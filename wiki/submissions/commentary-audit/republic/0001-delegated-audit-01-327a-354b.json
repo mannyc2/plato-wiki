@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-delegated-audit-01-327a-354b",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "republic",
+  "unit_key": "01-327a-354b",
+  "source_path": "scratch/commentary/delegated-audits/republic/01-327a-354b.json",
+  "source_sha256": "d22e67ad2a7284e2bf4ca507b84277054aa1c07ce48f562ebbad94a9db64c781",
+  "target_path": "wiki/submissions/commentary-audit/republic/01-327a-354b.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "1f10271ce2ac4a8b562d73c9a95c22263447128f9b4ee8233a79c8d3e0a65a9c",
+  "applied_at": "2026-08-24T01:15:36.803Z",
+  "applied_ids": [
+    "comm_republic_0001"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "republic",
+    "unit_key": "01-327a-354b",
+    "job": {
+      "job_id": "audit:republic:01-327a-354b",
+      "input_sha256": "c203b074d88826dd41a61747773096a2e2186b61172ad0dbb84829d1669d3d6e",
+      "audit_brief_path": "scratch/commentary/audit-briefs/republic/01-327a-354b.md",
+      "audit_brief_sha256": "4359583b02fe5e392986ea333d596fe6a962021c5c2258db6a7be9bb6a1d172a",
+      "output_path": "scratch/commentary/audits/republic/01-327a-354b.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/republic/01-327a-354b.output.json",
+    "output_sha256": "1f10271ce2ac4a8b562d73c9a95c22263447128f9b4ee8233a79c8d3e0a65a9c",
+    "provenance": {
+      "auditor": "batch-c-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

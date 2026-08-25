@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "euthyphro",
+  "source_path": "scratch/commentary/rewrites/euthyphro/01-2a-3e.json",
+  "source_sha256": "0bc54d862a231c5e00b3c645df57e22f4d406d836449dbde045274d1f10be24b",
+  "target_path": "wiki/commentary/euthyphro.md",
+  "target_sha256_before": "20d136c8f32345deef9aab90d9f5602965a810d8a22034f2edb0f3dadb79d389",
+  "target_sha256_after": "2d855af707ac414a0bd14552fa7a87d171579372aa233c5b1332b26ea57e4ac3",
+  "applied_at": "2026-08-21T14:23:30.567Z",
+  "applied_ids": [
+    "comm_euthyphro_0011",
+    "comm_euthyphro_0015",
+    "comm_euthyphro_0018",
+    "comm_euthyphro_0024"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "euthyphro",
+      "unit_key": "01-2a-3e",
+      "section_id": "comm_euthyphro_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthyphro/01-2a-3e.json",
+        "sha256": "b7140c0cd6b5fe9d917ae1951cecc32b30bfbac4b2f929bfafd6560fff9db077"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthyphro_0011",
+          "title": "",
+          "body": "The dialogue begins with a small but telling mismatch. Euthyphro assumes that Socrates' case can be named by analogy with his own; Socrates corrects the term, distinguishing a dike from a graphe. The passage does not yet explain the legal difference. Its immediate dramatic effect is to make us hear Socrates' precision: before either case is described, the two men are already using different names for the situation they share.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0001"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthyphro",
+      "unit_key": "02-4a-5c",
+      "section_id": "comm_euthyphro_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthyphro/02-4a-5c.json",
+        "sha256": "62b9759a04dac26363b477eb510f02913700bc139d2b08471f2aa16dbbc1c21a"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthyphro_0015",
+          "title": "",
+          "body": "Here the pressure shifts from the case to the warrant behind Euthyphro’s confidence. Socrates asks whether prosecuting his father might itself be unholy; Euthyphro answers by asserting precise knowledge of the pious and impious. The dialogue has not established that his act is unholy, or that his knowledge is genuine. It has set a standard: Euthyphro’s certainty must now be shown, not merely announced.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0006"
+            ],
+            "claims": [
+              "claim_euthyphro_0002"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthyphro",
+      "unit_key": "03-5d-6e",
+      "section_id": "comm_euthyphro_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthyphro/03-5d-6e.json",
+        "sha256": "959dfa9f9b25b40522766ecb0e4d314895ffe2d09baad1660a5e66480cc4eac6"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthyphro_0018",
+          "title": "",
+          "body": "The exchange turns Euthyphro’s mythic proof into a test of authority. Socrates says that when people tell such stories about the gods, he finds them difficult to accept, and links that difficulty to his prosecution. Euthyphro, by contrast, affirms that these events happened and adds that he knows still more wondrous ones. The contrast is not yet a settled verdict about either man’s theology; it puts Euthyphro’s confidence under pressure before the conversation returns to the definition of piety.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0008"
+            ],
+            "claims": [
+              "claim_euthyphro_0009",
+              "claim_euthyphro_0011"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthyphro",
+      "unit_key": "05-8b-9e",
+      "section_id": "comm_euthyphro_0005",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthyphro/05-8b-9e.json",
+        "sha256": "d61ac03f8aa9871b45710e479149f76164ca6c4b079fa587ed188861d1b90fe3"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthyphro_0024",
+          "title": "",
+          "body": "At 9e, Euthyphro takes up the revised formula as his own: the pious is what all the gods love, and the impious what they all hate. He calls it correct, while Socrates keeps the inquiry open. A definition is not secure merely because someone asserts it; it must still be examined.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0015"
+            ],
+            "claims": [
+              "claim_euthyphro_0024"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_euthyphro_0011",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0011\nsource_work: Euthyphro\nblock_kind: context\nplacement: before\nstephanus_span: 2a-2b\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 2a-2b\n  start_marker: 2a\n  end_marker: 2b\n  start_char: 0\n  end_char: 745\n  text_sha256: \"b65bfcd1c8e4570e73dfa8caaadd07eeff9fe345ab4ce657778f3a7e6955a0e2\"\nbody: \"The dialogue opens on legal ground, and the first exchange is already a correction. Euthyphro assumes Socrates has a private lawsuit, a dike, like his own; Socrates answers that what he faces is a graphe, a public indictment, brought on behalf of the city itself. The two men have come to the same porch on very different errands, and Socrates' careful word choice quietly marks the difference in stakes before either case has been described.\"\ncites:\n  observations: [\"obs_euthyphro_0001\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0015",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0015\nsource_work: Euthyphro\nblock_kind: argument\nplacement: after\nstephanus_span: 4e-5a\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 4e-5a\n  start_marker: 4e\n  end_marker: 5a\n  start_char: 5416\n  end_char: 6333\n  text_sha256: \"5333471844b221c6612380c27a1f6d577ae8bea273a91ac3a25fc2f5848ca926\"\nbody: \"Socrates' question here is the hinge of the whole scene: given these facts, is Euthyphro not afraid that prosecuting his own father is itself the unholy act? He does not say the prosecution is wrong; he only poses the risk. Euthyphro answers by claiming exact knowledge of everything divine — he would be useless, he says, no different from ordinary men, without it. That claim of precision, not the lawsuit, is what the rest of the dialogue will actually put on trial. The case itself is never adjudicated; it later gets set aside in favor of the definitional search.\"\ncites:\n  observations: [\"obs_euthyphro_0006\"]\n  claims: [\"claim_euthyphro_0002\"]\n  relations: [\"rel_euthyphro_0001\"]\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0018",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0018\nsource_work: Euthyphro\nblock_kind: context\nplacement: after\nstephanus_span: 6a-6b\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 6a-6b\n  start_marker: 6a\n  end_marker: 6b\n  start_char: 8118\n  end_char: 9086\n  text_sha256: \"0db3ad9037bbc0b9740d313d96f886c481b02441e7999fdd2d7f17520a6a01a8\"\nbody: \"For a moment the roles reverse and the trial comes back into view. Euthyphro's proof rests on the myths — Zeus binding Cronus, Cronus mutilating Uranus — and Socrates quietly says that his difficulty accepting exactly such stories is why he is being prosecuted. So the man on trial for impiety doubts the poets' gods, while the self-proclaimed expert in piety believes them, and more wondrous things besides. Plato lets that contrast sit without comment, and it shadows every definition that follows.\"\ncites:\n  observations: [\"obs_euthyphro_0008\"]\n  claims: [\"claim_euthyphro_0009\", \"claim_euthyphro_0011\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0024",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0024\nsource_work: Euthyphro\nblock_kind: notice\nplacement: after\nstephanus_span: 9e\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 9e\n  start_marker: 9e\n  end_marker: 9e\n  start_char: 16863\n  end_char: 17257\n  text_sha256: \"fe249030d61079ca51029d05e5f8b80944af003501830d2bed98a8ee9bd56934\"\nbody: \"The revised definition Euthyphro now states in his own voice is word for word the one Socrates offered a moment earlier. The wiki's relation ledger records the two as the same claim in two mouths. It is worth hearing how the ownership shifts: Socrates warns him to consider whether adopting it will let him teach what he promised, and Euthyphro answers only, what is to hinder? He has repaired his definition without ever examining why the first one broke.\"\ncites:\n  observations: [\"obs_euthyphro_0015\"]\n  claims: [\"claim_euthyphro_0024\"]\n  relations: [\"rel_euthyphro_0013\"]\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

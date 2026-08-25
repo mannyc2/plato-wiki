@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "submission_id": "0004-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "gorgias",
+  "source_path": "scratch/commentary/sample-repairs/gorgias/0036-round2.json",
+  "source_sha256": "fd2d0d03ca28f54a530d8d53813904d7ccd20c0902950a0f1fa719687e3de272",
+  "target_path": "wiki/commentary/gorgias.md",
+  "target_sha256_before": "504e4d92cb616dcc0f75b6697cc1dfe4a861848e0d095a6db095b566a9df6a06",
+  "target_sha256_after": "e81b18ab6e28968e9bb44c55c3c26b89923f8a205a013169d9ca8a94a2121535",
+  "applied_at": "2026-08-21T20:08:29.972Z",
+  "applied_ids": [
+    "comm_gorgias_0036"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "gorgias",
+    "ledger": {
+      "path": "wiki/commentary/gorgias.md",
+      "sha256": "504e4d92cb616dcc0f75b6697cc1dfe4a861848e0d095a6db095b566a9df6a06"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-gorgias-final-sample-round2",
+      "reviewed_on": "2026-08-21",
+      "rationale": "The independent Luna sample found one unsupported rhetoric formulation in the closing block; this repair binds the replacement to the exact justice-directed closing records.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_gorgias_0001",
+        "comm_gorgias_0004",
+        "comm_gorgias_0006",
+        "comm_gorgias_0007",
+        "comm_gorgias_0008",
+        "comm_gorgias_0012",
+        "comm_gorgias_0014",
+        "comm_gorgias_0017",
+        "comm_gorgias_0020",
+        "comm_gorgias_0024",
+        "comm_gorgias_0027",
+        "comm_gorgias_0030",
+        "comm_gorgias_0032",
+        "comm_gorgias_0035",
+        "comm_gorgias_0036"
+      ],
+      "failed_commentary_ids": [
+        "comm_gorgias_0036"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_gorgias_0036",
+        "title": "The closing call: practice justice and follow this account",
+        "body": "The closing call turns the surviving account into a way of life. Socrates urges Callicles to follow it by practicing justice and the rest of virtue in living and dying. He says rhetoric should always point toward what is just, then invites others to follow this path rather than the one Callicles trusts.",
+        "cites": {
+          "observations": [
+            "obs_gorgias_0391",
+            "obs_gorgias_0409"
+          ],
+          "claims": [
+            "claim_gorgias_0328",
+            "claim_gorgias_0329"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_gorgias_0036",
+      "body": "```yaml\ncommentary_id: comm_gorgias_0036\nsource_work: gorgias\nblock_kind: section\nplacement: before\ntitle: \"The closing call: practice justice and follow this account\"\nstephanus_span: 526e-527e\nsource_ref:\n  source_path: raw/plato/greek/gorgias.txt\n  stephanus_span: 526e-527e\n  start_marker: 526e\n  end_marker: 527e\n  start_char: 161801\n  end_char: 164277\n  text_sha256: \"f7203fba047d5ae474b7ed6194b1da93cc4359df27379c1b9eb8dde05a764e1b\"\nbody: \"Socrates says he is persuaded by the account and invites Callicles to the same life: practice justice, accept correction, use rhetoric only for the truth. Nothing worthwhile has been said against it — and so, he ends, let us follow this way and call others to it.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"closure_type/ethical_exhortation\", \"myth_demarcation/speaker_persuaded_by_myth\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

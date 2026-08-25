@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "statesman",
+  "source_path": "scratch/commentary/rewrite-repairs/statesman/round2.json",
+  "source_sha256": "ddce4c048b111e8a863f6d585d353fadaabeb8b487caa92104c83ae8b81ac5e7",
+  "target_path": "wiki/commentary/statesman.md",
+  "target_sha256_before": "1fb2fa446225934812bd01ad933835d45523fab2e66f3d0e93127f0aa673e54d",
+  "target_sha256_after": "04d507f17de81d07d632356a4246b13b454f349be03297423285fbea3e68d7e7",
+  "applied_at": "2026-08-21T15:21:35.558Z",
+  "applied_ids": [
+    "comm_statesman_0001",
+    "comm_statesman_0009",
+    "comm_statesman_0014",
+    "comm_statesman_0015"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "statesman",
+    "ledger": {
+      "path": "wiki/commentary/statesman.md",
+      "sha256": "1fb2fa446225934812bd01ad933835d45523fab2e66f3d0e93127f0aa673e54d"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/statesman/0001-rewrite-batch.json",
+      "sha256": "524c45becf3060c3bb1835ab55b371e6d25f242e6f837cfb3a70895ae97f1747"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-statesman-0001-rewrite-batch-acceptance.md",
+      "sha256": "a5fe07eb37ca2fc8c023e1b2394be7aea0a33bad5f50a6d27274bba5adcf090a"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-statesman-round1",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_statesman_0001",
+          "finding": "Uncited checkable source account; unsupported-claim defect remains."
+        },
+        {
+          "commentary_id": "comm_statesman_0009",
+          "finding": "Measure misreading fixed, but checkable account lacks citations."
+        },
+        {
+          "commentary_id": "comm_statesman_0014",
+          "finding": "Uncited opening claims; multiple-job problem not fully resolved."
+        },
+        {
+          "commentary_id": "comm_statesman_0015",
+          "finding": "Unsupported claim that the statesman is sought among knowledge guiding action; cited claim does not establish it."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-statesman-round2",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_statesman_0001",
+      "comm_statesman_0009",
+      "comm_statesman_0014",
+      "comm_statesman_0015"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_statesman_0001",
+        "title": "The danger of equal measures",
+        "body": "The opening places the statesman's inquiry inside a promise: Theodorus says gratitude will become triple after the statesman and philosopher are worked out, and Socrates immediately rebukes his equal valuation of the three figures. The dramatic work is a hierarchy question, not a settled ranking; the passage makes the inquiry begin under that pressure.",
+        "cites": {
+          "observations": [
+            "obs_statesman_0002",
+            "obs_statesman_0003"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_statesman_0009",
+        "title": "Two measures, one practical test",
+        "body": "One way to hear this passage is as a correction to two easy habits of judgment. “Greater” and “less” are first compared with one another; excess and deficiency are then considered against a mean—the fitting point for the matter at hand. The payoff, as I read it, is methodological: a discourse is not good because it is long or short, but because its divisions help the listener inquire more clearly. The mean is a test of fit, not an exact numerical standard.",
+        "cites": {
+          "observations": [
+            "obs_statesman_0158",
+            "obs_statesman_0181"
+          ],
+          "claims": [
+            "claim_statesman_0046",
+            "claim_statesman_0047",
+            "claim_statesman_0051",
+            "claim_statesman_0055"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_statesman_0014",
+        "title": "",
+        "body": "Socrates’ rebuke turns Theodorus’ arithmetic into a measure of honor: the three figures have been assigned equal worth even though Socrates says their honor exceeds that proportion. The exchange does not ask us to settle the ranking; it makes equal valuation itself the object of playful correction.",
+        "cites": {
+          "observations": [
+            "obs_statesman_0003"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_statesman_0015",
+        "title": "",
+        "body": "At 258e, the Stranger divides sciences into practical and purely cognitive kinds, and Young Socrates accepts the division. This is the inquiry’s first cut; it does not yet say which side contains the statesman’s art.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_statesman_0001"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_statesman_0001",
+      "body": "```yaml\ncommentary_id: comm_statesman_0001\nsource_work: Statesman\nblock_kind: section\nplacement: before\ntitle: \"The danger of equal measures\"\nstephanus_span: 257a-258a\nsource_ref:\n  source_path: raw/plato/greek/statesman.txt\n  stephanus_span: 257a-258a\n  start_marker: 257a\n  end_marker: 258a\n  start_char: 10\n  end_char: 1827\n  text_sha256: \"31bd51d366c5cc595d40fa8daf03ebcacdb54bbbe3489f3405f48c7e54570b39\"\nbody: \"I read this opening as a warning about equal measures. Gratitude is imagined as something that can be multiplied, yet Socrates makes the conversation pause over whether mathematical equality can represent intellectual worth. The section therefore asks us to listen for a distinction between treating figures alike and judging them alike. That distinction gives the exchange its tension before any later argument begins.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    },
+    {
+      "commentary_id": "comm_statesman_0009",
+      "body": "```yaml\ncommentary_id: comm_statesman_0009\nsource_work: Statesman\nblock_kind: section\nplacement: before\ntitle: \"Two measures, one practical test\"\nstephanus_span: 283c-287a\nsource_ref:\n  source_path: raw/plato/greek/statesman.txt\n  stephanus_span: 283c-287a\n  start_marker: 283c\n  end_marker: 287a\n  start_char: 53769\n  end_char: 61840\n  text_sha256: \"a42dfd9029a6a9261de90563ed350a91486b80361c176ece4320669c23ac5e52\"\nbody: \"One way to hear this passage is as a correction to two easy habits of judgment. “Greater” and “less” are first compared with one another; excess and deficiency are then considered against a mean—the fitting point for the matter at hand. The payoff, as I read it, is methodological: a discourse is not good because it is long or short, but because its divisions help the listener inquire more clearly. The mean is a test of fit, not an exact numerical standard.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    },
+    {
+      "commentary_id": "comm_statesman_0014",
+      "body": "```yaml\ncommentary_id: comm_statesman_0014\nsource_work: Statesman\nblock_kind: notice\nplacement: after\nstephanus_span: 257a\nsource_ref:\n  source_path: raw/plato/greek/statesman.txt\n  stephanus_span: 257a\n  start_marker: 257a\n  end_marker: 257a\n  start_char: 10\n  end_char: 350\n  text_sha256: \"a51ff07511473d0c25000a2893cc8f523b2571f82245da497917bd1856994e80\"\nbody: \"I would hear Socrates’ reply as a playful refusal to let a numerical proportion settle a question of worth. The mathematical joke does more than decorate the exchange: it makes the listener feel how a tidy measure can flatten a meaningful difference. Stay with that resistance; it is the single pressure point of this opening.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    },
+    {
+      "commentary_id": "comm_statesman_0015",
+      "body": "```yaml\ncommentary_id: comm_statesman_0015\nsource_work: Statesman\nblock_kind: argument\nplacement: after\nstephanus_span: 258e\nsource_ref:\n  source_path: raw/plato/greek/statesman.txt\n  stephanus_span: 258e\n  start_marker: 258e\n  end_marker: 258e\n  start_char: 2992\n  end_char: 3474\n  text_sha256: \"d017595d1af39106c2fd7b011d7c13dec15e6351c34164c96ea11afed8977574\"\nbody: \"Here the practical/cognitive division is proposed as the opening cut, not demonstrated as an exhaustive map of every science. The dialogue can use it as a working distinction while leaving its adequacy to later inquiry.\"\ncites:\n  observations: []\n  claims: [\"claim_statesman_0001\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    }
+  ]
+}

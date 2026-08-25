@@ -1,0 +1,52 @@
+dialogue: protagoras
+source_path: raw/plato/greek/protagoras.txt
+source_sha256: f2890c5fd07c6fa1f6219a938be81ca3eda1a55d5bd3d41ac7a1169a8e43d99b
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[45]:
+  group             | form    | start_char | end_char | marker | turn_id              | token_ids
+  assent_concession | πάνυ γε | 1341       | 1348     | 310a   | turn_protagoras_0018 | tok_protagoras_000233,tok_protagoras_000234
+  assent_concession | ναί     | 3023       | 3026     | 310d   | turn_protagoras_0022 | tok_protagoras_000510
+  assent_concession | ναί     | 7542       | 7545     | 312e   | turn_protagoras_0024 | tok_protagoras_001239
+  aporia_reset      | πάλιν   | 11456      | 11461    | 314d   | turn_protagoras_0026 | tok_protagoras_001893
+  aporia_reset      | πάλιν   | 20146      | 20151    | 318e   | turn_protagoras_0030 | tok_protagoras_003240
+  divine_legal      | δίκη    | 26379      | 26383    | 322a   | turn_protagoras_0033 | tok_protagoras_004212
+  aporia_reset      | πάλιν   | 27145      | 27150    | 322b   | turn_protagoras_0034 | tok_protagoras_004331
+  divine_legal      | ὅσιον   | 32000      | 32005    | 325a   | turn_protagoras_0037 | tok_protagoras_005102
+  divine_legal      | ὅσιον   | 33481      | 33486    | 325d   | turn_protagoras_0037 | tok_protagoras_005345
+  divine_legal      | ἀνόσιον | 33496      | 33503    | 325d   | turn_protagoras_0037 | tok_protagoras_005348
+  assent_concession | ναί     | 42217      | 42220    | 330a   | turn_protagoras_0042 | tok_protagoras_006730
+  assent_concession | ναί     | 43378      | 43381    | 330d   | turn_protagoras_0042 | tok_protagoras_006936
+  assent_concession | ναί     | 43487      | 43490    | 330d   | turn_protagoras_0042 | tok_protagoras_006954
+  divine_legal      | ἀνόσιον | 43651      | 43658    | 330d   | turn_protagoras_0042 | tok_protagoras_006982
+  divine_legal      | ὅσιον   | 43672      | 43677    | 330d   | turn_protagoras_0042 | tok_protagoras_006986
+  divine_legal      | ὅσιον   | 43785      | 43790    | 330d   | turn_protagoras_0042 | tok_protagoras_007003
+  divine_legal      | ὅσιον   | 43827      | 43832    | 330e   | turn_protagoras_0042 | tok_protagoras_007011
+  divine_legal      | ὅσιον   | 44655      | 44660    | 331a   | turn_protagoras_0043 | tok_protagoras_007145
+  divine_legal      | ὅσιον   | 44674      | 44679    | 331a   | turn_protagoras_0043 | tok_protagoras_007149
+  divine_legal      | ἀνόσιον | 44741      | 44748    | 331b   | turn_protagoras_0043 | tok_protagoras_007161
+  divine_legal      | ὅσιον   | 44841      | 44846    | 331b   | turn_protagoras_0043 | tok_protagoras_007177
+  divine_legal      | ὅσιον   | 45239      | 45244    | 331c   | turn_protagoras_0043 | tok_protagoras_007242
+  divine_legal      | ὅσιον   | 45388      | 45393    | 331c   | turn_protagoras_0043 | tok_protagoras_007268
+  divine_legal      | ὅσιον   | 46328      | 46333    | 331e   | turn_protagoras_0043 | tok_protagoras_007432
+  assent_concession | ναί     | 48226      | 48229    | 332e   | turn_protagoras_0044 | tok_protagoras_007725
+  assent_concession | ναί     | 48288      | 48291    | 332e   | turn_protagoras_0044 | tok_protagoras_007736
+  assent_concession | πάνυ γε | 48303      | 48310    | 332e   | turn_protagoras_0044 | tok_protagoras_007738,tok_protagoras_007739
+  assent_concession | ναί     | 48339      | 48342    | 332e   | turn_protagoras_0044 | tok_protagoras_007744
+  assent_concession | ναί     | 50357      | 50360    | 333e   | turn_protagoras_0045 | tok_protagoras_008075
+  assent_concession | ναί     | 52386      | 52389    | 334e   | turn_protagoras_0046 | tok_protagoras_008410
+  definition_prompt | εἶδος   | 58392      | 58397    | 338a   | turn_protagoras_0050 | tok_protagoras_009377
+  aporia_reset      | πάλιν   | 59806      | 59811    | 338d   | turn_protagoras_0050 | tok_protagoras_009594
+  aporia_reset      | πάλιν   | 60232      | 60237    | 338e   | turn_protagoras_0050 | tok_protagoras_009658
+  assent_concession | ναί     | 78099      | 78102    | 347b   | turn_protagoras_0059 | tok_protagoras_012431
+  aporia_reset      | πάλιν   | 82034      | 82039    | 349a   | turn_protagoras_0061 | tok_protagoras_013051
+  definition_prompt | οὐσία   | 82320      | 82325    | 349b   | turn_protagoras_0061 | tok_protagoras_013096
+  aporia_reset      | πάλιν   | 90662      | 90667    | 353c   | turn_protagoras_0065 | tok_protagoras_014497
+  aporia_reset      | πάλιν   | 91111      | 91116    | 353c   | turn_protagoras_0065 | tok_protagoras_014571
+  aporia_reset      | πάλιν   | 92053      | 92058    | 354a   | turn_protagoras_0066 | tok_protagoras_014726
+  aporia_reset      | πάλιν   | 93406      | 93411    | 354d   | turn_protagoras_0066 | tok_protagoras_014957
+  aporia_reset      | πάλιν   | 93761      | 93766    | 354e   | turn_protagoras_0066 | tok_protagoras_015016
+  aporia_reset      | πάλιν   | 96104      | 96109    | 355e   | turn_protagoras_0068 | tok_protagoras_015405
+  assent_concession | ναί     | 103755     | 103758   | 359c   | turn_protagoras_0071 | tok_protagoras_016702
+  assent_concession | ναί     | 105464     | 105467   | 360b   | turn_protagoras_0072 | tok_protagoras_016995
+  aporia_reset      | πάλιν   | 108070     | 108075   | 361c   | turn_protagoras_0073 | tok_protagoras_017428

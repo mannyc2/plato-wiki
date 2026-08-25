@@ -1,0 +1,530 @@
+# Voice sigla per dialogue: in-scene speakers who own reported discourse inside a
+# narrated turn. Conventions mirror derived/plato/turns/sigla.toml (exact verbatim
+# forms including the trailing period; reviewed manually; extend by commit, not by
+# script), with one deliberate difference of kind.
+#
+# derived/plato/turns/sigla.toml records sigla AS PRINTED in raw/plato/greek/*.txt
+# and drives turn segmentation. The Symposium prints no in-scene sigla at all: its
+# speakers are named in the narration (Φαῖδρον, τὸν Ἐρυξίμαχον, τὴν Διοτίμαν),
+# never as line-start sigla. Registering these forms in the turn registry would
+# contradict that file's "as printed" contract and would put non-printed strings in
+# front of the turn extractor. They therefore live here, and turn derivation is
+# unaffected: derived/plato/turns/symposium.toon keeps its 5 turns.
+#
+# A voice siglum is an identifier for an attributed voice, not a claim that the
+# source prints it. The licensing evidence for every attribution is the Greek
+# reported-speech formula recorded on each voice record, never this file.
+#
+# Provenance: added 2026-07-19 by the reported-speech voice attribution rollout step 1 for the Symposium pilot. Forms
+# follow the corpus's existing abbreviation practice for the same persons in
+# dialogues that do print sigla (ΣΩ. for Socrates in 21 dialogues; ΦΑΙ. for
+# Phaedrus in phaedrus.txt; ΕΡΥ./ΠΑΥ./ΑΓΑ./ΑΛΚ./ΑΡΙΣΤΟΦ. formed on the same
+# initial-syllable pattern). ΑΠΟΛ. and ΕΤΑΙ. are printed sigla and stay in the turn
+# registry; ΑΠΟΛ. is repeated here because it is also the outermost voice.
+
+[[dialogues]]
+slug = "symposium"
+sigla = [
+  "ΑΓΑ.",      # Agathon
+  "ΑΛΚ.",      # Alcibiades
+  "ΑΠΟΛ.",     # Apollodorus (outermost narrator; also a printed turn siglum)
+  "ΑΡΙΣΤΟΔ.",  # Aristodemus (inner narrator, source of the banquet report)
+  "ΑΡΙΣΤΟΦ.",  # Aristophanes
+  "ΔΙΟ.",      # Diotima
+  "ΕΡΥ.",      # Eryximachus
+  "ΠΑΥ.",      # Pausanias
+  "ΣΩ.",       # Socrates
+  "ΦΑΙ.",      # Phaedrus
+  # Terminal owners the text identifies outright but this registry had no id for,
+  # so their utterances could not be attributed for a reason that was about this
+  # file rather than about the Greek. Operator ruling, 2026-07-29, the Symposium re-review; same
+  # shape as the Phaedo discourse-attribution additions below. Registration ONLY: per the
+  # superset contract, an entry earns no attribution by itself, and the licensing
+  # evidence for every attribution stays on the voice record, never here.
+  "ΓΛΑΥ.",     # Glaucon, interlocutor of the conversation Apollodorus reports in
+               # the frame. Addressed vocatively at 172c (ὦ Γλαύκων) inside
+               # Apollodorus's own ἦν δ’ ἐγώ self-report. NOT the Γλαύκων of 222b
+               # (Χαρμίδην τὸν Γλαύκωνος), who is Charmides' father, is named only
+               # in the genitive, and never speaks.
+  "ΖΕΥΣ.",     # Zeus, inside Aristophanes' myth: nominative subject of λέγει at
+               # 190c (μόγις δὴ ὁ Ζεὺς ἐννοήσας λέγει ὅτι) introducing {q}-marked
+               # direct speech. His two other mentions are narrated action, not
+               # speech (190c ἐβουλεύοντο, 191c πορίζεται), and the 197b Ζεὺς sits
+               # inside a {quote} verse fragment in Agathon's speech — a citation
+               # about Zeus, not an utterance by him.
+  "ΗΦΑΙ.",     # Hephaestus, inside Aristophanes' myth: nominative subject of
+               # ἔροιτο at 192d (ἐπιστὰς ὁ Ἥφαιστος, ἔχων τὰ ὄργανα, ἔροιτο)
+               # introducing two {q} spans. Note the formula is a counterfactual
+               # optative (εἰ ... ἔροιτο): the utterance is hypothesised by
+               # Aristophanes, not narrated as having been said. The 197b Ἥφαιστος
+               # is Agathon naming him as inventor of χαλκεία, not a speaker.
+  "ΠΑΙΣ.",     # THE ONE announcing servant of 175a — not servants collectively.
+               # Operator ruling, 2026-07-29, the Symposium re-review. Its licensing construction
+               # is ἄλλον δέ τινα τῶν παίδων ἥκειν ἀγγέλλοντα ὅτι, which introduces
+               # {q}-marked first-person direct speech (κἀμοῦ καλοῦντος). The
+               # role-denoting phrase is the subject of the reporting construction
+               # in an accusative-and-infinitive form, not a nominative; see the
+               # role_reporting_formula row in docs/voices-protocol.md, amended the
+               # same day to cover that shape. It is NOT a named formula: the
+               # source prints no name here.
+               #
+               # Scope of the id, stated because the Greek is a plural noun: it
+               # denotes this single announcing servant. The vocative plural παῖδες
+               # (Agathon at 175a οὐ σκέψῃ, ἔφη, παῖ, and at 213b Ὑπολύετε, παῖδες,
+               # Ἀλκιβιάδην) addresses the household staff as a group and licenses
+               # nothing — a collective addressee is not an owner. Do not reuse
+               # ΠΑΙΣ. for another servant's utterance; a second one needs its own
+               # ruling and its own id.
+               #
+               # Form note: ΠΑΙ. is a *printed* turn siglum in laches.txt and
+               # meno.txt for a different person (Meno's slave boy). This entry
+               # deliberately takes a distinct form so no record implies the two are
+               # the same speaker, and because Symposium prints no siglum here.
+               #
+               # Registration ONLY, as above: it earns no attribution. In
+               # particular it does not by itself decide voice_symposium_0006, whose
+               # terminal owner still needs its own licensing evidence on the record.
+]
+
+# Provenance: added 2026-07-25 by the reported-speech voice attribution rollout wave 2 (phaedo, euthydemus,
+# protagoras). Same contract as the Symposium block above: these are voice
+# identifiers for owners of reported discourse, not claims that the source
+# prints them. Forms reuse the corpus's existing abbreviation for the same
+# person where one exists (ΣΩ. throughout; ΚΡ. for Crito per crito/cratylus/
+# timaeus; ΑΠΟΛ. per symposium; ΙΠ. for Hippias per greater-/lesser-hippias;
+# ΚΡΙ. for Critias per critias), and otherwise follow the same
+# initial-syllable pattern. Where a form would collide with a different person
+# inside the SAME dialogue it is lengthened (ΠΡΩΤ. for Protagoras, ΙΠΠΟΚΡ. for
+# Hippocrates). Registration is a superset: an entry earns no attribution, and
+# a person who owns no licensed span simply never appears in the ledger.
+
+[[dialogues]]
+slug = "phaedo"
+sigla = [
+  "ΑΠΟΛ.",     # Apollodorus
+  "ΚΕΒ.",      # Cebes
+  "ΚΡ.",       # Crito
+  "ΣΙΜ.",      # Simmias
+  "ΣΩ.",       # Socrates
+  "ΦΑΙΔ.",     # Phaedo (inner narrator; also a printed turn siglum)
+  # Terminal owners the text identifies outright but the registry had no id for,
+  # so their utterances were recorded as unresolved for a reason that was about
+  # this file rather than about the Greek (the Phaedo discourse attribution review). Each is the nominative
+  # subject of the reporting verb that transmits its utterance.
+  "ΘΥΡ.",      # the doorkeeper, ὁ θυρωρός (59e, subject of εἶπεν)
+  "ΞΑΝΘ.",     # Xanthippe, ἡ Ξανθίππη (60a, subject of εἶπεν)
+  "ΥΠΗΡ.",     # the attendant of the Eleven, ὁ τῶν ἕνδεκα ὑπηρέτης (116c);
+               # the same man is ὁ ἄνθρωπος in the death scene. Note that
+               # ὁ ἄνθρωπος is ALSO the ordinary common noun at 70a, 80c, and
+               # 87b, where it is not a speaker at all.
+]
+
+[[dialogues]]
+slug = "euthydemus"
+sigla = [
+  "ΔΙΟΝ.",     # Dionysodorus
+  "ΕΥΘ.",      # Euthydemus
+  "ΚΛΕΙΝ.",    # Cleinias
+  "ΚΡ.",       # Crito (frame interlocutor; also a printed turn siglum)
+  "ΚΤΗΣ.",     # Ctesippus
+  "ΛΟΓΟΓΡ.",   # THE ONE forensic speech-writer who accosts Crito at 304d, inside
+               # Crito's own printed narration in turn_euthydemus_0081. Added
+               # 2026-08-01 under the corpus reported-turn completion campaign's operator ruling of the same date; same
+               # shape as the Phaedo discourse attribution review's ΘΥΡ./ΞΑΝΘ./ΥΠΗΡ. and the Symposium re-review's ΠΑΙΣ. — an
+               # individual the text identifies by role and never by name.
+               #
+               # Licensing construction, char 70819-70943 (raw/plato/greek/
+               # euthydemus.txt): προσελθών τίς μοι περιπατοῦντι, ἀνὴρ οἰόμενος
+               # πάνυ εἶναι σοφός (char 70838), τούτων τις τῶν περὶ τοὺς λόγους
+               # τοὺς εἰς τὰ δικαστήρια δεινῶν, ὦ Κρίτων, ἔφη (char 70870). The
+               # role-denoting phrase is the NOMINATIVE subject of ἔφη, which
+               # introduces the direct question οὐδὲν ἀκροᾷ τῶνδε τῶν σοφῶν; — a
+               # role_reporting_formula in the plainest case the kind has, not a
+               # named formula: the source prints no name here and never does.
+               #
+               # Scope of the id, stated because the Greek is indefinite: it
+               # denotes this one man. τίς and τούτων τις introduce a
+               # first-mentioned individual, which docs/voices-protocol.md's
+               # 2026-07-29 amendment says does not disqualify a role phrase; the
+               # genuine plural τῶν … δεινῶν is the class he is drawn FROM, not a
+               # collective speaker. He speaks again at 304d-305b (καὶ μήν, ἔφη·
+               # τί δὲ ἄλλο, ἦ δ’ ὅς· ποῖον, ἔφη· ἀλλὰ γάρ, ὦ Κρίτων, ἔφη at char
+               # 71787) without being re-identified. Do not reuse ΛΟΓΟΓΡ. for
+               # another unnamed speaker; a second one needs its own ruling.
+               #
+               # Form note: the source never prints λογογράφος. The dialogue's own
+               # word for the trade is λογοποιός (289c-290a), which Socrates uses
+               # for a class, not for this man; ΛΟΓΟΓΡ. is deliberately distinct
+               # from it and from every printed siglum in the corpus, so no record
+               # implies the source labelled him.
+               #
+               # Registration ONLY, as everywhere in this file: it earns no
+               # attribution, and the licensing evidence stays on the record.
+  "ΣΩ.",       # Socrates (narrator of the reported conversation)
+]
+
+[[dialogues]]
+slug = "protagoras"
+sigla = [
+  "ΑΛΚ.",      # Alcibiades
+  "ΙΠ.",       # Hippias
+  "ΙΠΠΟΚΡ.",   # Hippocrates (lengthened to avoid colliding with ΙΠ.)
+  "ΚΑΛ.",      # Callias
+  "ΚΡΙ.",      # Critias
+  "ΠΡΟΔ.",     # Prodicus
+  "ΠΡΩΤ.",     # Protagoras (lengthened; ΠΡΩ. is Protarchus in philebus)
+  "ΣΩ.",       # Socrates (narrator of the reported conversation)
+  # Added 2026-08-01 by the corpus reported-turn completion campaign wave 1, under the operator ruling of that date
+  # that registering voice sigla is authorised inside this plan. Registration
+  # ONLY: the entry earns no attribution, and the licensing evidence stays on the
+  # voice record. Review note:
+  # wiki/review/2026-08-01-protagoras-voice-siglum-thyroros.md
+  "ΘΥΡ.",      # THE ONE eunuch doorkeeper of Callias' house at 314d — not
+               # doorkeepers as a class, and NOT the same individual as phaedo's
+               # ΘΥΡ. above. Operator ruling, 2026-08-01, the corpus reported-turn completion campaign wave 1; same
+               # shape as the Phaedo discourse-attribution additions and the Symposium re-review's ΠΑΙΣ.
+               # Registration ONLY: per the superset contract, an entry earns no
+               # attribution by itself, and the licensing evidence for every
+               # attribution stays on the voice record, never here.
+               #
+               # Licensing Greek, verbatim with offsets in
+               # raw/plato/greek/protagoras.txt:
+               #
+               #   char 11146  ὁ θυρωρός, εὐνοῦχός τις, κατήκουεν ἡμῶν
+               #   char 11331  ἔα, ἔφη, σοφισταί τινες· οὐ σχολὴ αὐτῷ·
+               #   char 11473  καὶ ὃς ἐγκεκλῃμένης τῆς θύρας ἀποκρινόμενος εἶπεν
+               #   char 11524  ὦ ἄνθρωποι, ἔφη, οὐκ ἀκηκόατε ὅτι οὐ σχολὴ αὐτῷ;
+               #
+               # Checked against all three parts of the "Case is not the test"
+               # amendment of 2026-07-29 in docs/voices-protocol.md, rather than
+               # assumed from the shape of the phrase:
+               #
+               #  1. GRAMMATICAL SUBJECT OF THE REPORTING CONSTRUCTION. ὁ θυρωρός
+               #     is nominative and is the subject of the finite κατήκουεν and
+               #     of the participles ἀνοίξας καὶ ἰδὼν that govern the ἔφη at
+               #     11331. It is not the trap the amendment names: that trap is
+               #     an ACCUSATIVE that is the object of the governing verb, and
+               #     the only object here is the genitive ἡμῶν after κατήκουεν.
+               #  2. ONE SPECIFIC INDIVIDUAL BY ROLE. Every verb and participle
+               #     the phrase governs is third person singular — κατήκουεν,
+               #     ἀνοίξας, ἰδών, ἔφη, ἐπήραξεν (11436), εἶπεν (11517). The
+               #     indefinite τις in εὐνοῦχός τις does NOT disqualify it: the
+               #     amendment says outright that Greek introduces a
+               #     first-mentioned individual that way. ὦ ἄνθρωποι at 11524 is
+               #     his vocative to Socrates and Hippocrates, an addressee, not a
+               #     plural subject. θυρωρ- and εὐνοῦχ- each occur exactly once in
+               #     the whole source, so there is no second holder of the office.
+               #  3. REGISTERED SIGLUM. That is what this entry supplies, and it
+               #     remains never a named_reporting_formula: the source prints no
+               #     proper name for him anywhere.
+               #
+               # The second utterance is introduced by the resumptive καὶ ὅς at
+               # 11473, whose antecedent is that same phrase. This is NOT the
+               # previous-speaker carry-forward the 2026-07-25 ruling rejects:
+               # that ruling is about an antecedent chosen because it was the last
+               # speaker inside a bounded two-party exchange, and here the
+               # reference is fixed by morphology — the only other noun phrase in
+               # the sentence is ἡμεῖς, first person plural, against a masculine
+               # singular ὅς.
+               #
+               # Form note, stated because the collision is real: ΘΥΡ. is already
+               # registered above for PHAEDO's doorkeeper, ὁ θυρωρός of 59e, a
+               # different man in a different house. Sigla are scoped per dialogue
+               # block, so there is no mechanical collision and no record implies
+               # the two are the same speaker; the form is reused because the
+               # office is the same, exactly as ΣΩ. and ΚΡ. are reused across
+               # blocks. Do not read a cross-dialogue identity into it, and do not
+               # reuse ΘΥΡ. inside protagoras for any other servant — the man who
+               # finally opens the door at 11739 (μόγις οὖν ποτε ἡμῖν ἅνθρωπος
+               # ἀνέῳξεν τὴν θύραν) is this same doorkeeper, but that clause is
+               # narrated action and not speech, so it licenses nothing.
+               #
+  # Added 2026-08-04 by the corpus reported-turn completion campaign wave 1. Provenance, stated exactly: a primary
+  # source review and an independent cross-review of the protagoras candidate
+  # each recommended these three separately, and the coordinator adjudicated the
+  # recommendation against raw/plato/greek/protagoras.txt when the records were
+  # resolved, re-verifying every offset below by slicing the source. No separate
+  # operator ruling was issued for this registration; it rests on that source
+  # adjudication and on the standing rule in docs/voices-protocol.md that a
+  # bounded stretch of direct speech transmitted below the printed speaker is a
+  # reported turn whose owner needs an id. Review note:
+  # wiki/review/2026-08-04-protagoras-voice-ledger-acceptance.md.
+  # Registration ONLY, as everywhere in this file: an entry earns no attribution,
+  # and the licensing evidence stays on the voice record.
+  #
+  # These three supersede a note that previously stood here saying Epimetheus,
+  # Hermes and Zeus were "NOT registered, deliberately" because "no record in the
+  # current protagoras cohort needs them." That premise was written against an
+  # older candidate and is now false: records 0465, 0466, 0467, 0470 and 0471
+  # need them. Its
+  # stated ground — that the myth quotations sit inside Protagoras' own held-floor
+  # speech — does not distinguish them from anything, since holding the floor is
+  # true of every nested reported turn, including the symposium myth speakers
+  # already registered above.
+  "ΕΠΙΜ.",     # Epimetheus, inside Protagoras' myth: nominative subject of
+               # παραιτεῖται at 320d (Προμηθέα δὲ παραιτεῖται Ἐπιμηθεὺς αὐτὸς
+               # νεῖμαι, char 24005; παραιτεῖται at 24017, the name at 24029)
+               # and of the ἔφη at 24080 that reports the words. The reported
+               # speech is {q}-marked in two segments, 24053-24079 and
+               # 24085-24104, split by that parenthetical ἔφη; it carries
+               # first-person μου and the imperative ἐπίσκεψαι.
+               # His brother Prometheus never speaks: all seven
+               # occurrences of Προμηθ- in the source were checked — 23931 and
+               # 25951 dative, 24005 and 26324 accusative, 25388 and 25641
+               # nominative but subjects of narrated action (ἔρχεται, κλέπτει),
+               # and 108293 inside Socrates' own closing speech about the myth —
+               # so no fourth siglum is licensed here.
+  "ΕΡΜΗΣ.",    # Hermes, inside Protagoras' myth: nominative subject of the
+               # reporting ἐρωτᾷ at 322c (ἐρωτᾷ οὖν Ἑρμῆς Δία, char 27346; the
+               # name at 27356), with Δία as accusative addressee. The {q} span
+               # at 27413-27640 carries the first-person deliberative
+               # subjunctives νείμω and θῶ.
+               #
+               # Form note. The lengthened ΕΡΜΗΣ. is a reader-facing convention,
+               # the same one that lengthened ΠΡΩΤ. above against philebus' ΠΡΩ.,
+               # and NOT a mechanical necessity: sigla are scoped per dialogue
+               # block, as the ΘΥΡ. entry above states outright, so the bare ΕΡΜ.
+               # used for Hermogenes in cratylus could not have collided with
+               # anything here. The form is chosen so a reader moving across
+               # blocks is not invited to read one person where there are two.
+  "ΖΕΥΣ.",     # Zeus, inside Protagoras' myth: ἔφη ὁ Ζεύς at 322d (char 27662)
+               # is a naming formula standing between the two {q} spans it
+               # reports, 27641-27661 and 27674-27874, which carry παρ’ ἐμοῦ and
+               # the imperative θές. The formula itself lies outside both, so it
+               # stays with ΠΡΩΤ. This is the same god, in the same construction,
+               # as the ΖΕΥΣ. registered for symposium above — there at char
+               # 37351, μόγις δὴ ὁ Ζεὺς ἐννοήσας λέγει ὅτι, verified in
+               # raw/plato/greek/symposium.txt. Per-dialogue scoping still
+               # applies: the shared form records a shared construction, and no
+               # record asserts a cross-dialogue identity.
+               #
+               # WHY THESE THREE AND NOT THE STAGED VOICES. The line is NAMED
+               # versus INDEFINITE, not certain versus hypothetical. Each of the
+               # three is a proper name in the nominative governing the verb that
+               # reports its own bounded utterance. That is why symposium's ΗΦΑΙ.
+               # is registered even though its formula is a counterfactual
+               # optative (εἰ ... ἔροιτο): Hephaestus is named. It is also why
+               # the collective οἱ ἄνθρωποι and the ὑβριστής of Socrates' staged
+               # interrogation (353c-357e) remain NOT registered, together with
+               # the τις and ὁ ἐρόμενος of the same stretch — the Greek singles
+               # out no one there, and registering a collective would invent a
+               # speaker, which the οἱ σοφοί φασιν row forbids. Without this
+               # distinction stated, the two decisions read as contradictory.
+               #
+               # UNREGISTERED IS NOT UNRECORDED. Operator ruling, 2026-08-04:
+               # the staged voices of this dialogue now carry records of their
+               # own — voice_protagoras_0472-0493, twenty-one of them unresolved
+               # — because leaving their bounded direct speech uncovered handed
+               # it to the printed speaker. Registration decides whether a staged
+               # owner may be RESOLVED; it never decides whether the span is
+               # recorded. The one resolved member, 0476, is ΙΠΠΟΚΡ. at 318c,
+               # named outright as the subject of ἐπανέροιτο. See "Staged direct
+               # speech" in docs/voices-protocol.md.
+]
+
+[[dialogues]]
+slug = "republic"
+sigla = [
+  # Added 2026-08-10 by the corpus reported-turn completion campaign wave 2 (Republic partial build: depth-1 frame
+  # plus Book 1). Registration ONLY, as everywhere in this file: an entry earns
+  # no attribution, and the licensing evidence stays on each voice record. All
+  # offsets are UTF-16 code units in raw/plato/greek/republic.txt, byte-verified
+  # against the source at sha256 ce086559a011ff7682319eec28680e9f4f6600631a698c
+  # 8cfa3653dd01aa5244; the apostrophe is U+2019 throughout.
+  "ΑΔ.",       # Adeimantus: καὶ ὁ Ἀδείμαντος, ἆρά γε, ἦ δ’ ὅς (char 1294, 328a)
+               # — the nominative name stands directly ahead of the anaphoric
+               # ἦ δ’ ὅς that reports his question.
+  "ΓΛΑΥ.",     # Glaucon: οὐδαμῶς, ἔφη ὁ Γλαύκων (char 1212, 327c), nominative
+               # subject of the naming ἔφη. Same form as symposium's ΓΛΑΥ.;
+               # per-dialogue scoping applies exactly as the ΖΕΥΣ. entries state
+               # — the shared form asserts no cross-dialogue identity.
+  "ΘΡΑΣ.",     # Thrasymachus: named in the nominative at καὶ ὁ Θρασύμαχος
+               # (char 19377, 336b) as the narrated aggressor, then speaks
+               # through the anaphoric ὁ δ’ εἰς τὸ μέσον φθεγξάμενος, τίς, ἔφη
+               # (char 19724, 336b) whose antecedent is that nominative.
+  "ΚΕΦ.",      # Cephalus: ὁ Κέφαλος ἠσπάζετό τε καὶ εἶπεν (char 2381, 328c),
+               # nominative subject of the reporting εἶπεν that opens his
+               # greeting ὦ Σώκρατες, οὐ δὲ θαμίζεις ἡμῖν.
+  "ΚΛΕΙΤ.",    # Cleitophon: ἐὰν σύ γ’, ἔφη, αὐτῷ μαρτυρήσῃς, ὁ Κλειτοφῶν
+               # ὑπολαβών (utterance at char 27570, the naming nominative at
+               # char 27603, 340a) — ὁ Κλειτοφῶν is the subject of the
+               # parenthetical ἔφη printed inside the utterance it reports.
+  "ΠΑΙΣ.",     # THE ONE slave boy of 327b — not servants as a class, and NOT
+               # the symposium ΠΑΙΣ. above; per-dialogue scoping again. Sent by
+               # Polemarchus (Πολέμαρχος ὁ Κεφάλου ἐκέλευσε δραμόντα τὸν παῖδα,
+               # char 398) and speaks twice: ὁ παῖς λαβόμενος τοῦ ἱματίου,
+               # κελεύει ὑμᾶς, ἔφη, Πολέμαρχος περιμεῖναι (char 486) and οὗτος,
+               # ἔφη, ὄπισθεν προσέρχεται (char 608). The role phrase ὁ παῖς is
+               # the nominative owner of both ἔφη — same shape as the plan
+               # 077/079/080 role registrations above. Do not reuse ΠΑΙΣ. for
+               # any other servant; a second one needs its own ruling.
+  "ΠΟΛ.",      # Polemarchus: ὁ οὖν Πολέμαρχος ἔφη (char 846, 327b), nominative
+               # subject of the naming ἔφη.
+  "ΣΟΦ.",      # Sophocles, named as Σοφοκλεῖ at char 4220, then the subject of
+               # the anaphoric καὶ ὅς ... ἔφη response at 329c.
+  "ΣΩ.",       # Socrates. The Republic prints NO siglum anywhere: he is the
+               # unnamed first-person narrator (κατέβην, char 16, 327a) whom
+               # Polemarchus' staged vocative ὦ Σώκρατες (char 868) names.
+               # Outermost voice of turn_republic_0001, whose registry speaker
+               # is the metadata literal (none) — that literal is never a
+               # siglum and is not registered here. His staged turns inside his
+               # own narration are person-marked (ἦν δ’ ἐγώ first at char 951;
+               # ἔφην; εἶπον), the construction that licenses the adjacent
+               # ΣΩ.,ΣΩ. chain repeat on those records.
+  # Present and named in Book 1 but never speaking, so NOT registered: Lysias
+  # and Euthydemus (sons of Cephalus), Niceratus, Charmantides. The indefinite
+  # questioners and objectors of the census receipt (the τις of 332c and their
+  # kin) are likewise never registered, but their spans are still recorded
+  # unresolved — UNREGISTERED IS NOT UNRECORDED, per the 2026-08-04 ruling
+  # stated in the protagoras block above.
+]
+
+# Added 2026-08-17 while completing newly reviewed reported-turn cohorts.
+# These are identifiers for the locally licensed owners, not an attribution
+# authority: each record still carries its Greek evidence.
+[[dialogues]]
+slug = "apology"
+sigla = [
+  "ΣΩ.",       # Socrates, the unlabelled first-person speaker of the single outer turn.
+]
+
+[[dialogues]]
+slug = "laches"
+sigla = [
+  "ΣΩ.",       # Socrates, printed speaker of turn_laches_0099.
+]
+
+[[dialogues]]
+slug = "lysis"
+sigla = [
+  "ΣΩ.",       # Socrates, the unlabelled first-person speaker of the required outer turn.
+  "ΙΠΠ.",      # Hippothales, subject of ὁ Ἱπποθάλης ... ἔφη at 203a (chars 278..311).
+  "ΚΤΗΣ.",     # Ctesippus, subject of ἔφη ὁ Κτήσιππος at 204a (chars 3158..3173).
+  "ΛΥΣ.",      # Lysis, subject of ὁ οὖν Λύσις ... λέγων ἔφη at 210e (chars 15565..15650).
+  "ΜΕΝ.",      # Menexenus, subject of ἔφη ὁ Μενέξενος at 215b (chars 25997..26012).
+]
+
+[[dialogues]]
+slug = "charmides"
+sigla = [
+  "ΣΩ.",       # Socrates, the unlabelled first-person speaker of the required outer turn.
+  "ΚΡΙ.",      # Critias, subject of ἔφη ὁ Κριτίας at 154e (chars 3191..3208).
+  "ΧΑΡ.",      # Charmides, subject of καὶ ὁ Χαρμίδης ... ἦ δ’ ὅς at 176a (chars 49535..49573).
+  "ΧΑΙ.",      # Chairephon, named with ἦ δ’ ὅς in the opening exchange (chars 409..504).
+  "ΘΡΑ.",      # The specific Thracian doctor, subject of ἔλεγεν δὲ ὁ Θρᾲξ οὗτος at 156d.
+]
+
+[[dialogues]]
+slug = "parmenides"
+sigla = [
+  "ΚΕΦ.",      # Cephalus, the unlabelled frame narrator addressed as ὦ Κέφαλε at chars 164..172.
+  "ΑΔ.",       # Adeimantus, subject of ὁ Ἀδείμαντος ... ἔφη at 126a (chars 138..162).
+  "ΑΝΤΙΦ.",    # Antiphon, subject of ἔφη ... ὁ Ἀντιφῶν at 127a (chars 1549..1593).
+  "ΠΥΘ.",      # Pythodorus, accusative subject of λέγειν in the same 127a report.
+  "ΣΩ.",       # Socrates, named by τὸν ... Σωκράτη ... φάναι at 127e (chars 2575..2703).
+  "ΖΗΝ.",      # Zeno, subject of φάναι τὸν Ζήνωνα at 127e (chars 2907..2923).
+  "ΠΑΡΜ.",     # Parmenides, subject of εἰπεῖν τὸν Παρμενίδην at 130b (chars 7783..7804).
+  "ΑΡΙΣΤ.",    # Aristotle, subject of ... φάναι ... τὸν Ἀριστοτέλη at 137c (chars 23333..23387).
+]
+
+[[dialogues]]
+slug = "cratylus"
+sigla = [
+  "ΕΡΜ.",  # Hermogenes, printed siglum of turn_cratylus_0003 and owner of the 421c recalled question.
+  "ΚΡ.",   # Cratylus, named at 383b and the antecedent of the two ἦ δ’ ὅς replies; not Crito in this dialogue.
+  "ΣΩ.",   # Socrates, printed siglum of turn_cratylus_0528.
+]
+
+[[dialogues]]
+slug = "ion"
+sigla = [
+  "ΣΩ.",   # Socrates, printed outer turn at 538d-539d
+  "ΙΩΝ.",  # Ion, printed outer turn at 537a-b and explicitly staged questioner at 538e
+  "ΝΕΣ.",  # Nestor, named in the introducing formula at 537a for the directly quoted advice
+]
+
+[[dialogues]]
+slug = "sophist"
+sigla = [
+  "ΞΕ.",  # Stranger, printed speaker of the two required outer turns.
+]
+
+[[dialogues]]
+slug = "philebus"
+sigla = [
+  "ΣΩ.",    # Socrates, printed speaker of all five required outer turns.
+  "ΝΟΥΣ.",  # Singular νοῦς, named as the responder by τὸν νοῦν … ἀποκρίνασθαι at 64a.
+]
+
+[[dialogues]]
+slug = "meno"
+sigla = [
+  "ΣΩ.",    # Socrates, printed speaker of every required outer turn.
+  "ΜΕΝ.",   # Meno, the second-person speaker of εἶπες ὅτι at 75a.
+  "ΘΕΟΓ.",  # Theognis, named as Θέογνιν τὸν ποιητὴν at 95d and resumed by οὗ λέγει.
+]
+
+[[dialogues]]
+slug = "crito"
+sigla = [
+  "ΣΩ.",   # Socrates, printed speaker of each required outer turn.
+  "ΓΥΝ.",  # The one off-stage woman introduced as τίς μοι γυνὴ and made subject of καλέσαι … εἰπεῖν at 44b.
+]
+
+[[dialogues]]
+slug = "timaeus"
+sigla = [
+  "ΚΡ.",    # Critias, printed frame speaker of 21a-25e.
+  "ΤΙ.",    # Timaeus, printed frame speaker of 40e-42a.
+  "ΚΡΙΠ.",  # The elder Critias, distinguished by παλαιοῦ Κριτίου at 25e.
+  "ΣΟΛ.",   # Solon, the grammatical responder at 22b.
+  "ΙΕΡ.",   # The one Egyptian priest introduced by τὸν οὖν ἱερέα φάναι.
+  "ΔΗΜ.",   # The maker named by ὁ τόδε τὸ πᾶν γεννήσας before 41a.
+]
+
+[[dialogues]]
+slug = "menexenus"
+sigla = [
+  "ΣΩ.",   # Socrates, printed frame speaker of all fourteen required turns.
+  "ΑΣΠ.",  # Aspasia of Miletus, named as the owner of the bounded λόγος at 249d.
+]
+
+[[dialogues]]
+slug = "gorgias"
+sigla = [
+  "ΣΩ.",   # Socrates, printed frame speaker of all required outer turns.
+  "ΙΑΤ.",  # One staged doctor, subject of εἴποι πρῶτον μὲν ὁ ἰατρὸς ὅτι at 452a.
+  "ΠΑΙΔ.", # One staged trainer, subject of ὁ παιδοτρίβης εἴποι ὅτι at 452b.
+  "ΧΡΗΜ.", # One staged money-maker, subject of εἴποι ἂν ὁ χρηματιστής at 452c.
+  "ΠΩΛ.",  # Polus, second-person recipient of the projected reply at 469e.
+  "ΖΕΥΣ.", # Zeus, named by εἶπεν οὖν ὁ Ζεύς at 523c.
+]
+
+[[dialogues]]
+slug = "phaedrus"
+sigla = [
+  "ΦΑΙ.",  # Phaedrus, printed frame speaker of the required written-speech turns.
+  "ΣΩ.",   # Socrates, printed frame speaker of the required reported-speech turns.
+]
+
+[[dialogues]]
+slug = "theaetetus"
+sigla = [
+  "ΣΩ.",     # Socrates, printed frame speaker of every required outer turn.
+  "ΘΕΑΙ.",   # Theaetetus, identified by the local second-person projected-speech formulas at 165e and 184b.
+  "ΕΛΕΓΚ.",  # The one definite singular refuter, ὁ ἐλεγκτικὸς ἐκεῖνος ... φήσει at 200a.
+]
+
+[[dialogues]]
+slug = "greater-hippias"
+sigla = [
+  "ΣΩ.",  # Socrates, printed frame speaker of all forty-six required outer turns.
+]
+
+[[dialogues]]
+slug = "laws"
+sigla = [
+  "ΑΘ.",  # Athenian Stranger, printed frame speaker of twenty-one required outer turns.
+  "ΚΛ.",  # Clinias, printed frame speaker of turn_laws_0243.
+  "ΜΕ.",  # Megillus, printed frame speaker of turn_laws_0155.
+]

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "euthydemus",
+  "source_path": "scratch/commentary/sample-repairs/euthydemus/final-sample-0007.json",
+  "source_sha256": "65666cc0dd9b4229b02fe97881a04dcfed781cb3e62a0fcf71bf1cba36f74540",
+  "target_path": "wiki/commentary/euthydemus.md",
+  "target_sha256_before": "463b64fb248f07a0cdbc60c810737a0fd715d513ee8b6f6974b17032fcee4fd4",
+  "target_sha256_after": "140294df99f923f6590e5c5f01f5ea83ce593be7476fa667a057b8b59370b3c5",
+  "applied_at": "2026-08-21T17:35:27.201Z",
+  "applied_ids": [
+    "comm_euthydemus_0007"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "euthydemus",
+    "ledger": {
+      "path": "wiki/commentary/euthydemus.md",
+      "sha256": "463b64fb248f07a0cdbc60c810737a0fd715d513ee8b6f6974b17032fcee4fd4"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-euthydemus-final-sample",
+      "reviewed_on": "2026-08-21",
+      "rationale": "The final sample found that the checkable false-belief, ignorance, and refutation claims lacked canonical citations.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_euthydemus_0001",
+        "comm_euthydemus_0002",
+        "comm_euthydemus_0003",
+        "comm_euthydemus_0004",
+        "comm_euthydemus_0005",
+        "comm_euthydemus_0006",
+        "comm_euthydemus_0007",
+        "comm_euthydemus_0008",
+        "comm_euthydemus_0009",
+        "comm_euthydemus_0010",
+        "comm_euthydemus_0011",
+        "comm_euthydemus_0012",
+        "comm_euthydemus_0013",
+        "comm_euthydemus_0014",
+        "comm_euthydemus_0015"
+      ],
+      "failed_commentary_ids": [
+        "comm_euthydemus_0007"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_euthydemus_0007",
+        "title": "The victory that leaves no room for correction",
+        "body": "Try hearing this passage not as a proof but as a trap for the proof-maker. Socrates lets the brothers’ rule expand until false belief, ignorance, and even refutation lose their place. My reading is that the comedy comes from this mismatch: a doctrine claiming total victory also removes the shared conditions that make correction—and therefore any serious exchange—possible.",
+        "cites": {
+          "observations": [
+            "obs_euthydemus_0107",
+            "obs_euthydemus_0249"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_euthydemus_0007",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0007\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"The victory that leaves no room for correction\"\nstephanus_span: 285a-286e\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 285a-286e\n  start_marker: 285a\n  end_marker: 286e\n  start_char: 29019\n  end_char: 33256\n  text_sha256: \"89e1003cbfe71f7947176711a4d71e1eef30a3af0fcb0235adedb70d8f220481\"\nbody: \"Try hearing this passage not as a proof but as a trap for the proof-maker. Socrates lets the brothers’ rule expand until false belief, ignorance, and even refutation lose their place. My reading is that the comedy comes from this mismatch: a doctrine claiming total victory also removes the shared conditions that make correction—and therefore any serious exchange—possible.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

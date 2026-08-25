@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-delegated-audit-07-401a-404e",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "cratylus",
+  "unit_key": "07-401a-404e",
+  "source_path": "scratch/commentary/delegated-audits/cratylus/07-401a-404e.json",
+  "source_sha256": "268bed3f9a45d85a15462e77bd6449a41f1fcb2961f9e612b62e8d320cf8d243",
+  "target_path": "wiki/submissions/commentary-audit/cratylus/07-401a-404e.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "018f6601997fc7b7e87973accdcd72f418fd8d9cbc1f7609d3c16fa3cabd3221",
+  "applied_at": "2026-08-24T01:15:36.762Z",
+  "applied_ids": [
+    "comm_cratylus_0007"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "cratylus",
+    "unit_key": "07-401a-404e",
+    "job": {
+      "job_id": "audit:cratylus:07-401a-404e",
+      "input_sha256": "2692ac1124e3e71342cad8f37f279d646f84b18467b3ff2f6fa195ee4df62e71",
+      "audit_brief_path": "scratch/commentary/audit-briefs/cratylus/07-401a-404e.md",
+      "audit_brief_sha256": "22251fd8c9bb7681f9c6f880bb4a1802a763f42f469361ba821fd8a7990c603e",
+      "output_path": "scratch/commentary/audits/cratylus/07-401a-404e.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/cratylus/07-401a-404e.output.json",
+    "output_sha256": "018f6601997fc7b7e87973accdcd72f418fd8d9cbc1f7609d3c16fa3cabd3221",
+    "provenance": {
+      "auditor": "batch-a-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

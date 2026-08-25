@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "submission_id": "0014-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "euthydemus",
+  "source_path": "scratch/commentary/sample-repairs/euthydemus/final-sample.json",
+  "source_sha256": "755d0b2a36ee1244fc3c56154c7a4d2a9692b8d29005461a447f05fcb23c5cab",
+  "target_path": "wiki/commentary/euthydemus.md",
+  "target_sha256_before": "f3179552b9e88c878c11435141aceb463725e132d8c047e2a57dc559fb4a2e2a",
+  "target_sha256_after": "31006e7b6a818392879d0bf9ca4e0190eaf1fc5e87a4da8f6b5ec942109cdf12",
+  "applied_at": "2026-08-24T00:36:41.724Z",
+  "applied_ids": [
+    "comm_euthydemus_0016"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "euthydemus",
+    "ledger": {
+      "path": "wiki/commentary/euthydemus.md",
+      "sha256": "f3179552b9e88c878c11435141aceb463725e132d8c047e2a57dc559fb4a2e2a"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-sampler",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna sample review confirmed the target lacked citations and a useful frame-specific insight; the replacement binds the reported critic and sons to accepted records.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_euthydemus_0001",
+        "comm_euthydemus_0004",
+        "comm_euthydemus_0005",
+        "comm_euthydemus_0006",
+        "comm_euthydemus_0007",
+        "comm_euthydemus_0009",
+        "comm_euthydemus_0010",
+        "comm_euthydemus_0011",
+        "comm_euthydemus_0013",
+        "comm_euthydemus_0016",
+        "comm_euthydemus_0017"
+      ],
+      "failed_commentary_ids": [
+        "comm_euthydemus_0016"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_euthydemus_0016",
+        "title": "A reported critic becomes a practical test",
+        "body": "Crito's reported encounter with an unnamed courtroom critic turns philosophy into a public target: the critic calls it worthless, while Crito's account keeps the criticism at one remove. The frame then returns to Crito's sons, distinguishing the older Critobulus from the younger child and making the question of who needs a teacher concrete.",
+        "cites": {
+          "observations": [
+            "obs_euthydemus_0255",
+            "obs_euthydemus_0256",
+            "obs_euthydemus_0203"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_euthydemus_0016",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0016\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"Crito’s reaction and Socrates’ response\"\nstephanus_span: 304c-306d\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 304c-306d\n  start_marker: 304c\n  end_marker: 306d\n  start_char: 70172\n  end_char: 75245\n  text_sha256: \"effd80125eb14e95dd27d58ac63811998022d5e8acaae225777a0ba22bc3b7c1\"\nbody: \"The wisdom sentence is complete; the passage also establishes Crito’s reaction and Socrates’ response.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

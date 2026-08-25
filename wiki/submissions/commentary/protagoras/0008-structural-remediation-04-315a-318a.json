@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0008-structural-remediation-04-315a-318a",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "protagoras",
+  "unit_key": "04-315a-318a",
+  "source_path": "scratch/commentary/audits/protagoras/04-315a-318a.json",
+  "source_sha256": "0bcfbea70358a187c718ee368473075db170292b88afce9b740e6c30c7a4ff99",
+  "target_path": "wiki/commentary/protagoras.md",
+  "target_sha256_before": "18d0716191451a376a912202ac34fb4dcc5132c86aa833e445cae7178d292619",
+  "target_sha256_after": "4e6d69c380aa3312363072a701e26ae0bfe57d2a87d4b85276cef128820cbe75",
+  "applied_at": "2026-08-23T22:32:08.963Z",
+  "applied_ids": [
+    "comm_protagoras_0004"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "protagoras",
+      "unitKey": "04-315a-318a",
+      "sectionId": "comm_protagoras_0004",
+      "auditOutputPath": "scratch/commentary/audits/protagoras/04-315a-318a.json",
+      "auditOutputSha256": "0bcfbea70358a187c718ee368473075db170292b88afce9b740e6c30c7a4ff99",
+      "expectedLedgerSha256": "18d0716191451a376a912202ac34fb4dcc5132c86aa833e445cae7178d292619",
+      "expectedAttributionSha256": "9ebdb20751552ca63e1852a2d63f1991a85b35e0441b929c5e52d9fc440e7b4f",
+      "expectedEnglishSha256": "db290ad5c3d30f9444722ca97fae306a7c0f1a26f98ac388531b145bbccb645c",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_protagoras_0004"
+        }
+      ],
+      "reviewer": "lane-c-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna assessment confirms conservative rejection of audited remove findings and split originals; placement is retained and no reanchors are claimed."
+    },
+    "audit_output_path": "scratch/commentary/audits/protagoras/04-315a-318a.json",
+    "audit_output_sha256": "0bcfbea70358a187c718ee368473075db170292b88afce9b740e6c30c7a4ff99",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_protagoras_0004",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

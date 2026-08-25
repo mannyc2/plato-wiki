@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "republic",
+  "source_path": "scratch/commentary/rewrites/republic/13-535b-543a.json",
+  "source_sha256": "2b5021a3f3708de3111e8f5bdda12a05488a6090a92d43de38597dac11771312",
+  "target_path": "wiki/commentary/republic.md",
+  "target_sha256_before": "f25ac3854925765dca9e750485b810006cd6646ef473f51aec9b8ab7df93b72e",
+  "target_sha256_after": "6ae2a42aad1ebb497e5dde65326b7821813f99b4afec79297687ef4618b24033",
+  "applied_at": "2026-08-23T21:18:26.529Z",
+  "applied_ids": [
+    "comm_republic_0013"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "republic",
+      "unit_key": "13-535b-543a",
+      "section_id": "comm_republic_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/republic/13-535b-543a.json",
+        "sha256": "0224ea890af1767bb138c0f6f0609a59269a5d8ac598a7e875e7ffcb4623693e"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_republic_0013",
+          "title": "The return to rule",
+          "body": "What does the city owe to those it has educated—and what do those people owe the city when their turn to rule arrives?",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_republic_0013",
+      "body": "```yaml\ncommentary_id: comm_republic_0013\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"Dialectic, selection, and the city’s possibility\"\nstephanus_span: 535b-543a\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 535b-543a\n  start_marker: 535b\n  end_marker: 543a\n  start_char: 393310\n  end_char: 405865\n  text_sha256: \"a63367bebf985516a38076eaf99c0b7c2a7304030f18bc20f87cfe31f64547fe\"\nbody: \"Dialectic tests whether candidates can give and receive an account without abandoning truth. The dialogue specifies the ages and trials by which dialecticians are selected, their return to rule, and the practical conditions under which the best city might finally be realized.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

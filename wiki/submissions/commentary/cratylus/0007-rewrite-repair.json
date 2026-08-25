@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "submission_id": "0007-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "cratylus",
+  "source_path": "scratch/commentary/rewrite-repairs/cratylus/0013-fourth.json",
+  "source_sha256": "4a6cb7ec5397df152d1a997ad797698992289d1a323cca7be4212d6855e8769e",
+  "target_path": "wiki/commentary/cratylus.md",
+  "target_sha256_before": "1d88f15c433f41b3ae9e234c6833fe10719d4f573c6d264a7f96d7e08d922bc1",
+  "target_sha256_after": "99d12117e839ef714d9b5102c00fe46ff408222e67d8f64edcaf17a960e66d39",
+  "applied_at": "2026-08-21T17:26:26.134Z",
+  "applied_ids": [
+    "comm_cratylus_0013"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "cratylus",
+    "ledger": {
+      "path": "wiki/commentary/cratylus.md",
+      "sha256": "1d88f15c433f41b3ae9e234c6833fe10719d4f573c6d264a7f96d7e08d922bc1"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/cratylus/0006-rewrite-batch.json",
+      "sha256": "7a359f1b8236a4aa691cef1d413b88128b09de627a8f50f82612776176a6bca7"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-cratylus-0006-rewrite-batch-acceptance.md",
+      "sha256": "45a38d2632ce2f0832f9629f5a949dd1ad1b7f663aff1adcc108f9a2ca44bb00"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-cratylus-round3",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_cratylus_0013",
+          "finding": "The block packs several jobs and calls the opening Cratylus's praise although its cited record covers only 428a-b."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-cratylus-0013-fourth",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_cratylus_0013"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_cratylus_0013",
+        "title": "The image test",
+        "body": "At 430e–431e, Socrates places a name beside a painted portrait: each is an imitation offered to a different sense. The comparison makes correctness a question of fit rather than a bare yes-or-no identity. As with a painting, a name may still be an image when elements are omitted or added; what changes is whether the rendering is fine or shoddy. Listen for the shift from asking whether a name imitates to asking how well it does so.",
+        "cites": {
+          "observations": [
+            "obs_cratylus_0247",
+            "obs_cratylus_0262",
+            "obs_cratylus_0234"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_cratylus_0013",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0013\nsource_work: Cratylus\nblock_kind: section\nplacement: before\ntitle: \"Praise becomes a test\"\nstephanus_span: 428a-431e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 428a-431e\n  start_marker: 428a\n  end_marker: 431e\n  start_char: 89669\n  end_char: 97984\n  text_sha256: \"d673d06e1eaf94c32b8e7d54ce6cf0b32ab110932e8ad2b02de5a80667fbcf2d\"\nbody: \"Cratylus’s praise does not close the inquiry; it gives Socrates a reason to reopen it. Socrates first invites Cratylus to teach him, then turns that apparent deference into a test of the claim that every genuine name is correct: the name “Hermogenes” forces the question whether a misnaming is false speech or merely noise. From there, the name-as-image analogy shifts the standard from confidence to comparison. Read the unit as admiration converted into accountability.\"\ncites:\n  observations: [\"obs_cratylus_0257\", \"obs_cratylus_0240\", \"obs_cratylus_0235\", \"obs_cratylus_0237\", \"obs_cratylus_0245\", \"obs_cratylus_0244\", \"obs_cratylus_0247\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    }
+  ]
+}

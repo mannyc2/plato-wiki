@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-02-235d-236d",
+  "lane": "commentary",
+  "kind": "rewrite",
+  "scope": "menexenus",
+  "unit_key": "02-235d-236d",
+  "source_path": "scratch/commentary/rewrites/menexenus/02-235d-236d.json",
+  "source_sha256": "0ae2c7df6b97e498f08d37635ed47aa913f422a37a335f7dc370ac7b8874e5a5",
+  "target_path": "wiki/commentary/menexenus.md",
+  "target_sha256_before": "bfd73b5b72b1a1e7a3bd44aea2b77f33ca9fc1a1167554e7c6ef4609deea35e4",
+  "target_sha256_after": "7d0ec070fecc929832cd06a385534c33a69e2f65e3e42cfe4021ca9091bc2388",
+  "applied_at": "2026-08-21T15:57:54.374Z",
+  "applied_ids": [
+    "comm_menexenus_0002"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "menexenus",
+    "unit_key": "02-235d-236d",
+    "section_id": "comm_menexenus_0002",
+    "audit_output": {
+      "path": "scratch/commentary/audits/menexenus/02-235d-236d.json",
+      "sha256": "99334237bf54717a6f8b4b434a821cece0b691952ffc6406a2d3ba99e011ab50"
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_menexenus_0002",
+        "title": "The speech as transmission",
+        "body": "Before the funeral speech reaches its public voice, Socrates presents it as a transmission through memory. He reports hearing Aspasia deliver it, with some portions improvised and others assembled from remnants of Pericles’ speech. Menexenus then says Socrates may attribute the words to Aspasia or to anyone at all. I take that looseness as the passage’s central cue: listen first to how the speech is handed on, rather than treating authorship as settled.",
+        "cites": {
+          "observations": [
+            "obs_menexenus_0012",
+            "obs_menexenus_0015"
+          ],
+          "claims": [
+            "claim_menexenus_0006"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_menexenus_0002",
+      "body": "```yaml\ncommentary_id: comm_menexenus_0002\nsource_work: Menexenus\nblock_kind: section\nplacement: before\ntitle: \"A speech with shifting attributions\"\nstephanus_span: 235d-236d\nsource_ref:\n  source_path: raw/plato/greek/menexenus.txt\n  stephanus_span: 235d-236d\n  start_marker: 235d\n  end_marker: 236d\n  start_char: 2390\n  end_char: 4887\n  text_sha256: \"2d8dc4174899dbea8a958f6381d6c2357210e908802237887f95bb2dbeadcc7b\"\nbody: \"Read this opening as a chain of attributions, not a settled account of authorship. Socrates reports Aspasia as his rhetoric teacher and says he heard her going through a funeral speech; he only conjectures that she had assembled some earlier parts from remnants of Pericles’ speech. What follows is therefore presented as remembered, attributed material. Menexenus even allows Socrates to call it Aspasia’s—or anyone’s. The privacy remark frames a playful promise to gratify him, not an exclusive condition of the speech.\"\ncites:\n  observations: [\"obs_menexenus_0011\", \"obs_menexenus_0012\", \"obs_menexenus_0015\", \"obs_menexenus_0017\"]\n  claims: [\"claim_menexenus_0005\", \"claim_menexenus_0006\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

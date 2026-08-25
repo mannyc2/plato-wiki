@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "submission_id": "0020-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "critias",
+  "source_path": "scratch/commentary/sample-repairs/critias/round3.json",
+  "source_sha256": "a930126f8b944c25632e114471981f5a0ca0ffb0d1c2e1cb1ff20415b5dc2ecc",
+  "target_path": "wiki/commentary/critias.md",
+  "target_sha256_before": "cbf9e242e5a3a7c833477c492520aecd1ec24b96a59145a47ced967879807baf",
+  "target_sha256_after": "2fa3bd021ee9ea298e206d8b820bf0515666fcac6cf73fc9eff70e7fe7a03abd",
+  "applied_at": "2026-08-23T23:59:55.404Z",
+  "applied_ids": [
+    "comm_critias_0010",
+    "comm_critias_0013"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "critias",
+    "ledger": {
+      "path": "wiki/commentary/critias.md",
+      "sha256": "cbf9e242e5a3a7c833477c492520aecd1ec24b96a59145a47ced967879807baf"
+    },
+    "sample_review": {
+      "reviewer": "sample-b-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna sample review found two bounded evidence and density defects requiring repair.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_critias_0001",
+        "comm_critias_0002",
+        "comm_critias_0005",
+        "comm_critias_0006",
+        "comm_critias_0008",
+        "comm_critias_0010",
+        "comm_critias_0012",
+        "comm_critias_0013",
+        "comm_critias_0016",
+        "comm_critias_0028",
+        "comm_critias_0029",
+        "comm_critias_0033"
+      ],
+      "failed_commentary_ids": [
+        "comm_critias_0010",
+        "comm_critias_0013"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_critias_0010",
+        "title": "The measured marvel: canals, temple, and rings of trust",
+        "body": "The description compresses the capital into an ordered scale: canals and concentric rings organize the city, while temple, royal precinct, baths, hippodrome, and docks distribute sacred, civic, and practical functions. The graded placement of guards toward the acropolis turns the layout into a hierarchy of trust. Critias closes by marking the account as approximate.",
+        "cites": {
+          "observations": [
+            "obs_critias_0063",
+            "obs_critias_0064",
+            "obs_critias_0065",
+            "obs_critias_0066",
+            "obs_critias_0067",
+            "obs_critias_0068",
+            "obs_critias_0069",
+            "obs_critias_0070",
+            "obs_critias_0071",
+            "obs_critias_0072",
+            "obs_critias_0076",
+            "obs_critias_0077",
+            "obs_critias_0101",
+            "obs_critias_0102",
+            "obs_critias_0103"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": [
+            "myth_demarcation/mythic_empire_introduced_with_scale_markers",
+            "turn_geometry/sustained_narrative_speech",
+            "dramatic_case_setup/city_foundation_sequence"
+          ]
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_critias_0013",
+        "title": "When wealth changes meaning",
+        "body": "Wealth is first described as light because the divine element governs its use; as that element fades into mortal mixture, the same abundance becomes a burden. The passage then contrasts genuine happiness with the ambition and power that appear blessed to those unable to recognize the difference. Zeus sees the race's wretched condition and calls the gods together.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_critias_0017",
+            "claim_critias_0020",
+            "claim_critias_0021",
+            "claim_critias_0022"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_critias_0010",
+      "body": "```yaml\ncommentary_id: comm_critias_0010\nsource_work: Critias\nblock_kind: section\nplacement: before\ntitle: \"The measured marvel: canals, temple, and rings of trust\"\nstephanus_span: 115d-117e\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 115d-117e\n  start_marker: 115d\n  end_marker: 117e\n  start_char: 18526\n  end_char: 23877\n  text_sha256: \"3cfb8ad735ff29bba1f4a2ab3aeb28e6d599adac4ff9b7b161fbffc7f866802b\"\nbody: \"An unbroken monologue builds the capital in numbers: canal dimensions, tri-colored stone, the golden-walled inaccessible precinct where the royal line was begotten, Poseidon's barbarian-looking temple, baths, hippodrome, dockyards, and guards housed by graded trustworthiness toward the acropolis. Critias ends with a hedge — this is roughly as it was told.\"\ncites:\n  observations: [\"obs_critias_0063\", \"obs_critias_0064\", \"obs_critias_0065\", \"obs_critias_0066\", \"obs_critias_0067\", \"obs_critias_0068\", \"obs_critias_0069\", \"obs_critias_0070\", \"obs_critias_0071\", \"obs_critias_0072\", \"obs_critias_0076\", \"obs_critias_0077\", \"obs_critias_0101\", \"obs_critias_0102\", \"obs_critias_0103\"]\n  claims: []\n  relations: []\n  dossiers: [\"myth_demarcation/mythic_empire_introduced_with_scale_markers\", \"turn_geometry/sustained_narrative_speech\", \"dramatic_case_setup/city_foundation_sequence\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0013",
+      "body": "```yaml\ncommentary_id: comm_critias_0013\nsource_work: Critias\nblock_kind: section\nplacement: before\ntitle: \"When wealth changes meaning\"\nstephanus_span: 120e-121c\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 120e-121c\n  start_marker: 120e\n  end_marker: 121c\n  start_char: 29617\n  end_char: 31192\n  text_sha256: \"ec40483142a0edbf56cfee46972ee4cff8e2437b96c3ce2a79033b4b95c1fcf1\"\nbody: \"At first, the rulers’ wealth is light because virtue governs its use; when the divine portion fades into mortal mixture, that abundance becomes a burden they cannot bear. The passage then reverses appearance and reality: those unable to perceive the truly happy life mistake lawless ambition and power for blessedness. Zeus sees the race’s wretched condition and gathers the gods, intending to chasten them.\"\ncites:\n  observations: []\n  claims: [\"claim_critias_0017\", \"claim_critias_0020\", \"claim_critias_0021\", \"claim_critias_0022\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

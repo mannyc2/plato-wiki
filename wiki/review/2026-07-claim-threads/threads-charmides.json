@@ -1,0 +1,961 @@
+{
+  "config_version": 3,
+  "dialogue": "charmides",
+  "input_files": {
+    "wiki/claims/charmides.md": "348abeec6439e7af39cd4296cdf6f39df7b566b3248e0f331d8f0672b751129d",
+    "derived/plato/tokens/charmides.toon": "ad847cce92cc41abb21724e21bb4e5abdf622069fc845ef9401d5029496d4132"
+  },
+  "claim_count": 34,
+  "definition_seed_count": 4,
+  "threads": [
+    {
+      "seed": "claim_charmides_0001",
+      "seed_kind": "definition",
+      "seed_status": "rejected",
+      "seed_final": "left_standing",
+      "seed_span": "159b",
+      "seed_start": 12511,
+      "seed_tokens": [
+        "αποκρινασθαι",
+        "βαδιζειν",
+        "διαλεγεσθαι",
+        "δοκοι",
+        "ειπεν",
+        "ερωτασ",
+        "ηθελεν",
+        "ησυχη",
+        "ησυχιοτησ",
+        "ησυχιουσ",
+        "ιδωμεν",
+        "κοσμιωσ",
+        "λεγουσιν",
+        "οδοισ",
+        "πραττειν",
+        "συλληβδην",
+        "σωφρονασ",
+        "σωφροσυνη",
+        "ταισ",
+        "φασι",
+        "ωκνει",
+        "ωσαυτωσ"
+      ],
+      "seed_greek_terms_tokens": [
+        "ησυχη",
+        "ησυχιοτησ",
+        "κοσμιωσ",
+        "σωφροσυνη"
+      ],
+      "flagged": true,
+      "members": [
+        {
+          "member": "claim_charmides_0002",
+          "shared_tokens": [
+            "ησυχη",
+            "σωφροσυνη",
+            "ωσαυτωσ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "159c",
+          "member_start": 12923,
+          "member_status": "rejected",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0003",
+          "shared_tokens": [
+            "ησυχη",
+            "ησυχιοτησ",
+            "σωφροσυνη",
+            "ωσαυτωσ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "159c-159d",
+          "member_start": 12923,
+          "member_status": "rejected",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0004",
+          "shared_tokens": [
+            "ησυχη",
+            "ησυχιοτησ",
+            "σωφροσυνη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "159d",
+          "member_start": 13383,
+          "member_status": "rejected",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0005",
+          "shared_tokens": [
+            "ησυχη",
+            "ησυχιοτησ",
+            "σωφροσυνη",
+            "ταισ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "159e-160b",
+          "member_start": 13814,
+          "member_status": "rejected",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0006",
+          "shared_tokens": [
+            "ησυχη",
+            "ησυχιοτησ",
+            "πραττειν",
+            "σωφροσυνη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "160b-160d",
+          "member_start": 14614,
+          "member_status": "rejected",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0009",
+          "shared_tokens": [
+            "πραττειν",
+            "σωφροσυνη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "161a-161b",
+          "member_start": 16368,
+          "member_status": "rejected",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0010",
+          "shared_tokens": [
+            "πραττειν",
+            "σωφροσυνη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "161b",
+          "member_start": 16791,
+          "member_status": "rejected",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0012",
+          "shared_tokens": [
+            "πραττειν",
+            "σωφροσυνη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "161d-162a",
+          "member_start": 17598,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0017",
+          "shared_tokens": [
+            "σωφροσυνη",
+            "ταισ",
+            "ωσαυτωσ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "165c-165e",
+          "member_start": 25946,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0018",
+          "shared_tokens": [
+            "σωφροσυνη",
+            "ταισ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "166b-166c",
+          "member_start": 27713,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0022",
+          "shared_tokens": [
+            "πραττειν",
+            "σωφροσυνη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "171d-171e",
+          "member_start": 39824,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0025",
+          "shared_tokens": [
+            "ιδωμεν",
+            "σωφροσυνη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "172c-172d",
+          "member_start": 41532,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0026",
+          "shared_tokens": [
+            "πραττειν",
+            "σωφροσυνη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "173a-173d",
+          "member_start": 42849,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0029",
+          "shared_tokens": [
+            "σωφροσυνη",
+            "ταισ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "174e-175a",
+          "member_start": 46757,
+          "member_status": "accepted",
+          "neg_cue": true
+        }
+      ]
+    },
+    {
+      "seed": "claim_charmides_0007",
+      "seed_kind": "definition",
+      "seed_status": "rejected",
+      "seed_final": "left_standing",
+      "seed_span": "160e",
+      "seed_start": 15895,
+      "seed_tokens": [
+        "αγαθοι",
+        "αγαθον",
+        "αγαθουσ",
+        "αιδωσ",
+        "αισχυνεσθαι",
+        "αισχυντηλον",
+        "ανδρειωσ",
+        "ανδρεσ",
+        "ανδρικωσ",
+        "ανθρωπον",
+        "απεργαζεται",
+        "δητα",
+        "διασκεψαμενοσ",
+        "εαυτον",
+        "ειεν",
+        "επισχων",
+        "καλον",
+        "σωφρονεσ",
+        "σωφροσυνη",
+        "σωφροσυνην",
+        "τοινυν",
+        "ωμολογεισ"
+      ],
+      "seed_greek_terms_tokens": [
+        "αιδωσ",
+        "αισχυντηλον",
+        "σωφροσυνη"
+      ],
+      "flagged": true,
+      "members": [
+        {
+          "member": "claim_charmides_0003",
+          "shared_tokens": [
+            "καλον",
+            "σωφροσυνη",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "159c-159d",
+          "member_start": 12923,
+          "member_status": "rejected",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0004",
+          "shared_tokens": [
+            "καλον",
+            "σωφροσυνη",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "159d",
+          "member_start": 13383,
+          "member_status": "rejected",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0005",
+          "shared_tokens": [
+            "καλον",
+            "σωφροσυνη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "159e-160b",
+          "member_start": 13814,
+          "member_status": "rejected",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0006",
+          "shared_tokens": [
+            "καλον",
+            "σωφροσυνη",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "160b-160d",
+          "member_start": 14614,
+          "member_status": "rejected",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0008",
+          "shared_tokens": [
+            "αγαθοι",
+            "αγαθον",
+            "αγαθουσ",
+            "αιδωσ",
+            "αισχυνεσθαι",
+            "αισχυντηλον",
+            "ανδρειωσ",
+            "ανδρεσ",
+            "ανδρικωσ",
+            "ανθρωπον",
+            "απεργαζεται",
+            "δητα",
+            "διασκεψαμενοσ",
+            "εαυτον",
+            "ειεν",
+            "επισχων",
+            "καλον",
+            "σωφρονεσ",
+            "σωφροσυνη",
+            "σωφροσυνην",
+            "τοινυν",
+            "ωμολογεισ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "160e-161a",
+          "member_start": 15895,
+          "member_status": "rejected",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0009",
+          "shared_tokens": [
+            "αγαθον",
+            "αγαθουσ",
+            "αιδωσ",
+            "σωφροσυνη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "161a-161b",
+          "member_start": 16368,
+          "member_status": "rejected",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0010",
+          "shared_tokens": [
+            "αγαθον",
+            "αιδωσ",
+            "σωφροσυνη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "161b",
+          "member_start": 16791,
+          "member_status": "rejected",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0012",
+          "shared_tokens": [
+            "σωφροσυνη",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "161d-162a",
+          "member_start": 17598,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0015",
+          "shared_tokens": [
+            "ανθρωπον",
+            "εαυτον",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "164c-164d",
+          "member_start": 23806,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0016",
+          "shared_tokens": [
+            "ανθρωπον",
+            "εαυτον",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "164d-165a",
+          "member_start": 24227,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0017",
+          "shared_tokens": [
+            "απεργαζεται",
+            "καλον",
+            "σωφροσυνη",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "165c-165e",
+          "member_start": 25946,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0019",
+          "shared_tokens": [
+            "αγαθον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "166d",
+          "member_start": 28545,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0022",
+          "shared_tokens": [
+            "σωφροσυνη",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "171d-171e",
+          "member_start": 39824,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0024",
+          "shared_tokens": [
+            "αγαθον",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "172b",
+          "member_start": 41087,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0025",
+          "shared_tokens": [
+            "αγαθον",
+            "σωφροσυνη",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "172c-172d",
+          "member_start": 41532,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0026",
+          "shared_tokens": [
+            "αγαθον",
+            "απεργαζεται",
+            "σωφροσυνη",
+            "σωφροσυνην",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "173a-173d",
+          "member_start": 42849,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0029",
+          "shared_tokens": [
+            "δητα",
+            "σωφροσυνη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "174e-175a",
+          "member_start": 46757,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0030",
+          "shared_tokens": [
+            "σωφροσυνη",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "175a-175b",
+          "member_start": 47187,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0032",
+          "shared_tokens": [
+            "αγαθον",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "175",
+          "member_start": 48884,
+          "member_status": "accepted",
+          "neg_cue": false
+        }
+      ]
+    },
+    {
+      "seed": "claim_charmides_0014",
+      "seed_kind": "definition",
+      "seed_status": "accepted",
+      "seed_final": "left_standing",
+      "seed_span": "163d-163e",
+      "seed_start": 22114,
+      "seed_tokens": [
+        "αγαθα",
+        "αγαθων",
+        "ακηκοα",
+        "αρχησ",
+        "αρχομενου",
+        "βελτιστε",
+        "βουλη",
+        "δηλου",
+        "διαιρουντοσ",
+        "διδωμι",
+        "διοριζομαι",
+        "δοκουν",
+        "εκαστον",
+        "εμανθανον",
+        "ευθυσ",
+        "κακα",
+        "καλοιησ",
+        "λεγησ",
+        "μυρια",
+        "οικεια",
+        "ονομαζειν",
+        "ονοματων",
+        "ορισαι",
+        "ποιησεισ",
+        "ποιησιν",
+        "ποιουντα",
+        "πραξεισ",
+        "πραξιν",
+        "πραττων",
+        "σαφεστερον",
+        "σαφωσ",
+        "σκοπωμεν",
+        "σωφρονει",
+        "σωφρονειν",
+        "σωφροσυνην",
+        "ταγαθα",
+        "τιθεσθαι",
+        "τουνομα",
+        "φερησ",
+        "φημι"
+      ],
+      "seed_greek_terms_tokens": [
+        "αγαθων",
+        "κακα",
+        "ποιησιν",
+        "πραξιν",
+        "σωφροσυνην",
+        "ταγαθα"
+      ],
+      "flagged": true,
+      "members": [
+        {
+          "member": "claim_charmides_0012",
+          "shared_tokens": [
+            "εκαστον",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "161d-162a",
+          "member_start": 17598,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0013",
+          "shared_tokens": [
+            "οικεια",
+            "ποιησεισ",
+            "ποιησιν",
+            "πραξεισ",
+            "σωφρονειν",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "163a-163c",
+          "member_start": 20753,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0015",
+          "shared_tokens": [
+            "σωφρονει",
+            "σωφρονειν",
+            "σωφροσυνην",
+            "φημι"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "164c-164d",
+          "member_start": 23806,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0016",
+          "shared_tokens": [
+            "σωφρονει",
+            "σωφρονειν",
+            "σωφροσυνην",
+            "φημι"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "164d-165a",
+          "member_start": 24227,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0019",
+          "shared_tokens": [
+            "εκαστον",
+            "φημι"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "166d",
+          "member_start": 28545,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0022",
+          "shared_tokens": [
+            "αρχησ",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "171d-171e",
+          "member_start": 39824,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0025",
+          "shared_tokens": [
+            "αρχησ",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "172c-172d",
+          "member_start": 41532,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0030",
+          "shared_tokens": [
+            "σωφροσυνην",
+            "τουνομα"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "175a-175b",
+          "member_start": 47187,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0031",
+          "shared_tokens": [
+            "σωφροσυνην",
+            "τουνομα"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "175b-175c",
+          "member_start": 47613,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0032",
+          "shared_tokens": [
+            "εμανθανον",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "175",
+          "member_start": 48884,
+          "member_status": "accepted",
+          "neg_cue": false
+        }
+      ]
+    },
+    {
+      "seed": "claim_charmides_0015",
+      "seed_kind": "definition",
+      "seed_status": "accepted",
+      "seed_final": "left_standing",
+      "seed_span": "164c-164d",
+      "seed_start": 23806,
+      "seed_tokens": [
+        "αγνοει",
+        "αγνοουντα",
+        "αισχυνθειην",
+        "αναθειμην",
+        "αναθεντι",
+        "ανακεισθαι",
+        "ανθρωπον",
+        "αντι",
+        "γενοιτο",
+        "γιγνωσκει",
+        "γιγνωσκειν",
+        "γραμμα",
+        "εαυτον",
+        "ειρηκεναι",
+        "εισιοντων",
+        "εκεινων",
+        "ελεγεσ",
+        "εμπροσθεν",
+        "ενιοτε",
+        "επραξεν",
+        "θεου",
+        "ιατροσ",
+        "οιει",
+        "ουσα",
+        "ουχι",
+        "πραξασ",
+        "πραττει",
+        "προσρησισ",
+        "συγχωρησαιμ",
+        "συμβαινειν",
+        "συμφερομαι",
+        "σωφρονει",
+        "σωφρονειν",
+        "σωφρονωσ",
+        "σωφροσυνην",
+        "φαναι",
+        "φημι",
+        "χαιρε",
+        "ωμολογημενων",
+        "ωφελιμωσ"
+      ],
+      "seed_greek_terms_tokens": [
+        "γιγνωσκειν",
+        "γνωθι",
+        "εαυτον",
+        "σαυτον",
+        "σωφροσυνην"
+      ],
+      "flagged": true,
+      "members": [
+        {
+          "member": "claim_charmides_0006",
+          "shared_tokens": [
+            "ειρηκεναι",
+            "ουσα"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "160b-160d",
+          "member_start": 14614,
+          "member_status": "rejected",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0007",
+          "shared_tokens": [
+            "ανθρωπον",
+            "εαυτον",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "160e",
+          "member_start": 15895,
+          "member_status": "rejected",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0008",
+          "shared_tokens": [
+            "ανθρωπον",
+            "εαυτον",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "160e-161a",
+          "member_start": 15895,
+          "member_status": "rejected",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0012",
+          "shared_tokens": [
+            "σωφρονωσ",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "161d-162a",
+          "member_start": 17598,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0013",
+          "shared_tokens": [
+            "ελεγεσ",
+            "ενιοτε",
+            "οιει",
+            "σωφρονειν",
+            "σωφροσυνην",
+            "φαναι",
+            "ωφελιμωσ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "163a-163c",
+          "member_start": 20753,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0014",
+          "shared_tokens": [
+            "σωφρονει",
+            "σωφρονειν",
+            "σωφροσυνην",
+            "φημι"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "163d-163e",
+          "member_start": 22114,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0016",
+          "shared_tokens": [
+            "αγνοουντα",
+            "αισχυνθειην",
+            "αναθειμην",
+            "αναθεντι",
+            "ανακεισθαι",
+            "ανθρωπον",
+            "αντι",
+            "γιγνωσκειν",
+            "γραμμα",
+            "εαυτον",
+            "ειρηκεναι",
+            "εισιοντων",
+            "θεου",
+            "ουσα",
+            "ουχι",
+            "προσρησισ",
+            "συγχωρησαιμ",
+            "συμφερομαι",
+            "σωφρονει",
+            "σωφρονειν",
+            "σωφροσυνην",
+            "φαναι",
+            "φημι",
+            "χαιρε"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "164d-165a",
+          "member_start": 24227,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0017",
+          "shared_tokens": [
+            "γιγνωσκειν",
+            "ουσα",
+            "φημι"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "165c-165e",
+          "member_start": 25946,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0019",
+          "shared_tokens": [
+            "οιει",
+            "φημι"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "166d",
+          "member_start": 28545,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0026",
+          "shared_tokens": [
+            "ιατροσ",
+            "ουσα",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "173a-173d",
+          "member_start": 42849,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_charmides_0030",
+          "shared_tokens": [
+            "γιγνωσκειν",
+            "ουσα",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "175a-175b",
+          "member_start": 47187,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_charmides_0031",
+          "shared_tokens": [
+            "γενοιτο",
+            "γιγνωσκειν",
+            "ουχι",
+            "σωφροσυνην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "175b-175c",
+          "member_start": 47613,
+          "member_status": "accepted",
+          "neg_cue": false
+        }
+      ]
+    }
+  ]
+}

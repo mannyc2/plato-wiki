@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "gorgias",
+  "source_path": "scratch/commentary/rewrites/gorgias/06-458a-459e.json",
+  "source_sha256": "ab79386f88627830480f42ad9c87bdacf97101b01332150667f9faa63697d0ed",
+  "target_path": "wiki/commentary/gorgias.md",
+  "target_sha256_before": "b38e82199b67c047753183e886ec2158ed1b1aa5b9ff78dcfb79f5a126a8f501",
+  "target_sha256_after": "8554fb650a861996aae81400a44f7d3cf51ea4ba4a9a7808efc1c9b3449075a7",
+  "applied_at": "2026-08-21T19:53:47.643Z",
+  "applied_ids": [
+    "comm_gorgias_0006"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "gorgias",
+      "unit_key": "06-458a-459e",
+      "section_id": "comm_gorgias_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/gorgias/06-458a-459e.json",
+        "sha256": "2ef119cfe05f7b0898f53a1b9b704c213a813ee9a586c64456d90ab37b30cfb2"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_gorgias_0006",
+          "title": "From crowd to a local epistemic asymmetry",
+          "body": "The exchange pivots on a narrowing qualification. Gorgias’s claim that rhetoric persuades more than medicine is first limited to a crowd; Socrates recasts that crowd as people who do not know, producing the local result that the non-knower can persuade non-knowers more effectively than the knower. Gorgias grants that consequence here, but the record does not establish that he accepts it as a universal rule. Socrates nevertheless extends the pattern to rhetoric generally: persuasion can make ignorance appear as knowledge. One way to hear the pressure point is as a gap between a case-specific concession and a general theory.",
+          "cites": {
+            "observations": [
+              "obs_gorgias_0016"
+            ],
+            "claims": [
+              "claim_gorgias_0036",
+              "claim_gorgias_0037"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_gorgias_0006",
+      "body": "```yaml\ncommentary_id: comm_gorgias_0006\nsource_work: gorgias\nblock_kind: section\nplacement: before\ntitle: \"From crowd to epistemic asymmetry\"\nstephanus_span: 458a-459e\nsource_ref:\n  source_path: raw/plato/greek/gorgias.txt\n  stephanus_span: 458a-459e\n  start_marker: 458a\n  end_marker: 459e\n  start_char: 22221\n  end_char: 26174\n  text_sha256: \"b2f2b305f5b91406916b00c89363a2c99a3f92c15cc90f95321a3ce54afa50b6\"\nbody: \"The audience's request keeps the exchange alive, but the argument turns when Socrates recasts Gorgias's qualification—persuasive “in a crowd”—as persuasive among those who do not know. Gorgias accepts the result: a non-knower can persuade non-knowers more effectively than a knower. Socrates then generalizes: rhetoric need not know the matters themselves; it needs a device that makes ignorance look like knowledge. The question becomes whether persuasion can substitute for expertise.\"\ncites:\n  observations: [\"obs_gorgias_0012\", \"obs_gorgias_0016\"]\n  claims: [\"claim_gorgias_0036\", \"claim_gorgias_0037\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

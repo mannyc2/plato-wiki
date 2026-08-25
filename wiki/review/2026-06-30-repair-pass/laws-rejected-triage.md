@@ -1,0 +1,83 @@
+# Laws Rejected Repair Triage
+
+Accepted repairs: 65
+Left rejected by design: 10
+
+## Accepted
+- obs_laws_0008 625e dramatic_case_setup/common_ignorance_diagnosed_to_frame_thesis: Cleinias says the lawgiver diagnoses the many as ignorant of continuous lifelong war among cities.
+- obs_laws_0029 629c definition_ladder/definiendum_marked_for_inquiry: The Athenian makes the two forms of war the explicit question for the staged Tyrtaeus inquiry.
+- obs_laws_0052 633a turn_geometry/procedural_agreement_to_inquire: Megillus asks the Athenian to judge the Zeus-praiser, and the Athenian makes the inquiry common to himself and Megillus.
+- obs_laws_0053 632e myth_demarcation/divine_condition_on_exposition: The Athenian conditions the later exposition of all virtue on divine willingness.
+- obs_laws_0069 636b prosopography/historical_exempla_in_argument: The Athenian cites Miletus, Boeotia, and Thurii as examples for the claim that gymnasia and common meals can foster faction.
+- obs_laws_0070 636b nature_pleasure_norm/pleasure_nature_distinction: The Athenian charges the practice under discussion with corrupting an old and natural norm concerning sexual pleasures.
+- obs_laws_0082 637b comparative_ethnography/speaker_eyewitness_custom_report: Megillus reports eyewitness examples of public drunkenness at Dionysia among Athenians and Tarantine colonists.
+- obs_laws_0083 637c-637d comparative_ethnography/local_custom_reply_formula: The Athenian generalizes a reply formula by which each city defends an unfamiliar custom as its own law.
+- obs_laws_0087 637d-637e comparative_ethnography/ethnographic_custom_cited_in_argument: The Athenian lists several warlike peoples as comparative cases for handling drunkenness.
+- obs_laws_0091 640c-640d turn_geometry/dense_assent_chain: Cleinias gives a chain of short assents while the Athenian controls the argument about a symposium ruler.
+- obs_laws_0099 642c-642d comparative_ethnography/civic_character_ascribed_by_report: Megillus reports and endorses a saying that good Athenians are exceptionally good by nature and divine allotment.
+- obs_laws_0100 642d comparative_ethnography/civic_quality_ascribed_to_divine_allotment: Megillus explains the goodness of good Athenians through nature and divine allotment rather than compulsion or fabrication.
+- obs_laws_0101 642d-642e prosopography/named_religious_figure_introduced: Cleinias introduces Epimenides as a Cretan divine man and kinsman connected with an oracle-guided Athenian visit.
+- obs_laws_0120 645b-645c myth_demarcation/myth_logos_boundary: The Athenian marks the puppet image as a preserved myth of virtue and then turns to clearer articulation of vice and virtue.
+- obs_laws_0121 645c turn_geometry/argument_transition_marker: The Athenian uses the clearer articulation of virtue and vice to justify returning to education and wine-drinking.
+- obs_laws_0122 647e-648b craft_analogy/hypothetical_drug_as_courage_test: The Athenian imagines a fear-producing drug and asks whether such a controlled test would be useful to a lawgiver for courage and cowardice.
+- obs_laws_0125 649a craft_analogy/drug_analogy_boundary: The Athenian denies an available fear drug, excludes sorcerers from the banquet frame, and turns to wine as a drink of fearlessness.
+- obs_laws_0130 648a-648b turn_geometry/addressee_shift: The Athenian shifts from Cleinias to an imagined lawgiver as addressee for the testing question.
+- obs_laws_0153 653b-653c definition_ladder/definition_proposed_by_speaker: The Athenian defines education through early habituation of pleasure and pain before reason, later harmonized with reason.
+- obs_laws_0162 657b-657c legislative_feasibility/law_requires_grasped_correctness: The Athenian says fixed musical law is warranted if someone can grasp the correctness of the songs.
+- obs_laws_0163 657c turn_geometry/interlocutor_assents_to_claim: Cleinias gives short assents to the Athenian's claim connecting pleasure with the belief that one fares well.
+- obs_laws_0174 659d-659e civic_education/soul_habituation_to_lawful_pleasure: Education is stated as habituating the child's pleasures and pains into concord with law and elder judgment.
+- obs_laws_0181 659b-659c music_censorship_program/musical_judgment_authority_restricted: The true music judge is cast as teacher of spectators, not a learner from theater noise or crowd pleasure.
+- obs_laws_0197 662c-662d elenchus/absurd_consequence_signal: The Athenian marks one answer to the just and pleasant life dilemma as absurd before developing the father-lawgiver version.
+- obs_laws_0198 662c-662d dramatic_case_setup/appeal_to_divine_legislators: The Athenian tests the thesis by imagining a question put to the gods credited with legislating for the interlocutors.
+- obs_laws_0220 666d-666e prosopography/spartan_cretan_choral_upbringing: Cleinias identifies his group's song repertoire as what they learned in choruses, and the Athenian treats that as a product of their camp-like civic upbringing.
+- obs_laws_0244 670b-670c music_censorship_program/musical_judgment_authority_restricted: The Athenian denies that compelled singing and dancing make the crowd competent judges of harmony and rhythm.
+- obs_laws_0253 671c-671d turn_geometry/fear_counterweight_to_shamelessness: Sympotic law must send shame-fear against the excessive boldness produced by wine.
+- obs_laws_0255 671c-671d turn_geometry/sympotic_order_procedure: The drinking party is ordered by regulated portions of silence, speech, drinking, and music.
+- obs_laws_0268 674b-674c policy_consequence/prohibitions_imply_minimal_production: The wine prohibitions are followed by an inference that the city would need few vineyards and minimal, measured wine production.
+- obs_laws_0280 682c-682d historical_development_thesis/sea_use_as_civilizational_marker: Fearless use of the sea marks a later populated-city stage in the historical reconstruction and helps explain possible campaigning against Troy.
+- obs_laws_0291 686c-686d frame_depth/speaker_self_corrects_argument: The Athenian questions whether he and others have mistaken a seemingly fine powerful thing as beneficial if only used well.
+- obs_laws_0301 677d-677e turn_geometry/recapitulation_or_restart: After the culture-founder exchange, the Athenian restarts the narrative from the destruction and restates the post-catastrophe baseline.
+- obs_laws_0302 686a-686b turn_geometry/speaker_introduces_argumentative_procedure: The Athenian marks the destruction of the Dorian system as the next object of examination.
+- obs_laws_0306 684e-685a frame_depth/dialogic_method_framed_as_play: The Athenian frames the current legal examination on the walk as sober old-man play.
+- obs_laws_0310 682e-683a historical_development_thesis/sequential_settlement_catalogue: The Athenian summarizes the digression as a sequence of first, second, third, and now fourth city or nation.
+- obs_laws_0315 688a-688b definition_ladder/virtue_parts_enumerated: The Athenian contrasts looking to one of four virtues with looking to all virtue, especially the leading virtue.
+- obs_laws_0320 690c-690d definition_ladder/ranked_criterion_sequence: The Athenian adds a seventh claim to rule, the lot, and assigns rule and submission by luck of draw.
+- obs_laws_0321 690c-690d irony_marker/serious_utterance_framed_as_play: The Athenian frames the address to a hypothetical lawgiver as playful while summarizing claims to rule.
+- obs_laws_0322 690c-690d craft_analogy/political_pathology_medical_analogy: The lawgiver is told to treat a discovered source of faction among competing claims to rule.
+- obs_laws_0326 680a-680b definition_ladder/constitutional_form_named: The Athenian names the early post-catastrophe constitution as dynasteia and says it still exists among Greeks and barbarians.
+- obs_laws_0382 679b craft_analogy/craft_divine_origin: The Athenian attributes two basic crafts to divine provision for human survival and growth in post-catastrophe need.
+- obs_laws_0388 679c prosopography/ethical_type_profile: The post-catastrophe group is profiled by absent vices and by simple trustfulness as a cause of goodness.
+- obs_laws_0401 692c turn_geometry/hindsight_vs_foresight_marker: The Athenian contrasts easy hindsight from a completed example with difficult foresight about moderating offices and making one power from three.
+- obs_laws_0403 693b dramatic_case_setup/legislative_purpose_framed: The Athenian states the rule against great unmixed offices and frames the lawgiver's target as a city free, intelligent, and friendly to itself.
+- obs_laws_0413 695c-695d constitutional_balance/lawful_equality_secures_civic_partnership: Darius' settlement is presented as law-based common equality that supports friendship and partnership among Persians.
+- obs_laws_0415 695e-696a education_regime_contrast/luxurious_upbringing_as_lawgiver_problem: The Athenian generalizes Persian succession failure into a lawgiver's problem about the bad life of children of the very rich and tyrants.
+- obs_laws_0426 698b constitutional_balance/lawful_awe_supports_measured_freedom: Older Athens is described as having measured rule and mistress-like awe, through which citizens willingly lived subject to laws.
+- obs_laws_0428 698d frame_depth/reported_logos_truth_hedge: The Athenian reports the frightening Eretrian story with an explicit truth and arrival hedge.
+- obs_laws_0431 699b turn_geometry/historical_example_as_proof: Athenians find one slight, difficult hope of safety by looking back to the earlier victory from impossible circumstances.
+- obs_laws_0432 699c constitutional_balance/lawful_fear_produces_civic_friendship: Fear and law-trained awe are named as causes of Athenian friendship and collective defense.
+- obs_laws_0439 700e craft_analogy/pleasure_imitation_criterion_rejected: The Athenian rejects the claim that music has no correctness and is rightly judged by the pleasure of the listener.
+- obs_laws_0441 701b political_regime_diagnosis/lawless_freedom_decline_sequence: Bad shamelessness is defined as not fearing better opinion, then placed in a sequence from refusal of rulers to rejection of parents, elders, and laws.
+- obs_laws_0443 701d turn_geometry/legislative_target_recalled: The Athenian recalls the purpose of the preceding examples: legislation should aim at a city free, friendly to itself, and intelligent.
+- obs_laws_0445 702a turn_geometry/prior_topics_recalled_for_city_foundation: The Athenian recaps the Dorian, Dardanus, survivor, music, and drunkenness discussions as serving the question of how a city might best be inhabited.
+- obs_laws_0462 705d lawgiving_method/whole_virtue_over_partial_war_aim: The Athenian ties the naval-material discussion back to the claim that laws should aim at virtue as a whole, not war as a single part.
+- obs_laws_0466 707c prosopography/historical_exemplum_in_argument: The Athenian contrasts land battles as preserving and improving Greeks with sea battles as preserving without improving.
+- obs_laws_0490 712b myth_demarcation/divine_assistance_invoked: The lawmaking exercise begins with invocation of a god to co-arrange the city and laws.
+- obs_laws_0603 737c dramatic_case_setup/city_foundation_sequence: The Athenian orders distribution by fixing citizen number, citizen divisions, then equal land and house assignment.
+- obs_laws_0624 742c economic_legislation/private_currency_concealment_and_credit_bans: Currency concealment is punished, and dowries, unsafe deposits, and interest loans are barred or made unenforceable.
+- obs_laws_0657 755a-755b constitutional_design/law_guardian_age_and_term_limits: Law guardians are limited by maximum term, minimum entry age, tapering service after sixty, and exclusion after seventy.
+- obs_laws_0679 759d-759e sacred_office_regulation/exegetes_chosen_by_tribal_vote_delphic_selection_and_lifelong_replacement: Exegetes are nominated by tribes, voted, scrutinized, sent to Delphi for final choice, serve for life, and are replaced from the tribe with the vacancy.
+- obs_laws_0759 782a-782b anthropological_history/civilizational_variation_catalogue: The Athenian turns the deep-time frame into a catalogue of repeated civic, customary, dietary, and animal changes.
+- obs_laws_0841 806e institutional_economy/delegated_labor_and_common_meal_life_setup: The Athenian sets up a life where necessities are moderate, crafts and farming are assigned to others, and common meals are arranged separately but nearby.
+- obs_laws_0943 846a-846b property_damage_law/transport_and_property_damage_cases_scale_by_value: Harvest transport and property-damage cases are routed by harm and value, with officials handling smaller cases and common courts larger ones.
+
+## Left Rejected
+- obs_laws_0030 629b-629c irony_marker/mock_deference: Rejected repair: the divine-poet address is source-backed, but mock deference is not a durable noninterpretive record here.
+- obs_laws_0059 633b-633c prosopography/dramatic_behavior_marker: Rejected repair: the endurance-practice detail is source-backed but already included in an accepted Spartan practice catalogue.
+- obs_laws_0076 636e-637a myth_demarcation/poetic_quotation_as_authority: Rejected repair: the cited span contains Megillus on Spartan pleasure laws, not the Theognis quotation claimed by the defective record.
+- obs_laws_0142 654c-654d definition_ladder/definition_revised_after_objection: Rejected repair: the span has a criterion disjunction rather than a revision after an objection.
+- obs_laws_0159 656c-656d craft_analogy/poetry_civic_filter: Rejected repair: the source claim is valid, but the craft-analogy label is wrong and the music-censorship program is already covered nearby.
+- obs_laws_0199 662e ironic_marker/socratic_self_deprecation: Rejected repair: the source supports a hypothetical father and lawgiver exchange, but the original irony label is unsupported and the argument is already covered nearby.
+- obs_laws_0258 671e-672a irony_marker/hesitancy_before_public_claim: Rejected repair: the cited span contains supervised drinking and departure as friends, while the claimed hesitation occurs outside the source ref.
+- obs_laws_0328 686e-687a irony_marker/knowledge_disavowal: Rejected repair: the source has a light hedge before a broader principle, but knowledge-disavowal overclassifies it and nearby accepted records cover the self-distancing turn.
+- obs_laws_0368 677b myth_demarcation/natural_disaster_chronology_argument: Rejected repair: the cited span starts the survivor and craft-ignorance frame, while the broader disaster chronology is already covered elsewhere.
+- obs_laws_0419 696e definition_ladder/ranked_criterion_sequence: Rejected repair: the rank formula is source-backed but partial and redundant with accepted neighboring records that cover the full distribution.

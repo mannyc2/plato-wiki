@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0010-structural-remediation-09-471d-502c",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "republic",
+  "unit_key": "09-471d-502c",
+  "source_path": "scratch/commentary/audits/republic/09-471d-502c.json",
+  "source_sha256": "0ec9e14677b977ad1031ed3fbf55192ae60ad2816a438e9f32f6cba644fec0de",
+  "target_path": "wiki/commentary/republic.md",
+  "target_sha256_before": "da40293bd40559c5a842e38618d2032af1d2b444a48c29056f8a5200da5b9aac",
+  "target_sha256_after": "981a61f9a3fcf6c3ef9e92195a2814657fb8ae29576cf0ac830da35219118689",
+  "applied_at": "2026-08-23T22:33:34.373Z",
+  "applied_ids": [
+    "comm_republic_0009"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "republic",
+      "unitKey": "09-471d-502c",
+      "sectionId": "comm_republic_0009",
+      "auditOutputPath": "scratch/commentary/audits/republic/09-471d-502c.json",
+      "auditOutputSha256": "0ec9e14677b977ad1031ed3fbf55192ae60ad2816a438e9f32f6cba644fec0de",
+      "expectedLedgerSha256": "da40293bd40559c5a842e38618d2032af1d2b444a48c29056f8a5200da5b9aac",
+      "expectedAttributionSha256": "fcad7c67895d52f092da1d171154ae2040a44697840261329f1a9c5b1a1b4c0a",
+      "expectedEnglishSha256": "be4a37f41357524bae7534191e810ca73365b19719ef0bda41ec4b8317247ca2",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_republic_0009"
+        }
+      ],
+      "reviewer": "lane-c-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna assessment confirms conservative rejection of audited remove findings and split originals; placement is retained and no reanchors are claimed."
+    },
+    "audit_output_path": "scratch/commentary/audits/republic/09-471d-502c.json",
+    "audit_output_sha256": "0ec9e14677b977ad1031ed3fbf55192ae60ad2816a438e9f32f6cba644fec0de",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_republic_0009",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "parmenides",
+  "source_path": "scratch/commentary/rewrites/parmenides/02-129a-131a.json",
+  "source_sha256": "be37380d30f6a11d315874d187652a97c150863b273baff1f9fb8b5c2afd76de",
+  "target_path": "wiki/commentary/parmenides.md",
+  "target_sha256_before": "9ad33a5a6c2e14b6f2227f7a25483962c6df32e085581b77aa3471a09addb99d",
+  "target_sha256_after": "4e2d4273f4c6ebc31c19bbd0aa095b34280236a0724e2be2aff4f60463847bf9",
+  "applied_at": "2026-08-21T14:56:28.022Z",
+  "applied_ids": [
+    "comm_parmenides_0002",
+    "comm_parmenides_0003",
+    "comm_parmenides_0004",
+    "comm_parmenides_0007",
+    "comm_parmenides_0008",
+    "comm_parmenides_0009",
+    "comm_parmenides_0010",
+    "comm_parmenides_0012",
+    "comm_parmenides_0013"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "parmenides",
+      "unit_key": "02-129a-131a",
+      "section_id": "comm_parmenides_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/parmenides/02-129a-131a.json",
+        "sha256": "9c399b7198df755b82f05f781980e55633effd2505ea5453b751e9c6c5b1e81d"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_parmenides_0002",
+          "title": "From the Forms to the participation dilemma",
+          "body": "Here Socrates draws the crucial contrast: sensible participants may display opposite properties, while opposite affections in the Forms themselves would be astonishing. Parmenides then tests the reach of this Forms language—Socrates names likeness, unity, justice, beauty, and goodness, but hesitates over Forms for trivial things. The pressure becomes precise at the end: if particulars participate, do they take the whole Form or only a part?",
+          "cites": {
+            "observations": [
+              "obs_parmenides_0018",
+              "obs_parmenides_0021",
+              "obs_parmenides_0026",
+              "obs_parmenides_0040"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "parmenides",
+      "unit_key": "03-131b-135d",
+      "section_id": "comm_parmenides_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/parmenides/03-131b-135d.json",
+        "sha256": "aadacc64b9a889bbfe0bbaaf49597ff598b9a77f459d6e385d4cb67452037a31"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_parmenides_0003",
+          "title": "Participation and training",
+          "body": "Parmenides turns participation into a test of explanatory discipline. If a Form is wholly in many things, it separates from itself; if divided, largeness, equality, and smallness produce absurd consequences. Socrates revises the account from Forms as thoughts to Forms as paradigms. I read the closing appeal to training as the method demanded here: define slowly, and follow each definition through its consequences.",
+          "cites": {
+            "observations": [
+              "obs_parmenides_0029",
+              "obs_parmenides_0032",
+              "obs_parmenides_0034"
+            ],
+            "claims": [
+              "claim_parmenides_0001",
+              "claim_parmenides_0003"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "parmenides",
+      "unit_key": "04-135e-137b",
+      "section_id": "comm_parmenides_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/parmenides/04-135e-137b.json",
+        "sha256": "431da282e91cb1f1ce2c422d510e51a52663eaed1bea525dbd5cb68635754f99"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_parmenides_0004",
+          "title": "The method becomes the subject",
+          "body": "I suggest hearing this stretch as a change in method rather than as a verdict about the Forms. Parmenides makes the exercise symmetrical: imagine the subject as existing, then as not existing, and trace what follows through the subject and its relations. On this reading, the passage postpones any final answer about the One; its immediate object is the discipline of following consequences. The next move will make that discipline concrete.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "parmenides",
+      "unit_key": "07-142b-145a",
+      "section_id": "comm_parmenides_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/parmenides/07-142b-145a.json",
+        "sha256": "bf68f054a6be309866879d148f0c739abd39e9d6fbfd932e8436fe21da06345d"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_parmenides_0007",
+          "title": "The one that is: a whole with parts",
+          "body": "The second hypothesis turns on a grammatical distinction: “the one is” is not “the one is one”; being is added to unity. Once being and unity are distinguished, the existent one becomes a whole with parts. The argument then multiplies the consequences into number and an unlimited multitude of existences. Hear the ending as a test of what a whole requires, not as a claim about shape.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_parmenides_0038",
+              "claim_parmenides_0039",
+              "claim_parmenides_0044"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "parmenides",
+      "unit_key": "08-145b-149c",
+      "section_id": "comm_parmenides_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/parmenides/08-145b-149c.json",
+        "sha256": "b1de62283f90d1f3626719b6221b061c27c7b27dccb7fa094c8cf91aaa5a2757"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_parmenides_0008",
+          "title": "Predicates under pressure",
+          "body": "This unit is best heard as a pressure test for descriptions of the One. One way to read it is that containment first unsettles the boundary between self and other, then makes rest and motion, sameness and otherness, likeness and unlikeness, and finally contact depend on how a relation is framed. The dialogue’s point is methodological: a predicate may disclose its contrary when its conditions are made explicit.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "parmenides",
+      "unit_key": "09-149d-155d",
+      "section_id": "comm_parmenides_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/parmenides/09-149d-155d.json",
+        "sha256": "8e443d2879e07e3dd148a1c58eeca64cd8bee55a97650379b8a57adbc63c7e58"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_parmenides_0009",
+          "title": "Time Turns the One Relational",
+          "body": "Here the hypothesis turns time into a stress test for relation. Being is linked to the present, and the One becomes older and younger than itself while also being neither older nor younger, depending on whether we track becoming, the now, or equal duration. From 153a the argument explicitly includes the others: different accounts of generation make the One older, younger, and the same age as them. The point is not a final chronology but the pressure produced when each account is followed consistently.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_parmenides_0051",
+              "claim_parmenides_0052",
+              "claim_parmenides_0053"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "parmenides",
+      "unit_key": "10-155e-160a",
+      "section_id": "comm_parmenides_0010",
+      "audit_output": {
+        "path": "scratch/commentary/audits/parmenides/10-155e-160a.json",
+        "sha256": "3f5354ae3571ae1916b638a255982c92e30be580802a2222bc73b30093ee82ff"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_parmenides_0010",
+          "title": "From the One to the Others",
+          "body": "The argument now turns outward. The sequence moves from change at the instant, through the extension of that pattern across contrary transitions, to the claim that the Others form a whole with parts and so participate in the One. One way to hear the shift in method is that the exercise begins mapping the structure of what is other.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_parmenides_0061",
+              "claim_parmenides_0062",
+              "claim_parmenides_0063"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "parmenides",
+      "unit_key": "12-163b-164c",
+      "section_id": "comm_parmenides_0012",
+      "audit_output": {
+        "path": "scratch/commentary/audits/parmenides/12-163b-164c.json",
+        "sha256": "2fe9ad5dc995070d2c85793cc95f535a2bdf6ced2e33007c756ce58b82100a19"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_parmenides_0012",
+          "title": "A stricter second pass",
+          "body": "I read the turn at 163b–164c as a stress test of the negation. The dialogue first lets the hypothesis produce a contradiction, then restarts by taking “is not” without qualification. For me, that restart is the point: it narrows the terms before the argument proceeds, shifting attention from what the non-existent One can undergo to what follows when participation in being is denied altogether. The passage therefore tests a rule of reasoning, not simply a definition of non-being.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "parmenides",
+      "unit_key": "13-164d-166c",
+      "section_id": "comm_parmenides_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/parmenides/13-164d-166c.json",
+        "sha256": "15c476a7b54976caafcbb5e31e3a0fd7db15ea564204a495efc90947262d4adf"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_parmenides_0013",
+          "title": "When unity disappears, predicates collapse",
+          "body": "One way to hear this stretch is as a test of what “the others” can mean when unity is unavailable. The argument first multiplies every apparent unit, then withdraws even the appearances of number, likeness, relation, and motion. Its force is not a description of objects so much as a demonstration that ordinary predicates depend upon the One. The closing reversal leaves the exercise suspended between affirmation and denial.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_parmenides_0002",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0002\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"Zeno's defense becomes Socrates' proposal\"\nstephanus_span: 129a-131a\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 129a-131a\n  start_marker: 129a\n  end_marker: 131a\n  start_char: 5318\n  end_char: 9977\n  text_sha256: \"7a3b1e0451308e8f63dfe2a9598c72b44f7ed15393d1933de8d822cdf9fc6043\"\nbody: \"Socrates first translates Zeno's many arguments into a defense of Parmenides: if the many suffer opposite predicates, perhaps the Forms themselves are being tested. He then proposes separate Forms for likeness, unity, justice, beauty, and goodness, while hesitating over human, natural, and contemptible things. Parmenides lets that confidence stand only long enough to question participation.\"\ncites:\n  observations: [\"obs_parmenides_0016\", \"obs_parmenides_0018\", \"obs_parmenides_0021\", \"obs_parmenides_0026\", \"obs_parmenides_0040\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0003",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0003\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"Participation under pressure\"\nstephanus_span: 131b-135d\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 131b-135d\n  start_marker: 131b\n  end_marker: 135d\n  start_char: 9977\n  end_char: 19907\n  text_sha256: \"06ed4c992dc4ab0a3125e382c8c54e3945c3944445cdabfd62a0aad97febf7f5\"\nbody: \"The Forms now face a forced choice: are they wholly present in many things, or divided among them? The sail image makes either answer costly, and the regress of the One over Many turns participation into an endless demand for another Form. Parmenides finally shifts the burden from a young theory to the need for training in argument.\"\ncites:\n  observations: [\"obs_parmenides_0029\", \"obs_parmenides_0032\", \"obs_parmenides_0034\", \"obs_parmenides_0043\"]\n  claims: [\"claim_parmenides_0001\", \"claim_parmenides_0003\"]\n  relations: [\"rel_parmenides_0001\"]\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0004",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0004\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"The exercise is set\"\nstephanus_span: 135e-137b\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 135e-137b\n  start_marker: 135e\n  end_marker: 137b\n  start_char: 19907\n  end_char: 23322\n  text_sha256: \"317656977618f4f76550d374bb113f853dfb75d4e1d711737827a748fda62fae\"\nbody: \"Parmenides does not repair the theory of Forms. He proposes a discipline: take a subject, assume both that it is and that it is not, and follow every consequence for itself and for the others. The coming argument is therefore deliberately conditional and symmetrical, not a single declaration of what the One is.\"\ncites:\n  observations: [\"obs_parmenides_0017\", \"obs_parmenides_0019\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0007",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0007\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"Second hypothesis: the One as a whole\"\nstephanus_span: 142b-145a\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 142b-145a\n  start_marker: 142b\n  end_marker: 145a\n  start_char: 33456\n  end_char: 39944\n  text_sha256: \"21ce55b2eb77fe495f83ba0ec9ee0c03f9eee728823c772c937bd9482d57c889\"\nbody: \"The second hypothesis begins with the same words but permits the One to be. It can now have being, and being and unity become two aspects of one subject. The argument proceeds by composition: if it is a whole, it has parts; if it has parts, it has limit and shape. The deductions are no longer the austere exclusions of the first hypothesis.\"\ncites:\n  observations: []\n  claims: [\"claim_parmenides_0038\", \"claim_parmenides_0039\", \"claim_parmenides_0044\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0008",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0008\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"The One contains and is contained\"\nstephanus_span: 145b-149c\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 145b-149c\n  start_marker: 145b\n  end_marker: 149c\n  start_char: 39944\n  end_char: 49293\n  text_sha256: \"b4d7d8998d8fc897a0c2be59b6a808bb7f3c161cab8d426118be5ed42d50b2c8\"\nbody: \"Once the One is treated as bounded and whole, the dialogue makes it spatially and relationally unstable. It is both in itself and in another, both at rest and in motion, and greater and less than itself in different respects. The point is not to choose one picture, but to expose how each permitted predicate generates its paired consequence.\"\ncites:\n  observations: []\n  claims: [\"claim_parmenides_0048\", \"claim_parmenides_0049\", \"claim_parmenides_0050\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0009",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0009\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"The One's relations, time, and knowledge\"\nstephanus_span: 149d-155d\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 149d-155d\n  start_marker: 149d\n  end_marker: 155d\n  start_char: 49293\n  end_char: 62709\n  text_sha256: \"a1bdb1185f533bf13693779230b01cb8bba6af0836a6ff0f4a57f60c19459ee3\"\nbody: \"The second hypothesis keeps drawing consequences for the One itself: relation, contact, sameness, difference, equality, inequality, motion, rest, becoming older or younger, and the limits of time. The argument has not yet transferred its subject to the others; it is showing how many predicates follow once the One is allowed to be.\"\ncites:\n  observations: []\n  claims: [\"claim_parmenides_0051\", \"claim_parmenides_0052\", \"claim_parmenides_0053\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0010",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0010\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"The consequences turn toward the others\"\nstephanus_span: 155e-160a\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 155e-160a\n  start_marker: 155e\n  end_marker: 160a\n  start_char: 62709\n  end_char: 72278\n  text_sha256: \"c055b85056658367789be51a9511b0c64bdf7996ebbffae3f4f34fb935262d01\"\nbody: \"Only at the end of the second hypothesis does the argument ask what follows for the others. Their multiplicity, parts, wholes, likeness, difference, motion, rest, and even knowledge and opinion are consequences of the One's being. The shift of subject matters: the exercise now maps the field around the One rather than adding another predicate to it.\"\ncites:\n  observations: []\n  claims: [\"claim_parmenides_0061\", \"claim_parmenides_0062\", \"claim_parmenides_0063\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0012",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0012\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"The negated One changes and does not change\"\nstephanus_span: 163b-164c\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 163b-164c\n  start_marker: 163b\n  end_marker: 164c\n  start_char: 78809\n  end_char: 81787\n  text_sha256: \"b9f883d7cb5ca21268d6aee6408bc2c267208bad5330ae1f5d69264343fd14c9\"\nbody: \"The negated One is made to yield contradictory-looking results: as it alters, it comes to be and perishes, yet as it does not alter, it does neither. Parmenides then restarts the deduction, making the hypothesis itself the object of scrutiny before the final consequences for the others begin.\"\ncites:\n  observations: []\n  claims: [\"claim_parmenides_0071\", \"claim_parmenides_0072\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0013",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0013\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"The others become indefinitely many appearances\"\nstephanus_span: 164d-166c\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 164d-166c\n  start_marker: 164d\n  end_marker: 166c\n  start_char: 81787\n  end_char: 85707\n  text_sha256: \"b03c9d97735977b1a70cf6d035007116c85fec458e5d514352456437a5124157\"\nbody: \"The consequences now turn to the others: without the One, each apparent unit breaks into indefinitely many portions, and the others become only appearances of number and size. The closing deductions gather the exercise's oppositions—being and not-being, appearing and not-appearing—without selecting a final doctrine.\"\ncites:\n  observations: []\n  claims: [\"claim_parmenides_0073\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

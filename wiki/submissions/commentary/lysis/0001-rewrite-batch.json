@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "lysis",
+  "source_path": "scratch/commentary/rewrites/lysis/01-203a-204b.json",
+  "source_sha256": "04d33a375ebaa3e553026394cdc7bec09aae4f88775afe5c1efd43e8b4a1171f",
+  "target_path": "wiki/commentary/lysis.md",
+  "target_sha256_before": "5156df26d69661c609dd9d25db1a4ca73ecb41d8fdc5cec5ddacaba9118104b3",
+  "target_sha256_after": "6ecb321d93201dd6f61aa8f057a639da73d2d357001d7c26fb3c442464f648d1",
+  "applied_at": "2026-08-21T15:45:19.365Z",
+  "applied_ids": [
+    "comm_lysis_0001",
+    "comm_lysis_0004",
+    "comm_lysis_0006",
+    "comm_lysis_0007",
+    "comm_lysis_0008",
+    "comm_lysis_0010",
+    "comm_lysis_0012",
+    "comm_lysis_0013",
+    "comm_lysis_0014"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "lysis",
+      "unit_key": "01-203a-204b",
+      "section_id": "comm_lysis_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/lysis/01-203a-204b.json",
+        "sha256": "cb4e05ead0c0a69df45294f5a8ade6d6901d57c513503c20806109c9fae89323"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_lysis_0001",
+          "title": "The invitation, with conditions",
+          "body": "Socrates’ route from the Academy to the Lyceum is interrupted by Hippothales and Ctesippus at the gate by the spring of Panops. Their summons points him toward a newly built wrestling-school where the group spends its time chiefly in conversation. But entry is not automatic: Socrates asks both on what terms he may enter and who the beautiful one is. When Hippothales blushes at the question, Socrates declares that he is already far advanced in eros.",
+          "cites": {
+            "observations": [
+              "obs_lysis_0001",
+              "obs_lysis_0003",
+              "obs_lysis_0004",
+              "obs_lysis_0005",
+              "obs_lysis_0006"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "lysis",
+      "unit_key": "04-206e-207c",
+      "section_id": "comm_lysis_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/lysis/04-206e-207c.json",
+        "sha256": "7b706fb33f64d732d6d6ef8940cc2d90d21171465901bf399f95e23f68dec5a3"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_lysis_0004",
+          "title": "Proximity and concealment before the questions",
+          "body": "The movement of bodies anticipates the argument: Lysis approaches after Menexenus has taken a seat, while Hippothales stays screened and listens. One way to read this staging is that friendship first appears as a problem of proximity and visibility. Socrates then turns the gathering toward comparative questions and the claim that friends share what they have.",
+          "cites": {
+            "observations": [
+              "obs_lysis_0020",
+              "obs_lysis_0025",
+              "obs_lysis_0026"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "lysis",
+      "unit_key": "06-209b-210e",
+      "section_id": "comm_lysis_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/lysis/06-209b-210e.json",
+        "sha256": "db31c4d874e7647e9ee5d20689995f5cf6364eaf7cf44736ff3f27d9ed2b1be1"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_lysis_0006",
+          "title": "Knowledge, not age, earns authority",
+          "body": "Socrates shifts the measure of authority from age and rank to competence. Lysis says his parents permit what he knows; Socrates then widens that principle from household management to Athenian affairs and the Great King’s kitchen, where superior judgment would outrank both family and royal succession. The argument is conditional: one is entrusted when one appears wiser in a given domain.",
+          "cites": {
+            "observations": [
+              "obs_lysis_0039",
+              "obs_lysis_0040"
+            ],
+            "claims": [
+              "claim_lysis_0004",
+              "claim_lysis_0005",
+              "claim_lysis_0006"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "lysis",
+      "unit_key": "07-211a-211e",
+      "section_id": "comm_lysis_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/lysis/07-211a-211e.json",
+        "sha256": "f45b79d5ec042e869119c20d10b2aeb7f3c5f9c68d1c38beb61cd36ee2f98224"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_lysis_0007",
+          "title": "A rehearsal before the real question",
+          "body": "One way to hear this transition is as a small test of friendship itself. Lysis asks Socrates to carry the conversation into his friend’s presence, then wants to remain close when the exchange becomes adversarial. Socrates’s declaration that he values a friend above wealth therefore arrives not as detached doctrine, but as a desire enacted in the room.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "lysis",
+      "unit_key": "08-212a-213d",
+      "section_id": "comm_lysis_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/lysis/08-212a-213d.json",
+        "sha256": "24d537ce6d0e2b7190f326f0684e777eda003e104dc2a711f4a2e09bf969a154"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_lysis_0008",
+          "title": "Reciprocity tested by reversal",
+          "body": "The reciprocity thesis is not the passage’s final landing. One-sided love first makes the mutual answer untenable; the proposed repair is that neither is a friend unless both love. Socrates then appears to reverse the candidate: the beloved seems to be the friend even while hating, but that makes friends into enemies, so the lover is restored. Read this as a recursive test, not a single march to aporia: after the reversals, Lysis doubts the inquiry itself.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_lysis_0009",
+              "claim_lysis_0010",
+              "claim_lysis_0011",
+              "claim_lysis_0012"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "lysis",
+      "unit_key": "10-215d-216b",
+      "section_id": "comm_lysis_0010",
+      "audit_output": {
+        "path": "scratch/commentary/audits/lysis/10-215d-216b.json",
+        "sha256": "84fcde11f23ffa2fac60d9673ed5601b3e136482f7faf9e9e954e7ccc5464fd4"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_lysis_0010",
+          "title": "Neither formula settles friendship",
+          "body": "I read this exchange as a stress test for two attractive formulas. On that reading, “opposite befriends opposite” sounds explanatory until the conversation turns it against friendship with an enemy, then against justice and goodness. The passage need not announce a third category; its sharper achievement is to leave both formulas under pressure. What, then, might friendship require beyond resemblance or opposition?",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "lysis",
+      "unit_key": "12-218d-220e",
+      "section_id": "comm_lysis_0012",
+      "audit_output": {
+        "path": "scratch/commentary/audits/lysis/12-218d-220e.json",
+        "sha256": "409040acbe2e18abe53aa91dfca266014f4503ddfc1b23e375c812e3ceb23fd4"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_lysis_0012",
+          "title": "A demanded endpoint, not yet a discovery",
+          "body": "Here the regress yields a requirement, not a result. If each friend is friend for the sake of another, the argument must either continue indefinitely or arrive at a first friend; it then distinguishes that supposed endpoint from the instrumental friends pictured as its images. The passage does not establish that such a first friend exists or identify it.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_lysis_0017",
+              "claim_lysis_0018",
+              "claim_lysis_0019"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "lysis",
+      "unit_key": "13-221a-222a",
+      "section_id": "comm_lysis_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/lysis/13-221a-222a.json",
+        "sha256": "ee8ac65fdd951fc0350dc6ce430e69ad0461eb5d1b3393c165458ba254059b89"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_lysis_0013",
+          "title": "A causal shift, not a final answer",
+          "body": "The exchange first tests the claim that bad causes friendship: desires that are neither good nor bad would remain when bad things vanished, and desire would still involve love (claim_lysis_0023). It then offers desire as a new candidate cause (claim_lysis_0024; claim_lysis_0025), before naming oikeion as what love, friendship, and desire concern (claim_lysis_0026). Hear these as successive proposals, not one identity: the passage has not yet settled the account (claim_lysis_0024; claim_lysis_0025; claim_lysis_0026).",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_lysis_0023",
+              "claim_lysis_0024",
+              "claim_lysis_0025",
+              "claim_lysis_0026"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "lysis",
+      "unit_key": "14-222b-223b",
+      "section_id": "comm_lysis_0014",
+      "audit_output": {
+        "path": "scratch/commentary/audits/lysis/14-222b-223b.json",
+        "sha256": "c33d450dec86e0678d6e0f76097a7ca95212b6ae76d5c3f43c9ac8d7687ef184"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_lysis_0014",
+          "title": "Aporia without a settled definition",
+          "body": "Here the argument reaches an aporia, but not a proof that every account of friendship has failed. Socrates’ summary is conditional: if none of the loved, loving, like, unlike, good, akin, or other examined candidates is a friend, he has nothing further to say (claim_lysis_0030). The pressure is cumulative: the oikeion proposal revives rejected like-to-like consequences (claim_lysis_0027; claim_lysis_0028; rel_lysis_0001), while identifying good with oikeion yields only the conditional that good is friend to good (claim_lysis_0029; rel_lysis_0001). One way to hear the ending is as exhaustion of this inquiry, not a settled definition.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_lysis_0027",
+              "claim_lysis_0028",
+              "claim_lysis_0029",
+              "claim_lysis_0030"
+            ],
+            "relations": [
+              "rel_lysis_0001"
+            ],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_lysis_0001",
+      "body": "```yaml\ncommentary_id: comm_lysis_0001\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"A walk interrupted: Socrates waylaid at the little gate\"\nstephanus_span: 203a-204b\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 203a-204b\n  start_marker: 203a\n  end_marker: 204b\n  start_char: 0\n  end_char: 1500\n  text_sha256: \"899ccfc2b402ada37f050378215e5e6b5b5640ea6a75b05342ca6303cbba33b0\"\nbody: \"Socrates narrates his own story: walking from the Academy to the Lyceum, he is stopped at a small gate by Hippothales and Ctesippus and drawn toward a new wrestling-school where the pastime is conversation. Before entering he asks one thing — who is the beautiful boy? Hippothales' blush answers before he does.\"\ncites:\n  observations: [\"obs_lysis_0001\", \"obs_lysis_0002\", \"obs_lysis_0003\", \"obs_lysis_0004\", \"obs_lysis_0005\", \"obs_lysis_0006\"]\n  claims: []\n  relations: []\n  dossiers: [\"dramatic_case_setup/setting_by_physical_action\", \"prosopography/named_interlocutor_role\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_lysis_0004",
+      "body": "```yaml\ncommentary_id: comm_lysis_0004\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"Festival day inside: knucklebones, a blushing spy, and first questions\"\nstephanus_span: 206e-207c\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 206e-207c\n  start_marker: 206e\n  end_marker: 207c\n  start_char: 6613\n  end_char: 8356\n  text_sha256: \"a17620ae4bd90efd4834c0087d26b5d2e1f5b3232d39ae7f9fbf1514d0edcf67\"\nbody: \"The scene shifts indoors: boys fresh from a sacrifice play at knucklebones while Lysis, crowned and described as beautiful and good, hovers, wanting to approach. Hippothales hides to listen. Socrates opens with playful comparisons — who is older, nobler, more beautiful — and both boys laugh and affirm their friendship.\"\ncites:\n  observations: [\"obs_lysis_0019\", \"obs_lysis_0020\", \"obs_lysis_0021\", \"obs_lysis_0025\", \"obs_lysis_0026\", \"obs_lysis_0027\"]\n  claims: []\n  relations: []\n  dossiers: [\"dramatic_case_setup/initial_question_stated\", \"dramatic_case_setup/narrator_reaction_cue\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_lysis_0006",
+      "body": "```yaml\ncommentary_id: comm_lysis_0006\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"Wherever you are wise, everyone will trust you\"\nstephanus_span: 209b-210e\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 209b-210e\n  start_marker: 209b\n  end_marker: 210e\n  start_char: 11705\n  end_char: 15453\n  text_sha256: \"ed962cb42c0ac4cd9fc20096a931f3f840051017436b5e7d785d24ee1fc16c51\"\nbody: \"The answer emerges: people entrust things wherever knowledge is shown — a father his household, the Athenians their affairs, even the Great King his soup pot. Useful through wisdom, one is loved; useless, not even by one's parents. Socrates ends by telling the hidden Hippothales, in effect, that this is how to talk to a beloved: humble him, don't inflate him.\"\ncites:\n  observations: [\"obs_lysis_0039\", \"obs_lysis_0040\"]\n  claims: [\"claim_lysis_0004\", \"claim_lysis_0005\", \"claim_lysis_0006\", \"claim_lysis_0007\", \"claim_lysis_0008\"]\n  relations: []\n  dossiers: [\"elenchus/knowledge_priority_argument\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_lysis_0007",
+      "body": "```yaml\ncommentary_id: comm_lysis_0007\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"A tag-team begins: Lysis recruits Socrates against Menexenus\"\nstephanus_span: 211a-211e\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 211a-211e\n  start_marker: 211a\n  end_marker: 211e\n  start_char: 15453\n  end_char: 17575\n  text_sha256: \"d7b622c17a4f889cc4c093f48f6c757679875370ceb6e9aad27655d96ee1f5af\"\nbody: \"Menexenus comes back, and Lysis — now eager — whispers that Socrates should put the same treatment to his friend. Socrates agrees to question the more disputatious boy and confesses his own lifelong desire: others want horses or money, he wants friends, and he would rather have a good friend than all of Darius' gold.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_lysis_0008",
+      "body": "```yaml\ncommentary_id: comm_lysis_0008\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"Lover, beloved, or both? The first definition collapses\"\nstephanus_span: 212a-213d\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 212a-213d\n  start_marker: 212a\n  end_marker: 213d\n  start_char: 17575\n  end_char: 21406\n  text_sha256: \"660d3854226fb1baf2b8cd1aeac8b5683df40f8c0b6ef220e5b9622772501c09\"\nbody: \"The inquiry proper opens: when one person loves another, which is the friend? Unrequited and even hostile love makes 'the lover' fail; reciprocity seems required — but then horse-lovers and wisdom-lovers are no lovers at all unless their objects love back. Each exit closes, and the first aporia arrives.\"\ncites:\n  observations: []\n  claims: [\"claim_lysis_0009\", \"claim_lysis_0010\", \"claim_lysis_0011\", \"claim_lysis_0012\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_lysis_0010",
+      "body": "```yaml\ncommentary_id: comm_lysis_0010\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"The contrarian's answer: does opposite befriend opposite?\"\nstephanus_span: 215d-216b\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 215d-216b\n  start_marker: 215d\n  end_marker: 216b\n  start_char: 24961\n  end_char: 26733\n  text_sha256: \"915915035aa5270f1e8043ad491f9f250abab1b8252b35ac2faaf37237067693\"\nbody: \"The reverse thesis gets its turn: the dry desires the wet, the poor the rich — opposite feeds on opposite. Yet pressed by the debater's move, it produces absurdities: friend of enemy, just of unjust. Neither like nor unlike will do, and the inquiry needs a third kind of thing.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_lysis_0012",
+      "body": "```yaml\ncommentary_id: comm_lysis_0012\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"For the sake of what? The regress to a first friend\"\nstephanus_span: 218d-220e\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 218d-220e\n  start_marker: 218d\n  end_marker: 220e\n  start_char: 31301\n  end_char: 36213\n  text_sha256: \"81a32ded43c07a6047c628499c5439bf789364f968d9bad332fe55171c5f13cd\"\nbody: \"Relief is short-lived. Every friend is friend for the sake of something, and the chain must stop at a first friend for whose sake all else is loved — the rest mere images. But if the good is loved only as a remedy for bad, remove the bad and the good becomes useless: the first friend appears to exist for the sake of an enemy.\"\ncites:\n  observations: []\n  claims: [\"claim_lysis_0017\", \"claim_lysis_0018\", \"claim_lysis_0019\", \"claim_lysis_0020\", \"claim_lysis_0021\", \"claim_lysis_0022\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_lysis_0013",
+      "body": "```yaml\ncommentary_id: comm_lysis_0013\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"Desire, need, and one's own: the last candidate\"\nstephanus_span: 221a-222a\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 221a-222a\n  start_marker: 221a\n  end_marker: 222a\n  start_char: 36213\n  end_char: 38603\n  text_sha256: \"863f81ca9c1c193541cd8a15e8cd8422da485b0e9dcb4df26a2e1b1c485ccd1b\"\nbody: \"A counterexample rescues the inquiry from the remedy picture: harmless desires would survive the abolition of bad, so bad cannot be the cause of love. Desire itself steps in — and what one desires is what one lacks, what is one's own (oikeion). Friends, then, would be akin to each other in soul. Hippothales, still listening, glows.\"\ncites:\n  observations: []\n  claims: [\"claim_lysis_0023\", \"claim_lysis_0024\", \"claim_lysis_0025\", \"claim_lysis_0026\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_lysis_0014",
+      "body": "```yaml\ncommentary_id: comm_lysis_0014\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"Dispersal at dusk: friends who cannot say what a friend is\"\nstephanus_span: 222b-223b\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 222b-223b\n  start_marker: 222b\n  end_marker: 223b\n  start_char: 38603\n  end_char: 41070\n  text_sha256: \"7409b8b510780cd49481410394ab857acbd75c0a5f95b2153e89074b8f1494a6\"\nbody: \"The oikeion collapses back into the old dilemmas: if akin means like, the earlier refutation returns; if it means the good, only the good can be friends. Every candidate has failed when the tutors arrive, half-drunk, to break up the party. Socrates ends with the dialogue's signature joke: they count themselves friends, yet cannot discover what a friend is.\"\ncites:\n  observations: []\n  claims: [\"claim_lysis_0027\", \"claim_lysis_0028\", \"claim_lysis_0029\", \"claim_lysis_0030\"]\n  relations: [\"rel_lysis_0001\"]\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

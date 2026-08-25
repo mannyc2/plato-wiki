@@ -1,0 +1,523 @@
+{
+  "schema_version": 1,
+  "dialogue": "critias",
+  "ledger": {
+    "path": "wiki/commentary/critias.md",
+    "sha256": "946075e5c7e506eddd816e7143142e00cf24655c8796a1c6865e5b57daf8922f"
+  },
+  "protocol": {
+    "path": "docs/commentary-protocol.md",
+    "sha256": "5f5e6f47f2d39cb42dd8941762ca1b82b4c1371801576f9ec7875e76286e1a13"
+  },
+  "authoring": {
+    "model": "gpt-5.6-luna",
+    "effort": "medium"
+  },
+  "units": [
+    {
+      "unit_key": "01-106a-106c",
+      "section_id": "comm_critias_0001",
+      "audit_brief_sha256": "1172198af944c0d76febba187dd55d3c6b41031dad15c35f8161701eb62ea383",
+      "output_path": "scratch/commentary/audits/critias/01-106a-106c.json",
+      "output_sha256": "3b64627eca2a50188ff659e0b9cc46f728f8a4182db64c8479726c922a2c1b00",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "critias",
+        "unit_key": "01-106a-106c",
+        "section_id": "comm_critias_0001",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_critias_0001",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Evidence matches the cited turn-transition and prayer records; insertion is at the unit start, and the concise relay framing is clear aloud."
+          },
+          {
+            "commentary_id": "comm_critias_0016",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Source and citation support the mirrored indulgence request and larger allowance; the edge follows a complete sentence before Critias continues, and the point is clear aloud."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "02-107a-108b",
+      "section_id": "comm_critias_0002",
+      "audit_brief_sha256": "c00f43b7b4be368608666d8341cbb36b7781a0384cff99e47af1d39a70d231a5",
+      "output_path": "scratch/commentary/audits/critias/02-107a-108b.json",
+      "output_sha256": "22880bc5edc2c8f3d028f94c59754d264a9e8b2931e8314a5ee839134732fb38",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "critias",
+        "unit_key": "02-107a-108b",
+        "section_id": "comm_critias_0002",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_critias_0002",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately orients the listener to Critias’s painting analogy, requests for indulgence, Hermocrates’s pre-granted turn, and Socrates’s theatrical warning; the edge is a complete sentence boundary."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "03-108c-109a",
+      "section_id": "comm_critias_0003",
+      "audit_brief_sha256": "a888e9a488b9d76c5b8bc6b7abbfac66f0eab5e7ea8a16b48e7b23bc6c600e5e",
+      "output_path": "scratch/commentary/audits/critias/03-108c-109a.json",
+      "output_sha256": "6ad11db08fd2455f78ea4490f205e3bc77c3c1f41e21ad94c0eec35c40a67f78",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "critias",
+        "unit_key": "03-108c-109a",
+        "section_id": "comm_critias_0003",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "04-109b-109e",
+      "section_id": "comm_critias_0004",
+      "audit_brief_sha256": "d8d918f9cc3dcbcf4eb9714200a0c7af9fd78266500991b7ca2d6cdf33bbbace",
+      "output_path": "scratch/commentary/audits/critias/04-109b-109e.json",
+      "output_sha256": "79e0f9fd30117dd5c0511766bb73035c27e41964a435e5dc75efd977f385cc8a",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "critias",
+        "unit_key": "04-109b-109e",
+        "section_id": "comm_critias_0004",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "05-110a-110d",
+      "section_id": "comm_critias_0005",
+      "audit_brief_sha256": "250d7b1b9c04c3c68f1497448330462aadd729eb148e7f493f87028de8ceedd0",
+      "output_path": "scratch/commentary/audits/critias/05-110a-110d.json",
+      "output_sha256": "35b7c8233c4be4c8dec0276c0c8a2303c7e734f8cbbc5e217c010d2b1546a296",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "critias",
+        "unit_key": "05-110a-110d",
+        "section_id": "comm_critias_0005",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_critias_0005",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately maps the unit’s leisure condition, preserved names, warrior class, common property, and guardian cross-reference. The edge falls between complete sentences before Critias’s reply."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "06-110e-111e",
+      "section_id": "comm_critias_0006",
+      "audit_brief_sha256": "971232180556b5389704723e76d7c224609d1963e3ee00267ce690b35c5da829",
+      "output_path": "scratch/commentary/audits/critias/06-110e-111e.json",
+      "output_sha256": "004d5b47d86a06a9b50fad2461f2048ea9806deace56c6887f8429d9ec022b49",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "critias",
+        "unit_key": "06-110e-111e",
+        "section_id": "comm_critias_0006",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_critias_0006",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames the claim, internal objection, erosion account, and surviving remains; after the opening land claim and before Critias’s supporting evidence, it prepares rather than disrupts."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "07-112a-112e",
+      "section_id": "comm_critias_0007",
+      "audit_brief_sha256": "962df7209afa12fa9c0ccc22c66e6622444e3ddf09362acce65f1608f497e9af",
+      "output_path": "scratch/commentary/audits/critias/07-112a-112e.json",
+      "output_sha256": "e83b6f843096040eb332dbda013fc64e9731adb34936460120c67aeb50efd26f",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "critias",
+        "unit_key": "07-112a-112e",
+        "section_id": "comm_critias_0007",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_critias_0028",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately interprets the cited domestic practices and their continuity; the edge follows the city-layout transition and precedes the acropolis description without splitting or displacing the exchange."
+          },
+          {
+            "commentary_id": "comm_critias_0029",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately identifies the childhood-memory hedge and communal handoff; the edge follows the enemy-story transition and precedes Critias’s explanation of Greek names without disrupting flow."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "08-113a-113e",
+      "section_id": "comm_critias_0008",
+      "audit_brief_sha256": "ebbee02d1f8557d237a3d2e05ff2efa052aff774d22b2c65abe57dfdb52fc7e5",
+      "output_path": "scratch/commentary/audits/critias/08-113a-113e.json",
+      "output_sha256": "12a5b5518026252fc00c4f908d19859613deb5bf3197d8c4e2aea367b2ce1902",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "critias",
+        "unit_key": "08-113a-113e",
+        "section_id": "comm_critias_0008",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_critias_0008",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames the naming pause and transition, then highlights Atlantis's foundation, concentric-ring craft image, and pre-nautical setting. The edge follows a complete setup sentence and precedes Critias's account."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "09-114a-115c",
+      "section_id": "comm_critias_0009",
+      "audit_brief_sha256": "9bc522d540ab2bc74cadd5b2980cbd3d6409bfb019b8ae88b62bd5d25d23ca29",
+      "output_path": "scratch/commentary/audits/critias/09-114a-115c.json",
+      "output_sha256": "25611f78afca19096bb429fe48e6953b841d88bde724b629360891e455192d10",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "critias",
+        "unit_key": "09-114a-115c",
+        "section_id": "comm_critias_0009",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_critias_0033",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately explains the naming and Greek/indigenous distinction, with interpretive value beyond recap. The edge follows Poseidon’s setup and precedes Critias’s naming sequence."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "10-115d-117e",
+      "section_id": "comm_critias_0010",
+      "audit_brief_sha256": "5db9fb76ba875d41c8f76e9516aaf3e648f4310f46339fca95c2c6ae5da8feb3",
+      "output_path": "scratch/commentary/audits/critias/10-115d-117e.json",
+      "output_sha256": "21dba15b0cb92386af23f0678ad66fbd4a635b6e36b30c48ec3a42f273455b48",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "critias",
+        "unit_key": "10-115d-117e",
+        "section_id": "comm_critias_0010",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_critias_0010",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "The measured layout and hierarchy are source-grounded by the cited observations and remain clear at the completed playback boundary."
+          }
+        ]
+      },
+      "provenance": {
+        "path": "wiki/submissions/commentary-audit/critias/0001-delegated-audit-10-115d-117e.json",
+        "sha256": "757e768f2c5345cf162404d9b890b6c5eee8dc28eb5a2e436f70ff009c62c4a2"
+      }
+    },
+    {
+      "unit_key": "11-118a-119c",
+      "section_id": "comm_critias_0011",
+      "audit_brief_sha256": "833853e37da9bf807f5022a9fa6bce69288987cf6dc752fa3e88721e47b7cca4",
+      "output_path": "scratch/commentary/audits/critias/11-118a-119c.json",
+      "output_sha256": "1baf0e63b78dd7be6908f9f3b862e0db844e667d52e5ce193d105b9a8b682b68",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "critias",
+        "unit_key": "11-118a-119c",
+        "section_id": "comm_critias_0011",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "12-119d-120d",
+      "section_id": "comm_critias_0012",
+      "audit_brief_sha256": "074ae78d3739331985e18587f532453f08d541a122bb993d8b9f0cf053907700",
+      "output_path": "scratch/commentary/audits/critias/12-119d-120d.json",
+      "output_sha256": "ca4e3b0983e7dbb30284b36fcbcfad9a6e88d02fb4c62ad6467e84f88e735f07",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "critias",
+        "unit_key": "12-119d-120d",
+        "section_id": "comm_critias_0012",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_critias_0012",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "The overview accurately covers the ritual, nocturnal judgment, constitutional laws, and mythic pivot; the edge falls after the 119e period and before the complete 120a sentence."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "13-120e-121c",
+      "section_id": "comm_critias_0013",
+      "audit_brief_sha256": "1a36282d07ec7ae760f82fa51f53f637d7ddf24e17a150c8e50541c16ff46037",
+      "output_path": "scratch/commentary/audits/critias/13-120e-121c.json",
+      "output_sha256": "41bff1e8c375d58b27f74f3054c178991775455677a6fa972fd752af6970374f",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "critias",
+        "unit_key": "13-120e-121c",
+        "section_id": "comm_critias_0013",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_critias_0013",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "The change from light wealth to burden and the divine judgment frame are supported by the cited claims and placed at a complete sentence edge."
+          }
+        ]
+      },
+      "provenance": {
+        "path": "wiki/submissions/commentary-audit/critias/0002-delegated-audit-13-120e-121c.json",
+        "sha256": "9e8a1f31f2eaf92e55d9c71eabd67cdb76c7c6817897ba004e47d9c203fe3761"
+      }
+    }
+  ],
+  "acceptance": {
+    "decision": "accepted",
+    "reviewer": "manifest-batch-1-delegated-luna-reviewer-20260823",
+    "reviewed_on": "2026-08-23",
+    "rationale": "Independent Luna source, accepted-evidence, and placement sample passed for the current Critias ledger.",
+    "sampled_commentary_ids": [
+      "comm_critias_0001",
+      "comm_critias_0002",
+      "comm_critias_0005",
+      "comm_critias_0006",
+      "comm_critias_0008",
+      "comm_critias_0010",
+      "comm_critias_0012",
+      "comm_critias_0013",
+      "comm_critias_0016",
+      "comm_critias_0028",
+      "comm_critias_0029",
+      "comm_critias_0033"
+    ],
+    "review_note": {
+      "path": "wiki/review/2026-08-23-commentary-quality-critias-luna-sample.md",
+      "sha256": "2a29feb8229a25fbe98602edfd22ad8c897cb91417d6e163b2ae7e69a02ad0ab"
+    }
+  }
+}

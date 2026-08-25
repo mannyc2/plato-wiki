@@ -1,0 +1,46 @@
+dialogue: phaedo
+turn_index_path: derived/plato/turns/phaedo.toon
+turn_index_sha256: 57886fb23f485b04465606c4c82071357299a00e5e2138af62b79c09c6d5f847
+token_index_path: derived/plato/tokens/phaedo.toon
+token_index_sha256: e2aef8a0810aa28328508c936774d711a27fb072198efb8331d61cee2ff95b02
+speakers[2]:
+  speaker | turns | total_tokens | median_tokens | p90_tokens | max_tokens | long_turns
+  ΕΧ.     | 17 | 393 | 16 | 35 | 130 | 2
+  ΦΑΙΔ.   | 18 | 21998 | 23 | 4713 | 10767 | 3
+turns[35]:
+  turn_id          | speaker | start_marker | end_marker | start_char | end_char | greek_char_count | token_count | dialogue_long_turn | speaker_long_turn
+  turn_phaedo_0001 | ΕΧ.     | 57a          | 57a        | 0 | 152 | 90 | 20 | no | no
+  turn_phaedo_0002 | ΦΑΙΔ.   | 57a          | 57a        | 152 | 194 | 19 | 4 | no | no
+  turn_phaedo_0003 | ΕΧ.     | 57a          | 57b        | 194 | 599 | 280 | 64 | no | yes
+  turn_phaedo_0004 | ΦΑΙΔ.   | 58a          | 58a        | 599 | 666 | 48 | 11 | no | no
+  turn_phaedo_0005 | ΕΧ.     | 58a          | 58a        | 666 | 824 | 112 | 24 | no | no
+  turn_phaedo_0006 | ΦΑΙΔ.   | 58a          | 58a        | 824 | 1010 | 110 | 23 | no | no
+  turn_phaedo_0007 | ΕΧ.     | 58a          | 58a        | 1010 | 1036 | 18 | 6 | no | no
+  turn_phaedo_0008 | ΦΑΙΔ.   | 58a          | 58c        | 1036 | 1996 | 648 | 140 | yes | no
+  turn_phaedo_0009 | ΕΧ.     | 58c          | 58c        | 1996 | 2208 | 153 | 35 | no | no
+  turn_phaedo_0010 | ΦΑΙΔ.   | 58d          | 58d        | 2208 | 2264 | 38 | 8 | no | no
+  turn_phaedo_0011 | ΕΧ.     | 58d          | 58d        | 2264 | 2362 | 79 | 16 | no | no
+  turn_phaedo_0012 | ΦΑΙΔ.   | 58d          | 58d        | 2362 | 2527 | 124 | 23 | no | no
+  turn_phaedo_0013 | ΕΧ.     | 58d          | 58d        | 2527 | 2669 | 101 | 20 | no | no
+  turn_phaedo_0014 | ΦΑΙΔ.   | 58e          | 59a        | 2669 | 3073 | 293 | 58 | no | no
+  turn_phaedo_0015 | ΦΑΙΔ.   | 59a          | 59b        | 3073 | 3626 | 427 | 89 | no | no
+  turn_phaedo_0016 | ΕΧ.     | 59b          | 59b        | 3626 | 3642 | 10 | 4 | no | no
+  turn_phaedo_0017 | ΦΑΙΔ.   | 59b          | 59b        | 3642 | 3732 | 73 | 14 | no | no
+  turn_phaedo_0018 | ΕΧ.     | 59b          | 59b        | 3732 | 3794 | 35 | 7 | no | no
+  turn_phaedo_0019 | ΦΑΙΔ.   | 59b          | 59b        | 3794 | 4193 | 203 | 41 | no | no
+  turn_phaedo_0020 | ΕΧ.     | 59b          | 59b        | 4193 | 4221 | 21 | 5 | no | no
+  turn_phaedo_0021 | ΦΑΙΔ.   | 59c          | 59c        | 4221 | 4430 | 79 | 17 | no | no
+  turn_phaedo_0022 | ΕΧ.     | 59c          | 59c        | 4430 | 4511 | 41 | 7 | no | no
+  turn_phaedo_0023 | ΦΑΙΔ.   | 59c          | 59c        | 4511 | 4573 | 34 | 8 | no | no
+  turn_phaedo_0024 | ΕΧ.     | 59c          | 59c        | 4573 | 4597 | 17 | 5 | no | no
+  turn_phaedo_0025 | ΦΑΙΔ.   | 59c          | 59c        | 4597 | 4641 | 36 | 6 | no | no
+  turn_phaedo_0026 | ΕΧ.     | 59c          | 59c        | 4641 | 4681 | 28 | 9 | no | no
+  turn_phaedo_0027 | ΦΑΙΔ.   | 59c          | 88c        | 4681 | 74605 | 50582 | 10767 | yes | yes
+  turn_phaedo_0028 | ΕΧ.     | 88c          | 88e        | 74605 | 75454 | 604 | 130 | yes | yes
+  turn_phaedo_0029 | ΦΑΙΔ.   | 88e          | 89a        | 75454 | 75959 | 384 | 75 | no | no
+  turn_phaedo_0030 | ΕΧ.     | 89a          | 89a        | 75959 | 75971 | 7 | 3 | no | no
+  turn_phaedo_0031 | ΦΑΙΔ.   | 89a          | 102a       | 75971 | 105377 | 21678 | 4713 | yes | yes
+  turn_phaedo_0032 | ΕΧ.     | 102a         | 102a       | 105377 | 105527 | 92 | 21 | no | no
+  turn_phaedo_0033 | ΦΑΙΔ.   | 102a         | 102a       | 105527 | 105607 | 49 | 11 | no | no
+  turn_phaedo_0034 | ΕΧ.     | 102a         | 102a       | 105607 | 105695 | 67 | 17 | no | no
+  turn_phaedo_0035 | ΦΑΙΔ.   | 102a         | 118a       | 105695 | 143492 | 27664 | 5990 | yes | yes

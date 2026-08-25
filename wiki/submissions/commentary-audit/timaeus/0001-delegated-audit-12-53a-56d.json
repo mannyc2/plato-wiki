@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-delegated-audit-12-53a-56d",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "timaeus",
+  "unit_key": "12-53a-56d",
+  "source_path": "scratch/commentary/delegated-audits/timaeus/12-53a-56d.json",
+  "source_sha256": "96ae42c0fb4057c19a58ea6f44e94df2d0255b9a855b1334ebd445cf225ffc55",
+  "target_path": "wiki/submissions/commentary-audit/timaeus/12-53a-56d.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "3fe6b3eea7aa7a9c89a87de0983f3c82d67674ceafc48e8c4d58f07eae0f146e",
+  "applied_at": "2026-08-24T01:15:36.809Z",
+  "applied_ids": [
+    "comm_timaeus_0012"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "timaeus",
+    "unit_key": "12-53a-56d",
+    "job": {
+      "job_id": "audit:timaeus:12-53a-56d",
+      "input_sha256": "3d1e91996311507d45771ac997394856492949f4c025dc821318d3a1ec524a44",
+      "audit_brief_path": "scratch/commentary/audit-briefs/timaeus/12-53a-56d.md",
+      "audit_brief_sha256": "26b475ab1821c3c210937ef4683e36efb87459daeaff96a99f0b501f8361f1b0",
+      "output_path": "scratch/commentary/audits/timaeus/12-53a-56d.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/timaeus/12-53a-56d.output.json",
+    "output_sha256": "3fe6b3eea7aa7a9c89a87de0983f3c82d67674ceafc48e8c4d58f07eae0f146e",
+    "provenance": {
+      "auditor": "batch-c-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "parmenides",
+  "source_path": "scratch/commentary/rewrites/parmenides/03-131b-135d.json",
+  "source_sha256": "7e527d4c365ea858a2ef0bac9d2a06cb57e6da4d9c11392487d7f4706a9e053c",
+  "target_path": "wiki/commentary/parmenides.md",
+  "target_sha256_before": "8b70ff05290270d0e98f40d9818f500a8077a44640c337b303bbacca1538a95d",
+  "target_sha256_after": "5af7ceb25cef08bd3aa8ba552292638fcede5f7690ce1ae5eb869009432cbe2e",
+  "applied_at": "2026-08-21T15:25:48.641Z",
+  "applied_ids": [
+    "comm_parmenides_0003",
+    "comm_parmenides_0009"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "parmenides",
+      "unit_key": "03-131b-135d",
+      "section_id": "comm_parmenides_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/parmenides/03-131b-135d.json",
+        "sha256": "e0bbc0e9c6915bb746ec5dcc1ef5c08985fc84481484add9c4a1ce98c728b0ef"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_parmenides_0003",
+          "title": "A proposal under pressure",
+          "body": "Hear this section as a stress test for participation, not as a catalogue of rival definitions. The whole-in-many proposal would make the one Form separate from itself; the part-in-many proposal makes the Form divisible and yields absurdities for largeness, equality, and smallness. When Socrates shifts from Forms as thoughts to Forms as paradigms, hear that as another attempt to save the account—not yet as a solution.",
+          "cites": {
+            "observations": [
+              "obs_parmenides_0029",
+              "obs_parmenides_0032",
+              "obs_parmenides_0034"
+            ],
+            "claims": [
+              "claim_parmenides_0001",
+              "claim_parmenides_0003"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "parmenides",
+      "unit_key": "09-149d-155d",
+      "section_id": "comm_parmenides_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/parmenides/09-149d-155d.json",
+        "sha256": "3eb855445cb10aafe68254707b15c9320344f05339ba5f4ad47cf62f5be1925d"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_parmenides_0009",
+          "title": "The One in Time",
+          "body": "Here “is” is tied to the present, while “was” and “will be” belong to past and future. The One then becomes older and younger than itself, yet also neither, depending on whether we follow becoming or equal duration. From 153a, comparable results appear between the One and the others. One way to read this sequence is as a test of temporal descriptions, not a single settled chronology.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_parmenides_0051",
+              "claim_parmenides_0052",
+              "claim_parmenides_0053"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_parmenides_0003",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0003\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"Participation and training\"\nstephanus_span: 131b-135d\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 131b-135d\n  start_marker: 131b\n  end_marker: 135d\n  start_char: 9977\n  end_char: 19907\n  text_sha256: \"06ed4c992dc4ab0a3125e382c8c54e3945c3944445cdabfd62a0aad97febf7f5\"\nbody: \"Parmenides turns participation into a test of explanatory discipline. If a Form is wholly in many things, it separates from itself; if divided, largeness, equality, and smallness produce absurd consequences. Socrates revises the account from Forms as thoughts to Forms as paradigms. I read the closing appeal to training as the method demanded here: define slowly, and follow each definition through its consequences.\"\ncites:\n  observations: [\"obs_parmenides_0029\", \"obs_parmenides_0032\", \"obs_parmenides_0034\"]\n  claims: [\"claim_parmenides_0001\", \"claim_parmenides_0003\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0009",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0009\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"Time Turns the One Relational\"\nstephanus_span: 149d-155d\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 149d-155d\n  start_marker: 149d\n  end_marker: 155d\n  start_char: 49293\n  end_char: 62709\n  text_sha256: \"a1bdb1185f533bf13693779230b01cb8bba6af0836a6ff0f4a57f60c19459ee3\"\nbody: \"Here the hypothesis turns time into a stress test for relation. Being is linked to the present, and the One becomes older and younger than itself while also being neither older nor younger, depending on whether we track becoming, the now, or equal duration. From 153a the argument explicitly includes the others: different accounts of generation make the One older, younger, and the same age as them. The point is not a final chronology but the pressure produced when each account is followed consistently.\"\ncites:\n  observations: []\n  claims: [\"claim_parmenides_0051\", \"claim_parmenides_0052\", \"claim_parmenides_0053\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

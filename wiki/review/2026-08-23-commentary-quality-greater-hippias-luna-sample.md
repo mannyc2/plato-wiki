@@ -1,0 +1,27 @@
+# Commentary quality-audit acceptance
+
+dialogue: greater-hippias
+decision: accepted
+reviewer: manifest-batch-1-delegated-luna-reviewer-20260823
+reviewed_on: 2026-08-23
+rationale: Independent Luna source, accepted-evidence, and placement sample passed for the current Greater Hippias ledger.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sampled_commentary_ids:
+- comm_greater-hippias_0001
+- comm_greater-hippias_0002
+- comm_greater-hippias_0005
+- comm_greater-hippias_0006
+- comm_greater-hippias_0007
+- comm_greater-hippias_0009
+- comm_greater-hippias_0010
+- comm_greater-hippias_0011
+- comm_greater-hippias_0014
+predecessor_manifest_path: wiki/commentary-audits/greater-hippias.json
+predecessor_manifest_sha256: d16e7997500c9c3de5eb89c811d2bb6cb94aac725e0aab05e5273bf7fa734b71
+predecessor_manifest_history_path: wiki/commentary-audits/history/greater-hippias/d16e7997500c9c3de5eb89c811d2bb6cb94aac725e0aab05e5273bf7fa734b71.json
+predecessor_manifest_history_sha256: d16e7997500c9c3de5eb89c811d2bb6cb94aac725e0aab05e5273bf7fa734b71
+predecessor_review_note_path: wiki/review/2026-08-21-commentary-quality-greater-hippias-luna-sample.md
+predecessor_review_note_sha256: b8742ac3c05bd4cff47a5592c700bfc47118270200d007e89cd672afb7186b77
+predecessor_review_note_history_path: wiki/review/commentary-quality-history/greater-hippias/b8742ac3c05bd4cff47a5592c700bfc47118270200d007e89cd672afb7186b77.md
+predecessor_review_note_history_sha256: b8742ac3c05bd4cff47a5592c700bfc47118270200d007e89cd672afb7186b77

@@ -1,0 +1,23 @@
+# Commentary quality-audit acceptance
+
+dialogue: phaedo
+decision: accepted
+reviewer: manifest-batch-2-delegated-luna-reviewer-20260823
+reviewed_on: 2026-08-23
+rationale: All 5 active accepted IDs sampled in ledger order; prose, Greek source, cited evidence, placement, and audit checks pass with no defects.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sampled_commentary_ids:
+- comm_phaedo_0003
+- comm_phaedo_0005
+- comm_phaedo_0010
+- comm_phaedo_0013
+- comm_phaedo_0014
+predecessor_manifest_path: wiki/commentary-audits/phaedo.json
+predecessor_manifest_sha256: 44e8a7ef7a594d6aebb91a50d7298115038d7f380d2d6222493d658ceb593996
+predecessor_manifest_history_path: wiki/commentary-audits/history/phaedo/44e8a7ef7a594d6aebb91a50d7298115038d7f380d2d6222493d658ceb593996.json
+predecessor_manifest_history_sha256: 44e8a7ef7a594d6aebb91a50d7298115038d7f380d2d6222493d658ceb593996
+predecessor_review_note_path: wiki/review/2026-08-21-commentary-quality-phaedo-luna-sample.md
+predecessor_review_note_sha256: 41474c86e0f4ebd6be2471e585f71ffd8fd8f9675f9216ac5d5a0ae395412559
+predecessor_review_note_history_path: wiki/review/commentary-quality-history/phaedo/41474c86e0f4ebd6be2471e585f71ffd8fd8f9675f9216ac5d5a0ae395412559.md
+predecessor_review_note_history_sha256: 41474c86e0f4ebd6be2471e585f71ffd8fd8f9675f9216ac5d5a0ae395412559

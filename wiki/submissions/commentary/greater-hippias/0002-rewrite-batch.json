@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "greater-hippias",
+  "source_path": "scratch/commentary/rewrites/greater-hippias/10-293d-294e.json",
+  "source_sha256": "3f040cf08d849c67945636a538cf9ffb3e84aceada9cfe3abc0e6f5c85f02963",
+  "target_path": "wiki/commentary/greater-hippias.md",
+  "target_sha256_before": "8bb33b4e21c95e2f9a8c5d50befb1301cb0e6008dec29525f9792223628b76af",
+  "target_sha256_after": "83d1bf13582f6efcab28601ac23c573d65b33b68b23b93aa6d777e927b2035e2",
+  "applied_at": "2026-08-23T21:17:22.113Z",
+  "applied_ids": [
+    "comm_greater-hippias_0010"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "greater-hippias",
+      "unit_key": "10-293d-294e",
+      "section_id": "comm_greater-hippias_0010",
+      "audit_output": {
+        "path": "scratch/commentary/audits/greater-hippias/10-293d-294e.json",
+        "sha256": "d624aa6b1e1b487cfed9e5ccbae6c9e123a62bbe6f211bc08bf4e23e70b9d76e"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_greater-hippias_0010",
+          "title": "The voice behind the candidate",
+          "body": "Socrates reports the candidate as coming from an interrogating voice, not as a proposal made by Hippias himself.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_greater-hippias_0010",
+      "body": "```yaml\ncommentary_id: comm_greater-hippias_0010\nsource_work: Greater Hippias\nblock_kind: section\nplacement: before\ntitle: \"Is the fitting the beautiful?\"\nstephanus_span: 293d-294e\nsource_ref:\n  source_path: raw/plato/greek/greater-hippias.txt\n  stephanus_span: 293d-294e\n  start_marker: 293d\n  end_marker: 294e\n  start_char: 26548\n  end_char: 29755\n  text_sha256: \"e3a237e832b85cad328f007f0ddc9327822eb3f4b12bbf61da98cc254c86839c\"\nbody: \"Socrates revives Hippias's earlier suggestion and tests it: does the fitting make things be beautiful, or merely appear so? Once Hippias concedes it produces appearance, the fitting cannot be what the inquiry seeks, and the candidate is conceded away.\"\ncites:\n  observations: []\n  claims: [\"claim_greater-hippias_0018\"]\n  relations: [\"rel_greater-hippias_0002\"]\n  dossiers: [\"definition_ladder/definition_rejected\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

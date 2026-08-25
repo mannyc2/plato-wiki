@@ -1,0 +1,111 @@
+dialogue: cratylus
+source_path: raw/plato/greek/cratylus.txt
+source_sha256: 8efd1736ad24fd8524fae3d0281f278bbfec921174ab8105d7c2bdf3333b5aca
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[104]:
+  group             | form      | start_char | end_char | marker | turn_id            | token_ids
+  assent_concession | πάνυ γε   | 3269       | 3276     | 385b   | turn_cratylus_0016 | tok_cratylus_000524,tok_cratylus_000525
+  assent_concession | ναί       | 3369       | 3372     | 385b   | turn_cratylus_0018 | tok_cratylus_000546
+  assent_concession | πάνυ γε   | 3431       | 3438     | 385b   | turn_cratylus_0020 | tok_cratylus_000559,tok_cratylus_000560
+  assent_concession | ναί       | 3823       | 3826     | 385c   | turn_cratylus_0028 | tok_cratylus_000629
+  assent_concession | ναί       | 3856       | 3859     | 385c   | turn_cratylus_0030 | tok_cratylus_000636
+  assent_concession | ναί       | 4070       | 4073     | 385d   | turn_cratylus_0036 | tok_cratylus_000676
+  definition_prompt | οὐσία     | 4566       | 4571     | 385e   | turn_cratylus_0039 | tok_cratylus_000762
+  definition_prompt | εἶδος     | 6583       | 6588     | 386e   | turn_cratylus_0057 | tok_cratylus_001107
+  assent_concession | πάνυ γε   | 6623       | 6630     | 386e   | turn_cratylus_0058 | tok_cratylus_001114,tok_cratylus_001115
+  assent_concession | πάνυ γε   | 7334       | 7341     | 387b   | turn_cratylus_0064 | tok_cratylus_001234,tok_cratylus_001235
+  assent_concession | ναί       | 7404       | 7407     | 387b   | turn_cratylus_0066 | tok_cratylus_001249
+  assent_concession | πάνυ γε   | 7766       | 7773     | 387c   | turn_cratylus_0070 | tok_cratylus_001314,tok_cratylus_001315
+  assent_concession | ναί       | 7891       | 7894     | 387c   | turn_cratylus_0072 | tok_cratylus_001335
+  assent_concession | ναί       | 8337       | 8340     | 387d   | turn_cratylus_0078 | tok_cratylus_001409
+  assent_concession | πάνυ γε   | 8434       | 8441     | 387e   | turn_cratylus_0080 | tok_cratylus_001426,tok_cratylus_001427
+  definition_prompt | τί ἐστι   | 8663       | 8670     | 388a   | turn_cratylus_0089 | tok_cratylus_001469,tok_cratylus_001470
+  assent_concession | πάνυ γε   | 8690       | 8697     | 388a   | turn_cratylus_0090 | tok_cratylus_001475,tok_cratylus_001476
+  assent_concession | ναί       | 8778       | 8781     | 388a   | turn_cratylus_0092 | tok_cratylus_001491
+  assent_concession | ναί       | 8884       | 8887     | 388b   | turn_cratylus_0094 | tok_cratylus_001506
+  assent_concession | πάνυ γε   | 8962       | 8969     | 388b   | turn_cratylus_0096 | tok_cratylus_001520,tok_cratylus_001521
+  assent_concession | πάνυ γε   | 9160       | 9167     | 388b   | turn_cratylus_0100 | tok_cratylus_001554,tok_cratylus_001555
+  assent_concession | ναί       | 9276       | 9279     | 388c   | turn_cratylus_0102 | tok_cratylus_001571
+  assent_concession | ναί       | 9457       | 9460     | 388c   | turn_cratylus_0106 | tok_cratylus_001601
+  assent_concession | πάνυ γε   | 10617      | 10624    | 389a   | turn_cratylus_0128 | tok_cratylus_001801,tok_cratylus_001802
+  aporia_reset      | πάλιν     | 10686      | 10691    | 389b   | turn_cratylus_0129 | tok_cratylus_001813
+  definition_prompt | εἶδος     | 10751      | 10756    | 389b   | turn_cratylus_0129 | tok_cratylus_001824
+  definition_prompt | εἶδος     | 11032      | 11037    | 389b   | turn_cratylus_0133 | tok_cratylus_001873
+  assent_concession | ναί       | 11134      | 11137    | 389c   | turn_cratylus_0134 | tok_cratylus_001888
+  assent_concession | πάνυ γε   | 11434      | 11441    | 389c   | turn_cratylus_0136 | tok_cratylus_001938,tok_cratylus_001939
+  assent_concession | ναί       | 11610      | 11613    | 389d   | turn_cratylus_0140 | tok_cratylus_001967
+  assent_concession | πάνυ γε   | 12237      | 12244    | 390a   | turn_cratylus_0142 | tok_cratylus_002072,tok_cratylus_002073
+  definition_prompt | εἶδος     | 12354      | 12359    | 390a   | turn_cratylus_0143 | tok_cratylus_002094
+  assent_concession | πάνυ γε   | 12478      | 12485    | 390a   | turn_cratylus_0144 | tok_cratylus_002113,tok_cratylus_002114
+  definition_prompt | εἶδος     | 12534      | 12539    | 390b   | turn_cratylus_0145 | tok_cratylus_002123
+  assent_concession | πάνυ γε   | 12848      | 12855    | 390b   | turn_cratylus_0148 | tok_cratylus_002173,tok_cratylus_002174
+  assent_concession | ναί       | 13087      | 13090    | 390c   | turn_cratylus_0154 | tok_cratylus_002214
+  assent_concession | πάνυ γε   | 13147      | 13154    | 390c   | turn_cratylus_0156 | tok_cratylus_002225,tok_cratylus_002226
+  assent_concession | ναί       | 13194      | 13197    | 390c   | turn_cratylus_0158 | tok_cratylus_002234
+  definition_prompt | εἶδος     | 13892      | 13897    | 390e   | turn_cratylus_0165 | tok_cratylus_002343
+  assent_concession | πάνυ γε   | 14532      | 14539    | 391b   | turn_cratylus_0168 | tok_cratylus_002447,tok_cratylus_002448
+  assent_concession | πάνυ γε   | 16664      | 16671    | 392b   | turn_cratylus_0182 | tok_cratylus_002807,tok_cratylus_002808
+  definition_prompt | οὐσία     | 19349      | 19354    | 393d   | turn_cratylus_0205 | tok_cratylus_003249
+  assent_concession | πάνυ γε   | 21505      | 21512    | 394d   | turn_cratylus_0212 | tok_cratylus_003591,tok_cratylus_003592
+  assent_concession | πάνυ γε   | 21770      | 21777    | 394d   | turn_cratylus_0214 | tok_cratylus_003639,tok_cratylus_003640
+  assent_concession | πάνυ γε   | 31764      | 31771    | 399c   | turn_cratylus_0270 | tok_cratylus_005238,tok_cratylus_005239
+  assent_concession | ναί       | 32068      | 32071    | 399d   | turn_cratylus_0275 | tok_cratylus_005286
+  assent_concession | ναί       | 33263      | 33266    | 400b   | turn_cratylus_0287 | tok_cratylus_005486
+  assent_concession | ναί       | 34087      | 34090    | 400d   | turn_cratylus_0290 | tok_cratylus_005620
+  definition_prompt | οὐσία     | 35508      | 35513    | 401c   | turn_cratylus_0299 | tok_cratylus_005848
+  assent_concession | ναί       | 37785      | 37788    | 402d   | turn_cratylus_0314 | tok_cratylus_006206
+  assent_concession | πάνυ γε   | 37904      | 37911    | 402d   | turn_cratylus_0316 | tok_cratylus_006227,tok_cratylus_006228
+  assent_concession | ναί       | 39610      | 39613    | 403c   | turn_cratylus_0329 | tok_cratylus_006502
+  assent_concession | ναί       | 39721      | 39724    | 403d   | turn_cratylus_0331 | tok_cratylus_006519
+  assent_concession | ναί       | 46579      | 46582    | 407a   | turn_cratylus_0365 | tok_cratylus_007623
+  assent_concession | πάνυ γε   | 49370      | 49377    | 408c   | turn_cratylus_0383 | tok_cratylus_008085,tok_cratylus_008086
+  assent_concession | πάνυ γε   | 49609      | 49616    | 408c   | turn_cratylus_0385 | tok_cratylus_008130,tok_cratylus_008131
+  assent_concession | πάνυ γε   | 50325      | 50332    | 408e   | turn_cratylus_0391 | tok_cratylus_008253,tok_cratylus_008254
+  assent_concession | ναί       | 50969      | 50972    | 409b   | turn_cratylus_0399 | tok_cratylus_008363
+  assent_concession | πάνυ γε   | 51173      | 51180    | 409b   | turn_cratylus_0401 | tok_cratylus_008400,tok_cratylus_008401
+  assent_concession | πάνυ γε   | 51239      | 51246    | 409b   | turn_cratylus_0403 | tok_cratylus_008410,tok_cratylus_008411
+  definition_prompt | εἶδος     | 54429      | 54434    | 411a   | turn_cratylus_0425 | tok_cratylus_008931
+  assent_concession | ναί       | 65688      | 65691    | 416c   | turn_cratylus_0470 | tok_cratylus_010723
+  assent_concession | πάνυ γε   | 65887      | 65894    | 416c   | turn_cratylus_0474 | tok_cratylus_010759,tok_cratylus_010760
+  assent_concession | πάνυ γε   | 66093      | 66100    | 416d   | turn_cratylus_0480 | tok_cratylus_010796,tok_cratylus_010797
+  assent_concession | ναί       | 68033      | 68036    | 417d   | turn_cratylus_0494 | tok_cratylus_011085
+  assent_concession | πάνυ γε   | 70108      | 70115    | 418d   | turn_cratylus_0510 | tok_cratylus_011408,tok_cratylus_011409
+  definition_prompt | ἰδέα      | 70454      | 70458    | 418e   | turn_cratylus_0513 | tok_cratylus_011461
+  divine_legal      | δίκη      | 72223      | 72227    | 419d   | turn_cratylus_0517 | tok_cratylus_011730
+  aporia_reset      | πάλιν     | 75746      | 75751    | 421b   | turn_cratylus_0526 | tok_cratylus_012271
+  definition_prompt | οὐσία     | 75944      | 75949    | 421b   | turn_cratylus_0526 | tok_cratylus_012300
+  assent_concession | πάνυ γε   | 78395      | 78402    | 422c   | turn_cratylus_0543 | tok_cratylus_012701,tok_cratylus_012702
+  assent_concession | πάνυ γε   | 78665      | 78672    | 422d   | turn_cratylus_0547 | tok_cratylus_012748,tok_cratylus_012749
+  assent_concession | ναί       | 79666      | 79669    | 423b   | turn_cratylus_0555 | tok_cratylus_012919
+  assent_concession | πάνυ γε   | 80631      | 80638    | 423d   | turn_cratylus_0567 | tok_cratylus_013084,tok_cratylus_013085
+  assent_concession | ναί       | 80803      | 80806    | 423d   | turn_cratylus_0569 | tok_cratylus_013117
+  definition_prompt | οὐσία     | 80841      | 80846    | 423e   | turn_cratylus_0570 | tok_cratylus_013125
+  definition_prompt | οὐσία     | 80954      | 80959    | 423e   | turn_cratylus_0570 | tok_cratylus_013146
+  assent_concession | ναί       | 82251      | 82254    | 424c   | turn_cratylus_0581 | tok_cratylus_013355
+  aporia_reset      | πάλιν     | 83416      | 83421    | 425a   | turn_cratylus_0582 | tok_cratylus_013545
+  assent_concession | πάνυ γε   | 91507      | 91514    | 428e   | turn_cratylus_0604 | tok_cratylus_014834,tok_cratylus_014835
+  assent_concession | πάνυ γε   | 91584      | 91591    | 428e   | turn_cratylus_0606 | tok_cratylus_014847,tok_cratylus_014848
+  assent_concession | πάνυ γε   | 91846      | 91853    | 429a   | turn_cratylus_0610 | tok_cratylus_014892,tok_cratylus_014893
+  assent_concession | ναί       | 92021      | 92024    | 429a   | turn_cratylus_0612 | tok_cratylus_014922
+  assent_concession | ὁμολογεῖς | 94097      | 94106    | 430a   | turn_cratylus_0635 | tok_cratylus_015297
+  assent_concession | ναί       | 94256      | 94259    | 430b   | turn_cratylus_0638 | tok_cratylus_015320
+  assent_concession | πάνυ γε   | 95676      | 95683    | 430e   | turn_cratylus_0652 | tok_cratylus_015575,tok_cratylus_015576
+  aporia_reset      | πάλιν     | 95696      | 95701    | 430e   | turn_cratylus_0653 | tok_cratylus_015580
+  assent_concession | ναί       | 97207      | 97210    | 431d   | turn_cratylus_0660 | tok_cratylus_015837
+  assent_concession | ναί       | 97623      | 97626    | 431e   | turn_cratylus_0664 | tok_cratylus_015912
+  assent_concession | ναί       | 97680      | 97683    | 431e   | turn_cratylus_0666 | tok_cratylus_015921
+  assent_concession | ναί       | 100925     | 100928   | 433b   | turn_cratylus_0682 | tok_cratylus_016476
+  assent_concession | πάνυ γε   | 100982     | 100989   | 433c   | turn_cratylus_0684 | tok_cratylus_016485,tok_cratylus_016486
+  assent_concession | ναί       | 102842     | 102845   | 434b   | turn_cratylus_0696 | tok_cratylus_016803
+  assent_concession | ναί       | 103098     | 103101   | 434c   | turn_cratylus_0700 | tok_cratylus_016849
+  assent_concession | πάνυ γε   | 103206     | 103213   | 434c   | turn_cratylus_0702 | tok_cratylus_016865,tok_cratylus_016866
+  assent_concession | ναί       | 104189     | 104192   | 435a   | turn_cratylus_0714 | tok_cratylus_017044
+  assent_concession | ναί       | 104272     | 104275   | 435a   | turn_cratylus_0716 | tok_cratylus_017057
+  assent_concession | ναί       | 106958     | 106961   | 436b   | turn_cratylus_0728 | tok_cratylus_017517
+  aporia_reset      | πάλιν     | 108035     | 108040   | 436e   | turn_cratylus_0731 | tok_cratylus_017693
+  aporia_reset      | πάλιν     | 109530     | 109535   | 437c   | turn_cratylus_0733 | tok_cratylus_017922
+  aporia_reset      | πάλιν     | 109962     | 109967   | 438a   | turn_cratylus_0737 | tok_cratylus_017991
+  assent_concession | ναί       | 112109     | 112112   | 439a   | turn_cratylus_0756 | tok_cratylus_018364
+  definition_prompt | εἶδος     | 114447     | 114452   | 440a   | turn_cratylus_0771 | tok_cratylus_018769
+  definition_prompt | εἶδος     | 114514     | 114519   | 440b   | turn_cratylus_0771 | tok_cratylus_018779

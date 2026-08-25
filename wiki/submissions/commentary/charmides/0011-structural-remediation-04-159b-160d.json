@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "submission_id": "0011-structural-remediation-04-159b-160d",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "charmides",
+  "unit_key": "04-159b-160d",
+  "source_path": "scratch/commentary/audits/charmides/04-159b-160d.json",
+  "source_sha256": "ff82b812859ee54b7a06374fed46b018f687f87b49337cf62b0445eb701e296e",
+  "target_path": "wiki/commentary/charmides.md",
+  "target_sha256_before": "a9b2961b47726e4b40b9d0851901e063a954c0c01efccc97888a0060508e549b",
+  "target_sha256_after": "ec56de4c4bd6624ed6f577a75cdf9a18f862dda6d7008fd3f159e0623b779edf",
+  "applied_at": "2026-08-23T22:34:31.869Z",
+  "applied_ids": [
+    "comm_charmides_0004",
+    "comm_charmides_0021",
+    "comm_charmides_0022",
+    "comm_charmides_0023"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "charmides",
+      "unitKey": "04-159b-160d",
+      "sectionId": "comm_charmides_0004",
+      "auditOutputPath": "scratch/commentary/audits/charmides/04-159b-160d.json",
+      "auditOutputSha256": "ff82b812859ee54b7a06374fed46b018f687f87b49337cf62b0445eb701e296e",
+      "expectedLedgerSha256": "a9b2961b47726e4b40b9d0851901e063a954c0c01efccc97888a0060508e549b",
+      "expectedAttributionSha256": "15af84af30150ae71bd1fb685dade849457450a1b1fca53758d46ab2d7425166",
+      "expectedEnglishSha256": "2b3601a95dceed4b86e1c48dfd5fcb829d4b03e004563852ac527f9806bb99a0",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_charmides_0004"
+        },
+        {
+          "operation": "remove",
+          "commentaryId": "comm_charmides_0021"
+        },
+        {
+          "operation": "remove",
+          "commentaryId": "comm_charmides_0022"
+        },
+        {
+          "operation": "remove",
+          "commentaryId": "comm_charmides_0023"
+        }
+      ],
+      "reviewer": "lane-c-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna assessment confirms conservative rejection of audited remove findings and split originals; placement is retained and no reanchors are claimed."
+    },
+    "audit_output_path": "scratch/commentary/audits/charmides/04-159b-160d.json",
+    "audit_output_sha256": "ff82b812859ee54b7a06374fed46b018f687f87b49337cf62b0445eb701e296e",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_charmides_0004",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_charmides_0021",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_charmides_0022",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_charmides_0023",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

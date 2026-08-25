@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "submission_id": "0006-rewrite-01-17a-18e",
+  "lane": "commentary",
+  "kind": "rewrite",
+  "scope": "apology",
+  "unit_key": "01-17a-18e",
+  "source_path": "scratch/commentary/rewrites/apology/01-17a-18e.json",
+  "source_sha256": "869654e610d6e0da9b46018de2ee04d5cb5a20b910205fb34a1f581380030086",
+  "target_path": "wiki/commentary/apology.md",
+  "target_sha256_before": "12006f2f330aa817cc3add7018488bcb94cc85f424844564dcff1fc273321741",
+  "target_sha256_after": "ecd2727a83b377387e1df97709a6a51b5fde00a1a11c954bceeb699e410ad0fc",
+  "applied_at": "2026-08-22T22:45:06.912Z",
+  "applied_ids": [
+    "comm_apology_0020"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "apology",
+    "unit_key": "01-17a-18e",
+    "section_id": "comm_apology_0001",
+    "audit_output": {
+      "path": "scratch/commentary/audits/apology/01-17a-18e.json",
+      "sha256": "9f15cbb7d9389c7f6d2659f64a14785db8e5137237db964498097da323e5eaca"
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_apology_0020",
+        "title": "",
+        "body": "The request quietly tests whether the trial will judge a performance or a proposition. By asking the jury to disregard the manner of speech, Socrates makes their standard of judgment part of his defense: justice in the verdict, truth in the speaker. One way to read this opening is that he contests not only the accusations, but the criteria by which they will be heard.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_apology_0001"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_apology_0020",
+      "body": "```yaml\ncommentary_id: comm_apology_0020\nsource_work: Apology\nblock_kind: argument\nplacement: after\nstephanus_span: 18a\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 18a\n  start_marker: 18a\n  end_marker: 18a\n  start_char: 1629\n  end_char: 2095\n  text_sha256: \"67b8a762abf453e85b3dde070308e99a1ca4c4632c9bc1d1e643bf81507e6596\"\nbody: \"Socrates asks the jury to shift its attention from the manner of his speech to whether what he says is just. He then gives each role its governing standard: the judge is to assess justice, while the orator is to speak the truth. One way to hear this is as a division of labor, not as a prediction about the verdict. Before answering the accusations, Socrates establishes how he wants his defense to be heard.\"\ncites:\n  observations: []\n  claims: [\"claim_apology_0001\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

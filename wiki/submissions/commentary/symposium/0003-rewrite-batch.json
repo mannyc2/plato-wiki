@@ -1,0 +1,552 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "symposium",
+  "source_path": "scratch/commentary/rewrites/symposium/01-172a-177e.json",
+  "source_sha256": "a1aa0167c2b95166619ed1420d9dbb9920113f9abdda2208ce94dee350eb77b8",
+  "target_path": "wiki/commentary/symposium.md",
+  "target_sha256_before": "4a57a4fdaa86eb9ed80e01923c7568d3eef4d565d67b55060ca06621e4fa11a0",
+  "target_sha256_after": "f0ff5aaeeaa649c13db573c26dd061804882105d516a474ad2e3ee9d058d9b4b",
+  "applied_at": "2026-08-21T14:34:40.341Z",
+  "applied_ids": [
+    "comm_symposium_0013",
+    "comm_symposium_0016",
+    "comm_symposium_0017",
+    "comm_symposium_0019",
+    "comm_symposium_0022",
+    "comm_symposium_0023",
+    "comm_symposium_0027",
+    "comm_symposium_0028",
+    "comm_symposium_0029",
+    "comm_symposium_0033",
+    "comm_symposium_0040",
+    "comm_symposium_0042",
+    "comm_symposium_0044",
+    "comm_symposium_0056",
+    "comm_symposium_0059",
+    "comm_symposium_0062",
+    "comm_symposium_0063",
+    "comm_symposium_0064",
+    "comm_symposium_0068"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "01-172a-177e",
+      "section_id": "comm_symposium_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/01-172a-177e.json",
+        "sha256": "489f6206a36c5c3e4d2b0869322fb7ef75dcd60875a090424f2d5ad0ee858d3e"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0013",
+          "title": "",
+          "body": "The scene’s comic tension comes from two different standards of arrival. Agathon treats Socrates’s absence as a problem requiring a servant’s intervention, while Aristodemus recognizes the withdrawal as a familiar habit and tells the household to leave him undisturbed. The episode therefore makes Socrates socially present before he is physically present: the company must accommodate a pattern of attention it does not share. That is an interpretation of the scene, not a claim about why Socrates stands apart.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0008"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0016",
+          "title": "",
+          "body": "The company has just accepted a turn-taking plan for praising Eros, with Phaedrus first. Socrates joins the agreement by saying that he knows nothing else but ta erotika. Is that line a modest disclaimer, a playful claim to fit the occasion, or both? The text gives us the juxtaposition; it does not force one verdict. Let the question remain open as the speeches test what this claimed knowledge amounts to.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0015"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0017",
+          "title": "",
+          "body": "Apollodorus has already identified how this account reaches us; the useful question now is not whether the frame can be verified, but what the guests do with the opportunity it creates. Let the banquet’s procedure answer that.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0001"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "02-178a-180b",
+      "section_id": "comm_symposium_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/02-178a-180b.json",
+        "sha256": "81e796242fed161c0b3052cd94feab0000286dc9260d57508678116507a54e8d"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0019",
+          "title": "",
+          "body": "The proof's decisive turn is from silence to seniority. Phaedrus treats the absence of any named parents for Eros as evidence that Eros belongs among the oldest gods, then reinforces that inference by citing Hesiod, Acusilaus, and Parmenides. The speech is building antiquity out of genealogy's gaps.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0017"
+            ],
+            "claims": [
+              "claim_symposium_0012",
+              "claim_symposium_0013"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0022",
+          "title": "",
+          "body": "Does Phaedrus's imagined army still depend on each beloved's gaze?",
+          "cites": {
+            "observations": [
+              "obs_symposium_0018"
+            ],
+            "claims": [
+              "claim_symposium_0018"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0023",
+          "title": "",
+          "body": "Phaedrus ends by calling Eros the most honored and most authoritative god for acquiring virtue and happiness. Greater Hippias offers a useful tension: it presents virtue itself as most honored in well-governed cities. The comparison marks a difference of emphasis, not an exclusive denial: Symposium names Eros as the divine means of acquisition, while Greater Hippias names virtue as the civic object of honor.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_symposium_0023"
+            ],
+            "relations": [
+              "rel_cross-dialogue_0410"
+            ],
+            "dossiers": []
+          },
+          "crossrefs": [
+            {
+              "source_work": "Greater Hippias",
+              "stephanus_span": "283e-284a",
+              "note": "virtue as the most honored thing in well-governed cities, against Eros as the most honored god for acquiring it"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "03-180c-185c",
+      "section_id": "comm_symposium_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/03-180c-185c.json",
+        "sha256": "58f611e45d92a24a5fc3f0ea3e9ed48677bec1ea38476c78d0a19ee80e8b200d"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0027",
+          "title": "",
+          "body": "Here Pausanias turns custom into a sorting device. It favors pursuit of one sort of lover and flight from another, then treats time as a test and capitulation to money or political power as shameful. The law does not create those pressures; it classifies how lover and beloved respond to them, using permanence—not desire alone—as its decisive measure.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0031",
+              "obs_symposium_0032"
+            ],
+            "claims": [
+              "claim_symposium_0038"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0028",
+          "title": "",
+          "body": "Pausanias makes the room itself his first test case: the guests’ drinking, singing, and conversation are the very activities he names before turning to love. That move gives his distinction a dramatic edge. The symposium is not outside his rule; its manner of proceeding is already an example of what he is asking the company to judge.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_symposium_0026"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0029",
+          "title": "",
+          "body": "Pausanias’s exception is exact: deception about wealth remains shameful, but deception about virtue remains honorable when the beloved acted in hope of becoming better. What, then, is being judged—the lover who turns out to be poor or vile, or the beloved’s reason for granting the favor? One way to hear the move is that the outcome matters less than the motive; does that make intention, rather than success, the real test?",
+          "cites": {
+            "observations": [
+              "obs_symposium_0052"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "04-185d-188e",
+      "section_id": "comm_symposium_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/04-185d-188e.json",
+        "sha256": "002dc7be4f9c50ec417431f3e9d7ff1060136fc20e42555ea4feffa53dc63a8d"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0033",
+          "title": "",
+          "body": "Eryximachus’s closing extends his two-love framework beyond music and medicine to human and divine affairs, including the seasons, where he links orderly mixture with fertility and health and excess with disease. He then admits that his praise may omit things and hands Aristophanes the task of filling them in. One way to hear the gesture is as a wide explanatory map whose completion remains open.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0044"
+            ],
+            "claims": [
+              "claim_symposium_0047",
+              "claim_symposium_0048"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "05-189a-193e",
+      "section_id": "comm_symposium_0005",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/05-189a-193e.json",
+        "sha256": "626a37d194be801d11d33b58eb872c72eaa0fa67b273b138bc7a0e5282bee302"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0040",
+          "title": "",
+          "body": "Hephaestus’s offer gives a body to a desire the lovers can only gesture toward: not merely continued contact, but being made one. Aristophanes immediately uses that imagined fusion to explain his definition of eros as the desire and pursuit of the whole. The myth thus turns an inarticulate feeling into a test: if reunion is what the lovers want, eros names the lack that makes wholeness seem like fulfillment.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0060"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "06-194a-197e",
+      "section_id": "comm_symposium_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/06-194a-197e.json",
+        "sha256": "1f5e48e29ddb59e66306be2b24773d6500ad444e961b2941e94b5c30e231f6af"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0042",
+          "title": "",
+          "body": "Socrates leads Agathon through a chain of agreements: the few thoughtful are more frightening than the many foolish, and a man of sense would care more about the judgment of the wise. Phaedrus interrupts before Socrates obtains a conclusion, insisting that Agathon first deliver his encomium. The exchange leaves the question open; it does not yet amount to a refutation.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0062",
+              "obs_symposium_0063"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0044",
+          "title": "",
+          "body": "Agathon treats Homer's description of Ate's soft feet as an analogical test. Because Ate does not walk on hard ground, he transfers the image to Eros: Eros walks and dwells in soft characters and souls, and this is offered as evidence of softness. The force lies in the comparison itself, not in a literal claim that Eros has physical feet.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0067"
+            ],
+            "claims": [
+              "claim_symposium_0076"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "08-201d-212c",
+      "section_id": "comm_symposium_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/08-201d-212c.json",
+        "sha256": "26fe477972228269f7012d6fd1379e20fd9c87ff1684768ff4cfaed6987b444d"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0056",
+          "title": "",
+          "body": "Diotima changes the status of the story before changing its content. By calling the half-and-whole account something merely reported, then opposing it with “my account,” she makes source-status part of the argument. The listener is asked to track not only what Eros desires, but which voice has authority to define that desire.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_symposium_0120",
+              "claim_symposium_0121"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0059",
+          "title": "",
+          "body": "One reason to glance toward the Republic is that the same word, philosopher, changes shape: there it names a desire for all wisdom; here it names Eros’s middle position. The comparison keeps the term from sounding settled, and makes philosophy a movement toward what is not yet possessed.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_symposium_0110"
+            ],
+            "relations": [
+              "rel_cross-dialogue_1168",
+              "rel_cross-dialogue_1171"
+            ],
+            "dossiers": []
+          },
+          "crossrefs": [
+            {
+              "source_work": "Republic",
+              "stephanus_span": "475b-475c",
+              "note": "the philosopher defined by desire for the whole of wisdom"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "09-212d-222b",
+      "section_id": "comm_symposium_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/09-212d-222b.json",
+        "sha256": "5bc525813463f74e92a25c4240b75b9cfd1c6f02f290eb2e77059fc00751e2ca"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0062",
+          "title": "",
+          "body": "Alcibiades begins by trying to control the room through the cup: he appoints himself ruler of the drinking, drains the cooler, and orders Socrates served. But he immediately concedes that wine cannot master Socrates. The tactic is therefore a comic gambit, not the evening’s only remaining procedure; Eryximachus still has the established sequence of speeches in view.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0176",
+              "obs_symposium_0177",
+              "obs_symposium_0179"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0063",
+          "title": "",
+          "body": "Eryximachus, not Alcibiades, states the order: the company had agreed to speak in turn about Eros, and Alcibiades must speak before directing Socrates. Alcibiades negotiates only the terms of his own turn. He chooses Socrates as the object of praise, promises truth, and asks Socrates to interrupt any falsehood. His leverage is local, while the evening’s sequence remains Eryximachus’s.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0179",
+              "obs_symposium_0181"
+            ],
+            "claims": [
+              "claim_symposium_0164",
+              "claim_symposium_0166"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0064",
+          "title": "",
+          "body": "Alcibiades announces his method before he uses it: he will praise Socrates through images, and the image will serve truth rather than ridicule. The Silenus figure gives the speech a hinge between comic exterior and divine interior. At 216e, Alcibiades says he once saw the inner images while admitting that he does not know whether anyone else has seen them. The speech offers personal testimony, not proof of exclusive access.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0183",
+              "obs_symposium_0195"
+            ],
+            "claims": [
+              "claim_symposium_0166",
+              "claim_symposium_0167"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0068",
+          "title": "",
+          "body": "Alcibiades now changes the burden of proof. He does not ask the company to accept a doctrine; he offers a witness’s report of what he saw when Socrates was opened. The force of the moment lies in that uncertainty: testimony can invite trust without settling who else could have seen the same interior.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0195"
+            ],
+            "claims": [
+              "claim_symposium_0174"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_symposium_0013",
+      "body": "```yaml\ncommentary_id: comm_symposium_0013\nsource_work: Symposium\nblock_kind: context\nplacement: before\nstephanus_span: 174a-175c\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 174a-175c\n  start_marker: 174a\n  end_marker: 175c\n  start_char: 3425\n  end_char: 7031\n  text_sha256: \"7c5d168dc4a0d401bd6b62b5b771bba6f1d307391c652f1e9f65b36e1ad9c7c7\"\nbody: \"The walk to dinner is a small comedy of Socratic habits. Socrates has washed and put on sandals - rare enough that the narrator flags it - to go beautiful to the beautiful; he rewrites a proverb and trades Homeric tags with Aristodemus, who ends up arriving uninvited and alone because Socrates has fallen behind, absorbed in his own thoughts. He is finally reported standing motionless in a neighbor's porch, and it takes an insider, Aristodemus, to explain to the baffled host that this is simply a habit.\"\ncites:\n  observations: [obs_symposium_0005, obs_symposium_0006, obs_symposium_0007, obs_symposium_0008, obs_symposium_0146, obs_symposium_0147]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0016",
+      "body": "```yaml\ncommentary_id: comm_symposium_0016\nsource_work: Symposium\nblock_kind: question\nplacement: after\nstephanus_span: 177d\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 177d\n  start_marker: 177d\n  end_marker: 177d\n  start_char: 11323\n  end_char: 11737\n  text_sha256: \"2560f7a542d2c238f25d07cb559dc6f2d18b701cd4cfb6224af8d693558520b6\"\nbody: \"Socrates lets the plan pass by saying he can hardly refuse, since he claims to know nothing except ta erotika - the very topic of the contest. The remark disavows knowledge in general and asserts a single expertise in the same breath. What should a reader do with a disclaimer that doubles as a boast about precisely tonight's subject?\"\ncites:\n  observations: [obs_symposium_0015]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0017",
+      "body": "```yaml\ncommentary_id: comm_symposium_0017\nsource_work: Symposium\nblock_kind: crossref\nplacement: after\nstephanus_span: 172a-173b\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 172a-173b\n  start_marker: 172a\n  end_marker: 173b\n  start_char: 5\n  end_char: 2240\n  text_sha256: \"bc7cfd18a5ce061a7dabef9a982bb82463f76b2582aac5ef08daf7d280e5c17f\"\nbody: \"Read this opening beside Theaetetus 142a–143c. The comparison is useful not as a generic paper-versus-memory contrast, but as a question about verification: here Apollodorus identifies Aristodemus as his source and says he checked some details with Socrates. What matters is that the dialogue makes the route of transmission part of what we hear.\"\ncites:\n  observations: [\"obs_symposium_0001\"]\n  claims: []\n  relations: []\n  dossiers: [\"frame_depth/reported_dialogue_frame\"]\ncrossrefs:\n  - source_work: \"Theaetetus\"\n    stephanus_span: 142a-143c\n    source_ref:\n      source_path: raw/plato/greek/theaetetus.txt\n      stephanus_span: 142a-143c\n      start_marker: 142a\n      end_marker: 143c\n      start_char: 0\n      end_char: 2577\n      text_sha256: \"08b4c9e1902fb8ecf2f03693a481263bc0f31560481f378bed0b975727194b56\"\n    note: \"the Theaetetus frame delivers a written, Socrates-checked transcript, in contrast with the Symposium's oral transmission chain\"\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0019",
+      "body": "```yaml\ncommentary_id: comm_symposium_0019\nsource_work: Symposium\nblock_kind: argument\nplacement: before\nstephanus_span: 178a-178c\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 178a-178c\n  start_marker: 178a\n  end_marker: 178c\n  start_char: 12101\n  end_char: 13377\n  text_sha256: \"b0d74039718aad9c4cf097ca6cadfb4c732c19d0c3b5a0255fe77975a564d5e7\"\nbody: \"Phaedrus's opening argument is genealogical: Eros is among the oldest of the gods, proved by the absence of any named parents and by the convergent testimony of Hesiod, Acusilaus, and Parmenides. Notice the method itself - cosmogonic poetry cited as if it were evidence about a god. Worth keeping an ear on how that way of establishing facts fares as the evening goes on.\"\ncites:\n  observations: [\"obs_symposium_0017\"]\n  claims: [\"claim_symposium_0011\", \"claim_symposium_0012\", \"claim_symposium_0013\"]\n  relations: []\n  dossiers: [\"myth_demarcation/mythic_origin_taxonomy\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0022",
+      "body": "```yaml\ncommentary_id: comm_symposium_0022\nsource_work: Symposium\nblock_kind: question\nplacement: after\nstephanus_span: 178e\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 178e\n  start_marker: 178e\n  end_marker: 178e\n  start_char: 13762\n  end_char: 14093\n  text_sha256: \"17b520f202c64292cca56e2f50d84171aed2c756bd2e274aef7fb95d23d2e270\"\nbody: \"Phaedrus now scales an intimate bond into a city or army. Does that move reveal a political theory of virtue, or does it merely enlarge the audience before whom erotic honor must be maintained?\"\ncites:\n  observations: []\n  claims: [\"claim_symposium_0018\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0023",
+      "body": "```yaml\ncommentary_id: comm_symposium_0023\nsource_work: Symposium\nblock_kind: crossref\nplacement: after\nstephanus_span: 180b\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 180b\n  start_marker: 180b\n  end_marker: 180b\n  start_char: 16491\n  end_char: 16929\n  text_sha256: \"7f1f3b12ef95636f37b849b168eca3c61fa5d6a3dac6bde6433ebffd58eae93a\"\nbody: \"Phaedrus closes by calling Eros the most honored and most authoritative of the gods for acquiring virtue and happiness. That superlative is in quiet tension elsewhere in the corpus: in the Greater Hippias it is virtue itself that is most honored in well-governed cities, and in the Laches Nicias ties complete virtue to comprehensive knowledge, not to any god.\"\ncites:\n  observations: []\n  claims: [\"claim_symposium_0023\"]\n  relations: [\"rel_cross-dialogue_0410\", \"rel_cross-dialogue_0464\"]\n  dossiers: []\ncrossrefs:\n  - source_work: \"Greater Hippias\"\n    stephanus_span: 283e-284a\n    source_ref:\n      source_path: raw/plato/greek/greater-hippias.txt\n      stephanus_span: 283e-284a\n      start_marker: 283e\n      end_marker: 284a\n      start_char: 5335\n      end_char: 6185\n      text_sha256: \"261eedb5058929ba3adb1ba8d70235cdd1e13b1c74c767ab2de0d557f36bbd57\"\n    note: \"virtue as the most honored thing in well-governed cities, against Eros as the most honored god for acquiring it\"\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0027",
+      "body": "```yaml\ncommentary_id: comm_symposium_0027\nsource_work: Symposium\nblock_kind: argument\nplacement: before\nstephanus_span: 183e-185c\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 183e-185c\n  start_marker: 183e\n  end_marker: 185c\n  start_char: 23652\n  end_char: 27184\n  text_sha256: \"acc1fecfe4ff5a503377d6791cbc2ff88e4a3621ac8d9406f3db28aae5d35b20\"\nbody: \"In this closing movement, listen for what the law does rather than what it permits. Pausanias casts Athenian custom as an umpire: it delays the suit, sets up temptations of money and power, and watches how each party holds up. One way to hear this is that he has quietly given the city the job of examining souls - without asking whether custom can actually do it.\"\ncites:\n  observations: [\"obs_symposium_0031\", \"obs_symposium_0032\"]\n  claims: [\"claim_symposium_0038\"]\n  relations: []\n  dossiers: [\"definition_ladder/criterion_for_evaluative_classification\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0028",
+      "body": "```yaml\ncommentary_id: comm_symposium_0028\nsource_work: Symposium\nblock_kind: crossref\nplacement: after\nstephanus_span: 181a\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 181a\n  start_marker: 181a\n  end_marker: 181a\n  start_char: 18023\n  end_char: 18405\n  text_sha256: \"e215f920cd6dc850c083948ebf8cd2e1248fa0b73ec29224d7c8f3a17927474e\"\nbody: \"At 181a, Pausanias makes a condition, not an essence, govern praise: drinking, singing, speaking, and loving become noble or base according to how they are done. This is the hinge of his distinction: the subject is not love in the abstract, but the manner in which an erotic impulse directs action.\"\ncites:\n  observations: []\n  claims: [\"claim_symposium_0026\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0029",
+      "body": "```yaml\ncommentary_id: comm_symposium_0029\nsource_work: Symposium\nblock_kind: question\nplacement: after\nstephanus_span: 184e-185b\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 184e-185b\n  start_marker: 184e\n  end_marker: 185b\n  start_char: 25649\n  end_char: 26787\n  text_sha256: \"7ac780ef03b4243405f33ebbee56e2f4dc6169a7faf49b5f8fed8eabaaf46f1b\"\nbody: \"The rule Pausanias reaches makes it noble for a beloved to be deceived, provided the deceiver was pursued for virtue's sake. Ask who benefits from this rule as stated - the boy it claims to protect, or the older speaker announcing it at a drinking party?\"\ncites:\n  observations: [obs_symposium_0052]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0033",
+      "body": "```yaml\ncommentary_id: comm_symposium_0033\nsource_work: Symposium\nblock_kind: argument\nplacement: before\nstephanus_span: 187e-188e\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 187e-188e\n  start_marker: 187e\n  end_marker: 188e\n  start_char: 31619\n  end_char: 34011\n  text_sha256: \"787ccd98b8e8a3f089e8338ccab9b1c0314c8c908a2982b3118901326b78238e\"\nbody: \"By the end of the speech, every science the doctor can name has become a branch of erotics - and the expert on eros, therefore, is the doctor. The praise of the god has quietly become a map of his own professional authority.\"\ncites:\n  observations: [\"obs_symposium_0044\"]\n  claims: [\"claim_symposium_0047\", \"claim_symposium_0048\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0040",
+      "body": "```yaml\ncommentary_id: comm_symposium_0040\nsource_work: Symposium\nblock_kind: crossref\nplacement: after\nstephanus_span: 192e-193a\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 192e-193a\n  start_marker: 192e\n  end_marker: 193a\n  start_char: 42163\n  end_char: 43150\n  text_sha256: \"59fa29b28c3ee8a34371675436193d5a1c3fd2ed56e9f25a1643e1fc0b0cce63\"\nbody: \"The etymological move - eros named from the pursuit of the whole - has a cousin in the Cratylus, where heroes are derived from eros as the offspring of divine-mortal unions. The adjudicated relations record both the kinship and the difference: there eros generates beings, here it reunites them.\"\ncites:\n  observations: []\n  claims: []\n  relations: [rel_cross-dialogue_0096, rel_cross-dialogue_0097]\n  dossiers: []\ncrossrefs:\n  - source_work: Cratylus\n    stephanus_span: 398d\n    source_ref:\n      source_path: raw/plato/greek/cratylus.txt\n      stephanus_span: 398d\n      start_marker: 398d\n      end_marker: 398d\n      start_char: 29618\n      end_char: 30103\n      text_sha256: \"8c7bfcf0cacf7a1b49102080c7698dc4640bbcbf7608b7a35eef62ada4b7901e\"\n    note: \"heroes etymologized from eros, another passage making eros the origin of human beings\"\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0042",
+      "body": "```yaml\ncommentary_id: comm_symposium_0042\nsource_work: Symposium\nblock_kind: context\nplacement: before\nstephanus_span: 194a-194e\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 194a-194e\n  start_marker: 194a\n  end_marker: 194e\n  start_char: 44748\n  end_char: 46812\n  text_sha256: \"aea54e18528815df2c0195031a8e5859e8cdd19867c731d65bd58f5bc2981265\"\nbody: \"Between the speeches, Socrates begins doing to Agathon exactly what he will do at length later: a short chain of agreed steps about whether a man of sense fears the wise few more than the foolish many. Phaedrus cuts it off - if Agathon starts answering Socrates, the program is finished - and makes him deliver his encomium first. The interruption preserves the contest, and postpones the refutation.\"\ncites:\n  observations: [obs_symposium_0063, obs_symposium_0062]\n  claims: []\n  relations: []\n  dossiers: [elenchus/assent_chain]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0044",
+      "body": "```yaml\ncommentary_id: comm_symposium_0044\nsource_work: Symposium\nblock_kind: notice\nplacement: before\nstephanus_span: 195d-196a\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 195d-196a\n  start_marker: 195d\n  end_marker: 196a\n  start_char: 48049\n  end_char: 49312\n  text_sha256: \"965557999e5f6027fcd78840e6f201d32e90ee31611cc89ca5d07cde2abf71cd\"\nbody: \"The argument’s key move is to turn poetic imagery into a test of habitat. Ate’s soft feet become a model for Eros, who both walks and dwells in the softest beings—characters and souls, avoiding hard dispositions. Agathon then infers fluid form from Eros’s supposed ability to envelop, enter, and leave souls unnoticed. The catalogue thus treats function as evidence for an attribute.\"\ncites:\n  observations: [\"obs_symposium_0067\", \"obs_symposium_0083\"]\n  claims: [\"claim_symposium_0076\", \"claim_symposium_0077\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0056",
+      "body": "```yaml\ncommentary_id: comm_symposium_0056\nsource_work: Symposium\nblock_kind: notice\nplacement: before\nstephanus_span: 205d-206a\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 205d-206a\n  start_marker: 205d\n  end_marker: 206a\n  start_char: 69094\n  end_char: 70460\n  text_sha256: \"53cbbf4aaf829bee1194ecb7002424bfc5b47de6d6bf489b92c8b3ac9b17de4b\"\nbody: \"Diotima briefly takes up a story about lovers seeking their other half, then gives it a condition: love is neither for half nor whole unless that object is good. The point is not to debate the story at length. The scene shifts attention from belonging as such to the good that a person can call his own.\"\ncites:\n  observations: []\n  claims: [\"claim_symposium_0120\", \"claim_symposium_0121\", \"claim_symposium_0122\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0059",
+      "body": "```yaml\ncommentary_id: comm_symposium_0059\nsource_work: Symposium\nblock_kind: crossref\nplacement: after\nstephanus_span: 204a-204b\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 204a-204b\n  start_marker: 204a\n  end_marker: 204b\n  start_char: 65708\n  end_char: 66598\n  text_sha256: \"a5d8c3ad372cf5ed56ee0800aaf4b8890fc922d746b625c515e541158e8200fb\"\nbody: \"In the Republic, the philosopher desires the whole of wisdom; here, Eros is placed between wisdom and ignorance. The shared title does not erase the difference: Diotima makes philosophy audible as desire from a position of lack.\"\ncites:\n  observations: []\n  claims: [\"claim_symposium_0110\"]\n  relations: [\"rel_cross-dialogue_1168\", \"rel_cross-dialogue_1171\"]\n  dossiers: []\ncrossrefs:\n  - source_work: \"Republic\"\n    stephanus_span: 475b-475c\n    source_ref:\n      source_path: raw/plato/greek/republic.txt\n      stephanus_span: 475b-475c\n      start_marker: 475b\n      end_marker: 475c\n      start_char: 285448\n      end_char: 286289\n      text_sha256: \"2484ccd0fcefab2ea7339fc21ae84973a14e9ea01c317f47bbd4efc2976254ca\"\n    note: \"the philosopher defined by desire for the whole of wisdom\"\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0062",
+      "body": "```yaml\ncommentary_id: comm_symposium_0062\nsource_work: Symposium\nblock_kind: notice\nplacement: before\nstephanus_span: 213d-214b\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 213d-214b\n  start_marker: 213d\n  end_marker: 214b\n  start_char: 85493\n  end_char: 87438\n  text_sha256: \"1e17e388cc71ff7fc73fbfb2647aaba8965fdcb83a93f9bf51206a91ab6d3906\"\nbody: \"One detail before the speech begins: Alcibiades seizes the only procedure left, the drinking. He appoints himself ruler of the bout, calls for the great cooler, drains it, and has it filled for Socrates — and in the same breath concedes the plan is worthless, since however much Socrates is ordered to drink, no one has ever seen him drunk. The new symposiarch's first act of rule is an admission that his one instrument has no power over its target.\"\ncites:\n  observations: [\"obs_symposium_0176\", \"obs_symposium_0177\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0063",
+      "body": "```yaml\ncommentary_id: comm_symposium_0063\nsource_work: Symposium\nblock_kind: context\nplacement: before\nstephanus_span: 214c-215a\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 214c-215a\n  start_marker: 214c\n  end_marker: 215a\n  start_char: 87438\n  end_char: 89148\n  text_sha256: \"2d9eaf9271917d1d6d3aab4c999a83723a01e3d59f132d803d3180c60f3573b0\"\nbody: \"Eryximachus restores the evening’s procedure: Alcibiades must take his turn, then direct Socrates. The subject shifts from the scheduled praise of Eros to praise of Socrates in the exchange that follows. The asymmetry matters: Alcibiades proposes the rule that Socrates may interrupt a falsehood; Socrates permits truthful speech and grants that permission. The encomium’s controlling protocol is Alcibiades’s, not Socrates’s.\"\ncites:\n  observations: [\"obs_symposium_0179\", \"obs_symposium_0181\"]\n  claims: [\"claim_symposium_0164\", \"claim_symposium_0166\"]\n  relations: []\n  dossiers: [\"turn_geometry/explicit_procedure_control\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0064",
+      "body": "```yaml\ncommentary_id: comm_symposium_0064\nsource_work: Symposium\nblock_kind: argument\nplacement: before\nstephanus_span: 215a-216e\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 215a-216e\n  start_marker: 215a\n  end_marker: 216e\n  start_char: 88754\n  end_char: 92873\n  text_sha256: \"827b3f04f477e125067e765c6683a29f2caea0ebac1554d8b65a779228c5640d\"\nbody: \"Alcibiades announces his method before he uses it: he will praise Socrates through images, and the image will serve truth, not ridicule. The controlling image is the Silenus figurine — a comic shell that opens to reveal gods inside. Everything you are about to hear applies that one picture. The outside of Socrates is public; the inside, Alcibiades claims, he alone has seen. Ask, as the speech runs on, what kind of praise needs a hinge.\"\ncites:\n  observations: [\"obs_symposium_0183\", \"obs_symposium_0195\"]\n  claims: [\"claim_symposium_0166\", \"claim_symposium_0167\"]\n  relations: []\n  dossiers: [\"craft_analogy/crafted_object_as_character_analogy\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0068",
+      "body": "```yaml\ncommentary_id: comm_symposium_0068\nsource_work: Symposium\nblock_kind: crossref\nplacement: after\nstephanus_span: 216d\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 216d\n  start_marker: 216d\n  end_marker: 216d\n  start_char: 92014\n  end_char: 92467\n  text_sha256: \"1dcae14fcf22cf2a838f29bf1591fdfd48ab9965480446ca1a8ba323c52a5006\"\nbody: \"The Republic offers σωφροσύνη as a general philosophical requirement; here it appears as a particular speaker’s testimony about Socrates. The comparison is useful not because the passages repeat one image, but because it changes the scale of the question—from what philosophy requires to how a person claims to recognize it.\"\ncites:\n  observations: []\n  claims: [\"claim_symposium_0174\"]\n  relations: [\"rel_cross-dialogue_1174\"]\n  dossiers: []\ncrossrefs:\n  - source_work: \"Republic\"\n    stephanus_span: 487a\n    source_ref:\n      source_path: raw/plato/greek/republic.txt\n      stephanus_span: 487a\n      start_marker: 487a\n      end_marker: 487a\n      start_char: 301951\n      end_char: 302370\n      text_sha256: \"5196c08a63704394e88e94fe11a63b10dd16c5265678469904ed138b7f3e0b9c\"\n    note: \"temperance among the philosopher’s necessary natural endowments\"\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

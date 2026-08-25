@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-delegated-audit-06-371a-373b",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "lesser-hippias",
+  "unit_key": "06-371a-373b",
+  "source_path": "scratch/commentary/delegated-audits/lesser-hippias/06-371a-373b.json",
+  "source_sha256": "115d85bba06f75a2c710719ac301a732417a8d65318683ce5913e61ffbbc4acc",
+  "target_path": "wiki/submissions/commentary-audit/lesser-hippias/06-371a-373b.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "39cd3d0f49caedcccae0f92bbebfddc2cf6322bc1718c6cc82a3384b8e20aae6",
+  "applied_at": "2026-08-24T01:15:36.787Z",
+  "applied_ids": [
+    "comm_lesser-hippias_0006"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "lesser-hippias",
+    "unit_key": "06-371a-373b",
+    "job": {
+      "job_id": "audit:lesser-hippias:06-371a-373b",
+      "input_sha256": "491778bb6a7c28ea881a3b9da8a931e0d9d155613054be0c2681f5f37a92dd4f",
+      "audit_brief_path": "scratch/commentary/audit-briefs/lesser-hippias/06-371a-373b.md",
+      "audit_brief_sha256": "d2cde10d11a5cdccc44cd084da2cc17387d7998b8f099aaafcbfb4d82ebde74b",
+      "output_path": "scratch/commentary/audits/lesser-hippias/06-371a-373b.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/lesser-hippias/06-371a-373b.output.json",
+    "output_sha256": "39cd3d0f49caedcccae0f92bbebfddc2cf6322bc1718c6cc82a3384b8e20aae6",
+    "provenance": {
+      "auditor": "batch-b-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

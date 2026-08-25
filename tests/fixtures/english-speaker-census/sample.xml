@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <profileDesc>
+      <particDesc>
+        <listPerson>
+          <person xml:id="alpha"><persName>Alpha</persName></person>
+          <person><persName>Beta</persName></person>
+          <personGrp><name>Collective Role</name></personGrp>
+          <person><persName>Unattributed</persName></person>
+        </listPerson>
+      </particDesc>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="translation">
+        <said who="#Alpha">One.</said>
+        <said who="#Alpha">Two.</said>
+        <said who="#Alpha #Beta">Together.</said>
+        <said who="#Collective Role">Collectively.</said>
+        <said who="#Ghost">Unknown.</said>
+        <said>No attribution.</said>
+      </div>
+    </body>
+  </text>
+</TEI>

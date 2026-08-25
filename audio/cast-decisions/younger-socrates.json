@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "status": "accepted-deterministic-cast-decision",
+  "policy": "cast-auto-accept-v1",
+  "acceptedAt": "2026-07-15",
+  "characterId": "younger-socrates",
+  "sourceCharacterId": "younger-socrates",
+  "candidateSelection": "highest-ranked-passing",
+  "rankingPolicy": "mean-cosine-desc/minimum-window-cosine-desc/ordinary-word-errors-asc/speech-rate-distance-from-3-asc/seed-asc",
+  "inputs": {
+    "cast": {
+      "path": "audio/cast.json",
+      "sha256": "ba2734d49cf7e1f98e955078f342b92f76c2dfc6f74a7e3c92a92cd9de0869f9"
+    },
+    "characters": {
+      "path": "audio/characters.json",
+      "sha256": "3bb880509eadf402d18f3a1e57a9abfacc5722ab62eedc2b7dedce14ff31e24d"
+    },
+    "referenceSources": {
+      "path": "audio/reference-sources.json",
+      "sha256": "c65f15e02a23734020a5bdb6100c1d45abc50b13bcab9b0cd60cc52145f6440e"
+    },
+    "referenceSidecar": {
+      "path": "scratch/audio-references/younger-socrates/w9eyj0CEB64-000684760-000691360-df4cc81ba23c.json",
+      "sha256": "d2f0a426a6981f411dba52c60557a9374002d6f9e672091cb56eabcd9953f3d0"
+    },
+    "speakerPurity": {
+      "path": "scratch/audio-jowett-reference-alignment/statesman.report.json",
+      "sha256": "e727241ca3ec3770a0cbbf45d7c5a0d1a4cdc6e1034152dab4168abdb65a2e3b"
+    },
+    "cloneManifest": {
+      "path": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/audition-manifest.json",
+      "sha256": "60c152826fea0ee4ee624c464d455c781cc09135267574c4a31b788cda24c4db"
+    },
+    "asr": {
+      "path": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/asr-qa.json",
+      "sha256": "d08153714ed52b927a63565ead346220ee4b09d95b690a62900e90775734fa64"
+    },
+    "acoustic": {
+      "path": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/speaker-ranking.json",
+      "sha256": "ff8d42e0a98a6bb8ca55232e3e188ac1afdb443e2fe7b46c32c1e8faf17effba"
+    }
+  },
+  "reference": {
+    "sourceUrl": "https://www.youtube.com/watch?v=w9eyj0CEB64",
+    "sourceRegistryPath": "audio/reference-sources.json",
+    "sourceRegistrySha256": "c65f15e02a23734020a5bdb6100c1d45abc50b13bcab9b0cd60cc52145f6440e",
+    "sourceDialogue": "statesman",
+    "sourceVideoId": "w9eyj0CEB64",
+    "sourceCharacterId": "younger-socrates",
+    "videoStartSeconds": 684.76,
+    "videoEndSeconds": 691.36,
+    "localDurationSeconds": 6.6,
+    "localSha256": "4488990bbc0682a9b5e178864b33da8e861e2ca8d6a9e486bc37f74302bbdf01",
+    "relativePath": "scratch/audio-references/younger-socrates/w9eyj0CEB64-000684760-000691360-df4cc81ba23c.wav",
+    "promptText": "I will try there appears to me to be one management of men and another of beasts",
+    "referenceAsr": {
+      "decision": "primary-zero-error",
+      "primaryExpectedWords": 17,
+      "primaryOrdinaryWordErrors": 0,
+      "primaryOrdinaryWordErrorRate": 0.0,
+      "primaryEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/asr-qa.json",
+      "primaryEvidenceSha256": "d08153714ed52b927a63565ead346220ee4b09d95b690a62900e90775734fa64"
+    },
+    "speakerPurityEvidencePath": "scratch/audio-jowett-reference-alignment/statesman.report.json",
+    "speakerPurityEvidenceSha256": "e727241ca3ec3770a0cbbf45d7c5a0d1a4cdc6e1034152dab4168abdb65a2e3b",
+    "speakerPurityProofRecordId": "jowett-caption-4fdec168ed720f9ac45bc40c",
+    "speakerPuritySourceAgreementSha256": "f743d54a9210c6d60813e35ea2c943bf10f1e29c9864a9fdb6f1706ae16116e5",
+    "speakerPurityMethod": "jowett-caption-turn-alignment-v1",
+    "dominantSpeakerCoverage": 1,
+    "competingSpeakerCoverage": 0,
+    "uncoveredSpeakerCoverage": 0
+  },
+  "gates": {
+    "referenceDuration": {
+      "minimumSeconds": 3,
+      "maximumSeconds": 15,
+      "maximumIntervalDeltaSeconds": 0.05
+    },
+    "speakerPurity": {
+      "minimumDominantCoverage": 0.95,
+      "maximumCompetingCoverage": 0.02,
+      "maximumUncoveredCoverage": 0.03
+    },
+    "asrFidelity": {
+      "minimumReferenceExpectedWords": 8,
+      "maximumReferenceOrdinaryWordErrors": 0,
+      "maximumReferenceOrdinaryWordErrorRate": 0,
+      "referenceFailureAdjudication": "exact-source-agreement-plus-pinned-independent-large-v3-zero-v1",
+      "minimumExpectedWords": 40,
+      "maximumOrdinaryWordErrors": 0,
+      "maximumOrdinaryWordErrorRate": 0
+    },
+    "acousticConsistency": {
+      "minimumMeanCosineSimilarity": 0.85,
+      "minimumWindowCosineSimilarity": 0.8
+    },
+    "signalSafety": {
+      "maximumClippedSamples": 0,
+      "maximumTruePeakDbtp": 0,
+      "maximumPeakAmplitude": 0.9999
+    },
+    "auditionDuration": {
+      "minimumSeconds": 8,
+      "maximumSeconds": 60,
+      "minimumWordsPerSecond": 1.5,
+      "maximumWordsPerSecond": 4.5
+    }
+  },
+  "candidates": [
+    {
+      "seed": 42,
+      "file": "younger-socrates-w9eyj0CEB64-58808e971d09-seed42.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/younger-socrates-w9eyj0CEB64-58808e971d09-seed42.wav",
+        "sha256": "3cb9d0a7d3cedcd70c6b5730b3d871f06cb6dd64c95d909e4f93be92c090c3f3",
+        "durationSeconds": 21.6,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 1,
+        "ordinaryWordErrorRate": 0.015625,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/asr-qa.json",
+        "asrEvidenceSha256": "d08153714ed52b927a63565ead346220ee4b09d95b690a62900e90775734fa64",
+        "meanSpeakerCosineSimilarity": 0.8877101341883341,
+        "minimumWindowSpeakerCosineSimilarity": 0.8584809303283691,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "ff8d42e0a98a6bb8ca55232e3e188ac1afdb443e2fe7b46c32c1e8faf17effba",
+        "clippedSamples": 0,
+        "truePeakDbtp": -1.5,
+        "peakAmplitude": 0.841949462890625
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [
+        "asr-fidelity"
+      ],
+      "rankingKey": [
+        -0.8877101341883341,
+        -0.8584809303283691,
+        1,
+        0.0370370370370372,
+        42
+      ]
+    },
+    {
+      "seed": 43,
+      "file": "younger-socrates-w9eyj0CEB64-58808e971d09-seed43.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/younger-socrates-w9eyj0CEB64-58808e971d09-seed43.wav",
+        "sha256": "0b7854d6c60a7990928d44fafb154761567e89b75c898814d1b9621ad5057e1d",
+        "durationSeconds": 22.24,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 1,
+        "ordinaryWordErrorRate": 0.015625,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/asr-qa.json",
+        "asrEvidenceSha256": "d08153714ed52b927a63565ead346220ee4b09d95b690a62900e90775734fa64",
+        "meanSpeakerCosineSimilarity": 0.8508038719495138,
+        "minimumWindowSpeakerCosineSimilarity": 0.8327517509460449,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "ff8d42e0a98a6bb8ca55232e3e188ac1afdb443e2fe7b46c32c1e8faf17effba",
+        "clippedSamples": 0,
+        "truePeakDbtp": -2.6,
+        "peakAmplitude": 0.737823486328125
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [
+        "asr-fidelity"
+      ],
+      "rankingKey": [
+        -0.8508038719495138,
+        -0.8327517509460449,
+        1,
+        0.12230215827338098,
+        43
+      ]
+    },
+    {
+      "seed": 44,
+      "file": "younger-socrates-w9eyj0CEB64-58808e971d09-seed44.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/younger-socrates-w9eyj0CEB64-58808e971d09-seed44.wav",
+        "sha256": "ffecf76d5e8fe351035ee6032eb2f28f317c99e3de159c41f5b83c490ed25ac0",
+        "durationSeconds": 20.96,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 1,
+        "ordinaryWordErrorRate": 0.015625,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/asr-qa.json",
+        "asrEvidenceSha256": "d08153714ed52b927a63565ead346220ee4b09d95b690a62900e90775734fa64",
+        "meanSpeakerCosineSimilarity": 0.8663992285728455,
+        "minimumWindowSpeakerCosineSimilarity": 0.8508954048156738,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "ff8d42e0a98a6bb8ca55232e3e188ac1afdb443e2fe7b46c32c1e8faf17effba",
+        "clippedSamples": 0,
+        "truePeakDbtp": -4.2,
+        "peakAmplitude": 0.6168212890625
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [
+        "asr-fidelity"
+      ],
+      "rankingKey": [
+        -0.8663992285728455,
+        -0.8508954048156738,
+        1,
+        0.05343511450381655,
+        44
+      ]
+    },
+    {
+      "seed": 45,
+      "file": "younger-socrates-w9eyj0CEB64-58808e971d09-seed45.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/younger-socrates-w9eyj0CEB64-58808e971d09-seed45.wav",
+        "sha256": "37a3eb0ae7ff83a9f61144c43f6963f97f4d041eb87961ebbd6e2059669a9cc3",
+        "durationSeconds": 20.32,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 1,
+        "ordinaryWordErrorRate": 0.015625,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/asr-qa.json",
+        "asrEvidenceSha256": "d08153714ed52b927a63565ead346220ee4b09d95b690a62900e90775734fa64",
+        "meanSpeakerCosineSimilarity": 0.8765024542808533,
+        "minimumWindowSpeakerCosineSimilarity": 0.8641343712806702,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "ff8d42e0a98a6bb8ca55232e3e188ac1afdb443e2fe7b46c32c1e8faf17effba",
+        "clippedSamples": 0,
+        "truePeakDbtp": -5.8,
+        "peakAmplitude": 0.512603759765625
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [
+        "asr-fidelity"
+      ],
+      "rankingKey": [
+        -0.8765024542808533,
+        -0.8641343712806702,
+        1,
+        0.14960629921259816,
+        45
+      ]
+    },
+    {
+      "seed": 46,
+      "file": "younger-socrates-w9eyj0CEB64-58808e971d09-seed46.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/younger-socrates-w9eyj0CEB64-58808e971d09-seed46.wav",
+        "sha256": "5721c1a623a18ae4353090d3e225952e2bfb0e7695caa68412755ffe77a5b9af",
+        "durationSeconds": 23.36,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/asr-qa.json",
+        "asrEvidenceSha256": "d08153714ed52b927a63565ead346220ee4b09d95b690a62900e90775734fa64",
+        "meanSpeakerCosineSimilarity": 0.8850023150444031,
+        "minimumWindowSpeakerCosineSimilarity": 0.8635621666908264,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "ff8d42e0a98a6bb8ca55232e3e188ac1afdb443e2fe7b46c32c1e8faf17effba",
+        "clippedSamples": 0,
+        "truePeakDbtp": -1.0,
+        "peakAmplitude": 0.890380859375
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8850023150444031,
+        -0.8635621666908264,
+        0,
+        0.2602739726027399,
+        46
+      ],
+      "passingRank": 1
+    },
+    {
+      "seed": 47,
+      "file": "younger-socrates-w9eyj0CEB64-58808e971d09-seed47.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/younger-socrates-w9eyj0CEB64-58808e971d09-seed47.wav",
+        "sha256": "bffe0837b82b46ed01bb63c1d02315586ba00a41aca9b989cb75e557b5ac2431",
+        "durationSeconds": 22.56,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/asr-qa.json",
+        "asrEvidenceSha256": "d08153714ed52b927a63565ead346220ee4b09d95b690a62900e90775734fa64",
+        "meanSpeakerCosineSimilarity": 0.8831748167673746,
+        "minimumWindowSpeakerCosineSimilarity": 0.8676742911338806,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "ff8d42e0a98a6bb8ca55232e3e188ac1afdb443e2fe7b46c32c1e8faf17effba",
+        "clippedSamples": 0,
+        "truePeakDbtp": -1.5,
+        "peakAmplitude": 0.833770751953125
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8831748167673746,
+        -0.8676742911338806,
+        0,
+        0.16312056737588643,
+        47
+      ],
+      "passingRank": 2
+    },
+    {
+      "seed": 48,
+      "file": "younger-socrates-w9eyj0CEB64-58808e971d09-seed48.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/younger-socrates-w9eyj0CEB64-58808e971d09-seed48.wav",
+        "sha256": "8231288a2ebe53183ffa9d332749a1ea4f7c240e0cf8de1310f6eb34cb17f6c7",
+        "durationSeconds": 23.84,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/asr-qa.json",
+        "asrEvidenceSha256": "d08153714ed52b927a63565ead346220ee4b09d95b690a62900e90775734fa64",
+        "meanSpeakerCosineSimilarity": 0.874346117178599,
+        "minimumWindowSpeakerCosineSimilarity": 0.8471792936325073,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "ff8d42e0a98a6bb8ca55232e3e188ac1afdb443e2fe7b46c32c1e8faf17effba",
+        "clippedSamples": 0,
+        "truePeakDbtp": -2.0,
+        "peakAmplitude": 0.78814697265625
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.874346117178599,
+        -0.8471792936325073,
+        0,
+        0.31543624161073813,
+        48
+      ],
+      "passingRank": 3
+    },
+    {
+      "seed": 49,
+      "file": "younger-socrates-w9eyj0CEB64-58808e971d09-seed49.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/younger-socrates-w9eyj0CEB64-58808e971d09-seed49.wav",
+        "sha256": "dea4d1a5b446a3bd0e1dafc63f9bd968a42858224e2b546543ec6ea5324bfc67",
+        "durationSeconds": 22.08,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/asr-qa.json",
+        "asrEvidenceSha256": "d08153714ed52b927a63565ead346220ee4b09d95b690a62900e90775734fa64",
+        "meanSpeakerCosineSimilarity": 0.8680970668792725,
+        "minimumWindowSpeakerCosineSimilarity": 0.8455597758293152,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/younger-socrates-0ca467f21bc0e936/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "ff8d42e0a98a6bb8ca55232e3e188ac1afdb443e2fe7b46c32c1e8faf17effba",
+        "clippedSamples": 0,
+        "truePeakDbtp": -2.3,
+        "peakAmplitude": 0.766326904296875
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8680970668792725,
+        -0.8455597758293152,
+        0,
+        0.1014492753623184,
+        49
+      ],
+      "passingRank": 4
+    }
+  ],
+  "selectedSeed": 46,
+  "selectedPassingRank": 1,
+  "decisionContentSha256": "76ff23c2bfa0a5fbb469e35cbba532302d1e6999a83d6f07c89e7f330065520d"
+}

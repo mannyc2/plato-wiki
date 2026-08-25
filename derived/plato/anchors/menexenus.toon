@@ -1,0 +1,13 @@
+dialogue: menexenus
+source_path: raw/plato/greek/menexenus.txt
+source_sha256: e00d4e5ac901940feeef9a30c1a331ce849e931ebc8cc96765f0e1a36b9ae007
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[6]:
+  group             | form    | start_char | end_char | marker | turn_id             | token_ids
+  assent_concession | πάνυ γε | 629        | 636      | 234b   | turn_menexenus_0005 | tok_menexenus_000103,tok_menexenus_000104
+  aporia_reset      | πάλιν   | 14644      | 14649    | 241d   | turn_menexenus_0030 | tok_menexenus_002341
+  aporia_reset      | πάλιν   | 17848      | 17853    | 243b   | turn_menexenus_0032 | tok_menexenus_002817
+  aporia_reset      | πάλιν   | 21199      | 21204    | 245a   | turn_menexenus_0034 | tok_menexenus_003335
+  aporia_reset      | πάλιν   | 22570      | 22575    | 245d   | turn_menexenus_0034 | tok_menexenus_003534
+  divine_legal      | ἀνόσιον | 22613      | 22620    | 245e   | turn_menexenus_0034 | tok_menexenus_003541

@@ -1,0 +1,21 @@
+# Commentary quality-audit acceptance
+
+dialogue: ion
+decision: accepted
+reviewer: manifest-batch-1-delegated-luna-reviewer-20260823
+reviewed_on: 2026-08-23
+rationale: Independent Luna source, accepted-evidence, and placement sample passed for the current Ion ledger.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sampled_commentary_ids:
+- comm_ion_0001
+- comm_ion_0004
+- comm_ion_0005
+predecessor_manifest_path: wiki/commentary-audits/ion.json
+predecessor_manifest_sha256: a1a406391bc0b2b3cdd4549dee16752a9e9789fdd223284722d72e0cc34d61ab
+predecessor_manifest_history_path: wiki/commentary-audits/history/ion/a1a406391bc0b2b3cdd4549dee16752a9e9789fdd223284722d72e0cc34d61ab.json
+predecessor_manifest_history_sha256: a1a406391bc0b2b3cdd4549dee16752a9e9789fdd223284722d72e0cc34d61ab
+predecessor_review_note_path: wiki/review/2026-08-21-commentary-quality-ion-luna-sample.md
+predecessor_review_note_sha256: 1c495a7f264a5c2f61adfe80828e4501475a52bcbb12029112c37ebc10b653c2
+predecessor_review_note_history_path: wiki/review/commentary-quality-history/ion/1c495a7f264a5c2f61adfe80828e4501475a52bcbb12029112c37ebc10b653c2.md
+predecessor_review_note_history_sha256: 1c495a7f264a5c2f61adfe80828e4501475a52bcbb12029112c37ebc10b653c2

@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "submission_id": "0036-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "laws",
+  "source_path": "scratch/commentary/sample-repairs/laws/repair-0012-20260823.json",
+  "source_sha256": "34027a708661744ea5b106abda4603acb63a5718d28242a3e7c5dc6783ec69c3",
+  "target_path": "wiki/commentary/laws.md",
+  "target_sha256_before": "cee0f62fcc9d7ac20bcd6976eec377c644e376e814c38a0a8304a7e8c9912e21",
+  "target_sha256_after": "03446802e7cf51044c68c2a93ece976b895c7190a6c35d963cca2cfd02f0efcf",
+  "applied_at": "2026-08-24T00:57:30.094Z",
+  "applied_ids": [
+    "comm_laws_0012"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "laws",
+    "ledger": {
+      "path": "wiki/commentary/laws.md",
+      "sha256": "cee0f62fcc9d7ac20bcd6976eec377c644e376e814c38a0a8304a7e8c9912e21"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-independent-audit-0012-20260823",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna audit found the accepted block overclaimed Dionysus and the later wine remedy and singing effect beyond its accepted cited records.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_laws_0001",
+        "comm_laws_0002",
+        "comm_laws_0004",
+        "comm_laws_0005",
+        "comm_laws_0006",
+        "comm_laws_0008",
+        "comm_laws_0009",
+        "comm_laws_0012",
+        "comm_laws_0016",
+        "comm_laws_0017",
+        "comm_laws_0018",
+        "comm_laws_0021",
+        "comm_laws_0022",
+        "comm_laws_0024",
+        "comm_laws_0026"
+      ],
+      "failed_commentary_ids": [
+        "comm_laws_0012"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_laws_0012",
+        "title": "Age separates the singing choruses from myth-telling",
+        "body": "The Sidonian story is marked as improbable but useful as a paradigm for legislation. The Athenian then orders participation by age: children and men up to thirty sing in distinct choruses, while men over thirty through sixty form a third singing group. Those beyond the singing age are left as myth-tellers about the same ethical matters because they can no longer bear songs. After describing older men’s reluctance to sing, he frames a legislative proposal to encourage their participation.",
+        "cites": {
+          "observations": [
+            "obs_laws_0205",
+            "obs_laws_1263",
+            "obs_laws_1264",
+            "obs_laws_1265",
+            "obs_laws_0227",
+            "obs_laws_0229"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_laws_0012",
+      "body": "```yaml\ncommentary_id: comm_laws_0012\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Age separates the singing choruses from myth-telling\"\nstephanus_span: 662d-666d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 662d-666d\n  start_marker: 662d\n  end_marker: 666d\n  start_char: 71369\n  end_char: 80326\n  text_sha256: \"4a385426bfea246565aef8732ed4d267a0742e5af45bf234313f6e1f46bb402d\"\nbody: \"The Sidonian story is marked as improbable but useful as a paradigm for legislation. The Athenian then separates the choruses by age: children and men up to thirty sing in the first two, while men over thirty through sixty form a third singing group later discussed as a chorus of Dionysus. Only after that singing range does he assign those who can no longer bear songs to myth-telling about the same ethical matters. Wine is then proposed for those from forty onward as a remedy for old age's harshness, making participation in song less shameful and more willing.\"\ncites:\n  observations: [\"obs_laws_0205\", \"obs_laws_1263\", \"obs_laws_1264\", \"obs_laws_1265\", \"obs_laws_0227\", \"obs_laws_0228\", \"obs_laws_0229\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

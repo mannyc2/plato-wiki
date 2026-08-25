@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-delegated-audit-10-252d-255c",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "phaedrus",
+  "unit_key": "10-252d-255c",
+  "source_path": "scratch/commentary/delegated-audits/phaedrus/10-252d-255c.json",
+  "source_sha256": "c3e2c1a17026d4f5916de3109c95924c0f673b69a7d22672c1a2533bf1e614b9",
+  "target_path": "wiki/submissions/commentary-audit/phaedrus/10-252d-255c.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "2f50c14d90814e8eb50c49e922e9732a03d864462325bdea2bd56b333b7881dc",
+  "applied_at": "2026-08-24T01:15:36.795Z",
+  "applied_ids": [
+    "comm_phaedrus_0010"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "phaedrus",
+    "unit_key": "10-252d-255c",
+    "job": {
+      "job_id": "audit:phaedrus:10-252d-255c",
+      "input_sha256": "90cad5dac7623ab7994a57c710d42114adc7c07cd85001a255c9f878336d006d",
+      "audit_brief_path": "scratch/commentary/audit-briefs/phaedrus/10-252d-255c.md",
+      "audit_brief_sha256": "70955783df119355636c6a41305425f4b52e1dce339d0aab042197fab779f49f",
+      "output_path": "scratch/commentary/audits/phaedrus/10-252d-255c.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/phaedrus/10-252d-255c.output.json",
+    "output_sha256": "2f50c14d90814e8eb50c49e922e9732a03d864462325bdea2bd56b333b7881dc",
+    "provenance": {
+      "auditor": "batch-c-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

@@ -1,0 +1,707 @@
+{
+  "config_version": 3,
+  "execution_date": "2026-07-12",
+  "authorization": "operator green-light 2026-07-11 (queue construction) + operator Phase 2 authorization 2026-07-12; scope = authorized_queue (29) only; every extension candidate rejected",
+  "execution_rule": "append-only stance events on authorized flagged claims; validator-forced standing->superseded re-resolutions within the authorized queue only; all other records untouched",
+  "queue_input_files_verified": {
+    "wiki/relations/charmides.md": "5ef4bd3a7ba7848f469cf7f5e8b03c30d699143300a75ce4d3917a92b3cdfccf",
+    "wiki/relations/cratylus.md": "c3074ae69864691c1551f3974fc55535bcabbf295944ee5b4f6578e68c7bed57",
+    "wiki/relations/crito.md": "a6631b52eecab14d59b1b5c8ffe35145d8ab3212c71b57017fe09ce2486c8ad6",
+    "wiki/relations/cross-dialogue.md": "762acc07ba98b2e717196118f7c244335996da1e35fede51aa4db49d198ac0e2",
+    "wiki/relations/euthydemus.md": "67afa1026a59bb05288cbbc278bfb8e7299d030a3b7f92eaf31f13f16aacd695",
+    "wiki/relations/euthyphro.md": "bfe7f264514470b7c13222ad924d52a89f093762c414701c97f3c6676ae9bd79",
+    "wiki/relations/gorgias.md": "b5e1aa90a0f7338a0752ba60099c7f2d4194043be3c17684a6c4ee701285de87",
+    "wiki/relations/greater-hippias.md": "6a0a848e77b9ef229017dd1df876084a6db5a42fbea777f362e410ff327e2e62",
+    "wiki/relations/ion.md": "7542d1facc6516773e573212cb9725191594c809c3e73ca14196951b7f4f6c2e",
+    "wiki/relations/laches.md": "ded1757874ab68696ba1929939d15f5b65605201e4930d43a59083f4a099452d",
+    "wiki/relations/laws.md": "862aca83dc0dce52bf3f2ccba840df70d04ab0916f245e3f262930508456ed2d",
+    "wiki/relations/lesser-hippias.md": "46410cc216b7d2994e04611b6e94a00cd33042797cf4fc124a7d3f3f2b0835d7",
+    "wiki/relations/lysis.md": "13b52859345446c7108e90752a66e8c50b2070c9d5e75ce90c3bcf5e283bd383",
+    "wiki/relations/meno.md": "262251ec831d1ab58886d4ec4788a9bae2f3cf4c9e47fd8e7a6e9ecb9a217917",
+    "wiki/relations/parmenides.md": "0c5197f5a8dd45c5cc1cab9ea46ffbfd693c40c99a88f62ba98372b6a241f420",
+    "wiki/relations/phaedo.md": "f4acc7c8e9bec116adefa4f1d72bdc24b348aad0f6a62e90940a93bb852bab28",
+    "wiki/relations/phaedrus.md": "9344013a7d05045880d1e05d0232649bd04c5a68ab2e7bdb7b326c4eb2e05cca",
+    "wiki/relations/philebus.md": "c28959e00c15a7d0b00c00d377f7284c9368091c2a39391635bd31020104d47f",
+    "wiki/relations/protagoras.md": "886ee4c66647850cfc28e4d4ddf0216e497da6db634fa4e55cef3dcb9066ff58",
+    "wiki/relations/republic.md": "2dd0704991cf68ed41892d002ab2892d6e1e5abb1e32f5cb77e9b860c046bb21",
+    "wiki/relations/sophist.md": "ea979362f0d9eae3276cc01736ab054fad9e33daf03b9284a874b7cbf2ad396b",
+    "wiki/relations/statesman.md": "e42e4578da37faef62ec99c305942f9297cae7d62fe0b10587eafb73193ad809",
+    "wiki/relations/symposium.md": "33079975bd95280ec813f2354ddd7679b9ab202a83444e166e8c81bf67e69001",
+    "wiki/relations/theaetetus.md": "37897ca52af7d5f1cc9669aee5651d23326ccce6a94bb2aa6a299274c959c015",
+    "wiki/relations/timaeus.md": "832e164d78c2d2eab819d504ee258ebb65872605e457a58a081896652b132962"
+  },
+  "derivation_rule": "an authorized relation licenses a stance event iff relation_kind=revision, scope is the claim's own dialogue, the revised side (earlier top-level start_char) is the queue's flagged claim, and the revising span does not precede the flagged claim's last existing stance event; the event copies the revising claim's verified source_ref and is re-hashed against the raw Greek",
+  "stance_kind_map": {
+    "revision": "revised"
+  },
+  "final_status_map": {
+    "asserted": "left_standing",
+    "reaffirmed": "left_standing",
+    "reported": "left_standing",
+    "posed_for_examination": "posed_only",
+    "challenged": "unresolved_challenge",
+    "refuted_conceded": "refuted",
+    "revised": "revised",
+    "withdrawn": "withdrawn"
+  },
+  "events": [
+    {
+      "claim": "claim_theaetetus_0005",
+      "licensed_by": "rel_theaetetus_0013",
+      "revising_claim": "claim_theaetetus_0076",
+      "kind": "revised",
+      "stephanus_span": "163a",
+      "source_ref": {
+        "source_path": "raw/plato/greek/theaetetus.txt",
+        "stephanus_span": "163a",
+        "start_marker": "163a",
+        "end_marker": "163a",
+        "start_char": 42931,
+        "end_char": 43342,
+        "text_sha256": "1c28b918aed1b5cc0c382fbaa1ada46bf22d41cc1c6906a1356a9845fa59c9e0"
+      }
+    },
+    {
+      "claim": "claim_theaetetus_0005",
+      "licensed_by": "rel_theaetetus_0016",
+      "revising_claim": "claim_theaetetus_0177",
+      "kind": "revised",
+      "stephanus_span": "187b",
+      "source_ref": {
+        "source_path": "raw/plato/greek/theaetetus.txt",
+        "stephanus_span": "187b",
+        "start_marker": "187b",
+        "end_marker": "187b",
+        "start_char": 93574,
+        "end_char": 94026,
+        "text_sha256": "e9c61800ccad358a5ce230aa68e62c4eb55ff8f9e8acb5ac14c065efd2fdc09a"
+      }
+    },
+    {
+      "claim": "claim_theaetetus_0029",
+      "licensed_by": "rel_theaetetus_0018",
+      "revising_claim": "claim_theaetetus_0153",
+      "kind": "revised",
+      "stephanus_span": "182e",
+      "source_ref": {
+        "source_path": "raw/plato/greek/theaetetus.txt",
+        "stephanus_span": "182e",
+        "start_marker": "182e",
+        "end_marker": "182e",
+        "start_char": 84279,
+        "end_char": 84692,
+        "text_sha256": "198bb0f41b956cd90766715820bf98dafa8dcf73d228cf6e4936f6b5b6e2baeb"
+      }
+    },
+    {
+      "claim": "claim_theaetetus_0029",
+      "licensed_by": "rel_theaetetus_0019",
+      "revising_claim": "claim_theaetetus_0275",
+      "kind": "revised",
+      "stephanus_span": "210a-210b",
+      "source_ref": {
+        "source_path": "raw/plato/greek/theaetetus.txt",
+        "stephanus_span": "210a-210b",
+        "start_marker": "210a",
+        "end_marker": "210b",
+        "start_char": 140479,
+        "end_char": 141279,
+        "text_sha256": "420d8ffe39be98de3c113bf8ff78cfee16a59cbc0b45a73fe1aa33def71273ad"
+      }
+    }
+  ],
+  "final_status_changes": {
+    "claim_theaetetus_0005": {
+      "before": "left_standing",
+      "after": "revised"
+    },
+    "claim_theaetetus_0029": {
+      "before": "left_standing",
+      "after": "revised"
+    }
+  },
+  "forced_resolutions": [
+    {
+      "relation_id": "rel_cross-dialogue_0046",
+      "kind": "tension",
+      "claim_a": "claim_charmides_0018",
+      "claim_b": "claim_theaetetus_0005",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0069",
+      "kind": "contradiction",
+      "claim_a": "claim_charmides_0020",
+      "claim_b": "claim_theaetetus_0005",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0253",
+      "kind": "tension",
+      "claim_a": "claim_euthyphro_0043",
+      "claim_b": "claim_theaetetus_0005",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0440",
+      "kind": "tension",
+      "claim_a": "claim_laches_0029",
+      "claim_b": "claim_theaetetus_0005",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0558",
+      "kind": "restatement",
+      "claim_a": "claim_laws_0179",
+      "claim_b": "claim_theaetetus_0005",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1094",
+      "kind": "restatement",
+      "claim_a": "claim_protagoras_0053",
+      "claim_b": "claim_theaetetus_0005",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1104",
+      "kind": "tension",
+      "claim_a": "claim_protagoras_0065",
+      "claim_b": "claim_theaetetus_0005",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1126",
+      "kind": "tension",
+      "claim_a": "claim_protagoras_0073",
+      "claim_b": "claim_theaetetus_0005",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1241",
+      "kind": "tension",
+      "claim_a": "claim_statesman_0067",
+      "claim_b": "claim_theaetetus_0005",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1264",
+      "kind": "tension",
+      "claim_a": "claim_theaetetus_0005",
+      "claim_b": "claim_timaeus_0069",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1266",
+      "kind": "tension",
+      "claim_a": "claim_theaetetus_0005",
+      "claim_b": "claim_timaeus_0070",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_theaetetus_0003",
+      "kind": "revision",
+      "claim_a": "claim_theaetetus_0003",
+      "claim_b": "claim_theaetetus_0005",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_theaetetus_0008",
+      "kind": "tension",
+      "claim_a": "claim_theaetetus_0004",
+      "claim_b": "claim_theaetetus_0005",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_theaetetus_0013",
+      "kind": "revision",
+      "claim_a": "claim_theaetetus_0005",
+      "claim_b": "claim_theaetetus_0076",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_theaetetus_0015",
+      "kind": "tension",
+      "claim_a": "claim_theaetetus_0005",
+      "claim_b": "claim_theaetetus_0173",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_theaetetus_0016",
+      "kind": "revision",
+      "claim_a": "claim_theaetetus_0005",
+      "claim_b": "claim_theaetetus_0177",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0005"
+    },
+    {
+      "relation_id": "rel_theaetetus_0018",
+      "kind": "revision",
+      "claim_a": "claim_theaetetus_0029",
+      "claim_b": "claim_theaetetus_0153",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0029"
+    },
+    {
+      "relation_id": "rel_theaetetus_0019",
+      "kind": "revision",
+      "claim_a": "claim_theaetetus_0029",
+      "claim_b": "claim_theaetetus_0275",
+      "resolution_before": "standing",
+      "resolution_after": "superseded",
+      "forced_by": "claim_theaetetus_0029"
+    }
+  ],
+  "untouched_authorized": [
+    "rel_cross-dialogue_0049",
+    "rel_cross-dialogue_0072",
+    "rel_cross-dialogue_0443",
+    "rel_cross-dialogue_0997",
+    "rel_cross-dialogue_1093",
+    "rel_cross-dialogue_1107",
+    "rel_cross-dialogue_1129",
+    "rel_cross-dialogue_1282",
+    "rel_cross-dialogue_1285",
+    "rel_theaetetus_0012",
+    "rel_theaetetus_0054"
+  ],
+  "dispositions": [
+    {
+      "relation_id": "rel_cross-dialogue_0046",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_charmides_0018",
+      "action": "resolution_update",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable; resolution standing -> superseded is validator-forced because a linked claim's final_status changed"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0049",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_charmides_0018",
+      "action": "no_change",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0069",
+      "scope": "cross-dialogue",
+      "kind": "contradiction",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_charmides_0020",
+      "action": "resolution_update",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable; resolution standing -> superseded is validator-forced because a linked claim's final_status changed"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0072",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_charmides_0020",
+      "action": "no_change",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0253",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_euthyphro_0043",
+      "other_claim": "claim_theaetetus_0005",
+      "action": "resolution_update",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable; resolution standing -> superseded is validator-forced because a linked claim's final_status changed"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0440",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_laches_0029",
+      "action": "resolution_update",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable; resolution standing -> superseded is validator-forced because a linked claim's final_status changed"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0443",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_laches_0029",
+      "action": "no_change",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0558",
+      "scope": "cross-dialogue",
+      "kind": "restatement",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_laws_0179",
+      "action": "resolution_update",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable; resolution standing -> superseded is validator-forced because a linked claim's final_status changed"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0997",
+      "scope": "cross-dialogue",
+      "kind": "contradiction",
+      "flagged_claim": "claim_theaetetus_0234",
+      "other_claim": "claim_phaedo_0097",
+      "action": "no_change",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1093",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_protagoras_0053",
+      "action": "no_change",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1094",
+      "scope": "cross-dialogue",
+      "kind": "restatement",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_protagoras_0053",
+      "action": "resolution_update",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable; resolution standing -> superseded is validator-forced because a linked claim's final_status changed"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1104",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_protagoras_0065",
+      "action": "resolution_update",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable; resolution standing -> superseded is validator-forced because a linked claim's final_status changed"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1107",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_protagoras_0065",
+      "action": "no_change",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1126",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_protagoras_0073",
+      "action": "resolution_update",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable; resolution standing -> superseded is validator-forced because a linked claim's final_status changed"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1129",
+      "scope": "cross-dialogue",
+      "kind": "restatement",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_protagoras_0073",
+      "action": "no_change",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1241",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_statesman_0067",
+      "action": "resolution_update",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable; resolution standing -> superseded is validator-forced because a linked claim's final_status changed"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1264",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_timaeus_0069",
+      "action": "resolution_update",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable; resolution standing -> superseded is validator-forced because a linked claim's final_status changed"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1266",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_timaeus_0070",
+      "action": "resolution_update",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable; resolution standing -> superseded is validator-forced because a linked claim's final_status changed"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1282",
+      "scope": "cross-dialogue",
+      "kind": "revision",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_timaeus_0069",
+      "action": "no_change",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable"
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1285",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_timaeus_0070",
+      "action": "no_change",
+      "reason": "cross-dialogue relation; stance events must cite the claim's own dialogue source (claim validator), so no fate event is derivable"
+    },
+    {
+      "relation_id": "rel_theaetetus_0003",
+      "scope": "theaetetus",
+      "kind": "revision",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_theaetetus_0003",
+      "action": "resolution_update",
+      "reason": "revision flows onto the earlier claim claim_theaetetus_0003, which is not the queue's flagged claim; no event on claim_theaetetus_0005; resolution standing -> superseded is validator-forced because a linked claim's final_status changed"
+    },
+    {
+      "relation_id": "rel_theaetetus_0008",
+      "scope": "theaetetus",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_theaetetus_0004",
+      "action": "resolution_update",
+      "reason": "standing tension records a co-present pull, not a fate event; no stance event is licensed; resolution standing -> superseded is validator-forced because a linked claim's final_status changed"
+    },
+    {
+      "relation_id": "rel_theaetetus_0012",
+      "scope": "theaetetus",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_theaetetus_0004",
+      "action": "no_change",
+      "reason": "standing tension records a co-present pull, not a fate event; no stance event is licensed"
+    },
+    {
+      "relation_id": "rel_theaetetus_0013",
+      "scope": "theaetetus",
+      "kind": "revision",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_theaetetus_0076",
+      "action": "stance_event",
+      "reason": "revised stance event appended to claim_theaetetus_0005 at 163a, citing the revising claim claim_theaetetus_0076's verified source_ref; resolution standing -> superseded in the same pass"
+    },
+    {
+      "relation_id": "rel_theaetetus_0015",
+      "scope": "theaetetus",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_theaetetus_0173",
+      "action": "resolution_update",
+      "reason": "standing tension records a co-present pull, not a fate event; no stance event is licensed; resolution standing -> superseded is validator-forced because a linked claim's final_status changed"
+    },
+    {
+      "relation_id": "rel_theaetetus_0016",
+      "scope": "theaetetus",
+      "kind": "revision",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_theaetetus_0177",
+      "action": "stance_event",
+      "reason": "revised stance event appended to claim_theaetetus_0005 at 187b, citing the revising claim claim_theaetetus_0177's verified source_ref; resolution standing -> superseded in the same pass"
+    },
+    {
+      "relation_id": "rel_theaetetus_0018",
+      "scope": "theaetetus",
+      "kind": "revision",
+      "flagged_claim": "claim_theaetetus_0029",
+      "other_claim": "claim_theaetetus_0153",
+      "action": "stance_event",
+      "reason": "revised stance event appended to claim_theaetetus_0029 at 182e, citing the revising claim claim_theaetetus_0153's verified source_ref; resolution standing -> superseded in the same pass"
+    },
+    {
+      "relation_id": "rel_theaetetus_0019",
+      "scope": "theaetetus",
+      "kind": "revision",
+      "flagged_claim": "claim_theaetetus_0029",
+      "other_claim": "claim_theaetetus_0275",
+      "action": "stance_event",
+      "reason": "revised stance event appended to claim_theaetetus_0029 at 210a-210b, citing the revising claim claim_theaetetus_0275's verified source_ref; resolution standing -> superseded in the same pass"
+    },
+    {
+      "relation_id": "rel_theaetetus_0054",
+      "scope": "theaetetus",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_theaetetus_0173",
+      "action": "no_change",
+      "reason": "standing tension records a co-present pull, not a fate event; no stance event is licensed"
+    }
+  ],
+  "fail_closed_claims": {
+    "claim_euthyphro_0043": {
+      "blockers": [
+        {
+          "relation_id": "rel_cross-dialogue_0030",
+          "resolution": "standing",
+          "review_status": "accepted"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0052",
+          "resolution": "standing",
+          "review_status": "accepted"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0244",
+          "resolution": "standing",
+          "review_status": "accepted"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0245",
+          "resolution": "standing",
+          "review_status": "accepted"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0246",
+          "resolution": "standing",
+          "review_status": "accepted"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0247",
+          "resolution": "standing",
+          "review_status": "accepted"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0248",
+          "resolution": "standing",
+          "review_status": "accepted"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0249",
+          "resolution": "standing",
+          "review_status": "accepted"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0250",
+          "resolution": "standing",
+          "review_status": "accepted"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0251",
+          "resolution": "standing",
+          "review_status": "accepted"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0252",
+          "resolution": "standing",
+          "review_status": "accepted"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0254",
+          "resolution": "standing",
+          "review_status": "needs_split"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0255",
+          "resolution": "standing",
+          "review_status": "needs_split"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0256",
+          "resolution": "standing",
+          "review_status": "needs_split"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0257",
+          "resolution": "standing",
+          "review_status": "needs_split"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_0258",
+          "resolution": "standing",
+          "review_status": "needs_split"
+        },
+        {
+          "relation_id": "rel_euthyphro_0029",
+          "resolution": "standing",
+          "review_status": "accepted"
+        },
+        {
+          "relation_id": "rel_euthyphro_0030",
+          "resolution": "standing",
+          "review_status": "rejected"
+        }
+      ]
+    },
+    "claim_theaetetus_0177": {
+      "blockers": [
+        {
+          "relation_id": "rel_cross-dialogue_0256",
+          "resolution": "standing",
+          "review_status": "needs_split"
+        },
+        {
+          "relation_id": "rel_cross-dialogue_1244",
+          "resolution": "standing",
+          "review_status": "rejected"
+        },
+        {
+          "relation_id": "rel_theaetetus_0007",
+          "resolution": "standing",
+          "review_status": "rejected"
+        },
+        {
+          "relation_id": "rel_theaetetus_0026",
+          "resolution": "standing",
+          "review_status": "rejected"
+        }
+      ]
+    },
+    "claim_theaetetus_0234": {
+      "blockers": [
+        {
+          "relation_id": "rel_cross-dialogue_0167",
+          "resolution": "standing",
+          "review_status": "rejected"
+        }
+      ]
+    }
+  },
+  "edited_files": {
+    "wiki/claims/theaetetus.md": {
+      "sha_before": "fbe3b8a620249752e8cebe2712b989176f59710425a1a26976d19823962ab64e",
+      "sha_after": "198ce8fdda8052cdbd4add3d63f7af4b89dd343821095592705f7122687eb2b6"
+    },
+    "wiki/relations/cross-dialogue.md": {
+      "sha_before": "762acc07ba98b2e717196118f7c244335996da1e35fede51aa4db49d198ac0e2",
+      "sha_after": "7d59617af87b9f9323a421b50b5a336bdd61570cf724f97e0626a1a3a097410a"
+    },
+    "wiki/relations/theaetetus.md": {
+      "sha_before": "37897ca52af7d5f1cc9669aee5651d23326ccce6a94bb2aa6a299274c959c015",
+      "sha_after": "baf47d8b3236bfcd31bf0310f6af170fdac51f1a8f9d5211cda9a0e7acbde2ac"
+    }
+  },
+  "phase1_freeze_note": "after these edits the Phase 1 --check gate exits 1 on input-sha drift BY DESIGN; the Phase 1 artifacts describe the pre-Phase-2 ledger state they were adjudicated against"
+}

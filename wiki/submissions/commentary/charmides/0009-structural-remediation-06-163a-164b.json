@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "submission_id": "0009-structural-remediation-06-163a-164b",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "charmides",
+  "unit_key": "06-163a-164b",
+  "source_path": "scratch/commentary/audits/charmides/06-163a-164b.json",
+  "source_sha256": "36fe9ca96de616f9e5e78c5838dad99fd61538f9dafefb2914d0c2be70b1b32f",
+  "target_path": "wiki/commentary/charmides.md",
+  "target_sha256_before": "9ae9512c677bfbab287542ece49a166abc1be202249f0fdf1353a0ae24533ef5",
+  "target_sha256_after": "c726e0f6766cd12858350054d01bb9591efb2aed282d5af6a2d0ad2a971653de",
+  "applied_at": "2026-08-23T22:34:11.110Z",
+  "applied_ids": [
+    "comm_charmides_0006",
+    "comm_charmides_0027",
+    "comm_charmides_0028"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "charmides",
+      "unitKey": "06-163a-164b",
+      "sectionId": "comm_charmides_0006",
+      "auditOutputPath": "scratch/commentary/audits/charmides/06-163a-164b.json",
+      "auditOutputSha256": "36fe9ca96de616f9e5e78c5838dad99fd61538f9dafefb2914d0c2be70b1b32f",
+      "expectedLedgerSha256": "9ae9512c677bfbab287542ece49a166abc1be202249f0fdf1353a0ae24533ef5",
+      "expectedAttributionSha256": "15af84af30150ae71bd1fb685dade849457450a1b1fca53758d46ab2d7425166",
+      "expectedEnglishSha256": "2b3601a95dceed4b86e1c48dfd5fcb829d4b03e004563852ac527f9806bb99a0",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_charmides_0006"
+        },
+        {
+          "operation": "remove",
+          "commentaryId": "comm_charmides_0027"
+        },
+        {
+          "operation": "remove",
+          "commentaryId": "comm_charmides_0028"
+        }
+      ],
+      "reviewer": "lane-c-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna assessment confirms conservative rejection of audited remove findings and split originals; placement is retained and no reanchors are claimed."
+    },
+    "audit_output_path": "scratch/commentary/audits/charmides/06-163a-164b.json",
+    "audit_output_sha256": "36fe9ca96de616f9e5e78c5838dad99fd61538f9dafefb2914d0c2be70b1b32f",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_charmides_0006",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_charmides_0027",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_charmides_0028",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

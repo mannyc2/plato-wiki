@@ -1,0 +1,415 @@
+{
+  "schema_version": 1,
+  "dialogue": "phaedo",
+  "ledger": {
+    "path": "wiki/commentary/phaedo.md",
+    "sha256": "6d7ee922c342bb2ca3ba4d386a684b4c6d51bd89ad9a631df728605dd3f70b50"
+  },
+  "protocol": {
+    "path": "docs/commentary-protocol.md",
+    "sha256": "5f5e6f47f2d39cb42dd8941762ca1b82b4c1371801576f9ec7875e76286e1a13"
+  },
+  "authoring": {
+    "model": "gpt-5.6-luna",
+    "effort": "medium"
+  },
+  "units": [
+    {
+      "unit_key": "01-57a-61b",
+      "section_id": "comm_phaedo_0001",
+      "audit_brief_sha256": "ce3a42c94a07a1f9c2f8fbcdde1544cf66b94c0f091b3ea062219511968bf0f1",
+      "output_path": "scratch/commentary/audits/phaedo/01-57a-61b.json",
+      "output_sha256": "906624c60e16bfff71c0a179e4e41268221c955847f71b69b693d8a40bec7157",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "01-57a-61b",
+        "section_id": "comm_phaedo_0001",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "02-61c-65a",
+      "section_id": "comm_phaedo_0002",
+      "audit_brief_sha256": "c217b710d2624c055879f97ca7853bc8033f20f8c3cae1d18597a9f0362a655b",
+      "output_path": "scratch/commentary/audits/phaedo/02-61c-65a.json",
+      "output_sha256": "c07cca78e0790c660cb89d971a34c0874fe543bbb6cc81d1437a06af75635ba6",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "02-61c-65a",
+        "section_id": "comm_phaedo_0002",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "03-65b-68e",
+      "section_id": "comm_phaedo_0003",
+      "audit_brief_sha256": "d0f957baeba64eb5ac8c942c83abba2ea78c311daef862841f2b1cda976e6751",
+      "output_path": "scratch/commentary/audits/phaedo/03-65b-68e.json",
+      "output_sha256": "9ffbab7f64693e07f759600cb4e63b7cfd8662928c601afab2867ca9829287c2",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "03-65b-68e",
+        "section_id": "comm_phaedo_0003",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_phaedo_0003",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "The interpretation is grounded in the passage’s body–soul contrast, treatment of fear and pleasure, and account of philosophical courage. The edge is a complete turn boundary and suits the transition."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "04-69a-72e",
+      "section_id": "comm_phaedo_0004",
+      "audit_brief_sha256": "4e742171fdfd058c22c8220ddb503dcda082de7e5ed25578bdef6ff622fa9c12",
+      "output_path": "scratch/commentary/audits/phaedo/04-69a-72e.json",
+      "output_sha256": "76c45733d6b82f8fc8d36ba5c4650869cb1400fa35da9c1820993d91284c218a",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "04-69a-72e",
+        "section_id": "comm_phaedo_0004",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "05-73a-76e",
+      "section_id": "comm_phaedo_0005",
+      "audit_brief_sha256": "b0784abdb66fdf8fca0831ff2caed82d9cdb70cb645afa287f557ff27336838e",
+      "output_path": "scratch/commentary/audits/phaedo/05-73a-76e.json",
+      "output_sha256": "05db7505ffc6f39208f172eca6c7249ba28bbf5e1babad42fc637df1ce50b294",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "05-73a-76e",
+        "section_id": "comm_phaedo_0005",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_phaedo_0005",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames the recollection argument and its equality example; the complete edge falls between related examples and the concise overview remains clear aloud."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "06-77a-80c",
+      "section_id": "comm_phaedo_0006",
+      "audit_brief_sha256": "498ef9436b642fb684896f0e461778b61f1ad5bff4c51a0b081ab860b3518a77",
+      "output_path": "scratch/commentary/audits/phaedo/06-77a-80c.json",
+      "output_sha256": "0b1d1fc835c383b7fd5b2710779b6a0a97d00fb729acb84e67e7656bf101c334",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "06-77a-80c",
+        "section_id": "comm_phaedo_0006",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "07-80d-84c",
+      "section_id": "comm_phaedo_0007",
+      "audit_brief_sha256": "4aa444cbcef6228f24a94816e1ea8553e9b213e86a08950ea06c098aaf283fc8",
+      "output_path": "scratch/commentary/audits/phaedo/07-80d-84c.json",
+      "output_sha256": "b52577beb437b2b6fb44549d581669cbd27dd9ab398e7c108bfc4ed95f6c5392",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "07-80d-84c",
+        "section_id": "comm_phaedo_0007",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "08-84d-88c",
+      "section_id": "comm_phaedo_0008",
+      "audit_brief_sha256": "e080a16cad7ea395f73fac6ef2991c34d302c7aa3311fdb08c1c82cc578a027c",
+      "output_path": "scratch/commentary/audits/phaedo/08-84d-88c.json",
+      "output_sha256": "117b78d7914142d1546bd6c494a7c2ad9bb4016a7b802166f267b83bb4e96a54",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "08-84d-88c",
+        "section_id": "comm_phaedo_0008",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "09-88d-92c",
+      "section_id": "comm_phaedo_0009",
+      "audit_brief_sha256": "38bba6006f6bb8275059f8e494615749c7423a2010bbbdf4cc8545cae3db509f",
+      "output_path": "scratch/commentary/audits/phaedo/09-88d-92c.json",
+      "output_sha256": "6eee45db3722525cf32ba8dbbb7305f818fb3d5d161f2bc207da2b878574001f",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "09-88d-92c",
+        "section_id": "comm_phaedo_0009",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "10-92d-96c",
+      "section_id": "comm_phaedo_0010",
+      "audit_brief_sha256": "7d4111e8b7bd7c86fcfde72fbcfa99f9471fa0aebbafe875ed104edbe1cfac52",
+      "output_path": "scratch/commentary/audits/phaedo/10-92d-96c.json",
+      "output_sha256": "eb5ca9b92a3866673adee4d0a270245abaa1e78124a405f46dc96e59ad2053de",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "10-92d-96c",
+        "section_id": "comm_phaedo_0010",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_phaedo_0010",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Interpretive framing accurately synthesizes the harmony argument and the soul’s resistance to appetite; the edge follows Socrates’ setup and precedes the composite-thing question cleanly."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "11-96d-100e",
+      "section_id": "comm_phaedo_0011",
+      "audit_brief_sha256": "3d1dda0113b9bd61d6c70689f28de02de748ba51a86075c04117a67db4591c3f",
+      "output_path": "scratch/commentary/audits/phaedo/11-96d-100e.json",
+      "output_sha256": "45fe3493a4896f620a3a5b3aa98981c26d7f2754b70451c267d498a79b310062",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "11-96d-100e",
+        "section_id": "comm_phaedo_0011",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "12-101a-104e",
+      "section_id": "comm_phaedo_0012",
+      "audit_brief_sha256": "cd6098b2370efdc651eba4f46d95f3a4afd17ca8de261c92d1921814c444c6e6",
+      "output_path": "scratch/commentary/audits/phaedo/12-101a-104e.json",
+      "output_sha256": "4535e95fedb4dd5b23dd4fad9381eaf52a7498ba538905c5915084966be01f29",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "12-101a-104e",
+        "section_id": "comm_phaedo_0012",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "13-105a-109a",
+      "section_id": "comm_phaedo_0013",
+      "audit_brief_sha256": "685fc3af45f807077dbeb165839901d64566fdccb3c41e6921f5a80d916c9d4e",
+      "output_path": "scratch/commentary/audits/phaedo/13-105a-109a.json",
+      "output_sha256": "36e679edd3d43469351317d2171610140aebe543a00478c1eb1cd4f4155ee84b",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "13-105a-109a",
+        "section_id": "comm_phaedo_0013",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_phaedo_0013",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames the section’s hinge: Cebes accepts, Simmias hesitates, and Socrates turns to ethical care and a qualified afterlife account. The edge follows a complete exchange and prepares the next argument."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "14-109b-113b",
+      "section_id": "comm_phaedo_0014",
+      "audit_brief_sha256": "47baf06f59bbbacb941aa5b0d441e5b32da6603e5dac3d416fbc346895ddaaaf",
+      "output_path": "scratch/commentary/audits/phaedo/14-109b-113b.json",
+      "output_sha256": "38eb0151643d6e821b77a8d300b6bf08e0f9ba31ad3372971a16b457f34a43c8",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "14-109b-113b",
+        "section_id": "comm_phaedo_0014",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_phaedo_0014",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "The passage presents a mythic, qualified account; this interpretation adds useful framing. The edge follows Socrates’ account and precedes Phaedo’s continuation without disrupting a sentence or exchange."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "15-113c-118a",
+      "section_id": "comm_phaedo_0015",
+      "audit_brief_sha256": "e1535f03a05781fa7304080707d0f147987896bf14cbec534fa696c61eca1627",
+      "output_path": "scratch/commentary/audits/phaedo/15-113c-118a.json",
+      "output_sha256": "d55f1e7ae5ebfdad2ac83e9d48b4f2943c324c591c94f0a6613cdfbc5c9948c9",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "phaedo",
+        "unit_key": "15-113c-118a",
+        "section_id": "comm_phaedo_0015",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    }
+  ],
+  "acceptance": {
+    "decision": "accepted",
+    "reviewer": "manifest-batch-2-delegated-luna-reviewer-20260823",
+    "reviewed_on": "2026-08-23",
+    "rationale": "All 5 active accepted IDs sampled in ledger order; prose, Greek source, cited evidence, placement, and audit checks pass with no defects.",
+    "sampled_commentary_ids": [
+      "comm_phaedo_0003",
+      "comm_phaedo_0005",
+      "comm_phaedo_0010",
+      "comm_phaedo_0013",
+      "comm_phaedo_0014"
+    ],
+    "review_note": {
+      "path": "wiki/review/2026-08-23-commentary-quality-phaedo-luna-sample.md",
+      "sha256": "9f28284e51bae1b910da60078ce8c8c62aadb6ef29cebc7b90097b89ca6228f0"
+    }
+  }
+}

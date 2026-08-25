@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0006-structural-remediation-06-186a-187b",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "laches",
+  "unit_key": "06-186a-187b",
+  "source_path": "scratch/commentary/audits/laches/06-186a-187b.json",
+  "source_sha256": "1bfffffa8522098858f6978d3663a4a099ec1676c0e3282452c1b41c89791a85",
+  "target_path": "wiki/commentary/laches.md",
+  "target_sha256_before": "09ecced47fc1a2af5dbe620f35f5b42b8a795dace4622ffe9c02ef3a69352456",
+  "target_sha256_after": "d4693a6b70266714da6b84bef435851dd5fc66cab5899c579636173d2d175ee4",
+  "applied_at": "2026-08-23T22:31:05.771Z",
+  "applied_ids": [
+    "comm_laches_0006"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "laches",
+      "unitKey": "06-186a-187b",
+      "sectionId": "comm_laches_0006",
+      "auditOutputPath": "scratch/commentary/audits/laches/06-186a-187b.json",
+      "auditOutputSha256": "1bfffffa8522098858f6978d3663a4a099ec1676c0e3282452c1b41c89791a85",
+      "expectedLedgerSha256": "09ecced47fc1a2af5dbe620f35f5b42b8a795dace4622ffe9c02ef3a69352456",
+      "expectedAttributionSha256": "6b6fc5da8bc82857e6036f0a5258683eed9bdfbf3b1dbb444d3dc4030bd4f63d",
+      "expectedEnglishSha256": "574c960261b743ae4c28d7c8f6a2a06cbfadc50f4ff00f38f9765c6dc15ee0eb",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_laches_0006"
+        }
+      ],
+      "reviewer": "lane-c-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna assessment confirms conservative rejection of audited remove findings and split originals; placement is retained and no reanchors are claimed."
+    },
+    "audit_output_path": "scratch/commentary/audits/laches/06-186a-187b.json",
+    "audit_output_sha256": "1bfffffa8522098858f6978d3663a4a099ec1676c0e3282452c1b41c89791a85",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_laches_0006",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

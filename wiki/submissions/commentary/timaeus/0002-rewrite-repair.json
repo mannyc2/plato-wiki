@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "timaeus",
+  "source_path": "scratch/commentary/rewrite-repairs/timaeus/round1-0004-0015.json",
+  "source_sha256": "a7b8be23eef567a1cacaac9a7bebffc31ce2143ed9dcc2af2f6d4634db4d0cf7",
+  "target_path": "wiki/commentary/timaeus.md",
+  "target_sha256_before": "836fd114574764301af7a9f2dc1652d17a0484ffc3f68d932e7bdabb9c3d6f1b",
+  "target_sha256_after": "06c5c232a87255c48d7f4ba21e20f6f1df63e5376d9ca347c6884d0f8808a6b1",
+  "applied_at": "2026-08-21T19:14:04.644Z",
+  "applied_ids": [
+    "comm_timaeus_0004",
+    "comm_timaeus_0015"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "timaeus",
+    "ledger": {
+      "path": "wiki/commentary/timaeus.md",
+      "sha256": "836fd114574764301af7a9f2dc1652d17a0484ffc3f68d932e7bdabb9c3d6f1b"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/timaeus/0001-rewrite-batch.json",
+      "sha256": "11ddca8d08fabeb344360c71a12d10050a5693dde4e56e0187148f8c8dc2cbec"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-timaeus-0001-rewrite-batch-acceptance.md",
+      "sha256": "8fccdb2af2cb277028bd5f34172ccfbf8dce984e0881800f7a7aeb1dbff15f81"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-timaeus-round1",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_timaeus_0004",
+          "finding": "The body’s concluding rule that an account must fit its subject and not promise more certainty is the source’s methodological principle at 29b, but the block cites neither obs_timaeus_0070 nor an equivalent accepted record; its listed citations do not support that specific checkable assertion."
+        },
+        {
+          "commentary_id": "comm_timaeus_0015",
+          "finding": "The cited records support the general change rule, the turn to tastes, smells, and hearing, but none supports the body’s checkable claim that the sequence closes with color; taste and color are not adequately evidenced by the listed citations."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-timaeus-round1",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_timaeus_0004",
+      "comm_timaeus_0015"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_timaeus_0004",
+        "title": "The prelude: invoking gods and defining the task",
+        "body": "Critias assigns Timaeus the first turn, from the cosmos to human nature; Timaeus invokes the gods, then turns to “our part,” the exposition. He starts by distinguishing what always is from what becomes, and presents the universe as generated, made by reference to a model. The passage also says that accounts should be akin to the things they explain, giving stable, firm accounts as the measure for what is stable. I read this prelude as a rule for listening: the account must fit its subject, not promise more certainty than the subject allows.",
+        "cites": {
+          "observations": [
+            "obs_timaeus_0060",
+            "obs_timaeus_0064",
+            "obs_timaeus_0070",
+            "obs_timaeus_0071",
+            "obs_timaeus_0072",
+            "obs_timaeus_0073"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_timaeus_0015",
+        "title": "From general change to sensory cases",
+        "body": "The order is the argument’s hinge. Timaeus first states how bodily change becomes pleasure, pain, or mere sensation: violent departure from nature hurts, restoration pleases, and gentle change may pass unnoticed. He then marks a turn from common bodily affections to particular parts, beginning with taste around the tongue; moves to smell, then hearing; and introduces color as the fourth remaining sensory kind. As I hear the movement, it closes this sensory catalogue with color: one rule about bodily change opens into distinct sensory cases.",
+        "cites": {
+          "observations": [
+            "obs_timaeus_0234",
+            "obs_timaeus_0237",
+            "obs_timaeus_0238",
+            "obs_timaeus_0243",
+            "obs_timaeus_0246",
+            "obs_timaeus_0248"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_timaeus_0004",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0004\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"The prelude: invoking gods and defining the task\"\nstephanus_span: 26e-29d\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 26e-29d\n  start_marker: 26e\n  end_marker: 29d\n  start_char: 19155\n  end_char: 23965\n  text_sha256: \"8b6f0d9dc9ceec29b9214e25f3864c5e846a616e560a330fd9ae7600e2a77394\"\nbody: \"Critias assigns Timaeus the first turn, from the cosmos to human nature; Timaeus invokes the gods, then turns to “our part,” the exposition. He starts by distinguishing what always is from what becomes, and presents the universe as generated, made by reference to a model. I read this prelude as a rule for listening: the account must fit its subject, not promise more certainty than the subject allows.\"\ncites:\n  observations: [\"obs_timaeus_0060\", \"obs_timaeus_0064\", \"obs_timaeus_0071\", \"obs_timaeus_0072\", \"obs_timaeus_0073\"]\n  claims: [\"claim_timaeus_0040\", \"claim_timaeus_0041\", \"claim_timaeus_0044\", \"claim_timaeus_0045\", \"claim_timaeus_0046\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0015",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0015\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"From general change to sensory cases\"\nstephanus_span: 64c-68e\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 64c-68e\n  start_marker: 64c\n  end_marker: 68e\n  start_char: 90152\n  end_char: 99429\n  text_sha256: \"3eac155eee97ef2320646149115b2def4f8aef17cebe602eb64fce005a9783d1\"\nbody: \"The order is the argument’s hinge. Timaeus first states how bodily change becomes pleasure, pain, or mere sensation: violent departure from nature hurts, restoration pleases, and gentle change may pass unnoticed. He then narrows from that general physiology to taste and smell, proceeds to hearing, and, as I hear the movement, closes with color. The sequence moves from one rule about bodily change to distinct sensory cases.\"\ncites:\n  observations: [\"obs_timaeus_0234\", \"obs_timaeus_0237\"]\n  claims: [\"claim_timaeus_0171\", \"claim_timaeus_0172\", \"claim_timaeus_0174\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

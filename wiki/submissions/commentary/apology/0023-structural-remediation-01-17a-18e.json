@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "submission_id": "0023-structural-remediation-01-17a-18e",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "apology",
+  "unit_key": "01-17a-18e",
+  "source_path": "scratch/commentary/audits/apology/01-17a-18e.json",
+  "source_sha256": "21bc6a92a8f6629ba4df435134a3a0fb07493d3f90db56d0ba2d4ea3d6d571ca",
+  "target_path": "wiki/commentary/apology.md",
+  "target_sha256_before": "52316534b0449375695de490e1d75ccf08328f455f0b9f06903180c046a6a027",
+  "target_sha256_after": "f2a3e74a1bff280bdf81a17f9751f2daf84818a40b2f79b88f5fded02c771dd4",
+  "applied_at": "2026-08-23T22:35:21.016Z",
+  "applied_ids": [
+    "comm_apology_0020",
+    "comm_apology_0021"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "apology",
+      "unitKey": "01-17a-18e",
+      "sectionId": "comm_apology_0001",
+      "auditOutputPath": "scratch/commentary/audits/apology/01-17a-18e.json",
+      "auditOutputSha256": "21bc6a92a8f6629ba4df435134a3a0fb07493d3f90db56d0ba2d4ea3d6d571ca",
+      "expectedLedgerSha256": "52316534b0449375695de490e1d75ccf08328f455f0b9f06903180c046a6a027",
+      "expectedAttributionSha256": "1c41890210e4621e5e081de33b408e54572bd07af74640ea6964c45dda553f64",
+      "expectedEnglishSha256": "04bf6411654f814bc016d5a0f649d1c50aef4d0dcbeeb1820910ecf8d2107046",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_apology_0020"
+        },
+        {
+          "operation": "remove",
+          "commentaryId": "comm_apology_0021"
+        }
+      ],
+      "reviewer": "lane-b-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna structural review confirms conservative rejection of audited remove findings and split originals; delegated Luna review only."
+    },
+    "audit_output_path": "scratch/commentary/audits/apology/01-17a-18e.json",
+    "audit_output_sha256": "21bc6a92a8f6629ba4df435134a3a0fb07493d3f90db56d0ba2d4ea3d6d571ca",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_apology_0020",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_apology_0021",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "artifactKind": "dots-cast-owner-reconciliation-plan",
+  "changes": {
+    "removedCharacterIds": [
+      "adeimantus",
+      "callias",
+      "cleinias",
+      "ctesippus",
+      "dionysodorus",
+      "euthydemus",
+      "hippocrates",
+      "lysis",
+      "lysis-and-menexenus",
+      "prodicus"
+    ],
+    "statusAfter": "partial",
+    "statusBefore": "partial"
+  },
+  "inputs": {
+    "castAcceptanceImplementationPath": "scripts/audio/cast_acceptance.py",
+    "castAcceptanceImplementationSha256": "3096d2f10df3e116563d42b2cadbfaa57d8e9fbfb81a0ede7993c54837971dff",
+    "castPath": "audio/cast.json",
+    "characterCatalogImplementationPath": "packages/harness/src/audio-catalog.ts",
+    "characterCatalogImplementationSha256": "27a7e11f5709d0e89d88cbf293a96778000f9f469ab4437255314ac0ec83af79",
+    "characterCatalogPath": "audio/characters.json",
+    "characterCatalogSha256": "899a2006e31dbfc18b50d8861bb6ff83b3241786fddaf36b16551e30d938c307",
+    "characterValidatorPath": "scripts/audio/validate_character_catalog.ts",
+    "characterValidatorSha256": "384ecc55a5ce60171a61a668a7f4996e5495b2cb121d8a37bc8b27c02f7355e2",
+    "finalizerPath": "scripts/audio/finalize_dots_cast.py",
+    "finalizerSha256": "ba1aadd20b68b22fcb318a44a87b9d0b9677afe74f5c3dfe36a58e3cd1a50bde",
+    "priorCastSha256": "d65f79d2aa3b62ae861af8899e9d5476313574e25ca0bcc820fda720e817cc0f"
+  },
+  "planSha256": "d653adc38f7a6beb5e049840c77f1282604273aecbf6bfa70368f9b33569c942",
+  "reconciledAt": "2026-07-16",
+  "result": {
+    "castSha256": "5c99bee68c0c09aa1f1a945670a1f990044d3644aa27baba029e83d8c3c8250a",
+    "selectedVoiceCount": 42
+  },
+  "schemaVersion": 1,
+  "status": "planned"
+}

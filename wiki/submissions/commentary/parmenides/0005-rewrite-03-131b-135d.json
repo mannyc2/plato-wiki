@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-rewrite-03-131b-135d",
+  "lane": "commentary",
+  "kind": "rewrite",
+  "scope": "parmenides",
+  "unit_key": "03-131b-135d",
+  "source_path": "scratch/commentary/rewrites/parmenides/03-131b-135d.json",
+  "source_sha256": "048e89cee59d45ea32778b72693581902e6ce4dac449e78c10c385c61362e4d1",
+  "target_path": "wiki/commentary/parmenides.md",
+  "target_sha256_before": "352048de9fb39a57d3cde176e55dd810367cf042c4455a436bd07dfe7c38f5cf",
+  "target_sha256_after": "4da0b31cdbed62aca098e15eda0ef350cfd3c85caaaa115a16f694f5d0a08c39",
+  "applied_at": "2026-08-21T15:39:20.255Z",
+  "applied_ids": [
+    "comm_parmenides_0003"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "parmenides",
+    "unit_key": "03-131b-135d",
+    "section_id": "comm_parmenides_0003",
+    "audit_output": {
+      "path": "scratch/commentary/audits/parmenides/03-131b-135d.json",
+      "sha256": "b85ab051ed62137a1e9edf26c703cef3c829d327457feea12ed3e96e5cf821e7"
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_parmenides_0003",
+        "title": "From refutation to training",
+        "body": "The whole-or-part dilemma is only the opening test, not the destination. A whole Form would be divided from itself; a part makes largeness, equality, and smallness incoherent. I read the later turns as a widening crisis: regress and likeness undermine the remedies, while separation threatens knowledge—even divine knowledge of human things. I hear the close refusing both denying Forms and defining them too soon. Socrates needs dialectical training.",
+        "cites": {
+          "observations": [
+            "obs_parmenides_0029",
+            "obs_parmenides_0032"
+          ],
+          "claims": [
+            "claim_parmenides_0001",
+            "claim_parmenides_0003"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_parmenides_0003",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0003\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"The fork in participation\"\nstephanus_span: 131b-135d\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 131b-135d\n  start_marker: 131b\n  end_marker: 135d\n  start_char: 9977\n  end_char: 19907\n  text_sha256: \"06ed4c992dc4ab0a3125e382c8c54e3945c3944445cdabfd62a0aad97febf7f5\"\nbody: \"Parmenides narrows participation to a fork: if one Form is wholly in many things, it is separated from itself; if each thing receives a part, the Form is divided, and largeness, equality, and smallness become absurdly measured by smaller parts. The section leaves the account needing another way to explain how many things share one Form.\"\ncites:\n  observations: [\"obs_parmenides_0029\", \"obs_parmenides_0032\"]\n  claims: [\"claim_parmenides_0001\", \"claim_parmenides_0003\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

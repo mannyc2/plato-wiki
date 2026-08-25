@@ -1,0 +1,29 @@
+# Commentary quality-audit acceptance
+
+dialogue: euthyphro
+decision: accepted
+reviewer: manifest-batch-1-delegated-luna-reviewer-20260823
+reviewed_on: 2026-08-23
+rationale: Independent Luna source, accepted-evidence, and placement sample passed for the current Euthyphro ledger.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sampled_commentary_ids:
+- comm_euthyphro_0001
+- comm_euthyphro_0002
+- comm_euthyphro_0004
+- comm_euthyphro_0005
+- comm_euthyphro_0009
+- comm_euthyphro_0011
+- comm_euthyphro_0013
+- comm_euthyphro_0019
+- comm_euthyphro_0020
+- comm_euthyphro_0025
+- comm_euthyphro_0029
+predecessor_manifest_path: wiki/commentary-audits/euthyphro.json
+predecessor_manifest_sha256: 496b40331c2d7b49b681fb0417bc3736f41a42d955ea817736bdc4c1fb86ccee
+predecessor_manifest_history_path: wiki/commentary-audits/history/euthyphro/496b40331c2d7b49b681fb0417bc3736f41a42d955ea817736bdc4c1fb86ccee.json
+predecessor_manifest_history_sha256: 496b40331c2d7b49b681fb0417bc3736f41a42d955ea817736bdc4c1fb86ccee
+predecessor_review_note_path: wiki/review/2026-08-21-commentary-quality-euthyphro-luna-sample.md
+predecessor_review_note_sha256: 3a8137b6aaea374d3392bf0cfc6ef63e3674ffec001e0d97ec1c9079d56fce0e
+predecessor_review_note_history_path: wiki/review/commentary-quality-history/euthyphro/3a8137b6aaea374d3392bf0cfc6ef63e3674ffec001e0d97ec1c9079d56fce0e.md
+predecessor_review_note_history_sha256: 3a8137b6aaea374d3392bf0cfc6ef63e3674ffec001e0d97ec1c9079d56fce0e

@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "euthydemus",
+  "source_path": "scratch/commentary/rewrite-repairs/euthydemus/round2.json",
+  "source_sha256": "9fb6625c777cd149bbf58e87a0740e8bc474cc8dfb9116f5aa5370102b4c019a",
+  "target_path": "wiki/commentary/euthydemus.md",
+  "target_sha256_before": "6085c95fc563a945ba7b57c66f3dc89cb72bc4ffde682ef5cb3576b9e029cd6d",
+  "target_sha256_after": "09b3bb2d1f07d27804b00e46264e160b0751431a4482a656610397ed5ecaf1f5",
+  "applied_at": "2026-08-21T17:10:08.875Z",
+  "applied_ids": [
+    "comm_euthydemus_0010",
+    "comm_euthydemus_0012",
+    "comm_euthydemus_0013",
+    "comm_euthydemus_0014",
+    "comm_euthydemus_0017"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "euthydemus",
+    "ledger": {
+      "path": "wiki/commentary/euthydemus.md",
+      "sha256": "6085c95fc563a945ba7b57c66f3dc89cb72bc4ffde682ef5cb3576b9e029cd6d"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/euthydemus/0001-rewrite-batch.json",
+      "sha256": "38bb10cbac031c8b269eb4e92d78f0c25ba0fe53d79e60df936bad6e75a51f54"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-euthydemus-0001-rewrite-batch-acceptance.md",
+      "sha256": "1a10f827e0d47b0bec597debd31e22807aae2e1c6eee686739d580de3ced8238"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-euthydemus-rewrite-batch",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_euthydemus_0010",
+          "finding": "The block combines several functions and cites obs_euthydemus_0148 for unsupported Crito and Cleinias framing claims."
+        },
+        {
+          "commentary_id": "comm_euthydemus_0012",
+          "finding": "The dog and father conclusion needs obs_euthydemus_0162 rather than the cited 0170 and 0183 records."
+        },
+        {
+          "commentary_id": "comm_euthydemus_0013",
+          "finding": "The block packs several functions, while obs_euthydemus_0177 records silence rather than the hellebore argument."
+        },
+        {
+          "commentary_id": "comm_euthydemus_0014",
+          "finding": "The cited obs_euthydemus_0182 does not support the craft-example sequence."
+        },
+        {
+          "commentary_id": "comm_euthydemus_0017",
+          "finding": "The closing advice and practice-practitioner distinction need accepted records 0209, 0210, and 0211."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-euthydemus-round2",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_euthydemus_0010",
+      "comm_euthydemus_0012",
+      "comm_euthydemus_0013",
+      "comm_euthydemus_0014",
+      "comm_euthydemus_0017"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_euthydemus_0010",
+        "title": "The search returns to aporia",
+        "body": "The search for the kingly art does not arrive at a usable definition. Socrates reports that he and the young man have fallen into aporia about the knowledge that would make them happy, and Crito names the impasse as great. Hear the scene as a return to the question, not a completed result.",
+        "cites": {
+          "observations": [
+            "obs_euthydemus_0148"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_euthydemus_0012",
+        "title": "The dog becomes a father",
+        "body": "The dog becomes Ctesippus’s father through a shift in relation. The dog belongs to Ctesippus, and the dog has fathered puppies; the argument then treats ownership as though it were kinship. Its force comes from sliding between two meanings of belonging, not from establishing a genuine family relation.",
+        "cites": {
+          "observations": [
+            "obs_euthydemus_0162"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_euthydemus_0013",
+        "title": "When a qualified good becomes unlimited",
+        "body": "The sophistic move is to turn a qualified good into an unlimited quantity. Ctesippus grants that medicine is useful when needed; Euthydemus then asks whether that means taking as much as possible, even a wagonload of hellebore. The pressure lies in removing the condition, not in discovering a medical rule.",
+        "cites": {
+          "observations": [
+            "obs_euthydemus_0175"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_euthydemus_0014",
+        "title": "When the craft changes its patient",
+        "body": "Dionysodorus quietly changes who the craft acts on. Socrates grants that a butcher cuts and skins; the sophist then treats the butcher as the thing cut and skinned, so butchering the butcher becomes “fitting.” The same grammatical slide is repeated with the bronzeworker and potter.",
+        "cites": {
+          "observations": [
+            "obs_euthydemus_0181"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_euthydemus_0017",
+        "title": "Judge philosophy, not its practitioners",
+        "body": "Crito’s unease concerns the people who claim to educate, but Socrates shifts the test to philosophy itself. Every pursuit has many poor practitioners and few serious ones, so bad examples do not settle the practice. Examine philosophy directly; if it proves worthy, pursue and practice it with the children.",
+        "cites": {
+          "observations": [
+            "obs_euthydemus_0209",
+            "obs_euthydemus_0210",
+            "obs_euthydemus_0211"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_euthydemus_0010",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0010\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"From the kingly art to aporia\"\nstephanus_span: 291a-293a\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 291a-293a\n  start_marker: 291a\n  end_marker: 293a\n  start_char: 41561\n  end_char: 46028\n  text_sha256: \"f80e2d64fcc30d3f7e1d2e30dd4607c5b8022d7284796a6ec6270a848d94ee7c\"\nbody: \"Crito’s opening reply asks which Ctesippus Socrates means; he then accepts that the striking line may have come from a superior speaker, rather than questioning Cleinias’ report. Socrates’ search for the kingly art proceeds by asking what it produces, but the promise of making people good leaves its practical use unclear. That reported aporia leads him to call on the brothers for help.\"\ncites:\n  observations: [\"obs_euthydemus_0148\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0012",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0012\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"Ctesippus turns the trap back\"\nstephanus_span: 296e-298e\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 296e-298e\n  start_marker: 296e\n  end_marker: 298e\n  start_char: 53830\n  end_char: 58675\n  text_sha256: \"fa91e21a097da802d4f3f965676d5740f92dd3b41f6049a168dde471e50758fc\"\nbody: \"The trap shifts when Ctesippus asks whether Euthydemus’s father, not Socrates’ father, is also caught by the same logic. Once Euthydemus calls that father the same as Ctesippus’s, Ctesippus presses the universal result until fathers become fathers of animals and the dog becomes his father. The passage shows a counterattack, not that Ctesippus has mastered the sophists’ method.\"\ncites:\n  observations: [\"obs_euthydemus_0170\", \"obs_euthydemus_0183\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0013",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0013\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"When “good” becomes too much\"\nstephanus_span: 299a-300d\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 299a-300d\n  start_marker: 299a\n  end_marker: 300d\n  start_char: 58675\n  end_char: 62694\n  text_sha256: \"b833bd2622743fc3ac24d59c8b49b397f3a5fa34ebb767d23f382ec0f485edfe\"\nbody: \"The pressure here comes from treating “good” as if quantity alone settled its use: physic becomes a cartload of hellebore, and ordinary questions about what can be seen or what can speak are turned into traps. Ctesippus finally answers the forced alternative with “neither and both.” Cleinias’s delight and laughter show that he enjoys the exchange; they do not, by themselves, establish that he has changed sides.\"\ncites:\n  observations: [\"obs_euthydemus_0177\", \"obs_euthydemus_0194\", \"obs_euthydemus_0248\", \"obs_euthydemus_0173\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0014",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0014\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"When presence becomes identity\"\nstephanus_span: 300e-302e\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 300e-302e\n  start_marker: 300e\n  end_marker: 302e\n  start_char: 62694\n  end_char: 67206\n  text_sha256: \"c035ab06b734287a0415e654e6bc7f2e32bc2149e18a9bcdb71bff85474d8ca3\"\nbody: \"At 300e–301a, the exchange shifts the meaning of “present” without announcing the shift. Socrates begins with beautiful things that possess some beauty; Dionysodorus answers as though being present made one thing identical with the other—an ox turns Socrates into an ox, and Dionysodorus into Dionysodorus. One way to hear the move is as a test of predicate scope: a relation is made to do the work of an identity. Socrates then praises the brothers as craftsmen, and the craft examples drive that confidence toward absurd conclusions at 301d–301e. Track what each predicate is being asked to do, not merely whether the replies sound grammatical.\"\ncites:\n  observations: [\"obs_euthydemus_0178\", \"obs_euthydemus_0182\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0017",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0017\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"Test the practice itself\"\nstephanus_span: 306e-307c\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 306e-307c\n  start_marker: 306e\n  end_marker: 307c\n  start_char: 75245\n  end_char: 76480\n  text_sha256: \"840743e12c1454ea4bd439b78a01cf25a7b10766e1d3dcf00d98a75192f41bfe\"\nbody: \"One way to hear this closing advice is as a distinction between a practice and the people who claim to practise it. The poor reputation of individual teachers need not settle philosophy’s worth. For the listener, the test remains deliberately open: examine the practice itself, then decide whether it deserves pursuit.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

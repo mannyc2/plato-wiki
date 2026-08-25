@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "lesser-hippias",
+  "source_path": "scratch/commentary/rewrites/lesser-hippias/03-365e-367b.json",
+  "source_sha256": "bfb809fcd6dd76242620e77268dacb3aa7bd4383598687b2a16934034cfbd255",
+  "target_path": "wiki/commentary/lesser-hippias.md",
+  "target_sha256_before": "dfbbb27ce40cd68824c02125e1291e0d9560783f610c909d5ff2f4f4a598ec12",
+  "target_sha256_after": "508a032ce781747ef7548a9dae1baa6411a562b929e06417c7cf7d1eb7022b59",
+  "applied_at": "2026-08-23T21:17:29.562Z",
+  "applied_ids": [
+    "comm_lesser-hippias_0010"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "lesser-hippias",
+      "unit_key": "03-365e-367b",
+      "section_id": "comm_lesser-hippias_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/lesser-hippias/03-365e-367b.json",
+        "sha256": "b9fbb5999baebca8cb8707169ab3ce69efe2eaee63871b3f984be60517b74ab8"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_lesser-hippias_0010",
+          "title": "",
+          "body": "The knowing man lies consistently, while the ignorant man tells the truth accidentally. The contrast presents these opposed patterns here, without by itself establishing an exclusive rule.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_lesser-hippias_0010",
+      "body": "```yaml\ncommentary_id: comm_lesser-hippias_0010\nsource_work: Lesser Hippias\nblock_kind: argument\nplacement: after\nstephanus_span: 367b\nsource_ref:\n  source_path: raw/plato/greek/lesser-hippias.txt\n  stephanus_span: 367b\n  start_marker: 367b\n  end_marker: 367b\n  start_char: 7757\n  end_char: 8138\n  text_sha256: \"98f8b2a057706c992e5fb5f6ef266fa6cd67bea1c7b267de13c366fd90cf6ae9\"\nbody: \"Socrates's move turns on a peculiarity of calculation. He does not just claim the expert can lie; he claims the expert can lie reliably. Someone ignorant of the sums, even when he means to deceive, may blunder onto the right answer without meaning to. Only the man who knows what is true can miss it every time, at will, and never stumble back into the truth by accident.\"\ncites:\n  observations: [\"obs_lesser-hippias_0032\", \"obs_lesser-hippias_0034\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

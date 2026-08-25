@@ -1,0 +1,18 @@
+{
+  "name": "@plato-observation-wiki/cli",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "bun src/cli.ts",
+    "test": "bun test src/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "validate": "bun src/cli.ts validate"
+  },
+  "dependencies": {
+    "@plato-observation-wiki/harness": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  }
+}

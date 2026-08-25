@@ -1,0 +1,411 @@
+{
+  "schemaVersion": 1,
+  "status": "accepted-deterministic-cast-decision",
+  "policy": "cast-auto-accept-v1",
+  "acceptedAt": "2026-07-15",
+  "characterId": "megillus-of-lacedaemon",
+  "sourceCharacterId": "megillus-of-lacedaemon",
+  "candidateSelection": "highest-ranked-passing",
+  "rankingPolicy": "mean-cosine-desc/minimum-window-cosine-desc/ordinary-word-errors-asc/speech-rate-distance-from-3-asc/seed-asc",
+  "inputs": {
+    "cast": {
+      "path": "audio/cast.json",
+      "sha256": "a3e59ef4a3f704c91bec85e7956bb6f788a00ae62f61956495d6dd70815ddfaf"
+    },
+    "characters": {
+      "path": "audio/characters.json",
+      "sha256": "3bb880509eadf402d18f3a1e57a9abfacc5722ab62eedc2b7dedce14ff31e24d"
+    },
+    "referenceSources": {
+      "path": "audio/reference-sources.json",
+      "sha256": "c65f15e02a23734020a5bdb6100c1d45abc50b13bcab9b0cd60cc52145f6440e"
+    },
+    "referenceSidecar": {
+      "path": "scratch/audio-references/megillus-of-lacedaemon/uddowL-Bw_M-001355520-001363520-679591d7e9f0.json",
+      "sha256": "787b9c1a9c24f2ab8f022b470fd32ad90cc40da516c9c7f40577af9853ff583d"
+    },
+    "speakerPurity": {
+      "path": "scratch/audio-jowett-reference-alignment/laws.report.json",
+      "sha256": "4783c8dcfc971578e185ecc0c9b62ed4a6e094d49b5fcd6f1520e20bafd30c9f"
+    },
+    "cloneManifest": {
+      "path": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/audition-manifest.json",
+      "sha256": "1022678b5d951580de7a94cf047be5dd0a3d944c41ac9bf65377351a5b4ef790"
+    },
+    "asr": {
+      "path": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/asr-qa.json",
+      "sha256": "8c33f51e8769d847ba7d20e7d9e11e8bf8d1daa8b60c746a3fe7ed81bbb6f150"
+    },
+    "acoustic": {
+      "path": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/speaker-ranking.json",
+      "sha256": "95dad50f9ed680af7b24378e35ada0c9aaa0cc2226ee396f3df4606ee81186c8"
+    }
+  },
+  "reference": {
+    "sourceUrl": "https://www.youtube.com/watch?v=uddowL-Bw_M",
+    "sourceRegistryPath": "audio/reference-sources.json",
+    "sourceRegistrySha256": "c65f15e02a23734020a5bdb6100c1d45abc50b13bcab9b0cd60cc52145f6440e",
+    "sourceDialogue": "laws",
+    "sourceVideoId": "uddowL-Bw_M",
+    "sourceCharacterId": "megillus-of-lacedaemon",
+    "videoStartSeconds": 1355.52,
+    "videoEndSeconds": 1363.52,
+    "localDurationSeconds": 8.0,
+    "localSha256": "289aaff7b48171f087d7ee1ebd5b36f139ed3f628d8df4970be15b7bf9eed5cf",
+    "relativePath": "scratch/audio-references/megillus-of-lacedaemon/uddowL-Bw_M-001355520-001363520-679591d7e9f0.wav",
+    "promptText": "which is the frequent endurance of pain exhibited among us Spartans in certain hand-to-hand fights, also in stealing",
+    "referenceAsr": {
+      "decision": "primary-zero-error",
+      "primaryExpectedWords": 20,
+      "primaryOrdinaryWordErrors": 0,
+      "primaryOrdinaryWordErrorRate": 0.0,
+      "primaryEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/asr-qa.json",
+      "primaryEvidenceSha256": "8c33f51e8769d847ba7d20e7d9e11e8bf8d1daa8b60c746a3fe7ed81bbb6f150"
+    },
+    "speakerPurityEvidencePath": "scratch/audio-jowett-reference-alignment/laws.report.json",
+    "speakerPurityEvidenceSha256": "4783c8dcfc971578e185ecc0c9b62ed4a6e094d49b5fcd6f1520e20bafd30c9f",
+    "speakerPurityProofRecordId": "jowett-caption-d3ed3c0608551bfdd338f384",
+    "speakerPuritySourceAgreementSha256": "a5518e75fdcbed186f73ae3308cb0d0d3a0f9d83fbfebb67571b9ec4db22396c",
+    "speakerPurityMethod": "jowett-caption-turn-alignment-v1",
+    "dominantSpeakerCoverage": 1,
+    "competingSpeakerCoverage": 0,
+    "uncoveredSpeakerCoverage": 0
+  },
+  "gates": {
+    "referenceDuration": {
+      "minimumSeconds": 3,
+      "maximumSeconds": 15,
+      "maximumIntervalDeltaSeconds": 0.05
+    },
+    "speakerPurity": {
+      "minimumDominantCoverage": 0.95,
+      "maximumCompetingCoverage": 0.02,
+      "maximumUncoveredCoverage": 0.03
+    },
+    "asrFidelity": {
+      "minimumReferenceExpectedWords": 8,
+      "maximumReferenceOrdinaryWordErrors": 0,
+      "maximumReferenceOrdinaryWordErrorRate": 0,
+      "referenceFailureAdjudication": "exact-source-agreement-plus-pinned-independent-large-v3-zero-v1",
+      "minimumExpectedWords": 40,
+      "maximumOrdinaryWordErrors": 0,
+      "maximumOrdinaryWordErrorRate": 0
+    },
+    "acousticConsistency": {
+      "minimumMeanCosineSimilarity": 0.85,
+      "minimumWindowCosineSimilarity": 0.8
+    },
+    "signalSafety": {
+      "maximumClippedSamples": 0,
+      "maximumTruePeakDbtp": 0,
+      "maximumPeakAmplitude": 0.9999
+    },
+    "auditionDuration": {
+      "minimumSeconds": 8,
+      "maximumSeconds": 60,
+      "minimumWordsPerSecond": 1.5,
+      "maximumWordsPerSecond": 4.5
+    }
+  },
+  "candidates": [
+    {
+      "seed": 42,
+      "file": "megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed42.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed42.wav",
+        "sha256": "a655f42e2bcdf70fe7a0f3f3fa505210790b8f658de6e0c5e784ff82fcda964f",
+        "durationSeconds": 21.6,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/asr-qa.json",
+        "asrEvidenceSha256": "8c33f51e8769d847ba7d20e7d9e11e8bf8d1daa8b60c746a3fe7ed81bbb6f150",
+        "meanSpeakerCosineSimilarity": 0.8727805018424988,
+        "minimumWindowSpeakerCosineSimilarity": 0.8594481945037842,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "95dad50f9ed680af7b24378e35ada0c9aaa0cc2226ee396f3df4606ee81186c8",
+        "clippedSamples": 0,
+        "truePeakDbtp": -3.1,
+        "peakAmplitude": 0.703765869140625
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8727805018424988,
+        -0.8594481945037842,
+        0,
+        0.0370370370370372,
+        42
+      ],
+      "passingRank": 6
+    },
+    {
+      "seed": 43,
+      "file": "megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed43.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed43.wav",
+        "sha256": "72ace4ace0b9c522c06a3d674089b39d7029bb3f224622659aa9f8035e016d07",
+        "durationSeconds": 25.28,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/asr-qa.json",
+        "asrEvidenceSha256": "8c33f51e8769d847ba7d20e7d9e11e8bf8d1daa8b60c746a3fe7ed81bbb6f150",
+        "meanSpeakerCosineSimilarity": 0.8750381668408712,
+        "minimumWindowSpeakerCosineSimilarity": 0.8534573316574097,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "95dad50f9ed680af7b24378e35ada0c9aaa0cc2226ee396f3df4606ee81186c8",
+        "clippedSamples": 0,
+        "truePeakDbtp": -3.8,
+        "peakAmplitude": 0.64251708984375
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8750381668408712,
+        -0.8534573316574097,
+        0,
+        0.4683544303797471,
+        43
+      ],
+      "passingRank": 4
+    },
+    {
+      "seed": 44,
+      "file": "megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed44.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed44.wav",
+        "sha256": "d3117460bfb8f3f60a34073b80839752b7b9df31669dfd9313ea3ab1178e7976",
+        "durationSeconds": 23.52,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/asr-qa.json",
+        "asrEvidenceSha256": "8c33f51e8769d847ba7d20e7d9e11e8bf8d1daa8b60c746a3fe7ed81bbb6f150",
+        "meanSpeakerCosineSimilarity": 0.8709243535995483,
+        "minimumWindowSpeakerCosineSimilarity": 0.8638997673988342,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "95dad50f9ed680af7b24378e35ada0c9aaa0cc2226ee396f3df4606ee81186c8",
+        "clippedSamples": 0,
+        "truePeakDbtp": -5.2,
+        "peakAmplitude": 0.5487060546875
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8709243535995483,
+        -0.8638997673988342,
+        0,
+        0.2789115646258504,
+        44
+      ],
+      "passingRank": 7
+    },
+    {
+      "seed": 45,
+      "file": "megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed45.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed45.wav",
+        "sha256": "f782d7efd32524c748d8358acbcdd58c11d8755942715ea3e2f5a8831611d828",
+        "durationSeconds": 24.32,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/asr-qa.json",
+        "asrEvidenceSha256": "8c33f51e8769d847ba7d20e7d9e11e8bf8d1daa8b60c746a3fe7ed81bbb6f150",
+        "meanSpeakerCosineSimilarity": 0.8933457533518473,
+        "minimumWindowSpeakerCosineSimilarity": 0.861327588558197,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "95dad50f9ed680af7b24378e35ada0c9aaa0cc2226ee396f3df4606ee81186c8",
+        "clippedSamples": 0,
+        "truePeakDbtp": -5.0,
+        "peakAmplitude": 0.559600830078125
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8933457533518473,
+        -0.861327588558197,
+        0,
+        0.36842105263157876,
+        45
+      ],
+      "passingRank": 1
+    },
+    {
+      "seed": 46,
+      "file": "megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed46.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed46.wav",
+        "sha256": "346c706d8dc65f9abea889e654ba7e0173acd4be528f3b18a6968c0ca2a07d05",
+        "durationSeconds": 23.84,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/asr-qa.json",
+        "asrEvidenceSha256": "8c33f51e8769d847ba7d20e7d9e11e8bf8d1daa8b60c746a3fe7ed81bbb6f150",
+        "meanSpeakerCosineSimilarity": 0.8574692408243815,
+        "minimumWindowSpeakerCosineSimilarity": 0.8527261018753052,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "95dad50f9ed680af7b24378e35ada0c9aaa0cc2226ee396f3df4606ee81186c8",
+        "clippedSamples": 0,
+        "truePeakDbtp": -4.0,
+        "peakAmplitude": 0.624298095703125
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8574692408243815,
+        -0.8527261018753052,
+        0,
+        0.31543624161073813,
+        46
+      ],
+      "passingRank": 8
+    },
+    {
+      "seed": 47,
+      "file": "megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed47.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed47.wav",
+        "sha256": "db46bacc2a506fc06abfec8cbe951fe2f0a203a69eb9ca7ec3853c69a5e910d3",
+        "durationSeconds": 26.24,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/asr-qa.json",
+        "asrEvidenceSha256": "8c33f51e8769d847ba7d20e7d9e11e8bf8d1daa8b60c746a3fe7ed81bbb6f150",
+        "meanSpeakerCosineSimilarity": 0.8737912774085999,
+        "minimumWindowSpeakerCosineSimilarity": 0.8608764410018921,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "95dad50f9ed680af7b24378e35ada0c9aaa0cc2226ee396f3df4606ee81186c8",
+        "clippedSamples": 0,
+        "truePeakDbtp": -4.9,
+        "peakAmplitude": 0.571014404296875
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8737912774085999,
+        -0.8608764410018921,
+        0,
+        0.5609756097560976,
+        47
+      ],
+      "passingRank": 5
+    },
+    {
+      "seed": 48,
+      "file": "megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed48.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed48.wav",
+        "sha256": "6579d9a98977e5a613bda91ae405c555b828ce10d933edbaa0f3d2d6e82e37fe",
+        "durationSeconds": 24.8,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/asr-qa.json",
+        "asrEvidenceSha256": "8c33f51e8769d847ba7d20e7d9e11e8bf8d1daa8b60c746a3fe7ed81bbb6f150",
+        "meanSpeakerCosineSimilarity": 0.8823725382486979,
+        "minimumWindowSpeakerCosineSimilarity": 0.8647892475128174,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "95dad50f9ed680af7b24378e35ada0c9aaa0cc2226ee396f3df4606ee81186c8",
+        "clippedSamples": 0,
+        "truePeakDbtp": -4.8,
+        "peakAmplitude": 0.573974609375
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8823725382486979,
+        -0.8647892475128174,
+        0,
+        0.4193548387096775,
+        48
+      ],
+      "passingRank": 3
+    },
+    {
+      "seed": 49,
+      "file": "megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed49.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/megillus-of-lacedaemon-uddowL-Bw_M-d0cc2236ca24-seed49.wav",
+        "sha256": "a3163f580f36e11fc5b49926330556439f8387ed4809930160e6dd22fad16995",
+        "durationSeconds": 25.76,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/asr-qa.json",
+        "asrEvidenceSha256": "8c33f51e8769d847ba7d20e7d9e11e8bf8d1daa8b60c746a3fe7ed81bbb6f150",
+        "meanSpeakerCosineSimilarity": 0.883584717909495,
+        "minimumWindowSpeakerCosineSimilarity": 0.8708529472351074,
+        "acousticEvidencePath": "scratch/audio-cast-batches/batches/58370d434ecf9bc356ffb4946acc5fc76e506c04edf9d7d59cd44799259f4bc6/items/megillus-of-lacedaemon-f222cb058ab1737e/audition/speaker-ranking.json",
+        "acousticEvidenceSha256": "95dad50f9ed680af7b24378e35ada0c9aaa0cc2226ee396f3df4606ee81186c8",
+        "clippedSamples": 0,
+        "truePeakDbtp": -3.4,
+        "peakAmplitude": 0.676361083984375
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.883584717909495,
+        -0.8708529472351074,
+        0,
+        0.5155279503105592,
+        49
+      ],
+      "passingRank": 2
+    }
+  ],
+  "selectedSeed": 45,
+  "selectedPassingRank": 1,
+  "decisionContentSha256": "d179614a09b38789db2b9c60eaa0fdbcb83919ab2c5692007bea828f8fccf939"
+}

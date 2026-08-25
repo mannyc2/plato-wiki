@@ -1,0 +1,16 @@
+dialogue: symposium
+turn_index_path: derived/plato/turns/symposium.toon
+turn_index_sha256: 6d86dd3d2f808cd29099ba89af1c7fab6acd44d3362db13078789d37b95f8329
+token_index_path: derived/plato/tokens/symposium.toon
+token_index_sha256: 986f4c774bbb889192a4009fc710a465675e6cf03bef61955077aca407df4c71
+speakers[2]:
+  speaker | turns | total_tokens | median_tokens | p90_tokens | max_tokens | long_turns
+  ΑΠΟΛ.   | 3 | 17278 | 431 | 431 | 16828 | 0
+  ΕΤΑΙ.   | 2 | 76 | 38 | 21 | 55 | 0
+turns[5]:
+  turn_id             | speaker | start_marker | end_marker | start_char | end_char | greek_char_count | token_count | dialogue_long_turn | speaker_long_turn
+  turn_symposium_0001 | ΑΠΟΛ.   | 172a         | 173d       | 0 | 2786 | 2050 | 431 | no | no
+  turn_symposium_0002 | ΕΤΑΙ.   | 173d         | 173d       | 2786 | 3126 | 275 | 55 | no | no
+  turn_symposium_0003 | ΑΠΟΛ.   | 173e         | 173e       | 3126 | 3242 | 87 | 19 | no | no
+  turn_symposium_0004 | ΕΤΑΙ.   | 173e         | 173e       | 3242 | 3373 | 102 | 21 | no | no
+  turn_symposium_0005 | ΑΠΟΛ.   | 173e         | 223d       | 3373 | 107347 | 80598 | 16828 | yes | no

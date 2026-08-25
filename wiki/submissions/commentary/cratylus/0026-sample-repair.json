@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "submission_id": "0026-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "cratylus",
+  "source_path": "scratch/commentary/sample-repairs/cratylus/sample-a-20260823.json",
+  "source_sha256": "f7535852830ffb53544cf86dfb90ee55a0fdd43b402c9738a1a6a09d9123d9f6",
+  "target_path": "wiki/commentary/cratylus.md",
+  "target_sha256_before": "be966a9c5fbbd3982c55c532bbd723cb7592cff209b0f4a92d53d8aa36e2b9bb",
+  "target_sha256_after": "1ae687d470a25bc2e8aa2b5040017972a4ea402507e86a7fc9c657b4a70ef656",
+  "applied_at": "2026-08-23T23:58:29.722Z",
+  "applied_ids": [
+    "comm_cratylus_0006",
+    "comm_cratylus_0007",
+    "comm_cratylus_0030",
+    "comm_cratylus_0032",
+    "comm_cratylus_0044",
+    "comm_cratylus_0048",
+    "comm_cratylus_0057"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "cratylus",
+    "ledger": {
+      "path": "wiki/commentary/cratylus.md",
+      "sha256": "be966a9c5fbbd3982c55c532bbd723cb7592cff209b0f4a92d53d8aa36e2b9bb"
+    },
+    "sample_review": {
+      "reviewer": "sample-a-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna review covered the canonical sample and found seven bounded prose repairs against the current audit findings.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_cratylus_0001",
+        "comm_cratylus_0002",
+        "comm_cratylus_0003",
+        "comm_cratylus_0004",
+        "comm_cratylus_0005",
+        "comm_cratylus_0006",
+        "comm_cratylus_0007",
+        "comm_cratylus_0008",
+        "comm_cratylus_0030",
+        "comm_cratylus_0031",
+        "comm_cratylus_0032",
+        "comm_cratylus_0044",
+        "comm_cratylus_0046",
+        "comm_cratylus_0048",
+        "comm_cratylus_0057"
+      ],
+      "failed_commentary_ids": [
+        "comm_cratylus_0006",
+        "comm_cratylus_0007",
+        "comm_cratylus_0030",
+        "comm_cratylus_0032",
+        "comm_cratylus_0044",
+        "comm_cratylus_0048",
+        "comm_cratylus_0057"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_cratylus_0006",
+        "title": "From gods to daimons to the body as sign",
+        "body": "The etymological survey moves in order from gods to daimons, heroes, human beings, and then soul and body. For soma, Socrates presents several possibilities: the body may be the soul's tomb, a sign through which the soul signifies, or an Orphic enclosure; he says the last account seems most persuasive, without settling the alternatives as doctrine.",
+        "cites": {
+          "observations": [],
+          "claims": [],
+          "relations": [],
+          "dossiers": [
+            "turn_geometry/argument_transition_marker",
+            "etymological_analysis/multiple_alternative_derivations",
+            "myth_demarcation/traditional_account_cited_with_hedge"
+          ]
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_cratylus_0007",
+        "title": "Human opinion behind divine names",
+        "body": "Socrates narrows the inquiry to the human opinions that produced divine names, rather than claiming to speak about the gods themselves. He presents this as the cautious boundary for the discussion, asking to use the names adopted by human beings as a prayer-like convention because he does not know the divine names themselves.",
+        "cites": {
+          "observations": [
+            "obs_cratylus_0094"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_cratylus_0030",
+        "title": "",
+        "body": "The examples remain qualified: names are often inherited from ancestors, while many are chosen in accordance with parental wishes; neither practice is presented as universal.",
+        "cites": {
+          "observations": [],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_cratylus_0032",
+        "title": "",
+        "body": "Socrates declines to claim knowledge of the gods' own names and limits this inquiry to what human beings say when naming them. This narrow move leaves the divine names themselves outside his present knowledge; it does not establish that they can never be investigated.",
+        "cites": {
+          "observations": [],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_cratylus_0044",
+        "title": "",
+        "body": "Socrates approaches the summit with a joke, asking Hermogenes not to demand excessive precision while announcing that virtue and vice are the remaining names to examine. His derivation of virtue from the unhindered flow of a good soul is presented conditionally, and he anticipates that Hermogenes may accuse him of fabricating. The etymological ascent is still in progress, and the comic hedge remains attached to the claim.",
+        "cites": {
+          "observations": [
+            "obs_cratylus_0199",
+            "obs_cratylus_0200",
+            "obs_cratylus_0159",
+            "obs_cratylus_0160"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_cratylus_0048",
+        "title": "",
+        "body": "Socrates begins by saying they do not know the truth and are conjecturing about human opinions. He warns that the letters-and-syllables method may look ridiculous, rejects an appeal to gods as a tragic stage-machine escape, and treats foreign origin or antiquity as evasions. The argument that secondary names depend on primary names remains conditional: Hermogenes cannot give an account of the primary names, so Socrates proposes to proceed.",
+        "cites": {
+          "observations": [
+            "obs_cratylus_0221",
+            "obs_cratylus_0223",
+            "obs_cratylus_0222",
+            "obs_cratylus_0211",
+            "obs_cratylus_0212"
+          ],
+          "claims": [
+            "claim_cratylus_0069"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_cratylus_0057",
+        "title": "",
+        "body": "At the close, Socrates leaves the Heraclitean account open: it may be right, and it may not be. He urges the young Cratylus to investigate bravely rather than accept names too quickly and asks him to report back; Cratylus replies that the Heraclitean view currently seems more persuasive to him. Socrates therefore does not settle the matter or commit the dialogue to flux.",
+        "cites": {
+          "observations": [],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_cratylus_0006",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0006\nsource_work: Cratylus\nblock_kind: section\nplacement: before\ntitle: \"From gods to daimons to the body as sign\"\nstephanus_span: 397b-400e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 397b-400e\n  start_marker: 397b\n  end_marker: 400e\n  start_char: 26566\n  end_char: 34488\n  text_sha256: \"a7113cd0a420b847d030186f6c437d9d31aa877d566897165e49c321cfc39550\"\nbody: \"The etymological survey now takes an ordered route: gods, daimons, heroes, human beings, then soul and body. The famous derivations of psyche and soma — including body as the soul's tomb or sign — show how etymology can smuggle in whole doctrines about human nature.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"turn_geometry/argument_transition_marker\", \"etymological_analysis/multiple_alternative_derivations\", \"myth_demarcation/traditional_account_cited_with_hedge\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0007",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0007\nsource_work: Cratylus\nblock_kind: section\nplacement: before\ntitle: \"A pious hedge, then a flux reading\"\nstephanus_span: 401a-404e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 401a-404e\n  start_marker: 401a\n  end_marker: 404e\n  start_char: 34488\n  end_char: 42421\n  text_sha256: \"80fb202cc01c71e1ab60f50e7932d7e49908f4a084dd6d72399d14f3f6750e3d\"\nbody: \"Socrates first narrows the question: the inquiry concerns the human opinions that produced divine names, not the gods themselves. Within that hedge, the names of Rhea and Cronus become a route into a Heraclitean account of motion. One way to read this move is that etymology does more than label a god: it proposes a picture of what beings are like.\"\ncites:\n  observations: [\"obs_cratylus_0094\", \"obs_cratylus_0102\"]\n  claims: [\"claim_cratylus_0029\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0030",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0030\nsource_work: Cratylus\nblock_kind: argument\nplacement: before\nstephanus_span: 397b-397c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 397b-397c\n  start_marker: 397b\n  end_marker: 397c\n  start_char: 26566\n  end_char: 27430\n  text_sha256: \"4591cd40c8648755a726e3f575dd0a48416cf645fcfba858dd5f38ca9e4059df\"\nbody: \"The examples remain qualified: names are often inherited from ancestors, while many are chosen in accordance with parental wishes; neither practice is presented as universal.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0032",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0032\nsource_work: Cratylus\nblock_kind: argument\nplacement: after\nstephanus_span: 400d-400e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 400d-400e\n  start_marker: 400d\n  end_marker: 400e\n  start_char: 33845\n  end_char: 34488\n  text_sha256: \"2b739cbd53ce73d535f205bcbd950c1d35fd997f085c1f7d1ccb6200e2bdac25\"\nbody: \"Socrates declines to pursue divine naming here and limits the inquiry to what human beings say about names. This move does not yield divine etymologies.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0044",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0044\nsource_work: Cratylus\nblock_kind: context\nplacement: before\nstephanus_span: 415a-415e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 415a-415e\n  start_marker: 415a\n  end_marker: 415e\n  start_char: 62501\n  end_char: 64498\n  text_sha256: \"dd58803fce351453715fd8a87e47dfc91e591dd8e2d449d1c74e25865dd4ba8a\"\nbody: \"Socrates opens with a joke and an announcement. He begs Hermogenes, in a mock-Homeric line, not to demand too much precision, and in the same breath declares that he is climbing to the summit of the whole inquiry: the names for virtue and vice. The pairing matters. The grandest claim of the etymological project arrives wrapped in a plea to be graded gently. When he then derives virtue from unhindered flow and vice from impeded going, he adds that Hermogenes may again accuse him of fabricating. So the summit is reached, but the guide keeps telling us not to trust his footing too far.\"\ncites:\n  observations: [\"obs_cratylus_0199\", \"obs_cratylus_0200\", \"obs_cratylus_0159\", \"obs_cratylus_0160\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0048",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0048\nsource_work: Cratylus\nblock_kind: notice\nplacement: before\nstephanus_span: 425c-426c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 425c-426c\n  start_marker: 425c\n  end_marker: 426c\n  start_char: 84177\n  end_char: 86549\n  text_sha256: \"188a290690a4eb86943fd159da49c73f65579195d8e3445b219926bae750aefe\"\nbody: \"Before the famous letter catalogue begins, Socrates builds an unusually thick hedge around it. He disclaims knowledge of the truth, saying they are only guessing at human opinion; he predicts the method itself will look ridiculous; and he calls his own findings outrageous. Yet in the same breath he blocks every exit: appealing to gods who set the first names is dismissed as a tragedian's crane, and foreign origin or sheer antiquity are called clever evasions by people unwilling to give an account. He even insists that whoever cannot explain primary names talks nonsense about all the rest. The hedging and the rigor pull against each other, and how seriously to take what follows is left to you.\"\ncites:\n  observations: [\"obs_cratylus_0221\", \"obs_cratylus_0223\", \"obs_cratylus_0222\", \"obs_cratylus_0211\", \"obs_cratylus_0212\"]\n  claims: [\"claim_cratylus_0069\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0057",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0057\nsource_work: Cratylus\nblock_kind: context\nplacement: after\nstephanus_span: 440d-440e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 440d-440e\n  start_marker: 440d\n  end_marker: 440e\n  start_char: 115304\n  end_char: 116026\n  text_sha256: \"a063460471aaa40d21174dff2ec39cbe11d7b4d3b597e576442024fa04246f88\"\nbody: \"The dialogue ends with Socrates’ commitment to the Heraclitean view that all things are in motion.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "ion",
+  "source_path": "scratch/commentary/rewrites/ion/03-532c-533c.json",
+  "source_sha256": "cd3dfeb8020873bec0f4b2ff39534e416b8cdba64839f288867888c1efb1068c",
+  "target_path": "wiki/commentary/ion.md",
+  "target_sha256_before": "9ea91256de00b5437c0f6e39ce47a57a460cf870e53d75359d6cf81c8e482650",
+  "target_sha256_after": "575a2f98c61fcd454f0782f26b2e5a1777d05e984a770bde19f2b8b64b749b08",
+  "applied_at": "2026-08-21T13:01:49.874Z",
+  "applied_ids": [
+    "comm_ion_0003",
+    "comm_ion_0004",
+    "comm_ion_0009"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "ion",
+      "unit_key": "03-532c-533c",
+      "section_id": "comm_ion_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/ion/03-532c-533c.json",
+        "sha256": "c6de05b813105754df85ece6d70f3a10ede70317ee89f0146d40f91222a03d65"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_ion_0003",
+          "title": "Ion's asymmetry becomes Socrates' test",
+          "body": "Ion names the puzzle: other poets make him drowsy, while Homer gives him fluency. Socrates turns that asymmetry into a test, proposing that knowledge of a whole craft should extend across its practitioners; he illustrates the proposal through painting, sculpture, and music. One way to read these analogies is as pressure on Ion’s claim, not proof that poetry must work exactly like those crafts. Ion returns to his Homeric excellence.",
+          "cites": {
+            "observations": [
+              "obs_ion_0006"
+            ],
+            "claims": [
+              "claim_ion_0007",
+              "claim_ion_0008"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "ion",
+      "unit_key": "04-533d-535a",
+      "section_id": "comm_ion_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/ion/04-533d-535a.json",
+        "sha256": "0283a697f5913e69d7144db409e25de1a474c49b14db9fbe3992f12cc4ddd877"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_ion_0004",
+          "title": "Authority on loan",
+          "body": "The crucial move here is to change the question from how Ion performs to where his authority comes from. Socrates presents poetic excellence as something transmitted through divine inspiration, so the poet appears as an interpreter rather than an independent maker. Tynnichus is offered as a striking illustration of that proposal, not as a conclusive proof.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_ion_0009",
+              "claim_ion_0014",
+              "claim_ion_0015"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "ion",
+      "unit_key": "09-541c-542b",
+      "section_id": "comm_ion_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/ion/09-541c-542b.json",
+        "sha256": "4abd5123dc658ee2a861a73fa701503f15820ac14fdb05ead799f32bfded5393"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_ion_0009",
+          "title": "The Proteus escape: from general to divine",
+          "body": "Ion says that Ephesus—not Athens—needs no general because it is ruled and commanded by Athens; he says Athens and Sparta reject him because they regard themselves as sufficient. Socrates answers with foreign generals Athens has chosen, then recasts Ion’s evasions as Protean shape-shifting. The final choice is narrow: if Ion has an art, he is unjust; if divinely possessed, he is not. Ion chooses “divine,” and Socrates grants him that label.",
+          "cites": {
+            "observations": [
+              "obs_ion_0013",
+              "obs_ion_0014"
+            ],
+            "claims": [
+              "claim_ion_0026",
+              "claim_ion_0027",
+              "claim_ion_0028",
+              "claim_ion_0029",
+              "claim_ion_0030"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_ion_0003",
+      "body": "```yaml\ncommentary_id: comm_ion_0003\nsource_work: Ion\nblock_kind: section\nplacement: before\ntitle: \"Ion's strange sleepiness and the parade of arts\"\nstephanus_span: 532c-533c\nsource_ref:\n  source_path: raw/plato/greek/ion.txt\n  stephanus_span: 532c-533c\n  start_marker: 532c\n  end_marker: 533c\n  start_char: 4760\n  end_char: 7350\n  text_sha256: \"a17e7d222998ef5521ca8253e88f90fc2a334f56d221278f23f2fe9942c243f5\"\nbody: \"Ion volunteers the puzzle himself: other poets put him to sleep, Homer wakes him up. Socrates answers that this pattern is exactly what craft-knowledge never looks like, testing it against painting, sculpture, and music. No connoisseur of one painter dozes before all the rest. Ion cannot deny the pattern — he can only insist on his experience.\"\ncites:\n  observations: [\"obs_ion_0006\"]\n  claims: [\"claim_ion_0007\", \"claim_ion_0008\"]\n  relations: []\n  dossiers: [\"craft_analogy/expert_craft_analogy\", \"elenchus/expertise_claim_narrowed_by_craft_test\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_ion_0004",
+      "body": "```yaml\ncommentary_id: comm_ion_0004\nsource_work: Ion\nblock_kind: section\nplacement: before\ntitle: \"The magnet speech: possession replaces craft\"\nstephanus_span: 533d-535a\nsource_ref:\n  source_path: raw/plato/greek/ion.txt\n  stephanus_span: 533d-535a\n  start_marker: 533d\n  end_marker: 535a\n  start_char: 7350\n  end_char: 10664\n  text_sha256: \"b255477d2bf65fc294c2ba5b87b8ea82f54b5bd6a61bab8b1397959143f2a76a\"\nbody: \"Socrates now offers his positive account: not craft but a divine power moves Ion, as the Heraclean stone transmits attraction through a chain of iron rings. Poets compose possessed and out of their minds, each confined to the one genre the Muse assigns, and Tynnichus's single great paean stands as the proof. The god speaks; the poet merely transmits.\"\ncites:\n  observations: [\"obs_ion_0007\"]\n  claims: [\"claim_ion_0009\", \"claim_ion_0010\", \"claim_ion_0011\", \"claim_ion_0012\", \"claim_ion_0013\", \"claim_ion_0014\", \"claim_ion_0015\"]\n  relations: []\n  dossiers: [\"divine_inspiration/inspiration_chain_model\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_ion_0009",
+      "body": "```yaml\ncommentary_id: comm_ion_0009\nsource_work: Ion\nblock_kind: section\nplacement: before\ntitle: \"Proteus cornered: unjust or divine\"\nstephanus_span: 541c-542b\nsource_ref:\n  source_path: raw/plato/greek/ion.txt\n  stephanus_span: 541c-542b\n  start_marker: 541c\n  end_marker: 542b\n  start_char: 22010\n  end_char: 23821\n  text_sha256: \"494393ec402a87cef02a0cf47ab2c315114a27edf8cb7aedc256a6ca4a69d3d7\"\nbody: \"Ion pleads that Athens needs no foreign general; Socrates names three foreigners Athens has elected. Calling Ion a Proteus who twists into every shape to escape, Socrates poses the closing choice: a craftsman who withholds his display is unjust; a possessed man who knows nothing does no wrong. Ion picks the finer name — divine — and the dialogue ends there.\"\ncites:\n  observations: [\"obs_ion_0013\", \"obs_ion_0014\"]\n  claims: [\"claim_ion_0026\", \"claim_ion_0027\", \"claim_ion_0028\", \"claim_ion_0029\", \"claim_ion_0030\"]\n  relations: [\"rel_ion_0002\", \"rel_cross-dialogue_0424\"]\n  dossiers: [\"prosopography/figures_or_types_as_evidence\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

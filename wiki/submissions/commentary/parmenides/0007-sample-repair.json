@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "submission_id": "0007-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "parmenides",
+  "source_path": "scratch/commentary/sample-repairs/parmenides/final-sample-0005-0006-0011.json",
+  "source_sha256": "413b4882b709fabb693c2d9fb52a82fef59ebacd8edf80d68fca98b10c1aabe0",
+  "target_path": "wiki/commentary/parmenides.md",
+  "target_sha256_before": "1e14f74ece88bf731307c4f20b2847ae0d84c83bcf01ec196f100d584ee842cc",
+  "target_sha256_after": "64d50b08ba26dcd20e20edad3c3d977ce11fc194a45cc99206ae289178232772",
+  "applied_at": "2026-08-21T16:05:46.339Z",
+  "applied_ids": [
+    "comm_parmenides_0005",
+    "comm_parmenides_0006",
+    "comm_parmenides_0011"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "parmenides",
+    "ledger": {
+      "path": "wiki/commentary/parmenides.md",
+      "sha256": "1e14f74ece88bf731307c4f20b2847ae0d84c83bcf01ec196f100d584ee842cc"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-parmenides-final-sample",
+      "reviewed_on": "2026-08-21",
+      "rationale": "The final sample found three blocks whose citations did not fully support their shape, relational, temporal, change, and generation predicates.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_parmenides_0001",
+        "comm_parmenides_0002",
+        "comm_parmenides_0003",
+        "comm_parmenides_0004",
+        "comm_parmenides_0005",
+        "comm_parmenides_0006",
+        "comm_parmenides_0007",
+        "comm_parmenides_0008",
+        "comm_parmenides_0009",
+        "comm_parmenides_0010",
+        "comm_parmenides_0011",
+        "comm_parmenides_0012",
+        "comm_parmenides_0013"
+      ],
+      "failed_commentary_ids": [
+        "comm_parmenides_0005",
+        "comm_parmenides_0006",
+        "comm_parmenides_0011"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_parmenides_0005",
+        "title": "First hypothesis: the One without additions",
+        "body": "The first hypothesis is tested by asking what unity excludes. Because the One cannot be many, it has neither parts nor whole; that rules out straight or round shape, whose definitions presume parts. The argument then denies alteration, rotation, locomotion, and rest: change would alter the One, rotation requires parts, locomotion requires a place, and rest requires being somewhere. These are conditional consequences of the hypothesis, not a portrait outside the exercise.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_parmenides_0021",
+            "claim_parmenides_0024",
+            "claim_parmenides_0025",
+            "claim_parmenides_0026"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_parmenides_0006",
+        "title": "First hypothesis: even sameness disappears",
+        "body": "The serial denial now reaches relation. The One is neither the same nor different from itself or another; neither like nor unlike; and neither equal, greater, nor less. Because these predicates require sameness, measures, or temporal comparison, the argument also denies older, younger, same age, and being in time. Hear the sequence as conditional elimination under the hypothesis, not as a positive description.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_parmenides_0027",
+            "claim_parmenides_0028",
+            "claim_parmenides_0029",
+            "claim_parmenides_0030",
+            "claim_parmenides_0031",
+            "claim_parmenides_0035"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_parmenides_0011",
+        "title": "If the One is not",
+        "body": "The negative hypothesis is treated as a qualified proposition, not simple erasure. The non-existent One must still be known and different from the Others, and must participate in being for the sentence ‘the One is not’ to be true. From that tension it is both moving and at rest: its movement is change from being to not-being, not locomotion or rotation, so it both alters and does not alter.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_parmenides_0070",
+            "claim_parmenides_0072",
+            "claim_parmenides_0073"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_parmenides_0005",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0005\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"First hypothesis: the One without additions\"\nstephanus_span: 137c-139e\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 137c-139e\n  start_marker: 137c\n  end_marker: 139e\n  start_char: 23322\n  end_char: 28674\n  text_sha256: \"192aa23ef3d30131e24bf10988b262e9e049e0c8a465525716e453d4a0de4aa2\"\nbody: \"Under the first hypothesis, the One is kept strictly to the word one. It cannot be a whole, have parts, have shape, be somewhere, move, or rest, because each added determination introduces what the hypothesis has excluded. The severity is methodological: the argument tests what follows when no predicate is allowed to accompany unity.\"\ncites:\n  observations: []\n  claims: [\"claim_parmenides_0021\", \"claim_parmenides_0023\", \"claim_parmenides_0027\"]\n  relations: [\"rel_parmenides_0002\"]\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0006",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0006\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"First hypothesis: even sameness disappears\"\nstephanus_span: 140a-142a\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 140a-142a\n  start_marker: 140a\n  end_marker: 142a\n  start_char: 28674\n  end_char: 33456\n  text_sha256: \"cddf30bed1fc6f662d63182107b40eb22f24db10d6d76dc6b403e285a2e864f8\"\nbody: \"The first hypothesis keeps tightening. The One is neither the same as itself nor different from itself or another; it cannot be like or unlike, equal or unequal, and it cannot participate in time. These are not competing descriptions of a character. They are successive consequences of refusing every relation beyond the bare hypothesis.\"\ncites:\n  observations: []\n  claims: [\"claim_parmenides_0028\", \"claim_parmenides_0029\", \"claim_parmenides_0036\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0011",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0011\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"If the One is not\"\nstephanus_span: 160b-163a\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 160b-163a\n  start_marker: 160b\n  end_marker: 163a\n  start_char: 72278\n  end_char: 78809\n  text_sha256: \"4b0b3f1ce07227d0ce8505f2a7476b54d9608c34115ee44812972c23de68ad32\"\nbody: \"The third movement now states the new hypothesis explicitly: the One is not. The argument begins to trace what this denial does to the One itself, reversing the earlier deductions and testing change, alteration, coming-to-be, and passing-away under the negative condition.\"\ncites:\n  observations: []\n  claims: [\"claim_parmenides_0068\", \"claim_parmenides_0069\", \"claim_parmenides_0070\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

@@ -1,0 +1,675 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "cratylus",
+  "source_path": "scratch/commentary/rewrites/cratylus/01-383a-384e.json",
+  "source_sha256": "228577a70e3c50aded6b23fdab7253b73f6a8972ff6cea07a70724d127991181",
+  "target_path": "wiki/commentary/cratylus.md",
+  "target_sha256_before": "417f5db50251e3b6722af29ef4d8c3c41c416e382353ce11b218cb3c64c2863e",
+  "target_sha256_after": "5f832654ae207dd933444222a9a7c61d46e64cac0d3f99f437df623eba655220",
+  "applied_at": "2026-08-21T16:14:10.979Z",
+  "applied_ids": [
+    "comm_cratylus_0004",
+    "comm_cratylus_0007",
+    "comm_cratylus_0015",
+    "comm_cratylus_0016",
+    "comm_cratylus_0017",
+    "comm_cratylus_0022",
+    "comm_cratylus_0023",
+    "comm_cratylus_0027",
+    "comm_cratylus_0028",
+    "comm_cratylus_0031",
+    "comm_cratylus_0036",
+    "comm_cratylus_0037",
+    "comm_cratylus_0038",
+    "comm_cratylus_0039",
+    "comm_cratylus_0040",
+    "comm_cratylus_0041",
+    "comm_cratylus_0042",
+    "comm_cratylus_0043",
+    "comm_cratylus_0049",
+    "comm_cratylus_0053",
+    "comm_cratylus_0056"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "cratylus",
+      "unit_key": "01-383a-384e",
+      "section_id": "comm_cratylus_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/cratylus/01-383a-384e.json",
+        "sha256": "25eaf2777c6fb93aaaf88e2f5ece01f585076f4f7e716aa59e9e45b037a84cd4"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_cratylus_0016",
+          "title": "",
+          "body": "Cratylus's doctrine enters as Hermogenes' report: names have a natural correctness, shared across Greeks and barbarians. Since the claim is reported rather than directly argued here, hear it as the first position placed before Socrates, not as the dialogue's settled answer. The question of what “correctness” consists in remains open.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0001",
+              "obs_cratylus_0003"
+            ],
+            "claims": [
+              "claim_cratylus_0001"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_cratylus_0017",
+          "title": "",
+          "body": "Socrates' price joke makes his epistemic posture part of the scene: he contrasts Prodicus's fifty-drachma lecture, said to confer complete education, with the one-drachma version he actually heard, and says he does not know the truth about names. He then treats Cratylus's denial as a possible joke about Hermogenes' failed pursuit of wealth. Both moves keep the exchange provisional rather than proving what the disputed name means.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0005",
+              "obs_cratylus_0007"
+            ],
+            "claims": [
+              "claim_cratylus_0002"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "cratylus",
+      "unit_key": "03-387a-390e",
+      "section_id": "comm_cratylus_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/cratylus/03-387a-390e.json",
+        "sha256": "20358398ab71b86e6cb44fe2aa0946ba52b428ca9dc7c9ad3050e840094e83f1"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_cratylus_0022",
+          "title": "",
+          "body": "This exchange gives Socrates a working definition, not yet a complete account of correctness. Naming is placed beside weaving and boring: each activity has its proper tool, and the name is presented as a teaching instrument that distinguishes things. The useful pressure point is the word “well”: once names have a function, the dialogue can ask what makes their use or construction good.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0028",
+              "obs_cratylus_0029"
+            ],
+            "claims": [
+              "claim_cratylus_0011"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_cratylus_0023",
+          "title": "",
+          "body": "The analogy relocates judgment from maker to user. A carpenter makes the rudder, but the steersman is the one who supervises and judges it; Socrates then assigns the corresponding supervisory role over the lawgiver to the dialectician. The point is not yet a theory of philosophy. It is a test of who has standing to assess a name-maker’s work.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0042",
+              "obs_cratylus_0046"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "cratylus",
+      "unit_key": "04-391a-394e",
+      "section_id": "comm_cratylus_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/cratylus/04-391a-394e.json",
+        "sha256": "8d84c2316bdd61f79b63461ade513f50a2bf3c77e9beb66dbae6caee0fe49d93"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_cratylus_0004",
+          "title": "Homer's test case: Hector's son",
+          "body": "To test name-correctness, Socrates moves from the paid sophists to Homer, treating the gods' and humans' different names for the same things as evidence in the inquiry. He then narrows the discussion to Hector's son, who is called both Astyanax and Scamandrius. The crucial distinction is simple: Hector is the father; the paired names belong to his child. That smaller case lets Socrates turn Homeric naming into a focused test.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0040",
+              "obs_cratylus_0048",
+              "obs_cratylus_0060"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_cratylus_0027",
+          "title": "",
+          "body": "Socrates now states the criterion with a limit built into it: changes in syllables or letters are harmless only if the name still makes the thing's essence, or force, plain. The letter example shows how added material can leave a designation intact; the doctor analogy shifts attention from a name's surface to its power. Astyanax, Hector, and Archepolis illustrate the proposed possibility. They do not establish that sound is irrelevant; the passage has supplied no independent test for sameness of force.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0063",
+              "obs_cratylus_0064",
+              "obs_cratylus_0065"
+            ],
+            "claims": [
+              "claim_cratylus_0013"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "cratylus",
+      "unit_key": "05-395a-397a",
+      "section_id": "comm_cratylus_0005",
+      "audit_output": {
+        "path": "scratch/commentary/audits/cratylus/05-395a-397a.json",
+        "sha256": "739f1183d2a21fa89cd8e6ed1244647e7bc7d3d0f147a5ae76c43740636c3ea5"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_cratylus_0028",
+          "title": "",
+          "body": "Atreus gives Socrates a narrower point than a universal rule. The name is said to be slightly deflected and veiled: it does not disclose the man’s nature to everyone, yet remains intelligible to those versed in names. The passage thus makes the audience’s competence part of the proposed explanation. Whether that local exception can support a broader account of naming is a question the dialogue has not settled here.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0076"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "cratylus",
+      "unit_key": "06-397b-400e",
+      "section_id": "comm_cratylus_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/cratylus/06-397b-400e.json",
+        "sha256": "23027a799834e4c59296586f2d55f9ae7414e340293e5c9eb3e61dcc6a5db340"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_cratylus_0031",
+          "title": "",
+          "body": "The force of this passage lies not in a refusal to choose, but in a qualified preference. Socrates reports three ways to hear σῶμα: as the soul’s tomb, as its sign, and, in the Orphic account, as an enclosure that holds the soul until its debt is paid. He says that last account seems most likely to explain the name [obs_cratylus_0092; claim_cratylus_0025]. One way to read the sequence is as a test of interpretive restraint: several pictures remain in view, but a reported tradition is not thereby turned into Socrates’ settled doctrine.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0092"
+            ],
+            "claims": [
+              "claim_cratylus_0025"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "cratylus",
+      "unit_key": "07-401a-404e",
+      "section_id": "comm_cratylus_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/cratylus/07-401a-404e.json",
+        "sha256": "f789565f92502570fc9ff6e23e1b7a0750901109a18ea11f055081d5f7df8f43"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_cratylus_0007",
+          "title": "A pious hedge, then a flux reading",
+          "body": "Socrates first narrows the question: the inquiry concerns the human opinions that produced divine names, not the gods themselves. Within that hedge, the names of Rhea and Cronus become a route into a Heraclitean account of motion. One way to read this move is that etymology does more than label a god: it proposes a picture of what beings are like.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0094",
+              "obs_cratylus_0102"
+            ],
+            "claims": [
+              "claim_cratylus_0029"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "cratylus",
+      "unit_key": "08-405a-408e",
+      "section_id": "comm_cratylus_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/cratylus/08-405a-408e.json",
+        "sha256": "676764e1d5b0432a952f83c4cb805e445f53a882f07ec4d8f77688bcfd234553"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_cratylus_0036",
+          "title": "",
+          "body": "Socrates makes Apollo’s name carry four proposed routes at once: purification, the Thessalian form Aploun, ever-shooting, and moving together; together they are said to touch music, prophecy, medicine, and archery. The striking point is not whether each route is convincing. It is the argumentative effect: a single name becomes a surface on which several powers can be made to meet. When Socrates answers the fear that Apollo suggests ruin, he shifts attention from the name’s sound to the way it is examined.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0116",
+              "obs_cratylus_0119"
+            ],
+            "claims": [
+              "claim_cratylus_0046"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_cratylus_0037",
+          "title": "",
+          "body": "The passage leaves Artemis’s name open: Socrates offers several possible routes and allows that the name-setter may have used one, or all, of them. Then he draws a boundary around what follows. Divine names can be treated seriously or playfully, but Socrates offers Hermogenes only the playful account and sends him elsewhere for the serious one. For the listener, that boundary matters: the alternatives invite attention without requiring us to mistake them for a settled verdict.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0293",
+              "obs_cratylus_0294"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_cratylus_0038",
+          "title": "",
+          "body": "Here the name-game turns toward a person in the room. Socrates links Hermes with the power of speech, joining eirein (“to speak”) to emesato (“he devised”) and proposing Eiremes before the embellished form Hermes. Hermogenes immediately applies that account to himself, acknowledging that he is not resourceful in speech. One way to hear the exchange is as a small dramatic test: an etymology becomes lively when its proposed meaning can answer back through a speaker’s own name.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0132",
+              "obs_cratylus_0133"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "cratylus",
+      "unit_key": "09-409a-410e",
+      "section_id": "comm_cratylus_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/cratylus/09-409a-410e.json",
+        "sha256": "419f0992b6d0d7061577c7e3cef69ae4899e10eff9839cb604e397a4862a7c39"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_cratylus_0039",
+          "title": "",
+          "body": "Socrates makes selene do more than name the moon: he says it seems to show as older what Anaxagoras has only recently said—that moonlight comes from the sun. The wording gives the etymology an anticipatory force, but the record does not tell us whether Socrates endorses the physical doctrine or claims that an ancient name-giver recovered buried science. Hermogenes then calls the expanded name dithyrambic and moves on to the month and stars. Hear that remark as unresolved: it may register style, approval, mockery, or some mixture.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0130",
+              "obs_cratylus_0141"
+            ],
+            "claims": [
+              "claim_cratylus_0053"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_cratylus_0040",
+          "title": "",
+          "body": "When πῦρ resists him, Socrates names a contrivance: a word may have entered Greek from another language, so a Greek-only etymology may reach aporia. He applies this possibility to fire, points to a slightly altered Phrygian form, and then sets aside fire and water. Dog appears among the other examples, but this local passage does not say that Socrates separately sets it aside. The useful question is narrower than whether the device excuses everything: what would show that a difficult name is foreign rather than merely unexplained?",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_cratylus_0054"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "cratylus",
+      "unit_key": "10-411a-414e",
+      "section_id": "comm_cratylus_0010",
+      "audit_output": {
+        "path": "scratch/commentary/audits/cratylus/10-411a-414e.json",
+        "sha256": "c484960be9ad448fb7823ada84a41f1f56e08f503eda017cb8980ff2f2930d47"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_cratylus_0041",
+          "title": "",
+          "body": "Socrates offers a diagnosis rather than a verdict: the ancient name-givers may have mistaken an inner condition—vertigo from their inquiry—for a feature of things themselves. He then notices that the names under discussion treat their objects as moving, flowing, and coming into being. Read the sequence as pressure on the method: if its shared premise arose from such a diagnosis, the etymologies may reveal how a flux picture was formed; they do not by themselves settle whether that picture is true.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0143",
+              "obs_cratylus_0144",
+              "obs_cratylus_0145"
+            ],
+            "claims": [
+              "claim_cratylus_0055"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_cratylus_0042",
+          "title": "",
+          "body": "The justice etymology turns into a report about inquiry under pressure. Socrates says his questioning begins from secret instruction, but asking what justice is produces a series of competing reported answers: sun, fire, the heat in fire, and then an unnamed speaker’s appeal to what Anaxagoras calls mind. The sequence does not establish any answer; it leaves Socrates in greater aporia. The dramatic point is the gap between explaining a name and knowing what the just is.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0163",
+              "obs_cratylus_0149",
+              "obs_cratylus_0150",
+              "obs_cratylus_0151"
+            ],
+            "claims": [
+              "claim_cratylus_0057",
+              "claim_cratylus_0058",
+              "claim_cratylus_0059",
+              "claim_cratylus_0060"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_cratylus_0043",
+          "title": "",
+          "body": "Hermogenes calls the derivation of τέχνη strained. Socrates answers by widening the issue: once letter insertion and removal are unrestricted, any name can be fitted to any thing. His closing appeal to measure and probability is therefore a guardrail, not a demonstration that the preceding derivation has succeeded. Listen for the unresolved tension: the method is criticized as arbitrary, yet the passage leaves its own local use under that rule for judgment.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0158",
+              "obs_cratylus_0170"
+            ],
+            "claims": [
+              "claim_cratylus_0061"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "cratylus",
+      "unit_key": "13-428a-431e",
+      "section_id": "comm_cratylus_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/cratylus/13-428a-431e.json",
+        "sha256": "13aa7728083f177e012104eca62a015f45d16fb9a29be3e340c3e03852d7144e"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_cratylus_0049",
+          "title": "",
+          "body": "The exchange begins with a reversal of roles. Socrates invites Cratylus to take over the inquiry, disclaims insistence on his own earlier views, and even offers to become his pupil. Cratylus responds with a poetic citation that frames his agreement with Socrates. A useful reading of this warm handoff is cautionary rather than celebratory: Socrates immediately says that he distrusts his own apparent wisdom and identifies self-deception as especially difficult to detect. The praise opens the next examination; it is not itself an argument that settles the question.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0256",
+              "obs_cratylus_0257",
+              "obs_cratylus_0227",
+              "obs_cratylus_0226"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "cratylus",
+      "unit_key": "14-432a-435d",
+      "section_id": "comm_cratylus_0014",
+      "audit_output": {
+        "path": "scratch/commentary/audits/cratylus/14-432a-435d.json",
+        "sha256": "aebaa994c609a29a60e3359378f1aced8c6fdcbd187b60df2632192ccbdd080d"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_cratylus_0053",
+          "title": "",
+          "body": "The hardness example tests whether resemblance can be the whole explanation. Cratylus accepts that different letters can signify the same quality, and says that we understand σκληρότης through habit. Socrates then identifies this habit with convention: custom helps language communicate even when a letter does not fit the quality named. The result is not that agreement replaces resemblance. Rather, convention supplements likeness where an unlike letter still carries meaning, leaving likeness as an important resource but not a sufficient account of name-correctness.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0264",
+              "obs_cratylus_0266"
+            ],
+            "claims": [
+              "claim_cratylus_0080"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "cratylus",
+      "unit_key": "15-435e-440e",
+      "section_id": "comm_cratylus_0015",
+      "audit_output": {
+        "path": "scratch/commentary/audits/cratylus/15-435e-440e.json",
+        "sha256": "5e9af659859ca90bd1a756cf23dd71a3974d2242f77641958ccb66f0b064d5bf"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_cratylus_0015",
+          "title": "A conditional escape from names",
+          "body": "Socrates first loosens Cratylus’s name-based route: if names conflict, the truth cannot be judged by more names, and beings may therefore be learned without them. He then reasons that total flux would make knowledge impossible, but leaves the stability of beings and the Heraclitean alternative open. Cratylus remains committed; Hermogenes merely accompanies him.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0305",
+              "obs_cratylus_0306",
+              "obs_cratylus_0312",
+              "obs_cratylus_0315",
+              "obs_cratylus_0316"
+            ],
+            "claims": [
+              "claim_cratylus_0091",
+              "claim_cratylus_0098"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_cratylus_0056",
+          "title": "",
+          "body": "Cratylus’s divine-origin reply does not end the problem. Socrates tests it by asking whether a daimon or god could have set names that contradict one another. Once names are placed in conflict, the dispute cannot be settled by another name. The passage therefore reaches a conditional result: if this argument holds, beings can be learned without names, through one another or themselves.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0303",
+              "obs_cratylus_0304",
+              "obs_cratylus_0305",
+              "obs_cratylus_0306"
+            ],
+            "claims": [
+              "claim_cratylus_0088",
+              "claim_cratylus_0089",
+              "claim_cratylus_0090",
+              "claim_cratylus_0091"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_cratylus_0004",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0004\nsource_work: Cratylus\nblock_kind: section\nplacement: before\ntitle: \"Calling Homer to the stand\"\nstephanus_span: 391a-394e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 391a-394e\n  start_marker: 391a\n  end_marker: 394e\n  start_char: 13992\n  end_char: 22293\n  text_sha256: \"2ac91ff42333384244bedabf68633806f1ee0751ca1e9ba6c30186b82ff20f24\"\nbody: \"To learn correctness of names, Socrates proposes consulting the poets. Homer's double names — what gods and men each call things, Hector and Astyanax — supply test cases for the principle that a correct name expresses the nature of its bearer, so offspring of like nature deserve like names.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"myth_demarcation/poetic_quotation_as_authority\", \"prosopography/homeric_character_characterized\", \"naming_convention/same_name_refers_to_same_nature\", \"myth_demarcation/divine_vs_human_naming\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0007",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0007\nsource_work: Cratylus\nblock_kind: section\nplacement: before\ntitle: \"Naming the gods under a pious hedge\"\nstephanus_span: 401a-404e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 401a-404e\n  start_marker: 401a\n  end_marker: 404e\n  start_char: 34488\n  end_char: 42421\n  text_sha256: \"80fb202cc01c71e1ab60f50e7932d7e49908f4a084dd6d72399d14f3f6750e3d\"\nbody: \"Before deriving divine names, Socrates enters a caution: we speak of what humans call the gods, not of the gods themselves. Then Hestia, Rhea, Cronus, and Poseidon dissolve into words about flowing and motion — the first quiet appearance of the flux doctrine the dialogue will later test.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"piety_constraint/piety_constraint_on_inquiry\", \"etymological_derivation/etymology_from_motion\", \"myth_demarcation/god_name_equated_with_abstractum\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0015",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0015\nsource_work: Cratylus\nblock_kind: section\nplacement: before\ntitle: \"Learn from things, not from names\"\nstephanus_span: 435e-440e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 435e-440e\n  start_marker: 435e\n  end_marker: 440e\n  start_char: 105859\n  end_char: 116026\n  text_sha256: \"6cc2297ed36bad05df8b502132821a0e224fd8d69f61ea44f0818dbdd016ca40\"\nbody: \"The closing argument turns on knowledge: if the first name-givers could err, names are unsafe teachers, and things must be studied through themselves. Against total flux Socrates sets the beautiful itself, stable enough to be known. The friends part unpersuaded, each sent off to keep inquiring.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"forms_trajectory/form_paradigm_standard\", \"elenchus/prior_concession_recalled_for_refutation\", \"turn_geometry/explicit_procedure_control\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0016",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0016\nsource_work: Cratylus\nblock_kind: context\nplacement: before\nstephanus_span: 383a-383b\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 383a-383b\n  start_marker: 383a\n  end_marker: 383b\n  start_char: 0\n  end_char: 788\n  text_sha256: \"13439c1ebb4b5c43638505396447ebd160ed9cab7429ef4b4355d66f9689c068\"\nbody: \"We arrive mid-conversation. Cratylus and Hermogenes have already been arguing, and Socrates is invited in as a third party. So the dialogue's central thesis — that every being has a naturally correct name, the same for Greeks and barbarians — reaches us secondhand, in Hermogenes' report of what Cratylus says. Cratylus himself speaks only four words. That indirectness matters: the man who believes names carry natural truth is, from the start, the one least willing to put his view into words. What correctness of names actually consists in is announced here as a question, not answered.\"\ncites:\n  observations: [\"obs_cratylus_0001\", \"obs_cratylus_0003\"]\n  claims: [\"claim_cratylus_0001\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0017",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0017\nsource_work: Cratylus\nblock_kind: notice\nplacement: after\nstephanus_span: 384b-384c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 384b-384c\n  start_marker: 384b\n  end_marker: 384c\n  start_char: 1253\n  end_char: 2126\n  text_sha256: \"36ebfb53bd9a0377a16f9e599dad4524ef3aadc710023309eed35ea6d56415f0\"\nbody: \"Two barbs sit inside Socrates' polite reply. First, he says he heard only Prodicus' one-drachma lecture on names, not the fifty-drachma course that confers complete expertise — pricing wisdom by the drachma while claiming ignorance of the very subject at hand. Second, he guesses why Cratylus denies Hermogenes his name: Hermogenes means 'born of Hermes,' the god of profit, and Hermogenes keeps failing to make money. Socrates offers this only as a suspicion of mockery, but it quietly grants Cratylus' premise a trial run — a name might really answer, or fail to answer, to its bearer.\"\ncites:\n  observations: [\"obs_cratylus_0005\", \"obs_cratylus_0007\"]\n  claims: [\"claim_cratylus_0002\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0022",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0022\nsource_work: Cratylus\nblock_kind: argument\nplacement: after\nstephanus_span: 388a-388c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 388a-388c\n  start_marker: 388a\n  end_marker: 388c\n  start_char: 8491\n  end_char: 9613\n  text_sha256: \"ea7f2714cae399d8c1bd020e3f06cd20deb7028bbcb0c1374af0f4c4fc76aec5\"\nbody: \"The whole refutation of Hermogenes turns on this small exchange. Once naming is an action like cutting or weaving, Socrates asks what tool it uses, and the answer is the name itself: a name is an instrument, like the shuttle or the drill. Then comes the definition that carries the rest of the dialogue: a name is a tool for teaching and for separating reality, the way a shuttle separates the threads of a web. If a name has a job to do, it can do that job well or badly — and that is exactly the standard of correctness Hermogenes' pure conventionalism has no room for.\"\ncites:\n  observations: [\"obs_cratylus_0028\", \"obs_cratylus_0029\"]\n  claims: [\"claim_cratylus_0011\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0023",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0023\nsource_work: Cratylus\nblock_kind: argument\nplacement: after\nstephanus_span: 390b-390d\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 390b-390d\n  start_marker: 390b\n  end_marker: 390d\n  start_char: 12487\n  end_char: 13723\n  text_sha256: \"c7dcbb613b62c10726daf52258863f60b41b823407ceb007294afb3fd202d743\"\nbody: \"Here the craft model quietly changes the subject of authority. In every craft, the maker is not the best judge of the product; the user is — the weaver judges the shuttle, the pilot judges the ship. So who uses names and should supervise the lawgiver who coins them? The one who knows how to ask and answer questions: the dialectician. In three quick steps the philosopher has been installed above the lawgiver, the rarest of craftsmen. Notice how much rides on the definition of the dialectician by mere question-and-answer, secured by nothing but Hermogenes' assent.\"\ncites:\n  observations: [\"obs_cratylus_0042\", \"obs_cratylus_0046\", \"obs_cratylus_0047\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0027",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0027\nsource_work: Cratylus\nblock_kind: argument\nplacement: after\nstephanus_span: 393d-394c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 393d-394c\n  start_marker: 393d\n  end_marker: 394c\n  start_char: 19164\n  end_char: 21408\n  text_sha256: \"405a1fe32b09996a1517ab77b490d7fdbf1c9342a90f832cfe579ccba872c5b3\"\nbody: \"Out of the Homeric name-games comes the unit's real theoretical yield: a name is correct so long as the essence of the thing shows through it, whatever happens to its letters and syllables. Astyanax, Hector, and Archepolis share almost no letters, yet all say 'king.' Socrates seals this with the doctor, who sees through a drug's colors and perfumes to its power — the name-expert likewise looks to a name's force, unshaken by letters added, moved, or dropped. This criterion cuts names loose from their sound entirely, and it will license the long etymological stretch that follows.\"\ncites:\n  observations: [\"obs_cratylus_0063\", \"obs_cratylus_0064\", \"obs_cratylus_0065\"]\n  claims: [\"claim_cratylus_0013\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0028",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0028\nsource_work: Cratylus\nblock_kind: argument\nplacement: after\nstephanus_span: 395b-395c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 395b-395c\n  start_marker: 395b\n  end_marker: 395c\n  start_char: 22641\n  end_char: 23494\n  text_sha256: \"6576854e1da47f0e93f3141751f116f142936cf3abb0455b30ed683d20edf86b\"\nbody: \"With Atreus, Socrates quietly adds a new rule to the game. The name, he says, is slightly bent and covered over, so that it shows the man's nature only to those who understand about names. That is a real shift: earlier a name was supposed to reveal its bearer's nature, and here Socrates will soon state that principle outright. If names can be deliberately veiled, then correctness no longer means transparency — it means legibility to an expert. The etymologist has just made himself indispensable, and everything he says from here on rests on that self-granted license.\"\ncites:\n  observations: [\"obs_cratylus_0076\", \"obs_cratylus_0079\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0031",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0031\nsource_work: Cratylus\nblock_kind: notice\nplacement: after\nstephanus_span: 400b-400c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 400b-400c\n  start_marker: 400b\n  end_marker: 400c\n  start_char: 32885\n  end_char: 33845\n  text_sha256: \"891c8d86c717507d8f70fb69883baddaa16f22ea9ba61566686731d09dd3ba81\"\nbody: \"For the body, Socrates does something he has not done before in this sequence: he lays out three rival derivations side by side and does not choose. The body is a tomb where the soul lies buried; or a sign through which the soul signifies; or, on the Orphic account he finds most likely, a prison enclosure holding the soul until its debt is paid. One word, three pictures of what a human life is. The plurality itself is worth hearing — it shows how easily this method generates whichever meaning the interpreter already favors.\"\ncites:\n  observations: [\"obs_cratylus_0092\", \"obs_cratylus_0328\"]\n  claims: [\"claim_cratylus_0025\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0036",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0036\nsource_work: Cratylus\nblock_kind: argument\nplacement: before\nstephanus_span: 405a-405e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 405a-405e\n  start_marker: 405a\n  end_marker: 405e\n  start_char: 42421\n  end_char: 44421\n  text_sha256: \"f4f0ede77b379c60a812fbe68c74c2d31915f214cd25839d83fb7d395bbdde78\"\nbody: \"Apollo gets the fullest treatment of any god in this stretch: one name is made to yield four separate derivations, matching his four powers of music, prophecy, medicine, and archery. The method here is loose by design. Socrates swaps in a Thessalian dialect form, substitutes an alpha for a whole prefix, and even explains an extra lambda as cosmetic. The payoff comes at the end: people who fear the name Apollo as meaning destruction have simply failed to examine its power. A name, on this showing, can be read well or badly — which quietly raises the question of who gets to decide.\"\ncites:\n  observations: [\"obs_cratylus_0116\", \"obs_cratylus_0117\", \"obs_cratylus_0118\", \"obs_cratylus_0119\"]\n  claims: [\"claim_cratylus_0045\", \"claim_cratylus_0046\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0037",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0037\nsource_work: Cratylus\nblock_kind: notice\nplacement: after\nstephanus_span: 406b-406c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 406b-406c\n  start_marker: 406b\n  end_marker: 406c\n  start_char: 44924\n  end_char: 45828\n  text_sha256: \"d78114121e0d9e83843d7968a2751add0a5a7a3138d4c73ad976ddbf3c8da18e\"\nbody: \"When Hermogenes asks about Dionysus and Aphrodite, Socrates does something he has not done before: he splits the account of divine names into a serious mode and a playful mode, and then delivers only the playful one, sending Hermogenes elsewhere for the serious version. The same looseness shows in Artemis, whose name gets several possible derivations left standing side by side, any or all of which might be right. Socrates never says which of the etymologies in this whole sequence belong to the serious account — a gap worth carrying through the rest of the dialogue.\"\ncites:\n  observations: [\"obs_cratylus_0294\", \"obs_cratylus_0293\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0038",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0038\nsource_work: Cratylus\nblock_kind: context\nplacement: before\nstephanus_span: 407e-408b\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 407e-408b\n  start_marker: 407e\n  end_marker: 408b\n  start_char: 48073\n  end_char: 49241\n  text_sha256: \"9b0ff0e2c26f83803fe4b795495df06e03f46b080aa5d3d96716d761e270eb84\"\nbody: \"This next etymology is personal. The dialogue opened with Cratylus insisting that Hermogenes is not really Hermogenes — not truly a son of Hermes. Now Hermogenes himself asks for the derivation. Socrates builds Hermes from two roots, speaking and contriving: the god of skillful, even deceptive speech. Hermogenes hears the verdict at once and accepts it — he is no contriver of speech, so Cratylus was right about his name. For a moment the theory of names is tested not on a distant god but on the man standing in the conversation.\"\ncites:\n  observations: [\"obs_cratylus_0132\", \"obs_cratylus_0133\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0039",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0039\nsource_work: Cratylus\nblock_kind: argument\nplacement: after\nstephanus_span: 409a-409c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 409a-409c\n  start_marker: 409a\n  end_marker: 409c\n  start_char: 50384\n  end_char: 51798\n  text_sha256: \"22724ae2806f9c2f6586b09afc485a856d76c44fbe0244c91b70492938f93a68\"\nbody: \"The moon etymology carries a quiet claim about where knowledge lives. Socrates says the name selene presses on Anaxagoras: it reveals something older than the doctrine he announced only recently — that the moon takes its light from the sun. If the ancient name-giver already knew this, then etymology is not word-play but archaeology, recovering science buried in language before the philosophers arrived. Hermogenes' reaction to the monstrous reconstructed name Selaenoneoaeia — he calls it dithyrambic — is the first hint that he hears something inflated in the performance, though he keeps asking for more.\"\ncites:\n  observations: [\"obs_cratylus_0130\", \"obs_cratylus_0141\"]\n  claims: [\"claim_cratylus_0053\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0040",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0040\nsource_work: Cratylus\nblock_kind: argument\nplacement: after\nstephanus_span: 409d-410a\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 409d-410a\n  start_marker: 409d\n  end_marker: 410a\n  start_char: 51798\n  end_char: 52826\n  text_sha256: \"13ab8f2f3caff816125d8bcf2ebb8055939dcfe4c8cceed4a8b73bb6195a006d\"\nbody: \"When pyr, fire, defeats him, Socrates does something new: instead of straining for a derivation, he introduces what he calls a contrivance. Many Greek words, he says, are borrowed from barbarian languages, and demanding a Greek explanation for a foreign word can only end in perplexity — so fire, water, and dog are set aside. As method, the rule is sensible. But it also hands the etymologist an unfalsifiable escape: any name that resists analysis can now be declared foreign. A tool that explains every success and excuses every failure should make a listener wonder how seriously the whole enterprise is meant.\"\ncites:\n  observations: []\n  claims: [\"claim_cratylus_0054\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0041",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0041\nsource_work: Cratylus\nblock_kind: argument\nplacement: before\nstephanus_span: 411b-411c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 411b-411c\n  start_marker: 411b\n  end_marker: 411c\n  start_char: 54848\n  end_char: 55708\n  text_sha256: \"880e72b411fca7942778d7c980aa31914cbafdea4e6c9689dedf1a1d18e39b72\"\nbody: \"Before deriving a single virtue-word, Socrates plants a diagnosis that quietly poisons everything that follows. The ancient name-givers, he says, got dizzy from spinning around in their search for how things are, and then blamed the things: they decided reality itself flows, when the vertigo was their own inner condition. So the flux doctrine built into all these names may record a symptom, not a discovery. Every etymology in this stretch presupposes that things move and become — which means the names testify to what their makers believed, not to what is true.\"\ncites:\n  observations: [\"obs_cratylus_0143\", \"obs_cratylus_0144\", \"obs_cratylus_0145\"]\n  claims: [\"claim_cratylus_0055\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0042",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0042\nsource_work: Cratylus\nblock_kind: context\nplacement: before\nstephanus_span: 413a-413c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 413a-413c\n  start_marker: 413a\n  end_marker: 413c\n  start_char: 58399\n  end_char: 59746\n  text_sha256: \"3d3b7b295f5880e7f896ede7ed925c339275c95dd72569bfa0310fc529778d50\"\nbody: \"Here the etymology of justice breaks open into a small drama. Socrates claims he pressed his sources in secret teachings, and the moment he asked the simple question — but what is the just? — the agreement collapsed. One answer follows another: the sun, fire, the heat in fire, and finally the mind that Anaxagoras taught, self-ruling and passing through all things. Each answer mocks the last, and Socrates ends in deeper perplexity than when he started. The name could be explained; the thing named could not.\"\ncites:\n  observations: [\"obs_cratylus_0163\", \"obs_cratylus_0149\", \"obs_cratylus_0151\", \"obs_cratylus_0150\"]\n  claims: [\"claim_cratylus_0057\", \"claim_cratylus_0058\", \"claim_cratylus_0059\", \"claim_cratylus_0060\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0043",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0043\nsource_work: Cratylus\nblock_kind: notice\nplacement: after\nstephanus_span: 414c-414e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 414c-414e\n  start_marker: 414c\n  end_marker: 414e\n  start_char: 61365\n  end_char: 62501\n  text_sha256: \"b33f5dfb29ef9490061e3297a34f4cefa6d0fcc29ade73b8dddd532cdf3c1f82\"\nbody: \"When Hermogenes objects that the derivation of techne is strained, Socrates does something remarkable: he states the objection to his own method better than anyone else could. If we may freely add and remove letters, any name can be fitted to any thing — and his defense is only that the wise supervisor must keep to due measure and the likely. He has been adding and removing letters for pages. Whether that concession quietly discredits the whole etymological performance, or merely disciplines it, is left for the listener to weigh.\"\ncites:\n  observations: [\"obs_cratylus_0170\", \"obs_cratylus_0158\"]\n  claims: [\"claim_cratylus_0061\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0049",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0049\nsource_work: Cratylus\nblock_kind: context\nplacement: before\nstephanus_span: 428a-428c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 428a-428c\n  start_marker: 428a\n  end_marker: 428c\n  start_char: 89669\n  end_char: 90861\n  text_sha256: \"7e8f7be4507cadce20405b4f7e6348153db99f5190c1b4c0153e7588bd9607fa\"\nbody: \"After hundreds of lines of silence, Cratylus finally takes the stage — and the handoff is strange on both sides. Socrates disclaims everything he has just built with Hermogenes and offers to enroll as Cratylus's pupil, a courtesy that inverts who has actually done the work of the inquiry. Cratylus answers not with an argument but with Homer: like Achilles praising Ajax, he tells Socrates that everything said so far pleases him. Total agreement, from the man whose thesis has never yet been tested. That warm endorsement is exactly what Socrates says he distrusts most: self-deception, the deceiver who never leaves your side.\"\ncites:\n  observations: [\"obs_cratylus_0256\", \"obs_cratylus_0257\", \"obs_cratylus_0227\", \"obs_cratylus_0226\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0053",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0053\nsource_work: Cratylus\nblock_kind: argument\nplacement: after\nstephanus_span: 434c-435b\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 434c-435b\n  start_marker: 434c\n  end_marker: 435b\n  start_char: 102898\n  end_char: 105038\n  text_sha256: \"f81df63c268f7036dcb2670f64e7d3e4c2e11dbb2c6658df9f46268359bc3900\"\nbody: \"The word σκληρότης, hardness, is the trap. It contains a lambda, the letter both men agreed expresses smoothness and softness — the opposite of what the word means. Yet Cratylus admits he understands the word anyway, and explains this by custom. Socrates then closes the door: custom that lets an unlike letter carry meaning just is convention. Cratylus, the pure naturalist, has been maneuvered into conceding that agreement, not resemblance, is doing the work in his own example. It is the sharpest single reversal in the dialogue's second half, and Socrates seals it by counting Cratylus's silence as consent.\"\ncites:\n  observations: [\"obs_cratylus_0264\", \"obs_cratylus_0266\"]\n  claims: [\"claim_cratylus_0080\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0056",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0056\nsource_work: Cratylus\nblock_kind: argument\nplacement: before\nstephanus_span: 438a-438e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 438a-438e\n  start_marker: 438a\n  end_marker: 438e\n  start_char: 109931\n  end_char: 111938\n  text_sha256: \"d9198c9b50400a61047f711517b0e75a155500fecdb85dc7ead0b98a8439837b\"\nbody: \"Here the dialogue's deepest trap closes. Cratylus has held that the name-giver set names knowingly, and that things can only be learned through names. Socrates puts the two together: before any names existed, from what names did the first name-giver learn the things he named? Cratylus reaches for a more-than-human power, but even a god, Socrates replies, would not have set names that contradict one another. And since the names do conflict — some pointing to motion, some to rest — no further name can judge between them. Something other than names must show the truth of beings, which means beings can be learned without names at all.\"\ncites:\n  observations: [\"obs_cratylus_0303\", \"obs_cratylus_0304\", \"obs_cratylus_0305\", \"obs_cratylus_0306\"]\n  claims: [\"claim_cratylus_0088\", \"claim_cratylus_0089\", \"claim_cratylus_0090\", \"claim_cratylus_0091\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

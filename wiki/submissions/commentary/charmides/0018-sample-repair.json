@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "submission_id": "0018-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "charmides",
+  "source_path": "scratch/commentary/sample-repairs/charmides/0018-final.json",
+  "source_sha256": "d763865d83b16a2859c010d977fef26f1262fbe36a81ac715584d01dd1d6104f",
+  "target_path": "wiki/commentary/charmides.md",
+  "target_sha256_before": "2fea138486359fb4cc1bda48dd6aa60507196c9c235248c08af880627f7a8a50",
+  "target_sha256_after": "cdf3674ea1b8095098fd9e1592d27300c185c294abf77ee07a7c9b3435a9e7e7",
+  "applied_at": "2026-08-24T00:08:47.821Z",
+  "applied_ids": [
+    "comm_charmides_0003",
+    "comm_charmides_0005"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "charmides",
+    "ledger": {
+      "path": "wiki/commentary/charmides.md",
+      "sha256": "2fea138486359fb4cc1bda48dd6aa60507196c9c235248c08af880627f7a8a50"
+    },
+    "sample_review": {
+      "reviewer": "sample-d-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna high-effort review sampled every active accepted block and identified two bounded evidence defects for repair.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_charmides_0001",
+        "comm_charmides_0003",
+        "comm_charmides_0005",
+        "comm_charmides_0008",
+        "comm_charmides_0010",
+        "comm_charmides_0012",
+        "comm_charmides_0016",
+        "comm_charmides_0031",
+        "comm_charmides_0034",
+        "comm_charmides_0038",
+        "comm_charmides_0039",
+        "comm_charmides_0044",
+        "comm_charmides_0045"
+      ],
+      "failed_commentary_ids": [
+        "comm_charmides_0003",
+        "comm_charmides_0005"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_charmides_0003",
+        "title": "Does the patient already have the cure?",
+        "body": "Critias pins the charm to temperance and heaps superlatives on Charmides; Socrates adds the famous lineage. Asked point-blank whether he possesses sophrosyne, Charmides blushes and states his dilemma — denial insults his praisers, assent is self-praise — and Socrates converts the impasse into a joint inquiry.",
+        "cites": {
+          "observations": [
+            "obs_charmides_0023",
+            "obs_charmides_0024",
+            "obs_charmides_0025",
+            "obs_charmides_0041",
+            "obs_charmides_0042",
+            "obs_charmides_0032",
+            "obs_charmides_0033",
+            "obs_charmides_0034"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": [
+            "turn_geometry/explicit_procedure_control",
+            "turn_geometry/respondent_answer_constraint"
+          ]
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_charmides_0005",
+        "title": "A blush, a poet, and a borrowed answer",
+        "body": "Charmides tries again — temperance as a sense of shame — then falls back on something he has heard: doing one's own things. Socrates insists the question is whether a saying is true, not who said it, and presses a literal reading under which a city would not be well-governed if each person made only his own things.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_charmides_0011",
+            "claim_charmides_0012"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_charmides_0003",
+      "body": "```yaml\ncommentary_id: comm_charmides_0003\nsource_work: Charmides\nblock_kind: section\nplacement: before\ntitle: \"Does the patient already have the cure?\"\nstephanus_span: 157d-159a\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 157d-159a\n  start_marker: 157d\n  end_marker: 159a\n  start_char: 9176\n  end_char: 12511\n  text_sha256: \"6a8bd2ea648fa6f3662720e4b81d2b10a3320ff09bb89abbf5b7a9b181887cbc\"\nbody: \"Critias pins the charm to temperance and heaps superlatives on his ward; Socrates adds the famous lineage. Asked point-blank whether he possesses sophrosyne, Charmides blushes and states his dilemma — denial insults his praisers, assent is self-praise — and Socrates converts the impasse into a joint inquiry.\"\ncites:\n  observations: [\"obs_charmides_0023\", \"obs_charmides_0024\", \"obs_charmides_0025\", \"obs_charmides_0041\", \"obs_charmides_0042\", \"obs_charmides_0032\", \"obs_charmides_0033\", \"obs_charmides_0034\"]\n  claims: []\n  relations: []\n  dossiers: [\"turn_geometry/explicit_procedure_control\", \"turn_geometry/respondent_answer_constraint\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0005",
+      "body": "```yaml\ncommentary_id: comm_charmides_0005\nsource_work: Charmides\nblock_kind: section\nplacement: before\ntitle: \"A blush, a poet, and a borrowed answer\"\nstephanus_span: 160e-162e\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 160e-162e\n  start_marker: 160e\n  end_marker: 162e\n  start_char: 15895\n  end_char: 20753\n  text_sha256: \"cd16195919a4d7a3bd4df7ea0edb994122b1df3fcecf97676be525a2ad3216eb\"\nbody: \"Charmides tries again — temperance as a sense of shame — then falls back on something he has heard: doing one's own things. Socrates insists the question is whether a saying is true, not who said it, and presses a literal reading under which craftsmen and well-run cities fail the test.\"\ncites:\n  observations: []\n  claims: [\"claim_charmides_0011\", \"claim_charmides_0012\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

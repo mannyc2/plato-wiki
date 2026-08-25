@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "phaedo",
+  "source_path": "scratch/commentary/rewrites/phaedo/12-101a-104e.json",
+  "source_sha256": "f30de5f65e2a0c22fdf9011fe5a9a5cd28c17cdf203e9251ecac066319067a73",
+  "target_path": "wiki/commentary/phaedo.md",
+  "target_sha256_before": "edec32d6c923e3941fd05fb532bf1b42a0ea4e259989dbb3e78228a781ebcd6c",
+  "target_sha256_after": "42caf1b43e373d7e900dbcd3ae6d8e770e7d5ffd5d68921923558eec8763dbcb",
+  "applied_at": "2026-08-23T21:18:19.355Z",
+  "applied_ids": [
+    "comm_phaedo_0012"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "phaedo",
+      "unit_key": "12-101a-104e",
+      "section_id": "comm_phaedo_0012",
+      "audit_output": {
+        "path": "scratch/commentary/audits/phaedo/12-101a-104e.json",
+        "sha256": "b6a0e40bfcb749735a30ab256d01a7d3e8edf989e44e55b1f71b166825d1595a"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_phaedo_0012",
+          "title": "A question about the argument",
+          "body": "What, exactly, has the argument established?",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_phaedo_0012",
+      "body": "```yaml\ncommentary_id: comm_phaedo_0012\nsource_work: Phaedo\nblock_kind: section\nplacement: before\ntitle: \"When a contrary arrives\"\nstephanus_span: 101a-104e\nsource_ref:\n  source_path: raw/plato/greek/phaedo.txt\n  stephanus_span: 101a-104e\n  start_marker: 101a\n  end_marker: 104e\n  start_char: 103047\n  end_char: 112756\n  text_sha256: \"ae60708534045f4eb29c99fbac0ac8273e9348f9db9f8f5a94dc825eb527b64e\"\nbody: \"I hear this stretch as a change in level. The question is no longer how one thing can be described with opposite qualities, but what happens when the contrary approaches the principle or pattern that gives it that description. On this reading, snow, fire, and three make the issue concrete: they do not become their opposites while remaining what they are; they withdraw or perish. The passage thus sharpens a rule for testing identity.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

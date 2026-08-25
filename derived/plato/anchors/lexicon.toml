@@ -1,0 +1,27 @@
+# Observable Greek anchor forms. Exact NFC substrings only - no lemmas,
+# no normalization. Groups are detection purposes, not theories (BACKLOG
+# Priority 3). Reviewed manually; extend by commit, not by script.
+
+[[groups]]
+name = "definition_prompt"
+forms = ["τί ἐστι", "εἶδος", "ἰδέα", "οὐσία"]
+
+[[groups]]
+name = "assent_concession"
+forms = ["ναί", "πάνυ γε", "ὁμολογεῖς"]
+
+[[groups]]
+name = "aporia_reset"
+forms = ["ἀπορεῖν", "πάλιν"]
+
+[[groups]]
+name = "divine_legal"
+forms = ["ὅσιον", "ἀνόσιον", "δίκη", "γραφή"]
+
+[[groups]]
+name = "irony_marker"
+forms = ["εἰρων"]
+
+[[groups]]
+name = "method_term"
+forms = ["ὑπόθεσις", "μαιευτική", "κατ' εἴδη"]

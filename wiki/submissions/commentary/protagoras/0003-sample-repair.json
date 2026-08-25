@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "protagoras",
+  "source_path": "scratch/commentary/sample-repairs/protagoras/0007-0009-round2.json",
+  "source_sha256": "49eae1d299d44167fa546eeb3c9196aec41c70e23930475f1e46b5654a2fc854",
+  "target_path": "wiki/commentary/protagoras.md",
+  "target_sha256_before": "bb3f9b4b0f0713094c1fe6fed1f062bbf525a182fa0177e9e30ce90e9bceee5c",
+  "target_sha256_after": "347fbf44b4f6b9f113e1309a9e6987b91a51288e21d5a42b2a999565557ee634",
+  "applied_at": "2026-08-21T20:46:39.571Z",
+  "applied_ids": [
+    "comm_protagoras_0007",
+    "comm_protagoras_0009"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "protagoras",
+    "ledger": {
+      "path": "wiki/commentary/protagoras.md",
+      "sha256": "bb3f9b4b0f0713094c1fe6fed1f062bbf525a182fa0177e9e30ce90e9bceee5c"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-protagoras-final-sample-round2",
+      "reviewed_on": "2026-08-21",
+      "rationale": "Independent Luna sample found 0007's mythos-to-logos boundary and 0009's speaker handoff mislocated; repairs bind each block to accepted records.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_protagoras_0001",
+        "comm_protagoras_0002",
+        "comm_protagoras_0003",
+        "comm_protagoras_0004",
+        "comm_protagoras_0005",
+        "comm_protagoras_0006",
+        "comm_protagoras_0007",
+        "comm_protagoras_0008",
+        "comm_protagoras_0009",
+        "comm_protagoras_0010",
+        "comm_protagoras_0011",
+        "comm_protagoras_0012",
+        "comm_protagoras_0013",
+        "comm_protagoras_0014",
+        "comm_protagoras_0015"
+      ],
+      "failed_commentary_ids": [
+        "comm_protagoras_0007",
+        "comm_protagoras_0009"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_protagoras_0007",
+        "title": "The logos begins after the punishment argument",
+        "body": "Punishment is the proof Protagoras has just completed, not the logos he is about to begin. He argues that reasoned punishment looks to the future—to deter the offender and educate witnesses—so Athenians treat virtue as teachable. At 324d he marks a new turn: the remaining problem will be answered with a logos rather than a mythos.",
+        "cites": {
+          "observations": [
+            "obs_protagoras_0097",
+            "obs_protagoras_0092",
+            "obs_protagoras_0086"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_protagoras_0009",
+        "title": "Keep the speaker handoff in view",
+        "body": "At 328a the voice shifts: Socrates introduces the craftsmen’s-sons comparison, asking who could teach sons the crafts learned from fathers and fellow practitioners. He uses that comparison to test how virtue can be taught. Protagoras resumes by presenting himself as someone who can advance a learner even a little. Keep the analogy with Socrates and the self-endorsement with Protagoras.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_protagoras_0015"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_protagoras_0007",
+      "body": "```yaml\ncommentary_id: comm_protagoras_0007\nsource_work: Protagoras\nblock_kind: section\nplacement: before\ntitle: \"From myth to logos: punishment as evidence\"\nstephanus_span: 323b-324e\nsource_ref:\n  source_path: raw/plato/greek/protagoras.txt\n  stephanus_span: 323b-324e\n  start_marker: 323b\n  end_marker: 324e\n  start_char: 28664\n  end_char: 31956\n  text_sha256: \"abf2d342253f333cf9fd9ec6e1a261aec9183bf3ad78a8a4f237be9c83522a2e\"\nbody: \"Do not hear the transition as a turn from myth to punishment. Protagoras explicitly says that he will now offer a logos rather than a mythos; punishment belongs inside that argument as its evidence. His point is that reasoned punishment looks forward—to deter repetition and educate—so he presents the practice as evidence that virtue can be taught.\"\ncites:\n  observations: [\"obs_protagoras_0097\", \"obs_protagoras_0092\", \"obs_protagoras_0086\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_protagoras_0009",
+      "body": "```yaml\ncommentary_id: comm_protagoras_0009\nsource_work: Protagoras\nblock_kind: section\nplacement: before\ntitle: \"When everyone is already a teacher\"\nstephanus_span: 327a-328d\nsource_ref:\n  source_path: raw/plato/greek/protagoras.txt\n  stephanus_span: 327a-328d\n  start_marker: 327a\n  end_marker: 328d\n  start_char: 36103\n  end_char: 39726\n  text_sha256: \"accf226277986a0ecb80235489bdcebde09211f004d0da0f73b75653d9ab15d2\"\nbody: \"Protagoras shifts the problem from finding a single source of virtue to recognizing a distributed civic formation. His analogy with craftsmen’s sons suggests that people already acquire a practice through family and fellow practitioners; virtue likewise belongs to a community in which everyone teaches as far as he can. The specialist is not thereby unnecessary, but his advantage is harder to isolate: he is the one who advances someone even a little.\"\ncites:\n  observations: [\"obs_protagoras_0113\"]\n  claims: [\"claim_protagoras_0015\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

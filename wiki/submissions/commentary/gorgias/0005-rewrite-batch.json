@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "gorgias",
+  "source_path": "scratch/commentary/rewrites/gorgias/31-517b-519d.json",
+  "source_sha256": "143e53fd4e663a0878637c10f04dbf00710efd28b94b9e54864b482fc6534ba2",
+  "target_path": "wiki/commentary/gorgias.md",
+  "target_sha256_before": "3524c60ebfaa9c3593cfcf7b3576f1e3ff3a6e2f89241fb29c5d9132233c6a7e",
+  "target_sha256_after": "d58257984a6fded3f5f0382dacd3aba6fc9ef22447c8f5e803eca892f5bc843d",
+  "applied_at": "2026-08-23T21:17:18.727Z",
+  "applied_ids": [
+    "comm_gorgias_0031"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "gorgias",
+      "unit_key": "31-517b-519d",
+      "section_id": "comm_gorgias_0031",
+      "audit_output": {
+        "path": "scratch/commentary/audits/gorgias/31-517b-519d.json",
+        "sha256": "fed2499aa77b90123fd757925cf0c015e42155e75b50e8c60024e966e9d3d5b2"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_gorgias_0031",
+          "title": "Persuasion and the Good",
+          "body": "The analogy shifts attention from what an activity can make people want to whether it benefits them. That is why blame can fall on the practitioner: success at pleasing does not by itself show that the practice serves the good.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_gorgias_0031",
+      "body": "```yaml\ncommentary_id: comm_gorgias_0031\nsource_work: gorgias\nblock_kind: section\nplacement: before\ntitle: \"Caterers, not doctors, of the city\"\nstephanus_span: 517b-519d\nsource_ref:\n  source_path: raw/plato/greek/gorgias.txt\n  stephanus_span: 517b-519d\n  start_marker: 517b\n  end_marker: 519d\n  start_char: 142312\n  end_char: 147508\n  text_sha256: \"29bfc411003d9a769da7909c563f66f2c86b2c08009d283f167113457b6e45ca\"\nbody: \"The great providers filled Athens with harbors and walls the way a pastry chef fills a body — swelling without health. When the sickness comes, the citizens blame their current advisers, not the feast-givers who caused it. One might wonder where blame belongs in this picture.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"craft_analogy/medical_craft_city_policy_analogy\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

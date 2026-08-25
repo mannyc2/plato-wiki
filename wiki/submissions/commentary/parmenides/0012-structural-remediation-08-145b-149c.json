@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0012-structural-remediation-08-145b-149c",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "parmenides",
+  "unit_key": "08-145b-149c",
+  "source_path": "scratch/commentary/audits/parmenides/08-145b-149c.json",
+  "source_sha256": "64dba5267b7c81c2892e9aa6e3fd9ee2d107f17d9d0636bdb190e54f69b02528",
+  "target_path": "wiki/commentary/parmenides.md",
+  "target_sha256_before": "ed978e109c3d9a7efc9498cc8061c33b8086a575894122b4887f468d9e6caa79",
+  "target_sha256_after": "eb849930f33a7e3289076b9e5ff01f54366d203dd30228846b19c16ef473c3e7",
+  "applied_at": "2026-08-23T22:33:58.262Z",
+  "applied_ids": [
+    "comm_parmenides_0008"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "parmenides",
+      "unitKey": "08-145b-149c",
+      "sectionId": "comm_parmenides_0008",
+      "auditOutputPath": "scratch/commentary/audits/parmenides/08-145b-149c.json",
+      "auditOutputSha256": "64dba5267b7c81c2892e9aa6e3fd9ee2d107f17d9d0636bdb190e54f69b02528",
+      "expectedLedgerSha256": "ed978e109c3d9a7efc9498cc8061c33b8086a575894122b4887f468d9e6caa79",
+      "expectedAttributionSha256": "61b78b31efe8ceb1999e63afae8a49384ef7877d37eb29aae6ec1dfd33383d17",
+      "expectedEnglishSha256": "689dc1108d395dfda666828112f52613640074a3be1f22a36c8eed96ccde3dab",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_parmenides_0008"
+        }
+      ],
+      "reviewer": "lane-a-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna structural review confirms conservative rejection of audited remove findings and split originals; delegated model review only."
+    },
+    "audit_output_path": "scratch/commentary/audits/parmenides/08-145b-149c.json",
+    "audit_output_sha256": "64dba5267b7c81c2892e9aa6e3fd9ee2d107f17d9d0636bdb190e54f69b02528",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_parmenides_0008",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

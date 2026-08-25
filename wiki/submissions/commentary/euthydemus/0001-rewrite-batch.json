@@ -1,0 +1,409 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "euthydemus",
+  "source_path": "scratch/commentary/rewrites/euthydemus/01-271a-272e.json",
+  "source_sha256": "44577a5d0b343a2b84da5807eae4b6ff44a7f56fc4d40b3de7a9792a1d8258ad",
+  "target_path": "wiki/commentary/euthydemus.md",
+  "target_sha256_before": "e9203a602f3f1405ad88979a6b79a4fa463e7690451644fa2a97ae0e151fcbce",
+  "target_sha256_after": "24c8ee05b4d2958bf80e8269095efde5651aa95803b81f4e3047e23ae9c7521b",
+  "applied_at": "2026-08-21T17:04:45.977Z",
+  "applied_ids": [
+    "comm_euthydemus_0001",
+    "comm_euthydemus_0004",
+    "comm_euthydemus_0007",
+    "comm_euthydemus_0008",
+    "comm_euthydemus_0010",
+    "comm_euthydemus_0011",
+    "comm_euthydemus_0012",
+    "comm_euthydemus_0013",
+    "comm_euthydemus_0014",
+    "comm_euthydemus_0015",
+    "comm_euthydemus_0017"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "01-271a-272e",
+      "section_id": "comm_euthydemus_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/01-271a-272e.json",
+        "sha256": "25fcf4d59c744f50f34357b1ae03504db73c4fb52278e26857983cae2d33a380"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0001",
+          "title": "When argument becomes combat",
+          "body": "The important signal here is not simply that the brothers claim universal expertise, but that Socrates translates their verbal skill into combat. Their words are weapons, and refutation is said to work the same way whether a claim is true or false. Hear that as the unit’s governing problem: what kind of skill can ignore truth?",
+          "cites": {
+            "observations": [
+              "obs_euthydemus_0007"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "04-277d-278e",
+      "section_id": "comm_euthydemus_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/04-277d-278e.json",
+        "sha256": "fcee56a706faa6f1e3f25549a666ceaff9d8be3aff4ded48e96ea4194f6926ec"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0004",
+          "title": "When verbal precision is not wisdom",
+          "body": "For a listener, the useful hinge here is not the initiation imagery but Socrates’ examination of manthanein. The brothers make one word straddle two opposite conditions: acquiring knowledge and examining something with knowledge already in hand (obs_euthydemus_0051). My reading is that Socrates draws a boundary between handling a word cleverly and understanding the matter it is meant to address.",
+          "cites": {
+            "observations": [
+              "obs_euthydemus_0051"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "07-285a-286e",
+      "section_id": "comm_euthydemus_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/07-285a-286e.json",
+        "sha256": "1e2b27d6357983dcc20cc2ac5e3846df9b9cefc31bf12d816c716df6640eae4b"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0007",
+          "title": "Socrates turns the denial of contradiction against itself",
+          "body": "One way to hear this exchange is as a reversal. Dionysodorus denies that anyone contradicts anyone else; Socrates then takes the questioner’s role and follows that denial past contradiction: if false speech is impossible, false belief and ignorance disappear with it, and even refutation becomes hard to name. The triumph starts to undermine the practice of argument itself.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": [
+              "elenchus/inversion_counterargument"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "08-287a-288d",
+      "section_id": "comm_euthydemus_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/08-287a-288d.json",
+        "sha256": "ee13da1188722ccc6ef4986264a8084fca1e22f6870b1f10080f47311eb1f7c3"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0008",
+          "title": "The argument trapped by either answer",
+          "body": "This is a local trap, not a demonstration that refutation itself is meaningless. Socrates forces Dionysodorus to choose: if Socrates was right, the sophistic claim cannot refute him; if he was mistaken, the claim that no one errs is itself defeated. Dionysodorus responds by controlling the next question rather than resolving that dilemma. The argument turns back upon its own terms.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": [
+              "elenchus/socratic_dilemma"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "10-291a-293a",
+      "section_id": "comm_euthydemus_0010",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/10-291a-293a.json",
+        "sha256": "68a5056eea5d6ce269272b8528513f24f7ca87c89962d024a2197e30555a25c7"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0010",
+          "title": "From the kingly art to aporia",
+          "body": "Crito’s opening reply asks which Ctesippus Socrates means; he then accepts that the striking line may have come from a superior speaker, rather than questioning Cleinias’ report. Socrates’ search for the kingly art proceeds by asking what it produces, but the promise of making people good leaves its practical use unclear. That reported aporia leads him to call on the brothers for help.",
+          "cites": {
+            "observations": [
+              "obs_euthydemus_0148"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "11-293b-296d",
+      "section_id": "comm_euthydemus_0011",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/11-293b-296d.json",
+        "sha256": "5767597d17bcd9fe0484b7bb7201ac51cb3be0f3825ff5794f5140b39f3a0418"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0011",
+          "title": "When qualifications become admissions",
+          "body": "Here the brothers turn a qualification into an admission. They press Socrates from “I know something” to “I am knowing,” then forbid the words that would limit the claim—“whenever” and “that I know”—until “everything” and “always” can be attached to his answers. The maneuver exploits the answer procedure, but it also relies on the premise that the same thing cannot both be and not be at once. So the final claim is not a refutation by procedure alone; it is a conclusion produced by that procedure working on a contested premise.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": [
+              "elenchus/eristic_predicate_scope_equivocation",
+              "turn_geometry/respondent_answer_constraint"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "12-296e-298e",
+      "section_id": "comm_euthydemus_0012",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/12-296e-298e.json",
+        "sha256": "7d4e74cad4cccf4a1b7567aa6568dc862e1c8e9fd7f701148c6752d4d255ada5"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0012",
+          "title": "Ctesippus turns the trap back",
+          "body": "The trap shifts when Ctesippus asks whether Euthydemus’s father, not Socrates’ father, is also caught by the same logic. Once Euthydemus calls that father the same as Ctesippus’s, Ctesippus presses the universal result until fathers become fathers of animals and the dog becomes his father. The passage shows a counterattack, not that Ctesippus has mastered the sophists’ method.",
+          "cites": {
+            "observations": [
+              "obs_euthydemus_0170",
+              "obs_euthydemus_0183"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "13-299a-300d",
+      "section_id": "comm_euthydemus_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/13-299a-300d.json",
+        "sha256": "27f19e2f23aa5af241c8c2eb6e18b8fdec6be3217cd4674f728ce735266e8f79"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0013",
+          "title": "When “good” becomes too much",
+          "body": "The pressure here comes from treating “good” as if quantity alone settled its use: physic becomes a cartload of hellebore, and ordinary questions about what can be seen or what can speak are turned into traps. Ctesippus finally answers the forced alternative with “neither and both.” Cleinias’s delight and laughter show that he enjoys the exchange; they do not, by themselves, establish that he has changed sides.",
+          "cites": {
+            "observations": [
+              "obs_euthydemus_0177",
+              "obs_euthydemus_0194",
+              "obs_euthydemus_0248",
+              "obs_euthydemus_0173"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "14-300e-302e",
+      "section_id": "comm_euthydemus_0014",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/14-300e-302e.json",
+        "sha256": "5476a6ec4590d33c871182a4f3490101ddabd41662347cd3bf2bb8acd1eee050"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0014",
+          "title": "When presence becomes identity",
+          "body": "At 300e–301a, the exchange shifts the meaning of “present” without announcing the shift. Socrates begins with beautiful things that possess some beauty; Dionysodorus answers as though being present made one thing identical with the other—an ox turns Socrates into an ox, and Dionysodorus into Dionysodorus. One way to hear the move is as a test of predicate scope: a relation is made to do the work of an identity. Socrates then praises the brothers as craftsmen, and the craft examples drive that confidence toward absurd conclusions at 301d–301e. Track what each predicate is being asked to do, not merely whether the replies sound grammatical.",
+          "cites": {
+            "observations": [
+              "obs_euthydemus_0178",
+              "obs_euthydemus_0182"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "15-303a-304b",
+      "section_id": "comm_euthydemus_0015",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/15-303a-304b.json",
+        "sha256": "259b48dce36b905c801b08410130241b9bf6a48c797a885c656d14686a3a653d"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0015",
+          "title": "Applause, then the scarcity joke",
+          "body": "Applause supplies the surface; Socrates' mock praise supplies the twist. He does not say that the arguments refute their own speakers. He imagines instead that most people would be ashamed to use them for refuting others. Then the closing advice turns compliment into warning: a trick learned instantly loses prestige, so its champions should keep it private—and charge for access. The praise begins to sound like an exposure of scarcity masquerading as excellence.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": [
+              "dramatic_case_setup/audience_reaction_reported",
+              "irony_marker/socratic_mock_praise"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "17-306e-307c",
+      "section_id": "comm_euthydemus_0017",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/17-306e-307c.json",
+        "sha256": "ff12b682f83b23c792bf53c10e61b85963c60f41330a1e82fa436a80c5a0f7b4"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0017",
+          "title": "Test the practice itself",
+          "body": "One way to hear this closing advice is as a distinction between a practice and the people who claim to practise it. The poor reputation of individual teachers need not settle philosophy’s worth. For the listener, the test remains deliberately open: examine the practice itself, then decide whether it deserves pursuit.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_euthydemus_0001",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0001\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"Crito asks about yesterday's crowd\"\nstephanus_span: 271a-272e\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 271a-272e\n  start_marker: 271a\n  end_marker: 272e\n  start_char: 0\n  end_char: 3524\n  text_sha256: \"e05d93b9fcf6ae7f56b57dfdba283948476533a384dea01bd9feec541ccef87c\"\nbody: \"The whole dialogue is Socrates retelling yesterday's scene to Crito, who saw the crowd but could not hear. Socrates names the two brothers, Euthydemus and Dionysodorus, praises their new all-purpose fighting skill, and announces his own wish to become their pupil despite his age.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"frame_depth/reported_dialogue_frame\", \"prosopography/named_interlocutor_introduction\", \"elenchus/refutation_indifferent_to_truth\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0004",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0004\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"Socrates names the game: initiation, not instruction\"\nstephanus_span: 277d-278e\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 277d-278e\n  start_marker: 277d\n  end_marker: 278e\n  start_char: 13294\n  end_char: 16194\n  text_sha256: \"91eeee81eb37437af5af8890fa84742b9bf061e9444368580936604e2365eb97\"\nbody: \"Socrates steps in to comfort Cleinias. He explains that the brothers were playing on the double sense of 'learning' — the tricks are initiation rites, play before the serious part. He then invites them to show the earnest version and offers to model it himself.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"elenchus/equivocation_manthanein_epistasthai\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0007",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0007\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"If falsehood is impossible, so is contradiction\"\nstephanus_span: 285a-286e\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 285a-286e\n  start_marker: 285a\n  end_marker: 286e\n  start_char: 29019\n  end_char: 33256\n  text_sha256: \"89e1003cbfe71f7947176711a4d71e1eef30a3af0fcb0235adedb70d8f220481\"\nbody: \"Socrates redirects Ctesippus's anger and takes over as respondent. The brothers now argue that contradiction itself is impossible: two speakers either describe the same thing or different things, so they never truly clash. Socrates notes he has heard this argument before, from the circle of Protagoras.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"elenchus/inversion_counterargument\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0008",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0008\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"The argument that overthrows itself\"\nstephanus_span: 287a-288d\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 287a-288d\n  start_marker: 287a\n  end_marker: 288d\n  start_char: 33256\n  end_char: 37021\n  text_sha256: \"4b93e08ad3ea417ce055b2f654057f74c2d84ac5a0dba9b7ef79b8caed70461e\"\nbody: \"Socrates presses the self-defeating consequence: if no one can speak falsely or think falsely, refutation itself becomes meaningless — the brothers' own weapon dissolves. Dionysodorus dodges by policing Socrates' words, and Socrates compares the argument to a thing that throws down its own thrower.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"elenchus/socratic_dilemma\", \"turn_geometry/combat_image_for_argument\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0010",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0010\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"Crito interrupts: the kingly art goes in a circle\"\nstephanus_span: 291a-293a\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 291a-293a\n  start_marker: 291a\n  end_marker: 293a\n  start_char: 41561\n  end_char: 46028\n  text_sha256: \"f80e2d64fcc30d3f7e1d2e30dd4607c5b8022d7284796a6ec6270a848d94ee7c\"\nbody: \"The frame breaks open: Crito doubts that young Cleinias said anything so fine. Back inside the story, the search for the ruling, kingly art collapses into a regress — it makes men good, but good for what? Socrates reports genuine perplexity and appeals to the brothers to rescue them.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"frame_depth/embedded_report_narrative\", \"elenchus/aporia_reported\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0011",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0011\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"Third bout: you know everything, always\"\nstephanus_span: 293b-296d\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 293b-296d\n  start_marker: 293b\n  end_marker: 296d\n  start_char: 46028\n  end_char: 53830\n  text_sha256: \"ae9bcc812fe6db3a427a15dd93f368eb8ce8d73e123e86a4125fb15de4408613\"\nbody: \"The rescue is another ambush. Because Socrates knows something, he must know everything — the brothers strip every qualification from 'know' and refuse to let him add conditions of time or subject. The answer-constraint itself, not any premise, does the refuting work.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"elenchus/eristic_predicate_scope_equivocation\", \"turn_geometry/respondent_answer_constraint\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0012",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0012\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"Your father is a dog\"\nstephanus_span: 296e-298e\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 296e-298e\n  start_marker: 296e\n  end_marker: 298e\n  start_char: 53830\n  end_char: 58675\n  text_sha256: \"fa91e21a097da802d4f3f965676d5740f92dd3b41f6049a168dde471e50758fc\"\nbody: \"The sophisms turn genealogical. If Socrates' father is a father, he is the father of all; and Ctesippus's dog, being a father and being his, makes the dog his father. Ctesippus has now learned the style and starts trading blows in kind.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"elenchus/eristic_predicate_scope_equivocation\", \"elenchus/equivocation_sophism\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0013",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0013\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"Good things everywhere: drugs, weapons, gold\"\nstephanus_span: 299a-300d\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 299a-300d\n  start_marker: 299a\n  end_marker: 300d\n  start_char: 58675\n  end_char: 62694\n  text_sha256: \"b833bd2622743fc3ac24d59c8b49b397f3a5fa34ebb767d23f382ec0f485edfe\"\nbody: \"More-of-a-good-thing sophisms: if health is good, endless medicine is better; if gold is good, happiness is gold in the skull and belly. Then the seeing-and-silent puzzles. Ctesippus now answers trick with trick, and Cleinias laughs — the pupil audience has changed sides.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"turn_geometry/respondent_collapse\", \"elenchus/eristic_predicate_scope_equivocation\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0014",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0014\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"The beautiful, the different, and cattle-like ancestral gods\"\nstephanus_span: 300e-302e\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 300e-302e\n  start_marker: 300e\n  end_marker: 302e\n  start_char: 62694\n  end_char: 67206\n  text_sha256: \"c035ab06b734287a0415e654e6bc7f2e32bc2149e18a9bcdb71bff85474d8ca3\"\nbody: \"Dionysodorus raises what sounds like a real question — is the beautiful different from beautiful things? — then smothers it in wordplay. The final trap: whatever is 'yours' you may treat as you please, so Socrates' ancestral gods, being his, could be sold like cattle.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"elenchus/homonymy_exploitation\", \"elenchus/aporia_reported\", \"irony_marker/socratic_mock_praise\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0015",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0015\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"Applause and Socrates' double-edged praise\"\nstephanus_span: 303a-304b\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 303a-304b\n  start_marker: 303a\n  end_marker: 304b\n  start_char: 67206\n  end_char: 70172\n  text_sha256: \"5aaac71d1c0bf8a9c5fc6e1e9cb5b61d6466ef98122ef1e5a0f6d06ffb72b50a\"\nbody: \"The display ends in delirious applause — even the columns seem to join in. Socrates delivers an extended compliment whose every clause cuts: the arguments refute their own speakers, please only a few, and should be sold dearly to keep the supply scarce. Ask how much of this praise survives being heard twice.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"dramatic_case_setup/audience_reaction_reported\", \"irony_marker/socratic_mock_praise\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0017",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0017\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"Crito's sons and the closing advice\"\nstephanus_span: 306e-307c\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 306e-307c\n  start_marker: 306e\n  end_marker: 307c\n  start_char: 75245\n  end_char: 76480\n  text_sha256: \"840743e12c1454ea4bd439b78a01cf25a7b10766e1d3dcf00d98a75192f41bfe\"\nbody: \"Crito confesses his real worry: how to educate his sons. Socrates' parting counsel — examine philosophy itself, not its practitioners, and pursue it if it proves good — quietly answers the whole dialogue: the abuse of argument by the brothers is no verdict on argument.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

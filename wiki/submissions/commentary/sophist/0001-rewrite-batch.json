@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "sophist",
+  "source_path": "scratch/commentary/rewrites/sophist/01-216a-218e.json",
+  "source_sha256": "6780d86ab67ab163073d35c8ce7550f1d913d49f1e14fed952a1994db4b969f4",
+  "target_path": "wiki/commentary/sophist.md",
+  "target_sha256_before": "1dbb17e46d295c3e1df80b661da948de475c1ad86f95bc8fbaf56b9e29416c3f",
+  "target_sha256_after": "ca6687104e36b877ae74ea480eeeb2a72f8e46fd3e5597ef824f5cc32f12c432",
+  "applied_at": "2026-08-21T13:19:12.184Z",
+  "applied_ids": [
+    "comm_sophist_0001",
+    "comm_sophist_0002",
+    "comm_sophist_0004",
+    "comm_sophist_0005",
+    "comm_sophist_0006",
+    "comm_sophist_0008",
+    "comm_sophist_0009",
+    "comm_sophist_0010",
+    "comm_sophist_0011",
+    "comm_sophist_0012",
+    "comm_sophist_0013"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "sophist",
+      "unit_key": "01-216a-218e",
+      "section_id": "comm_sophist_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/sophist/01-216a-218e.json",
+        "sha256": "62c3b3966b6b60f007bc6cfacf98a7de1d16e573e93be4f1709450e0891a14fc"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_sophist_0001",
+          "title": "Names before definitions",
+          "body": "An Eleatic visitor has arrived, and the welcome quickly becomes a test of classification. Socrates asks whether “sophist,” “statesman,” and “philosopher” name one kind, two, or three; at this point, the record preserves the question rather than an answer. Read the opening accordingly: it establishes the problem before it supplies a definition.",
+          "cites": {
+            "observations": [
+              "obs_sophist_0004"
+            ],
+            "claims": [
+              "claim_sophist_0001"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_sophist_0011",
+          "title": "",
+          "body": "I would hear the Stranger’s proposal as a change of scale, not as a completed method. The angler is a deliberately modest trial: familiar enough to approach, yet still worth giving an account. The point is not that the sophist has already been analyzed, but that the dialogue is looking for a manageable first case before it risks the harder one.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "sophist",
+      "unit_key": "02-219a-221c",
+      "section_id": "comm_sophist_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/sophist/02-219a-221c.json",
+        "sha256": "193be89952b1f5e29fd0dc3397c0f5da022a9e11750add09d0485f4c3f03b2c3"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_sophist_0002",
+          "title": "A rehearsal in method",
+          "body": "One way to hear this passage is as a rehearsal in intellectual discipline. The angler is deliberately modest: that small subject lets the Stranger make the search’s turns audible without asking us yet to settle the sophist’s identity. I take the final handoff as the real payoff: method becomes something to test, not merely something to admire.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "sophist",
+      "unit_key": "03-221d-231c",
+      "section_id": "comm_sophist_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/sophist/03-221d-231c.json",
+        "sha256": "a0a746f6382f8d0105f4d018a90c275c7a0dd7b7f6011e734ed430ae35fb1946"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_sophist_0012",
+          "title": "",
+          "body": "Hear this as the Stranger’s proposal, not Socrates’ summary: questioning first clears the mind’s obstruction. In my reading, the image of bodily purgation gives the exchange its force. Cross-examination is valuable here not because it installs a doctrine, but because it exposes a person’s confidence as unstable and leaves room for learning. The modesty it produces is therefore a condition of instruction, not yet instruction’s final content.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "sophist",
+      "unit_key": "04-231d-236d",
+      "section_id": "comm_sophist_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/sophist/04-231d-236d.json",
+        "sha256": "77c9da994ffd29462e70f420cc31f9ea303ddfefe7af8b9728639fb1fef07bf4"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_sophist_0004",
+          "title": "When seeming outruns understanding",
+          "body": "I hear this stretch as a staged lesson in the danger of mistaking successful appearance for knowledge. The key pressure is not simply whether an image resembles its model, but whether it works only because a viewer sees it from a favorable distance. On this reading, the unresolved placement of the sophist is the point: the search has reached the border where seeming can imitate understanding.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "sophist",
+      "unit_key": "05-236e-239c",
+      "section_id": "comm_sophist_0005",
+      "audit_output": {
+        "path": "scratch/commentary/audits/sophist/05-236e-239c.json",
+        "sha256": "0399a23a3de82c51266e283fcfa3e6f4299a06a5345f9b48e844b343981f60fe"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_sophist_0005",
+          "title": "How can false speech be possible?",
+          "body": "I read this passage as a deliberate trap: the attempt to deny non-being repeatedly borrows the very forms—one, many, something, and “is”—that it wants to exclude. On this reading, the Stranger’s self-defeat explains why the hunt must pause: the sophist remains hidden until falsity can be distinguished from sheer nothingness.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "sophist",
+      "unit_key": "06-239d-242b",
+      "section_id": "comm_sophist_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/sophist/06-239d-242b.json",
+        "sha256": "9470651ce56ee03d75b94400eb042f40f43bd2e92c7ae2fe479c266fe6ca7772"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_sophist_0006",
+          "title": "The price of speaking about falsehood",
+          "body": "I read this unit as the moment when the inquiry discovers its own price: to call an image unreal, or a judgment false, seems to give not-being some foothold in being. The Stranger does not survey rival doctrines here. He dramatizes a verbal trap, then asks Theaetetus to permit the audacious remedy—testing Parmenides—because without that move the inquiry cannot speak coherently about falsehood, images, or appearances.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "sophist",
+      "unit_key": "08-251b-259e",
+      "section_id": "comm_sophist_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/sophist/08-251b-259e.json",
+        "sha256": "a4b39749e42a7f3fe2edd1c4194cd994fb97488d7bd52c6997eaac0b77400da5"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_sophist_0008",
+          "title": "The cost of separation",
+          "body": "One way to hear this turn is as a warning about method: if every kind were sealed off from every other, speech would lose the crossings that let it say anything at all. The point is not to erase distinctions, but to make distinctions usable. That is the pressure this section places on the listener.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "sophist",
+      "unit_key": "09-260a-264b",
+      "section_id": "comm_sophist_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/sophist/09-260a-264b.json",
+        "sha256": "1438196f28d442dca50a69381711acbd28ee906b1361b14ca7693e5c7eb59b29"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_sophist_0009",
+          "title": "A pressure test for appearances",
+          "body": "My reading is that this passage stages a pressure test for the sophist’s last hiding place. It asks us to keep two ideas together: an appearance need not be sheer nothing, yet it need not be trusted as truth. On that reading, the turn matters because inquiry can examine the space between seeming and being instead of abandoning the search.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "sophist",
+      "unit_key": "10-264c-268d",
+      "section_id": "comm_sophist_0010",
+      "audit_output": {
+        "path": "scratch/commentary/audits/sophist/10-264c-268d.json",
+        "sha256": "bd630e11de451cd4b0d5c7c1de42680c4a14f7b4ddaed29353f42bf513c11968"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_sophist_0010",
+          "title": "Retracing the divisions",
+          "body": "I read this span as a controlled retracing rather than a fresh beginning: the inquiry keeps narrowing its distinctions until the name “sophist” is attached to a particular kind of imitation. The point, as I see it, is not that every imitator deceives in the same way, but that the method preserves differences while bringing the quarry back into view.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_sophist_0013",
+          "title": "",
+          "body": "The question I want to isolate here is this: if someone can appear just while lacking knowledge of justice, should we judge the imitation by the appearance it produces, or by the imitator’s relation to what he knows? Rather than treat this moment as the final division, let the later steps remain open. For now, listen for the distinction between knowing and merely holding an opinion.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_sophist_0001",
+      "body": "```yaml\ncommentary_id: comm_sophist_0001\nsource_work: Sophist\nblock_kind: section\nplacement: before\ntitle: \"An Eleatic guest and the problem of the name\"\nstephanus_span: 216a-218e\nsource_ref:\n  source_path: raw/plato/greek/sophist.txt\n  stephanus_span: 216a-218e\n  start_marker: 216a\n  end_marker: 218e\n  start_char: 0\n  end_char: 5315\n  text_sha256: \"e7aad05774166e0f4b34357f4f3035c8f6e6961675554ded87ff147fafa86e30\"\nbody: \"Theodorus introduces the Eleatic Stranger, and Socrates immediately turns the encounter toward three neighboring names: sophist, statesman, and philosopher. The Stranger agrees to begin with the sophist, but warns that the name alone is not yet an agreement about the thing.\"\ncites:\n  observations: [obs_sophist_0001, obs_sophist_0002, obs_sophist_0004]\n  claims: [claim_sophist_0001]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_sophist_0002",
+      "body": "```yaml\ncommentary_id: comm_sophist_0002\nsource_work: Sophist\nblock_kind: section\nplacement: before\ntitle: \"The angler as a small model of division\"\nstephanus_span: 219a-221c\nsource_ref:\n  source_path: raw/plato/greek/sophist.txt\n  stephanus_span: 219a-221c\n  start_marker: 219a\n  end_marker: 221c\n  start_char: 5315\n  end_char: 10417\n  text_sha256: \"2397f2c1f521084dec05d0d362fe4b5a10cf2f144c9f11a1942660c7fdec52d5\"\nbody: \"To make the method visible, the Stranger classifies the angler by successive cuts: acquisition rather than production, hunting rather than exchange, and finally the particular kind of fishing. The point is not the angler's importance; it is to make the path of a definition inspectable before applying it to the sophist.\"\ncites: {observations: [], claims: [], relations: [], dossiers: []}\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_sophist_0004",
+      "body": "```yaml\ncommentary_id: comm_sophist_0004\nsource_work: Sophist\nblock_kind: section\nplacement: before\ntitle: \"Images, likenesses, and the pressure of appearance\"\nstephanus_span: 231d-236d\nsource_ref:\n  source_path: raw/plato/greek/sophist.txt\n  stephanus_span: 231d-236d\n  start_marker: 231d\n  end_marker: 236d\n  start_char: 29522\n  end_char: 39632\n  text_sha256: \"f5208a47ea64001af9226f3e6df08a870de4f42f6fcad502760aff57b7b77010\"\nbody: \"The inquiry shifts from acquisition to production and imitation. A likeness can preserve proportions, while a merely apparent image may alter them for the viewer's eye. That distinction makes the sophist's apparent wisdom a problem about representation, not just about a profession.\"\ncites: {observations: [], claims: [claim_sophist_0012, claim_sophist_0013, claim_sophist_0014, claim_sophist_0015, claim_sophist_0016, claim_sophist_0017, claim_sophist_0018, claim_sophist_0019, claim_sophist_0020], relations: [], dossiers: []}\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_sophist_0005",
+      "body": "```yaml\ncommentary_id: comm_sophist_0005\nsource_work: Sophist\nblock_kind: section\nplacement: before\ntitle: \"How can false speech be possible?\"\nstephanus_span: 236e-239c\nsource_ref:\n  source_path: raw/plato/greek/sophist.txt\n  stephanus_span: 236e-239c\n  start_marker: 236e\n  end_marker: 239c\n  start_char: 39632\n  end_char: 45130\n  text_sha256: \"ddee95373517686b57d922fa74740afaf86c0c6f7111f5912ccd65c126e3928b\"\nbody: \"The Stranger pauses the hunt to confront a logical obstacle. If speaking falsely means saying what is not, and what is not cannot be, then neither false speech nor false belief seems possible. The dialogue must therefore clarify being and non-being before it can return to the sophist's imitation.\"\ncites: {observations: [], claims: [claim_sophist_0021, claim_sophist_0022, claim_sophist_0023, claim_sophist_0024], relations: [], dossiers: []}\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_sophist_0006",
+      "body": "```yaml\ncommentary_id: comm_sophist_0006\nsource_work: Sophist\nblock_kind: section\nplacement: before\ntitle: \"The old battle over being\"\nstephanus_span: 239d-242b\nsource_ref:\n  source_path: raw/plato/greek/sophist.txt\n  stephanus_span: 239d-242b\n  start_marker: 239d\n  end_marker: 242b\n  start_char: 45130\n  end_char: 50666\n  text_sha256: \"0b783844a99b93b5f7b30461a0463d90401796137bbcc091710e3fc463529874\"\nbody: \"The investigation widens into a survey of earlier accounts of being: a single whole, opposed principles, or competing descriptions of what is real. Their disagreement is not decorative history. It shows why the Stranger cannot simply invoke 'being' as though everyone already meant the same thing by it.\"\ncites: {observations: [], claims: [], relations: [], dossiers: []}\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_sophist_0008",
+      "body": "```yaml\ncommentary_id: comm_sophist_0008\nsource_work: Sophist\nblock_kind: section\nplacement: before\ntitle: \"Communion and difference\"\nstephanus_span: 251b-259e\nsource_ref:\n  source_path: raw/plato/greek/sophist.txt\n  stephanus_span: 251b-259e\n  start_marker: 251b\n  end_marker: 259e\n  start_char: 68356\n  end_char: 86515\n  text_sha256: \"ff33e19e1f7de63846d1951de807079bfc03bb672ddd9a4051b65d4941925127\"\nbody: \"The Stranger replaces isolated kinds with communion: some combine, others do not. Being, motion, and rest participate without collapsing into one another, and difference emerges as a kind whose work is to make one thing other than another. Non-being is therefore prepared as relational difference before the hunt returns to false speech.\"\ncites: {observations: [], claims: [], relations: [], dossiers: []}\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_sophist_0009",
+      "body": "```yaml\ncommentary_id: comm_sophist_0009\nsource_work: Sophist\nblock_kind: section\nplacement: before\ntitle: \"False speech and opinion become possible\"\nstephanus_span: 260a-264b\nsource_ref:\n  source_path: raw/plato/greek/sophist.txt\n  stephanus_span: 260a-264b\n  start_marker: 260a\n  end_marker: 264b\n  start_char: 86515\n  end_char: 95559\n  text_sha256: \"70244201b7d60b224a7029009ebca417332b7bba248eb0b6f648efa1ad54b374\"\nbody: \"With difference established, the Stranger can explain how a statement is false without saying sheer nothing. A sentence joins a subject and predicate; when the combination concerns what is other than the thing, it is false, and false opinion follows. The sophist's images and speeches can now be examined as appearances grounded in this structure.\"\ncites: {observations: [], claims: [], relations: [], dossiers: []}\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_sophist_0010",
+      "body": "```yaml\ncommentary_id: comm_sophist_0010\nsource_work: Sophist\nblock_kind: section\nplacement: before\ntitle: \"The sophist returns as an imitator\"\nstephanus_span: 264c-268d\nsource_ref:\n  source_path: raw/plato/greek/sophist.txt\n  stephanus_span: 264c-268d\n  start_marker: 264c\n  end_marker: 268d\n  start_char: 95559\n  end_char: 104196\n  text_sha256: \"da296b0d2f2b9d19149805b24ead7732ea83cb9e5267c918cdc7e1ce995a05fa\"\nbody: \"The final division returns to the original quarry. Human image-making splits into likeness-making and appearance-making; imitation then splits between knowledge and opinion. The sophist belongs to the ironic imitator who seems wise without knowing, and the long hunt closes by naming that specific kind of appearance.\"\ncites: {observations: [], claims: [], relations: [], dossiers: []}\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_sophist_0011",
+      "body": "```yaml\ncommentary_id: comm_sophist_0011\nsource_work: Sophist\nblock_kind: argument\nplacement: after\nstephanus_span: 218c-218e\nsource_ref:\n  source_path: raw/plato/greek/sophist.txt\n  stephanus_span: 218c-218e\n  start_marker: 218c\n  end_marker: 218e\n  start_char: 4210\n  end_char: 5315\n  text_sha256: \"f36bdade3e563bb5cd6abac854e6fe352a55fa2f46e485149289a0b607261dc0\"\nbody: \"The Stranger's first methodological move is to make the small case answerable to the large one. By practicing division on the angler, he turns method itself into something the interlocutors can inspect, criticize, and reuse. The sophist will be difficult partly because the method must remain visible while it works.\"\ncites: {observations: [], claims: [claim_sophist_0001], relations: [], dossiers: []}\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_sophist_0012",
+      "body": "```yaml\ncommentary_id: comm_sophist_0012\nsource_work: Sophist\nblock_kind: notice\nplacement: after\nstephanus_span: 230b-230e\nsource_ref:\n  source_path: raw/plato/greek/sophist.txt\n  stephanus_span: 230b-230e\n  start_marker: 230b\n  end_marker: 230e\n  start_char: 26797\n  end_char: 28336\n  text_sha256: \"4bc41cbe09776e1213d184adf9ecfc771d0b90ee0510d0110b4689cd92299437\"\nbody: \"The sophist's apparent expertise is finally treated as a kind of purification problem. Socrates' image of questioning as a cleansing art matters here: the point is not to fill the student with a replacement doctrine, but to remove the confidence that blocks inquiry.\"\ncites: {observations: [], claims: [claim_sophist_0009, claim_sophist_0010], relations: [], dossiers: []}\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_sophist_0013",
+      "body": "```yaml\ncommentary_id: comm_sophist_0013\nsource_work: Sophist\nblock_kind: question\nplacement: after\nstephanus_span: 267c-267e\nsource_ref:\n  source_path: raw/plato/greek/sophist.txt\n  stephanus_span: 267c-267e\n  start_marker: 267c\n  end_marker: 267e\n  start_char: 101475\n  end_char: 102704\n  text_sha256: \"8939d41983ef5a55b065cb817b581c877f3ee5fb9ddf1e4adbfbf184fd699281\"\nbody: \"When someone imitates justice without knowing justice, what exactly is being displayed: a skill, a guess, or a performance aimed at an audience? Keep that question open as the final division distinguishes the imitator who knows from the imitator who only has an opinion.\"\ncites: {observations: [], claims: [claim_sophist_0022, claim_sophist_0024], relations: [], dossiers: []}\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

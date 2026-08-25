@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "menexenus",
+  "source_path": "scratch/commentary/rewrite-repairs/menexenus/round3.json",
+  "source_sha256": "5209d02e850358637f3d388b26cac583de17f6d940c8364ab1599a390e211fe2",
+  "target_path": "wiki/commentary/menexenus.md",
+  "target_sha256_before": "0d46a4f4f7ad1adf1c8d900b9468aaccf5c46dbe272e3b36aa9a909f8101d6c8",
+  "target_sha256_after": "265512e5b35db1a1b23e1705218d52dbad120538e2f9454ed40b5d24e488d289",
+  "applied_at": "2026-08-21T16:02:53.245Z",
+  "applied_ids": [
+    "comm_menexenus_0002"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "menexenus",
+    "ledger": {
+      "path": "wiki/commentary/menexenus.md",
+      "sha256": "0d46a4f4f7ad1adf1c8d900b9468aaccf5c46dbe272e3b36aa9a909f8101d6c8"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/menexenus/0002-rewrite-02-235d-236d.json",
+      "sha256": "fbe24232c8a263465c7fb1d08a34821f98c9a094db7ef3c524117fff14ed8c0f"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-block-review-menexenus-rejected-827f0c326eda.md",
+      "sha256": "3d8afba5b249a6dd0564dd2bce4af7c2b84cbe450bbac884353016d893f65126"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-menexenus-round2",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_menexenus_0002",
+          "finding": "The rewrite overstates the 236b phrasing as improvised and lacks accepted support for Menexenus permitting attribution to anyone."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-menexenus-round3",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_menexenus_0002"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_menexenus_0002",
+        "title": "A speech passed through layers",
+        "body": "Before the oration begins, Socrates turns authorship into a chain of reports. He says he heard Aspasia deliver a funeral speech, one assembled from remnants of the speech Pericles had delivered. He disavows anything from himself, remembers learning it from Aspasia, and fears her anger if he brings it out. Menexenus then says he may tell it as Aspasia’s or anyone else’s. The speech starts under that layered uncertainty.",
+        "cites": {
+          "observations": [
+            "obs_menexenus_0012",
+            "obs_menexenus_0013",
+            "obs_menexenus_0015"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_menexenus_0002",
+      "body": "```yaml\ncommentary_id: comm_menexenus_0002\nsource_work: Menexenus\nblock_kind: section\nplacement: before\ntitle: \"The speech as transmission\"\nstephanus_span: 235d-236d\nsource_ref:\n  source_path: raw/plato/greek/menexenus.txt\n  stephanus_span: 235d-236d\n  start_marker: 235d\n  end_marker: 236d\n  start_char: 2390\n  end_char: 4887\n  text_sha256: \"2d8dc4174899dbea8a958f6381d6c2357210e908802237887f95bb2dbeadcc7b\"\nbody: \"Before the funeral speech reaches its public voice, Socrates presents it as a transmission through memory. He reports hearing Aspasia deliver it, with some portions improvised and others assembled from remnants of Pericles’ speech. Menexenus then says Socrates may attribute the words to Aspasia or to anyone at all. I take that looseness as the passage’s central cue: listen first to how the speech is handed on, rather than treating authorship as settled.\"\ncites:\n  observations: [\"obs_menexenus_0012\", \"obs_menexenus_0015\"]\n  claims: [\"claim_menexenus_0006\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

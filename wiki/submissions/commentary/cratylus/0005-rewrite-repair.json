@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "cratylus",
+  "source_path": "scratch/commentary/rewrite-repairs/cratylus/0013-second.json",
+  "source_sha256": "1398e072fba8157034d71a2e81bc7ec3c195e47dd882f5793fc5bde918bb0b2a",
+  "target_path": "wiki/commentary/cratylus.md",
+  "target_sha256_before": "9a3eb910f8806ec9e0c82b83831218cbebc88afc42231cda74bc6e76cf054fbe",
+  "target_sha256_after": "d547da1e0386aaef7a3a9cb875b671f344131c8d5318f92b71c1e161966a7559",
+  "applied_at": "2026-08-21T17:13:34.362Z",
+  "applied_ids": [
+    "comm_cratylus_0013"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "cratylus",
+    "ledger": {
+      "path": "wiki/commentary/cratylus.md",
+      "sha256": "9a3eb910f8806ec9e0c82b83831218cbebc88afc42231cda74bc6e76cf054fbe"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/cratylus/0004-sample-repair.json",
+      "sha256": "e3d82cbcf2284c10c6dc5b2aacb694ba50b321e499c935201a001fde6ef0bd74"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-cratylus-0004-sample-repair-acceptance.md",
+      "sha256": "dc94a4ebd507b294c452404d57cc3c4df6ad209cf5234ffa7a4f37a4be5a37c8"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-cratylus-sample-repair",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_cratylus_0013",
+          "finding": "The block assigns Cratylus's substantive handoff to 428a, although Hermogenes speaks there and Cratylus begins at 428b-c."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-cratylus-0013-second",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_cratylus_0013"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_cratylus_0013",
+        "title": "Cratylus answers the summons — and the thesis meets an image test",
+        "body": "At 428a, Hermogenes—not Cratylus—answers the summons, quoting Hesiod to urge Socrates to keep contributing. Socrates then opens the floor at 428b, inviting Cratylus to supply a better account and even offering to become his pupil. Cratylus's substantive reply arrives in 428b-c: he accepts the invitation while casting Socrates' speech as inspired. The thesis soon becomes testable: Cratylus makes false speech impossible, and Socrates sets names beside portraits and other images, making the question of correct likeness concrete. The exchange turns apparent deference into argumentative pressure.",
+        "cites": {
+          "observations": [
+            "obs_cratylus_0255",
+            "obs_cratylus_0256",
+            "obs_cratylus_0257",
+            "obs_cratylus_0225",
+            "obs_cratylus_0235",
+            "obs_cratylus_0244",
+            "obs_cratylus_0247"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_cratylus_0013",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0013\nsource_work: Cratylus\nblock_kind: section\nplacement: before\ntitle: \"Cratylus takes the handoff — and overreaches\"\nstephanus_span: 428a-431e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 428a-431e\n  start_marker: 428a\n  end_marker: 431e\n  start_char: 89669\n  end_char: 97984\n  text_sha256: \"d673d06e1eaf94c32b8e7d54ce6cf0b32ab110932e8ad2b02de5a80667fbcf2d\"\nbody: \"After a brief challenge at 427e, Cratylus takes up the exchange at 428a. He holds that a wrong name is no name and that false speech is impossible. Socrates tests the position through images: a portrait may resemble well or badly, so naming, too, can admit degrees of correctness.\"\ncites:\n  observations: [\"obs_cratylus_0243\", \"obs_cratylus_0240\", \"obs_cratylus_0235\", \"obs_cratylus_0231\", \"obs_cratylus_0232\", \"obs_cratylus_0234\"]\n  claims: []\n  relations: []\n  dossiers: [\"turn_geometry/interlocutor_characterization\", \"craft_analogy/mimesis_appearance_reality_distinction\", \"elenchus/refutation_by_counterexample\", \"elenchus/respondent_strong_dissent\"]\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

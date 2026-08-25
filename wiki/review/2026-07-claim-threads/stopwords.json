@@ -1,0 +1,2733 @@
+{
+  "config": {
+    "version": 3,
+    "version_note": "v1 (top-150 TF, >=1 shared token, no name filter) failed the collapse gate (interlocutor vocatives + discourse words). v2 (top-190 TF, name filter, >=2 shared tokens) passed gold/stability/precision but operator review found: (a) ranking was term frequency, not the approved document frequency; (b) term-only greek_terms fallback edges (469/1336) created thread members outside the precision/collapse evaluation; (c) adjudications were not persisted or enforced; (d) the phase-2 queue did not encode the authorized-29 boundary. v3: document-frequency stopwording; the first v3 freeze attempt (DF-ranked top-190) was inspected pre-evaluation and found to slice the df=25 band mid-count, readmitting the v1 collapse drivers (μεντοι/εοικεν/παλιν at ranks 196-198), so the rule was refined to a pure df>=25 threshold (231 tokens) BEFORE any evaluation ran; greek_terms demoted to corroboration on primary edges only (no edge creation); persisted adjudication enforced by --check at >=80%; authorized/extension queue split; nonzero exits on stale stopwords, gold failure, or precision failure.",
+    "pilot_dialogues": [
+      "charmides",
+      "euthyphro",
+      "theaetetus"
+    ],
+    "normalization": "NFD, strip combining marks, lowercase, final sigma to sigma (matches token-index `normalized` column)",
+    "min_token_len": 4,
+    "stopword_rule": "union of (a) all normalized tokens with DOCUMENT FREQUENCY >= 25 of 27 dialogues in the full committed token index (a pure df threshold at the natural band boundary: the df=25 band ends the corpus-wide discourse vocabulary, incl. every observed collapse driver, while the nearest inquiry vocabulary sits at df=24 — δοξαν/αγαθον/καλον — and below) and (b) name-like tokens: count >= 5 with >= 90% capitalized surface forms (proper names, vocatives, sigla fragments; Perseus Greek capitalizes names, not sentence starts)",
+    "stopword_min_df": 25,
+    "name_filter": {
+      "min_count": 5,
+      "min_capitalized_share": 0.9
+    },
+    "min_shared_primary_tokens": 2,
+    "link_rule": "same-dialogue star per definition-kind seed claim (any review_status); edge iff >=2 shared non-stopword span tokens; greek_terms NEVER create edges — an edge is marked greek_terms_corroborated when a shared span token also appears in either side's greek_terms tokens",
+    "phase2_authorized_queue": [
+      "rel_cross-dialogue_0046",
+      "rel_cross-dialogue_0049",
+      "rel_cross-dialogue_0069",
+      "rel_cross-dialogue_0072",
+      "rel_cross-dialogue_0253",
+      "rel_cross-dialogue_0440",
+      "rel_cross-dialogue_0443",
+      "rel_cross-dialogue_0558",
+      "rel_cross-dialogue_0997",
+      "rel_cross-dialogue_1093",
+      "rel_cross-dialogue_1094",
+      "rel_cross-dialogue_1104",
+      "rel_cross-dialogue_1107",
+      "rel_cross-dialogue_1126",
+      "rel_cross-dialogue_1129",
+      "rel_cross-dialogue_1241",
+      "rel_cross-dialogue_1264",
+      "rel_cross-dialogue_1266",
+      "rel_cross-dialogue_1282",
+      "rel_cross-dialogue_1285",
+      "rel_theaetetus_0003",
+      "rel_theaetetus_0008",
+      "rel_theaetetus_0012",
+      "rel_theaetetus_0013",
+      "rel_theaetetus_0015",
+      "rel_theaetetus_0016",
+      "rel_theaetetus_0018",
+      "rel_theaetetus_0019",
+      "rel_theaetetus_0054"
+    ],
+    "phase2_execution_rule": "Phase 2 consumers MUST load authorized_queue only and MUST reject any relation id in extension_candidates until the operator extends scope; the 2026-07-11 authorization is the 29-relation queue, not the formal flag-rule superset",
+    "neg_cue_regex": "\\b(is not|are not|cannot|not the same|not identical|other than|refut|abandon|reject|fails?|absurd|impossible|neither|no longer)\\b",
+    "flag_rule": "seed with final_status left_standing|posed_only having >=1 same-thread member at a strictly later start_char whose content matches neg_cue_regex (any review_status)",
+    "gold_pairs": {
+      "claim_theaetetus_0029": [
+        "claim_theaetetus_0173"
+      ],
+      "claim_theaetetus_0177": [
+        "claim_theaetetus_0235"
+      ],
+      "claim_theaetetus_0241": [
+        "claim_theaetetus_0275"
+      ],
+      "claim_charmides_0001": [
+        "claim_charmides_0006"
+      ],
+      "claim_charmides_0007": [
+        "claim_charmides_0009"
+      ],
+      "claim_euthyphro_0014": [
+        "claim_euthyphro_0025",
+        "claim_euthyphro_0027",
+        "claim_euthyphro_0029",
+        "claim_euthyphro_0030"
+      ]
+    },
+    "precision_sample": {
+      "seed": 20260711,
+      "edges_per_dialogue": 10,
+      "rule": "deterministic PRNG over non-gold primary edges sorted by (seed_id, member_id); half drawn from the dialogue's largest star, half from the remainder",
+      "pass_threshold": "operator-adjudicated: >=80% of sampled edges inquiry-relevant (shared tokens belong to the seed's definiendum/definiens/test-case vocabulary, not generic names or discourse verbs)"
+    },
+    "phase2_queue_rule": "relations with review_status=accepted and resolution=standing whose claim_a or claim_b is a flagged pilot definition; relation ledgers parsed structurally via Bun.YAML"
+  },
+  "input_files": {
+    "derived/plato/tokens/apology.toon": "7c115c3dee938eb24eecb3298d87ebe291769c6aacd824faade3d3986b4e55bd",
+    "derived/plato/tokens/charmides.toon": "ad847cce92cc41abb21724e21bb4e5abdf622069fc845ef9401d5029496d4132",
+    "derived/plato/tokens/cratylus.toon": "a43ebd50274bf60d26389ab020b990361118895c2896645b5e3891e0b87ea4e3",
+    "derived/plato/tokens/critias.toon": "813042999c1c25317fa90d5c600518378bc952249145f998f4a3ae6669d23242",
+    "derived/plato/tokens/crito.toon": "6447f3c8e87c9265f9f41fb5bef71b90edbdda1b4872625fac69995c60272796",
+    "derived/plato/tokens/euthydemus.toon": "3d7b42585c52319731a7db7d0640ced98c1e695e1469a8326f132b74a27e3e75",
+    "derived/plato/tokens/euthyphro.toon": "4472758f418e98a0429c6d8f57373665b8ea1b147dd197a42bef444e8288c632",
+    "derived/plato/tokens/gorgias.toon": "54e2a223d7d19db59b223fe01ab9be320096105e72b8a442c3fdab9d8d65a6fb",
+    "derived/plato/tokens/greater-hippias.toon": "09cfbc8877e92c022c6f3ad4fe5225ba30729b60d6697f8e57b1afa56477cc32",
+    "derived/plato/tokens/ion.toon": "523b10a621df54828c058bae544ea639230cd9ec42ae0b5909decf8777b73e8a",
+    "derived/plato/tokens/laches.toon": "07153bda0119d982c5a63c8c201617ad998d16f4596e03d9dd7efcb8dc68bacf",
+    "derived/plato/tokens/laws.toon": "62112aeb48ed2227e704b17ec3e3a77f1f5598a13f2c1c5c44649fa42c887388",
+    "derived/plato/tokens/lesser-hippias.toon": "48b2f02bf0ea1dd16bfe34efb0388646bc997db2d8010e03e39c6338880c5422",
+    "derived/plato/tokens/lysis.toon": "586dd849b3fd1e438d2a83c5c0619b5b5c10666b343297a2e2b42e3c0591f12c",
+    "derived/plato/tokens/menexenus.toon": "6592109d981a1913646a3fef8e5a0fae61b55593694188542d0cfd1e8ce589bf",
+    "derived/plato/tokens/meno.toon": "2a857430ae321479c85ea8f6880e8f7aa645688a044075025a3064e3aafb43d4",
+    "derived/plato/tokens/parmenides.toon": "bcc6b75135c7fca60414a7beb310c6d85c8dd841c1eccb474dacf7ec5de9d43f",
+    "derived/plato/tokens/phaedo.toon": "e2aef8a0810aa28328508c936774d711a27fb072198efb8331d61cee2ff95b02",
+    "derived/plato/tokens/phaedrus.toon": "4eb51cd160475ab1258510c446011ce9a0e6a2c54dd5d19372ab6c1e1c96fb47",
+    "derived/plato/tokens/philebus.toon": "d2ec1a1b2daf2f69d2a3532c88ce5e70949a23bafcec43e656a889d9b7018d79",
+    "derived/plato/tokens/protagoras.toon": "91dbe1d469c1fbf296761f2db0a42e8a33bc273d4b07a8d22eba90b772fbccca",
+    "derived/plato/tokens/republic.toon": "a493bf5948d20378bac03e79c58b0dbca127e7abccd985b2d6956da1da86d281",
+    "derived/plato/tokens/sophist.toon": "c0e8ca5163674e1c7c489ef5978c2689c21862cd0a50f22cd7f061ea50cbdcbe",
+    "derived/plato/tokens/statesman.toon": "62167b2e392d378e9d77ae306a8f1ae39e8f922b76981f2ae8f4d1e7c76a8b8a",
+    "derived/plato/tokens/symposium.toon": "986f4c774bbb889192a4009fc710a465675e6cf03bef61955077aca407df4c71",
+    "derived/plato/tokens/theaetetus.toon": "be43f2c86ab6e616496d1f18b3cd405f5b377f6690e2cf12b79c5a3745f2ea0b",
+    "derived/plato/tokens/timaeus.toon": "9475903b49164b6d000e61b35fc806fcfadf16607bcda718c3f4f060375cd7ce"
+  },
+  "total_distinct_normalized_tokens": 43991,
+  "total_token_occurrences": 522589,
+  "ranking": "document frequency (dialogues present) desc, total count desc, token asc",
+  "stopwords": [
+    {
+      "token": "και",
+      "dialogues": 27,
+      "count": 27831
+    },
+    {
+      "token": "δε",
+      "dialogues": 27,
+      "count": 9591
+    },
+    {
+      "token": "η",
+      "dialogues": 27,
+      "count": 8148
+    },
+    {
+      "token": "το",
+      "dialogues": 27,
+      "count": 7983
+    },
+    {
+      "token": "μεν",
+      "dialogues": 27,
+      "count": 6436
+    },
+    {
+      "token": "τε",
+      "dialogues": 27,
+      "count": 6255
+    },
+    {
+      "token": "αν",
+      "dialogues": 27,
+      "count": 5918
+    },
+    {
+      "token": "των",
+      "dialogues": 27,
+      "count": 5913
+    },
+    {
+      "token": "εν",
+      "dialogues": 27,
+      "count": 5107
+    },
+    {
+      "token": "γαρ",
+      "dialogues": 27,
+      "count": 4846
+    },
+    {
+      "token": "τα",
+      "dialogues": 27,
+      "count": 4494
+    },
+    {
+      "token": "δη",
+      "dialogues": 27,
+      "count": 4148
+    },
+    {
+      "token": "τι",
+      "dialogues": 27,
+      "count": 4085
+    },
+    {
+      "token": "ο",
+      "dialogues": 27,
+      "count": 4060
+    },
+    {
+      "token": "του",
+      "dialogues": 27,
+      "count": 3926
+    },
+    {
+      "token": "ου",
+      "dialogues": 27,
+      "count": 3882
+    },
+    {
+      "token": "την",
+      "dialogues": 27,
+      "count": 3878
+    },
+    {
+      "token": "γε",
+      "dialogues": 27,
+      "count": 3688
+    },
+    {
+      "token": "μη",
+      "dialogues": 27,
+      "count": 3658
+    },
+    {
+      "token": "ειναι",
+      "dialogues": 27,
+      "count": 3585
+    },
+    {
+      "token": "ωσ",
+      "dialogues": 27,
+      "count": 3536
+    },
+    {
+      "token": "δ",
+      "dialogues": 27,
+      "count": 3519
+    },
+    {
+      "token": "ω",
+      "dialogues": 27,
+      "count": 3510
+    },
+    {
+      "token": "περι",
+      "dialogues": 27,
+      "count": 3404
+    },
+    {
+      "token": "ουν",
+      "dialogues": 27,
+      "count": 3359
+    },
+    {
+      "token": "τον",
+      "dialogues": 27,
+      "count": 3300
+    },
+    {
+      "token": "ει",
+      "dialogues": 27,
+      "count": 2906
+    },
+    {
+      "token": "οτι",
+      "dialogues": 27,
+      "count": 2902
+    },
+    {
+      "token": "τω",
+      "dialogues": 27,
+      "count": 2770
+    },
+    {
+      "token": "τησ",
+      "dialogues": 27,
+      "count": 2666
+    },
+    {
+      "token": "ουκ",
+      "dialogues": 27,
+      "count": 2656
+    },
+    {
+      "token": "αλλα",
+      "dialogues": 27,
+      "count": 2498
+    },
+    {
+      "token": "τουτο",
+      "dialogues": 27,
+      "count": 2375
+    },
+    {
+      "token": "προσ",
+      "dialogues": 27,
+      "count": 2363
+    },
+    {
+      "token": "εστιν",
+      "dialogues": 27,
+      "count": 2329
+    },
+    {
+      "token": "ταυτα",
+      "dialogues": 27,
+      "count": 2255
+    },
+    {
+      "token": "εισ",
+      "dialogues": 27,
+      "count": 2110
+    },
+    {
+      "token": "τισ",
+      "dialogues": 27,
+      "count": 2089
+    },
+    {
+      "token": "τοισ",
+      "dialogues": 27,
+      "count": 2075
+    },
+    {
+      "token": "εγω",
+      "dialogues": 27,
+      "count": 2067
+    },
+    {
+      "token": "τουσ",
+      "dialogues": 27,
+      "count": 2050
+    },
+    {
+      "token": "αλλ",
+      "dialogues": 27,
+      "count": 1955
+    },
+    {
+      "token": "οι",
+      "dialogues": 27,
+      "count": 1837
+    },
+    {
+      "token": "ην",
+      "dialogues": 27,
+      "count": 1790
+    },
+    {
+      "token": "κατα",
+      "dialogues": 27,
+      "count": 1572
+    },
+    {
+      "token": "νυν",
+      "dialogues": 27,
+      "count": 1513
+    },
+    {
+      "token": "ημιν",
+      "dialogues": 27,
+      "count": 1384
+    },
+    {
+      "token": "πωσ",
+      "dialogues": 27,
+      "count": 1357
+    },
+    {
+      "token": "τη",
+      "dialogues": 27,
+      "count": 1336
+    },
+    {
+      "token": "μοι",
+      "dialogues": 27,
+      "count": 1266
+    },
+    {
+      "token": "δια",
+      "dialogues": 27,
+      "count": 1230
+    },
+    {
+      "token": "τουτων",
+      "dialogues": 27,
+      "count": 1220
+    },
+    {
+      "token": "αυ",
+      "dialogues": 27,
+      "count": 1214
+    },
+    {
+      "token": "αυτων",
+      "dialogues": 27,
+      "count": 1118
+    },
+    {
+      "token": "τασ",
+      "dialogues": 27,
+      "count": 1115
+    },
+    {
+      "token": "σοι",
+      "dialogues": 27,
+      "count": 1094
+    },
+    {
+      "token": "επι",
+      "dialogues": 27,
+      "count": 1087
+    },
+    {
+      "token": "εστι",
+      "dialogues": 27,
+      "count": 1085
+    },
+    {
+      "token": "εκ",
+      "dialogues": 27,
+      "count": 1082
+    },
+    {
+      "token": "ουδεν",
+      "dialogues": 27,
+      "count": 1069
+    },
+    {
+      "token": "ων",
+      "dialogues": 27,
+      "count": 1069
+    },
+    {
+      "token": "ουτε",
+      "dialogues": 27,
+      "count": 1039
+    },
+    {
+      "token": "παντα",
+      "dialogues": 27,
+      "count": 1030
+    },
+    {
+      "token": "ουτω",
+      "dialogues": 27,
+      "count": 990
+    },
+    {
+      "token": "ουτωσ",
+      "dialogues": 27,
+      "count": 971
+    },
+    {
+      "token": "τινα",
+      "dialogues": 27,
+      "count": 954
+    },
+    {
+      "token": "συ",
+      "dialogues": 27,
+      "count": 943
+    },
+    {
+      "token": "αυτου",
+      "dialogues": 27,
+      "count": 940
+    },
+    {
+      "token": "ειη",
+      "dialogues": 27,
+      "count": 914
+    },
+    {
+      "token": "ωσπερ",
+      "dialogues": 27,
+      "count": 899
+    },
+    {
+      "token": "υπο",
+      "dialogues": 27,
+      "count": 889
+    },
+    {
+      "token": "αυτω",
+      "dialogues": 27,
+      "count": 885
+    },
+    {
+      "token": "δει",
+      "dialogues": 27,
+      "count": 873
+    },
+    {
+      "token": "ετι",
+      "dialogues": 27,
+      "count": 861
+    },
+    {
+      "token": "ον",
+      "dialogues": 27,
+      "count": 851
+    },
+    {
+      "token": "που",
+      "dialogues": 27,
+      "count": 850
+    },
+    {
+      "token": "α",
+      "dialogues": 27,
+      "count": 843
+    },
+    {
+      "token": "αυτον",
+      "dialogues": 27,
+      "count": 801
+    },
+    {
+      "token": "λεγειν",
+      "dialogues": 27,
+      "count": 790
+    },
+    {
+      "token": "μαλλον",
+      "dialogues": 27,
+      "count": 745
+    },
+    {
+      "token": "αει",
+      "dialogues": 27,
+      "count": 736
+    },
+    {
+      "token": "οιον",
+      "dialogues": 27,
+      "count": 723
+    },
+    {
+      "token": "αλλων",
+      "dialogues": 27,
+      "count": 661
+    },
+    {
+      "token": "αλλο",
+      "dialogues": 27,
+      "count": 660
+    },
+    {
+      "token": "λογον",
+      "dialogues": 27,
+      "count": 637
+    },
+    {
+      "token": "ουχ",
+      "dialogues": 27,
+      "count": 631
+    },
+    {
+      "token": "εξ",
+      "dialogues": 27,
+      "count": 612
+    },
+    {
+      "token": "εχει",
+      "dialogues": 27,
+      "count": 596
+    },
+    {
+      "token": "αυτα",
+      "dialogues": 27,
+      "count": 565
+    },
+    {
+      "token": "παρα",
+      "dialogues": 27,
+      "count": 559
+    },
+    {
+      "token": "αυτοσ",
+      "dialogues": 27,
+      "count": 547
+    },
+    {
+      "token": "παντων",
+      "dialogues": 27,
+      "count": 546
+    },
+    {
+      "token": "αυτη",
+      "dialogues": 27,
+      "count": 530
+    },
+    {
+      "token": "μαλιστα",
+      "dialogues": 27,
+      "count": 526
+    },
+    {
+      "token": "ουδ",
+      "dialogues": 27,
+      "count": 516
+    },
+    {
+      "token": "ευ",
+      "dialogues": 27,
+      "count": 499
+    },
+    {
+      "token": "πολλα",
+      "dialogues": 27,
+      "count": 488
+    },
+    {
+      "token": "αμα",
+      "dialogues": 27,
+      "count": 480
+    },
+    {
+      "token": "ημασ",
+      "dialogues": 27,
+      "count": 480
+    },
+    {
+      "token": "ειπειν",
+      "dialogues": 27,
+      "count": 475
+    },
+    {
+      "token": "ημων",
+      "dialogues": 27,
+      "count": 475
+    },
+    {
+      "token": "ωστε",
+      "dialogues": 27,
+      "count": 471
+    },
+    {
+      "token": "ηδη",
+      "dialogues": 27,
+      "count": 470
+    },
+    {
+      "token": "αληθη",
+      "dialogues": 27,
+      "count": 462
+    },
+    {
+      "token": "δι",
+      "dialogues": 27,
+      "count": 452
+    },
+    {
+      "token": "αυτουσ",
+      "dialogues": 27,
+      "count": 439
+    },
+    {
+      "token": "λεγω",
+      "dialogues": 27,
+      "count": 439
+    },
+    {
+      "token": "τοιαυτα",
+      "dialogues": 27,
+      "count": 436
+    },
+    {
+      "token": "τουτω",
+      "dialogues": 27,
+      "count": 415
+    },
+    {
+      "token": "τινοσ",
+      "dialogues": 27,
+      "count": 408
+    },
+    {
+      "token": "μηδεν",
+      "dialogues": 27,
+      "count": 403
+    },
+    {
+      "token": "ποιειν",
+      "dialogues": 27,
+      "count": 373
+    },
+    {
+      "token": "παρ",
+      "dialogues": 27,
+      "count": 372
+    },
+    {
+      "token": "ινα",
+      "dialogues": 27,
+      "count": 364
+    },
+    {
+      "token": "δηλον",
+      "dialogues": 27,
+      "count": 363
+    },
+    {
+      "token": "επειδη",
+      "dialogues": 27,
+      "count": 358
+    },
+    {
+      "token": "πολυ",
+      "dialogues": 27,
+      "count": 357
+    },
+    {
+      "token": "ουτοσ",
+      "dialogues": 27,
+      "count": 344
+    },
+    {
+      "token": "λογω",
+      "dialogues": 27,
+      "count": 338
+    },
+    {
+      "token": "λογου",
+      "dialogues": 27,
+      "count": 280
+    },
+    {
+      "token": "προτερον",
+      "dialogues": 27,
+      "count": 275
+    },
+    {
+      "token": "νουν",
+      "dialogues": 27,
+      "count": 230
+    },
+    {
+      "token": "επ",
+      "dialogues": 27,
+      "count": 210
+    },
+    {
+      "token": "εμου",
+      "dialogues": 27,
+      "count": 204
+    },
+    {
+      "token": "πριν",
+      "dialogues": 27,
+      "count": 199
+    },
+    {
+      "token": "πολλοι",
+      "dialogues": 27,
+      "count": 185
+    },
+    {
+      "token": "αρα",
+      "dialogues": 26,
+      "count": 1365
+    },
+    {
+      "token": "εαν",
+      "dialogues": 26,
+      "count": 1161
+    },
+    {
+      "token": "πανυ",
+      "dialogues": 26,
+      "count": 1116
+    },
+    {
+      "token": "αυτο",
+      "dialogues": 26,
+      "count": 1091
+    },
+    {
+      "token": "σωκρατεσ",
+      "dialogues": 26,
+      "count": 1067
+    },
+    {
+      "token": "λεγεισ",
+      "dialogues": 26,
+      "count": 1043
+    },
+    {
+      "token": "δοκει",
+      "dialogues": 26,
+      "count": 904
+    },
+    {
+      "token": "μην",
+      "dialogues": 26,
+      "count": 882
+    },
+    {
+      "token": "ουδε",
+      "dialogues": 26,
+      "count": 798
+    },
+    {
+      "token": "ορθωσ",
+      "dialogues": 26,
+      "count": 758
+    },
+    {
+      "token": "ποτε",
+      "dialogues": 26,
+      "count": 708
+    },
+    {
+      "token": "οταν",
+      "dialogues": 26,
+      "count": 706
+    },
+    {
+      "token": "τοτε",
+      "dialogues": 26,
+      "count": 666
+    },
+    {
+      "token": "πρωτον",
+      "dialogues": 26,
+      "count": 595
+    },
+    {
+      "token": "αυτοισ",
+      "dialogues": 26,
+      "count": 594
+    },
+    {
+      "token": "οιμαι",
+      "dialogues": 26,
+      "count": 592
+    },
+    {
+      "token": "τουτου",
+      "dialogues": 26,
+      "count": 550
+    },
+    {
+      "token": "αναγκη",
+      "dialogues": 26,
+      "count": 538
+    },
+    {
+      "token": "μονον",
+      "dialogues": 26,
+      "count": 515
+    },
+    {
+      "token": "ειτε",
+      "dialogues": 26,
+      "count": 514
+    },
+    {
+      "token": "σε",
+      "dialogues": 26,
+      "count": 508
+    },
+    {
+      "token": "με",
+      "dialogues": 26,
+      "count": 484
+    },
+    {
+      "token": "καλωσ",
+      "dialogues": 26,
+      "count": 480
+    },
+    {
+      "token": "χρη",
+      "dialogues": 26,
+      "count": 447
+    },
+    {
+      "token": "ισωσ",
+      "dialogues": 26,
+      "count": 442
+    },
+    {
+      "token": "τουτοισ",
+      "dialogues": 26,
+      "count": 442
+    },
+    {
+      "token": "ενεκα",
+      "dialogues": 26,
+      "count": 420
+    },
+    {
+      "token": "οντα",
+      "dialogues": 26,
+      "count": 402
+    },
+    {
+      "token": "εμοι",
+      "dialogues": 26,
+      "count": 389
+    },
+    {
+      "token": "λογοσ",
+      "dialogues": 26,
+      "count": 384
+    },
+    {
+      "token": "ειπερ",
+      "dialogues": 26,
+      "count": 382
+    },
+    {
+      "token": "ανθρωπων",
+      "dialogues": 26,
+      "count": 381
+    },
+    {
+      "token": "εσται",
+      "dialogues": 26,
+      "count": 376
+    },
+    {
+      "token": "αι",
+      "dialogues": 26,
+      "count": 367
+    },
+    {
+      "token": "απο",
+      "dialogues": 26,
+      "count": 346
+    },
+    {
+      "token": "ταυτη",
+      "dialogues": 26,
+      "count": 332
+    },
+    {
+      "token": "εισιν",
+      "dialogues": 26,
+      "count": 331
+    },
+    {
+      "token": "τ",
+      "dialogues": 26,
+      "count": 313
+    },
+    {
+      "token": "οισ",
+      "dialogues": 26,
+      "count": 309
+    },
+    {
+      "token": "τουτον",
+      "dialogues": 26,
+      "count": 301
+    },
+    {
+      "token": "σου",
+      "dialogues": 26,
+      "count": 300
+    },
+    {
+      "token": "ταυτην",
+      "dialogues": 26,
+      "count": 282
+    },
+    {
+      "token": "πολλων",
+      "dialogues": 26,
+      "count": 276
+    },
+    {
+      "token": "τουτ",
+      "dialogues": 26,
+      "count": 270
+    },
+    {
+      "token": "αλλοισ",
+      "dialogues": 26,
+      "count": 255
+    },
+    {
+      "token": "οπερ",
+      "dialogues": 26,
+      "count": 251
+    },
+    {
+      "token": "μηδε",
+      "dialogues": 26,
+      "count": 249
+    },
+    {
+      "token": "παντοσ",
+      "dialogues": 26,
+      "count": 244
+    },
+    {
+      "token": "αλλουσ",
+      "dialogues": 26,
+      "count": 231
+    },
+    {
+      "token": "εκεινου",
+      "dialogues": 26,
+      "count": 221
+    },
+    {
+      "token": "αρτι",
+      "dialogues": 26,
+      "count": 203
+    },
+    {
+      "token": "παντεσ",
+      "dialogues": 26,
+      "count": 203
+    },
+    {
+      "token": "επειδαν",
+      "dialogues": 26,
+      "count": 201
+    },
+    {
+      "token": "αυτοι",
+      "dialogues": 26,
+      "count": 200
+    },
+    {
+      "token": "τυγχανει",
+      "dialogues": 26,
+      "count": 191
+    },
+    {
+      "token": "ουδεισ",
+      "dialogues": 26,
+      "count": 187
+    },
+    {
+      "token": "ποιει",
+      "dialogues": 26,
+      "count": 175
+    },
+    {
+      "token": "ποτ",
+      "dialogues": 26,
+      "count": 168
+    },
+    {
+      "token": "ειπε",
+      "dialogues": 26,
+      "count": 165
+    },
+    {
+      "token": "ομωσ",
+      "dialogues": 26,
+      "count": 149
+    },
+    {
+      "token": "τοι",
+      "dialogues": 26,
+      "count": 128
+    },
+    {
+      "token": "ουκουν",
+      "dialogues": 25,
+      "count": 1074
+    },
+    {
+      "token": "μετα",
+      "dialogues": 25,
+      "count": 745
+    },
+    {
+      "token": "οσ",
+      "dialogues": 25,
+      "count": 646
+    },
+    {
+      "token": "φαινεται",
+      "dialogues": 25,
+      "count": 495
+    },
+    {
+      "token": "εχειν",
+      "dialogues": 25,
+      "count": 467
+    },
+    {
+      "token": "εγωγε",
+      "dialogues": 25,
+      "count": 446
+    },
+    {
+      "token": "ταυτον",
+      "dialogues": 25,
+      "count": 433
+    },
+    {
+      "token": "τοιουτον",
+      "dialogues": 25,
+      "count": 429
+    },
+    {
+      "token": "μεντοι",
+      "dialogues": 25,
+      "count": 419
+    },
+    {
+      "token": "παλιν",
+      "dialogues": 25,
+      "count": 414
+    },
+    {
+      "token": "εοικεν",
+      "dialogues": 25,
+      "count": 407
+    },
+    {
+      "token": "γ",
+      "dialogues": 25,
+      "count": 405
+    },
+    {
+      "token": "οσα",
+      "dialogues": 25,
+      "count": 402
+    },
+    {
+      "token": "ποτερον",
+      "dialogues": 25,
+      "count": 397
+    },
+    {
+      "token": "οπωσ",
+      "dialogues": 25,
+      "count": 324
+    },
+    {
+      "token": "τοιουτων",
+      "dialogues": 25,
+      "count": 303
+    },
+    {
+      "token": "νυνδη",
+      "dialogues": 25,
+      "count": 285
+    },
+    {
+      "token": "σφοδρα",
+      "dialogues": 25,
+      "count": 269
+    },
+    {
+      "token": "σχεδον",
+      "dialogues": 25,
+      "count": 268
+    },
+    {
+      "token": "γενεσθαι",
+      "dialogues": 25,
+      "count": 264
+    },
+    {
+      "token": "ικανωσ",
+      "dialogues": 25,
+      "count": 260
+    },
+    {
+      "token": "λεγει",
+      "dialogues": 25,
+      "count": 239
+    },
+    {
+      "token": "ταλλα",
+      "dialogues": 25,
+      "count": 236
+    },
+    {
+      "token": "εμε",
+      "dialogues": 25,
+      "count": 214
+    },
+    {
+      "token": "αλλωσ",
+      "dialogues": 25,
+      "count": 211
+    },
+    {
+      "token": "ουτοι",
+      "dialogues": 25,
+      "count": 206
+    },
+    {
+      "token": "επειτα",
+      "dialogues": 25,
+      "count": 204
+    },
+    {
+      "token": "λεγων",
+      "dialogues": 25,
+      "count": 204
+    },
+    {
+      "token": "υπ",
+      "dialogues": 25,
+      "count": 204
+    },
+    {
+      "token": "αναγκαιον",
+      "dialogues": 25,
+      "count": 203
+    },
+    {
+      "token": "εικοσ",
+      "dialogues": 25,
+      "count": 202
+    },
+    {
+      "token": "λογουσ",
+      "dialogues": 25,
+      "count": 199
+    },
+    {
+      "token": "πολλακισ",
+      "dialogues": 25,
+      "count": 199
+    },
+    {
+      "token": "βουλει",
+      "dialogues": 25,
+      "count": 197
+    },
+    {
+      "token": "εκεινο",
+      "dialogues": 25,
+      "count": 191
+    },
+    {
+      "token": "επει",
+      "dialogues": 25,
+      "count": 191
+    },
+    {
+      "token": "προσθεν",
+      "dialogues": 25,
+      "count": 180
+    },
+    {
+      "token": "ωδε",
+      "dialogues": 25,
+      "count": 157
+    },
+    {
+      "token": "παντωσ",
+      "dialogues": 25,
+      "count": 152
+    },
+    {
+      "token": "αλλη",
+      "dialogues": 25,
+      "count": 151
+    },
+    {
+      "token": "ελεγον",
+      "dialogues": 25,
+      "count": 143
+    },
+    {
+      "token": "αξιον",
+      "dialogues": 25,
+      "count": 123
+    },
+    {
+      "token": "καιτοι",
+      "dialogues": 25,
+      "count": 112
+    },
+    {
+      "token": "λεγομενα",
+      "dialogues": 25,
+      "count": 103
+    }
+  ],
+  "name_stopwords": [
+    {
+      "token": "σω",
+      "count": 3810,
+      "capitalized_share": 0.998
+    },
+    {
+      "token": "διοσ",
+      "count": 88,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ελληνων",
+      "count": 49,
+      "capitalized_share": 1
+    },
+    {
+      "token": "σωκρατησ",
+      "count": 93,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ομηροσ",
+      "count": 67,
+      "capitalized_share": 1
+    },
+    {
+      "token": "σωκρατουσ",
+      "count": 44,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ομηρου",
+      "count": 56,
+      "capitalized_share": 1
+    },
+    {
+      "token": "σωκρατη",
+      "count": 95,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αιδου",
+      "count": 50,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αθηναιων",
+      "count": 39,
+      "capitalized_share": 1
+    },
+    {
+      "token": "σωκρατει",
+      "count": 27,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ζευσ",
+      "count": 24,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ελληνεσ",
+      "count": 18,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ομηρον",
+      "count": 29,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ελλησιν",
+      "count": 20,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αθηναιοι",
+      "count": 65,
+      "capitalized_share": 1
+    },
+    {
+      "token": "προδικοσ",
+      "count": 23,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ομηρω",
+      "count": 12,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ηραν",
+      "count": 11,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ηρακλεισ",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ελληνασ",
+      "count": 26,
+      "capitalized_share": 1
+    },
+    {
+      "token": "μουσων",
+      "count": 20,
+      "capitalized_share": 0.9
+    },
+    {
+      "token": "λακεδαιμονιοι",
+      "count": 17,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λακεδαιμονιων",
+      "count": 15,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ησιοδοσ",
+      "count": 14,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κρονου",
+      "count": 14,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αθηναιουσ",
+      "count": 12,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ελλαδα",
+      "count": 12,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ηφαιστου",
+      "count": 10,
+      "capitalized_share": 1
+    },
+    {
+      "token": "δελφοισ",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κριτων",
+      "count": 68,
+      "capitalized_share": 0.971
+    },
+    {
+      "token": "πρωταγορασ",
+      "count": 64,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ελλησι",
+      "count": 14,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αθηνασ",
+      "count": 13,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ησιοδον",
+      "count": 10,
+      "capitalized_share": 1
+    },
+    {
+      "token": "σολωνοσ",
+      "count": 10,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αθηναιοισ",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "διι",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "τροια",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ελλαδοσ",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κρονοσ",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "πρω",
+      "count": 564,
+      "capitalized_share": 0.991
+    },
+    {
+      "token": "πρωταγοραν",
+      "count": 19,
+      "capitalized_share": 1
+    },
+    {
+      "token": "οδυσσεα",
+      "count": 18,
+      "capitalized_share": 1
+    },
+    {
+      "token": "περικλησ",
+      "count": 12,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λακεδαιμονα",
+      "count": 10,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ασιασ",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ηρακλεουσ",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "πινδαροσ",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αιγυπτον",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αιγυπτου",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θηβαιοσ",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κρ",
+      "count": 182,
+      "capitalized_share": 1
+    },
+    {
+      "token": "γοργιασ",
+      "count": 28,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κριτια",
+      "count": 27,
+      "capitalized_share": 1
+    },
+    {
+      "token": "πρωταγορου",
+      "count": 25,
+      "capitalized_share": 1
+    },
+    {
+      "token": "απολλωνοσ",
+      "count": 16,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αχιλλεα",
+      "count": 15,
+      "capitalized_share": 1
+    },
+    {
+      "token": "σολων",
+      "count": 15,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αλκιβιαδου",
+      "count": 11,
+      "capitalized_share": 1
+    },
+    {
+      "token": "γλαυκωνοσ",
+      "count": 11,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ιππιασ",
+      "count": 11,
+      "capitalized_share": 1
+    },
+    {
+      "token": "παρμενιδησ",
+      "count": 11,
+      "capitalized_share": 1
+    },
+    {
+      "token": "γοργιαν",
+      "count": 10,
+      "capitalized_share": 1
+    },
+    {
+      "token": "γοργιου",
+      "count": 10,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ερμου",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λακεδαιμονι",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "απολλω",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αναξαγορου",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "απολλωνι",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αχιλλεωσ",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ευθυδημον",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ηρασ",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ιππιαν",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ιππονικου",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "περικλεα",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "τροιαν",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αθηναζε",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αρεωσ",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "δαιδαλου",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "εκτορα",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ησιοδου",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "πατροκλω",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ηρακλειτοσ",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "νεστορα",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "οδυσσεια",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θεαι",
+      "count": 993,
+      "capitalized_share": 0.999
+    },
+    {
+      "token": "ιππια",
+      "count": 103,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θεο",
+      "count": 100,
+      "capitalized_share": 1
+    },
+    {
+      "token": "γλαυκων",
+      "count": 77,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κτησιπποσ",
+      "count": 46,
+      "capitalized_share": 1
+    },
+    {
+      "token": "μενων",
+      "count": 46,
+      "capitalized_share": 0.913
+    },
+    {
+      "token": "γοργια",
+      "count": 37,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θεοδωρε",
+      "count": 33,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αδειμαντοσ",
+      "count": 18,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κριτιασ",
+      "count": 15,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θεαιτητον",
+      "count": 14,
+      "capitalized_share": 1
+    },
+    {
+      "token": "πολεμαρχοσ",
+      "count": 14,
+      "capitalized_share": 1
+    },
+    {
+      "token": "χαιρεφων",
+      "count": 13,
+      "capitalized_share": 1
+    },
+    {
+      "token": "παρμενιδην",
+      "count": 12,
+      "capitalized_share": 1
+    },
+    {
+      "token": "μελητοσ",
+      "count": 11,
+      "capitalized_share": 1
+    },
+    {
+      "token": "μαραθωνι",
+      "count": 10,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ταρταρον",
+      "count": 10,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αχιλλευσ",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "καλλιασ",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "μενεξενοσ",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "οδυσσευσ",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "περσων",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "προδικου",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λακεδαιμονιοισ",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "οδυσσεωσ",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "περικλεουσ",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ποσειδωνοσ",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "φαιδροσ",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κρητην",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αγαμεμνονοσ",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "απολλοδωροσ",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κλεινιου",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κρητεσ",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λακεδαιμονιουσ",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "παρμενιδου",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αιαντα",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αισχυλου",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "δαρειου",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "δελφουσ",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ζευ",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ηρακλησ",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ξε",
+      "count": 1033,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ιπ",
+      "count": 290,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κλεινια",
+      "count": 96,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κεβησ",
+      "count": 83,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θεαιτητε",
+      "count": 73,
+      "capitalized_share": 1
+    },
+    {
+      "token": "πρωταγορα",
+      "count": 53,
+      "capitalized_share": 1
+    },
+    {
+      "token": "φαιδρε",
+      "count": 44,
+      "capitalized_share": 1
+    },
+    {
+      "token": "σιμμιασ",
+      "count": 39,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λαχησ",
+      "count": 38,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αγαθωνα",
+      "count": 30,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κλεινιασ",
+      "count": 23,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θρασυμαχοσ",
+      "count": 19,
+      "capitalized_share": 1
+    },
+    {
+      "token": "σιμωνιδησ",
+      "count": 19,
+      "capitalized_share": 1
+    },
+    {
+      "token": "εχ",
+      "count": 18,
+      "capitalized_share": 0.944
+    },
+    {
+      "token": "μελητε",
+      "count": 18,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θεαιτητοσ",
+      "count": 14,
+      "capitalized_share": 1
+    },
+    {
+      "token": "μενεξενε",
+      "count": 13,
+      "capitalized_share": 1
+    },
+    {
+      "token": "παρμενιδη",
+      "count": 13,
+      "capitalized_share": 1
+    },
+    {
+      "token": "προδικε",
+      "count": 13,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ανυτοσ",
+      "count": 12,
+      "capitalized_share": 1
+    },
+    {
+      "token": "σιμωνιδην",
+      "count": 12,
+      "capitalized_share": 1
+    },
+    {
+      "token": "φαιδρον",
+      "count": 12,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αλκιβιαδην",
+      "count": 11,
+      "capitalized_share": 1
+    },
+    {
+      "token": "διονυσου",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ζηνωνα",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ιπποκρατησ",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θεοδωρον",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "μελητον",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "νικιασ",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "σιμμιαν",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "χαρμιδησ",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ευθυφρονοσ",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κριτιαν",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "πιττακον",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αθηναιε",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "απολλωνα",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ερμογενησ",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θεοδωρου",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θευθ",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θρασυμαχον",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "καλλια",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κριτιου",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λαχεσιν",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λυσιαν",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "παυσανιασ",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "περσαι",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "πιττακου",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αντιφων",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αριστωνοσ",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "διονυσον",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ερετριασ",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θεμιστοκλεα",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κεφαλε",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κλωθω",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κτησιππω",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "πωλου",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "τιμαιε",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "χαρμιδην",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αθ",
+      "count": 1088,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κλ",
+      "count": 798,
+      "capitalized_share": 1
+    },
+    {
+      "token": "νε",
+      "count": 440,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ερμ",
+      "count": 294,
+      "capitalized_share": 1
+    },
+    {
+      "token": "καλ",
+      "count": 240,
+      "capitalized_share": 1
+    },
+    {
+      "token": "πωλ",
+      "count": 207,
+      "capitalized_share": 1
+    },
+    {
+      "token": "φαι",
+      "count": 190,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ευθ",
+      "count": 116,
+      "capitalized_share": 1
+    },
+    {
+      "token": "γορ",
+      "count": 98,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λα",
+      "count": 80,
+      "capitalized_share": 1
+    },
+    {
+      "token": "καλλικλεισ",
+      "count": 62,
+      "capitalized_share": 1
+    },
+    {
+      "token": "πρωταρχε",
+      "count": 60,
+      "capitalized_share": 1
+    },
+    {
+      "token": "νι",
+      "count": 50,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ευθυφρων",
+      "count": 39,
+      "capitalized_share": 1
+    },
+    {
+      "token": "πωλε",
+      "count": 39,
+      "capitalized_share": 1
+    },
+    {
+      "token": "διονυσοδωροσ",
+      "count": 37,
+      "capitalized_share": 1
+    },
+    {
+      "token": "σιμμια",
+      "count": 35,
+      "capitalized_share": 1
+    },
+    {
+      "token": "νικια",
+      "count": 34,
+      "capitalized_share": 1
+    },
+    {
+      "token": "μεγιλλε",
+      "count": 33,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ευθυδημοσ",
+      "count": 30,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θρασυμαχε",
+      "count": 30,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ερμογενεσ",
+      "count": 29,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ευθυδημε",
+      "count": 26,
+      "capitalized_share": 1
+    },
+    {
+      "token": "διονυσοδωρε",
+      "count": 22,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αδειμαντε",
+      "count": 19,
+      "capitalized_share": 1
+    },
+    {
+      "token": "φαιδ",
+      "count": 18,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κρατυλε",
+      "count": 17,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κρι",
+      "count": 17,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λυσιμαχε",
+      "count": 17,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ερυξιμαχον",
+      "count": 16,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λυ",
+      "count": 15,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θεοδωροσ",
+      "count": 14,
+      "capitalized_share": 1
+    },
+    {
+      "token": "φι",
+      "count": 14,
+      "capitalized_share": 1
+    },
+    {
+      "token": "χαι",
+      "count": 14,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λυσι",
+      "count": 13,
+      "capitalized_share": 1
+    },
+    {
+      "token": "χαρμιδη",
+      "count": 13,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λυσιου",
+      "count": 12,
+      "capitalized_share": 1
+    },
+    {
+      "token": "φαιδων",
+      "count": 12,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κτησιππε",
+      "count": 11,
+      "capitalized_share": 1
+    },
+    {
+      "token": "φιληβε",
+      "count": 11,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ερυξιμαχε",
+      "count": 10,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κρατυλοσ",
+      "count": 10,
+      "capitalized_share": 1
+    },
+    {
+      "token": "τερ",
+      "count": 10,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αριστοφανη",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ζηνων",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κρητων",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λυσιασ",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "φιληβοσ",
+      "count": 9,
+      "capitalized_share": 1
+    },
+    {
+      "token": "διοτιμα",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ιπποθαλεσ",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "πολεμαρχε",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "φιληβου",
+      "count": 8,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αλκιβιαδησ",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ανυτε",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ερμογενη",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "εχεκρατεσ",
+      "count": 7,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αριστοδημοσ",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ζηνωνοσ",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θετταλιαν",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "καλλικλησ",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "μελησια",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "πιττακε",
+      "count": 6,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αιδησ",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αρχελαον",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "αστυανακτα",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ευθυδημου",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ευθυδημω",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "θρασυμαχου",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "ιπποκρατεσ",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κρητησ",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "κυρου",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "λυσια",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "μαγνητων",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "μενεξενον",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "σιμμιου",
+      "count": 5,
+      "capitalized_share": 1
+    },
+    {
+      "token": "χαιρεδημοσ",
+      "count": 5,
+      "capitalized_share": 1
+    }
+  ],
+  "boundary_window": [
+    {
+      "rank": 222,
+      "token": "εκεινο",
+      "dialogues": 25,
+      "count": 191
+    },
+    {
+      "rank": 223,
+      "token": "επει",
+      "dialogues": 25,
+      "count": 191
+    },
+    {
+      "rank": 224,
+      "token": "προσθεν",
+      "dialogues": 25,
+      "count": 180
+    },
+    {
+      "rank": 225,
+      "token": "ωδε",
+      "dialogues": 25,
+      "count": 157
+    },
+    {
+      "rank": 226,
+      "token": "παντωσ",
+      "dialogues": 25,
+      "count": 152
+    },
+    {
+      "rank": 227,
+      "token": "αλλη",
+      "dialogues": 25,
+      "count": 151
+    },
+    {
+      "rank": 228,
+      "token": "ελεγον",
+      "dialogues": 25,
+      "count": 143
+    },
+    {
+      "rank": 229,
+      "token": "αξιον",
+      "dialogues": 25,
+      "count": 123
+    },
+    {
+      "rank": 230,
+      "token": "καιτοι",
+      "dialogues": 25,
+      "count": 112
+    },
+    {
+      "rank": 231,
+      "token": "λεγομενα",
+      "dialogues": 25,
+      "count": 103
+    },
+    {
+      "rank": 232,
+      "token": "αρ",
+      "dialogues": 24,
+      "count": 670
+    },
+    {
+      "rank": 233,
+      "token": "τοινυν",
+      "dialogues": 24,
+      "count": 639
+    },
+    {
+      "rank": 234,
+      "token": "ναι",
+      "dialogues": 24,
+      "count": 631
+    },
+    {
+      "rank": 235,
+      "token": "μητε",
+      "dialogues": 24,
+      "count": 565
+    },
+    {
+      "rank": 236,
+      "token": "ταισ",
+      "dialogues": 24,
+      "count": 521
+    },
+    {
+      "rank": 237,
+      "token": "αυτην",
+      "dialogues": 24,
+      "count": 463
+    },
+    {
+      "rank": 238,
+      "token": "αγαθον",
+      "dialogues": 24,
+      "count": 401
+    },
+    {
+      "rank": 239,
+      "token": "καλον",
+      "dialogues": 24,
+      "count": 399
+    },
+    {
+      "rank": 240,
+      "token": "ημεισ",
+      "dialogues": 24,
+      "count": 325
+    },
+    {
+      "rank": 241,
+      "token": "παν",
+      "dialogues": 24,
+      "count": 316
+    },
+    {
+      "rank": 242,
+      "token": "δυο",
+      "dialogues": 24,
+      "count": 315
+    },
+    {
+      "rank": 243,
+      "token": "γιγνεται",
+      "dialogues": 24,
+      "count": 313
+    },
+    {
+      "rank": 244,
+      "token": "δειν",
+      "dialogues": 24,
+      "count": 311
+    },
+    {
+      "rank": 245,
+      "token": "τινι",
+      "dialogues": 24,
+      "count": 280
+    },
+    {
+      "rank": 246,
+      "token": "τοδε",
+      "dialogues": 24,
+      "count": 278
+    }
+  ]
+}

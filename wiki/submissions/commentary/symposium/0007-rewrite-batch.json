@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "submission_id": "0007-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "symposium",
+  "source_path": "scratch/commentary/rewrites/symposium/01-172a-177e.json",
+  "source_sha256": "0ead055f679dd4b286784451f9e222d01984cd1ba1f7da987076bb723a12695a",
+  "target_path": "wiki/commentary/symposium.md",
+  "target_sha256_before": "242af6da2dea3389852f81d3fc0ba6b90ac17f810c928fb14a60396febc69640",
+  "target_sha256_after": "3853fca9a23b14ba8783825802fe9f259e4088a2eade50018f602c3d08b49aa1",
+  "applied_at": "2026-08-21T15:29:34.706Z",
+  "applied_ids": [
+    "comm_symposium_0011",
+    "comm_symposium_0015",
+    "comm_symposium_0057"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "01-172a-177e",
+      "section_id": "comm_symposium_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/01-172a-177e.json",
+        "sha256": "ed6d6c089eeb7db90b846c12f8e28fa90ef52fc90ca439c7b4057797634c5875"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0011",
+          "title": "",
+          "body": "The opening first corrects the listener’s position. Glaucon treats the banquet as recent enough for Apollodorus to have been there; Apollodorus answers by placing it in his childhood and naming Aristodemus as the attendee from whom he heard it. The listener must therefore separate presence, recollection, and verification before receiving the speeches. I read that calibration as the frame’s first intellectual demand.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0001",
+              "obs_symposium_0003"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0015",
+          "title": "",
+          "body": "Eryximachus makes the new activity a distributed form: each person is to speak in turn, praise Eros as beautifully as possible, and let Phaedrus begin. The point is not merely that speeches replace music; the table itself becomes the instrument of the event, assigning every guest a turn and a common object. I read this arrangement as a shift from passive entertainment to shared authorship: the feast will now be made by the speeches it solicits.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0013",
+              "obs_symposium_0015"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "08-201d-212c",
+      "section_id": "comm_symposium_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/08-201d-212c.json",
+        "sha256": "cfe86525fd4aa7b359fddcf487e47907aa64ea328d57f5b2d72f04a44737ebef"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0057",
+          "title": "",
+          "body": "Diotima uses Alcestis, Achilles, and Codrus to press a larger thesis: human beings will risk everything for the immortal memory of virtue and renown. The examples therefore do not stand only as heroic deaths to admire; within her argument, they become evidence for love’s orientation toward immortality. I hear this as a reframing of courage: the question is no longer merely whether the deed is noble, but what kind of immortality the deed is meant to secure.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_symposium_0144",
+              "claim_symposium_0145",
+              "claim_symposium_0146"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_symposium_0011",
+      "body": "```yaml\ncommentary_id: comm_symposium_0011\nsource_work: Symposium\nblock_kind: context\nplacement: before\nstephanus_span: 172a-173b\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 172a-173b\n  start_marker: 172a\n  end_marker: 173b\n  start_char: 5\n  end_char: 2240\n  text_sha256: \"bc7cfd18a5ce061a7dabef9a982bb82463f76b2582aac5ef08daf7d280e5c17f\"\nbody: \"Before any speech begins, the dialogue makes us notice its route of transmission. The unnamed companion asks Apollodorus, who heard the banquet from Aristodemus; Apollodorus says he checked some details with Socrates. The account is told while they walk to Athens. That layered, moving frame ensures that we hear the speeches as reported memory, not as direct access to the feast.\"\ncites:\n  observations: [\"obs_symposium_0001\", \"obs_symposium_0078\"]\n  claims: []\n  relations: []\n  dossiers: [\"frame_depth/reported_dialogue_frame\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0015",
+      "body": "```yaml\ncommentary_id: comm_symposium_0015\nsource_work: Symposium\nblock_kind: argument\nplacement: before\nstephanus_span: 176a-177e\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 176a-177e\n  start_marker: 176a\n  end_marker: 177e\n  start_char: 7963\n  end_char: 12101\n  text_sha256: \"8d49904c0f59739a1a99ede9f498e45bf43cb7b07b408fdcaedd7bfc26598001\"\nbody: \"Here the group does not renounce drinking. It agrees that each person may drink as much as he wishes, but without compulsion and without making the gathering a bout of drunkenness. Eryximachus then turns that settlement into a new procedure: the aulos-girl is dismissed, and the men will spend the day with one another through speeches. I read the move as a redirection rather than a prohibition: pleasure remains available, while the gathering’s shared attention is organized around logoi.\"\ncites:\n  observations: [\"obs_symposium_0012\", \"obs_symposium_0013\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0057",
+      "body": "```yaml\ncommentary_id: comm_symposium_0057\nsource_work: Symposium\nblock_kind: notice\nplacement: before\nstephanus_span: 207d-209e\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 207d-209e\n  start_marker: 207d\n  end_marker: 209e\n  start_char: 73388\n  end_char: 78102\n  text_sha256: \"b53a8dfd5dbf09c8483cd820efb0004119792cbd0e46bc026dc675f518fc8b42\"\nbody: \"The appearance of Alcestis and Achilles makes this passage sound like a return to the evening’s heroic examples. Here, however, Diotima places their deaths beside Codrus’s within an argument about the immortal memory of virtue. One way to hear the move is as a reframing rather than a correction: the heroic actions now serve as examples for Diotima’s claim that human striving reaches toward immortal virtue and renown.\"\ncites:\n  observations: [\"obs_symposium_0129\", \"obs_symposium_0130\"]\n  claims: [\"claim_symposium_0144\", \"claim_symposium_0145\", \"claim_symposium_0146\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

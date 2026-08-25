@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "submission_id": "0011-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "timaeus",
+  "source_path": "scratch/commentary/sample-repairs/timaeus/0012-round5.json",
+  "source_sha256": "ea9f5c167b89816ef22255c9692d66e3efdc6309fdc32a4975f3220cb263e063",
+  "target_path": "wiki/commentary/timaeus.md",
+  "target_sha256_before": "b6b701ce601222dec176b7dfab7abf3f5105e40018a27156ee4d2f30cf173fa0",
+  "target_sha256_after": "e79f3417ddd905f286d623ab56ed2976731f6b5b44341732c8fd017e3f0a498a",
+  "applied_at": "2026-08-24T00:01:31.274Z",
+  "applied_ids": [
+    "comm_timaeus_0012"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "timaeus",
+    "ledger": {
+      "path": "wiki/commentary/timaeus.md",
+      "sha256": "b6b701ce601222dec176b7dfab7abf3f5105e40018a27156ee4d2f30cf173fa0"
+    },
+    "sample_review": {
+      "reviewer": "sample-c-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna sample review found one bounded source-qualification defect in the likely-account orientation.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_timaeus_0001",
+        "comm_timaeus_0003",
+        "comm_timaeus_0004",
+        "comm_timaeus_0005",
+        "comm_timaeus_0007",
+        "comm_timaeus_0008",
+        "comm_timaeus_0009",
+        "comm_timaeus_0011",
+        "comm_timaeus_0012",
+        "comm_timaeus_0013",
+        "comm_timaeus_0014",
+        "comm_timaeus_0016",
+        "comm_timaeus_0017",
+        "comm_timaeus_0018",
+        "comm_timaeus_0019"
+      ],
+      "failed_commentary_ids": [
+        "comm_timaeus_0012"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_timaeus_0012",
+        "title": "A likely account, not final knowledge",
+        "body": "Timaeus marks a limit without declaring the higher principles inaccessible to himself: principles above the two triangles are said to be known to God and a god's friend, while the account proceeds by probable reasoning. Within that account, three kinds can transform through shared material, whereas earth remains structurally separate.",
+        "cites": {
+          "observations": [
+            "obs_timaeus_0160",
+            "obs_timaeus_0161"
+          ],
+          "claims": [
+            "claim_timaeus_0126",
+            "claim_timaeus_0128"
+          ],
+          "relations": [],
+          "dossiers": [
+            "mathematical_cosmology/elemental_transformability_restricted"
+          ]
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_timaeus_0012",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0012\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"A likely account, not final knowledge\"\nstephanus_span: 53a-56d\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 53a-56d\n  start_marker: 53a\n  end_marker: 56d\n  start_char: 66547\n  end_char: 74380\n  text_sha256: \"e214b5cfe505ba35a898b2e1eda37bf0543f8eb26097af643064841753825e77\"\nbody: \"Read this not as a report from the laboratory, but as a disciplined “likely account”: Timaeus reduces bodies to triangles, posits two immediate principles, and admits that anything higher lies beyond the speaker’s reach. Its real explanatory gain is a boundary on change: three kinds can transform through shared material, while earth remains structurally separate.\"\ncites:\n  observations: [\"obs_timaeus_0160\", \"obs_timaeus_0161\"]\n  claims: [\"claim_timaeus_0126\", \"claim_timaeus_0128\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

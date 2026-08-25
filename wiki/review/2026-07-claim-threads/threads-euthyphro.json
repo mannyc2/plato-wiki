@@ -1,0 +1,4148 @@
+{
+  "config_version": 3,
+  "dialogue": "euthyphro",
+  "input_files": {
+    "wiki/claims/euthyphro.md": "855bc9dc47b76b5582f4fee8f4637183d8ffbde90cc7150df516e9f595d3a6f9",
+    "derived/plato/tokens/euthyphro.toon": "4472758f418e98a0429c6d8f57373665b8ea1b147dd197a42bef444e8288c632"
+  },
+  "claim_count": 57,
+  "definition_seed_count": 12,
+  "threads": [
+    {
+      "seed": "claim_euthyphro_0007",
+      "seed_kind": "definition",
+      "seed_status": "accepted",
+      "seed_final": "left_standing",
+      "seed_span": "5d-6a",
+      "seed_start": 7263,
+      "seed_tokens": [
+        "αδικουντι",
+        "αλλοσ",
+        "ανθρωποι",
+        "ανοσιον",
+        "ανοσιοτητα",
+        "αποδεχομαι",
+        "αριστον",
+        "ασεβουντι",
+        "γιγνομενα",
+        "γραφην",
+        "δηπου",
+        "δησαι",
+        "δικαιοτατον",
+        "δικη",
+        "δυσχερωσ",
+        "εαντε",
+        "ειπον",
+        "εκτεμειν",
+        "εναντια",
+        "εναντιον",
+        "εξαμαρτανειν",
+        "εξαμαρτανοντι",
+        "εοικε",
+        "επεξερχομαι",
+        "επεξιεναι",
+        "επιτρεπειν",
+        "ετερα",
+        "εχον",
+        "θεασαι",
+        "θεων",
+        "ιδεαν",
+        "ιερων",
+        "κακεινον",
+        "κατεπινεν",
+        "κλοπασ",
+        "λεγε",
+        "λεγη",
+        "λεγουσι",
+        "μεγα",
+        "μελλη",
+        "μητηρ",
+        "μιαν",
+        "νομιζοντεσ",
+        "νομου",
+        "ομοιον",
+        "ομολογουσι",
+        "οσιον",
+        "οσιου",
+        "οστισουν",
+        "οτιπερ",
+        "ουνεκα",
+        "παση",
+        "πατερα",
+        "πατηρ",
+        "πατρι",
+        "ποιω",
+        "πραξει",
+        "συνδοκει",
+        "τεκμηριον",
+        "τοινυν",
+        "τυγχανη",
+        "τυγχανουσι",
+        "υεισ",
+        "φευγω",
+        "φησει",
+        "φονου",
+        "φονουσ",
+        "χαλεπαινουσιν"
+      ],
+      "seed_greek_terms_tokens": [
+        "αδικουντι",
+        "επεξιεναι",
+        "οσιον"
+      ],
+      "flagged": true,
+      "members": [
+        {
+          "member": "claim_euthyphro_0001",
+          "shared_tokens": [
+            "δικη",
+            "επεξιεναι",
+            "πατηρ",
+            "φονου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "4b-4c",
+          "member_start": 3984,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0002",
+          "shared_tokens": [
+            "αλλοσ",
+            "ανοσιον",
+            "εξαμαρτανειν",
+            "επεξιεναι",
+            "λεγε",
+            "οσιου",
+            "πατερα",
+            "πατρι",
+            "φονου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "4e-5c",
+          "member_start": 5416,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0003",
+          "shared_tokens": [
+            "ανοσιον",
+            "εξαμαρτανειν",
+            "επεξιεναι",
+            "οσιου",
+            "πατρι",
+            "φονου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "4e-5a",
+          "member_start": 5416,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0004",
+          "shared_tokens": [
+            "αλλοσ",
+            "εξαμαρτανειν",
+            "λεγε",
+            "πατερα"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "5a-5c",
+          "member_start": 5832,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0005",
+          "shared_tokens": [
+            "αδικουντι",
+            "ανοσιον",
+            "ανοσιοτητα",
+            "δηπου",
+            "εαντε",
+            "εναντιον",
+            "εξαμαρτανοντι",
+            "επεξιεναι",
+            "εχον",
+            "ιδεαν",
+            "ιερων",
+            "κλοπασ",
+            "λεγε",
+            "μελλη",
+            "μιαν",
+            "ομοιον",
+            "οσιον",
+            "οσιου",
+            "οτιπερ",
+            "παση",
+            "πατηρ",
+            "ποιω",
+            "πραξει",
+            "τοινυν",
+            "φονου",
+            "φονουσ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0006",
+          "shared_tokens": [
+            "αδικουντι",
+            "ανοσιον",
+            "ανοσιοτητα",
+            "δηπου",
+            "εαντε",
+            "εναντιον",
+            "εξαμαρτανοντι",
+            "επεξιεναι",
+            "εχον",
+            "ιδεαν",
+            "ιερων",
+            "κλοπασ",
+            "λεγε",
+            "μελλη",
+            "μιαν",
+            "ομοιον",
+            "οσιον",
+            "οσιου",
+            "οτιπερ",
+            "παση",
+            "πατηρ",
+            "ποιω",
+            "πραξει",
+            "τοινυν",
+            "φονου",
+            "φονουσ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0008",
+          "shared_tokens": [
+            "αδικουντι",
+            "αλλοσ",
+            "ανθρωποι",
+            "ανοσιον",
+            "αποδεχομαι",
+            "αριστον",
+            "ασεβουντι",
+            "γιγνομενα",
+            "γραφην",
+            "δησαι",
+            "δικαιοτατον",
+            "δικη",
+            "δυσχερωσ",
+            "εαντε",
+            "ειπον",
+            "εκτεμειν",
+            "εναντια",
+            "εξαμαρτανειν",
+            "εοικε",
+            "επεξερχομαι",
+            "επεξιεναι",
+            "επιτρεπειν",
+            "ετερα",
+            "θεασαι",
+            "θεων",
+            "κακεινον",
+            "κατεπινεν",
+            "λεγη",
+            "λεγουσι",
+            "μεγα",
+            "μητηρ",
+            "νομιζοντεσ",
+            "νομου",
+            "ομολογουσι",
+            "οστισουν",
+            "ουνεκα",
+            "πατερα",
+            "πατρι",
+            "συνδοκει",
+            "τεκμηριον",
+            "τυγχανη",
+            "τυγχανουσι",
+            "υεισ",
+            "φευγω",
+            "φησει",
+            "χαλεπαινουσιν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5e-6a",
+          "member_start": 7756,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0009",
+          "shared_tokens": [
+            "αδικουντι",
+            "αποδεχομαι",
+            "γραφην",
+            "δησαι",
+            "δικη",
+            "δυσχερωσ",
+            "εκτεμειν",
+            "εναντια",
+            "εξαμαρτανειν",
+            "εοικε",
+            "επεξερχομαι",
+            "ετερα",
+            "θεων",
+            "κακεινον",
+            "κατεπινεν",
+            "λεγη",
+            "λεγουσι",
+            "ομολογουσι",
+            "ουνεκα",
+            "πατερα",
+            "πατρι",
+            "συνδοκει",
+            "υεισ",
+            "φευγω",
+            "φησει",
+            "χαλεπαινουσιν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6a-6b",
+          "member_start": 8118,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0012",
+          "shared_tokens": [
+            "ειπον",
+            "οσιον",
+            "πατρι",
+            "φονου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6c-6d",
+          "member_start": 9086,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0013",
+          "shared_tokens": [
+            "αλλοσ",
+            "ιδεαν",
+            "οσιον",
+            "πατρι",
+            "τοινυν",
+            "φονου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6d-6e",
+          "member_start": 9546,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0014",
+          "shared_tokens": [
+            "αλλοσ",
+            "ανοσιον",
+            "ιδεαν",
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6e-7a",
+          "member_start": 10025,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0015",
+          "shared_tokens": [
+            "ανθρωποι",
+            "εναντια",
+            "θεων"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "7b-7e",
+          "member_start": 10927,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0016",
+          "shared_tokens": [
+            "ανθρωποι",
+            "εναντια",
+            "θεων"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "7b-7e",
+          "member_start": 10927,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0017",
+          "shared_tokens": [
+            "ανοσιον",
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "8a",
+          "member_start": 12705,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0018",
+          "shared_tokens": [
+            "αδικουντι",
+            "ανθρωποι"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "8e",
+          "member_start": 14624,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0019",
+          "shared_tokens": [
+            "αδικουντι",
+            "ανθρωποι"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "8e",
+          "member_start": 14624,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0020",
+          "shared_tokens": [
+            "επεξιεναι",
+            "πατρι",
+            "τεκμηριον",
+            "φονου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "9a-9b",
+          "member_start": 15000,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0022",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "9c",
+          "member_start": 15920,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0023",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "9d",
+          "member_start": 16426,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0024",
+          "shared_tokens": [
+            "ανοσιον",
+            "εναντιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "9",
+          "member_start": 16863,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0025",
+          "shared_tokens": [
+            "ετερα",
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "10a",
+          "member_start": 17257,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0026",
+          "shared_tokens": [
+            "εναντιον",
+            "λεγε"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "10b",
+          "member_start": 17738,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0027",
+          "shared_tokens": [
+            "θεων",
+            "οσιον",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "10c-10e",
+          "member_start": 18214,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0028",
+          "shared_tokens": [
+            "θεων",
+            "οσιον",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "10c-10e",
+          "member_start": 18214,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0029",
+          "shared_tokens": [
+            "θεων",
+            "οσιον",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "10d-11a",
+          "member_start": 18676,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0030",
+          "shared_tokens": [
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "10e-11a",
+          "member_start": 19167,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0031",
+          "shared_tokens": [
+            "ανοσιον",
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11b",
+          "member_start": 20100,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0032",
+          "shared_tokens": [
+            "ανοσιον",
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11b-11c",
+          "member_start": 20100,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0033",
+          "shared_tokens": [
+            "εοικε",
+            "οσιον",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11d-11e",
+          "member_start": 21046,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0034",
+          "shared_tokens": [
+            "οσιον",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11",
+          "member_start": 21457,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0035",
+          "shared_tokens": [
+            "θεων",
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "12",
+          "member_start": 23700,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0036",
+          "shared_tokens": [
+            "θεων",
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "12e-13a",
+          "member_start": 23700,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0037",
+          "shared_tokens": [
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13b-13c",
+          "member_start": 24602,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0038",
+          "shared_tokens": [
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13b-13c",
+          "member_start": 24602,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0043",
+          "shared_tokens": [
+            "ειπον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14c-14d",
+          "member_start": 27353,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0049",
+          "shared_tokens": [
+            "εοικε",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0050",
+          "shared_tokens": [
+            "εοικε",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0051",
+          "shared_tokens": [
+            "εοικε",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0052",
+          "shared_tokens": [
+            "εοικε",
+            "ετερα",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b-15c",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0053",
+          "shared_tokens": [
+            "ετερα",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15c",
+          "member_start": 29719,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0054",
+          "shared_tokens": [
+            "ετερα",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15c",
+          "member_start": 29719,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0055",
+          "shared_tokens": [
+            "αλλοσ",
+            "ανοσιον",
+            "οσιον",
+            "πατερα",
+            "φονου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15d",
+          "member_start": 30182,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0056",
+          "shared_tokens": [
+            "αλλοσ",
+            "ανοσιον",
+            "οσιον",
+            "πατερα",
+            "φονου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15d",
+          "member_start": 30182,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0057",
+          "shared_tokens": [
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15e-16a",
+          "member_start": 30631,
+          "member_status": "accepted",
+          "neg_cue": true
+        }
+      ]
+    },
+    {
+      "seed": "claim_euthyphro_0014",
+      "seed_kind": "definition",
+      "seed_status": "accepted",
+      "seed_final": "left_standing",
+      "seed_span": "6e-7a",
+      "seed_start": 10025,
+      "seed_tokens": [
+        "αληθωσ",
+        "αλλοσ",
+        "ανθρωποσ",
+        "ανοσια",
+        "ανοσιον",
+        "ανοσιοσ",
+        "ανοσιω",
+        "απεκρινω",
+        "αποβλεπων",
+        "αποκρινασθαι",
+        "αυτην",
+        "βουλομαι",
+        "διδαξον",
+        "εζητουν",
+        "ειρησθαι",
+        "εκεινην",
+        "εναντιωτατον",
+        "επεκδιδαξεισ",
+        "επισκεψωμεθα",
+        "θεοισ",
+        "θεομισεσ",
+        "θεομισησ",
+        "θεοφιλεσ",
+        "θεοφιλησ",
+        "ιδεαν",
+        "λεγομεν",
+        "μνημονευεισ",
+        "οιδα",
+        "οσια",
+        "οσιον",
+        "οσιοσ",
+        "ουπω",
+        "παγκαλωσ",
+        "παραδειγματι",
+        "πραττη",
+        "προσφιλεσ",
+        "τοινυν",
+        "φερε",
+        "φρασω",
+        "χρωμενοσ"
+      ],
+      "seed_greek_terms_tokens": [
+        "ανοσιον",
+        "θεοισ",
+        "οσιον",
+        "προσφιλεσ"
+      ],
+      "flagged": true,
+      "members": [
+        {
+          "member": "claim_euthyphro_0002",
+          "shared_tokens": [
+            "αλλοσ",
+            "ανοσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "4e-5c",
+          "member_start": 5416,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0005",
+          "shared_tokens": [
+            "ανοσιον",
+            "ιδεαν",
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0006",
+          "shared_tokens": [
+            "ανοσιον",
+            "ιδεαν",
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0007",
+          "shared_tokens": [
+            "αλλοσ",
+            "ανοσιον",
+            "ιδεαν",
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d-6a",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0008",
+          "shared_tokens": [
+            "αλλοσ",
+            "ανοσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5e-6a",
+          "member_start": 7756,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0009",
+          "shared_tokens": [
+            "αληθωσ",
+            "θεοισ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6a-6b",
+          "member_start": 8118,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0010",
+          "shared_tokens": [
+            "αληθωσ",
+            "θεοισ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6b",
+          "member_start": 8628,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0011",
+          "shared_tokens": [
+            "αληθωσ",
+            "θεοισ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6b",
+          "member_start": 8628,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0012",
+          "shared_tokens": [
+            "οσια",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6c-6d",
+          "member_start": 9086,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0013",
+          "shared_tokens": [
+            "αλλοσ",
+            "ανοσια",
+            "αποβλεπων",
+            "αυτην",
+            "βουλομαι",
+            "διδαξον",
+            "εκεινην",
+            "θεοισ",
+            "ιδεαν",
+            "μνημονευεισ",
+            "οσια",
+            "οσιον",
+            "παραδειγματι",
+            "πραττη",
+            "προσφιλεσ",
+            "τοινυν",
+            "φρασω",
+            "χρωμενοσ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6d-6e",
+          "member_start": 9546,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0017",
+          "shared_tokens": [
+            "ανοσια",
+            "ανοσιον",
+            "απεκρινω",
+            "θεομισεσ",
+            "θεοφιλεσ",
+            "οσια",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "8a",
+          "member_start": 12705,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0022",
+          "shared_tokens": [
+            "ανοσιον",
+            "θεομισεσ",
+            "θεοφιλεσ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "9c",
+          "member_start": 15920,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0023",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "9d",
+          "member_start": 16426,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0024",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "9",
+          "member_start": 16863,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0025",
+          "shared_tokens": [
+            "λεγομεν",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "10a",
+          "member_start": 17257,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0027",
+          "shared_tokens": [
+            "βουλομαι",
+            "θεοφιλεσ",
+            "λεγομεν",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "10c-10e",
+          "member_start": 18214,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0028",
+          "shared_tokens": [
+            "βουλομαι",
+            "θεοφιλεσ",
+            "λεγομεν",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "10c-10e",
+          "member_start": 18214,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0029",
+          "shared_tokens": [
+            "θεοφιλεσ",
+            "λεγομεν",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "10d-11a",
+          "member_start": 18676,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0030",
+          "shared_tokens": [
+            "θεοφιλεσ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "10e-11a",
+          "member_start": 19167,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0031",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον",
+            "ουπω"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11b",
+          "member_start": 20100,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0032",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον",
+            "ουπω"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11b-11c",
+          "member_start": 20100,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0035",
+          "shared_tokens": [
+            "οσια",
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "12",
+          "member_start": 23700,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0036",
+          "shared_tokens": [
+            "λεγομεν",
+            "οσια",
+            "οσιον",
+            "ουπω",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "12e-13a",
+          "member_start": 23700,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0042",
+          "shared_tokens": [
+            "θεοισ",
+            "οσια"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14b",
+          "member_start": 26900,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0043",
+          "shared_tokens": [
+            "απεκρινω",
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14c-14d",
+          "member_start": 27353,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0044",
+          "shared_tokens": [
+            "απεκρινω",
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14c",
+          "member_start": 27353,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0049",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0050",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0051",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0052",
+          "shared_tokens": [
+            "θεοισ",
+            "θεοφιλεσ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b-15c",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0053",
+          "shared_tokens": [
+            "θεοισ",
+            "θεοφιλεσ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15c",
+          "member_start": 29719,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0054",
+          "shared_tokens": [
+            "θεοισ",
+            "θεοφιλεσ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15c",
+          "member_start": 29719,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0055",
+          "shared_tokens": [
+            "αλλοσ",
+            "ανοσιον",
+            "οιδα",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15d",
+          "member_start": 30182,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0056",
+          "shared_tokens": [
+            "αλλοσ",
+            "ανοσιον",
+            "οιδα",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15d",
+          "member_start": 30182,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0057",
+          "shared_tokens": [
+            "οσια",
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15e-16a",
+          "member_start": 30631,
+          "member_status": "accepted",
+          "neg_cue": true
+        }
+      ]
+    },
+    {
+      "seed": "claim_euthyphro_0023",
+      "seed_kind": "definition",
+      "seed_status": "accepted",
+      "seed_final": "posed_only",
+      "seed_span": "9d",
+      "seed_start": 16426,
+      "seed_tokens": [
+        "αδικον",
+        "αμφοτερα",
+        "ανοσιον",
+        "ανοσιου",
+        "διδαξεισ",
+        "επανορθουμεθα",
+        "ηγεισθων",
+        "θεοι",
+        "κωλυει",
+        "μισουντων",
+        "μισωσιν",
+        "οσιον",
+        "οσιου",
+        "ουδετερα",
+        "ραστα",
+        "σκοπει",
+        "υπεσχου",
+        "υποθεμενοσ",
+        "φιλωσιν",
+        "ωρισθαι"
+      ],
+      "seed_greek_terms_tokens": [
+        "αμφοτερα",
+        "ανοσιον",
+        "οσιον",
+        "ουδετερα"
+      ],
+      "flagged": true,
+      "members": [
+        {
+          "member": "claim_euthyphro_0002",
+          "shared_tokens": [
+            "ανοσιον",
+            "ανοσιου",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "4e-5c",
+          "member_start": 5416,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0003",
+          "shared_tokens": [
+            "ανοσιον",
+            "ανοσιου",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "4e-5a",
+          "member_start": 5416,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0005",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0006",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0007",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d-6a",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0014",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6e-7a",
+          "member_start": 10025,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0015",
+          "shared_tokens": [
+            "αδικον",
+            "θεοι",
+            "σκοπει"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "7b-7e",
+          "member_start": 10927,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0016",
+          "shared_tokens": [
+            "αδικον",
+            "θεοι",
+            "σκοπει"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "7b-7e",
+          "member_start": 10927,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0017",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "8a",
+          "member_start": 12705,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0022",
+          "shared_tokens": [
+            "αδικον",
+            "ανοσιον",
+            "θεοι",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "9c",
+          "member_start": 15920,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0024",
+          "shared_tokens": [
+            "ανοσιον",
+            "θεοι",
+            "μισωσιν",
+            "οσιον",
+            "φιλωσιν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "9",
+          "member_start": 16863,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0027",
+          "shared_tokens": [
+            "οσιον",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "10c-10e",
+          "member_start": 18214,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0028",
+          "shared_tokens": [
+            "οσιον",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "10c-10e",
+          "member_start": 18214,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0029",
+          "shared_tokens": [
+            "οσιον",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "10d-11a",
+          "member_start": 18676,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0031",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11b",
+          "member_start": 20100,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0032",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11b-11c",
+          "member_start": 20100,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0033",
+          "shared_tokens": [
+            "οσιον",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11d-11e",
+          "member_start": 21046,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0034",
+          "shared_tokens": [
+            "οσιον",
+            "οσιου"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11",
+          "member_start": 21457,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0055",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15d",
+          "member_start": 30182,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0056",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15d",
+          "member_start": 30182,
+          "member_status": "accepted",
+          "neg_cue": false
+        }
+      ]
+    },
+    {
+      "seed": "claim_euthyphro_0024",
+      "seed_kind": "definition",
+      "seed_status": "accepted",
+      "seed_final": "left_standing",
+      "seed_span": "9",
+      "seed_start": 16863,
+      "seed_tokens": [
+        "ανοσιον",
+        "αποδεχωμεθα",
+        "εναντιον",
+        "επισκοπωμεν",
+        "εωμεν",
+        "θεοι",
+        "λεγεσθαι",
+        "λεγεται",
+        "μισωσιν",
+        "νυνι",
+        "οσιον",
+        "σκεπτεον",
+        "συγχωρουντεσ",
+        "φαιην",
+        "φιλωσιν"
+      ],
+      "seed_greek_terms_tokens": [
+        "ανοσιον",
+        "οσιον"
+      ],
+      "flagged": true,
+      "members": [
+        {
+          "member": "claim_euthyphro_0002",
+          "shared_tokens": [
+            "ανοσιον",
+            "φαιην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "4e-5c",
+          "member_start": 5416,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0003",
+          "shared_tokens": [
+            "ανοσιον",
+            "φαιην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "4e-5a",
+          "member_start": 5416,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0005",
+          "shared_tokens": [
+            "ανοσιον",
+            "εναντιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0006",
+          "shared_tokens": [
+            "ανοσιον",
+            "εναντιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0007",
+          "shared_tokens": [
+            "ανοσιον",
+            "εναντιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d-6a",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0012",
+          "shared_tokens": [
+            "νυνι",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6c-6d",
+          "member_start": 9086,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0014",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6e-7a",
+          "member_start": 10025,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0017",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "8a",
+          "member_start": 12705,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0022",
+          "shared_tokens": [
+            "ανοσιον",
+            "θεοι",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "9c",
+          "member_start": 15920,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0023",
+          "shared_tokens": [
+            "ανοσιον",
+            "θεοι",
+            "μισωσιν",
+            "οσιον",
+            "φιλωσιν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "9d",
+          "member_start": 16426,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0031",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11b",
+          "member_start": 20100,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0032",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11b-11c",
+          "member_start": 20100,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0052",
+          "shared_tokens": [
+            "οσιον",
+            "σκεπτεον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b-15c",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0053",
+          "shared_tokens": [
+            "οσιον",
+            "σκεπτεον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15c",
+          "member_start": 29719,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0054",
+          "shared_tokens": [
+            "οσιον",
+            "σκεπτεον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15c",
+          "member_start": 29719,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0055",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15d",
+          "member_start": 30182,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0056",
+          "shared_tokens": [
+            "ανοσιον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15d",
+          "member_start": 30182,
+          "member_status": "accepted",
+          "neg_cue": false
+        }
+      ]
+    },
+    {
+      "seed": "claim_euthyphro_0035",
+      "seed_kind": "definition",
+      "seed_status": "accepted",
+      "seed_final": "left_standing",
+      "seed_span": "12",
+      "seed_start": 23700,
+      "seed_tokens": [
+        "αδικειν",
+        "ασεβειασ",
+        "γραφεσθαι",
+        "διδαξαι",
+        "δικαιου",
+        "εμοιγε",
+        "ευσεβεσ",
+        "ευσεβη",
+        "θεραπειαν",
+        "θεων",
+        "λεγωμεν",
+        "λοιπον",
+        "μελητω",
+        "μεμαθηκοτασ",
+        "μεροσ",
+        "μηκεθ",
+        "οσια",
+        "οσιον",
+        "πειρω",
+        "ποιον",
+        "τοινυν",
+        "φαινη"
+      ],
+      "seed_greek_terms_tokens": [
+        "θεραπειαν"
+      ],
+      "flagged": true,
+      "members": [
+        {
+          "member": "claim_euthyphro_0002",
+          "shared_tokens": [
+            "ασεβειασ",
+            "γραφεσθαι",
+            "ευσεβεσ",
+            "ποιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "4e-5c",
+          "member_start": 5416,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0004",
+          "shared_tokens": [
+            "ασεβειασ",
+            "γραφεσθαι",
+            "ευσεβεσ",
+            "ποιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5a-5c",
+          "member_start": 5832,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0005",
+          "shared_tokens": [
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0006",
+          "shared_tokens": [
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "5d",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0007",
+          "shared_tokens": [
+            "θεων",
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d-6a",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0012",
+          "shared_tokens": [
+            "διδαξαι",
+            "οσια",
+            "οσιον",
+            "πειρω"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6c-6d",
+          "member_start": 9086,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0013",
+          "shared_tokens": [
+            "διδαξαι",
+            "οσια",
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6d-6e",
+          "member_start": 9546,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0014",
+          "shared_tokens": [
+            "οσια",
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6e-7a",
+          "member_start": 10025,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0017",
+          "shared_tokens": [
+            "θεων",
+            "οσια",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "8a",
+          "member_start": 12705,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0025",
+          "shared_tokens": [
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "10a",
+          "member_start": 17257,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0027",
+          "shared_tokens": [
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "10c-10e",
+          "member_start": 18214,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0028",
+          "shared_tokens": [
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "10c-10e",
+          "member_start": 18214,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0029",
+          "shared_tokens": [
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "10d-11a",
+          "member_start": 18676,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0030",
+          "shared_tokens": [
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "10e-11a",
+          "member_start": 19167,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0031",
+          "shared_tokens": [
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "11b",
+          "member_start": 20100,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0032",
+          "shared_tokens": [
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "11b-11c",
+          "member_start": 20100,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0033",
+          "shared_tokens": [
+            "εμοιγε",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "11d-11e",
+          "member_start": 21046,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0034",
+          "shared_tokens": [
+            "εμοιγε",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11",
+          "member_start": 21457,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0036",
+          "shared_tokens": [
+            "αδικειν",
+            "ασεβειασ",
+            "γραφεσθαι",
+            "διδαξαι",
+            "δικαιου",
+            "εμοιγε",
+            "ευσεβεσ",
+            "ευσεβη",
+            "θεραπειαν",
+            "θεων",
+            "λεγωμεν",
+            "λοιπον",
+            "μελητω",
+            "μεμαθηκοτασ",
+            "μεροσ",
+            "μηκεθ",
+            "οσια",
+            "οσιον",
+            "πειρω",
+            "ποιον",
+            "τοινυν",
+            "φαινη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "12e-13a",
+          "member_start": 23700,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0037",
+          "shared_tokens": [
+            "εμοιγε",
+            "θεραπειαν",
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13b-13c",
+          "member_start": 24602,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0038",
+          "shared_tokens": [
+            "εμοιγε",
+            "θεραπειαν",
+            "θεων",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13b-13c",
+          "member_start": 24602,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0039",
+          "shared_tokens": [
+            "θεραπειαν",
+            "θεων"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13d",
+          "member_start": 25508,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0040",
+          "shared_tokens": [
+            "θεραπειαν",
+            "θεων"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13d",
+          "member_start": 25508,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0043",
+          "shared_tokens": [
+            "διδαξαι",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "14c-14d",
+          "member_start": 27353,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0044",
+          "shared_tokens": [
+            "διδαξαι",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "14c",
+          "member_start": 27353,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0057",
+          "shared_tokens": [
+            "οσια",
+            "οσιον",
+            "τοινυν"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "15e-16a",
+          "member_start": 30631,
+          "member_status": "accepted",
+          "neg_cue": true
+        }
+      ]
+    },
+    {
+      "seed": "claim_euthyphro_0039",
+      "seed_kind": "definition",
+      "seed_status": "accepted",
+      "seed_final": "unresolved_challenge",
+      "seed_span": "13d",
+      "seed_start": 25508,
+      "seed_tokens": [
+        "απεργασιαν",
+        "δεσποτασ",
+        "δουλοι",
+        "ειεν",
+        "εργου",
+        "εχοισ",
+        "ηγουμενοσ",
+        "ηνπερ",
+        "θεοισ",
+        "θεραπεια",
+        "θεραπειαν",
+        "θεραπευουσιν",
+        "θεων",
+        "ιατροισ",
+        "λεγοισ",
+        "μανθανω",
+        "οιει",
+        "οσιοτησ",
+        "ουσα",
+        "τοιαυτην",
+        "υγιειασ",
+        "υπηρετικη"
+      ],
+      "seed_greek_terms_tokens": [
+        "δεσποτασ",
+        "δουλοι",
+        "θεραπεια",
+        "θεραπευουσιν",
+        "θεων"
+      ],
+      "flagged": false,
+      "members": [
+        {
+          "member": "claim_euthyphro_0009",
+          "shared_tokens": [
+            "θεοισ",
+            "θεων"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6a-6b",
+          "member_start": 8118,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0035",
+          "shared_tokens": [
+            "θεραπειαν",
+            "θεων"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "12",
+          "member_start": 23700,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0036",
+          "shared_tokens": [
+            "θεραπεια",
+            "θεραπειαν",
+            "θεων",
+            "τοιαυτην"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "12e-13a",
+          "member_start": 23700,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0037",
+          "shared_tokens": [
+            "θεραπεια",
+            "θεραπειαν",
+            "θεων",
+            "οιει",
+            "οσιοτησ",
+            "ουσα"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13b-13c",
+          "member_start": 24602,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0038",
+          "shared_tokens": [
+            "θεραπεια",
+            "θεραπειαν",
+            "θεων",
+            "οιει",
+            "οσιοτησ",
+            "ουσα"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13b-13c",
+          "member_start": 24602,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0040",
+          "shared_tokens": [
+            "απεργασιαν",
+            "δεσποτασ",
+            "δουλοι",
+            "ειεν",
+            "εργου",
+            "εχοισ",
+            "ηγουμενοσ",
+            "ηνπερ",
+            "θεοισ",
+            "θεραπεια",
+            "θεραπειαν",
+            "θεραπευουσιν",
+            "θεων",
+            "ιατροισ",
+            "λεγοισ",
+            "μανθανω",
+            "οιει",
+            "οσιοτησ",
+            "ουσα",
+            "τοιαυτην",
+            "υγιειασ",
+            "υπηρετικη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13d",
+          "member_start": 25508,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0041",
+          "shared_tokens": [
+            "απεργασιαν",
+            "εργου",
+            "θεοισ",
+            "υπηρετικη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13e-14a",
+          "member_start": 25960,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0042",
+          "shared_tokens": [
+            "εργου",
+            "θεοισ"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "14b",
+          "member_start": 26900,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0043",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιοτησ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14c-14d",
+          "member_start": 27353,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0045",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιοτησ",
+            "ουσα"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14",
+          "member_start": 28240,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0046",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιοτησ",
+            "ουσα"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "14",
+          "member_start": 28240,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0047",
+          "shared_tokens": [
+            "θεοισ",
+            "οιει"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "15a",
+          "member_start": 28759,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0048",
+          "shared_tokens": [
+            "θεοισ",
+            "οιει"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15a",
+          "member_start": 28759,
+          "member_status": "accepted",
+          "neg_cue": false
+        }
+      ]
+    },
+    {
+      "seed": "claim_euthyphro_0042",
+      "seed_kind": "definition",
+      "seed_status": "accepted",
+      "seed_final": "left_standing",
+      "seed_span": "14b",
+      "seed_start": 26900,
+      "seed_tokens": [
+        "ακριβωσ",
+        "ανατρεπει",
+        "απαντα",
+        "απλωσ",
+        "απολλυσιν",
+        "ασεβη",
+        "βραχυτερων",
+        "εβουλου",
+        "ειπεσ",
+        "εναντια",
+        "επιστηται",
+        "εργου",
+        "ευχομενοσ",
+        "ηρωτων",
+        "θεοισ",
+        "θυων",
+        "ιδιουσ",
+        "κεφαλαιον",
+        "κεχαρισμενα",
+        "κεχαρισμενων",
+        "κοινα",
+        "μαθειν",
+        "οικουσ",
+        "οσια",
+        "πλειονοσ",
+        "πολεων",
+        "πραττειν",
+        "σωζει",
+        "ταυτ",
+        "τοδε"
+      ],
+      "seed_greek_terms_tokens": [
+        "ασεβη",
+        "ευχομενοσ",
+        "θυων",
+        "κεχαρισμενα",
+        "οσια"
+      ],
+      "flagged": false,
+      "members": [
+        {
+          "member": "claim_euthyphro_0009",
+          "shared_tokens": [
+            "εναντια",
+            "θεοισ"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "6a-6b",
+          "member_start": 8118,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0012",
+          "shared_tokens": [
+            "ειπεσ",
+            "οσια"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6c-6d",
+          "member_start": 9086,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0013",
+          "shared_tokens": [
+            "ειπεσ",
+            "θεοισ",
+            "οσια"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6d-6e",
+          "member_start": 9546,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0014",
+          "shared_tokens": [
+            "θεοισ",
+            "οσια"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6e-7a",
+          "member_start": 10025,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0017",
+          "shared_tokens": [
+            "ηρωτων",
+            "οσια",
+            "ταυτ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "8a",
+          "member_start": 12705,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0039",
+          "shared_tokens": [
+            "εργου",
+            "θεοισ"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "13d",
+          "member_start": 25508,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0040",
+          "shared_tokens": [
+            "εργου",
+            "θεοισ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13d",
+          "member_start": 25508,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0041",
+          "shared_tokens": [
+            "εργου",
+            "θεοισ",
+            "κεφαλαιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13e-14a",
+          "member_start": 25960,
+          "member_status": "accepted",
+          "neg_cue": false
+        }
+      ]
+    },
+    {
+      "seed": "claim_euthyphro_0043",
+      "seed_kind": "definition",
+      "seed_status": "accepted",
+      "seed_final": "left_standing",
+      "seed_span": "14c-14d",
+      "seed_start": 27353,
+      "seed_tokens": [
+        "αιτειν",
+        "αιτησεωσ",
+        "ακολουθειν",
+        "απεκρινω",
+        "απετραπου",
+        "δεομεθα",
+        "δηλοσ",
+        "διδαξαι",
+        "διδοναι",
+        "δοσεωσ",
+        "δωρεισθαι",
+        "ειμι",
+        "ειπησ",
+        "ειπον",
+        "εκεινοισ",
+        "εκεινοσ",
+        "εκεινων",
+        "εμεμαθηκη",
+        "επιθυμητησ",
+        "επιστημη",
+        "επιστημην",
+        "ερωμενω",
+        "ερωντα",
+        "ευχεσθαι",
+        "ησθα",
+        "θεοισ",
+        "θεουσ",
+        "θυειν",
+        "λεξον",
+        "μαλα",
+        "οσιον",
+        "οσιοτησ",
+        "οσιοτητα",
+        "ουχι",
+        "πεσειται",
+        "προθυμοσ",
+        "προσεχω",
+        "σοφιασ",
+        "συνηκασ",
+        "υπαγη",
+        "υπηρεσια",
+        "φιλε",
+        "χαμαι"
+      ],
+      "seed_greek_terms_tokens": [
+        "αιτησεωσ",
+        "δοσεωσ",
+        "επιστημη",
+        "θεοισ",
+        "οσιοτησ"
+      ],
+      "flagged": true,
+      "members": [
+        {
+          "member": "claim_euthyphro_0002",
+          "shared_tokens": [
+            "εκεινοσ",
+            "φιλε"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "4e-5c",
+          "member_start": 5416,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0004",
+          "shared_tokens": [
+            "εκεινοσ",
+            "φιλε"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "5a-5c",
+          "member_start": 5832,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0007",
+          "shared_tokens": [
+            "ειπον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d-6a",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0012",
+          "shared_tokens": [
+            "διδαξαι",
+            "ειπον",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "6c-6d",
+          "member_start": 9086,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0013",
+          "shared_tokens": [
+            "διδαξαι",
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6d-6e",
+          "member_start": 9546,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0014",
+          "shared_tokens": [
+            "απεκρινω",
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6e-7a",
+          "member_start": 10025,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0017",
+          "shared_tokens": [
+            "απεκρινω",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "8a",
+          "member_start": 12705,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0020",
+          "shared_tokens": [
+            "εκεινοισ",
+            "φιλε"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "9a-9b",
+          "member_start": 15000,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0027",
+          "shared_tokens": [
+            "οσιον",
+            "φιλε"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "10c-10e",
+          "member_start": 18214,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0028",
+          "shared_tokens": [
+            "οσιον",
+            "φιλε"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "10c-10e",
+          "member_start": 18214,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0029",
+          "shared_tokens": [
+            "οσιον",
+            "φιλε"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "10d-11a",
+          "member_start": 18676,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0030",
+          "shared_tokens": [
+            "οσιον",
+            "φιλε"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "10e-11a",
+          "member_start": 19167,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0032",
+          "shared_tokens": [
+            "ειμι",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "11b-11c",
+          "member_start": 20100,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0033",
+          "shared_tokens": [
+            "ειμι",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11d-11e",
+          "member_start": 21046,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0035",
+          "shared_tokens": [
+            "διδαξαι",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "12",
+          "member_start": 23700,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0036",
+          "shared_tokens": [
+            "διδαξαι",
+            "ειμι",
+            "θεουσ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "12e-13a",
+          "member_start": 23700,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0037",
+          "shared_tokens": [
+            "θεουσ",
+            "οσιον",
+            "οσιοτησ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13b-13c",
+          "member_start": 24602,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0038",
+          "shared_tokens": [
+            "θεουσ",
+            "οσιον",
+            "οσιοτησ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13b-13c",
+          "member_start": 24602,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0039",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιοτησ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13d",
+          "member_start": 25508,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0040",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιοτησ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13d",
+          "member_start": 25508,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0041",
+          "shared_tokens": [
+            "ειπον",
+            "θεοισ",
+            "φιλε"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13e-14a",
+          "member_start": 25960,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0044",
+          "shared_tokens": [
+            "αιτειν",
+            "ακολουθειν",
+            "απεκρινω",
+            "απετραπου",
+            "δηλοσ",
+            "διδαξαι",
+            "δωρεισθαι",
+            "εκεινοσ",
+            "εμεμαθηκη",
+            "επιστημην",
+            "ερωμενω",
+            "ερωντα",
+            "ευχεσθαι",
+            "ησθα",
+            "θεοισ",
+            "θεουσ",
+            "θυειν",
+            "μαλα",
+            "οσιον",
+            "οσιοτητα",
+            "ουχι",
+            "προθυμοσ",
+            "υπαγη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14c",
+          "member_start": 27353,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0045",
+          "shared_tokens": [
+            "διδοναι",
+            "εκεινοισ",
+            "θεοισ",
+            "οσιοτησ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14",
+          "member_start": 28240,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0046",
+          "shared_tokens": [
+            "διδοναι",
+            "εκεινοισ",
+            "θεοισ",
+            "οσιοτησ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14",
+          "member_start": 28240,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0047",
+          "shared_tokens": [
+            "θεοισ",
+            "θεουσ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15a",
+          "member_start": 28759,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0048",
+          "shared_tokens": [
+            "θεοισ",
+            "θεουσ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15a",
+          "member_start": 28759,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0049",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον",
+            "ουχι"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0050",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον",
+            "ουχι"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0051",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον",
+            "ουχι"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0052",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον",
+            "ουχι"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b-15c",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0053",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15c",
+          "member_start": 29719,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0054",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15c",
+          "member_start": 29719,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0055",
+          "shared_tokens": [
+            "ειπησ",
+            "θεουσ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15d",
+          "member_start": 30182,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0056",
+          "shared_tokens": [
+            "ειπησ",
+            "θεουσ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "15d",
+          "member_start": 30182,
+          "member_status": "accepted",
+          "neg_cue": false
+        }
+      ]
+    },
+    {
+      "seed": "claim_euthyphro_0044",
+      "seed_kind": "definition",
+      "seed_status": "accepted",
+      "seed_final": "left_standing",
+      "seed_span": "14c",
+      "seed_start": 27353,
+      "seed_tokens": [
+        "αιτειν",
+        "ακολουθειν",
+        "απεκρινω",
+        "απετραπου",
+        "δηλοσ",
+        "διδαξαι",
+        "δωρεισθαι",
+        "εκεινοσ",
+        "εμεμαθηκη",
+        "επιστημην",
+        "ερωμενω",
+        "ερωντα",
+        "ευχεσθαι",
+        "ησθα",
+        "θεοισ",
+        "θεουσ",
+        "θυειν",
+        "μαλα",
+        "οσιον",
+        "οσιοτητα",
+        "ουχι",
+        "προθυμοσ",
+        "υπαγη"
+      ],
+      "seed_greek_terms_tokens": [
+        "αιτειν",
+        "δωρεισθαι",
+        "ευχεσθαι",
+        "θυειν"
+      ],
+      "flagged": true,
+      "members": [
+        {
+          "member": "claim_euthyphro_0012",
+          "shared_tokens": [
+            "διδαξαι",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "6c-6d",
+          "member_start": 9086,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0013",
+          "shared_tokens": [
+            "διδαξαι",
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "6d-6e",
+          "member_start": 9546,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0014",
+          "shared_tokens": [
+            "απεκρινω",
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6e-7a",
+          "member_start": 10025,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0017",
+          "shared_tokens": [
+            "απεκρινω",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "8a",
+          "member_start": 12705,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0035",
+          "shared_tokens": [
+            "διδαξαι",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "12",
+          "member_start": 23700,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0036",
+          "shared_tokens": [
+            "διδαξαι",
+            "θεουσ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "12e-13a",
+          "member_start": 23700,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0037",
+          "shared_tokens": [
+            "θεουσ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "13b-13c",
+          "member_start": 24602,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0038",
+          "shared_tokens": [
+            "θεουσ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "13b-13c",
+          "member_start": 24602,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0043",
+          "shared_tokens": [
+            "αιτειν",
+            "ακολουθειν",
+            "απεκρινω",
+            "απετραπου",
+            "δηλοσ",
+            "διδαξαι",
+            "δωρεισθαι",
+            "εκεινοσ",
+            "εμεμαθηκη",
+            "επιστημην",
+            "ερωμενω",
+            "ερωντα",
+            "ευχεσθαι",
+            "ησθα",
+            "θεοισ",
+            "θεουσ",
+            "θυειν",
+            "μαλα",
+            "οσιον",
+            "οσιοτητα",
+            "ουχι",
+            "προθυμοσ",
+            "υπαγη"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14c-14d",
+          "member_start": 27353,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0047",
+          "shared_tokens": [
+            "θεοισ",
+            "θεουσ"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "15a",
+          "member_start": 28759,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0048",
+          "shared_tokens": [
+            "θεοισ",
+            "θεουσ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15a",
+          "member_start": 28759,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0049",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον",
+            "ουχι"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "15b",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0050",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον",
+            "ουχι"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "15b",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0051",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον",
+            "ουχι"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "15b",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0052",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον",
+            "ουχι"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b-15c",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0053",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "15c",
+          "member_start": 29719,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0054",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "15c",
+          "member_start": 29719,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0055",
+          "shared_tokens": [
+            "θεουσ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15d",
+          "member_start": 30182,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0056",
+          "shared_tokens": [
+            "θεουσ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "15d",
+          "member_start": 30182,
+          "member_status": "accepted",
+          "neg_cue": false
+        }
+      ]
+    },
+    {
+      "seed": "claim_euthyphro_0045",
+      "seed_kind": "definition",
+      "seed_status": "accepted",
+      "seed_final": "left_standing",
+      "seed_span": "14",
+      "seed_start": 28240,
+      "seed_tokens": [
+        "αληθεσ",
+        "αλληλων",
+        "ανθρωποισ",
+        "αντιδωρεισθαι",
+        "δειται",
+        "δεομενοι",
+        "διδοασι",
+        "διδοναι",
+        "διδοντα",
+        "δωροφορειν",
+        "δωρων",
+        "εκεινοι",
+        "εκεινοισ",
+        "εμοιγε",
+        "εμπορικη",
+        "ηδιον",
+        "θεοισ",
+        "λαμβανουσιν",
+        "ονομαζειν",
+        "οσιοτησ",
+        "ουσα",
+        "τεχνη",
+        "τεχνικον",
+        "τυγχανουσιν",
+        "φρασον",
+        "ωφελια"
+      ],
+      "seed_greek_terms_tokens": [
+        "ανθρωποισ",
+        "εμπορικη",
+        "θεοισ",
+        "οσιοτησ",
+        "τεχνη"
+      ],
+      "flagged": true,
+      "members": [
+        {
+          "member": "claim_euthyphro_0037",
+          "shared_tokens": [
+            "εμοιγε",
+            "οσιοτησ",
+            "ουσα",
+            "ωφελια"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13b-13c",
+          "member_start": 24602,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0038",
+          "shared_tokens": [
+            "εμοιγε",
+            "οσιοτησ",
+            "ουσα",
+            "ωφελια"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13b-13c",
+          "member_start": 24602,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0039",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιοτησ",
+            "ουσα"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13d",
+          "member_start": 25508,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0040",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιοτησ",
+            "ουσα"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13d",
+          "member_start": 25508,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0043",
+          "shared_tokens": [
+            "διδοναι",
+            "εκεινοισ",
+            "θεοισ",
+            "οσιοτησ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14c-14d",
+          "member_start": 27353,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0046",
+          "shared_tokens": [
+            "αληθεσ",
+            "αλληλων",
+            "ανθρωποισ",
+            "αντιδωρεισθαι",
+            "δειται",
+            "δεομενοι",
+            "διδοασι",
+            "διδοναι",
+            "διδοντα",
+            "δωροφορειν",
+            "δωρων",
+            "εκεινοι",
+            "εκεινοισ",
+            "εμοιγε",
+            "εμπορικη",
+            "ηδιον",
+            "θεοισ",
+            "λαμβανουσιν",
+            "ονομαζειν",
+            "οσιοτησ",
+            "ουσα",
+            "τεχνη",
+            "τεχνικον",
+            "τυγχανουσιν",
+            "φρασον",
+            "ωφελια"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14",
+          "member_start": 28240,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0047",
+          "shared_tokens": [
+            "εκεινοι",
+            "θεοισ",
+            "λαμβανουσιν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15a",
+          "member_start": 28759,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0048",
+          "shared_tokens": [
+            "εκεινοι",
+            "θεοισ",
+            "λαμβανουσιν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15a",
+          "member_start": 28759,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0052",
+          "shared_tokens": [
+            "αλληλων",
+            "θεοισ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b-15c",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0053",
+          "shared_tokens": [
+            "αλληλων",
+            "θεοισ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15c",
+          "member_start": 29719,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0054",
+          "shared_tokens": [
+            "αλληλων",
+            "θεοισ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15c",
+          "member_start": 29719,
+          "member_status": "accepted",
+          "neg_cue": false
+        }
+      ]
+    },
+    {
+      "seed": "claim_euthyphro_0048",
+      "seed_kind": "definition",
+      "seed_status": "accepted",
+      "seed_final": "left_standing",
+      "seed_span": "15a",
+      "seed_start": 28759,
+      "seed_tokens": [
+        "αγαθα",
+        "αγαθον",
+        "γερα",
+        "δηποτ",
+        "δωρα",
+        "δωσιν",
+        "εκεινοι",
+        "εμποριαν",
+        "θεοισ",
+        "θεουσ",
+        "λαμβανομεν",
+        "λαμβανουσιν",
+        "οιει",
+        "παντι",
+        "πλεονεκτουμεν",
+        "τιμη",
+        "τοσουτον",
+        "χαρισ",
+        "ωφελεισθαι",
+        "ωφελουνται"
+      ],
+      "seed_greek_terms_tokens": [
+        "γερα",
+        "δωρα",
+        "θεοισ",
+        "τιμη",
+        "χαρισ"
+      ],
+      "flagged": false,
+      "members": [
+        {
+          "member": "claim_euthyphro_0015",
+          "shared_tokens": [
+            "αγαθα",
+            "αγαθον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "7b-7e",
+          "member_start": 10927,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0016",
+          "shared_tokens": [
+            "αγαθα",
+            "αγαθον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "7b-7e",
+          "member_start": 10927,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0037",
+          "shared_tokens": [
+            "θεουσ",
+            "οιει",
+            "ωφελουνται"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "13b-13c",
+          "member_start": 24602,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0038",
+          "shared_tokens": [
+            "θεουσ",
+            "οιει",
+            "ωφελουνται"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "13b-13c",
+          "member_start": 24602,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0039",
+          "shared_tokens": [
+            "θεοισ",
+            "οιει"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13d",
+          "member_start": 25508,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0040",
+          "shared_tokens": [
+            "θεοισ",
+            "οιει"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "13d",
+          "member_start": 25508,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0043",
+          "shared_tokens": [
+            "θεοισ",
+            "θεουσ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14c-14d",
+          "member_start": 27353,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0044",
+          "shared_tokens": [
+            "θεοισ",
+            "θεουσ"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14c",
+          "member_start": 27353,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0045",
+          "shared_tokens": [
+            "εκεινοι",
+            "θεοισ",
+            "λαμβανουσιν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14",
+          "member_start": 28240,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0046",
+          "shared_tokens": [
+            "εκεινοι",
+            "θεοισ",
+            "λαμβανουσιν"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14",
+          "member_start": 28240,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0047",
+          "shared_tokens": [
+            "αγαθα",
+            "αγαθον",
+            "γερα",
+            "δηποτ",
+            "δωρα",
+            "δωσιν",
+            "εκεινοι",
+            "εμποριαν",
+            "θεοισ",
+            "θεουσ",
+            "λαμβανομεν",
+            "λαμβανουσιν",
+            "οιει",
+            "παντι",
+            "πλεονεκτουμεν",
+            "τιμη",
+            "τοσουτον",
+            "χαρισ",
+            "ωφελεισθαι",
+            "ωφελουνται"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15a",
+          "member_start": 28759,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0055",
+          "shared_tokens": [
+            "θεουσ",
+            "παντι"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "15d",
+          "member_start": 30182,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0056",
+          "shared_tokens": [
+            "θεουσ",
+            "παντι"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "15d",
+          "member_start": 30182,
+          "member_status": "accepted",
+          "neg_cue": false
+        }
+      ]
+    },
+    {
+      "seed": "claim_euthyphro_0050",
+      "seed_kind": "definition",
+      "seed_status": "accepted",
+      "seed_final": "left_standing",
+      "seed_span": "15b",
+      "seed_start": 29230,
+      "seed_tokens": [
+        "αισθανη",
+        "αιτιαση",
+        "βαδιζοντασ",
+        "βαδιζοντεσ",
+        "δαιδαλον",
+        "εοικε",
+        "θαυμαση",
+        "θεοισ",
+        "κεχαρισμενον",
+        "κυκλω",
+        "λογοι",
+        "μενοντεσ",
+        "οσιον",
+        "ουχι",
+        "περιελθων",
+        "περιιοντα",
+        "ποιων",
+        "τεχνικωτεροσ",
+        "φαινωνται",
+        "φιλον",
+        "ωφελιμον"
+      ],
+      "seed_greek_terms_tokens": [
+        "φιλον"
+      ],
+      "flagged": true,
+      "members": [
+        {
+          "member": "claim_euthyphro_0007",
+          "shared_tokens": [
+            "εοικε",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "5d-6a",
+          "member_start": 7263,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0009",
+          "shared_tokens": [
+            "εοικε",
+            "θεοισ"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "6a-6b",
+          "member_start": 8118,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0010",
+          "shared_tokens": [
+            "εοικε",
+            "θεοισ"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "6b",
+          "member_start": 8628,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0011",
+          "shared_tokens": [
+            "εοικε",
+            "θεοισ"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "6b",
+          "member_start": 8628,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0013",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "6d-6e",
+          "member_start": 9546,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0014",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "6e-7a",
+          "member_start": 10025,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0031",
+          "shared_tokens": [
+            "οσιον",
+            "φιλον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11b",
+          "member_start": 20100,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0032",
+          "shared_tokens": [
+            "οσιον",
+            "φιλον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "11b-11c",
+          "member_start": 20100,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0033",
+          "shared_tokens": [
+            "εοικε",
+            "οσιον"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "11d-11e",
+          "member_start": 21046,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0043",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον",
+            "ουχι"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "14c-14d",
+          "member_start": 27353,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0044",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον",
+            "ουχι"
+          ],
+          "greek_terms_corroborated": false,
+          "member_span": "14c",
+          "member_start": 27353,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0049",
+          "shared_tokens": [
+            "αισθανη",
+            "αιτιαση",
+            "βαδιζοντασ",
+            "βαδιζοντεσ",
+            "δαιδαλον",
+            "εοικε",
+            "θαυμαση",
+            "θεοισ",
+            "κεχαρισμενον",
+            "κυκλω",
+            "λογοι",
+            "μενοντεσ",
+            "οσιον",
+            "ουχι",
+            "περιελθων",
+            "περιιοντα",
+            "ποιων",
+            "τεχνικωτεροσ",
+            "φαινωνται",
+            "φιλον",
+            "ωφελιμον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0051",
+          "shared_tokens": [
+            "αισθανη",
+            "αιτιαση",
+            "βαδιζοντασ",
+            "βαδιζοντεσ",
+            "δαιδαλον",
+            "εοικε",
+            "θαυμαση",
+            "θεοισ",
+            "κεχαρισμενον",
+            "κυκλω",
+            "λογοι",
+            "μενοντεσ",
+            "οσιον",
+            "ουχι",
+            "περιελθων",
+            "περιιοντα",
+            "ποιων",
+            "τεχνικωτεροσ",
+            "φαινωνται",
+            "φιλον",
+            "ωφελιμον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0052",
+          "shared_tokens": [
+            "αισθανη",
+            "αιτιαση",
+            "βαδιζοντασ",
+            "βαδιζοντεσ",
+            "δαιδαλον",
+            "εοικε",
+            "θαυμαση",
+            "θεοισ",
+            "κεχαρισμενον",
+            "κυκλω",
+            "λογοι",
+            "μενοντεσ",
+            "οσιον",
+            "ουχι",
+            "περιελθων",
+            "περιιοντα",
+            "ποιων",
+            "τεχνικωτεροσ",
+            "φαινωνται",
+            "φιλον",
+            "ωφελιμον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15b-15c",
+          "member_start": 29230,
+          "member_status": "accepted",
+          "neg_cue": false
+        },
+        {
+          "member": "claim_euthyphro_0053",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον",
+            "φιλον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15c",
+          "member_start": 29719,
+          "member_status": "accepted",
+          "neg_cue": true
+        },
+        {
+          "member": "claim_euthyphro_0054",
+          "shared_tokens": [
+            "θεοισ",
+            "οσιον",
+            "φιλον"
+          ],
+          "greek_terms_corroborated": true,
+          "member_span": "15c",
+          "member_start": 29719,
+          "member_status": "accepted",
+          "neg_cue": false
+        }
+      ]
+    }
+  ]
+}

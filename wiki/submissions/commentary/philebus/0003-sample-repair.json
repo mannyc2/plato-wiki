@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "philebus",
+  "source_path": "scratch/commentary/sample-repairs/philebus/final-sample.json",
+  "source_sha256": "6a9396e2488417b0b991aa32c743e8f58b8d5e28d6753e2180fbf6d388d85d0e",
+  "target_path": "wiki/commentary/philebus.md",
+  "target_sha256_before": "10b71f58731064978a0d7cda8e0e7d6148c34beb1444670adf6de917b0766fb7",
+  "target_sha256_after": "97bbf3a57ccd668aa191badb40bc3cc721c102fe45f32273012311b66f3aa9cb",
+  "applied_at": "2026-08-21T14:53:32.901Z",
+  "applied_ids": [
+    "comm_philebus_0006",
+    "comm_philebus_0007",
+    "comm_philebus_0013"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "philebus",
+    "ledger": {
+      "path": "wiki/commentary/philebus.md",
+      "sha256": "10b71f58731064978a0d7cda8e0e7d6148c34beb1444670adf6de917b0766fb7"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-philebus-final-sample",
+      "reviewed_on": "2026-08-21",
+      "rationale": "Final sample isolates three accepted blocks with unsupported or under-supported checkable assertions and binds each repair to accepted source records.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_philebus_0001",
+        "comm_philebus_0002",
+        "comm_philebus_0003",
+        "comm_philebus_0005",
+        "comm_philebus_0006",
+        "comm_philebus_0007",
+        "comm_philebus_0008",
+        "comm_philebus_0009",
+        "comm_philebus_0010",
+        "comm_philebus_0011",
+        "comm_philebus_0013",
+        "comm_philebus_0014",
+        "comm_philebus_0016",
+        "comm_philebus_0018",
+        "comm_philebus_0020"
+      ],
+      "failed_commentary_ids": [
+        "comm_philebus_0006",
+        "comm_philebus_0007",
+        "comm_philebus_0013"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_philebus_0006",
+        "title": "Testing pleasure’s claim to truth",
+        "body": "This section turns pleasure into a test of appearances. Future hopes are pictured in the soul, yet pleasures and pains can look larger or smaller when set beside one another. The inquiry also considers the view that pleasures are escapes from pain, asking us to compare these accounts rather than treat immediacy as proof.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_philebus_0031",
+            "claim_philebus_0032",
+            "claim_philebus_0039",
+            "claim_philebus_0043"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_philebus_0007",
+        "title": "Intensity Is Not Yet Value",
+        "body": "Here the inquiry tests intensity at its extremes, looking to sickness rather than health; it then widens to mixtures in body, soul, and both. By the end, laughter at a friend’s ridiculousness is traced through envy to a pleasure that carries pain. Intensity, on this reading, is evidence to examine, not a verdict of value.",
+        "cites": {
+          "observations": [
+            "obs_philebus_0191",
+            "obs_philebus_0197",
+            "obs_philebus_0221"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_philebus_0013",
+        "title": "",
+        "body": "Socrates tests the leap from one shared name to one shared value. Protarchus grants that pleasures arise from opposed conditions, while Socrates answers with the color-and-shape analogy and asks what identical element could make unlike pleasures all good. Protarchus deflects the demand rather than resolving it, leaving the claim that pleasure is the good under pressure.",
+        "cites": {
+          "observations": [
+            "obs_philebus_0010",
+            "obs_philebus_0011",
+            "obs_philebus_0013",
+            "obs_philebus_0014",
+            "obs_philebus_0015"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_philebus_0006",
+      "body": "```yaml\ncommentary_id: comm_philebus_0006\nsource_work: Philebus\nblock_kind: section\nplacement: before\ntitle: \"Testing pleasure’s claim to truth\"\nstephanus_span: 39b-44e\nsource_ref:\n  source_path: raw/plato/greek/philebus.txt\n  stephanus_span: 39b-44e\n  start_marker: 39b\n  end_marker: 44e\n  start_char: 56225\n  end_char: 67932\n  text_sha256: \"e3dc9d712a26e37ccb7f0c1de60c72d9e9772e04ce37c54257fbb8fb34d95f3b\"\nbody: \"This section puts an earlier question under pressure: can pleasures, like opinions, be true or false? I hear the movement as a warning that pleasure is not judged simply by how strongly it feels. Anticipation, comparison, and escape from pain can make an appearance seem authoritative; the promised discipline is to compare rival accounts rather than let immediacy decide.\"\ncites:\n  observations: []\n  claims: [\"claim_philebus_0023\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_philebus_0007",
+      "body": "```yaml\ncommentary_id: comm_philebus_0007\nsource_work: Philebus\nblock_kind: section\nplacement: before\ntitle: \"Intensity Is Not Yet Value\"\nstephanus_span: 45a-49e\nsource_ref:\n  source_path: raw/plato/greek/philebus.txt\n  stephanus_span: 45a-49e\n  start_marker: 45a\n  end_marker: 49e\n  start_char: 67932\n  end_char: 78038\n  text_sha256: \"e43d4b35a1a2a8da1e9358e357c85d6ff4b62e313a630a2a81eb0cd1aaed2d20\"\nbody: \"One way to hear this stretch is as a warning against treating intensity as a verdict. The strongest sensation may be bound to deprivation, pain, or confusion; even laughter can carry an uneasy mixture when it answers another person’s self-misjudgment. I read the passage as leaving us with a sharper question than “Which pleasure is greatest?”: what, exactly, are we learning to praise?\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_philebus_0013",
+      "body": "```yaml\ncommentary_id: comm_philebus_0013\nsource_work: Philebus\nblock_kind: argument\nplacement: before\nstephanus_span: 12c-13b\nsource_ref:\n  source_path: raw/plato/greek/philebus.txt\n  stephanus_span: 12c-13b\n  start_marker: 12c\n  end_marker: 13b\n  start_char: 2211\n  end_char: 4278\n  text_sha256: \"aa7ca035c9b3a2f025e460279e2a92096fc9bc360f53da3e2ce3d22966e850f3\"\nbody: \"I read this exchange as a test of the word “all,” not as an admission that pleasures themselves oppose one another. Socrates places pleasures beside opposed states; Protarchus keeps the opposition in their sources while defending the sameness of pleasure as pleasure. That distinction sharpens the challenge: can one name cover experiences arising from unlike conditions without erasing the differences that prompted the inquiry?\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

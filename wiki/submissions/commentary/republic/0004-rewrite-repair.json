@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "submission_id": "0004-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "republic",
+  "source_path": "scratch/commentary/rewrite-repairs/republic/0016-round2.json",
+  "source_sha256": "684be1d91de88cf6250aee990a78e5720a7e0ad2dffc2aa1e25328641aa78561",
+  "target_path": "wiki/commentary/republic.md",
+  "target_sha256_before": "12dfc0023a7d5792c411d7f36307217b37d302048a2e72c5db9d0997847cb152",
+  "target_sha256_after": "b22f94bd1a4d639b41201c89d66bd4c110c83e58825ab730ec5ca403f5ca350a",
+  "applied_at": "2026-08-21T21:04:36.275Z",
+  "applied_ids": [
+    "comm_republic_0016"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "republic",
+    "ledger": {
+      "path": "wiki/commentary/republic.md",
+      "sha256": "12dfc0023a7d5792c411d7f36307217b37d302048a2e72c5db9d0997847cb152"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/republic/0003-sample-repair.json",
+      "sha256": "761190f2f1cffeddee5855cdc5e6d96b2d3d228bad63336ddef2046607d988b9"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-republic-0003-sample-repair-acceptance.md",
+      "sha256": "40bcc924039fa964c91535cb67fdd17717031f8a7e5bbead9e7cbd27d1aa9d25"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-republic-0010-0016-sample-repair",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_republic_0016",
+          "finding": "The body wrongly predicates insatiability of both the tyrannized city and the tyrannical soul; the Greek and accepted evidence assign insatiability specifically to the tyrannical soul."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-republic-0016-round2",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_republic_0016"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_republic_0016",
+        "title": "Tyranny as enslavement",
+        "body": "Here the city and the tyrannical soul reverse the appearance of command. The tyrannized city is poor, while the tyrannical soul is poor and insatiable; the soul is also dragged by turmoil and regret. The prison image completes the reversal: the tyrant is bound by fears and desires, confined and unable to live as free men do. What looks like mastery is enslavement.",
+        "cites": {
+          "observations": [
+            "obs_republic_0828",
+            "obs_republic_0832"
+          ],
+          "claims": [
+            "claim_republic_0669"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_republic_0016",
+      "body": "```yaml\ncommentary_id: comm_republic_0016\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"Tyranny as enslavement\"\nstephanus_span: 576c-588a\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 576c-588a\n  start_marker: 576c\n  end_marker: 588a\n  start_char: 469930\n  end_char: 494641\n  text_sha256: \"d3acb6fae6c30b8d0a4e48682c72f2496c8a2224062ee66166d88822567db30a\"\nbody: \"Here the city and the tyrannical soul reverse the appearance of command. The ruler seems to possess others, yet both city and soul are poor and insatiable, and fear and pain make that power inwardly needy. The prison image completes the reversal: the tyrant is bound by fears and desires, confined and unable to live as free men do. What looks like mastery is enslavement.\"\ncites:\n  observations: [\"obs_republic_0828\", \"obs_republic_0832\"]\n  claims: [\"claim_republic_0669\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

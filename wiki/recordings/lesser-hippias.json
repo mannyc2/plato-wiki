@@ -1,0 +1,117 @@
+{
+  "schema_version": 2,
+  "recording_id": "lesser-hippias-dots-review-6f5d44e1",
+  "dialogue": "lesser-hippias",
+  "status": "draft",
+  "audio": {
+    "path": "artifacts/6f5d44e139a8a941b2620bbc49746631503f7e57e23b743d395ae5d3740d509b/publication.mp3",
+    "mime_type": "audio/mpeg",
+    "duration_seconds": 2139.336,
+    "sha256": "1e51a5d70fdfabbd1bb27617ab5ecffacf355d79c43dc84fe08d107e7c0ee712"
+  },
+  "chapters": [
+    {
+      "chapter_id": "chapter-lesser-hippias_0001",
+      "commentary_id": "comm_lesser-hippias_0001",
+      "start_frame": 0,
+      "title": "A silence that has to be broken"
+    },
+    {
+      "chapter_id": "chapter-lesser-hippias_0002",
+      "commentary_id": "comm_lesser-hippias_0002",
+      "start_frame": 6089972,
+      "title": "From the wiliest hero to the powerful liar"
+    },
+    {
+      "chapter_id": "chapter-lesser-hippias_0003",
+      "commentary_id": "comm_lesser-hippias_0003",
+      "start_frame": 17790748,
+      "title": "How much skill hides inside a lie"
+    },
+    {
+      "chapter_id": "chapter-lesser-hippias_0004",
+      "commentary_id": "comm_lesser-hippias_0004",
+      "start_frame": 30545009,
+      "title": "The trap closes on every art — and on the heroes"
+    },
+    {
+      "chapter_id": "chapter-lesser-hippias_0005",
+      "commentary_id": "comm_lesser-hippias_0005",
+      "start_frame": 47089265,
+      "title": "Turning Hippias's own evidence around"
+    },
+    {
+      "chapter_id": "chapter-lesser-hippias_0006",
+      "commentary_id": "comm_lesser-hippias_0006",
+      "start_frame": 57715579,
+      "title": "Achilles the schemer, and the question that stings"
+    },
+    {
+      "chapter_id": "chapter-lesser-hippias_0007",
+      "commentary_id": "comm_lesser-hippias_0007",
+      "start_frame": 74759060,
+      "title": "From the runner who slows on purpose to the just soul"
+    },
+    {
+      "chapter_id": "chapter-lesser-hippias_0008",
+      "commentary_id": "comm_lesser-hippias_0008",
+      "start_frame": 98857034,
+      "title": "The good man as willing wrongdoer, and Socrates alone adrift"
+    }
+  ],
+  "cast": [
+    {
+      "character_id": "commentary-narrator",
+      "name": "Commentary Narrator",
+      "voice": "dots-critias-commentary-narrator-seed42"
+    },
+    {
+      "character_id": "eudicus",
+      "name": "Eudicus",
+      "voice": "dots-lesser-hippias-eudicus-seed48"
+    },
+    {
+      "character_id": "hippias",
+      "name": "Hippias",
+      "voice": "dots-lesser-hippias-hippias-seed44"
+    },
+    {
+      "character_id": "socrates",
+      "name": "Socrates",
+      "voice": "dots-crito-socrates-seed44"
+    }
+  ],
+  "provenance": [
+    {
+      "label": "Review state",
+      "value": "Mechanically passed master; severe ASR defects repaired; final review is pending"
+    },
+    {
+      "label": "ASR evidence",
+      "value": "1.612% corpus WER; 107 raw word differences; the severe turn 125 and 143 defects are absent; chapters 4 and 5 narrowly exceed 2% raw WER"
+    },
+    {
+      "label": "QA handoff",
+      "value": "5b6912af9ee3bb0b2f42d5c23d3e7c0aa84e7660f4a6497e930f2d8802ec01f2"
+    },
+    {
+      "label": "Known review note",
+      "value": "The commentary narrator omits the opening article in chapter headings 1 and 8; deterministic retries did not improve either heading"
+    },
+    {
+      "label": "Socrates voice reference",
+      "value": "Crito audiobook source from the supplied Plato dialogue channel",
+      "url": "https://www.youtube.com/watch?v=MNDfJMrH1XY"
+    },
+    {
+      "label": "Eudicus and Hippias voice references",
+      "value": "Lesser Hippias audiobook source",
+      "url": "https://www.youtube.com/watch?v=FyTeWC_0MuQ"
+    },
+    {
+      "label": "Commentary narrator voice reference",
+      "value": "Critias audiobook source",
+      "url": "https://www.youtube.com/watch?v=0JyWZW9B9oc"
+    }
+  ]
+}

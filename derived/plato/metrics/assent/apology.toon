@@ -1,0 +1,13 @@
+dialogue: apology
+anchor_lexicon_path: derived/plato/anchors/lexicon.toml
+anchor_lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+token_index_path: derived/plato/tokens/apology.toon
+token_index_sha256: 7c115c3dee938eb24eecb3298d87ebe291769c6aacd824faade3d3986b4e55bd
+speakers[1]:
+  speaker | turns | assent_occurrences | assent_token_count | assent_turns | short_assent_turns
+  (none)  | 1 | 3 | 6 | 1 | 0
+turns[1]:
+  turn_id           | speaker | token_count | assent_occurrences | assent_token_count | assent_token_ids                                                                                                  | short_assent
+  turn_apology_0001 | (none)  | 8750 | 3 | 6 | tok_apology_001038,tok_apology_001039,tok_apology_002948,tok_apology_002949,tok_apology_003685,tok_apology_003686 | no
+stretches[0]:
+  stretch_id | speaker | start_turn_id | end_turn_id | turn_count | assent_token_ids

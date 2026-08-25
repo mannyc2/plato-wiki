@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "apology",
+  "source_path": "scratch/commentary/rewrites/apology/16-39c-39e.json",
+  "source_sha256": "849ce7148cdb07cbc50fe33e6ecf9038efb4a27b26864a49ad25767d0a627101",
+  "target_path": "wiki/commentary/apology.md",
+  "target_sha256_before": "df29925f13a9cc75bc26c3d5e364d8baa51ada413671cdd5cdada1a71d52fa2c",
+  "target_sha256_after": "e3feef2ca1040b088eed512799c7c54547c1af7b0de0fe7cf46c6d807255134c",
+  "applied_at": "2026-08-21T19:43:19.977Z",
+  "applied_ids": [
+    "comm_apology_0016"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "16-39c-39e",
+      "section_id": "comm_apology_0016",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/16-39c-39e.json",
+        "sha256": "86c230a3c4a89ee29b7da2d54ae58620141cd0c47299127e30bd6ffe9c3f0e7c"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0016",
+          "title": "Escape by silencing, or by reforming oneself?",
+          "body": "The passage sets two answers to reproach against each other. Socrates predicts that killing people will not end examination: more examiners, younger and harsher, will follow. Against that failed strategy, he proposes the “finest and easiest” deliverance—preparing oneself to be as good as possible rather than suppressing others. His leave-taking from the condemners then opens the address to those who acquitted him.",
+          "cites": {
+            "observations": [
+              "obs_apology_0030",
+              "obs_apology_0051",
+              "obs_apology_0052"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_apology_0016",
+      "body": "```yaml\ncommentary_id: comm_apology_0016\nsource_work: Apology\nblock_kind: section\nplacement: before\ntitle: \"The dying man's prophecy: more examiners are coming\"\nstephanus_span: 39c-39e\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 39c-39e\n  start_marker: 39c\n  end_marker: 39e\n  start_char: 48137\n  end_char: 49365\n  text_sha256: \"81df4aed012b3f042864717691f87e8e876595417ea9c24e11911f16972bc6d7\"\nbody: \"Socrates prophesies to those who voted against him: killing the examiner will multiply examiners, younger and harsher. The only escape from reproach is to become as good as possible. He then turns, in a marked shift of address, to those who voted to acquit.\"\ncites:\n  observations: [\"obs_apology_0030\", \"obs_apology_0050\", \"obs_apology_0051\", \"obs_apology_0052\"]\n  claims: []\n  relations: []\n  dossiers: [\"closure_type/prophecy\", \"closure_type/ethical_exhortation\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

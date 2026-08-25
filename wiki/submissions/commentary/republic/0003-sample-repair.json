@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "republic",
+  "source_path": "scratch/commentary/sample-repairs/republic/0010-0016-round2.json",
+  "source_sha256": "bbffef663395287daf966484d2de4523c52353c2eb54b6827e2ebf0b585b3748",
+  "target_path": "wiki/commentary/republic.md",
+  "target_sha256_before": "f476f468d409ce3c0abca0803a653ddcbd5a447cdc71bd0b8b90bd2556bd7b25",
+  "target_sha256_after": "0a2c8f78612a24945acc592bf69a5b2edecf7836568c4855a441c42320ad6f1a",
+  "applied_at": "2026-08-21T20:58:59.853Z",
+  "applied_ids": [
+    "comm_republic_0010",
+    "comm_republic_0016"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "republic",
+    "ledger": {
+      "path": "wiki/commentary/republic.md",
+      "sha256": "f476f468d409ce3c0abca0803a653ddcbd5a447cdc71bd0b8b90bd2556bd7b25"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-republic-0010-0016-sample-repair-round2",
+      "reviewed_on": "2026-08-21",
+      "rationale": "Round-two Luna repair narrows both failed sections to one spoken job while preserving only the accepted evidence needed for the Good's explanatory image and tyranny's enslavement reversal.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_republic_0001",
+        "comm_republic_0002",
+        "comm_republic_0003",
+        "comm_republic_0004",
+        "comm_republic_0005",
+        "comm_republic_0006",
+        "comm_republic_0007",
+        "comm_republic_0008",
+        "comm_republic_0009",
+        "comm_republic_0010",
+        "comm_republic_0011",
+        "comm_republic_0012",
+        "comm_republic_0013",
+        "comm_republic_0014",
+        "comm_republic_0015",
+        "comm_republic_0016",
+        "comm_republic_0017",
+        "comm_republic_0018",
+        "comm_republic_0019"
+      ],
+      "failed_commentary_ids": [
+        "comm_republic_0010",
+        "comm_republic_0016"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_republic_0010",
+        "title": "The longer route to the greatest study",
+        "body": "The longer route is required because the inquiry has reached its greatest study: the Idea of the Good. The Good is what makes the just and other things useful. The sun image gives that role a clear shape: as the sun makes sight possible, the Good gives truth to what is known and power to the knower. The route lengthens toward this source.",
+        "cites": {
+          "observations": [
+            "obs_republic_0230",
+            "obs_republic_0260"
+          ],
+          "claims": [
+            "claim_republic_0525"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_republic_0016",
+        "title": "Tyranny as enslavement",
+        "body": "Here the city and the tyrannical soul reverse the appearance of command. The ruler seems to possess others, yet both city and soul are poor and insatiable, and fear and pain make that power inwardly needy. The prison image completes the reversal: the tyrant is bound by fears and desires, confined and unable to live as free men do. What looks like mastery is enslavement.",
+        "cites": {
+          "observations": [
+            "obs_republic_0828",
+            "obs_republic_0832"
+          ],
+          "claims": [
+            "claim_republic_0669"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_republic_0010",
+      "body": "```yaml\ncommentary_id: comm_republic_0010\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"The longer route to the greatest study\"\nstephanus_span: 502d-514a\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 502d-514a\n  start_marker: 502d\n  end_marker: 514a\n  start_char: 333316\n  end_char: 352150\n  text_sha256: \"386a3d812b4c634638e052132d2d9eaae3febf979d360dd4e06978bfe56c5791\"\nbody: \"Here the dialogue reopens the question of rule by tightening its standard. The discussion of women and children is marked complete, but the rulers’ case must be taken up again; the candidates must combine quick learning with steadiness and survive tests in pleasures, pains, fears, and study. The payoff is methodological: the earlier account of virtue was serviceable but not fully precise, and an incomplete measure cannot measure what it addresses. The “longer route” is therefore a demand for completion, not a decorative detour.\"\ncites:\n  observations: [\"obs_republic_0224\"]\n  claims: [\"claim_republic_0520\", \"claim_republic_0521\", \"claim_republic_0522\", \"claim_republic_0523\", \"claim_republic_0524\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_republic_0016",
+      "body": "```yaml\ncommentary_id: comm_republic_0016\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"Tyranny as enslavement\"\nstephanus_span: 576c-588a\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 576c-588a\n  start_marker: 576c\n  end_marker: 588a\n  start_char: 469930\n  end_char: 494641\n  text_sha256: \"d3acb6fae6c30b8d0a4e48682c72f2496c8a2224062ee66166d88822567db30a\"\nbody: \"Power is turned inside out here. The tyrannized city and tyrannical soul are alike enslaved, so apparent command is not freedom for the whole. Poverty, insatiability, fear, disturbance, and regret mark their condition; the tyrant is pictured as confined, unable to live as free men do. The reversal suggests that command over others does not secure command of oneself. Socrates insists that the judgment requires examination, not mere belief.\"\ncites:\n  observations: [\"obs_republic_0483\", \"obs_republic_0828\", \"obs_republic_0830\"]\n  claims: [\"claim_republic_0664\", \"claim_republic_0665\", \"claim_republic_0668\", \"claim_republic_0669\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

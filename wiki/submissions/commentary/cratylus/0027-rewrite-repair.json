@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "submission_id": "0027-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "cratylus",
+  "source_path": "scratch/commentary/rewrite-repairs/cratylus/0026-citation-repair.json",
+  "source_sha256": "148e65b2742104382f3b30449eb458aed5e4228f64bb3e1e1ab9b1f82c71e16e",
+  "target_path": "wiki/commentary/cratylus.md",
+  "target_sha256_before": "e74a7ed76698ce2a94cda4ceb24eecae4a73a1f99dc27a24ecd424cdbb67b121",
+  "target_sha256_after": "f4b0e9723eac10eccf289d1bad13db97bae3211e6c64a6c9bac76883efa222e3",
+  "applied_at": "2026-08-24T00:08:25.108Z",
+  "applied_ids": [
+    "comm_cratylus_0006",
+    "comm_cratylus_0030",
+    "comm_cratylus_0032"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "cratylus",
+    "ledger": {
+      "path": "wiki/commentary/cratylus.md",
+      "sha256": "e74a7ed76698ce2a94cda4ceb24eecae4a73a1f99dc27a24ecd424cdbb67b121"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/cratylus/0026-sample-repair.json",
+      "sha256": "d1f1cc692bdf5a4a2b25818a79376eb11b3b330e2e0051a2077f4bdbcbd4268b"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-23-commentary-rewrite-cratylus-0026-sample-repair-acceptance.md",
+      "sha256": "654c9119ad1354331121ed1074db850e4090aba228ddacdb07209142ba784358"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-cratylus-0026-subset",
+      "reviewed_on": "2026-08-23",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_cratylus_0006",
+          "finding": "The repaired body is supportable, but the 0026 record has no canonical observation or claim citations and needs the accepted evidence bindings."
+        },
+        {
+          "commentary_id": "comm_cratylus_0030",
+          "finding": "The repaired body is supportable, but the 0026 record has no canonical observation or claim citations and needs the accepted evidence bindings."
+        },
+        {
+          "commentary_id": "comm_cratylus_0032",
+          "finding": "The repaired body is supportable, but the 0026 record has no canonical observation or claim citations and needs the accepted evidence bindings."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-cratylus-0026-citation-repair",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_cratylus_0006",
+      "comm_cratylus_0030",
+      "comm_cratylus_0032"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_cratylus_0006",
+        "title": "From gods to daimons to the body as sign",
+        "body": "The etymological survey moves in order from gods to daimons, heroes, human beings, and then soul and body. For soma, Socrates presents several possibilities: the body may be the soul's tomb, a sign through which the soul signifies, or an Orphic enclosure; he says the last account seems most persuasive, without settling the alternatives as doctrine.",
+        "cites": {
+          "observations": [
+            "obs_cratylus_0083",
+            "obs_cratylus_0092",
+            "obs_cratylus_0328"
+          ],
+          "claims": [
+            "claim_cratylus_0016",
+            "claim_cratylus_0025"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_cratylus_0030",
+        "title": "",
+        "body": "The examples remain qualified: names are often inherited from ancestors, while many are chosen in accordance with parental wishes; neither practice is presented as universal.",
+        "cites": {
+          "observations": [
+            "obs_cratylus_0083"
+          ],
+          "claims": [
+            "claim_cratylus_0016"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_cratylus_0032",
+        "title": "",
+        "body": "Socrates declines to claim knowledge of the gods' own names and limits this inquiry to what human beings say when naming them. This narrow move leaves the divine names themselves outside his present knowledge; it does not establish that they can never be investigated.",
+        "cites": {
+          "observations": [
+            "obs_cratylus_0093"
+          ],
+          "claims": [
+            "claim_cratylus_0026"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_cratylus_0006",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0006\nsource_work: Cratylus\nblock_kind: section\nplacement: before\ntitle: \"From gods to daimons to the body as sign\"\nstephanus_span: 397b-400e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 397b-400e\n  start_marker: 397b\n  end_marker: 400e\n  start_char: 26566\n  end_char: 34488\n  text_sha256: \"a7113cd0a420b847d030186f6c437d9d31aa877d566897165e49c321cfc39550\"\nbody: \"The etymological survey moves in order from gods to daimons, heroes, human beings, and then soul and body. For soma, Socrates presents several possibilities: the body may be the soul's tomb, a sign through which the soul signifies, or an Orphic enclosure; he says the last account seems most persuasive, without settling the alternatives as doctrine.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"turn_geometry/argument_transition_marker\", \"etymological_analysis/multiple_alternative_derivations\", \"myth_demarcation/traditional_account_cited_with_hedge\"]\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0030",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0030\nsource_work: Cratylus\nblock_kind: argument\nplacement: before\nstephanus_span: 397b-397c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 397b-397c\n  start_marker: 397b\n  end_marker: 397c\n  start_char: 26566\n  end_char: 27430\n  text_sha256: \"4591cd40c8648755a726e3f575dd0a48416cf645fcfba858dd5f38ca9e4059df\"\nbody: \"The examples remain qualified: names are often inherited from ancestors, while many are chosen in accordance with parental wishes; neither practice is presented as universal.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0032",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0032\nsource_work: Cratylus\nblock_kind: argument\nplacement: after\nstephanus_span: 400d-400e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 400d-400e\n  start_marker: 400d\n  end_marker: 400e\n  start_char: 33845\n  end_char: 34488\n  text_sha256: \"2b739cbd53ce73d535f205bcbd950c1d35fd997f085c1f7d1ccb6200e2bdac25\"\nbody: \"Socrates declines to claim knowledge of the gods' own names and limits this inquiry to what human beings say when naming them. This narrow move leaves the divine names themselves outside his present knowledge; it does not establish that they can never be investigated.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    }
+  ]
+}

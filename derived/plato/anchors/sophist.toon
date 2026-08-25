@@ -1,0 +1,109 @@
+dialogue: sophist
+source_path: raw/plato/greek/sophist.txt
+source_sha256: 4e856d5f7b7c4d870fd0fbce7c61060fd9c85e6c708ba39d6f18b329cb4ebbeb
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[102]:
+  group             | form      | start_char | end_char | marker | turn_id           | token_ids
+  assent_concession | ναί       | 5110       | 5113     | 218e   | turn_sophist_0022 | tok_sophist_000834
+  definition_prompt | εἶδος     | 6210       | 6215     | 219c   | turn_sophist_0039 | tok_sophist_001018
+  assent_concession | ναί       | 6522       | 6525     | 219c   | turn_sophist_0040 | tok_sophist_001068
+  assent_concession | ναί       | 7073       | 7076     | 219e   | turn_sophist_0048 | tok_sophist_001159
+  definition_prompt | εἶδος     | 7504       | 7509     | 220a   | turn_sophist_0055 | tok_sophist_001236
+  divine_legal      | δίκη      | 7524       | 7528     | 220a   | turn_sophist_0055 | tok_sophist_001240
+  assent_concession | πάνυ γε   | 7656       | 7663     | 220a   | turn_sophist_0056 | tok_sophist_001259,tok_sophist_001260
+  assent_concession | ναί       | 7903       | 7906     | 220b   | turn_sophist_0062 | tok_sophist_001303
+  assent_concession | ναί       | 8424       | 8427     | 220c   | turn_sophist_0072 | tok_sophist_001396
+  assent_concession | πάνυ γε   | 8799       | 8806     | 220d   | turn_sophist_0076 | tok_sophist_001456,tok_sophist_001457
+  definition_prompt | εἶδος     | 9162       | 9167     | 220e   | turn_sophist_0081 | tok_sophist_001516
+  assent_concession | ναί       | 10412      | 10415    | 221c   | turn_sophist_0090 | tok_sophist_001706
+  assent_concession | ναί       | 11013      | 11016    | 221e   | turn_sophist_0102 | tok_sophist_001805
+  assent_concession | πάνυ γε   | 11151      | 11158    | 222a   | turn_sophist_0104 | tok_sophist_001827,tok_sophist_001828
+  definition_prompt | εἶδος     | 12591      | 12596    | 222d   | turn_sophist_0126 | tok_sophist_002057
+  definition_prompt | εἶδος     | 12902      | 12907    | 222e   | turn_sophist_0133 | tok_sophist_002104
+  assent_concession | πάνυ γε   | 12915      | 12922    | 222e   | turn_sophist_0134 | tok_sophist_002106,tok_sophist_002107
+  definition_prompt | εἶδος     | 14246      | 14251    | 223c   | turn_sophist_0145 | tok_sophist_002296
+  assent_concession | πάνυ γε   | 14605      | 14612    | 223d   | turn_sophist_0152 | tok_sophist_002351,tok_sophist_002352
+  assent_concession | ναί       | 14731      | 14734    | 223d   | turn_sophist_0154 | tok_sophist_002372
+  assent_concession | ναί       | 15071      | 15074    | 223e   | turn_sophist_0160 | tok_sophist_002434
+  assent_concession | ναί       | 17343      | 17346    | 225a   | turn_sophist_0186 | tok_sophist_002792
+  assent_concession | ναί       | 17642      | 17645    | 225b   | turn_sophist_0192 | tok_sophist_002841
+  definition_prompt | εἶδος     | 17914      | 17919    | 225c   | turn_sophist_0195 | tok_sophist_002883
+  aporia_reset      | πάλιν     | 18889      | 18894    | 225e   | turn_sophist_0206 | tok_sophist_003041
+  assent_concession | ναί       | 19902      | 19905    | 226c   | turn_sophist_0218 | tok_sophist_003200
+  definition_prompt | εἶδος     | 20598      | 20603    | 226e   | turn_sophist_0231 | tok_sophist_003314
+  assent_concession | ναί       | 20637      | 20640    | 226e   | turn_sophist_0232 | tok_sophist_003322
+  definition_prompt | εἶδος     | 22083      | 22088    | 227c   | turn_sophist_0238 | tok_sophist_003552
+  assent_concession | ναί       | 24049      | 24052    | 228d   | turn_sophist_0272 | tok_sophist_003876
+  divine_legal      | δίκη      | 24667      | 24671    | 229a   | turn_sophist_0279 | tok_sophist_003976
+  definition_prompt | εἶδος     | 25352      | 25357    | 229c   | turn_sophist_0289 | tok_sophist_004089
+  assent_concession | πάνυ γε   | 25617      | 25624    | 229c   | turn_sophist_0294 | tok_sophist_004131,tok_sophist_004132
+  definition_prompt | εἶδος     | 26734      | 26739    | 230a   | turn_sophist_0305 | tok_sophist_004314
+  aporia_reset      | ἀπορεῖν   | 29308      | 29315    | 231c   | turn_sophist_0321 | tok_sophist_004712
+  assent_concession | ναί       | 29685      | 29688    | 231d   | turn_sophist_0324 | tok_sophist_004770
+  assent_concession | πάνυ γε   | 29758      | 29765    | 231d   | turn_sophist_0326 | tok_sophist_004784,tok_sophist_004785
+  assent_concession | ναί       | 29827      | 29830    | 231d   | turn_sophist_0328 | tok_sophist_004797
+  assent_concession | ναί       | 30846      | 30849    | 232b   | turn_sophist_0338 | tok_sophist_004953
+  assent_concession | ναί       | 33174      | 33177    | 233c   | turn_sophist_0368 | tok_sophist_005344
+  definition_prompt | εἶδος     | 34566      | 34571    | 234b   | turn_sophist_0391 | tok_sophist_005582
+  definition_prompt | εἶδος     | 34623      | 34628    | 234b   | turn_sophist_0392 | tok_sophist_005591
+  assent_concession | ναί       | 38481      | 38484    | 236a   | turn_sophist_0418 | tok_sophist_006210
+  definition_prompt | εἶδος     | 39379      | 39384    | 236d   | turn_sophist_0429 | tok_sophist_006357
+  assent_concession | ναί       | 43705      | 43708    | 238e   | turn_sophist_0480 | tok_sophist_007101
+  assent_concession | ναί       | 43987      | 43990    | 239a   | turn_sophist_0486 | tok_sophist_007147
+  assent_concession | ναί       | 47693      | 47696    | 240e   | turn_sophist_0532 | tok_sophist_007782
+  aporia_reset      | πάλιν     | 49335      | 49340    | 241d   | turn_sophist_0551 | tok_sophist_008046
+  assent_concession | πάνυ γε   | 52896      | 52903    | 243c   | turn_sophist_0579 | tok_sophist_008630,tok_sophist_008631
+  assent_concession | ναί       | 54622      | 54625    | 244b   | turn_sophist_0593 | tok_sophist_008916
+  assent_concession | ναί       | 54668      | 54671    | 244b   | turn_sophist_0595 | tok_sophist_008924
+  assent_concession | ναί       | 55225      | 55228    | 244d   | turn_sophist_0605 | tok_sophist_009019
+  assent_concession | ναί       | 56630      | 56633    | 245b   | turn_sophist_0625 | tok_sophist_009274
+  assent_concession | πάνυ γε   | 56773      | 56780    | 245c   | turn_sophist_0627 | tok_sophist_009303,tok_sophist_009304
+  assent_concession | ναί       | 56980      | 56983    | 245c   | turn_sophist_0631 | tok_sophist_009342
+  assent_concession | πάνυ γε   | 59850      | 59857    | 246e   | turn_sophist_0659 | tok_sophist_009809,tok_sophist_009810
+  assent_concession | ναί       | 59905      | 59908    | 247a   | turn_sophist_0661 | tok_sophist_009818
+  assent_concession | ναί       | 60138      | 60141    | 247a   | turn_sophist_0665 | tok_sophist_009859
+  aporia_reset      | πάλιν     | 61078      | 61083    | 247c   | turn_sophist_0674 | tok_sophist_010014
+  assent_concession | ναί       | 62239      | 62242    | 248a   | turn_sophist_0683 | tok_sophist_010203
+  assent_concession | ναί       | 62986      | 62989    | 248c   | turn_sophist_0693 | tok_sophist_010334
+  aporia_reset      | πάλιν     | 68487      | 68492    | 251b   | turn_sophist_0762 | tok_sophist_011248
+  method_term       | κατ' εἴδη | 70199      | 70208    | 252a   | turn_sophist_0776 | tok_sophist_011523,tok_sophist_011524
+  aporia_reset      | πάλιν     | 71482      | 71487    | 252d   | turn_sophist_0787 | tok_sophist_011723
+  assent_concession | ναί       | 71693      | 71696    | 252d   | turn_sophist_0791 | tok_sophist_011757
+  assent_concession | ναί       | 71865      | 71868    | 252e   | turn_sophist_0795 | tok_sophist_011791
+  aporia_reset      | πάλιν     | 73049      | 73054    | 253c   | turn_sophist_0810 | tok_sophist_011993
+  definition_prompt | εἶδος     | 73459      | 73464    | 253d   | turn_sophist_0814 | tok_sophist_012055
+  assent_concession | ναί       | 73558      | 73561    | 253d   | turn_sophist_0815 | tok_sophist_012070
+  definition_prompt | ἰδέα      | 74522      | 74526    | 254a   | turn_sophist_0824 | tok_sophist_012228
+  assent_concession | ναί       | 76748      | 76751    | 255b   | turn_sophist_0849 | tok_sophist_012608
+  aporia_reset      | πάλιν     | 76981      | 76986    | 255b   | turn_sophist_0854 | tok_sophist_012653
+  assent_concession | ναί       | 77943      | 77946    | 255e   | turn_sophist_0869 | tok_sophist_012826
+  aporia_reset      | πάλιν     | 78408      | 78413    | 256a   | turn_sophist_0880 | tok_sophist_012908
+  aporia_reset      | πάλιν     | 78940      | 78945    | 256b   | turn_sophist_0886 | tok_sophist_013000
+  aporia_reset      | πάλιν     | 79324      | 79329    | 256c   | turn_sophist_0892 | tok_sophist_013064
+  aporia_reset      | πάλιν     | 80188      | 80193    | 256e   | turn_sophist_0902 | tok_sophist_013215
+  aporia_reset      | πάλιν     | 82166      | 82171    | 257e   | turn_sophist_0934 | tok_sophist_013556
+  definition_prompt | οὐσία     | 82959      | 82964    | 258b   | turn_sophist_0946 | tok_sophist_013697
+  definition_prompt | εἶδος     | 83526      | 83531    | 258c   | turn_sophist_0950 | tok_sophist_013796
+  definition_prompt | εἶδος     | 84017      | 84022    | 258d   | turn_sophist_0958 | tok_sophist_013879
+  assent_concession | ναί       | 87594      | 87597    | 260c   | turn_sophist_0983 | tok_sophist_014487
+  aporia_reset      | πάλιν     | 88233      | 88238    | 260e   | turn_sophist_0988 | tok_sophist_014603
+  aporia_reset      | πάλιν     | 89362      | 89367    | 261b   | turn_sophist_0991 | tok_sophist_014792
+  aporia_reset      | πάλιν     | 89927      | 89932    | 261d   | turn_sophist_0995 | tok_sophist_014882
+  assent_concession | ναί       | 90599      | 90602    | 262a   | turn_sophist_1006 | tok_sophist_014996
+  aporia_reset      | πάλιν     | 91199      | 91204    | 262b   | turn_sophist_1015 | tok_sophist_015090
+  assent_concession | ναί       | 93051      | 93054    | 263b   | turn_sophist_1042 | tok_sophist_015404
+  assent_concession | ναί       | 93258      | 93261    | 263b   | turn_sophist_1048 | tok_sophist_015446
+  method_term       | κατ' εἴδη | 95613      | 95622    | 264c   | turn_sophist_1083 | tok_sophist_015842,tok_sophist_015843
+  assent_concession | ναί       | 95740      | 95743    | 264c   | turn_sophist_1086 | tok_sophist_015861
+  assent_concession | ναί       | 96341      | 96344    | 264d   | turn_sophist_1094 | tok_sophist_015957
+  aporia_reset      | πάλιν     | 96350      | 96355    | 264d   | turn_sophist_1095 | tok_sophist_015959
+  assent_concession | ναί       | 96774      | 96777    | 265a   | turn_sophist_1098 | tok_sophist_016018
+  assent_concession | ναί       | 98852      | 98855    | 266a   | turn_sophist_1120 | tok_sophist_016365
+  aporia_reset      | πάλιν     | 99022      | 99027    | 266a   | turn_sophist_1121 | tok_sophist_016394
+  definition_prompt | εἶδος     | 99635      | 99640    | 266c   | turn_sophist_1127 | tok_sophist_016497
+  assent_concession | ναί       | 100558     | 100561   | 266e   | turn_sophist_1136 | tok_sophist_016641
+  assent_concession | ναί       | 100900     | 100903   | 267a   | turn_sophist_1142 | tok_sophist_016695
+  assent_concession | πάνυ γε   | 101750     | 101757   | 267c   | turn_sophist_1152 | tok_sophist_016831,tok_sophist_016832
+  assent_concession | ναί       | 101975     | 101978   | 267d   | turn_sophist_1156 | tok_sophist_016865
+  method_term       | κατ' εἴδη | 102077     | 102086   | 267d   | turn_sophist_1157 | tok_sophist_016884,tok_sophist_016885

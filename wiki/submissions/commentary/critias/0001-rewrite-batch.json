@@ -1,0 +1,575 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "critias",
+  "source_path": "scratch/commentary/rewrites/critias/01-106a-106c.json",
+  "source_sha256": "0c1ef84c3a8ae55a472ec820fd9edd1d53410624e342bf950dddf4a304dbb806",
+  "target_path": "wiki/commentary/critias.md",
+  "target_sha256_before": "03abda36ccc3e6fa76d306170f8c92cfe1772e79647bd2eab0c0f044a8ae89c4",
+  "target_sha256_after": "bfb694731a6e9daf179ea00259f7a81dc37c4b98d252e297d4b1b2636a6688bb",
+  "applied_at": "2026-08-21T14:28:09.164Z",
+  "applied_ids": [
+    "comm_critias_0005",
+    "comm_critias_0009",
+    "comm_critias_0011",
+    "comm_critias_0013",
+    "comm_critias_0014",
+    "comm_critias_0018",
+    "comm_critias_0019",
+    "comm_critias_0021",
+    "comm_critias_0023",
+    "comm_critias_0024",
+    "comm_critias_0025",
+    "comm_critias_0027",
+    "comm_critias_0028",
+    "comm_critias_0029",
+    "comm_critias_0031",
+    "comm_critias_0032",
+    "comm_critias_0033",
+    "comm_critias_0034"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "01-106a-106c",
+      "section_id": "comm_critias_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/01-106a-106c.json",
+        "sha256": "12270bfc5fe0974f1262826da2be809a40382d4463f06c9428131ed1c1a881bd"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0014",
+          "title": "",
+          "body": "The opening gives the handoff a physical rhythm. Timaeus describes release from the difficult passage of his logos as rest after a long journey, then formally transfers the next logos to Critias according to their arrangements. One way to hear the metaphor is that Critias inherits a burden already in motion: the transition is not a new beginning, but a change of speaker carrying the discourse forward. That sense of inherited burden is an interpretation; the passage itself establishes the journey image and the formal transfer.",
+          "cites": {
+            "observations": [
+              "obs_critias_0001"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "02-107a-108b",
+      "section_id": "comm_critias_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/02-107a-108b.json",
+        "sha256": "50db41b60de1308828bd7edc90858aa5ee75876159483016c0df6689fd7c9080"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0018",
+          "title": "",
+          "body": "Critias turns an audience rule into a request for mercy. He says that mortal and human accounts receive exact scrutiny, then asks listeners to pardon any failure to render what is fitting. Ask yourself what this move changes: does it merely acknowledge the difficulty of representation, or does it invite the audience to judge the speech by the speaker’s stated limits before judging its likeness?",
+          "cites": {
+            "observations": [
+              "obs_critias_0007",
+              "obs_critias_0008"
+            ],
+            "claims": [
+              "claim_critias_0003",
+              "claim_critias_0004"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_critias_0019",
+          "title": "",
+          "body": "Socrates answers the request by making indulgence part of the conversation’s procedure: Hermocrates receives it in advance, so he can begin differently instead of repeating Critias’s prelude. Then Socrates shifts from courtesy to performance, warning Critias about the theatre’s enthusiastic reception of the previous poet. I hear a playful pressure here: the welcome lowers the cost of asking for pardon, while the comparison raises the standard the next speech must face.",
+          "cites": {
+            "observations": [
+              "obs_critias_0009",
+              "obs_critias_0010"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "03-108c-109a",
+      "section_id": "comm_critias_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/03-108c-109a.json",
+        "sha256": "0e6266f2c8a7a25e02b89b8adcf0e3166fd9f35a6ad7c32925ebee1e0793bf86"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0021",
+          "title": "",
+          "body": "At 109a, Critias turns geography into a promise about sequence: the many peoples will emerge as the account unrolls, but Athens and its opponents must come first, with Athens given priority within that pair. I read this as a deliberate narrowing of the story’s field: the wider war will initially be seen through Athens before the account opens outward.",
+          "cites": {
+            "observations": [
+              "obs_critias_0012"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "04-109b-109e",
+      "section_id": "comm_critias_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/04-109b-109e.json",
+        "sha256": "b5ccdaf29cec49339fb6558b40d38cd4f0bc16cc278721d499121a682fc6306e"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0023",
+          "title": "",
+          "body": "The passage does not present the past as wholly erased. It preserves the rulers’ names, while their deeds have vanished and the surviving remnant knows only a few brief reports alongside those names. Read this as a portrait of selective transmission: a name can carry continuity without carrying a full account of conduct. The result is an inherited past with a clear limit—names remain, but the deeds they once identified cannot be recovered in full.",
+          "cites": {
+            "observations": [
+              "obs_critias_0021",
+              "obs_critias_0022"
+            ],
+            "claims": [
+              "claim_critias_0008"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "05-110a-110d",
+      "section_id": "comm_critias_0005",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/05-110a-110d.json",
+        "sha256": "21504e7592a3ae108c11345a1a19ac263076cdf5d4c6b67bdfa925dffbfab3a0"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0005",
+          "title": "From preserved names to a civic design",
+          "body": "This unit begins with Critias’s condition for ancient inquiry: myth-telling and investigation arrive with leisure once necessities are secured. It then turns from preserved names to a portrait of ancient Athens, where a distinct warrior class owns nothing privately, shares its possessions, and is said to practice the pursuits of yesterday’s hypothesized guardians.",
+          "cites": {
+            "observations": [
+              "obs_critias_0024",
+              "obs_critias_0025",
+              "obs_critias_0026",
+              "obs_critias_0028"
+            ],
+            "claims": [
+              "claim_critias_0009",
+              "claim_critias_0011"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_critias_0024",
+          "title": "",
+          "body": "The key distinction is between the condition Critias names and the evidence he offers. He says myth-telling and inquiry into antiquity arrive with leisure once necessities are secured; he then reports names preserved without their deeds, citing Solon’s account of what Egyptian priests recounted. One way to read this is as an attempt to reconstruct the past from a thin surviving record, not as proof that the missing deeds are thereby verified.",
+          "cites": {
+            "observations": [
+              "obs_critias_0023",
+              "obs_critias_0024",
+              "obs_critias_0025"
+            ],
+            "claims": [
+              "claim_critias_0009"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_critias_0025",
+          "title": "",
+          "body": "The comparison is precise but limited: Critias describes an ancient Athenian warrior class with communal property and says that it practiced the pursuits described yesterday for the hypothesized guardians. That links the two descriptions; it does not by itself establish that Socrates’ city once existed. The historical status of the ancient arrangement remains part of Critias’s account, not something certified by the comparison alone.",
+          "cites": {
+            "observations": [
+              "obs_critias_0026",
+              "obs_critias_0028"
+            ],
+            "claims": [
+              "claim_critias_0011"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "06-110e-111e",
+      "section_id": "comm_critias_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/06-110e-111e.json",
+        "sha256": "b57e5dc07462e9489d868a8d7b68cb4768d7f172a4b39bf78a29c190c79650a6"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0027",
+          "title": "",
+          "body": "The passage’s force comes from layering kinds of evidence. Critias points to surviving roof-beams from mountains that now feed only bees, then shifts to a roof-tile image for soil that stores rain, and finally points to shrines at former springs as signs. I would hear this not as a demonstration that settles every detail of the ancient chronology, but as an invitation to let present traces make the vanished landscape imaginable.",
+          "cites": {
+            "observations": [
+              "obs_critias_0033",
+              "obs_critias_0036"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "07-112a-112e",
+      "section_id": "comm_critias_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/07-112a-112e.json",
+        "sha256": "6f58bbef428cfbc90e3d62f00013498247cad04a7c640dc42f10292b2b39e2cb"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0028",
+          "title": "",
+          "body": "Here the political portrait is made visible through domestic habits. The Athenians are said to use neither gold nor silver and to pursue a middle course between arrogance and illiberality; their orderly houses pass unchanged to later generations. The point, as I read it, is continuity: a civic way of life is pictured as something built into dwelling and inheritance, not merely announced as a principle.",
+          "cites": {
+            "observations": [
+              "obs_critias_0040"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_critias_0029",
+          "title": "",
+          "body": "The handoff places the enemy story in remembered speech: Critias says that he and his hearers heard it as children, then qualifies the offering with the possibility that memory may fail. I hear this not as a verdict on truth, but as a change in register: what follows is offered for communal possession, not simply asserted.",
+          "cites": {
+            "observations": [
+              "obs_critias_0049"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "08-113a-113e",
+      "section_id": "comm_critias_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/08-113a-113e.json",
+        "sha256": "2a0654a624be9b4854e7a1f81a42b2081bfb20ad876cd56f550f45671f7c203c"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0031",
+          "title": "",
+          "body": "At the turning word τορνεύων, the passage lets us picture Poseidon's act through a craft gesture: the rings are not merely reported as present; they are imagined as shaped around the hill with deliberate circular precision. That image makes the island's geometry feel made and ordered. It would be too strong, however, to turn this single verb into a claim that the whole landscape is a worked artifact. The craft analogy sharpens the scene without settling everything about the terrain.",
+          "cites": {
+            "observations": [
+              "obs_critias_0047"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_critias_0032",
+          "title": "",
+          "body": "The aside about ships and sailing does more than explain why the rings block human access. By placing the scene in a time before either existed, Critias gives the island a temporal setting as well as a geography: this is a narrated past whose conditions differ from a later age of seafaring. The sentence thus helps the myth mark its distance from the narrator's present, without requiring any further claim about Atlantis's future.",
+          "cites": {
+            "observations": [
+              "obs_critias_0048"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "09-114a-115c",
+      "section_id": "comm_critias_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/09-114a-115c.json",
+        "sha256": "56d70d3179a09483a63f9d7c11e3a77e00af3d334f8878f3ced8df3bda30a45a"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0009",
+          "title": "From allotment to ordered building",
+          "body": "This unit moves from ordered distribution of lands and titles to natural abundance, then to construction. Atlas is made king, succession follows the eldest line, and each son receives a territorial role. The catalogue presents fertility and animals before the narrative turns to an ordered building program: the first works described bridge the sea-rings and make a road toward the palace.",
+          "cites": {
+            "observations": [
+              "obs_critias_0054",
+              "obs_critias_0056",
+              "obs_critias_0057",
+              "obs_critias_0058",
+              "obs_critias_0059"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_critias_0033",
+          "title": "",
+          "body": "The naming sequence gives the imagined geography a genealogy. Atlas supplies the name of the island and sea; his twin is Eumelus in Greek but Gadeirus in the native tongue, and the Gadeiric region is linked to that name. Read this as the story’s naming device: it ties places to founders while marking a difference between languages. The passage itself does not establish a chain of Egyptian transmission into Greek.",
+          "cites": {
+            "observations": [
+              "obs_critias_0052",
+              "obs_critias_0053"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_critias_0034",
+          "title": "",
+          "body": "The fertility catalogue does not simply end; it supplies the materials for the next movement. After naming the island’s produce and praising it as sacred, beautiful, wondrous, and boundless in quantity, the narration turns to what the inhabitants build. It begins with bridges across the sea-rings and a road toward the palace, then describes an ordered succession of adornment. Hear the shift from natural provision to deliberate arrangement.",
+          "cites": {
+            "observations": [
+              "obs_critias_0057",
+              "obs_critias_0058",
+              "obs_critias_0059"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "11-118a-119c",
+      "section_id": "comm_critias_0011",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/11-118a-119c.json",
+        "sha256": "99bbf4265b8a747d8fc719f3356976585eb580f2f3b8677d58e1e30cd27a2675"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0011",
+          "title": "From measured land to ordered power",
+          "body": "This passage’s organizing move is to make Atlantis legible as an administered whole: measured terrain and engineered waterworks become territorial lots, military obligations, and finally a rule binding the ten kings. The levy is not uniformly fractional. Each leader contributes one sixth of a chariot, but the other listed forces are fixed numbers, alongside a fleet total of 1,200 ships. The final turn grounds inter-king relations in Poseidon’s written law.",
+          "cites": {
+            "observations": [
+              "obs_critias_0073",
+              "obs_critias_0081",
+              "obs_critias_0082",
+              "obs_critias_0083",
+              "obs_critias_0084",
+              "obs_critias_0086",
+              "obs_critias_0091"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "13-120e-121c",
+      "section_id": "comm_critias_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/13-120e-121c.json",
+        "sha256": "99dbebf0a3c6751991fbcac30a6712262b493c47cd5fe05abc4c8de8efe2464c"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0013",
+          "title": "When wealth changes meaning",
+          "body": "At first, the rulers’ wealth is light because virtue governs its use; when the divine portion fades into mortal mixture, that abundance becomes a burden they cannot bear. The passage then reverses appearance and reality: those unable to perceive the truly happy life mistake lawless ambition and power for blessedness. Zeus sees the race’s wretched condition and gathers the gods, intending to chasten them.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_critias_0017",
+              "claim_critias_0020",
+              "claim_critias_0021",
+              "claim_critias_0022"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_critias_0005",
+      "body": "```yaml\ncommentary_id: comm_critias_0005\nsource_work: Critias\nblock_kind: section\nplacement: before\ntitle: \"Names without deeds: the old Athenian constitution\"\nstephanus_span: 110a-110d\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 110a-110d\n  start_marker: 110a\n  end_marker: 110d\n  start_char: 6623\n  end_char: 8305\n  text_sha256: \"5834f3522551b7e08452b2e193691a0d0fabf5112eef21010908216c0f146efb\"\nbody: \"Critias explains why only royal names like Cecrops and Erechtheus survive — myth-telling needs leisure that catastrophe destroys — then sketches ancient Athens's social order: a warrior class set apart by divine men, propertyless and communal, practicing exactly the pursuits assigned to yesterday's hypothesized guardians. The Republic's city acquires a past.\"\ncites:\n  observations: [\"obs_critias_0023\", \"obs_critias_0024\", \"obs_critias_0025\", \"obs_critias_0026\", \"obs_critias_0027\", \"obs_critias_0028\"]\n  claims: [\"claim_critias_0009\", \"claim_critias_0010\", \"claim_critias_0011\"]\n  relations: []\n  dossiers: [\"prosopography/named_cast_entry_or_catalog\", \"prosopography/guardian_selection_profile\", \"dramatic_case_setup/city_foundation_sequence\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0009",
+      "body": "```yaml\ncommentary_id: comm_critias_0009\nsource_work: Critias\nblock_kind: section\nplacement: before\ntitle: \"Atlas's line and an island of everything\"\nstephanus_span: 114a-115c\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 114a-115c\n  start_marker: 114a\n  end_marker: 115c\n  start_char: 15102\n  end_char: 18526\n  text_sha256: \"8f75a6f48074b9483ff110011451df64fa9a49f9a7e60d2884024a6b14738d57\"\nbody: \"Ten sons in five twin pairs receive the empire, Atlas eldest and king, his line ruling by strict primogeniture. The island supplies every resource — the now-lost oreichalkos, timber, elephants, double harvests — and the kings begin bridging the sea-rings, each generation adorning what the last adorned. Notice how abundance precedes architecture.\"\ncites:\n  observations: [\"obs_critias_0052\", \"obs_critias_0053\", \"obs_critias_0054\", \"obs_critias_0055\", \"obs_critias_0056\", \"obs_critias_0057\", \"obs_critias_0058\", \"obs_critias_0059\", \"obs_critias_0060\", \"obs_critias_0061\"]\n  claims: []\n  relations: []\n  dossiers: [\"myth_demarcation/mythic_origin_taxonomy\", \"myth_demarcation/temporal_distance_marker\", \"prosopography/named_cast_entry_or_catalog\", \"craft_analogy/spatial_schema_analogy\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0011",
+      "body": "```yaml\ncommentary_id: comm_critias_0011\nsource_work: Critias\nblock_kind: section\nplacement: before\ntitle: \"Counting an empire: the plain, the ditch, the sixty thousand lots\"\nstephanus_span: 118a-119c\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 118a-119c\n  start_marker: 118a\n  end_marker: 119c\n  start_char: 23877\n  end_char: 27189\n  text_sha256: \"8ac78be7a4224aafa7412ff80da1043a6733390c5245999bfff3e2b8e9cd8319\"\nbody: \"The description widens to the rectangular plain and its incredible ditch — Critias flags the numbers as unbelievable even as he reports what was heard. Sixty thousand territorial lots each owe fractional quotas toward chariots, hoplites, and twelve hundred ships, while governance among the ten kings rests on Poseidon's inscribed law.\"\ncites:\n  observations: [\"obs_critias_0073\", \"obs_critias_0074\", \"obs_critias_0075\", \"obs_critias_0081\", \"obs_critias_0082\", \"obs_critias_0083\", \"obs_critias_0084\", \"obs_critias_0085\", \"obs_critias_0086\", \"obs_critias_0090\", \"obs_critias_0091\"]\n  claims: []\n  relations: []\n  dossiers: [\"myth_demarcation/geographic_marker_links_myth_to_empirical_world\", \"dramatic_case_setup/soil_fertility_catalogue\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0013",
+      "body": "```yaml\ncommentary_id: comm_critias_0013\nsource_work: Critias\nblock_kind: section\nplacement: before\ntitle: \"The fading portion: virtue, wealth, and the unfinished sentence\"\nstephanus_span: 120e-121c\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 120e-121c\n  start_marker: 120e\n  end_marker: 121c\n  start_char: 29617\n  end_char: 31192\n  text_sha256: \"ec40483142a0edbf56cfee46972ee4cff8e2437b96c3ce2a79033b4b95c1fcf1\"\nbody: \"While the divine nature sufficed, the kings despised everything but virtue and carried gold as a burden. As the god's portion faded through mortal admixture, they grew shameful — though the blind still called them blessed. Zeus convenes the gods to chasten them, begins to speak, and the dialogue breaks off forever.\"\ncites:\n  observations: [\"obs_critias_0094\", \"obs_critias_0095\", \"obs_critias_0096\", \"obs_critias_0097\", \"obs_critias_0098\", \"obs_critias_0099\", \"obs_critias_0100\"]\n  claims: [\"claim_critias_0015\", \"claim_critias_0016\", \"claim_critias_0017\", \"claim_critias_0018\", \"claim_critias_0019\", \"claim_critias_0020\", \"claim_critias_0021\", \"claim_critias_0022\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0014",
+      "body": "```yaml\ncommentary_id: comm_critias_0014\nsource_work: Critias\nblock_kind: context\nplacement: before\nstephanus_span: 106a-106b\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 106a-106b\n  start_marker: 106a\n  end_marker: 106b\n  start_char: 0\n  end_char: 676\n  text_sha256: \"9a827e283fe1cdcf17a65c1bc259a29e7297b0b1e15f9139a92cc6c0f148e000\"\nbody: \"The Critias opens mid-relay. Timaeus has just finished his long account of the cosmos, and his first words are a sigh of relief: he compares finishing his speech to resting after a long journey, then formally passes the next logos to Critias under the terms the company agreed on. So the dialogue begins not with a fresh scene but with a baton change inside a larger, prearranged program of speeches — and the speaker we are about to hear has been waiting his turn.\"\ncites:\n  observations: [\"obs_critias_0001\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0018",
+      "body": "```yaml\ncommentary_id: comm_critias_0018\nsource_work: Critias\nblock_kind: question\nplacement: after\nstephanus_span: 107d-107e\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 107d-107e\n  start_marker: 107d\n  end_marker: 107e\n  start_char: 2059\n  end_char: 2666\n  text_sha256: \"369a17328f6b9bc755ccfb952be13cbd18f40ba003eadbb6ae382fcae02f5f61\"\nbody: \"Critias claims his coming story deserves extra pardon because its subject is mortal and human, and mortal things are hard to depict. But the tale he is about to tell concerns Athens and Atlantis nine thousand years gone — a past no listener here has any familiar acquaintance with. By his own painting analogy, does ancient Atlantis sit with the human bodies we judge severely, or with the distant mountains and heavens we accept on a slight likeness? If it is the latter, what is the request for indulgence actually doing?\"\ncites:\n  observations: [\"obs_critias_0007\"]\n  claims: [\"claim_critias_0004\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0019",
+      "body": "```yaml\ncommentary_id: comm_critias_0019\nsource_work: Critias\nblock_kind: context\nplacement: after\nstephanus_span: 108a-108b\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 108a-108b\n  start_marker: 108a\n  end_marker: 108b\n  start_char: 2666\n  end_char: 3458\n  text_sha256: \"68c97de5b06df40d0c6c916245a797add29e9be67a1d4b0544e4ae3c0f7ce558\"\nbody: \"Socrates grants the pardon at once, extends it in advance to Hermocrates so the third speaker will need a fresh prelude rather than this one again, and then adds a barbed courtesy: the previous poet — Timaeus — won marvelous applause from this theater, so Critias will need an extraordinary measure of the very indulgence he just secured. The stage is being managed as a competition among performers, and Socrates casts himself and the company as an audience whose judgment has already been set high.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0021",
+      "body": "```yaml\ncommentary_id: comm_critias_0021\nsource_work: Critias\nblock_kind: context\nplacement: after\nstephanus_span: 108e-109a\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 108e-109a\n  start_marker: 108e\n  end_marker: 109a\n  start_char: 4261\n  end_char: 5109\n  text_sha256: \"90b0215101ceea7fe6090ddeb7b642ee29163d59e591627f5d37d8296807f1bd\"\nbody: \"The headline facts return from the Timaeus: a war nine thousand years old, Athens leading one side, the kings of Atlantis the other, and the island itself, once larger than Libya and Asia together, now sunk by earthquakes into mud that blocks the sea. Notice the shape of that last detail: the story's central marvel is presented as physically unverifiable, its site literally impassable. Critias then sets his agenda deliberately, promising the crowd of nations later but insisting that ancient Athens and its enemy be described first, with Athens taking priority even over Atlantis.\"\ncites:\n  observations: [\"obs_critias_0011\", \"obs_critias_0013\", \"obs_critias_0012\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0023",
+      "body": "```yaml\ncommentary_id: comm_critias_0023\nsource_work: Critias\nblock_kind: notice\nplacement: after\nstephanus_span: 109d-109e\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 109d-109e\n  start_marker: 109d\n  end_marker: 109e\n  start_char: 6010\n  end_char: 6623\n  text_sha256: \"f9e60d43b32ab4f06daa108322520b74e922fa24df57781d7b42564171d38c54\"\nbody: \"The story undercuts its own evidence in the same breath that it offers it. The first Athenians were good men born from the soil itself — but their deeds have vanished, because each catastrophe left only illiterate mountain survivors who caught the rulers' names and almost nothing else. So Critias claims an unbroken chain of names while conceding that everything the names once meant is gone. One way to hear this is as a built-in shield: the grander the claim about ancient Athens, the more convenient that no record could survive to test it.\"\ncites:\n  observations: [\"obs_critias_0020\", \"obs_critias_0021\", \"obs_critias_0022\"]\n  claims: [\"claim_critias_0008\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0024",
+      "body": "```yaml\ncommentary_id: comm_critias_0024\nsource_work: Critias\nblock_kind: argument\nplacement: before\nstephanus_span: 110a-110b\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 110a-110b\n  start_marker: 110a\n  end_marker: 110b\n  start_char: 6623\n  end_char: 7516\n  text_sha256: \"80c2459692a71640f5600bc35bea20b69caff4d4064d7f60d5d52e706ccaf2b7\"\nbody: \"Critias here solves a problem his own story created: if ancient Athens was so glorious, why does no one remember it? His answer is that history-writing requires leisure, and survivors of catastrophe are too busy staying alive to keep records. So only names survived — Cecrops, Erechtheus, Theseus — stripped of the deeds attached to them. The move is clever: the very absence of evidence becomes evidence, since a real tradition would be expected to decay in exactly this way. It also quietly licenses Critias to fill those empty names with whatever deeds his account requires.\"\ncites:\n  observations: [\"obs_critias_0024\", \"obs_critias_0025\"]\n  claims: [\"claim_critias_0009\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0025",
+      "body": "```yaml\ncommentary_id: comm_critias_0025\nsource_work: Critias\nblock_kind: crossref\nplacement: after\nstephanus_span: 110c-110d\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 110c-110d\n  start_marker: 110c\n  end_marker: 110d\n  start_char: 7516\n  end_char: 8305\n  text_sha256: \"735a7773b376ca477f06807c1c5edd59a2eb4bdf85f14c3dc5222f440735eaab\"\nbody: \"The ancient Athenian warriors live apart, own nothing privately, hold everything in common, and take only sufficient sustenance from the other citizens. Critias then says it outright: they practiced all the pursuits described yesterday for the hypothesized guardians. This is the payoff of the whole exercise — the city Socrates built in speech is being certified as one that once actually existed. Even the armed statue of Athena is enlisted, as proof that women shared the pursuits of war. The question the certification raises is whether historical costume adds anything to an argument, or merely flatters it.\"\ncites:\n  observations: [\"obs_critias_0026\", \"obs_critias_0028\"]\n  claims: [\"claim_critias_0010\", \"claim_critias_0011\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0027",
+      "body": "```yaml\ncommentary_id: comm_critias_0027\nsource_work: Critias\nblock_kind: notice\nplacement: after\nstephanus_span: 111c-111d\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 111c-111d\n  start_marker: 111c\n  end_marker: 111d\n  start_char: 9529\n  end_char: 10408\n  text_sha256: \"b0cdef4e6a3c7b730fa6a4d77136b1d899bcb2b21087a007709cd6377f951f6f\"\nbody: \"The proofs get more concrete as the passage goes on. First surviving rafters, cut from mountains that now feed only bees. Then a homely craft image: the old soil worked like roof-tiles, catching the rain from Zeus and storing it instead of letting it slide off bare ground into the sea. And finally shrines left standing at the sites of dried-up springs — religious markers pressed into service as geological evidence. Critias is teaching his audience to read the landscape itself as a record, which is exactly how he wants them to treat his story.\"\ncites:\n  observations: [\"obs_critias_0033\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0028",
+      "body": "```yaml\ncommentary_id: comm_critias_0028\nsource_work: Critias\nblock_kind: argument\nplacement: before\nstephanus_span: 112a-112d\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 112a-112d\n  start_marker: 112a\n  end_marker: 112d\n  start_char: 10747\n  end_char: 12433\n  text_sha256: \"788a16848d40fd65be3028cc1e111c81b1b8de87d03b0f9aaad99701c36aad0a\"\nbody: \"This portrait of the old acropolis quietly rebuilds Socrates' city in speech as archaeology. Craftsmen and farmers live on the lower slopes while a military class dwells apart on the summit; the warriors own no gold or silver, share common houses and mess-rooms, and hold their numbers steady at those fit to fight. Each detail matches the guardians of the Republic — but Critias presents it not as a philosopher's design, only as how Athens actually was before the floods. The argument of the whole dialogue turns on that move: the ideal city is claimed as a lost fact of one's own ancestral soil.\"\ncites:\n  observations: [\"obs_critias_0039\", \"obs_critias_0040\", \"obs_critias_0042\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0029",
+      "body": "```yaml\ncommentary_id: comm_critias_0029\nsource_work: Critias\nblock_kind: notice\nplacement: after\nstephanus_span: 112e\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 112e\n  start_marker: 112e\n  end_marker: 112e\n  start_char: 12433\n  end_char: 12913\n  text_sha256: \"31ab218ed2e1f738959790df9d2d3b55f2cb5b7bb34abc44a09fdde1bffee15d\"\nbody: \"As Critias pivots from the ancient Athenians to their enemies, he anchors the story once more in childhood memory — something he and his hearers absorbed as boys, now handed over as common property among friends. So the tale's authority rests on the frailest of chains: what old men recall hearing when they were children. The same speaker who dates his facts by floods and earthquakes asks us to trust a memory he admits could have been lost. Whether that admission strengthens the story's charm or undermines its truth is left for the listener to weigh.\"\ncites:\n  observations: [\"obs_critias_0049\", \"obs_critias_0038\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0031",
+      "body": "```yaml\ncommentary_id: comm_critias_0031\nsource_work: Critias\nblock_kind: notice\nplacement: after\nstephanus_span: 113c-113d\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 113c-113d\n  start_marker: 113c\n  end_marker: 113d\n  start_char: 13742\n  end_char: 14640\n  text_sha256: \"608b306f930999339a5503fe49192e53298fd534ebb545bb2613046f96306151\"\nbody: \"When Poseidon rings Cleito's hill with alternating belts of sea and land, the Greek describes him with a lathe-turning word — the god shapes the landscape the way a craftsman turns material on a lathe. It is a small verb with a large effect: the founding geography of Atlantis is not natural terrain but worked artifact, made 'with ease, as a god would.' The island whose measurements will soon be given in stades begins its existence as a piece of divine manufacture.\"\ncites:\n  observations: [\"obs_critias_0047\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0032",
+      "body": "```yaml\ncommentary_id: comm_critias_0032\nsource_work: Critias\nblock_kind: notice\nplacement: after\nstephanus_span: 113e\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 113e\n  start_marker: 113e\n  end_marker: 113e\n  start_char: 14640\n  end_char: 15102\n  text_sha256: \"7c97eb92c30a0fad4a9e1ae9bc0b7ba214b27c9fb113887fb7dbf384e34fbc8e\"\nbody: \"The rings that make the hill impassable work, Critias adds, because ships and sailing did not yet exist. The aside quietly dates the story to an era before seafaring itself — a hedge that fences the mythical past off from the narrator's own maritime present. It also plants an irony worth carrying forward: the power that will later be defined by its navy is founded in a world where crossing water is impossible.\"\ncites:\n  observations: [\"obs_critias_0048\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0033",
+      "body": "```yaml\ncommentary_id: comm_critias_0033\nsource_work: Critias\nblock_kind: context\nplacement: before\nstephanus_span: 114a-114c\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 114a-114c\n  start_marker: 114a\n  end_marker: 114c\n  start_char: 15102\n  end_char: 16292\n  text_sha256: \"bf7b37b8b16edf137907167f95cd317ae433032f74f0d49e293f868fcf0028f0\"\nbody: \"Critias now runs through Poseidon's ten sons in strict birth order, each with his own territory and subjects, and the roll call doubles as etymology: the Atlantic sea takes its name from Atlas, the eldest and king, and the region of Gadeira from his twin, called Eumelus in Greek but Gadeirus in the native tongue. That double naming is a quiet reminder that this is supposed to be a translated record, filtered through Egyptian and then Greek. The catalogue also fixes the political shape of Atlantis from the start: one king over nine subordinate rulers, ranked by birth rather than merit.\"\ncites:\n  observations: [\"obs_critias_0052\", \"obs_critias_0053\", \"obs_critias_0054\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0034",
+      "body": "```yaml\ncommentary_id: comm_critias_0034\nsource_work: Critias\nblock_kind: argument\nplacement: after\nstephanus_span: 115b-115c\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 115b-115c\n  start_marker: 115b\n  end_marker: 115c\n  start_char: 17716\n  end_char: 18526\n  text_sha256: \"34e07fdd3491f1c5b7e2e7f9ee54dc040b1ec3d888a132bcde029cca4c6b96d1\"\nbody: \"The long inventory of the island's produce ends with the claim that everything it bore was sacred, beautiful, wondrous, and boundless in quantity. Then the register shifts: the kings take all this from the earth and start building — bridging the rings of sea, cutting a road to the palace, each king adorning what was already adorned. The narrator marks it as an ordered procedure. One way to hear the sequence is as nature's boundless gift meeting human ordering, and the question the rest of the story will press is whether that ordering stays measured or becomes appetite dressed as magnificence.\"\ncites:\n  observations: [\"obs_critias_0057\", \"obs_critias_0058\", \"obs_critias_0059\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

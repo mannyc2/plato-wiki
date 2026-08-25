@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "submission_id": "0004-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "menexenus",
+  "source_path": "scratch/commentary/sample-repairs/menexenus/final-sample-0009-0014.json",
+  "source_sha256": "520ec70528ed225a30b1f8faf5bb00ee471d68e012e7dcfccdb5b21f4d70d451",
+  "target_path": "wiki/commentary/menexenus.md",
+  "target_sha256_before": "c7a0216ab180036ba83aecb1dc14bd3364371afe4fb5d5db60a7ac5f9483fdb5",
+  "target_sha256_after": "cfb3b28f2dc536cfc41f4208ce8d67d297ae87dbfad22f34d9e1c258a80fded8",
+  "applied_at": "2026-08-21T16:33:54.054Z",
+  "applied_ids": [
+    "comm_menexenus_0009",
+    "comm_menexenus_0014"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "menexenus",
+    "ledger": {
+      "path": "wiki/commentary/menexenus.md",
+      "sha256": "c7a0216ab180036ba83aecb1dc14bd3364371afe4fb5d5db60a7ac5f9483fdb5"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-menexenus-final-sample",
+      "reviewed_on": "2026-08-21",
+      "rationale": "The final sample found a tangled self-defeat pivot in 0009 and an unsupported final frame-return claim in 0014.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_menexenus_0001",
+        "comm_menexenus_0002",
+        "comm_menexenus_0003",
+        "comm_menexenus_0004",
+        "comm_menexenus_0005",
+        "comm_menexenus_0006",
+        "comm_menexenus_0007",
+        "comm_menexenus_0008",
+        "comm_menexenus_0009",
+        "comm_menexenus_0010",
+        "comm_menexenus_0011",
+        "comm_menexenus_0012",
+        "comm_menexenus_0013",
+        "comm_menexenus_0014"
+      ],
+      "failed_commentary_ids": [
+        "comm_menexenus_0009",
+        "comm_menexenus_0014"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_menexenus_0009",
+        "title": "The third war: Athens conquered by no one but Athens",
+        "body": "The third war begins as an unexpected and terrible turn in the catalogue, moving through the Sicilian and Hellespont campaigns. The orator then names the shocking escalation: other Greeks summoned the Persian king—once expelled with Athens—against the city and gathered Greeks and barbarians for the attack. At Mytilene, sixty Athenian ships rescue the trapped fleet, defeat the enemy, and free their friends; the fallen rescuers make the city's strength and virtue visible. Their achievement gives Athens a reputation for never being conquered, and the orator says that reputation proved true. The defeat that follows is assigned inward: Athens was overcome by its own dissension, not by others. It remained unconquered by external enemies, yet it both defeated and was defeated by itself; after peace with the others, the conflict becomes the city's own war.",
+        "cites": {
+          "observations": [
+            "obs_menexenus_0059",
+            "obs_menexenus_0060",
+            "obs_menexenus_0061",
+            "obs_menexenus_0064"
+          ],
+          "claims": [
+            "claim_menexenus_0021"
+          ],
+          "relations": [],
+          "dossiers": [
+            "turn_geometry/argument_transition_marker"
+          ]
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_menexenus_0014",
+        "title": "The city as heir, father, and guardian — then the dismissal",
+        "body": "The closing movement places the city in familial roles toward the war dead and their families: heir and son to the dead, father to their sons, and guardian to their parents. It also describes the city's continuing care through annual customary rites and athletic, equestrian, and musical contests. After urging the mourners to bear their loss more gently, the speaker gives the final procedural command: having joined in lament, they are to depart.",
+        "cites": {
+          "observations": [
+            "obs_menexenus_0096",
+            "obs_menexenus_0093",
+            "obs_menexenus_0094",
+            "obs_menexenus_0092"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": [
+            "city_as_kinship_substitute/polis_in_familial_roles",
+            "closure_type/explicit_departure_command"
+          ]
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_menexenus_0009",
+      "body": "```yaml\ncommentary_id: comm_menexenus_0009\nsource_work: Menexenus\nblock_kind: section\nplacement: before\ntitle: \"External victories, internal defeat\"\nstephanus_span: 242e-243e\nsource_ref:\n  source_path: raw/plato/greek/menexenus.txt\n  stephanus_span: 242e-243e\n  start_marker: 242e\n  end_marker: 243e\n  start_char: 16781\n  end_char: 19097\n  text_sha256: \"cd56041919265d3d925bcdd7ebc8cc479e4927b2caf89f092d81b9a60b82937a\"\nbody: \"The catalogue changes direction here. After listing victories and losses in Sicily and the Hellespont, the speaker marks the Greek appeal to Persia as the war’s unexpected turn. He then uses the rescuers’ victory to present Athens as unconquerable from without, while locating defeat in internal dissension. I read that last move as the oration’s framing of defeat, not as a conclusion the passage independently proves.\"\ncites:\n  observations: [\"obs_menexenus_0059\", \"obs_menexenus_0060\", \"obs_menexenus_0061\", \"obs_menexenus_0064\"]\n  claims: [\"claim_menexenus_0021\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_menexenus_0014",
+      "body": "```yaml\ncommentary_id: comm_menexenus_0014\nsource_work: Menexenus\nblock_kind: section\nplacement: before\ntitle: \"Civic kinship becomes public ritual\"\nstephanus_span: 248e-249e\nsource_ref:\n  source_path: raw/plato/greek/menexenus.txt\n  stephanus_span: 248e-249e\n  start_marker: 248e\n  end_marker: 249e\n  start_char: 28664\n  end_char: 31115\n  text_sha256: \"7b0b024043e05fcf1eccae7fdd8e65cc812ee0a4e77b3ed8a59220574b7f3053\"\nbody: \"The passage invites us to hear civic care as a replacement kinship: the city takes the position of heir and son to the dead, father to the orphans, and guardian to their parents. Annual rites and contests give that care an institutional form. Then the imperative to depart snaps the consolatory picture back into public procedure.\"\ncites:\n  observations: [\"obs_menexenus_0092\", \"obs_menexenus_0093\", \"obs_menexenus_0094\", \"obs_menexenus_0096\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

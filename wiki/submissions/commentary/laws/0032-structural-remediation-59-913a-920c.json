@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "submission_id": "0032-structural-remediation-59-913a-920c",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "laws",
+  "unit_key": "59-913a-920c",
+  "source_path": "scratch/commentary/audits/laws/59-913a-920c.json",
+  "source_sha256": "202c8653ed429f62acc4f51fc5fbeafb196ff39f774bc1012ff76f90d6541102",
+  "target_path": "wiki/commentary/laws.md",
+  "target_sha256_before": "3a11151606c43da9bdba3b00526a5bf57c873802350d4e4ba1a02ebeb8182824",
+  "target_sha256_after": "a5c7cdbeea72f7046de5c0ac83fde90fcbce0568b203dde9d259d38adbec7466",
+  "applied_at": "2026-08-23T23:05:06.655Z",
+  "applied_ids": [
+    "comm_laws_0059"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "laws",
+      "unitKey": "59-913a-920c",
+      "sectionId": "comm_laws_0059",
+      "auditOutputPath": "scratch/commentary/audits/laws/59-913a-920c.json",
+      "auditOutputSha256": "202c8653ed429f62acc4f51fc5fbeafb196ff39f774bc1012ff76f90d6541102",
+      "expectedLedgerSha256": "3a11151606c43da9bdba3b00526a5bf57c873802350d4e4ba1a02ebeb8182824",
+      "expectedAttributionSha256": "7a09fbf015fcc946a2acc9373d26af206a6cbfbffa899afc76ccc172f53c32db",
+      "expectedEnglishSha256": "02294c19ba9df8bbe90881fa3e379898227f1bcd074afa0edbf169b91f92d168",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_laws_0059",
+          "rewriteResolution": "reject-original"
+        }
+      ],
+      "reviewer": "round3-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Delegated Luna review finds no distinct supported teaching function: this accurate legal recap adds no teaching point; reject the original while retaining the scaffold."
+    },
+    "audit_output_path": "scratch/commentary/audits/laws/59-913a-920c.json",
+    "audit_output_sha256": "202c8653ed429f62acc4f51fc5fbeafb196ff39f774bc1012ff76f90d6541102",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_laws_0059",
+        "disposition": "rewrite",
+        "rewriteResolution": "reject-original"
+      }
+    ]
+  }
+}

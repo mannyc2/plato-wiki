@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "timaeus",
+  "source_path": "scratch/commentary/rewrites/timaeus/04-26e-29d.json",
+  "source_sha256": "7ccdc3b22907cd93102107798d31ebc5cd7d197e3f2950578fea930b05bd6e9e",
+  "target_path": "wiki/commentary/timaeus.md",
+  "target_sha256_before": "552735b5ae70aa5d76a5bec28068a6a5ac2e6fb72bbb35de1c9563b8ee8f26d4",
+  "target_sha256_after": "8461f8ccf19637ce35bbd707cd21c756fcabf2e48a21d046d40e75cf1f4292f5",
+  "applied_at": "2026-08-21T19:44:43.866Z",
+  "applied_ids": [
+    "comm_timaeus_0004",
+    "comm_timaeus_0014"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "04-26e-29d",
+      "section_id": "comm_timaeus_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/04-26e-29d.json",
+        "sha256": "5147c53ab19f11a64d09aa4a1146e80abda6f9c08e3862d70555282662aa7e0f"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0004",
+          "title": "A rule for hearing the cosmology",
+          "body": "The prelude gives us one rule for hearing the cosmology: an account should resemble the thing it explains. Timaeus says that accounts of what is stable should themselves be stable and firm. I read this as a restraint on the listener: do not demand the same kind of certainty from every subject.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0070"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "14-60d-64b",
+      "section_id": "comm_timaeus_0014",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/14-60d-64b.json",
+        "sha256": "0e9a92633251a965cd1919243ef370c776155092e3382e4bf7522c7e59507c8c"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0014",
+          "title": "From dissolution to bodily affection",
+          "body": "Timaeus moves from mixed bodies to the causes of bodily affections. The access-and-interstice logic still governs dissolution, but it does not simply carry over: heat is attributed to fire’s sharp geometry and rapid cutting, while cold is attributed to larger surrounding particles compressing bodily moisture and provoking recoil. Because sensation, flesh, and mortal soul cannot yet be explained together, he assumes one side and returns to it later.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0217",
+              "obs_timaeus_0218",
+              "obs_timaeus_0219",
+              "obs_timaeus_0226",
+              "obs_timaeus_0227",
+              "obs_timaeus_0228"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_timaeus_0004",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0004\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"The prelude: invoking gods and defining the task\"\nstephanus_span: 26e-29d\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 26e-29d\n  start_marker: 26e\n  end_marker: 29d\n  start_char: 19155\n  end_char: 23965\n  text_sha256: \"8b6f0d9dc9ceec29b9214e25f3864c5e846a616e560a330fd9ae7600e2a77394\"\nbody: \"Critias assigns Timaeus the first turn, from the cosmos to human nature; Timaeus invokes the gods, then turns to “our part,” the exposition. He starts by distinguishing what always is from what becomes, and presents the universe as generated, made by reference to a model. The passage also says that accounts should be akin to the things they explain, giving stable, firm accounts as the measure for what is stable. I read this prelude as a rule for listening: the account must fit its subject, not promise more certainty than the subject allows.\"\ncites:\n  observations: [\"obs_timaeus_0060\", \"obs_timaeus_0064\", \"obs_timaeus_0070\", \"obs_timaeus_0071\", \"obs_timaeus_0072\", \"obs_timaeus_0073\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0014",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0014\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"From mixtures to affections\"\nstephanus_span: 60d-64b\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 60d-64b\n  start_marker: 60d\n  end_marker: 64b\n  start_char: 82372\n  end_char: 90152\n  text_sha256: \"612f2c5794b1a4d4f470453c43760ce47b659b1ae8e0b1301dfbcdecdf9b673c\"\nbody: \"Here Timaeus changes the question: after classifying mixed bodies and their resistance to dissolution, he asks how their affections become intelligible. The account keeps the same logic of access—different elemental parts enter or fail to enter intervals—but now applies it to heat and cold as bodily processes. He also flags a genuine ordering problem: sensation, flesh, and mortal soul depend on one another for explanation, so the argument must posit one side and return to it later.\"\ncites:\n  observations: [\"obs_timaeus_0225\", \"obs_timaeus_0226\", \"obs_timaeus_0227\", \"obs_timaeus_0228\", \"obs_timaeus_0217\", \"obs_timaeus_0218\", \"obs_timaeus_0219\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

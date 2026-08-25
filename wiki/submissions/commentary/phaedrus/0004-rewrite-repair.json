@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "submission_id": "0004-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "phaedrus",
+  "source_path": "scratch/commentary/rewrite-repairs/phaedrus/0017-round2.json",
+  "source_sha256": "3526266f6654e48c54b62d2b8a696e6b4fa119e1307704198de20385cffb83f2",
+  "target_path": "wiki/commentary/phaedrus.md",
+  "target_sha256_before": "6fccdeee65fe30fe95f3116a72d0865ba785675c2c5e0e37ce9a390dff26c99e",
+  "target_sha256_after": "bbb382a42f7beed9d9a6b989d3503d71febf5d6cf92dc78f2d14df75c1ca78f6",
+  "applied_at": "2026-08-21T19:03:26.578Z",
+  "applied_ids": [
+    "comm_phaedrus_0017"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "phaedrus",
+    "ledger": {
+      "path": "wiki/commentary/phaedrus.md",
+      "sha256": "6fccdeee65fe30fe95f3116a72d0865ba785675c2c5e0e37ce9a390dff26c99e"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/phaedrus/0003-sample-repair.json",
+      "sha256": "fac32b0ac0d8adb763acefe203a0e9ec4b9e5065691f0163b5ce322cdd7f9ae0"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-phaedrus-0003-sample-repair-acceptance.md",
+      "sha256": "1ac642b2e0a16d480796f64943ec6c918d69af9638605dcf94f28966584b60f2"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-phaedrus-sample-repair-round1",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_phaedrus_0017",
+          "finding": "The opening claim about Theuth's proposal lacks a directly supporting accepted citation; add obs_phaedrus_0257 or remove that proposition."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-phaedrus-round2",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_phaedrus_0017"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_phaedrus_0017",
+        "title": "Writing as a reminder, not a substitute",
+        "body": "The Egyptian tale turns on a reversal: Theuth presents writing as a drug for memory and wisdom, while Thamus says it produces forgetfulness and only the appearance of wisdom. Socrates later calls writing a reminder for one who already knows, then contrasts its helplessness when questioned with speech written with knowledge in the learner’s soul, capable of defending itself. I hear this as a limit on what writing can do, not its disappearance.",
+        "cites": {
+          "observations": [
+            "obs_phaedrus_0257",
+            "obs_phaedrus_0301"
+          ],
+          "claims": [
+            "claim_phaedrus_0079",
+            "claim_phaedrus_0081",
+            "claim_phaedrus_0082"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_phaedrus_0017",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0017\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"Writing as a reminder, not a substitute\"\nstephanus_span: 273e-276a\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 273e-276a\n  start_marker: 273e\n  end_marker: 276a\n  start_char: 92687\n  end_char: 97611\n  text_sha256: \"c5858b76d6d0cf71fc05dd03d6ee6b4bfcbee4807e238eb8fbdcfd6dda5fc296\"\nbody: \"The Egyptian tale turns on a reversal: Theuth presents writing as a remedy for memory and wisdom, while Thamus says it produces forgetfulness and only the appearance of wisdom. Socrates later calls writing a reminder for one who already knows, then contrasts its helplessness when questioned with speech written with knowledge in the learner's soul, capable of defending itself. I hear this as a limit on what writing can do, not its disappearance.\"\ncites:\n  observations: [\"obs_phaedrus_0301\"]\n  claims: [\"claim_phaedrus_0079\", \"claim_phaedrus_0081\", \"claim_phaedrus_0082\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

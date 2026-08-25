@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-02-44b-46a",
+  "lane": "commentary",
+  "kind": "rewrite",
+  "scope": "crito",
+  "unit_key": "02-44b-46a",
+  "source_path": "scratch/commentary/rewrites/crito/02-44b-46a.json",
+  "source_sha256": "1eb858d4466fa196f365d432f8e839bb8da797993c6c33379a51b9e27653c478",
+  "target_path": "wiki/commentary/crito.md",
+  "target_sha256_before": "a5a4bc7e6e597b783eebeec3bb434d116a921cb9e542615cbe84d7ef5fbaed37",
+  "target_sha256_after": "1d30fac6aa2f949fcd97002b1538b23eb23cca8652bc3dcc7c30679e7990ec9a",
+  "applied_at": "2026-08-21T12:37:50.240Z",
+  "applied_ids": [
+    "comm_crito_0002"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "crito",
+    "unit_key": "02-44b-46a",
+    "section_id": "comm_crito_0002",
+    "audit_output": {
+      "path": "scratch/commentary/audits/crito/02-44b-46a.json",
+      "sha256": "d6f787e7f059ca45db701f350b42ec8b388885f79725a5cb72e90cf0b2cbbac0"
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_crito_0002",
+        "title": "The dream opens the pressure campaign",
+        "body": "Socrates reports a dream in which a woman in white recites a verse about reaching Phthia on the third day; he calls the dream clear, while Crito calls it strange. The text leaves its meaning at that level. Crito then builds his case for escape through reputation, available resources, children, and the charge of cowardice.",
+        "cites": {
+          "observations": [
+            "obs_crito_0003",
+            "obs_crito_0004"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_crito_0002",
+      "body": "```yaml\ncommentary_id: comm_crito_0002\nsource_work: Crito\nblock_kind: section\nplacement: before\ntitle: \"Crito's case for escape\"\nstephanus_span: 44b-46a\nsource_ref:\n  source_path: raw/plato/greek/crito.txt\n  stephanus_span: 44b-46a\n  start_marker: 44b\n  end_marker: 46a\n  start_char: 2096\n  end_char: 6456\n  text_sha256: \"9bfccbe834c6df6be7ffa05fdc6f89c1d16333c21fbae37db7eb75de31d040e1\"\naudio_insertion:\n  attribution_path: audio/speaker-attributions/crito.json\n  attribution_sha256: \"ec879f54eae937c0579a3d1f4d5b1c98c8ee596425ebdb2e32de8b7fe7a0b2af\"\n  english_sha256: \"788cb7f273b9ea125faa9bb946009de9728fe2f86a91d9c504b79e8f63fd9019\"\n  turn_id: turn-000030\n  edge: after\n  char_offset: 2750\nbody: \"The dream has played, and Socrates trusts the woman in white over the travelers' report: they reckon the ship arrives today; she has promised the third day. Now Crito begins his case for escape — not one speech but pressure from every side: what people will say, the money and helpers ready, the sons left as orphans, the courage a man who professed virtue owes himself.\"\ncites:\n  observations: [\"obs_crito_0002\", \"obs_crito_0003\", \"obs_crito_0004\", \"obs_crito_0005\"]\n  claims: [\"claim_crito_0009\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

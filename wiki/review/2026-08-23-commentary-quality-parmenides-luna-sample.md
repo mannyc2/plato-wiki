@@ -1,0 +1,25 @@
+# Commentary quality-audit acceptance
+
+dialogue: parmenides
+decision: accepted
+reviewer: manifest-batch-2-delegated-luna-reviewer-20260823
+reviewed_on: 2026-08-23
+rationale: All 7 active accepted IDs sampled in ledger order; prose, Greek source, cited evidence, placement, and audit checks pass with no defects.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sampled_commentary_ids:
+- comm_parmenides_0001
+- comm_parmenides_0002
+- comm_parmenides_0004
+- comm_parmenides_0005
+- comm_parmenides_0006
+- comm_parmenides_0010
+- comm_parmenides_0013
+predecessor_manifest_path: wiki/commentary-audits/parmenides.json
+predecessor_manifest_sha256: 4501786f25d32c549dec8a52fd4ebf20d9cf09f9e98dac56201fd69d2597f393
+predecessor_manifest_history_path: wiki/commentary-audits/history/parmenides/4501786f25d32c549dec8a52fd4ebf20d9cf09f9e98dac56201fd69d2597f393.json
+predecessor_manifest_history_sha256: 4501786f25d32c549dec8a52fd4ebf20d9cf09f9e98dac56201fd69d2597f393
+predecessor_review_note_path: wiki/review/2026-08-21-commentary-quality-parmenides-luna-sample.md
+predecessor_review_note_sha256: a8143c18b046bdd98f2a949c86e77f551b0f3f98077be7baea8ca7fe3b0ff65d
+predecessor_review_note_history_path: wiki/review/commentary-quality-history/parmenides/a8143c18b046bdd98f2a949c86e77f551b0f3f98077be7baea8ca7fe3b0ff65d.md
+predecessor_review_note_history_sha256: a8143c18b046bdd98f2a949c86e77f551b0f3f98077be7baea8ca7fe3b0ff65d

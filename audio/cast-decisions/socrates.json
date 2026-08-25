@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "status": "accepted-deterministic-cast-decision",
+  "policy": "cast-auto-accept-v1",
+  "acceptedAt": "2026-07-15",
+  "characterId": "socrates",
+  "sourceCharacterId": "socrates",
+  "candidateSelection": "operator-pinned",
+  "rankingPolicy": "mean-cosine-desc/minimum-window-cosine-desc/ordinary-word-errors-asc/speech-rate-distance-from-3-asc/seed-asc",
+  "inputs": {
+    "cast": {
+      "path": "audio/cast.json",
+      "sha256": "70a62c75f087a4ca83a193f66218ddb5ce680ac4a72f1ea6ad58efeada767b9f"
+    },
+    "characters": {
+      "path": "audio/characters.json",
+      "sha256": "3bb880509eadf402d18f3a1e57a9abfacc5722ab62eedc2b7dedce14ff31e24d"
+    },
+    "referenceSources": {
+      "path": "audio/reference-sources.json",
+      "sha256": "c65f15e02a23734020a5bdb6100c1d45abc50b13bcab9b0cd60cc52145f6440e"
+    },
+    "referenceSidecar": {
+      "path": "scratch/audio-references/socrates/MNDfJMrH1XY-000065920-000072280-b577608ef05e.json",
+      "sha256": "3dab2fe1177d131522604f2ed68079b18f98b4f938af86b0db9cb8b08fa1931d"
+    },
+    "speakerPurity": {
+      "path": "scratch/audio-jowett-reference-alignment/crito.report.json",
+      "sha256": "8fa596574fe9d99336813d00f8bd58c9569e4e2bd01903161c711d33b6f3b6f0"
+    },
+    "cloneManifest": {
+      "path": "scratch/audio-references/auditions/socrates-safe-seed44/audition-manifest.json",
+      "sha256": "ccf23cd519733e407c0f739fdf28c5bff6ea93e021155a8b3ac17a31a901b46b"
+    },
+    "asr": {
+      "path": "scratch/audio-references/auditions/socrates-safe-seed44/asr-qa.json",
+      "sha256": "e7ab1e19c7141e2d23da2bedd2ab10fcd315d42a2158094c502d29411fa09fa3"
+    },
+    "acoustic": {
+      "path": "scratch/audio-references/auditions/socrates-safe-seed44/speaker-ranking.json",
+      "sha256": "aae0bfb5b69e88a373985a1de8dee683cb601a7ff5fcadf0e07581beaa6e59be"
+    },
+    "referenceAsrAdjudication": {
+      "path": "scratch/audio-references/auditions/socrates-safe-seed44/reference-asr-adjudication.json",
+      "sha256": "866cb29562bb8b1a815dd75187fd570e4c4fd35ffdb77b055468cf41c6eb8071"
+    }
+  },
+  "reference": {
+    "sourceUrl": "https://www.youtube.com/watch?v=MNDfJMrH1XY",
+    "sourceRegistryPath": "audio/reference-sources.json",
+    "sourceRegistrySha256": "c65f15e02a23734020a5bdb6100c1d45abc50b13bcab9b0cd60cc52145f6440e",
+    "sourceDialogue": "crito",
+    "sourceVideoId": "MNDfJMrH1XY",
+    "sourceCharacterId": "socrates",
+    "videoStartSeconds": 65.92,
+    "videoEndSeconds": 72.28,
+    "localDurationSeconds": 6.36,
+    "localSha256": "87449321c0ca939554b91feb05c2ee4fab1b55151715780112c34f1bbb9cf1a3",
+    "relativePath": "scratch/audio-references/socrates/MNDfJMrH1XY-000065920-000072280-b577608ef05e.wav",
+    "promptText": "Why, Crito, when a man has reached my age he ought not to be repining at the prospect of death.",
+    "referenceAsr": {
+      "decision": "independent-large-v3-zero-error",
+      "primaryExpectedWords": 20,
+      "primaryOrdinaryWordErrors": 1,
+      "primaryOrdinaryWordErrorRate": 0.05,
+      "primaryEvidencePath": "scratch/audio-references/auditions/socrates-safe-seed44/asr-qa.json",
+      "primaryEvidenceSha256": "e7ab1e19c7141e2d23da2bedd2ab10fcd315d42a2158094c502d29411fa09fa3",
+      "sourceAgreementEvidencePath": "scratch/audio-jowett-reference-alignment/crito.report.json",
+      "sourceAgreementEvidenceSha256": "8fa596574fe9d99336813d00f8bd58c9569e4e2bd01903161c711d33b6f3b6f0",
+      "sourceAgreementSha256": "17ba4358a113af636ea1ae2f450629ba20d80ce4eaa7b8c3ff2d0c9ea6d22165",
+      "adjudicationEvidencePath": "scratch/audio-references/auditions/socrates-safe-seed44/reference-asr-adjudication.json",
+      "adjudicationEvidenceSha256": "866cb29562bb8b1a815dd75187fd570e4c4fd35ffdb77b055468cf41c6eb8071",
+      "independentExpectedWords": 20,
+      "independentOrdinaryWordErrors": 0,
+      "independentOrdinaryWordErrorRate": 0,
+      "independentEvidencePath": "scratch/audio-references/auditions/socrates-safe-seed44/reference-asr-independent.json",
+      "independentEvidenceSha256": "1b80c177e0a2304312c7ccc393b14c2ed7c8c63386f153d614d30a49074e4827",
+      "independentModel": {
+        "repository": "deepdml/faster-whisper-large-v3-turbo-ct2",
+        "revision": "44cbbd1adefe7387c83df88963a6d9ac4c9adea5"
+      }
+    },
+    "speakerPurityEvidencePath": "scratch/audio-jowett-reference-alignment/crito.report.json",
+    "speakerPurityEvidenceSha256": "8fa596574fe9d99336813d00f8bd58c9569e4e2bd01903161c711d33b6f3b6f0",
+    "speakerPurityProofRecordId": "existing-socrates-selection",
+    "speakerPuritySourceAgreementSha256": "17ba4358a113af636ea1ae2f450629ba20d80ce4eaa7b8c3ff2d0c9ea6d22165",
+    "speakerPurityMethod": "jowett-caption-turn-alignment-v1",
+    "dominantSpeakerCoverage": 1,
+    "competingSpeakerCoverage": 0,
+    "uncoveredSpeakerCoverage": 0
+  },
+  "gates": {
+    "referenceDuration": {
+      "minimumSeconds": 3,
+      "maximumSeconds": 15,
+      "maximumIntervalDeltaSeconds": 0.05
+    },
+    "speakerPurity": {
+      "minimumDominantCoverage": 0.95,
+      "maximumCompetingCoverage": 0.02,
+      "maximumUncoveredCoverage": 0.03
+    },
+    "asrFidelity": {
+      "minimumReferenceExpectedWords": 8,
+      "maximumReferenceOrdinaryWordErrors": 0,
+      "maximumReferenceOrdinaryWordErrorRate": 0,
+      "referenceFailureAdjudication": "exact-source-agreement-plus-pinned-independent-large-v3-zero-v1",
+      "minimumExpectedWords": 40,
+      "maximumOrdinaryWordErrors": 0,
+      "maximumOrdinaryWordErrorRate": 0
+    },
+    "acousticConsistency": {
+      "minimumMeanCosineSimilarity": 0.85,
+      "minimumWindowCosineSimilarity": 0.8
+    },
+    "signalSafety": {
+      "maximumClippedSamples": 0,
+      "maximumTruePeakDbtp": 0,
+      "maximumPeakAmplitude": 0.9999
+    },
+    "auditionDuration": {
+      "minimumSeconds": 8,
+      "maximumSeconds": 60,
+      "minimumWordsPerSecond": 1.5,
+      "maximumWordsPerSecond": 4.5
+    }
+  },
+  "candidates": [
+    {
+      "seed": 44,
+      "file": "socrates-MNDfJMrH1XY-de8c01d733d2-seed44.wav",
+      "audition": {
+        "relativePath": "scratch/audio-references/auditions/socrates-safe-seed44/socrates-MNDfJMrH1XY-de8c01d733d2-seed44.wav",
+        "sha256": "a7c7945705cc5cd86a5576b625e83e834f1f50508bc8172ed2d6da37ebd1e108",
+        "durationSeconds": 20.16,
+        "expectedWords": 71,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-references/auditions/socrates-safe-seed44/asr-qa.json",
+        "asrEvidenceSha256": "e7ab1e19c7141e2d23da2bedd2ab10fcd315d42a2158094c502d29411fa09fa3",
+        "meanSpeakerCosineSimilarity": 0.9088325500488281,
+        "minimumWindowSpeakerCosineSimilarity": 0.8968644142150879,
+        "acousticEvidencePath": "scratch/audio-references/auditions/socrates-safe-seed44/speaker-ranking.json",
+        "acousticEvidenceSha256": "aae0bfb5b69e88a373985a1de8dee683cb601a7ff5fcadf0e07581beaa6e59be",
+        "clippedSamples": 0,
+        "truePeakDbtp": -0.3,
+        "peakAmplitude": 0.960662841796875
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.9088325500488281,
+        -0.8968644142150879,
+        0,
+        0.5218253968253967,
+        44
+      ],
+      "passingRank": 1
+    }
+  ],
+  "selectedSeed": 44,
+  "selectedPassingRank": 1,
+  "decisionContentSha256": "84e2cc343cac9104532991e879640ce5557a5ef0803193ae1af153478f8ae0d8"
+}

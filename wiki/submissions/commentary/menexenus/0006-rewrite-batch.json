@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "submission_id": "0006-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "menexenus",
+  "source_path": "scratch/commentary/rewrites/menexenus/04-237d-238b.json",
+  "source_sha256": "6760b248c20ca81b18abde7971ae637fb6b11b2ac0227f60f000bc3374566824",
+  "target_path": "wiki/commentary/menexenus.md",
+  "target_sha256_before": "f0f227632989d449d3b91b07da67f9b09b724137dc2d496a413fb52b25fb9aa9",
+  "target_sha256_after": "9f44bc0698b219bc2372ae2118dd9117a47b77ccdf9ddc999e9ecf9a54eddade",
+  "applied_at": "2026-08-23T21:17:36.924Z",
+  "applied_ids": [
+    "comm_menexenus_0004",
+    "comm_menexenus_0007",
+    "comm_menexenus_0010"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "menexenus",
+      "unit_key": "04-237d-238b",
+      "section_id": "comm_menexenus_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/menexenus/04-237d-238b.json",
+        "sha256": "506bf032599387dd27090ed4c86976635be324755c49580b1d8519c35d6471d2"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_menexenus_0004",
+          "title": "The mother’s nourishment",
+          "body": "The passage reverses the usual parent–child relation: the mother nourishes those who belong to her, making civic identity a relation of dependence rather than a simple legal label.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "menexenus",
+      "unit_key": "07-240c-241c",
+      "section_id": "comm_menexenus_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/menexenus/07-240c-241c.json",
+        "sha256": "015f857a10bd2e23b676280620ac4a823ab58e698fcd43453f857ea9a32d6573"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_menexenus_0007",
+          "title": "Education as Civic Formation",
+          "body": "Education matters here not as another item in the city’s self-description, but as the point at which inherited civic standing must become lived character.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "menexenus",
+      "unit_key": "10-244a-245b",
+      "section_id": "comm_menexenus_0010",
+      "audit_output": {
+        "path": "scratch/commentary/audits/menexenus/10-244a-245b.json",
+        "sha256": "d202b649ddaa2faa9ef90ff53df72e82c4cdfbf04003246f9b3cc5f05614c8f7"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_menexenus_0010",
+          "title": "Athens as a refuge",
+          "body": "The passage should not be inflated into a scene of former enemies coming to beg. Keep its narrower emphasis on the need of named Greeks and the King for Athens and on their seeking salvation there.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_menexenus_0004",
+      "body": "```yaml\ncommentary_id: comm_menexenus_0004\nsource_work: Menexenus\nblock_kind: section\nplacement: before\ntitle: \"When the copy claims priority\"\nstephanus_span: 237d-238b\nsource_ref:\n  source_path: raw/plato/greek/menexenus.txt\n  stephanus_span: 237d-238b\n  start_marker: 237d\n  end_marker: 238b\n  start_char: 6546\n  end_char: 8182\n  text_sha256: \"2deb23bc8054b62b1cb6ca5d1ebdd0f7409c70f8c87704a1ed4fef880aa188a7\"\nbody: \"The speech’s decisive move is not the comparison of earth and woman but its reversal of who copies whom. By making the earth the model and woman the imitator, it turns a familiar maternal analogy into a claim of priority: Athenian earth is presented as the original, while human birth repeats its pattern. Read this as rhetorical persuasion, not demonstrated metaphysics.\"\ncites:\n  observations: [\"obs_menexenus_0024\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_menexenus_0007",
+      "body": "```yaml\ncommentary_id: comm_menexenus_0007\nsource_work: Menexenus\nblock_kind: section\nplacement: before\ntitle: \"Marathon and Salamis: victories retold as lessons\"\nstephanus_span: 240c-241c\nsource_ref:\n  source_path: raw/plato/greek/menexenus.txt\n  stephanus_span: 240c-241c\n  start_marker: 240c\n  end_marker: 241c\n  start_char: 12062\n  end_char: 14486\n  text_sha256: \"aa8fe604ae91aa0101c43a2f2537a638339232644a96fdd7703753cdfa02387e\"\nbody: \"Marathon becomes the oration's first prize and its central maxim: every multitude and every wealth yields to virtue. The Marathon men are made fathers of Greek freedom, and the sea-fighters at Salamis and Artemisium take second prize, curing the Greeks of fear. Notice how battles are consistently recast as acts of teaching.\"\ncites:\n  observations: [\"obs_menexenus_0045\", \"obs_menexenus_0046\", \"obs_menexenus_0047\", \"obs_menexenus_0048\", \"obs_menexenus_0049\", \"obs_menexenus_0050\", \"obs_menexenus_0051\"]\n  claims: [\"claim_menexenus_0017\", \"claim_menexenus_0018\"]\n  relations: [\"rel_cross-dialogue_0013\", \"rel_cross-dialogue_0404\"]\n  dossiers: [\"elenchus/ethical_inversion_maxim\", \"definition_ladder/psychological_progression_tracked\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_menexenus_0010",
+      "body": "```yaml\ncommentary_id: comm_menexenus_0010\nsource_work: Menexenus\nblock_kind: section\nplacement: before\ntitle: \"After civil war: misfortune, clemency, and the city's one fault\"\nstephanus_span: 244a-245b\nsource_ref:\n  source_path: raw/plato/greek/menexenus.txt\n  stephanus_span: 244a-245b\n  start_marker: 244a\n  end_marker: 245b\n  start_char: 19097\n  end_char: 21849\n  text_sha256: \"a8224c4f6e9e5d564bf1e6f1239f3c54f9c3f240235d8fcb4db2917fec8cd98a\"\nbody: \"The civil war's deaths are attributed to misfortune, not vice. Restored, the city forgives barbarians but resents ungrateful Greeks, and former enemies — Argives, Boeotians, Corinthians, even the Persian king — come begging its help. The only just accusation the speaker allows against Athens: it pities too much and serves the weaker.\"\ncites:\n  observations: [\"obs_menexenus_0062\", \"obs_menexenus_0063\", \"obs_menexenus_0072\", \"obs_menexenus_0073\", \"obs_menexenus_0074\", \"obs_menexenus_0075\", \"obs_menexenus_0076\", \"obs_menexenus_0077\"]\n  claims: [\"claim_menexenus_0022\"]\n  relations: []\n  dossiers: [\"dramatic_case_setup/city_internal_plurality_claim\", \"prosopography/ally_catalogue\", \"craft_analogy/historical_exemplum_analogy\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

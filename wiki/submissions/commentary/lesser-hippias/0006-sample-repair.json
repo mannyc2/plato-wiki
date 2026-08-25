@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "submission_id": "0006-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "lesser-hippias",
+  "source_path": "scratch/commentary/sample-repairs/lesser-hippias/round3.json",
+  "source_sha256": "cc83e0f897fde7535a914ee1f6a6218a45024ceae59bd0978bd92304e1e9bfcd",
+  "target_path": "wiki/commentary/lesser-hippias.md",
+  "target_sha256_before": "90a7c9caa54ad73430c3b4a16e4887d2b051e2552eb484d3a0bfd613cd1345ba",
+  "target_sha256_after": "cc44dad7d2898ebae87076c6b663f41c5be9da9392955ed7e0c3ae5a560669a2",
+  "applied_at": "2026-08-23T23:59:55.393Z",
+  "applied_ids": [
+    "comm_lesser-hippias_0006",
+    "comm_lesser-hippias_0010"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "lesser-hippias",
+    "ledger": {
+      "path": "wiki/commentary/lesser-hippias.md",
+      "sha256": "90a7c9caa54ad73430c3b4a16e4887d2b051e2552eb484d3a0bfd613cd1345ba"
+    },
+    "sample_review": {
+      "reviewer": "sample-b-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna sample review found two bounded modality and density defects requiring repair.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_lesser-hippias_0001",
+        "comm_lesser-hippias_0002",
+        "comm_lesser-hippias_0003",
+        "comm_lesser-hippias_0004",
+        "comm_lesser-hippias_0005",
+        "comm_lesser-hippias_0006",
+        "comm_lesser-hippias_0007",
+        "comm_lesser-hippias_0008",
+        "comm_lesser-hippias_0010",
+        "comm_lesser-hippias_0012",
+        "comm_lesser-hippias_0013"
+      ],
+      "failed_commentary_ids": [
+        "comm_lesser-hippias_0006",
+        "comm_lesser-hippias_0010"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_lesser-hippias_0006",
+        "title": "Achilles the schemer, and the question that stings",
+        "body": "The Achilles and Odysseus example sharpens the dispute about willing wrongdoing. Achilles says he will leave, yet the exchange presents Odysseus as the willing schemer; Hippias therefore objects that the laws punish willing wrongdoers more severely. The example turns the question of who lies into a question about whether willingness makes the act worse.",
+        "cites": {
+          "observations": [
+            "obs_lesser-hippias_0052",
+            "obs_lesser-hippias_0053",
+            "obs_lesser-hippias_0054",
+            "obs_lesser-hippias_0055",
+            "obs_lesser-hippias_0056",
+            "obs_lesser-hippias_0058",
+            "obs_lesser-hippias_0062",
+            "obs_lesser-hippias_0087"
+          ],
+          "claims": [
+            "claim_lesser-hippias_0006",
+            "claim_lesser-hippias_0007",
+            "claim_lesser-hippias_0008",
+            "claim_lesser-hippias_0009",
+            "claim_lesser-hippias_0010"
+          ],
+          "relations": [
+            "rel_lesser-hippias_0001"
+          ],
+          "dossiers": [
+            "prosopography/homeric_hero_ranking",
+            "myth_demarcation/poetic_quotation_as_authority",
+            "dramatic_case_setup/thesis_stated_in_opening_exchange",
+            "elenchus/respondent_rejects_conclusion",
+            "elenchus/common_opinion_deployed_as_challenge",
+            "irony_marker/knowledge_disavowal",
+            "turn_geometry/explicit_procedure_control"
+          ]
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_lesser-hippias_0010",
+        "title": "",
+        "body": "The contrast is conditional rather than absolute: the wise man can lie consistently if he wishes, while the ignorant man may happen to tell the truth.",
+        "cites": {
+          "observations": [],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_lesser-hippias_0006",
+      "body": "```yaml\ncommentary_id: comm_lesser-hippias_0006\nsource_work: Lesser Hippias\nblock_kind: section\nplacement: before\ntitle: \"Achilles the schemer, and the question that stings\"\nstephanus_span: 371a-373b\nsource_ref:\n  source_path: raw/plato/greek/lesser-hippias.txt\n  stephanus_span: 371a-373b\n  start_marker: 371a\n  end_marker: 373b\n  start_char: 15067\n  end_char: 19800\n  text_sha256: \"cc81dbc6ac928dff69115adeeffb6fc788d792e806ef146f385c18d6a6a4f70e\"\nbody: \"Now the Homeric counterreading turns moral. Achilles, Socrates argues, is the subtler schemer: he tells Odysseus he will sail home, yet tells Ajax he will stay, a contradiction Odysseus failed to notice. That triggers the dispute. If the willing liar is abler, Odysseus would be better; Hippias objects that the laws punish willing wrongdoers harder. Socrates, unsteady in his thesis, states the contrary and asks the others for help.\"\ncites:\n  observations: [\"obs_lesser-hippias_0052\", \"obs_lesser-hippias_0053\", \"obs_lesser-hippias_0054\", \"obs_lesser-hippias_0055\", \"obs_lesser-hippias_0056\", \"obs_lesser-hippias_0058\", \"obs_lesser-hippias_0062\", \"obs_lesser-hippias_0087\"]\n  claims: [\"claim_lesser-hippias_0006\", \"claim_lesser-hippias_0007\", \"claim_lesser-hippias_0008\", \"claim_lesser-hippias_0009\", \"claim_lesser-hippias_0010\"]\n  relations: [\"rel_lesser-hippias_0001\"]\n  dossiers: [\"prosopography/homeric_hero_ranking\", \"myth_demarcation/poetic_quotation_as_authority\", \"dramatic_case_setup/thesis_stated_in_opening_exchange\", \"elenchus/respondent_rejects_conclusion\", \"elenchus/common_opinion_deployed_as_challenge\", \"irony_marker/knowledge_disavowal\", \"turn_geometry/explicit_procedure_control\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_lesser-hippias_0010",
+      "body": "```yaml\ncommentary_id: comm_lesser-hippias_0010\nsource_work: Lesser Hippias\nblock_kind: argument\nplacement: after\nstephanus_span: 367b\nsource_ref:\n  source_path: raw/plato/greek/lesser-hippias.txt\n  stephanus_span: 367b\n  start_marker: 367b\n  end_marker: 367b\n  start_char: 7757\n  end_char: 8138\n  text_sha256: \"98f8b2a057706c992e5fb5f6ef266fa6cd67bea1c7b267de13c366fd90cf6ae9\"\nbody: \"The knowing man lies consistently, while the ignorant man tells the truth accidentally. The contrast presents these opposed patterns here, without by itself establishing an exclusive rule.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

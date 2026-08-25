@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0009-structural-remediation-10-244a-245b",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "menexenus",
+  "unit_key": "10-244a-245b",
+  "source_path": "scratch/commentary/audits/menexenus/10-244a-245b.json",
+  "source_sha256": "5df742dbb73dc17ee5ae5892dcf5ddb5c376c6d02841b3a643da8b20770d029b",
+  "target_path": "wiki/commentary/menexenus.md",
+  "target_sha256_before": "5c756a632f773c13ae4a583cc72993df26764057849210ccf5f175d826ce3486",
+  "target_sha256_after": "200cb97042d81ca158fbd78dab8e60b6efa9b72266d15249e46fd97f16b644c2",
+  "applied_at": "2026-08-23T22:27:07.225Z",
+  "applied_ids": [
+    "comm_menexenus_0010"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "menexenus",
+      "unitKey": "10-244a-245b",
+      "sectionId": "comm_menexenus_0010",
+      "auditOutputPath": "scratch/commentary/audits/menexenus/10-244a-245b.json",
+      "auditOutputSha256": "5df742dbb73dc17ee5ae5892dcf5ddb5c376c6d02841b3a643da8b20770d029b",
+      "expectedLedgerSha256": "5c756a632f773c13ae4a583cc72993df26764057849210ccf5f175d826ce3486",
+      "expectedAttributionSha256": "e183acebb895bf91d7fa1807be74275d2ef8733285d9dc4422ee01a9926d0b41",
+      "expectedEnglishSha256": "a1a24aa22e0f7c27c5917ad1f82abc4f1be9312870dba4897d97d25fff772492",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_menexenus_0010"
+        }
+      ],
+      "reviewer": "lane-b-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna structural review confirms conservative rejection of audited remove findings and split originals; delegated Luna review only."
+    },
+    "audit_output_path": "scratch/commentary/audits/menexenus/10-244a-245b.json",
+    "audit_output_sha256": "5df742dbb73dc17ee5ae5892dcf5ddb5c376c6d02841b3a643da8b20770d029b",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_menexenus_0010",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

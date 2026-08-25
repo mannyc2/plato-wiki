@@ -1,0 +1,717 @@
+{
+  "schema_version": 1,
+  "dialogue": "apology",
+  "ledger": {
+    "path": "wiki/commentary/apology.md",
+    "sha256": "a68c392cd03982f42eea5c2719b483da20c171bb897bdec2cd240b4266efeb63"
+  },
+  "protocol": {
+    "path": "docs/commentary-protocol.md",
+    "sha256": "ec82c17b1b3a289bc079181ac6bfe0f90df9dae4afa068ac6804aeb6e41978ad"
+  },
+  "authoring": {
+    "model": "gpt-5.6-luna",
+    "effort": "medium"
+  },
+  "units": [
+    {
+      "unit_key": "01-17a-18e",
+      "section_id": "comm_apology_0001",
+      "audit_brief_sha256": "c889704654791a04c19b600f115fc3845f90b83f5db02533ef05e899f8e0a0c2",
+      "output_path": "scratch/commentary/audits/apology/01-17a-18e.json",
+      "output_sha256": "1e1150fd9e82325c4210c99b8cfff2afc03e366522018294fc0ac63ebf12a89e",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "01-17a-18e",
+        "section_id": "comm_apology_0001",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0001",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section efficiently orients the listener to the opening defense and its central procedural shift from speech style to justice, then frames the older-versus-newer accusation structure. It is concise, specific to the passage, and suitable as a unit-level introduction."
+          },
+          {
+            "commentary_id": "comm_apology_0020",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "This block isolates the passage's governing standard for the hearing: the jury should assess justice and the speaker should tell the truth. The interpretive framing is clearly marked as one way to hear the move, and the prose is concise and easy to follow aloud."
+          },
+          {
+            "commentary_id": "comm_apology_0021",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The block explains the dramatic force of inherited accusations: they precede the trial, were formed in childhood, and cannot readily be answered by live questioning. Its final formulation appropriately presents the strategic implication as a reading rather than an established fact, while adding more"
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "02-19a-20c",
+      "section_id": "comm_apology_0002",
+      "audit_brief_sha256": "b871c6e49cf610ac8a920cc1704ca37e6cf68b989395639e690a10feff570458",
+      "output_path": "scratch/commentary/audits/apology/02-19a-20c.json",
+      "output_sha256": "f71941c7db837d4755c86ca80abb5de7b30d2d1984fd33f4a3c81f5291236e89",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "02-19a-20c",
+        "section_id": "comm_apology_0002",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0002",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "Clearly orients the whole unit by naming both caricatures Socrates answers and preserves the unresolved question that drives the next move. It adds structure rather than merely repeating the passage."
+          },
+          {
+            "commentary_id": "comm_apology_0022",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The interruption earns its place by distinguishing Socrates’ reconstructed charge from Meletus’ formal suit and from claims about every juror’s belief. It is source-specific, cautious, and easy to follow aloud."
+          },
+          {
+            "commentary_id": "comm_apology_0023",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "It identifies the unit’s central turn from fee denial to the problem of expertise in human virtue. The conditional wording around Euenus preserves Socrates’ uncertainty, and the connected observations remain within one coherent argumentative job."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "03-20d-23c",
+      "section_id": "comm_apology_0003",
+      "audit_brief_sha256": "6d9fe1a25bbd5589136c8e947c1a973b21dc8b5400649f0a0aafeef3e025f61e",
+      "output_path": "scratch/commentary/audits/apology/03-20d-23c.json",
+      "output_sha256": "cf6bd97b5445e1e9defea1d8c7973e9e569d7fcf52ef0e8131ce7d3eb11cc6de",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "03-20d-23c",
+        "section_id": "comm_apology_0003",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0003",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section gives a concise orientation to the oracle, the examinations, and Socrates’ interpretive turn without merely reproducing the passage."
+          },
+          {
+            "commentary_id": "comm_apology_0024",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "This interruption earns its place by clarifying the shift from personal assertion to public testimony and identifying the unresolved tension that drives the examination."
+          },
+          {
+            "commentary_id": "comm_apology_0025",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The block isolates the attempted refutation and explains the precise distinction Socrates draws between knowing and falsely thinking one knows."
+          },
+          {
+            "commentary_id": "comm_apology_0026",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The block clearly marks the oracle’s interpretive resolution and connects it to Socrates’ continuing search, while preserving the passage’s open-ended scope."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "04-23d-24a",
+      "section_id": "comm_apology_0004",
+      "audit_brief_sha256": "b8ed583278618d87b85eda6e8c985366fa6b0d2ec8c3bae6f37b8e7da18870a7",
+      "output_path": "scratch/commentary/audits/apology/04-23d-24a.json",
+      "output_sha256": "c54173a67319db83e881d70d3bfd11bba5b5ce47431107d570b186ab12a3dabb",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "04-23d-24a",
+        "section_id": "comm_apology_0004",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0004",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "A concise, passage-specific orientation: it connects stock accusations to the named accusers and their constituencies without merely reciting the source."
+          },
+          {
+            "commentary_id": "comm_apology_0027",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "Clearly isolates the gap between accusation and specification, while explicitly limiting the claim to Socrates’ rhetorical portrayal and preserving the distinction from the formal indictment."
+          },
+          {
+            "commentary_id": "comm_apology_0028",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "Earns its interruption by marking the shift from diffuse rumor to named accusers and attributed constituencies, with appropriate caution about what the passage does not independently establish."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "05-24b-26a",
+      "section_id": "comm_apology_0005",
+      "audit_brief_sha256": "ffef824d472925b8717d09119e45f5a911fb45cc53da29aee7b609f352a34fed",
+      "output_path": "scratch/commentary/audits/apology/05-24b-26a.json",
+      "output_sha256": "b7225900877c120ff1d78e7c73f5e36f587aed95368a4d549d52e7d017f3ac8c",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "05-24b-26a",
+        "section_id": "comm_apology_0005",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0005",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "A concise section orientation that identifies the cross-examination's reversal, analogy, and legal dilemma without merely repeating the passage."
+          },
+          {
+            "commentary_id": "comm_apology_0030",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The interruption clarifies how the sequence of answers exposes Meletus's unexamined accusation, then explains why the horse analogy matters. Its length remains intelligible aloud."
+          },
+          {
+            "commentary_id": "comm_apology_0031",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "It isolates the second dilemma, makes its vulnerable premise audible, and preserves interpretive uncertainty rather than presenting the philosophical inference as settled fact."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "06-26b-28a",
+      "section_id": "comm_apology_0006",
+      "audit_brief_sha256": "5fae91ee9c9832b3f923ef5b42410302160df0164c8c520e0871920af329ae80",
+      "output_path": "scratch/commentary/audits/apology/06-26b-28a.json",
+      "output_sha256": "e97eb6e75ae4d26d99b4d424f5febb8523c47026bf0a98de5a173aa29a27886c",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "06-26b-28a",
+        "section_id": "comm_apology_0006",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0006",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "Concise orientation to the section’s central reversal: Meletus’s clarified charge is set against Socrates’ assent-chain refutation. It adds structure rather than merely repeating the passage."
+          },
+          {
+            "commentary_id": "comm_apology_0032",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "Earns its contextual interruption by distinguishing the Anaxagorean attribution from Socrates’ own position and explaining why the exchange matters before the indictment is tested further."
+          },
+          {
+            "commentary_id": "comm_apology_0033",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "Clearly identifies the staged concessions and preserves the passage’s scope: Socrates is testing the charge, not presenting a complete theology. The argument is focused and speakable."
+          },
+          {
+            "commentary_id": "comm_apology_0034",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The Cratylus comparison adds a distinct cross-dialogue perspective without claiming to settle Socrates’ theology; its closing question preserves the passage’s uncertainty and justifies the interruption."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "07-28b-29b",
+      "section_id": "comm_apology_0007",
+      "audit_brief_sha256": "9bf3f12aaf2f4f1bb93b4c700499fc6a14c8eac613552cfc43b3bada47871125",
+      "output_path": "scratch/commentary/audits/apology/07-28b-29b.json",
+      "output_sha256": "eebcb0fc6232bd0a3392f7a81c78859789a1af60ecf6beb5a077e3423fafb891",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "07-28b-29b",
+        "section_id": "comm_apology_0007",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0007",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "A concise section orientation that identifies the passage’s connected movement from Achilles and military duty to Socrates’ distinction between known wrongdoing and unknown death. It adds structure rather than merely repeating the source."
+          },
+          {
+            "commentary_id": "comm_apology_0036",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The interruption isolates one clear argumentative contrast: epistemic restraint about death alongside moral certainty about injustice and disobedience. Its final interpretive formulation is explicitly marked as one possible reading and remains easy to follow aloud."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "08-29c-31b",
+      "section_id": "comm_apology_0008",
+      "audit_brief_sha256": "34259565d0406206534be3b1ca33e99fe0a41386ebc30fcc26cf02c017c5cfcf",
+      "output_path": "scratch/commentary/audits/apology/08-29c-31b.json",
+      "output_sha256": "1e8b38f974cc48303110d2610a4888a200898c203990b0455c245a59fd039d2b",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "08-29c-31b",
+        "section_id": "comm_apology_0008",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0008",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section efficiently orients the listener to the hypothetical bargain, Socrates’ ethical reversal, and the gadfly claim. Its compact summary adds structure without materially reciting the passage or becoming difficult to hear."
+          },
+          {
+            "commentary_id": "comm_apology_0037",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "This has one clear argumentative job: showing why conditional acquittal would conflict with the life Socrates is defending. It distinguishes the hypothetical condition from the jury’s actual evidentiary judgment and remains clear aloud."
+          },
+          {
+            "commentary_id": "comm_apology_0038",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The cross-dialogue comparison earns its interruption by identifying a documented tension between the Apology’s substantive ethical assertion and the Meno’s epistemic pressure. It marks the comparison as a possible reading rather than overstating the evidence."
+          },
+          {
+            "commentary_id": "comm_apology_0039",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The block focuses on the gadfly image’s political consequence and correctly preserves the passage’s conditional language about Athens becoming somnolent and receiving another divine examiner. It sharpens the warning without flattening it into certainty."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "09-31c-32e",
+      "section_id": "comm_apology_0009",
+      "audit_brief_sha256": "506d3ac4c46cdf29ef6ed1a785b8a09be40a10a47016c7466c124aec409125f5",
+      "output_path": "scratch/commentary/audits/apology/09-31c-32e.json",
+      "output_sha256": "eaf63af1925791a1fec896c106c5fd99b84dd5556f7c6a4242fa9f9fe0d33c8e",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "09-31c-32e",
+        "section_id": "comm_apology_0009",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0009",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section title and body efficiently orient the passage's movement from the daimonion and political-survival claim to the two promised examples. It adds structure without merely reciting the source."
+          },
+          {
+            "commentary_id": "comm_apology_0040",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "This is a focused argumentative explanation: it identifies the puzzle, distinguishes the personal account from the general claim, and accurately preserves that the daimonion is Socrates' account."
+          },
+          {
+            "commentary_id": "comm_apology_0041",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The interruption earns its place by identifying the transition from speeches to deeds and the deliberate pairing of two cases. Its interpretive qualification distinguishes Socrates' presentation from neutral historical equivalence and remains appropriately cautious."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "10-33a-34a",
+      "section_id": "comm_apology_0010",
+      "audit_brief_sha256": "852fe37cfde044a8971a29b763b44e78595a96e0211d2a633e5e9fa00fa0a7f9",
+      "output_path": "scratch/commentary/audits/apology/10-33a-34a.json",
+      "output_sha256": "ef77cc031edde08c558653033abcb0deae329e37c14fcaff8ad01d99cb2f532d",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "10-33a-34a",
+        "section_id": "comm_apology_0010",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0010",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "A concise, section-level orientation that identifies Socrates’ teacher disavowal, the evidentiary challenge, and the named supporters without merely reproducing the passage."
+          },
+          {
+            "commentary_id": "comm_apology_0042",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "Earns the interruption by isolating the passage’s central distinction between open conversation and accountable teaching, while carefully clarifying that payment is not the determining condition rather than claiming that money never appears."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "11-34b-35d",
+      "section_id": "comm_apology_0011",
+      "audit_brief_sha256": "ba5331e9411e2b250b029b8c134a6d4ca73d5a0ff3c4ee74e94adc4b913ea105",
+      "output_path": "scratch/commentary/audits/apology/11-34b-35d.json",
+      "output_sha256": "d3aaadc3fea84eff99ef6ab0d0f1bbf4cc75b2984212b0dfb37ed8cb7c1ce430",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "11-34b-35d",
+        "section_id": "comm_apology_0011",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0011",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section clearly identifies the passage’s single argumentative move: Socrates rejects emotional appeals and grounds that refusal in the juror’s oath and legal judgment. It adds interpretive value beyond recap, is concise and easy to hear, and does not overstate the cited observation."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "12-35e-36b",
+      "section_id": "comm_apology_0012",
+      "audit_brief_sha256": "3bd2a1f22d4e43af8c9e7f94c6ff064801a7cb98cb9edcec27faa27eb57bea74",
+      "output_path": "scratch/commentary/audits/apology/12-35e-36b.json",
+      "output_sha256": "6e89fd16cd16b6b8242521e8b93abe543be6202e67e9d1a473096e4a176a5f82",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "12-35e-36b",
+        "section_id": "comm_apology_0012",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0012",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section efficiently orients the listener to the narrow vote, Meletus's procedural defeat, and the transition into penalty; it adds structural and dramatic value beyond recap."
+          },
+          {
+            "commentary_id": "comm_apology_0047",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "This single notice makes the arithmetic's rhetorical effect audible: the close vote frames the penalty question as a challenge to the court's judgment. Its final sentence clearly marks the interpretation as the commentator's."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "13-36c-37a",
+      "section_id": "comm_apology_0013",
+      "audit_brief_sha256": "e42af88a4bcd84e82218b212e3b3d1b1e80be54b47617f1e1bd0a913a5ce72ce",
+      "output_path": "scratch/commentary/audits/apology/13-36c-37a.json",
+      "output_sha256": "ae01b853002a4e7e0818814dfff3ccc1cd9e8dd476173ae5602509e099f588a6",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "13-36c-37a",
+        "section_id": "comm_apology_0013",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0013",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section body efficiently frames the passage’s sequence: Socrates’ claimed benefaction, his proposed reward, and the contrast with Olympic victory. It adds the key seem/being happy distinction without merely repeating the source."
+          },
+          {
+            "commentary_id": "comm_apology_0048",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "This interruption isolates the passage’s central argumentative move: converting the penalty into a claim about civic value. The Olympic comparison and cautious qualification make the point intelligible aloud without introducing unsupported certainty."
+          },
+          {
+            "commentary_id": "comm_apology_0049",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The question earns its interruption by preserving the passage’s unresolved tone and inviting the listener to weigh confidence, provocation, and mixed motives. It does not force a predetermined interpretation."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "14-37b-38b",
+      "section_id": "comm_apology_0014",
+      "audit_brief_sha256": "4403c7c2b259d969b51f48a4699a78c567f581b6b0da902690d0977ee82c8bc1",
+      "output_path": "scratch/commentary/audits/apology/14-37b-38b.json",
+      "output_sha256": "4963af34c0fe7f50bf674d1d1a9baca3561ab9d183379a548ebc98fda45c150d",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "14-37b-38b",
+        "section_id": "comm_apology_0014",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0014",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section gives the unit a clear through-line: each proposed compromise is tested against the life Socrates claims he must preserve. It adds interpretive structure without merely recapping the passage."
+          },
+          {
+            "commentary_id": "comm_apology_0050",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "This is a focused explanation of why Socrates treats exile as no genuine solution. It accurately distinguishes his reasoning from proof that exile is objectively impossible and is coherent when heard aloud."
+          },
+          {
+            "commentary_id": "comm_apology_0051",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The block locates the unexamined-life statement within Socrates’ immediate rhetorical problem rather than presenting it as an isolated maxim. Its interpretive claim is appropriately framed and adds listening value."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "15-38c-39b",
+      "section_id": "comm_apology_0015",
+      "audit_brief_sha256": "c5f993ea594fe42fb9c65c490273f49a3dac93bb72981394fe5b20ad766b259b",
+      "output_path": "scratch/commentary/audits/apology/15-38c-39b.json",
+      "output_sha256": "c181ada0b127ea9b4ed8a234e6e51c64e57bcd09ef34bf851b85964510c992e2",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "15-38c-39b",
+        "section_id": "comm_apology_0015",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0015",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section introduction is concise, anchored in the unit’s central reversal, and gives the listener a useful map without merely retelling the passage."
+          },
+          {
+            "commentary_id": "comm_apology_0052",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "This interruption isolates the passage’s reversal from lack of arguments to refusal of courtroom shamelessness, while clearly marking the final methodological reading as an interpretation."
+          },
+          {
+            "commentary_id": "comm_apology_0053",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The commentary makes the closing runner image audible and connects it to the double verdict; its claims remain supported by the cited observations and the source’s own framing."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "16-39c-39e",
+      "section_id": "comm_apology_0016",
+      "audit_brief_sha256": "18e783e8ea68c0d38ae75983345e2897dd376ac368d30920093b9301654ed6f5",
+      "output_path": "scratch/commentary/audits/apology/16-39c-39e.json",
+      "output_sha256": "4670ea58492543de0aa7c14097b6e577ecc402ea9b7476898d678df5be909fae",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "16-39c-39e",
+        "section_id": "comm_apology_0016",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0016",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section clearly frames the passage’s central contrast: silencing reproach by killing versus reforming oneself, then marks the turn from condemners to acquitters. It adds useful argumentative structure without merely retelling the source."
+          },
+          {
+            "commentary_id": "comm_apology_0054",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "This interruption earns its place by recasting the prophecy as a shift in courtroom direction: the verdict does not end examination. Its interpretive framing is signaled as one way to hear the passage and remains supported by the cited observations."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "17-40a-41c",
+      "section_id": "comm_apology_0017",
+      "audit_brief_sha256": "315394d432f2828ae030a54a7b4091d1e1085f0529c04f8c7c4103574b0e541e",
+      "output_path": "scratch/commentary/audits/apology/17-40a-41c.json",
+      "output_sha256": "aa83e4b5d0ad82a010a7ab4e1d3b80f41a20657631313296166b71dac3d4bc5c",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "17-40a-41c",
+        "section_id": "comm_apology_0017",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0017",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section title and body efficiently orient the unit: the silent sign frames Socrates’ claim about death, and the two conditional possibilities are accurately distinguished without overexplaining."
+          },
+          {
+            "commentary_id": "comm_apology_0056",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "This interruption isolates one argumentative move, accurately identifies the sign’s silence and Socrates’ inference, and preserves the premise’s uncertainty. Its cadence is clear and its citation-supported qualification adds value beyond recap."
+          },
+          {
+            "commentary_id": "comm_apology_0057",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The block gives a useful close-reading contrast between the compact sleep image and the extended migration scenario. It marks its interpretive claim as a reading and correctly preserves the final conditional hedge about traditional reports."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "18-41d-42a",
+      "section_id": "comm_apology_0018",
+      "audit_brief_sha256": "2dc29897ae110d23a1c3903824a603f606eef8991926ff858c3ad4dff3b9f284",
+      "output_path": "scratch/commentary/audits/apology/18-41d-42a.json",
+      "output_sha256": "47fc12d654c344b7a38f7c176dbc22d391154bfe88280e9f2bd194d06307c453",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "apology",
+        "unit_key": "18-41d-42a",
+        "section_id": "comm_apology_0018",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0018",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section efficiently orients the closing movement: consolation, the request concerning his sons, and the unresolved divine judgment. It adds structure beyond mere recap and is clear when spoken."
+          },
+          {
+            "commentary_id": "comm_apology_0058",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "This isolates the passage’s argument and clearly distinguishes Socrates’ personal inference from proof. The interpretive qualification is appropriately marked and the prose is listenable."
+          },
+          {
+            "commentary_id": "comm_apology_0059",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The block earns its interruption by showing how Socrates extends his corrective practice into the future through his sons. Its final question keeps the moral tension open rather than supplying a predetermined answer."
+          },
+          {
+            "commentary_id": "comm_apology_0060",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The question identifies a genuine closing tension between Socrates’ confidence about death and the final reservation about which lot is better. It preserves uncertainty and gives the ending a focused listening problem."
+          }
+        ]
+      }
+    }
+  ],
+  "acceptance": {
+    "decision": "accepted",
+    "reviewer": "cjpher-delegated-luna-reviewer-apology-final-sample-round3",
+    "reviewed_on": "2026-08-21",
+    "rationale": "Fresh independent Luna final sample found all fifteen sampled blocks source-aligned, supported, focused, appropriately qualified, dramatically fitting, and clear for spoken delivery.",
+    "sampled_commentary_ids": [
+      "comm_apology_0001",
+      "comm_apology_0004",
+      "comm_apology_0008",
+      "comm_apology_0011",
+      "comm_apology_0014",
+      "comm_apology_0016",
+      "comm_apology_0017",
+      "comm_apology_0018",
+      "comm_apology_0021",
+      "comm_apology_0027",
+      "comm_apology_0048",
+      "comm_apology_0049",
+      "comm_apology_0050",
+      "comm_apology_0054",
+      "comm_apology_0056"
+    ],
+    "review_note": {
+      "path": "wiki/review/2026-08-21-commentary-quality-apology-luna-sample.md",
+      "sha256": "4aef3f895909d0ab420251360f696a64c56a4169b6bdbcbd1c7f46e5c7ffc0e3"
+    }
+  }
+}

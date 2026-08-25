@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "submission_id": "0004-rewrite-07-168d-172c",
+  "lane": "commentary",
+  "kind": "rewrite",
+  "scope": "theaetetus",
+  "unit_key": "07-168d-172c",
+  "source_path": "scratch/commentary/rewrites/theaetetus/07-168d-172c.json",
+  "source_sha256": "340e1654170a8eb250be81fbf404d36663e351fb473065a976350a6f5401f30e",
+  "target_path": "wiki/commentary/theaetetus.md",
+  "target_sha256_before": "2e2ca4fb44aa16900a15efa411a77b3469eaa915f15ff9bf09c55d5afcf8ff63",
+  "target_sha256_after": "998ac520de70df35edaaf2be39da4a54dd2f1072c7c2151e501dcfc9eb518bcd",
+  "applied_at": "2026-08-21T17:19:35.562Z",
+  "applied_ids": [
+    "comm_theaetetus_0007"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "theaetetus",
+    "unit_key": "07-168d-172c",
+    "section_id": "comm_theaetetus_0007",
+    "audit_output": {
+      "path": "scratch/commentary/audits/theaetetus/07-168d-172c.json",
+      "sha256": "b09f0b4e0249eefd23a0b8b78fc7675053e1dfed123944f0dce7f1e78af52dea"
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_theaetetus_0007",
+        "title": "The pressure point: who gets to judge?",
+        "body": "I take Socrates’ maneuver here as a test of what the measure can tolerate. If a person’s judgment is authoritative simply because it is that person’s, then a judgment against Protagoras’ doctrine cannot be dismissed merely for opposing it. The theory is made to face the judgments it would authorize—and that is its pressure point.",
+        "cites": {
+          "observations": [],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_theaetetus_0007",
+      "body": "```yaml\ncommentary_id: comm_theaetetus_0007\nsource_work: Theaetetus\nblock_kind: section\nplacement: before\ntitle: \"A doctrine turned against itself\"\nstephanus_span: 168d-172c\nsource_ref:\n  source_path: raw/plato/greek/theaetetus.txt\n  stephanus_span: 168d-172c\n  start_marker: 168d\n  end_marker: 172c\n  start_char: 54601\n  end_char: 63147\n  text_sha256: \"4b5f9ae42aad8adafdba1ac76915857eaf32c76a7099cf1d63025095829b0438\"\nbody: \"One way to hear this passage is as a pressure test of Protagoras’ measure: if every appearance is true for the person who has it, then the appearance that the doctrine is wrong must also count. The measure has become answerable to judgments it cannot simply dismiss.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "symposium",
+  "source_path": "scratch/commentary/rewrites/symposium/06-194a-197e.json",
+  "source_sha256": "1165f082a035210ae58aa6cdac3f8364d23072647d920802bfa6e3ff779540f7",
+  "target_path": "wiki/commentary/symposium.md",
+  "target_sha256_before": "09a08c2d5e2e8b13807b19b657abf3fc31f5f5ac0dcccd0cd6404d53f1e0d113",
+  "target_sha256_after": "6f4bcfd930ff81f24249d0cf6c6178ac40a83b42248dc1e71430ef0c9719a7d4",
+  "applied_at": "2026-08-21T14:01:32.551Z",
+  "applied_ids": [
+    "comm_symposium_0044",
+    "comm_symposium_0045",
+    "comm_symposium_0049",
+    "comm_symposium_0050",
+    "comm_symposium_0051"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "06-194a-197e",
+      "section_id": "comm_symposium_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/06-194a-197e.json",
+        "sha256": "23b7c560f12f20e588dfc87400a2a086c6e6c4b647d8251b89ccaf3f7223fe59"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0044",
+          "title": "",
+          "body": "The argument’s key move is to turn poetic imagery into a test of habitat. Ate’s soft feet become a model for Eros, who both walks and dwells in the softest beings—characters and souls, avoiding hard dispositions. Agathon then infers fluid form from Eros’s supposed ability to envelop, enter, and leave souls unnoticed. The catalogue thus treats function as evidence for an attribute.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0067",
+              "obs_symposium_0083"
+            ],
+            "claims": [
+              "claim_symposium_0076",
+              "claim_symposium_0077"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0045",
+          "title": "",
+          "body": "The ending makes form part of the performance. Agathon explicitly shifts into meter for a compact image of Eros as the maker of peace among humans and calm at sea, then labels the speech a mixture of play and measured seriousness. That label does not settle whether the praise is playful or serious; it asks the audience to hear both registers at once.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0070",
+              "obs_symposium_0071"
+            ],
+            "claims": [
+              "claim_symposium_0088"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "07-198a-201c",
+      "section_id": "comm_symposium_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/07-198a-201c.json",
+        "sha256": "7cddf372ac1222cb6f7ec51f83e1088b920712fd68efc0630a1be135956157ce"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0049",
+          "title": "",
+          "body": "Socrates does not set Agathon’s encomium aside; he turns its picture of Eros into the material of the questioning. Agathon supplies the agreements: Eros is love of something, desire reaches toward what is lacking, and what is already possessed is not desired as such. The healthy person’s apparent counterexample is absorbed by shifting desire from present possession to continued presence in the future. The pressure therefore comes from Agathon’s own assent, while the target remains the beautiful Eros his speech had presented.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0076",
+              "obs_symposium_0077",
+              "obs_symposium_0088"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0050",
+          "title": "",
+          "body": "The reversal is now explicit. Socrates has Agathon recall his own claim that Eros loves beauty; then the agreed rule that love reaches toward what it lacks turns that claim against Eros. Agathon’s admission of ignorance marks the collapse of the earlier encomium, and the next inference extends the lack from beauty to good things because Agathon accepts that good things are beautiful. The exchange does not yet offer a positive definition of Eros; it shows how assent can expose the cost of a claim.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0090",
+              "obs_symposium_0091",
+              "obs_symposium_0092"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0051",
+          "title": "",
+          "body": "The earlier general rule now has a later target. Compare 201a–201b, where Socrates asks Agathon to retrieve his own description of Eros as love of beauty and tests it against the agreed principle that love concerns what one lacks. The turn from general premise to self-implication is the point to carry forward.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0076",
+              "obs_symposium_0090"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": [
+            {
+              "source_work": "Symposium",
+              "stephanus_span": "201a-201b",
+              "note": "Socrates turns the agreed account of desire and lack against Agathon’s own description of Eros as love of beauty."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_symposium_0044",
+      "body": "```yaml\ncommentary_id: comm_symposium_0044\nsource_work: Symposium\nblock_kind: notice\nplacement: before\nstephanus_span: 195d-196a\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 195d-196a\n  start_marker: 195d\n  end_marker: 196a\n  start_char: 48049\n  end_char: 49312\n  text_sha256: \"965557999e5f6027fcd78840e6f201d32e90ee31611cc89ca5d07cde2abf71cd\"\nbody: \"Watch how the attributes are proven: Homer's line about Ate's soft feet walking on men's heads becomes the model for Eros walking on souls, and moistness is inferred from what Eros must be able to do - envelop everything, slip unnoticed in and out of souls. The catalogue argues from function to attribute, poetry supplying the premises. The method is the encomiast's, and remembering it will sharpen the pleasure of what Socrates does next.\"\ncites:\n  observations: [obs_symposium_0067, obs_symposium_0083, obs_symposium_0084, obs_symposium_0085]\n  claims: [claim_symposium_0076, claim_symposium_0077, claim_symposium_0078]\n  relations: []\n  dossiers: [definition_ladder/attribute_inferred_from_function_or_effect]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0045",
+      "body": "```yaml\ncommentary_id: comm_symposium_0045\nsource_work: Symposium\nblock_kind: notice\nplacement: before\nstephanus_span: 197c-197e\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 197c-197e\n  start_marker: 197c\n  end_marker: 197e\n  start_char: 51827\n  end_char: 52980\n  text_sha256: \"0f118ca5377d6308f6303708b2183f9e9bae857445200e4f899d5502e6ea5f30\"\nbody: \"The finale announces its own poetry - Agathon is moved to speak in meter, delivers a verse on the peace Eros makes on earth and sea, and closes a run of Gorgianic balanced clauses by dedicating the speech as part play, part measured seriousness. The room erupts. The applause is the last uncomplicated moment the portrait will enjoy.\"\ncites:\n  observations: [obs_symposium_0070, obs_symposium_0071, obs_symposium_0072]\n  claims: [claim_symposium_0087, claim_symposium_0088]\n  relations: []\n  dossiers: [rhetorical_register_shift/prose_to_verse_introduction]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0049",
+      "body": "```yaml\ncommentary_id: comm_symposium_0049\nsource_work: Symposium\nblock_kind: argument\nplacement: before\nstephanus_span: 199d-200e\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 199d-200e\n  start_marker: 199d\n  end_marker: 200e\n  start_char: 56266\n  end_char: 59301\n  text_sha256: \"21ebc2b7facde21114c6e5ec006b08d1941f8bbc09321d84540a7837956f6d07\"\nbody: \"Listen for what Socrates never uses: Agathon's speech. Every step comes out of Agathon's own answers. Even the obvious objection — surely a healthy man can desire health — is answered from inside the chain: what he wants is for his health to last, and the future is something he does not yet have. The refutation is being assembled entirely out of agreements, before the encomium is so much as mentioned.\"\ncites:\n  observations: [\"obs_symposium_0076\", \"obs_symposium_0077\", \"obs_symposium_0088\"]\n  claims: [\"claim_symposium_0090\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0050",
+      "body": "```yaml\ncommentary_id: comm_symposium_0050\nsource_work: Symposium\nblock_kind: argument\nplacement: before\nstephanus_span: 201a-201c\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 201a-201c\n  start_marker: 201a\n  end_marker: 201c\n  start_char: 59301\n  end_char: 60548\n  text_sha256: \"ab7c0d860a5242bdd6aee90d26813a7afe62a8012095a859241b50deb2b15b9c\"\nbody: \"At 201c, the pressure comes from carrying Agathon’s own agreements one step farther. Once he has accepted that Eros lacks beauty, Socrates adds the premise that good things are beautiful and draws the parallel conclusion that Eros lacks good things. Agathon answers that he cannot contradict Socrates. What matters here, I think, is the form of the refutation: the conclusion has been assembled from assent rather than announced as a fresh description.\"\ncites:\n  observations: [\"obs_symposium_0090\", \"obs_symposium_0091\", \"obs_symposium_0092\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0051",
+      "body": "```yaml\ncommentary_id: comm_symposium_0051\nsource_work: Symposium\nblock_kind: crossref\nplacement: after\nstephanus_span: 199d-200c\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 199d-200c\n  start_marker: 199d\n  end_marker: 200c\n  start_char: 56266\n  end_char: 58409\n  text_sha256: \"445ca4dae14f0dd6599e0281e312b88126ad08176864b5c7b491a107911f2e20\"\nbody: \"For a forward comparison, carry this distinction to 200d–200e: desire will be recast as wanting present goods to remain present in the future, not simply as possessing what one already has.\"\ncites:\n  observations: [\"obs_symposium_0088\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs:\n  - source_work: \"Symposium\"\n    stephanus_span: 200d-200e\n    source_ref:\n      source_path: raw/plato/greek/symposium.txt\n      stephanus_span: 200d-200e\n      start_marker: 200d\n      end_marker: 200e\n      start_char: 58409\n      end_char: 59301\n      text_sha256: \"0dc0a156f94a718f06c7dfe388548f1496ff21e9362202aef1e1d9f00e87fa32\"\n    note: \"Socrates distinguishes present possession from wanting continued possession in future time.\"\nauthor: model\nreview_status: unreviewed\n```"
+    }
+  ]
+}

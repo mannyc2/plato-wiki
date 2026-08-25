@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0006-structural-remediation-11-96d-100e",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "phaedo",
+  "unit_key": "11-96d-100e",
+  "source_path": "scratch/commentary/audits/phaedo/11-96d-100e.json",
+  "source_sha256": "0dbef95a2d59a651bbdbc02a7ecb42c8157b6f71cb849fc5ac6dfc786fe14628",
+  "target_path": "wiki/commentary/phaedo.md",
+  "target_sha256_before": "032fd5fa8a20d95d32ef92ceed6dcc701964cbe829605ed5cc1851a613ab9938",
+  "target_sha256_after": "eaf9a761e3e15bde4b494d142788e91f6e6b6a8de195d34ba78f4a82c0792d45",
+  "applied_at": "2026-08-23T22:34:29.153Z",
+  "applied_ids": [
+    "comm_phaedo_0011"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "phaedo",
+      "unitKey": "11-96d-100e",
+      "sectionId": "comm_phaedo_0011",
+      "auditOutputPath": "scratch/commentary/audits/phaedo/11-96d-100e.json",
+      "auditOutputSha256": "0dbef95a2d59a651bbdbc02a7ecb42c8157b6f71cb849fc5ac6dfc786fe14628",
+      "expectedLedgerSha256": "032fd5fa8a20d95d32ef92ceed6dcc701964cbe829605ed5cc1851a613ab9938",
+      "expectedAttributionSha256": "9995fc409c1332aac68146ffcfd0a79b7847d33ba72999a4dcfd754df473ef76",
+      "expectedEnglishSha256": "36c763a34328edc2e92a927efc86178731c8b9f4661fd4731ad5a488d6624900",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_phaedo_0011"
+        }
+      ],
+      "reviewer": "lane-a-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna structural review confirms conservative rejection of audited remove findings and split originals; delegated model review only."
+    },
+    "audit_output_path": "scratch/commentary/audits/phaedo/11-96d-100e.json",
+    "audit_output_sha256": "0dbef95a2d59a651bbdbc02a7ecb42c8157b6f71cb849fc5ac6dfc786fe14628",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_phaedo_0011",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

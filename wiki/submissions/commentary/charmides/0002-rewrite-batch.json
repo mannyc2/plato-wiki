@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "charmides",
+  "source_path": "scratch/commentary/rewrites/charmides/06-163a-164b.json",
+  "source_sha256": "cd54899e3804393d474fc088a03d912cd419d7345fe98e2715abf6c31568a286",
+  "target_path": "wiki/commentary/charmides.md",
+  "target_sha256_before": "ee6fced42b0250a00901a5485654a027109bf574d476e40e0b1d8b07d92bf45b",
+  "target_sha256_after": "60e782a007fdced77c4c8f93bf101651a1b13e3e8c08a81aff55dbb0e66864c9",
+  "applied_at": "2026-08-21T14:27:19.041Z",
+  "applied_ids": [
+    "comm_charmides_0027",
+    "comm_charmides_0031",
+    "comm_charmides_0041",
+    "comm_charmides_0043"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "charmides",
+      "unit_key": "06-163a-164b",
+      "section_id": "comm_charmides_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/charmides/06-163a-164b.json",
+        "sha256": "2c485d4e41eba45156dc8db8cb3cfea6c0c10f0d9f37027b13d868d25a707b76"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_charmides_0027",
+          "title": "",
+          "body": "Critias’s distinction is sharper than the claim that only noble and beneficial acts count as “work.” He says that work is never a reproach; rather, noble and beneficial works are the ones he classifies as one’s own, while harmful works are alien. That move turns “doing one’s own” into doing good things. Socrates does not resolve the terminology. He grants Critias freedom to choose his names, then asks him to state the resulting definition plainly: temperance is the doing or making of good things. One way to read the passage is as a shift from ownership to evaluation.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0069",
+              "obs_charmides_0070"
+            ],
+            "claims": [
+              "claim_charmides_0013",
+              "claim_charmides_0014"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "charmides",
+      "unit_key": "07-164c-166e",
+      "section_id": "comm_charmides_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/charmides/07-164c-166e.json",
+        "sha256": "11123a5c58e694df369303828eedae300a74edcb944f2ce3d88247bca3db24bb"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_charmides_0031",
+          "title": "",
+          "body": "Socrates has required a science to have something distinct as its subject. Critias now makes temperance the exception: it is a science of the other sciences and of itself, and Socrates extends that answer to include non-knowledge. Does this identify a subject matter, or only rename self-reference as knowledge?",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_charmides_0017",
+              "claim_charmides_0018",
+              "claim_charmides_0020"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "charmides",
+      "unit_key": "11-174b-175a",
+      "section_id": "comm_charmides_0011",
+      "audit_output": {
+        "path": "scratch/commentary/audits/charmides/11-174b-175a.json",
+        "sha256": "ef3956106a2dfcf86ce6d805895487b435e0a8d7db6aed5e12200a1c6c56d427"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_charmides_0041",
+          "title": "",
+          "body": "The thought experiment separates the crafts themselves from the knowledge that makes their results beneficial. Critias’s answer is not that knowledge of good and bad performs every technical task; it is that doing well and being happy require this one knowledge rather than knowledgeable living in general or the sum of the other crafts. That distinction is the hinge: technical expertise can remain intact while the question of its good use comes into view.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0140"
+            ],
+            "claims": [
+              "claim_charmides_0027"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_charmides_0043",
+          "title": "",
+          "body": "The Republic offers a useful contrast, not a final verdict on this passage. At 442d, sōphrosynē is described as agreement that the rational part rules, a condition of inner order rather than knowledge of knowledge. Since this account uses different premises, the Charmides refutation does not directly address it. The comparison broadens the question without closing the aporia.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [
+              "rel_cross-dialogue_0081"
+            ],
+            "dossiers": []
+          },
+          "crossrefs": [
+            {
+              "source_work": "Republic",
+              "stephanus_span": "442d",
+              "note": "A contrasting account at Republic 442d defines sōphrosynē as agreement that the rational part rules; the different premises mean the Charmides refutation does not directly apply."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_charmides_0027",
+      "body": "```yaml\ncommentary_id: comm_charmides_0027\nsource_work: Charmides\nblock_kind: argument\nplacement: before\nstephanus_span: 163b-163e\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 163b-163e\n  start_marker: 163b\n  end_marker: 163e\n  start_char: 21216\n  end_char: 22989\n  text_sha256: \"9e68f46af4a8aaff9929907a20a4314c6fea7c0c8db45a79f0c73b293862d120\"\nbody: \"Cornered, Critias escapes by changing what the words mean. Leaning on a line of Hesiod, he splits making from doing and working, so that only things done nobly and beneficially count as real work — and only those count as one's own. Ownership quietly becomes goodness: doing your own business now means doing good things. Socrates lets the wordplay pass, comparing it to Prodicus's endless distinctions between names, and asks only that Critias say plainly what he means. The result is a genuinely new definition: temperance is the doing of good things.\"\ncites:\n  observations: [\"obs_charmides_0069\", \"obs_charmides_0070\"]\n  claims: [\"claim_charmides_0013\", \"claim_charmides_0014\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0031",
+      "body": "```yaml\ncommentary_id: comm_charmides_0031\nsource_work: Charmides\nblock_kind: question\nplacement: after\nstephanus_span: 166b-166e\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 166b-166e\n  start_marker: 166b\n  end_marker: 166e\n  start_char: 27713\n  end_char: 29466\n  text_sha256: \"a6ae22d2ddb787a2ce815e5bfc50da5eb42c97c4287c69f824db02e76ddec232\"\nbody: \"At 166c Critias says that Socrates is trying to refute him while leaving the subject of the discussion behind. Socrates answers that he is examining the argument because he fears mistaking ignorance for knowledge, and asks Critias to attend to what the argument itself will show. Critias then states that temperance is knowledge of itself and of the other sciences; Socrates immediately asks whether it therefore includes knowledge of ignorance. What should we make of this exchange: does the new definition clarify the inquiry, or does the accusation of refutation remain part of the problem?\"\ncites:\n  observations: [\"obs_charmides_0091\", \"obs_charmides_0086\", \"obs_charmides_0088\"]\n  claims: [\"claim_charmides_0018\", \"claim_charmides_0019\", \"claim_charmides_0020\"]\n  relations: [\"rel_charmides_0003\"]\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0041",
+      "body": "```yaml\ncommentary_id: comm_charmides_0041\nsource_work: Charmides\nblock_kind: argument\nplacement: before\nstephanus_span: 174b-174c\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 174b-174c\n  start_marker: 174b\n  end_marker: 174c\n  start_char: 45418\n  end_char: 46313\n  text_sha256: \"0616389c34a91b3b4ad7473d21a9da8176423394cbcef8211303c1e241c94588\"\nbody: \"Critias’s answer makes knowledge of good and bad the single knowledge connected with doing well and being happy, rather than merely the sum of all technical know-how. Socrates marks this shift with a personal accusation: he says Critias has been leading him in circles and concealing the answer. That is Socrates’ charge, not proof of Critias’ intention. He then tests the distinction by asking whether the other crafts would lose their own work if this knowledge were removed. They would not. The pressure point is therefore not whether each craft can perform its task, but what makes its result beneficial.\"\ncites:\n  observations: [\"obs_charmides_0140\", \"obs_charmides_0141\"]\n  claims: [\"claim_charmides_0027\", \"claim_charmides_0029\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0043",
+      "body": "```yaml\ncommentary_id: comm_charmides_0043\nsource_work: Charmides\nblock_kind: crossref\nplacement: after\nstephanus_span: 175a\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 175a\n  start_marker: 175a\n  end_marker: 175a\n  start_char: 47187\n  end_char: 47613\n  text_sha256: \"10762f77a63d398a693252553338800737a2adcbd84cd2c72aa0eaa0020e7d86\"\nbody: \"The aporia here is not Plato's last word on temperance. In the Republic, sōphrosynē is defined as the agreement that the rational part should rule — a condition of inner order, not a knowledge of knowledge. That definition escapes this refutation precisely because it never treats temperance as a craft with a product, and it supplies the beneficial account this investigation says it cannot find.\"\ncites:\n  observations: []\n  claims: []\n  relations: [\"rel_cross-dialogue_0081\", \"rel_cross-dialogue_0082\"]\n  dossiers: []\ncrossrefs:\n  - source_work: \"Republic\"\n    stephanus_span: 442d\n    source_ref:\n      source_path: raw/plato/greek/republic.txt\n      stephanus_span: 442d\n      start_marker: 442d\n      end_marker: 442d\n      start_char: 225398\n      end_char: 225805\n      text_sha256: \"0436abbbd2f0184eaea9cee891fbbe932ffdcf50078735fd3a026df2894eef54\"\n    note: \"Sōphrosynē redefined as agreement that the rational part rules, resolving the Charmides aporia.\"\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

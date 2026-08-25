@@ -1,0 +1,551 @@
+{
+  "config_version": 3,
+  "rule": "relations with review_status=accepted and resolution=standing whose claim_a or claim_b is a flagged pilot definition; relation ledgers parsed structurally via Bun.YAML",
+  "execution_rule": "Phase 2 consumers MUST load authorized_queue only and MUST reject any relation id in extension_candidates until the operator extends scope; the 2026-07-11 authorization is the 29-relation queue, not the formal flag-rule superset",
+  "input_files": {
+    "wiki/relations/charmides.md": "5ef4bd3a7ba7848f469cf7f5e8b03c30d699143300a75ce4d3917a92b3cdfccf",
+    "wiki/relations/cratylus.md": "c3074ae69864691c1551f3974fc55535bcabbf295944ee5b4f6578e68c7bed57",
+    "wiki/relations/crito.md": "a6631b52eecab14d59b1b5c8ffe35145d8ab3212c71b57017fe09ce2486c8ad6",
+    "wiki/relations/cross-dialogue.md": "762acc07ba98b2e717196118f7c244335996da1e35fede51aa4db49d198ac0e2",
+    "wiki/relations/euthydemus.md": "67afa1026a59bb05288cbbc278bfb8e7299d030a3b7f92eaf31f13f16aacd695",
+    "wiki/relations/euthyphro.md": "bfe7f264514470b7c13222ad924d52a89f093762c414701c97f3c6676ae9bd79",
+    "wiki/relations/gorgias.md": "b5e1aa90a0f7338a0752ba60099c7f2d4194043be3c17684a6c4ee701285de87",
+    "wiki/relations/greater-hippias.md": "6a0a848e77b9ef229017dd1df876084a6db5a42fbea777f362e410ff327e2e62",
+    "wiki/relations/ion.md": "7542d1facc6516773e573212cb9725191594c809c3e73ca14196951b7f4f6c2e",
+    "wiki/relations/laches.md": "ded1757874ab68696ba1929939d15f5b65605201e4930d43a59083f4a099452d",
+    "wiki/relations/laws.md": "862aca83dc0dce52bf3f2ccba840df70d04ab0916f245e3f262930508456ed2d",
+    "wiki/relations/lesser-hippias.md": "46410cc216b7d2994e04611b6e94a00cd33042797cf4fc124a7d3f3f2b0835d7",
+    "wiki/relations/lysis.md": "13b52859345446c7108e90752a66e8c50b2070c9d5e75ce90c3bcf5e283bd383",
+    "wiki/relations/meno.md": "262251ec831d1ab58886d4ec4788a9bae2f3cf4c9e47fd8e7a6e9ecb9a217917",
+    "wiki/relations/parmenides.md": "0c5197f5a8dd45c5cc1cab9ea46ffbfd693c40c99a88f62ba98372b6a241f420",
+    "wiki/relations/phaedo.md": "f4acc7c8e9bec116adefa4f1d72bdc24b348aad0f6a62e90940a93bb852bab28",
+    "wiki/relations/phaedrus.md": "9344013a7d05045880d1e05d0232649bd04c5a68ab2e7bdb7b326c4eb2e05cca",
+    "wiki/relations/philebus.md": "c28959e00c15a7d0b00c00d377f7284c9368091c2a39391635bd31020104d47f",
+    "wiki/relations/protagoras.md": "886ee4c66647850cfc28e4d4ddf0216e497da6db634fa4e55cef3dcb9066ff58",
+    "wiki/relations/republic.md": "2dd0704991cf68ed41892d002ab2892d6e1e5abb1e32f5cb77e9b860c046bb21",
+    "wiki/relations/sophist.md": "ea979362f0d9eae3276cc01736ab054fad9e33daf03b9284a874b7cbf2ad396b",
+    "wiki/relations/statesman.md": "e42e4578da37faef62ec99c305942f9297cae7d62fe0b10587eafb73193ad809",
+    "wiki/relations/symposium.md": "33079975bd95280ec813f2354ddd7679b9ab202a83444e166e8c81bf67e69001",
+    "wiki/relations/theaetetus.md": "37897ca52af7d5f1cc9669aee5651d23326ccce6a94bb2aa6a299274c959c015",
+    "wiki/relations/timaeus.md": "832e164d78c2d2eab819d504ee258ebb65872605e457a58a081896652b132962"
+  },
+  "flagged_pilot_definitions": [
+    "claim_charmides_0001",
+    "claim_charmides_0007",
+    "claim_charmides_0014",
+    "claim_charmides_0015",
+    "claim_euthyphro_0007",
+    "claim_euthyphro_0014",
+    "claim_euthyphro_0023",
+    "claim_euthyphro_0024",
+    "claim_euthyphro_0035",
+    "claim_euthyphro_0043",
+    "claim_euthyphro_0044",
+    "claim_euthyphro_0045",
+    "claim_euthyphro_0050",
+    "claim_theaetetus_0005",
+    "claim_theaetetus_0029",
+    "claim_theaetetus_0068",
+    "claim_theaetetus_0175",
+    "claim_theaetetus_0177",
+    "claim_theaetetus_0186",
+    "claim_theaetetus_0187",
+    "claim_theaetetus_0234",
+    "claim_theaetetus_0241",
+    "claim_theaetetus_0261"
+  ],
+  "authorized_queue_size": 29,
+  "authorized_queue": [
+    {
+      "relation_id": "rel_cross-dialogue_0046",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_charmides_0018",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0049",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_charmides_0018",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0069",
+      "scope": "cross-dialogue",
+      "kind": "contradiction",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_charmides_0020",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0072",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_charmides_0020",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0253",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_euthyphro_0043",
+      "other_claim": "claim_theaetetus_0005",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0440",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_laches_0029",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0443",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_laches_0029",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0558",
+      "scope": "cross-dialogue",
+      "kind": "restatement",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_laws_0179",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0997",
+      "scope": "cross-dialogue",
+      "kind": "contradiction",
+      "flagged_claim": "claim_theaetetus_0234",
+      "other_claim": "claim_phaedo_0097",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1093",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_protagoras_0053",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1094",
+      "scope": "cross-dialogue",
+      "kind": "restatement",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_protagoras_0053",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1104",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_protagoras_0065",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1107",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_protagoras_0065",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1126",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_protagoras_0073",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1129",
+      "scope": "cross-dialogue",
+      "kind": "restatement",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_protagoras_0073",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1241",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_statesman_0067",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1264",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_timaeus_0069",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1266",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_timaeus_0070",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1282",
+      "scope": "cross-dialogue",
+      "kind": "revision",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_timaeus_0069",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_cross-dialogue_1285",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_timaeus_0070",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_theaetetus_0003",
+      "scope": "theaetetus",
+      "kind": "revision",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_theaetetus_0003",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_theaetetus_0008",
+      "scope": "theaetetus",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_theaetetus_0004",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_theaetetus_0012",
+      "scope": "theaetetus",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_theaetetus_0004",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_theaetetus_0013",
+      "scope": "theaetetus",
+      "kind": "revision",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_theaetetus_0076",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_theaetetus_0015",
+      "scope": "theaetetus",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_theaetetus_0173",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_theaetetus_0016",
+      "scope": "theaetetus",
+      "kind": "revision",
+      "flagged_claim": "claim_theaetetus_0005",
+      "other_claim": "claim_theaetetus_0177",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_theaetetus_0018",
+      "scope": "theaetetus",
+      "kind": "revision",
+      "flagged_claim": "claim_theaetetus_0029",
+      "other_claim": "claim_theaetetus_0153",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_theaetetus_0019",
+      "scope": "theaetetus",
+      "kind": "revision",
+      "flagged_claim": "claim_theaetetus_0029",
+      "other_claim": "claim_theaetetus_0275",
+      "authorized": true
+    },
+    {
+      "relation_id": "rel_theaetetus_0054",
+      "scope": "theaetetus",
+      "kind": "tension",
+      "flagged_claim": "claim_theaetetus_0177",
+      "other_claim": "claim_theaetetus_0173",
+      "authorized": true
+    }
+  ],
+  "authorized_not_reproduced_by_formal_rule": [],
+  "extension_candidates_size": 31,
+  "extension_candidates": [
+    {
+      "relation_id": "rel_charmides_0002",
+      "scope": "charmides",
+      "kind": "restatement",
+      "flagged_claim": "claim_charmides_0015",
+      "other_claim": "claim_charmides_0016",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0019",
+      "scope": "cross-dialogue",
+      "kind": "restatement",
+      "flagged_claim": "claim_charmides_0014",
+      "other_claim": "claim_laws_0245",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0020",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_charmides_0014",
+      "other_claim": "claim_phaedo_0138",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0021",
+      "scope": "cross-dialogue",
+      "kind": "contradiction",
+      "flagged_claim": "claim_charmides_0014",
+      "other_claim": "claim_phaedrus_0030",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0022",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_charmides_0014",
+      "other_claim": "claim_republic_0489",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0023",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_charmides_0014",
+      "other_claim": "claim_republic_0625",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0024",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_charmides_0014",
+      "other_claim": "claim_symposium_0113",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0025",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_charmides_0015",
+      "other_claim": "claim_laws_0245",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0026",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_charmides_0015",
+      "other_claim": "claim_phaedo_0138",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0027",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_charmides_0015",
+      "other_claim": "claim_phaedrus_0030",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0028",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_charmides_0015",
+      "other_claim": "claim_republic_0489",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0029",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_charmides_0015",
+      "other_claim": "claim_republic_0625",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0030",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_euthyphro_0043",
+      "other_claim": "claim_charmides_0018",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0052",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_euthyphro_0043",
+      "other_claim": "claim_charmides_0020",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0236",
+      "scope": "cross-dialogue",
+      "kind": "contradiction",
+      "flagged_claim": "claim_euthyphro_0024",
+      "other_claim": "claim_laws_0247",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0237",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_euthyphro_0024",
+      "other_claim": "claim_phaedo_0009",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0239",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_euthyphro_0024",
+      "other_claim": "claim_protagoras_0022",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0244",
+      "scope": "cross-dialogue",
+      "kind": "restatement",
+      "flagged_claim": "claim_euthyphro_0043",
+      "other_claim": "claim_laches_0029",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0245",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_euthyphro_0043",
+      "other_claim": "claim_laws_0955",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0246",
+      "scope": "cross-dialogue",
+      "kind": "restatement",
+      "flagged_claim": "claim_euthyphro_0043",
+      "other_claim": "claim_protagoras_0021",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0247",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_euthyphro_0043",
+      "other_claim": "claim_protagoras_0053",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0248",
+      "scope": "cross-dialogue",
+      "kind": "restatement",
+      "flagged_claim": "claim_euthyphro_0043",
+      "other_claim": "claim_protagoras_0065",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0249",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_euthyphro_0043",
+      "other_claim": "claim_protagoras_0073",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0250",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_euthyphro_0043",
+      "other_claim": "claim_statesman_0067",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0251",
+      "scope": "cross-dialogue",
+      "kind": "restatement",
+      "flagged_claim": "claim_euthyphro_0043",
+      "other_claim": "claim_theaetetus_0003",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0252",
+      "scope": "cross-dialogue",
+      "kind": "tension",
+      "flagged_claim": "claim_euthyphro_0043",
+      "other_claim": "claim_theaetetus_0004",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0262",
+      "scope": "cross-dialogue",
+      "kind": "restatement",
+      "flagged_claim": "claim_euthyphro_0045",
+      "other_claim": "claim_protagoras_0065",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_cross-dialogue_0263",
+      "scope": "cross-dialogue",
+      "kind": "restatement",
+      "flagged_claim": "claim_euthyphro_0045",
+      "other_claim": "claim_statesman_0025",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_euthyphro_0019",
+      "scope": "euthyphro",
+      "kind": "tension",
+      "flagged_claim": "claim_euthyphro_0024",
+      "other_claim": "claim_euthyphro_0055",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_euthyphro_0029",
+      "scope": "euthyphro",
+      "kind": "revision",
+      "flagged_claim": "claim_euthyphro_0043",
+      "other_claim": "claim_euthyphro_0045",
+      "authorized": false
+    },
+    {
+      "relation_id": "rel_euthyphro_0033",
+      "scope": "euthyphro",
+      "kind": "restatement",
+      "flagged_claim": "claim_euthyphro_0050",
+      "other_claim": "claim_euthyphro_0051",
+      "authorized": false
+    }
+  ],
+  "extension_candidate_flagged_claims_beyond_authorized": [
+    "claim_charmides_0014",
+    "claim_charmides_0015",
+    "claim_euthyphro_0024",
+    "claim_euthyphro_0045",
+    "claim_euthyphro_0050"
+  ]
+}

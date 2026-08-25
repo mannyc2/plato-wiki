@@ -1,0 +1,29 @@
+# Commentary quality-audit acceptance
+
+dialogue: euthydemus
+decision: accepted
+reviewer: manifest-batch-1-delegated-luna-reviewer-20260823
+reviewed_on: 2026-08-23
+rationale: Independent Luna source, accepted-evidence, and placement sample passed for the current Euthydemus ledger.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sampled_commentary_ids:
+- comm_euthydemus_0001
+- comm_euthydemus_0004
+- comm_euthydemus_0005
+- comm_euthydemus_0006
+- comm_euthydemus_0007
+- comm_euthydemus_0009
+- comm_euthydemus_0010
+- comm_euthydemus_0011
+- comm_euthydemus_0013
+- comm_euthydemus_0016
+- comm_euthydemus_0017
+predecessor_manifest_path: wiki/commentary-audits/euthydemus.json
+predecessor_manifest_sha256: bdd0e2b1a2a27fd28acd30656cfa69a607676f1eaf08807ff37aa579931b7ece
+predecessor_manifest_history_path: wiki/commentary-audits/history/euthydemus/bdd0e2b1a2a27fd28acd30656cfa69a607676f1eaf08807ff37aa579931b7ece.json
+predecessor_manifest_history_sha256: bdd0e2b1a2a27fd28acd30656cfa69a607676f1eaf08807ff37aa579931b7ece
+predecessor_review_note_path: wiki/review/2026-08-21-commentary-quality-euthydemus-luna-sample.md
+predecessor_review_note_sha256: 0414b2f4a91a7649938a2fb82dd42ff52a0c6c6911abf21e05b4ce9f4c0f64a7
+predecessor_review_note_history_path: wiki/review/commentary-quality-history/euthydemus/0414b2f4a91a7649938a2fb82dd42ff52a0c6c6911abf21e05b4ce9f4c0f64a7.md
+predecessor_review_note_history_sha256: 0414b2f4a91a7649938a2fb82dd42ff52a0c6c6911abf21e05b4ce9f4c0f64a7

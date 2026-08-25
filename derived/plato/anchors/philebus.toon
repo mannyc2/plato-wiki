@@ -1,0 +1,82 @@
+dialogue: philebus
+source_path: raw/plato/greek/philebus.txt
+source_sha256: 8973a4d14e3967d651f18b18ae6fb5ca00f938b464bf8e3a47a1d66b2ade3807
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[75]:
+  group             | form      | start_char | end_char | marker | turn_id            | token_ids
+  assent_concession | ναί       | 1464       | 1467     | 12a    | turn_philebus_0016 | tok_philebus_000243
+  aporia_reset      | πάλιν     | 4470       | 4475     | 13c    | turn_philebus_0034 | tok_philebus_000747
+  aporia_reset      | πάλιν     | 4969       | 4974     | 13d    | turn_philebus_0036 | tok_philebus_000828
+  aporia_reset      | πάλιν     | 5110       | 5115     | 13e    | turn_philebus_0038 | tok_philebus_000852
+  aporia_reset      | πάλιν     | 6753       | 6758     | 14d    | turn_philebus_0051 | tok_philebus_001120
+  aporia_reset      | πάλιν     | 9277       | 9282     | 15e    | turn_philebus_0062 | tok_philebus_001540
+  aporia_reset      | πάλιν     | 11027      | 11032    | 16d    | turn_philebus_0068 | tok_philebus_001829
+  aporia_reset      | πάλιν     | 11657      | 11662    | 17a    | turn_philebus_0069 | tok_philebus_001942
+  aporia_reset      | πάλιν     | 14079      | 14084    | 18b    | turn_philebus_0090 | tok_philebus_002363
+  aporia_reset      | πάλιν     | 14342      | 14347    | 18b    | turn_philebus_0092 | tok_philebus_002409
+  definition_prompt | εἶδος     | 14446      | 14451    | 18c    | turn_philebus_0092 | tok_philebus_002426
+  assent_concession | ναί       | 15110      | 15113    | 18d    | turn_philebus_0095 | tok_philebus_002541
+  aporia_reset      | πάλιν     | 15901      | 15906    | 19a    | turn_philebus_0103 | tok_philebus_002676
+  method_term       | κατ' εἴδη | 24611      | 24620    | 23d    | turn_philebus_0174 | tok_philebus_004156,tok_philebus_004157
+  aporia_reset      | πάλιν     | 25174      | 25179    | 23e    | turn_philebus_0182 | tok_philebus_004247
+  assent_concession | ναί       | 28455      | 28458    | 25c    | turn_philebus_0209 | tok_philebus_004805
+  assent_concession | ναί       | 28705      | 28708    | 25d    | turn_philebus_0212 | tok_philebus_004847
+  assent_concession | πάνυ γε   | 31632      | 31639    | 27a    | turn_philebus_0245 | tok_philebus_005337,tok_philebus_005338
+  assent_concession | ναί       | 33370      | 33373    | 27e    | turn_philebus_0269 | tok_philebus_005633
+  assent_concession | πάνυ γε   | 34132      | 34139    | 28b    | turn_philebus_0275 | tok_philebus_005768,tok_philebus_005769
+  divine_legal      | ὅσιον     | 35221      | 35226    | 28e    | turn_philebus_0283 | tok_philebus_005939
+  aporia_reset      | πάλιν     | 41004      | 41009    | 31d    | turn_philebus_0346 | tok_philebus_006946
+  assent_concession | ναί       | 41347      | 41350    | 31e    | turn_philebus_0351 | tok_philebus_007002
+  aporia_reset      | πάλιν     | 41385      | 41390    | 31e    | turn_philebus_0352 | tok_philebus_007008
+  assent_concession | ναί       | 41404      | 41407    | 31e    | turn_philebus_0353 | tok_philebus_007011
+  aporia_reset      | πάλιν     | 41486      | 41491    | 32a    | turn_philebus_0354 | tok_philebus_007025
+  aporia_reset      | πάλιν     | 41612      | 41617    | 32a    | turn_philebus_0354 | tok_philebus_007047
+  aporia_reset      | πάλιν     | 41733      | 41738    | 32a    | turn_philebus_0356 | tok_philebus_007070
+  definition_prompt | εἶδος     | 41920      | 41925    | 32b    | turn_philebus_0356 | tok_philebus_007104
+  aporia_reset      | πάλιν     | 42055      | 42060    | 32b    | turn_philebus_0356 | tok_philebus_007129
+  definition_prompt | εἶδος     | 42161      | 42166    | 32b    | turn_philebus_0358 | tok_philebus_007148
+  definition_prompt | εἶδος     | 42467      | 42472    | 32c    | turn_philebus_0361 | tok_philebus_007199
+  definition_prompt | εἶδος     | 44606      | 44611    | 33c    | turn_philebus_0378 | tok_philebus_007554
+  aporia_reset      | πάλιν     | 44769      | 44774    | 33c    | turn_philebus_0380 | tok_philebus_007581
+  aporia_reset      | πάλιν     | 46438      | 46443    | 34b    | turn_philebus_0404 | tok_philebus_007867
+  aporia_reset      | πάλιν     | 47550      | 47555    | 34e    | turn_philebus_0418 | tok_philebus_008042
+  assent_concession | ναί       | 47722      | 47725    | 34e    | turn_philebus_0425 | tok_philebus_008075
+  assent_concession | ναί       | 48280      | 48283    | 35b    | turn_philebus_0435 | tok_philebus_008170
+  assent_concession | ναί       | 48411      | 48414    | 35b    | turn_philebus_0439 | tok_philebus_008194
+  assent_concession | πάνυ γε   | 48890      | 48897    | 35c    | turn_philebus_0449 | tok_philebus_008276,tok_philebus_008277
+  definition_prompt | εἶδος     | 49230      | 49235    | 35d    | turn_philebus_0454 | tok_philebus_008335
+  assent_concession | ναί       | 51976      | 51979    | 37a    | turn_philebus_0491 | tok_philebus_008807
+  assent_concession | ναί       | 52003      | 52006    | 37a    | turn_philebus_0493 | tok_philebus_008812
+  assent_concession | πάνυ γε   | 52109      | 52116    | 37a    | turn_philebus_0497 | tok_philebus_008835,tok_philebus_008836
+  assent_concession | ναί       | 52350      | 52353    | 37b    | turn_philebus_0501 | tok_philebus_008877
+  assent_concession | ναί       | 52731      | 52734    | 37c    | turn_philebus_0505 | tok_philebus_008940
+  assent_concession | πάνυ γε   | 54567      | 54574    | 38b    | turn_philebus_0531 | tok_philebus_009259,tok_philebus_009260
+  assent_concession | πάνυ γε   | 55274      | 55281    | 38d    | turn_philebus_0543 | tok_philebus_009378,tok_philebus_009379
+  aporia_reset      | πάλιν     | 55504      | 55509    | 38e    | turn_philebus_0546 | tok_philebus_009420
+  divine_legal      | γραφή     | 56029      | 56034    | 39a    | turn_philebus_0554 | tok_philebus_009513
+  assent_concession | ναί       | 58077      | 58080    | 40a    | turn_philebus_0583 | tok_philebus_009860
+  assent_concession | πάνυ γε   | 59015      | 59022    | 40c    | turn_philebus_0595 | tok_philebus_010015,tok_philebus_010016
+  assent_concession | ναί       | 59125      | 59128    | 40d    | turn_philebus_0597 | tok_philebus_010035
+  assent_concession | ναί       | 63109      | 63112    | 42d    | turn_philebus_0643 | tok_philebus_010705
+  aporia_reset      | πάλιν     | 63500      | 63505    | 42e    | turn_philebus_0650 | tok_philebus_010775
+  aporia_reset      | πάλιν     | 64879      | 64884    | 43c    | turn_philebus_0668 | tok_philebus_011011
+  assent_concession | πάνυ γε   | 75910      | 75917    | 48e    | turn_philebus_0783 | tok_philebus_012821,tok_philebus_012822
+  definition_prompt | εἶδος     | 75964      | 75969    | 48e    | turn_philebus_0784 | tok_philebus_012832
+  assent_concession | πάνυ γε   | 77902      | 77909    | 49e    | turn_philebus_0805 | tok_philebus_013149,tok_philebus_013150
+  assent_concession | ναί       | 78926      | 78929    | 50c    | turn_philebus_0817 | tok_philebus_013318
+  assent_concession | πάνυ γε   | 79090      | 79097    | 50c    | turn_philebus_0821 | tok_philebus_013347,tok_philebus_013348
+  definition_prompt | οὐσία     | 84807      | 84812    | 53c    | turn_philebus_0864 | tok_philebus_014285
+  definition_prompt | οὐσία     | 86073      | 86078    | 54a    | turn_philebus_0885 | tok_philebus_014503
+  assent_concession | πάνυ γε   | 90269      | 90276    | 56b    | turn_philebus_0929 | tok_philebus_015181,tok_philebus_015182
+  assent_concession | πάνυ γε   | 90624      | 90631    | 56c    | turn_philebus_0933 | tok_philebus_015235,tok_philebus_015236
+  aporia_reset      | πάλιν     | 92614      | 92619    | 57b    | turn_philebus_0952 | tok_philebus_015554
+  assent_concession | ναί       | 97028      | 97031    | 59d    | turn_philebus_0991 | tok_philebus_016283
+  assent_concession | πάνυ γε   | 100202     | 100209   | 61b    | turn_philebus_1029 | tok_philebus_016837,tok_philebus_016838
+  aporia_reset      | πάλιν     | 102895     | 102900   | 62d    | turn_philebus_1058 | tok_philebus_017268
+  aporia_reset      | πάλιν     | 104502     | 104507   | 63c    | turn_philebus_1072 | tok_philebus_017529
+  assent_concession | πάνυ γε   | 107619     | 107626   | 64e    | turn_philebus_1096 | tok_philebus_018020,tok_philebus_018021
+  definition_prompt | ἰδέα      | 107664     | 107668   | 65a    | turn_philebus_1097 | tok_philebus_018028
+  assent_concession | ναί       | 108359     | 108362   | 65b    | turn_philebus_1103 | tok_philebus_018139
+  assent_concession | ναί       | 111277     | 111280   | 66e    | turn_philebus_1127 | tok_philebus_018604
+  definition_prompt | ἰδέα      | 112147     | 112151   | 67a    | turn_philebus_1135 | tok_philebus_018747

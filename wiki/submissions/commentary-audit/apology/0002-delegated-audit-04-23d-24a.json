@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-delegated-audit-04-23d-24a",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "apology",
+  "unit_key": "04-23d-24a",
+  "source_path": "scratch/commentary/delegated-audits/apology/04-23d-24a.json",
+  "source_sha256": "76f0dadb866a6e1a9ef5bfc459c725a5d8ea94fbe9ff28cc5251d2795f9dbf13",
+  "target_path": "wiki/submissions/commentary-audit/apology/04-23d-24a.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "61f9b97eec1ab8ed728f06a7a586141baac3592ee8121bcebfffce497b23975a",
+  "applied_at": "2026-08-24T01:15:36.750Z",
+  "applied_ids": [
+    "comm_apology_0004"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "apology",
+    "unit_key": "04-23d-24a",
+    "job": {
+      "job_id": "audit:apology:04-23d-24a",
+      "input_sha256": "25bc3ad1935b71e9fb9250e59ca90a8e7492250700c4506c9e371b22ba3ab6e2",
+      "audit_brief_path": "scratch/commentary/audit-briefs/apology/04-23d-24a.md",
+      "audit_brief_sha256": "f3da7e173305d2f2f7e3791eb6b13cd7290c1d01e9ea7373426e3c08d982ef60",
+      "output_path": "scratch/commentary/audits/apology/04-23d-24a.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/apology/04-23d-24a.output.json",
+    "output_sha256": "61f9b97eec1ab8ed728f06a7a586141baac3592ee8121bcebfffce497b23975a",
+    "provenance": {
+      "auditor": "batch-a-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

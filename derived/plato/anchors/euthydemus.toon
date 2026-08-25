@@ -1,0 +1,59 @@
+dialogue: euthydemus
+source_path: raw/plato/greek/euthydemus.txt
+source_sha256: 23536f3045b3c14d919bfc41e21a18e2bb7903cd34408d17e1ab08801ab9df14
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[52]:
+  group             | form      | start_char | end_char | marker | turn_id              | token_ids
+  aporia_reset      | πάλιν     | 3492       | 3497     | 272e   | turn_euthydemus_0012 | tok_euthydemus_000581
+  definition_prompt | τί ἐστι   | 5212       | 5219     | 273d   | turn_euthydemus_0012 | tok_euthydemus_000850,tok_euthydemus_000851
+  assent_concession | πάνυ γε   | 10462      | 10469    | 276b   | turn_euthydemus_0015 | tok_euthydemus_001671,tok_euthydemus_001672
+  aporia_reset      | πάλιν     | 11575      | 11580    | 276d   | turn_euthydemus_0015 | tok_euthydemus_001842
+  assent_concession | ναί       | 12085      | 12088    | 277a   | turn_euthydemus_0016 | tok_euthydemus_001926
+  aporia_reset      | πάλιν     | 12656      | 12661    | 277b   | turn_euthydemus_0016 | tok_euthydemus_002013
+  assent_concession | ναί       | 17327      | 17330    | 279c   | turn_euthydemus_0018 | tok_euthydemus_002787
+  aporia_reset      | πάλιν     | 17525      | 17530    | 279c   | turn_euthydemus_0018 | tok_euthydemus_002823
+  aporia_reset      | πάλιν     | 17790      | 17795    | 279d   | turn_euthydemus_0018 | tok_euthydemus_002866
+  assent_concession | πάνυ γε   | 18188      | 18195    | 279e   | turn_euthydemus_0018 | tok_euthydemus_002931,tok_euthydemus_002932
+  aporia_reset      | πάλιν     | 19000      | 19005    | 280b   | turn_euthydemus_0019 | tok_euthydemus_003061
+  assent_concession | ναί       | 22874      | 22877    | 282a   | turn_euthydemus_0021 | tok_euthydemus_003722
+  divine_legal      | ὅσιον     | 26536      | 26541    | 283e   | turn_euthydemus_0022 | tok_euthydemus_004309
+  assent_concession | πάνυ γε   | 26952      | 26959    | 284a   | turn_euthydemus_0023 | tok_euthydemus_004386,tok_euthydemus_004387
+  assent_concession | ναί       | 27002      | 27005    | 284a   | turn_euthydemus_0023 | tok_euthydemus_004396
+  assent_concession | ναί       | 27154      | 27157    | 284b   | turn_euthydemus_0023 | tok_euthydemus_004423
+  assent_concession | ναί       | 27641      | 27644    | 284c   | turn_euthydemus_0023 | tok_euthydemus_004513
+  assent_concession | ὁμολογεῖς | 28293      | 28302    | 284d   | turn_euthydemus_0023 | tok_euthydemus_004634
+  assent_concession | ναί       | 28421      | 28424    | 284d   | turn_euthydemus_0023 | tok_euthydemus_004655
+  aporia_reset      | πάλιν     | 29548      | 29553    | 285b   | turn_euthydemus_0024 | tok_euthydemus_004836
+  definition_prompt | τί ἐστι   | 30587      | 30594    | 285d   | turn_euthydemus_0024 | tok_euthydemus_005001,tok_euthydemus_005002
+  assent_concession | πάνυ γε   | 31077      | 31084    | 285e   | turn_euthydemus_0025 | tok_euthydemus_005074,tok_euthydemus_005075
+  assent_concession | πάνυ γε   | 32647      | 32654    | 286d   | turn_euthydemus_0025 | tok_euthydemus_005341,tok_euthydemus_005342
+  assent_concession | ὁμολογεῖς | 34808      | 34817    | 287d   | turn_euthydemus_0026 | tok_euthydemus_005690
+  aporia_reset      | πάλιν     | 35939      | 35944    | 288b   | turn_euthydemus_0027 | tok_euthydemus_005881
+  aporia_reset      | πάλιν     | 36508      | 36513    | 288c   | turn_euthydemus_0027 | tok_euthydemus_005967
+  assent_concession | ναί       | 36900      | 36903    | 288d   | turn_euthydemus_0027 | tok_euthydemus_006022
+  assent_concession | ναί       | 36967      | 36970    | 288d   | turn_euthydemus_0027 | tok_euthydemus_006035
+  assent_concession | ναί       | 41781      | 41784    | 291a   | turn_euthydemus_0036 | tok_euthydemus_006814
+  aporia_reset      | πάλιν     | 42376      | 42381    | 291b   | turn_euthydemus_0037 | tok_euthydemus_006910
+  aporia_reset      | πάλιν     | 43120      | 43125    | 291d   | turn_euthydemus_0043 | tok_euthydemus_007039
+  assent_concession | πάνυ γε   | 43890      | 43897    | 292a   | turn_euthydemus_0052 | tok_euthydemus_007172,tok_euthydemus_007173
+  assent_concession | ναί       | 44084      | 44087    | 292b   | turn_euthydemus_0056 | tok_euthydemus_007205
+  assent_concession | πάνυ γε   | 45058      | 45065    | 292d   | turn_euthydemus_0064 | tok_euthydemus_007366,tok_euthydemus_007367
+  assent_concession | πάνυ γε   | 46362      | 46369    | 293b   | turn_euthydemus_0069 | tok_euthydemus_007581,tok_euthydemus_007582
+  assent_concession | πάνυ γε   | 46599      | 46606    | 293c   | turn_euthydemus_0069 | tok_euthydemus_007624,tok_euthydemus_007625
+  aporia_reset      | πάλιν     | 46952      | 46957    | 293d   | turn_euthydemus_0069 | tok_euthydemus_007687
+  assent_concession | ναί       | 48488      | 48491    | 294b   | turn_euthydemus_0070 | tok_euthydemus_007940
+  assent_concession | πάνυ γε   | 48581      | 48588    | 294b   | turn_euthydemus_0070 | tok_euthydemus_007956,tok_euthydemus_007957
+  aporia_reset      | πάλιν     | 51894      | 51899    | 295e   | turn_euthydemus_0071 | tok_euthydemus_008467
+  aporia_reset      | πάλιν     | 51933      | 51938    | 295e   | turn_euthydemus_0071 | tok_euthydemus_008473
+  assent_concession | ὁμολογεῖς | 53106      | 53115    | 296c   | turn_euthydemus_0072 | tok_euthydemus_008664
+  assent_concession | ναί       | 53542      | 53545    | 296d   | turn_euthydemus_0072 | tok_euthydemus_008730
+  assent_concession | πάνυ γε   | 54191      | 54198    | 297a   | turn_euthydemus_0073 | tok_euthydemus_008839,tok_euthydemus_008840
+  aporia_reset      | πάλιν     | 56956      | 56961    | 298b   | turn_euthydemus_0074 | tok_euthydemus_009296
+  assent_concession | πάνυ γε   | 59576      | 59583    | 299b   | turn_euthydemus_0075 | tok_euthydemus_009751,tok_euthydemus_009752
+  assent_concession | ὁμολογεῖς | 60329      | 60338    | 299d   | turn_euthydemus_0075 | tok_euthydemus_009885
+  assent_concession | ναί       | 61123      | 61126    | 300a   | turn_euthydemus_0076 | tok_euthydemus_010019
+  assent_concession | ναί       | 65486      | 65489    | 302b   | turn_euthydemus_0078 | tok_euthydemus_010748
+  assent_concession | ὁμολογεῖς | 65497      | 65506    | 302b   | turn_euthydemus_0078 | tok_euthydemus_010750
+  assent_concession | ὁμολογεῖς | 67182      | 67191    | 302e   | turn_euthydemus_0079 | tok_euthydemus_011051
+  assent_concession | ναί       | 75956      | 75959    | 307b   | turn_euthydemus_0092 | tok_euthydemus_012484

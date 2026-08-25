@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-01-363a-363d",
+  "lane": "commentary",
+  "kind": "rewrite",
+  "scope": "lesser-hippias",
+  "unit_key": "01-363a-363d",
+  "source_path": "scratch/commentary/rewrites/lesser-hippias/01-363a-363d.json",
+  "source_sha256": "cc01a8ca841917039583a64c0ef89d1230511791ba0380496c43c82777193351",
+  "target_path": "wiki/commentary/lesser-hippias.md",
+  "target_sha256_before": "87fef001caf946312c469457c970f13a092e493877e55c624c2fa18a80be9df4",
+  "target_sha256_after": "4faadc9f29582e73fad1c596eeaf7f34801f3c051ae7ee755287334aa5d50904",
+  "applied_at": "2026-08-21T13:02:50.070Z",
+  "applied_ids": [
+    "comm_lesser-hippias_0009"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "lesser-hippias",
+    "unit_key": "01-363a-363d",
+    "section_id": "comm_lesser-hippias_0001",
+    "audit_output": {
+      "path": "scratch/commentary/audits/lesser-hippias/01-363a-363d.json",
+      "sha256": "c9f5b890c5e982da48eab75ce7975ac630cfd644924228b2fbf434e6eb1da14f"
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_lesser-hippias_0009",
+        "title": "",
+        "body": "Hippias’s reply is also a piece of self-presentation. He portrays himself as the man who publicly offers both prepared displays and answers to anyone who asks. That makes Socrates’ question a challenge to the role Hippias has just claimed: refusing it would sit badly with his public promise. I would not take this pledge as Socrates’ verdict on Achilles and Odysseus; it commits Hippias to the inquiry before it settles anything.",
+        "cites": {
+          "observations": [
+            "obs_lesser-hippias_0004"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_lesser-hippias_0009",
+      "body": "```yaml\ncommentary_id: comm_lesser-hippias_0009\nsource_work: Lesser Hippias\nblock_kind: notice\nplacement: after\nstephanus_span: 363d\nsource_ref:\n  source_path: raw/plato/greek/lesser-hippias.txt\n  stephanus_span: 363d\n  start_marker: 363d\n  end_marker: 363d\n  start_char: 1080\n  end_char: 1308\n  text_sha256: \"a499c333179561108ae100497931740b7e54a7fa43ffaa4c3eaa953f617bbbcf\"\nbody: \"Apemantus supplies the comparison that starts the inquiry: he ranked the Iliad above the Odyssey because Achilles was better than Odysseus. Socrates reports that ranking and asks Hippias which man is better. At this point, I would not treat the passage as settling Socrates’ own verdict; the immediate task is to make Hippias state his.\"\ncites:\n  observations: [\"obs_lesser-hippias_0003\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

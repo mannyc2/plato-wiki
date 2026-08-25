@@ -1,0 +1,4207 @@
+{
+  "version": 1,
+  "standard": "docs/label-normalization-standards.md",
+  "seed": "aeaee42b",
+  "universeSize": 2967,
+  "strata": {
+    "craft_analogy": {
+      "population": 271,
+      "drawn": 28
+    },
+    "elenchus": {
+      "population": 263,
+      "drawn": 28
+    },
+    "turn_geometry": {
+      "population": 262,
+      "drawn": 28
+    },
+    "definition_ladder": {
+      "population": 231,
+      "drawn": 24
+    },
+    "dramatic_case_setup": {
+      "population": 170,
+      "drawn": 18
+    },
+    "prosopography": {
+      "population": 160,
+      "drawn": 17
+    },
+    "myth_demarcation": {
+      "population": 131,
+      "drawn": 13
+    },
+    "irony_marker": {
+      "population": 124,
+      "drawn": 13
+    },
+    "forms_trajectory": {
+      "population": 102,
+      "drawn": 12
+    },
+    "frame_depth": {
+      "population": 64,
+      "drawn": 12
+    },
+    "laws-only passthrough": {
+      "population": 773,
+      "drawn": 83
+    },
+    "other": {
+      "population": 416,
+      "drawn": 44
+    }
+  },
+  "entries": [
+    {
+      "family": "craft_analogy",
+      "label": "bodily_health_psychic_order_analogy",
+      "observation_id": "obs_republic_0798",
+      "dialogue": "republic",
+      "stephanus_span": "444c-449a",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "bodily_psychic_condition_parallel"
+      },
+      "reason": "Shared function: compares bodily health, disease, or order with psychic condition; Republic virtue and vice details remain in the observation fields."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "bodily_regimen_for_later_benefit_analogy",
+      "observation_id": "obs_laws_1258",
+      "dialogue": "laws",
+      "stephanus_span": "646a-646e",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a later-benefit regimen analogy, where present bodily distress licenses voluntary training; this differs from generic medical-policy or body-soul parallels."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "cause_rules_what_serves_generation",
+      "observation_id": "obs_philebus_0108",
+      "dialogue": "philebus",
+      "stephanus_span": "27a-27b",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a master-servant metaphor for cause over generated result, not the same craft function as production or expert analogies."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "craft_analogy_agriculture_to_politics",
+      "observation_id": "obs_euthyphro_0032",
+      "dialogue": "euthyphro",
+      "stephanus_span": "2c-2d",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "craft_training_education_analogy"
+      },
+      "reason": "Shared function: a craft or cultivation model explains training the young; the farming and political details remain local to the observation."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "craft_analogy_rejected_by_respondent",
+      "observation_id": "obs_gorgias_0209",
+      "dialogue": "gorgias",
+      "stephanus_span": "490c-490e",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "analogy_criticized_by_respondent"
+      },
+      "reason": "Shared function: the respondent rejects the offered analogy as irrelevant; the particular food, medical, clothing, and seed examples stay in the observation."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "craft_competence_prior_to_public_works",
+      "observation_id": "obs_gorgias_0328",
+      "dialogue": "gorgias",
+      "stephanus_span": "514c",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "expert_craft_analogy"
+      },
+      "reason": "Shared function: craft credentials and prior products test public competence; the building/public-works detail remains in the observation fields."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "craft_credential_demand",
+      "observation_id": "obs_laches_0153",
+      "dialogue": "laches",
+      "stephanus_span": "186e-187a",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "expert_craft_analogy"
+      },
+      "reason": "Shared function: expertise is tested by teachers, fellow practitioners, and improved products; the education-of-youth case remains in the observation."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "craft_usefulness_restricted_by_user_aim",
+      "observation_id": "obs_gorgias_0449",
+      "dialogue": "gorgias",
+      "stephanus_span": "480e-481b",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "craft_scope_demarcation"
+      },
+      "reason": "Shared function: the passage limits a craft-like power by the user's aim; the rhetoric-and-wrongdoing detail remains local."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "craftsman_mixing_analogy",
+      "observation_id": "obs_philebus_0287",
+      "dialogue": "philebus",
+      "stephanus_span": "59e-60a",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks the interlocutors as craftsmen mixing prepared materials at a segment boundary; no existing target names this mixing-task function without flattening it."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "divine_rewards_for_justice",
+      "observation_id": "obs_republic_0751",
+      "dialogue": "republic",
+      "stephanus_span": "612c-613a",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names a theological reward premise rather than a repeatable craft-analogy function, and no same-family function target fits it."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "dyeing_paradeigma",
+      "observation_id": "obs_lysis_0083",
+      "dialogue": "lysis",
+      "stephanus_span": "217b-217c",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a dyeing paradeigma used to clarify presence and character transfer; no existing target names that specific analogical function."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "ethical_benefit_payment_asymmetry",
+      "observation_id": "obs_gorgias_0359",
+      "dialogue": "gorgias",
+      "stephanus_span": "520c-520d",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a payment-safety asymmetry between moral improvement and ordinary craft benefits; this is not just a generic expert-craft analogy."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "expertise_as_beneficial_reorientation",
+      "observation_id": "obs_theaetetus_0411",
+      "dialogue": "theaetetus",
+      "stephanus_span": "167c-167e",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "expert_craft_analogy"
+      },
+      "reason": "Shared function: expert roles are analogized by their power to produce beneficial reorientation; doctor, rhetor, and sophist details remain local."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "expertise_confidence_examples",
+      "observation_id": "obs_protagoras_0255",
+      "dialogue": "protagoras",
+      "stephanus_span": "350a",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "expert_craft_analogy"
+      },
+      "reason": "Shared function: practical expertise supplies comparative examples of competence effects; the divers, horsemen, and peltasts stay in observation prose."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "instrumental_music_permitted_under_vocal_dance",
+      "observation_id": "obs_laws_0240",
+      "dialogue": "laws",
+      "stephanus_span": "669e-670a",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names a Laws musical-permission rule rather than a craft analogy function, and no same-family function target fits it."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "legislation_as_craft_of_testing",
+      "observation_id": "obs_laws_0129",
+      "dialogue": "laws",
+      "stephanus_span": "648a-648b",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "lawgiving_expertise_as_techne"
+      },
+      "reason": "Shared function: lawgiving is framed as expert craft work on citizens; the courage-testing detail remains in the observation."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "letter_as_phonetic_instrument",
+      "observation_id": "obs_cratylus_0218",
+      "dialogue": "cratylus",
+      "stephanus_span": "426c-426d",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a letter treated as a phonetic instrument for imitation; existing naming or letter models do not name the same narrow function."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "material_shaped_and_joined",
+      "observation_id": "obs_timaeus_0360",
+      "dialogue": "timaeus",
+      "stephanus_span": "36a-36c",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "demiourgos_production_mapping"
+      },
+      "reason": "Shared function: demiurgic craft operations map production steps onto cosmological formation; the cutting, bending, and joining details remain local."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "naming_mapped_to_making",
+      "observation_id": "obs_cratylus_0025",
+      "dialogue": "cratylus",
+      "stephanus_span": "387c-387d",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "analogy_for_naming_convention"
+      },
+      "reason": "Shared function: naming is mapped onto a craft/action model; the local argument about nature and preference remains in the observation fields."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "navigation_craft_as_rhetoric_comparison",
+      "observation_id": "obs_gorgias_0331",
+      "dialogue": "gorgias",
+      "stephanus_span": "511d-511e",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "nautical_method_analogy"
+      },
+      "reason": "Shared function: navigation/pilotage supplies a craft comparison for another practice; the rhetoric-saving contrast remains local to the observation."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "painter_pigment_mixing",
+      "observation_id": "obs_cratylus_0202",
+      "dialogue": "cratylus",
+      "stephanus_span": "424d-424e",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "painting_as_speech_analogy"
+      },
+      "reason": "Shared function: a visual-art craft analogy explains speech or naming composition; pigment and phonetic-element details remain in the observation."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "physical_reflection_analogy",
+      "observation_id": "obs_phaedrus_0327",
+      "dialogue": "phaedrus",
+      "stephanus_span": "255b-255d",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a physical reflection analogy for erotic return through the eyes; no existing craft target names that same analogical function."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "pleasure_assimilation_analogy",
+      "observation_id": "obs_laws_1261",
+      "dialogue": "laws",
+      "stephanus_span": "656a-656c",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "mimesis_affective_psychology"
+      },
+      "reason": "Shared function: mimetic or artistic objects shape affective character; the bad-figures and melodies case remains local."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "politician_sophist_parallel_by_similar_conduct",
+      "observation_id": "obs_gorgias_0343",
+      "dialogue": "gorgias",
+      "stephanus_span": "519b-519c",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a professional-type parallel between politicians and sophists by shared beneficiary complaints; existing craft targets would hide that comparison question."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "polymathy_as_universal_craft_mastery",
+      "observation_id": "obs_lesser-hippias_0031",
+      "dialogue": "lesser-hippias",
+      "stephanus_span": "368b",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "expert_craft_analogy"
+      },
+      "reason": "Shared function: advertised expertise across crafts licenses an examination of competence; Hippias' polymathy details remain in the observation."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "sophist_merchant_analogy",
+      "observation_id": "obs_protagoras_0023",
+      "dialogue": "protagoras",
+      "stephanus_span": "313d-313e",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks the sophist-as-merchant analogy for selling soul-affecting teachings; no existing target names this exchange-and-risk function closely enough."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "soul_divided_and_bound_by_proportion",
+      "observation_id": "obs_timaeus_0103",
+      "dialogue": "timaeus",
+      "stephanus_span": "36e-37a",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "craft_analogy",
+        "label": "demiourgos_production_mapping"
+      },
+      "reason": "Shared function: demiurgic craft operations map onto cosmological construction; proportional division and binding remain in the observation."
+    },
+    {
+      "family": "craft_analogy",
+      "label": "wrestling_analogy_for_argumentative_danger",
+      "observation_id": "obs_theaetetus_0417",
+      "dialogue": "theaetetus",
+      "stephanus_span": "181a-181c",
+      "review_status": "accepted",
+      "stratum": "craft_analogy",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a wrestling analogy for two-front argumentative danger; no same-family target names that contest-risk function without overbroad combat imagery."
+    },
+    {
+      "family": "elenchus",
+      "label": "answer_turned_against_respondent",
+      "observation_id": "obs_gorgias_0191",
+      "dialogue": "gorgias",
+      "stephanus_span": "488c-488d",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "argument_from_prior_agreement"
+      },
+      "reason": "Shared function: a respondent's own answer or agreement is turned into pressure against the respondent's position; local Callicles details remain in the observation."
+    },
+    {
+      "family": "elenchus",
+      "label": "aporia_signaled_by_new_distinction",
+      "observation_id": "obs_lysis_0116",
+      "dialogue": "lysis",
+      "stephanus_span": "222a-222b",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a new distinction that destabilizes an apparent resolution; it is aporia-inducing but not simply an aporia report."
+    },
+    {
+      "family": "elenchus",
+      "label": "argument_captured_verdict",
+      "observation_id": "obs_theaetetus_0226",
+      "dialogue": "theaetetus",
+      "stephanus_span": "179a-179b",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a respondent's verdict that an argument has been captured on two grounds; existing refutation labels do not name that verdict function."
+    },
+    {
+      "family": "elenchus",
+      "label": "assent_by_analogous_pairs",
+      "observation_id": "obs_protagoras_0142",
+      "dialogue": "protagoras",
+      "stephanus_span": "332c-332d",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "assent_chain"
+      },
+      "reason": "Shared function: sequential respondent assents build the premise chain; the analogous-pair induction remains in the observation."
+    },
+    {
+      "family": "elenchus",
+      "label": "assent_chain_to_conclusion",
+      "observation_id": "obs_laws_0109",
+      "dialogue": "laws",
+      "stephanus_span": "645d-645e",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "assent_chain"
+      },
+      "reason": "Shared function: a chain of affirmations carries the respondent to a conclusion; the wine and self-control sequence remains local."
+    },
+    {
+      "family": "elenchus",
+      "label": "benefit_regress_argument",
+      "observation_id": "obs_euthydemus_0139",
+      "dialogue": "euthydemus",
+      "stephanus_span": "292d",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a regress in which a candidate art transmits itself without determinate product; no existing target preserves that product-regress function."
+    },
+    {
+      "family": "elenchus",
+      "label": "dialectic_vs_eristic_contrast",
+      "observation_id": "obs_philebus_0033",
+      "dialogue": "philebus",
+      "stephanus_span": "17a-17b",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks an explicit dialectic-versus-eristic contrast by whether intermediates are identified; this is a method distinction, not generic elenctic testing."
+    },
+    {
+      "family": "elenchus",
+      "label": "dialectical_reset",
+      "observation_id": "obs_philebus_0018",
+      "dialogue": "philebus",
+      "stephanus_span": "13c-13d",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "recapitulation_or_restart"
+      },
+      "reason": "Shared function: the argument is pulled back and restarted to avoid collapse; the Philebus phrasing remains in the observation."
+    },
+    {
+      "family": "elenchus",
+      "label": "distributive_predicate_scrutiny",
+      "observation_id": "obs_greater-hippias_0121",
+      "dialogue": "greater-hippias",
+      "stephanus_span": "302e",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "part_whole_consequence_blocks_predication"
+      },
+      "reason": "Shared function: a part-whole or collective-distributive consequence blocks a predicate from applying; the beauty-definition details remain local."
+    },
+    {
+      "family": "elenchus",
+      "label": "forced_disjunction_two_branches",
+      "observation_id": "obs_lysis_0140",
+      "dialogue": "lysis",
+      "stephanus_span": "219c",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "forced_alternative"
+      },
+      "reason": "Shared function: the argument compresses options into a necessary either-or; the regress terminus details remain in the observation."
+    },
+    {
+      "family": "elenchus",
+      "label": "harmful_act_reclassified_as_neutral_instrument",
+      "observation_id": "obs_gorgias_0087",
+      "dialogue": "gorgias",
+      "stephanus_span": "468a-468b",
+      "review_status": "rejected",
+      "stratum": "elenchus",
+      "adjudication": "passage_summary_relabel",
+      "target": {
+        "family": "elenchus",
+        "label": "conditional_argument_step"
+      },
+      "reason": "The label summarizes a rejected local repair; if retained as content, the reusable function would be a conditional argument step already captured by the target."
+    },
+    {
+      "family": "elenchus",
+      "label": "interlocutor_demands_proof_of_existence",
+      "observation_id": "obs_philebus_0162",
+      "dialogue": "philebus",
+      "stephanus_span": "41b",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "proof_requested"
+      },
+      "reason": "Shared function: an interlocutor conditions progress on proof of a claim's existence; false-pleasure details remain in the observation fields."
+    },
+    {
+      "family": "elenchus",
+      "label": "opponent_position_reformulated",
+      "observation_id": "obs_gorgias_0312",
+      "dialogue": "gorgias",
+      "stephanus_span": "508c-508d",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "socratic_reframe_premise"
+      },
+      "reason": "Shared function: the opponent's position is reformulated into a premise that can be examined; the Gorgias context remains local."
+    },
+    {
+      "family": "elenchus",
+      "label": "parallel_counterexample_series",
+      "observation_id": "obs_charmides_0098",
+      "dialogue": "charmides",
+      "stephanus_span": "167e-168a",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "refutation_by_counterexample"
+      },
+      "reason": "Shared function: a series of parallel counterexamples pressures the proposed claim; the distributive example details remain in the observation."
+    },
+    {
+      "family": "elenchus",
+      "label": "partner_solicits_correction",
+      "observation_id": "obs_statesman_0036",
+      "dialogue": "statesman",
+      "stephanus_span": "262c-262d",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a partner soliciting correction within the inquiry; this collaborative repair function is not the same as assent, objection, or aporia targets."
+    },
+    {
+      "family": "elenchus",
+      "label": "principle_stated_then_applied_to_refute",
+      "observation_id": "obs_protagoras_0140",
+      "dialogue": "protagoras",
+      "stephanus_span": "332c-332d",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "conditional_argument_step"
+      },
+      "reason": "Shared function: a stated principle is applied as an argument step toward refutation; the one-opposite case remains in the observation."
+    },
+    {
+      "family": "elenchus",
+      "label": "prior_claim_refuted_by_assent",
+      "observation_id": "obs_philebus_0218",
+      "dialogue": "philebus",
+      "stephanus_span": "43a-43b",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "argument_from_prior_agreement"
+      },
+      "reason": "Shared function: a prior claim or concession is used to produce refutational pressure; the Philebus pleasure context stays local."
+    },
+    {
+      "family": "elenchus",
+      "label": "reductio_ad_absurdum",
+      "observation_id": "obs_laches_0149",
+      "dialogue": "laches",
+      "stephanus_span": "196e",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "reductio_conclusion"
+      },
+      "reason": "Shared function: the argument drives a position to an absurd conclusion; the Laches courage case remains in the observation."
+    },
+    {
+      "family": "elenchus",
+      "label": "refutation_by_poetic_authority",
+      "observation_id": "obs_charmides_0051",
+      "dialogue": "charmides",
+      "stephanus_span": "160e-161a",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks refutation through cited poetic authority; existing elenchus targets do not name that authority-mediated refutation function."
+    },
+    {
+      "family": "elenchus",
+      "label": "respondent_aporia_from_undefined_term",
+      "observation_id": "obs_charmides_0159",
+      "dialogue": "charmides",
+      "stephanus_span": "175e-176a",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "aporia_reported"
+      },
+      "reason": "Shared function: the respondent reaches aporia when an operative term is undefined; the Charmides term remains in the observation."
+    },
+    {
+      "family": "elenchus",
+      "label": "respondent_competence_requirement",
+      "observation_id": "obs_parmenides_0052",
+      "dialogue": "parmenides",
+      "stephanus_span": "133b-133c",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a competence requirement imposed on the respondent before dialectical testing; no target preserves that respondent-qualification function."
+    },
+    {
+      "family": "elenchus",
+      "label": "respondent_comprehension_delay",
+      "observation_id": "obs_philebus_0250",
+      "dialogue": "philebus",
+      "stephanus_span": "53e-54a",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a comprehension delay by the respondent; this is a reception problem rather than an assent chain or refutation result."
+    },
+    {
+      "family": "elenchus",
+      "label": "respondent_objection",
+      "observation_id": "obs_greater-hippias_0112",
+      "dialogue": "greater-hippias",
+      "stephanus_span": "300a-300b",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "respondent_rejects_conclusion"
+      },
+      "reason": "Shared function: the respondent objects to or rejects the argumentative result; the Hippias passage details remain local."
+    },
+    {
+      "family": "elenchus",
+      "label": "respondent_sets_procedure",
+      "observation_id": "obs_gorgias_0367",
+      "dialogue": "gorgias",
+      "stephanus_span": "515d-515e",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks the respondent taking control over procedure; no available target with a different label preserves that exact procedural function in this family."
+    },
+    {
+      "family": "elenchus",
+      "label": "semantic_distinction_resolves_contradiction",
+      "observation_id": "obs_protagoras_0204",
+      "dialogue": "protagoras",
+      "stephanus_span": "340b-340c",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a semantic distinction resolving an apparent contradiction; this is not merely a false dichotomy or prior-agreement refutation."
+    },
+    {
+      "family": "elenchus",
+      "label": "short_assent_sequence",
+      "observation_id": "obs_lesser-hippias_0078",
+      "dialogue": "lesser-hippias",
+      "stephanus_span": "375e-376a",
+      "review_status": "rejected",
+      "stratum": "elenchus",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "elenchus",
+        "label": "assent_chain"
+      },
+      "reason": "Shared function: a short sequence of assents advances the argument; the Lesser Hippias content remains in the observation."
+    },
+    {
+      "family": "elenchus",
+      "label": "temporal_universalization_of_knowledge",
+      "observation_id": "obs_euthydemus_0224",
+      "dialogue": "euthydemus",
+      "stephanus_span": "296c-296d",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks temporal universalization of a knowledge claim; no existing target names that extension function without losing the temporal pressure."
+    },
+    {
+      "family": "elenchus",
+      "label": "universal_assent_claim",
+      "observation_id": "obs_laws_0158",
+      "dialogue": "laws",
+      "stephanus_span": "650a-650b",
+      "review_status": "accepted",
+      "stratum": "elenchus",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks an appeal to universal assent as an argumentative claim; it is not simply common opinion deployed as a challenge."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "argument_reconstruction_for_confirmation",
+      "observation_id": "obs_euthydemus_0218",
+      "dialogue": "euthydemus",
+      "stephanus_span": "293d",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "recapitulation_or_restart"
+      },
+      "reason": "Shared function: a prior argument is reconstructed to confirm the next move; the Euthydemus details stay local."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "contrast_setup_for_elenchus",
+      "observation_id": "obs_republic_0785",
+      "dialogue": "republic",
+      "stephanus_span": "421a-421d",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "speaker_introduces_argumentative_procedure"
+      },
+      "reason": "Shared function: a speaker sets up the procedural contrast that will drive an elenchus; Republic happiness details remain local."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "dialogue_civility_norm",
+      "observation_id": "obs_laws_0060",
+      "dialogue": "laws",
+      "stephanus_span": "634c-634d",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a civility norm governing how dialogue should proceed; no existing turn target names that normative interaction rule."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "explicit_assent_check_refused",
+      "observation_id": "obs_gorgias_0455",
+      "dialogue": "gorgias",
+      "stephanus_span": "493d-494a",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "respondent_refuses_to_answer"
+      },
+      "reason": "Shared function: a requested assent or answer is explicitly refused; the Gorgias assent-check context remains local."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "hindsight_vs_foresight_marker",
+      "observation_id": "obs_laws_0401",
+      "dialogue": "laws",
+      "stephanus_span": "692c",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a hindsight-versus-foresight framing move; no turn-geometry target names that temporal contrast function."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "hypothesis_distinction_interrogation",
+      "observation_id": "obs_parmenides_0206",
+      "dialogue": "parmenides",
+      "stephanus_span": "160b-160c",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks interrogation of a hypothesis distinction; existing hypothetical-prompt labels would overgeneralize the formal distinction being tested."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "inclusive_risk_framing",
+      "observation_id": "obs_gorgias_0322",
+      "dialogue": "gorgias",
+      "stephanus_span": "512e-513a",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks inclusive risk framing that draws speaker and respondent into the same danger; no target preserves that shared-risk function."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "interlocutor_rejects_topic_as_shameful",
+      "observation_id": "obs_gorgias_0227",
+      "dialogue": "gorgias",
+      "stephanus_span": "494e-495a",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks an interlocutor rejecting a topic as shameful; this differs from generic procedural complaint or refusal targets."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "letter_substitution_proposal_by_respondent",
+      "observation_id": "obs_cratylus_0259",
+      "dialogue": "cratylus",
+      "stephanus_span": "434c-434d",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a respondent's concrete letter-substitution proposal; no existing turn target names that substitution function."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "oath_interrupted",
+      "observation_id": "obs_gorgias_0065",
+      "dialogue": "gorgias",
+      "stephanus_span": "466e-467a",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "procedural_interruption"
+      },
+      "reason": "Shared function: the exchange is interrupted before the projected speech act completes; the oath detail remains local."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "procedural_control_by_speaker",
+      "observation_id": "obs_charmides_0015",
+      "dialogue": "charmides",
+      "stephanus_span": "154e-155a",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "explicit_procedure_control"
+      },
+      "reason": "Shared function: a speaker explicitly controls how the exchange will proceed; the Charmides setting remains in the observation."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "procedure_choice_between_speech_and_questions",
+      "observation_id": "obs_theaetetus_0412",
+      "dialogue": "theaetetus",
+      "stephanus_span": "167c-167e",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "explicit_procedure_control"
+      },
+      "reason": "Shared function: the speaker frames a choice between procedural modes; speech-versus-questions details remain local."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "procedure_control_by_respondent",
+      "observation_id": "obs_theaetetus_0277",
+      "dialogue": "theaetetus",
+      "stephanus_span": "187c-187d",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "respondent_sets_procedure"
+      },
+      "reason": "Shared function: the respondent controls or sets the procedure for the exchange; Theaetetus context remains in the observation."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "repetition_flag_as_content_deficit",
+      "observation_id": "obs_phaedrus_0090",
+      "dialogue": "phaedrus",
+      "stephanus_span": "234e-235a",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks repetition as evidence of content deficit; no existing turn target names that evaluative flag function."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "respondent_collapse_assent_chain",
+      "observation_id": "obs_euthydemus_0038",
+      "dialogue": "euthydemus",
+      "stephanus_span": "277b-277c",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "respondent_collapse"
+      },
+      "reason": "Shared function: the respondent collapses under an assent sequence; local Euthydemus details remain in the observation."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "respondent_defers_to_interlocutor_judgment",
+      "observation_id": "obs_phaedrus_0050",
+      "dialogue": "phaedrus",
+      "stephanus_span": "234c-234d",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "respondent_transfer_with_authority_hedge"
+      },
+      "reason": "Shared function: the respondent defers judgment or transfers authority to another speaker; the Phaedrus judgment detail remains local."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "respondent_initial_reluctance",
+      "observation_id": "obs_charmides_0036",
+      "dialogue": "charmides",
+      "stephanus_span": "159b-159c",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks initial reluctance by a respondent before participation; no target captures that opening resistance without flattening it into refusal."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "respondent_permission_for_syllogism",
+      "observation_id": "obs_gorgias_0147",
+      "dialogue": "gorgias",
+      "stephanus_span": "479b-479c",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "procedural_agreement_to_inquire"
+      },
+      "reason": "Shared function: the respondent grants permission for a question-driven argument to proceed; the syllogism detail remains local."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "respondent_relinquishes_turn",
+      "observation_id": "obs_gorgias_0257",
+      "dialogue": "gorgias",
+      "stephanus_span": "504c-504d",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "respondent_turn_take"
+      },
+      "reason": "Shared function: respondent turn control shifts or is relinquished; the Gorgias exchange detail remains local."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "respondent_substitution_with_aporia",
+      "observation_id": "obs_philebus_0104",
+      "dialogue": "philebus",
+      "stephanus_span": "28b-28c",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks respondent substitution paired with aporia; existing transfer or collapse targets do not preserve that replacement function."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "socrates_controls_question_agenda",
+      "observation_id": "obs_greater-hippias_0017",
+      "dialogue": "greater-hippias",
+      "stephanus_span": "283d-283e",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "explicit_procedure_control"
+      },
+      "reason": "Shared function: Socrates controls the question agenda for the exchange; the Hippias setting remains local."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "socratic_erotic_method_avowal",
+      "observation_id": "obs_philebus_0036",
+      "dialogue": "philebus",
+      "stephanus_span": "16b-16c",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "methodological_program_declaration"
+      },
+      "reason": "Shared function: Socrates avows a method that will organize the inquiry; the erotic-method phrasing remains in the observation."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "sole_respondent_designation",
+      "observation_id": "obs_gorgias_0139",
+      "dialogue": "gorgias",
+      "stephanus_span": "476a-476b",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "respondent_answer_constraint"
+      },
+      "reason": "Shared function: the exchange designates or constrains who will answer; the sole-respondent setup remains local."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "speaker_offers_extreme_concession_for_private_audience",
+      "observation_id": "obs_menexenus_0017",
+      "dialogue": "menexenus",
+      "stephanus_span": "236c-236d",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks an extreme concession offered under private-audience conditions; no existing target names that audience-conditioned concession function."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "speaker_preempts_interlocutor_response",
+      "observation_id": "obs_laws_0095",
+      "dialogue": "laws",
+      "stephanus_span": "639d-639e",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "speaker_ventriloquism"
+      },
+      "reason": "Shared function: the speaker supplies or preempts an interlocutor response; the Laws response detail remains local."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "speaker_requests_length_permission",
+      "observation_id": "obs_philebus_0111",
+      "dialogue": "philebus",
+      "stephanus_span": "28d-28e",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "macrology_restrained"
+      },
+      "reason": "Shared function: speech length is negotiated or restrained as a procedural issue; the Philebus permission request remains in the observation."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "speaker_self_interprets_utterance_type",
+      "observation_id": "obs_laws_0259",
+      "dialogue": "laws",
+      "stephanus_span": "673c-673d",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a speaker self-interpreting the type of utterance being made; no existing turn target names that metadiscursive self-classification."
+    },
+    {
+      "family": "turn_geometry",
+      "label": "topic_transition_request",
+      "observation_id": "obs_cratylus_0334",
+      "dialogue": "cratylus",
+      "stephanus_span": "408c-408e",
+      "review_status": "accepted",
+      "stratum": "turn_geometry",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "turn_geometry",
+        "label": "argument_transition_marker"
+      },
+      "reason": "Shared function: a request marks transition to a new topic or argument unit; the Cratylus topic remains local."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "definiendum_announced_without_definition",
+      "observation_id": "obs_cratylus_0003",
+      "dialogue": "cratylus",
+      "stephanus_span": "383a-383b",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "definiendum_marked_for_inquiry"
+      },
+      "reason": "Shared function: the item to be defined is announced before a definition is supplied; the Cratylus naturalness issue remains local."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "definition_by_composition_into_one",
+      "observation_id": "obs_philebus_0114",
+      "dialogue": "philebus",
+      "stephanus_span": "29c-29d",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "classification_by_collection_into_one_genus"
+      },
+      "reason": "Shared function: many components are collected into one definitional unity; the Philebus composition details remain in the observation."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "definition_decomposed_into_components",
+      "observation_id": "obs_laws_0139",
+      "dialogue": "laws",
+      "stephanus_span": "654a-654b",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a definition decomposed into components; existing successive-addition or criterion targets would hide the decomposition function."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "definition_example_dialect_variant",
+      "observation_id": "obs_cratylus_0258",
+      "dialogue": "cratylus",
+      "stephanus_span": "434c-434d",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "definition_by_example"
+      },
+      "reason": "Shared function: an example supplies or tests a definition; the dialect-variant detail remains local."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "definition_refuted_by_material_example",
+      "observation_id": "obs_greater-hippias_0063",
+      "dialogue": "greater-hippias",
+      "stephanus_span": "291b-291c",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "definition_tested_by_case"
+      },
+      "reason": "Shared function: a proposed definition is tested against a concrete case; the material example remains in the observation."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "definition_reopened_after_apparent_completion",
+      "observation_id": "obs_sophist_0310",
+      "dialogue": "sophist",
+      "stephanus_span": "223c",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "recapitulation_or_restart"
+      },
+      "reason": "Shared function: the definition inquiry reopens after apparent completion; the Sophist division detail remains local."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "definition_supported_by_empirical_evidence",
+      "observation_id": "obs_gorgias_0165",
+      "dialogue": "gorgias",
+      "stephanus_span": "483d-483e",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "definition_supported_by_example"
+      },
+      "reason": "Shared function: empirical or concrete evidence supports a proposed definition; the Gorgias evidence remains local."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "definition_target_introduced",
+      "observation_id": "obs_laws_0317",
+      "dialogue": "laws",
+      "stephanus_span": "688e-689a",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "definition_target_set"
+      },
+      "reason": "Shared function: the target of definition is explicitly set for inquiry; the Laws target remains in the observation."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "definition_tested_by_domain_shift",
+      "observation_id": "obs_charmides_0039",
+      "dialogue": "charmides",
+      "stephanus_span": "159d-159e",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "definition_tested_by_case"
+      },
+      "reason": "Shared function: a definition is tested by shifting it to another case or domain; the Charmides domain shift remains local."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "dialectic_defined_by_kind_discrimination",
+      "observation_id": "obs_sophist_0194",
+      "dialogue": "sophist",
+      "stephanus_span": "253d-253e",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "definition_proposed"
+      },
+      "reason": "Shared function: a definition is stated for the term under inquiry; kind-discrimination details remain in the observation."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "etymology_from_compound",
+      "observation_id": "obs_cratylus_0132",
+      "dialogue": "cratylus",
+      "stephanus_span": "408a-408b",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "definition_by_name_etymology"
+      },
+      "reason": "Shared function: etymology supplies definitional content for a name; the compound derivation remains local."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "eudaimonia_as_unresolved_criterion",
+      "observation_id": "obs_charmides_0139",
+      "dialogue": "charmides",
+      "stephanus_span": "173c-173d",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "eudaimonia_criterion_stated"
+      },
+      "reason": "Shared function: eudaimonia is used as the criterion under dispute; unresolved-status details remain in the observation."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "evaluative_terms_collected_by_domain",
+      "observation_id": "obs_statesman_0281",
+      "dialogue": "statesman",
+      "stephanus_span": "306c-306d",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks evaluative terms collected by domain before classification; existing catalogue targets do not preserve the domain-collection function."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "happiness_as_disputed_criterion",
+      "observation_id": "obs_gorgias_0105",
+      "dialogue": "gorgias",
+      "stephanus_span": "473b-473c",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "eudaimonia_criterion_stated"
+      },
+      "reason": "Shared function: happiness/eudaimonia is posed as a criterion for evaluation; the Gorgias dispute remains local."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "harmless_pleasure_defined_as_play",
+      "observation_id": "obs_laws_0223",
+      "dialogue": "laws",
+      "stephanus_span": "667e-668a",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "definition_proposed"
+      },
+      "reason": "Shared function: a term is explicitly defined for the argument; the harmless-pleasure-as-play content remains local."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "inquiry_highest_principle_first",
+      "observation_id": "obs_sophist_0156",
+      "dialogue": "sophist",
+      "stephanus_span": "243d-243e",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks inquiry ordered by seeking the highest principle first; no existing definition target names that priority-setting method."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "intermediate_become_friend_via_evil_presence",
+      "observation_id": "obs_lysis_0082",
+      "dialogue": "lysis",
+      "stephanus_span": "217b-217c",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "intermediate_term_defined"
+      },
+      "reason": "Shared function: an intermediate term is defined by its relation to another condition; the evil-presence detail remains local."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "names_as_teaching_method_under_review",
+      "observation_id": "obs_cratylus_0300",
+      "dialogue": "cratylus",
+      "stephanus_span": "435e",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks names as a teaching method placed under review; existing name-definition targets do not preserve the methodological test function."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "reciprocal_erotic_response_named",
+      "observation_id": "obs_phaedrus_0175",
+      "dialogue": "phaedrus",
+      "stephanus_span": "255d-255e",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "definition_proposed"
+      },
+      "reason": "Shared function: a term is named or defined for the argument; the reciprocal erotic response detail remains local."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "successive_category_enumeration",
+      "observation_id": "obs_philebus_0355",
+      "dialogue": "philebus",
+      "stephanus_span": "51c-51e",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "characteristic_catalogue_for_definiendum"
+      },
+      "reason": "Shared function: categories or characteristics are enumerated to define the target; the Philebus category sequence remains local."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "temporal_universality_test",
+      "observation_id": "obs_greater-hippias_0151",
+      "dialogue": "greater-hippias",
+      "stephanus_span": "292e",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "definition_tested_by_case"
+      },
+      "reason": "Shared function: a definition is tested by whether it holds across a case condition; the temporal universality detail remains in the observation."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "thesis_contrast_without_definition",
+      "observation_id": "obs_parmenides_0025",
+      "dialogue": "parmenides",
+      "stephanus_span": "128a-128b",
+      "review_status": "rejected",
+      "stratum": "definition_ladder",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a contrast of theses before a definition is supplied; no target preserves the without-definition contrast function."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "uncontested_vs_contested_terms",
+      "observation_id": "obs_phaedrus_0303",
+      "dialogue": "phaedrus",
+      "stephanus_span": "262e-263a",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "formal_classification_distinction"
+      },
+      "reason": "Shared function: terms are divided into classes for definitional control; the contested/uncontested distinction remains local."
+    },
+    {
+      "family": "definition_ladder",
+      "label": "wisdom_defined_by_beneficial_change",
+      "observation_id": "obs_theaetetus_0315",
+      "dialogue": "theaetetus",
+      "stephanus_span": "166d",
+      "review_status": "accepted",
+      "stratum": "definition_ladder",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "definition_ladder",
+        "label": "definition_proposed"
+      },
+      "reason": "Shared function: wisdom is defined for the argument; the beneficial-change content remains in the observation fields."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "assembly_enforcement_by_force",
+      "observation_id": "obs_protagoras_0066",
+      "dialogue": "protagoras",
+      "stephanus_span": "319c-319d",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a civic assembly case where force enforces the setup; existing dramatic targets do not name this coercive public frame."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "asymmetric_competence_requirement",
+      "observation_id": "obs_laws_0093",
+      "dialogue": "laws",
+      "stephanus_span": "640c-640d",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks an asymmetric competence requirement as the setup for discussion; no target preserves that competence-asymmetry function."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "collective_interest_as_norm_source",
+      "observation_id": "obs_gorgias_0451",
+      "dialogue": "gorgias",
+      "stephanus_span": "483b-483d",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks collective interest as the source of a norm inside the case setup; not merely a generic opening or topic transition."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "contest_framed_as_psyche_disposition",
+      "observation_id": "obs_philebus_0004",
+      "dialogue": "philebus",
+      "stephanus_span": "11d-12a",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks the argument as a contest over psychic disposition; existing contest or emotional-reaction labels would hide that setup function."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "ethical_type_profile",
+      "observation_id": "obs_laws_0312",
+      "dialogue": "laws",
+      "stephanus_span": "681b-681c",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks an ethical type profile used to set up the Laws case; no dramatic target names this profile function closely enough."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "forensic_vs_abstract_inquiry_contrast",
+      "observation_id": "obs_theaetetus_0197",
+      "dialogue": "theaetetus",
+      "stephanus_span": "175c-175d",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a forensic-versus-abstract inquiry contrast; this frames the inquiry differently from generic legal-case setup."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "hereditary_succession_rule",
+      "observation_id": "obs_critias_0056",
+      "dialogue": "critias",
+      "stephanus_span": "114c-114d",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names a Critias hereditary-succession rule rather than a reusable dramatic setup function, and no same-family function target fits it."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "imminent_public_speech_announcement",
+      "observation_id": "obs_menexenus_0003",
+      "dialogue": "menexenus",
+      "stephanus_span": "234a-234b",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "dramatic_case_setup",
+        "label": "funeral_oration_praise_sequence_announced"
+      },
+      "reason": "Shared function: a funeral-oratorical praise sequence is announced as the frame; the imminent public speech detail remains local."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "indictment_restated",
+      "observation_id": "obs_euthyphro_0039",
+      "dialogue": "euthyphro",
+      "stephanus_span": "5a-5b",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "dramatic_case_setup",
+        "label": "accusation_stated"
+      },
+      "reason": "Shared function: the legal accusation is stated or restated as the dramatic case; the Euthyphro indictment detail remains local."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "judge_qualifications_stated",
+      "observation_id": "obs_laws_0176",
+      "dialogue": "laws",
+      "stephanus_span": "658e-659a",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names a Laws judicial qualification rule rather than a repeatable dramatic case setup, and no same-family target fits it."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "local_law_limits_experience",
+      "observation_id": "obs_laws_1256",
+      "dialogue": "laws",
+      "stephanus_span": "639b-639d",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks local law limiting experience as a setup constraint for the dialogue; no target preserves that jurisdictional constraint function."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "lover_speech_demonstration_frame",
+      "observation_id": "obs_lysis_0012",
+      "dialogue": "lysis",
+      "stephanus_span": "204e-205a",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a lover-speech demonstration frame; existing lover-opposition or protreptic targets would hide the demonstration setup."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "oath_compels_speech",
+      "observation_id": "obs_phaedrus_0061",
+      "dialogue": "phaedrus",
+      "stephanus_span": "236e-236e",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks an oath compelling a speech act; existing dramatic oath or speech-frame labels do not name that compulsion function."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "praise_escalation_stakes",
+      "observation_id": "obs_theaetetus_0034",
+      "dialogue": "theaetetus",
+      "stephanus_span": "145a-145b",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks praise escalation as stakes for the scene; no target preserves that escalation function without flattening it into generic reaction."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "remedy_request_establishes_topic",
+      "observation_id": "obs_charmides_0164",
+      "dialogue": "charmides",
+      "stephanus_span": "156a-156c",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "dramatic_case_setup",
+        "label": "dialogue_opening_topic_set"
+      },
+      "reason": "Shared function: a request establishes the topic to be pursued; the Charmides remedy frame remains local."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "reported_public_criticism",
+      "observation_id": "obs_phaedrus_0191",
+      "dialogue": "phaedrus",
+      "stephanus_span": "257b-257c",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks reported public criticism as a setup pressure; existing criticism or perception labels do not name this dramatic function in the family."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "request_for_demonstration",
+      "observation_id": "obs_euthydemus_0025",
+      "dialogue": "euthydemus",
+      "stephanus_span": "274c-274d",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a request for demonstration that sets up the display; no dramatic target names the demonstration-request function."
+    },
+    {
+      "family": "dramatic_case_setup",
+      "label": "ritual_purification_frame",
+      "observation_id": "obs_cratylus_0086",
+      "dialogue": "cratylus",
+      "stephanus_span": "396d-397a",
+      "review_status": "accepted",
+      "stratum": "dramatic_case_setup",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks ritual purification as the frame for the discussion; no target preserves that ritual setup function."
+    },
+    {
+      "family": "prosopography",
+      "label": "absent_position_restated",
+      "observation_id": "obs_philebus_0289",
+      "dialogue": "philebus",
+      "stephanus_span": "59e-60a",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks restatement of an absent party's position; broad character-description targets would hide the absent-position function."
+    },
+    {
+      "family": "prosopography",
+      "label": "character_as_reporter",
+      "observation_id": "obs_critias_0078",
+      "dialogue": "critias",
+      "stephanus_span": "117d-117e",
+      "review_status": "rejected",
+      "stratum": "prosopography",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a character functioning as reporter in the narrative chain; no prosopography target preserves that reporter role."
+    },
+    {
+      "family": "prosopography",
+      "label": "character_introduced_through_superlative",
+      "observation_id": "obs_charmides_0023",
+      "dialogue": "charmides",
+      "stephanus_span": "157d-157e",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "prosopography",
+        "label": "character_description_by_speaker"
+      },
+      "reason": "Shared function: a speaker introduces a character through descriptive evaluation; the superlative detail remains local."
+    },
+    {
+      "family": "prosopography",
+      "label": "collective_role_reversal",
+      "observation_id": "obs_republic_0808",
+      "dialogue": "republic",
+      "stephanus_span": "492a-492d",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a collective role reversal as the character profile; no target preserves that reversal function."
+    },
+    {
+      "family": "prosopography",
+      "label": "erastai_as_silent_audience",
+      "observation_id": "obs_euthydemus_0017",
+      "dialogue": "euthydemus",
+      "stephanus_span": "274a-274b",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks lovers as a silent audience shaping the scene; generic unnamed-role targets would hide the silent-audience function."
+    },
+    {
+      "family": "prosopography",
+      "label": "etymology_mirrors_dramatis_persona",
+      "observation_id": "obs_cratylus_0133",
+      "dialogue": "cratylus",
+      "stephanus_span": "408a-408b",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks etymology mirroring a dramatis persona; no target names that link between word analysis and character role."
+    },
+    {
+      "family": "prosopography",
+      "label": "few_many_audience_distinction",
+      "observation_id": "obs_timaeus_0099",
+      "dialogue": "timaeus",
+      "stephanus_span": "39b-39c",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a few-versus-many audience distinction; existing audience or social-class labels do not preserve this comparison function."
+    },
+    {
+      "family": "prosopography",
+      "label": "interlocutor_withdrawal_at_opening",
+      "observation_id": "obs_philebus_0002",
+      "dialogue": "philebus",
+      "stephanus_span": "11a-11c",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks interlocutor withdrawal at the opening as a role configuration; no target names that withdrawal function."
+    },
+    {
+      "family": "prosopography",
+      "label": "named_characters_introduced",
+      "observation_id": "obs_lysis_0002",
+      "dialogue": "lysis",
+      "stephanus_span": "203a-203b",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "prosopography",
+        "label": "named_cast_entry_or_catalog"
+      },
+      "reason": "Shared function: named characters are introduced as a cast entry; the Lysis names and setting remain local."
+    },
+    {
+      "family": "prosopography",
+      "label": "named_intermediary_chain",
+      "observation_id": "obs_parmenides_0002",
+      "dialogue": "parmenides",
+      "stephanus_span": "126b-126c",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "prosopography",
+        "label": "named_cast_entry_or_catalog"
+      },
+      "reason": "Shared function: named figures are catalogued to establish the conversation chain; the intermediary sequence remains local."
+    },
+    {
+      "family": "prosopography",
+      "label": "nicias_seconding_testimony",
+      "observation_id": "obs_laches_0035",
+      "dialogue": "laches",
+      "stephanus_span": "180c-180d",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks Nicias seconding another's testimony; no prosopography target names that corroborating-testimony function."
+    },
+    {
+      "family": "prosopography",
+      "label": "philosopher_appearance_as_disguise",
+      "observation_id": "obs_sophist_0001",
+      "dialogue": "sophist",
+      "stephanus_span": "216c-216d",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks philosopher appearance as a disguise problem; generic character-description labels would lose the disguise function."
+    },
+    {
+      "family": "prosopography",
+      "label": "poetic_authority_cited_in_argument",
+      "observation_id": "obs_protagoras_0205",
+      "dialogue": "protagoras",
+      "stephanus_span": "344d",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "prosopography",
+        "label": "figures_or_types_as_evidence"
+      },
+      "reason": "Shared function: a named poetic authority functions as evidence in argument; the Simonides detail remains in the observation."
+    },
+    {
+      "family": "prosopography",
+      "label": "rhetors_and_tyrants_paired",
+      "observation_id": "obs_gorgias_0067",
+      "dialogue": "gorgias",
+      "stephanus_span": "466e-467a",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "prosopography",
+        "label": "figures_or_types_as_evidence"
+      },
+      "reason": "Shared function: social or political types are paired as argumentative evidence; rhetor and tyrant details remain local."
+    },
+    {
+      "family": "prosopography",
+      "label": "sophist_self_promotion",
+      "observation_id": "obs_greater-hippias_0082",
+      "dialogue": "greater-hippias",
+      "stephanus_span": "294e-295a",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "prosopography",
+        "label": "sophist_self_presentation"
+      },
+      "reason": "Shared function: a sophist presents or promotes his own expertise; the Hippias self-promotion detail remains local."
+    },
+    {
+      "family": "prosopography",
+      "label": "soul_type_and_life_choice",
+      "observation_id": "obs_republic_0752",
+      "dialogue": "republic",
+      "stephanus_span": "619c-620a",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "prosopography",
+        "label": "ethical_type_profile"
+      },
+      "reason": "Shared function: a soul or character type is profiled by its ethical orientation; the life-choice detail remains in the observation."
+    },
+    {
+      "family": "prosopography",
+      "label": "victory_defeat_group_profile",
+      "observation_id": "obs_laws_0394",
+      "dialogue": "laws",
+      "stephanus_span": "685e",
+      "review_status": "accepted",
+      "stratum": "prosopography",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "prosopography",
+        "label": "ethical_type_profile"
+      },
+      "reason": "Shared function: a group profile is defined by ethical victory or defeat; the Laws group detail remains local."
+    },
+    {
+      "family": "myth_demarcation",
+      "label": "age_standstill_reversal",
+      "observation_id": "obs_statesman_0084",
+      "dialogue": "statesman",
+      "stephanus_span": "270c-270d",
+      "review_status": "accepted",
+      "stratum": "myth_demarcation",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "myth_demarcation",
+        "label": "cosmic_cycle_narrative"
+      },
+      "reason": "Shared function: a mythic cosmic cycle is narrated through reversal or standstill; the Statesman detail remains local."
+    },
+    {
+      "family": "myth_demarcation",
+      "label": "divine_assembly_summoned",
+      "observation_id": "obs_critias_0094",
+      "dialogue": "critias",
+      "stephanus_span": "121b-121c",
+      "review_status": "accepted",
+      "stratum": "myth_demarcation",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a divine assembly being summoned inside the mythic narrative; no target names that assembly-convening function."
+    },
+    {
+      "family": "myth_demarcation",
+      "label": "divine_dual_attribute_characterization",
+      "observation_id": "obs_timaeus_0046",
+      "dialogue": "timaeus",
+      "stephanus_span": "24c-24d",
+      "review_status": "accepted",
+      "stratum": "myth_demarcation",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks dual divine attributes used for characterization; existing myth targets do not preserve that attribute-pair function."
+    },
+    {
+      "family": "myth_demarcation",
+      "label": "divine_gift_hedge",
+      "observation_id": "obs_laws_0236",
+      "dialogue": "laws",
+      "stephanus_span": "665a-665b",
+      "review_status": "accepted",
+      "stratum": "myth_demarcation",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "myth_demarcation",
+        "label": "gift_of_gods_narrative"
+      },
+      "reason": "Shared function: a divine gift is invoked with narrative hedge; the Laws musical gift detail remains local."
+    },
+    {
+      "family": "myth_demarcation",
+      "label": "doctrine_called_mythos",
+      "observation_id": "obs_theaetetus_0146",
+      "dialogue": "theaetetus",
+      "stephanus_span": "164d-164e",
+      "review_status": "accepted",
+      "stratum": "myth_demarcation",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "myth_demarcation",
+        "label": "myth_logos_boundary"
+      },
+      "reason": "Shared function: the passage marks a claim's status as mythos rather than strict argument; doctrine details remain in the observation."
+    },
+    {
+      "family": "myth_demarcation",
+      "label": "erotic_selection_by_divine_type",
+      "observation_id": "obs_phaedrus_0315",
+      "dialogue": "phaedrus",
+      "stephanus_span": "252e",
+      "review_status": "accepted",
+      "stratum": "myth_demarcation",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks erotic selection by divine type within the palinode; no target preserves that divine-type selection function."
+    },
+    {
+      "family": "myth_demarcation",
+      "label": "exemplary_punishment_display",
+      "observation_id": "obs_gorgias_0381",
+      "dialogue": "gorgias",
+      "stephanus_span": "525b-525c",
+      "review_status": "accepted",
+      "stratum": "myth_demarcation",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "myth_demarcation",
+        "label": "underworld_judgment_sequence"
+      },
+      "reason": "Shared function: postmortem punishment is displayed within an underworld judgment sequence; the exemplary display detail remains local."
+    },
+    {
+      "family": "myth_demarcation",
+      "label": "mythic_authority_cited_by_name",
+      "observation_id": "obs_cratylus_0097",
+      "dialogue": "cratylus",
+      "stephanus_span": "402b-402c",
+      "review_status": "accepted",
+      "stratum": "myth_demarcation",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks mythic authority cited by name for an etymological argument; poetic-quotation targets do not preserve the named-authority function."
+    },
+    {
+      "family": "myth_demarcation",
+      "label": "mythic_report_hedge",
+      "observation_id": "obs_laws_1269",
+      "dialogue": "laws",
+      "stephanus_span": "683d-684c",
+      "review_status": "accepted",
+      "stratum": "myth_demarcation",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "myth_demarcation",
+        "label": "myth_logos_hedge"
+      },
+      "reason": "Shared function: a mythic report is hedged as a non-strict account; the Laws report details remain local."
+    },
+    {
+      "family": "myth_demarcation",
+      "label": "poetic_quotation_as_polemical_unit",
+      "observation_id": "obs_protagoras_0307",
+      "dialogue": "protagoras",
+      "stephanus_span": "345d-346a",
+      "review_status": "accepted",
+      "stratum": "myth_demarcation",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "myth_demarcation",
+        "label": "poetic_citation_as_argument"
+      },
+      "reason": "Shared function: a poetic quotation is deployed as an argumentative unit; the polemical use remains in the observation."
+    },
+    {
+      "family": "myth_demarcation",
+      "label": "postmortem_destination_by_soul_type",
+      "observation_id": "obs_phaedrus_0174",
+      "dialogue": "phaedrus",
+      "stephanus_span": "256c-256d",
+      "review_status": "accepted",
+      "stratum": "myth_demarcation",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "myth_demarcation",
+        "label": "afterlife_topography"
+      },
+      "reason": "Shared function: postmortem destinations are mapped by soul type; the Phaedrus taxonomy remains local."
+    },
+    {
+      "family": "myth_demarcation",
+      "label": "prelegal_myth_frames_statutory_obedience",
+      "observation_id": "obs_laws_1136",
+      "dialogue": "laws",
+      "stephanus_span": "927a-927c",
+      "review_status": "accepted",
+      "stratum": "myth_demarcation",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a prelegal myth framing statutory obedience; existing teaching-in-myth targets would hide the legal-framing function."
+    },
+    {
+      "family": "myth_demarcation",
+      "label": "reality_hierarchy_by_contrastive_negation",
+      "observation_id": "obs_timaeus_0044",
+      "dialogue": "timaeus",
+      "stephanus_span": "25a",
+      "review_status": "accepted",
+      "stratum": "myth_demarcation",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a reality hierarchy through contrastive negation inside mythic account; no myth target names that hierarchy-marking function."
+    },
+    {
+      "family": "irony_marker",
+      "label": "explicit_jest_denial",
+      "observation_id": "obs_laches_0150",
+      "dialogue": "laches",
+      "stephanus_span": "196e",
+      "review_status": "accepted",
+      "stratum": "irony_marker",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "irony_marker",
+        "label": "seriousness_play_challenge"
+      },
+      "reason": "Shared function: the speaker marks whether speech is jest or serious; the explicit denial detail remains local."
+    },
+    {
+      "family": "irony_marker",
+      "label": "interlocutor_infantilized_by_speaker",
+      "observation_id": "obs_sophist_0149",
+      "dialogue": "sophist",
+      "stephanus_span": "242c-242d",
+      "review_status": "accepted",
+      "stratum": "irony_marker",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks infantilizing address as ironic pressure; mock-deference targets do not preserve this asymmetric diminishment function."
+    },
+    {
+      "family": "irony_marker",
+      "label": "knowledge_disavowal_before_account",
+      "observation_id": "obs_republic_0811",
+      "dialogue": "republic",
+      "stephanus_span": "506a-507a",
+      "review_status": "accepted",
+      "stratum": "irony_marker",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "irony_marker",
+        "label": "knowledge_disavowal"
+      },
+      "reason": "Shared function: the speaker disavows knowledge before giving an account; Republic-specific details remain local."
+    },
+    {
+      "family": "irony_marker",
+      "label": "knowledge_disavowal_enthusiasm",
+      "observation_id": "obs_phaedrus_0198",
+      "dialogue": "phaedrus",
+      "stephanus_span": "263d-263e",
+      "review_status": "accepted",
+      "stratum": "irony_marker",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "irony_marker",
+        "label": "knowledge_disavowal"
+      },
+      "reason": "Shared function: knowledge is disavowed while the speaker remains engaged or enthusiastic; Phaedrus details remain local."
+    },
+    {
+      "family": "irony_marker",
+      "label": "mock_agreement_with_interlocutor_confidence",
+      "observation_id": "obs_greater-hippias_0162",
+      "dialogue": "greater-hippias",
+      "stephanus_span": "286c-286e",
+      "review_status": "accepted",
+      "stratum": "irony_marker",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "irony_marker",
+        "label": "mock_deference"
+      },
+      "reason": "Shared function: the speaker mockingly agrees with or defers to an interlocutor's confidence; the Hippias detail remains local."
+    },
+    {
+      "family": "irony_marker",
+      "label": "mock_initiation_language",
+      "observation_id": "obs_gorgias_0259",
+      "dialogue": "gorgias",
+      "stephanus_span": "497b-497c",
+      "review_status": "accepted",
+      "stratum": "irony_marker",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks mock initiation language as ironic framing; no target preserves that ritualized mock-initiation function."
+    },
+    {
+      "family": "irony_marker",
+      "label": "mock_persuasion_claim",
+      "observation_id": "obs_greater-hippias_0119",
+      "dialogue": "greater-hippias",
+      "stephanus_span": "301d-301e",
+      "review_status": "accepted",
+      "stratum": "irony_marker",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "irony_marker",
+        "label": "mock_deference"
+      },
+      "reason": "Shared function: the speaker makes a mock persuasion or deference claim; the local persuasion detail remains in the observation."
+    },
+    {
+      "family": "irony_marker",
+      "label": "pleasure_shame_concealment_claim",
+      "observation_id": "obs_philebus_0320",
+      "dialogue": "philebus",
+      "stephanus_span": "65e-66a",
+      "review_status": "accepted",
+      "stratum": "irony_marker",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks pleasure-shame concealment as an ironic claim; no target names that concealment function."
+    },
+    {
+      "family": "irony_marker",
+      "label": "reported_self_description_subverted",
+      "observation_id": "obs_euthydemus_0232",
+      "dialogue": "euthydemus",
+      "stephanus_span": "303e",
+      "review_status": "accepted",
+      "stratum": "irony_marker",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks reported self-description being subverted by the narrative; broad self-deprecation targets would hide that reported-subversion function."
+    },
+    {
+      "family": "irony_marker",
+      "label": "socratic_self_deprecation_for_critique",
+      "observation_id": "obs_phaedrus_0091",
+      "dialogue": "phaedrus",
+      "stephanus_span": "234e-235a",
+      "review_status": "accepted",
+      "stratum": "irony_marker",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "irony_marker",
+        "label": "socratic_self_deprecation"
+      },
+      "reason": "Shared function: Socrates diminishes himself while preparing a critique; the Phaedrus critique context remains local."
+    },
+    {
+      "family": "irony_marker",
+      "label": "speaker_covers_head_for_shame",
+      "observation_id": "obs_phaedrus_0062",
+      "dialogue": "phaedrus",
+      "stephanus_span": "237a",
+      "review_status": "accepted",
+      "stratum": "irony_marker",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a physical shame gesture by the speaker; no irony target names that embodied concealment function."
+    },
+    {
+      "family": "irony_marker",
+      "label": "speech_responsibility_displaced_to_interlocutor",
+      "observation_id": "obs_phaedrus_0096",
+      "dialogue": "phaedrus",
+      "stephanus_span": "242d-242e",
+      "review_status": "accepted",
+      "stratum": "irony_marker",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks displacement of speech responsibility onto the interlocutor; no target preserves that responsibility-shifting function."
+    },
+    {
+      "family": "irony_marker",
+      "label": "wrongdoing_involuntary_claim",
+      "observation_id": "obs_gorgias_0184",
+      "dialogue": "gorgias",
+      "stephanus_span": "488a-488b",
+      "review_status": "accepted",
+      "stratum": "irony_marker",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a wrongdoing-is-involuntary claim as an ironic pressure point; no target names that ethical inversion function in this family."
+    },
+    {
+      "family": "forms_trajectory",
+      "label": "being_as_one_form_among_others",
+      "observation_id": "obs_sophist_0213",
+      "dialogue": "sophist",
+      "stephanus_span": "256e-257a",
+      "review_status": "accepted",
+      "stratum": "forms_trajectory",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "forms_trajectory",
+        "label": "form_object_introduced"
+      },
+      "reason": "Shared function: being is introduced as a form-object among others; the Sophist being detail remains local."
+    },
+    {
+      "family": "forms_trajectory",
+      "label": "form_account_deferred_to_image",
+      "observation_id": "obs_republic_0812",
+      "dialogue": "republic",
+      "stephanus_span": "506a-507a",
+      "review_status": "accepted",
+      "stratum": "forms_trajectory",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "forms_trajectory",
+        "label": "image_truth_deficiency_contrast"
+      },
+      "reason": "Shared function: an image substitutes for or marks the limits of a direct form account; the Good-image detail remains local."
+    },
+    {
+      "family": "forms_trajectory",
+      "label": "greatest_kinds_framework_invoked",
+      "observation_id": "obs_sophist_0223",
+      "dialogue": "sophist",
+      "stephanus_span": "256c-256d",
+      "review_status": "accepted",
+      "stratum": "forms_trajectory",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks invocation of the greatest-kinds framework; no target names that framework-invocation function without reducing it to a catalogue."
+    },
+    {
+      "family": "forms_trajectory",
+      "label": "not_being_as_unlimited_multitude",
+      "observation_id": "obs_sophist_0215",
+      "dialogue": "sophist",
+      "stephanus_span": "256e-257a",
+      "review_status": "accepted",
+      "stratum": "forms_trajectory",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks not-being as an unlimited multitude; existing non-being targets do not preserve the multitude-formulation function."
+    },
+    {
+      "family": "forms_trajectory",
+      "label": "opposite_predicates_resolved_by_distinct_participations",
+      "observation_id": "obs_sophist_0232",
+      "dialogue": "sophist",
+      "stephanus_span": "256a-256b",
+      "review_status": "accepted",
+      "stratum": "forms_trajectory",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "forms_trajectory",
+        "label": "participation_vocabulary_in_deduction"
+      },
+      "reason": "Shared function: participation vocabulary resolves predicate opposition inside a deduction; the Sophist predicates remain local."
+    },
+    {
+      "family": "forms_trajectory",
+      "label": "participation_as_likeness_homonymy_pair",
+      "observation_id": "obs_parmenides_0045",
+      "dialogue": "parmenides",
+      "stephanus_span": "133d-133e",
+      "review_status": "accepted",
+      "stratum": "forms_trajectory",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks participation framed through likeness and homonymy as a paired problem; no target preserves that paired formulation."
+    },
+    {
+      "family": "forms_trajectory",
+      "label": "participation_vocabulary",
+      "observation_id": "obs_parmenides_0200",
+      "dialogue": "parmenides",
+      "stephanus_span": "162b-162c",
+      "review_status": "accepted",
+      "stratum": "forms_trajectory",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "forms_trajectory",
+        "label": "participation_vocabulary_in_deduction"
+      },
+      "reason": "Shared function: participation language is used as the operative vocabulary in a formal deduction; Parmenides details remain local."
+    },
+    {
+      "family": "forms_trajectory",
+      "label": "perception_generated_with_sensible",
+      "observation_id": "obs_theaetetus_0092",
+      "dialogue": "theaetetus",
+      "stephanus_span": "156b-156c",
+      "review_status": "accepted",
+      "stratum": "forms_trajectory",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks perception generated together with the sensible; no forms target names that co-generation function."
+    },
+    {
+      "family": "forms_trajectory",
+      "label": "self_subsistent_being_denied",
+      "observation_id": "obs_theaetetus_0117",
+      "dialogue": "theaetetus",
+      "stephanus_span": "160b-160c",
+      "review_status": "accepted",
+      "stratum": "forms_trajectory",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "forms_trajectory",
+        "label": "self_subsistent_form_named"
+      },
+      "reason": "Shared function: self-subsistent being or form status is explicitly at issue; the Theaetetus denial remains in the observation."
+    },
+    {
+      "family": "forms_trajectory",
+      "label": "soul_grasps_common_terms_through_itself",
+      "observation_id": "obs_theaetetus_0263",
+      "dialogue": "theaetetus",
+      "stephanus_span": "185e-186a",
+      "review_status": "accepted",
+      "stratum": "forms_trajectory",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "forms_trajectory",
+        "label": "sensory_route_denied"
+      },
+      "reason": "Shared function: the soul grasps common terms without the bodily senses; Theaetetus common-term details remain local."
+    },
+    {
+      "family": "forms_trajectory",
+      "label": "soul_mixture_of_forms_ingredients",
+      "observation_id": "obs_timaeus_0102",
+      "dialogue": "timaeus",
+      "stephanus_span": "36e-37a",
+      "review_status": "accepted",
+      "stratum": "forms_trajectory",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks the soul mixture through form-like ingredients; no target preserves that mixture-composition function."
+    },
+    {
+      "family": "forms_trajectory",
+      "label": "space_grasped_by_bastard_reasoning",
+      "observation_id": "obs_timaeus_0194",
+      "dialogue": "timaeus",
+      "stephanus_span": "52b",
+      "review_status": "accepted",
+      "stratum": "forms_trajectory",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks space grasped by bastard reasoning as a distinctive epistemic formulation; no forms target preserves that receptacle-reasoning function."
+    },
+    {
+      "family": "frame_depth",
+      "label": "archival_transmission_claim",
+      "observation_id": "obs_timaeus_0357",
+      "dialogue": "timaeus",
+      "stephanus_span": "22c-23a",
+      "review_status": "accepted",
+      "stratum": "frame_depth",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "frame_depth",
+        "label": "transmission_chain_cited"
+      },
+      "reason": "Shared function: the frame cites an archival or transmitted source for the account; Timaeus details remain local."
+    },
+    {
+      "family": "frame_depth",
+      "label": "dialogue_scheduled_for_next_day",
+      "observation_id": "obs_laches_0146",
+      "dialogue": "laches",
+      "stephanus_span": "201c",
+      "review_status": "accepted",
+      "stratum": "frame_depth",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks the dialogue scheduled for a next-day continuation; no frame target names that scheduling function."
+    },
+    {
+      "family": "frame_depth",
+      "label": "embedded_hypothesis_reference",
+      "observation_id": "obs_parmenides_0080",
+      "dialogue": "parmenides",
+      "stephanus_span": "136a-136b",
+      "review_status": "accepted",
+      "stratum": "frame_depth",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a reference to an embedded hypothesis inside the reported frame; no target preserves that embedded-reference function."
+    },
+    {
+      "family": "frame_depth",
+      "label": "incredibility_hedge",
+      "observation_id": "obs_critias_0090",
+      "dialogue": "critias",
+      "stephanus_span": "118c-118d",
+      "review_status": "accepted",
+      "stratum": "frame_depth",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks an incredibility hedge in the transmitted account; broader hedge targets would hide the credibility-pressure function."
+    },
+    {
+      "family": "frame_depth",
+      "label": "memory_hedge_by_age",
+      "observation_id": "obs_laches_0073",
+      "dialogue": "laches",
+      "stephanus_span": "189c-189d",
+      "review_status": "accepted",
+      "stratum": "frame_depth",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "frame_depth",
+        "label": "narrator_memory_disclaimer"
+      },
+      "reason": "Shared function: the frame hedges memory or recall reliability; the age detail remains local."
+    },
+    {
+      "family": "frame_depth",
+      "label": "named_transmission_chain",
+      "observation_id": "obs_timaeus_0053",
+      "dialogue": "timaeus",
+      "stephanus_span": "25d-25e",
+      "review_status": "accepted",
+      "stratum": "frame_depth",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "frame_depth",
+        "label": "transmission_chain_cited"
+      },
+      "reason": "Shared function: a named transmission chain anchors the reported account; the Solon/Egyptian details remain in the observation."
+    },
+    {
+      "family": "frame_depth",
+      "label": "narratological_account_of_greek_translation",
+      "observation_id": "obs_critias_0043",
+      "dialogue": "critias",
+      "stephanus_span": "113b-113c",
+      "review_status": "accepted",
+      "stratum": "frame_depth",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a narratological account of Greek translation inside the frame; no target names that translation-mediation function."
+    },
+    {
+      "family": "frame_depth",
+      "label": "outer_frame_addressee_closure",
+      "observation_id": "obs_euthydemus_0209",
+      "dialogue": "euthydemus",
+      "stephanus_span": "307b-307c",
+      "review_status": "accepted",
+      "stratum": "frame_depth",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks closure addressed to the outer frame addressee; no target preserves that addressee-closure function."
+    },
+    {
+      "family": "frame_depth",
+      "label": "previous_day_summary_as_frame_device",
+      "observation_id": "obs_timaeus_0014",
+      "dialogue": "timaeus",
+      "stephanus_span": "18e-19a",
+      "review_status": "accepted",
+      "stratum": "frame_depth",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "frame_depth",
+        "label": "reported_narrative_marker"
+      },
+      "reason": "Shared function: a prior-day summary marks the reported narrative frame; the Timaeus recap remains local."
+    },
+    {
+      "family": "frame_depth",
+      "label": "speaker_requests_leniency_for_own_speech",
+      "observation_id": "obs_critias_0008",
+      "dialogue": "critias",
+      "stephanus_span": "107e-108b",
+      "review_status": "accepted",
+      "stratum": "frame_depth",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a speaker requesting leniency for his own framed speech; no target names that leniency-preface function."
+    },
+    {
+      "family": "frame_depth",
+      "label": "written_text_read_aloud",
+      "observation_id": "obs_theaetetus_0006",
+      "dialogue": "theaetetus",
+      "stephanus_span": "143c",
+      "review_status": "accepted",
+      "stratum": "frame_depth",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks written text being read aloud as the frame mechanism; no existing target preserves that read-aloud function."
+    },
+    {
+      "family": "frame_depth",
+      "label": "written_work_referenced_in_dialogue",
+      "observation_id": "obs_parmenides_0024",
+      "dialogue": "parmenides",
+      "stephanus_span": "128a-128b",
+      "review_status": "accepted",
+      "stratum": "frame_depth",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a written work referenced inside the dialogue frame; no target with a different label preserves that book-reference function."
+    },
+    {
+      "family": "advocacy_corruption_prelude",
+      "label": "advocacy_craft_is_condemned_when_it_makes_victory_indifferent_to_justice",
+      "observation_id": "obs_laws_1166",
+      "dialogue": "laws",
+      "stephanus_span": "937d-938a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names a Laws advocacy-corruption prelude topic rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "affection_taxonomy",
+      "label": "friendship_desire_and_love_need_taxonomy_before_correct_judgment",
+      "observation_id": "obs_laws_0918",
+      "dialogue": "laws",
+      "stephanus_span": "837a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names an affection-taxonomy doctrine topic rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "antithetical_reversal",
+      "label": "benefit_inverts_through_intermediary",
+      "observation_id": "obs_laws_0351",
+      "dialogue": "laws",
+      "stephanus_span": "641c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks antithetical benefit reversal through an intermediary; this is a textual reversal function, not merely a topic entry."
+    },
+    {
+      "family": "art_status",
+      "label": "serious_arts_share_with_nature",
+      "observation_id": "obs_laws_1048",
+      "dialogue": "laws",
+      "stephanus_span": "889d-889e",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names a Laws art-status doctrine topic rather than a repeatable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "astronomy_education",
+      "label": "celestial_bodies_have_single_circular_paths_not_wandering",
+      "observation_id": "obs_laws_0888",
+      "dialogue": "laws",
+      "stephanus_span": "822a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names an astronomy-education content claim rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "atheist_refutation_terms",
+      "label": "denier_must_refute_soul_priority_or_live_believing_gods",
+      "observation_id": "obs_laws_1073",
+      "dialogue": "laws",
+      "stephanus_span": "899c-899d",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names terms of an atheist-refutation doctrine rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "causal_taxonomy",
+      "label": "tripartite_generation_sources",
+      "observation_id": "obs_laws_1044",
+      "dialogue": "laws",
+      "stephanus_span": "888e",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names a causal-taxonomy content item rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "civic_education",
+      "label": "athlete_abstinence_precedent_cited_for_sexual_restraint",
+      "observation_id": "obs_laws_0924",
+      "dialogue": "laws",
+      "stephanus_span": "839e-840b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "civic_loyalty_law",
+      "label": "receiving_stolen_goods_harboring_exiles_and_private_war_peace_are_capitalized",
+      "observation_id": "obs_laws_1209",
+      "dialogue": "laws",
+      "stephanus_span": "955b-955c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "comparative_ethnography",
+      "label": "moderated_freedom_case",
+      "observation_id": "obs_laws_0407",
+      "dialogue": "laws",
+      "stephanus_span": "694a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a comparative ethnographic case used as an example; this is a textual case-function rather than only a legal topic."
+    },
+    {
+      "family": "constitutional_balance",
+      "label": "excessive_despotism_destroys_civic_friendship",
+      "observation_id": "obs_laws_0422",
+      "dialogue": "laws",
+      "stephanus_span": "697c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "constitutional_design",
+      "label": "cavalry_commanders_elected_with_limited_dispute",
+      "observation_id": "obs_laws_0662",
+      "dialogue": "laws",
+      "stephanus_span": "756b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "constitutional_design",
+      "label": "election_mediates_monarchic_and_democratic_forms",
+      "observation_id": "obs_laws_0665",
+      "dialogue": "laws",
+      "stephanus_span": "756e-757a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "constitutional_typology",
+      "label": "best_city_defined_by_commonality_of_friends",
+      "observation_id": "obs_laws_0612",
+      "dialogue": "laws",
+      "stephanus_span": "739c-739d",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "constitutional_typology",
+      "label": "constitutions_ranked_before_founder_choice",
+      "observation_id": "obs_laws_0611",
+      "dialogue": "laws",
+      "stephanus_span": "739a-739b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "cosmological_account",
+      "label": "soulless_elements_without_mind_god_art",
+      "observation_id": "obs_laws_1046",
+      "dialogue": "laws",
+      "stephanus_span": "889b-889c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "cult_regulation_rationale",
+      "label": "private_shrine_ban_answers_unregulated_vows_from_need_fear_and_visions",
+      "observation_id": "obs_laws_1096",
+      "dialogue": "laws",
+      "stephanus_span": "909e-910a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "divine_care_argument",
+      "label": "cosmic_battle_places_humans_under_divine_guardianship",
+      "observation_id": "obs_laws_1087",
+      "dialogue": "laws",
+      "stephanus_span": "906a-906c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "economic_character_correlation",
+      "label": "currency_influx_corrupts_character",
+      "observation_id": "obs_laws_0460",
+      "dialogue": "laws",
+      "stephanus_span": "705b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "economic_character_correlation",
+      "label": "economic_mean_prevents_stasis_and_slavery",
+      "observation_id": "obs_laws_0559",
+      "dialogue": "laws",
+      "stephanus_span": "728e-729a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "economic_character_correlation",
+      "label": "non_money_loving_as_property_settlement_anchor",
+      "observation_id": "obs_laws_0601",
+      "dialogue": "laws",
+      "stephanus_span": "737a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "economic_legislation",
+      "label": "entrenched_land_debt_reform_limited_to_cautious_transition",
+      "observation_id": "obs_laws_0599",
+      "dialogue": "laws",
+      "stephanus_span": "736c-736d",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "economic_legislation",
+      "label": "money_making_limited_to_preserve_soul_and_body_care",
+      "observation_id": "obs_laws_0628",
+      "dialogue": "laws",
+      "stephanus_span": "743d-743e",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "economic_legislation",
+      "label": "poverty_and_wealth_as_dual_commercial_disease",
+      "observation_id": "obs_laws_1116",
+      "dialogue": "laws",
+      "stephanus_span": "919b-919d",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "education_law",
+      "label": "animal_training_analogy_supports_motion_for_unborn_bodies",
+      "observation_id": "obs_laws_0776",
+      "dialogue": "laws",
+      "stephanus_span": "789b-789c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks an animal-training analogy used to support bodily motion rules; no same-family target names that analogical support function."
+    },
+    {
+      "family": "education_law",
+      "label": "infant_distress_reduction_rejects_pleasure_maximization",
+      "observation_id": "obs_laws_0790",
+      "dialogue": "laws",
+      "stephanus_span": "792b-792c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, doctrine, or policy content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "education_law",
+      "label": "limited_asymmetry_examples_do_not_license_general_hand_bias",
+      "observation_id": "obs_laws_0801",
+      "dialogue": "laws",
+      "stephanus_span": "794e-795a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks limited asymmetry examples used to block a general inference; this example-limiting function is not just a topic entry."
+    },
+    {
+      "family": "education_offices",
+      "label": "child_supervisor_chosen_by_marriage_officials_daily_punishes_noncitizens",
+      "observation_id": "obs_laws_0798",
+      "dialogue": "laws",
+      "stephanus_span": "794b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "ethical_training",
+      "label": "wrongdoing_prevention_ranked_above_abstention",
+      "observation_id": "obs_laws_0569",
+      "dialogue": "laws",
+      "stephanus_span": "730d-730e",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "food_distribution",
+      "label": "produce_is_divided_into_twelve_parts_and_three_status_shares",
+      "observation_id": "obs_laws_0948",
+      "dialogue": "laws",
+      "stephanus_span": "847e-848b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "foreign_visitor_regulation",
+      "label": "cultural_spectators_receive_temple_hospitality_and_priestly_minor_jurisdiction",
+      "observation_id": "obs_laws_1202",
+      "dialogue": "laws",
+      "stephanus_span": "953a-953b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "guardian_education",
+      "label": "differentiated_guardians_require_more_precise_education",
+      "observation_id": "obs_laws_1236",
+      "dialogue": "laws",
+      "stephanus_span": "965a-965b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "gymnastics_law",
+      "label": "contests_limited_to_practices_useful_for_war_peace_and_household",
+      "observation_id": "obs_laws_0807",
+      "dialogue": "laws",
+      "stephanus_span": "796d",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "gymnastics_law",
+      "label": "education_supervisor_delegates_dance_and_gymnastics_training",
+      "observation_id": "obs_laws_0862",
+      "dialogue": "laws",
+      "stephanus_span": "813b-813d",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "high_crime_grouping",
+      "label": "three_offender_categories_under_one_law",
+      "observation_id": "obs_laws_0968",
+      "dialogue": "laws",
+      "stephanus_span": "857a-857b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks three offender categories grouped under one law; this grouping operation is a textual function, not merely a crime topic."
+    },
+    {
+      "family": "homicide_procedure",
+      "label": "plotted_homicide_keeps_trial_rules_but_changes_guaranty_and_burial",
+      "observation_id": "obs_laws_1008",
+      "dialogue": "laws",
+      "stephanus_span": "871e-872a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "homicide_return_procedure",
+      "label": "exile_return_border_judges",
+      "observation_id": "obs_laws_0995",
+      "dialogue": "laws",
+      "stephanus_span": "867d-868a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "homicide_self_defense",
+      "label": "defensive_homicide_clean_status_varies_by_status_relation",
+      "observation_id": "obs_laws_1002",
+      "dialogue": "laws",
+      "stephanus_span": "869c-869e",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "household_rule",
+      "label": "slave_address_limited_to_command",
+      "observation_id": "obs_laws_0743",
+      "dialogue": "laws",
+      "stephanus_span": "778a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "hypothetical_scenario",
+      "label": "pleasure_only_agon_thought_experiment",
+      "observation_id": "obs_laws_0168",
+      "dialogue": "laws",
+      "stephanus_span": "658a-658b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a pleasure-only agon thought experiment; no same-family target names that hypothetical-scenario function."
+    },
+    {
+      "family": "impiety_law_procedure",
+      "label": "impiety_law_moves_from_prelude_to_reporting_and_official_liability",
+      "observation_id": "obs_laws_1090",
+      "dialogue": "laws",
+      "stephanus_span": "907c-907e",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "inquiry_restriction",
+      "label": "law_bars_youth_examination",
+      "observation_id": "obs_laws_0061",
+      "dialogue": "laws",
+      "stephanus_span": "634c-634d",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "institutional_economy",
+      "label": "common_messes_and_land_only_life_setup",
+      "observation_id": "obs_laws_0934",
+      "dialogue": "laws",
+      "stephanus_span": "841e-842d",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "judicial_procedure",
+      "label": "courts_require_active_judges_not_silent_arbitrators",
+      "observation_id": "obs_laws_0704",
+      "dialogue": "laws",
+      "stephanus_span": "766d",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "judicial_procedure",
+      "label": "private_disputes_move_through_chosen_arbitrators_local_panels_and_selected_judges",
+      "observation_id": "obs_laws_1212",
+      "dialogue": "laws",
+      "stephanus_span": "956b-956e",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "kinship_homicide_penalty",
+      "label": "parent_killing_in_anger_depends_on_dying_parent_release",
+      "observation_id": "obs_laws_1001",
+      "dialogue": "laws",
+      "stephanus_span": "869a-869c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws statute, office, penalty, or institutional content rather than a reusable textual function, and no same-family function target fits it."
+    },
+    {
+      "family": "law_emergence",
+      "label": "custom_before_written_law",
+      "observation_id": "obs_laws_0325",
+      "dialogue": "laws",
+      "stephanus_span": "680a-680b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks custom preceding written law as a law-emergence sequence; this ordering function is not merely a legal topic."
+    },
+    {
+      "family": "law_revision_protocol",
+      "label": "external_observation_confirms_and_corrects_laws",
+      "observation_id": "obs_laws_1198",
+      "dialogue": "laws",
+      "stephanus_span": "951a-951c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks external observation confirming and correcting laws as a revision protocol; this is a textual method function rather than only a legal topic."
+    },
+    {
+      "family": "lawgiving_method",
+      "label": "constitution_preceded_by_herd_purification_model",
+      "observation_id": "obs_laws_0592",
+      "dialogue": "laws",
+      "stephanus_span": "735a-735b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a herd-purification model preceding constitution-making; no same-family target names this lawgiving-method analogy."
+    },
+    {
+      "family": "lawgiving_method",
+      "label": "law_and_order_are_second_best_when_unruled_knowledge_is_unavailable",
+      "observation_id": "obs_laws_1018",
+      "dialogue": "laws",
+      "stephanus_span": "875c-876a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks law and order as second-best when unruled knowledge is unavailable; this method-ranking function is not merely a doctrine topic."
+    },
+    {
+      "family": "lawgiving_method",
+      "label": "lawgiver_tests_laws_against_honor_hierarchy",
+      "observation_id": "obs_laws_0629",
+      "dialogue": "laws",
+      "stephanus_span": "744a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks the lawgiver testing laws against an honor hierarchy; no same-family target names that testing function."
+    },
+    {
+      "family": "legal_limit_acknowledgment",
+      "label": "prelude_marks_burden_of_general_law",
+      "observation_id": "obs_laws_1133",
+      "dialogue": "laws",
+      "stephanus_span": "925d-926a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a prelude acknowledging the burden of general law; this legal-limit acknowledgment is a textual function."
+    },
+    {
+      "family": "legal_prelude",
+      "label": "murder_prelude_uses_retribution_before_written_law",
+      "observation_id": "obs_laws_1005",
+      "dialogue": "laws",
+      "stephanus_span": "870d-871a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a murder prelude using retribution before written law; no same-family target names that prelude function."
+    },
+    {
+      "family": "legislative_method",
+      "label": "law_guardians_as_fellow_judges_and_students",
+      "observation_id": "obs_laws_0718",
+      "dialogue": "laws",
+      "stephanus_span": "770c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks law guardians as fellow judges and students in the legislative method; this role-framing function is not merely an office topic."
+    },
+    {
+      "family": "legislative_method",
+      "label": "lawgiver_marks_curricular_speech_as_opposed_to_many",
+      "observation_id": "obs_laws_0856",
+      "dialogue": "laws",
+      "stephanus_span": "810d",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks the lawgiver setting curricular speech against common opinion; no same-family target names that opposition-marking function."
+    },
+    {
+      "family": "legislative_method",
+      "label": "persuasion_needed_beyond_penalty",
+      "observation_id": "obs_laws_1051",
+      "dialogue": "laws",
+      "stephanus_span": "890b-890c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks persuasion as needed beyond penalty in legislative method; this is a method function rather than only content."
+    },
+    {
+      "family": "legislative_method",
+      "label": "written_laws_should_appear_parental_not_tyrannical",
+      "observation_id": "obs_laws_0974",
+      "dialogue": "laws",
+      "stephanus_span": "859a-859b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks written laws as needing a parental rather than tyrannical appearance; this is a legislative-presentation function."
+    },
+    {
+      "family": "legislative_revision",
+      "label": "law_guardians_test_supplemental_public_rules_before_sealing",
+      "observation_id": "obs_laws_1213",
+      "dialogue": "laws",
+      "stephanus_span": "957a-957b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks law guardians testing supplemental public rules before sealing them; no same-family target names this revision-testing function."
+    },
+    {
+      "family": "market_oath_law",
+      "label": "market_selling_bars_two_prices_praise_and_oaths",
+      "observation_id": "obs_laws_1110",
+      "dialogue": "laws",
+      "stephanus_span": "917a-917c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws regulatory, educational, military, or moral-psychology content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "marriage_regulation",
+      "label": "newlyweds_continue_common_messes_from_safety_custom",
+      "observation_id": "obs_laws_0752",
+      "dialogue": "laws",
+      "stephanus_span": "780b-780c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws regulatory, educational, military, or moral-psychology content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "martial_contests",
+      "label": "armed_combat_and_peltast_contests_replace_heavy_strength_events",
+      "observation_id": "obs_laws_0910",
+      "dialogue": "laws",
+      "stephanus_span": "833e-834a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws regulatory, educational, military, or moral-psychology content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "martial_training",
+      "label": "choreia_and_hardiness_are_oriented_to_wartime_excellence",
+      "observation_id": "obs_laws_1172",
+      "dialogue": "laws",
+      "stephanus_span": "942d-942e",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws regulatory, educational, military, or moral-psychology content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "mathematical_education",
+      "label": "play_based_arithmetic_lessons_for_free_citizens",
+      "observation_id": "obs_laws_0874",
+      "dialogue": "laws",
+      "stephanus_span": "819a-819b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks play-based arithmetic lessons as pedagogical method; this is a textual education function rather than only an education topic."
+    },
+    {
+      "family": "military_capacity_diagnosis",
+      "label": "naval_service_habituates_retreat",
+      "observation_id": "obs_laws_0452",
+      "dialogue": "laws",
+      "stephanus_span": "706c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws regulatory, educational, military, or moral-psychology content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "moral_psychology",
+      "label": "life_preference_by_pain_nonexcess",
+      "observation_id": "obs_laws_0588",
+      "dialogue": "laws",
+      "stephanus_span": "734c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws regulatory, educational, military, or moral-psychology content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "music_law",
+      "label": "game_innovation_forms_different_adults_who_seek_different_laws",
+      "observation_id": "obs_laws_0811",
+      "dialogue": "laws",
+      "stephanus_span": "798c-798d",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws regulatory, educational, military, or moral-psychology content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "normative_criterion_contrast",
+      "label": "descriptive_vs_right_judgment",
+      "observation_id": "obs_laws_0171",
+      "dialogue": "laws",
+      "stephanus_span": "658c-658d",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a contrast between descriptive judgment and right judgment; no same-family target names that normative-criterion contrast."
+    },
+    {
+      "family": "parent_assault_prelude",
+      "label": "parent_assault_requires_living_punishments_as_extreme_deterrence",
+      "observation_id": "obs_laws_1029",
+      "dialogue": "laws",
+      "stephanus_span": "880e-881b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws penalty, statute, office, finance, settlement, or normative content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "penalty_procedure",
+      "label": "slave_or_foreigner_sacrilege_marking_whipping_exile",
+      "observation_id": "obs_laws_0960",
+      "dialogue": "laws",
+      "stephanus_span": "854b-854e",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws penalty, statute, office, finance, settlement, or normative content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "policy_consequence",
+      "label": "prohibitions_imply_minimal_production",
+      "observation_id": "obs_laws_0268",
+      "dialogue": "laws",
+      "stephanus_span": "674b-674c",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a policy-consequence inference from prohibitions to minimal production; this is a textual consequence function, not only a policy topic."
+    },
+    {
+      "family": "political_crime_definition",
+      "label": "violent_constitutional_overthrow_as_city_enemy",
+      "observation_id": "obs_laws_0965",
+      "dialogue": "laws",
+      "stephanus_span": "856b-856e",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws penalty, statute, office, finance, settlement, or normative content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "political_regime_diagnosis",
+      "label": "lawless_freedom_decline_sequence",
+      "observation_id": "obs_laws_0441",
+      "dialogue": "laws",
+      "stephanus_span": "701b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a lawless-freedom decline sequence in regime diagnosis; no same-family target names that diagnostic sequence."
+    },
+    {
+      "family": "procedural_agreement",
+      "label": "age_restricted_discussion_protocol",
+      "observation_id": "obs_laws_0066",
+      "dialogue": "laws",
+      "stephanus_span": "634e-635a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks an age-restricted discussion protocol as procedural agreement; this protocol function is not merely a legal topic."
+    },
+    {
+      "family": "procreation_law",
+      "label": "child_production_supervision_lasts_ten_years_before_infertility_divorce",
+      "observation_id": "obs_laws_0767",
+      "dialogue": "laws",
+      "stephanus_span": "784b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws penalty, statute, office, finance, settlement, or normative content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "procreation_law",
+      "label": "reproductive_desire_restrained_by_fear_law_reason_and_cult",
+      "observation_id": "obs_laws_0763",
+      "dialogue": "laws",
+      "stephanus_span": "783a-783b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws penalty, statute, office, finance, settlement, or normative content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "public_finance_law",
+      "label": "annual_assessment_reports_support_choice_between_property_and_income_levies",
+      "observation_id": "obs_laws_1210",
+      "dialogue": "laws",
+      "stephanus_span": "955d-955e",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws penalty, statute, office, finance, settlement, or normative content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "settlement_foundation",
+      "label": "tribal_lots_consecrated_to_twelve_gods",
+      "observation_id": "obs_laws_0637",
+      "dialogue": "laws",
+      "stephanus_span": "745e",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws penalty, statute, office, finance, settlement, or normative content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "soul_visibility",
+      "label": "sun_body_visible_soul_unseen",
+      "observation_id": "obs_laws_1070",
+      "dialogue": "laws",
+      "stephanus_span": "898d",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a visible-body versus unseen-soul contrast; no same-family target names that visibility contrast function."
+    },
+    {
+      "family": "status_law",
+      "label": "freedom_claim_guarantor_release",
+      "observation_id": "obs_laws_1103",
+      "dialogue": "laws",
+      "stephanus_span": "914e-915a",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws penalty, statute, office, finance, settlement, or normative content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "supplication_norm",
+      "label": "suppliant_wrong_guarded_by_divine_witness",
+      "observation_id": "obs_laws_0566",
+      "dialogue": "laws",
+      "stephanus_span": "730a-730b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws penalty, statute, office, finance, settlement, or normative content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "virtue_ruler_alignment",
+      "label": "divine_desire_aligns_power_with_virtue",
+      "observation_id": "obs_laws_0487",
+      "dialogue": "laws",
+      "stephanus_span": "711d",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws penalty, statute, office, finance, settlement, or normative content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "water_law",
+      "label": "planting_and_water_access_rules_use_existing_customary_law",
+      "observation_id": "obs_laws_0938",
+      "dialogue": "laws",
+      "stephanus_span": "843e-844b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws penalty, statute, office, finance, settlement, or normative content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "witness_procedure",
+      "label": "witness_law_sets_summons_oath_status_and_gender_rules",
+      "observation_id": "obs_laws_1164",
+      "dialogue": "laws",
+      "stephanus_span": "936e-937b",
+      "review_status": "accepted",
+      "stratum": "laws-only passthrough",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Laws penalty, statute, office, finance, settlement, or normative content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "appearance_reality_marker",
+      "label": "to_onti_reality_marker",
+      "observation_id": "obs_menexenus_0084",
+      "dialogue": "menexenus",
+      "stephanus_span": "247d-247e",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks to onti as a reality marker; no family target names that appearance-reality marking function."
+    },
+    {
+      "family": "argument_from_punishment",
+      "label": "forward_looking_punishment",
+      "observation_id": "obs_protagoras_0092",
+      "dialogue": "protagoras",
+      "stephanus_span": "323e-324b",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks punishment used as a forward-looking argument; no same-family target names that argument-from-punishment function."
+    },
+    {
+      "family": "body_mind_instrumentality",
+      "label": "body_serves_mind",
+      "observation_id": "obs_protagoras_0109",
+      "dialogue": "protagoras",
+      "stephanus_span": "326a-326b",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks body serving mind as an instrumentality claim; no same-family target names that body-mind function."
+    },
+    {
+      "family": "closure_type",
+      "label": "aporia_reported",
+      "observation_id": "obs_lysis_0126",
+      "dialogue": "lysis",
+      "stephanus_span": "222e-223a",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "merge_candidate",
+      "target": {
+        "family": "closure_type",
+        "label": "aporetic_inquiry_closure"
+      },
+      "reason": "Shared function: an inquiry closes by reporting aporia; the Lysis closure details remain in the observation."
+    },
+    {
+      "family": "cosmogonic_proportion",
+      "label": "proportion_yields_unity",
+      "observation_id": "obs_timaeus_0082",
+      "dialogue": "timaeus",
+      "stephanus_span": "32a-32b",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks proportion yielding unity in a cosmogonic construction; no same-family target names that proportion-unity function."
+    },
+    {
+      "family": "elemental_theory",
+      "label": "bodily_filling_by_like_to_like_motion",
+      "observation_id": "obs_timaeus_0309",
+      "dialogue": "timaeus",
+      "stephanus_span": "81a-81b",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names cosmological, elemental, or word-specific content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "elemental_theory",
+      "label": "receptacle_shaken_by_unequal_powers",
+      "observation_id": "obs_timaeus_0197",
+      "dialogue": "timaeus",
+      "stephanus_span": "52e",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names cosmological, elemental, or word-specific content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "ethnographic_allusion",
+      "label": "ethnographic_custom_cited_in_argument",
+      "observation_id": "obs_euthydemus_0166",
+      "dialogue": "euthydemus",
+      "stephanus_span": "299d-299e",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks an ethnographic custom cited inside an argument; no same-family target names that allusive evidence function."
+    },
+    {
+      "family": "etymological_gloss",
+      "label": "etymology_of_himeros",
+      "observation_id": "obs_phaedrus_0153",
+      "dialogue": "phaedrus",
+      "stephanus_span": "251b-251c",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names cosmological, elemental, or word-specific content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "etymological_method",
+      "label": "antiquity_obscures_primary_names",
+      "observation_id": "obs_cratylus_0215",
+      "dialogue": "cratylus",
+      "stephanus_span": "421c-421d",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks antiquity obscuring primary names as an etymological-method constraint; no same-family target names that constraint function."
+    },
+    {
+      "family": "etymology_analysis",
+      "label": "archaic_form_etymology",
+      "observation_id": "obs_cratylus_0338",
+      "dialogue": "cratylus",
+      "stephanus_span": "418c-418e",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks an archaic-form etymology operation; no target preserves that etymological function without making it word-specific."
+    },
+    {
+      "family": "etymology_analysis",
+      "label": "etymological_argument_from_gloss",
+      "observation_id": "obs_cratylus_0283",
+      "dialogue": "cratylus",
+      "stephanus_span": "398c-398d",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks an etymological argument drawn from a gloss; no same-family target names that gloss-argument function."
+    },
+    {
+      "family": "etymology_analysis",
+      "label": "multiple_alternative_derivations",
+      "observation_id": "obs_cratylus_0175",
+      "dialogue": "cratylus",
+      "stephanus_span": "420b-420c",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks multiple alternative derivations as an etymology-analysis move; no target preserves that alternative-derivation function."
+    },
+    {
+      "family": "etymology_analysis",
+      "label": "natural_kind_name_principle",
+      "observation_id": "obs_cratylus_0058",
+      "dialogue": "cratylus",
+      "stephanus_span": "393a-393b",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a natural-kind name principle in etymological analysis; no target names that principle-setting function."
+    },
+    {
+      "family": "etymology_analysis",
+      "label": "phonetic_letter_mimesis",
+      "observation_id": "obs_cratylus_0224",
+      "dialogue": "cratylus",
+      "stephanus_span": "426d-427b",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks phonetic letter mimesis as an etymological operation; no same-family target names that mimesis function."
+    },
+    {
+      "family": "etymology_method",
+      "label": "divine_name_noun_derivation",
+      "observation_id": "obs_cratylus_0137",
+      "dialogue": "cratylus",
+      "stephanus_span": "407d-407e",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks divine-name derivation by noun analysis; no target preserves that derivational function without reducing it to a topic."
+    },
+    {
+      "family": "instant_of_change",
+      "label": "between_state_predicate_cancellation",
+      "observation_id": "obs_parmenides_0225",
+      "dialogue": "parmenides",
+      "stephanus_span": "157a",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks between-state predicate cancellation at the instant of change; no target names that logical function."
+    },
+    {
+      "family": "mathematical_cosmology",
+      "label": "equilateral_triangle_construction",
+      "observation_id": "obs_timaeus_0167",
+      "dialogue": "timaeus",
+      "stephanus_span": "54e",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names cosmological, elemental, or word-specific content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "mathematical_cosmology",
+      "label": "four_beautiful_bodies_constructed",
+      "observation_id": "obs_timaeus_0162",
+      "dialogue": "timaeus",
+      "stephanus_span": "53e",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names cosmological, elemental, or word-specific content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "mathematical_cosmology",
+      "label": "two_bound_by_third_proportion",
+      "observation_id": "obs_timaeus_0079",
+      "dialogue": "timaeus",
+      "stephanus_span": "31b-31c",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks two terms bound by a third proportion; no same-family target names that proportional binding function."
+    },
+    {
+      "family": "mathematical_deduction",
+      "label": "combinatorial_pair_selection_for_number",
+      "observation_id": "obs_parmenides_0129",
+      "dialogue": "parmenides",
+      "stephanus_span": "143c",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks combinatorial pair selection for a number argument; no target names that mathematical-deduction function."
+    },
+    {
+      "family": "mathematical_deduction",
+      "label": "number_generation_from_unit_and_pair",
+      "observation_id": "obs_parmenides_0109",
+      "dialogue": "parmenides",
+      "stephanus_span": "143d-143e",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks number generation from unit and pair; no same-family target names that generation step."
+    },
+    {
+      "family": "medical_caution",
+      "label": "treatment_separation_named_as_error",
+      "observation_id": "obs_charmides_0028",
+      "dialogue": "charmides",
+      "stephanus_span": "157b",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks treatment-separation named as an error; no target names that medical-caution function."
+    },
+    {
+      "family": "method_boundary",
+      "label": "truth_prior_to_names_for_learning_and_inquiry",
+      "observation_id": "obs_cratylus_0308",
+      "dialogue": "cratylus",
+      "stephanus_span": "439b",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks truth as prior to names for learning and inquiry; no target names that method-boundary function."
+    },
+    {
+      "family": "method_exposition",
+      "label": "socrates_names_divisions_and_collections",
+      "observation_id": "obs_phaedrus_0205",
+      "dialogue": "phaedrus",
+      "stephanus_span": "266a-266b",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks Socrates naming divisions and collections as a method exposition; no same-family target names that methodological exposition function."
+    },
+    {
+      "family": "methodological_distinction",
+      "label": "intellect_persuades_necessity",
+      "observation_id": "obs_timaeus_0173",
+      "dialogue": "timaeus",
+      "stephanus_span": "48a",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks intellect persuading necessity as a methodological distinction; no target names that persuasion-of-necessity function."
+    },
+    {
+      "family": "name_image_theory",
+      "label": "imperfect_components_allowed_if_type_present",
+      "observation_id": "obs_cratylus_0295",
+      "dialogue": "cratylus",
+      "stephanus_span": "432e",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks imperfect image components allowed when type is present; no target names that name-image criterion function."
+    },
+    {
+      "family": "perception_generation",
+      "label": "color_mixture_taxonomy_by_named_blends",
+      "observation_id": "obs_timaeus_0252",
+      "dialogue": "timaeus",
+      "stephanus_span": "68b-68c",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Timaeus perception, anatomy, physiology, or teleological content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "perception_generation",
+      "label": "pleasure_pain_by_emptying_filling_timing",
+      "observation_id": "obs_timaeus_0236",
+      "dialogue": "timaeus",
+      "stephanus_span": "65a-65b",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Timaeus perception, anatomy, physiology, or teleological content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "physiological_analogy",
+      "label": "teething_analogy_for_wing_growth",
+      "observation_id": "obs_phaedrus_0152",
+      "dialogue": "phaedrus",
+      "stephanus_span": "251b-251c",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a teething analogy for wing growth; no same-family target names that physiological analogy function."
+    },
+    {
+      "family": "political_regime_diagnosis",
+      "label": "excessive_quietness_leads_to_enslavement",
+      "observation_id": "obs_statesman_0286",
+      "dialogue": "statesman",
+      "stephanus_span": "307e-308a",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks excessive quietness leading to enslavement as a regime-diagnostic sequence; no target names that diagnostic function."
+    },
+    {
+      "family": "psychic_anatomy",
+      "label": "mortal_soul_affection_catalog",
+      "observation_id": "obs_timaeus_0259",
+      "dialogue": "timaeus",
+      "stephanus_span": "69d",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Timaeus perception, anatomy, physiology, or teleological content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "psychic_anatomy",
+      "label": "spirited_part_as_reason_auxiliary",
+      "observation_id": "obs_timaeus_0262",
+      "dialogue": "timaeus",
+      "stephanus_span": "70a",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Timaeus perception, anatomy, physiology, or teleological content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "psychic_anatomy",
+      "label": "womb_desire_as_wandering_living_thing",
+      "observation_id": "obs_timaeus_0352",
+      "dialogue": "timaeus",
+      "stephanus_span": "91c-91d",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Timaeus perception, anatomy, physiology, or teleological content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "rhetorical_argument",
+      "label": "comparative_double_charge",
+      "observation_id": "obs_phaedrus_0324",
+      "dialogue": "phaedrus",
+      "stephanus_span": "240a-240c",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a comparative double charge as rhetorical argument structure; no target names that double-charge function."
+    },
+    {
+      "family": "simile",
+      "label": "reluctant_speaker_before_dialectic",
+      "observation_id": "obs_parmenides_0058",
+      "dialogue": "parmenides",
+      "stephanus_span": "137a-137b",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a reluctant speaker simile before dialectic; no same-family target names that simile setup function."
+    },
+    {
+      "family": "social_stratification",
+      "label": "few_many_audience_distinction",
+      "observation_id": "obs_protagoras_0072",
+      "dialogue": "protagoras",
+      "stephanus_span": "317a-317b",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks a few-versus-many audience distinction; no target with a different label preserves that audience-stratification function."
+    },
+    {
+      "family": "spatial_reasoning",
+      "label": "touch_requires_adjacency",
+      "observation_id": "obs_parmenides_0142",
+      "dialogue": "parmenides",
+      "stephanus_span": "148e",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks touch requiring adjacency as a spatial-reasoning condition; no target names that adjacency function."
+    },
+    {
+      "family": "teleological_structure",
+      "label": "air_fire_net_alternates_through_porous_body",
+      "observation_id": "obs_timaeus_0302",
+      "dialogue": "timaeus",
+      "stephanus_span": "78d",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Timaeus perception, anatomy, physiology, or teleological content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "teleological_structure",
+      "label": "spleen_cleans_liver_mirror",
+      "observation_id": "obs_timaeus_0273",
+      "dialogue": "timaeus",
+      "stephanus_span": "72c-72d",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "topic_registry",
+      "target": null,
+      "reason": "Names Timaeus perception, anatomy, physiology, or teleological content rather than a reusable textual function, and no same-family target fits it."
+    },
+    {
+      "family": "temporal_argument",
+      "label": "self_aging_entails_reciprocal_age_predicates",
+      "observation_id": "obs_parmenides_0095",
+      "dialogue": "parmenides",
+      "stephanus_span": "141b-141c",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks self-aging entailing reciprocal age predicates; no same-family target names that temporal-predicate argument."
+    },
+    {
+      "family": "thesis_escalation",
+      "label": "names_claimed_as_sole_best_inquiry_method",
+      "observation_id": "obs_cratylus_0301",
+      "dialogue": "cratylus",
+      "stephanus_span": "436a",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks names escalated into the sole best inquiry method; no target names that thesis-escalation function."
+    },
+    {
+      "family": "tripartite_division",
+      "label": "tripartite_classification_of_subject",
+      "observation_id": "obs_philebus_0211",
+      "dialogue": "philebus",
+      "stephanus_span": "48d-48e",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks tripartite classification of the subject; no same-family target names that classification function."
+    },
+    {
+      "family": "virtue_ruler_alignment",
+      "label": "royal_weaving_uses_shared_opinion_and_honor",
+      "observation_id": "obs_statesman_0300",
+      "dialogue": "statesman",
+      "stephanus_span": "310e-311a",
+      "review_status": "accepted",
+      "stratum": "other",
+      "adjudication": "keep_distinct_function",
+      "target": null,
+      "reason": "Marks royal weaving using shared opinion and honor as a statesman-method function; no target names that weaving-alignment function."
+    }
+  ]
+}

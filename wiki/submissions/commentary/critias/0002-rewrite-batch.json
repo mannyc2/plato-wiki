@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "critias",
+  "source_path": "scratch/commentary/rewrites/critias/03-108c-109a.json",
+  "source_sha256": "659c63f07eb8b2e2d4f5b6cceac1b62c9daa44f5e3e36910501f33713c6d8616",
+  "target_path": "wiki/commentary/critias.md",
+  "target_sha256_before": "8dfd130a04eb06332de590793307ac2fd9e534151de5e18739594390ad20ae81",
+  "target_sha256_after": "c8131826cb2362f0397f03a9e3889d5b656f10d645065d92e2cb9d9716179eac",
+  "applied_at": "2026-08-21T14:45:52.279Z",
+  "applied_ids": [
+    "comm_critias_0003",
+    "comm_critias_0011",
+    "comm_critias_0022",
+    "comm_critias_0033"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "03-108c-109a",
+      "section_id": "comm_critias_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/03-108c-109a.json",
+        "sha256": "1804a3083d7c5acc535e95d1bc406a00146fa68bb8b045d93463413e22f46bdc"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0003",
+          "title": "Memory makes continuation the task",
+          "body": "Memory is the hinge of Critias’s opening. He invokes Mnemosyne because the speech depends on remembering and reporting what priests once said and Solon transmitted. I hear this as the dialogue’s governing task: carrying a received account through to completion.",
+          "cites": {
+            "observations": [
+              "obs_critias_0011",
+              "obs_critias_0014",
+              "obs_critias_0015"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "04-109b-109e",
+      "section_id": "comm_critias_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/04-109b-109e.json",
+        "sha256": "8d54214af83c52a529b8fd92e69a96229158146bb300bfde1e52a75df48d0086"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0022",
+          "title": "",
+          "body": "Critias begins by making divine rule legible through two contrasts. The gods’ distribution of the earth is not a contest for possession; it is an allotment grounded in each god’s proper share. Their care for mortals is likewise pictured not as bodily coercion but as persuasion that steers the soul. One way to read the pairing is as a test of authority: legitimate rule depends both on knowing what belongs where and on guiding from within, not merely on overpowering the governed. That standard is proposed here as Critias’s mythic frame, not as a general doctrine.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_critias_0005",
+              "claim_critias_0006"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "09-114a-115c",
+      "section_id": "comm_critias_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/09-114a-115c.json",
+        "sha256": "fca99739300bcaf5133d1d567b187d01558835c5e631363dfd0391d95788b2d1"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0033",
+          "title": "",
+          "body": "The naming sequence gives the imagined geography a genealogy. Atlas supplies the name of the island and sea; his twin is Eumelus in Greek but Gadeirus in the indigenous tongue, and the Gadeiric region is linked to that name. The paired names make language part of the map: Greek and local usage stand side by side, while territory becomes legible through founders, kinship, and names.",
+          "cites": {
+            "observations": [
+              "obs_critias_0052",
+              "obs_critias_0053"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "11-118a-119c",
+      "section_id": "comm_critias_0011",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/11-118a-119c.json",
+        "sha256": "8046b7c40139ba90ba681b897bc4e1fb2cfb043611721ef918c2d24cd1dd94fe"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0011",
+          "title": "Measured land, apportioned power",
+          "body": "Atlantis is presented here not simply as territory but as territory converted into administration. The plain’s dimensions, ditch, and canals give the landscape a measured infrastructure; the allotments then turn that geometry into a chain of command. The military levy combines a sixth share of a war-chariot’s equipment with fixed contingents and a fleet total of 1,200 ships. At the close, Poseidon’s written law supplies the political order that joins the ten kings.",
+          "cites": {
+            "observations": [
+              "obs_critias_0073",
+              "obs_critias_0081",
+              "obs_critias_0082",
+              "obs_critias_0083",
+              "obs_critias_0084",
+              "obs_critias_0086",
+              "obs_critias_0091"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_critias_0003",
+      "body": "```yaml\ncommentary_id: comm_critias_0003\nsource_work: Critias\nblock_kind: section\nplacement: before\ntitle: \"Invoking Mnemosyne: the war recalled and the account begun\"\nstephanus_span: 108c-109a\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 108c-109a\n  start_marker: 108c\n  end_marker: 109a\n  start_char: 3458\n  end_char: 5109\n  text_sha256: \"8501d7214ca05eb40a013894209d5bf74a978feb12bcafe8a21346602725fbac\"\nbody: \"Critias invokes Memory above all gods, because everything he will say hangs on a transmission chain from Egyptian priests through Solon. He then recaps the nine-thousand-year-old war from the Timaeus, fixes Atlantis's sunken geography, and announces the order of exposition: ancient Athens first, then her adversary.\"\ncites:\n  observations: [\"obs_critias_0011\", \"obs_critias_0012\", \"obs_critias_0013\", \"obs_critias_0014\", \"obs_critias_0015\", \"obs_critias_0016\"]\n  claims: []\n  relations: []\n  dossiers: [\"frame_depth/transmission_chain_cited\", \"dramatic_case_setup/recapitulation_or_restart\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0011",
+      "body": "```yaml\ncommentary_id: comm_critias_0011\nsource_work: Critias\nblock_kind: section\nplacement: before\ntitle: \"From measured land to ordered power\"\nstephanus_span: 118a-119c\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 118a-119c\n  start_marker: 118a\n  end_marker: 119c\n  start_char: 23877\n  end_char: 27189\n  text_sha256: \"8ac78be7a4224aafa7412ff80da1043a6733390c5245999bfff3e2b8e9cd8319\"\nbody: \"This passage’s organizing move is to make Atlantis legible as an administered whole: measured terrain and engineered waterworks become territorial lots, military obligations, and finally a rule binding the ten kings. The levy is not uniformly fractional. Each leader contributes one sixth of a chariot, but the other listed forces are fixed numbers, alongside a fleet total of 1,200 ships. The final turn grounds inter-king relations in Poseidon’s written law.\"\ncites:\n  observations: [\"obs_critias_0073\", \"obs_critias_0081\", \"obs_critias_0082\", \"obs_critias_0083\", \"obs_critias_0084\", \"obs_critias_0086\", \"obs_critias_0091\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0022",
+      "body": "```yaml\ncommentary_id: comm_critias_0022\nsource_work: Critias\nblock_kind: argument\nplacement: before\nstephanus_span: 109b-109c\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 109b-109c\n  start_marker: 109b\n  end_marker: 109c\n  start_char: 5109\n  end_char: 6010\n  text_sha256: \"7ebb3902831eda31fc2e771cdc2d7a32747f6c07a0428c85186de14768190a09\"\nbody: \"Critias opens his history by cleaning up the myths. The gods did not fight over territory, he says — they drew just lots, since a god who grabbed what belonged to another would have to be either ignorant or unjust. And they ruled their human flocks not by force on bodies but by persuasion on the soul, steering from the stern like a helmsman with a rudder. Both corrections quietly remake the traditional gods into ideal rulers: government by allotment and persuasion rather than strife and compulsion, before a single human institution has been described.\"\ncites:\n  observations: []\n  claims: [\"claim_critias_0005\", \"claim_critias_0006\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0033",
+      "body": "```yaml\ncommentary_id: comm_critias_0033\nsource_work: Critias\nblock_kind: context\nplacement: before\nstephanus_span: 114a-114c\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 114a-114c\n  start_marker: 114a\n  end_marker: 114c\n  start_char: 15102\n  end_char: 16292\n  text_sha256: \"bf7b37b8b16edf137907167f95cd317ae433032f74f0d49e293f868fcf0028f0\"\nbody: \"The naming sequence gives the imagined geography a genealogy. Atlas supplies the name of the island and sea; his twin is Eumelus in Greek but Gadeirus in the native tongue, and the Gadeiric region is linked to that name. Read this as the story’s naming device: it ties places to founders while marking a difference between languages. The passage itself does not establish a chain of Egyptian transmission into Greek.\"\ncites:\n  observations: [\"obs_critias_0052\", \"obs_critias_0053\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

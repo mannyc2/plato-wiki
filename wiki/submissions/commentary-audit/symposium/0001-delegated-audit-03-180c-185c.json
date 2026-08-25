@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-delegated-audit-03-180c-185c",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "symposium",
+  "unit_key": "03-180c-185c",
+  "source_path": "scratch/commentary/delegated-audits/symposium/03-180c-185c.json",
+  "source_sha256": "71ea6fa480dcadc0a8719aaef2932e109e1feec60e254581ead6ff4d86f5e400",
+  "target_path": "wiki/submissions/commentary-audit/symposium/03-180c-185c.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "540e96d265f94808237f28a46d83bd112560bf888b4b65df8aacf41a2467a11c",
+  "applied_at": "2026-08-24T01:15:36.805Z",
+  "applied_ids": [
+    "comm_symposium_0003"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "symposium",
+    "unit_key": "03-180c-185c",
+    "job": {
+      "job_id": "audit:symposium:03-180c-185c",
+      "input_sha256": "db3aa2865c2201c19ee0db269dd4e12dabb95f95a82f0e2a0da5790d49d47e79",
+      "audit_brief_path": "scratch/commentary/audit-briefs/symposium/03-180c-185c.md",
+      "audit_brief_sha256": "0f14b3fed70449628eeab3ea09ca7bebe96b8832267a53faeca4947647892ca8",
+      "output_path": "scratch/commentary/audits/symposium/03-180c-185c.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/symposium/03-180c-185c.output.json",
+    "output_sha256": "540e96d265f94808237f28a46d83bd112560bf888b4b65df8aacf41a2467a11c",
+    "provenance": {
+      "auditor": "batch-c-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

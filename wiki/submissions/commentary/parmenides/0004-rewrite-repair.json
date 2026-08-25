@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "submission_id": "0004-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "parmenides",
+  "source_path": "scratch/commentary/rewrite-repairs/parmenides/round4.json",
+  "source_sha256": "b2be8983e2129b076701ef4acfd5af3d043aa54c2302853a8022d03b65ca1b49",
+  "target_path": "wiki/commentary/parmenides.md",
+  "target_sha256_before": "1b7c9ca4209643ff5b61d8aa2fbe0906eb6fa47c84985fafa1641e7e427421b0",
+  "target_sha256_after": "daca40d4513605c944209b520cf0bdff1538002660e79bd217007964992e4ba7",
+  "applied_at": "2026-08-21T15:31:25.356Z",
+  "applied_ids": [
+    "comm_parmenides_0003"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "parmenides",
+    "ledger": {
+      "path": "wiki/commentary/parmenides.md",
+      "sha256": "1b7c9ca4209643ff5b61d8aa2fbe0906eb6fa47c84985fafa1641e7e427421b0"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/parmenides/0003-rewrite-batch.json",
+      "sha256": "9c6df7534f22f89822f78744fe561784d2f676de2b3da2c8fcf93899214d5da3"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-parmenides-0003-rewrite-batch-acceptance.md",
+      "sha256": "c44f9366ef21fbb42982904c260b7e1227d46fc6869bee78f14d8e1bb8de1604"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-parmenides-round3",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_parmenides_0003",
+          "finding": "The body still compresses the whole/part dilemma, numerical absurdities, and thought-to-paradigm revision into one recap-heavy interruption; narrow it to one concise section orientation."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-parmenides-round4",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_parmenides_0003"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_parmenides_0003",
+        "title": "The fork in participation",
+        "body": "Parmenides narrows participation to a fork: if one Form is wholly in many things, it is separated from itself; if each thing receives a part, the Form is divided, and largeness, equality, and smallness become absurdly measured by smaller parts. The section leaves the account needing another way to explain how many things share one Form.",
+        "cites": {
+          "observations": [
+            "obs_parmenides_0029",
+            "obs_parmenides_0032"
+          ],
+          "claims": [
+            "claim_parmenides_0001",
+            "claim_parmenides_0003"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_parmenides_0003",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0003\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"A proposal under pressure\"\nstephanus_span: 131b-135d\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 131b-135d\n  start_marker: 131b\n  end_marker: 135d\n  start_char: 9977\n  end_char: 19907\n  text_sha256: \"06ed4c992dc4ab0a3125e382c8c54e3945c3944445cdabfd62a0aad97febf7f5\"\nbody: \"Hear this section as a stress test for participation, not as a catalogue of rival definitions. The whole-in-many proposal would make the one Form separate from itself; the part-in-many proposal makes the Form divisible and yields absurdities for largeness, equality, and smallness. When Socrates shifts from Forms as thoughts to Forms as paradigms, hear that as another attempt to save the account—not yet as a solution.\"\ncites:\n  observations: [\"obs_parmenides_0029\", \"obs_parmenides_0032\", \"obs_parmenides_0034\"]\n  claims: [\"claim_parmenides_0001\", \"claim_parmenides_0003\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    }
+  ]
+}

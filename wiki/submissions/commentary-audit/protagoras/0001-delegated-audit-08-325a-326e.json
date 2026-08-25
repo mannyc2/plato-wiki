@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-delegated-audit-08-325a-326e",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "protagoras",
+  "unit_key": "08-325a-326e",
+  "source_path": "scratch/commentary/delegated-audits/protagoras/08-325a-326e.json",
+  "source_sha256": "8328a1e92fc69fd0a176b5f12b3b60259e1c4b4d7bce0fae854412d7c436b16d",
+  "target_path": "wiki/submissions/commentary-audit/protagoras/08-325a-326e.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "8c8117b27c7756e8fcfd18f323ff54b8f406140c3befb967ac5ea8d71d352c72",
+  "applied_at": "2026-08-24T01:15:36.799Z",
+  "applied_ids": [
+    "comm_protagoras_0008"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "protagoras",
+    "unit_key": "08-325a-326e",
+    "job": {
+      "job_id": "audit:protagoras:08-325a-326e",
+      "input_sha256": "d1e977aa347a491c3f9f7dec984a3aebb7d21b13f083ec5f3bf1841e8bbee2f9",
+      "audit_brief_path": "scratch/commentary/audit-briefs/protagoras/08-325a-326e.md",
+      "audit_brief_sha256": "133350270bf6f2b3aa356741c21309589f4baac0f4505101b914bce3ca774a9b",
+      "output_path": "scratch/commentary/audits/protagoras/08-325a-326e.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/protagoras/08-325a-326e.output.json",
+    "output_sha256": "8c8117b27c7756e8fcfd18f323ff54b8f406140c3befb967ac5ea8d71d352c72",
+    "provenance": {
+      "auditor": "batch-c-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0009-structural-remediation-12-296e-298e",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "euthydemus",
+  "unit_key": "12-296e-298e",
+  "source_path": "scratch/commentary/audits/euthydemus/12-296e-298e.json",
+  "source_sha256": "2f68d7e0519d8d4173c8eb7c51c15aecfbee2ff38db10a8a2ef7e14abd1f7d68",
+  "target_path": "wiki/commentary/euthydemus.md",
+  "target_sha256_before": "e76e2da2e2edee095ca6866635afe3cc4e581b57a66bb9a25af9f63c9968f62f",
+  "target_sha256_after": "33bd0e648ad9bd796d1d1f9954befdd59298283ae0e4d541c028b48ef178c7c5",
+  "applied_at": "2026-08-23T22:33:19.757Z",
+  "applied_ids": [
+    "comm_euthydemus_0012"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "euthydemus",
+      "unitKey": "12-296e-298e",
+      "sectionId": "comm_euthydemus_0012",
+      "auditOutputPath": "scratch/commentary/audits/euthydemus/12-296e-298e.json",
+      "auditOutputSha256": "2f68d7e0519d8d4173c8eb7c51c15aecfbee2ff38db10a8a2ef7e14abd1f7d68",
+      "expectedLedgerSha256": "e76e2da2e2edee095ca6866635afe3cc4e581b57a66bb9a25af9f63c9968f62f",
+      "expectedAttributionSha256": "8cf2b2133e128dee04c9b4b0e16509ecafe938075f7af191fbea6d12449e40f2",
+      "expectedEnglishSha256": "20a50426f4a1aca5f23ff106c165a553c6bdf218e4b913084481569425760dd2",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_euthydemus_0012"
+        }
+      ],
+      "reviewer": "lane-a-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna structural review confirms conservative rejection of audited remove findings and split originals; delegated model review only."
+    },
+    "audit_output_path": "scratch/commentary/audits/euthydemus/12-296e-298e.json",
+    "audit_output_sha256": "2f68d7e0519d8d4173c8eb7c51c15aecfbee2ff38db10a8a2ef7e14abd1f7d68",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_euthydemus_0012",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

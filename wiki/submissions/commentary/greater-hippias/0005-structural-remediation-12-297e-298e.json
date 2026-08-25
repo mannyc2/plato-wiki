@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-structural-remediation-12-297e-298e",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "greater-hippias",
+  "unit_key": "12-297e-298e",
+  "source_path": "scratch/commentary/audits/greater-hippias/12-297e-298e.json",
+  "source_sha256": "fca8d29e9db6d57086be0c44323d919157300e671a3b43ec4a922201774ad01d",
+  "target_path": "wiki/commentary/greater-hippias.md",
+  "target_sha256_before": "763f6057e5e8551325f9f3e5d00e03d75982ac407459c5ba5c8d0f1677ca3333",
+  "target_sha256_after": "fa7a9756f48b59be4a9b3d8311b2186535aa675461a0c3de1269fae2bb9737cc",
+  "applied_at": "2026-08-23T22:31:44.358Z",
+  "applied_ids": [
+    "comm_greater-hippias_0012"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "greater-hippias",
+      "unitKey": "12-297e-298e",
+      "sectionId": "comm_greater-hippias_0012",
+      "auditOutputPath": "scratch/commentary/audits/greater-hippias/12-297e-298e.json",
+      "auditOutputSha256": "fca8d29e9db6d57086be0c44323d919157300e671a3b43ec4a922201774ad01d",
+      "expectedLedgerSha256": "763f6057e5e8551325f9f3e5d00e03d75982ac407459c5ba5c8d0f1677ca3333",
+      "expectedAttributionSha256": "78f33614ab7d74469a428e347acd1afdbe1fee8d43496fa121af23c73ccd1b51",
+      "expectedEnglishSha256": "958a9957de5681d6f68c2fc0cbd0ee30da1ba38ad47814ded13922ab13b33c8c",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_greater-hippias_0012"
+        }
+      ],
+      "reviewer": "lane-c-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna assessment confirms conservative rejection of audited remove findings and split originals; placement is retained and no reanchors are claimed."
+    },
+    "audit_output_path": "scratch/commentary/audits/greater-hippias/12-297e-298e.json",
+    "audit_output_sha256": "fca8d29e9db6d57086be0c44323d919157300e671a3b43ec4a922201774ad01d",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_greater-hippias_0012",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

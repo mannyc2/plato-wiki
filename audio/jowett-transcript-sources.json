@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 2,
+  "status": "source-registry",
+  "sourcePolicy": {
+    "fetchPolicy": "network-disabled-unless-explicitly-requested",
+    "cachePolicy": "content-addressed-sha256-under-scratch",
+    "coveragePolicy": "one-pinned-complete-source-per-dialogue",
+    "translationPolicy": "jowett-unless-explicit-channel-matching-exception",
+    "defaultSource": {
+      "provider": "internet-classics-archive",
+      "format": "internet-classics-text-v1",
+      "translator": "Benjamin Jowett",
+      "encoding": "utf-8"
+    }
+  },
+  "dialogues": [
+    {
+      "dialogue": "apology",
+      "status": "available-complete",
+      "pageUrl": "https://classics.mit.edu/Plato/apology.html",
+      "transcriptUrl": "https://classics.mit.edu/Plato/apology.1b.txt",
+      "expectedBytes": 61106,
+      "expectedSha256": "56cab7c541fc6d44c0cd5c131942350440b319dd56ff2f50bbda20113a07df7e"
+    },
+    {
+      "dialogue": "charmides",
+      "status": "available-complete",
+      "pageUrl": "https://classics.mit.edu/Plato/charmides.html",
+      "transcriptUrl": "https://classics.mit.edu/Plato/charmides.1b.txt",
+      "expectedBytes": 58634,
+      "expectedSha256": "fbed163761a115c2e87cd672527997d2843368c9a847530cde38e4f0b2a81aa3"
+    },
+    {
+      "dialogue": "cratylus",
+      "status": "available-complete",
+      "provider": "project-gutenberg",
+      "format": "gutenberg-plain-text-v1",
+      "translator": "Benjamin Jowett",
+      "encoding": "utf-8-sig",
+      "pageUrl": "https://www.gutenberg.org/ebooks/1616",
+      "transcriptUrl": "https://www.gutenberg.org/cache/epub/1616/pg1616.txt",
+      "expectedBytes": 326450,
+      "expectedSha256": "e5fe819c38e449ac686945b92aca54f3d4917e04ab1d47c576c54c9072e40acc",
+      "bodyStartMarker": "PERSONS OF THE DIALOGUE",
+      "bodyEndMarker": "*** END OF THE PROJECT GUTENBERG EBOOK"
+    },
+    {
+      "dialogue": "critias",
+      "status": "available-complete",
+      "pageUrl": "https://classics.mit.edu/Plato/critias.html",
+      "transcriptUrl": "https://classics.mit.edu/Plato/critias.1b.txt",
+      "expectedBytes": 39527,
+      "expectedSha256": "cef12a99b1ea1ef38c513be4db42f5b889cc34d1c9cf22c335ebccf68598d9cb"
+    },
+    {
+      "dialogue": "crito",
+      "status": "available-complete",
+      "pageUrl": "https://classics.mit.edu/Plato/crito.html",
+      "transcriptUrl": "https://classics.mit.edu/Plato/crito.1b.txt",
+      "expectedBytes": 30128,
+      "expectedSha256": "bd3101f532f1aa00d495094ef0d4260afe2d1a27099eee07ae333c1a82f0c8e9",
+      "labelOverrides": {
+        "Cr": "crito",
+        "Crito": "crito",
+        "Soc": "socrates",
+        "Socrates": "socrates"
+      },
+      "referenceAnchors": [
+        {
+          "anchorId": "existing-socrates-selection",
+          "characterId": "socrates",
+          "videoId": "MNDfJMrH1XY",
+          "requestedStartSeconds": 65.04,
+          "requestedEndSeconds": 72.51,
+          "expectedPrompt": "Why, Crito, when a man has reached my age he ought not to be repining at the prospect of death."
+        },
+        {
+          "anchorId": "corrected-crito-reference",
+          "characterId": "crito",
+          "videoId": "MNDfJMrH1XY",
+          "requestedStartSeconds": 296.59,
+          "requestedEndSeconds": 303.0,
+          "expectedPrompt": "Persons who, at no great cost, are willing to save you and bring you out of prison."
+        }
+      ]
+    },
+    {
+      "dialogue": "euthydemus",
+      "status": "available-complete",
+      "pageUrl": "https://classics.mit.edu/Plato/euthydemus.html",
+      "transcriptUrl": "https://classics.mit.edu/Plato/euthydemus.1b.txt",
+      "expectedBytes": 85152,
+      "expectedSha256": "21f4cb0f9561daf76a16a31756e539fd06d71018b8009746ecf24992daed09da"
+    },
+    {
+      "dialogue": "euthyphro",
+      "status": "available-complete",
+      "pageUrl": "https://classics.mit.edu/Plato/euthyfro.html",
+      "transcriptUrl": "https://classics.mit.edu/Plato/euthyfro.1b.txt",
+      "expectedBytes": 37644,
+      "expectedSha256": "a1fb97bab6a0fcd5296c067a56e4a79504dc90ce1702af684b5201b49b8b17c1"
+    },
+    {
+      "dialogue": "gorgias",
+      "status": "available-complete",
+      "provider": "project-gutenberg",
+      "format": "gutenberg-plain-text-v1",
+      "translator": "Benjamin Jowett",
+      "encoding": "utf-8-sig",
+      "pageUrl": "https://www.gutenberg.org/ebooks/1672",
+      "transcriptUrl": "https://www.gutenberg.org/cache/epub/1672/pg1672.txt",
+      "expectedBytes": 355837,
+      "expectedSha256": "379f2abb140332a49d5f86fd78f008f47de0e4fecb53a0a42b2b4cf6bfa4c133",
+      "bodyStartMarker": "PERSONS OF THE DIALOGUE",
+      "bodyEndMarker": "*** END OF THE PROJECT GUTENBERG EBOOK"
+    },
+    {
+      "dialogue": "greater-hippias",
+      "status": "available-complete",
+      "provider": "perseus-pinned-git",
+      "format": "perseus-tei-said-v1",
+      "translator": "Harold North Fowler",
+      "encoding": "utf-8",
+      "translationException": "channel-description-misattribution",
+      "pageUrl": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg025/tlg0059.tlg025.perseus-eng2.xml",
+      "transcriptUrl": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg025/tlg0059.tlg025.perseus-eng2.xml",
+      "expectedBytes": 99852,
+      "expectedSha256": "b4cdd3200494bca0dde6f064955b8b627f2d32a29649ea8f4bba18e21302803a"
+    },
+    {
+      "dialogue": "ion",
+      "status": "available-complete",
+      "pageUrl": "https://classics.mit.edu/Plato/ion.html",
+      "transcriptUrl": "https://classics.mit.edu/Plato/ion.1b.txt",
+      "expectedBytes": 29390,
+      "expectedSha256": "6683e6a6608fbb785fe5ab9d6f2355d3bf2f5177a9e0c18f5a2eb32930409cd4"
+    },
+    {
+      "dialogue": "laches",
+      "status": "available-complete",
+      "pageUrl": "https://classics.mit.edu/Plato/laches.html",
+      "transcriptUrl": "https://classics.mit.edu/Plato/laches.1b.txt",
+      "expectedBytes": 56293,
+      "expectedSha256": "ad310f76cc89b443e373c8976197d9aaab30b9556236e59f8f6e6a152c23dbbf"
+    },
+    {
+      "dialogue": "laws",
+      "status": "available-complete",
+      "pageUrl": "https://classics.mit.edu/Plato/laws.html",
+      "transcriptUrl": "https://classics.mit.edu/Plato/laws.mb.txt",
+      "expectedBytes": 764021,
+      "expectedSha256": "efd194bed434b0eb8403877fd3c25be9d1313e98091dda0656a5ad5b35c6adbe"
+    },
+    {
+      "dialogue": "lesser-hippias",
+      "status": "available-complete",
+      "provider": "project-gutenberg",
+      "format": "gutenberg-plain-text-v1",
+      "translator": "Benjamin Jowett",
+      "encoding": "utf-8-sig",
+      "pageUrl": "https://www.gutenberg.org/ebooks/1673",
+      "transcriptUrl": "https://www.gutenberg.org/cache/epub/1673/pg1673.txt",
+      "expectedBytes": 74421,
+      "expectedSha256": "52df684dd14fa9f30fd616423defbfb9695b4c865253d78caab21007d5bd2525",
+      "bodyStartMarker": "PERSONS OF THE DIALOGUE",
+      "bodyEndMarker": "*** END OF THE PROJECT GUTENBERG EBOOK"
+    },
+    {
+      "dialogue": "lysis",
+      "status": "available-complete",
+      "pageUrl": "https://classics.mit.edu/Plato/lysis.html",
+      "transcriptUrl": "https://classics.mit.edu/Plato/lysis.1b.txt",
+      "expectedBytes": 49828,
+      "expectedSha256": "a6b29303eba7c5f6f22baab2831ea47df9e1c996f9a969dfd1e022cbbe5be3a6"
+    },
+    {
+      "dialogue": "menexenus",
+      "status": "available-complete",
+      "provider": "project-gutenberg",
+      "format": "gutenberg-plain-text-v1",
+      "translator": "Benjamin Jowett",
+      "encoding": "utf-8-sig",
+      "pageUrl": "https://www.gutenberg.org/ebooks/1682",
+      "transcriptUrl": "https://www.gutenberg.org/cache/epub/1682/pg1682.txt",
+      "expectedBytes": 77852,
+      "expectedSha256": "1a34580bfcb9aec8c9badf3f3812fffef65310a7950b3781a436733246339690",
+      "bodyStartMarker": "PERSONS OF THE DIALOGUE",
+      "bodyEndMarker": "*** END OF THE PROJECT GUTENBERG EBOOK"
+    },
+    {
+      "dialogue": "meno",
+      "status": "available-complete",
+      "pageUrl": "https://classics.mit.edu/Plato/meno.html",
+      "transcriptUrl": "https://classics.mit.edu/Plato/meno.1b.txt",
+      "expectedBytes": 69616,
+      "expectedSha256": "44fda41932d6f98a8d889eb11541996ff5788cf94a1648d7f1b50860fc23cff6"
+    },
+    {
+      "dialogue": "parmenides",
+      "status": "available-complete",
+      "pageUrl": "https://classics.mit.edu/Plato/parmenides.html",
+      "transcriptUrl": "https://classics.mit.edu/Plato/parmenides.1b.txt",
+      "expectedBytes": 102477,
+      "expectedSha256": "9cc6380fc46af00bb21c07ba4e6cb9676c98dd3c8a11480714ed2bdae56a6e99"
+    },
+    {
+      "dialogue": "phaedo",
+      "status": "available-complete",
+      "provider": "boston-university-static",
+      "format": "bu-html-paragraphs-v1",
+      "translator": "Benjamin Jowett",
+      "encoding": "windows-1252",
+      "pageUrl": "https://people.bu.edu/wwildman/courses/wphil/readings/wphil_rdg01_phaedo_entire.htm",
+      "transcriptUrl": "https://people.bu.edu/wwildman/courses/wphil/readings/wphil_rdg01_phaedo_entire.htm",
+      "expectedBytes": 149215,
+      "expectedSha256": "b04718ed8d9db2e5993702b99fe142da56e780da12f11d7dfe25f0c032f9dcb1",
+      "bodyStartMarker": "Persons of the Dialogue:",
+      "bodyEndMarker": "</html>"
+    },
+    {
+      "dialogue": "phaedrus",
+      "status": "available-complete",
+      "pageUrl": "https://classics.mit.edu/Plato/phaedrus.html",
+      "transcriptUrl": "https://classics.mit.edu/Plato/phaedrus.1b.txt",
+      "expectedBytes": 124658,
+      "expectedSha256": "7c8b42ae22cc43afb37e0aae1842fa46ae253a99083702682a01718756ae8435"
+    },
+    {
+      "dialogue": "philebus",
+      "status": "available-complete",
+      "provider": "project-gutenberg",
+      "format": "gutenberg-plain-text-v1",
+      "translator": "Benjamin Jowett",
+      "encoding": "utf-8-sig",
+      "pageUrl": "https://www.gutenberg.org/ebooks/1744",
+      "transcriptUrl": "https://www.gutenberg.org/cache/epub/1744/pg1744.txt",
+      "expectedBytes": 286898,
+      "expectedSha256": "f224a1bdbb919332313d0ffd81341cc580537fa1f05ed70b6dcac7217790149a",
+      "bodyStartMarker": "PERSONS OF THE DIALOGUE",
+      "bodyEndMarker": "*** END OF THE PROJECT GUTENBERG EBOOK"
+    },
+    {
+      "dialogue": "protagoras",
+      "status": "available-complete",
+      "provider": "project-gutenberg",
+      "format": "gutenberg-plain-text-v1",
+      "translator": "Benjamin Jowett",
+      "encoding": "utf-8-sig",
+      "pageUrl": "https://www.gutenberg.org/ebooks/1591",
+      "transcriptUrl": "https://www.gutenberg.org/cache/epub/1591/pg1591.txt",
+      "expectedBytes": 176202,
+      "expectedSha256": "7eb0299f5b11d13cb96ed1a1822c12c83f627c2488648d2013ac2e81eb5ab3ea",
+      "bodyStartMarker": "PERSONS OF THE DIALOGUE",
+      "bodyEndMarker": "*** END OF THE PROJECT GUTENBERG EBOOK"
+    },
+    {
+      "dialogue": "republic",
+      "status": "available-complete",
+      "pageUrl": "https://classics.mit.edu/Plato/republic.html",
+      "transcriptUrl": "https://classics.mit.edu/Plato/republic.mb.txt",
+      "expectedBytes": 680821,
+      "expectedSha256": "dba64b5660016cb40ef5eab004f9610e529887065ecfc74b988f67ce00c31ed1"
+    },
+    {
+      "dialogue": "sophist",
+      "status": "available-complete",
+      "provider": "project-gutenberg",
+      "format": "gutenberg-plain-text-v1",
+      "translator": "Benjamin Jowett",
+      "encoding": "utf-8-sig",
+      "pageUrl": "https://www.gutenberg.org/ebooks/1735",
+      "transcriptUrl": "https://www.gutenberg.org/cache/epub/1735/pg1735.txt",
+      "expectedBytes": 286674,
+      "expectedSha256": "bd88e451d82d3e519c04ced512d006e51a2076ac0f1a99b1b11cb9b7b28dd1e3",
+      "bodyStartMarker": "PERSONS OF THE DIALOGUE",
+      "bodyEndMarker": "*** END OF THE PROJECT GUTENBERG EBOOK",
+      "mediaOmissions": [
+        {
+          "kind": "channel-recording-abridgement",
+          "estimatedOmittedSourceWords": 2656,
+          "effect": "alignment-coverage-only-not-speaker-impurity"
+        }
+      ]
+    },
+    {
+      "dialogue": "statesman",
+      "status": "available-complete",
+      "provider": "project-gutenberg",
+      "format": "gutenberg-plain-text-v1",
+      "translator": "Benjamin Jowett",
+      "encoding": "utf-8-sig",
+      "pageUrl": "https://www.gutenberg.org/ebooks/1738",
+      "transcriptUrl": "https://www.gutenberg.org/cache/epub/1738/pg1738.txt",
+      "expectedBytes": 252962,
+      "expectedSha256": "171c09697bde2a26ad7cd4775929e780b0bc218ea47c4b4755cabe437610d3f4",
+      "bodyStartMarker": "PERSONS OF THE DIALOGUE",
+      "bodyEndMarker": "*** END OF THE PROJECT GUTENBERG EBOOK"
+    },
+    {
+      "dialogue": "symposium",
+      "status": "available-complete",
+      "provider": "project-gutenberg",
+      "format": "gutenberg-plain-text-v1",
+      "translator": "Benjamin Jowett",
+      "encoding": "utf-8-sig",
+      "pageUrl": "https://www.gutenberg.org/ebooks/1600",
+      "transcriptUrl": "https://www.gutenberg.org/cache/epub/1600/pg1600.txt",
+      "expectedBytes": 200974,
+      "expectedSha256": "8b5c599ea734ff0f5e8d83f399dead8c796800897b107c8d53fa909f74a05d6f",
+      "bodyStartMarker": "PERSONS OF THE DIALOGUE",
+      "bodyEndMarker": "*** END OF THE PROJECT GUTENBERG EBOOK"
+    },
+    {
+      "dialogue": "theaetetus",
+      "status": "available-complete",
+      "provider": "project-gutenberg",
+      "format": "gutenberg-plain-text-v1",
+      "translator": "Benjamin Jowett",
+      "encoding": "utf-8-sig",
+      "pageUrl": "https://www.gutenberg.org/ebooks/1726",
+      "transcriptUrl": "https://www.gutenberg.org/cache/epub/1726/pg1726.txt",
+      "expectedBytes": 397545,
+      "expectedSha256": "3d819c9137f018f31993ea6c340847e73a2e70db665fad5af12d841bcd50dfa8",
+      "bodyStartMarker": "PERSONS OF THE DIALOGUE",
+      "bodyEndMarker": "*** END OF THE PROJECT GUTENBERG EBOOK"
+    },
+    {
+      "dialogue": "timaeus",
+      "status": "available-complete",
+      "provider": "project-gutenberg",
+      "format": "gutenberg-plain-text-v1",
+      "translator": "Benjamin Jowett",
+      "encoding": "utf-8-sig",
+      "pageUrl": "https://www.gutenberg.org/ebooks/1572",
+      "transcriptUrl": "https://www.gutenberg.org/cache/epub/1572/pg1572.txt",
+      "expectedBytes": 475689,
+      "expectedSha256": "4f839b423198a80be946aeb7d4b0baef30862d12702a6026b2479be9718342d9",
+      "bodyStartMarker": "PERSONS OF THE DIALOGUE",
+      "bodyEndMarker": "*** END OF THE PROJECT GUTENBERG EBOOK"
+    }
+  ]
+}

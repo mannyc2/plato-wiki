@@ -1,0 +1,11 @@
+dialogue: crito
+source_path: raw/plato/greek/crito.txt
+source_sha256: fc1eaadbd89edd53c9ad97c51b0c568346338869f26aa2e322ff86d54b42e28a
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[4]:
+  group             | form  | start_char | end_char | marker | turn_id         | token_ids
+  assent_concession | ναί   | 8306       | 8309     | 47a    | turn_crito_0039 | tok_crito_001419
+  assent_concession | ναί   | 9978       | 9981     | 47e    | turn_crito_0055 | tok_crito_001712
+  divine_legal      | ὅσιον | 18024      | 18029    | 51c    | turn_crito_0093 | tok_crito_003056
+  divine_legal      | δίκη  | 20419      | 20423    | 52c    | turn_crito_0096 | tok_crito_003442

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0028-structural-remediation-06-26b-28a",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "apology",
+  "unit_key": "06-26b-28a",
+  "source_path": "scratch/commentary/audits/apology/06-26b-28a.json",
+  "source_sha256": "aaa9a8ae4a3c995c87e2ff42a3f8cd4f60e8638670376f9d9a4e179d1f5a8c0e",
+  "target_path": "wiki/commentary/apology.md",
+  "target_sha256_before": "d8fdf5fac8653e115500d880e7d0cab035f9c226cc082d3d02aca67c85c4359c",
+  "target_sha256_after": "7c586abc0d23ed7e55ce4fcaf4fa9f5bcf9a12dddf9a0eeb705cdc77db029af8",
+  "applied_at": "2026-08-23T23:01:29.995Z",
+  "applied_ids": [
+    "comm_apology_0006"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "apology",
+      "unitKey": "06-26b-28a",
+      "sectionId": "comm_apology_0006",
+      "auditOutputPath": "scratch/commentary/audits/apology/06-26b-28a.json",
+      "auditOutputSha256": "aaa9a8ae4a3c995c87e2ff42a3f8cd4f60e8638670376f9d9a4e179d1f5a8c0e",
+      "expectedLedgerSha256": "d8fdf5fac8653e115500d880e7d0cab035f9c226cc082d3d02aca67c85c4359c",
+      "expectedAttributionSha256": "1c41890210e4621e5e081de33b408e54572bd07af74640ea6964c45dda553f64",
+      "expectedEnglishSha256": "04bf6411654f814bc016d5a0f649d1c50aef4d0dcbeeb1820910ecf8d2107046",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_apology_0006"
+        }
+      ],
+      "reviewer": "round3-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Delegated Luna review supports conservative rejection of the current audited remove findings; no reanchors are proposed."
+    },
+    "audit_output_path": "scratch/commentary/audits/apology/06-26b-28a.json",
+    "audit_output_sha256": "aaa9a8ae4a3c995c87e2ff42a3f8cd4f60e8638670376f9d9a4e179d1f5a8c0e",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_apology_0006",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

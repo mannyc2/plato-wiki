@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "lysis",
+  "source_path": "scratch/commentary/sample-repairs/lysis/final-sample-round2.json",
+  "source_sha256": "86254c95f67f2cd55fae08f3b9b3e564ac477b517b3067363982e32b43b109c9",
+  "target_path": "wiki/commentary/lysis.md",
+  "target_sha256_before": "09514c2c7868c599aeb50749d7f637a68a13b2d18b21241b417d4604f8b21e42",
+  "target_sha256_after": "9cad0f8f207840740c979d66d71dd46f85311276e0a33e6195ff1958b87bd591",
+  "applied_at": "2026-08-21T16:25:31.569Z",
+  "applied_ids": [
+    "comm_lysis_0008",
+    "comm_lysis_0009",
+    "comm_lysis_0011"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "lysis",
+    "ledger": {
+      "path": "wiki/commentary/lysis.md",
+      "sha256": "09514c2c7868c599aeb50749d7f637a68a13b2d18b21241b417d4604f8b21e42"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-lysis-final-sample2",
+      "reviewed_on": "2026-08-21",
+      "rationale": "The fresh sample found a scene reversal in 0008 and insufficient canonical support for the checkable claims in 0009 and 0011.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_lysis_0001",
+        "comm_lysis_0002",
+        "comm_lysis_0003",
+        "comm_lysis_0004",
+        "comm_lysis_0005",
+        "comm_lysis_0006",
+        "comm_lysis_0007",
+        "comm_lysis_0008",
+        "comm_lysis_0009",
+        "comm_lysis_0010",
+        "comm_lysis_0011",
+        "comm_lysis_0012",
+        "comm_lysis_0013",
+        "comm_lysis_0014"
+      ],
+      "failed_commentary_ids": [
+        "comm_lysis_0008",
+        "comm_lysis_0009",
+        "comm_lysis_0011"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_lysis_0008",
+        "title": "Lover, beloved, or both? The first definition collapses",
+        "body": "The lover–beloved question has now reversed itself: the first answer made both friends when one loved, but testing unrequited love leaves neither friend unless affection is mutual. Socrates asks whether they were searching wrongly; Lysis says no, blushing as he speaks. That response becomes the hinge: Socrates lets Menexenus rest and turns the argument toward Lysis.",
+        "cites": {
+          "observations": [
+            "obs_lysis_0059",
+            "obs_lysis_0061",
+            "obs_lysis_0065",
+            "obs_lysis_0066",
+            "obs_lysis_0067"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_lysis_0009",
+        "title": "The poets' answer: does like befriend like?",
+        "body": "At 214a–b, Socrates brings in the poets and writers on nature as authorities for like befriending like, but the exchange stays tentative: Menexenus hedges, and Socrates admits they may understand only part—or all—of it. The proposal then buckles: the bad harm one another, while the good seem self-sufficient. At 215c Socrates stops and asks Lysis where they have been misled.",
+        "cites": {
+          "observations": [
+            "obs_lysis_0071",
+            "obs_lysis_0074",
+            "obs_lysis_0076",
+            "obs_lysis_0077",
+            "obs_lysis_0078",
+            "obs_lysis_0089",
+            "obs_lysis_0090",
+            "obs_lysis_0091"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_lysis_0011",
+        "title": "The in-between friend: philosophy as the mark of the intermediate",
+        "body": "With the like and unlike accounts both rejected, Socrates offers a middle candidate: what is neither good nor bad can befriend the good through the presence of bad. He then places philosophy in that same intermediate zone: neither the already wise nor the hopelessly ignorant philosophize, but those who still recognize that they do not know what they do not know. At 218b–c, the formula is announced as a discovery and accepted provisionally.",
+        "cites": {
+          "observations": [
+            "obs_lysis_0130",
+            "obs_lysis_0092",
+            "obs_lysis_0143"
+          ],
+          "claims": [
+            "claim_lysis_0014",
+            "claim_lysis_0015",
+            "claim_lysis_0016"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_lysis_0008",
+      "body": "```yaml\ncommentary_id: comm_lysis_0008\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"Reciprocity tested by reversal\"\nstephanus_span: 212a-213d\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 212a-213d\n  start_marker: 212a\n  end_marker: 213d\n  start_char: 17575\n  end_char: 21406\n  text_sha256: \"660d3854226fb1baf2b8cd1aeac8b5683df40f8c0b6ef220e5b9622772501c09\"\nbody: \"The reciprocity thesis is not the passage’s final landing. One-sided love first makes the mutual answer untenable; the proposed repair is that neither is a friend unless both love. Socrates then appears to reverse the candidate: the beloved seems to be the friend even while hating, but that makes friends into enemies, so the lover is restored. Read this as a recursive test, not a single march to aporia: after the reversals, Lysis doubts the inquiry itself.\"\ncites:\n  observations: []\n  claims: [\"claim_lysis_0009\", \"claim_lysis_0010\", \"claim_lysis_0011\", \"claim_lysis_0012\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_lysis_0009",
+      "body": "```yaml\ncommentary_id: comm_lysis_0009\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"The poets' answer: does like befriend like?\"\nstephanus_span: 213e-215c\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 213e-215c\n  start_marker: 213e\n  end_marker: 215c\n  start_char: 21406\n  end_char: 24961\n  text_sha256: \"73687f4a14ca67d0dd03d6d0e4179e34b882662630ffb5bfd424e5f70e9c5204\"\nbody: \"Socrates turns from the boys' failure to the poets, the traditional fathers of wisdom: god ever draws like to like. But the bad are unstable and harm those near them, so likeness among the bad cannot ground friendship — and the good, being self-sufficient, seem to need nothing from one another. The proverb buckles under examination.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_lysis_0011",
+      "body": "```yaml\ncommentary_id: comm_lysis_0011\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"The in-between friend: philosophy as the mark of the intermediate\"\nstephanus_span: 216c-218c\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 216c-218c\n  start_marker: 216c\n  end_marker: 218c\n  start_char: 26733\n  end_char: 31301\n  text_sha256: \"2679c856c7a42cbf0737800b2cbbc7e433b5040926cf504919074bb8ad4f2926\"\nbody: \"A new candidate: what is neither good nor bad befriends the good because bad is present in it without yet corrupting it — as a body not yet ruined by disease loves medicine. Hence the striking claim that neither the wise nor the hopelessly ignorant philosophize, only those aware of their own lack. The definition is welcomed with relief.\"\ncites:\n  observations: []\n  claims: [\"claim_lysis_0013\", \"claim_lysis_0014\", \"claim_lysis_0015\", \"claim_lysis_0016\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

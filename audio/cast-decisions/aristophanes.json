@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "status": "accepted-deterministic-cast-decision",
+  "policy": "cast-auto-accept-v1",
+  "acceptedAt": "2026-07-16",
+  "characterId": "aristophanes",
+  "sourceCharacterId": "aristophanes",
+  "candidateSelection": "highest-ranked-passing",
+  "rankingPolicy": "mean-cosine-desc/minimum-window-cosine-desc/ordinary-word-errors-asc/speech-rate-distance-from-3-asc/seed-asc",
+  "inputs": {
+    "cast": {
+      "path": "audio/cast.json",
+      "sha256": "f6b65227f30fbf8d366674cae3d2d5613e37a40e3e11a66ef2c2b4b0c65c0839"
+    },
+    "characters": {
+      "path": "audio/characters.json",
+      "sha256": "899a2006e31dbfc18b50d8861bb6ff83b3241786fddaf36b16551e30d938c307"
+    },
+    "referenceSources": {
+      "path": "audio/reference-sources.json",
+      "sha256": "c65f15e02a23734020a5bdb6100c1d45abc50b13bcab9b0cd60cc52145f6440e"
+    },
+    "referenceSidecar": {
+      "path": "scratch/audio-references/aristophanes/Y7gKpAFDuto-002881160-002886480-975c8c23951c.json",
+      "sha256": "9657bab9354ab32235a3831ea6a55ab47a63b043ea72ab87306efff3ba63d3f4"
+    },
+    "speakerPurity": {
+      "path": "scratch/audio-targeted-reference-phrases-recovery/policy-899a2006/symposium.report.json",
+      "sha256": "e8c17be8b3dba78b64fb0a7b867c8bf0fed50d6aaf3717c5ddca1b9fb91aee06"
+    },
+    "cloneManifest": {
+      "path": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/audition-manifest.json",
+      "sha256": "f4c14e619514b1cb89b42fe12bc49702a10063fe29e11cd5262340d043f9d835"
+    },
+    "asr": {
+      "path": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/asr-qa.json",
+      "sha256": "f6e044e629a86b40e7240c663fe020d970ad78d92ecf4001059a72df5d9b5471"
+    },
+    "acoustic": {
+      "path": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/speaker-ranking.json",
+      "sha256": "2dde0ff0829eca202ff23ab4122801626ff2e2de8f01dd3b9d2d894e929ddde0"
+    }
+  },
+  "reference": {
+    "sourceUrl": "https://www.youtube.com/watch?v=Y7gKpAFDuto",
+    "sourceRegistryPath": "audio/reference-sources.json",
+    "sourceRegistrySha256": "c65f15e02a23734020a5bdb6100c1d45abc50b13bcab9b0cd60cc52145f6440e",
+    "sourceDialogue": "symposium",
+    "sourceVideoId": "Y7gKpAFDuto",
+    "sourceCharacterId": "aristophanes",
+    "videoStartSeconds": 2881.16,
+    "videoEndSeconds": 2886.48,
+    "localDurationSeconds": 5.32,
+    "localSha256": "c1e06568d078ba83e6e8abad7cad0070a6767fa8d99d44ea1b93e2687f39deae",
+    "relativePath": "scratch/audio-references/aristophanes/Y7gKpAFDuto-002881160-002886480-975c8c23951c.wav",
+    "promptText": "I will unsay my words but do you please not to watch me as I fear",
+    "referenceAsr": {
+      "decision": "primary-zero-error",
+      "primaryExpectedWords": 16,
+      "primaryOrdinaryWordErrors": 0,
+      "primaryOrdinaryWordErrorRate": 0.0,
+      "primaryEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/asr-qa.json",
+      "primaryEvidenceSha256": "f6e044e629a86b40e7240c663fe020d970ad78d92ecf4001059a72df5d9b5471"
+    },
+    "speakerPurityEvidencePath": "scratch/audio-targeted-reference-phrases-recovery/policy-899a2006/symposium.report.json",
+    "speakerPurityEvidenceSha256": "e8c17be8b3dba78b64fb0a7b867c8bf0fed50d6aaf3717c5ddca1b9fb91aee06",
+    "speakerPurityProofRecordId": "jowett-targeted-21b0715f50d81a49a3f620a4",
+    "speakerPuritySourceAgreementSha256": "8bd469ccfc85b307a520fdf3e746bb974addf86ffe64d315f85612663bd0cdc1",
+    "speakerPurityMethod": "jowett-caption-turn-alignment-v1",
+    "dominantSpeakerCoverage": 1,
+    "competingSpeakerCoverage": 0,
+    "uncoveredSpeakerCoverage": 0
+  },
+  "gates": {
+    "referenceDuration": {
+      "minimumSeconds": 3,
+      "maximumSeconds": 15,
+      "maximumIntervalDeltaSeconds": 0.05
+    },
+    "speakerPurity": {
+      "minimumDominantCoverage": 0.95,
+      "maximumCompetingCoverage": 0.02,
+      "maximumUncoveredCoverage": 0.03
+    },
+    "asrFidelity": {
+      "minimumReferenceExpectedWords": 8,
+      "maximumReferenceOrdinaryWordErrors": 0,
+      "maximumReferenceOrdinaryWordErrorRate": 0,
+      "referenceFailureAdjudication": "exact-source-agreement-plus-pinned-independent-large-v3-zero-v1",
+      "minimumExpectedWords": 40,
+      "maximumOrdinaryWordErrors": 0,
+      "maximumOrdinaryWordErrorRate": 0
+    },
+    "acousticConsistency": {
+      "minimumMeanCosineSimilarity": 0.85,
+      "minimumWindowCosineSimilarity": 0.8
+    },
+    "signalSafety": {
+      "maximumClippedSamples": 0,
+      "maximumTruePeakDbtp": 0,
+      "maximumPeakAmplitude": 0.9999
+    },
+    "auditionDuration": {
+      "minimumSeconds": 8,
+      "maximumSeconds": 60,
+      "minimumWordsPerSecond": 1.5,
+      "maximumWordsPerSecond": 4.5
+    }
+  },
+  "candidates": [
+    {
+      "seed": 42,
+      "file": "aristophanes-Y7gKpAFDuto-4301f7a760fb-seed42.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/aristophanes-Y7gKpAFDuto-4301f7a760fb-seed42.wav",
+        "sha256": "1811e1f67bd7aadd5533c4adc7e80098f6916410ebe06413ec7301f828ea3283",
+        "durationSeconds": 24.16,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/asr-qa.json",
+        "asrEvidenceSha256": "f6e044e629a86b40e7240c663fe020d970ad78d92ecf4001059a72df5d9b5471",
+        "meanSpeakerCosineSimilarity": 0.895306388537089,
+        "minimumWindowSpeakerCosineSimilarity": 0.8756781816482544,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/speaker-ranking.json",
+        "acousticEvidenceSha256": "2dde0ff0829eca202ff23ab4122801626ff2e2de8f01dd3b9d2d894e929ddde0",
+        "clippedSamples": 0,
+        "truePeakDbtp": -0.2,
+        "peakAmplitude": 0.9759521484375
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.895306388537089,
+        -0.8756781816482544,
+        0,
+        0.3509933774834435,
+        42
+      ],
+      "passingRank": 4
+    },
+    {
+      "seed": 43,
+      "file": "aristophanes-Y7gKpAFDuto-4301f7a760fb-seed43.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/aristophanes-Y7gKpAFDuto-4301f7a760fb-seed43.wav",
+        "sha256": "dffaeaec738b9b56f7c62ddc5c4dd56125539e469f6c49ab81c23c6b895013ad",
+        "durationSeconds": 22.24,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/asr-qa.json",
+        "asrEvidenceSha256": "f6e044e629a86b40e7240c663fe020d970ad78d92ecf4001059a72df5d9b5471",
+        "meanSpeakerCosineSimilarity": 0.9012717405954996,
+        "minimumWindowSpeakerCosineSimilarity": 0.8909918665885925,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/speaker-ranking.json",
+        "acousticEvidenceSha256": "2dde0ff0829eca202ff23ab4122801626ff2e2de8f01dd3b9d2d894e929ddde0",
+        "clippedSamples": 9,
+        "truePeakDbtp": 0.1,
+        "peakAmplitude": 0.999969482421875
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [
+        "signal-safety"
+      ],
+      "rankingKey": [
+        -0.9012717405954996,
+        -0.8909918665885925,
+        0,
+        0.12230215827338098,
+        43
+      ]
+    },
+    {
+      "seed": 44,
+      "file": "aristophanes-Y7gKpAFDuto-4301f7a760fb-seed44.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/aristophanes-Y7gKpAFDuto-4301f7a760fb-seed44.wav",
+        "sha256": "dbb4467318c6c1cd7188767a491f3cac6aa11993ec9964786ff9a5399294bc28",
+        "durationSeconds": 23.84,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/asr-qa.json",
+        "asrEvidenceSha256": "f6e044e629a86b40e7240c663fe020d970ad78d92ecf4001059a72df5d9b5471",
+        "meanSpeakerCosineSimilarity": 0.9098696112632751,
+        "minimumWindowSpeakerCosineSimilarity": 0.8976245522499084,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/speaker-ranking.json",
+        "acousticEvidenceSha256": "2dde0ff0829eca202ff23ab4122801626ff2e2de8f01dd3b9d2d894e929ddde0",
+        "clippedSamples": 0,
+        "truePeakDbtp": -0.6,
+        "peakAmplitude": 0.9337158203125
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.9098696112632751,
+        -0.8976245522499084,
+        0,
+        0.31543624161073813,
+        44
+      ],
+      "passingRank": 1
+    },
+    {
+      "seed": 45,
+      "file": "aristophanes-Y7gKpAFDuto-4301f7a760fb-seed45.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/aristophanes-Y7gKpAFDuto-4301f7a760fb-seed45.wav",
+        "sha256": "0b13c56d7285117e3a97ffeaf6fa793a5daadb391ce7c44d16f13075cace59a7",
+        "durationSeconds": 22.88,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/asr-qa.json",
+        "asrEvidenceSha256": "f6e044e629a86b40e7240c663fe020d970ad78d92ecf4001059a72df5d9b5471",
+        "meanSpeakerCosineSimilarity": 0.8987830877304077,
+        "minimumWindowSpeakerCosineSimilarity": 0.8820169568061829,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/speaker-ranking.json",
+        "acousticEvidenceSha256": "2dde0ff0829eca202ff23ab4122801626ff2e2de8f01dd3b9d2d894e929ddde0",
+        "clippedSamples": 0,
+        "truePeakDbtp": -0.1,
+        "peakAmplitude": 0.988189697265625
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8987830877304077,
+        -0.8820169568061829,
+        0,
+        0.20279720279720248,
+        45
+      ],
+      "passingRank": 3
+    },
+    {
+      "seed": 46,
+      "file": "aristophanes-Y7gKpAFDuto-4301f7a760fb-seed46.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/aristophanes-Y7gKpAFDuto-4301f7a760fb-seed46.wav",
+        "sha256": "bfbea4b3181b6ede29354de2400a21f63b5606e846d4ff34c38fabaaa35eaddd",
+        "durationSeconds": 22.08,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 1,
+        "ordinaryWordErrorRate": 0.015625,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/asr-qa.json",
+        "asrEvidenceSha256": "f6e044e629a86b40e7240c663fe020d970ad78d92ecf4001059a72df5d9b5471",
+        "meanSpeakerCosineSimilarity": 0.8891779581705729,
+        "minimumWindowSpeakerCosineSimilarity": 0.871735692024231,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/speaker-ranking.json",
+        "acousticEvidenceSha256": "2dde0ff0829eca202ff23ab4122801626ff2e2de8f01dd3b9d2d894e929ddde0",
+        "clippedSamples": 0,
+        "truePeakDbtp": 0.0,
+        "peakAmplitude": 0.998382568359375
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [
+        "asr-fidelity"
+      ],
+      "rankingKey": [
+        -0.8891779581705729,
+        -0.871735692024231,
+        1,
+        0.1014492753623184,
+        46
+      ]
+    },
+    {
+      "seed": 47,
+      "file": "aristophanes-Y7gKpAFDuto-4301f7a760fb-seed47.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/aristophanes-Y7gKpAFDuto-4301f7a760fb-seed47.wav",
+        "sha256": "c9f58bf5172b700e255ff6175569e88c24ec81d2992269544b5bacabccd07aba",
+        "durationSeconds": 24.48,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/asr-qa.json",
+        "asrEvidenceSha256": "f6e044e629a86b40e7240c663fe020d970ad78d92ecf4001059a72df5d9b5471",
+        "meanSpeakerCosineSimilarity": 0.9026655554771423,
+        "minimumWindowSpeakerCosineSimilarity": 0.8865394592285156,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/speaker-ranking.json",
+        "acousticEvidenceSha256": "2dde0ff0829eca202ff23ab4122801626ff2e2de8f01dd3b9d2d894e929ddde0",
+        "clippedSamples": 0,
+        "truePeakDbtp": -1.1,
+        "peakAmplitude": 0.876190185546875
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.9026655554771423,
+        -0.8865394592285156,
+        0,
+        0.3856209150326797,
+        47
+      ],
+      "passingRank": 2
+    },
+    {
+      "seed": 48,
+      "file": "aristophanes-Y7gKpAFDuto-4301f7a760fb-seed48.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/aristophanes-Y7gKpAFDuto-4301f7a760fb-seed48.wav",
+        "sha256": "393102538e0c99cc3231142c3568ef6bb5bb5f02a99076abaa0dfdc0eb24de61",
+        "durationSeconds": 23.84,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 1,
+        "ordinaryWordErrorRate": 0.015625,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/asr-qa.json",
+        "asrEvidenceSha256": "f6e044e629a86b40e7240c663fe020d970ad78d92ecf4001059a72df5d9b5471",
+        "meanSpeakerCosineSimilarity": 0.8906671404838562,
+        "minimumWindowSpeakerCosineSimilarity": 0.8865498304367065,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/speaker-ranking.json",
+        "acousticEvidenceSha256": "2dde0ff0829eca202ff23ab4122801626ff2e2de8f01dd3b9d2d894e929ddde0",
+        "clippedSamples": 0,
+        "truePeakDbtp": -0.8,
+        "peakAmplitude": 0.9132080078125
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [
+        "asr-fidelity"
+      ],
+      "rankingKey": [
+        -0.8906671404838562,
+        -0.8865498304367065,
+        1,
+        0.31543624161073813,
+        48
+      ]
+    },
+    {
+      "seed": 49,
+      "file": "aristophanes-Y7gKpAFDuto-4301f7a760fb-seed49.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/aristophanes-Y7gKpAFDuto-4301f7a760fb-seed49.wav",
+        "sha256": "c318907642aa56164e48df16e25921b562ae88e4232e418c2192b6e0099b4c5a",
+        "durationSeconds": 24.32,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 1,
+        "ordinaryWordErrorRate": 0.015625,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/asr-qa.json",
+        "asrEvidenceSha256": "f6e044e629a86b40e7240c663fe020d970ad78d92ecf4001059a72df5d9b5471",
+        "meanSpeakerCosineSimilarity": 0.9028923511505127,
+        "minimumWindowSpeakerCosineSimilarity": 0.8865530490875244,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/1ac3cfe147fa570ec4edb87de115fdc51ef0febbab73ac665fa29976060d4589/speaker-ranking.json",
+        "acousticEvidenceSha256": "2dde0ff0829eca202ff23ab4122801626ff2e2de8f01dd3b9d2d894e929ddde0",
+        "clippedSamples": 0,
+        "truePeakDbtp": -0.5,
+        "peakAmplitude": 0.93865966796875
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [
+        "asr-fidelity"
+      ],
+      "rankingKey": [
+        -0.9028923511505127,
+        -0.8865530490875244,
+        1,
+        0.36842105263157876,
+        49
+      ]
+    }
+  ],
+  "selectedSeed": 44,
+  "selectedPassingRank": 1,
+  "decisionContentSha256": "07f363f4f4c1f901cf0e607a0dd1a185a7155c0e8935942644b0c674153d0fb9"
+}

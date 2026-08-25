@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "crito",
+  "source_path": "scratch/commentary/rewrites/crito/01-43a-44a.json",
+  "source_sha256": "f9fb7565f39476b02afed11af4150b9e89ffd7200662b8e73fed25616ecb2739",
+  "target_path": "wiki/commentary/crito.md",
+  "target_sha256_before": "1c185347c99f44fc9b162e85d62bc1d1dc524065f45880901c60d703efa13891",
+  "target_sha256_after": "a59a2123e76654b14379ab01efe6dd5d70643c573098f2ee5678892aa904d87b",
+  "applied_at": "2026-08-21T12:33:37.883Z",
+  "applied_ids": [
+    "comm_crito_0001",
+    "comm_crito_0017"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "crito",
+      "unit_key": "01-43a-44a",
+      "section_id": "comm_crito_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/crito/01-43a-44a.json",
+        "sha256": "7a15268b58f2ce0119f7bc5f131be6e389969d9476163b01896b97586b4c7f16"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_crito_0001",
+          "title": "Before dawn: a friend's grief and Socrates' composure",
+          "body": "Before dawn, Crito sits silently beside Socrates, unable to sleep, while Socrates sleeps peacefully in prison. Crito's hard news is that the ship from Delos is expected today, making tomorrow the expected day of death. The scene's first tension is therefore not an argument but a contrast: grief keeps the friend awake; Socrates meets the timetable with calm acceptance.",
+          "cites": {
+            "observations": [
+              "obs_crito_0001",
+              "obs_crito_0002"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "crito",
+      "unit_key": "04-48b-49d",
+      "section_id": "comm_crito_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/crito/04-48b-49d.json",
+        "sha256": "6ee28c8a3f6e1b9f177c7a77b940e881e803304e3bfd5a98b3a7b0503652689e"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_crito_0017",
+          "title": "",
+          "body": "Socrates turns agreement into a test of sincerity. He warns that few people share this principle, so those who accept it and those who reject it lack a common basis for deliberation. He then asks Crito to examine whether he truly shares the view before they proceed. The point is not to report a settled consensus, but to make the next step depend on considered assent.",
+          "cites": {
+            "observations": [
+              "obs_crito_0011"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_crito_0001",
+      "body": "```yaml\ncommentary_id: comm_crito_0001\nsource_work: Crito\nblock_kind: section\nplacement: before\ntitle: \"Before dawn: sleep, the ship, and the dream\"\nstephanus_span: 43a-44a\nsource_ref:\n  source_path: raw/plato/greek/crito.txt\n  stephanus_span: 43a-44a\n  start_marker: 43a\n  end_marker: 44a\n  start_char: 0\n  end_char: 2096\n  text_sha256: \"0fb49a3ff5df5a16236326937de87b313d7055eae44c923a68b533b3cb1dfafa\"\naudio_insertion:\n  attribution_path: audio/speaker-attributions/crito.json\n  attribution_sha256: \"ec879f54eae937c0579a3d1f4d5b1c98c8ee596425ebdb2e32de8b7fe7a0b2af\"\n  english_sha256: \"788cb7f273b9ea125faa9bb946009de9728fe2f86a91d9c504b79e8f63fd9019\"\n  turn_id: turn-000001\n  edge: before\nbody: \"It is still dark in the prison. Crito has come early and sat in silence beside Socrates, who sleeps on though the day of his death is near. Execution has waited only because a sacred ship is away at Delos, and word has now come that it is returning. Listen, as the two men talk, for the distance between the friend who cannot rest and the condemned man who takes it all calmly.\"\ncites:\n  observations: [\"obs_crito_0001\", \"obs_crito_0002\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_crito_0017",
+      "body": "```yaml\ncommentary_id: comm_crito_0017\nsource_work: Crito\nblock_kind: notice\nplacement: after\nstephanus_span: 49d\nsource_ref:\n  source_path: raw/plato/greek/crito.txt\n  stephanus_span: 49d\n  start_marker: 49d\n  end_marker: 49d\n  start_char: 13676\n  end_char: 14177\n  text_sha256: \"d8d0b220651d83ad1f1309c369f7111b8eff7e3cb5bd91322d9f138e2e321917\"\naudio_insertion:\n  attribution_path: audio/speaker-attributions/crito.json\n  attribution_sha256: \"ec879f54eae937c0579a3d1f4d5b1c98c8ee596425ebdb2e32de8b7fe7a0b2af\"\n  english_sha256: \"788cb7f273b9ea125faa9bb946009de9728fe2f86a91d9c504b79e8f63fd9019\"\n  turn_id: turn-000109\n  edge: after\nbody: \"Before building anything on the rule, Socrates stops and makes Crito test his own agreement. Few people hold that one must never do wrong or return a wrong, he says, and few ever will; and between those who accept this and those who reject it there is no common ground for deliberation, only mutual contempt. So he presses Crito not merely to say yes but to share the conviction — and Crito gives it, making this the premise on which the rest of the argument stands.\"\ncites:\n  observations: [\"obs_crito_0011\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

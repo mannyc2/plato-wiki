@@ -1,0 +1,32 @@
+# Commentary quality-audit acceptance
+
+dialogue: charmides
+decision: accepted
+reviewer: manifest-batch-1-delegated-luna-reviewer-20260823
+reviewed_on: 2026-08-23
+rationale: Independent Luna source, accepted-evidence, and placement sample passed for the current Charmides ledger.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sampled_commentary_ids:
+- comm_charmides_0001
+- comm_charmides_0003
+- comm_charmides_0005
+- comm_charmides_0008
+- comm_charmides_0010
+- comm_charmides_0012
+- comm_charmides_0013
+- comm_charmides_0016
+- comm_charmides_0031
+- comm_charmides_0034
+- comm_charmides_0038
+- comm_charmides_0039
+- comm_charmides_0044
+- comm_charmides_0045
+predecessor_manifest_path: wiki/commentary-audits/charmides.json
+predecessor_manifest_sha256: d8d49d88e9b589c04a8fb05a7fa9024bcf32a72c5e97a027f113798913d2780d
+predecessor_manifest_history_path: wiki/commentary-audits/history/charmides/d8d49d88e9b589c04a8fb05a7fa9024bcf32a72c5e97a027f113798913d2780d.json
+predecessor_manifest_history_sha256: d8d49d88e9b589c04a8fb05a7fa9024bcf32a72c5e97a027f113798913d2780d
+predecessor_review_note_path: wiki/review/2026-08-21-commentary-quality-charmides-luna-sample.md
+predecessor_review_note_sha256: cd6c2127a7191ff5b1719a65f81973e175d745fc97ce1af5a0d9a2d3cfbc1468
+predecessor_review_note_history_path: wiki/review/commentary-quality-history/charmides/cd6c2127a7191ff5b1719a65f81973e175d745fc97ce1af5a0d9a2d3cfbc1468.md
+predecessor_review_note_history_sha256: cd6c2127a7191ff5b1719a65f81973e175d745fc97ce1af5a0d9a2d3cfbc1468

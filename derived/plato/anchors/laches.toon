@@ -1,0 +1,26 @@
+dialogue: laches
+source_path: raw/plato/greek/laches.txt
+source_sha256: a035988ad66603bb28bb451b1b1d53131e572518198a5dbc6f78cb121d97803f
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[19]:
+  group             | form      | start_char | end_char | marker | turn_id          | token_ids
+  definition_prompt | τί ἐστι   | 3623       | 3630     | 180c   | turn_laches_0005 | tok_laches_000581,tok_laches_000582
+  assent_concession | πάνυ γε   | 13619      | 13626    | 185a   | turn_laches_0033 | tok_laches_002249,tok_laches_002250
+  assent_concession | πάνυ γε   | 14925      | 14932    | 185d   | turn_laches_0047 | tok_laches_002462,tok_laches_002463
+  assent_concession | ναί       | 15024      | 15027    | 185e   | turn_laches_0049 | tok_laches_002478
+  assent_concession | πάνυ γε   | 24551      | 24558    | 190b   | turn_laches_0068 | tok_laches_004029,tok_laches_004030
+  assent_concession | πάνυ γε   | 27967      | 27974    | 191e   | turn_laches_0094 | tok_laches_004613,tok_laches_004614
+  aporia_reset      | πάλιν     | 28027      | 28032    | 191e   | turn_laches_0095 | tok_laches_004623
+  assent_concession | πάνυ γε   | 28492      | 28499    | 192a   | turn_laches_0098 | tok_laches_004713,tok_laches_004714
+  assent_concession | πάνυ γε   | 29425      | 29432    | 192c   | turn_laches_0106 | tok_laches_004872,tok_laches_004873
+  assent_concession | ναί       | 29516      | 29519    | 192d   | turn_laches_0108 | tok_laches_004887
+  assent_concession | πάνυ γε   | 30964      | 30971    | 193c   | turn_laches_0126 | tok_laches_005125,tok_laches_005126
+  assent_concession | πάνυ γε   | 31484      | 31491    | 193d   | turn_laches_0134 | tok_laches_005215,tok_laches_005216
+  aporia_reset      | πάλιν     | 31574      | 31579    | 193d   | turn_laches_0137 | tok_laches_005233
+  assent_concession | ὁμολογεῖς | 36004      | 36013    | 195e   | turn_laches_0191 | tok_laches_006009
+  aporia_reset      | πάλιν     | 40368      | 40373    | 197e   | turn_laches_0218 | tok_laches_006755
+  assent_concession | πάνυ γε   | 40478      | 40485    | 198a   | turn_laches_0219 | tok_laches_006772,tok_laches_006773
+  assent_concession | πάνυ γε   | 41204      | 41211    | 198c   | turn_laches_0225 | tok_laches_006904,tok_laches_006905
+  assent_concession | ναί       | 42688      | 42691    | 199b   | turn_laches_0238 | tok_laches_007163
+  assent_concession | πάνυ γε   | 42790      | 42797    | 199b   | turn_laches_0240 | tok_laches_007182,tok_laches_007183

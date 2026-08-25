@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0013-structural-remediation-02-155a-157c",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "charmides",
+  "unit_key": "02-155a-157c",
+  "source_path": "scratch/commentary/audits/charmides/02-155a-157c.json",
+  "source_sha256": "9ce71d15865214d907bde84ce7b26dbd55fb8a9e44840da5c8b0b563ec31ae1b",
+  "target_path": "wiki/commentary/charmides.md",
+  "target_sha256_before": "42cff1b5b16f620f8e9624a760de3cb1c16d2f254609830429788105a340b2dd",
+  "target_sha256_after": "d32465e561be2c81f62d0ea4c39a0c3fdab6a5c6b58fdc4e90be842a1b4fd657",
+  "applied_at": "2026-08-23T22:34:49.492Z",
+  "applied_ids": [
+    "comm_charmides_0017"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "charmides",
+      "unitKey": "02-155a-157c",
+      "sectionId": "comm_charmides_0002",
+      "auditOutputPath": "scratch/commentary/audits/charmides/02-155a-157c.json",
+      "auditOutputSha256": "9ce71d15865214d907bde84ce7b26dbd55fb8a9e44840da5c8b0b563ec31ae1b",
+      "expectedLedgerSha256": "42cff1b5b16f620f8e9624a760de3cb1c16d2f254609830429788105a340b2dd",
+      "expectedAttributionSha256": "15af84af30150ae71bd1fb685dade849457450a1b1fca53758d46ab2d7425166",
+      "expectedEnglishSha256": "2b3601a95dceed4b86e1c48dfd5fcb829d4b03e004563852ac527f9806bb99a0",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_charmides_0017"
+        }
+      ],
+      "reviewer": "lane-c-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna assessment confirms conservative rejection of audited remove findings and split originals; placement is retained and no reanchors are claimed."
+    },
+    "audit_output_path": "scratch/commentary/audits/charmides/02-155a-157c.json",
+    "audit_output_sha256": "9ce71d15865214d907bde84ce7b26dbd55fb8a9e44840da5c8b0b563ec31ae1b",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_charmides_0017",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

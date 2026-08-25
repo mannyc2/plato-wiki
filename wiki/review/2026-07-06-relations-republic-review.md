@@ -1,0 +1,196 @@
+# Relation Review: republic
+
+Plan: 043 tension/contradiction relation layer
+Phase: adjudication and review
+Scope: republic
+
+## Runs
+
+- Current adjudication profile: `deepseek-pro`
+- Current review profile: `deepseek-pro`
+- Provider details are recorded per run in `wiki/ingest-log.md`; resumed scopes may include earlier partial runs from another profile.
+- Adjudication runs:
+  - `2026-07-06T10-59-14-667Z_relations-segmented_republic`
+  - `2026-07-06T11-01-50-583Z_relations-segmented_republic`
+  - `2026-07-06T11-02-25-798Z_relations-segmented_republic`
+  - `2026-07-06T11-03-26-992Z_relations-segmented_republic`
+  - `2026-07-06T11-20-07-171Z_relations-segmented_republic`
+  - `2026-07-06T11-20-46-022Z_relations-segmented_republic`
+  - `2026-07-06T11-21-20-923Z_relations-segmented_republic`
+  - `2026-07-06T11-21-57-661Z_relations-segmented_republic`
+  - `2026-07-06T11-22-37-981Z_relations-segmented_republic`
+  - `2026-07-06T11-23-12-837Z_relations-segmented_republic`
+  - `2026-07-06T11-23-53-936Z_relations-segmented_republic`
+  - `2026-07-06T11-24-27-508Z_relations-segmented_republic`
+  - `2026-07-06T11-25-07-933Z_relations-segmented_republic`
+  - `2026-07-06T11-25-48-943Z_relations-segmented_republic`
+  - `2026-07-06T11-26-42-032Z_relations-segmented_republic`
+  - `2026-07-06T11-27-27-724Z_relations-segmented_republic`
+  - `2026-07-06T11-28-06-851Z_relations-segmented_republic`
+  - `2026-07-06T11-28-40-643Z_relations-segmented_republic`
+  - `2026-07-06T11-29-15-847Z_relations-segmented_republic`
+  - `2026-07-06T11-29-52-391Z_relations-segmented_republic`
+  - `2026-07-06T11-30-27-300Z_relations-segmented_republic`
+  - `2026-07-06T11-31-06-189Z_relations-segmented_republic`
+  - `2026-07-06T11-31-41-962Z_relations-segmented_republic`
+  - `2026-07-06T11-32-20-631Z_relations-segmented_republic`
+  - `2026-07-06T11-32-56-197Z_relations-segmented_republic`
+  - `2026-07-06T11-33-31-613Z_relations-segmented_republic`
+  - `2026-07-06T11-34-06-659Z_relations-segmented_republic`
+  - `2026-07-06T11-34-44-884Z_relations-segmented_republic`
+  - `2026-07-06T11-35-18-380Z_relations-segmented_republic`
+  - `2026-07-06T11-35-53-827Z_relations-segmented_republic`
+  - `2026-07-06T11-36-35-576Z_relations-segmented_republic`
+  - `2026-07-06T11-37-15-937Z_relations-segmented_republic`
+  - `2026-07-06T11-37-53-793Z_relations-segmented_republic`
+  - `2026-07-06T11-38-45-770Z_relations-segmented_republic`
+  - `2026-07-06T11-39-28-561Z_relations-segmented_republic`
+  - `2026-07-06T11-40-10-898Z_relations-segmented_republic`
+  - `2026-07-06T11-40-45-590Z_relations-segmented_republic`
+  - `2026-07-06T11-41-25-595Z_relations-segmented_republic`
+  - `2026-07-06T11-42-04-339Z_relations-segmented_republic`
+  - `2026-07-06T11-42-39-758Z_relations-segmented_republic`
+  - `2026-07-06T11-43-17-241Z_relations-segmented_republic`
+  - `2026-07-06T11-43-50-750Z_relations-segmented_republic`
+  - `2026-07-06T11-44-28-551Z_relations-segmented_republic`
+  - `2026-07-06T11-45-08-964Z_relations-segmented_republic`
+  - `2026-07-06T12-01-26-416Z_relations-segmented_republic`
+  - `2026-07-06T12-02-10-181Z_relations-segmented_republic`
+  - `2026-07-06T12-07-20-516Z_relations-segmented_republic`
+  - `2026-07-06T12-08-00-511Z_relations-segmented_republic`
+  - `2026-07-06T12-24-16-467Z_relations-segmented_republic`
+  - `2026-07-06T12-24-54-242Z_relations-segmented_republic`
+  - `2026-07-06T12-40-33-877Z_relations-segmented_republic`
+  - `2026-07-06T12-41-10-259Z_relations-segmented_republic`
+  - `2026-07-06T12-41-43-482Z_relations-segmented_republic`
+  - `2026-07-06T12-42-21-399Z_relations-segmented_republic`
+  - `2026-07-06T12-42-56-199Z_relations-segmented_republic`
+  - `2026-07-06T12-43-30-350Z_relations-segmented_republic`
+  - `2026-07-06T12-44-08-362Z_relations-segmented_republic`
+  - `2026-07-06T12-44-47-661Z_relations-segmented_republic`
+  - `2026-07-06T12-45-23-699Z_relations-segmented_republic`
+  - `2026-07-06T13-01-24-625Z_relations-segmented_republic`
+  - `2026-07-06T13-02-00-161Z_relations-segmented_republic`
+  - `2026-07-06T13-17-31-852Z_relations-segmented_republic`
+  - `2026-07-06T13-33-44-897Z_relations-segmented_republic`
+  - `2026-07-06T13-34-16-522Z_relations-segmented_republic`
+  - `2026-07-06T13-40-38-236Z_relations-segmented_republic`
+  - `2026-07-06T13-56-33-436Z_relations-segmented_republic`
+  - `2026-07-06T13-57-04-284Z_relations-segmented_republic`
+  - `2026-07-06T14-03-28-043Z_relations-segmented_republic`
+  - `2026-07-06T14-04-00-752Z_relations-segmented_republic`
+  - `2026-07-06T14-17-51-516Z_relations-segmented_republic`
+  - `2026-07-06T14-18-24-150Z_relations-segmented_republic`
+  - `2026-07-06T14-34-53-631Z_relations-segmented_republic`
+  - `2026-07-06T14-39-56-781Z_relations-segmented_republic`
+  - `2026-07-06T14-40-35-058Z_relations-segmented_republic`
+  - `2026-07-06T14-41-58-070Z_relations-segmented_republic`
+  - `2026-07-06T14-42-30-044Z_relations-segmented_republic`
+  - `2026-07-06T14-47-22-973Z_relations-segmented_republic`
+  - `2026-07-06T14-48-00-786Z_relations-segmented_republic`
+  - `2026-07-06T14-48-41-821Z_relations-segmented_republic`
+  - `2026-07-06T14-49-19-516Z_relations-segmented_republic`
+  - `2026-07-06T14-50-00-460Z_relations-segmented_republic`
+  - `2026-07-06T14-54-53-314Z_relations-segmented_republic`
+  - `2026-07-06T14-55-23-292Z_relations-segmented_republic`
+- Review runs:
+  - `2026-07-06T15-04-24-414Z_relations-review-segmented_republic`
+  - `2026-07-06T15-11-08-002Z_relations-review-segmented_republic`
+  - `2026-07-06T15-15-45-521Z_relations-review-segmented_republic`
+  - `2026-07-06T16-47-23-823Z_relations-review-segmented_republic`
+  - `2026-07-06T16-48-05-066Z_relations-review-segmented_republic`
+  - `2026-07-06T16-48-40-199Z_relations-review-segmented_republic`
+  - `2026-07-06T16-49-19-695Z_relations-review-segmented_republic`
+  - `2026-07-06T16-49-57-625Z_relations-review-segmented_republic`
+  - `2026-07-06T16-50-34-605Z_relations-review-segmented_republic`
+  - `2026-07-06T16-51-17-382Z_relations-review-segmented_republic`
+  - `2026-07-06T16-51-52-429Z_relations-review-segmented_republic`
+  - `2026-07-06T16-52-28-696Z_relations-review-segmented_republic`
+  - `2026-07-06T16-53-03-083Z_relations-review-segmented_republic`
+  - `2026-07-06T16-53-47-096Z_relations-review-segmented_republic`
+  - `2026-07-06T16-54-25-115Z_relations-review-segmented_republic`
+  - `2026-07-06T16-55-03-850Z_relations-review-segmented_republic`
+  - `2026-07-06T16-55-38-869Z_relations-review-segmented_republic`
+  - `2026-07-06T16-56-21-151Z_relations-review-segmented_republic`
+  - `2026-07-06T16-57-10-847Z_relations-review-segmented_republic`
+  - `2026-07-06T16-57-52-161Z_relations-review-segmented_republic`
+  - `2026-07-06T16-58-27-484Z_relations-review-segmented_republic`
+  - `2026-07-06T16-59-03-989Z_relations-review-segmented_republic`
+  - `2026-07-06T16-59-55-576Z_relations-review-segmented_republic`
+  - `2026-07-06T17-00-43-287Z_relations-review-segmented_republic`
+  - `2026-07-06T17-01-25-035Z_relations-review-segmented_republic`
+  - `2026-07-06T17-02-00-248Z_relations-review-segmented_republic`
+  - `2026-07-06T17-02-41-094Z_relations-review-segmented_republic`
+  - `2026-07-06T17-03-17-797Z_relations-review-segmented_republic`
+  - `2026-07-06T17-03-55-811Z_relations-review-segmented_republic`
+  - `2026-07-06T17-04-41-054Z_relations-review-segmented_republic`
+  - `2026-07-06T17-05-16-001Z_relations-review-segmented_republic`
+  - `2026-07-06T17-05-56-808Z_relations-review-segmented_republic`
+  - `2026-07-06T17-06-33-413Z_relations-review-segmented_republic`
+  - `2026-07-06T17-07-11-511Z_relations-review-segmented_republic`
+  - `2026-07-06T17-07-47-128Z_relations-review-segmented_republic`
+  - `2026-07-06T17-08-26-243Z_relations-review-segmented_republic`
+  - `2026-07-06T17-09-00-405Z_relations-review-segmented_republic`
+  - `2026-07-06T17-09-41-352Z_relations-review-segmented_republic`
+  - `2026-07-06T17-10-20-315Z_relations-review-segmented_republic`
+  - `2026-07-06T17-10-59-281Z_relations-review-segmented_republic`
+  - `2026-07-06T17-11-35-044Z_relations-review-segmented_republic`
+  - `2026-07-06T17-12-10-614Z_relations-review-segmented_republic`
+  - `2026-07-06T17-12-49-506Z_relations-review-segmented_republic`
+  - `2026-07-06T17-13-27-409Z_relations-review-segmented_republic`
+  - `2026-07-06T17-14-09-015Z_relations-review-segmented_republic`
+  - `2026-07-06T17-14-41-201Z_relations-review-segmented_republic`
+  - `2026-07-06T17-15-15-900Z_relations-review-segmented_republic`
+  - `2026-07-06T17-15-50-053Z_relations-review-segmented_republic`
+  - `2026-07-06T17-16-23-492Z_relations-review-segmented_republic`
+  - `2026-07-06T17-16-59-304Z_relations-review-segmented_republic`
+  - `2026-07-06T17-17-38-473Z_relations-review-segmented_republic`
+  - `2026-07-06T17-18-13-233Z_relations-review-segmented_republic`
+  - `2026-07-06T17-25-11-341Z_relations-review-segmented_republic`
+  - `2026-07-06T17-25-48-118Z_relations-review-segmented_republic`
+  - `2026-07-06T17-40-57-258Z_relations-review-segmented_republic`
+  - `2026-07-06T17-41-29-738Z_relations-review-segmented_republic`
+  - `2026-07-06T17-43-57-246Z_relations-review-segmented_republic`
+  - `2026-07-06T17-45-28-147Z_relations-review-segmented_republic`
+  - `2026-07-06T17-46-00-369Z_relations-review-segmented_republic`
+  - `2026-07-06T18-01-06-219Z_relations-review-segmented_republic`
+  - `2026-07-06T18-01-36-346Z_relations-review-segmented_republic`
+  - `2026-07-06T18-02-05-247Z_relations-review-segmented_republic`
+  - `2026-07-06T18-18-36-323Z_relations-review-segmented_republic`
+  - `2026-07-06T18-19-08-251Z_relations-review-segmented_republic`
+  - `2026-07-06T18-36-10-685Z_relations-review-segmented_republic`
+  - `2026-07-06T18-37-10-474Z_relations-review-segmented_republic`
+  - `2026-07-06T18-37-42-470Z_relations-review-segmented_republic`
+  - `2026-07-06T18-40-05-649Z_relations-review-segmented_republic`
+  - `2026-07-06T18-40-46-199Z_relations-review-segmented_republic`
+  - `2026-07-06T18-42-34-586Z_relations-review-segmented_republic`
+  - `2026-07-06T18-47-08-604Z_relations-review-segmented_republic`
+  - `2026-07-06T18-47-52-052Z_relations-review-segmented_republic`
+  - `2026-07-06T19-03-04-228Z_relations-review-segmented_republic`
+  - `2026-07-06T19-03-37-242Z_relations-review-segmented_republic`
+  - `2026-07-06T19-19-38-770Z_relations-review-segmented_republic`
+  - `2026-07-06T19-20-08-588Z_relations-review-segmented_republic`
+  - `2026-07-06T19-30-48-507Z_relations-review-segmented_republic`
+  - `2026-07-06T19-31-21-308Z_relations-review-segmented_republic`
+  - `2026-07-06T19-32-10-838Z_relations-review-segmented_republic`
+  - `2026-07-06T19-43-18-553Z_relations-review-segmented_republic`
+  - `2026-07-06T19-43-51-143Z_relations-review-segmented_republic`
+  - `2026-07-06T19-45-33-392Z_relations-review-segmented_republic`
+  - `2026-07-06T19-46-48-389Z_relations-review-segmented_republic`
+  - `2026-07-06T19-47-18-324Z_relations-review-segmented_republic`
+  - `2026-07-06T19-47-48-452Z_relations-review-segmented_republic`
+  - `2026-07-06T19-48-53-544Z_relations-review-segmented_republic`
+
+## Rationale
+
+The review pass checks relation records against accepted claim ids, cited
+resolution spans where required, validator-derived resolution constraints,
+and neutral basis/limits text. This note supplies the required rationale
+artifact for the review-status writeback recorded in `wiki/ingest-log.md`.
+
+## Result
+
+- accepted: 85
+- rejected: 3
+- needs_split: 0
+- unreviewed: 0

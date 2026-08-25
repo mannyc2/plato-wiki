@@ -1,0 +1,11 @@
+dialogue: parmenides
+turn_index_path: derived/plato/turns/parmenides.toon
+turn_index_sha256: c1bfc9f484b4754590e47e16e0dfa83b6b6c5c3077349701d52c4ac67f5b93c4
+token_index_path: derived/plato/tokens/parmenides.toon
+token_index_sha256: bcc6b75135c7fca60414a7beb310c6d85c8dd841c1eccb474dacf7ec5de9d43f
+speakers[1]:
+  speaker | turns | total_tokens | median_tokens | p90_tokens | max_tokens | long_turns
+  (none)  | 1 | 15261 | 15261 | 15261 | 15261 | 0
+turns[1]:
+  turn_id              | speaker | start_marker | end_marker | start_char | end_char | greek_char_count | token_count | dialogue_long_turn | speaker_long_turn
+  turn_parmenides_0001 | (none)  | 126a         | 166c       | 0 | 85707 | 65049 | 15261 | no | no

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0014-structural-remediation-10-33a-34a",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "apology",
+  "unit_key": "10-33a-34a",
+  "source_path": "scratch/commentary/audits/apology/10-33a-34a.json",
+  "source_sha256": "f340789cbef26a0df1715bb8e1d1696c8eb8048eec109465f065514d2ace888d",
+  "target_path": "wiki/commentary/apology.md",
+  "target_sha256_before": "abf47db290ad253613f9a286d4edeae3935ecc7fd19f9bebed2d421ceec0bf3e",
+  "target_sha256_after": "68012be9e168034b3d935874dc68404290d09b1cf9b422f34e9867c7a3513c5f",
+  "applied_at": "2026-08-23T22:34:26.010Z",
+  "applied_ids": [
+    "comm_apology_0042"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "apology",
+      "unitKey": "10-33a-34a",
+      "sectionId": "comm_apology_0010",
+      "auditOutputPath": "scratch/commentary/audits/apology/10-33a-34a.json",
+      "auditOutputSha256": "f340789cbef26a0df1715bb8e1d1696c8eb8048eec109465f065514d2ace888d",
+      "expectedLedgerSha256": "abf47db290ad253613f9a286d4edeae3935ecc7fd19f9bebed2d421ceec0bf3e",
+      "expectedAttributionSha256": "1c41890210e4621e5e081de33b408e54572bd07af74640ea6964c45dda553f64",
+      "expectedEnglishSha256": "04bf6411654f814bc016d5a0f649d1c50aef4d0dcbeeb1820910ecf8d2107046",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_apology_0042"
+        }
+      ],
+      "reviewer": "lane-b-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna structural review confirms conservative rejection of audited remove findings and split originals; delegated Luna review only."
+    },
+    "audit_output_path": "scratch/commentary/audits/apology/10-33a-34a.json",
+    "audit_output_sha256": "f340789cbef26a0df1715bb8e1d1696c8eb8048eec109465f065514d2ace888d",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_apology_0042",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

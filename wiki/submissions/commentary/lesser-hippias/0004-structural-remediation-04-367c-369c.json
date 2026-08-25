@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0004-structural-remediation-04-367c-369c",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "lesser-hippias",
+  "unit_key": "04-367c-369c",
+  "source_path": "scratch/commentary/audits/lesser-hippias/04-367c-369c.json",
+  "source_sha256": "bfe501766d1a30a52b377efbcc8df38f50bcf5b22491495bb1c6d9764a1ba4ed",
+  "target_path": "wiki/commentary/lesser-hippias.md",
+  "target_sha256_before": "f883ce7cdb45acea5d40e3051ed85d08f261c7b205c4d2b05b26b5bb1128b49d",
+  "target_sha256_after": "651188fd594b291e5e5d25f2e59a0be91ab1e6e54af67de44810973472e7dbf3",
+  "applied_at": "2026-08-23T22:28:27.576Z",
+  "applied_ids": [
+    "comm_lesser-hippias_0011"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "lesser-hippias",
+      "unitKey": "04-367c-369c",
+      "sectionId": "comm_lesser-hippias_0004",
+      "auditOutputPath": "scratch/commentary/audits/lesser-hippias/04-367c-369c.json",
+      "auditOutputSha256": "bfe501766d1a30a52b377efbcc8df38f50bcf5b22491495bb1c6d9764a1ba4ed",
+      "expectedLedgerSha256": "f883ce7cdb45acea5d40e3051ed85d08f261c7b205c4d2b05b26b5bb1128b49d",
+      "expectedAttributionSha256": "82f83da08298ac755e8b29edee273225a5c64d4147a36dc00e8379711b36cb5e",
+      "expectedEnglishSha256": "cc79a01cb6282b8ac3dc089eef1c7f6306c6b330d9579a19eb9914d27c259b44",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_lesser-hippias_0011"
+        }
+      ],
+      "reviewer": "lane-c-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna assessment confirms conservative rejection of audited remove findings and split originals; placement is retained and no reanchors are claimed."
+    },
+    "audit_output_path": "scratch/commentary/audits/lesser-hippias/04-367c-369c.json",
+    "audit_output_sha256": "bfe501766d1a30a52b377efbcc8df38f50bcf5b22491495bb1c6d9764a1ba4ed",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_lesser-hippias_0011",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

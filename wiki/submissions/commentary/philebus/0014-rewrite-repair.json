@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "submission_id": "0014-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "philebus",
+  "source_path": "scratch/commentary/rewrite-repairs/philebus/0018-second-repair.json",
+  "source_sha256": "52aff6b30a86920b63648bf66d25f7e051e38da47a89b6c8af8c758462328807",
+  "target_path": "wiki/commentary/philebus.md",
+  "target_sha256_before": "5529e3a53efd1c2ea1f1d1e734fcfa99829cfc385a3f95e7ea2593c67daf1895",
+  "target_sha256_after": "fb9ec43d0265a8f3fb7a5e8e057bd3d5e2aa2de3a4e9b95bfe02e2fee0c3568f",
+  "applied_at": "2026-08-24T00:17:22.832Z",
+  "applied_ids": [
+    "comm_philebus_0018"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "philebus",
+    "ledger": {
+      "path": "wiki/commentary/philebus.md",
+      "sha256": "5529e3a53efd1c2ea1f1d1e734fcfa99829cfc385a3f95e7ea2593c67daf1895"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/philebus/0013-rewrite-repair.json",
+      "sha256": "3acd9aba87d2c74547e9aa5c353ff7dc449552986badd3053fc5e71faab25712"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-23-commentary-block-review-philebus-rejected-ba08bd7f0317.md",
+      "sha256": "e9c067514942f80ca8b2d9c30c00898532f2b70077bc7fda14e025ed1f2780f2"
+    },
+    "prior_review": {
+      "reviewer": "repair-d-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_philebus_0018",
+          "finding": "Cited claim and relation support purity, truth, and comparative value, but not proportion or the forward-looking later-ranking claim."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-philebus-0018-round2",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_philebus_0018"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_philebus_0018",
+        "title": "",
+        "body": "The analogy of pure whiteness shifts the comparison from intensity to mixture. A small pleasure free from pain can be more pleasant, truer, and more beautiful—and of greater comparative value—than a large mixed pleasure: the pure and unmixed outranks the intense.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_philebus_0049"
+          ],
+          "relations": [
+            "rel_philebus_0003"
+          ],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_philebus_0018",
+      "body": "```yaml\ncommentary_id: comm_philebus_0018\nsource_work: Philebus\nblock_kind: argument\nplacement: before\nstephanus_span: 52a-53c\nsource_ref:\n  source_path: raw/plato/greek/philebus.txt\n  stephanus_span: 52a-53c\n  start_marker: 52a\n  end_marker: 53c\n  start_char: 81943\n  end_char: 84990\n  text_sha256: \"e0115e26a115d1ac249aed52b559eea21102007bd273171fff128c4ff80ffe90\"\nbody: \"The comparison with pure whiteness changes the criterion of superiority. The strongest pleasure is not automatically the best; purity, truth, and proportion now do the evaluative work. The later ranking will depend on this quieter standard.\"\ncites:\n  observations: []\n  claims: [\"claim_philebus_0049\"]\n  relations: [\"rel_philebus_0003\"]\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "theaetetus",
+  "source_path": "scratch/commentary/rewrite-repairs/theaetetus/0009.json",
+  "source_sha256": "2849c62fb7fcc3530be73de726ee82a9453e629f2b4248dd96ee56698eccfc68",
+  "target_path": "wiki/commentary/theaetetus.md",
+  "target_sha256_before": "feb79e4209f42d529b410b78fa372bc438bc35f3b5f9e11f9fbe31fd677e0fcd",
+  "target_sha256_after": "97761dd8d74284593764201dc0844af9c62a210c5ab0cc94496ff5da30ff4b2b",
+  "applied_at": "2026-08-21T17:02:44.747Z",
+  "applied_ids": [
+    "comm_theaetetus_0009"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "theaetetus",
+    "ledger": {
+      "path": "wiki/commentary/theaetetus.md",
+      "sha256": "feb79e4209f42d529b410b78fa372bc438bc35f3b5f9e11f9fbe31fd677e0fcd"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/theaetetus/0001-rewrite-batch.json",
+      "sha256": "c3951035c294c1ef3485ba0e401ab80f6f852473d8f287220318357630f6b519"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-theaetetus-0001-rewrite-batch-acceptance.md",
+      "sha256": "933f25aa50ad8049d1177a4ec91b4f0482c52927c8f44c81c45382933fba25de"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-theaetetus-rewrite-batch",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_theaetetus_0009",
+          "finding": "The rewrite combines the future-expertise test, universal-motion naming turn, and closing deferral into three distinct functions."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-theaetetus-0009",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_theaetetus_0009"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_theaetetus_0009",
+        "title": "Guarding the question from the digression",
+        "body": "At the close of this long detour, Socrates names its danger: arguments that burst in may leave the governing question—what knowledge is—unexamined. I hear his refusal to pursue Parmenides here as a choice about scope, not a verdict on Parmenides. The conversation must return to Theaetetus and try the maieutic examination of what he is “pregnant” with about knowledge.",
+        "cites": {
+          "observations": [
+            "obs_theaetetus_0245"
+          ],
+          "claims": [
+            "claim_theaetetus_0157"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_theaetetus_0009",
+      "body": "```yaml\ncommentary_id: comm_theaetetus_0009\nsource_work: Theaetetus\nblock_kind: section\nplacement: before\ntitle: \"Testing the measure against the future\"\nstephanus_span: 177d-184a\nsource_ref:\n  source_path: raw/plato/greek/theaetetus.txt\n  stephanus_span: 177d-184a\n  start_marker: 177d\n  end_marker: 184a\n  start_char: 73583\n  end_char: 87334\n  text_sha256: \"956bff2c7b66756948c0b371cd957423d2d8dc574115acf63c9ba1b8e157f335\"\nbody: \"This stretch can be heard as a stress test for the measure doctrine: future expertise exposes the difference between feeling something now and judging what will happen. The inquiry then turns to universal motion, where even naming seems unable to hold still. I take the closing refusal as disciplined deferral, protecting the question about knowledge from being swallowed by a larger dispute.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

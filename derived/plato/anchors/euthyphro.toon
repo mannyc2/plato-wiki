@@ -1,0 +1,111 @@
+dialogue: euthyphro
+source_path: raw/plato/greek/euthyphro.txt
+source_sha256: 9fac1bf69b5a6e95c8436b25e82244bc60de058f63290c6be205b753ee94b806
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[104]:
+  group             | form      | start_char | end_char | marker | turn_id             | token_ids
+  divine_legal      | δίκη      | 158        | 162      | 2a     | turn_euthyphro_0001 | tok_euthyphro_000028
+  assent_concession | πάνυ γε   | 421        | 428      | 2b     | turn_euthyphro_0006 | tok_euthyphro_000075,tok_euthyphro_000076
+  divine_legal      | δίκη      | 3535       | 3539     | 3e     | turn_euthyphro_0019 | tok_euthyphro_000586
+  divine_legal      | δίκη      | 3843       | 3847     | 4a     | turn_euthyphro_0029 | tok_euthyphro_000644
+  divine_legal      | δίκη      | 4353       | 4357     | 4b     | turn_euthyphro_0034 | tok_euthyphro_000733
+  divine_legal      | δίκη      | 4400       | 4404     | 4b     | turn_euthyphro_0034 | tok_euthyphro_000743
+  divine_legal      | δίκη      | 4587       | 4591     | 4c     | turn_euthyphro_0034 | tok_euthyphro_000775
+  divine_legal      | ἀνόσιον   | 5408       | 5415     | 4d     | turn_euthyphro_0034 | tok_euthyphro_000911
+  divine_legal      | ἀνόσιον   | 5748       | 5755     | 4e     | turn_euthyphro_0035 | tok_euthyphro_000973
+  assent_concession | ὁμολογεῖς | 6318       | 6327     | 5a     | turn_euthyphro_0037 | tok_euthyphro_001063
+  assent_concession | ναί       | 6736       | 6739     | 5b     | turn_euthyphro_0038 | tok_euthyphro_001131
+  divine_legal      | ὅσιον     | 7339       | 7344     | 5d     | turn_euthyphro_0039 | tok_euthyphro_001237
+  divine_legal      | ἀνόσιον   | 7363       | 7370     | 5d     | turn_euthyphro_0039 | tok_euthyphro_001242
+  divine_legal      | ἀνόσιον   | 7490       | 7497     | 5d     | turn_euthyphro_0039 | tok_euthyphro_001265
+  divine_legal      | ὅσιον     | 7565       | 7570     | 5d     | turn_euthyphro_0041 | tok_euthyphro_001279
+  divine_legal      | ἀνόσιον   | 7581       | 7588     | 5d     | turn_euthyphro_0041 | tok_euthyphro_001283
+  divine_legal      | ὅσιον     | 7618       | 7623     | 5d     | turn_euthyphro_0042 | tok_euthyphro_001290
+  divine_legal      | ἀνόσιον   | 7825       | 7832     | 5e     | turn_euthyphro_0042 | tok_euthyphro_001325
+  divine_legal      | δίκη      | 8199       | 8203     | 6a     | turn_euthyphro_0042 | tok_euthyphro_001387
+  divine_legal      | ὅσιον     | 9633       | 9638     | 6d     | turn_euthyphro_0047 | tok_euthyphro_001634
+  divine_legal      | ὅσιον     | 9687       | 9692     | 6d     | turn_euthyphro_0047 | tok_euthyphro_001644
+  definition_prompt | εἶδος     | 9967       | 9972     | 6d     | turn_euthyphro_0051 | tok_euthyphro_001698
+  definition_prompt | ἰδέα      | 10020      | 10024    | 6d     | turn_euthyphro_0051 | tok_euthyphro_001709
+  divine_legal      | ὅσιον     | 10276      | 10281    | 6e     | turn_euthyphro_0053 | tok_euthyphro_001757
+  divine_legal      | ὅσιον     | 10446      | 10451    | 6e     | turn_euthyphro_0056 | tok_euthyphro_001790
+  divine_legal      | ἀνόσιον   | 10477      | 10484    | 7a     | turn_euthyphro_0056 | tok_euthyphro_001795
+  divine_legal      | ὅσιον     | 10847      | 10852    | 7a     | turn_euthyphro_0059 | tok_euthyphro_001858
+  assent_concession | πάνυ γε   | 11428      | 11435    | 7c     | turn_euthyphro_0066 | tok_euthyphro_001954,tok_euthyphro_001955
+  assent_concession | πάνυ γε   | 12644      | 12651    | 7e     | turn_euthyphro_0078 | tok_euthyphro_002163,tok_euthyphro_002164
+  divine_legal      | ὅσιον     | 13109      | 13114    | 8a     | turn_euthyphro_0085 | tok_euthyphro_002249
+  divine_legal      | ἀνόσιον   | 13122      | 13129    | 8a     | turn_euthyphro_0085 | tok_euthyphro_002252
+  assent_concession | ναί       | 14693      | 14696    | 8e     | turn_euthyphro_0096 | tok_euthyphro_002520
+  assent_concession | πάνυ γε   | 14991      | 14998    | 8e     | turn_euthyphro_0098 | tok_euthyphro_002566,tok_euthyphro_002567
+  assent_concession | πάνυ γε   | 15663      | 15670    | 9b     | turn_euthyphro_0100 | tok_euthyphro_002673,tok_euthyphro_002674
+  assent_concession | πάνυ γε   | 15861      | 15868    | 9b     | turn_euthyphro_0102 | tok_euthyphro_002707,tok_euthyphro_002708
+  divine_legal      | ὅσιον     | 16188      | 16193    | 9c     | turn_euthyphro_0103 | tok_euthyphro_002760
+  divine_legal      | ἀνόσιον   | 16204      | 16211    | 9c     | turn_euthyphro_0103 | tok_euthyphro_002764
+  divine_legal      | ὅσιον     | 16306      | 16311    | 9c     | turn_euthyphro_0103 | tok_euthyphro_002783
+  divine_legal      | ἀνόσιον   | 16557      | 16564    | 9d     | turn_euthyphro_0103 | tok_euthyphro_002827
+  divine_legal      | ὅσιον     | 16589      | 16594    | 9d     | turn_euthyphro_0103 | tok_euthyphro_002833
+  divine_legal      | ὅσιον     | 16908      | 16913    | 9e     | turn_euthyphro_0106 | tok_euthyphro_002893
+  divine_legal      | ἀνόσιον   | 16986      | 16993    | 9e     | turn_euthyphro_0106 | tok_euthyphro_002908
+  divine_legal      | ὅσιον     | 17330      | 17335    | 10a    | turn_euthyphro_0109 | tok_euthyphro_002965
+  divine_legal      | ὅσιον     | 17340      | 17345    | 10a    | turn_euthyphro_0109 | tok_euthyphro_002967
+  divine_legal      | ὅσιον     | 17390      | 17395    | 10a    | turn_euthyphro_0109 | tok_euthyphro_002976
+  assent_concession | πάνυ γε   | 17926      | 17933    | 10b    | turn_euthyphro_0118 | tok_euthyphro_003069,tok_euthyphro_003070
+  assent_concession | πάνυ γε   | 18526      | 18533    | 10c    | turn_euthyphro_0122 | tok_euthyphro_003168,tok_euthyphro_003169
+  assent_concession | ναί       | 18787      | 18790    | 10d    | turn_euthyphro_0126 | tok_euthyphro_003214
+  divine_legal      | ὅσιον     | 18815      | 18820    | 10d    | turn_euthyphro_0127 | tok_euthyphro_003220
+  divine_legal      | ὅσιον     | 18883      | 18888    | 10d    | turn_euthyphro_0129 | tok_euthyphro_003234
+  divine_legal      | ὅσιον     | 18938      | 18943    | 10d    | turn_euthyphro_0129 | tok_euthyphro_003243
+  divine_legal      | ὅσιον     | 19078      | 19083    | 10d    | turn_euthyphro_0133 | tok_euthyphro_003269
+  divine_legal      | ὅσιον     | 19111      | 19116    | 10d    | turn_euthyphro_0133 | tok_euthyphro_003275
+  divine_legal      | ὅσιον     | 19225      | 19230    | 10e    | turn_euthyphro_0135 | tok_euthyphro_003294
+  divine_legal      | ὅσιον     | 19256      | 19261    | 10e    | turn_euthyphro_0135 | tok_euthyphro_003299
+  divine_legal      | ὅσιον     | 19292      | 19297    | 10e    | turn_euthyphro_0135 | tok_euthyphro_003305
+  assent_concession | ναί       | 19317      | 19320    | 10e    | turn_euthyphro_0136 | tok_euthyphro_003310
+  divine_legal      | ὅσιον     | 19532      | 19537    | 10e    | turn_euthyphro_0139 | tok_euthyphro_003349
+  divine_legal      | ὅσιον     | 19553      | 19558    | 10e    | turn_euthyphro_0139 | tok_euthyphro_003354
+  divine_legal      | ὅσιον     | 19583      | 19588    | 11a    | turn_euthyphro_0139 | tok_euthyphro_003358
+  divine_legal      | ὅσιον     | 19705      | 19710    | 11a    | turn_euthyphro_0139 | tok_euthyphro_003381
+  divine_legal      | ὅσιον     | 19731      | 19736    | 11a    | turn_euthyphro_0139 | tok_euthyphro_003386
+  divine_legal      | ὅσιον     | 19951      | 19956    | 11a    | turn_euthyphro_0139 | tok_euthyphro_003422
+  divine_legal      | ὅσιον     | 20072      | 20077    | 11a    | turn_euthyphro_0139 | tok_euthyphro_003444
+  aporia_reset      | πάλιν     | 20173      | 20178    | 11b    | turn_euthyphro_0139 | tok_euthyphro_003462
+  divine_legal      | ὅσιον     | 20207      | 20212    | 11b    | turn_euthyphro_0139 | tok_euthyphro_003470
+  divine_legal      | ὅσιον     | 20322      | 20327    | 11b    | turn_euthyphro_0139 | tok_euthyphro_003490
+  divine_legal      | ἀνόσιον   | 20335      | 20342    | 11b    | turn_euthyphro_0139 | tok_euthyphro_003493
+  divine_legal      | ὅσιον     | 21718      | 21723    | 11e    | turn_euthyphro_0143 | tok_euthyphro_003735
+  divine_legal      | ὅσιον     | 21769      | 21774    | 11e    | turn_euthyphro_0145 | tok_euthyphro_003745
+  divine_legal      | ὅσιον     | 21785      | 21790    | 11e    | turn_euthyphro_0145 | tok_euthyphro_003749
+  divine_legal      | ὅσιον     | 21831      | 21836    | 12a    | turn_euthyphro_0145 | tok_euthyphro_003757
+  divine_legal      | ὅσιον     | 21856      | 21861    | 12a    | turn_euthyphro_0145 | tok_euthyphro_003762
+  assent_concession | πάνυ γε   | 22372      | 22379    | 12b    | turn_euthyphro_0148 | tok_euthyphro_003847,tok_euthyphro_003848
+  assent_concession | πάνυ γε   | 22588      | 22595    | 12b    | turn_euthyphro_0150 | tok_euthyphro_003885,tok_euthyphro_003886
+  assent_concession | πάνυ γε   | 23095      | 23102    | 12c    | turn_euthyphro_0154 | tok_euthyphro_003974,tok_euthyphro_003975
+  divine_legal      | ὅσιον     | 23181      | 23186    | 12d    | turn_euthyphro_0155 | tok_euthyphro_003989
+  divine_legal      | ὅσιον     | 23198      | 23203    | 12d    | turn_euthyphro_0155 | tok_euthyphro_003993
+  divine_legal      | ὅσιον     | 23249      | 23254    | 12d    | turn_euthyphro_0155 | tok_euthyphro_004002
+  divine_legal      | ὅσιον     | 23282      | 23287    | 12d    | turn_euthyphro_0155 | tok_euthyphro_004008
+  divine_legal      | ὅσιον     | 23410      | 23415    | 12d    | turn_euthyphro_0157 | tok_euthyphro_004034
+  divine_legal      | ὅσιον     | 23499      | 23504    | 12d    | turn_euthyphro_0157 | tok_euthyphro_004051
+  divine_legal      | ὅσιον     | 23770      | 23775    | 12e    | turn_euthyphro_0159 | tok_euthyphro_004104
+  divine_legal      | ὅσιον     | 24005      | 24010    | 12e    | turn_euthyphro_0160 | tok_euthyphro_004145
+  assent_concession | πάνυ γε   | 24431      | 24438    | 13a    | turn_euthyphro_0162 | tok_euthyphro_004219,tok_euthyphro_004220
+  assent_concession | ναί       | 24482      | 24485    | 13a    | turn_euthyphro_0164 | tok_euthyphro_004229
+  assent_concession | ναί       | 24613      | 24616    | 13b    | turn_euthyphro_0168 | tok_euthyphro_004250
+  assent_concession | πάνυ γε   | 24651      | 24658    | 13b    | turn_euthyphro_0170 | tok_euthyphro_004258,tok_euthyphro_004259
+  divine_legal      | ὅσιον     | 25336      | 25341    | 13c    | turn_euthyphro_0179 | tok_euthyphro_004379
+  assent_concession | ναί       | 26128      | 26131    | 13e    | turn_euthyphro_0192 | tok_euthyphro_004514
+  assent_concession | πάνυ γε   | 26746      | 26753    | 14a    | turn_euthyphro_0200 | tok_euthyphro_004627,tok_euthyphro_004628
+  divine_legal      | ὅσιον     | 27592      | 27597    | 14c    | turn_euthyphro_0203 | tok_euthyphro_004778
+  divine_legal      | ὅσιον     | 29279      | 29284    | 15b    | turn_euthyphro_0221 | tok_euthyphro_005073
+  divine_legal      | ὅσιον     | 29407      | 29412    | 15b    | turn_euthyphro_0223 | tok_euthyphro_005096
+  aporia_reset      | πάλιν     | 29702      | 29707    | 15b    | turn_euthyphro_0225 | tok_euthyphro_005145
+  divine_legal      | ὅσιον     | 29772      | 29777    | 15c    | turn_euthyphro_0225 | tok_euthyphro_005158
+  divine_legal      | ὅσιον     | 29914      | 29919    | 15c    | turn_euthyphro_0227 | tok_euthyphro_005185
+  assent_concession | πάνυ γε   | 29976      | 29983    | 15c    | turn_euthyphro_0228 | tok_euthyphro_005197,tok_euthyphro_005198
+  aporia_reset      | πάλιν     | 30101      | 30106    | 15c    | turn_euthyphro_0231 | tok_euthyphro_005221
+  definition_prompt | τί ἐστι   | 30116      | 30123    | 15c    | turn_euthyphro_0231 | tok_euthyphro_005223,tok_euthyphro_005224
+  divine_legal      | ὅσιον     | 30127      | 30132    | 15c    | turn_euthyphro_0231 | tok_euthyphro_005226
+  divine_legal      | ὅσιον     | 30393      | 30398    | 15d    | turn_euthyphro_0231 | tok_euthyphro_005275
+  divine_legal      | ἀνόσιον   | 30406      | 30413    | 15d    | turn_euthyphro_0231 | tok_euthyphro_005278
+  divine_legal      | ὅσιον     | 30662      | 30667    | 15e    | turn_euthyphro_0231 | tok_euthyphro_005319

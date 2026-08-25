@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "submission_id": "0008-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "parmenides",
+  "source_path": "scratch/commentary/rewrite-repairs/parmenides/sample-round2.json",
+  "source_sha256": "e9ffab917807d4043f8760db1d427808ac149a088925353ec86a1d675f384862",
+  "target_path": "wiki/commentary/parmenides.md",
+  "target_sha256_before": "294676363314086b37d5f5fc58cdea5044c32d456ff1379d7c2ac3a88dfdd0c7",
+  "target_sha256_after": "9008e2c519e04b6eaf9351c11035ba0eacc405b7e7272849fffb753a5ff08a80",
+  "applied_at": "2026-08-21T16:10:49.839Z",
+  "applied_ids": [
+    "comm_parmenides_0011"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "parmenides",
+    "ledger": {
+      "path": "wiki/commentary/parmenides.md",
+      "sha256": "294676363314086b37d5f5fc58cdea5044c32d456ff1379d7c2ac3a88dfdd0c7"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/parmenides/0007-sample-repair.json",
+      "sha256": "c2566a0d656e3b6c732ca35137bd12f7ebf78664ac682d7bf7fefb0485c65bd5"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-parmenides-0007-sample-repair-acceptance.md",
+      "sha256": "ccf1be72b6f23281cae35466a7ad4aad1a940342bf9c5e9463cf514bb8586616"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-parmenides-sample-repair",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_parmenides_0011",
+          "finding": "The phrase must still be known overstates claim 0070, which supports knowability or intelligibility rather than actual knowledge."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-parmenides-sample-two",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_parmenides_0011"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_parmenides_0011",
+        "title": "If the One is not",
+        "body": "Within the negative hypothesis, ‘the One is not’ is not erasure: it treats the One as a determinate subject, knowable as what is meant and distinct from the Others. This does not assert actual knowledge or existence. It participates in being only as required for the statement to be true. Hence the paradox: changing from being to not-being, it moves; unable to travel or rotate, it rests, and so both alters and does not alter.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_parmenides_0070",
+            "claim_parmenides_0072",
+            "claim_parmenides_0073"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_parmenides_0011",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0011\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"If the One is not\"\nstephanus_span: 160b-163a\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 160b-163a\n  start_marker: 160b\n  end_marker: 163a\n  start_char: 72278\n  end_char: 78809\n  text_sha256: \"4b0b3f1ce07227d0ce8505f2a7476b54d9608c34115ee44812972c23de68ad32\"\nbody: \"The negative hypothesis is treated as a qualified proposition, not simple erasure. The non-existent One must still be known and different from the Others, and must participate in being for the sentence ‘the One is not’ to be true. From that tension it is both moving and at rest: its movement is change from being to not-being, not locomotion or rotation, so it both alters and does not alter.\"\ncites:\n  observations: []\n  claims: [\"claim_parmenides_0070\", \"claim_parmenides_0072\", \"claim_parmenides_0073\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    }
+  ]
+}

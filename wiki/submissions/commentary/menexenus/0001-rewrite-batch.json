@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "menexenus",
+  "source_path": "scratch/commentary/rewrites/menexenus/01-234a-235c.json",
+  "source_sha256": "999824f6451b08b2e1ba1cfdf384c774deb24348b2892a3094fc44940e571925",
+  "target_path": "wiki/commentary/menexenus.md",
+  "target_sha256_before": "7eb810ee5396da33bed07fdd0afc545b0a037933518b48ba514480667ca7e1c9",
+  "target_sha256_after": "09b2037e789ee06986171ce853ad2a22b85e4c926988048834a68c7eb8522884",
+  "applied_at": "2026-08-21T15:49:54.972Z",
+  "applied_ids": [
+    "comm_menexenus_0001",
+    "comm_menexenus_0002",
+    "comm_menexenus_0004",
+    "comm_menexenus_0005",
+    "comm_menexenus_0009",
+    "comm_menexenus_0014"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "menexenus",
+      "unit_key": "01-234a-235c",
+      "section_id": "comm_menexenus_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/menexenus/01-234a-235c.json",
+        "sha256": "5fe09c732811b448a209043cddc3c67328eb7628c0230ee4c777fd4d78383734"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_menexenus_0001",
+          "title": "Before the speech: a forecast of enchantment",
+          "body": "Menexenus has come from the council-chamber because the speaker for the war dead will be chosen tomorrow; no oration has yet been heard in this scene. Socrates therefore offers a forecast, imagining prepared praise making him feel greater, nobler, and more beautiful. Menexenus punctures the performance by calling it Socrates’ habitual mockery of the orators.",
+          "cites": {
+            "observations": [
+              "obs_menexenus_0003",
+              "obs_menexenus_0005",
+              "obs_menexenus_0006"
+            ],
+            "claims": [
+              "claim_menexenus_0001",
+              "claim_menexenus_0002"
+            ],
+            "relations": [],
+            "dossiers": [
+              "irony_marker/in_text_accusation_of_mockery"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "menexenus",
+      "unit_key": "02-235d-236d",
+      "section_id": "comm_menexenus_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/menexenus/02-235d-236d.json",
+        "sha256": "3dd8630e646923ff4e9f41a721d895f16e488838eb36f7cc20bd6be221d01a06"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_menexenus_0002",
+          "title": "A speech with shifting attributions",
+          "body": "Read this opening as a chain of attributions, not a settled account of authorship. Socrates reports Aspasia as his rhetoric teacher and says he heard her going through a funeral speech; he only conjectures that she had assembled some earlier parts from remnants of Pericles’ speech. What follows is therefore presented as remembered, attributed material. Menexenus even allows Socrates to call it Aspasia’s—or anyone’s. The privacy remark frames a playful promise to gratify him, not an exclusive condition of the speech.",
+          "cites": {
+            "observations": [
+              "obs_menexenus_0011",
+              "obs_menexenus_0012",
+              "obs_menexenus_0015",
+              "obs_menexenus_0017"
+            ],
+            "claims": [
+              "claim_menexenus_0005",
+              "claim_menexenus_0006"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "menexenus",
+      "unit_key": "04-237d-238b",
+      "section_id": "comm_menexenus_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/menexenus/04-237d-238b.json",
+        "sha256": "33271ee467457b81058c279c999c4ef0f7dcf0d2d2c88101e7f31368ab74e89a"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_menexenus_0004",
+          "title": "When the copy claims priority",
+          "body": "The speech’s decisive move is not the comparison of earth and woman but its reversal of who copies whom. By making the earth the model and woman the imitator, it turns a familiar maternal analogy into a claim of priority: Athenian earth is presented as the original, while human birth repeats its pattern. Read this as rhetorical persuasion, not demonstrated metaphysics.",
+          "cites": {
+            "observations": [
+              "obs_menexenus_0024"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "menexenus",
+      "unit_key": "05-238c-239a",
+      "section_id": "comm_menexenus_0005",
+      "audit_output": {
+        "path": "scratch/commentary/audits/menexenus/05-238c-239a.json",
+        "sha256": "94d6e437eb7bb9596fde2d38549bc28009c56bcc8956c1e9d140ab7ab7cd4740"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_menexenus_0005",
+          "title": "From common birth to civic equality",
+          "body": "The oration builds civic equality from a claimed common origin. It presents Athens as an aristocracy approved by the multitude, with rule assigned to those deemed wise or good, then moves from equality of birth to equality before the law. The image of citizens as brothers from one mother is the premise of that legal reciprocity, not its result: because they share a civic origin, they refuse to be one another’s masters or slaves, yielding only to recognized virtue and understanding.",
+          "cites": {
+            "observations": [
+              "obs_menexenus_0028",
+              "obs_menexenus_0029",
+              "obs_menexenus_0042",
+              "obs_menexenus_0043",
+              "obs_menexenus_0044"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "menexenus",
+      "unit_key": "09-242e-243e",
+      "section_id": "comm_menexenus_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/menexenus/09-242e-243e.json",
+        "sha256": "7724cd2578c94df3a4ed931ee2dc47ee50978493dd2ee01e7ddd449f760ad46a"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_menexenus_0009",
+          "title": "External victories, internal defeat",
+          "body": "The catalogue changes direction here. After listing victories and losses in Sicily and the Hellespont, the speaker marks the Greek appeal to Persia as the war’s unexpected turn. He then uses the rescuers’ victory to present Athens as unconquerable from without, while locating defeat in internal dissension. I read that last move as the oration’s framing of defeat, not as a conclusion the passage independently proves.",
+          "cites": {
+            "observations": [
+              "obs_menexenus_0059",
+              "obs_menexenus_0060",
+              "obs_menexenus_0061",
+              "obs_menexenus_0064"
+            ],
+            "claims": [
+              "claim_menexenus_0021"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "menexenus",
+      "unit_key": "14-248e-249e",
+      "section_id": "comm_menexenus_0014",
+      "audit_output": {
+        "path": "scratch/commentary/audits/menexenus/14-248e-249e.json",
+        "sha256": "ad658dc8281baa1105123084b3f36eec7ff53735b2533764a02b73897d5b77e2"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_menexenus_0014",
+          "title": "Civic kinship becomes public ritual",
+          "body": "The passage invites us to hear civic care as a replacement kinship: the city takes the position of heir and son to the dead, father to the orphans, and guardian to their parents. Annual rites and contests give that care an institutional form. Then the imperative to depart snaps the consolatory picture back into public procedure.",
+          "cites": {
+            "observations": [
+              "obs_menexenus_0092",
+              "obs_menexenus_0093",
+              "obs_menexenus_0094",
+              "obs_menexenus_0096"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_menexenus_0001",
+      "body": "```yaml\ncommentary_id: comm_menexenus_0001\nsource_work: Menexenus\nblock_kind: section\nplacement: before\ntitle: \"A funeral speech is coming, and Socrates is already enchanted\"\nstephanus_span: 234a-235c\nsource_ref:\n  source_path: raw/plato/greek/menexenus.txt\n  stephanus_span: 234a-235c\n  start_marker: 234a\n  end_marker: 235c\n  start_char: 0\n  end_char: 2390\n  text_sha256: \"80620d7d9d8a3ae9571553d8de3f892cb2723e7de9b8cacc653f0455030b8b79\"\nbody: \"Socrates meets young Menexenus fresh from the council-chamber, where a speaker for the war dead is about to be chosen. Before any oration is heard, Socrates describes what such speeches do to him: they enchant, inflate, and transport their hearers. Menexenus calls this his usual mockery of the orators — a charge worth holding onto for the whole dialogue.\"\ncites:\n  observations: [\"obs_menexenus_0001\", \"obs_menexenus_0002\", \"obs_menexenus_0003\", \"obs_menexenus_0004\", \"obs_menexenus_0005\", \"obs_menexenus_0006\", \"obs_menexenus_0007\"]\n  claims: [\"claim_menexenus_0001\", \"claim_menexenus_0002\", \"claim_menexenus_0003\"]\n  relations: []\n  dossiers: [\"irony_marker/in_text_accusation_of_mockery\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_menexenus_0002",
+      "body": "```yaml\ncommentary_id: comm_menexenus_0002\nsource_work: Menexenus\nblock_kind: section\nplacement: before\ntitle: \"Where the speech comes from: Aspasia, Pericles, and leftovers\"\nstephanus_span: 235d-236d\nsource_ref:\n  source_path: raw/plato/greek/menexenus.txt\n  stephanus_span: 235d-236d\n  start_marker: 235d\n  end_marker: 236d\n  start_char: 2390\n  end_char: 4887\n  text_sha256: \"2d8dc4174899dbea8a958f6381d6c2357210e908802237887f95bb2dbeadcc7b\"\nbody: \"Asked whether he could speak himself, Socrates disavows anything of his own and names Aspasia as his rhetoric teacher — the maker of Pericles. The oration he will deliver is her composition, stitched partly from remnants of Pericles' own funeral speech, and he agrees to perform it only because they are alone.\"\ncites:\n  observations: [\"obs_menexenus_0011\", \"obs_menexenus_0012\", \"obs_menexenus_0013\", \"obs_menexenus_0014\", \"obs_menexenus_0015\", \"obs_menexenus_0016\", \"obs_menexenus_0017\"]\n  claims: [\"claim_menexenus_0004\", \"claim_menexenus_0005\", \"claim_menexenus_0006\"]\n  relations: []\n  dossiers: [\"frame_depth/reported_speech_chain\", \"irony_marker/socratic_knowledge_disavowal\", \"frame_depth/reported_speech_attributed_to_named_teacher\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_menexenus_0004",
+      "body": "```yaml\ncommentary_id: comm_menexenus_0004\nsource_work: Menexenus\nblock_kind: section\nplacement: before\ntitle: \"Proving a birth: the land, the nursing test, and woman as copy\"\nstephanus_span: 237d-238b\nsource_ref:\n  source_path: raw/plato/greek/menexenus.txt\n  stephanus_span: 237d-238b\n  start_marker: 237d\n  end_marker: 238b\n  start_char: 6546\n  end_char: 8182\n  text_sha256: \"2deb23bc8054b62b1cb6ca5d1ebdd0f7409c70f8c87704a1ed4fef880aa188a7\"\nbody: \"The oration argues its mythology. The land generated humankind and proves true motherhood the way a mother does — by supplying nourishment, wheat and barley. Then the analogy is inverted: the earth did not imitate woman; woman imitates the earth. Gods arrive as teachers, though the speaker declines, with careful propriety, to name them.\"\ncites:\n  observations: [\"obs_menexenus_0021\", \"obs_menexenus_0022\", \"obs_menexenus_0023\", \"obs_menexenus_0024\", \"obs_menexenus_0025\", \"obs_menexenus_0026\"]\n  claims: [\"claim_menexenus_0010\", \"claim_menexenus_0011\", \"claim_menexenus_0012\"]\n  relations: []\n  dossiers: [\"craft_analogy/biological_nature_nurture_analogy\", \"craft_analogy/imitation_of_model\", \"myth_demarcation/mythic_aetiology\", \"myth_demarcation/traditional_account_cited_with_hedge\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_menexenus_0005",
+      "body": "```yaml\ncommentary_id: comm_menexenus_0005\nsource_work: Menexenus\nblock_kind: section\nplacement: before\ntitle: \"The constitution renamed: an aristocracy the multitude approves\"\nstephanus_span: 238c-239a\nsource_ref:\n  source_path: raw/plato/greek/menexenus.txt\n  stephanus_span: 238c-239a\n  start_marker: 238c\n  end_marker: 239a\n  start_char: 8182\n  end_char: 9751\n  text_sha256: \"7a183eda7eb2be35306ff6a523fea4f288eab89862864cbc9e74878e8051a321\"\nbody: \"The politeia is defined as the nourishment of human beings, and the Athenian one is renamed: not democracy but aristocracy with the multitude's approval, where one criterion — being deemed wise or good — governs rule. Equal birth is said to compel equality under law, making all Athenians brothers of one mother.\"\ncites:\n  observations: [\"obs_menexenus_0027\", \"obs_menexenus_0028\", \"obs_menexenus_0029\", \"obs_menexenus_0042\", \"obs_menexenus_0043\", \"obs_menexenus_0044\"]\n  claims: [\"claim_menexenus_0013\", \"claim_menexenus_0014\"]\n  relations: []\n  dossiers: [\"definition_ladder/definition_proposed\", \"definition_ladder/definition_refined_by_successive_addition\", \"definition_ladder/criterion_for_evaluative_classification\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_menexenus_0009",
+      "body": "```yaml\ncommentary_id: comm_menexenus_0009\nsource_work: Menexenus\nblock_kind: section\nplacement: before\ntitle: \"The third war: Athens conquered by no one but Athens\"\nstephanus_span: 242e-243e\nsource_ref:\n  source_path: raw/plato/greek/menexenus.txt\n  stephanus_span: 242e-243e\n  start_marker: 242e\n  end_marker: 243e\n  start_char: 16781\n  end_char: 19097\n  text_sha256: \"cd56041919265d3d925bcdd7ebc8cc479e4927b2caf89f092d81b9a60b82937a\"\nbody: \"The war catalogue reaches Sicily, the Hellespont, and the shocking turn the orator flags himself: Greeks summoning the Persian king against Greeks. Arginusae earns the city a reputation for being unconquerable — declared true — so the final defeat must be rewritten: Athens was beaten only by its own internal dissension.\"\ncites:\n  observations: [\"obs_menexenus_0059\", \"obs_menexenus_0060\", \"obs_menexenus_0061\", \"obs_menexenus_0064\"]\n  claims: [\"claim_menexenus_0021\"]\n  relations: []\n  dossiers: [\"turn_geometry/argument_transition_marker\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_menexenus_0014",
+      "body": "```yaml\ncommentary_id: comm_menexenus_0014\nsource_work: Menexenus\nblock_kind: section\nplacement: before\ntitle: \"The city as son, father, and guardian — then the dismissal\"\nstephanus_span: 248e-249e\nsource_ref:\n  source_path: raw/plato/greek/menexenus.txt\n  stephanus_span: 248e-249e\n  start_marker: 248e\n  end_marker: 249e\n  start_char: 28664\n  end_char: 31115\n  text_sha256: \"7b0b024043e05fcf1eccae7fdd8e65cc812ee0a4e77b3ed8a59220574b7f3053\"\nbody: \"The oration ends by substituting the city for the family it commemorates: heir and son to the dead, father to the orphans, guardian to the parents, with annual rites and contests in perpetuity. A command to depart closes the speech, and the dialogue's frame returns for a last exchange between Socrates and Menexenus.\"\ncites:\n  observations: [\"obs_menexenus_0095\", \"obs_menexenus_0096\", \"obs_menexenus_0092\", \"obs_menexenus_0093\", \"obs_menexenus_0094\"]\n  claims: []\n  relations: []\n  dossiers: [\"city_as_kinship_substitute/polis_in_familial_roles\", \"closure_type/explicit_departure_command\", \"frame_depth/transmission_chain_cited\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

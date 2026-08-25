@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "timaeus",
+  "source_path": "scratch/commentary/sample-repairs/timaeus/0004-round3.json",
+  "source_sha256": "b0394d4b73791c99e315083911820c83521321adfb4d52c93244103ce975627a",
+  "target_path": "wiki/commentary/timaeus.md",
+  "target_sha256_before": "04cb463ad0084e7fd7ad74eda0cbc8a651e1804add261767d28ab96521c69a9c",
+  "target_sha256_after": "5ee0afb2c5fe19901f259b61e4e2dd52836d9185d6dbd978f8eae1f1fe00d825",
+  "applied_at": "2026-08-21T20:03:18.478Z",
+  "applied_ids": [
+    "comm_timaeus_0004"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "timaeus",
+    "ledger": {
+      "path": "wiki/commentary/timaeus.md",
+      "sha256": "04cb463ad0084e7fd7ad74eda0cbc8a651e1804add261767d28ab96521c69a9c"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-timaeus-final-sample-round3",
+      "reviewed_on": "2026-08-21",
+      "rationale": "Independent Luna sample found one bounded prose defect in 0004.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_timaeus_0001",
+        "comm_timaeus_0002",
+        "comm_timaeus_0003",
+        "comm_timaeus_0004",
+        "comm_timaeus_0005",
+        "comm_timaeus_0006",
+        "comm_timaeus_0007",
+        "comm_timaeus_0008",
+        "comm_timaeus_0009",
+        "comm_timaeus_0010",
+        "comm_timaeus_0011",
+        "comm_timaeus_0012",
+        "comm_timaeus_0013",
+        "comm_timaeus_0014",
+        "comm_timaeus_0015"
+      ],
+      "failed_commentary_ids": [
+        "comm_timaeus_0004"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_timaeus_0004",
+        "title": "A rule for hearing the cosmology",
+        "body": "The prelude gives us one listening rule: an account should fit the kind of thing it explains. Timaeus says that an account of what is stable should itself be stable and firm. I take that as a limit on our expectations: the form of an account should answer to its subject.",
+        "cites": {
+          "observations": [
+            "obs_timaeus_0070"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_timaeus_0004",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0004\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"A rule for hearing the cosmology\"\nstephanus_span: 26e-29d\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 26e-29d\n  start_marker: 26e\n  end_marker: 29d\n  start_char: 19155\n  end_char: 23965\n  text_sha256: \"8b6f0d9dc9ceec29b9214e25f3864c5e846a616e560a330fd9ae7600e2a77394\"\nbody: \"The prelude gives us one rule for hearing the cosmology: an account should resemble the thing it explains. Timaeus says that accounts of what is stable should themselves be stable and firm. I read this as a restraint on the listener: do not demand the same kind of certainty from every subject.\"\ncites:\n  observations: [\"obs_timaeus_0070\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "submission_id": "0010-structural-remediation-09-212d-222b",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "symposium",
+  "unit_key": "09-212d-222b",
+  "source_path": "scratch/commentary/audits/symposium/09-212d-222b.json",
+  "source_sha256": "d2d7c46512e0745254b269fe472abc27b9adbe269ee2b2352a819dfc8feaf4d2",
+  "target_path": "wiki/commentary/symposium.md",
+  "target_sha256_before": "6c83a7b0d1e89709ba1970a8847d17d4952f44d1c1592e37e8d89a81e5e168b7",
+  "target_sha256_after": "858cad8ccfd225dfedf993824c8f8cbabeb70f956ed36c59162f4a66f5055035",
+  "applied_at": "2026-08-23T22:34:25.193Z",
+  "applied_ids": [
+    "comm_symposium_0066",
+    "comm_symposium_0067"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "symposium",
+      "unitKey": "09-212d-222b",
+      "sectionId": "comm_symposium_0009",
+      "auditOutputPath": "scratch/commentary/audits/symposium/09-212d-222b.json",
+      "auditOutputSha256": "d2d7c46512e0745254b269fe472abc27b9adbe269ee2b2352a819dfc8feaf4d2",
+      "expectedLedgerSha256": "6c83a7b0d1e89709ba1970a8847d17d4952f44d1c1592e37e8d89a81e5e168b7",
+      "expectedAttributionSha256": "0dd2047f2bf3ead5c2c1e5eb64892b95adc162bc513ce1f1472eba3046f8a809",
+      "expectedEnglishSha256": "3f985d42c68d058deabdb9d61dc9b5e44bbe2bac5e0f1bdf03d7a88a10e8d13d",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_symposium_0066"
+        },
+        {
+          "operation": "remove",
+          "commentaryId": "comm_symposium_0067"
+        }
+      ],
+      "reviewer": "lane-a-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna structural review confirms conservative rejection of audited remove findings and split originals; delegated model review only."
+    },
+    "audit_output_path": "scratch/commentary/audits/symposium/09-212d-222b.json",
+    "audit_output_sha256": "d2d7c46512e0745254b269fe472abc27b9adbe269ee2b2352a819dfc8feaf4d2",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_symposium_0066",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_symposium_0067",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

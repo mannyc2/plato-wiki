@@ -1,0 +1,17 @@
+dialogue: apology
+source_path: raw/plato/greek/apology.txt
+source_sha256: 37c1ce832119acb9c2872c1c04433a3895a32679f2231f239a1b150c9a01c4d8
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[10]:
+  group             | form    | start_char | end_char | marker | turn_id           | token_ids
+  assent_concession | πάνυ γε | 6527       | 6534     | 20b    | turn_apology_0001 | tok_apology_001038,tok_apology_001039
+  definition_prompt | τί ἐστι | 6956       | 6963     | 20c    | turn_apology_0001 | tok_apology_001105,tok_apology_001106
+  aporia_reset      | ἀπορεῖν | 14101      | 14108    | 23d    | turn_apology_0001 | tok_apology_002273
+  assent_concession | πάνυ γε | 18348      | 18355    | 25c    | turn_apology_0001 | tok_apology_002948,tok_apology_002949
+  divine_legal      | γραφή   | 21672      | 21677    | 27a    | turn_apology_0001 | tok_apology_003481
+  assent_concession | πάνυ γε | 22944      | 22951    | 27d    | turn_apology_0001 | tok_apology_003685,tok_apology_003686
+  aporia_reset      | πάλιν   | 23142      | 23147    | 27d    | turn_apology_0001 | tok_apology_003719
+  divine_legal      | γραφή   | 32005      | 32010    | 31d    | turn_apology_0001 | tok_apology_005184
+  divine_legal      | ἀνόσιον | 34124      | 34131    | 32d    | turn_apology_0001 | tok_apology_005516
+  divine_legal      | δίκη    | 47276      | 47280    | 38e    | turn_apology_0001 | tok_apology_007641

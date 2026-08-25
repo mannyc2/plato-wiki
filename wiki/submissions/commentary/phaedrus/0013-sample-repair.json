@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "submission_id": "0013-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "phaedrus",
+  "source_path": "scratch/commentary/sample-repairs/phaedrus/0010-round5.json",
+  "source_sha256": "ec59e75e73d9246a8ff1e37d16693252ea7f777640bde8a16499f4e3c0133ad1",
+  "target_path": "wiki/commentary/phaedrus.md",
+  "target_sha256_before": "4221b0e7895d6edefb3ddf8e8aa0d0f0d827cbd98edef4b40ace110184a36eb3",
+  "target_sha256_after": "8c25e06c49bcc88e289bf6d0dc5c1369cb60e0798e7e7491b1c92ae1ff71b192",
+  "applied_at": "2026-08-24T00:01:31.150Z",
+  "applied_ids": [
+    "comm_phaedrus_0002",
+    "comm_phaedrus_0010"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "phaedrus",
+    "ledger": {
+      "path": "wiki/commentary/phaedrus.md",
+      "sha256": "4221b0e7895d6edefb3ddf8e8aa0d0f0d827cbd98edef4b40ace110184a36eb3"
+    },
+    "sample_review": {
+      "reviewer": "sample-c-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna sample review found two bounded evidence defects in the speech and lover orientations.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_phaedrus_0001",
+        "comm_phaedrus_0002",
+        "comm_phaedrus_0003",
+        "comm_phaedrus_0004",
+        "comm_phaedrus_0008",
+        "comm_phaedrus_0009",
+        "comm_phaedrus_0010",
+        "comm_phaedrus_0012",
+        "comm_phaedrus_0015",
+        "comm_phaedrus_0017",
+        "comm_phaedrus_0018"
+      ],
+      "failed_commentary_ids": [
+        "comm_phaedrus_0002",
+        "comm_phaedrus_0010"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_phaedrus_0002",
+        "title": "When polish begins to persuade",
+        "body": "Phaedrus's performance keeps presentation and content distinct: its polished delivery can be playful while the seriousness of what it says remains a separate question. The passage thus leaves style and substance to be assessed separately.",
+        "cites": {
+          "observations": [
+            "obs_phaedrus_0089",
+            "obs_phaedrus_0049",
+            "obs_phaedrus_0051"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_phaedrus_0010",
+        "title": "The lover's discipline",
+        "body": "Here the lover's relation is disciplined by a model: he honors and imitates the god whose chorus he followed, fashions the beloved toward that image, and must govern opposed horses—one yielding to word, the other only reluctantly to whip and goad. The test is therefore what kind of relation desire can sustain: one ordered by guidance, not mere force.",
+        "cites": {
+          "observations": [
+            "obs_phaedrus_0161",
+            "obs_phaedrus_0166",
+            "obs_phaedrus_0167"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": [
+            "craft_analogy/imitation_of_model",
+            "craft_analogy/soul_governance_as_chariot_driving"
+          ]
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_phaedrus_0002",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0002\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"When polish begins to persuade\"\nstephanus_span: 229e-234e\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 229e-234e\n  start_marker: 229e\n  end_marker: 234e\n  start_char: 4899\n  end_char: 15173\n  text_sha256: \"f7c32b5a06fac2d5618cacbdb3b13fe35c6a733a531eed180bd686f0ea4f8290\"\nbody: \"I read this stretch as a small warning about rhetorical charm. The speech presents confidence in a form that invites assent before its reasoning has been tested; Socrates’ response lets that charm hang in the air, then introduces a hesitation. For a listener, the live question is whether verbal finish has earned judgment, or merely borrowed its authority.\"\ncites:\n  observations: [\"obs_phaedrus_0089\", \"obs_phaedrus_0049\", \"obs_phaedrus_0051\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_phaedrus_0010",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0010\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"The lover’s discipline\"\nstephanus_span: 252d-255c\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 252d-255c\n  start_marker: 252d\n  end_marker: 255c\n  start_char: 50703\n  end_char: 56909\n  text_sha256: \"be0d284a7a88159a8f546f3c2980ceea7a70ae8e0da76bae8a4bcace4023b023\"\nbody: \"Love is described as madness, but not as an excuse for surrender. The charioteer must govern the unruly horse, and the beloved’s presence becomes a test of whether desire can be educated into friendship rather than reduced to possession.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

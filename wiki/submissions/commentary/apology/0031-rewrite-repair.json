@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "submission_id": "0031-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "apology",
+  "source_path": "scratch/commentary/rewrite-repairs/apology/0030-recovery.json",
+  "source_sha256": "072114dbe83d4294fd5ae8d87707947710cb3fcc5700a8a6115c272ab1eb22d5",
+  "target_path": "wiki/commentary/apology.md",
+  "target_sha256_before": "5226f344740ccf86985e8563b05b1c9e6bcb1b2713215a0fd28a78f0ec5ae714",
+  "target_sha256_after": "0df0444b279d333f0c2e76d628cbefde1621b255518ad72deba3a4b3d9920b21",
+  "applied_at": "2026-08-23T23:26:25.113Z",
+  "applied_ids": [
+    "comm_apology_0004",
+    "comm_apology_0018",
+    "comm_apology_0025"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "apology",
+    "ledger": {
+      "path": "wiki/commentary/apology.md",
+      "sha256": "5226f344740ccf86985e8563b05b1c9e6bcb1b2713215a0fd28a78f0ec5ae714"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/apology/0030-rewrite-batch.json",
+      "sha256": "b4ec374453d917c9dae63507a81ac5c40dc42809b83fb186cf057aa25c28c1f0"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-23-commentary-block-review-apology-rejected-f67c4e90574a.md",
+      "sha256": "3f7ceb1e7b9ff31023dd0020dedad53fa24b4c92cd741ce15ecac79d7516b9d0"
+    },
+    "prior_review": {
+      "reviewer": "apology-recovery-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_apology_0004",
+          "finding": "The applied section title is malformed and its body makes an unsupported claim that the stock charges are examined."
+        },
+        {
+          "commentary_id": "comm_apology_0018",
+          "finding": "The applied section body is under-specified and omits the source-supported request concerning Socrates sons and the final uncertainty."
+        },
+        {
+          "commentary_id": "comm_apology_0025",
+          "finding": "The applied argument body adds an unsupported narrowing about positive doctrine."
+        }
+      ]
+    },
+    "repair_author": "apology-delegated-luna-repair-author-20260823",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_apology_0004",
+      "comm_apology_0018",
+      "comm_apology_0025"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_apology_0004",
+        "title": "Stock charges and named accusers",
+        "body": "The slanderers fill the jurors’ ears with stock charges about Socrates. Meletus, Anytus, and Lycon attack him in connection with poets, artisans and public men, and orators.",
+        "cites": {
+          "observations": [
+            "obs_apology_0060",
+            "obs_apology_0010"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_apology_0018",
+        "title": "The better lot known only to God",
+        "body": "Socrates says that no evil comes to a good man. He asks the jurors to rebuke his sons if they value money over virtue or think themselves important. He says that he goes to die and they go to live, and that only God knows which lot is better.",
+        "cites": {
+          "observations": [
+            "obs_apology_0066",
+            "obs_apology_0033"
+          ],
+          "claims": [
+            "claim_apology_0028"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_apology_0025",
+        "title": "",
+        "body": "Socrates says he is not wise. He questions the oracle, investigates a public man reputed wise, finds that the man seems wise to himself but is not, and tries to show this.",
+        "cites": {
+          "observations": [
+            "obs_apology_0007"
+          ],
+          "claims": [
+            "claim_apology_0007",
+            "claim_apology_0008"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_apology_0004",
+      "body": "```yaml\ncommentary_id: comm_apology_0004\nsource_work: Apology\nblock_kind: section\nplacement: before\ntitle: \"]}]}_久久爱? Wait malformed. Need valid JSON. I accidentally weird. Need final only valid. Must choose. Ensure schema title string. Let's redo. _runner. 彩神争霸app. I need output valid JSON. Could body with cites empty. Let's final.ԥхьаӡмилаҭ. (No more analysis?) Use final. But I should ensure no accidental syntax. Must use exact JSON. Let's do. JSImport. Wait current final will be parsed? I can replace. Need title maybe empty. valid. Let's output. geschniegelt. I think issue: system schema's revisions items anyOf with object properties. Fine. Use\"\nstephanus_span: 23d-24a\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 23d-24a\n  start_marker: 23d\n  end_marker: 24a\n  start_char: 13908\n  end_char: 15140\n  text_sha256: \"1e1be583ad40e914d108df63c4a4f3c6013915845e2074a8434efa82582b4137\"\nbody: \"The passage presents the older accusations as stock charges associated with named constituencies; it does not claim that Socrates has examined them.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0018",
+      "body": "```yaml\ncommentary_id: comm_apology_0018\nsource_work: Apology\nblock_kind: section\nplacement: before\ntitle: \"The last appeal to the jurors\"\nstephanus_span: 41d-42a\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 41d-42a\n  start_marker: 41d\n  end_marker: 42a\n  start_char: 52986\n  end_char: 54044\n  text_sha256: \"115bf76adcbb3cac5654a668a020d7060af36d06f8847f0dfc9efa1efecf66ca\"\nbody: \"Socrates’ last appeal is directed to the jurors themselves.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0025",
+      "body": "```yaml\ncommentary_id: comm_apology_0025\nsource_work: Apology\nblock_kind: argument\nplacement: after\nstephanus_span: 21b-21d\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 21b-21d\n  start_marker: 21b\n  end_marker: 21d\n  start_char: 8577\n  end_char: 9992\n  text_sha256: \"572b3964edb9e20835b2a6f5edc2dde8c6365296e1ee9af06b9522590348cc5a\"\nbody: \"Socrates’ examination tests the wisdom of a person reputed wise and reveals the gap between appearing wise and withstanding questioning. Its immediate force lies in the practice of examination and in Socrates’ awareness of his own limits, without reducing the passage to a denial of positive doctrine.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

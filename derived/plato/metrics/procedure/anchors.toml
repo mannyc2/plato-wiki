@@ -1,0 +1,20 @@
+# Literal Greek procedure anchors for deterministic candidate detection.
+# This is a candidate registry, not an interpretation layer: matches only
+# token-normalized forms listed here and does not claim procedure significance
+# without later observation review.
+
+[[groups]]
+name = "brevity_demand"
+forms = ["βραχέως", "διὰ βραχέων", "κατὰ βραχύ"]
+
+[[groups]]
+name = "answer_demand"
+forms = ["ἀποκρίνου", "ἀποκρίνεσθαι", "ἀποκρίνασθαι", "ἀπόκριναι"]
+
+[[groups]]
+name = "question_method"
+forms = ["ἐρωτᾶν", "ἐρωτῶ", "ἐρωτᾷς", "ἐρωτᾷ", "ἐρώτησις"]
+
+[[groups]]
+name = "long_speech"
+forms = ["μακρὸν λόγον", "μακρολογία", "μακρολογεῖν"]

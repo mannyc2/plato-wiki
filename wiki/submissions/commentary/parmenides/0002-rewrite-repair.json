@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "parmenides",
+  "source_path": "scratch/commentary/rewrite-repairs/parmenides/round2.json",
+  "source_sha256": "50501dd142ebcc4aefbdc51326ec3bf14d4600beaef42e743d4b40d603d8d226",
+  "target_path": "wiki/commentary/parmenides.md",
+  "target_sha256_before": "3340adb18e2263d35ed9a547efd03bf2bf14ec998c7909b63bd79d9e9ae482a4",
+  "target_sha256_after": "40be649db9a66808d83cb2cf12bafcfd223ebaf925516ee178c0ebed37f96d3e",
+  "applied_at": "2026-08-21T15:16:29.882Z",
+  "applied_ids": [
+    "comm_parmenides_0004",
+    "comm_parmenides_0007",
+    "comm_parmenides_0008",
+    "comm_parmenides_0012",
+    "comm_parmenides_0013"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "parmenides",
+    "ledger": {
+      "path": "wiki/commentary/parmenides.md",
+      "sha256": "3340adb18e2263d35ed9a547efd03bf2bf14ec998c7909b63bd79d9e9ae482a4"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/parmenides/0001-rewrite-batch.json",
+      "sha256": "70a32ba5c5b8a266ced1f5a1893a88e0f568edacca6f8838bbf6dfd02c2fb8eb"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-parmenides-0001-rewrite-batch-acceptance.md",
+      "sha256": "5ccaa6a7089d2e8f9a06afe41f0e02e7701a7f3f3d14ecb62b1276df7b519f66"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-parmenides-round1",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_parmenides_0004",
+          "finding": "checkable source claims uncited; “postpones any final answer” overstrong."
+        },
+        {
+          "commentary_id": "comm_parmenides_0007",
+          "finding": "citation supports unlimited number, not “unlimited multitude of existences.”"
+        },
+        {
+          "commentary_id": "comm_parmenides_0008",
+          "finding": "checkable predicate inventory uncited."
+        },
+        {
+          "commentary_id": "comm_parmenides_0012",
+          "finding": "alteration contradiction and restart claims uncited."
+        },
+        {
+          "commentary_id": "comm_parmenides_0013",
+          "finding": "claims about the others and predicate collapse uncited; cited claim is from 162e–163a."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-parmenides-round2",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_parmenides_0004",
+      "comm_parmenides_0007",
+      "comm_parmenides_0008",
+      "comm_parmenides_0012",
+      "comm_parmenides_0013"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_parmenides_0004",
+        "title": "The method becomes the subject",
+        "body": "I suggest hearing this stretch as a change in method. Parmenides asks us to take a subject as being and as not being, then trace what follows for the subject and for the others. The exercise is presented as thoroughgoing training meant to see the truth. For this transition, stay with the procedure being set out rather than supplying a verdict.",
+        "cites": {
+          "observations": [
+            "obs_parmenides_0057",
+            "obs_parmenides_0066"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_parmenides_0007",
+        "title": "The one that is: a whole with parts",
+        "body": "The second hypothesis begins with a distinction: “the one is” means that the One partakes of being, not simply that it is one. That makes the one-that-is a whole with two parts, “one” and “being.” Repeated division then makes its multitude unlimited, and the argument extends the result to number. Hear this as a deduction within the hypothesis, not as a claim about the One without qualification.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_parmenides_0038",
+            "claim_parmenides_0039",
+            "claim_parmenides_0040",
+            "claim_parmenides_0044"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_parmenides_0008",
+        "title": "Predicates under pressure",
+        "body": "After the whole is given limit, middle, and extremes, the argument pushes the One through paired relations: it is both in itself and in another, then both at rest and in motion. Sameness and difference make it like and unlike; contact is tested by adjacency and number. Hear the passage as a pressure test, not a final portrait.",
+        "cites": {
+          "observations": [
+            "obs_parmenides_0118",
+            "obs_parmenides_0119",
+            "obs_parmenides_0120",
+            "obs_parmenides_0130",
+            "obs_parmenides_0144"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_parmenides_0012",
+        "title": "A stricter second pass",
+        "body": "The first pass lets the non-being One be altered: alteration yields coming-to-be and perishing, while no alteration yields neither, so the hypothesis produces both results. Parmenides then returns to the beginning and asks what “is not” means simply, defining it as complete absence of being before continuing. The restart narrows the terms for the next deduction.",
+        "cites": {
+          "observations": [
+            "obs_parmenides_0202",
+            "obs_parmenides_0203",
+            "obs_parmenides_0248"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_parmenides_0013",
+        "title": "When unity disappears, predicates collapse",
+        "body": "Without the One, each Other is treated as a mass that appears one but breaks into indefinite multitude when examined. The argument then reverses course: because none is one, the Others are neither one nor many, and finally neither are nor appear as such. The closing sentence gathers the result as a universal pair of opposites, within the exercise’s hypotheses.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_parmenides_0081",
+            "claim_parmenides_0082",
+            "claim_parmenides_0083",
+            "claim_parmenides_0084",
+            "claim_parmenides_0085"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_parmenides_0004",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0004\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"The method becomes the subject\"\nstephanus_span: 135e-137b\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 135e-137b\n  start_marker: 135e\n  end_marker: 137b\n  start_char: 19907\n  end_char: 23322\n  text_sha256: \"317656977618f4f76550d374bb113f853dfb75d4e1d711737827a748fda62fae\"\nbody: \"I suggest hearing this stretch as a change in method rather than as a verdict about the Forms. Parmenides makes the exercise symmetrical: imagine the subject as existing, then as not existing, and trace what follows through the subject and its relations. On this reading, the passage postpones any final answer about the One; its immediate object is the discipline of following consequences. The next move will make that discipline concrete.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0007",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0007\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"The one that is: a whole with parts\"\nstephanus_span: 142b-145a\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 142b-145a\n  start_marker: 142b\n  end_marker: 145a\n  start_char: 33456\n  end_char: 39944\n  text_sha256: \"21ce55b2eb77fe495f83ba0ec9ee0c03f9eee728823c772c937bd9482d57c889\"\nbody: \"The second hypothesis turns on a grammatical distinction: “the one is” is not “the one is one”; being is added to unity. Once being and unity are distinguished, the existent one becomes a whole with parts. The argument then multiplies the consequences into number and an unlimited multitude of existences. Hear the ending as a test of what a whole requires, not as a claim about shape.\"\ncites:\n  observations: []\n  claims: [\"claim_parmenides_0038\", \"claim_parmenides_0039\", \"claim_parmenides_0044\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0008",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0008\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"Predicates under pressure\"\nstephanus_span: 145b-149c\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 145b-149c\n  start_marker: 145b\n  end_marker: 149c\n  start_char: 39944\n  end_char: 49293\n  text_sha256: \"b4d7d8998d8fc897a0c2be59b6a808bb7f3c161cab8d426118be5ed42d50b2c8\"\nbody: \"This unit is best heard as a pressure test for descriptions of the One. One way to read it is that containment first unsettles the boundary between self and other, then makes rest and motion, sameness and otherness, likeness and unlikeness, and finally contact depend on how a relation is framed. The dialogue’s point is methodological: a predicate may disclose its contrary when its conditions are made explicit.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0012",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0012\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"A stricter second pass\"\nstephanus_span: 163b-164c\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 163b-164c\n  start_marker: 163b\n  end_marker: 164c\n  start_char: 78809\n  end_char: 81787\n  text_sha256: \"b9f883d7cb5ca21268d6aee6408bc2c267208bad5330ae1f5d69264343fd14c9\"\nbody: \"I read the turn at 163b–164c as a stress test of the negation. The dialogue first lets the hypothesis produce a contradiction, then restarts by taking “is not” without qualification. For me, that restart is the point: it narrows the terms before the argument proceeds, shifting attention from what the non-existent One can undergo to what follows when participation in being is denied altogether. The passage therefore tests a rule of reasoning, not simply a definition of non-being.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    },
+    {
+      "commentary_id": "comm_parmenides_0013",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0013\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"When unity disappears, predicates collapse\"\nstephanus_span: 164d-166c\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 164d-166c\n  start_marker: 164d\n  end_marker: 166c\n  start_char: 81787\n  end_char: 85707\n  text_sha256: \"b03c9d97735977b1a70cf6d035007116c85fec458e5d514352456437a5124157\"\nbody: \"One way to hear this stretch is as a test of what “the others” can mean when unity is unavailable. The argument first multiplies every apparent unit, then withdraws even the appearances of number, likeness, relation, and motion. Its force is not a description of objects so much as a demonstration that ordinary predicates depend upon the One. The closing reversal leaves the exercise suspended between affirmation and denial.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    }
+  ]
+}

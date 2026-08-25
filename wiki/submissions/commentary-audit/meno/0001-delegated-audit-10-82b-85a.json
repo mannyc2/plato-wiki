@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-delegated-audit-10-82b-85a",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "meno",
+  "unit_key": "10-82b-85a",
+  "source_path": "scratch/commentary/delegated-audits/meno/10-82b-85a.json",
+  "source_sha256": "5041079a16c30a9a26f0bb543757eff07d9cff25058a48044d4eb233e61fbf60",
+  "target_path": "wiki/submissions/commentary-audit/meno/10-82b-85a.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "baebf3bc52d7203a478facbb672b405a0b2b6ee2d7a564c7e992fe1696ff61fb",
+  "applied_at": "2026-08-24T01:15:36.790Z",
+  "applied_ids": [
+    "comm_meno_0010"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "meno",
+    "unit_key": "10-82b-85a",
+    "job": {
+      "job_id": "audit:meno:10-82b-85a",
+      "input_sha256": "7dd327ba189bb84ccd7f842025b0ec591a424e397c47b5c9fd6d6aa6d04fe239",
+      "audit_brief_path": "scratch/commentary/audit-briefs/meno/10-82b-85a.md",
+      "audit_brief_sha256": "0702a438e16b8d0fd823fc793d10ebb06c7765cff82b398a839870d797794e18",
+      "output_path": "scratch/commentary/audits/meno/10-82b-85a.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/meno/10-82b-85a.output.json",
+    "output_sha256": "baebf3bc52d7203a478facbb672b405a0b2b6ee2d7a564c7e992fe1696ff61fb",
+    "provenance": {
+      "auditor": "batch-b-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

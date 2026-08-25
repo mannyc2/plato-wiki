@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-rewrite-01-17a-18e",
+  "lane": "commentary",
+  "kind": "rewrite",
+  "scope": "apology",
+  "unit_key": "01-17a-18e",
+  "source_path": "scratch/commentary/rewrites/apology/01-17a-18e.json",
+  "source_sha256": "f5fa916e5e4627f9af6b872ec45a3b61c4de72a8f75f58ad9174313f07be6f27",
+  "target_path": "wiki/commentary/apology.md",
+  "target_sha256_before": "75e19dacd5a2cfc50a91001c3e5679b5e31bc81991216d3c9fc5afe871830c2d",
+  "target_sha256_after": "6d45e2e2c63a42a420221b94d00efe97bf9d5586c342b05b89d40d20a2b7cdc4",
+  "applied_at": "2026-08-22T22:41:51.243Z",
+  "applied_ids": [
+    "comm_apology_0021"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "apology",
+    "unit_key": "01-17a-18e",
+    "section_id": "comm_apology_0001",
+    "audit_output": {
+      "path": "scratch/commentary/audits/apology/01-17a-18e.json",
+      "sha256": "94d09fa6200205db3d7f7d166fa479cc1ab9045cc29531f2077e1625ee886e85"
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_apology_0021",
+        "title": "",
+        "body": "The older accusations matter because they reach the jury before the courtroom does. Socrates says these accusers won many jurors’ belief in childhood by portraying him as a wise investigator of the heavens and things beneath the earth who could make the weaker argument stronger. None of them can be summoned for questioning. One way to read his first task, then, is as an attempt to unsettle the inherited picture the jury brings to the present indictment.",
+        "cites": {
+          "observations": [
+            "obs_apology_0003"
+          ],
+          "claims": [
+            "claim_apology_0002"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_apology_0021",
+      "body": "```yaml\ncommentary_id: comm_apology_0021\nsource_work: Apology\nblock_kind: argument\nplacement: after\nstephanus_span: 18b-18e\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 18b-18e\n  start_marker: 18b\n  end_marker: 18e\n  start_char: 2095\n  end_char: 3750\n  text_sha256: \"68474c53c226affc254ff5ceaa1eba70b6193f97d55b4d2e7e4a96ac91da22be\"\nbody: \"The older accusations matter because they reach the jury before the courtroom does. Socrates says many listeners encountered this story in childhood, when they were especially ready to believe it: that he was a wise man who investigated things in the sky and beneath the earth and made the weaker argument stronger. Most of these accusers cannot be summoned or questioned. One way to read his first task, then, is as an attempt to unsettle the inherited picture the jury brings to the present indictment.\"\ncites:\n  observations: [\"obs_apology_0003\"]\n  claims: [\"claim_apology_0002\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

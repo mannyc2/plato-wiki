@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0017-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "charmides",
+  "source_path": "scratch/commentary/rewrites/charmides/01-153a-154e.json",
+  "source_sha256": "6d92faf7516c29cac8da7f3fe83bd2003388fe97bc7d4953f2f2ea5a120be7b9",
+  "target_path": "wiki/commentary/charmides.md",
+  "target_sha256_before": "f52a673839abb12f75174f15bd913ecc728c501f58dbf25a0e90b1ce6612ff1b",
+  "target_sha256_after": "2fea138486359fb4cc1bda48dd6aa60507196c9c235248c08af880627f7a8a50",
+  "applied_at": "2026-08-23T23:53:59.192Z",
+  "applied_ids": [
+    "comm_charmides_0013"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "charmides",
+      "unit_key": "01-153a-154e",
+      "section_id": "comm_charmides_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/charmides/01-153a-154e.json",
+        "sha256": "1ef3030cf8792216afae6a3860e21d0f628c66770b7727af4c06ff5dba8d71c1"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_charmides_0013",
+          "title": "",
+          "body": "The contrast matters: Charmides’ appearance attracts attention, while examination is what could test what kind of person he is.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_charmides_0013",
+      "body": "```yaml\ncommentary_id: comm_charmides_0013\nsource_work: Charmides\nblock_kind: context\nplacement: before\nstephanus_span: 153a-153d\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 153a-153d\n  start_marker: 153a\n  end_marker: 153d\n  start_char: 0\n  end_char: 1449\n  text_sha256: \"7ce19e56f0d6f76f1aa82a2e3bde2ec15e1a041130410f1c161433db69d67398\"\nbody: \"Keep the focus on the contrast between appearance and examination: Charmides’ beauty and reputation are immediately available to view, whereas the temperance attributed to him cannot be established by appearance alone.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

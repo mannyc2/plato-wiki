@@ -1,0 +1,548 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "charmides",
+  "source_path": "scratch/commentary/rewrites/charmides/01-153a-154e.json",
+  "source_sha256": "52822f3100baa0674b0b67076db8ab8b26a39b4e15af628edda322c4d3ffe40c",
+  "target_path": "wiki/commentary/charmides.md",
+  "target_sha256_before": "970de3045e8e36ff1cf63501a019bc9509f9e97062d932f0f5fc19c4ccac2ad7",
+  "target_sha256_after": "fb05cd0e6c2892cf0fae0b8c250ca38e945f0ff3eca75b1bcb49846c2278a140",
+  "applied_at": "2026-08-21T14:12:02.214Z",
+  "applied_ids": [
+    "comm_charmides_0013",
+    "comm_charmides_0014",
+    "comm_charmides_0016",
+    "comm_charmides_0018",
+    "comm_charmides_0020",
+    "comm_charmides_0022",
+    "comm_charmides_0023",
+    "comm_charmides_0028",
+    "comm_charmides_0029",
+    "comm_charmides_0030",
+    "comm_charmides_0031",
+    "comm_charmides_0035",
+    "comm_charmides_0037",
+    "comm_charmides_0039",
+    "comm_charmides_0040",
+    "comm_charmides_0041",
+    "comm_charmides_0045"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "charmides",
+      "unit_key": "01-153a-154e",
+      "section_id": "comm_charmides_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/charmides/01-153a-154e.json",
+        "sha256": "1b38c57775dd703e1b0d40eb1aaf98a6b5109f0b1383ad29430a0507e204fd86"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_charmides_0013",
+          "title": "",
+          "body": "The frame makes Socrates’ return a change of register: from a campaign just marked by the deaths of acquaintances to the familiar palestra and its talk of philosophy and promising young men. One way to read the setting is as a juxtaposition of public danger with the social world into which Socrates reenters—and of the questions this community chooses to pursue.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0001",
+              "obs_charmides_0002",
+              "obs_charmides_0006"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_charmides_0014",
+          "title": "",
+          "body": "The turn is not from a passive Socrates to an active one: he has already initiated the question about philosophy and the young men at 153d. Here, after Chaerephon prompts him about Charmides’ face, Socrates redirects the shared admiration toward the soul. He accepts the language of beauty, then proposes examining whether Charmides is well-formed in soul and calls for conversation. The philosophical procedure grows out of the spectacle rather than simply replacing it.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0006",
+              "obs_charmides_0012",
+              "obs_charmides_0015",
+              "obs_charmides_0008"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "charmides",
+      "unit_key": "02-155a-157c",
+      "section_id": "comm_charmides_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/charmides/02-155a-157c.json",
+        "sha256": "986aa25a92cf35074be7de7a907b970f14fc3aeb9cdaca94c38181abab5ddb76"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_charmides_0016",
+          "title": "",
+          "body": "Charmides’ arrival unsettles the confidence Socrates expected to bring to the conversation. He reports being thrown into aporia, losing his former boldness, catching fire, and imagining himself as prey in Cydias’ fawn-and-lion image. I would not turn that erotic disturbance into a diagnosis that he has lost sophrosyne. The narrower irony is sharper: the speaker presenting a cure is himself unable to command his response to the encounter.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0019",
+              "obs_charmides_0016"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "charmides",
+      "unit_key": "03-157d-159a",
+      "section_id": "comm_charmides_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/charmides/03-157d-159a.json",
+        "sha256": "1ee75ca0add84c22b2a486e5fdd40a0d1b44b9cb0dff384a5ab9587b29c94a80"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_charmides_0018",
+          "title": "",
+          "body": "Socrates turns the promised cure into a conditional test: if Charmides already has sophrosyne, the remedy can be given directly; if not, the incantation comes first. The therapeutic sequence therefore identifies the immediate question of the inquiry—not yet a definition, but whether the quality is present at all.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0042"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_charmides_0020",
+          "title": "",
+          "body": "Socrates proceeds on a premise worth noticing: if temperance is present, Charmides should have some perception and opinion of it, and should be able to say what it is. The passage thus treats possession as a possible route to articulation. Whether that route will hold remains open; for now, it is the test placed before Charmides.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0052"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "charmides",
+      "unit_key": "04-159b-160d",
+      "section_id": "comm_charmides_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/charmides/04-159b-160d.json",
+        "sha256": "859952dd0c4db276777a4766e517031a3f1c468c5f7bde17fa3860649735d81a"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_charmides_0022",
+          "title": "",
+          "body": "At 160a–160b, Socrates’ questions keep moving while Charmides’ replies contract into brief confirmations: “true,” “yes,” “that is so,” and “it looks like it.” This compressed response pattern lets Socrates carry the argument from quick understanding and deliberation to a general claim about soul and body before stating the consequence for quietness. The exchange gives Socrates the argumentative momentum without requiring us to decide that Charmides is insincere.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0048"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_charmides_0023",
+          "title": "",
+          "body": "Charmides’ concession closes this test, and Socrates immediately gives the inquiry a new instruction: look into yourself, consider what temperance does to you when present, and infer what sort of thing could produce that effect. The passage clearly requests self-examination. Whether this marks a genuine change of method or simply frames the next attempt is left open; what matters here is the restart.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0045"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "charmides",
+      "unit_key": "06-163a-164b",
+      "section_id": "comm_charmides_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/charmides/06-163a-164b.json",
+        "sha256": "8e13506efa52ed853ffccfef017957f6cd2d5ad021bc63cea8d27345fce8410b"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_charmides_0028",
+          "title": "",
+          "body": "Socrates tests Critias’s proposal by adding a condition about awareness. The doctor may produce a benefit, but Socrates asks whether the doctor must know when the treatment helps rather than harms. Critias answers, “perhaps not.” The important pressure point is not simply whether the doctor performs a good act; it is whether the agent’s knowledge must include the value of that act. One way to read the exchange is as a shift from judging results to examining self-knowledge.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0076"
+            ],
+            "claims": [
+              "claim_charmides_0014"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "charmides",
+      "unit_key": "07-164c-166e",
+      "section_id": "comm_charmides_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/charmides/07-164c-166e.json",
+        "sha256": "92a9f39d246149c4248abb177eb73903f04c36960cc180362d82f648c7d2b6b9"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_charmides_0029",
+          "title": "",
+          "body": "Critias refuses the implication that someone could be temperate without knowing it: if that follows from his earlier admissions, he would retract those admissions rather than accept the result. He then recasts temperance as self-knowledge and invokes the Delphic inscription in support, reading its wording as a riddling divine address rather than an ordinary greeting. One way to hear the move is as a shift from defending the earlier premises to offering a new definition and a reason for it.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0075",
+              "obs_charmides_0072"
+            ],
+            "claims": [
+              "claim_charmides_0015",
+              "claim_charmides_0016"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_charmides_0030",
+          "title": "",
+          "body": "Socrates asks Critias to identify both the subject and the product of temperance, using medicine and building as immediate examples. Critias objects that self-knowledge is unlike the other sciences and points out that calculation and geometry do not yield tangible products like houses or cloaks. Socrates accepts the objection, then changes the question: instead of asking for a product, he asks what each science is about, illustrating the new approach with the even and odd, and with the heavy and light. The pressure shifts from output to object.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0083",
+              "obs_charmides_0084",
+              "obs_charmides_0089"
+            ],
+            "claims": [
+              "claim_charmides_0017"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_charmides_0031",
+          "title": "",
+          "body": "At 166c Critias says that Socrates is trying to refute him while leaving the subject of the discussion behind. Socrates answers that he is examining the argument because he fears mistaking ignorance for knowledge, and asks Critias to attend to what the argument itself will show. Critias then states that temperance is knowledge of itself and of the other sciences; Socrates immediately asks whether it therefore includes knowledge of ignorance. What should we make of this exchange: does the new definition clarify the inquiry, or does the accusation of refutation remain part of the problem?",
+          "cites": {
+            "observations": [
+              "obs_charmides_0091",
+              "obs_charmides_0086",
+              "obs_charmides_0088"
+            ],
+            "claims": [
+              "claim_charmides_0018",
+              "claim_charmides_0019",
+              "claim_charmides_0020"
+            ],
+            "relations": [
+              "rel_charmides_0003"
+            ],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "charmides",
+      "unit_key": "09-169d-172a",
+      "section_id": "comm_charmides_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/charmides/09-169d-172a.json",
+        "sha256": "487756276a20ac25ab7f47a955fa3bf54e0130e16e59740ffc7fe1d07f0aadc1"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_charmides_0035",
+          "title": "",
+          "body": "Socrates does not yet settle what a science of science can do. He grants its possibility only to keep the discussion moving, then asks whether it can distinguish anything beyond knowledge from non-knowledge. Critias answers, “No, only that.” The exchange therefore makes this a test of the proposed science’s reach, while leaving its existence itself for later examination.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0121",
+              "obs_charmides_0123"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_charmides_0037",
+          "title": "",
+          "body": "The passage holds a hope and a result apart. Under the earlier, broader hypothesis, knowing what one knows and does not know would let people entrust unfamiliar tasks to those with the relevant knowledge and live without error. Socrates then states the present result: no such science has appeared, and Critias agrees. Read as an argument, the contrast keeps the promised benefit conditional rather than turning it into an established achievement.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0132",
+              "obs_charmides_0133",
+              "obs_charmides_0134"
+            ],
+            "claims": [
+              "claim_charmides_0022",
+              "claim_charmides_0023"
+            ],
+            "relations": [
+              "rel_charmides_0004"
+            ],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "charmides",
+      "unit_key": "10-172b-174a",
+      "section_id": "comm_charmides_0010",
+      "audit_output": {
+        "path": "scratch/commentary/audits/charmides/10-172b-174a.json",
+        "sha256": "810bfacfae20bcb3d0fbfa1bdbf454886e174a5027e8f14bf46f558faab56b7f"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_charmides_0039",
+          "title": "",
+          "body": "Socrates labels the proposal a dream after admitting he may be talking nonsense, so the thought experiment arrives with its certainty deliberately lowered. Yet he asks us to grant its strongest consequence: if temperance governed as defined, ignorance could not pass itself off as expertise, and life would proceed according to knowledge. The decisive gap comes at the end. Even after granting that scenario, Socrates says they still cannot learn whether knowledgeable action makes us happy. One way to hear the passage is as a test of sufficiency: better knowledge may secure competent action without, by itself, explaining eudaimonia.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0149",
+              "obs_charmides_0150",
+              "obs_charmides_0151"
+            ],
+            "claims": [
+              "claim_charmides_0026"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_charmides_0040",
+          "title": "",
+          "body": "Socrates now tests the word “knowledge” by forcing it into particular crafts, beginning with shoemaking. The exchange keeps the happiness criterion unresolved rather than proving that every skilled activity makes its practitioner happy. Socrates then imagines a person who knows everything past, present, and future and asks which science makes him happy—or whether all do alike. I hear Critias’ final “not alike” as keeping that question open, not as identifying a single science. The next pressure point is therefore the missing link between knowledge and happiness.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0138",
+              "obs_charmides_0139"
+            ],
+            "claims": [
+              "claim_charmides_0026"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "charmides",
+      "unit_key": "11-174b-175a",
+      "section_id": "comm_charmides_0011",
+      "audit_output": {
+        "path": "scratch/commentary/audits/charmides/11-174b-175a.json",
+        "sha256": "2056b00a204dbafc2488ce501c1b900daf4b5298f085dc3f514622ceaf0cda00"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_charmides_0041",
+          "title": "",
+          "body": "Critias’s answer makes knowledge of good and bad the single knowledge connected with doing well and being happy, rather than merely the sum of all technical know-how. Socrates marks this shift with a personal accusation: he says Critias has been leading him in circles and concealing the answer. That is Socrates’ charge, not proof of Critias’ intention. He then tests the distinction by asking whether the other crafts would lose their own work if this knowledge were removed. They would not. The pressure point is therefore not whether each craft can perform its task, but what makes its result beneficial.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0140",
+              "obs_charmides_0141"
+            ],
+            "claims": [
+              "claim_charmides_0027",
+              "claim_charmides_0029"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "charmides",
+      "unit_key": "12-175b-176d",
+      "section_id": "comm_charmides_0012",
+      "audit_output": {
+        "path": "scratch/commentary/audits/charmides/12-175b-176d.json",
+        "sha256": "2736a6d63bfe774b7974654f951799bdf92c19dc4dc0e2867186b7b21d95c5d4"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_charmides_0045",
+          "title": "",
+          "body": "Charmides keeps the ending unresolved: he says he cannot know whether he has temperance because the inquiry has not discovered what it is, yet he is willing to keep receiving Socrates’ charm. Critias turns that willingness into a proposed test, saying it will be evidence of temperance if Charmides stays with Socrates. Read the comedy carefully: obedience satisfies the guardian’s test, but the exchange does not certify the virtue. It ends with a promise of treatment and a playful threat of force, not with temperance securely established.",
+          "cites": {
+            "observations": [
+              "obs_charmides_0159"
+            ],
+            "claims": [
+              "claim_charmides_0033",
+              "claim_charmides_0034"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_charmides_0013",
+      "body": "```yaml\ncommentary_id: comm_charmides_0013\nsource_work: Charmides\nblock_kind: context\nplacement: before\nstephanus_span: 153a-153d\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 153a-153d\n  start_marker: 153a\n  end_marker: 153d\n  start_char: 0\n  end_char: 1449\n  text_sha256: \"7ce19e56f0d6f76f1aa82a2e3bde2ec15e1a041130410f1c161433db69d67398\"\nbody: \"Socrates tells this whole story himself, in the first person, the day after returning from the fighting at Potidaea. The scene carries a quiet dissonance: a soldier comes back from a battle in which many acquaintances died, then walks into a wrestling-school and asks how philosophy is doing and which young men have turned out well. He is seated beside Critias, who becomes the dialogue's principal respondent.\"\ncites:\n  observations: [\"obs_charmides_0004\", \"obs_charmides_0005\", \"obs_charmides_0006\", \"obs_charmides_0001\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0014",
+      "body": "```yaml\ncommentary_id: comm_charmides_0014\nsource_work: Charmides\nblock_kind: argument\nplacement: after\nstephanus_span: 154d-154e\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 154d-154e\n  start_marker: 154d\n  end_marker: 154e\n  start_char: 2809\n  end_char: 3594\n  text_sha256: \"f036d348f2eb422fcbcf84c22c402272d85f10344ed8a421868ad7662d979281\"\nbody: \"Everyone in the room has been staring at Charmides' body — Chaerephon even jokes that stripped, the boy would seem to have no face at all. Socrates accepts the joke's own terms and turns them: if we want the whole of him, let us strip his soul first and look at that, since a boy his age is old enough to talk. In one move the erotic spectacle becomes a philosophical examination, and Socrates, who until now has only answered the others' prompts, takes charge of what happens next.\"\ncites:\n  observations: [\"obs_charmides_0012\", \"obs_charmides_0015\", \"obs_charmides_0009\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0016",
+      "body": "```yaml\ncommentary_id: comm_charmides_0016\nsource_work: Charmides\nblock_kind: notice\nplacement: after\nstephanus_span: 155c-155e\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 155c-155e\n  start_marker: 155c\n  end_marker: 155e\n  start_char: 4416\n  end_char: 5659\n  text_sha256: \"ec14fe9bedd2b29baaf29baa18ca89696ba724c40e0ab62f13b7ba31557ea96c\"\nbody: \"The man about to prescribe temperance has just lost his own. Socrates reports that his confidence was knocked out of him when Charmides sat down, that he saw inside the boy's cloak and caught fire, and he quotes the erotic poet Cydias on the fawn devoured by the lion. The narrator casts himself as the prey. That self-portrait sits oddly under the doctor's costume he is wearing, and the dialogue never quite resolves whether the physician of souls here is also a patient.\"\ncites:\n  observations: [\"obs_charmides_0019\", \"obs_charmides_0016\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0018",
+      "body": "```yaml\ncommentary_id: comm_charmides_0018\nsource_work: Charmides\nblock_kind: argument\nplacement: before\nstephanus_span: 158b-158c\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 158b-158c\n  start_marker: 158b\n  end_marker: 158c\n  start_char: 10379\n  end_char: 11245\n  text_sha256: \"6682a34bafa49eac46614f8c8962b999d3580ae47f6dc0ffe9f88f8950837f23\"\nbody: \"Socrates now turns Critias's extravagant praise into a test. He builds a simple fork: if Charmides already has temperance, as Critias declares, he needs no incantation and can take the remedy at once; if he still lacks it, the charm must come first. The medical fiction quietly becomes a diagnostic question about the soul, and sophrosyne is fixed as the thing under examination. The praise of ancestry that came before makes the fork sharper, because everything said so far about Charmides has been said by others — this is the first moment he must speak for himself.\"\ncites:\n  observations: [\"obs_charmides_0042\", \"obs_charmides_0041\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0020",
+      "body": "```yaml\ncommentary_id: comm_charmides_0020\nsource_work: Charmides\nblock_kind: notice\nplacement: after\nstephanus_span: 159a\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 159a\n  start_marker: 159a\n  end_marker: 159a\n  start_char: 12062\n  end_char: 12511\n  text_sha256: \"85e7adfe0a3248e8e52929fea8a6067944ad460601e1d45a10b892d512c1feba\"\nbody: \"The premise Socrates slips in here carries the rest of the dialogue: if temperance is present in you, it must give off some perception of itself, from which you could form an opinion of what it is — and since Charmides speaks Greek, he can say it. That is a substantial assumption, that a virtue announces itself to its possessor. Whether self-knowledge really works that way is exactly what the coming definitions will strain against, so it is worth hearing this quiet step as a step, not an obvious truth.\"\ncites:\n  observations: [\"obs_charmides_0052\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0022",
+      "body": "```yaml\ncommentary_id: comm_charmides_0022\nsource_work: Charmides\nblock_kind: notice\nplacement: after\nstephanus_span: 160a-160b\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 160a-160b\n  start_marker: 160a\n  end_marker: 160b\n  start_char: 14210\n  end_char: 15056\n  text_sha256: \"826ca6d9c3d51358e0df78a9290a0fd2a1d14dd51a13288d55c6c19d1afbaeb0\"\nbody: \"Charmides' side of this exchange shrinks to almost nothing: four rapid, one-word assents in a row before Socrates draws the conclusion, ending with a hedged 'it looks like it.' The record shows the pattern without settling what it means — the observations deliberately do not say he was coerced or insincere. One way to hear it is as irony working underneath the argument: a boy praised for quietness being refuted about quietness precisely by answering quickly. That reading is mine, not the text's; the ledger records only the assent chain itself.\"\ncites:\n  observations: [\"obs_charmides_0048\", \"obs_charmides_0040\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0023",
+      "body": "```yaml\ncommentary_id: comm_charmides_0023\nsource_work: Charmides\nblock_kind: context\nplacement: after\nstephanus_span: 160d\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 160d\n  start_marker: 160d\n  end_marker: 160d\n  start_char: 15474\n  end_char: 15895\n  text_sha256: \"c399dd725a869598e2b3b9fdabd3cd98053fcb3f05d880135e038a94224451b0\"\nbody: \"The concession does not end the inquiry; it changes the method. Socrates tells Charmides to look into himself — to consider what temperance makes him when it is present, and what it must be to have that effect. The first definition came from convention, from what people say about quiet behavior. The second is to come from introspection. Whether this is a genuine methodological shift or just a fresh prompt, the dialogue's next answer will be tested the same way this one was.\"\ncites:\n  observations: [\"obs_charmides_0045\", \"obs_charmides_0035\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0028",
+      "body": "```yaml\ncommentary_id: comm_charmides_0028\nsource_work: Charmides\nblock_kind: argument\nplacement: after\nstephanus_span: 164a-164b\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 164a-164b\n  start_marker: 164a\n  end_marker: 164b\n  start_char: 22989\n  end_char: 23806\n  text_sha256: \"239ff29e9bf0a67af20fdeecea0a2262d82ef8839f2e40fcd7e217d79e9ebf67\"\nbody: \"Socrates now moves fast: the doctor who heals does something helpful, one who does what is helpful does what is needed, and one who does what is needed is temperate. Critias says yes to each. Then comes the turn — must the doctor know when his work is actually helping? Here Critias hesitates: perhaps not. That one hedge undoes the definition, because it allows a man to be temperate without knowing it, and Critias would sooner take back his earlier admissions than accept a temperance ignorant of itself.\"\ncites:\n  observations: [\"obs_charmides_0074\", \"obs_charmides_0076\", \"obs_charmides_0075\"]\n  claims: []\n  relations: [\"rel_charmides_0001\"]\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0029",
+      "body": "```yaml\ncommentary_id: comm_charmides_0029\nsource_work: Charmides\nblock_kind: argument\nplacement: before\nstephanus_span: 164c-164d\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 164c-164d\n  start_marker: 164c\n  end_marker: 164d\n  start_char: 23806\n  end_char: 24627\n  text_sha256: \"9d4ff1f5ac5b1ca680c4af2d92d6d64297c12bc1d8df699a4766a772c56294f6\"\nbody: \"Cornered by his own admissions, Critias does something unusual for a Socratic respondent: rather than accept the conclusion that a man could be temperate without knowing it, he openly offers to retract whatever earlier concession produced it. The retreat is also an advance. Out of it comes the dialogue's most ambitious definition yet — temperance simply is self-knowledge — and Critias claims divine backing, reading the Delphic 'Know thyself' not as advice but as the god's own greeting, a riddling substitute for 'Hail.' The definition arrives, in other words, wrapped in an appeal to authority rather than argument.\"\ncites:\n  observations: [\"obs_charmides_0075\", \"obs_charmides_0072\"]\n  claims: [\"claim_charmides_0015\", \"claim_charmides_0016\"]\n  relations: [\"rel_charmides_0001\"]\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0030",
+      "body": "```yaml\ncommentary_id: comm_charmides_0030\nsource_work: Charmides\nblock_kind: argument\nplacement: before\nstephanus_span: 165c-166b\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 165c-166b\n  start_marker: 165c\n  end_marker: 166b\n  start_char: 25946\n  end_char: 28142\n  text_sha256: \"bffbc9fd522c42ab95a45bc50c74388bf8b314ecdd1aef92fc3512d3af783ee8\"\nbody: \"Socrates now applies his standard craft test: if temperance is a knowledge, it must be of something, and it should produce some fine work, as medicine produces health and building produces houses. Critias fights back on method itself, telling Socrates he is searching wrongly by treating unlike sciences as alike — what house does geometry build? Socrates concedes the point and quietly lowers the bar: forget the product, just name the object, as calculation has the odd and even and weighing has the heavy and light. The concession makes the question harder for Critias, not easier.\"\ncites:\n  observations: [\"obs_charmides_0083\", \"obs_charmides_0084\", \"obs_charmides_0085\", \"obs_charmides_0089\"]\n  claims: [\"claim_charmides_0017\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0031",
+      "body": "```yaml\ncommentary_id: comm_charmides_0031\nsource_work: Charmides\nblock_kind: question\nplacement: after\nstephanus_span: 166b-166e\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 166b-166e\n  start_marker: 166b\n  end_marker: 166e\n  start_char: 27713\n  end_char: 29466\n  text_sha256: \"a6ae22d2ddb787a2ce815e5bfc50da5eb42c97c4287c69f824db02e76ddec232\"\nbody: \"Under pressure to name temperance's object, Critias produces the formula the rest of the dialogue will test: temperance alone is a knowledge of itself and of the other knowledges — and Socrates immediately adds that it must then also be knowledge of ignorance. But the handoff comes only after a charged exchange, with Critias accusing Socrates of refuting for sport and Socrates insisting he examines the argument for his own sake, whoever gets refuted. Is that insistence a neutral rule of inquiry, or does it quietly enact the very self-examination that Critias's definition names without practicing?\"\ncites:\n  observations: [\"obs_charmides_0090\", \"obs_charmides_0088\", \"obs_charmides_0091\", \"obs_charmides_0086\"]\n  claims: [\"claim_charmides_0018\", \"claim_charmides_0020\", \"claim_charmides_0019\"]\n  relations: [\"rel_charmides_0003\"]\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0035",
+      "body": "```yaml\ncommentary_id: comm_charmides_0035\nsource_work: Charmides\nblock_kind: argument\nplacement: before\nstephanus_span: 169d-170a\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 169d-170a\n  start_marker: 169d\n  end_marker: 170a\n  start_char: 35293\n  end_char: 36619\n  text_sha256: \"a4332c56a0ae971d7e8e7467393c6fd6d627b2f6a060aad44e49522910b1e04c\"\nbody: \"Rather than settle whether a science of science is even possible, Socrates sets that question aside and grants it for the sake of argument, promising to return to it later. The move changes what is at stake. The test is no longer existence but usefulness: even if such a knowledge were real, would it actually deliver knowing what one knows and does not know? Socrates then narrows the granted power to almost nothing — a science of science can sort items into knowledge and not-knowledge, and that is all. Everything that follows presses on the gap between knowing that one knows and knowing what one knows.\"\ncites:\n  observations: [\"obs_charmides_0121\", \"obs_charmides_0123\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0037",
+      "body": "```yaml\ncommentary_id: comm_charmides_0037\nsource_work: Charmides\nblock_kind: argument\nplacement: after\nstephanus_span: 171d-172a\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 171d-172a\n  start_marker: 171d\n  end_marker: 172a\n  start_char: 39824\n  end_char: 41087\n  text_sha256: \"2a14fc19edf4aace006f57402cce19fda0fb6cef9a4c8712d4bdfc2352870b26\"\nbody: \"Before delivering the blow, Socrates paints the alternative in full: if the temperate man really knew what he knows and does not know, and could test others the same way, households and cities under temperance's rule would run without error, and those who fared well would be happy. That picture is carefully conditional — a benefit hypothesis, not an established result. Then the pivot: no such knowledge has appeared anywhere, and Critias concedes it. The eulogy of temperance and the admission of its absence sit side by side, and the dialogue's later turns will keep working that wound.\"\ncites:\n  observations: [\"obs_charmides_0134\", \"obs_charmides_0133\", \"obs_charmides_0132\"]\n  claims: [\"claim_charmides_0022\", \"claim_charmides_0023\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0039",
+      "body": "```yaml\ncommentary_id: comm_charmides_0039\nsource_work: Charmides\nblock_kind: notice\nplacement: before\nstephanus_span: 173a-173d\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 173a-173d\n  start_marker: 173a\n  end_marker: 173d\n  start_char: 42849\n  end_char: 44536\n  text_sha256: \"2c38b18d866b382002636edd1ac28be11c05b3323fe468e762c56eae1bc2ea69\"\nbody: \"Socrates hedges this vision three times over before he speaks it. He says he may be talking nonsense, calls it a dream, and asks whether it came through the gate of horn or of ivory — the Homeric gates of true and false dreams. Then the vision itself: a city where temperance rules, no fake pilot or doctor or general escapes detection, and everything is done according to knowledge. He grants all of it, and still cannot say that such a life would be happy. The hedging matters, because what the dream withholds is exactly the question the rest of the dialogue turns on.\"\ncites:\n  observations: [\"obs_charmides_0149\", \"obs_charmides_0150\", \"obs_charmides_0151\"]\n  claims: [\"claim_charmides_0026\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0040",
+      "body": "```yaml\ncommentary_id: comm_charmides_0040\nsource_work: Charmides\nblock_kind: argument\nplacement: after\nstephanus_span: 173d-174a\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 173d-174a\n  start_marker: 173d\n  end_marker: 174a\n  start_char: 44076\n  end_char: 45418\n  text_sha256: \"25ce284b91173a640f5caed6e554ae78d62e9328b255de9937627be12b00fd9f\"\nbody: \"When Critias insists that living according to knowledge is the only measure of doing well, Socrates asks the deflating question: knowledge of what? Shoemaking? Bronze-work? Critias refuses each craft, which quietly abandons the claim that knowledgeable living as such makes anyone happy. So Socrates builds the strongest possible case — a man who knows everything past, present, and to come — and asks which of his sciences makes him happy. Critias's answer, that not all do so alike, concedes that some one knowledge must carry the weight, and the hunt for that knowledge is now the whole question.\"\ncites:\n  observations: [\"obs_charmides_0138\", \"obs_charmides_0139\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0041",
+      "body": "```yaml\ncommentary_id: comm_charmides_0041\nsource_work: Charmides\nblock_kind: argument\nplacement: before\nstephanus_span: 174b-174c\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 174b-174c\n  start_marker: 174b\n  end_marker: 174c\n  start_char: 45418\n  end_char: 46313\n  text_sha256: \"0616389c34a91b3b4ad7473d21a9da8176423394cbcef8211303c1e241c94588\"\nbody: \"When Critias finally names knowledge of good and bad as the science that makes us happy, Socrates cries out that he has been dragged in a circle. The complaint is precise: if happiness comes from this one science alone, then living knowledgeably in general — the whole edifice of knowledge of knowledge — was never what made life go well. Critias's answer quietly abandons the definition he has defended all along, and Socrates makes the abandonment explicit before Critias can retreat.\"\ncites:\n  observations: [\"obs_charmides_0140\", \"obs_charmides_0141\"]\n  claims: [\"claim_charmides_0027\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_charmides_0045",
+      "body": "```yaml\ncommentary_id: comm_charmides_0045\nsource_work: Charmides\nblock_kind: notice\nplacement: after\nstephanus_span: 176a-176d\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 176a-176d\n  start_marker: 176a\n  end_marker: 176d\n  start_char: 49279\n  end_char: 50785\n  text_sha256: \"1b96c3a556a0dd58de30fc3bf4380eb541bee48be92f204c102c5c02f9212dfb\"\nbody: \"The dialogue's last word on temperance is a small comedy about obedience. Charmides admits he cannot know whether he has the virtue, since no one has said what it is — yet he is sure he needs Socrates' charm. Critias then declares that submitting to Socrates will itself be proof that Charmides is temperate, and Charmides promises to use force if necessary. So a conversation that could not define temperance ends by certifying it through deference to a guardian's command, backed by a cheerful threat of violence. The drama supplies an answer the argument refused: here, temperance looks like doing what those in charge tell you.\"\ncites:\n  observations: [\"obs_charmides_0159\"]\n  claims: [\"claim_charmides_0033\", \"claim_charmides_0034\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}
