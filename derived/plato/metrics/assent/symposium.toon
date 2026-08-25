@@ -1,0 +1,18 @@
+dialogue: symposium
+anchor_lexicon_path: derived/plato/anchors/lexicon.toml
+anchor_lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+token_index_path: derived/plato/tokens/symposium.toon
+token_index_sha256: 986f4c774bbb889192a4009fc710a465675e6cf03bef61955077aca407df4c71
+speakers[2]:
+  speaker | turns | assent_occurrences | assent_token_count | assent_turns | short_assent_turns
+  ΑΠΟΛ.   | 3 | 11 | 17 | 1 | 0
+  ΕΤΑΙ.   | 2 | 0 | 0 | 0 | 0
+turns[5]:
+  turn_id             | speaker | token_count | assent_occurrences | assent_token_count | assent_token_ids                                                                                                                                                                                                                                                                                                                                                     | short_assent
+  turn_symposium_0001 | ΑΠΟΛ.   | 431 | 0 | 0 |                                                                                                                                                                                                                                                                                                                                                                      | no
+  turn_symposium_0002 | ΕΤΑΙ.   | 55 | 0 | 0 |                                                                                                                                                                                                                                                                                                                                                                      | no
+  turn_symposium_0003 | ΑΠΟΛ.   | 19 | 0 | 0 |                                                                                                                                                                                                                                                                                                                                                                      | no
+  turn_symposium_0004 | ΕΤΑΙ.   | 21 | 0 | 0 |                                                                                                                                                                                                                                                                                                                                                                      | no
+  turn_symposium_0005 | ΑΠΟΛ.   | 16828 | 11 | 17 | tok_symposium_009068,tok_symposium_009069,tok_symposium_009159,tok_symposium_009160,tok_symposium_009446,tok_symposium_009447,tok_symposium_009515,tok_symposium_009600,tok_symposium_009631,tok_symposium_009986,tok_symposium_010114,tok_symposium_010115,tok_symposium_011358,tok_symposium_013788,tok_symposium_013789,tok_symposium_017013,tok_symposium_017014 | no
+stretches[0]:
+  stretch_id | speaker | start_turn_id | end_turn_id | turn_count | assent_token_ids

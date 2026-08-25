@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-delegated-audit-03-157d-159a",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "charmides",
+  "unit_key": "03-157d-159a",
+  "source_path": "scratch/commentary/delegated-audits/charmides/03-157d-159a.json",
+  "source_sha256": "70de151093bf1b1ef349f8c7f6e3e96696984eb483e0e7b269dd7f2428edf104",
+  "target_path": "wiki/submissions/commentary-audit/charmides/03-157d-159a.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "517bc790843177f8e730f69e0258ee11cac2094c0fe66fd8de15742ab256438a",
+  "applied_at": "2026-08-24T01:15:36.757Z",
+  "applied_ids": [
+    "comm_charmides_0003"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "charmides",
+    "unit_key": "03-157d-159a",
+    "job": {
+      "job_id": "audit:charmides:03-157d-159a",
+      "input_sha256": "d42a604d13399d952237136fab65e9ee68ef8bd3f80578920f957a398c233589",
+      "audit_brief_path": "scratch/commentary/audit-briefs/charmides/03-157d-159a.md",
+      "audit_brief_sha256": "6c53824b48168183298396d1daad1d13a5ca07bfce2b18c2870cd1f28ac12797",
+      "output_path": "scratch/commentary/audits/charmides/03-157d-159a.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/charmides/03-157d-159a.output.json",
+    "output_sha256": "517bc790843177f8e730f69e0258ee11cac2094c0fe66fd8de15742ab256438a",
+    "provenance": {
+      "auditor": "batch-a-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

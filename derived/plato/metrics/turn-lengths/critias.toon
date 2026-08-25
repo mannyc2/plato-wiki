@@ -1,0 +1,33 @@
+dialogue: critias
+turn_index_path: derived/plato/turns/critias.toon
+turn_index_sha256: 18c8c993f2427313bce48d689e1a4a03ec5605c678a7c17f7cb236f5441e5c78
+token_index_path: derived/plato/tokens/critias.toon
+token_index_sha256: 813042999c1c25317fa90d5c600518378bc952249145f998f4a3ae6669d23242
+speakers[4]:
+  speaker | turns | total_tokens | median_tokens | p90_tokens | max_tokens | long_turns
+  ΕΡ.     | 1 | 43 | 43 | 43 | 43 | 0
+  ΚΡΙ.    | 17 | 4753 | 321 | 354 | 374 | 0
+  ΣΩ.     | 1 | 82 | 82 | 82 | 82 | 0
+  ΤΙ.     | 1 | 95 | 95 | 95 | 95 | 0
+turns[20]:
+  turn_id           | speaker | start_marker | end_marker | start_char | end_char | greek_char_count | token_count | dialogue_long_turn | speaker_long_turn
+  turn_critias_0001 | ΤΙ.     | 106a         | 106b       | 0 | 625 | 499 | 95 | no | no
+  turn_critias_0002 | ΚΡΙ.    | 106b         | 107a       | 625 | 866 | 180 | 37 | no | no
+  turn_critias_0003 | ΚΡΙ.    | 107a         | 107e       | 866 | 2666 | 1455 | 286 | no | no
+  turn_critias_0004 | ΚΡΙ.    | 108a         | 108a       | 2666 | 2886 | 173 | 33 | no | no
+  turn_critias_0005 | ΣΩ.     | 108a         | 108b       | 2886 | 3406 | 412 | 82 | no | no
+  turn_critias_0006 | ΕΡ.     | 108b         | 108c       | 3406 | 3684 | 220 | 43 | no | no
+  turn_critias_0007 | ΚΡΙ.    | 108c         | 109a       | 3684 | 4768 | 857 | 172 | no | no
+  turn_critias_0008 | ΚΡΙ.    | 109a         | 110a       | 4768 | 6771 | 1605 | 312 | no | no
+  turn_critias_0009 | ΚΡΙ.    | 110a         | 110e       | 6771 | 8593 | 1457 | 298 | no | no
+  turn_critias_0010 | ΚΡΙ.    | 110e         | 111e       | 8593 | 10708 | 1671 | 348 | no | no
+  turn_critias_0011 | ΚΡΙ.    | 111e         | 112e       | 10708 | 12913 | 1771 | 354 | no | no
+  turn_critias_0012 | ΚΡΙ.    | 113a         | 113e       | 12913 | 14946 | 1608 | 331 | no | no
+  turn_critias_0013 | ΚΡΙ.    | 113e         | 114e       | 14946 | 17182 | 1783 | 355 | no | no
+  turn_critias_0014 | ΚΡΙ.    | 114e         | 116a       | 17182 | 19475 | 1802 | 374 | no | no
+  turn_critias_0015 | ΚΡΙ.    | 116a         | 116e       | 19475 | 21623 | 1724 | 339 | no | no
+  turn_critias_0016 | ΚΡΙ.    | 116e         | 117e       | 21623 | 23759 | 1719 | 342 | no | no
+  turn_critias_0017 | ΚΡΙ.    | 117e         | 118e       | 23759 | 25873 | 1684 | 345 | no | no
+  turn_critias_0018 | ΚΡΙ.    | 118e         | 119e       | 25873 | 27903 | 1626 | 321 | no | no
+  turn_critias_0019 | ΚΡΙ.    | 119e         | 120e       | 27903 | 29761 | 1482 | 294 | no | no
+  turn_critias_0020 | ΚΡΙ.    | 120e         | 121c       | 29761 | 31192 | 1171 | 212 | no | no

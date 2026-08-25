@@ -1,0 +1,100 @@
+{
+  "plan": "071",
+  "dialogue": "symposium",
+  "generated_from": {
+    "voice_index_path": "derived/plato/voices/symposium.toon",
+    "voice_index_sha256": "03a4952e32dba2e645754abf01b10229d3570804c651224a728d9a74034b8ca6",
+    "claim_ledger_path": "wiki/claims/symposium.md",
+    "claim_ledger_sha256_before": "6c57a68c5d337d98274cf7bc2730ac449ff3603d16fca7400531bad74b970baa",
+    "claim_ledger_sha256_after": "6c57a68c5d337d98274cf7bc2730ac449ff3603d16fca7400531bad74b970baa"
+  },
+  "counts": {
+    "claims_total": 196,
+    "migrated": 0,
+    "already_correct": 185,
+    "blocking_accepted": 0,
+    "unresolved_but_not_accepted": 11
+  },
+  "changes": [],
+  "blocking_accepted": [],
+  "unresolved_but_not_accepted": [
+    {
+      "claimId": "claim_symposium_0005",
+      "reviewStatus": "rejected",
+      "speaker": "ΑΠΟΛ.",
+      "status": "needs_anchor",
+      "evidence": "1 of 1 term(s) absent from a cross-voice window: \"Σωκράτη δ' ἐξαιρῶ λόγου· ἱκανὸς γὰρ καὶ ἀμφότερα\" missing"
+    },
+    {
+      "claimId": "claim_symposium_0069",
+      "reviewStatus": "rejected",
+      "speaker": "ΑΠΟΛ.",
+      "status": "needs_anchor",
+      "evidence": "3 of 3 term(s) absent from a cross-voice window: \"νοῦν ἔχοντι\" missing; \"ὀλίγοι ἔμφρονες\" missing; \"πολλῶν ἀφρόνων\" missing"
+    },
+    {
+      "claimId": "claim_symposium_0089",
+      "reviewStatus": "rejected",
+      "speaker": "ΑΠΟΛ.",
+      "status": "needs_anchor",
+      "evidence": "context window crosses voices and the claim has no greek_terms to anchor"
+    },
+    {
+      "claimId": "claim_symposium_0091",
+      "reviewStatus": "rejected",
+      "speaker": "ΑΠΟΛ.",
+      "status": "needs_anchor",
+      "evidence": "context window crosses voices and the claim has no greek_terms to anchor"
+    },
+    {
+      "claimId": "claim_symposium_0093",
+      "reviewStatus": "rejected",
+      "speaker": "ΑΠΟΛ.",
+      "status": "needs_anchor",
+      "evidence": "context window crosses voices and the claim has no greek_terms to anchor"
+    },
+    {
+      "claimId": "claim_symposium_0095",
+      "reviewStatus": "rejected",
+      "speaker": "ΑΠΟΛ.",
+      "status": "needs_anchor",
+      "evidence": "context window crosses voices and the claim has no greek_terms to anchor"
+    },
+    {
+      "claimId": "claim_symposium_0096",
+      "reviewStatus": "rejected",
+      "speaker": "ΑΠΟΛ.",
+      "status": "needs_anchor",
+      "evidence": "context window crosses voices and the claim has no greek_terms to anchor"
+    },
+    {
+      "claimId": "claim_symposium_0097",
+      "reviewStatus": "rejected",
+      "speaker": "ΑΠΟΛ.",
+      "status": "needs_anchor",
+      "evidence": "context window crosses voices and the claim has no greek_terms to anchor"
+    },
+    {
+      "claimId": "claim_symposium_0107",
+      "reviewStatus": "rejected",
+      "speaker": "ΑΠΟΛ.",
+      "status": "needs_anchor",
+      "evidence": "1 of 2 term(s) absent from a cross-voice window: \"τὸ δαιμόνιον\" missing"
+    },
+    {
+      "claimId": "claim_symposium_0116",
+      "reviewStatus": "rejected",
+      "speaker": "ΑΠΟΛ.",
+      "status": "needs_anchor",
+      "evidence": "1 of 4 term(s) absent from a cross-voice window: \"πᾶσαι αἱ τέχναι\" missing"
+    },
+    {
+      "claimId": "claim_symposium_0119",
+      "reviewStatus": "rejected",
+      "speaker": "ΑΠΟΛ.",
+      "status": "needs_anchor",
+      "evidence": "1 of 6 term(s) absent from a cross-voice window: \"τοὺς ἐραστάς\" missing"
+    }
+  ],
+  "stance_actors_differing_from_owner": []
+}

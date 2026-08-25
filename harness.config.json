@@ -1,0 +1,58 @@
+{
+  "defaultProfile": "openai",
+  "transcriptsDir": "wiki/transcripts",
+  "profiles": {
+    "openai": {
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "apiKeyEnv": "OPENAI_API_KEY"
+    },
+    "anthropic": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5",
+      "apiKeyEnv": "ANTHROPIC_API_KEY"
+    },
+    "deepseek-flash": {
+      "provider": "deepseek",
+      "model": "deepseek-v4-flash",
+      "apiKeyEnv": "DEEPSEEK_API_KEY",
+      "disableReasoning": true
+    },
+    "deepseek-pro": {
+      "provider": "deepseek",
+      "model": "deepseek-v4-pro",
+      "apiKeyEnv": "DEEPSEEK_API_KEY",
+      "disableReasoning": true
+    },
+    "pioneer-flash": {
+      "provider": "deepseek",
+      "model": "deepseek-v4-flash",
+      "apiKeyEnv": "PIONEER_API_KEY",
+      "baseUrl": "https://api.pioneer.ai/v1",
+      "apiKeyHeader": "X-API-Key",
+      "remoteModelId": "deepseek-ai/DeepSeek-V4-Flash",
+      "disableReasoning": true,
+      "maxTokens": 8192
+    },
+    "pioneer-pro": {
+      "provider": "deepseek",
+      "model": "deepseek-v4-pro",
+      "apiKeyEnv": "PIONEER_API_KEY",
+      "baseUrl": "https://api.pioneer.ai/v1",
+      "apiKeyHeader": "X-API-Key",
+      "remoteModelId": "deepseek-ai/DeepSeek-V4-Pro",
+      "disableReasoning": true,
+      "maxTokens": 8192
+    },
+    "pioneer-auto": {
+      "provider": "deepseek",
+      "model": "deepseek-v4-flash",
+      "apiKeyEnv": "PIONEER_API_KEY",
+      "baseUrl": "https://api.pioneer.ai/v1",
+      "apiKeyHeader": "X-API-Key",
+      "remoteModelId": "pioneer/auto",
+      "disableReasoning": true,
+      "maxTokens": 8192
+    }
+  }
+}

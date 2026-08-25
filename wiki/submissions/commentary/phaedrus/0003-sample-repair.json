@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "phaedrus",
+  "source_path": "scratch/commentary/sample-repairs/phaedrus/final-sample-0001-0017.json",
+  "source_sha256": "6e45d735a45ba15331085b973fbcc25e97e2e10cfd0bc1a8358972afb6aaf2fb",
+  "target_path": "wiki/commentary/phaedrus.md",
+  "target_sha256_before": "d0d15984756e96b1da4c5a729766fd720d2e69326fd9b5e2e07f3581320c9dea",
+  "target_sha256_after": "5cc5881cfda02ec52d6bc2b1f657ee6fbf108a7ad272f8367e16c6bf91c0a87b",
+  "applied_at": "2026-08-21T18:56:28.785Z",
+  "applied_ids": [
+    "comm_phaedrus_0001",
+    "comm_phaedrus_0017"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "phaedrus",
+    "ledger": {
+      "path": "wiki/commentary/phaedrus.md",
+      "sha256": "d0d15984756e96b1da4c5a729766fd720d2e69326fd9b5e2e07f3581320c9dea"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-phaedrus-final-sample",
+      "reviewed_on": "2026-08-21",
+      "rationale": "The independent Luna sample found two bounded unsupported-claim defects; these revisions add accepted local evidence and tighten only those blocks.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_phaedrus_0001",
+        "comm_phaedrus_0002",
+        "comm_phaedrus_0003",
+        "comm_phaedrus_0004",
+        "comm_phaedrus_0005",
+        "comm_phaedrus_0006",
+        "comm_phaedrus_0007",
+        "comm_phaedrus_0008",
+        "comm_phaedrus_0011",
+        "comm_phaedrus_0012",
+        "comm_phaedrus_0013",
+        "comm_phaedrus_0014",
+        "comm_phaedrus_0016",
+        "comm_phaedrus_0017",
+        "comm_phaedrus_0018"
+      ],
+      "failed_commentary_ids": [
+        "comm_phaedrus_0001",
+        "comm_phaedrus_0017"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_phaedrus_0001",
+        "title": "The walk beyond the walls",
+        "body": "Phaedrus comes from Lysias and walks outside the city wall to rehearse the speech; Socrates presents himself as following because he is eager to hear it. The Ilissus setting is immediately tied to Phaedrus's question about whether the Boreas story is true, bringing the physical walk into the dialogue's first question about myth.",
+        "cites": {
+          "observations": [
+            "obs_phaedrus_0001",
+            "obs_phaedrus_0006",
+            "obs_phaedrus_0008",
+            "obs_phaedrus_0016",
+            "obs_phaedrus_0018"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_phaedrus_0017",
+        "title": "Writing as a reminder, not a substitute",
+        "body": "The Egyptian tale turns on a reversal: Theuth presents writing as a remedy for memory and wisdom, while Thamus says it produces forgetfulness and only the appearance of wisdom. Socrates later calls writing a reminder for one who already knows, then contrasts its helplessness when questioned with speech written with knowledge in the learner's soul, capable of defending itself. I hear this as a limit on what writing can do, not its disappearance.",
+        "cites": {
+          "observations": [
+            "obs_phaedrus_0301"
+          ],
+          "claims": [
+            "claim_phaedrus_0079",
+            "claim_phaedrus_0081",
+            "claim_phaedrus_0082"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_phaedrus_0001",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0001\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"The walk beyond the walls\"\nstephanus_span: 227a-229d\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 227a-229d\n  start_marker: 227a\n  end_marker: 229d\n  start_char: 8\n  end_char: 4899\n  text_sha256: \"b79528e190e7093e3e373f9fdf24b558cd33c836b09bda429c5ceff726eec7f0\"\nbody: \"Phaedrus brings Lysias’s speech out of the city, and Socrates follows him to the plane tree. The setting matters: the conversation leaves civic bustle for a place where myth, memory, and the claims of speech can be tested together.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_phaedrus_0017",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0017\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"Writing as a reminder, not a substitute\"\nstephanus_span: 273e-276a\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 273e-276a\n  start_marker: 273e\n  end_marker: 276a\n  start_char: 92687\n  end_char: 97611\n  text_sha256: \"c5858b76d6d0cf71fc05dd03d6ee6b4bfcbee4807e238eb8fbdcfd6dda5fc296\"\nbody: \"The Egyptian story distinguishes memory from mere reminders. Written marks can prompt recollection, but they cannot answer questions or defend themselves. The living speech planted in a learner’s soul is therefore the measure against which writing is assessed.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0008-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "symposium",
+  "source_path": "scratch/commentary/rewrites/symposium/03-180c-185c.json",
+  "source_sha256": "9edd03b0025e6a33725ac3822cd9bab8d8f8168c5b75269cfbf2a2cb12ca5feb",
+  "target_path": "wiki/commentary/symposium.md",
+  "target_sha256_before": "7ac4233346330cf37fd4f4b625d0665177c827c5bb83e4f7e9ce2cfec8e349e4",
+  "target_sha256_after": "09c8fc41528d21e81f2cf64949dcaf61cb612c4c51fce5648c3df1fb6bceb82f",
+  "applied_at": "2026-08-23T21:18:37.934Z",
+  "applied_ids": [
+    "comm_symposium_0003"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "03-180c-185c",
+      "section_id": "comm_symposium_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/03-180c-185c.json",
+        "sha256": "2c042aef388b4e10f8410ba18139395d32815ddbd1466123633cf182521a69bb"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0003",
+          "title": "Love Requires a Test",
+          "body": "Pausanias makes the praise of Love depend on discrimination: the word covers more than one kind of desire, and the important question is what each kind seeks. Admiration for love is therefore not enough until its aim has been identified.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_symposium_0003",
+      "body": "```yaml\ncommentary_id: comm_symposium_0003\nsource_work: Symposium\nblock_kind: section\nplacement: before\ntitle: \"Pausanias: two Erotes\"\nstephanus_span: 180c-185c\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 180c-185c\n  start_marker: 180c\n  end_marker: 185c\n  start_char: 16929\n  end_char: 27184\n  text_sha256: \"aaac41ec46388ce4e0a75a20f9210b9711b1d680e36c6f6e547f23b1b21f4274\"\nbody: \"Pausanias corrects the terms of the exercise: since Aphrodite is double, heavenly and popular, Eros must be double too, and only the heavenly kind deserves praise. His speech is a defense of a regulated Athenian pederasty, in which gratifying a lover is honorable exactly when it is exchanged for virtue and wisdom.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

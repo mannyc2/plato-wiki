@@ -1,0 +1,913 @@
+dialogue: statesman
+turn_index_path: derived/plato/turns/statesman.toon
+turn_index_sha256: 3b6362e0b18d3d24fd62ae447033955bdaf69e79cf670cde6001d5ccde47ff2c
+token_index_path: derived/plato/tokens/statesman.toon
+token_index_sha256: 62167b2e392d378e9d77ae306a8f1ae39e8f922b76981f2ae8f4d1e7c76a8b8a
+speakers[5]:
+  speaker | turns | total_tokens | median_tokens | p90_tokens | max_tokens | long_turns
+  (none)  | 1 | 1 | 1 | 1 | 1 | 0
+  ΘΕΟ.    | 5 | 91 | 12 | 18 | 54 | 1
+  ΝΕ. ΣΩ. | 440 | 2376 | 4 | 9 | 55 | 46
+  ΞΕ.     | 448 | 15712 | 24.5 | 67 | 351 | 32
+  ΣΩ.     | 5 | 136 | 17 | 22 | 69 | 1
+turns[899]:
+  turn_id             | speaker | start_marker | end_marker | start_char | end_char | greek_char_count | token_count | dialogue_long_turn | speaker_long_turn
+  turn_statesman_0001 | (none)  | 257a         | 257a       | 0 | 10 | 9 | 1 | no | no
+  turn_statesman_0002 | ΣΩ.     | 257a         | 257a       | 10 | 106 | 69 | 16 | no | no
+  turn_statesman_0003 | ΘΕΟ.    | 257a         | 257a       | 106 | 240 | 97 | 18 | no | no
+  turn_statesman_0004 | ΣΩ.     | 257a         | 257a       | 240 | 350 | 88 | 17 | no | no
+  turn_statesman_0005 | ΘΕΟ.    | 257b         | 257b       | 350 | 379 | 15 | 4 | no | no
+  turn_statesman_0006 | ΣΩ.     | 257b         | 257b       | 379 | 506 | 102 | 22 | no | no
+  turn_statesman_0007 | ΘΕΟ.    | 257b         | 257c       | 506 | 845 | 263 | 54 | no | yes
+  turn_statesman_0008 | ΞΕ.     | 257c         | 257c       | 845 | 1024 | 130 | 28 | no | no
+  turn_statesman_0009 | ΘΕΟ.    | 257c         | 257c       | 1024 | 1039 | 10 | 3 | no | no
+  turn_statesman_0010 | ΞΕ.     | 257c         | 257c       | 1039 | 1134 | 80 | 12 | no | no
+  turn_statesman_0011 | ΘΕΟ.    | 257c         | 257c       | 1134 | 1218 | 68 | 12 | no | no
+  turn_statesman_0012 | ΣΩ.     | 257d         | 257d       | 1218 | 1298 | 57 | 12 | no | no
+  turn_statesman_0013 | ΣΩ.     | 257d         | 258a       | 1298 | 1712 | 328 | 69 | yes | yes
+  turn_statesman_0014 | ΞΕ.     | 258a         | 258a       | 1712 | 1763 | 38 | 8 | no | no
+  turn_statesman_0015 | ΝΕ. ΣΩ. | 258a         | 258a       | 1763 | 1776 | 7 | 3 | no | no
+  turn_statesman_0016 | ΞΕ.     | 258a         | 258a       | 1776 | 1805 | 22 | 5 | no | no
+  turn_statesman_0017 | ΝΕ. ΣΩ. | 258a         | 258a       | 1805 | 1827 | 14 | 5 | no | no
+  turn_statesman_0018 | ΞΕ.     | 258b         | 258b       | 1827 | 2080 | 184 | 40 | no | no
+  turn_statesman_0019 | ΝΕ. ΣΩ. | 258b         | 258b       | 2080 | 2095 | 9 | 3 | no | no
+  turn_statesman_0020 | ΞΕ.     | 258b         | 258b       | 2095 | 2166 | 58 | 10 | no | no
+  turn_statesman_0021 | ΝΕ. ΣΩ. | 258b         | 258b       | 2166 | 2183 | 9 | 4 | no | no
+  turn_statesman_0022 | ΞΕ.     | 258b         | 258b       | 2183 | 2245 | 46 | 12 | no | no
+  turn_statesman_0023 | ΝΕ. ΣΩ. | 258b         | 258b       | 2245 | 2261 | 9 | 4 | no | no
+  turn_statesman_0024 | ΞΕ.     | 258c         | 258c       | 2261 | 2283 | 9 | 3 | no | no
+  turn_statesman_0025 | ΝΕ. ΣΩ. | 258c         | 258c       | 2283 | 2302 | 12 | 4 | no | no
+  turn_statesman_0026 | ΞΕ.     | 258c         | 258c       | 2302 | 2571 | 222 | 42 | no | no
+  turn_statesman_0027 | ΝΕ. ΣΩ. | 258c         | 258c       | 2571 | 2641 | 49 | 14 | no | yes
+  turn_statesman_0028 | ΞΕ.     | 258d         | 258d       | 2641 | 2723 | 56 | 14 | no | no
+  turn_statesman_0029 | ΝΕ. ΣΩ. | 258d         | 258d       | 2723 | 2744 | 14 | 4 | no | no
+  turn_statesman_0030 | ΞΕ.     | 258d         | 258d       | 2744 | 2870 | 101 | 21 | no | no
+  turn_statesman_0031 | ΝΕ. ΣΩ. | 258d         | 258d       | 2870 | 2891 | 14 | 4 | no | no
+  turn_statesman_0032 | ΞΕ.     | 258d         | 258e       | 2891 | 3087 | 156 | 29 | no | no
+  turn_statesman_0033 | ΝΕ. ΣΩ. | 258e         | 258e       | 3087 | 3103 | 9 | 4 | no | no
+  turn_statesman_0034 | ΞΕ.     | 258e         | 258e       | 3103 | 3201 | 80 | 14 | no | no
+  turn_statesman_0035 | ΝΕ. ΣΩ. | 258e         | 258e       | 3201 | 3261 | 44 | 12 | no | yes
+  turn_statesman_0036 | ΞΕ.     | 258e         | 258e       | 3261 | 3462 | 164 | 32 | no | no
+  turn_statesman_0037 | ΝΕ. ΣΩ. | 258e         | 258e       | 3462 | 3474 | 6 | 3 | no | no
+  turn_statesman_0038 | ΞΕ.     | 259a         | 259a       | 3474 | 3648 | 138 | 24 | no | no
+  turn_statesman_0039 | ΝΕ. ΣΩ. | 259a         | 259a       | 3648 | 3661 | 7 | 3 | no | no
+  turn_statesman_0040 | ΞΕ.     | 259a         | 259a       | 3661 | 3815 | 123 | 25 | no | no
+  turn_statesman_0041 | ΝΕ. ΣΩ. | 259a         | 259a       | 3815 | 3832 | 11 | 3 | no | no
+  turn_statesman_0042 | ΞΕ.     | 259b         | 259b       | 3832 | 3885 | 36 | 8 | no | no
+  turn_statesman_0043 | ΝΕ. ΣΩ. | 259b         | 259b       | 3885 | 3898 | 7 | 3 | no | no
+  turn_statesman_0044 | ΞΕ.     | 259b         | 259b       | 3898 | 4029 | 106 | 21 | no | no
+  turn_statesman_0045 | ΝΕ. ΣΩ. | 259b         | 259b       | 4029 | 4051 | 15 | 4 | no | no
+  turn_statesman_0046 | ΞΕ.     | 259b         | 259b       | 4051 | 4097 | 36 | 8 | no | no
+  turn_statesman_0047 | ΝΕ. ΣΩ. | 259b         | 259b       | 4097 | 4113 | 9 | 4 | no | no
+  turn_statesman_0048 | ΞΕ.     | 259b         | 259b       | 4113 | 4202 | 70 | 16 | no | no
+  turn_statesman_0049 | ΝΕ. ΣΩ. | 259b         | 259b       | 4202 | 4217 | 9 | 3 | no | no
+  turn_statesman_0050 | ΞΕ.     | 259c         | 259c       | 4217 | 4401 | 144 | 26 | no | no
+  turn_statesman_0051 | ΝΕ. ΣΩ. | 259c         | 259c       | 4401 | 4417 | 9 | 4 | no | no
+  turn_statesman_0052 | ΞΕ.     | 259c         | 259c       | 4417 | 4575 | 125 | 29 | no | no
+  turn_statesman_0053 | ΝΕ. ΣΩ. | 259c         | 259c       | 4575 | 4590 | 9 | 3 | no | no
+  turn_statesman_0054 | ΞΕ.     | 259c         | 259d       | 4590 | 4708 | 92 | 17 | no | no
+  turn_statesman_0055 | ΝΕ. ΣΩ. | 259d         | 259d       | 4708 | 4724 | 9 | 4 | no | no
+  turn_statesman_0056 | ΞΕ.     | 259d         | 259d       | 4724 | 4829 | 86 | 17 | no | no
+  turn_statesman_0057 | ΝΕ. ΣΩ. | 259d         | 259d       | 4829 | 4844 | 9 | 3 | no | no
+  turn_statesman_0058 | ΞΕ.     | 259d         | 259d       | 4844 | 4918 | 59 | 11 | no | no
+  turn_statesman_0059 | ΝΕ. ΣΩ. | 259d         | 259d       | 4918 | 4935 | 10 | 4 | no | no
+  turn_statesman_0060 | ΞΕ.     | 259d         | 259d       | 4935 | 5001 | 52 | 12 | no | no
+  turn_statesman_0061 | ΝΕ. ΣΩ. | 259d         | 259d       | 5001 | 5022 | 14 | 4 | no | no
+  turn_statesman_0062 | ΞΕ.     | 259e         | 259e       | 5022 | 5075 | 35 | 8 | no | no
+  turn_statesman_0063 | ΝΕ. ΣΩ. | 259e         | 259e       | 5075 | 5088 | 7 | 3 | no | no
+  turn_statesman_0064 | ΞΕ.     | 259e         | 259e       | 5088 | 5133 | 36 | 7 | no | no
+  turn_statesman_0065 | ΝΕ. ΣΩ. | 259e         | 259e       | 5133 | 5152 | 10 | 5 | no | no
+  turn_statesman_0066 | ΞΕ.     | 259e         | 259e       | 5152 | 5256 | 84 | 18 | no | no
+  turn_statesman_0067 | ΝΕ. ΣΩ. | 259e         | 259e       | 5256 | 5272 | 9 | 4 | no | no
+  turn_statesman_0068 | ΞΕ.     | 259e         | 259e       | 5272 | 5342 | 55 | 12 | no | no
+  turn_statesman_0069 | ΝΕ. ΣΩ. | 259e         | 259e       | 5342 | 5355 | 7 | 3 | no | no
+  turn_statesman_0070 | ΞΕ.     | 259e         | 259e       | 5355 | 5406 | 40 | 8 | no | no
+  turn_statesman_0071 | ΝΕ. ΣΩ. | 259e         | 259e       | 5406 | 5421 | 9 | 3 | no | no
+  turn_statesman_0072 | ΞΕ.     | 260a         | 260a       | 5421 | 5488 | 49 | 9 | no | no
+  turn_statesman_0073 | ΝΕ. ΣΩ. | 260a         | 260a       | 5488 | 5505 | 10 | 4 | no | no
+  turn_statesman_0074 | ΞΕ.     | 260a         | 260a       | 5505 | 5694 | 155 | 29 | no | no
+  turn_statesman_0075 | ΝΕ. ΣΩ. | 260a         | 260a       | 5694 | 5709 | 9 | 3 | no | no
+  turn_statesman_0076 | ΞΕ.     | 260a         | 260b       | 5709 | 5859 | 118 | 22 | no | no
+  turn_statesman_0077 | ΝΕ. ΣΩ. | 260b         | 260b       | 5859 | 5878 | 13 | 3 | no | no
+  turn_statesman_0078 | ΞΕ.     | 260b         | 260b       | 5878 | 6013 | 110 | 20 | no | no
+  turn_statesman_0079 | ΝΕ. ΣΩ. | 260b         | 260b       | 6013 | 6045 | 22 | 7 | no | no
+  turn_statesman_0080 | ΞΕ.     | 260b         | 260b       | 6045 | 6105 | 48 | 10 | no | no
+  turn_statesman_0081 | ΝΕ. ΣΩ. | 260b         | 260b       | 6105 | 6124 | 10 | 5 | no | no
+  turn_statesman_0082 | ΞΕ.     | 260b         | 260b       | 6124 | 6214 | 73 | 14 | no | no
+  turn_statesman_0083 | ΝΕ. ΣΩ. | 260b         | 260b       | 6214 | 6230 | 9 | 4 | no | no
+  turn_statesman_0084 | ΞΕ.     | 260c         | 260c       | 6230 | 6418 | 143 | 30 | no | no
+  turn_statesman_0085 | ΝΕ. ΣΩ. | 260c         | 260c       | 6418 | 6445 | 18 | 6 | no | no
+  turn_statesman_0086 | ΞΕ.     | 260c         | 260d       | 6445 | 6675 | 180 | 38 | no | no
+  turn_statesman_0087 | ΝΕ. ΣΩ. | 260d         | 260d       | 6675 | 6688 | 7 | 3 | no | no
+  turn_statesman_0088 | ΞΕ.     | 260d         | 260d       | 6688 | 6778 | 76 | 12 | no | no
+  turn_statesman_0089 | ΝΕ. ΣΩ. | 260d         | 260d       | 6778 | 6800 | 14 | 5 | no | no
+  turn_statesman_0090 | ΞΕ.     | 260d         | 260d       | 6800 | 6916 | 98 | 15 | no | no
+  turn_statesman_0091 | ΝΕ. ΣΩ. | 260d         | 260d       | 6916 | 6936 | 14 | 3 | no | no
+  turn_statesman_0092 | ΞΕ.     | 260d         | 261a       | 6936 | 7477 | 431 | 77 | yes | no
+  turn_statesman_0093 | ΝΕ. ΣΩ. | 261a         | 261a       | 7477 | 7499 | 14 | 5 | no | no
+  turn_statesman_0094 | ΞΕ.     | 261a         | 261a       | 7499 | 7680 | 149 | 26 | no | no
+  turn_statesman_0095 | ΝΕ. ΣΩ. | 261a         | 261a       | 7680 | 7697 | 10 | 4 | no | no
+  turn_statesman_0096 | ΞΕ.     | 261a         | 261a       | 7697 | 7753 | 44 | 8 | no | no
+  turn_statesman_0097 | ΝΕ. ΣΩ. | 261a         | 261a       | 7753 | 7765 | 6 | 3 | no | no
+  turn_statesman_0098 | ΞΕ.     | 261a         | 261b       | 7765 | 7892 | 102 | 15 | no | no
+  turn_statesman_0099 | ΝΕ. ΣΩ. | 261b         | 261b       | 7892 | 7911 | 10 | 5 | no | no
+  turn_statesman_0100 | ΞΕ.     | 261b         | 261b       | 7911 | 7982 | 57 | 12 | no | no
+  turn_statesman_0101 | ΝΕ. ΣΩ. | 261b         | 261b       | 7982 | 7994 | 6 | 3 | no | no
+  turn_statesman_0102 | ΞΕ.     | 261b         | 261b       | 7994 | 8051 | 42 | 11 | no | no
+  turn_statesman_0103 | ΝΕ. ΣΩ. | 261b         | 261b       | 8051 | 8064 | 7 | 3 | no | no
+  turn_statesman_0104 | ΞΕ.     | 261b         | 261b       | 8064 | 8163 | 80 | 15 | no | no
+  turn_statesman_0105 | ΝΕ. ΣΩ. | 261b         | 261b       | 8163 | 8180 | 10 | 4 | no | no
+  turn_statesman_0106 | ΞΕ.     | 261b         | 261c       | 8180 | 8322 | 95 | 22 | no | no
+  turn_statesman_0107 | ΝΕ. ΣΩ. | 261c         | 261c       | 8322 | 8344 | 15 | 4 | no | no
+  turn_statesman_0108 | ΞΕ.     | 261c         | 261c       | 8344 | 8444 | 79 | 16 | no | no
+  turn_statesman_0109 | ΝΕ. ΣΩ. | 261c         | 261c       | 8444 | 8495 | 39 | 8 | no | no
+  turn_statesman_0110 | ΞΕ.     | 261c         | 261d       | 8495 | 8720 | 176 | 36 | no | no
+  turn_statesman_0111 | ΝΕ. ΣΩ. | 261d         | 261d       | 8720 | 8735 | 9 | 3 | no | no
+  turn_statesman_0112 | ΞΕ.     | 261d         | 261d       | 8735 | 8873 | 110 | 25 | no | no
+  turn_statesman_0113 | ΝΕ. ΣΩ. | 261d         | 261d       | 8873 | 8888 | 9 | 3 | no | no
+  turn_statesman_0114 | ΞΕ.     | 261d         | 261d       | 8888 | 9027 | 112 | 21 | no | no
+  turn_statesman_0115 | ΝΕ. ΣΩ. | 261d         | 261d       | 9027 | 9061 | 24 | 7 | no | no
+  turn_statesman_0116 | ΞΕ.     | 261e         | 261e       | 9061 | 9179 | 94 | 15 | no | no
+  turn_statesman_0117 | ΝΕ. ΣΩ. | 261e         | 261e       | 9179 | 9220 | 30 | 8 | no | no
+  turn_statesman_0118 | ΞΕ.     | 261e         | 262a       | 9220 | 9538 | 253 | 48 | no | no
+  turn_statesman_0119 | ΝΕ. ΣΩ. | 262a         | 262a       | 9538 | 9637 | 75 | 18 | no | yes
+  turn_statesman_0120 | ΞΕ.     | 262a         | 262a       | 9637 | 9744 | 88 | 16 | no | no
+  turn_statesman_0121 | ΝΕ. ΣΩ. | 262a         | 262a       | 9744 | 9762 | 11 | 4 | no | no
+  turn_statesman_0122 | ΞΕ.     | 262a         | 262c       | 9762 | 10241 | 376 | 74 | yes | no
+  turn_statesman_0123 | ΝΕ. ΣΩ. | 262c         | 262c       | 10241 | 10276 | 23 | 7 | no | no
+  turn_statesman_0124 | ΞΕ.     | 262c         | 262c       | 10276 | 10496 | 180 | 35 | no | no
+  turn_statesman_0125 | ΝΕ. ΣΩ. | 262c         | 262c       | 10496 | 10565 | 54 | 12 | no | yes
+  turn_statesman_0126 | ΞΕ.     | 262c         | 263a       | 10565 | 11465 | 715 | 145 | yes | yes
+  turn_statesman_0127 | ΝΕ. ΣΩ. | 263a         | 263a       | 11465 | 11600 | 103 | 24 | no | yes
+  turn_statesman_0128 | ΞΕ.     | 263a         | 263b       | 11600 | 11991 | 311 | 60 | yes | no
+  turn_statesman_0129 | ΝΕ. ΣΩ. | 263b         | 263b       | 11991 | 12009 | 11 | 4 | no | no
+  turn_statesman_0130 | ΞΕ.     | 263b         | 263b       | 12009 | 12054 | 35 | 8 | no | no
+  turn_statesman_0131 | ΝΕ. ΣΩ. | 263b         | 263b       | 12054 | 12070 | 9 | 4 | no | no
+  turn_statesman_0132 | ΞΕ.     | 263b         | 263b       | 12070 | 12256 | 145 | 33 | no | no
+  turn_statesman_0133 | ΝΕ. ΣΩ. | 263b         | 263b       | 12256 | 12277 | 13 | 4 | no | no
+  turn_statesman_0134 | ΞΕ.     | 263c         | 263c       | 12277 | 12317 | 24 | 7 | no | no
+  turn_statesman_0135 | ΝΕ. ΣΩ. | 263c         | 263c       | 12317 | 12332 | 9 | 3 | no | no
+  turn_statesman_0136 | ΞΕ.     | 263c         | 263c       | 12332 | 12558 | 182 | 36 | no | no
+  turn_statesman_0137 | ΝΕ. ΣΩ. | 263c         | 263c       | 12558 | 12573 | 9 | 3 | no | no
+  turn_statesman_0138 | ΞΕ.     | 263c         | 263d       | 12573 | 12730 | 121 | 24 | no | no
+  turn_statesman_0139 | ΝΕ. ΣΩ. | 263d         | 263d       | 12730 | 12758 | 19 | 6 | no | no
+  turn_statesman_0140 | ΞΕ.     | 263d         | 263e       | 12758 | 13156 | 311 | 67 | yes | no
+  turn_statesman_0141 | ΝΕ. ΣΩ. | 263e         | 263e       | 13156 | 13169 | 7 | 3 | no | no
+  turn_statesman_0142 | ΞΕ.     | 263e         | 263e       | 13169 | 13237 | 53 | 12 | no | no
+  turn_statesman_0143 | ΝΕ. ΣΩ. | 263e         | 263e       | 13237 | 13260 | 15 | 5 | no | no
+  turn_statesman_0144 | ΞΕ.     | 263e         | 263e       | 13260 | 13303 | 33 | 8 | no | no
+  turn_statesman_0145 | ΝΕ. ΣΩ. | 263e         | 263e       | 13303 | 13318 | 8 | 4 | no | no
+  turn_statesman_0146 | ΞΕ.     | 263e         | 263e       | 13318 | 13421 | 82 | 17 | no | no
+  turn_statesman_0147 | ΝΕ. ΣΩ. | 263e         | 263e       | 13421 | 13434 | 7 | 3 | no | no
+  turn_statesman_0148 | ΞΕ.     | 264a         | 264a       | 13434 | 13590 | 118 | 26 | no | no
+  turn_statesman_0149 | ΝΕ. ΣΩ. | 264a         | 264a       | 13590 | 13605 | 9 | 3 | no | no
+  turn_statesman_0150 | ΞΕ.     | 264a         | 264a       | 13605 | 13714 | 86 | 19 | no | no
+  turn_statesman_0151 | ΝΕ. ΣΩ. | 264a         | 264a       | 13714 | 13727 | 7 | 3 | no | no
+  turn_statesman_0152 | ΞΕ.     | 264a         | 264b       | 13727 | 13914 | 146 | 29 | no | no
+  turn_statesman_0153 | ΝΕ. ΣΩ. | 264b         | 264b       | 13914 | 13929 | 9 | 3 | no | no
+  turn_statesman_0154 | ΞΕ.     | 264b         | 264b       | 13929 | 13981 | 43 | 7 | no | no
+  turn_statesman_0155 | ΝΕ. ΣΩ. | 264b         | 264b       | 13981 | 14021 | 27 | 8 | no | no
+  turn_statesman_0156 | ΞΕ.     | 264b         | 264b       | 14021 | 14195 | 138 | 29 | no | no
+  turn_statesman_0157 | ΝΕ. ΣΩ. | 264b         | 264b       | 14195 | 14213 | 11 | 4 | no | no
+  turn_statesman_0158 | ΞΕ.     | 264b         | 264c       | 14213 | 14432 | 167 | 38 | no | no
+  turn_statesman_0159 | ΝΕ. ΣΩ. | 264c         | 264c       | 14432 | 14495 | 49 | 11 | no | yes
+  turn_statesman_0160 | ΞΕ.     | 264c         | 264c       | 14495 | 14619 | 100 | 20 | no | no
+  turn_statesman_0161 | ΝΕ. ΣΩ. | 264c         | 264c       | 14619 | 14635 | 9 | 4 | no | no
+  turn_statesman_0162 | ΞΕ.     | 264d         | 264d       | 14635 | 14756 | 90 | 19 | no | no
+  turn_statesman_0163 | ΝΕ. ΣΩ. | 264d         | 264d       | 14756 | 14778 | 14 | 5 | no | no
+  turn_statesman_0164 | ΞΕ.     | 264d         | 264d       | 14778 | 14979 | 164 | 29 | no | no
+  turn_statesman_0165 | ΝΕ. ΣΩ. | 264d         | 264d       | 14979 | 14995 | 10 | 3 | no | no
+  turn_statesman_0166 | ΞΕ.     | 264d         | 264e       | 14995 | 15109 | 74 | 17 | no | no
+  turn_statesman_0167 | ΝΕ. ΣΩ. | 264e         | 264e       | 15109 | 15128 | 10 | 5 | no | no
+  turn_statesman_0168 | ΞΕ.     | 264e         | 264e       | 15128 | 15200 | 57 | 12 | no | no
+  turn_statesman_0169 | ΝΕ. ΣΩ. | 264e         | 264e       | 15200 | 15213 | 7 | 3 | no | no
+  turn_statesman_0170 | ΞΕ.     | 264e         | 264e       | 15213 | 15252 | 30 | 7 | no | no
+  turn_statesman_0171 | ΝΕ. ΣΩ. | 264e         | 264e       | 15252 | 15272 | 14 | 3 | no | no
+  turn_statesman_0172 | ΞΕ.     | 264e         | 264e       | 15272 | 15385 | 88 | 21 | no | no
+  turn_statesman_0173 | ΝΕ. ΣΩ. | 264e         | 264e       | 15385 | 15400 | 9 | 3 | no | no
+  turn_statesman_0174 | ΞΕ.     | 264e         | 264e       | 15400 | 15482 | 66 | 12 | no | no
+  turn_statesman_0175 | ΝΕ. ΣΩ. | 264e         | 264e       | 15482 | 15497 | 9 | 3 | no | no
+  turn_statesman_0176 | ΞΕ.     | 265a         | 265a       | 15497 | 15820 | 250 | 52 | no | no
+  turn_statesman_0177 | ΝΕ. ΣΩ. | 265a         | 265a       | 15820 | 15855 | 25 | 6 | no | no
+  turn_statesman_0178 | ΞΕ.     | 265a         | 265a       | 15855 | 15914 | 42 | 12 | no | no
+  turn_statesman_0179 | ΝΕ. ΣΩ. | 265b         | 265b       | 15914 | 15971 | 39 | 8 | no | no
+  turn_statesman_0180 | ΞΕ.     | 265b         | 265b       | 15971 | 16214 | 192 | 40 | no | no
+  turn_statesman_0181 | ΝΕ. ΣΩ. | 265b         | 265b       | 16214 | 16228 | 8 | 3 | no | no
+  turn_statesman_0182 | ΞΕ.     | 265b         | 265b       | 16228 | 16300 | 56 | 12 | no | no
+  turn_statesman_0183 | ΝΕ. ΣΩ. | 265b         | 265b       | 16300 | 16314 | 8 | 3 | no | no
+  turn_statesman_0184 | ΞΕ.     | 265b         | 265b       | 16314 | 16374 | 46 | 11 | no | no
+  turn_statesman_0185 | ΝΕ. ΣΩ. | 265c         | 265c       | 16374 | 16399 | 12 | 3 | no | no
+  turn_statesman_0186 | ΞΕ.     | 265c         | 265c       | 16399 | 16546 | 121 | 22 | no | no
+  turn_statesman_0187 | ΝΕ. ΣΩ. | 265c         | 265c       | 16546 | 16574 | 19 | 6 | no | no
+  turn_statesman_0188 | ΞΕ.     | 265c         | 265c       | 16574 | 16729 | 126 | 25 | no | no
+  turn_statesman_0189 | ΝΕ. ΣΩ. | 265d         | 265d       | 16729 | 16800 | 49 | 10 | no | yes
+  turn_statesman_0190 | ΞΕ.     | 265d         | 265d       | 16800 | 16885 | 68 | 15 | no | no
+  turn_statesman_0191 | ΝΕ. ΣΩ. | 265d         | 265d       | 16885 | 16911 | 17 | 6 | no | no
+  turn_statesman_0192 | ΞΕ.     | 265d         | 265d       | 16911 | 16984 | 62 | 9 | no | no
+  turn_statesman_0193 | ΝΕ. ΣΩ. | 265d         | 265d       | 16984 | 17001 | 10 | 4 | no | no
+  turn_statesman_0194 | ΞΕ.     | 265d         | 265d       | 17001 | 17129 | 103 | 22 | no | no
+  turn_statesman_0195 | ΝΕ. ΣΩ. | 265d         | 265d       | 17129 | 17147 | 11 | 4 | no | no
+  turn_statesman_0196 | ΞΕ.     | 265e         | 265e       | 17147 | 17215 | 47 | 12 | no | no
+  turn_statesman_0197 | ΝΕ. ΣΩ. | 265e         | 265e       | 17215 | 17228 | 7 | 3 | no | no
+  turn_statesman_0198 | ΞΕ.     | 265e         | 265e       | 17228 | 17306 | 61 | 15 | no | no
+  turn_statesman_0199 | ΝΕ. ΣΩ. | 265e         | 265e       | 17306 | 17325 | 10 | 5 | no | no
+  turn_statesman_0200 | ΞΕ.     | 265e         | 265e       | 17325 | 17424 | 79 | 15 | no | no
+  turn_statesman_0201 | ΝΕ. ΣΩ. | 265e         | 265e       | 17424 | 17456 | 23 | 6 | no | no
+  turn_statesman_0202 | ΞΕ.     | 265e         | 265e       | 17456 | 17530 | 58 | 12 | no | no
+  turn_statesman_0203 | ΝΕ. ΣΩ. | 265e         | 265e       | 17530 | 17551 | 13 | 5 | no | no
+  turn_statesman_0204 | ΞΕ.     | 266a         | 266a       | 17551 | 17734 | 142 | 29 | no | no
+  turn_statesman_0205 | ΝΕ. ΣΩ. | 266a         | 266a       | 17734 | 17786 | 37 | 11 | no | yes
+  turn_statesman_0206 | ΞΕ.     | 266a         | 266a       | 17786 | 17874 | 71 | 14 | no | no
+  turn_statesman_0207 | ΝΕ. ΣΩ. | 266a         | 266a       | 17874 | 17886 | 6 | 3 | no | no
+  turn_statesman_0208 | ΞΕ.     | 266a         | 266a       | 17886 | 17945 | 47 | 10 | no | no
+  turn_statesman_0209 | ΝΕ. ΣΩ. | 266a         | 266a       | 17945 | 17964 | 12 | 4 | no | no
+  turn_statesman_0210 | ΞΕ.     | 266b         | 266b       | 17964 | 18102 | 103 | 24 | no | no
+  turn_statesman_0211 | ΝΕ. ΣΩ. | 266b         | 266b       | 18102 | 18121 | 12 | 4 | no | no
+  turn_statesman_0212 | ΞΕ.     | 266b         | 266b       | 18121 | 18257 | 109 | 24 | no | no
+  turn_statesman_0213 | ΝΕ. ΣΩ. | 266b         | 266b       | 18257 | 18325 | 49 | 14 | no | yes
+  turn_statesman_0214 | ΞΕ.     | 266b         | 266c       | 18325 | 18460 | 103 | 21 | no | no
+  turn_statesman_0215 | ΝΕ. ΣΩ. | 266c         | 266c       | 18460 | 18478 | 11 | 4 | no | no
+  turn_statesman_0216 | ΞΕ.     | 266c         | 266c       | 18478 | 18590 | 94 | 16 | no | no
+  turn_statesman_0217 | ΝΕ. ΣΩ. | 266c         | 266c       | 18590 | 18632 | 31 | 7 | no | no
+  turn_statesman_0218 | ΞΕ.     | 266c         | 266c       | 18632 | 18686 | 41 | 9 | no | no
+  turn_statesman_0219 | ΝΕ. ΣΩ. | 266c         | 266c       | 18686 | 18709 | 14 | 5 | no | no
+  turn_statesman_0220 | ΞΕ.     | 266c         | 266d       | 18709 | 18894 | 147 | 28 | no | no
+  turn_statesman_0221 | ΝΕ. ΣΩ. | 266d         | 266d       | 18894 | 18921 | 19 | 5 | no | no
+  turn_statesman_0222 | ΞΕ.     | 266d         | 266d       | 18921 | 19022 | 78 | 18 | no | no
+  turn_statesman_0223 | ΝΕ. ΣΩ. | 266d         | 266d       | 19022 | 19040 | 11 | 4 | no | no
+  turn_statesman_0224 | ΞΕ.     | 266d         | 266d       | 19040 | 19205 | 133 | 27 | no | no
+  turn_statesman_0225 | ΝΕ. ΣΩ. | 266d         | 266d       | 19205 | 19221 | 10 | 3 | no | no
+  turn_statesman_0226 | ΞΕ.     | 266d         | 266e       | 19221 | 19360 | 104 | 24 | no | no
+  turn_statesman_0227 | ΝΕ. ΣΩ. | 266e         | 266e       | 19360 | 19379 | 12 | 4 | no | no
+  turn_statesman_0228 | ΞΕ.     | 266e         | 266e       | 19379 | 19794 | 342 | 66 | yes | no
+  turn_statesman_0229 | ΝΕ. ΣΩ. | 267a         | 267a       | 19794 | 19915 | 92 | 18 | no | yes
+  turn_statesman_0230 | ΞΕ.     | 267a         | 267a       | 19915 | 20037 | 100 | 20 | no | no
+  turn_statesman_0231 | ΝΕ. ΣΩ. | 267a         | 267a       | 20037 | 20059 | 14 | 5 | no | no
+  turn_statesman_0232 | ΞΕ.     | 267a         | 267c       | 20059 | 20744 | 558 | 94 | yes | yes
+  turn_statesman_0233 | ΝΕ. ΣΩ. | 267c         | 267c       | 20744 | 20771 | 19 | 5 | no | no
+  turn_statesman_0234 | ΞΕ.     | 267c         | 267c       | 20771 | 20864 | 72 | 16 | no | no
+  turn_statesman_0235 | ΝΕ. ΣΩ. | 267c         | 267c       | 20864 | 20885 | 13 | 5 | no | no
+  turn_statesman_0236 | ΞΕ.     | 267c         | 267d       | 20885 | 21055 | 130 | 27 | no | no
+  turn_statesman_0237 | ΝΕ. ΣΩ. | 267d         | 267d       | 21055 | 21074 | 12 | 4 | no | no
+  turn_statesman_0238 | ΞΕ.     | 267d         | 267d       | 21074 | 21145 | 56 | 12 | no | no
+  turn_statesman_0239 | ΝΕ. ΣΩ. | 267d         | 267d       | 21145 | 21164 | 12 | 4 | no | no
+  turn_statesman_0240 | ΞΕ.     | 267d         | 267d       | 21164 | 21278 | 93 | 19 | no | no
+  turn_statesman_0241 | ΝΕ. ΣΩ. | 267d         | 267d       | 21278 | 21291 | 7 | 3 | no | no
+  turn_statesman_0242 | ΞΕ.     | 267d         | 267d       | 21291 | 21406 | 92 | 18 | no | no
+  turn_statesman_0243 | ΝΕ. ΣΩ. | 267d         | 267d       | 21406 | 21421 | 9 | 3 | no | no
+  turn_statesman_0244 | ΞΕ.     | 267e         | 267e       | 21421 | 21496 | 54 | 12 | no | no
+  turn_statesman_0245 | ΝΕ. ΣΩ. | 267e         | 267e       | 21496 | 21514 | 11 | 4 | no | no
+  turn_statesman_0246 | ΞΕ.     | 267e         | 267e       | 21514 | 21620 | 84 | 18 | no | no
+  turn_statesman_0247 | ΝΕ. ΣΩ. | 267e         | 267e       | 21620 | 21637 | 10 | 4 | no | no
+  turn_statesman_0248 | ΞΕ.     | 267e         | 268a       | 21637 | 21979 | 273 | 52 | no | no
+  turn_statesman_0249 | ΝΕ. ΣΩ. | 268a         | 268a       | 21979 | 22012 | 24 | 6 | no | no
+  turn_statesman_0250 | ΞΕ.     | 268a         | 268b       | 22012 | 22563 | 443 | 86 | yes | yes
+  turn_statesman_0251 | ΝΕ. ΣΩ. | 268b         | 268b       | 22563 | 22581 | 12 | 3 | no | no
+  turn_statesman_0252 | ΞΕ.     | 268b         | 268c       | 22581 | 22761 | 143 | 27 | no | no
+  turn_statesman_0253 | ΝΕ. ΣΩ. | 268c         | 268c       | 22761 | 22778 | 11 | 3 | no | no
+  turn_statesman_0254 | ΞΕ.     | 268c         | 268c       | 22778 | 23088 | 261 | 43 | no | no
+  turn_statesman_0255 | ΝΕ. ΣΩ. | 268d         | 268d       | 23088 | 23121 | 18 | 5 | no | no
+  turn_statesman_0256 | ΞΕ.     | 268d         | 268d       | 23121 | 23217 | 75 | 16 | no | no
+  turn_statesman_0257 | ΝΕ. ΣΩ. | 268d         | 268d       | 23217 | 23261 | 33 | 8 | no | no
+  turn_statesman_0258 | ΞΕ.     | 268d         | 268d       | 23261 | 23331 | 55 | 12 | no | no
+  turn_statesman_0259 | ΝΕ. ΣΩ. | 268d         | 268d       | 23331 | 23349 | 11 | 4 | no | no
+  turn_statesman_0260 | ΞΕ.     | 268d         | 268e       | 23349 | 23563 | 169 | 30 | no | no
+  turn_statesman_0261 | ΝΕ. ΣΩ. | 268e         | 268e       | 23563 | 23585 | 14 | 5 | no | no
+  turn_statesman_0262 | ΞΕ.     | 268e         | 268e       | 23585 | 23690 | 82 | 19 | no | no
+  turn_statesman_0263 | ΝΕ. ΣΩ. | 268e         | 268e       | 23690 | 23709 | 12 | 4 | no | no
+  turn_statesman_0264 | ΞΕ.     | 268e         | 268e       | 23709 | 23895 | 149 | 34 | no | no
+  turn_statesman_0265 | ΝΕ. ΣΩ. | 268e         | 268e       | 23895 | 23950 | 42 | 10 | no | yes
+  turn_statesman_0266 | ΞΕ.     | 269a         | 269a       | 23950 | 24213 | 202 | 47 | no | no
+  turn_statesman_0267 | ΝΕ. ΣΩ. | 269a         | 269a       | 24213 | 24251 | 27 | 8 | no | no
+  turn_statesman_0268 | ΞΕ.     | 269a         | 269a       | 24251 | 24320 | 54 | 13 | no | no
+  turn_statesman_0269 | ΝΕ. ΣΩ. | 269b         | 269b       | 24320 | 24353 | 18 | 5 | no | no
+  turn_statesman_0270 | ΞΕ.     | 269b         | 269b       | 24353 | 24428 | 59 | 13 | no | no
+  turn_statesman_0271 | ΝΕ. ΣΩ. | 269b         | 269b       | 24428 | 24470 | 31 | 8 | no | no
+  turn_statesman_0272 | ΞΕ.     | 269b         | 269c       | 24470 | 24808 | 265 | 56 | no | no
+  turn_statesman_0273 | ΝΕ. ΣΩ. | 269c         | 269c       | 24808 | 24857 | 36 | 8 | no | no
+  turn_statesman_0274 | ΞΕ.     | 269c         | 269d       | 24857 | 25221 | 288 | 59 | yes | no
+  turn_statesman_0275 | ΝΕ. ΣΩ. | 269d         | 269d       | 25221 | 25246 | 16 | 6 | no | no
+  turn_statesman_0276 | ΞΕ.     | 269d         | 269e       | 25246 | 25886 | 518 | 102 | yes | yes
+  turn_statesman_0277 | ΞΕ.     | 269e         | 270a       | 25886 | 26474 | 474 | 90 | yes | yes
+  turn_statesman_0278 | ΝΕ. ΣΩ. | 270b         | 270b       | 26474 | 26554 | 57 | 12 | no | yes
+  turn_statesman_0279 | ΞΕ.     | 270b         | 270b       | 26554 | 26688 | 106 | 23 | no | no
+  turn_statesman_0280 | ΝΕ. ΣΩ. | 270b         | 270b       | 26688 | 26706 | 11 | 4 | no | no
+  turn_statesman_0281 | ΞΕ.     | 270b         | 270b       | 26706 | 26795 | 67 | 17 | no | no
+  turn_statesman_0282 | ΝΕ. ΣΩ. | 270b         | 270b       | 26795 | 26811 | 9 | 4 | no | no
+  turn_statesman_0283 | ΞΕ.     | 270b         | 270c       | 26811 | 26939 | 101 | 18 | no | no
+  turn_statesman_0284 | ΝΕ. ΣΩ. | 270c         | 270c       | 26939 | 26959 | 13 | 4 | no | no
+  turn_statesman_0285 | ΞΕ.     | 270c         | 270c       | 26959 | 27053 | 78 | 14 | no | no
+  turn_statesman_0286 | ΝΕ. ΣΩ. | 270c         | 270c       | 27053 | 27078 | 17 | 5 | no | no
+  turn_statesman_0287 | ΞΕ.     | 270c         | 270c       | 27078 | 27195 | 95 | 19 | no | no
+  turn_statesman_0288 | ΝΕ. ΣΩ. | 270c         | 270c       | 27195 | 27214 | 10 | 5 | no | no
+  turn_statesman_0289 | ΞΕ.     | 270c         | 270d       | 27214 | 27540 | 261 | 52 | no | no
+  turn_statesman_0290 | ΝΕ. ΣΩ. | 270d         | 270d       | 27540 | 27558 | 11 | 4 | no | no
+  turn_statesman_0291 | ΞΕ.     | 270d         | 271a       | 27558 | 28323 | 616 | 120 | yes | yes
+  turn_statesman_0292 | ΝΕ. ΣΩ. | 271a         | 271a       | 28323 | 28410 | 63 | 17 | no | yes
+  turn_statesman_0293 | ΞΕ.     | 271a         | 271c       | 28410 | 29248 | 666 | 135 | yes | yes
+  turn_statesman_0294 | ΝΕ. ΣΩ. | 271c         | 271c       | 29248 | 29509 | 208 | 47 | no | yes
+  turn_statesman_0295 | ΞΕ.     | 271c         | 271e       | 29509 | 30230 | 566 | 119 | yes | yes
+  turn_statesman_0296 | ΞΕ.     | 271e         | 272b       | 30230 | 31010 | 617 | 123 | yes | yes
+  turn_statesman_0297 | ΝΕ. ΣΩ. | 272b         | 272b       | 31010 | 31027 | 11 | 3 | no | no
+  turn_statesman_0298 | ΞΕ.     | 272b         | 272b       | 31027 | 31073 | 36 | 8 | no | no
+  turn_statesman_0299 | ΝΕ. ΣΩ. | 272b         | 272b       | 31073 | 31095 | 14 | 5 | no | no
+  turn_statesman_0300 | ΞΕ.     | 272b         | 272e       | 31095 | 32397 | 1032 | 207 | yes | yes
+  turn_statesman_0301 | ΞΕ.     | 272e         | 273e       | 32397 | 34628 | 1803 | 351 | yes | yes
+  turn_statesman_0302 | ΞΕ.     | 273e         | 274e       | 34628 | 36490 | 1480 | 296 | yes | yes
+  turn_statesman_0303 | ΝΕ. ΣΩ. | 274e         | 274e       | 36490 | 36549 | 45 | 11 | no | yes
+  turn_statesman_0304 | ΞΕ.     | 274e         | 274e       | 36549 | 36627 | 60 | 15 | no | no
+  turn_statesman_0305 | ΝΕ. ΣΩ. | 274e         | 274e       | 36627 | 36640 | 7 | 3 | no | no
+  turn_statesman_0306 | ΞΕ.     | 274e         | 275a       | 36640 | 37061 | 336 | 68 | yes | no
+  turn_statesman_0307 | ΝΕ. ΣΩ. | 275a         | 275a       | 37061 | 37076 | 9 | 3 | no | no
+  turn_statesman_0308 | ΞΕ.     | 275a         | 275a       | 37076 | 37197 | 98 | 19 | no | no
+  turn_statesman_0309 | ΝΕ. ΣΩ. | 275a         | 275a       | 37197 | 37212 | 9 | 3 | no | no
+  turn_statesman_0310 | ΞΕ.     | 275b         | 275b       | 37212 | 37545 | 273 | 48 | no | no
+  turn_statesman_0311 | ΝΕ. ΣΩ. | 275b         | 275b       | 37545 | 37560 | 9 | 3 | no | no
+  turn_statesman_0312 | ΞΕ.     | 275b         | 275c       | 37560 | 37815 | 200 | 41 | no | no
+  turn_statesman_0313 | ΝΕ. ΣΩ. | 275c         | 275c       | 37815 | 37835 | 13 | 4 | no | no
+  turn_statesman_0314 | ΞΕ.     | 275c         | 275c       | 37835 | 37930 | 73 | 16 | no | no
+  turn_statesman_0315 | ΝΕ. ΣΩ. | 275c         | 275c       | 37930 | 37950 | 12 | 5 | no | no
+  turn_statesman_0316 | ΞΕ.     | 275c         | 275d       | 37950 | 38155 | 162 | 31 | no | no
+  turn_statesman_0317 | ΝΕ. ΣΩ. | 275d         | 275d       | 38155 | 38168 | 7 | 3 | no | no
+  turn_statesman_0318 | ΞΕ.     | 275d         | 275d       | 38168 | 38304 | 111 | 19 | no | no
+  turn_statesman_0319 | ΝΕ. ΣΩ. | 275d         | 275d       | 38304 | 38317 | 7 | 3 | no | no
+  turn_statesman_0320 | ΞΕ.     | 275d         | 275e       | 38317 | 38486 | 132 | 26 | no | no
+  turn_statesman_0321 | ΝΕ. ΣΩ. | 275e         | 275e       | 38486 | 38530 | 32 | 8 | no | no
+  turn_statesman_0322 | ΞΕ.     | 275e         | 275e       | 38530 | 38827 | 242 | 47 | no | no
+  turn_statesman_0323 | ΝΕ. ΣΩ. | 276a         | 276a       | 38827 | 38905 | 52 | 13 | no | yes
+  turn_statesman_0324 | ΞΕ.     | 276a         | 276a       | 38905 | 39169 | 217 | 42 | no | no
+  turn_statesman_0325 | ΝΕ. ΣΩ. | 276a         | 276a       | 39169 | 39216 | 33 | 10 | no | yes
+  turn_statesman_0326 | ΞΕ.     | 276a         | 276b       | 39216 | 39551 | 268 | 52 | no | no
+  turn_statesman_0327 | ΝΕ. ΣΩ. | 276b         | 276b       | 39551 | 39566 | 9 | 3 | no | no
+  turn_statesman_0328 | ΞΕ.     | 276b         | 276c       | 39566 | 39734 | 135 | 24 | no | no
+  turn_statesman_0329 | ΝΕ. ΣΩ. | 276c         | 276c       | 39734 | 39756 | 15 | 4 | no | no
+  turn_statesman_0330 | ΞΕ.     | 276c         | 276c       | 39756 | 39854 | 75 | 18 | no | no
+  turn_statesman_0331 | ΝΕ. ΣΩ. | 276c         | 276c       | 39854 | 39872 | 11 | 4 | no | no
+  turn_statesman_0332 | ΞΕ.     | 276c         | 276c       | 39872 | 40064 | 158 | 29 | no | no
+  turn_statesman_0333 | ΝΕ. ΣΩ. | 276c         | 276c       | 40064 | 40080 | 9 | 4 | no | no
+  turn_statesman_0334 | ΞΕ.     | 276c         | 276d       | 40080 | 40255 | 136 | 25 | no | no
+  turn_statesman_0335 | ΝΕ. ΣΩ. | 276d         | 276d       | 40255 | 40270 | 9 | 3 | no | no
+  turn_statesman_0336 | ΞΕ.     | 276d         | 276d       | 40270 | 40351 | 65 | 14 | no | no
+  turn_statesman_0337 | ΝΕ. ΣΩ. | 276d         | 276d       | 40351 | 40366 | 9 | 3 | no | no
+  turn_statesman_0338 | ΞΕ.     | 276d         | 276d       | 40366 | 40440 | 61 | 11 | no | no
+  turn_statesman_0339 | ΝΕ. ΣΩ. | 276d         | 276d       | 40440 | 40454 | 8 | 3 | no | no
+  turn_statesman_0340 | ΞΕ.     | 276d         | 276d       | 40454 | 40483 | 21 | 6 | no | no
+  turn_statesman_0341 | ΝΕ. ΣΩ. | 276d         | 276d       | 40483 | 40498 | 8 | 4 | no | no
+  turn_statesman_0342 | ΞΕ.     | 276e         | 276e       | 40498 | 40679 | 145 | 26 | no | no
+  turn_statesman_0343 | ΝΕ. ΣΩ. | 276e         | 276e       | 40679 | 40694 | 9 | 3 | no | no
+  turn_statesman_0344 | ΞΕ.     | 276e         | 276e       | 40694 | 40815 | 98 | 18 | no | no
+  turn_statesman_0345 | ΝΕ. ΣΩ. | 276e         | 276e       | 40815 | 40837 | 14 | 5 | no | no
+  turn_statesman_0346 | ΞΕ.     | 276e         | 276e       | 40837 | 41054 | 181 | 32 | no | no
+  turn_statesman_0347 | ΝΕ. ΣΩ. | 277a         | 277a       | 41054 | 41155 | 72 | 17 | no | yes
+  turn_statesman_0348 | ΞΕ.     | 277a         | 277c       | 41155 | 42117 | 782 | 146 | yes | yes
+  turn_statesman_0349 | ΝΕ. ΣΩ. | 277c         | 277c       | 42117 | 42188 | 54 | 13 | no | yes
+  turn_statesman_0350 | ΞΕ.     | 277d         | 277d       | 42188 | 42368 | 141 | 26 | no | no
+  turn_statesman_0351 | ΝΕ. ΣΩ. | 277d         | 277d       | 42368 | 42393 | 16 | 5 | no | no
+  turn_statesman_0352 | ΞΕ.     | 277d         | 277d       | 42393 | 42481 | 68 | 17 | no | no
+  turn_statesman_0353 | ΝΕ. ΣΩ. | 277d         | 277d       | 42481 | 42496 | 8 | 4 | no | no
+  turn_statesman_0354 | ΞΕ.     | 277d         | 277d       | 42496 | 42566 | 55 | 11 | no | no
+  turn_statesman_0355 | ΝΕ. ΣΩ. | 277e         | 277e       | 42566 | 42623 | 36 | 10 | no | yes
+  turn_statesman_0356 | ΞΕ.     | 277e         | 277e       | 42623 | 42739 | 94 | 18 | no | no
+  turn_statesman_0357 | ΝΕ. ΣΩ. | 277e         | 277e       | 42739 | 42757 | 11 | 4 | no | no
+  turn_statesman_0358 | ΞΕ.     | 277e         | 277e       | 42757 | 42904 | 123 | 21 | no | no
+  turn_statesman_0359 | ΝΕ. ΣΩ. | 278a         | 278a       | 42904 | 42931 | 12 | 5 | no | no
+  turn_statesman_0360 | ΞΕ.     | 278a         | 278a       | 42931 | 43011 | 64 | 14 | no | no
+  turn_statesman_0361 | ΝΕ. ΣΩ. | 278a         | 278a       | 43011 | 43033 | 14 | 5 | no | no
+  turn_statesman_0362 | ΞΕ.     | 278a         | 278a       | 43033 | 43115 | 65 | 14 | no | no
+  turn_statesman_0363 | ΝΕ. ΣΩ. | 278a         | 278a       | 43115 | 43128 | 7 | 3 | no | no
+  turn_statesman_0364 | ΞΕ.     | 278a         | 278c       | 43128 | 43634 | 409 | 73 | yes | no
+  turn_statesman_0365 | ΝΕ. ΣΩ. | 278c         | 278c       | 43634 | 43661 | 19 | 5 | no | no
+  turn_statesman_0366 | ΞΕ.     | 278c         | 278c       | 43661 | 43863 | 167 | 30 | no | no
+  turn_statesman_0367 | ΝΕ. ΣΩ. | 278c         | 278c       | 43863 | 43881 | 12 | 3 | no | no
+  turn_statesman_0368 | ΞΕ.     | 278c         | 278d       | 43881 | 44236 | 280 | 61 | yes | no
+  turn_statesman_0369 | ΝΕ. ΣΩ. | 278d         | 278d       | 44236 | 44268 | 23 | 6 | no | no
+  turn_statesman_0370 | ΞΕ.     | 278d         | 278e       | 44268 | 44407 | 106 | 22 | no | no
+  turn_statesman_0371 | ΝΕ. ΣΩ. | 278e         | 278e       | 44407 | 44431 | 17 | 4 | no | no
+  turn_statesman_0372 | ΞΕ.     | 278e         | 278e       | 44431 | 44823 | 322 | 61 | yes | no
+  turn_statesman_0373 | ΝΕ. ΣΩ. | 278e         | 278e       | 44823 | 44851 | 19 | 6 | no | no
+  turn_statesman_0374 | ΞΕ.     | 279a         | 279a       | 44851 | 45098 | 199 | 37 | no | no
+  turn_statesman_0375 | ΝΕ. ΣΩ. | 279a         | 279a       | 45098 | 45116 | 11 | 4 | no | no
+  turn_statesman_0376 | ΞΕ.     | 279a         | 279b       | 45116 | 45510 | 309 | 64 | yes | no
+  turn_statesman_0377 | ΝΕ. ΣΩ. | 279b         | 279b       | 45510 | 45529 | 11 | 5 | no | no
+  turn_statesman_0378 | ΞΕ.     | 279b         | 279c       | 45529 | 45763 | 184 | 36 | no | no
+  turn_statesman_0379 | ΝΕ. ΣΩ. | 279c         | 279c       | 45763 | 45783 | 13 | 4 | no | no
+  turn_statesman_0380 | ΞΕ.     | 279c         | 279c       | 45783 | 45831 | 39 | 7 | no | no
+  turn_statesman_0381 | ΝΕ. ΣΩ. | 279c         | 279c       | 45831 | 45855 | 16 | 4 | no | no
+  turn_statesman_0382 | ΞΕ.     | 279c         | 280a       | 45855 | 47057 | 961 | 189 | yes | yes
+  turn_statesman_0383 | ΝΕ. ΣΩ. | 280a         | 280a       | 47057 | 47078 | 14 | 4 | no | no
+  turn_statesman_0384 | ΞΕ.     | 280a         | 280b       | 47078 | 47300 | 177 | 33 | no | no
+  turn_statesman_0385 | ΝΕ. ΣΩ. | 280b         | 280b       | 47300 | 47331 | 21 | 5 | no | no
+  turn_statesman_0386 | ΞΕ.     | 280b         | 280b       | 47331 | 47550 | 178 | 33 | no | no
+  turn_statesman_0387 | ΝΕ. ΣΩ. | 280b         | 280b       | 47550 | 47567 | 11 | 3 | no | no
+  turn_statesman_0388 | ΞΕ.     | 280c         | 280c       | 47567 | 47799 | 183 | 37 | no | no
+  turn_statesman_0389 | ΝΕ. ΣΩ. | 280c         | 280c       | 47799 | 47821 | 14 | 5 | no | no
+  turn_statesman_0390 | ΞΕ.     | 280c         | 280e       | 47821 | 48560 | 609 | 100 | yes | yes
+  turn_statesman_0391 | ΝΕ. ΣΩ. | 280e         | 280e       | 48560 | 48583 | 15 | 5 | no | no
+  turn_statesman_0392 | ΞΕ.     | 280e         | 281a       | 48583 | 48723 | 104 | 23 | no | no
+  turn_statesman_0393 | ΝΕ. ΣΩ. | 281a         | 281a       | 48723 | 48736 | 7 | 3 | no | no
+  turn_statesman_0394 | ΞΕ.     | 281a         | 281a       | 48736 | 48779 | 32 | 9 | no | no
+  turn_statesman_0395 | ΝΕ. ΣΩ. | 281a         | 281a       | 48779 | 48792 | 7 | 3 | no | no
+  turn_statesman_0396 | ΞΕ.     | 281a         | 281a       | 48792 | 48850 | 47 | 9 | no | no
+  turn_statesman_0397 | ΝΕ. ΣΩ. | 281a         | 281a       | 48850 | 48871 | 13 | 5 | no | no
+  turn_statesman_0398 | ΞΕ.     | 281a         | 281a       | 48871 | 48985 | 92 | 19 | no | no
+  turn_statesman_0399 | ΝΕ. ΣΩ. | 281a         | 281a       | 48985 | 49002 | 11 | 3 | no | no
+  turn_statesman_0400 | ΞΕ.     | 281a         | 281b       | 49002 | 49130 | 98 | 20 | no | no
+  turn_statesman_0401 | ΝΕ. ΣΩ. | 281b         | 281b       | 49130 | 49150 | 12 | 5 | no | no
+  turn_statesman_0402 | ΞΕ.     | 281b         | 281b       | 49150 | 49303 | 126 | 23 | no | no
+  turn_statesman_0403 | ΝΕ. ΣΩ. | 281b         | 281b       | 49303 | 49320 | 11 | 3 | no | no
+  turn_statesman_0404 | ΞΕ.     | 281b         | 281b       | 49320 | 49517 | 163 | 30 | no | no
+  turn_statesman_0405 | ΝΕ. ΣΩ. | 281c         | 281c       | 49517 | 49541 | 10 | 4 | no | no
+  turn_statesman_0406 | ΞΕ.     | 281c         | 281c       | 49541 | 49710 | 138 | 26 | no | no
+  turn_statesman_0407 | ΝΕ. ΣΩ. | 281c         | 281c       | 49710 | 49728 | 12 | 3 | no | no
+  turn_statesman_0408 | ΞΕ.     | 281c         | 281d       | 49728 | 50039 | 243 | 51 | no | no
+  turn_statesman_0409 | ΝΕ. ΣΩ. | 281d         | 281d       | 50039 | 50054 | 9 | 3 | no | no
+  turn_statesman_0410 | ΞΕ.     | 281d         | 281d       | 50054 | 50124 | 53 | 13 | no | no
+  turn_statesman_0411 | ΝΕ. ΣΩ. | 281d         | 281d       | 50124 | 50143 | 10 | 5 | no | no
+  turn_statesman_0412 | ΞΕ.     | 281d         | 281d       | 50143 | 50215 | 58 | 12 | no | no
+  turn_statesman_0413 | ΝΕ. ΣΩ. | 281d         | 281d       | 50215 | 50230 | 9 | 3 | no | no
+  turn_statesman_0414 | ΞΕ.     | 281d         | 281d       | 50230 | 50289 | 45 | 10 | no | no
+  turn_statesman_0415 | ΝΕ. ΣΩ. | 281d         | 281d       | 50289 | 50302 | 7 | 3 | no | no
+  turn_statesman_0416 | ΞΕ.     | 281e         | 281e       | 50302 | 50547 | 197 | 35 | no | no
+  turn_statesman_0417 | ΝΕ. ΣΩ. | 281e         | 281e       | 50547 | 50572 | 17 | 5 | no | no
+  turn_statesman_0418 | ΞΕ.     | 281e         | 281e       | 50572 | 50770 | 163 | 31 | no | no
+  turn_statesman_0419 | ΝΕ. ΣΩ. | 281e         | 281e       | 50770 | 50788 | 12 | 3 | no | no
+  turn_statesman_0420 | ΞΕ.     | 282a         | 282a       | 50788 | 51000 | 171 | 30 | no | no
+  turn_statesman_0421 | ΝΕ. ΣΩ. | 282a         | 282a       | 51000 | 51015 | 9 | 3 | no | no
+  turn_statesman_0422 | ΞΕ.     | 282a         | 282a       | 51015 | 51180 | 131 | 30 | no | no
+  turn_statesman_0423 | ΝΕ. ΣΩ. | 282a         | 282a       | 51180 | 51200 | 12 | 5 | no | no
+  turn_statesman_0424 | ΞΕ.     | 282b         | 282b       | 51200 | 51307 | 82 | 15 | no | no
+  turn_statesman_0425 | ΝΕ. ΣΩ. | 282b         | 282b       | 51307 | 51320 | 7 | 3 | no | no
+  turn_statesman_0426 | ΞΕ.     | 282b         | 282b       | 51320 | 51551 | 185 | 40 | no | no
+  turn_statesman_0427 | ΝΕ. ΣΩ. | 282b         | 282b       | 51551 | 51564 | 7 | 3 | no | no
+  turn_statesman_0428 | ΞΕ.     | 282b         | 282c       | 51564 | 51775 | 164 | 34 | no | no
+  turn_statesman_0429 | ΝΕ. ΣΩ. | 282c         | 282c       | 51775 | 51797 | 14 | 5 | no | no
+  turn_statesman_0430 | ΞΕ.     | 282c         | 282c       | 51797 | 52009 | 177 | 30 | no | no
+  turn_statesman_0431 | ΝΕ. ΣΩ. | 282c         | 282c       | 52009 | 52027 | 12 | 3 | no | no
+  turn_statesman_0432 | ΞΕ.     | 282c         | 282d       | 52027 | 52181 | 122 | 20 | no | no
+  turn_statesman_0433 | ΝΕ. ΣΩ. | 282d         | 282d       | 52181 | 52201 | 13 | 4 | no | no
+  turn_statesman_0434 | ΞΕ.     | 282d         | 282d       | 52201 | 52284 | 64 | 15 | no | no
+  turn_statesman_0435 | ΝΕ. ΣΩ. | 282d         | 282d       | 52284 | 52377 | 72 | 16 | no | yes
+  turn_statesman_0436 | ΞΕ.     | 282d         | 282d       | 52377 | 52452 | 58 | 13 | no | no
+  turn_statesman_0437 | ΝΕ. ΣΩ. | 282d         | 282d       | 52452 | 52469 | 11 | 3 | no | no
+  turn_statesman_0438 | ΞΕ.     | 282e         | 282e       | 52469 | 52560 | 67 | 14 | no | no
+  turn_statesman_0439 | ΝΕ. ΣΩ. | 282e         | 282e       | 52560 | 52572 | 6 | 3 | no | no
+  turn_statesman_0440 | ΞΕ.     | 282e         | 282e       | 52572 | 52660 | 70 | 15 | no | no
+  turn_statesman_0441 | ΝΕ. ΣΩ. | 282e         | 282e       | 52660 | 52673 | 7 | 3 | no | no
+  turn_statesman_0442 | ΞΕ.     | 282e         | 282e       | 52673 | 52820 | 120 | 24 | no | no
+  turn_statesman_0443 | ΝΕ. ΣΩ. | 282e         | 282e       | 52820 | 52835 | 9 | 3 | no | no
+  turn_statesman_0444 | ΞΕ.     | 282e         | 283a       | 52835 | 53078 | 191 | 39 | no | no
+  turn_statesman_0445 | ΝΕ. ΣΩ. | 283a         | 283a       | 53078 | 53096 | 12 | 3 | no | no
+  turn_statesman_0446 | ΞΕ.     | 283a         | 283a       | 53096 | 53363 | 218 | 42 | no | no
+  turn_statesman_0447 | ΝΕ. ΣΩ. | 283a         | 283a       | 53363 | 53381 | 12 | 3 | no | no
+  turn_statesman_0448 | ΞΕ.     | 283b         | 283b       | 53381 | 53538 | 124 | 22 | no | no
+  turn_statesman_0449 | ΝΕ. ΣΩ. | 283b         | 283b       | 53538 | 53609 | 54 | 12 | no | yes
+  turn_statesman_0450 | ΞΕ.     | 283b         | 283c       | 53609 | 53821 | 163 | 34 | no | no
+  turn_statesman_0451 | ΝΕ. ΣΩ. | 283c         | 283c       | 53821 | 53841 | 13 | 4 | no | no
+  turn_statesman_0452 | ΞΕ.     | 283c         | 283c       | 53841 | 54028 | 155 | 29 | no | no
+  turn_statesman_0453 | ΝΕ. ΣΩ. | 283c         | 283c       | 54028 | 54048 | 13 | 4 | no | no
+  turn_statesman_0454 | ΞΕ.     | 283c         | 283c       | 54048 | 54122 | 59 | 13 | no | no
+  turn_statesman_0455 | ΝΕ. ΣΩ. | 283c         | 283c       | 54122 | 54137 | 9 | 3 | no | no
+  turn_statesman_0456 | ΞΕ.     | 283c         | 283d       | 54137 | 54258 | 90 | 20 | no | no
+  turn_statesman_0457 | ΝΕ. ΣΩ. | 283d         | 283d       | 54258 | 54271 | 7 | 3 | no | no
+  turn_statesman_0458 | ΞΕ.     | 283d         | 283d       | 54271 | 54340 | 53 | 13 | no | no
+  turn_statesman_0459 | ΝΕ. ΣΩ. | 283d         | 283d       | 54340 | 54377 | 27 | 7 | no | no
+  turn_statesman_0460 | ΞΕ.     | 283d         | 283d       | 54377 | 54513 | 98 | 21 | no | no
+  turn_statesman_0461 | ΝΕ. ΣΩ. | 283d         | 283d       | 54513 | 54533 | 13 | 4 | no | no
+  turn_statesman_0462 | ΞΕ.     | 283d         | 283e       | 54533 | 54690 | 119 | 26 | no | no
+  turn_statesman_0463 | ΝΕ. ΣΩ. | 283e         | 283e       | 54690 | 54706 | 10 | 3 | no | no
+  turn_statesman_0464 | ΞΕ.     | 283e         | 283e       | 54706 | 54924 | 161 | 38 | no | no
+  turn_statesman_0465 | ΝΕ. ΣΩ. | 283e         | 283e       | 54924 | 54942 | 12 | 3 | no | no
+  turn_statesman_0466 | ΞΕ.     | 283e         | 283e       | 54942 | 55192 | 194 | 45 | no | no
+  turn_statesman_0467 | ΝΕ. ΣΩ. | 283e         | 283e       | 55192 | 55208 | 9 | 4 | no | no
+  turn_statesman_0468 | ΞΕ.     | 284a         | 284a       | 55208 | 55330 | 89 | 22 | no | no
+  turn_statesman_0469 | ΝΕ. ΣΩ. | 284a         | 284a       | 55330 | 55345 | 9 | 3 | no | no
+  turn_statesman_0470 | ΞΕ.     | 284a         | 284b       | 55345 | 55714 | 294 | 62 | yes | no
+  turn_statesman_0471 | ΝΕ. ΣΩ. | 284b         | 284b       | 55714 | 55730 | 9 | 4 | no | no
+  turn_statesman_0472 | ΞΕ.     | 284b         | 284b       | 55730 | 55834 | 85 | 16 | no | no
+  turn_statesman_0473 | ΝΕ. ΣΩ. | 284b         | 284b       | 55834 | 55852 | 11 | 4 | no | no
+  turn_statesman_0474 | ΞΕ.     | 284b         | 284c       | 55852 | 56239 | 312 | 61 | yes | no
+  turn_statesman_0475 | ΝΕ. ΣΩ. | 284c         | 284c       | 56239 | 56293 | 41 | 10 | no | yes
+  turn_statesman_0476 | ΞΕ.     | 284c         | 284c       | 56293 | 56452 | 124 | 28 | no | no
+  turn_statesman_0477 | ΝΕ. ΣΩ. | 284c         | 284c       | 56452 | 56470 | 11 | 4 | no | no
+  turn_statesman_0478 | ΞΕ.     | 284d         | 284d       | 56470 | 56913 | 352 | 75 | yes | no
+  turn_statesman_0479 | ΝΕ. ΣΩ. | 284e         | 284e       | 56913 | 56971 | 36 | 11 | no | yes
+  turn_statesman_0480 | ΞΕ.     | 284e         | 284e       | 56971 | 57315 | 278 | 58 | yes | no
+  turn_statesman_0481 | ΝΕ. ΣΩ. | 284e         | 284e       | 57315 | 57385 | 54 | 12 | no | yes
+  turn_statesman_0482 | ΞΕ.     | 284e         | 285c       | 57385 | 58361 | 781 | 151 | yes | yes
+  turn_statesman_0483 | ΝΕ. ΣΩ. | 285c         | 285c       | 58361 | 58382 | 15 | 3 | no | no
+  turn_statesman_0484 | ΞΕ.     | 285c         | 285c       | 58382 | 58514 | 108 | 22 | no | no
+  turn_statesman_0485 | ΝΕ. ΣΩ. | 285c         | 285c       | 58514 | 58532 | 11 | 4 | no | no
+  turn_statesman_0486 | ΞΕ.     | 285c         | 285d       | 58532 | 58803 | 221 | 39 | no | no
+  turn_statesman_0487 | ΝΕ. ΣΩ. | 285d         | 285d       | 58803 | 58838 | 25 | 7 | no | no
+  turn_statesman_0488 | ΞΕ.     | 285d         | 285d       | 58838 | 58973 | 109 | 22 | no | no
+  turn_statesman_0489 | ΝΕ. ΣΩ. | 285d         | 285d       | 58973 | 59017 | 32 | 9 | no | yes
+  turn_statesman_0490 | ΞΕ.     | 285d         | 286a       | 59017 | 59599 | 471 | 86 | yes | yes
+  turn_statesman_0491 | ΞΕ.     | 286a         | 286b       | 59599 | 59876 | 214 | 47 | no | no
+  turn_statesman_0492 | ΝΕ. ΣΩ. | 286b         | 286b       | 59876 | 59900 | 16 | 4 | no | no
+  turn_statesman_0493 | ΞΕ.     | 286b         | 286b       | 59900 | 59969 | 53 | 11 | no | no
+  turn_statesman_0494 | ΝΕ. ΣΩ. | 286b         | 286b       | 59969 | 59984 | 9 | 3 | no | no
+  turn_statesman_0495 | ΞΕ.     | 286b         | 286c       | 59984 | 60421 | 350 | 71 | yes | no
+  turn_statesman_0496 | ΝΕ. ΣΩ. | 286c         | 286c       | 60421 | 60459 | 26 | 7 | no | no
+  turn_statesman_0497 | ΞΕ.     | 286c         | 286d       | 60459 | 60741 | 222 | 49 | no | no
+  turn_statesman_0498 | ΝΕ. ΣΩ. | 286d         | 286d       | 60741 | 60756 | 9 | 3 | no | no
+  turn_statesman_0499 | ΞΕ.     | 286d         | 287b       | 60756 | 61916 | 920 | 179 | yes | yes
+  turn_statesman_0500 | ΝΕ. ΣΩ. | 287b         | 287b       | 61916 | 61959 | 31 | 8 | no | no
+  turn_statesman_0501 | ΞΕ.     | 287b         | 287b       | 61959 | 62174 | 170 | 37 | no | no
+  turn_statesman_0502 | ΝΕ. ΣΩ. | 287b         | 287b       | 62174 | 62189 | 9 | 3 | no | no
+  turn_statesman_0503 | ΞΕ.     | 287b         | 287c       | 62189 | 62302 | 81 | 18 | no | no
+  turn_statesman_0504 | ΝΕ. ΣΩ. | 287c         | 287c       | 62302 | 62333 | 22 | 6 | no | no
+  turn_statesman_0505 | ΞΕ.     | 287c         | 287c       | 62333 | 62468 | 110 | 21 | no | no
+  turn_statesman_0506 | ΝΕ. ΣΩ. | 287c         | 287c       | 62468 | 62500 | 22 | 7 | no | no
+  turn_statesman_0507 | ΞΕ.     | 287c         | 287c       | 62500 | 62607 | 88 | 15 | no | no
+  turn_statesman_0508 | ΝΕ. ΣΩ. | 287c         | 287c       | 62607 | 62620 | 7 | 3 | no | no
+  turn_statesman_0509 | ΞΕ.     | 287c         | 287d       | 62620 | 62910 | 225 | 49 | no | no
+  turn_statesman_0510 | ΝΕ. ΣΩ. | 287d         | 287d       | 62910 | 62926 | 9 | 4 | no | no
+  turn_statesman_0511 | ΞΕ.     | 287d         | 287e       | 62926 | 63162 | 185 | 40 | no | no
+  turn_statesman_0512 | ΝΕ. ΣΩ. | 287e         | 287e       | 63162 | 63180 | 11 | 4 | no | no
+  turn_statesman_0513 | ΞΕ.     | 287e         | 287e       | 63180 | 63315 | 108 | 21 | no | no
+  turn_statesman_0514 | ΝΕ. ΣΩ. | 287e         | 287e       | 63315 | 63333 | 11 | 4 | no | no
+  turn_statesman_0515 | ΞΕ.     | 287e         | 288a       | 63333 | 63566 | 173 | 35 | no | no
+  turn_statesman_0516 | ΝΕ. ΣΩ. | 288a         | 288a       | 63566 | 63586 | 12 | 5 | no | no
+  turn_statesman_0517 | ΞΕ.     | 288a         | 288a       | 63586 | 63796 | 171 | 34 | no | no
+  turn_statesman_0518 | ΝΕ. ΣΩ. | 288a         | 288a       | 63796 | 63814 | 11 | 4 | no | no
+  turn_statesman_0519 | ΞΕ.     | 288a         | 288a       | 63814 | 63927 | 92 | 17 | no | no
+  turn_statesman_0520 | ΝΕ. ΣΩ. | 288a         | 288a       | 63927 | 63944 | 11 | 3 | no | no
+  turn_statesman_0521 | ΞΕ.     | 288b         | 288b       | 63944 | 64348 | 322 | 63 | yes | no
+  turn_statesman_0522 | ΝΕ. ΣΩ. | 288b         | 288b       | 64348 | 64370 | 14 | 5 | no | no
+  turn_statesman_0523 | ΞΕ.     | 288c         | 288c       | 64370 | 64586 | 170 | 33 | no | no
+  turn_statesman_0524 | ΝΕ. ΣΩ. | 288c         | 288c       | 64586 | 64600 | 8 | 3 | no | no
+  turn_statesman_0525 | ΞΕ.     | 288c         | 288c       | 64600 | 64629 | 22 | 5 | no | no
+  turn_statesman_0526 | ΝΕ. ΣΩ. | 288c         | 288c       | 64629 | 64645 | 9 | 4 | no | no
+  turn_statesman_0527 | ΞΕ.     | 288c         | 288c       | 64645 | 64774 | 105 | 20 | no | no
+  turn_statesman_0528 | ΝΕ. ΣΩ. | 288d         | 288d       | 64774 | 64818 | 27 | 7 | no | no
+  turn_statesman_0529 | ΞΕ.     | 288d         | 288d       | 64818 | 64994 | 141 | 29 | no | no
+  turn_statesman_0530 | ΝΕ. ΣΩ. | 288d         | 288d       | 64994 | 65022 | 19 | 6 | no | no
+  turn_statesman_0531 | ΞΕ.     | 288d         | 288e       | 65022 | 65501 | 395 | 70 | yes | no
+  turn_statesman_0532 | ΝΕ. ΣΩ. | 288e         | 288e       | 65501 | 65516 | 9 | 3 | no | no
+  turn_statesman_0533 | ΞΕ.     | 288e         | 289a       | 65516 | 65872 | 289 | 54 | no | no
+  turn_statesman_0534 | ΝΕ. ΣΩ. | 289a         | 289a       | 65872 | 65892 | 12 | 5 | no | no
+  turn_statesman_0535 | ΞΕ.     | 289a         | 289c       | 65892 | 66556 | 509 | 103 | yes | yes
+  turn_statesman_0536 | ΝΕ. ΣΩ. | 289c         | 289c       | 66556 | 66578 | 14 | 5 | no | no
+  turn_statesman_0537 | ΞΕ.     | 289c         | 289d       | 66578 | 66965 | 312 | 61 | yes | no
+  turn_statesman_0538 | ΝΕ. ΣΩ. | 289d         | 289d       | 66965 | 66987 | 15 | 4 | no | no
+  turn_statesman_0539 | ΞΕ.     | 289d         | 289d       | 66987 | 67075 | 73 | 12 | no | no
+  turn_statesman_0540 | ΝΕ. ΣΩ. | 289d         | 289d       | 67075 | 67095 | 13 | 4 | no | no
+  turn_statesman_0541 | ΞΕ.     | 289d         | 289d       | 67095 | 67218 | 102 | 17 | no | no
+  turn_statesman_0542 | ΝΕ. ΣΩ. | 289d         | 289d       | 67218 | 67233 | 9 | 3 | no | no
+  turn_statesman_0543 | ΞΕ.     | 289d         | 289e       | 67233 | 67371 | 109 | 18 | no | no
+  turn_statesman_0544 | ΝΕ. ΣΩ. | 289e         | 289e       | 67371 | 67390 | 10 | 5 | no | no
+  turn_statesman_0545 | ΞΕ.     | 289e         | 290a       | 67390 | 67822 | 347 | 67 | yes | no
+  turn_statesman_0546 | ΝΕ. ΣΩ. | 290a         | 290a       | 67822 | 67868 | 33 | 9 | no | yes
+  turn_statesman_0547 | ΞΕ.     | 290a         | 290a       | 67868 | 67992 | 102 | 18 | no | no
+  turn_statesman_0548 | ΝΕ. ΣΩ. | 290a         | 290a       | 67992 | 68009 | 10 | 4 | no | no
+  turn_statesman_0549 | ΞΕ.     | 290a         | 290a       | 68009 | 68066 | 45 | 10 | no | no
+  turn_statesman_0550 | ΝΕ. ΣΩ. | 290a         | 290a       | 68066 | 68099 | 23 | 7 | no | no
+  turn_statesman_0551 | ΞΕ.     | 290b         | 290b       | 68099 | 68291 | 151 | 28 | no | no
+  turn_statesman_0552 | ΝΕ. ΣΩ. | 290b         | 290b       | 68291 | 68367 | 57 | 13 | no | yes
+  turn_statesman_0553 | ΞΕ.     | 290b         | 290c       | 68367 | 68569 | 161 | 31 | no | no
+  turn_statesman_0554 | ΝΕ. ΣΩ. | 290c         | 290c       | 68569 | 68593 | 16 | 5 | no | no
+  turn_statesman_0555 | ΞΕ.     | 290c         | 290c       | 68593 | 68778 | 154 | 27 | no | no
+  turn_statesman_0556 | ΝΕ. ΣΩ. | 290c         | 290c       | 68778 | 68791 | 7 | 3 | no | no
+  turn_statesman_0557 | ΞΕ.     | 290c         | 290d       | 68791 | 69045 | 199 | 42 | no | no
+  turn_statesman_0558 | ΝΕ. ΣΩ. | 290d         | 290d       | 69045 | 69068 | 16 | 4 | no | no
+  turn_statesman_0559 | ΞΕ.     | 290d         | 290e       | 69068 | 69742 | 544 | 110 | yes | yes
+  turn_statesman_0560 | ΝΕ. ΣΩ. | 290e         | 290e       | 69742 | 69763 | 13 | 5 | no | no
+  turn_statesman_0561 | ΞΕ.     | 291a         | 291a       | 69763 | 69957 | 155 | 28 | no | no
+  turn_statesman_0562 | ΝΕ. ΣΩ. | 291a         | 291a       | 69957 | 69993 | 25 | 7 | no | no
+  turn_statesman_0563 | ΞΕ.     | 291a         | 291a       | 69993 | 70021 | 21 | 5 | no | no
+  turn_statesman_0564 | ΝΕ. ΣΩ. | 291a         | 291a       | 70021 | 70036 | 8 | 4 | no | no
+  turn_statesman_0565 | ΞΕ.     | 291a         | 291b       | 70036 | 70384 | 279 | 53 | no | no
+  turn_statesman_0566 | ΝΕ. ΣΩ. | 291b         | 291b       | 70384 | 70433 | 36 | 9 | no | yes
+  turn_statesman_0567 | ΞΕ.     | 291b         | 291c       | 70433 | 70596 | 123 | 27 | no | no
+  turn_statesman_0568 | ΝΕ. ΣΩ. | 291c         | 291c       | 70596 | 70611 | 9 | 3 | no | no
+  turn_statesman_0569 | ΞΕ.     | 291c         | 291c       | 70611 | 70822 | 176 | 31 | no | no
+  turn_statesman_0570 | ΝΕ. ΣΩ. | 291c         | 291c       | 70822 | 70861 | 28 | 8 | no | no
+  turn_statesman_0571 | ΞΕ.     | 291c         | 291c       | 70861 | 70913 | 38 | 11 | no | no
+  turn_statesman_0572 | ΝΕ. ΣΩ. | 291c         | 291c       | 70913 | 70931 | 11 | 4 | no | no
+  turn_statesman_0573 | ΞΕ.     | 291d         | 291d       | 70931 | 70993 | 42 | 10 | no | no
+  turn_statesman_0574 | ΝΕ. ΣΩ. | 291d         | 291d       | 70993 | 71006 | 7 | 3 | no | no
+  turn_statesman_0575 | ΞΕ.     | 291d         | 291d       | 71006 | 71079 | 58 | 13 | no | no
+  turn_statesman_0576 | ΝΕ. ΣΩ. | 291d         | 291d       | 71079 | 71098 | 10 | 5 | no | no
+  turn_statesman_0577 | ΞΕ.     | 291d         | 291d       | 71098 | 71181 | 67 | 13 | no | no
+  turn_statesman_0578 | ΝΕ. ΣΩ. | 291d         | 291d       | 71181 | 71202 | 13 | 5 | no | no
+  turn_statesman_0579 | ΞΕ.     | 291d         | 291d       | 71202 | 71307 | 82 | 18 | no | no
+  turn_statesman_0580 | ΝΕ. ΣΩ. | 291d         | 291d       | 71307 | 71324 | 10 | 4 | no | no
+  turn_statesman_0581 | ΞΕ.     | 291e         | 291e       | 71324 | 71585 | 212 | 38 | no | no
+  turn_statesman_0582 | ΝΕ. ΣΩ. | 291e         | 291e       | 71585 | 71601 | 9 | 4 | no | no
+  turn_statesman_0583 | ΞΕ.     | 291e         | 291e       | 71601 | 71681 | 65 | 12 | no | no
+  turn_statesman_0584 | ΝΕ. ΣΩ. | 291e         | 291e       | 71681 | 71702 | 13 | 5 | no | no
+  turn_statesman_0585 | ΞΕ.     | 291e         | 292a       | 71702 | 71901 | 156 | 30 | no | no
+  turn_statesman_0586 | ΝΕ. ΣΩ. | 292a         | 292a       | 71901 | 71916 | 9 | 3 | no | no
+  turn_statesman_0587 | ΞΕ.     | 292a         | 292a       | 71916 | 72140 | 181 | 36 | no | no
+  turn_statesman_0588 | ΝΕ. ΣΩ. | 292a         | 292a       | 72140 | 72170 | 20 | 7 | no | no
+  turn_statesman_0589 | ΞΕ.     | 292b         | 292b       | 72170 | 72217 | 32 | 6 | no | no
+  turn_statesman_0590 | ΝΕ. ΣΩ. | 292b         | 292b       | 72217 | 72229 | 6 | 3 | no | no
+  turn_statesman_0591 | ΞΕ.     | 292b         | 292b       | 72229 | 72291 | 51 | 9 | no | no
+  turn_statesman_0592 | ΝΕ. ΣΩ. | 292b         | 292b       | 72291 | 72318 | 18 | 6 | no | no
+  turn_statesman_0593 | ΞΕ.     | 292b         | 292b       | 72318 | 72382 | 51 | 10 | no | no
+  turn_statesman_0594 | ΝΕ. ΣΩ. | 292b         | 292b       | 72382 | 72395 | 7 | 3 | no | no
+  turn_statesman_0595 | ΞΕ.     | 292b         | 292b       | 72395 | 72492 | 78 | 16 | no | no
+  turn_statesman_0596 | ΝΕ. ΣΩ. | 292b         | 292b       | 72492 | 72505 | 7 | 3 | no | no
+  turn_statesman_0597 | ΞΕ.     | 292b         | 292c       | 72505 | 72730 | 174 | 34 | no | no
+  turn_statesman_0598 | ΝΕ. ΣΩ. | 292c         | 292c       | 72730 | 72752 | 15 | 4 | no | no
+  turn_statesman_0599 | ΞΕ.     | 292c         | 292c       | 72752 | 72971 | 176 | 34 | no | no
+  turn_statesman_0600 | ΝΕ. ΣΩ. | 292d         | 292d       | 72971 | 73024 | 34 | 9 | no | yes
+  turn_statesman_0601 | ΞΕ.     | 292d         | 292d       | 73024 | 73339 | 260 | 47 | no | no
+  turn_statesman_0602 | ΝΕ. ΣΩ. | 292d         | 292d       | 73339 | 73400 | 45 | 12 | no | yes
+  turn_statesman_0603 | ΞΕ.     | 292e         | 292e       | 73400 | 73490 | 67 | 14 | no | no
+  turn_statesman_0604 | ΝΕ. ΣΩ. | 292e         | 292e       | 73490 | 73507 | 10 | 4 | no | no
+  turn_statesman_0605 | ΞΕ.     | 292e         | 292e       | 73507 | 73601 | 76 | 15 | no | no
+  turn_statesman_0606 | ΝΕ. ΣΩ. | 292e         | 293a       | 73601 | 73917 | 244 | 55 | no | yes
+  turn_statesman_0607 | ΞΕ.     | 293a         | 293a       | 73917 | 74064 | 119 | 24 | no | no
+  turn_statesman_0608 | ΝΕ. ΣΩ. | 293a         | 293a       | 74064 | 74080 | 9 | 4 | no | no
+  turn_statesman_0609 | ΞΕ.     | 293a         | 293c       | 74080 | 74846 | 615 | 112 | yes | yes
+  turn_statesman_0610 | ΝΕ. ΣΩ. | 293c         | 293c       | 74846 | 74870 | 16 | 5 | no | no
+  turn_statesman_0611 | ΞΕ.     | 293c         | 293d       | 74870 | 75208 | 271 | 50 | no | no
+  turn_statesman_0612 | ΝΕ. ΣΩ. | 293d         | 293d       | 75208 | 75223 | 9 | 3 | no | no
+  turn_statesman_0613 | ΞΕ.     | 293d         | 293e       | 75223 | 75828 | 480 | 89 | yes | yes
+  turn_statesman_0614 | ΝΕ. ΣΩ. | 293e         | 293e       | 75828 | 75943 | 89 | 20 | no | yes
+  turn_statesman_0615 | ΞΕ.     | 293e         | 294a       | 75943 | 76190 | 194 | 39 | no | no
+  turn_statesman_0616 | ΝΕ. ΣΩ. | 294a         | 294a       | 76190 | 76210 | 12 | 5 | no | no
+  turn_statesman_0617 | ΞΕ.     | 294a         | 294a       | 76210 | 76372 | 128 | 27 | no | no
+  turn_statesman_0618 | ΝΕ. ΣΩ. | 294a         | 294a       | 76372 | 76394 | 14 | 5 | no | no
+  turn_statesman_0619 | ΞΕ.     | 294a         | 294b       | 76394 | 76767 | 301 | 60 | yes | no
+  turn_statesman_0620 | ΝΕ. ΣΩ. | 294b         | 294b       | 76767 | 76783 | 9 | 4 | no | no
+  turn_statesman_0621 | ΞΕ.     | 294b         | 294c       | 76783 | 77038 | 197 | 43 | no | no
+  turn_statesman_0622 | ΝΕ. ΣΩ. | 294c         | 294c       | 77038 | 77114 | 59 | 13 | no | yes
+  turn_statesman_0623 | ΞΕ.     | 294c         | 294c       | 77114 | 77198 | 68 | 14 | no | no
+  turn_statesman_0624 | ΝΕ. ΣΩ. | 294c         | 294c       | 77198 | 77218 | 14 | 3 | no | no
+  turn_statesman_0625 | ΞΕ.     | 294c         | 294d       | 77218 | 77333 | 86 | 17 | no | no
+  turn_statesman_0626 | ΝΕ. ΣΩ. | 294d         | 294d       | 77333 | 77349 | 9 | 4 | no | no
+  turn_statesman_0627 | ΞΕ.     | 294d         | 294d       | 77349 | 77492 | 114 | 24 | no | no
+  turn_statesman_0628 | ΝΕ. ΣΩ. | 294d         | 294d       | 77492 | 77520 | 19 | 6 | no | no
+  turn_statesman_0629 | ΞΕ.     | 294d         | 294d       | 77520 | 77618 | 81 | 15 | no | no
+  turn_statesman_0630 | ΝΕ. ΣΩ. | 294d         | 294d       | 77618 | 77636 | 11 | 4 | no | no
+  turn_statesman_0631 | ΞΕ.     | 294d         | 294e       | 77636 | 77857 | 176 | 33 | no | no
+  turn_statesman_0632 | ΝΕ. ΣΩ. | 294e         | 294e       | 77857 | 77872 | 9 | 3 | no | no
+  turn_statesman_0633 | ΞΕ.     | 294e         | 294e       | 77872 | 78020 | 118 | 27 | no | no
+  turn_statesman_0634 | ΝΕ. ΣΩ. | 294e         | 294e       | 78020 | 78040 | 13 | 4 | no | no
+  turn_statesman_0635 | ΞΕ.     | 294e         | 295a       | 78040 | 78265 | 182 | 31 | no | no
+  turn_statesman_0636 | ΝΕ. ΣΩ. | 295a         | 295a       | 78265 | 78288 | 15 | 5 | no | no
+  turn_statesman_0637 | ΞΕ.     | 295a         | 295a       | 78288 | 78468 | 145 | 31 | no | no
+  turn_statesman_0638 | ΝΕ. ΣΩ. | 295a         | 295a       | 78468 | 78483 | 9 | 3 | no | no
+  turn_statesman_0639 | ΞΕ.     | 295a         | 295b       | 78483 | 78802 | 250 | 49 | no | no
+  turn_statesman_0640 | ΝΕ. ΣΩ. | 295b         | 295b       | 78802 | 78846 | 30 | 9 | no | yes
+  turn_statesman_0641 | ΞΕ.     | 295b         | 295b       | 78846 | 78905 | 45 | 10 | no | no
+  turn_statesman_0642 | ΝΕ. ΣΩ. | 295b         | 295b       | 78905 | 78923 | 11 | 4 | no | no
+  turn_statesman_0643 | ΞΕ.     | 295b         | 295c       | 78923 | 79213 | 233 | 42 | no | no
+  turn_statesman_0644 | ΝΕ. ΣΩ. | 295c         | 295c       | 79213 | 79228 | 9 | 3 | no | no
+  turn_statesman_0645 | ΞΕ.     | 295c         | 295e       | 79228 | 79874 | 516 | 103 | yes | yes
+  turn_statesman_0646 | ΝΕ. ΣΩ. | 295e         | 295e       | 79874 | 79901 | 19 | 5 | no | no
+  turn_statesman_0647 | ΞΕ.     | 295e         | 296a       | 79901 | 80287 | 308 | 65 | yes | no
+  turn_statesman_0648 | ΝΕ. ΣΩ. | 296a         | 296a       | 80287 | 80303 | 9 | 4 | no | no
+  turn_statesman_0649 | ΞΕ.     | 296a         | 296a       | 80303 | 80369 | 51 | 12 | no | no
+  turn_statesman_0650 | ΝΕ. ΣΩ. | 296a         | 296a       | 80369 | 80401 | 21 | 7 | no | no
+  turn_statesman_0651 | ΞΕ.     | 296a         | 296a       | 80401 | 80558 | 125 | 26 | no | no
+  turn_statesman_0652 | ΝΕ. ΣΩ. | 296a         | 296a       | 80558 | 80585 | 17 | 6 | no | no
+  turn_statesman_0653 | ΞΕ.     | 296b         | 296b       | 80585 | 80731 | 106 | 25 | no | no
+  turn_statesman_0654 | ΝΕ. ΣΩ. | 296b         | 296b       | 80731 | 80756 | 17 | 5 | no | no
+  turn_statesman_0655 | ΞΕ.     | 296b         | 296c       | 80756 | 81144 | 306 | 67 | yes | no
+  turn_statesman_0656 | ΝΕ. ΣΩ. | 296c         | 296c       | 81144 | 81171 | 20 | 4 | no | no
+  turn_statesman_0657 | ΞΕ.     | 296c         | 296c       | 81171 | 81300 | 90 | 22 | no | no
+  turn_statesman_0658 | ΝΕ. ΣΩ. | 296c         | 296c       | 81300 | 81322 | 15 | 4 | no | no
+  turn_statesman_0659 | ΞΕ.     | 296c         | 296d       | 81322 | 81659 | 268 | 53 | no | no
+  turn_statesman_0660 | ΝΕ. ΣΩ. | 296d         | 296d       | 81659 | 81686 | 20 | 4 | no | no
+  turn_statesman_0661 | ΞΕ.     | 296d         | 296e       | 81686 | 82053 | 271 | 63 | yes | no
+  turn_statesman_0662 | ΞΕ.     | 296e         | 297b       | 82053 | 82607 | 443 | 87 | yes | yes
+  turn_statesman_0663 | ΝΕ. ΣΩ. | 297b         | 297b       | 82607 | 82657 | 36 | 10 | no | yes
+  turn_statesman_0664 | ΞΕ.     | 297b         | 297b       | 82657 | 82699 | 33 | 7 | no | no
+  turn_statesman_0665 | ΝΕ. ΣΩ. | 297b         | 297b       | 82699 | 82722 | 15 | 5 | no | no
+  turn_statesman_0666 | ΞΕ.     | 297b         | 297c       | 82722 | 83067 | 268 | 59 | yes | no
+  turn_statesman_0667 | ΝΕ. ΣΩ. | 297c         | 297c       | 83067 | 83150 | 63 | 15 | no | yes
+  turn_statesman_0668 | ΞΕ.     | 297c         | 297d       | 83150 | 83294 | 110 | 24 | no | no
+  turn_statesman_0669 | ΝΕ. ΣΩ. | 297d         | 297d       | 83294 | 83312 | 11 | 4 | no | no
+  turn_statesman_0670 | ΞΕ.     | 297d         | 297d       | 83312 | 83602 | 233 | 47 | no | no
+  turn_statesman_0671 | ΝΕ. ΣΩ. | 297d         | 297d       | 83602 | 83620 | 11 | 4 | no | no
+  turn_statesman_0672 | ΞΕ.     | 297e         | 297e       | 83620 | 83930 | 241 | 52 | no | no
+  turn_statesman_0673 | ΝΕ. ΣΩ. | 297e         | 297e       | 83930 | 83952 | 14 | 5 | no | no
+  turn_statesman_0674 | ΞΕ.     | 297e         | 297e       | 83952 | 84047 | 78 | 14 | no | no
+  turn_statesman_0675 | ΝΕ. ΣΩ. | 297e         | 297e       | 84047 | 84062 | 9 | 3 | no | no
+  turn_statesman_0676 | ΞΕ.     | 297e         | 297e       | 84062 | 84185 | 101 | 19 | no | no
+  turn_statesman_0677 | ΝΕ. ΣΩ. | 297e         | 297e       | 84185 | 84203 | 11 | 4 | no | no
+  turn_statesman_0678 | ΞΕ.     | 298a         | 298e       | 84203 | 85917 | 1381 | 262 | yes | yes
+  turn_statesman_0679 | ΝΕ. ΣΩ. | 298e         | 298e       | 85917 | 85950 | 24 | 6 | no | no
+  turn_statesman_0680 | ΞΕ.     | 298e         | 298e       | 85950 | 86185 | 192 | 37 | no | no
+  turn_statesman_0681 | ΝΕ. ΣΩ. | 298e         | 298e       | 86185 | 86215 | 21 | 5 | no | no
+  turn_statesman_0682 | ΞΕ.     | 298e         | 299a       | 86215 | 86714 | 400 | 82 | yes | yes
+  turn_statesman_0683 | ΝΕ. ΣΩ. | 299a         | 299b       | 86714 | 86824 | 80 | 18 | no | yes
+  turn_statesman_0684 | ΞΕ.     | 299b         | 299e       | 86824 | 88338 | 1238 | 228 | yes | yes
+  turn_statesman_0685 | ΝΕ. ΣΩ. | 299e         | 299e       | 88338 | 88568 | 179 | 41 | no | yes
+  turn_statesman_0686 | ΞΕ.     | 300a         | 300a       | 88568 | 88930 | 292 | 56 | no | no
+  turn_statesman_0687 | ΝΕ. ΣΩ. | 300a         | 300a       | 88930 | 88967 | 16 | 4 | no | no
+  turn_statesman_0688 | ΞΕ.     | 300b         | 300b       | 88967 | 89254 | 236 | 39 | no | no
+  turn_statesman_0689 | ΝΕ. ΣΩ. | 300b         | 300b       | 89254 | 89280 | 16 | 6 | no | no
+  turn_statesman_0690 | ΞΕ.     | 300c         | 300c       | 89280 | 89443 | 127 | 26 | no | no
+  turn_statesman_0691 | ΝΕ. ΣΩ. | 300c         | 300c       | 89443 | 89458 | 9 | 3 | no | no
+  turn_statesman_0692 | ΞΕ.     | 300c         | 300c       | 89458 | 89567 | 88 | 18 | no | no
+  turn_statesman_0693 | ΝΕ. ΣΩ. | 300c         | 300c       | 89567 | 89586 | 10 | 5 | no | no
+  turn_statesman_0694 | ΞΕ.     | 300c         | 300d       | 89586 | 89829 | 190 | 38 | no | no
+  turn_statesman_0695 | ΝΕ. ΣΩ. | 300d         | 300d       | 89829 | 89849 | 13 | 4 | no | no
+  turn_statesman_0696 | ΞΕ.     | 300d         | 300d       | 89849 | 90039 | 154 | 31 | no | no
+  turn_statesman_0697 | ΝΕ. ΣΩ. | 300d         | 300d       | 90039 | 90061 | 14 | 5 | no | no
+  turn_statesman_0698 | ΞΕ.     | 300d         | 300e       | 90061 | 90271 | 160 | 33 | no | no
+  turn_statesman_0699 | ΝΕ. ΣΩ. | 300e         | 300e       | 90271 | 90291 | 13 | 4 | no | no
+  turn_statesman_0700 | ΞΕ.     | 300e         | 300e       | 90291 | 90396 | 86 | 16 | no | no
+  turn_statesman_0701 | ΝΕ. ΣΩ. | 300e         | 300e       | 90396 | 90420 | 16 | 5 | no | no
+  turn_statesman_0702 | ΞΕ.     | 300e         | 300e       | 90420 | 90555 | 108 | 24 | no | no
+  turn_statesman_0703 | ΝΕ. ΣΩ. | 300e         | 300e       | 90555 | 90575 | 12 | 5 | no | no
+  turn_statesman_0704 | ΞΕ.     | 300e         | 301a       | 90575 | 90819 | 195 | 38 | no | no
+  turn_statesman_0705 | ΝΕ. ΣΩ. | 301a         | 301a       | 90819 | 90845 | 18 | 4 | no | no
+  turn_statesman_0706 | ΞΕ.     | 301a         | 301a       | 90845 | 90987 | 117 | 20 | no | no
+  turn_statesman_0707 | ΝΕ. ΣΩ. | 301a         | 301a       | 90987 | 91007 | 14 | 3 | no | no
+  turn_statesman_0708 | ΞΕ.     | 301a         | 301b       | 91007 | 91181 | 136 | 25 | no | no
+  turn_statesman_0709 | ΝΕ. ΣΩ. | 301b         | 301b       | 91181 | 91203 | 16 | 3 | no | no
+  turn_statesman_0710 | ΞΕ.     | 301b         | 301b       | 91203 | 91394 | 153 | 33 | no | no
+  turn_statesman_0711 | ΝΕ. ΣΩ. | 301b         | 301b       | 91394 | 91414 | 13 | 4 | no | no
+  turn_statesman_0712 | ΞΕ.     | 301b         | 301c       | 91414 | 91685 | 212 | 46 | no | no
+  turn_statesman_0713 | ΝΕ. ΣΩ. | 301c         | 301c       | 91685 | 91701 | 9 | 4 | no | no
+  turn_statesman_0714 | ΞΕ.     | 301c         | 301d       | 91701 | 92220 | 424 | 77 | yes | no
+  turn_statesman_0715 | ΝΕ. ΣΩ. | 301d         | 301d       | 92220 | 92239 | 10 | 5 | no | no
+  turn_statesman_0716 | ΞΕ.     | 301d         | 301e       | 92239 | 92494 | 199 | 41 | no | no
+  turn_statesman_0717 | ΝΕ. ΣΩ. | 301e         | 301e       | 92494 | 92514 | 14 | 3 | no | no
+  turn_statesman_0718 | ΞΕ.     | 301e         | 302b       | 92514 | 93316 | 644 | 116 | yes | yes
+  turn_statesman_0719 | ΝΕ. ΣΩ. | 302b         | 302b       | 93316 | 93336 | 14 | 3 | no | no
+  turn_statesman_0720 | ΞΕ.     | 302b         | 302b       | 93336 | 93599 | 208 | 46 | no | no
+  turn_statesman_0721 | ΝΕ. ΣΩ. | 302b         | 302b       | 93599 | 93623 | 13 | 6 | no | no
+  turn_statesman_0722 | ΞΕ.     | 302c         | 302c       | 93623 | 93710 | 66 | 12 | no | no
+  turn_statesman_0723 | ΝΕ. ΣΩ. | 302c         | 302c       | 93710 | 93727 | 10 | 4 | no | no
+  turn_statesman_0724 | ΞΕ.     | 302c         | 302c       | 93727 | 93864 | 110 | 22 | no | no
+  turn_statesman_0725 | ΝΕ. ΣΩ. | 302c         | 302c       | 93864 | 93886 | 14 | 5 | no | no
+  turn_statesman_0726 | ΞΕ.     | 302c         | 302c       | 93886 | 93989 | 85 | 15 | no | no
+  turn_statesman_0727 | ΝΕ. ΣΩ. | 302c         | 302c       | 93989 | 94002 | 7 | 3 | no | no
+  turn_statesman_0728 | ΞΕ.     | 302d         | 302d       | 94002 | 94272 | 200 | 42 | no | no
+  turn_statesman_0729 | ΝΕ. ΣΩ. | 302d         | 302d       | 94272 | 94317 | 33 | 8 | no | no
+  turn_statesman_0730 | ΞΕ.     | 302d         | 302e       | 94317 | 94473 | 118 | 26 | no | no
+  turn_statesman_0731 | ΝΕ. ΣΩ. | 302e         | 302e       | 94473 | 94495 | 14 | 5 | no | no
+  turn_statesman_0732 | ΞΕ.     | 302e         | 302e       | 94495 | 94722 | 183 | 37 | no | no
+  turn_statesman_0733 | ΝΕ. ΣΩ. | 302e         | 302e       | 94722 | 94768 | 35 | 8 | no | no
+  turn_statesman_0734 | ΞΕ.     | 302e         | 302e       | 94768 | 94907 | 113 | 21 | no | no
+  turn_statesman_0735 | ΝΕ. ΣΩ. | 303a         | 303a       | 94907 | 94934 | 14 | 3 | no | no
+  turn_statesman_0736 | ΞΕ.     | 303a         | 303b       | 94934 | 95557 | 493 | 106 | yes | yes
+  turn_statesman_0737 | ΝΕ. ΣΩ. | 303b         | 303b       | 95557 | 95640 | 65 | 13 | no | yes
+  turn_statesman_0738 | ΞΕ.     | 303b         | 303c       | 95640 | 95929 | 238 | 40 | no | no
+  turn_statesman_0739 | ΝΕ. ΣΩ. | 303c         | 303c       | 95929 | 96017 | 73 | 12 | no | yes
+  turn_statesman_0740 | ΞΕ.     | 303c         | 303d       | 96017 | 96213 | 152 | 30 | no | no
+  turn_statesman_0741 | ΝΕ. ΣΩ. | 303d         | 303d       | 96213 | 96231 | 12 | 3 | no | no
+  turn_statesman_0742 | ΞΕ.     | 303d         | 303d       | 96231 | 96428 | 162 | 30 | no | no
+  turn_statesman_0743 | ΝΕ. ΣΩ. | 303d         | 303d       | 96428 | 96441 | 7 | 3 | no | no
+  turn_statesman_0744 | ΞΕ.     | 303d         | 303e       | 96441 | 96803 | 278 | 55 | no | no
+  turn_statesman_0745 | ΝΕ. ΣΩ. | 303e         | 303e       | 96803 | 96852 | 37 | 9 | no | yes
+  turn_statesman_0746 | ΞΕ.     | 303e         | 304a       | 96852 | 97274 | 339 | 68 | yes | no
+  turn_statesman_0747 | ΝΕ. ΣΩ. | 304a         | 304a       | 97274 | 97317 | 32 | 8 | no | no
+  turn_statesman_0748 | ΞΕ.     | 304a         | 304a       | 97317 | 97417 | 80 | 16 | no | no
+  turn_statesman_0749 | ΝΕ. ΣΩ. | 304a         | 304a       | 97417 | 97435 | 11 | 4 | no | no
+  turn_statesman_0750 | ΞΕ.     | 304b         | 304b       | 97435 | 97524 | 66 | 13 | no | no
+  turn_statesman_0751 | ΝΕ. ΣΩ. | 304b         | 304b       | 97524 | 97539 | 9 | 3 | no | no
+  turn_statesman_0752 | ΞΕ.     | 304b         | 304b       | 97539 | 97682 | 110 | 27 | no | no
+  turn_statesman_0753 | ΝΕ. ΣΩ. | 304b         | 304b       | 97682 | 97712 | 21 | 5 | no | no
+  turn_statesman_0754 | ΞΕ.     | 304b         | 304b       | 97712 | 97765 | 44 | 7 | no | no
+  turn_statesman_0755 | ΝΕ. ΣΩ. | 304b         | 304b       | 97765 | 97778 | 7 | 3 | no | no
+  turn_statesman_0756 | ΞΕ.     | 304b         | 304c       | 97778 | 97913 | 104 | 20 | no | no
+  turn_statesman_0757 | ΝΕ. ΣΩ. | 304c         | 304c       | 97913 | 97937 | 17 | 4 | no | no
+  turn_statesman_0758 | ΞΕ.     | 304c         | 304c       | 97937 | 98050 | 80 | 18 | no | no
+  turn_statesman_0759 | ΝΕ. ΣΩ. | 304c         | 304c       | 98050 | 98069 | 12 | 4 | no | no
+  turn_statesman_0760 | ΞΕ.     | 304c         | 304c       | 98069 | 98128 | 45 | 12 | no | no
+  turn_statesman_0761 | ΝΕ. ΣΩ. | 304c         | 304c       | 98128 | 98147 | 10 | 5 | no | no
+  turn_statesman_0762 | ΞΕ.     | 304c         | 304d       | 98147 | 98263 | 88 | 18 | no | no
+  turn_statesman_0763 | ΝΕ. ΣΩ. | 304d         | 304d       | 98263 | 98315 | 40 | 9 | no | yes
+  turn_statesman_0764 | ΞΕ.     | 304d         | 304d       | 98315 | 98478 | 118 | 27 | no | no
+  turn_statesman_0765 | ΝΕ. ΣΩ. | 304d         | 304d       | 98478 | 98525 | 36 | 8 | no | no
+  turn_statesman_0766 | ΞΕ.     | 304d         | 304d       | 98525 | 98593 | 49 | 14 | no | no
+  turn_statesman_0767 | ΝΕ. ΣΩ. | 304d         | 304d       | 98593 | 98619 | 18 | 4 | no | no
+  turn_statesman_0768 | ΞΕ.     | 304d         | 304e       | 98619 | 98731 | 84 | 17 | no | no
+  turn_statesman_0769 | ΝΕ. ΣΩ. | 304e         | 304e       | 98731 | 98744 | 7 | 3 | no | no
+  turn_statesman_0770 | ΞΕ.     | 304e         | 304e       | 98744 | 98795 | 39 | 9 | no | no
+  turn_statesman_0771 | ΝΕ. ΣΩ. | 304e         | 304e       | 98795 | 98810 | 9 | 3 | no | no
+  turn_statesman_0772 | ΞΕ.     | 304e         | 304e       | 98810 | 98911 | 83 | 15 | no | no
+  turn_statesman_0773 | ΝΕ. ΣΩ. | 304e         | 304e       | 98911 | 99007 | 75 | 17 | no | yes
+  turn_statesman_0774 | ΞΕ.     | 304e         | 304e       | 99007 | 99146 | 115 | 21 | no | no
+  turn_statesman_0775 | ΝΕ. ΣΩ. | 304e         | 304e       | 99146 | 99197 | 41 | 7 | no | no
+  turn_statesman_0776 | ΞΕ.     | 305a         | 305a       | 99197 | 99295 | 76 | 12 | no | no
+  turn_statesman_0777 | ΝΕ. ΣΩ. | 305a         | 305a       | 99295 | 99309 | 8 | 3 | no | no
+  turn_statesman_0778 | ΞΕ.     | 305a         | 305a       | 99309 | 99459 | 124 | 23 | no | no
+  turn_statesman_0779 | ΝΕ. ΣΩ. | 305a         | 305a       | 99459 | 99483 | 17 | 4 | no | no
+  turn_statesman_0780 | ΞΕ.     | 305a         | 305a       | 99483 | 99564 | 65 | 12 | no | no
+  turn_statesman_0781 | ΝΕ. ΣΩ. | 305a         | 305a       | 99564 | 99583 | 12 | 4 | no | no
+  turn_statesman_0782 | ΞΕ.     | 305b         | 305b       | 99583 | 99663 | 58 | 12 | no | no
+  turn_statesman_0783 | ΝΕ. ΣΩ. | 305b         | 305b       | 99663 | 99685 | 14 | 5 | no | no
+  turn_statesman_0784 | ΞΕ.     | 305b         | 305c       | 99685 | 100082 | 317 | 63 | yes | no
+  turn_statesman_0785 | ΝΕ. ΣΩ. | 305c         | 305c       | 100082 | 100152 | 54 | 12 | no | yes
+  turn_statesman_0786 | ΞΕ.     | 305c         | 305c       | 100152 | 100259 | 88 | 17 | no | no
+  turn_statesman_0787 | ΝΕ. ΣΩ. | 305c         | 305c       | 100259 | 100278 | 12 | 4 | no | no
+  turn_statesman_0788 | ΞΕ.     | 305c         | 305d       | 100278 | 100613 | 268 | 52 | no | no
+  turn_statesman_0789 | ΝΕ. ΣΩ. | 305d         | 305d       | 100613 | 100628 | 9 | 3 | no | no
+  turn_statesman_0790 | ΞΕ.     | 305d         | 305d       | 100628 | 100812 | 147 | 30 | no | no
+  turn_statesman_0791 | ΝΕ. ΣΩ. | 305e         | 305e       | 100812 | 100840 | 14 | 4 | no | no
+  turn_statesman_0792 | ΞΕ.     | 305e         | 305e       | 100840 | 101072 | 191 | 34 | no | no
+  turn_statesman_0793 | ΝΕ. ΣΩ. | 305e         | 305e       | 101072 | 101099 | 19 | 5 | no | no
+  turn_statesman_0794 | ΞΕ.     | 305e         | 305e       | 101099 | 101240 | 112 | 25 | no | no
+  turn_statesman_0795 | ΝΕ. ΣΩ. | 305e         | 305e       | 101240 | 101263 | 15 | 5 | no | no
+  turn_statesman_0796 | ΞΕ.     | 306a         | 306a       | 101263 | 101390 | 97 | 19 | no | no
+  turn_statesman_0797 | ΝΕ. ΣΩ. | 306a         | 306a       | 101390 | 101405 | 9 | 3 | no | no
+  turn_statesman_0798 | ΞΕ.     | 306a         | 306a       | 101405 | 101474 | 56 | 10 | no | no
+  turn_statesman_0799 | ΝΕ. ΣΩ. | 306a         | 306a       | 101474 | 101504 | 21 | 6 | no | no
+  turn_statesman_0800 | ΞΕ.     | 306a         | 306a       | 101504 | 101648 | 118 | 23 | no | no
+  turn_statesman_0801 | ΝΕ. ΣΩ. | 306a         | 306a       | 101648 | 101668 | 13 | 4 | no | no
+  turn_statesman_0802 | ΞΕ.     | 306a         | 306b       | 101668 | 101754 | 61 | 14 | no | no
+  turn_statesman_0803 | ΝΕ. ΣΩ. | 306b         | 306b       | 101754 | 101771 | 10 | 4 | no | no
+  turn_statesman_0804 | ΞΕ.     | 306b         | 306b       | 101771 | 101857 | 66 | 16 | no | no
+  turn_statesman_0805 | ΝΕ. ΣΩ. | 306b         | 306b       | 101857 | 101870 | 7 | 3 | no | no
+  turn_statesman_0806 | ΞΕ.     | 306b         | 306b       | 101870 | 101934 | 53 | 9 | no | no
+  turn_statesman_0807 | ΝΕ. ΣΩ. | 306b         | 306b       | 101934 | 101949 | 9 | 3 | no | no
+  turn_statesman_0808 | ΞΕ.     | 306b         | 306b       | 101949 | 102059 | 88 | 20 | no | no
+  turn_statesman_0809 | ΝΕ. ΣΩ. | 306b         | 306b       | 102059 | 102079 | 13 | 4 | no | no
+  turn_statesman_0810 | ΞΕ.     | 306b         | 306c       | 102079 | 102185 | 78 | 18 | no | no
+  turn_statesman_0811 | ΝΕ. ΣΩ. | 306c         | 306c       | 102185 | 102198 | 7 | 3 | no | no
+  turn_statesman_0812 | ΞΕ.     | 306c         | 306c       | 102198 | 102335 | 111 | 23 | no | no
+  turn_statesman_0813 | ΝΕ. ΣΩ. | 306c         | 306c       | 102335 | 102371 | 25 | 7 | no | no
+  turn_statesman_0814 | ΞΕ.     | 306c         | 306c       | 102371 | 102470 | 78 | 18 | no | no
+  turn_statesman_0815 | ΝΕ. ΣΩ. | 306c         | 306c       | 102470 | 102499 | 20 | 5 | no | no
+  turn_statesman_0816 | ΞΕ.     | 306c         | 306d       | 102499 | 102773 | 219 | 41 | no | no
+  turn_statesman_0817 | ΝΕ. ΣΩ. | 306d         | 306d       | 102773 | 102789 | 9 | 4 | no | no
+  turn_statesman_0818 | ΞΕ.     | 306d         | 306d       | 102789 | 102858 | 55 | 12 | no | no
+  turn_statesman_0819 | ΝΕ. ΣΩ. | 306d         | 306d       | 102858 | 102875 | 11 | 3 | no | no
+  turn_statesman_0820 | ΞΕ.     | 306d         | 306d       | 102875 | 102962 | 68 | 14 | no | no
+  turn_statesman_0821 | ΝΕ. ΣΩ. | 306e         | 306e       | 102962 | 102987 | 9 | 5 | no | no
+  turn_statesman_0822 | ΞΕ.     | 306e         | 306e       | 102987 | 103288 | 246 | 47 | no | no
+  turn_statesman_0823 | ΝΕ. ΣΩ. | 306e         | 306e       | 103288 | 103301 | 7 | 3 | no | no
+  turn_statesman_0824 | ΞΕ.     | 306e         | 306e       | 103301 | 103474 | 141 | 27 | no | no
+  turn_statesman_0825 | ΝΕ. ΣΩ. | 306e         | 306e       | 103474 | 103487 | 7 | 3 | no | no
+  turn_statesman_0826 | ΞΕ.     | 307a         | 307a       | 103487 | 103590 | 75 | 17 | no | no
+  turn_statesman_0827 | ΝΕ. ΣΩ. | 307a         | 307a       | 103590 | 103613 | 15 | 5 | no | no
+  turn_statesman_0828 | ΞΕ.     | 307a         | 307a       | 103613 | 103679 | 53 | 11 | no | no
+  turn_statesman_0829 | ΝΕ. ΣΩ. | 307a         | 307a       | 103679 | 103692 | 7 | 3 | no | no
+  turn_statesman_0830 | ΞΕ.     | 307a         | 307b       | 103692 | 104028 | 271 | 52 | no | no
+  turn_statesman_0831 | ΝΕ. ΣΩ. | 307b         | 307b       | 104028 | 104048 | 14 | 3 | no | no
+  turn_statesman_0832 | ΞΕ.     | 307b         | 307b       | 104048 | 104192 | 119 | 21 | no | no
+  turn_statesman_0833 | ΝΕ. ΣΩ. | 307b         | 307b       | 104192 | 104205 | 7 | 3 | no | no
+  turn_statesman_0834 | ΞΕ.     | 307b         | 307c       | 104205 | 104692 | 387 | 72 | yes | no
+  turn_statesman_0835 | ΝΕ. ΣΩ. | 307c         | 307c       | 104692 | 104715 | 15 | 5 | no | no
+  turn_statesman_0836 | ΞΕ.     | 307c         | 307d       | 104715 | 104978 | 207 | 43 | no | no
+  turn_statesman_0837 | ΝΕ. ΣΩ. | 307d         | 307d       | 104978 | 105001 | 17 | 3 | no | no
+  turn_statesman_0838 | ΞΕ.     | 307d         | 307d       | 105001 | 105137 | 110 | 23 | no | no
+  turn_statesman_0839 | ΝΕ. ΣΩ. | 307d         | 307d       | 105137 | 105163 | 17 | 6 | no | no
+  turn_statesman_0840 | ΞΕ.     | 307e         | 308a       | 105163 | 105782 | 490 | 100 | yes | yes
+  turn_statesman_0841 | ΝΕ. ΣΩ. | 308a         | 308a       | 105782 | 105822 | 30 | 7 | no | no
+  turn_statesman_0842 | ΞΕ.     | 308a         | 308a       | 105822 | 106121 | 246 | 48 | no | no
+  turn_statesman_0843 | ΝΕ. ΣΩ. | 308b         | 308b       | 106121 | 106152 | 16 | 5 | no | no
+  turn_statesman_0844 | ΞΕ.     | 308b         | 308b       | 106152 | 106273 | 97 | 22 | no | no
+  turn_statesman_0845 | ΝΕ. ΣΩ. | 308b         | 308b       | 106273 | 106304 | 22 | 6 | no | no
+  turn_statesman_0846 | ΞΕ.     | 308b         | 308b       | 106304 | 106458 | 126 | 24 | no | no
+  turn_statesman_0847 | ΝΕ. ΣΩ. | 308b         | 308b       | 106458 | 106480 | 16 | 3 | no | no
+  turn_statesman_0848 | ΞΕ.     | 308b         | 308b       | 106480 | 106508 | 21 | 5 | no | no
+  turn_statesman_0849 | ΝΕ. ΣΩ. | 308b         | 308b       | 106508 | 106526 | 11 | 4 | no | no
+  turn_statesman_0850 | ΞΕ.     | 308c         | 308c       | 106526 | 106902 | 288 | 59 | yes | no
+  turn_statesman_0851 | ΝΕ. ΣΩ. | 308c         | 308c       | 106902 | 106918 | 9 | 4 | no | no
+  turn_statesman_0852 | ΞΕ.     | 308d         | 308e       | 106918 | 107464 | 443 | 79 | yes | yes
+  turn_statesman_0853 | ΝΕ. ΣΩ. | 308e         | 308e       | 107464 | 107486 | 14 | 5 | no | no
+  turn_statesman_0854 | ΞΕ.     | 308e         | 309a       | 107486 | 108012 | 429 | 80 | yes | yes
+  turn_statesman_0855 | ΝΕ. ΣΩ. | 309a         | 309a       | 108012 | 108044 | 23 | 6 | no | no
+  turn_statesman_0856 | ΞΕ.     | 309a         | 309a       | 108044 | 108144 | 82 | 16 | no | no
+  turn_statesman_0857 | ΝΕ. ΣΩ. | 309a         | 309a       | 108144 | 108162 | 12 | 3 | no | no
+  turn_statesman_0858 | ΞΕ.     | 309a         | 309b       | 108162 | 108601 | 359 | 64 | yes | no
+  turn_statesman_0859 | ΝΕ. ΣΩ. | 309b         | 309b       | 108601 | 108619 | 11 | 4 | no | no
+  turn_statesman_0860 | ΞΕ.     | 309c         | 309c       | 108619 | 108775 | 121 | 25 | no | no
+  turn_statesman_0861 | ΝΕ. ΣΩ. | 309c         | 309c       | 108775 | 108803 | 18 | 6 | no | no
+  turn_statesman_0862 | ΞΕ.     | 309c         | 309c       | 108803 | 109002 | 152 | 30 | no | no
+  turn_statesman_0863 | ΝΕ. ΣΩ. | 309c         | 309c       | 109002 | 109028 | 18 | 5 | no | no
+  turn_statesman_0864 | ΞΕ.     | 309d         | 309d       | 109028 | 109220 | 152 | 29 | no | no
+  turn_statesman_0865 | ΝΕ. ΣΩ. | 309d         | 309d       | 109220 | 109243 | 15 | 5 | no | no
+  turn_statesman_0866 | ΞΕ.     | 309d         | 309d       | 109243 | 109359 | 92 | 18 | no | no
+  turn_statesman_0867 | ΝΕ. ΣΩ. | 309d         | 309d       | 109359 | 109377 | 12 | 3 | no | no
+  turn_statesman_0868 | ΞΕ.     | 309d         | 309e       | 109377 | 109575 | 157 | 29 | no | no
+  turn_statesman_0869 | ΝΕ. ΣΩ. | 309e         | 309e       | 109575 | 109594 | 10 | 5 | no | no
+  turn_statesman_0870 | ΞΕ.     | 309e         | 309e       | 109594 | 109803 | 168 | 34 | no | no
+  turn_statesman_0871 | ΝΕ. ΣΩ. | 309e         | 309e       | 109803 | 109825 | 14 | 5 | no | no
+  turn_statesman_0872 | ΞΕ.     | 309e         | 309e       | 109825 | 110034 | 173 | 33 | no | no
+  turn_statesman_0873 | ΝΕ. ΣΩ. | 309e         | 309e       | 110034 | 110051 | 10 | 4 | no | no
+  turn_statesman_0874 | ΞΕ.     | 310a         | 310a       | 110051 | 110323 | 217 | 42 | no | no
+  turn_statesman_0875 | ΝΕ. ΣΩ. | 310a         | 310a       | 110323 | 110343 | 14 | 3 | no | no
+  turn_statesman_0876 | ΞΕ.     | 310a         | 310a       | 110343 | 110481 | 115 | 19 | no | no
+  turn_statesman_0877 | ΝΕ. ΣΩ. | 310b         | 310b       | 110481 | 110515 | 17 | 6 | no | no
+  turn_statesman_0878 | ΞΕ.     | 310b         | 310b       | 110515 | 110684 | 137 | 29 | no | no
+  turn_statesman_0879 | ΝΕ. ΣΩ. | 310b         | 310b       | 110684 | 110699 | 8 | 4 | no | no
+  turn_statesman_0880 | ΞΕ.     | 310b         | 310b       | 110699 | 110808 | 88 | 19 | no | no
+  turn_statesman_0881 | ΝΕ. ΣΩ. | 310b         | 310b       | 110808 | 110823 | 9 | 3 | no | no
+  turn_statesman_0882 | ΞΕ.     | 310b         | 310c       | 110823 | 110947 | 94 | 20 | no | no
+  turn_statesman_0883 | ΝΕ. ΣΩ. | 310c         | 310c       | 110947 | 110970 | 15 | 5 | no | no
+  turn_statesman_0884 | ΞΕ.     | 310c         | 310c       | 110970 | 111175 | 166 | 32 | no | no
+  turn_statesman_0885 | ΝΕ. ΣΩ. | 310c         | 310c       | 111175 | 111188 | 7 | 3 | no | no
+  turn_statesman_0886 | ΞΕ.     | 310c         | 310d       | 111188 | 111476 | 226 | 47 | no | no
+  turn_statesman_0887 | ΝΕ. ΣΩ. | 310d         | 310d       | 111476 | 111501 | 15 | 6 | no | no
+  turn_statesman_0888 | ΞΕ.     | 310d         | 310d       | 111501 | 111655 | 129 | 22 | no | no
+  turn_statesman_0889 | ΝΕ. ΣΩ. | 310d         | 310d       | 111655 | 111670 | 9 | 3 | no | no
+  turn_statesman_0890 | ΞΕ.     | 310d         | 310e       | 111670 | 111859 | 150 | 28 | no | no
+  turn_statesman_0891 | ΝΕ. ΣΩ. | 310e         | 310e       | 111859 | 111900 | 30 | 7 | no | no
+  turn_statesman_0892 | ΞΕ.     | 310e         | 311a       | 111900 | 112363 | 378 | 71 | yes | no
+  turn_statesman_0893 | ΝΕ. ΣΩ. | 311a         | 311a       | 112363 | 112376 | 7 | 3 | no | no
+  turn_statesman_0894 | ΞΕ.     | 311a         | 311a       | 112376 | 112664 | 236 | 44 | no | no
+  turn_statesman_0895 | ΝΕ. ΣΩ. | 311a         | 311a       | 112664 | 112696 | 22 | 7 | no | no
+  turn_statesman_0896 | ΞΕ.     | 311b         | 311b       | 112696 | 112932 | 186 | 38 | no | no
+  turn_statesman_0897 | ΝΕ. ΣΩ. | 311b         | 311b       | 112932 | 112952 | 12 | 5 | no | no
+  turn_statesman_0898 | ΞΕ.     | 311b         | 311c       | 112952 | 113454 | 404 | 69 | yes | no
+  turn_statesman_0899 | ΝΕ. ΣΩ. | 311c         | 311c       | 113454 | 113538 | 65 | 14 | no | yes

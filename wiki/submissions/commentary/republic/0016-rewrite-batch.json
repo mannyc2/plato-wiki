@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0016-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "republic",
+  "source_path": "scratch/commentary/rewrites/republic/01-327a-354b.json",
+  "source_sha256": "148a7675b2a4c74c2173f186d9ac4647303fdf11e09dc14733bf31fd39e2e7de",
+  "target_path": "wiki/commentary/republic.md",
+  "target_sha256_before": "6447e292c392a5391583330a2f3a6d2d2a221552094fb6deb56e605c8577595a",
+  "target_sha256_after": "f371d897b9f18557ee1f4ca8559775206135fa37932f463336a3ced3e4b6596c",
+  "applied_at": "2026-08-23T23:20:14.312Z",
+  "applied_ids": [
+    "comm_republic_0001"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "republic",
+      "unit_key": "01-327a-354b",
+      "section_id": "comm_republic_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/republic/01-327a-354b.json",
+        "sha256": "41ff0b6154835fd8a5c1d22f39f3bab47b1d1add21c856e75d57d35366c41ee7"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_republic_0001",
+          "title": "The test for a definition",
+          "body": "Use this question as a listening test: What does a definition of justice treat as the relevant obligation, and is that obligation universal or partisan?",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_republic_0001",
+      "body": "```yaml\ncommentary_id: comm_republic_0001\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"Descent to the Piraeus and the question of justice\"\nstephanus_span: 327a-354b\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 327a-354b\n  start_marker: 327a\n  end_marker: 354b\n  start_char: 5\n  end_char: 58903\n  text_sha256: \"45df105c5d757e3f3bd4ee1603dad9f6ebe9772869f017af1da177a7cede909f\"\nbody: \"The dialogue begins below the city, where a festival, a crowd, and an invitation turn a return journey into an inquiry. Cephalus, Polemarchus, and Thrasymachus successively offer accounts of justice, and each account reveals a different pressure: honesty, advantage, power, and the demand that an answer explain itself.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

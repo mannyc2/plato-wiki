@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-04-109b-109e",
+  "lane": "commentary",
+  "kind": "rewrite",
+  "scope": "critias",
+  "unit_key": "04-109b-109e",
+  "source_path": "scratch/commentary/rewrites/critias/04-109b-109e.json",
+  "source_sha256": "59874b22acbfc61514fa2b9bd8118ff3d7f2d2b17100fb1d07e705bd9362bae3",
+  "target_path": "wiki/commentary/critias.md",
+  "target_sha256_before": "cdecf1d8eb803041fa2e950a4c38c0105c92465f6e5f88081ef018c413b647f4",
+  "target_sha256_after": "f697aed31008a6f1b422e6920478ac29e1199aba6e6cdda41a9c35607f9eaa23",
+  "applied_at": "2026-08-21T14:51:39.400Z",
+  "applied_ids": [
+    "comm_critias_0004"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "critias",
+    "unit_key": "04-109b-109e",
+    "section_id": "comm_critias_0004",
+    "audit_output": {
+      "path": "scratch/commentary/audits/critias/04-109b-109e.json",
+      "sha256": "58d7a87addd721de472cc6f07fc69aa7bae5b8ea984f8ddc50488a1d96e99454"
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_critias_0004",
+        "title": "Divine allotment: Athena and Hephaestus share the land",
+        "body": "The myth begins with divine allotment without strife and governance by persuasion rather than bodily force. Hephaestus and Athena jointly receive this land, linked by kinship and a shared love of wisdom and craft; the good men planted there become a history whose names survive while their deeds disappear through destruction and time.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_critias_0005",
+            "claim_critias_0006",
+            "claim_critias_0007",
+            "claim_critias_0008"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_critias_0004",
+      "body": "```yaml\ncommentary_id: comm_critias_0004\nsource_work: Critias\nblock_kind: section\nplacement: before\ntitle: \"Allotment without strife: Athena's Athens and its earth-born men\"\nstephanus_span: 109b-109e\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 109b-109e\n  start_marker: 109b\n  end_marker: 109e\n  start_char: 5109\n  end_char: 6623\n  text_sha256: \"dd7f2b47a863e996d3f6fb0cb79765a5f4231816246e25f09ea2c82911a74301\"\nbody: \"The myth proper opens with the gods dividing the earth by just lots, not quarrel, tending humans by persuasion of the soul rather than force. Hephaestus and Athena jointly receive Attica and raise autochthonous good men — whose names survive but whose deeds vanished with each catastrophe's illiterate mountain remnant.\"\ncites:\n  observations: [\"obs_critias_0017\", \"obs_critias_0018\", \"obs_critias_0019\", \"obs_critias_0020\", \"obs_critias_0021\", \"obs_critias_0022\"]\n  claims: [\"claim_critias_0005\", \"claim_critias_0006\", \"claim_critias_0007\", \"claim_critias_0008\"]\n  relations: []\n  dossiers: [\"craft_analogy/divine_craft_production\", \"prosopography/mythic_type_comparison_for_character\", \"dramatic_case_setup/autochthony_claim\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

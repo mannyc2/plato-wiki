@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "laws",
+  "source_path": "scratch/commentary/rewrite-repairs/laws/round2-0035.json",
+  "source_sha256": "7c7a3fa1a1446bf1d185f2498ee2d68cf3b3868c8a4644112a92bfecb5aea203",
+  "target_path": "wiki/commentary/laws.md",
+  "target_sha256_before": "18bf8009b72c119b56fb40ff5b988cdfd14e15f8086df98b304af3eead7d5fac",
+  "target_sha256_after": "23258b53fe5212821005ab3a06db78093fc09d3d419cc4604dbf50bb2981f260",
+  "applied_at": "2026-08-21T21:33:08.987Z",
+  "applied_ids": [
+    "comm_laws_0035"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "laws",
+    "ledger": {
+      "path": "wiki/commentary/laws.md",
+      "sha256": "18bf8009b72c119b56fb40ff5b988cdfd14e15f8086df98b304af3eead7d5fac"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/laws/0002-rewrite-repair.json",
+      "sha256": "5eb8cf0091d4e5069ccf3bc89866688298ff7a95e91446c6f6239a1d43662864"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-laws-0002-rewrite-repair-acceptance.md",
+      "sha256": "88cab0be25de3c7e7a7528559b26df047c6b814c819cc4ba95df1a38145dbda0"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-laws-combined-repairs",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_laws_0035",
+          "finding": "The private-appeals clause must be limited to third-stage private appeals as required by claim_laws_0472."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-laws-round2-0035",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_laws_0035"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_laws_0035",
+        "title": "Different disputes, different procedures",
+        "body": "The proposed courts differentiate procedure by kind of case. At the third stage of private appeals, a common court is formed with judges selected by the offices; public indictments begin and end with the people while three high offices examine; tribal courts use jurors chosen by lot for private cases. The point is differentiated procedure.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_laws_0472",
+            "claim_laws_0474",
+            "claim_laws_0476"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_laws_0035",
+      "body": "```yaml\ncommentary_id: comm_laws_0035\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Different disputes, different procedures\"\nstephanus_span: 764c-768e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 764c-768e\n  start_marker: 764c\n  end_marker: 768e\n  start_char: 261826\n  end_char: 271297\n  text_sha256: \"ee03c042d3f6cd642356320869376039ad26808096bb6438c4e774ce9382482e\"\nbody: \"The city does not place every dispute in a single court. Private appeals go to a common court whose judges are selected by the offices; public indictments begin and end with the people while three high offices examine; tribal courts use jurors chosen by lot for private cases. The point is differentiated procedure.\"\ncites:\n  observations: []\n  claims: [\"claim_laws_0472\", \"claim_laws_0474\", \"claim_laws_0476\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    }
+  ]
+}

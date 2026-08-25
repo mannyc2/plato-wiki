@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0010-structural-remediation-01-11a-16e",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "philebus",
+  "unit_key": "01-11a-16e",
+  "source_path": "scratch/commentary/audits/philebus/01-11a-16e.json",
+  "source_sha256": "05eca5ca58e96c9b0b93e79457a81bcfab70beb3cee41ba0cc7a9417fc632b1b",
+  "target_path": "wiki/commentary/philebus.md",
+  "target_sha256_before": "37520ec0400c97dde34038115b8dfd8f5888b6685925c36d0067caa919586c08",
+  "target_sha256_after": "af1dcfb2af2269dccca673c81c3da3da80cdc780dc949a51b42bf3a8c9fa71f3",
+  "applied_at": "2026-08-23T22:34:40.450Z",
+  "applied_ids": [
+    "comm_philebus_0001"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "philebus",
+      "unitKey": "01-11a-16e",
+      "sectionId": "comm_philebus_0001",
+      "auditOutputPath": "scratch/commentary/audits/philebus/01-11a-16e.json",
+      "auditOutputSha256": "05eca5ca58e96c9b0b93e79457a81bcfab70beb3cee41ba0cc7a9417fc632b1b",
+      "expectedLedgerSha256": "37520ec0400c97dde34038115b8dfd8f5888b6685925c36d0067caa919586c08",
+      "expectedAttributionSha256": "4ce49ca06f62a145f1bab5eea725ff98fc10ccc28ce32e6215c48ba4ce25560f",
+      "expectedEnglishSha256": "6d654deed2a570d0e342567a6ded9a882ca62696c6129301f72476b1f16f386b",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_philebus_0001"
+        }
+      ],
+      "reviewer": "lane-a-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna structural review confirms conservative rejection of audited remove findings and split originals; delegated model review only."
+    },
+    "audit_output_path": "scratch/commentary/audits/philebus/01-11a-16e.json",
+    "audit_output_sha256": "05eca5ca58e96c9b0b93e79457a81bcfab70beb3cee41ba0cc7a9417fc632b1b",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_philebus_0001",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

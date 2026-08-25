@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "meno",
+  "source_path": "scratch/commentary/rewrites/meno/03-73d-74b.json",
+  "source_sha256": "e460348bad7fabf3bb8ba725aa934235df51fda46e94fdce06e3c3c55afeb919",
+  "target_path": "wiki/commentary/meno.md",
+  "target_sha256_before": "a6070d6bdc27b36775b0d029fd021180ff6dc0accffd9fb152c3f22f4f9a069c",
+  "target_sha256_after": "8cbc7595cf0cfd77592aa3892d23636ebc140fbf5a16ba6aa28cf2bfde588473",
+  "applied_at": "2026-08-23T21:18:16.032Z",
+  "applied_ids": [
+    "comm_meno_0003"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "meno",
+      "unit_key": "03-73d-74b",
+      "section_id": "comm_meno_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/meno/03-73d-74b.json",
+        "sha256": "594dd8ee7d2e8f948e104cc82445cd3f36627701250bd53c24e1493f59dbd89a"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_meno_0003",
+          "title": "What the examples still lack",
+          "body": "The examples are not yet a definition: they leave unexplained what makes the several cases virtue. A satisfactory account must name that common feature rather than repeat the role-specific cases.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_meno_0003",
+      "body": "```yaml\ncommentary_id: comm_meno_0003\nsource_work: Meno\nblock_kind: section\nplacement: before\ntitle: \"Ruling, justice, and the second swarm\"\nstephanus_span: 73d-74b\nsource_ref:\n  source_path: raw/plato/greek/meno.txt\n  stephanus_span: 73d-74b\n  start_marker: 73d\n  end_marker: 74b\n  start_char: 6212\n  end_char: 7843\n  text_sha256: \"d91939660d172708a8da9009351e8431569d36431413d9d2724b0815c833a5c2\"\nbody: \"Meno's second try, borrowed from Gorgias: virtue is the ability to rule. Socrates objects with the child and the slave, then distinguishes virtue from a virtue as roundness differs from shape. Asked for others, Meno lists courage, temperance, wisdom — and the swarm returns.\"\ncites:\n  observations: [\"obs_meno_0009\", \"obs_meno_0010\", \"obs_meno_0011\"]\n  claims: [\"claim_meno_0011\", \"claim_meno_0012\", \"claim_meno_0013\", \"claim_meno_0014\", \"claim_meno_0015\", \"claim_meno_0016\"]\n  relations: []\n  dossiers: [\"definition_ladder/definition_revised_after_objection\", \"definition_ladder/formal_classification_distinction\", \"definition_ladder/characteristic_catalogue_for_definiendum\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

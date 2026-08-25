@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-structural-remediation-15-201e-205e",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "theaetetus",
+  "unit_key": "15-201e-205e",
+  "source_path": "scratch/commentary/audits/theaetetus/15-201e-205e.json",
+  "source_sha256": "af72ffdcf2466c9d299b3154d612d5416e5e23340e4e60ee19eb50eb957cd011",
+  "target_path": "wiki/commentary/theaetetus.md",
+  "target_sha256_before": "8e383625d766bf72e6a735415dc16343d3a4dd32e029883235d1ac78cd59f24b",
+  "target_sha256_after": "b8bea7a95b88dc45283d9c7d4795245a270d1a65c1d9623d3fc1a28db9760e39",
+  "applied_at": "2026-08-23T22:26:34.065Z",
+  "applied_ids": [
+    "comm_theaetetus_0015"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "theaetetus",
+      "unitKey": "15-201e-205e",
+      "sectionId": "comm_theaetetus_0015",
+      "auditOutputPath": "scratch/commentary/audits/theaetetus/15-201e-205e.json",
+      "auditOutputSha256": "af72ffdcf2466c9d299b3154d612d5416e5e23340e4e60ee19eb50eb957cd011",
+      "expectedLedgerSha256": "8e383625d766bf72e6a735415dc16343d3a4dd32e029883235d1ac78cd59f24b",
+      "expectedAttributionSha256": "01a05e43f11e5321178473facba32528c8ba96f9fcf6490d752230cc2de5493e",
+      "expectedEnglishSha256": "dbf21650d92cf8740b195eb32c72d34f877fc573cb059d26d496644d71d7032e",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_theaetetus_0015"
+        }
+      ],
+      "reviewer": "lane-b-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna structural review confirms conservative rejection of audited remove findings and split originals; delegated Luna review only."
+    },
+    "audit_output_path": "scratch/commentary/audits/theaetetus/15-201e-205e.json",
+    "audit_output_sha256": "af72ffdcf2466c9d299b3154d612d5416e5e23340e4e60ee19eb50eb957cd011",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_theaetetus_0015",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

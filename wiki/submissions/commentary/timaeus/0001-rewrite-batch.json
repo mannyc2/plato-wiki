@@ -1,0 +1,810 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "timaeus",
+  "source_path": "scratch/commentary/rewrites/timaeus/01-17a-20d.json",
+  "source_sha256": "6e87265f1a9996664c30d2b53a7beec8dede01b56b92be60dac0a8be157f5b2d",
+  "target_path": "wiki/commentary/timaeus.md",
+  "target_sha256_before": "4524d417b3a509b25912dc38ec284c9ab72cf46157e66fa4559cf0d57488559a",
+  "target_sha256_after": "a70b8973492c4980cc0643295a696024be8d95817a95d7032dd00f0cd8a176a6",
+  "applied_at": "2026-08-21T19:07:47.036Z",
+  "applied_ids": [
+    "comm_timaeus_0001",
+    "comm_timaeus_0002",
+    "comm_timaeus_0003",
+    "comm_timaeus_0004",
+    "comm_timaeus_0005",
+    "comm_timaeus_0006",
+    "comm_timaeus_0007",
+    "comm_timaeus_0008",
+    "comm_timaeus_0009",
+    "comm_timaeus_0010",
+    "comm_timaeus_0012",
+    "comm_timaeus_0013",
+    "comm_timaeus_0014",
+    "comm_timaeus_0015",
+    "comm_timaeus_0016",
+    "comm_timaeus_0017",
+    "comm_timaeus_0018",
+    "comm_timaeus_0019",
+    "comm_timaeus_0020",
+    "comm_timaeus_0021"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "01-17a-20d",
+      "section_id": "comm_timaeus_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/01-17a-20d.json",
+        "sha256": "3b523549dfd6437681756a643a012d04e4a7ac2a0facda982b0fe96700e3f4c8"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0001",
+          "title": "From civic sketch to Critias's tale",
+          "body": "Treat this opening as a frame, not as the beginning of a new doctrine. Socrates asks the company to secure yesterday’s civic proposal in memory, and Timaeus confirms that it satisfied them all. The dramatic turn is a change of mode: the city is invited into action, but the handoff at the close belongs to Critias, who is asked to tell the ancient tale; Timaeus only assents here.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0001",
+              "obs_timaeus_0002",
+              "obs_timaeus_0003"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "02-20e-23c",
+      "section_id": "comm_timaeus_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/02-20e-23c.json",
+        "sha256": "ab70ea0a42ec5df0fd33c5e6842eb3065d5ab353688be219c782b7cc89990330"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0002",
+          "title": "Recovery before content",
+          "body": "The passage does not yet disclose the deed itself. Socrates instead makes recovery the immediate task: he asks about an ancient act Athens actually performed, then requests what Solon heard, how he heard it, and from whom. Critias answers by nesting an Egyptian account inside an older festival recollection. One way to hear the effect is as a test of provenance before the deed can become history.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0025",
+              "obs_timaeus_0027",
+              "obs_timaeus_0033"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "03-23d-26d",
+      "section_id": "comm_timaeus_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/03-23d-26d.json",
+        "sha256": "e66c53a434f0a987ee6c9224d901af8b02b6d9a81ab71489a2aa477f67986239"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0003",
+          "title": "From report to test",
+          "body": "Read this section as a change in evidential posture. The Egyptian priest supplies precise dates, a divine founding story, and a civic portrait of ancient Athens; the report then places that city’s greatest deed against an Atlantic power and a named geographic threshold. Those details give the account the texture of history, but the records mark them as reported claims, not independent proof. My reading is that the passage prepares a test: can Socrates’ imagined city now be treated as an ancestral reality?",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0050",
+              "obs_timaeus_0051",
+              "obs_timaeus_0042",
+              "obs_timaeus_0043"
+            ],
+            "claims": [
+              "claim_timaeus_0029",
+              "claim_timaeus_0030",
+              "claim_timaeus_0031",
+              "claim_timaeus_0032"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "04-26e-29d",
+      "section_id": "comm_timaeus_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/04-26e-29d.json",
+        "sha256": "f09e3209cae84c36bd8d4ac59e3630929ed73c3f69008d7fbdb0455350a01e71"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0004",
+          "title": "The prelude: invoking gods and defining the task",
+          "body": "Critias assigns Timaeus the first turn, from the cosmos to human nature; Timaeus invokes the gods, then turns to “our part,” the exposition. He starts by distinguishing what always is from what becomes, and presents the universe as generated, made by reference to a model. I read this prelude as a rule for listening: the account must fit its subject, not promise more certainty than the subject allows.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0060",
+              "obs_timaeus_0064",
+              "obs_timaeus_0071",
+              "obs_timaeus_0072",
+              "obs_timaeus_0073"
+            ],
+            "claims": [
+              "claim_timaeus_0040",
+              "claim_timaeus_0041",
+              "claim_timaeus_0044",
+              "claim_timaeus_0045",
+              "claim_timaeus_0046"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "05-29e-32b",
+      "section_id": "comm_timaeus_0005",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/05-29e-32b.json",
+        "sha256": "6a515d0f5692e22ee13289de47e4c069fb8afb8ff0ef22ec29907e2e1f380fb9"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0005",
+          "title": "Likeness turns into unity",
+          "body": "The argument’s governing test is likeness to a complete whole. The good maker’s lack of envy provides the stated motive for making things as like himself as possible. The cosmos is therefore modeled not on a partial creature but on an intelligible living whole containing all the others. From that all-containing paradigm, Timaeus argues for one heaven rather than many.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0076",
+              "obs_timaeus_0131",
+              "obs_timaeus_0137",
+              "obs_timaeus_0077"
+            ],
+            "claims": [
+              "claim_timaeus_0050"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "06-32c-35b",
+      "section_id": "comm_timaeus_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/06-32c-35b.json",
+        "sha256": "48d8b1e3d58221417992358b9297c8435e29ea244261a70aa92baee3216ff262"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0006",
+          "title": "The body is narrated first; the soul rules first",
+          "body": "Read the sequence as a correction, not as a chronology of rank. Timaeus narrates the cosmic body's construction first, but then insists that the soul is older and prior in generation and excellence, mistress and ruler over what is to be ruled. Only after making that distinction does he describe the soul's composition as an intermediate mixture of indivisible and divisible being. The order of telling and the order of rule are therefore different.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0080",
+              "obs_timaeus_0088",
+              "obs_timaeus_0091"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "07-35c-38e",
+      "section_id": "comm_timaeus_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/07-35c-38e.json",
+        "sha256": "fe87d02f248d32a32b6d59df284423ec59e15687bb0bb9ec437e3d65169a0b0f"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0007",
+          "title": "From harmonic structure to knowing",
+          "body": "This section follows a deliberate shift: the demiurge first portions the soul-stuff through a double-and-triple numerical sequence, then bends it into circles and orders their motions. The same architecture is given an epistemic function: the circle of the Different yields firm opinion about the sensible, while the circle of the Same yields intellect and knowledge about the rational. Plato’s striking move is to make knowing a movement of soul, not a viewpoint outside the cosmos.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_timaeus_0064",
+              "claim_timaeus_0066",
+              "claim_timaeus_0069"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "08-39a-42c",
+      "section_id": "comm_timaeus_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/08-39a-42c.json",
+        "sha256": "db02e877397fd3f18d5821b6bf3db78f94b78df40fce8005b8beaf51d51fc1a3"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0008",
+          "title": "From cosmic measure to mortal risk",
+          "body": "Read this unit as a handoff from cosmic measure to mortal risk. The sun's circuit gives time a measure, and the cosmos is completed by imitation of an intelligible living model. Then the scale changes: the Demiurge assigns souls to stars, announces a first birth, and directs created gods to craft mortal living beings. Embodiment brings sensation, desire, fear, and anger by necessity; justice now turns on whether these affections are mastered.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0097",
+              "obs_timaeus_0098",
+              "obs_timaeus_0113",
+              "obs_timaeus_0114"
+            ],
+            "claims": [
+              "claim_timaeus_0079",
+              "claim_timaeus_0082",
+              "claim_timaeus_0083",
+              "claim_timaeus_0085",
+              "claim_timaeus_0262"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "09-42d-45c",
+      "section_id": "comm_timaeus_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/09-42d-45c.json",
+        "sha256": "552e615d229a17a42f42d06dda954bcbba2cbde7951ac40251c55a406996881b"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0009",
+          "title": "Delegated craft within the maker’s order",
+          "body": "The sequence places the maker’s sowing and delegation before the younger gods’ imitation: they receive the immortal beginning of a mortal creature and construct its body within an order already established. I read the borrowed elements and invisible fastenings as marking embodiment as derivative craft, not a second first creation.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0116",
+              "obs_timaeus_0138",
+              "obs_timaeus_0139"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "10-45d-48e",
+      "section_id": "comm_timaeus_0010",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/10-45d-48e.json",
+        "sha256": "a1f8efa6cd1820248b1bd017ca32826dc47e9a8d87f6b5144e7788423cb48b83"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0010",
+          "title": "From Vision to Necessity",
+          "body": "One way to hear this hinge is as a change in method, not merely a change in subject. Timaeus first separates mind-guided causes from bodily processes that move by necessity; he then makes sight an education in order, since the heavens’ revolutions are offered as a pattern for stabilizing our own thought. The account can now turn to necessity without abandoning intellect: the cosmos is presented as a mixture, with intellect persuading necessity toward the best.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0151",
+              "obs_timaeus_0152"
+            ],
+            "claims": [
+              "claim_timaeus_0092",
+              "claim_timaeus_0094",
+              "claim_timaeus_0096",
+              "claim_timaeus_0097"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "12-53a-56d",
+      "section_id": "comm_timaeus_0012",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/12-53a-56d.json",
+        "sha256": "17826093e01d742f07eef2002445383f2a1c1c90f7f0cec2b9a6cc6a4205190a"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0012",
+          "title": "A likely account, not final knowledge",
+          "body": "Read this not as a report from the laboratory, but as a disciplined “likely account”: Timaeus reduces bodies to triangles, posits two immediate principles, and admits that anything higher lies beyond the speaker’s reach. Its real explanatory gain is a boundary on change: three kinds can transform through shared material, while earth remains structurally separate.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0160",
+              "obs_timaeus_0161"
+            ],
+            "claims": [
+              "claim_timaeus_0126",
+              "claim_timaeus_0128"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "13-56e-60c",
+      "section_id": "comm_timaeus_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/13-56e-60c.json",
+        "sha256": "54278930fbcfcd7832b5f5de610fd19bfb23e5fbff2bbba6186e6a15bfd4c2e8"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0013",
+          "title": "From elemental forms to a probable physics",
+          "body": "Here the account shifts from naming elements to stating what a probable physics must attend to. Timaeus proposes that smaller and larger triangles, mixing among themselves and with one another, account for unlimited variety within the elemental forms. He then asks for agreement about motion and rest, placing rest in uniformity and motion in irregularity, with inequality named as the cause of the irregular nature. I hear this as a methodological preface, not a final demonstration.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_timaeus_0141",
+              "claim_timaeus_0142",
+              "claim_timaeus_0143"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "14-60d-64b",
+      "section_id": "comm_timaeus_0014",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/14-60d-64b.json",
+        "sha256": "947b3fd7322ca32fb4f3e19d30b083fc8f368592b7d5aa8e8fd4d3c96940467c"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0014",
+          "title": "From mixtures to affections",
+          "body": "Here Timaeus changes the question: after classifying mixed bodies and their resistance to dissolution, he asks how their affections become intelligible. The account keeps the same logic of access—different elemental parts enter or fail to enter intervals—but now applies it to heat and cold as bodily processes. He also flags a genuine ordering problem: sensation, flesh, and mortal soul depend on one another for explanation, so the argument must posit one side and return to it later.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0225",
+              "obs_timaeus_0226",
+              "obs_timaeus_0227",
+              "obs_timaeus_0228",
+              "obs_timaeus_0217",
+              "obs_timaeus_0218",
+              "obs_timaeus_0219"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "15-64c-68e",
+      "section_id": "comm_timaeus_0015",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/15-64c-68e.json",
+        "sha256": "e49956604c24d899198ec2542817498bf579ebf98ff3da51249c1767bf2bbbb4"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0015",
+          "title": "From general change to sensory cases",
+          "body": "The order is the argument’s hinge. Timaeus first states how bodily change becomes pleasure, pain, or mere sensation: violent departure from nature hurts, restoration pleases, and gentle change may pass unnoticed. He then narrows from that general physiology to taste and smell, proceeds to hearing, and, as I hear the movement, closes with color. The sequence moves from one rule about bodily change to distinct sensory cases.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0234",
+              "obs_timaeus_0237"
+            ],
+            "claims": [
+              "claim_timaeus_0171",
+              "claim_timaeus_0172",
+              "claim_timaeus_0174"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "16-69a-72e",
+      "section_id": "comm_timaeus_0016",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/16-69a-72e.json",
+        "sha256": "3eaaed3f35bf18da78a2ececb0571f10467ebbc54150792be9b97f76b7bbcc32"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0016",
+          "title": "The spirited part between command and desire",
+          "body": "Here anatomy becomes a map of mediation. The mortal soul-kind is housed in the chest and divided by the diaphragm; the spirited part is placed between diaphragm and neck, nearer the head, so that it can hear reason and help restrain appetite. Its placement should not be paraphrased as “near the heart.” Read as an image, it stands between command and desire.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0260",
+              "obs_timaeus_0261",
+              "obs_timaeus_0262"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "17-73a-76e",
+      "section_id": "comm_timaeus_0017",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/17-73a-76e.json",
+        "sha256": "a4b34eb694a450683a5123c0eb2c69fdf23fc73fc176a0c6b8b6818a3673e50f"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0017",
+          "title": "Marrow first: the anchor of mortal construction",
+          "body": "Marrow is the section's foundation, not merely one layer in a protective stack. Timaeus says bones, flesh, and related structures begin from it because the bonds joining soul to body are rooted there; he then divides it into brain and mortal-soul forms, from which soul-bonds are cast like anchors. Read the later bone, joint, sinew, and flesh arrangements as responses to this inner anchoring: protection matters, but only alongside movement and perception.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0276",
+              "obs_timaeus_0277",
+              "obs_timaeus_0279",
+              "obs_timaeus_0280",
+              "obs_timaeus_0282"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "18-77a-80e",
+      "section_id": "comm_timaeus_0018",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/18-77a-80e.json",
+        "sha256": "985f26efa27b7a65ef971dbbfde178bb72cfa5b64f9c579a167a0d8d358e94fb"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0018",
+          "title": "The body as a circulation model",
+          "body": "One way to hear this unit is as a circulation model rather than a catalogue of organs. Plants enter the account as nourishment; the body is figured as irrigation channels, and a woven apparatus of fire and air carries the process into respiration. Timaeus then explains breathing as a returning circuit, built from particle-size relations and the premise that no void exists. Read this as an explanatory construction, not settled anatomy.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0295",
+              "obs_timaeus_0299"
+            ],
+            "claims": [
+              "claim_timaeus_0217",
+              "claim_timaeus_0218",
+              "claim_timaeus_0219"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "19-81a-84e",
+      "section_id": "comm_timaeus_0019",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/19-81a-84e.json",
+        "sha256": "2f0cbb810c2f92a655ea9f036632baf0e41be14bb9d32c9d7cabde9b0985b9e5"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0019",
+          "title": "When bodily order reverses",
+          "body": "One way to read this section is as a theory of bodily order rather than a catalogue of illnesses. Growth depends on inflow outrunning outflow, while health depends on proportionate like-with-like exchange. Once that order reverses, disease moves through successive levels: elemental imbalance, backward tissue formation, and blocked or misdirected breath. The section’s logic is cumulative: a local reversal can become a whole-body cascade.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0309",
+              "obs_timaeus_0313",
+              "obs_timaeus_0314",
+              "obs_timaeus_0315"
+            ],
+            "claims": [
+              "claim_timaeus_0223",
+              "claim_timaeus_0226"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "20-85a-88e",
+      "section_id": "comm_timaeus_0020",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/20-85a-88e.json",
+        "sha256": "a012a87b34c16d3f485a842db2cb9e1f64548f104500963ac9d7131757f2130c"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0020",
+          "title": "Proportion joins body and soul",
+          "body": "The section’s hinge is proportion. Timaeus explains one bodily disease through bile disrupting the fibers that keep blood between excess thinness and thickness; he then describes excessive pleasure and pain as impairing perception and reasoning. One way to read the sequence is that bodily and psychic disorder are not separate topics: each is a failure of measured activity within the soul–body compound.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_timaeus_0230",
+              "claim_timaeus_0233",
+              "claim_timaeus_0234"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "timaeus",
+      "unit_key": "21-89a-92c",
+      "section_id": "comm_timaeus_0021",
+      "audit_output": {
+        "path": "scratch/commentary/audits/timaeus/21-89a-92c.json",
+        "sha256": "762c8735b0ae68410b29959bd28252c0b33e6cccf3dcea7c6ca383ed7799f6d8"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_timaeus_0021",
+          "title": "From bodily regimen to cosmic self-formation",
+          "body": "Read this closing unit as a transfer of method. Timaeus first ranks bodily motions and recommends regimen over unnecessary drugging; he then applies exercise and proportion to the three kinds of soul. The culminating prescription is to care for the divine element by following the universe’s harmonies and revolutions, allowing the thinker to become like what it understands. My reading is that cosmology becomes a discipline of self-formation.",
+          "cites": {
+            "observations": [
+              "obs_timaeus_0349"
+            ],
+            "claims": [
+              "claim_timaeus_0245",
+              "claim_timaeus_0246",
+              "claim_timaeus_0247",
+              "claim_timaeus_0248",
+              "claim_timaeus_0249",
+              "claim_timaeus_0252"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_timaeus_0001",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0001\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"A remembered city asks for motion\"\nstephanus_span: 17a-20d\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 17a-20d\n  start_marker: 17a\n  end_marker: 20d\n  start_char: 0\n  end_char: 6940\n  text_sha256: \"be6722a6ea0f13bc6220408ee526fce12125dd98967eefed657c1b4520603271\"\nbody: \"Socrates recapitulates the proposed city and asks to see it in action. The request turns an apparently complete constitutional sketch into a demand for history, war, and visible deeds; the speakers' roles are arranged so that Timaeus can take up the larger account.\"\ncites:\n  observations: [obs_timaeus_0001, obs_timaeus_0002, obs_timaeus_0003]\n  claims: [claim_timaeus_0001, claim_timaeus_0002]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0002",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0002\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"The likely account enters through memory\"\nstephanus_span: 20e-23c\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 20e-23c\n  start_marker: 20e\n  end_marker: 23c\n  start_char: 6940\n  end_char: 12835\n  text_sha256: \"3d9f236db1f66089e1914d58dc7a4458f411a1a20a286faa0d059f0faa463f4f\"\nbody: \"Critias transmits Solon's Egyptian report of an ancient Athenian victory, but the transmission is already marked by loss, translation, and interrupted poetry. The story gains authority from its chain of recollection while remaining a recalled logos rather than an immediately verifiable record.\"\ncites:\n  observations: [obs_timaeus_0004, obs_timaeus_0005]\n  claims: [claim_timaeus_0003]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0003",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0003\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"The catastrophe that resets knowledge\"\nstephanus_span: 23d-26d\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 23d-26d\n  start_marker: 23d\n  end_marker: 26d\n  start_char: 12835\n  end_char: 19155\n  text_sha256: \"aad4760f0dad3137c3f4de294ce2885a75549a7f35a904537d0af41fd9c2e507\"\nbody: \"The priests explain that floods and fires repeatedly erase records, while Egypt preserves an older memory. The contrast does not simply certify Egypt; it makes historical knowledge depend on which communities survive and what their institutions can remember.\"\ncites:\n  observations: [obs_timaeus_0006, obs_timaeus_0007]\n  claims: [claim_timaeus_0004]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0004",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0004\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"Timaeus asks permission to speak\"\nstephanus_span: 26e-29d\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 26e-29d\n  start_marker: 26e\n  end_marker: 29d\n  start_char: 19155\n  end_char: 23965\n  text_sha256: \"8b6f0d9dc9ceec29b9214e25f3864c5e846a616e560a330fd9ae7600e2a77394\"\nbody: \"Timaeus takes the floor by asking what sort of speaker and audience the account requires. His famous distinction between what is stable and what comes to be leads to the standard of an eikos logos: the cosmological speech should be judged by fittingness to its subject, not by pretending to mathematical certainty where the subject does not allow it.\"\ncites:\n  observations: [obs_timaeus_0008]\n  claims: [claim_timaeus_0005, claim_timaeus_0006]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0005",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0005\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"The demiurge looks to a model\"\nstephanus_span: 29e-32b\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 29e-32b\n  start_marker: 29e\n  end_marker: 32b\n  start_char: 23965\n  end_char: 27702\n  text_sha256: \"4c5938ad1c54f8749b08a2433c584d01c13361c445087f577581ceed41697cdd\"\nbody: \"The maker is introduced as good and without envy, and the visible world is fashioned toward order. Yet the passage belongs to the likely account: its language gives a model for reading the cosmos, while its narrative of making need not be reduced to a settled chronology.\"\ncites:\n  observations: [obs_timaeus_0009]\n  claims: [claim_timaeus_0007, claim_timaeus_0008]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0006",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0006\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"One world, with soul and body\"\nstephanus_span: 32c-35b\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 32c-35b\n  start_marker: 32c\n  end_marker: 35b\n  start_char: 27702\n  end_char: 31791\n  text_sha256: \"cfd8b169a9b2cf6755a7c16e5191e11485f8b84da89c01d42a8ced7ffec7b1ac\"\nbody: \"The account makes the cosmos a single visible living whole, then describes its soul as proportionally composed before its body. Mathematical ratios here are not an escape from mythic speech; they are the account's way of showing order as relation.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0009, claim_timaeus_0010]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0007",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0007\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"The world soul is set in motion\"\nstephanus_span: 35c-38e\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 35c-38e\n  start_marker: 35c\n  end_marker: 38e\n  start_char: 31791\n  end_char: 38035\n  text_sha256: \"3113346b2ae318778d885ded9d8e241ddb664282cad564fd4b46b5779ac231f2\"\nbody: \"The mixture of sameness, difference, and being is divided into harmonized intervals, and the soul's rotations become the basis of time and celestial motion. The account links knowing and moving without saying that human understanding simply possesses the cosmos from outside it.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0011]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0008",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0008\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"The stars and the mortal orders\"\nstephanus_span: 39a-42c\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 39a-42c\n  start_marker: 39a\n  end_marker: 42c\n  start_char: 38035\n  end_char: 45480\n  text_sha256: \"942cd5c5c77ca370205754ce3faf64ec2f554e2028fa5486d6be9c9456c15727\"\nbody: \"The maker fills the heavens with living beings, assigns souls to stars, and leaves mortal bodies to the younger gods. The division preserves a tension: providential order is asserted, but the mortal and bodily realm is mediated through subordinate makers and necessity.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0013, claim_timaeus_0014]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0009",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0009\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"Mortal bodies are assigned to the younger gods\"\nstephanus_span: 42d-45c\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 42d-45c\n  start_marker: 42d\n  end_marker: 45c\n  start_char: 45480\n  end_char: 51776\n  text_sha256: \"80f2b7b59c55165b08384a3657a25913f24c8a55d9750c42ec848ce30bc2e068\"\nbody: \"The younger gods take responsibility for mortal bodies, beginning with the head and the bodily instruments of sight. The account presents their work as subordinate craftsmanship: mortal embodiment belongs within the ordered cosmos, but it is not identical with the maker's first construction.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0015, claim_timaeus_0016]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0010",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0010\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"Sight joins the body to the heavens\"\nstephanus_span: 45d-48e\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 45d-48e\n  start_marker: 45d\n  end_marker: 48e\n  start_char: 51776\n  end_char: 58342\n  text_sha256: \"46465f973e5e952439c66690aa200cfeba0ff222b3c22e010ceecf126f54fe7e\"\nbody: \"The construction of the eyes and the mechanics of vision make perception a bodily process with a cosmic orientation. When Timaeus returns to necessity, he warns that the account must now add the wandering cause rather than force every event into the language of intelligent design.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0017, claim_timaeus_0018]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0012",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0012\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"Triangles and solids make elemental bodies\"\nstephanus_span: 53a-56d\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 53a-56d\n  start_marker: 53a\n  end_marker: 56d\n  start_char: 66547\n  end_char: 74380\n  text_sha256: \"e214b5cfe505ba35a898b2e1eda37bf0543f8eb26097af643064841753825e77\"\nbody: \"The account now gives the geometrical figures of fire, air, water, and earth, explaining how their triangles and solids permit transformation. The mathematics makes elemental change constrained and intelligible, without turning the likely account into an observed physics.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0021, claim_timaeus_0022]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0013",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0013\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"Elemental transformations and their geometrical consequences\"\nstephanus_span: 56e-60c\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 56e-60c\n  start_marker: 56e\n  end_marker: 60c\n  start_char: 74380\n  end_char: 82372\n  text_sha256: \"2d3e3fc05298c1b1eef39b8ad1d6b3ec6153d6243c0817c3795cca229e194d14\"\nbody: \"The triangles and solids explain how the elements can transform into one another, while the figures also distinguish their motions and textures. Geometry is functioning as a grammar of change: it offers a constrained account of generation rather than a catalogue of inert substances.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0023, claim_timaeus_0024]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0014",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0014\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"Elemental qualities become sensations\"\nstephanus_span: 60d-64b\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 60d-64b\n  start_marker: 60d\n  end_marker: 64b\n  start_char: 82372\n  end_char: 90152\n  text_sha256: \"612f2c5794b1a4d4f470453c43760ce47b659b1ae8e0b1301dfbcdecdf9b673c\"\nbody: \"Hardness, softness, heaviness, lightness, roughness, smoothness, and the other sensible qualities are explained through impacts and bodily motions. The passage shifts from elemental figures to the way those figures affect perceivers, linking cosmological construction to lived sensation.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0025]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0015",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0015\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"The senses and the passions\"\nstephanus_span: 64c-68e\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 64c-68e\n  start_marker: 64c\n  end_marker: 68e\n  start_char: 90152\n  end_char: 99429\n  text_sha256: \"3eac155eee97ef2320646149115b2def4f8aef17cebe602eb64fce005a9783d1\"\nbody: \"Sound, color, taste, smell, and touch are explained through bodily motions and their effects on perceivers. The sensory catalogue also prepares an account of pleasure and pain in which what feels good or bad depends on a body's restoration or disturbance.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0026, claim_timaeus_0027]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0016",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0016\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"The soul's three places\"\nstephanus_span: 69a-72e\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 69a-72e\n  start_marker: 69a\n  end_marker: 72e\n  start_char: 99429\n  end_char: 107627\n  text_sha256: \"848446f180784b8e69fcfb77b9f6ef15582fdb2e973f9e036ecc83319c814655\"\nbody: \"The younger gods place reason in the head, spirit near the heart, and appetite below the diaphragm, joining anatomy to psychic hierarchy. The arrangement is presented as a crafted bodily support for order, not as a license to ignore the complicated life of the embodied soul.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0028, claim_timaeus_0029]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0017",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0017\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"The body is built around its vulnerabilities\"\nstephanus_span: 73a-76e\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 73a-76e\n  start_marker: 73a\n  end_marker: 76e\n  start_char: 107627\n  end_char: 116011\n  text_sha256: \"f7b7ae74d6180ce7fcef53bb8ae0ce7617b041adaaf7a4e979d3887ee96b9b6d\"\nbody: \"Marrow, bones, flesh, sinews, skin, hair, and nails are described as successive bodily protections and instruments. The maker's design is constrained by the need to preserve sensation and movement, so bodily order repeatedly appears as compromise rather than simple perfection.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0030]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0018",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0018\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"Breath, blood, and nourishment\"\nstephanus_span: 77a-80e\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 77a-80e\n  start_marker: 77a\n  end_marker: 80e\n  start_char: 116011\n  end_char: 124298\n  text_sha256: \"dd6fa9412d9e7d05f45ef26e76f792866561e1c25fa6339e90e2c304d1d6d589\"\nbody: \"The account traces respiration, digestion, and the circulation of nourishment through the body. These mechanisms show how a living organism maintains itself through exchanges with what surrounds it; the cosmos is not only a picture but a model for embodied dependence.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0031, claim_timaeus_0032]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0019",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0019\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"Disease begins as imbalance\"\nstephanus_span: 81a-84e\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 81a-84e\n  start_marker: 81a\n  end_marker: 84e\n  start_char: 124298\n  end_char: 132625\n  text_sha256: \"1d4f556f596d2a9951ff9cdd1f21165bcf80f6d11e20a62b610d89a5b6e98de3\"\nbody: \"Disease is explained through changes in the bodily mixtures, flows, and tissues that support life. Timaeus's physiology is speculative, but its governing insight is clear within the account: health is a proportion that can be damaged by motion, composition, and environment.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0033, claim_timaeus_0034]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0020",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0020\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"Medicine must work with the whole life\"\nstephanus_span: 85a-88e\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 85a-88e\n  start_marker: 85a\n  end_marker: 88e\n  start_char: 132625\n  end_char: 140832\n  text_sha256: \"c32584a8e18c33af2994a1a3ca820d5cd4272883ba20a3a6c7371c619011fddd\"\nbody: \"The speech connects disease to excess, imbalance, and disorder in soul as well as body, then recommends regimen and proportion over indiscriminate intervention. Its medical advice extends the cosmology's ethical demand: care should restore an organism's coordinated activity rather than merely suppress a symptom.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0035, claim_timaeus_0036]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_timaeus_0021",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0021\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"The final synthesis: becoming like the order we study\"\nstephanus_span: 89a-92c\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 89a-92c\n  start_marker: 89a\n  end_marker: 92c\n  start_char: 140832\n  end_char: 148409\n  text_sha256: \"72c058fa73f3ffb3fcbe357a4c33e32c16657cd6747c2cda8ad955a569f723d3\"\nbody: \"The closing movement joins exercise, psychic balance, astronomy, and the cultivation of intellect: human beings are to correct their disordered revolutions by learning the world's harmonies. The account then narrates the generation of women, birds, animals, and fish before declaring one complete visible cosmos—an ending that returns speculative cosmology to the lived question of what kind of life follows from it.\"\ncites:\n  observations: []\n  claims: [claim_timaeus_0037, claim_timaeus_0038]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

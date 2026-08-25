@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "laches",
+  "source_path": "scratch/commentary/rewrites/laches/06-186a-187b.json",
+  "source_sha256": "62d2496387332f493f0432e7a460e057b3491d29eff61a8e97e01e47c87bff15",
+  "target_path": "wiki/commentary/laches.md",
+  "target_sha256_before": "b15650c4a525482c74df34fb4dc60d1ac3edb93626eadee9bb0d88541bddd3ad",
+  "target_sha256_after": "c2ea67ad5fbfa8e5cd05b86a2589474b1d35234864559c55c9473a95c79b4e76",
+  "applied_at": "2026-08-23T21:17:25.812Z",
+  "applied_ids": [
+    "comm_laches_0006"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "laches",
+      "unit_key": "06-186a-187b",
+      "section_id": "comm_laches_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laches/06-186a-187b.json",
+        "sha256": "cb5197c917812854b5b5e8030a90f0ec6560b0c506672a0edaba4015e06515ef"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laches_0006",
+          "title": "The credential test",
+          "body": "Socrates proposes a credential test: ask who taught a purported expert and what works or pupils can testify to his skill. The pottery analogy makes the standard concrete: we would inspect a potter’s work before entrusting him with a vessel. The passage establishes the test; it does not show that Socrates himself fails it.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_laches_0006",
+      "body": "```yaml\ncommentary_id: comm_laches_0006\nsource_work: Laches\nblock_kind: section\nplacement: before\ntitle: \"The credential demand: name your teachers or show your works\"\nstephanus_span: 186a-187b\nsource_ref:\n  source_path: raw/plato/greek/laches.txt\n  stephanus_span: 186a-187b\n  start_marker: 186a\n  end_marker: 187b\n  start_char: 15449\n  end_char: 18386\n  text_sha256: \"dfb73f8dc8a43435544c0fce209d67e617df7743207451c9f4a8c3e067302e1d\"\nbody: \"Socrates sets the standard a claimed expert in soul-care must meet: name the teachers who trained you, or point to people you have made good. He applies it to himself first and fails it — he has had no teacher and cannot pay the sophists. The pottery proverb warns against practicing on what is most precious.\"\ncites:\n  observations: [\"obs_laches_0075\", \"obs_laches_0076\", \"obs_laches_0077\", \"obs_laches_0151\", \"obs_laches_0153\", \"obs_laches_0048\", \"obs_laches_0049\", \"obs_laches_0050\"]\n  claims: [\"claim_laches_0007\", \"claim_laches_0008\", \"claim_laches_0009\", \"claim_laches_0010\", \"claim_laches_0011\"]\n  relations: []\n  dossiers: [\"craft_analogy/teacher_craft_analogy\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

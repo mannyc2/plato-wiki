@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "submission_id": "0007-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "laws",
+  "source_path": "scratch/commentary/rewrites/laws/09-652a-655b.json",
+  "source_sha256": "866b3038c056a511cb03f2552b22db436c6c967963870ccd3fcb571af78b0486",
+  "target_path": "wiki/commentary/laws.md",
+  "target_sha256_before": "15eb81c1d288396b2ff6c54be8ba9172ef0464895a775e83bee7c8726a75d464",
+  "target_sha256_after": "0f6f310f45ed34bcac9ecfb207121dcd9d67a088b81ac280854f27251981d846",
+  "applied_at": "2026-08-23T21:38:37.795Z",
+  "applied_ids": [
+    "comm_laws_0009",
+    "comm_laws_0015",
+    "comm_laws_0022",
+    "comm_laws_0033",
+    "comm_laws_0059"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "09-652a-655b",
+      "section_id": "comm_laws_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/09-652a-655b.json",
+        "sha256": "7b12beca5abf435837717d255cdba136cc688f31702949ce4ae8e3af0bc65405"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0009",
+          "title": "What Musical Education Must Teach",
+          "body": "Musical training matters here because it teaches citizens what to enjoy. Its goal is not performance or pleasure treated as an end in itself, but the formation of taste that responds to order and measure. The city therefore judges music by the kind of character its pleasures cultivate.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "15-676a-681e",
+      "section_id": "comm_laws_0015",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/15-676a-681e.json",
+        "sha256": "c839a70cabaface45048ace96829aab3b4ee2ce46d86987be92bde3fbc37a306"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0015",
+          "title": "Developmental summary",
+          "body": "This passage offers a developmental summary without assigning the discussion to a numbered book.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "22-704a-708e",
+      "section_id": "comm_laws_0022",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/22-704a-708e.json",
+        "sha256": "09723bd56c2f47886fc3f4bbe713c4ea21810214a1329b497ac45892f2f4f20a"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0022",
+          "title": "Place and Law",
+          "body": "Here the governing question is the fit between a city’s setting and the laws it can sustain. The relation to the sea is not background scenery; it is part of the political inquiry.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "33-755c-758e",
+      "section_id": "comm_laws_0033",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/33-755c-758e.json",
+        "sha256": "0143830c138e08f2d58310fc22f6845033270c795f7524aa95f658600d68b7d0"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0033",
+          "title": "The Question of Political Measure",
+          "body": "A useful listening question here is whether any single qualification can serve as a complete title to political authority.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "59-913a-920c",
+      "section_id": "comm_laws_0059",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/59-913a-920c.json",
+        "sha256": "92a2ff51c8e4d57be60b96c606b020f84b2da629a1568e93d26b1e9b39436604"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0059",
+          "title": "The rule is narrower: only disputed items that are not registered remain with the magistrates; registered items may be released by the record or by a guaranty.",
+          "body": "The rule is narrower: only disputed items that are not registered remain with the magistrates; registered items may be released by the record or by a guaranty.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_laws_0009",
+      "body": "```yaml\ncommentary_id: comm_laws_0009\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Song and dance as the first shape of virtue\"\nstephanus_span: 652a-655b\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 652a-655b\n  start_marker: 652a\n  end_marker: 655b\n  start_char: 51352\n  end_char: 56699\n  text_sha256: \"5abc6fc04bee51f1217df489b99301c94d6c389c93b3d34c384b3725bbb41aa0\"\nbody: \"Book 2 opens by restating the gain from ruled drinking, then grounds education in the child's first pleasures and pains. The gods gave choral festivity as restoration; the educated person is defined as one able to sing and dance well — and the definition is immediately refined toward singing fine things.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"turn_geometry/argument_transition_marker\", \"definition_ladder/definition_proposed\", \"myth_demarcation/myth_logos_hedge\", \"definition_ladder/definition_by_paired_opposites\", \"definition_ladder/definition_revised_after_objection\", \"craft_analogy/hunting_metaphor_for_inquiry\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0015",
+      "body": "```yaml\ncommentary_id: comm_laws_0015\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"From patriarchal custom to legislation\"\nstephanus_span: 676a-681e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 676a-681e\n  start_marker: 676a\n  end_marker: 681e\n  start_char: 96331\n  end_char: 107284\n  text_sha256: \"19f6c146a950f5fdcece6db0f8f7320538065fe9e5a1a7df8afa5512f148241d\"\nbody: \"Book 3 asks us to watch political order emerge, not appear whole. After catastrophe, the survivors are cut off from city arts and writing, but they are not without rule: they live by custom and patriarchal law. Separate clans preserve inherited usages; when settlements enlarge, representatives compare those usages and turn selected customs into legislation. The point is developmental: constitutional order grows by consolidating older forms, with Homer serving as witness.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"myth_demarcation/catastrophic_destruction_narrative\", \"definition_ladder/constitutional_form_named\", \"dramatic_case_setup/city_foundation_sequence\", \"myth_demarcation/natural_disaster_chronology_argument\", \"myth_demarcation/poetic_authority_cited_in_argument\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0022",
+      "body": "```yaml\ncommentary_id: comm_laws_0022\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Eighty stades from the sea: site, ships, and settlers\"\nstephanus_span: 704a-708e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 704a-708e\n  start_marker: 704a\n  end_marker: 708e\n  start_char: 149227\n  end_char: 158545\n  text_sha256: \"1bc01209132f69c7c318356a06402cd05c2e827449fe42aae617c77bbbe37dcb\"\nbody: \"Book 4 begins the founding with geography. The site's distance from the sea is welcomed: maritime commerce breeds faithless habits, and naval power corrupts even courage — Homer and history are enlisted. The mixed origins of the settlers pose the lawgiver's first tradeoff between ease and unity.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"dramatic_case_setup/city_foundation_sequence\", \"settlement_site_assessment/maritime_proximity_moral_risk\", \"military_capacity_diagnosis/naval_capacity_deficit_diagnosed\", \"myth_demarcation/poetic_authority_cited_in_argument\", \"prosopography/historical_exemplum_in_argument\", \"settlement_composition_assessment/settler_composition_lawgiving_tradeoff\", \"turn_geometry/speaker_self_conscious_preface\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0033",
+      "body": "```yaml\ncommentary_id: comm_laws_0033\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Generals, council, and the two equalities\"\nstephanus_span: 755c-758e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 755c-758e\n  start_marker: 755c\n  end_marker: 758e\n  start_char: 242969\n  end_char: 250551\n  text_sha256: \"404e9aeb430bcbf5a93f5fcd95b404f5721bc096120ccabbea7c69d6fbe9dc1a\"\nbody: \"Military commands and the 360-member council are established through a deliberately mixed election procedure. The design is justified by distinguishing two equalities: the arithmetic equality of lot and the true, proportional equality that awards more to greater virtue — a mean between monarchy and democracy.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0059",
+      "body": "```yaml\ncommentary_id: comm_laws_0059\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"When law withdraws its protection\"\nstephanus_span: 913a-920c\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 913a-920c\n  start_marker: 913a\n  end_marker: 920c\n  start_char: 542315\n  end_char: 558397\n  text_sha256: \"6bba55f08afd1e0272ce6bf114943980007d85a2f4270b69b943999ea49494e9\"\nbody: \"This unit repeatedly makes legal protection depend on public procedure rather than private trust. A disputed object is kept with magistrates until judgment; an exchange made outside the appointed market or without immediate payment is left to the parties’ confidence, not ordinary legal action. One way to read the pattern is that the law protects commerce by making its conditions visible before the bargain is made.\"\ncites:\n  observations: [\"obs_laws_1102\", \"obs_laws_1106\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

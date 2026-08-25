@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "philebus",
+  "source_path": "scratch/commentary/rewrites/philebus/01-11a-16e.json",
+  "source_sha256": "118c7085019063d25675656e45f2e4eb08d211eb973cc3ee0ca4b63b81242836",
+  "target_path": "wiki/commentary/philebus.md",
+  "target_sha256_before": "63dcab3080b855bf1b977b16ec094a4f8e95a9cfd68c1a684df7cb10de90dc8a",
+  "target_sha256_after": "b895cec8af77bb810f4e403f70d16005ffcb61a25c129c93af447b2ea7e4e988",
+  "applied_at": "2026-08-21T14:05:48.315Z",
+  "applied_ids": [
+    "comm_philebus_0011",
+    "comm_philebus_0012",
+    "comm_philebus_0017"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "philebus",
+      "unit_key": "01-11a-16e",
+      "section_id": "comm_philebus_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/philebus/01-11a-16e.json",
+        "sha256": "cd545b08243697e376de29d72b3a7dd995350c6cc8f027288a32c1da37ad7435"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_philebus_0012",
+          "title": "",
+          "body": "The opening’s real test is not which slogan sounds stronger. I hear Socrates turning each thesis into a practical burden: show a condition of soul capable of making life happy for all humans. That standard makes the argument comparative and answerable; a claim about pleasure or wisdom must survive the life it proposes.",
+          "cites": {
+            "observations": [
+              "obs_philebus_0004"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "philebus",
+      "unit_key": "04-27e-34a",
+      "section_id": "comm_philebus_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/philebus/04-27e-34a.json",
+        "sha256": "6c73582c67ca68a40ec3682880342177c3eab566b39f53e7d611397f58f7588c"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_philebus_0017",
+          "title": "",
+          "body": "The word to listen for is “irreverence.” Socrates turns classification into a test of what deserves the highest regard, not a neutral exercise in filing concepts. One way to hear the challenge is as pressure on Philebus’s standard: if pleasure’s claim to the good depends on its unlimited intensity, can that same measure judge wisdom, knowledge, and mind? The passage leaves the question open, making the next exchange consequential.",
+          "cites": {
+            "observations": [
+              "obs_philebus_0349",
+              "obs_philebus_0350"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "philebus",
+      "unit_key": "11-63d-67b",
+      "section_id": "comm_philebus_0011",
+      "audit_output": {
+        "path": "scratch/commentary/audits/philebus/11-63d-67b.json",
+        "sha256": "f8e7bfb95063acafe3a4c9fc23cb0d72e065e20b106b897db6bd9a31deaaed9f"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_philebus_0011",
+          "title": "Standards before ranking",
+          "body": "Before pleasure can be ranked, the comparison is given a standard. Protarchus says that intellect is identical with truth—or most like and truest of all things—and that nothing is more immoderate than pleasure, while nothing is more measured than intellect and knowledge. One way to read the move is as a change in the question: not which experience is strongest, but which candidate can answer to truth and measure.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_philebus_0077",
+              "claim_philebus_0078"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_philebus_0011",
+      "body": "```yaml\ncommentary_id: comm_philebus_0011\nsource_work: Philebus\nblock_kind: section\nplacement: before\ntitle: \"Measure before verdict\"\nstephanus_span: 63d-67b\nsource_ref:\n  source_path: raw/plato/greek/philebus.txt\n  stephanus_span: 63d-67b\n  start_marker: 63d\n  end_marker: 67b\n  start_char: 104731\n  end_char: 112819\n  text_sha256: \"3c7a5eb5e7fe1bdab31b71f371c11c88d59d7ace43e67639c3eb3a6b62f3aabf\"\nbody: \"One way to hear this section is as a search for a standard before a verdict: Protarchus presents intellect as most akin to truth, and contrasts pleasure’s excess with the measure of intellect and knowledge. Read that contrast as the real pressure point. The issue is not simply which feeling wins, but what kind of mixture can remain proportionate enough to count as a good life.\"\ncites:\n  observations: []\n  claims: [\"claim_philebus_0077\", \"claim_philebus_0078\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_philebus_0012",
+      "body": "```yaml\ncommentary_id: comm_philebus_0012\nsource_work: Philebus\nblock_kind: notice\nplacement: before\nstephanus_span: 11a-12a\nsource_ref:\n  source_path: raw/plato/greek/philebus.txt\n  stephanus_span: 11a-12a\n  start_marker: 11a\n  end_marker: 12a\n  start_char: 0\n  end_char: 1809\n  text_sha256: \"62aced75b1e1e4d15315fb2dab12689ba38839d55692996e7bbb15b03d9168ad\"\nbody: \"The first surprise is procedural. Philebus's thesis is spoken for him, then Protarchus accepts the burden of answering. The dialogue's apparent two-sided contest already contains a replacement: the named champion of pleasure has yielded the microphone to a friend.\"\ncites:\n  observations: [\"obs_philebus_0002\", \"obs_philebus_0003\", \"obs_philebus_0005\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_philebus_0017",
+      "body": "```yaml\ncommentary_id: comm_philebus_0017\nsource_work: Philebus\nblock_kind: notice\nplacement: before\nstephanus_span: 27e-28a\nsource_ref:\n  source_path: raw/plato/greek/philebus.txt\n  stephanus_span: 27e-28a\n  start_marker: 27e\n  end_marker: 28a\n  start_char: 33110\n  end_char: 33885\n  text_sha256: \"79da7790aece80bbf2c058d0e78ced807364b856cc878e4411afd73cb4211540\"\nbody: \"Watch the handoff from pleasure to intellect. Philebus's side places pleasure and pain among what admits more and less; Socrates immediately asks where practical wisdom, knowledge, and intellect belong. The categories become a contest over direction, not just a filing system.\"\ncites:\n  observations: [\"obs_philebus_0349\", \"obs_philebus_0350\"]\n  claims: []\n  relations: []\n  dossiers: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-04-48b-49d",
+  "lane": "commentary",
+  "kind": "rewrite",
+  "scope": "crito",
+  "unit_key": "04-48b-49d",
+  "source_path": "scratch/commentary/rewrites/crito/04-48b-49d.json",
+  "source_sha256": "6e402107192ad271eb88a0e3b73320453aad9542843c9ea5ebba4a36778e6929",
+  "target_path": "wiki/commentary/crito.md",
+  "target_sha256_before": "219fb4d45d426bc943b56989010de98017760de012a3dd21317283f583549314",
+  "target_sha256_after": "b9739113550d4344b3d5c11fa627ce075ffb6e33045ddbbd7561ac56c3a4a65c",
+  "applied_at": "2026-08-21T12:48:45.637Z",
+  "applied_ids": [
+    "comm_crito_0004"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "crito",
+    "unit_key": "04-48b-49d",
+    "section_id": "comm_crito_0004",
+    "audit_output": {
+      "path": "scratch/commentary/audits/crito/04-48b-49d.json",
+      "sha256": "88d6b52e9c9746d089d99b03c332f8f8ecc9f9089e75459d3db7e74e6eb872c9"
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_crito_0004",
+        "title": "From agreement to consistency",
+        "body": "This unit shows how Socrates converts Crito’s practical proposal into a test of consistency. Crito has agreed that living well is living justly, so Socrates narrows the escape question to whether leaving without permission would be just. He then carries that agreed starting point into the harder case of retaliation: Crito is led to accept that wrongdoing is not justified by prior harm. The text records assent in the exchange; it does not independently settle the identity of living well and justice as doctrine.",
+        "cites": {
+          "observations": [
+            "obs_crito_0009",
+            "obs_crito_0010",
+            "obs_crito_0011"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_crito_0004",
+      "body": "```yaml\ncommentary_id: comm_crito_0004\nsource_work: Crito\nblock_kind: section\nplacement: before\ntitle: \"The rule against wrongdoing\"\nstephanus_span: 48b-49d\nsource_ref:\n  source_path: raw/plato/greek/crito.txt\n  stephanus_span: 48b-49d\n  start_marker: 48b\n  end_marker: 49d\n  start_char: 10732\n  end_char: 14177\n  text_sha256: \"65bd44e16035c28afe0ebb54eab222718372c84de12ee2a4b1761b58ec39646c\"\naudio_insertion:\n  attribution_path: audio/speaker-attributions/crito.json\n  attribution_sha256: \"ec879f54eae937c0579a3d1f4d5b1c98c8ee596425ebdb2e32de8b7fe7a0b2af\"\n  english_sha256: \"788cb7f273b9ea125faa9bb946009de9728fe2f86a91d9c504b79e8f63fd9019\"\n  turn_id: turn-000081\n  edge: before\nbody: \"The standard is now fixed: what matters is not living but living well, and living well means living justly. So the whole question about escape becomes a single one — would it be just? Socrates sweeps aside money, reputation, and the children as the reckoning of the many, and holds Crito to a harder rule: never do wrong, and never return a wrong for a wrong, whatever one suffers.\"\ncites:\n  observations: [\"obs_crito_0009\", \"obs_crito_0010\"]\n  claims: [\"claim_crito_0031\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

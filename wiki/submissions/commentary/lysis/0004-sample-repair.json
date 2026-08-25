@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "submission_id": "0004-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "lysis",
+  "source_path": "scratch/commentary/sample-repairs/lysis/final-sample-0013.json",
+  "source_sha256": "a8d1a29ab2e050af7c5d1a3712fe087791c2c7bdae3650ae3778d475f1d07a24",
+  "target_path": "wiki/commentary/lysis.md",
+  "target_sha256_before": "7c50295de33ba7b9982753db0000233dd1f6bee9c5977c99629f95332c70f318",
+  "target_sha256_after": "ce090927ae856259e6a4a9590c6526a064cae748fd2f376b6bad4d679da75037",
+  "applied_at": "2026-08-21T16:05:45.159Z",
+  "applied_ids": [
+    "comm_lysis_0013"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "lysis",
+    "ledger": {
+      "path": "wiki/commentary/lysis.md",
+      "sha256": "7c50295de33ba7b9982753db0000233dd1f6bee9c5977c99629f95332c70f318"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-lysis-final-sample",
+      "reviewed_on": "2026-08-21",
+      "rationale": "The final sample found one source narrowing: oikeion must remain an open relation across soul, character, manner, or appearance rather than friendship in soul.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_lysis_0001",
+        "comm_lysis_0002",
+        "comm_lysis_0003",
+        "comm_lysis_0004",
+        "comm_lysis_0005",
+        "comm_lysis_0006",
+        "comm_lysis_0007",
+        "comm_lysis_0008",
+        "comm_lysis_0009",
+        "comm_lysis_0010",
+        "comm_lysis_0011",
+        "comm_lysis_0012",
+        "comm_lysis_0013",
+        "comm_lysis_0014"
+      ],
+      "failed_commentary_ids": [
+        "comm_lysis_0013"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_lysis_0013",
+        "title": "Desire replaces the bad as cause",
+        "body": "Harmless desire survives even if bad disappears, so bad cannot be friendship's cause. Socrates offers desire as a new candidate, then connects it to need: what lacks something desires it, and the lacking thing is drawn toward its own (oikeion). For Lysis and Menexenus, this makes them akin in some way, but the relation remains open—perhaps soul, character, manner, or form—and is not yet a final definition.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_lysis_0023",
+            "claim_lysis_0024",
+            "claim_lysis_0025",
+            "claim_lysis_0026"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_lysis_0013",
+      "body": "```yaml\ncommentary_id: comm_lysis_0013\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"Desire changes the question\"\nstephanus_span: 221a-222a\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 221a-222a\n  start_marker: 221a\n  end_marker: 222a\n  start_char: 36213\n  end_char: 38603\n  text_sha256: \"863f81ca9c1c193541cd8a15e8cd8422da485b0e9dcb4df26a2e1b1c485ccd1b\"\nbody: \"Once harmless desires remain in the thought experiment, bad can no longer explain every friendship. The conversation therefore shifts its causal question: desire is proposed as what makes the desiring thing a friend of what it wants, and need then points toward what is one’s own. The proposal reaches affinity, but the next passage still has to distinguish that affinity from mere likeness.\"\ncites:\n  observations: []\n  claims: [\"claim_lysis_0023\", \"claim_lysis_0024\", \"claim_lysis_0025\", \"claim_lysis_0026\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

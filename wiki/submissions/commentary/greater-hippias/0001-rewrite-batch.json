@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "greater-hippias",
+  "source_path": "scratch/commentary/rewrites/greater-hippias/01-281a-282b.json",
+  "source_sha256": "f87da4d655d037c2687c62576622e0a10b86e6ba5053db98be3478a5d00c7eaa",
+  "target_path": "wiki/commentary/greater-hippias.md",
+  "target_sha256_before": "9d24f8f1327918ea14f451a23590eeab479938e1f32c4ad3acfa6553c1ed542b",
+  "target_sha256_after": "df4aa96b8c7a8e453a2f69a2fde7a9465de2a7fbad9207b826900f955fe2d423",
+  "applied_at": "2026-08-21T16:27:08.426Z",
+  "applied_ids": [
+    "comm_greater-hippias_0001",
+    "comm_greater-hippias_0003",
+    "comm_greater-hippias_0004",
+    "comm_greater-hippias_0006"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "greater-hippias",
+      "unit_key": "01-281a-282b",
+      "section_id": "comm_greater-hippias_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/greater-hippias/01-281a-282b.json",
+        "sha256": "2f3f082579785b5e4536b7bf23a612fcc822a7ae7d0c6007eba2985c2d016ded"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_greater-hippias_0001",
+          "title": "Courtesy and examination",
+          "body": "Socrates opens with honorific praise, but the conversation quickly asks what wisdom can do in public and private life. Hippias answers by assigning the ancients an incapacity; Socrates then proposes, for examination, that sophistic art has progressed beyond them. I read the opening’s courtesy as compatible with a test, not proof that a concealed test is already the scene’s settled design.",
+          "cites": {
+            "observations": [
+              "obs_greater-hippias_0001",
+              "obs_greater-hippias_0005"
+            ],
+            "claims": [
+              "claim_greater-hippias_0001",
+              "claim_greater-hippias_0002"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "greater-hippias",
+      "unit_key": "03-283b-284b",
+      "section_id": "comm_greater-hippias_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/greater-hippias/03-283b-284b.json",
+        "sha256": "18d62aaa587c1f959331ea5df73c02e082ef580887beba23adcc5e75f26c7cb1"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_greater-hippias_0003",
+          "title": "Sparta as the pressure point",
+          "body": "Socrates turns an earnings-based measure of wisdom into a test of Hippias’s claim that his wisdom improves learners in virtue. Sparta is the pressure point: Hippias says he earned nothing there, and Socrates asks how that fits his expertise claim. The questioning proceeds by forced alternatives, then extends the test through a horsemanship analogy. Hippias offers ancestral custom as an explanation; the passage does not yet settle the tension.",
+          "cites": {
+            "observations": [
+              "obs_greater-hippias_0015",
+              "obs_greater-hippias_0018",
+              "obs_greater-hippias_0019",
+              "obs_greater-hippias_0020",
+              "obs_greater-hippias_0022"
+            ],
+            "claims": [
+              "claim_greater-hippias_0004",
+              "claim_greater-hippias_0005",
+              "claim_greater-hippias_0007"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "greater-hippias",
+      "unit_key": "04-284c-285a",
+      "section_id": "comm_greater-hippias_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/greater-hippias/04-284c-285a.json",
+        "sha256": "3f5e642aeaf74e0d9d72fd6680460eca8890405508349087588fd25b0a44ed32"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_greater-hippias_0004",
+          "title": "Law, benefit, and a conditional reversal",
+          "body": "The conversation turns from Hippias’s earnings to law’s relation to benefit. After Hippias accepts that the more beneficial is, in truth, more lawful, Socrates applies the premise to Sparta: if Hippias’s foreign education benefits Spartan sons more, then his own account makes it more lawful than their fathers’ teaching. Read as an argument, this is conditional—not a settled verdict that Sparta is unlawful or that Hippias’s teaching is actually superior.",
+          "cites": {
+            "observations": [
+              "obs_greater-hippias_0024",
+              "obs_greater-hippias_0030"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "greater-hippias",
+      "unit_key": "06-286d-287c",
+      "section_id": "comm_greater-hippias_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/greater-hippias/06-286d-287c.json",
+        "sha256": "fb79207d689102cab1b124b61d70cf29e603e290f3d27c5237037ab9ca98d3c8"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_greater-hippias_0006",
+          "title": "Practice before conclusion",
+          "body": "Here Hippias’s claim of an easy lesson is converted into a practice procedure. Socrates asks permission to imitate the earlier questioner by objecting to Hippias’s answers, and Hippias consents. That arrangement makes the ensuing beautiful-by-beauty formulation something to test: it is posed in the exchange, not yet established as either speaker’s conclusion.",
+          "cites": {
+            "observations": [
+              "obs_greater-hippias_0037",
+              "obs_greater-hippias_0038"
+            ],
+            "claims": [
+              "claim_greater-hippias_0014"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_greater-hippias_0001",
+      "body": "```yaml\ncommentary_id: comm_greater-hippias_0001\nsource_work: Greater Hippias\nblock_kind: section\nplacement: before\ntitle: \"The beautiful and wise Hippias arrives\"\nstephanus_span: 281a-282b\nsource_ref:\n  source_path: raw/plato/greek/greater-hippias.txt\n  stephanus_span: 281a-282b\n  start_marker: 281a\n  end_marker: 282b\n  start_char: 0\n  end_char: 2391\n  text_sha256: \"93fa3f9eb2010f57d87c799c57a75ec93ddf754841fe0e46f287811686cc1a15\"\nbody: \"Socrates greets Hippias with a double honorific and hears why the busy ambassador rarely visits Athens. Hippias explains the ancients' absence from politics as incapacity, and both men float the idea that the sophists' craft, like every craft, has progressed. The opening sets the register: extravagant courtesy over an unstated test.\"\ncites:\n  observations: [\"obs_greater-hippias_0001\", \"obs_greater-hippias_0002\", \"obs_greater-hippias_0003\", \"obs_greater-hippias_0004\", \"obs_greater-hippias_0005\", \"obs_greater-hippias_0006\", \"obs_greater-hippias_0007\", \"obs_greater-hippias_0008\", \"obs_greater-hippias_0009\"]\n  claims: [\"claim_greater-hippias_0001\", \"claim_greater-hippias_0002\"]\n  relations: []\n  dossiers: [\"prosopography/honorific_epithet_in_opening_address\", \"prosopography/sage_catalogue_in_sequence\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_greater-hippias_0003",
+      "body": "```yaml\ncommentary_id: comm_greater-hippias_0003\nsource_work: Greater Hippias\nblock_kind: section\nplacement: before\ntitle: \"Why Sparta paid nothing\"\nstephanus_span: 283b-284b\nsource_ref:\n  source_path: raw/plato/greek/greater-hippias.txt\n  stephanus_span: 283b-284b\n  start_marker: 283b\n  end_marker: 284b\n  start_char: 4127\n  end_char: 6581\n  text_sha256: \"328d7a9bd03c3f6e36e604ef485d8e97a74064625f3bc9424a6e561685ba16d5\"\nbody: \"If wealth marks the wise man, why did well-governed Sparta, which wanted Hippias's teaching, pay him nothing? Socrates builds a dilemma from Hippias's own claims about improving the young, and Hippias retreats to Spartan ancestral custom against foreign education.\"\ncites:\n  observations: [\"obs_greater-hippias_0015\", \"obs_greater-hippias_0016\", \"obs_greater-hippias_0017\", \"obs_greater-hippias_0018\", \"obs_greater-hippias_0019\", \"obs_greater-hippias_0020\", \"obs_greater-hippias_0021\", \"obs_greater-hippias_0022\", \"obs_greater-hippias_0023\"]\n  claims: [\"claim_greater-hippias_0004\", \"claim_greater-hippias_0005\", \"claim_greater-hippias_0006\", \"claim_greater-hippias_0007\"]\n  relations: []\n  dossiers: [\"prosopography/sparta_as_dramatic_touchstone\", \"elenchus/socratic_dilemma\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_greater-hippias_0004",
+      "body": "```yaml\ncommentary_id: comm_greater-hippias_0004\nsource_work: Greater Hippias\nblock_kind: section\nplacement: before\ntitle: \"Law, benefit, and the lawless Spartans\"\nstephanus_span: 284c-285a\nsource_ref:\n  source_path: raw/plato/greek/greater-hippias.txt\n  stephanus_span: 284c-285a\n  start_marker: 284c\n  end_marker: 285a\n  start_char: 6581\n  end_char: 8285\n  text_sha256: \"6328bcc90eac40bab256bf8f372405055f7255cae6e815072004c26ce5222aa1\"\nbody: \"The talk turns from fees to law. Hippias agrees that law aims at benefit and that those who know count the more beneficial as the truly more lawful — which yields the odd result that Sparta acts unlawfully in refusing Hippias's more beneficial foreign teaching.\"\ncites:\n  observations: [\"obs_greater-hippias_0024\", \"obs_greater-hippias_0025\", \"obs_greater-hippias_0026\", \"obs_greater-hippias_0028\", \"obs_greater-hippias_0029\", \"obs_greater-hippias_0030\"]\n  claims: [\"claim_greater-hippias_0008\", \"claim_greater-hippias_0009\", \"claim_greater-hippias_0010\", \"claim_greater-hippias_0011\"]\n  relations: [\"rel_greater-hippias_0001\"]\n  dossiers: [\"elenchus/assent_chain_to_contradiction\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_greater-hippias_0006",
+      "body": "```yaml\ncommentary_id: comm_greater-hippias_0006\nsource_work: Greater Hippias\nblock_kind: section\nplacement: before\ntitle: \"An anonymous questioner asks what the beautiful is\"\nstephanus_span: 286d-287c\nsource_ref:\n  source_path: raw/plato/greek/greater-hippias.txt\n  stephanus_span: 286d-287c\n  start_marker: 286d\n  end_marker: 287c\n  start_char: 11182\n  end_char: 13284\n  text_sha256: \"3a4128b802c72effe1476471f3d1b7c5fffaa9eddd2c0414ffaa33bbf5ada8c5\"\nbody: \"Socrates introduces a rude imaginary interrogator who once cornered him with the question of what the beautiful is, and negotiates a procedure: he will play that questioner against Hippias's answers. The premise is set that all beautiful things are beautiful by the beautiful, something that is.\"\ncites:\n  observations: [\"obs_greater-hippias_0037\", \"obs_greater-hippias_0038\"]\n  claims: [\"claim_greater-hippias_0014\"]\n  relations: []\n  dossiers: [\"irony_marker/mock_deference\", \"turn_geometry/explicit_procedure_control\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

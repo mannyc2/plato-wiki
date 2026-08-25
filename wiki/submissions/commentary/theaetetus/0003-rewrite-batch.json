@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "theaetetus",
+  "source_path": "scratch/commentary/rewrites/theaetetus/01-142a-145c.json",
+  "source_sha256": "441dc9efedb563948f75a78190d75893d37dc579f4000df9557a2265e789203d",
+  "target_path": "wiki/commentary/theaetetus.md",
+  "target_sha256_before": "d6ca73ed5a42d86ef1234de0e957121097ce5990c1638cfe4959ca9715ee3e3a",
+  "target_sha256_after": "a7813d69dce267f4c51c03fb779947ca4dcc6e94f2626d84b3201fd5a291e616",
+  "applied_at": "2026-08-21T17:14:36.274Z",
+  "applied_ids": [
+    "comm_theaetetus_0001",
+    "comm_theaetetus_0007",
+    "comm_theaetetus_0012",
+    "comm_theaetetus_0015"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "theaetetus",
+      "unit_key": "01-142a-145c",
+      "section_id": "comm_theaetetus_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/theaetetus/01-142a-145c.json",
+        "sha256": "3c5afb720e8bcb7b0cfa6a5f447dfbbea010538ca56766b96cb516e12c8d91fe"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_theaetetus_0001",
+          "title": "From Praise to Inquiry",
+          "body": "I hear this opening as a rehearsal of philosophical method rather than a verdict on Theaetetus. On that reading, praise arrives first, but Socrates treats neither resemblance nor reputation as self-validating: the speaker’s competence must be tested, and the student must be willing to display himself. The scene’s pressure lies in turning admiration into examination—an invitation, not yet a conclusion.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "theaetetus",
+      "unit_key": "07-168d-172c",
+      "section_id": "comm_theaetetus_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/theaetetus/07-168d-172c.json",
+        "sha256": "17a0c9cc7d3705852b04580ed3317c3bce3377cf35a4ab04462de23b6a9dec56"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_theaetetus_0007",
+          "title": "A doctrine turned against itself",
+          "body": "One way to hear this passage is as a pressure test of Protagoras’ measure: if every appearance is true for the person who has it, then the appearance that the doctrine is wrong must also count. The measure has become answerable to judgments it cannot simply dismiss.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "theaetetus",
+      "unit_key": "12-191c-197b",
+      "section_id": "comm_theaetetus_0012",
+      "audit_output": {
+        "path": "scratch/commentary/audits/theaetetus/12-191c-197b.json",
+        "sha256": "6375a75d8aacee0b25ef3a1b79230a7e78861c70daed065233d208da75608c6c"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_theaetetus_0012",
+          "title": "The wax tablet: a provisional model of error",
+          "body": "One way to read the wax tablet is as a trial model for error. It invites us to picture a mistake as a wrong fit between an imprint and a present perception. But that is an opening proposal, not a settled result: the dialogue must still test whether this image can bear the weight placed on it.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "theaetetus",
+      "unit_key": "15-201e-205e",
+      "section_id": "comm_theaetetus_0015",
+      "audit_output": {
+        "path": "scratch/commentary/audits/theaetetus/15-201e-205e.json",
+        "sha256": "29234182e068e0235fc79c8d431ede9e21055842125f1446c2729d8f3b57f3a6"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_theaetetus_0015",
+          "title": "When the distinction collapses",
+          "body": "One way I hear this stretch is as a stress test for the dream’s attractive division between unknowable elements and knowable combinations. Socrates makes the listener choose between two pictures of the syllable, then shows why neither preserves that division. The pressure falls not on defining the syllable once and for all, but on asking whether the theory can keep its promised gap intact.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_theaetetus_0001",
+      "body": "```yaml\ncommentary_id: comm_theaetetus_0001\nsource_work: Theaetetus\nblock_kind: section\nplacement: before\ntitle: \"Staging an Examination\"\nstephanus_span: 142a-145c\nsource_ref:\n  source_path: raw/plato/greek/theaetetus.txt\n  stephanus_span: 142a-145c\n  start_marker: 142a\n  end_marker: 145c\n  start_char: 0\n  end_char: 6674\n  text_sha256: \"eae6a0845f6696d5a09091add41c4652455c1b53f440732a572aee2d17d2efa2\"\nbody: \"I hear this opening as a deliberate staging of examination. The conversation arrives through a written reconstruction; Theaetetus arrives through reports of a character in which quick learning and gentleness belong together. Socrates then shifts attention from resemblance of faces to the authority behind a judgment, and from praise to a first question about Theaetetus’s studies. The point is not yet to define knowledge, but to put a promising student—and the praise surrounding him—under scrutiny.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_theaetetus_0007",
+      "body": "```yaml\ncommentary_id: comm_theaetetus_0007\nsource_work: Theaetetus\nblock_kind: section\nplacement: before\ntitle: \"When the measure judges itself\"\nstephanus_span: 168d-172c\nsource_ref:\n  source_path: raw/plato/greek/theaetetus.txt\n  stephanus_span: 168d-172c\n  start_marker: 168d\n  end_marker: 172c\n  start_char: 54601\n  end_char: 63147\n  text_sha256: \"4b5f9ae42aad8adafdba1ac76915857eaf32c76a7099cf1d63025095829b0438\"\nbody: \"I hear Socrates turn Protagoras’ measure against itself: on its own terms, the doctrine must admit that those who reject it are right, and so concede its own defeat. The proposed repair does not erase expertise; it leaves room for better judgment in health and in what benefits a city, while treating justice and piety as matters fixed by common opinion. That narrowing carries the discussion toward the next contrast, between philosophical leisure and courtroom speech.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_theaetetus_0012",
+      "body": "```yaml\ncommentary_id: comm_theaetetus_0012\nsource_work: Theaetetus\nblock_kind: section\nplacement: before\ntitle: \"The wax tablet: error as misalignment\"\nstephanus_span: 191c-197b\nsource_ref:\n  source_path: raw/plato/greek/theaetetus.txt\n  stephanus_span: 191c-197b\n  start_marker: 191c\n  end_marker: 197b\n  start_char: 102270\n  end_char: 114884\n  text_sha256: \"9296fa1cd0f6f6d3c4c0d139d9e003a8b0b8a1f949d12cd4266868b9096b55fc\"\nbody: \"One way to hear this stretch is as a test of where error enters. The wax image can preserve knowledge, yet the mind may fit the right imprint to the wrong perception; error is therefore a misalignment, not mere absence. At 197b, Socrates sharpens the problem by distinguishing possessing knowledge from having it ready for use.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_theaetetus_0015",
+      "body": "```yaml\ncommentary_id: comm_theaetetus_0015\nsource_work: Theaetetus\nblock_kind: section\nplacement: before\ntitle: \"The dilemma of the knowable syllable\"\nstephanus_span: 201e-205e\nsource_ref:\n  source_path: raw/plato/greek/theaetetus.txt\n  stephanus_span: 201e-205e\n  start_marker: 201e\n  end_marker: 205e\n  start_char: 123765\n  end_char: 132193\n  text_sha256: \"c563f7ea2d0861bc11a04484800a9d68868e5c5ccf7f63ade0259cc39085ef22\"\nbody: \"I read Socrates as closing both routes by which the dream tries to separate knowledge from its elements. If a syllable is a whole made of letters, knowing the whole requires the letters, so both become knowable and expressible. If instead the syllable is a single indivisible form, it has the same status as an element: neither can be explained or known. On either reading, the promised gap between unknowable letters and knowable syllables disappears.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

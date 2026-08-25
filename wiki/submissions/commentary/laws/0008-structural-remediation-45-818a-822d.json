@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "submission_id": "0008-structural-remediation-45-818a-822d",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "laws",
+  "unit_key": "45-818a-822d",
+  "source_path": "scratch/commentary/audits/laws/45-818a-822d.json",
+  "source_sha256": "abcf3fbd49b3bd83168c1ed68d511954e68eb1d65fe9215eb4a1d120ac51b31e",
+  "target_path": "wiki/commentary/laws.md",
+  "target_sha256_before": "e057881380032b4a24f0d1144bd3dca094175ffa04a66b9f19f3a1ae842fb75c",
+  "target_sha256_after": "86c716328625f541705e4eb0a41a220bc0d008e3c155c65fc732ecfbd05cbc1b",
+  "applied_at": "2026-08-23T21:54:47.312Z",
+  "applied_ids": [
+    "comm_laws_0045"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "laws",
+      "unitKey": "45-818a-822d",
+      "sectionId": "comm_laws_0045",
+      "auditOutputPath": "scratch/commentary/audits/laws/45-818a-822d.json",
+      "auditOutputSha256": "abcf3fbd49b3bd83168c1ed68d511954e68eb1d65fe9215eb4a1d120ac51b31e",
+      "expectedLedgerSha256": "e057881380032b4a24f0d1144bd3dca094175ffa04a66b9f19f3a1ae842fb75c",
+      "expectedAttributionSha256": "7a09fbf015fcc946a2acc9373d26af206a6cbfbffa899afc76ccc172f53c32db",
+      "expectedEnglishSha256": "02294c19ba9df8bbe90881fa3e379898227f1bcd074afa0edbf169b91f92d168",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_laws_0045",
+          "rewriteResolution": "reject-original"
+        }
+      ],
+      "reviewer": "cjpher-delegated-luna-reviewer-laws45-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Independent Luna review rejects the original because its curriculum and astronomy claims lack accepted citations and the constrained rewrite remains uncited; the section scaffold is retained."
+    },
+    "audit_output_path": "scratch/commentary/audits/laws/45-818a-822d.json",
+    "audit_output_sha256": "abcf3fbd49b3bd83168c1ed68d511954e68eb1d65fe9215eb4a1d120ac51b31e",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_laws_0045",
+        "disposition": "rewrite",
+        "rewriteResolution": "reject-original"
+      }
+    ]
+  }
+}

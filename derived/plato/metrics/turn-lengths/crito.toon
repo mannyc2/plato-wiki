@@ -1,0 +1,113 @@
+dialogue: crito
+turn_index_path: derived/plato/turns/crito.toon
+turn_index_sha256: 1707ebca9073f0a0350ddc8a3da53418552ee499f17506241327cb17f132c282
+token_index_path: derived/plato/tokens/crito.toon
+token_index_sha256: 6447f3c8e87c9265f9f41fb5bef71b90edbdda1b4872625fac69995c60272796
+speakers[2]:
+  speaker | turns | total_tokens | median_tokens | p90_tokens | max_tokens | long_turns
+  ΚΡ.     | 49 | 972 | 4 | 42 | 344 | 9
+  ΣΩ.     | 53 | 3305 | 24 | 197 | 364 | 7
+turns[102]:
+  turn_id         | speaker | start_marker | end_marker | start_char | end_char | greek_char_count | token_count | dialogue_long_turn | speaker_long_turn
+  turn_crito_0001 | ΣΩ.     | 43a          | 43a        | 0 | 60 | 39 | 11 | no | no
+  turn_crito_0002 | ΚΡ.     | 43a          | 43a        | 60 | 78 | 12 | 4 | no | no
+  turn_crito_0003 | ΣΩ.     | 43a          | 43a        | 78 | 98 | 15 | 3 | no | no
+  turn_crito_0004 | ΚΡ.     | 43a          | 43a        | 98 | 116 | 13 | 3 | no | no
+  turn_crito_0005 | ΣΩ.     | 43a          | 43a        | 116 | 180 | 52 | 10 | no | no
+  turn_crito_0006 | ΚΡ.     | 43a          | 43a        | 180 | 282 | 78 | 18 | no | no
+  turn_crito_0007 | ΣΩ.     | 43a          | 43a        | 282 | 309 | 19 | 6 | no | no
+  turn_crito_0008 | ΚΡ.     | 43a          | 43a        | 309 | 329 | 15 | 3 | no | no
+  turn_crito_0009 | ΣΩ.     | 43b          | 43b        | 329 | 395 | 47 | 10 | no | no
+  turn_crito_0010 | ΚΡ.     | 43b          | 43b        | 395 | 751 | 282 | 64 | no | yes
+  turn_crito_0011 | ΣΩ.     | 43b          | 43b        | 751 | 839 | 69 | 15 | no | no
+  turn_crito_0012 | ΚΡ.     | 43c          | 43c        | 839 | 994 | 120 | 23 | no | no
+  turn_crito_0013 | ΣΩ.     | 43c          | 43c        | 994 | 1038 | 32 | 9 | no | no
+  turn_crito_0014 | ΚΡ.     | 43c          | 43c        | 1038 | 1225 | 143 | 32 | no | yes
+  turn_crito_0015 | ΣΩ.     | 43c          | 43d        | 1225 | 1309 | 60 | 14 | no | no
+  turn_crito_0016 | ΚΡ.     | 43d          | 43d        | 1309 | 1567 | 196 | 42 | no | yes
+  turn_crito_0017 | ΣΩ.     | 43d          | 43d        | 1567 | 1674 | 80 | 19 | no | no
+  turn_crito_0018 | ΚΡ.     | 44a          | 44a        | 1674 | 1706 | 20 | 4 | no | no
+  turn_crito_0019 | ΣΩ.     | 44a          | 44a        | 1706 | 1785 | 59 | 17 | no | no
+  turn_crito_0020 | ΚΡ.     | 44a          | 44a        | 1785 | 1822 | 27 | 8 | no | no
+  turn_crito_0021 | ΣΩ.     | 44a          | 44a        | 1822 | 2013 | 155 | 32 | no | no
+  turn_crito_0022 | ΚΡ.     | 44a          | 44a        | 2013 | 2042 | 20 | 7 | no | no
+  turn_crito_0023 | ΣΩ.     | 44a          | 44b        | 2042 | 2224 | 120 | 24 | no | no
+  turn_crito_0024 | ΚΡ.     | 44b          | 44b        | 2224 | 2260 | 27 | 6 | no | no
+  turn_crito_0025 | ΣΩ.     | 44b          | 44b        | 2260 | 2308 | 34 | 10 | no | no
+  turn_crito_0026 | ΚΡ.     | 44b          | 44c        | 2308 | 2827 | 405 | 90 | yes | yes
+  turn_crito_0027 | ΣΩ.     | 44c          | 44c        | 2827 | 2993 | 132 | 27 | no | no
+  turn_crito_0028 | ΚΡ.     | 44d          | 44d        | 2993 | 3229 | 180 | 42 | no | yes
+  turn_crito_0029 | ΣΩ.     | 44d          | 44d        | 3229 | 3473 | 188 | 45 | no | no
+  turn_crito_0030 | ΚΡ.     | 44e          | 44e        | 3473 | 3782 | 240 | 53 | no | yes
+  turn_crito_0031 | ΚΡ.     | 44e          | 45a        | 3782 | 3976 | 149 | 33 | no | yes
+  turn_crito_0032 | ΣΩ.     | 45a          | 45a        | 3976 | 4029 | 40 | 9 | no | no
+  turn_crito_0033 | ΚΡ.     | 45a          | 46a        | 4029 | 6125 | 1666 | 344 | yes | yes
+  turn_crito_0034 | ΚΡ.     | 46a          | 46a        | 6125 | 6456 | 257 | 58 | no | yes
+  turn_crito_0035 | ΣΩ.     | 46b          | 46e        | 6456 | 7930 | 1154 | 254 | yes | yes
+  turn_crito_0036 | ΣΩ.     | 46e          | 47a        | 7930 | 8238 | 229 | 56 | no | no
+  turn_crito_0037 | ΚΡ.     | 47a          | 47a        | 8238 | 8249 | 7 | 2 | no | no
+  turn_crito_0038 | ΣΩ.     | 47a          | 47a        | 8249 | 8302 | 40 | 10 | no | no
+  turn_crito_0039 | ΚΡ.     | 47a          | 47a        | 8302 | 8311 | 5 | 2 | no | no
+  turn_crito_0040 | ΣΩ.     | 47a          | 47a        | 8311 | 8374 | 48 | 12 | no | no
+  turn_crito_0041 | ΚΡ.     | 47a          | 47a        | 8374 | 8389 | 8 | 4 | no | no
+  turn_crito_0042 | ΣΩ.     | 47a          | 47b        | 8389 | 8597 | 162 | 35 | no | no
+  turn_crito_0043 | ΚΡ.     | 47b          | 47b        | 8597 | 8613 | 11 | 3 | no | no
+  turn_crito_0044 | ΣΩ.     | 47b          | 47b        | 8613 | 8726 | 92 | 19 | no | no
+  turn_crito_0045 | ΚΡ.     | 47b          | 47b        | 8726 | 8739 | 8 | 3 | no | no
+  turn_crito_0046 | ΣΩ.     | 47b          | 47b        | 8739 | 8886 | 115 | 27 | no | no
+  turn_crito_0047 | ΚΡ.     | 47b          | 47b        | 8886 | 8902 | 11 | 3 | no | no
+  turn_crito_0048 | ΣΩ.     | 47c          | 47c        | 8902 | 9080 | 127 | 27 | no | no
+  turn_crito_0049 | ΚΡ.     | 47c          | 47c        | 9080 | 9096 | 10 | 4 | no | no
+  turn_crito_0050 | ΣΩ.     | 47c          | 47c        | 9096 | 9175 | 58 | 16 | no | no
+  turn_crito_0051 | ΚΡ.     | 47c          | 47c        | 9175 | 9222 | 35 | 9 | no | no
+  turn_crito_0052 | ΣΩ.     | 47c          | 47d        | 9222 | 9721 | 390 | 88 | yes | no
+  turn_crito_0053 | ΚΡ.     | 47d          | 47d        | 9721 | 9750 | 21 | 5 | no | no
+  turn_crito_0054 | ΣΩ.     | 47d          | 47e        | 9750 | 9974 | 175 | 36 | no | no
+  turn_crito_0055 | ΚΡ.     | 47e          | 47e        | 9974 | 9983 | 5 | 2 | no | no
+  turn_crito_0056 | ΣΩ.     | 47e          | 47e        | 9983 | 10053 | 56 | 11 | no | no
+  turn_crito_0057 | ΚΡ.     | 47e          | 47e        | 10053 | 10066 | 9 | 2 | no | no
+  turn_crito_0058 | ΣΩ.     | 47e          | 48a        | 10066 | 10292 | 172 | 38 | no | no
+  turn_crito_0059 | ΚΡ.     | 48a          | 48a        | 10292 | 10305 | 9 | 2 | no | no
+  turn_crito_0060 | ΣΩ.     | 48a          | 48a        | 10305 | 10326 | 16 | 3 | no | no
+  turn_crito_0061 | ΚΡ.     | 48a          | 48a        | 10326 | 10339 | 8 | 3 | no | no
+  turn_crito_0062 | ΣΩ.     | 48a          | 48a        | 10339 | 10732 | 294 | 68 | no | no
+  turn_crito_0063 | ΚΡ.     | 48b          | 48b        | 10732 | 10800 | 45 | 12 | no | no
+  turn_crito_0064 | ΣΩ.     | 48b          | 48b        | 10800 | 10999 | 153 | 39 | no | no
+  turn_crito_0065 | ΚΡ.     | 48b          | 48b        | 10999 | 11015 | 11 | 3 | no | no
+  turn_crito_0066 | ΣΩ.     | 48b          | 48b        | 11015 | 11086 | 53 | 15 | no | no
+  turn_crito_0067 | ΚΡ.     | 48b          | 48b        | 11086 | 11097 | 7 | 2 | no | no
+  turn_crito_0068 | ΣΩ.     | 48b          | 48d        | 11097 | 11950 | 679 | 135 | yes | no
+  turn_crito_0069 | ΚΡ.     | 48d          | 48d        | 11950 | 12013 | 47 | 12 | no | no
+  turn_crito_0070 | ΣΩ.     | 48d          | 49a        | 12013 | 12420 | 312 | 68 | no | no
+  turn_crito_0071 | ΚΡ.     | 49a          | 49a        | 12420 | 12441 | 16 | 3 | no | no
+  turn_crito_0072 | ΣΩ.     | 49a          | 49b        | 12441 | 13147 | 548 | 112 | yes | no
+  turn_crito_0073 | ΚΡ.     | 49b          | 49b        | 13147 | 13158 | 7 | 2 | no | no
+  turn_crito_0074 | ΣΩ.     | 49b          | 49b        | 13158 | 13187 | 22 | 5 | no | no
+  turn_crito_0075 | ΚΡ.     | 49b          | 49b        | 13187 | 13200 | 8 | 3 | no | no
+  turn_crito_0076 | ΣΩ.     | 49b          | 49b        | 13200 | 13290 | 72 | 14 | no | no
+  turn_crito_0077 | ΚΡ.     | 49c          | 49c        | 13290 | 13313 | 12 | 3 | no | no
+  turn_crito_0078 | ΣΩ.     | 49c          | 49c        | 13313 | 13359 | 31 | 10 | no | no
+  turn_crito_0079 | ΚΡ.     | 49c          | 49c        | 13359 | 13389 | 21 | 6 | no | no
+  turn_crito_0080 | ΣΩ.     | 49c          | 49c        | 13389 | 13473 | 65 | 14 | no | no
+  turn_crito_0081 | ΚΡ.     | 49c          | 49c        | 13473 | 13486 | 9 | 2 | no | no
+  turn_crito_0082 | ΣΩ.     | 49c          | 49c        | 13486 | 13552 | 53 | 11 | no | no
+  turn_crito_0083 | ΚΡ.     | 49c          | 49c        | 13552 | 13570 | 13 | 3 | no | no
+  turn_crito_0084 | ΣΩ.     | 49c          | 49e        | 13570 | 14325 | 596 | 125 | yes | no
+  turn_crito_0085 | ΚΡ.     | 49e          | 49e        | 14325 | 14373 | 35 | 9 | no | no
+  turn_crito_0086 | ΣΩ.     | 49e          | 49e        | 14373 | 14486 | 87 | 21 | no | no
+  turn_crito_0087 | ΚΡ.     | 49e          | 49e        | 14486 | 14500 | 10 | 2 | no | no
+  turn_crito_0088 | ΣΩ.     | 49e          | 50a        | 14500 | 14690 | 147 | 31 | no | no
+  turn_crito_0089 | ΚΡ.     | 50a          | 50a        | 14690 | 14757 | 50 | 12 | no | no
+  turn_crito_0090 | ΣΩ.     | 50a          | 50c        | 14757 | 15561 | 617 | 136 | yes | no
+  turn_crito_0091 | ΚΡ.     | 50c          | 50c        | 15561 | 15591 | 21 | 6 | no | no
+  turn_crito_0092 | ΣΩ.     | 50c          | 50e        | 15591 | 16769 | 878 | 197 | yes | yes
+  turn_crito_0093 | ΣΩ.     | 50e          | 51c        | 16769 | 18157 | 1105 | 227 | yes | yes
+  turn_crito_0094 | ΚΡ.     | 51c          | 51c        | 18157 | 18175 | 13 | 3 | no | no
+  turn_crito_0095 | ΣΩ.     | 51c          | 52a        | 18175 | 19430 | 986 | 198 | yes | yes
+  turn_crito_0096 | ΣΩ.     | 52a          | 52d        | 19430 | 21079 | 1285 | 267 | yes | yes
+  turn_crito_0097 | ΚΡ.     | 52d          | 52d        | 21079 | 21103 | 17 | 4 | no | no
+  turn_crito_0098 | ΣΩ.     | 52d          | 52e        | 21103 | 21423 | 240 | 47 | no | no
+  turn_crito_0099 | ΣΩ.     | 52e          | 53e        | 21423 | 23711 | 1809 | 364 | yes | yes
+  turn_crito_0100 | ΣΩ.     | 53e          | 54d        | 23711 | 25543 | 1448 | 295 | yes | yes
+  turn_crito_0101 | ΚΡ.     | 54d          | 54d        | 25543 | 25581 | 26 | 7 | no | no
+  turn_crito_0102 | ΣΩ.     | 54e          | 54e        | 25581 | 25663 | 59 | 13 | no | no

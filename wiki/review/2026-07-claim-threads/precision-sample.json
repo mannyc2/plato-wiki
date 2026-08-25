@@ -1,0 +1,370 @@
+{
+  "config_version": 3,
+  "rule": {
+    "seed": 20260711,
+    "edges_per_dialogue": 10,
+    "rule": "deterministic PRNG over non-gold primary edges sorted by (seed_id, member_id); half drawn from the dialogue's largest star, half from the remainder",
+    "pass_threshold": "operator-adjudicated: >=80% of sampled edges inquiry-relevant (shared tokens belong to the seed's definiendum/definiens/test-case vocabulary, not generic names or discourse verbs)"
+  },
+  "adjudication_file": "precision-adjudication.json (hand-authored, one verdict per sampled edge; --check enforces coverage and the >=80% threshold)",
+  "edges": [
+    {
+      "dialogue": "charmides",
+      "seed": "claim_charmides_0007",
+      "member": "claim_charmides_0006",
+      "shared_tokens": [
+        "καλον",
+        "σωφροσυνη",
+        "τοινυν"
+      ]
+    },
+    {
+      "dialogue": "charmides",
+      "seed": "claim_charmides_0007",
+      "member": "claim_charmides_0024",
+      "shared_tokens": [
+        "αγαθον",
+        "σωφροσυνην"
+      ]
+    },
+    {
+      "dialogue": "charmides",
+      "seed": "claim_charmides_0007",
+      "member": "claim_charmides_0029",
+      "shared_tokens": [
+        "δητα",
+        "σωφροσυνη"
+      ]
+    },
+    {
+      "dialogue": "charmides",
+      "seed": "claim_charmides_0007",
+      "member": "claim_charmides_0015",
+      "shared_tokens": [
+        "ανθρωπον",
+        "εαυτον",
+        "σωφροσυνην"
+      ]
+    },
+    {
+      "dialogue": "charmides",
+      "seed": "claim_charmides_0007",
+      "member": "claim_charmides_0012",
+      "shared_tokens": [
+        "σωφροσυνη",
+        "σωφροσυνην"
+      ]
+    },
+    {
+      "dialogue": "charmides",
+      "seed": "claim_charmides_0015",
+      "member": "claim_charmides_0012",
+      "shared_tokens": [
+        "σωφρονωσ",
+        "σωφροσυνην"
+      ]
+    },
+    {
+      "dialogue": "charmides",
+      "seed": "claim_charmides_0015",
+      "member": "claim_charmides_0013",
+      "shared_tokens": [
+        "ελεγεσ",
+        "ενιοτε",
+        "οιει",
+        "σωφρονειν",
+        "σωφροσυνην",
+        "φαναι",
+        "ωφελιμωσ"
+      ]
+    },
+    {
+      "dialogue": "charmides",
+      "seed": "claim_charmides_0015",
+      "member": "claim_charmides_0014",
+      "shared_tokens": [
+        "σωφρονει",
+        "σωφρονειν",
+        "σωφροσυνην",
+        "φημι"
+      ]
+    },
+    {
+      "dialogue": "charmides",
+      "seed": "claim_charmides_0001",
+      "member": "claim_charmides_0026",
+      "shared_tokens": [
+        "πραττειν",
+        "σωφροσυνη"
+      ]
+    },
+    {
+      "dialogue": "charmides",
+      "seed": "claim_charmides_0001",
+      "member": "claim_charmides_0025",
+      "shared_tokens": [
+        "ιδωμεν",
+        "σωφροσυνη"
+      ]
+    },
+    {
+      "dialogue": "euthyphro",
+      "seed": "claim_euthyphro_0007",
+      "member": "claim_euthyphro_0033",
+      "shared_tokens": [
+        "εοικε",
+        "οσιον",
+        "οσιου"
+      ]
+    },
+    {
+      "dialogue": "euthyphro",
+      "seed": "claim_euthyphro_0007",
+      "member": "claim_euthyphro_0052",
+      "shared_tokens": [
+        "εοικε",
+        "ετερα",
+        "οσιον"
+      ]
+    },
+    {
+      "dialogue": "euthyphro",
+      "seed": "claim_euthyphro_0007",
+      "member": "claim_euthyphro_0017",
+      "shared_tokens": [
+        "ανοσιον",
+        "θεων",
+        "οσιον"
+      ]
+    },
+    {
+      "dialogue": "euthyphro",
+      "seed": "claim_euthyphro_0007",
+      "member": "claim_euthyphro_0008",
+      "shared_tokens": [
+        "αδικουντι",
+        "αλλοσ",
+        "ανθρωποι",
+        "ανοσιον",
+        "αποδεχομαι",
+        "αριστον",
+        "ασεβουντι",
+        "γιγνομενα",
+        "γραφην",
+        "δησαι",
+        "δικαιοτατον",
+        "δικη",
+        "δυσχερωσ",
+        "εαντε",
+        "ειπον",
+        "εκτεμειν",
+        "εναντια",
+        "εξαμαρτανειν",
+        "εοικε",
+        "επεξερχομαι",
+        "επεξιεναι",
+        "επιτρεπειν",
+        "ετερα",
+        "θεασαι",
+        "θεων",
+        "κακεινον",
+        "κατεπινεν",
+        "λεγη",
+        "λεγουσι",
+        "μεγα",
+        "μητηρ",
+        "νομιζοντεσ",
+        "νομου",
+        "ομολογουσι",
+        "οστισουν",
+        "ουνεκα",
+        "πατερα",
+        "πατρι",
+        "συνδοκει",
+        "τεκμηριον",
+        "τυγχανη",
+        "τυγχανουσι",
+        "υεισ",
+        "φευγω",
+        "φησει",
+        "χαλεπαινουσιν"
+      ]
+    },
+    {
+      "dialogue": "euthyphro",
+      "seed": "claim_euthyphro_0007",
+      "member": "claim_euthyphro_0006",
+      "shared_tokens": [
+        "αδικουντι",
+        "ανοσιον",
+        "ανοσιοτητα",
+        "δηπου",
+        "εαντε",
+        "εναντιον",
+        "εξαμαρτανοντι",
+        "επεξιεναι",
+        "εχον",
+        "ιδεαν",
+        "ιερων",
+        "κλοπασ",
+        "λεγε",
+        "μελλη",
+        "μιαν",
+        "ομοιον",
+        "οσιον",
+        "οσιου",
+        "οτιπερ",
+        "παση",
+        "πατηρ",
+        "ποιω",
+        "πραξει",
+        "τοινυν",
+        "φονου",
+        "φονουσ"
+      ]
+    },
+    {
+      "dialogue": "euthyphro",
+      "seed": "claim_euthyphro_0043",
+      "member": "claim_euthyphro_0035",
+      "shared_tokens": [
+        "διδαξαι",
+        "οσιον"
+      ]
+    },
+    {
+      "dialogue": "euthyphro",
+      "seed": "claim_euthyphro_0044",
+      "member": "claim_euthyphro_0013",
+      "shared_tokens": [
+        "διδαξαι",
+        "θεοισ",
+        "οσιον"
+      ]
+    },
+    {
+      "dialogue": "euthyphro",
+      "seed": "claim_euthyphro_0023",
+      "member": "claim_euthyphro_0055",
+      "shared_tokens": [
+        "ανοσιον",
+        "οσιον"
+      ]
+    },
+    {
+      "dialogue": "euthyphro",
+      "seed": "claim_euthyphro_0035",
+      "member": "claim_euthyphro_0002",
+      "shared_tokens": [
+        "ασεβειασ",
+        "γραφεσθαι",
+        "ευσεβεσ",
+        "ποιον"
+      ]
+    },
+    {
+      "dialogue": "euthyphro",
+      "seed": "claim_euthyphro_0042",
+      "member": "claim_euthyphro_0013",
+      "shared_tokens": [
+        "ειπεσ",
+        "θεοισ",
+        "οσια"
+      ]
+    },
+    {
+      "dialogue": "theaetetus",
+      "seed": "claim_theaetetus_0185",
+      "member": "claim_theaetetus_0107",
+      "shared_tokens": [
+        "ετερον",
+        "ετερου"
+      ]
+    },
+    {
+      "dialogue": "theaetetus",
+      "seed": "claim_theaetetus_0185",
+      "member": "claim_theaetetus_0106",
+      "shared_tokens": [
+        "ετερον",
+        "ετερου"
+      ]
+    },
+    {
+      "dialogue": "theaetetus",
+      "seed": "claim_theaetetus_0185",
+      "member": "claim_theaetetus_0098",
+      "shared_tokens": [
+        "δοξαζειν",
+        "δοξαν",
+        "ψευδη"
+      ]
+    },
+    {
+      "dialogue": "theaetetus",
+      "seed": "claim_theaetetus_0185",
+      "member": "claim_theaetetus_0057",
+      "shared_tokens": [
+        "δοκω",
+        "ετερον",
+        "φαμεν"
+      ]
+    },
+    {
+      "dialogue": "theaetetus",
+      "seed": "claim_theaetetus_0185",
+      "member": "claim_theaetetus_0043",
+      "shared_tokens": [
+        "δοκω",
+        "φαμεν"
+      ]
+    },
+    {
+      "dialogue": "theaetetus",
+      "seed": "claim_theaetetus_0231",
+      "member": "claim_theaetetus_0230",
+      "shared_tokens": [
+        "δοξαζειν",
+        "επιστημη",
+        "επιστημην"
+      ]
+    },
+    {
+      "dialogue": "theaetetus",
+      "seed": "claim_theaetetus_0005",
+      "member": "claim_theaetetus_0157",
+      "shared_tokens": [
+        "επιστημην",
+        "τοινυν"
+      ]
+    },
+    {
+      "dialogue": "theaetetus",
+      "seed": "claim_theaetetus_0005",
+      "member": "claim_theaetetus_0028",
+      "shared_tokens": [
+        "επιστημη",
+        "θεμισ"
+      ]
+    },
+    {
+      "dialogue": "theaetetus",
+      "seed": "claim_theaetetus_0029",
+      "member": "claim_theaetetus_0171",
+      "shared_tokens": [
+        "αισθανεσθαι",
+        "επιστημη"
+      ]
+    },
+    {
+      "dialogue": "theaetetus",
+      "seed": "claim_theaetetus_0177",
+      "member": "claim_theaetetus_0212",
+      "shared_tokens": [
+        "δοξα",
+        "δοξαν",
+        "ψευδησ"
+      ]
+    }
+  ]
+}

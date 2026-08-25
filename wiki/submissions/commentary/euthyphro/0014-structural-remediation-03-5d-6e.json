@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "submission_id": "0014-structural-remediation-03-5d-6e",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "euthyphro",
+  "unit_key": "03-5d-6e",
+  "source_path": "scratch/commentary/audits/euthyphro/03-5d-6e.json",
+  "source_sha256": "fcdcd4fa6b3f802e4e5735a1c7ecb92d5e53cf0a7ce8ac4c6965a429d18cd4f0",
+  "target_path": "wiki/commentary/euthyphro.md",
+  "target_sha256_before": "ecba16f28b5076c6383193a78315863badfb49974e1e36ba1216851e2bcfe5b2",
+  "target_sha256_after": "9f3f9eec15951ad3dd002d6b24748cd4a221363f719ccd89d3d2f28e83831f89",
+  "applied_at": "2026-08-23T22:54:04.438Z",
+  "applied_ids": [
+    "comm_euthyphro_0017",
+    "comm_euthyphro_0018"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "euthyphro",
+      "unitKey": "03-5d-6e",
+      "sectionId": "comm_euthyphro_0003",
+      "auditOutputPath": "scratch/commentary/audits/euthyphro/03-5d-6e.json",
+      "auditOutputSha256": "fcdcd4fa6b3f802e4e5735a1c7ecb92d5e53cf0a7ce8ac4c6965a429d18cd4f0",
+      "expectedLedgerSha256": "ecba16f28b5076c6383193a78315863badfb49974e1e36ba1216851e2bcfe5b2",
+      "expectedAttributionSha256": "fb94c60765e0b98880856c6e1b958d3f0231dcfbb114bdf97c3bb3d6d88cc07b",
+      "expectedEnglishSha256": "c7dfbda09d2477bb9610bebdf40a0c2e4ee8b4ad000b84b7143544ab1ebbf756",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_euthyphro_0017"
+        },
+        {
+          "operation": "remove",
+          "commentaryId": "comm_euthyphro_0018"
+        }
+      ],
+      "reviewer": "round2-a-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna assessment supports conservative rejection of the current audited remove findings; no reanchors are proposed."
+    },
+    "audit_output_path": "scratch/commentary/audits/euthyphro/03-5d-6e.json",
+    "audit_output_sha256": "fcdcd4fa6b3f802e4e5735a1c7ecb92d5e53cf0a7ce8ac4c6965a429d18cd4f0",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_euthyphro_0017",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_euthyphro_0018",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

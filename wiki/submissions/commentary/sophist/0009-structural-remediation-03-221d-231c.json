@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0009-structural-remediation-03-221d-231c",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "sophist",
+  "unit_key": "03-221d-231c",
+  "source_path": "scratch/commentary/audits/sophist/03-221d-231c.json",
+  "source_sha256": "aa4848d7a65d181680a05a983711486dfa8250ce61cf273e4e06fb5a93f4f5c8",
+  "target_path": "wiki/commentary/sophist.md",
+  "target_sha256_before": "383cd10740c775a9868f9a8aa31989d7c74ef237ffd5216728a0bfa7408c2a9e",
+  "target_sha256_after": "78338b0cd64d58df7e8510d87e7635b4dff2df0bb4199903b2dca4117dd1feb4",
+  "applied_at": "2026-08-23T22:55:05.995Z",
+  "applied_ids": [
+    "comm_sophist_0003"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "sophist",
+      "unitKey": "03-221d-231c",
+      "sectionId": "comm_sophist_0003",
+      "auditOutputPath": "scratch/commentary/audits/sophist/03-221d-231c.json",
+      "auditOutputSha256": "aa4848d7a65d181680a05a983711486dfa8250ce61cf273e4e06fb5a93f4f5c8",
+      "expectedLedgerSha256": "383cd10740c775a9868f9a8aa31989d7c74ef237ffd5216728a0bfa7408c2a9e",
+      "expectedAttributionSha256": "b08297f1ae4b71ad9d92e1e0367e954bd41d6f6d6868c857e3345fd6af1bc2b8",
+      "expectedEnglishSha256": "baaea2322c69372db21dbebb3f2c1f2e86a0dd9717becf1b273ffd8e8023fe99",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_sophist_0003"
+        }
+      ],
+      "reviewer": "round2-b-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna assessment supports conservative rejection of the current audited remove findings; no reanchors are proposed."
+    },
+    "audit_output_path": "scratch/commentary/audits/sophist/03-221d-231c.json",
+    "audit_output_sha256": "aa4848d7a65d181680a05a983711486dfa8250ce61cf273e4e06fb5a93f4f5c8",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_sophist_0003",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

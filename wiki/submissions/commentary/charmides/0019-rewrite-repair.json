@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "submission_id": "0019-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "charmides",
+  "source_path": "scratch/commentary/rewrite-repairs/charmides/0013-repair.json",
+  "source_sha256": "64e35d52f981b88155d572e73ec7b1de710b047b232b89c91d45e9236ed9d17f",
+  "target_path": "wiki/commentary/charmides.md",
+  "target_sha256_before": "3ca228774c4effbe6ed3ecf857055eca23fb9283ab54fbf7ba384fa45fe37c7e",
+  "target_sha256_after": "7007d5dcb4077f21e2d0fa23185f2f2c51128c665ff9db538a91605264d873f7",
+  "applied_at": "2026-08-24T00:23:43.307Z",
+  "applied_ids": [
+    "comm_charmides_0013"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "charmides",
+    "ledger": {
+      "path": "wiki/commentary/charmides.md",
+      "sha256": "3ca228774c4effbe6ed3ecf857055eca23fb9283ab54fbf7ba384fa45fe37c7e"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/charmides/0017-rewrite-batch.json",
+      "sha256": "2e0c29dfa8dc1ad1b7ff620207e3f9d4f7ac0224cbaa49832fff34ff79d591b1"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-23-commentary-block-review-charmides-rejected-44d00e3e4692.md",
+      "sha256": "bc102938b1aecee8eab4a20e37544caa3943c347bd8c4bf55760df7723617de1"
+    },
+    "prior_review": {
+      "reviewer": "block-e-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_charmides_0013",
+          "finding": "The 0017 rewrite leaves the appearance/examination contrast without accepted evidence and does not establish the temperance claim at 153a–153d."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-charmides-0013-20260823",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_charmides_0013"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_charmides_0013",
+        "title": "",
+        "body": "The opening is a return and a change of subject. Socrates has come back from Potidaea to the palestra, where Chaerephon greets him and Critias is beside him. Once the camp stories are finished, Socrates turns to the city's philosophy and asks which young men stand out in wisdom or beauty.",
+        "cites": {
+          "observations": [
+            "obs_charmides_0001",
+            "obs_charmides_0002",
+            "obs_charmides_0003",
+            "obs_charmides_0005",
+            "obs_charmides_0006"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_charmides_0013",
+      "body": "```yaml\ncommentary_id: comm_charmides_0013\nsource_work: Charmides\nblock_kind: context\nplacement: before\nstephanus_span: 153a-153d\nsource_ref:\n  source_path: raw/plato/greek/charmides.txt\n  stephanus_span: 153a-153d\n  start_marker: 153a\n  end_marker: 153d\n  start_char: 0\n  end_char: 1449\n  text_sha256: \"7ce19e56f0d6f76f1aa82a2e3bde2ec15e1a041130410f1c161433db69d67398\"\nbody: \"The contrast matters: Charmides’ appearance attracts attention, while examination is what could test what kind of person he is.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

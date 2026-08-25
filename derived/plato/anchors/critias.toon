@@ -1,0 +1,14 @@
+dialogue: critias
+source_path: raw/plato/greek/critias.txt
+source_sha256: f724e270f7d4fdffa96cfaf82ce029b30e7cbe60f8cee3f3c7f941af2cb58ee2
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[7]:
+  group             | form  | start_char | end_char | marker | turn_id           | token_ids
+  divine_legal      | δίκη  | 365        | 369      | 106b   | turn_critias_0001 | tok_critias_000058
+  divine_legal      | δίκη  | 12566      | 12570    | 112e   | turn_critias_0011 | tok_critias_002002
+  aporia_reset      | πάλιν | 13285      | 13290    | 113a   | turn_critias_0012 | tok_critias_002116
+  aporia_reset      | πάλιν | 19393      | 19398    | 115e   | turn_critias_0014 | tok_critias_003107
+  definition_prompt | εἶδος | 20813      | 20818    | 116d   | turn_critias_0015 | tok_critias_003330
+  definition_prompt | εἶδος | 23925      | 23930    | 118a   | turn_critias_0017 | tok_critias_003831
+  aporia_reset      | πάλιν | 25453      | 25458    | 118d   | turn_critias_0017 | tok_critias_004074

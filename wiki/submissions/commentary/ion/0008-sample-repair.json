@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "submission_id": "0008-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "ion",
+  "source_path": "scratch/commentary/sample-repairs/ion/round3.json",
+  "source_sha256": "20f888eb2945652c2a663ec112121428fbf0ab3c0bb19fc714aaf9bc9cec2810",
+  "target_path": "wiki/commentary/ion.md",
+  "target_sha256_before": "c9b1357a69f58c2f1f4e329f6204371c6af5f1a46cd2bf51555e6637df50df18",
+  "target_sha256_after": "502650f37f5cdfeb5afd4469a541e573c5c82bc7697a7a64cd5f037d58b34c27",
+  "applied_at": "2026-08-23T23:59:40.339Z",
+  "applied_ids": [
+    "comm_ion_0001"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "ion",
+    "ledger": {
+      "path": "wiki/commentary/ion.md",
+      "sha256": "c9b1357a69f58c2f1f4e329f6204371c6af5f1a46cd2bf51555e6637df50df18"
+    },
+    "sample_review": {
+      "reviewer": "sample-b-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna sample review found one bounded unsupported forecast requiring repair.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_ion_0001",
+        "comm_ion_0004",
+        "comm_ion_0005"
+      ],
+      "failed_commentary_ids": [
+        "comm_ion_0001"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_ion_0001",
+        "title": "A crowned rhapsode meets a curious layman",
+        "body": "Ion arrives fresh from a first-prize victory at Epidaurus and is bound for the Panathenaea. Socrates praises the rhapsode's art while specifying its task: interpreting the poet's thought, not merely his words. Ion readily accepts this standard and ranks himself above every Homeric interpreter.",
+        "cites": {
+          "observations": [
+            "obs_ion_0001",
+            "obs_ion_0002",
+            "obs_ion_0003"
+          ],
+          "claims": [
+            "claim_ion_0001",
+            "claim_ion_0002"
+          ],
+          "relations": [],
+          "dossiers": [
+            "definition_ladder/definition_proposed",
+            "prosopography/figures_or_types_as_evidence"
+          ]
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_ion_0001",
+      "body": "```yaml\ncommentary_id: comm_ion_0001\nsource_work: Ion\nblock_kind: section\nplacement: before\ntitle: \"A crowned rhapsode meets a curious layman\"\nstephanus_span: 530a-530d\nsource_ref:\n  source_path: raw/plato/greek/ion.txt\n  stephanus_span: 530a-530d\n  start_marker: 530a\n  end_marker: 530d\n  start_char: 0\n  end_char: 1648\n  text_sha256: \"946a52634a1acf5c72e6998b98f9cc93b65ef624d2c9cf6584b21a7cb630a751\"\nbody: \"Ion arrives fresh from a first-prize victory at Epidaurus, bound for the Panathenaea. Socrates praises the rhapsode's art and states its standard: the rhapsode must interpret the poet's thought, not just his words. Ion accepts the standard eagerly and ranks himself above every Homeric interpreter who ever lived. The whole examination will test that boast against that standard.\"\ncites:\n  observations: [\"obs_ion_0001\", \"obs_ion_0002\", \"obs_ion_0003\"]\n  claims: [\"claim_ion_0001\", \"claim_ion_0002\"]\n  relations: []\n  dossiers: [\"definition_ladder/definition_proposed\", \"prosopography/figures_or_types_as_evidence\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

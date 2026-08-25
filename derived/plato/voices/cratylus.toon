@@ -1,0 +1,16 @@
+dialogue: cratylus
+ledger_path: wiki/voices/cratylus.md
+ledger_sha256: f6243203cf76ad5ef572658da186cde9ed4e8f3883835572f202f718db0359f6
+source_path: raw/plato/greek/cratylus.txt
+source_sha256: 8efd1736ad24fd8524fae3d0281f278bbfec921174ab8105d7c2bdf3333b5aca
+turn_index_path: derived/plato/turns/cratylus.toon
+turn_index_sha256: 8e51fac9d83c86996c4eb87f8c05e7f071c61524693b35167fd37b82dbcf571c
+voices[7]:
+  voice_id            | outer_turn_id      | start_char | end_char | depth | voice_chain | resolution | evidence_kinds                  | evidence_count
+  voice_cratylus_0001 | turn_cratylus_0003 | 85         | 729      | 1     | ΕΡΜ.        | resolved   | printed_siglum                  | 1
+  voice_cratylus_0006 | turn_cratylus_0528 | 76286      | 76340    | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1
+  voice_cratylus_0002 | turn_cratylus_0003 | 468        | 497      | 2     | ΕΡΜ.>ΕΡΜ.   | resolved   | person_marked_reporting_formula | 1
+  voice_cratylus_0003 | turn_cratylus_0003 | 499        | 525      | 2     | ΕΡΜ.>ΚΡ.    | resolved   | anaphoric_reporting_formula     | 1
+  voice_cratylus_0004 | turn_cratylus_0003 | 527        | 630      | 2     | ΕΡΜ.        | unresolved | (none)                          | 0
+  voice_cratylus_0005 | turn_cratylus_0003 | 631        | 728      | 2     | ΕΡΜ.>ΚΡ.    | resolved   | anaphoric_reporting_formula     | 1
+  voice_cratylus_0007 | turn_cratylus_0528 | 76290      | 76331    | 2     | ΣΩ.>ΕΡΜ.    | resolved   | person_marked_reporting_formula | 1

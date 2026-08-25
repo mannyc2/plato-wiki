@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-delegated-audit-08-50a-54d",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "philebus",
+  "unit_key": "08-50a-54d",
+  "source_path": "scratch/commentary/delegated-audits/philebus/08-50a-54d.json",
+  "source_sha256": "96c404316781c5cb36f46ae171ff842c54095da84f39f9db70c415c69f18cb7f",
+  "target_path": "wiki/submissions/commentary-audit/philebus/08-50a-54d.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "66a024687e04780037cee27db9fb1d0d885f25901bbd130f6535faceb0f8ce0a",
+  "applied_at": "2026-08-24T01:15:36.796Z",
+  "applied_ids": [
+    "comm_philebus_0018"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "philebus",
+    "unit_key": "08-50a-54d",
+    "job": {
+      "job_id": "audit:philebus:08-50a-54d",
+      "input_sha256": "b4787103dc51c8ddde2e13fbfef07add722e2cf6a80830886251f441534e9ed7",
+      "audit_brief_path": "scratch/commentary/audit-briefs/philebus/08-50a-54d.md",
+      "audit_brief_sha256": "75769ffade39f5423e7dc487a41f5163e2ef33a6f1926bd4a2af54d9616bc961",
+      "output_path": "scratch/commentary/audits/philebus/08-50a-54d.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/philebus/08-50a-54d.output.json",
+    "output_sha256": "66a024687e04780037cee27db9fb1d0d885f25901bbd130f6535faceb0f8ce0a",
+    "provenance": {
+      "auditor": "batch-c-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

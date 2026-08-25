@@ -1,0 +1,93 @@
+dialogue: phaedo
+source_path: raw/plato/greek/phaedo.txt
+source_sha256: b98ace9434b77dcf308b1bd617ef54e0da6ec26a7b7aaad06bc6cad3fa8fe4a7
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[86]:
+  group             | form      | start_char | end_char | marker | turn_id          | token_ids
+  assent_concession | ναί       | 670        | 673      | 58a    | turn_phaedo_0005 | tok_phaedo_000101
+  aporia_reset      | πάλιν     | 1616       | 1621     | 58b    | turn_phaedo_0008 | tok_phaedo_000235
+  assent_concession | ναί       | 4233       | 4236     | 59c    | turn_phaedo_0021 | tok_phaedo_000614
+  divine_legal      | δίκη      | 4894       | 4898     | 59d    | turn_phaedo_0027 | tok_phaedo_000699
+  divine_legal      | δίκη      | 8563       | 8567     | 61a    | turn_phaedo_0027 | tok_phaedo_001222
+  divine_legal      | ὅσιον     | 11262      | 11267    | 62a    | turn_phaedo_0027 | tok_phaedo_001614
+  assent_concession | ὁμολογεῖς | 13927      | 13936    | 63a    | turn_phaedo_0027 | tok_phaedo_002016
+  assent_concession | πάνυ γε   | 16566      | 16573    | 64b    | turn_phaedo_0027 | tok_phaedo_002409,tok_phaedo_002410
+  assent_concession | πάνυ γε   | 17151      | 17158    | 64c    | turn_phaedo_0027 | tok_phaedo_002502,tok_phaedo_002503
+  assent_concession | ναί       | 19537      | 19540    | 65c    | turn_phaedo_0027 | tok_phaedo_002883
+  aporia_reset      | πάλιν     | 31502      | 31507    | 70c    | turn_phaedo_0027 | tok_phaedo_004710
+  aporia_reset      | πάλιν     | 31586      | 31591    | 70c    | turn_phaedo_0027 | tok_phaedo_004724
+  aporia_reset      | πάλιν     | 31692      | 31697    | 70d    | turn_phaedo_0027 | tok_phaedo_004744
+  assent_concession | ναί       | 32522      | 32525    | 70e    | turn_phaedo_0027 | tok_phaedo_004880
+  assent_concession | πάνυ γε   | 32720      | 32727    | 71a    | turn_phaedo_0027 | tok_phaedo_004907,tok_phaedo_004908
+  assent_concession | πάνυ γε   | 32929      | 32936    | 71a    | turn_phaedo_0027 | tok_phaedo_004940,tok_phaedo_004941
+  aporia_reset      | πάλιν     | 33113      | 33118    | 71b    | turn_phaedo_0027 | tok_phaedo_004973
+  assent_concession | ναί       | 33254      | 33257    | 71b    | turn_phaedo_0027 | tok_phaedo_004995
+  assent_concession | ναί       | 34352      | 34355    | 71d    | turn_phaedo_0027 | tok_phaedo_005171
+  assent_concession | πάνυ γε   | 35176      | 35183    | 72a    | turn_phaedo_0027 | tok_phaedo_005296,tok_phaedo_005297
+  aporia_reset      | πάλιν     | 35410      | 35415    | 72a    | turn_phaedo_0027 | tok_phaedo_005335
+  aporia_reset      | πάλιν     | 35792      | 35797    | 72b    | turn_phaedo_0027 | tok_phaedo_005390
+  aporia_reset      | πάλιν     | 36575      | 36580    | 72c    | turn_phaedo_0027 | tok_phaedo_005508
+  definition_prompt | εἶδος     | 39394      | 39399    | 73d    | turn_phaedo_0027 | tok_phaedo_005946
+  assent_concession | πάνυ γε   | 39979      | 39986    | 73e    | turn_phaedo_0027 | tok_phaedo_006030,tok_phaedo_006031
+  assent_concession | πάνυ γε   | 40761      | 40768    | 74b    | turn_phaedo_0027 | tok_phaedo_006146,tok_phaedo_006147
+  assent_concession | πάνυ γε   | 41533      | 41540    | 74c    | turn_phaedo_0027 | tok_phaedo_006276,tok_phaedo_006277
+  assent_concession | πάνυ γε   | 43470      | 43477    | 75b    | turn_phaedo_0027 | tok_phaedo_006590,tok_phaedo_006591
+  assent_concession | ναί       | 43557      | 43560    | 75c    | turn_phaedo_0027 | tok_phaedo_006603
+  assent_concession | πάνυ γε   | 44800      | 44807    | 75e    | turn_phaedo_0027 | tok_phaedo_006790,tok_phaedo_006791
+  assent_concession | ναί       | 46153      | 46156    | 76c    | turn_phaedo_0027 | tok_phaedo_006985
+  definition_prompt | οὐσία     | 46824      | 46829    | 76d    | turn_phaedo_0027 | tok_phaedo_007086
+  definition_prompt | οὐσία     | 51573      | 51578    | 78d    | turn_phaedo_0027 | tok_phaedo_007808
+  assent_concession | ναί       | 53337      | 53340    | 79b    | turn_phaedo_0027 | tok_phaedo_008092
+  assent_concession | πάνυ γε   | 53841      | 53848    | 79c    | turn_phaedo_0027 | tok_phaedo_008174,tok_phaedo_008175
+  assent_concession | ναί       | 56300      | 56303    | 80d    | turn_phaedo_0027 | tok_phaedo_008578
+  assent_concession | πάνυ γε   | 58267      | 58274    | 81c    | turn_phaedo_0027 | tok_phaedo_008885,tok_phaedo_008886
+  aporia_reset      | πάλιν     | 58416      | 58421    | 81c    | turn_phaedo_0027 | tok_phaedo_008913
+  aporia_reset      | πάλιν     | 59057      | 59062    | 81e    | turn_phaedo_0027 | tok_phaedo_009007
+  aporia_reset      | πάλιν     | 60105      | 60110    | 82b    | turn_phaedo_0027 | tok_phaedo_009171
+  aporia_reset      | πάλιν     | 60205      | 60210    | 82b    | turn_phaedo_0027 | tok_phaedo_009188
+  assent_concession | πάνυ γε   | 63129      | 63136    | 83c    | turn_phaedo_0027 | tok_phaedo_009635,tok_phaedo_009636
+  aporia_reset      | πάλιν     | 63607      | 63612    | 83d    | turn_phaedo_0027 | tok_phaedo_009709
+  aporia_reset      | πάλιν     | 64188      | 64193    | 84a    | turn_phaedo_0027 | tok_phaedo_009792
+  definition_prompt | εἶδος     | 71007      | 71012    | 87a    | turn_phaedo_0027 | tok_phaedo_010866
+  aporia_reset      | πάλιν     | 74408      | 74413    | 88c    | turn_phaedo_0027 | tok_phaedo_011401
+  aporia_reset      | πάλιν     | 75081      | 75086    | 88d    | turn_phaedo_0028 | tok_phaedo_011506
+  assent_concession | πάνυ γε   | 77797      | 77804    | 89e    | turn_phaedo_0031 | tok_phaedo_011917,tok_phaedo_011918
+  assent_concession | πάνυ γε   | 78447      | 78454    | 90a    | turn_phaedo_0031 | tok_phaedo_012030,tok_phaedo_012031
+  definition_prompt | εἶδος     | 83232      | 83237    | 92b    | turn_phaedo_0031 | tok_phaedo_012777
+  definition_prompt | οὐσία     | 84392      | 84397    | 92d    | turn_phaedo_0031 | tok_phaedo_012961
+  assent_concession | πάνυ γε   | 85401      | 85408    | 93b    | turn_phaedo_0031 | tok_phaedo_013128,tok_phaedo_013129
+  assent_concession | πάνυ γε   | 86444      | 86451    | 93d    | turn_phaedo_0031 | tok_phaedo_013298,tok_phaedo_013299
+  method_term       | ὑπόθεσις  | 87642      | 87650    | 94b    | turn_phaedo_0031 | tok_phaedo_013485
+  definition_prompt | τί ἐστι   | 92399      | 92406    | 96a    | turn_phaedo_0031 | tok_phaedo_014214,tok_phaedo_014215
+  definition_prompt | εἶδος     | 96453      | 96458    | 98a    | turn_phaedo_0031 | tok_phaedo_014892
+  definition_prompt | τί ἐστι   | 99055      | 99062    | 99b    | turn_phaedo_0031 | tok_phaedo_015320,tok_phaedo_015321
+  definition_prompt | εἶδος     | 101362     | 101367   | 100b   | turn_phaedo_0031 | tok_phaedo_015688
+  aporia_reset      | πάλιν     | 101395     | 101400   | 100b   | turn_phaedo_0031 | tok_phaedo_015693
+  assent_concession | ναί       | 102930     | 102933   | 100e   | turn_phaedo_0031 | tok_phaedo_015947
+  assent_concession | ὁμολογεῖς | 106155     | 106164   | 102b   | turn_phaedo_0035 | tok_phaedo_016468
+  assent_concession | ναί       | 109554     | 109557   | 103d   | turn_phaedo_0035 | tok_phaedo_016976
+  assent_concession | πάνυ γε   | 109774     | 109781   | 103d   | turn_phaedo_0035 | tok_phaedo_017011,tok_phaedo_017012
+  definition_prompt | εἶδος     | 110042     | 110047   | 103e   | turn_phaedo_0035 | tok_phaedo_017057
+  assent_concession | πάνυ γε   | 110311     | 110318   | 103e   | turn_phaedo_0035 | tok_phaedo_017107,tok_phaedo_017108
+  assent_concession | πάνυ γε   | 111842     | 111849   | 104c   | turn_phaedo_0035 | tok_phaedo_017370,tok_phaedo_017371
+  definition_prompt | ἰδέα      | 112091     | 112095   | 104d   | turn_phaedo_0035 | tok_phaedo_017412
+  assent_concession | πάνυ γε   | 112165     | 112172   | 104d   | turn_phaedo_0035 | tok_phaedo_017423,tok_phaedo_017424
+  definition_prompt | ἰδέα      | 112215     | 112219   | 104d   | turn_phaedo_0035 | tok_phaedo_017432
+  assent_concession | ναί       | 112325     | 112328   | 104d   | turn_phaedo_0035 | tok_phaedo_017450
+  assent_concession | ναί       | 112369     | 112372   | 104d   | turn_phaedo_0035 | tok_phaedo_017457
+  definition_prompt | ἰδέα      | 112414     | 112418   | 104e   | turn_phaedo_0035 | tok_phaedo_017465
+  assent_concession | ναί       | 112523     | 112526   | 104e   | turn_phaedo_0035 | tok_phaedo_017481
+  aporia_reset      | πάλιν     | 113012     | 113017   | 105a   | turn_phaedo_0035 | tok_phaedo_017567
+  aporia_reset      | πάλιν     | 113426     | 113431   | 105b   | turn_phaedo_0035 | tok_phaedo_017638
+  definition_prompt | εἶδος     | 116736     | 116741   | 106d   | turn_phaedo_0035 | tok_phaedo_018194
+  aporia_reset      | πάλιν     | 119443     | 119448   | 107e   | turn_phaedo_0035 | tok_phaedo_018612
+  definition_prompt | εἶδος     | 125282     | 125287   | 110d   | turn_phaedo_0035 | tok_phaedo_019561
+  definition_prompt | εἶδος     | 125361     | 125366   | 110d   | turn_phaedo_0035 | tok_phaedo_019574
+  aporia_reset      | πάλιν     | 128621     | 128626   | 112a   | turn_phaedo_0035 | tok_phaedo_020125
+  aporia_reset      | πάλιν     | 129624     | 129629   | 112c   | turn_phaedo_0035 | tok_phaedo_020300
+  aporia_reset      | πάλιν     | 129742     | 129747   | 112d   | turn_phaedo_0035 | tok_phaedo_020317
+  aporia_reset      | πάλιν     | 130123     | 130128   | 112d   | turn_phaedo_0035 | tok_phaedo_020375
+  aporia_reset      | πάλιν     | 130824     | 130829   | 113a   | turn_phaedo_0035 | tok_phaedo_020479
+  aporia_reset      | πάλιν     | 133765     | 133770   | 114b   | turn_phaedo_0035 | tok_phaedo_020896
+  divine_legal      | δίκη      | 133873     | 133877   | 114b   | turn_phaedo_0035 | tok_phaedo_020914

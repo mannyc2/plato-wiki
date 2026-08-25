@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-delegated-audit-03-20d-23c",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "apology",
+  "unit_key": "03-20d-23c",
+  "source_path": "scratch/commentary/delegated-audits/apology/03-20d-23c.json",
+  "source_sha256": "13824d2e787ec685c4bf9fb5f207c0c45f3f1e6be0fce733500583d32c72945a",
+  "target_path": "wiki/submissions/commentary-audit/apology/03-20d-23c.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "74ed7b42d6c224ce36acb3ce775303aea81b008497677fc1f96805d98709d162",
+  "applied_at": "2026-08-24T01:15:36.746Z",
+  "applied_ids": [
+    "comm_apology_0003",
+    "comm_apology_0025"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "apology",
+    "unit_key": "03-20d-23c",
+    "job": {
+      "job_id": "audit:apology:03-20d-23c",
+      "input_sha256": "24759d951b898199eea82b423a520411fff367dfed260d343016e59baabc4f5c",
+      "audit_brief_path": "scratch/commentary/audit-briefs/apology/03-20d-23c.md",
+      "audit_brief_sha256": "be4c6aacb2568c1d0813c71dc6cb8b2293837bfa7bc7dc001b44b51b73797270",
+      "output_path": "scratch/commentary/audits/apology/03-20d-23c.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/apology/03-20d-23c.output.json",
+    "output_sha256": "74ed7b42d6c224ce36acb3ce775303aea81b008497677fc1f96805d98709d162",
+    "provenance": {
+      "auditor": "batch-a-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

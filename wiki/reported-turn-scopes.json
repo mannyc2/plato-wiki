@@ -1,0 +1,694 @@
+{
+  "schemaVersion": 1,
+  "dialogues": [
+    {
+      "dialogue": "apology",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_apology_0001"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/apology.txt",
+        "greekSourceSha256": "37c1ce832119acb9c2872c1c04433a3895a32679f2231f239a1b150c9a01c4d8",
+        "outerTurnIndexPath": "derived/plato/turns/apology.toon",
+        "outerTurnIndexSha256": "b093ce5bf1903e2ba655f7a366f88b7bff76ee522b7569de5b93d71bc27d51dd"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-apology-reported-turn-scope-census.md",
+        "sha256": "9902c4c8dfac8ca46c6aa4e4b7b5e7ce2fd428f36fdb97240d09518984036aee"
+      }
+    },
+    {
+      "dialogue": "charmides",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_charmides_0001"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/charmides.txt",
+        "greekSourceSha256": "cb446b66773c1ae410489ff61b95c0e16242dc0abc787dc466b9a74551cfe218",
+        "outerTurnIndexPath": "derived/plato/turns/charmides.toon",
+        "outerTurnIndexSha256": "2342c951ccdff8e6f7a089eeeb274341cf417d71d06ac0a736eb372a8ff82c9b"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-charmides-reported-turn-scope-census.md",
+        "sha256": "2a2492ae8e8e1d0c16c35b28971efaa89504535bae9d5195bf4b95ec6148a2f3"
+      }
+    },
+    {
+      "dialogue": "cratylus",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_cratylus_0003",
+        "turn_cratylus_0528"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/cratylus.txt",
+        "greekSourceSha256": "8efd1736ad24fd8524fae3d0281f278bbfec921174ab8105d7c2bdf3333b5aca",
+        "outerTurnIndexPath": "derived/plato/turns/cratylus.toon",
+        "outerTurnIndexSha256": "8e51fac9d83c86996c4eb87f8c05e7f071c61524693b35167fd37b82dbcf571c"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-cratylus-reported-turn-scope-census.md",
+        "sha256": "3b79ae423026133b231178169ffc8b21cb66446f6e0ec88b23154db3c5ad47a2"
+      }
+    },
+    {
+      "dialogue": "critias",
+      "disposition": "none",
+      "outerTurnIds": [],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/critias.txt",
+        "greekSourceSha256": "f724e270f7d4fdffa96cfaf82ce029b30e7cbe60f8cee3f3c7f941af2cb58ee2",
+        "outerTurnIndexPath": "derived/plato/turns/critias.toon",
+        "outerTurnIndexSha256": "18c8c993f2427313bce48d689e1a4a03ec5605c678a7c17f7cb236f5441e5c78"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-critias-reported-turn-scope-census.md",
+        "sha256": "9ebbb5ff5ae39301243173f8f268e0decb16b5132c9144c115b102a32958df5b"
+      }
+    },
+    {
+      "dialogue": "crito",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_crito_0023",
+        "turn_crito_0062",
+        "turn_crito_0090",
+        "turn_crito_0092",
+        "turn_crito_0093",
+        "turn_crito_0095",
+        "turn_crito_0096",
+        "turn_crito_0098",
+        "turn_crito_0099",
+        "turn_crito_0100"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/crito.txt",
+        "greekSourceSha256": "fc1eaadbd89edd53c9ad97c51b0c568346338869f26aa2e322ff86d54b42e28a",
+        "outerTurnIndexPath": "derived/plato/turns/crito.toon",
+        "outerTurnIndexSha256": "1707ebca9073f0a0350ddc8a3da53418552ee499f17506241327cb17f132c282"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-crito-reported-turn-scope-census.md",
+        "sha256": "68b07d47e52aab97f57ff5d755c40cb154c3c03fc47201ee2230b7cb506e64e8"
+      }
+    },
+    {
+      "dialogue": "euthydemus",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_euthydemus_0012",
+        "turn_euthydemus_0013",
+        "turn_euthydemus_0014",
+        "turn_euthydemus_0015",
+        "turn_euthydemus_0016",
+        "turn_euthydemus_0017",
+        "turn_euthydemus_0018",
+        "turn_euthydemus_0019",
+        "turn_euthydemus_0020",
+        "turn_euthydemus_0021",
+        "turn_euthydemus_0022",
+        "turn_euthydemus_0023",
+        "turn_euthydemus_0024",
+        "turn_euthydemus_0025",
+        "turn_euthydemus_0026",
+        "turn_euthydemus_0027",
+        "turn_euthydemus_0028",
+        "turn_euthydemus_0029",
+        "turn_euthydemus_0043",
+        "turn_euthydemus_0069",
+        "turn_euthydemus_0070",
+        "turn_euthydemus_0071",
+        "turn_euthydemus_0072",
+        "turn_euthydemus_0073",
+        "turn_euthydemus_0074",
+        "turn_euthydemus_0075",
+        "turn_euthydemus_0076",
+        "turn_euthydemus_0077",
+        "turn_euthydemus_0078",
+        "turn_euthydemus_0079",
+        "turn_euthydemus_0080",
+        "turn_euthydemus_0081",
+        "turn_euthydemus_0082"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/euthydemus.txt",
+        "greekSourceSha256": "23536f3045b3c14d919bfc41e21a18e2bb7903cd34408d17e1ab08801ab9df14",
+        "outerTurnIndexPath": "derived/plato/turns/euthydemus.toon",
+        "outerTurnIndexSha256": "114215016db5ab4c3c5d0a00e15cd6073bd51f28de0fdc2114ed8fc7e3a4c6ad"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-euthydemus-reported-turn-scope-census.md",
+        "sha256": "a17caf6c690f6d1d4bda691df313218b912d76656442afd1e40f7748fe1ea0b7"
+      }
+    },
+    {
+      "dialogue": "euthyphro",
+      "disposition": "none",
+      "outerTurnIds": [],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/euthyphro.txt",
+        "greekSourceSha256": "9fac1bf69b5a6e95c8436b25e82244bc60de058f63290c6be205b753ee94b806",
+        "outerTurnIndexPath": "derived/plato/turns/euthyphro.toon",
+        "outerTurnIndexSha256": "d488716c61feffb7c2734f9878d7b0b8edd25c783c3589339441c31fb1c39b18"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-euthyphro-reported-turn-scope-census.md",
+        "sha256": "d8ab9993eb98c21f8b3e3cf4b7cf4a59f218a9aacecfcda96ef98b0cee278869"
+      }
+    },
+    {
+      "dialogue": "gorgias",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_gorgias_0087",
+        "turn_gorgias_0089",
+        "turn_gorgias_0097",
+        "turn_gorgias_0135",
+        "turn_gorgias_0151",
+        "turn_gorgias_0364",
+        "turn_gorgias_0998",
+        "turn_gorgias_1095",
+        "turn_gorgias_1103",
+        "turn_gorgias_1104"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/gorgias.txt",
+        "greekSourceSha256": "5c56dd528433e113ac4ed3139227e6a18c81b39fe717b72c79ec402cebf6460a",
+        "outerTurnIndexPath": "derived/plato/turns/gorgias.toon",
+        "outerTurnIndexSha256": "fcc226d7b29d0d505a1d9b05c037c18cae9fdc24e33d3f3c1ce159097226e4fa"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-gorgias-reported-turn-scope-census.md",
+        "sha256": "73e3c541d67a07cf333c072177dd03037309c8fd350174d1dbcad2257f2e7f6e"
+      }
+    },
+    {
+      "dialogue": "greater-hippias",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_greater-hippias_0077",
+        "turn_greater-hippias_0083",
+        "turn_greater-hippias_0085",
+        "turn_greater-hippias_0087",
+        "turn_greater-hippias_0089",
+        "turn_greater-hippias_0091",
+        "turn_greater-hippias_0093",
+        "turn_greater-hippias_0095",
+        "turn_greater-hippias_0105",
+        "turn_greater-hippias_0109",
+        "turn_greater-hippias_0111",
+        "turn_greater-hippias_0113",
+        "turn_greater-hippias_0117",
+        "turn_greater-hippias_0121",
+        "turn_greater-hippias_0123",
+        "turn_greater-hippias_0125",
+        "turn_greater-hippias_0129",
+        "turn_greater-hippias_0131",
+        "turn_greater-hippias_0133",
+        "turn_greater-hippias_0135",
+        "turn_greater-hippias_0137",
+        "turn_greater-hippias_0139",
+        "turn_greater-hippias_0145",
+        "turn_greater-hippias_0167",
+        "turn_greater-hippias_0169",
+        "turn_greater-hippias_0171",
+        "turn_greater-hippias_0173",
+        "turn_greater-hippias_0177",
+        "turn_greater-hippias_0179",
+        "turn_greater-hippias_0181",
+        "turn_greater-hippias_0183",
+        "turn_greater-hippias_0185",
+        "turn_greater-hippias_0187",
+        "turn_greater-hippias_0281",
+        "turn_greater-hippias_0283",
+        "turn_greater-hippias_0285",
+        "turn_greater-hippias_0287",
+        "turn_greater-hippias_0289",
+        "turn_greater-hippias_0291",
+        "turn_greater-hippias_0293",
+        "turn_greater-hippias_0295",
+        "turn_greater-hippias_0297",
+        "turn_greater-hippias_0351",
+        "turn_greater-hippias_0353",
+        "turn_greater-hippias_0355",
+        "turn_greater-hippias_0357"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/greater-hippias.txt",
+        "greekSourceSha256": "ccda6820c403e75c99d26a990c1c993a5f25d2ff5a2da6cef872ce204e9666b4",
+        "outerTurnIndexPath": "derived/plato/turns/greater-hippias.toon",
+        "outerTurnIndexSha256": "6809ef43af975ec38dec56b5468c179848f232f5255d68dcbceda001ead5fd5d"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-greater-hippias-reported-turn-scope-census.md",
+        "sha256": "7d0c4f5a3691de39569a850e2d0f02b3932cfd8d3ec346ceecc56fd7025b3d48"
+      }
+    },
+    {
+      "dialogue": "ion",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_ion_0089",
+        "turn_ion_0120"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/ion.txt",
+        "greekSourceSha256": "0528d703134b2f59f3db31bad84bafb320e5022e1d7660cf64d72034cb29c93d",
+        "outerTurnIndexPath": "derived/plato/turns/ion.toon",
+        "outerTurnIndexSha256": "ee3abe4fdf0a3e4a2df28dc53553c928f3e337cd1dc1803ae84537c30fcdfadb"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-ion-reported-turn-scope-census.md",
+        "sha256": "a15b5f691e0d8778c644671257626e77fa7c2016845d4ebd9b2a237069a3a290"
+      }
+    },
+    {
+      "dialogue": "laches",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_laches_0099"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/laches.txt",
+        "greekSourceSha256": "a035988ad66603bb28bb451b1b1d53131e572518198a5dbc6f78cb121d97803f",
+        "outerTurnIndexPath": "derived/plato/turns/laches.toon",
+        "outerTurnIndexSha256": "a365d1f042afa8cc5fa25a2318ac35f4f126872222d27864fdc3b2d167806669"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-laches-reported-turn-scope-census.md",
+        "sha256": "1bf498624bd5dac9c290e96ff90a4f92b34f5c9781774128642535ec08000e17"
+      }
+    },
+    {
+      "dialogue": "laws",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_laws_0068",
+        "turn_laws_0069",
+        "turn_laws_0104",
+        "turn_laws_0155",
+        "turn_laws_0243",
+        "turn_laws_0831",
+        "turn_laws_0881",
+        "turn_laws_0883",
+        "turn_laws_0919",
+        "turn_laws_0964",
+        "turn_laws_0966",
+        "turn_laws_0969",
+        "turn_laws_1080",
+        "turn_laws_1283",
+        "turn_laws_1351",
+        "turn_laws_1447",
+        "turn_laws_1453",
+        "turn_laws_1498",
+        "turn_laws_1499",
+        "turn_laws_1548",
+        "turn_laws_1565",
+        "turn_laws_1622",
+        "turn_laws_1839"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/laws.txt",
+        "greekSourceSha256": "43aa8380889539e393dbb536684bcbc71d797d0780a3c62c9bf2436068cdd2f7",
+        "outerTurnIndexPath": "derived/plato/turns/laws.toon",
+        "outerTurnIndexSha256": "1e519d1b3060586854860f57e4938fbc5cb727b9f9b69a206331076bfa2cdd1e"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-laws-reported-turn-scope-census.md",
+        "sha256": "8edc31397b0040db19a8293aa4ef75134328908d7b93de68f7ee433093b92b69"
+      }
+    },
+    {
+      "dialogue": "lesser-hippias",
+      "disposition": "none",
+      "outerTurnIds": [],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/lesser-hippias.txt",
+        "greekSourceSha256": "11d5520c34a07fc79819098712da4b01d2be4867fd056b3d3b82ed61760bc8cb",
+        "outerTurnIndexPath": "derived/plato/turns/lesser-hippias.toon",
+        "outerTurnIndexSha256": "03620a2de523e189b15a008601cfb7440ff594273610cf585128eb193b9d278b"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-lesser-hippias-reported-turn-scope-census.md",
+        "sha256": "79379544a6b0fb7411e156f821ab473512b618edfe1e0facfbe81fb6cc154bf9"
+      }
+    },
+    {
+      "dialogue": "lysis",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_lysis_0001"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/lysis.txt",
+        "greekSourceSha256": "c52fbd7394b742fa245bd9f8a6c69dc14c2aa2a0569ecef78bcbe51b469a2d35",
+        "outerTurnIndexPath": "derived/plato/turns/lysis.toon",
+        "outerTurnIndexSha256": "acb69848a3e34f6465b67dadcd76009bd5a27b6195f4feb4ba47833c6cf67534"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-lysis-reported-turn-scope-census.md",
+        "sha256": "7121b59ca5b850c0b75e1867c7afeb89ce2b8420b387ed80222a7ff0bb855eea"
+      }
+    },
+    {
+      "dialogue": "menexenus",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_menexenus_0025",
+        "turn_menexenus_0026",
+        "turn_menexenus_0027",
+        "turn_menexenus_0028",
+        "turn_menexenus_0029",
+        "turn_menexenus_0030",
+        "turn_menexenus_0031",
+        "turn_menexenus_0032",
+        "turn_menexenus_0033",
+        "turn_menexenus_0034",
+        "turn_menexenus_0035",
+        "turn_menexenus_0036",
+        "turn_menexenus_0037",
+        "turn_menexenus_0038"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/menexenus.txt",
+        "greekSourceSha256": "e00d4e5ac901940feeef9a30c1a331ce849e931ebc8cc96765f0e1a36b9ae007",
+        "outerTurnIndexPath": "derived/plato/turns/menexenus.toon",
+        "outerTurnIndexSha256": "a6229abbae81dd653eb336c47774d4b910d728cfc49d384e09718095843d7937"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-menexenus-reported-turn-scope-census.md",
+        "sha256": "d74590630b6d6a5af3cd85a727efc891c3c2e3d0c4dbc6d277abdd876d68f1ed"
+      }
+    },
+    {
+      "dialogue": "meno",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_meno_0003",
+        "turn_meno_0056",
+        "turn_meno_0062",
+        "turn_meno_0066",
+        "turn_meno_0072",
+        "turn_meno_0361",
+        "turn_meno_0478",
+        "turn_meno_0566"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/meno.txt",
+        "greekSourceSha256": "91e9583fb58eaaee47228c2ad2c917b40c6a9cdd864727cfc1ef6e561ef79f99",
+        "outerTurnIndexPath": "derived/plato/turns/meno.toon",
+        "outerTurnIndexSha256": "c9c5aafaa857b23b3fa214279a3d9a1ecb78170a8368f5469c97716236dc65ea"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-meno-reported-turn-scope-census.md",
+        "sha256": "96fa80e5ed8a741dc91dde9c994af8f1fbe070fd7be86e42ee44c224acdb2d8a"
+      }
+    },
+    {
+      "dialogue": "parmenides",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_parmenides_0001"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/parmenides.txt",
+        "greekSourceSha256": "63e6839a3de2e45238e2d427cb0a2310e4d54f0ddc1484068cc729e61240f1f2",
+        "outerTurnIndexPath": "derived/plato/turns/parmenides.toon",
+        "outerTurnIndexSha256": "c1bfc9f484b4754590e47e16e0dfa83b6b6c5c3077349701d52c4ac67f5b93c4"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-parmenides-reported-turn-scope-census.md",
+        "sha256": "7dce0f11c154852c49ea6eb175a9d937b4f9caade127ef9a5a7aa014e47f2d45"
+      }
+    },
+    {
+      "dialogue": "phaedo",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_phaedo_0027",
+        "turn_phaedo_0031",
+        "turn_phaedo_0035"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/phaedo.txt",
+        "greekSourceSha256": "b98ace9434b77dcf308b1bd617ef54e0da6ec26a7b7aaad06bc6cad3fa8fe4a7",
+        "outerTurnIndexPath": "derived/plato/turns/phaedo.toon",
+        "outerTurnIndexSha256": "57886fb23f485b04465606c4c82071357299a00e5e2138af62b79c09c6d5f847"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-phaedo-reported-turn-scope-census.md",
+        "sha256": "fb640a68b43c7ec2d4e6d92d6957ab18d404872cd90301c28e9141759127d2e5"
+      }
+    },
+    {
+      "dialogue": "phaedrus",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_phaedrus_0039",
+        "turn_phaedrus_0040",
+        "turn_phaedrus_0041",
+        "turn_phaedrus_0042",
+        "turn_phaedrus_0069",
+        "turn_phaedrus_0070",
+        "turn_phaedrus_0074",
+        "turn_phaedrus_0075",
+        "turn_phaedrus_0076",
+        "turn_phaedrus_0077",
+        "turn_phaedrus_0160",
+        "turn_phaedrus_0201",
+        "turn_phaedrus_0225",
+        "turn_phaedrus_0276",
+        "turn_phaedrus_0278",
+        "turn_phaedrus_0282",
+        "turn_phaedrus_0286",
+        "turn_phaedrus_0319",
+        "turn_phaedrus_0331",
+        "turn_phaedrus_0348",
+        "turn_phaedrus_0349"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/phaedrus.txt",
+        "greekSourceSha256": "89a2de0f0f71b79700d2bfa84ab29ffad10576c333949cc8ec08fc152667261c",
+        "outerTurnIndexPath": "derived/plato/turns/phaedrus.toon",
+        "outerTurnIndexSha256": "99106f1748e8506a919c4ea341527c9d2e608ebced3c1ee87089fb37093942ee"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-phaedrus-reported-turn-scope-census.md",
+        "sha256": "a572a60bae1982b616f50e013068b6bf51f70ee559784990a06e765f9b82038c"
+      }
+    },
+    {
+      "dialogue": "philebus",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_philebus_0540",
+        "turn_philebus_1070",
+        "turn_philebus_1072",
+        "turn_philebus_1074",
+        "turn_philebus_1075"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/philebus.txt",
+        "greekSourceSha256": "8973a4d14e3967d651f18b18ae6fb5ca00f938b464bf8e3a47a1d66b2ade3807",
+        "outerTurnIndexPath": "derived/plato/turns/philebus.toon",
+        "outerTurnIndexSha256": "848bc6c8fbbd31a57d1b35434537a16ab08d19caa50c79ca9d6d3159e8419fba"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-philebus-reported-turn-scope-census.md",
+        "sha256": "bf99801b45000b23fbc501835b2ecafb03cce519c0de8279b051ee757fbb5c24"
+      }
+    },
+    {
+      "dialogue": "protagoras",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_protagoras_0022",
+        "turn_protagoras_0023",
+        "turn_protagoras_0024",
+        "turn_protagoras_0025",
+        "turn_protagoras_0026",
+        "turn_protagoras_0028",
+        "turn_protagoras_0029",
+        "turn_protagoras_0030",
+        "turn_protagoras_0031",
+        "turn_protagoras_0032",
+        "turn_protagoras_0033",
+        "turn_protagoras_0034",
+        "turn_protagoras_0035",
+        "turn_protagoras_0036",
+        "turn_protagoras_0037",
+        "turn_protagoras_0038",
+        "turn_protagoras_0039",
+        "turn_protagoras_0040",
+        "turn_protagoras_0041",
+        "turn_protagoras_0042",
+        "turn_protagoras_0043",
+        "turn_protagoras_0044",
+        "turn_protagoras_0045",
+        "turn_protagoras_0046",
+        "turn_protagoras_0047",
+        "turn_protagoras_0048",
+        "turn_protagoras_0049",
+        "turn_protagoras_0050",
+        "turn_protagoras_0051",
+        "turn_protagoras_0052",
+        "turn_protagoras_0053",
+        "turn_protagoras_0054",
+        "turn_protagoras_0055",
+        "turn_protagoras_0056",
+        "turn_protagoras_0057",
+        "turn_protagoras_0058",
+        "turn_protagoras_0059",
+        "turn_protagoras_0060",
+        "turn_protagoras_0061",
+        "turn_protagoras_0062",
+        "turn_protagoras_0063",
+        "turn_protagoras_0064",
+        "turn_protagoras_0065",
+        "turn_protagoras_0066",
+        "turn_protagoras_0067",
+        "turn_protagoras_0068",
+        "turn_protagoras_0069",
+        "turn_protagoras_0070",
+        "turn_protagoras_0071",
+        "turn_protagoras_0072",
+        "turn_protagoras_0073",
+        "turn_protagoras_0074"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/protagoras.txt",
+        "greekSourceSha256": "f2890c5fd07c6fa1f6219a938be81ca3eda1a55d5bd3d41ac7a1169a8e43d99b",
+        "outerTurnIndexPath": "derived/plato/turns/protagoras.toon",
+        "outerTurnIndexSha256": "c35d612db3346447e8c4152742e1fdf36476819612db9c7e0c855fbe5e55b5de"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-protagoras-reported-turn-scope-census.md",
+        "sha256": "fee97df5d763eae364da4f248497305e2af94e5807171a1fecee6a495bde5572"
+      }
+    },
+    {
+      "dialogue": "republic",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_republic_0001"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/republic.txt",
+        "greekSourceSha256": "ce086559a011ff7682319eec28680e9f4f6600631a698c8cfa3653dd01aa5244",
+        "outerTurnIndexPath": "derived/plato/turns/republic.toon",
+        "outerTurnIndexSha256": "147bf0f6da8ba86c7611801e314f9aa5649e1bb72be9b4a9c868750f6eb01af1"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-republic-reported-turn-scope-census.md",
+        "sha256": "2ead8bc9d66b1fa7d330ccbb6b4e65d87695ef825b1daa9efd9bf45972550d69"
+      }
+    },
+    {
+      "dialogue": "sophist",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_sophist_0592",
+        "turn_sophist_0956"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/sophist.txt",
+        "greekSourceSha256": "4e856d5f7b7c4d870fd0fbce7c61060fd9c85e6c708ba39d6f18b329cb4ebbeb",
+        "outerTurnIndexPath": "derived/plato/turns/sophist.toon",
+        "outerTurnIndexSha256": "34a515b5accf12d084e3605380f0866b27e3a6ff17b84656a0951f135ad1fd6b"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-sophist-reported-turn-scope-census.md",
+        "sha256": "0bab8307fa9342aaefe4f96022f95b8f312a0b24c46ce7cc961db947e9817417"
+      }
+    },
+    {
+      "dialogue": "statesman",
+      "disposition": "none",
+      "outerTurnIds": [],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/statesman.txt",
+        "greekSourceSha256": "f31b15a667c9c31b5b2d1e138310af71f442dabc65d284348733dae467ef85e9",
+        "outerTurnIndexPath": "derived/plato/turns/statesman.toon",
+        "outerTurnIndexSha256": "3b6362e0b18d3d24fd62ae447033955bdaf69e79cf670cde6001d5ccde47ff2c"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-statesman-reported-turn-scope-census.md",
+        "sha256": "996d58d8bcf9150cc83a50427f865d3502f6666557e615a9049da7cfd28dafab"
+      }
+    },
+    {
+      "dialogue": "symposium",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_symposium_0001",
+        "turn_symposium_0005"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/symposium.txt",
+        "greekSourceSha256": "260b7c575fc40bf88e74f793ebaccb48e536702b26d8780c111190e01a3447a7",
+        "outerTurnIndexPath": "derived/plato/turns/symposium.toon",
+        "outerTurnIndexSha256": "6d86dd3d2f808cd29099ba89af1c7fab6acd44d3362db13078789d37b95f8329"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-symposium-reported-turn-scope-census.md",
+        "sha256": "4b045e89e8ad2859a0212d6d4f01f3ddf2eebb2a0422448d3738e77217dfb5c9"
+      }
+    },
+    {
+      "dialogue": "theaetetus",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_theaetetus_0189",
+        "turn_theaetetus_0234",
+        "turn_theaetetus_0292",
+        "turn_theaetetus_0302",
+        "turn_theaetetus_0351",
+        "turn_theaetetus_0353",
+        "turn_theaetetus_0355",
+        "turn_theaetetus_0356",
+        "turn_theaetetus_0357",
+        "turn_theaetetus_0514",
+        "turn_theaetetus_0606",
+        "turn_theaetetus_0729",
+        "turn_theaetetus_0731",
+        "turn_theaetetus_0733",
+        "turn_theaetetus_0812",
+        "turn_theaetetus_0853"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/theaetetus.txt",
+        "greekSourceSha256": "96b88e1f11fdcd0b3b5318857d95dfb7aa66825e786b3f27460f8043688df0ee",
+        "outerTurnIndexPath": "derived/plato/turns/theaetetus.toon",
+        "outerTurnIndexSha256": "7521a9787c1c43eefc9102d9dc606a9980eee129ce0a17d15634810c3263f12b"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-theaetetus-reported-turn-scope-census.md",
+        "sha256": "5e123ad7e698230fdcd84c17ff01605ec9150f5db8a0b28e10cf898ba24e1d6c"
+      }
+    },
+    {
+      "dialogue": "timaeus",
+      "disposition": "required",
+      "outerTurnIds": [
+        "turn_timaeus_0037",
+        "turn_timaeus_0038",
+        "turn_timaeus_0039",
+        "turn_timaeus_0040",
+        "turn_timaeus_0041",
+        "turn_timaeus_0062"
+      ],
+      "inputs": {
+        "greekSourcePath": "raw/plato/greek/timaeus.txt",
+        "greekSourceSha256": "ba7a86cdfb7df9582d07ce98814a270baa0412c4bd8eeeaa361d74db43d2a53f",
+        "outerTurnIndexPath": "derived/plato/turns/timaeus.toon",
+        "outerTurnIndexSha256": "0c3ebdfe987f3224455427bd3bcd9ce9faeafb2740968e421a0bf4a01fc05165"
+      },
+      "reviewReceipt": {
+        "path": "wiki/review/2026-07-26-timaeus-reported-turn-scope-census.md",
+        "sha256": "c46b7d8a92de658bed3abede182d2fca3a3b0d4ecc5650257f1619ffe4adacd6"
+      }
+    }
+  ]
+}

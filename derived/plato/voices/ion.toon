@@ -1,0 +1,13 @@
+dialogue: ion
+ledger_path: wiki/voices/ion.md
+ledger_sha256: 0a578426354e5d24a10ae7e4d1d1a5c00d05224853ae5759c95249df6788ea73
+source_path: raw/plato/greek/ion.txt
+source_sha256: 0528d703134b2f59f3db31bad84bafb320e5022e1d7660cf64d72034cb29c93d
+turn_index_path: derived/plato/turns/ion.toon
+turn_index_sha256: ee3abe4fdf0a3e4a2df28dc53553c928f3e337cd1dc1803ae84537c30fcdfadb
+voices[4]:
+  voice_id       | outer_turn_id | start_char | end_char | depth | voice_chain | resolution | evidence_kinds                  | evidence_count
+  voice_ion_0001 | turn_ion_0089 | 14609      | 14909    | 1     | ΙΩΝ.        | resolved   | printed_siglum                  | 1
+  voice_ion_0003 | turn_ion_0120 | 17471      | 18752    | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1
+  voice_ion_0002 | turn_ion_0089 | 14614      | 14908    | 2     | ΙΩΝ.>ΝΕΣ.   | resolved   | named_reporting_formula         | 1
+  voice_ion_0004 | turn_ion_0120 | 17513      | 17757    | 2     | ΣΩ.>ΙΩΝ.    | resolved   | person_marked_reporting_formula | 1

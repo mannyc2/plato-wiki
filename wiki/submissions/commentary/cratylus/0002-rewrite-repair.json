@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "cratylus",
+  "source_path": "scratch/commentary/rewrite-repairs/cratylus/round2.json",
+  "source_sha256": "8995322857be2d9af634bf018c7dcda3d671cc83bb1aba1351e08cc7ce0e1d00",
+  "target_path": "wiki/commentary/cratylus.md",
+  "target_sha256_before": "6a8b9ef74dd58038dbad69af33b6f8fe4cf11c72d7683b853b02abfbc9480a3b",
+  "target_sha256_after": "59cbf2458bd72646f3c52ede8931505ec0abb350cf161d84bb2120e1efc3b349",
+  "applied_at": "2026-08-21T16:18:42.752Z",
+  "applied_ids": [
+    "comm_cratylus_0031"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "cratylus",
+    "ledger": {
+      "path": "wiki/commentary/cratylus.md",
+      "sha256": "6a8b9ef74dd58038dbad69af33b6f8fe4cf11c72d7683b853b02abfbc9480a3b"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/cratylus/0001-rewrite-batch.json",
+      "sha256": "6507648601e7ddff5f35e423996be7c03a7fc45a88f30b2268df6bad3a23e170"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-cratylus-0001-rewrite-batch-acceptance.md",
+      "sha256": "6e4d48cecf38a17909eb2d73d804cfb5cd08d65f3145e7efd35303c279c23feb"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-cratylus-round1",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_cratylus_0031",
+          "finding": "Literal canonical citation identifiers in the spoken body create unnatural citation-shaped prose and must remain only in cites."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-cratylus-round2",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_cratylus_0031"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_cratylus_0031",
+        "title": "",
+        "body": "Socrates gives the body several possible readings at once. It can be heard as the soul’s tomb, as a sign through which the soul signifies, or—on the Orphic account he finds most persuasive—as an enclosure that keeps the soul until its debt is paid. The passage leaves that preference qualified: alternatives remain audible, rather than becoming a settled doctrine.",
+        "cites": {
+          "observations": [
+            "obs_cratylus_0092",
+            "obs_cratylus_0328"
+          ],
+          "claims": [
+            "claim_cratylus_0025"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_cratylus_0031",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0031\nsource_work: Cratylus\nblock_kind: notice\nplacement: after\nstephanus_span: 400b-400c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 400b-400c\n  start_marker: 400b\n  end_marker: 400c\n  start_char: 32885\n  end_char: 33845\n  text_sha256: \"891c8d86c717507d8f70fb69883baddaa16f22ea9ba61566686731d09dd3ba81\"\nbody: \"The force of this passage lies not in a refusal to choose, but in a qualified preference. Socrates reports three ways to hear σῶμα: as the soul’s tomb, as its sign, and, in the Orphic account, as an enclosure that holds the soul until its debt is paid. He says that last account seems most likely to explain the name [obs_cratylus_0092; claim_cratylus_0025]. One way to read the sequence is as a test of interpretive restraint: several pictures remain in view, but a reported tradition is not thereby turned into Socrates’ settled doctrine.\"\ncites:\n  observations: [\"obs_cratylus_0092\"]\n  claims: [\"claim_cratylus_0025\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    }
+  ]
+}

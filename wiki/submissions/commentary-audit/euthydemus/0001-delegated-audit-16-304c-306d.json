@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-delegated-audit-16-304c-306d",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "euthydemus",
+  "unit_key": "16-304c-306d",
+  "source_path": "scratch/commentary/delegated-audits/euthydemus/16-304c-306d.json",
+  "source_sha256": "5c737331394148fdfea1c616a7dee63d80c8eab5890fe19eae9e33c7afc718b0",
+  "target_path": "wiki/submissions/commentary-audit/euthydemus/16-304c-306d.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "a5ef86482b6482e9e5534e34e2e80520e11947ee7e49a435ef4ea8c69f926493",
+  "applied_at": "2026-08-24T01:15:36.771Z",
+  "applied_ids": [
+    "comm_euthydemus_0016"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "euthydemus",
+    "unit_key": "16-304c-306d",
+    "job": {
+      "job_id": "audit:euthydemus:16-304c-306d",
+      "input_sha256": "bb8c6f3f288e92ea59740316ee142ce0528726c984fd13b0468dbd649c52a3cd",
+      "audit_brief_path": "scratch/commentary/audit-briefs/euthydemus/16-304c-306d.md",
+      "audit_brief_sha256": "66c22921ee165d2832e3ff050fc1869021fff37f93c7f23d5f5cd61bf0916bdf",
+      "output_path": "scratch/commentary/audits/euthydemus/16-304c-306d.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/euthydemus/16-304c-306d.output.json",
+    "output_sha256": "a5ef86482b6482e9e5534e34e2e80520e11947ee7e49a435ef4ea8c69f926493",
+    "provenance": {
+      "auditor": "batch-a-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

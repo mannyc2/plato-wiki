@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0008-structural-remediation-30-515c-517a",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "gorgias",
+  "unit_key": "30-515c-517a",
+  "source_path": "scratch/commentary/audits/gorgias/30-515c-517a.json",
+  "source_sha256": "beb93a76a1a0525df7d06fcf6c7f465b4a5b707dee3021bb6452b44ca23c53a9",
+  "target_path": "wiki/commentary/gorgias.md",
+  "target_sha256_before": "57ae650d6d2fe32a2e906c7e92d13771e91617db6b12e9407cdc87dc2e5d1829",
+  "target_sha256_after": "418fe381d35e51f4c7b6453dd5cc6bb65753d7f438cc7dfe9f5c49710667c5da",
+  "applied_at": "2026-08-23T22:32:40.975Z",
+  "applied_ids": [
+    "comm_gorgias_0030"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "gorgias",
+      "unitKey": "30-515c-517a",
+      "sectionId": "comm_gorgias_0030",
+      "auditOutputPath": "scratch/commentary/audits/gorgias/30-515c-517a.json",
+      "auditOutputSha256": "beb93a76a1a0525df7d06fcf6c7f465b4a5b707dee3021bb6452b44ca23c53a9",
+      "expectedLedgerSha256": "57ae650d6d2fe32a2e906c7e92d13771e91617db6b12e9407cdc87dc2e5d1829",
+      "expectedAttributionSha256": "65e8ab9c5d06e8b9442d2459b021ff042594d56279788b4c379455286ee7c50f",
+      "expectedEnglishSha256": "bd3069d96890236d887119540e141baf6daf4b8cbebaeb8a2b744c38063154f4",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_gorgias_0030"
+        }
+      ],
+      "reviewer": "lane-b-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna structural review confirms conservative rejection of audited remove findings and split originals; delegated Luna review only."
+    },
+    "audit_output_path": "scratch/commentary/audits/gorgias/30-515c-517a.json",
+    "audit_output_sha256": "beb93a76a1a0525df7d06fcf6c7f465b4a5b707dee3021bb6452b44ca23c53a9",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_gorgias_0030",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

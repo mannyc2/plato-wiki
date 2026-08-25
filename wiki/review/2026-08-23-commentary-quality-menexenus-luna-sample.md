@@ -1,0 +1,27 @@
+# Commentary quality-audit acceptance
+
+dialogue: menexenus
+decision: accepted
+reviewer: manifest-batch-2-delegated-luna-reviewer-20260823
+reviewed_on: 2026-08-23
+rationale: All 9 active accepted IDs sampled in ledger order; prose, Greek source, cited evidence, placement, and audit checks pass with no defects.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sampled_commentary_ids:
+- comm_menexenus_0001
+- comm_menexenus_0002
+- comm_menexenus_0003
+- comm_menexenus_0004
+- comm_menexenus_0007
+- comm_menexenus_0008
+- comm_menexenus_0009
+- comm_menexenus_0013
+- comm_menexenus_0014
+predecessor_manifest_path: wiki/commentary-audits/menexenus.json
+predecessor_manifest_sha256: a1d2d2c9a6ace54a377ba6f2bebe292a8699f1146cd1e5683de2d37f0e3a6697
+predecessor_manifest_history_path: wiki/commentary-audits/history/menexenus/a1d2d2c9a6ace54a377ba6f2bebe292a8699f1146cd1e5683de2d37f0e3a6697.json
+predecessor_manifest_history_sha256: a1d2d2c9a6ace54a377ba6f2bebe292a8699f1146cd1e5683de2d37f0e3a6697
+predecessor_review_note_path: wiki/review/2026-08-21-commentary-quality-menexenus-luna-sample.md
+predecessor_review_note_sha256: c67d2011bcb342a3c942f15c0a5f4f294d755747b21ff00ed8cc959f9e6ddcde
+predecessor_review_note_history_path: wiki/review/commentary-quality-history/menexenus/c67d2011bcb342a3c942f15c0a5f4f294d755747b21ff00ed8cc959f9e6ddcde.md
+predecessor_review_note_history_sha256: c67d2011bcb342a3c942f15c0a5f4f294d755747b21ff00ed8cc959f9e6ddcde

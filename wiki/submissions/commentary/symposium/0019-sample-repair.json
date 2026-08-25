@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "submission_id": "0019-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "symposium",
+  "source_path": "scratch/commentary/sample-repairs/symposium/0003-round5.json",
+  "source_sha256": "17e7522aaa36aa6890a999db7df54cee76464b063549a48c9d8cf7e99eef77be",
+  "target_path": "wiki/commentary/symposium.md",
+  "target_sha256_before": "c8bf1a6e4e35ab90c02f4858aa2f304b846e6d07faf9fdcc0e555de14fdcd48b",
+  "target_sha256_after": "3814c6e4b13834ec5c09b14592dabd8f382b61497c821fb604f66b2625f5a7ee",
+  "applied_at": "2026-08-24T00:01:31.340Z",
+  "applied_ids": [
+    "comm_symposium_0003"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "symposium",
+    "ledger": {
+      "path": "wiki/commentary/symposium.md",
+      "sha256": "c8bf1a6e4e35ab90c02f4858aa2f304b846e6d07faf9fdcc0e555de14fdcd48b"
+    },
+    "sample_review": {
+      "reviewer": "sample-c-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna sample review found one bounded evidence defect in the action-and-praise orientation.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_symposium_0002",
+        "comm_symposium_0003",
+        "comm_symposium_0004",
+        "comm_symposium_0005",
+        "comm_symposium_0006",
+        "comm_symposium_0007",
+        "comm_symposium_0009",
+        "comm_symposium_0013",
+        "comm_symposium_0016",
+        "comm_symposium_0020",
+        "comm_symposium_0021",
+        "comm_symposium_0032",
+        "comm_symposium_0036",
+        "comm_symposium_0042",
+        "comm_symposium_0048"
+      ],
+      "failed_commentary_ids": [
+        "comm_symposium_0003"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_symposium_0003",
+        "title": "Love Requires a Test",
+        "body": "The question is not whether an action is performed, but whether it deserves praise. Pausanias makes the same distinction for love: an action is neither noble nor shameful in itself, and its manner of performance determines how it is judged; only the love that prompts noble action merits encomium.",
+        "cites": {
+          "observations": [
+            "obs_symposium_0024"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": [
+            "definition_ladder/criterion_for_evaluative_classification"
+          ]
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_symposium_0003",
+      "body": "```yaml\ncommentary_id: comm_symposium_0003\nsource_work: Symposium\nblock_kind: section\nplacement: before\ntitle: \"Love Requires a Test\"\nstephanus_span: 180c-185c\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 180c-185c\n  start_marker: 180c\n  end_marker: 185c\n  start_char: 16929\n  end_char: 27184\n  text_sha256: \"aaac41ec46388ce4e0a75a20f9210b9711b1d680e36c6f6e547f23b1b21f4274\"\nbody: \"Pausanias makes the praise of Love depend on discrimination: the word covers more than one kind of desire, and the important question is what each kind seeks. Admiration for love is therefore not enough until its aim has been identified.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

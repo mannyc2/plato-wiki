@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "status": "accepted-deterministic-cast-decision",
+  "policy": "cast-auto-accept-v1",
+  "acceptedAt": "2026-07-15",
+  "characterId": "clinias-of-crete",
+  "sourceCharacterId": "clinias-of-crete",
+  "candidateSelection": "highest-ranked-passing",
+  "rankingPolicy": "mean-cosine-desc/minimum-window-cosine-desc/ordinary-word-errors-asc/speech-rate-distance-from-3-asc/seed-asc",
+  "inputs": {
+    "cast": {
+      "path": "audio/cast.json",
+      "sha256": "1512febad323afd211d0b0969dfd7d6e2601b91149bcb535f873b7d76e6753cc"
+    },
+    "characters": {
+      "path": "audio/characters.json",
+      "sha256": "3bb880509eadf402d18f3a1e57a9abfacc5722ab62eedc2b7dedce14ff31e24d"
+    },
+    "referenceSources": {
+      "path": "audio/reference-sources.json",
+      "sha256": "c65f15e02a23734020a5bdb6100c1d45abc50b13bcab9b0cd60cc52145f6440e"
+    },
+    "referenceSidecar": {
+      "path": "scratch/audio-references/clinias-of-crete/uddowL-Bw_M-000148640-000157200-50e38aa2f880.json",
+      "sha256": "ad4cca6de84994afec84a72a5506ee126538b004a9bf2fd5114a81502b2b52f6"
+    },
+    "speakerPurity": {
+      "path": "scratch/audio-narrative-cue-references/cast-candidate-reports/laws.report.json",
+      "sha256": "06cde1700f4d853f90c3db6cd1568da06fe043b322b10cbaa831d2f6e4ddef4f"
+    },
+    "cloneManifest": {
+      "path": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/audition-manifest.json",
+      "sha256": "62d16cd86aa86f6e1e03c940d3167e111c48a4b9eaad4b619c93b7e04225fd39"
+    },
+    "asr": {
+      "path": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/asr-qa.json",
+      "sha256": "c4ac0aa9b3bdee161c319826c2d4c909f4db01f19acf6e723f0839a02871c1a1"
+    },
+    "acoustic": {
+      "path": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/speaker-ranking.json",
+      "sha256": "661d9bcb0aaf4700576c8cba7dd9d714d8cc3635c6c4e10c5e382cd49d8f0c55"
+    },
+    "referenceAsrAdjudication": {
+      "path": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/reference-asr-adjudication.json",
+      "sha256": "0843cdc1488c89f58e13f8fb0d8b581e55ee3c81071d9620c18394f6f0bc91b7"
+    }
+  },
+  "reference": {
+    "sourceUrl": "https://www.youtube.com/watch?v=uddowL-Bw_M",
+    "sourceRegistryPath": "audio/reference-sources.json",
+    "sourceRegistrySha256": "c65f15e02a23734020a5bdb6100c1d45abc50b13bcab9b0cd60cc52145f6440e",
+    "sourceDialogue": "laws",
+    "sourceVideoId": "uddowL-Bw_M",
+    "sourceCharacterId": "clinias-of-crete",
+    "videoStartSeconds": 148.64,
+    "videoEndSeconds": 157.2,
+    "localDurationSeconds": 8.56,
+    "localSha256": "b5d009880490306524e86f12d6ffc01ee9b393ff5050f7fc3cd414a23ca2c199",
+    "relativePath": "scratch/audio-references/clinias-of-crete/uddowL-Bw_M-000148640-000157200-50e38aa2f880.wav",
+    "promptText": "Yes, stranger. And if we proceed onward, we shall come to groves of cypresses which are of rare height and beauty,",
+    "referenceAsr": {
+      "decision": "independent-large-v3-zero-error",
+      "primaryExpectedWords": 21,
+      "primaryOrdinaryWordErrors": 1,
+      "primaryOrdinaryWordErrorRate": 0.047619047619047616,
+      "primaryEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/asr-qa.json",
+      "primaryEvidenceSha256": "c4ac0aa9b3bdee161c319826c2d4c909f4db01f19acf6e723f0839a02871c1a1",
+      "sourceAgreementEvidencePath": "scratch/audio-narrative-cue-references/cast-candidate-reports/laws.report.json",
+      "sourceAgreementEvidenceSha256": "06cde1700f4d853f90c3db6cd1568da06fe043b322b10cbaa831d2f6e4ddef4f",
+      "sourceAgreementSha256": "522e60e0985b0f3b660d102278717f303af8934de05862f679bd7ce688b66095",
+      "adjudicationEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/reference-asr-adjudication.json",
+      "adjudicationEvidenceSha256": "0843cdc1488c89f58e13f8fb0d8b581e55ee3c81071d9620c18394f6f0bc91b7",
+      "independentExpectedWords": 21,
+      "independentOrdinaryWordErrors": 0,
+      "independentOrdinaryWordErrorRate": 0,
+      "independentEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/reference-asr-independent.json",
+      "independentEvidenceSha256": "363ba359828dfb8a9571c1610c3ec4b54cc2b43c893c8931454b5e99bb24e9df",
+      "independentModel": {
+        "repository": "deepdml/faster-whisper-large-v3-turbo-ct2",
+        "revision": "44cbbd1adefe7387c83df88963a6d9ac4c9adea5"
+      }
+    },
+    "speakerPurityEvidencePath": "scratch/audio-narrative-cue-references/cast-candidate-reports/laws.report.json",
+    "speakerPurityEvidenceSha256": "06cde1700f4d853f90c3db6cd1568da06fe043b322b10cbaa831d2f6e4ddef4f",
+    "speakerPurityProofRecordId": "narrative-cue-c9f9c9b20c5daae5ab17858f",
+    "speakerPuritySourceAgreementSha256": "522e60e0985b0f3b660d102278717f303af8934de05862f679bd7ce688b66095",
+    "speakerPurityMethod": "jowett-caption-turn-alignment-v1",
+    "dominantSpeakerCoverage": 1,
+    "competingSpeakerCoverage": 0,
+    "uncoveredSpeakerCoverage": 0
+  },
+  "gates": {
+    "referenceDuration": {
+      "minimumSeconds": 3,
+      "maximumSeconds": 15,
+      "maximumIntervalDeltaSeconds": 0.05
+    },
+    "speakerPurity": {
+      "minimumDominantCoverage": 0.95,
+      "maximumCompetingCoverage": 0.02,
+      "maximumUncoveredCoverage": 0.03
+    },
+    "asrFidelity": {
+      "minimumReferenceExpectedWords": 8,
+      "maximumReferenceOrdinaryWordErrors": 0,
+      "maximumReferenceOrdinaryWordErrorRate": 0,
+      "referenceFailureAdjudication": "exact-source-agreement-plus-pinned-independent-large-v3-zero-v1",
+      "minimumExpectedWords": 40,
+      "maximumOrdinaryWordErrors": 0,
+      "maximumOrdinaryWordErrorRate": 0
+    },
+    "acousticConsistency": {
+      "minimumMeanCosineSimilarity": 0.85,
+      "minimumWindowCosineSimilarity": 0.8
+    },
+    "signalSafety": {
+      "maximumClippedSamples": 0,
+      "maximumTruePeakDbtp": 0,
+      "maximumPeakAmplitude": 0.9999
+    },
+    "auditionDuration": {
+      "minimumSeconds": 8,
+      "maximumSeconds": 60,
+      "minimumWordsPerSecond": 1.5,
+      "maximumWordsPerSecond": 4.5
+    }
+  },
+  "candidates": [
+    {
+      "seed": 42,
+      "file": "clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed42.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed42.wav",
+        "sha256": "ce9f64dc3f219206dc84824baa570d47e55b5487a4483b1e00f273a114545fea",
+        "durationSeconds": 25.6,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/asr-qa.json",
+        "asrEvidenceSha256": "c4ac0aa9b3bdee161c319826c2d4c909f4db01f19acf6e723f0839a02871c1a1",
+        "meanSpeakerCosineSimilarity": 0.880249559879303,
+        "minimumWindowSpeakerCosineSimilarity": 0.8655384182929993,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/speaker-ranking.json",
+        "acousticEvidenceSha256": "661d9bcb0aaf4700576c8cba7dd9d714d8cc3635c6c4e10c5e382cd49d8f0c55",
+        "clippedSamples": 0,
+        "truePeakDbtp": -2.6,
+        "peakAmplitude": 0.73736572265625
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.880249559879303,
+        -0.8655384182929993,
+        0,
+        0.5,
+        42
+      ],
+      "passingRank": 4
+    },
+    {
+      "seed": 43,
+      "file": "clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed43.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed43.wav",
+        "sha256": "8b7039f03aa8d43a73dae99f1cc9e9c11e500de91beac8312ab560323fa3b292",
+        "durationSeconds": 23.52,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/asr-qa.json",
+        "asrEvidenceSha256": "c4ac0aa9b3bdee161c319826c2d4c909f4db01f19acf6e723f0839a02871c1a1",
+        "meanSpeakerCosineSimilarity": 0.871810515721639,
+        "minimumWindowSpeakerCosineSimilarity": 0.8611850142478943,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/speaker-ranking.json",
+        "acousticEvidenceSha256": "661d9bcb0aaf4700576c8cba7dd9d714d8cc3635c6c4e10c5e382cd49d8f0c55",
+        "clippedSamples": 0,
+        "truePeakDbtp": -5.1,
+        "peakAmplitude": 0.554718017578125
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.871810515721639,
+        -0.8611850142478943,
+        0,
+        0.2789115646258504,
+        43
+      ],
+      "passingRank": 7
+    },
+    {
+      "seed": 44,
+      "file": "clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed44.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed44.wav",
+        "sha256": "1ebc98a004900f621213c3d228a54bca1c51fc38ab9425cd85a61124be8b09b8",
+        "durationSeconds": 25.92,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/asr-qa.json",
+        "asrEvidenceSha256": "c4ac0aa9b3bdee161c319826c2d4c909f4db01f19acf6e723f0839a02871c1a1",
+        "meanSpeakerCosineSimilarity": 0.8765790661176046,
+        "minimumWindowSpeakerCosineSimilarity": 0.8661646246910095,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/speaker-ranking.json",
+        "acousticEvidenceSha256": "661d9bcb0aaf4700576c8cba7dd9d714d8cc3635c6c4e10c5e382cd49d8f0c55",
+        "clippedSamples": 0,
+        "truePeakDbtp": -3.8,
+        "peakAmplitude": 0.6414794921875
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8765790661176046,
+        -0.8661646246910095,
+        0,
+        0.5308641975308643,
+        44
+      ],
+      "passingRank": 6
+    },
+    {
+      "seed": 45,
+      "file": "clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed45.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed45.wav",
+        "sha256": "4095ac7997e5168477681a45fe6890a8f6900e2f28a384cf8c8aada9e5dd5e9e",
+        "durationSeconds": 26.72,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/asr-qa.json",
+        "asrEvidenceSha256": "c4ac0aa9b3bdee161c319826c2d4c909f4db01f19acf6e723f0839a02871c1a1",
+        "meanSpeakerCosineSimilarity": 0.8710072835286459,
+        "minimumWindowSpeakerCosineSimilarity": 0.8637431859970093,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/speaker-ranking.json",
+        "acousticEvidenceSha256": "661d9bcb0aaf4700576c8cba7dd9d714d8cc3635c6c4e10c5e382cd49d8f0c55",
+        "clippedSamples": 0,
+        "truePeakDbtp": -3.7,
+        "peakAmplitude": 0.64959716796875
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8710072835286459,
+        -0.8637431859970093,
+        0,
+        0.6047904191616764,
+        45
+      ],
+      "passingRank": 8
+    },
+    {
+      "seed": 46,
+      "file": "clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed46.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed46.wav",
+        "sha256": "7722b219bc06fb9a6b87e32ea09f5fdd44e6d5f0467f755ae623f06b38096063",
+        "durationSeconds": 25.76,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/asr-qa.json",
+        "asrEvidenceSha256": "c4ac0aa9b3bdee161c319826c2d4c909f4db01f19acf6e723f0839a02871c1a1",
+        "meanSpeakerCosineSimilarity": 0.8769606153170267,
+        "minimumWindowSpeakerCosineSimilarity": 0.8726657629013062,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/speaker-ranking.json",
+        "acousticEvidenceSha256": "661d9bcb0aaf4700576c8cba7dd9d714d8cc3635c6c4e10c5e382cd49d8f0c55",
+        "clippedSamples": 0,
+        "truePeakDbtp": -3.8,
+        "peakAmplitude": 0.641265869140625
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8769606153170267,
+        -0.8726657629013062,
+        0,
+        0.5155279503105592,
+        46
+      ],
+      "passingRank": 5
+    },
+    {
+      "seed": 47,
+      "file": "clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed47.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed47.wav",
+        "sha256": "1f5f45e44d57a0e763f5bb157101583ead8f87c2650a8fc9c500896028a2bd42",
+        "durationSeconds": 27.04,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/asr-qa.json",
+        "asrEvidenceSha256": "c4ac0aa9b3bdee161c319826c2d4c909f4db01f19acf6e723f0839a02871c1a1",
+        "meanSpeakerCosineSimilarity": 0.883372445901235,
+        "minimumWindowSpeakerCosineSimilarity": 0.8743628263473511,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/speaker-ranking.json",
+        "acousticEvidenceSha256": "661d9bcb0aaf4700576c8cba7dd9d714d8cc3635c6c4e10c5e382cd49d8f0c55",
+        "clippedSamples": 0,
+        "truePeakDbtp": -4.2,
+        "peakAmplitude": 0.6160888671875
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.883372445901235,
+        -0.8743628263473511,
+        0,
+        0.6331360946745561,
+        47
+      ],
+      "passingRank": 2
+    },
+    {
+      "seed": 48,
+      "file": "clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed48.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed48.wav",
+        "sha256": "638aa0477e04dd040a643989924129b671903ab2d550696a5a37e752398791bb",
+        "durationSeconds": 26.4,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/asr-qa.json",
+        "asrEvidenceSha256": "c4ac0aa9b3bdee161c319826c2d4c909f4db01f19acf6e723f0839a02871c1a1",
+        "meanSpeakerCosineSimilarity": 0.8833408157030741,
+        "minimumWindowSpeakerCosineSimilarity": 0.8751102685928345,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/speaker-ranking.json",
+        "acousticEvidenceSha256": "661d9bcb0aaf4700576c8cba7dd9d714d8cc3635c6c4e10c5e382cd49d8f0c55",
+        "clippedSamples": 0,
+        "truePeakDbtp": -4.4,
+        "peakAmplitude": 0.603912353515625
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8833408157030741,
+        -0.8751102685928345,
+        0,
+        0.5757575757575757,
+        48
+      ],
+      "passingRank": 3
+    },
+    {
+      "seed": 49,
+      "file": "clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed49.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/clinias-of-crete-uddowL-Bw_M-b58409fc8620-seed49.wav",
+        "sha256": "ef80fe4b2893a7b2d85f8ca4559c78eb1bffa968b93454a98db8ff0280aaacd7",
+        "durationSeconds": 25.92,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/asr-qa.json",
+        "asrEvidenceSha256": "c4ac0aa9b3bdee161c319826c2d4c909f4db01f19acf6e723f0839a02871c1a1",
+        "meanSpeakerCosineSimilarity": 0.8879484931627909,
+        "minimumWindowSpeakerCosineSimilarity": 0.883638322353363,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/fc6095773a81660294665b1f46f2d632770c50026b75d76b2f2954eeb6f6ab3f/speaker-ranking.json",
+        "acousticEvidenceSha256": "661d9bcb0aaf4700576c8cba7dd9d714d8cc3635c6c4e10c5e382cd49d8f0c55",
+        "clippedSamples": 0,
+        "truePeakDbtp": -3.5,
+        "peakAmplitude": 0.664398193359375
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8879484931627909,
+        -0.883638322353363,
+        0,
+        0.5308641975308643,
+        49
+      ],
+      "passingRank": 1
+    }
+  ],
+  "selectedSeed": 49,
+  "selectedPassingRank": 1,
+  "decisionContentSha256": "0a72eca68b6e19446e964985f3559f9b2c7bd8358cdb0dbb9e33948e110ce0fa"
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "submission_id": "0004-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "critias",
+  "source_path": "scratch/commentary/rewrites/critias/01-106a-106c.json",
+  "source_sha256": "b5a2bb3cf488d37ed32c9c8c4267418828a76c2c19f1bc47ce3e917fa9dc2f62",
+  "target_path": "wiki/commentary/critias.md",
+  "target_sha256_before": "70a13138280986341d3edbf98f5db614b3322cae766f2cdcf12a412a2424ee29",
+  "target_sha256_after": "bafda1b5a34a9ade70298e2e50f2fc4830ef24e20bd5b5e3b24d87714dfd1b0b",
+  "applied_at": "2026-08-23T21:17:11.851Z",
+  "applied_ids": [
+    "comm_critias_0014",
+    "comm_critias_0023"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "01-106a-106c",
+      "section_id": "comm_critias_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/01-106a-106c.json",
+        "sha256": "c5742f34f962dd8d16fc10373b9d64279f0ba1276fd82bb1e6563591f29cc268"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0014",
+          "title": "",
+          "body": "The handoff is best heard as framing: it places the account before its listeners without repeating the preceding movement into the scene.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "critias",
+      "unit_key": "04-109b-109e",
+      "section_id": "comm_critias_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/critias/04-109b-109e.json",
+        "sha256": "f079c29cc816a5dbf1a8594d0c8f8f15580bbd4e728c3a3351b30f8be2849114"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_critias_0023",
+          "title": "",
+          "body": "A useful listening cue: hear the inherited order as a demand placed on human beings.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_critias_0014",
+      "body": "```yaml\ncommentary_id: comm_critias_0014\nsource_work: Critias\nblock_kind: context\nplacement: before\nstephanus_span: 106a-106b\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 106a-106b\n  start_marker: 106a\n  end_marker: 106b\n  start_char: 0\n  end_char: 676\n  text_sha256: \"9a827e283fe1cdcf17a65c1bc259a29e7297b0b1e15f9139a92cc6c0f148e000\"\nbody: \"The opening gives the handoff a physical rhythm. Timaeus describes release from the difficult passage of his logos as rest after a long journey, then formally transfers the next logos to Critias according to their arrangements. One way to hear the metaphor is that Critias inherits a burden already in motion: the transition is not a new beginning, but a change of speaker carrying the discourse forward. That sense of inherited burden is an interpretation; the passage itself establishes the journey image and the formal transfer.\"\ncites:\n  observations: [\"obs_critias_0001\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_critias_0023",
+      "body": "```yaml\ncommentary_id: comm_critias_0023\nsource_work: Critias\nblock_kind: notice\nplacement: after\nstephanus_span: 109d-109e\nsource_ref:\n  source_path: raw/plato/greek/critias.txt\n  stephanus_span: 109d-109e\n  start_marker: 109d\n  end_marker: 109e\n  start_char: 6010\n  end_char: 6623\n  text_sha256: \"f9e60d43b32ab4f06daa108322520b74e922fa24df57781d7b42564171d38c54\"\nbody: \"The passage does not present the past as wholly erased. It preserves the rulers’ names, while their deeds have vanished and the surviving remnant knows only a few brief reports alongside those names. Read this as a portrait of selective transmission: a name can carry continuity without carrying a full account of conduct. The result is an inherited past with a clear limit—names remain, but the deeds they once identified cannot be recovered in full.\"\ncites:\n  observations: [\"obs_critias_0021\", \"obs_critias_0022\"]\n  claims: [\"claim_critias_0008\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

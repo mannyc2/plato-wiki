@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "submission_id": "0007-structural-remediation-08-167a-169c",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "charmides",
+  "unit_key": "08-167a-169c",
+  "source_path": "scratch/commentary/audits/charmides/08-167a-169c.json",
+  "source_sha256": "9bc7fca3d9c4ebbff5f08307ccaba136bf3d96f1c37f44234a58539a00042667",
+  "target_path": "wiki/commentary/charmides.md",
+  "target_sha256_before": "293f1070c9733e8b6b859f30421184eb577cf64c556db33d1d3482c2770997b0",
+  "target_sha256_after": "31b9b676c0742ac59e0b87b3684065fe48a92f31ecaed22411baebfd0010eddd",
+  "applied_at": "2026-08-23T22:33:42.462Z",
+  "applied_ids": [
+    "comm_charmides_0032",
+    "comm_charmides_0033"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "charmides",
+      "unitKey": "08-167a-169c",
+      "sectionId": "comm_charmides_0008",
+      "auditOutputPath": "scratch/commentary/audits/charmides/08-167a-169c.json",
+      "auditOutputSha256": "9bc7fca3d9c4ebbff5f08307ccaba136bf3d96f1c37f44234a58539a00042667",
+      "expectedLedgerSha256": "293f1070c9733e8b6b859f30421184eb577cf64c556db33d1d3482c2770997b0",
+      "expectedAttributionSha256": "15af84af30150ae71bd1fb685dade849457450a1b1fca53758d46ab2d7425166",
+      "expectedEnglishSha256": "2b3601a95dceed4b86e1c48dfd5fcb829d4b03e004563852ac527f9806bb99a0",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_charmides_0032"
+        },
+        {
+          "operation": "remove",
+          "commentaryId": "comm_charmides_0033"
+        }
+      ],
+      "reviewer": "lane-c-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna assessment confirms conservative rejection of audited remove findings and split originals; placement is retained and no reanchors are claimed."
+    },
+    "audit_output_path": "scratch/commentary/audits/charmides/08-167a-169c.json",
+    "audit_output_sha256": "9bc7fca3d9c4ebbff5f08307ccaba136bf3d96f1c37f44234a58539a00042667",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_charmides_0032",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_charmides_0033",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

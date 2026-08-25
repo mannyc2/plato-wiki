@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0019-structural-remediation-04-109b-109e",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "critias",
+  "unit_key": "04-109b-109e",
+  "source_path": "scratch/commentary/audits/critias/04-109b-109e.json",
+  "source_sha256": "bb3caab2f8693340ece32cba49419623324076741e3a78b8d129cf58758b5673",
+  "target_path": "wiki/commentary/critias.md",
+  "target_sha256_before": "0acb9c09cc0d2e9cc0e9334694b13577faea98521ac7180d536c76a09f05f787",
+  "target_sha256_after": "cbf9e242e5a3a7c833477c492520aecd1ec24b96a59145a47ced967879807baf",
+  "applied_at": "2026-08-23T23:10:18.080Z",
+  "applied_ids": [
+    "comm_critias_0004"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "critias",
+      "unitKey": "04-109b-109e",
+      "sectionId": "comm_critias_0004",
+      "auditOutputPath": "scratch/commentary/audits/critias/04-109b-109e.json",
+      "auditOutputSha256": "bb3caab2f8693340ece32cba49419623324076741e3a78b8d129cf58758b5673",
+      "expectedLedgerSha256": "0acb9c09cc0d2e9cc0e9334694b13577faea98521ac7180d536c76a09f05f787",
+      "expectedAttributionSha256": "9b39b25c405313f94d9d09c9bcfe8ee2eec86e1200536f88ac4ddf1aaa10f831",
+      "expectedEnglishSha256": "4edcea49fb8083715e5e71c6ce8ccbd8930c6c8cf185cb367dca81ca69ede50e",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_critias_0004"
+        }
+      ],
+      "reviewer": "round4-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Independent delegated Luna structural review confirms the +2285-char playback displacement; prose rewrite cannot repair the edge, so remove the original and retain the scaffold."
+    },
+    "audit_output_path": "scratch/commentary/audits/critias/04-109b-109e.json",
+    "audit_output_sha256": "bb3caab2f8693340ece32cba49419623324076741e3a78b8d129cf58758b5673",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_critias_0004",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

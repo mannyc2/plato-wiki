@@ -1,0 +1,58 @@
+dialogue: phaedrus
+source_path: raw/plato/greek/phaedrus.txt
+source_sha256: 89a2de0f0f71b79700d2bfa84ab29ffad10576c333949cc8ec08fc152667261c
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[51]:
+  group             | form      | start_char | end_char | marker | turn_id            | token_ids
+  assent_concession | ναί       | 404        | 407      | 227b   | turn_phaedrus_0005 | tok_phaedrus_000067
+  aporia_reset      | πάλιν     | 1363       | 1368     | 227d   | turn_phaedrus_0012 | tok_phaedrus_000231
+  definition_prompt | εἶδος     | 4796       | 4801     | 229d   | turn_phaedrus_0032 | tok_phaedrus_000806
+  definition_prompt | εἶδος     | 19608      | 19613    | 237a   | turn_phaedrus_0069 | tok_phaedrus_003166
+  definition_prompt | ἰδέα      | 20947      | 20951    | 237d   | turn_phaedrus_0069 | tok_phaedrus_003392
+  aporia_reset      | πάλιν     | 22787      | 22792    | 238d   | turn_phaedrus_0074 | tok_phaedrus_003687
+  aporia_reset      | πάλιν     | 27905      | 27910    | 241b   | turn_phaedrus_0077 | tok_phaedrus_004495
+  definition_prompt | οὐσία     | 40666      | 40671    | 247c   | turn_phaedrus_0106 | tok_phaedrus_006616
+  aporia_reset      | πάλιν     | 41317      | 41322    | 247e   | turn_phaedrus_0106 | tok_phaedrus_006726
+  aporia_reset      | πάλιν     | 44211      | 44216    | 249b   | turn_phaedrus_0108 | tok_phaedrus_007183
+  definition_prompt | εἶδος     | 44325      | 44330    | 249b   | turn_phaedrus_0108 | tok_phaedrus_007204
+  definition_prompt | εἶδος     | 48212      | 48217    | 251b   | turn_phaedrus_0110 | tok_phaedrus_007820
+  definition_prompt | εἶδος     | 52779      | 52784    | 253c   | turn_phaedrus_0112 | tok_phaedrus_008554
+  definition_prompt | εἶδος     | 52998      | 53003    | 253d   | turn_phaedrus_0112 | tok_phaedrus_008597
+  aporia_reset      | πάλιν     | 54228      | 54233    | 254b   | turn_phaedrus_0113 | tok_phaedrus_008777
+  aporia_reset      | πάλιν     | 54817      | 54822    | 254d   | turn_phaedrus_0113 | tok_phaedrus_008876
+  aporia_reset      | πάλιν     | 56757      | 56762    | 255c   | turn_phaedrus_0114 | tok_phaedrus_009179
+  aporia_reset      | πάλιν     | 56810      | 56815    | 255c   | turn_phaedrus_0114 | tok_phaedrus_009188
+  definition_prompt | εἶδος     | 65125      | 65130    | 259d   | turn_phaedrus_0142 | tok_phaedrus_010506
+  assent_concession | πάνυ γε   | 67166      | 67173    | 260d   | turn_phaedrus_0159 | tok_phaedrus_010846,tok_phaedrus_010847
+  assent_concession | ναί       | 68775      | 68778    | 261c   | turn_phaedrus_0169 | tok_phaedrus_011112
+  assent_concession | ναί       | 69074      | 69077    | 261c   | turn_phaedrus_0173 | tok_phaedrus_011163
+  assent_concession | ναί       | 71791      | 71794    | 263a   | turn_phaedrus_0203 | tok_phaedrus_011621
+  definition_prompt | εἶδος     | 72592      | 72597    | 263c   | turn_phaedrus_0215 | tok_phaedrus_011759
+  aporia_reset      | πάλιν     | 73521      | 73526    | 263e   | turn_phaedrus_0222 | tok_phaedrus_011914
+  assent_concession | ναί       | 75974      | 75977    | 265a   | turn_phaedrus_0241 | tok_phaedrus_012328
+  assent_concession | πάνυ γε   | 76112      | 76119    | 265b   | turn_phaedrus_0243 | tok_phaedrus_012350,tok_phaedrus_012351
+  definition_prompt | εἶδος     | 77283      | 77288    | 265d   | turn_phaedrus_0251 | tok_phaedrus_012542
+  aporia_reset      | πάλιν     | 77326      | 77331    | 265e   | turn_phaedrus_0252 | tok_phaedrus_012549
+  method_term       | κατ' εἴδη | 77332      | 77341    | 265e   | turn_phaedrus_0252 | tok_phaedrus_012550,tok_phaedrus_012551
+  definition_prompt | εἶδος     | 77519      | 77524    | 265e   | turn_phaedrus_0252 | tok_phaedrus_012581
+  definition_prompt | εἶδος     | 77683      | 77688    | 266a   | turn_phaedrus_0252 | tok_phaedrus_012607
+  aporia_reset      | πάλιν     | 77748      | 77753    | 266a   | turn_phaedrus_0252 | tok_phaedrus_012618
+  divine_legal      | δίκη      | 77854      | 77858    | 266a   | turn_phaedrus_0252 | tok_phaedrus_012634
+  definition_prompt | εἶδος     | 78736      | 78741    | 266c   | turn_phaedrus_0255 | tok_phaedrus_012784
+  assent_concession | ναί       | 79281      | 79284    | 266e   | turn_phaedrus_0259 | tok_phaedrus_012874
+  aporia_reset      | πάλιν     | 80769      | 80774    | 267d   | turn_phaedrus_0268 | tok_phaedrus_013117
+  assent_concession | ναί       | 87231      | 87234    | 271a   | turn_phaedrus_0307 | tok_phaedrus_014162
+  method_term       | κατ' εἴδη | 92724      | 92733    | 273e   | turn_phaedrus_0335 | tok_phaedrus_015072,tok_phaedrus_015073
+  definition_prompt | ἰδέα      | 92765      | 92769    | 273e   | turn_phaedrus_0335 | tok_phaedrus_015080
+  assent_concession | ναί       | 93815      | 93818    | 274b   | turn_phaedrus_0343 | tok_phaedrus_015257
+  divine_legal      | γραφή     | 96597      | 96602    | 275d   | turn_phaedrus_0355 | tok_phaedrus_015711
+  divine_legal      | γραφή     | 96887      | 96892    | 275e   | turn_phaedrus_0355 | tok_phaedrus_015763
+  divine_legal      | δίκη      | 97067      | 97071    | 275e   | turn_phaedrus_0355 | tok_phaedrus_015794
+  divine_legal      | γραφή     | 98545      | 98550    | 276d   | turn_phaedrus_0367 | tok_phaedrus_016041
+  aporia_reset      | πάλιν     | 99830      | 99835    | 277b   | turn_phaedrus_0374 | tok_phaedrus_016240
+  aporia_reset      | πάλιν     | 99981      | 99986    | 277b   | turn_phaedrus_0375 | tok_phaedrus_016268
+  method_term       | κατ' εἴδη | 99987      | 99996    | 277b   | turn_phaedrus_0375 | tok_phaedrus_016269,tok_phaedrus_016270
+  definition_prompt | εἶδος     | 100109     | 100114   | 277c   | turn_phaedrus_0375 | tok_phaedrus_016287
+  divine_legal      | δίκη      | 100562     | 100566   | 277d   | turn_phaedrus_0377 | tok_phaedrus_016364
+  divine_legal      | δίκη      | 103012     | 103016   | 278e   | turn_phaedrus_0387 | tok_phaedrus_016778

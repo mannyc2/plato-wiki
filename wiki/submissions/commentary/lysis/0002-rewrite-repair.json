@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "lysis",
+  "source_path": "scratch/commentary/rewrite-repairs/lysis/round2.json",
+  "source_sha256": "167a1119a8db3dcca7475d06b0d125837b53e7eab8b7e36eb15c89035ced5819",
+  "target_path": "wiki/commentary/lysis.md",
+  "target_sha256_before": "5c7bae255b3ad48573165733fe53cd112f9430bf13f33c1d4d83120ae7bbcdcb",
+  "target_sha256_after": "8acc0239da52f77cbaa492dfbb8ef5ff938967d7c7b28632298d02b25de1963b",
+  "applied_at": "2026-08-21T15:52:06.112Z",
+  "applied_ids": [
+    "comm_lysis_0007",
+    "comm_lysis_0010",
+    "comm_lysis_0013",
+    "comm_lysis_0014"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "lysis",
+    "ledger": {
+      "path": "wiki/commentary/lysis.md",
+      "sha256": "5c7bae255b3ad48573165733fe53cd112f9430bf13f33c1d4d83120ae7bbcdcb"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/lysis/0001-rewrite-batch.json",
+      "sha256": "0cfd089e1c4e9147f1d6142d9a49c4842e866527371081896feac5a15783a626"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-lysis-0001-rewrite-batch-acceptance.md",
+      "sha256": "8f062b9bbe567c710d8a60488edf5129c0c148f652a1e0e8f6c8946660daf1f4"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-lysis-round1",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_lysis_0007",
+          "finding": "The body needs accepted citations for Lysis's request, his support during the challenge, and Socrates's declaration."
+        },
+        {
+          "commentary_id": "comm_lysis_0010",
+          "finding": "The source-based account of the contrary thesis and its consequences needs accepted canonical citations."
+        },
+        {
+          "commentary_id": "comm_lysis_0013",
+          "finding": "Inline canonical claim identifiers interrupt the spoken prose and must remain only in the cites field."
+        },
+        {
+          "commentary_id": "comm_lysis_0014",
+          "finding": "Inline identifiers disrupt delivery and the block must tighten its several movements into one concluding job."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-lysis-round2",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_lysis_0007",
+      "comm_lysis_0010",
+      "comm_lysis_0013",
+      "comm_lysis_0014"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_lysis_0007",
+        "title": "A whispered request opens the inquiry",
+        "body": "Lysis’s quiet request turns the scene toward Menexenus: he asks Socrates to repeat the same treatment with his friend, drawing the older man into a conversation not yet begun. Socrates accepts the assignment, then gives the request personal force by describing his own desire for a good friend as stronger than the usual hunger for horses, gold, or honors.",
+        "cites": {
+          "observations": [
+            "obs_lysis_0049",
+            "obs_lysis_0050",
+            "obs_lysis_0051",
+            "obs_lysis_0055"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_lysis_0010",
+        "title": "The opposite thesis turns against itself",
+        "body": "The reported reversal begins from need: the poor needs the rich, the sick the doctor, and the ignorant the knower, so opposites seem to become friends through what one supplies the other. But Socrates turns that formula back on itself, asking whether it would make an enemy a friend and the good a friend of the bad. Those counterexamples put both simple likeness and opposition under pressure.",
+        "cites": {
+          "observations": [
+            "obs_lysis_0079",
+            "obs_lysis_0080",
+            "obs_lysis_0081",
+            "obs_lysis_0088"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_lysis_0013",
+        "title": "Desire changes the question",
+        "body": "Once harmless desires remain in the thought experiment, bad can no longer explain every friendship. The conversation therefore shifts its causal question: desire is proposed as what makes the desiring thing a friend of what it wants, and need then points toward what is one’s own. The proposal reaches affinity, but the next passage still has to distinguish that affinity from mere likeness.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_lysis_0023",
+            "claim_lysis_0024",
+            "claim_lysis_0025",
+            "claim_lysis_0026"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_lysis_0014",
+        "title": "An interruption leaves the question open",
+        "body": "The inquiry ends without converting its last proposals into a definition. Socrates gathers the candidates into a conditional: if none of the examined possibilities is the friend, he has nothing more to say. Then the paidagogoi break up the gathering, so the dialogue closes with its unanswered question still alive.",
+        "cites": {
+          "observations": [
+            "obs_lysis_0125",
+            "obs_lysis_0127"
+          ],
+          "claims": [
+            "claim_lysis_0030"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_lysis_0007",
+      "body": "```yaml\ncommentary_id: comm_lysis_0007\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"A rehearsal before the real question\"\nstephanus_span: 211a-211e\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 211a-211e\n  start_marker: 211a\n  end_marker: 211e\n  start_char: 15453\n  end_char: 17575\n  text_sha256: \"d7b622c17a4f889cc4c093f48f6c757679875370ceb6e9aad27655d96ee1f5af\"\nbody: \"One way to hear this transition is as a small test of friendship itself. Lysis asks Socrates to carry the conversation into his friend’s presence, then wants to remain close when the exchange becomes adversarial. Socrates’s declaration that he values a friend above wealth therefore arrives not as detached doctrine, but as a desire enacted in the room.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    },
+    {
+      "commentary_id": "comm_lysis_0010",
+      "body": "```yaml\ncommentary_id: comm_lysis_0010\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"Neither formula settles friendship\"\nstephanus_span: 215d-216b\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 215d-216b\n  start_marker: 215d\n  end_marker: 216b\n  start_char: 24961\n  end_char: 26733\n  text_sha256: \"915915035aa5270f1e8043ad491f9f250abab1b8252b35ac2faaf37237067693\"\nbody: \"I read this exchange as a stress test for two attractive formulas. On that reading, “opposite befriends opposite” sounds explanatory until the conversation turns it against friendship with an enemy, then against justice and goodness. The passage need not announce a third category; its sharper achievement is to leave both formulas under pressure. What, then, might friendship require beyond resemblance or opposition?\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    },
+    {
+      "commentary_id": "comm_lysis_0013",
+      "body": "```yaml\ncommentary_id: comm_lysis_0013\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"A causal shift, not a final answer\"\nstephanus_span: 221a-222a\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 221a-222a\n  start_marker: 221a\n  end_marker: 222a\n  start_char: 36213\n  end_char: 38603\n  text_sha256: \"863f81ca9c1c193541cd8a15e8cd8422da485b0e9dcb4df26a2e1b1c485ccd1b\"\nbody: \"The exchange first tests the claim that bad causes friendship: desires that are neither good nor bad would remain when bad things vanished, and desire would still involve love (claim_lysis_0023). It then offers desire as a new candidate cause (claim_lysis_0024; claim_lysis_0025), before naming oikeion as what love, friendship, and desire concern (claim_lysis_0026). Hear these as successive proposals, not one identity: the passage has not yet settled the account (claim_lysis_0024; claim_lysis_0025; claim_lysis_0026).\"\ncites:\n  observations: []\n  claims: [\"claim_lysis_0023\", \"claim_lysis_0024\", \"claim_lysis_0025\", \"claim_lysis_0026\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    },
+    {
+      "commentary_id": "comm_lysis_0014",
+      "body": "```yaml\ncommentary_id: comm_lysis_0014\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"Aporia without a settled definition\"\nstephanus_span: 222b-223b\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 222b-223b\n  start_marker: 222b\n  end_marker: 223b\n  start_char: 38603\n  end_char: 41070\n  text_sha256: \"7409b8b510780cd49481410394ab857acbd75c0a5f95b2153e89074b8f1494a6\"\nbody: \"Here the argument reaches an aporia, but not a proof that every account of friendship has failed. Socrates’ summary is conditional: if none of the loved, loving, like, unlike, good, akin, or other examined candidates is a friend, he has nothing further to say (claim_lysis_0030). The pressure is cumulative: the oikeion proposal revives rejected like-to-like consequences (claim_lysis_0027; claim_lysis_0028; rel_lysis_0001), while identifying good with oikeion yields only the conditional that good is friend to good (claim_lysis_0029; rel_lysis_0001). One way to hear the ending is as exhaustion of this inquiry, not a settled definition.\"\ncites:\n  observations: []\n  claims: [\"claim_lysis_0027\", \"claim_lysis_0028\", \"claim_lysis_0029\", \"claim_lysis_0030\"]\n  relations: [\"rel_lysis_0001\"]\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    }
+  ]
+}

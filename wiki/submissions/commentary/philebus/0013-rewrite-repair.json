@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "submission_id": "0013-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "philebus",
+  "source_path": "scratch/commentary/rewrite-repairs/philebus/0018-evidence.json",
+  "source_sha256": "6d4f870b7e82b15a8c4aa0a9496e96e8ad1b5f338de7145ef3392ad5f3e0202e",
+  "target_path": "wiki/commentary/philebus.md",
+  "target_sha256_before": "c3dcc720bc43b26698e82e74894092eb7338aa945de036fb9ae68078fb2a7813",
+  "target_sha256_after": "747dc4bec66b3211e5fabb872cb5a90755d0e92c8431f87cce5a589c211f88a2",
+  "applied_at": "2026-08-24T00:08:17.992Z",
+  "applied_ids": [
+    "comm_philebus_0018"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "philebus",
+    "ledger": {
+      "path": "wiki/commentary/philebus.md",
+      "sha256": "c3dcc720bc43b26698e82e74894092eb7338aa945de036fb9ae68078fb2a7813"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/philebus/0012-rewrite-batch.json",
+      "sha256": "85d22c656cb0091a99e6a84a45ffbcafc3ed1a9c69065f129d3457525e79ed80"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-23-commentary-block-review-philebus-rejected-9469f71bc581.md",
+      "sha256": "8d9e753f9077ce7b08b6d46cf73466d0d9db87b2d2cf3a46fb4d160328ef915b"
+    },
+    "prior_review": {
+      "reviewer": "repair-c-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_philebus_0018",
+          "finding": "The replacement omits the accepted claim and relation citations required to support its source-grounded account of purity, truth, and value."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-philebus-0018-round1",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_philebus_0018"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_philebus_0018",
+        "title": "",
+        "body": "The comparison with pure whiteness changes the criterion of superiority. The strongest pleasure is not automatically the best; purity, truth, and proportion now do the evaluative work. The later ranking will depend on this quieter standard.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_philebus_0049"
+          ],
+          "relations": [
+            "rel_philebus_0003"
+          ],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_philebus_0018",
+      "body": "```yaml\ncommentary_id: comm_philebus_0018\nsource_work: Philebus\nblock_kind: argument\nplacement: before\nstephanus_span: 52a-53c\nsource_ref:\n  source_path: raw/plato/greek/philebus.txt\n  stephanus_span: 52a-53c\n  start_marker: 52a\n  end_marker: 53c\n  start_char: 81943\n  end_char: 84990\n  text_sha256: \"e0115e26a115d1ac249aed52b559eea21102007bd273171fff128c4ff80ffe90\"\nbody: \"For comparison, the passage asks us to distinguish pleasures by their purity and truth: the purer and truer pleasure has greater value.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

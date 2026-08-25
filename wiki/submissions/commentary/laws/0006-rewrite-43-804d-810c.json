@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "submission_id": "0006-rewrite-43-804d-810c",
+  "lane": "commentary",
+  "kind": "rewrite",
+  "scope": "laws",
+  "unit_key": "43-804d-810c",
+  "source_path": "scratch/commentary/rewrites/laws/43-804d-810c.json",
+  "source_sha256": "609f218cc35048f38e9f6fa41949a615c1300e4461ff394a4d06c67a6dcab343",
+  "target_path": "wiki/commentary/laws.md",
+  "target_sha256_before": "1bc0a56b9f7ca7570bfd166ef86143e70f0bd7eebc26997db68527c91ad727c2",
+  "target_sha256_after": "ea3b34907c915c33ba6f4e677f637d9e94bbdb3a74e49858b8282d17d1307a34",
+  "applied_at": "2026-08-21T22:53:21.443Z",
+  "applied_ids": [
+    "comm_laws_0043"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "laws",
+    "unit_key": "43-804d-810c",
+    "section_id": "comm_laws_0043",
+    "audit_output": {
+      "path": "scratch/commentary/audits/laws/43-804d-810c.json",
+      "sha256": "d7f372e17eb92c71f2f5e27b7d424989356fa1622cc231b2d14fefde61f885b9"
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_laws_0043",
+        "title": "Completeness as the lawgiver’s test",
+        "body": "What makes this passage memorable is the Athenian’s test of completeness. The Sauromatian example names women sharing horses, bows, and other weapons with men; it does not itself describe military training. The Athenian turns that case into a feasibility argument, then compares Thracian, local, and Laconian arrangements. I read the sequence as a challenge to ask not merely what is customary, but how fully a city lets women share civic practices.",
+        "cites": {
+          "observations": [
+            "obs_laws_0832",
+            "obs_laws_0836",
+            "obs_laws_0837"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_laws_0043",
+      "body": "```yaml\ncommentary_id: comm_laws_0043\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Completeness as the lawgiver’s test\"\nstephanus_span: 804d-810c\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 804d-810c\n  start_marker: 804d\n  end_marker: 810c\n  start_char: 338409\n  end_char: 350658\n  text_sha256: \"7f9a52864a592a741a8950c5a06670a5af389c8c98f2d0b4aba6a70624c8d3a4\"\nbody: \"What makes this passage memorable is its standard for a lawgiver: not whether a reform sounds customary, but whether it uses the city’s available human power completely. The Athenian invokes a reported case of women sharing military training, then turns that possibility into a critique of partial constitutions. Thracian, local, and Laconian arrangements are not labels for one Athenian practice; they are tests of how far participation is allowed to reach.\"\ncites:\n  observations: [\"obs_laws_0832\", \"obs_laws_0836\", \"obs_laws_0837\"]\n  claims: [\"claim_laws_0619\", \"claim_laws_0621\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "laws",
+  "source_path": "scratch/commentary/rewrite-repairs/laws/round1-combined.json",
+  "source_sha256": "0c9f7da93ced150e5037cad847d3b273bd4265402418dd245e46e1205b2edf9a",
+  "target_path": "wiki/commentary/laws.md",
+  "target_sha256_before": "31d59da866e19f38eaf08640fe627df948b61df03241542e4bd3e26100f50986",
+  "target_sha256_after": "6e71a117104a09943496bf443696eea57ddcff7635ac18dc560afc5901e850a3",
+  "applied_at": "2026-08-21T21:27:20.709Z",
+  "applied_ids": [
+    "comm_laws_0005",
+    "comm_laws_0012",
+    "comm_laws_0017",
+    "comm_laws_0018",
+    "comm_laws_0019",
+    "comm_laws_0027",
+    "comm_laws_0028",
+    "comm_laws_0029",
+    "comm_laws_0031",
+    "comm_laws_0035",
+    "comm_laws_0038"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "laws",
+    "ledger": {
+      "path": "wiki/commentary/laws.md",
+      "sha256": "31d59da866e19f38eaf08640fe627df948b61df03241542e4bd3e26100f50986"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/laws/0001-rewrite-batch.json",
+      "sha256": "d418ca5c64806e43e3d7203abeea5bd39ef5c16d546d399af6387ecc6b803cda"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-laws-0001-rewrite-batch-acceptance.md",
+      "sha256": "46a6269efe8a804961359c856f8cde9292eae2642754ff8b7563b6efe0a9400f"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-laws-round1-combined",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_laws_0005",
+          "finding": "Multiple jobs combine the age-restricted discussion protocol with the evaluation of common meals and gymnasia."
+        },
+        {
+          "commentary_id": "comm_laws_0012",
+          "finding": "The Sidonian transition needs accepted obs_laws_0205 while retaining the supported age-graded wine proposal in claim_laws_0132."
+        },
+        {
+          "commentary_id": "comm_laws_0017",
+          "finding": "The block defines greatest ignorance as a divided will without an accepted exact-span record for that definition."
+        },
+        {
+          "commentary_id": "comm_laws_0018",
+          "finding": "The third-saviour and ephor sequence is asserted without citing the accepted exact-span claim that records it."
+        },
+        {
+          "commentary_id": "comm_laws_0019",
+          "finding": "The sentence about Cambyses losing the Persian regime is not supported by the cited exact-span records."
+        },
+        {
+          "commentary_id": "comm_laws_0027",
+          "finding": "The block inventories unsupported honor examples while relying on observations that do not support the full list."
+        },
+        {
+          "commentary_id": "comm_laws_0028",
+          "finding": "The opening praise-and-blame claim is not adequately supported by the cited observation."
+        },
+        {
+          "commentary_id": "comm_laws_0029",
+          "finding": "The collection-complete and purity-secured premise is not supported by the cited exact-span records."
+        },
+        {
+          "commentary_id": "comm_laws_0031",
+          "finding": "The land-division, twelvefold, and near-far assertions rely on observations that do not support the full list."
+        },
+        {
+          "commentary_id": "comm_laws_0035",
+          "finding": "The block combines education with three distinct court structures instead of doing one job."
+        },
+        {
+          "commentary_id": "comm_laws_0038",
+          "finding": "The block combines opposed slave sayings, a justice test, and a later city shift; retain only the bounded slave-conduct test."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-laws-round1combined",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_laws_0005",
+      "comm_laws_0012",
+      "comm_laws_0017",
+      "comm_laws_0018",
+      "comm_laws_0019",
+      "comm_laws_0027",
+      "comm_laws_0028",
+      "comm_laws_0029",
+      "comm_laws_0031",
+      "comm_laws_0035",
+      "comm_laws_0038"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_laws_0005",
+        "title": "A bounded permission to examine the laws",
+        "body": "Before discussing defects in their cities’ laws, the Athenian tests whether age and the absence of young people make this conversation permitted. The answer is yes: the elders may speak alone. This frames the criticism as a bounded dramatic procedure, not a general invitation.",
+        "cites": {
+          "observations": [
+            "obs_laws_0066"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_laws_0012",
+        "title": "From persuasive myth to an age rule",
+        "body": "The Sidonian tale is introduced as an improbable but persuasive paradigm for the lawgiver. The Athenian then turns to a concrete age rule: children are kept from wine; younger adults drink moderately; men over forty may call on Dionysus at symposia to soften old age and make their souls pliable. The proposal gives older participation in song a civic setting.",
+        "cites": {
+          "observations": [
+            "obs_laws_0205"
+          ],
+          "claims": [
+            "claim_laws_0132"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_laws_0017",
+        "title": "From private wish to wiser prayer",
+        "body": "The Athenian begins with a wish shared by everyone: that things follow the command of one’s own soul. Megillus then redirects the object of prayer and striving toward phronesis and nous, for the city and for each person. The movement is from getting what one wants to wanting what intelligence can guide.",
+        "cites": {
+          "observations": [
+            "obs_laws_0298"
+          ],
+          "claims": [
+            "claim_laws_0199",
+            "claim_laws_0200"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_laws_0018",
+        "title": "A layered report of constitutional safeguards",
+        "body": "The Athenian recounts Sparta’s constitutional balance as a layered report: a god gives kingship twin birth; human nature mixed with divine power adds the council of elders; a third saviour adds the ephors as a bridle. The sequence is presented as a report of how successive powers were mixed into the rule.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_laws_0224"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_laws_0019",
+        "title": "Persia and the education of successors",
+        "body": "The Persian example contrasts political moderation with inherited upbringing. Under Cyrus, shared speech and counsel are said to accompany flourishing; his sons, however, are raised as already blessed, with no one allowed to oppose them. The passage directs attention from a ruler’s ancestry to the education that forms successors.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_laws_0232",
+            "claim_laws_0234"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_laws_0027",
+        "title": "Honor must make the soul better",
+        "body": "The speech gives honor a practical test: a soul is not honored by speeches, gifts, or concessions unless they make it better. Self-praise that leaves conduct unchecked is likewise called harm rather than honor. I hear the passage redirecting honor from appearance to formation.",
+        "cites": {
+          "observations": [
+            "obs_laws_0548",
+            "obs_laws_0549"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_laws_0028",
+        "title": "Praise and blame prepare the hearer",
+        "body": "Before statutes are stated, the Athenian assigns praise and blame a preparatory task: they make people more tractable and well-disposed toward the coming laws. The hinge is a change of register—from setting laws down to shaping the hearer’s disposition toward them.",
+        "cites": {
+          "observations": [
+            "obs_laws_0567"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_laws_0029",
+        "title": "Purification becomes a legislative problem",
+        "body": "The Athenian distinguishes this founding from a colony or a selection by purification. Instead, many streams flow into one lake, and the legislator must keep the inflowing water as pure as possible by drawing some off, channeling others, and diverting the rest. Purification becomes an active legislative problem.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_laws_0380"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_laws_0031",
+        "title": "The lawgiver’s rule for approximation",
+        "body": "The Athenian distinguishes a model from its implementation. A lawgiver should display the finest and truest pattern, but when an element proves impossible, omit that element and devise the closest fitting remainder. The standard is deliberate approximation, not a claim that every detail can be enacted.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_laws_0409"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_laws_0035",
+        "title": "Different disputes, different procedures",
+        "body": "The city does not place every dispute in a single court. Private appeals go to a common court whose judges are selected by the offices; public indictments begin and end with the people while three high offices examine; tribal courts use jurors chosen by lot for private cases. The point is differentiated procedure.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_laws_0472",
+            "claim_laws_0474",
+            "claim_laws_0476"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_laws_0038",
+        "title": "Justice is tested in treatment of slaves",
+        "body": "The passage turns a dispute about what to say of slaves into a test of conduct. One maxim praises slaves as potentially excellent; another treats the class as untrustworthy. The Athenian then makes conduct toward slaves—the people easiest to wrong—the measure of genuine justice. Reverence for justice must show itself in treatment.",
+        "cites": {
+          "observations": [
+            "obs_laws_0739"
+          ],
+          "claims": [
+            "claim_laws_0515"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_laws_0005",
+      "body": "```yaml\ncommentary_id: comm_laws_0005\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"A Protected Space for Critiquing the Cities' Laws\"\nstephanus_span: 634e-637e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 634e-637e\n  start_marker: 634e\n  end_marker: 637e\n  start_char: 20245\n  end_char: 26692\n  text_sha256: \"cfc02191c246dbf890f140d4f576072ecab3ff08ade0ad7f42e7014fc08debb7\"\nbody: \"The Athenian is not opening a general license for old men to criticize whenever the young are away. He describes a protocol: criticism of the interlocutors’ cities’ laws belongs before a magistrate or an age-mate, never before the young; here, the speakers’ age and the absence of youth make the exchange permissible. The inquiry then tests Megillus’s tentative praise of common meals and gymnasia against the Athenian’s mixed assessment of their benefits and dangers.\"\ncites:\n  observations: [\"obs_laws_0066\"]\n  claims: [\"claim_laws_0044\", \"claim_laws_0045\", \"claim_laws_0046\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0012",
+      "body": "```yaml\ncommentary_id: comm_laws_0012\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"From persuasive myth to age-graded song\"\nstephanus_span: 662d-666d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 662d-666d\n  start_marker: 662d\n  end_marker: 666d\n  start_char: 71369\n  end_char: 80326\n  text_sha256: \"4a385426bfea246565aef8732ed4d267a0742e5af45bf234313f6e1f46bb402d\"\nbody: \"The unit's hinge is the movement from persuasion to institution. The Sidonian story supplies the example: even an improbable tale can help a lawgiver shape young souls. The proposed response is age-graded singing, not a three-part Dionysian chorus for the whole population: those no longer able to carry a song are left to tell stories, while wine is proposed for men over forty as an aid to older participation.\"\ncites:\n  observations: [\"obs_laws_0205\", \"obs_laws_0215\"]\n  claims: [\"claim_laws_0131\", \"claim_laws_0132\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0017",
+      "body": "```yaml\ncommentary_id: comm_laws_0017\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"When desire disagrees with judgment\"\nstephanus_span: 686c-689e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 686c-689e\n  start_marker: 686c\n  end_marker: 689e\n  start_char: 116288\n  end_char: 123551\n  text_sha256: \"0066714550d760895daf62f3fcd83e85b9f0ec1ab10540dfbf2aec101cd3243b\"\nbody: \"Here the Athenian makes prayer answer to a problem inside the soul. The greatest ignorance is not merely lacking a skill; it is a divided will: reasoned judgment calls something noble and good while pleasure and pain turn toward its opposite. That is why the common wish for everything to obey us is unsafe as a prayer. The desired end must be governed by phronesis and nous, or it may become the opposite of what we wanted.\"\ncites:\n  observations: [\"obs_laws_0298\", \"obs_laws_0314\"]\n  claims: [\"claim_laws_0199\", \"claim_laws_0200\"]\n  relations: []\n  dossiers: [\"definition_ladder/definition_proposed\"]\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0018",
+      "body": "```yaml\ncommentary_id: comm_laws_0018\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"The cure is cumulative\"\nstephanus_span: 690a-693e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 690a-693e\n  start_marker: 690a\n  end_marker: 693e\n  start_char: 123551\n  end_char: 131482\n  text_sha256: \"2f3d32297f68e2a5a92c54da5f1b2a8a2f279d381ebf0558f05eb2dfe0e25f34\"\nbody: \"At 690d the catalogue of rival titles to rule becomes a diagnosis of faction. But the Lacedaemonian case is not presented as kingship saved by one divine dilution. The Athenian’s retrospective sequence is cumulative: a god makes the royal line twin; a human element joined to divine power adds the council of elders; then a third saviour adds the ephors. The resulting mixture is measured enough for kingship to survive and to become a cause of safety for others. Read the theology here as the passage’s way of narrating institutional balance, not as a single-cause explanation.\"\ncites:\n  observations: [\"obs_laws_0322\", \"obs_laws_0335\", \"obs_laws_0336\", \"obs_laws_0406\"]\n  claims: [\"claim_laws_0218\"]\n  relations: []\n  dossiers: [\"constitutional_typology/mixed_constitution_required\", \"myth_demarcation/divine_causation_with_logos_hedge\", \"dramatic_case_setup/theological_type_established\"]\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0019",
+      "body": "```yaml\ncommentary_id: comm_laws_0019\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Persia’s reversal across generations\"\nstephanus_span: 694a-697e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 694a-697e\n  start_marker: 694a\n  end_marker: 697e\n  start_char: 131482\n  end_char: 139249\n  text_sha256: \"46f0765553a5bb30680b7053b3fda30bec603dc649af71dedb32f88717ce4862\"\nbody: \"Persia’s story is a reversal, not a single slide into decay. Under Cyrus, measured freedom and shared counsel make the regime prosper; then the Athenian asks how it was lost under Cambyses and nearly saved under Darius. Darius stands apart: not a king’s son, not luxuriously reared, he uses law to secure fellowship. The warning is about succession and education across generations—not about making every later ruler a son of Cyrus.\"\ncites:\n  observations: [\"obs_laws_0407\", \"obs_laws_0409\", \"obs_laws_0412\"]\n  claims: [\"claim_laws_0232\", \"claim_laws_0233\", \"claim_laws_0236\", \"claim_laws_0237\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0027",
+      "body": "```yaml\ncommentary_id: comm_laws_0027\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Honor is measured by betterment\"\nstephanus_span: 726a-729a\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 726a-729a\n  start_marker: 726a\n  end_marker: 729a\n  start_char: 189760\n  end_char: 194570\n  text_sha256: \"571084d52fe5af932edd62df8313da098afccae643dfca251b39b532ce5170ab\"\nbody: \"The speech makes “honor” answerable to what it does. The soul stands immediately after the gods, yet self-praise, blame-shifting, indulgence in pleasure, yielding to fear, preference for beauty over virtue, and dishonorable pursuit of wealth all damage what they claim to honor. The test is not the appearance of esteem but whether one’s conduct makes the soul better.\"\ncites:\n  observations: [\"obs_laws_0547\", \"obs_laws_0548\", \"obs_laws_0549\", \"obs_laws_0550\", \"obs_laws_0551\", \"obs_laws_0552\", \"obs_laws_0553\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0028",
+      "body": "```yaml\ncommentary_id: comm_laws_0028\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Preparing the hearer for law\"\nstephanus_span: 729b-734e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 729b-734e\n  start_marker: 729b\n  end_marker: 734e\n  start_char: 194570\n  end_char: 206747\n  text_sha256: \"85a0a388f6c18395433a8554ada18aa633eac0d163bab185ed02b795ba715d1d\"\nbody: \"The teaching point here is preparation, not inventory. Before the laws are stated, praise and blame are supposed to make people tractable and well-disposed toward them (obs_laws_0567). I would therefore hear the later comparison of lives as persuasion toward a law-shaped ideal, not as a pleasure-only proof or a special argument for unbelievers; that reading also fits the unit’s preference for noble lifelong service to home laws over contest victory (claim_laws_0355).\"\ncites:\n  observations: [\"obs_laws_0567\"]\n  claims: [\"claim_laws_0355\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0029",
+      "body": "```yaml\ncommentary_id: comm_laws_0029\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Purity as a founding premise\"\nstephanus_span: 735a-738e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 735a-738e\n  start_marker: 735a\n  end_marker: 738e\n  start_char: 206747\n  end_char: 214943\n  text_sha256: \"580f56270b0e38967dc08acc9b1f8f33065e80390e9014a33b369ab6349b3ae0\"\nbody: \"One way to hear this turn is as a verbal bracket around purification. The herd analogy makes cleansing a lawgiver’s concern, but the present founding is not assigned a colony or a selection by purification. I take the next premise—that the collection is complete and its purity secured—as a stipulation, not a report of an already-purified citizen body. The question becomes: what institutional design can begin once purity is assumed?\"\ncites:\n  observations: [\"obs_laws_0592\", \"obs_laws_0593\"]\n  claims: [\"claim_laws_0380\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0031",
+      "body": "```yaml\ncommentary_id: comm_laws_0031\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Designing the ideal, then adjusting it\"\nstephanus_span: 744a-747e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 744a-747e\n  start_marker: 744a\n  end_marker: 747e\n  start_char: 225700\n  end_char: 234235\n  text_sha256: \"ea809bebeb52213f448786ae0f1b3e27d0cf6072261c7689eb1d8ce71422daca\"\nbody: \"Here the Athenian treats founding as a problem of design rather than a single stroke of inspiration. Unequal starting wealth is organized through proportionate property assessments, while the land is divided into twelve parts and each lot joins near and distant ground to compensate for unequal terrain. The resulting city is a pattern, not a guarantee: when an ideal detail proves impossible, legislation should pursue the closest fitting alternative.\"\ncites:\n  observations: [\"obs_laws_0630\", \"obs_laws_0635\", \"obs_laws_0636\"]\n  claims: [\"claim_laws_0409\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0035",
+      "body": "```yaml\ncommentary_id: comm_laws_0035\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Civic formation and differentiated judgment\"\nstephanus_span: 764c-768e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 764c-768e\n  start_marker: 764c\n  end_marker: 768e\n  start_char: 261826\n  end_char: 271297\n  text_sha256: \"ee03c042d3f6cd642356320869376039ad26808096bb6438c4e774ce9382482e\"\nbody: \"Education is presented as the greatest of the city’s highest offices, because early formation is treated as decisive. The courts then distribute judgment by kind of case, not through one three-tier ladder: private disputes have a third-stage common court whose judges are selected by the offices, while private suits use tribal courts with jurors chosen by lot. Public indictments give the people the beginning and end of trial, with examination by three high offices.\"\ncites:\n  observations: [\"obs_laws_0700\"]\n  claims: [\"claim_laws_0472\", \"claim_laws_0474\", \"claim_laws_0476\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0038",
+      "body": "```yaml\ncommentary_id: comm_laws_0038\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"When law must become lived practice\"\nstephanus_span: 776c-780e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 776c-780e\n  start_marker: 776c\n  end_marker: 780e\n  start_char: 285940\n  end_char: 295287\n  text_sha256: \"d87de5f6061be03ffa2a20dbbf3eec325b2a09f2dc15888ce660a18e26f82252\"\nbody: \"One way to hear this whole turn is as a test of whether law can become lived practice. It begins with a dispute that is both practical and verbal—what is said about slaves cuts against need and follows it—and sharpens into a demand that conduct toward the powerless reveal genuine justice. The later shift to the new city distinguishes the order of speaking from the order of building. The question is not whether a rule sounds orderly, but whether people can inhabit it.\"\ncites:\n  observations: [\"obs_laws_0737\", \"obs_laws_0744\"]\n  claims: [\"claim_laws_0515\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

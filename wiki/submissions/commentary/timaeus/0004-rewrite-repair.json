@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "submission_id": "0004-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "timaeus",
+  "source_path": "scratch/commentary/rewrite-repairs/timaeus/0014-round3.json",
+  "source_sha256": "d81e5695876e3bdc8044a3f11a9b5a21efe10ea4f612b536523e02bb794543c3",
+  "target_path": "wiki/commentary/timaeus.md",
+  "target_sha256_before": "738e2a95cb5a83a0cc559f373f9cb24d804e7d56cc460f82d5e4bc76fbc277ac",
+  "target_sha256_after": "f803039219de0942ca88033815464ab552c77668f0964427b9e369c496e706e9",
+  "applied_at": "2026-08-21T19:54:57.682Z",
+  "applied_ids": [
+    "comm_timaeus_0014"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "timaeus",
+    "ledger": {
+      "path": "wiki/commentary/timaeus.md",
+      "sha256": "738e2a95cb5a83a0cc559f373f9cb24d804e7d56cc460f82d5e4bc76fbc277ac"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/timaeus/0003-rewrite-batch.json",
+      "sha256": "9daa7805a904920d4df7f05eec3e1c16a45c46dc98f96799c2373ec3c52046f0"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-timaeus-0003-rewrite-batch-acceptance.md",
+      "sha256": "85906a2e6beda0e3512ae8c05ea10d19437ec4ec60751a667d0fb2137c05be5c"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-timaeus-round3",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_timaeus_0014",
+          "finding": "Independent Luna review found comm_timaeus_0014 accurate and supported but still combining dissolution mechanics, heat, cold, and methodological ordering into multiple jobs."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-timaeus-0014-round3",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_timaeus_0014"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_timaeus_0014",
+        "title": "The order of explanation",
+        "body": "At 61c–61d, Timaeus turns to the causes of bodily affections and names a problem of order. Sensation must be present in the account, but flesh, the surrounding bodily parts, and the mortal soul have not yet been explained; the sensory affections and those bodily and psychic topics cannot be adequately stated apart. His solution is procedural: posit one side first, then return to it. I hear this as a rule for exposition—dependency need not halt the account if its sequence is made explicit.",
+        "cites": {
+          "observations": [
+            "obs_timaeus_0217"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_timaeus_0014",
+      "body": "```yaml\ncommentary_id: comm_timaeus_0014\nsource_work: Timaeus\nblock_kind: section\nplacement: before\ntitle: \"From dissolution to bodily affection\"\nstephanus_span: 60d-64b\nsource_ref:\n  source_path: raw/plato/greek/timaeus.txt\n  stephanus_span: 60d-64b\n  start_marker: 60d\n  end_marker: 64b\n  start_char: 82372\n  end_char: 90152\n  text_sha256: \"612f2c5794b1a4d4f470453c43760ce47b659b1ae8e0b1301dfbcdecdf9b673c\"\nbody: \"Timaeus moves from mixed bodies to the causes of bodily affections. The access-and-interstice logic still governs dissolution, but it does not simply carry over: heat is attributed to fire’s sharp geometry and rapid cutting, while cold is attributed to larger surrounding particles compressing bodily moisture and provoking recoil. Because sensation, flesh, and mortal soul cannot yet be explained together, he assumes one side and returns to it later.\"\ncites:\n  observations: [\"obs_timaeus_0217\", \"obs_timaeus_0218\", \"obs_timaeus_0219\", \"obs_timaeus_0226\", \"obs_timaeus_0227\", \"obs_timaeus_0228\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

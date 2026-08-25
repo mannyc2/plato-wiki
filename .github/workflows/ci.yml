@@ -1,0 +1,138 @@
+name: ci
+
+# Pull requests and non-final repositories build the exact deployable artifact
+# but cannot deploy it. Only public main in the final repository name reaches
+# the protected GitHub Pages environment.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    outputs:
+      manifest_sha256: ${{ steps.public_manifest.outputs.sha256 }}
+    steps:
+      # actions/checkout v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+
+      # oven-sh/setup-bun v2
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: 1.3.9
+
+      - name: Install
+        run: bun install --frozen-lockfile
+
+      - name: Install audio interop tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          ffmpeg -version | head -n 1
+          ffprobe -version | head -n 1
+
+      # astral-sh/setup-uv v9.0.0
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
+        with:
+          version: 0.9.24
+          python-version: "3.13.11"
+          enable-cache: false
+
+      - name: Pre-warm the Python interop environment
+        env:
+          UV_CACHE_DIR: ${{ runner.temp }}/uv-cache
+        run: |
+          time uv run --with numpy==2.2.6 python -c \
+            'import numpy; print("numpy", numpy.__version__)'
+
+      - name: Edition completeness
+        run: bun run completeness -- --target knowledge-base
+
+      - name: Materialize and audit the public tree
+        id: public_manifest
+        run: |
+          bun run public:export -- \
+            --out-dir "${RUNNER_TEMP}/public-tree" \
+            --manifest "${RUNNER_TEMP}/public-manifest.json"
+          bun run release:audit -- \
+            --target knowledge-base \
+            --public-tree "${RUNNER_TEMP}/public-tree" \
+            --export-manifest "${RUNNER_TEMP}/public-manifest.json"
+          echo "sha256=$(sha256sum "${RUNNER_TEMP}/public-manifest.json" | cut -d ' ' -f 1)" >> "${GITHUB_OUTPUT}"
+
+      - name: Verify and build the exact Pages artifact
+        env:
+          UV_CACHE_DIR: ${{ runner.temp }}/uv-cache
+        run: |
+          bun run ci -- \
+            --site-out-dir "${RUNNER_TEMP}/site" \
+            --source-revision "${GITHUB_SHA}" \
+            --export-manifest "${RUNNER_TEMP}/public-manifest.json"
+
+      - name: Diff hygiene
+        run: |
+          git diff --check
+          test -z "$(git status --porcelain)" || {
+            echo "hosted checks modified the checkout:"
+            git status --short
+            exit 1
+          }
+
+      # actions/upload-pages-artifact v4
+      - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
+        with:
+          path: ${{ runner.temp }}/site
+
+      # actions/upload-artifact v4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: release-evidence
+          path: |
+            wiki/completeness.md
+            release/public/
+
+  deploy:
+    needs: verify
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && github.repository == 'mannyc2/plato-wiki'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # actions/checkout v5; smoke tests execute the repository-owned checker.
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+
+      # oven-sh/setup-bun v2
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: 1.3.9
+
+      # actions/configure-pages v5
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
+
+      # actions/deploy-pages v4
+      - name: Deploy exact artifact
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
+
+      - name: Smoke deployed revision
+        run: |
+          bun scripts/release/smoke-site.ts \
+            --base-url "${{ steps.deployment.outputs.page_url }}" \
+            --expected-revision "${GITHUB_SHA}" \
+            --expected-manifest-sha256 "${{ needs.verify.outputs.manifest_sha256 }}"

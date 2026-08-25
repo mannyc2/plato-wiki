@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-delegated-audit-34-523a-524a",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "gorgias",
+  "unit_key": "34-523a-524a",
+  "source_path": "scratch/commentary/delegated-audits/gorgias/34-523a-524a.json",
+  "source_sha256": "340c278c301e953f3a128103a44b207d8127ddb9ba4f86cd393c3557f87f4547",
+  "target_path": "wiki/submissions/commentary-audit/gorgias/34-523a-524a.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "0faa8bbc6fedb203b2be0e077f257e8e0ece374743fd56433be6bf4dff6692be",
+  "applied_at": "2026-08-24T01:15:36.775Z",
+  "applied_ids": [
+    "comm_gorgias_0034"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "gorgias",
+    "unit_key": "34-523a-524a",
+    "job": {
+      "job_id": "audit:gorgias:34-523a-524a",
+      "input_sha256": "95ad255f5ce68090c418b6ff572830daf576e73933f216915b0e935672b3b57d",
+      "audit_brief_path": "scratch/commentary/audit-briefs/gorgias/34-523a-524a.md",
+      "audit_brief_sha256": "3a9ad297329545e5b0f0c7a510d577dcf0ed060ffdb69879f5b309024277adda",
+      "output_path": "scratch/commentary/audits/gorgias/34-523a-524a.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/gorgias/34-523a-524a.output.json",
+    "output_sha256": "0faa8bbc6fedb203b2be0e077f257e8e0ece374743fd56433be6bf4dff6692be",
+    "provenance": {
+      "auditor": "batch-b-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

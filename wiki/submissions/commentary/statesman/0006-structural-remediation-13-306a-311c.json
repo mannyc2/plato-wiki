@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "submission_id": "0006-structural-remediation-13-306a-311c",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "statesman",
+  "unit_key": "13-306a-311c",
+  "source_path": "scratch/commentary/audits/statesman/13-306a-311c.json",
+  "source_sha256": "778e46889aea49f980c1c8204e428c8f9466e45636fbbeea90bf7c82007a9e63",
+  "target_path": "wiki/commentary/statesman.md",
+  "target_sha256_before": "9b29b672c642d6c82d9fab82a169bd82ffddc24737bea9c4b0ff3f8328fa1665",
+  "target_sha256_after": "fabc3c7fcbbb7d944cc8d399bb1dad468ab6309e9af579b296d74f0f9bd9492e",
+  "applied_at": "2026-08-23T22:26:34.107Z",
+  "applied_ids": [
+    "comm_statesman_0013",
+    "comm_statesman_0022"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "statesman",
+      "unitKey": "13-306a-311c",
+      "sectionId": "comm_statesman_0013",
+      "auditOutputPath": "scratch/commentary/audits/statesman/13-306a-311c.json",
+      "auditOutputSha256": "778e46889aea49f980c1c8204e428c8f9466e45636fbbeea90bf7c82007a9e63",
+      "expectedLedgerSha256": "9b29b672c642d6c82d9fab82a169bd82ffddc24737bea9c4b0ff3f8328fa1665",
+      "expectedAttributionSha256": "f108aa7f4d3d41b0ffdc8a749ec2e0283297da3d15eb5fdc62ebcc7a55f8854d",
+      "expectedEnglishSha256": "a7eb1401c5919d20663a644a503e5034ef2907fcfa3fd04db3c55dc0981e679c",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_statesman_0013"
+        },
+        {
+          "operation": "remove",
+          "commentaryId": "comm_statesman_0022"
+        }
+      ],
+      "reviewer": "lane-b-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna structural review confirms conservative rejection of audited remove findings and split originals; delegated Luna review only."
+    },
+    "audit_output_path": "scratch/commentary/audits/statesman/13-306a-311c.json",
+    "audit_output_sha256": "778e46889aea49f980c1c8204e428c8f9466e45636fbbeea90bf7c82007a9e63",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_statesman_0013",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_statesman_0022",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

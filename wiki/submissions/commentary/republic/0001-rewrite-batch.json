@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "republic",
+  "source_path": "scratch/commentary/rewrites/republic/03-368a-376e.json",
+  "source_sha256": "dfc0947d3e21fc55d61fc93b5b1131b96a9e088bc548306dab2899c191aa44b6",
+  "target_path": "wiki/commentary/republic.md",
+  "target_sha256_before": "5100541df61ca9b225a1d24d1cb1b866617ee8b54442e24f977cfaaa3d0c65a9",
+  "target_sha256_after": "b55c9f54eb52064daf6e13e267bc3eba1ce438bf00eeeb71c94cda88a2a4d795",
+  "applied_at": "2026-08-21T20:30:48.601Z",
+  "applied_ids": [
+    "comm_republic_0003",
+    "comm_republic_0004",
+    "comm_republic_0005",
+    "comm_republic_0009",
+    "comm_republic_0010",
+    "comm_republic_0011",
+    "comm_republic_0016",
+    "comm_republic_0017"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "republic",
+      "unit_key": "03-368a-376e",
+      "section_id": "comm_republic_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/republic/03-368a-376e.json",
+        "sha256": "ac0fc4bc65a0496869a301b2d0d304e1cdf9a72e88f7fb180fd8402e354bd34e"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_republic_0003",
+          "title": "From the city to the guardian",
+          "body": "Socrates enlarges the question of justice into a city so its structure can be read at a larger scale. The city begins from non-self-sufficiency, expands through differentiated crafts and exchange, and reaches guardianship as a specialized craft requiring dedicated practice. The guardian is then specified as spirited, gentle toward familiars, and learning-loving. At the endpoint, education is only the next question; tales are classified as true or false.",
+          "cites": {
+            "observations": [
+              "obs_republic_0065",
+              "obs_republic_0066",
+              "obs_republic_0067",
+              "obs_republic_0771",
+              "obs_republic_0772",
+              "obs_republic_0773"
+            ],
+            "claims": [
+              "claim_republic_0146",
+              "claim_republic_0147",
+              "claim_republic_0148",
+              "claim_republic_0150",
+              "claim_republic_0151",
+              "claim_republic_0152"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "republic",
+      "unit_key": "04-377a-392c",
+      "section_id": "comm_republic_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/republic/04-377a-392c.json",
+        "sha256": "439b36c286b712ee3b5ea122b9b708e3621679b57d611224edf477c79205bb66"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_republic_0004",
+          "title": "The first curriculum is selection",
+          "body": "Here poetry becomes an instrument of civic design. The discussion puts stories before gymnastics because the young are thought most impressionable at the beginning of education; it therefore refuses random tales and assigns the city the power to approve some stories and reject others. My reading is that this makes education a question of public curation, not private taste.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_republic_0153",
+              "claim_republic_0154",
+              "claim_republic_0155"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "republic",
+      "unit_key": "05-392d-412b",
+      "section_id": "comm_republic_0005",
+      "audit_output": {
+        "path": "scratch/commentary/audits/republic/05-392d-412b.json",
+        "sha256": "9d3505e46f7f7ace482cc8cf0c1dec02f8dbc393d10ef30b9e9913d097368ae2"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_republic_0005",
+          "title": "From imitation to habituation",
+          "body": "Here the argument turns representation into habituation. Socrates distinguishes the poet’s own narration from speech performed as another, then applies the one-work principle to mimesis. The question is no longer only what a story depicts, but what a guardian repeatedly practices: imitation can settle into body, voice, and thought. One way to read the turn toward music and gymnastics is as the search for stable formation. At this boundary, the emphasis is formation rather than selection.",
+          "cites": {
+            "observations": [
+              "obs_republic_0086",
+              "obs_republic_0087",
+              "obs_republic_0091"
+            ],
+            "claims": [
+              "claim_republic_0198",
+              "claim_republic_0199",
+              "claim_republic_0200"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "republic",
+      "unit_key": "09-471d-502c",
+      "section_id": "comm_republic_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/republic/09-471d-502c.json",
+        "sha256": "4d5456ca90458f8c3047e02d76a5400279f7c559e252a5097f54f2ddd5e0d18e"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_republic_0009",
+          "title": "From the third wave to a definition of philosophy",
+          "body": "Socrates first separates the city’s paradigm from proof that it can be enacted, then narrows the feasibility demand to the nearest possible civic arrangement before stating the philosopher-king condition. The definition that follows makes philosophy a love of wisdom as a whole and of learning itself, not merely of beautiful appearances.",
+          "cites": {
+            "observations": [
+              "obs_republic_0169",
+              "obs_republic_0801",
+              "obs_republic_0802",
+              "obs_republic_0170"
+            ],
+            "claims": [
+              "claim_republic_0427",
+              "claim_republic_0429",
+              "claim_republic_0430",
+              "claim_republic_0432",
+              "claim_republic_0434"
+            ],
+            "relations": [
+              "rel_republic_0050"
+            ],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "republic",
+      "unit_key": "10-502d-514a",
+      "section_id": "comm_republic_0010",
+      "audit_output": {
+        "path": "scratch/commentary/audits/republic/10-502d-514a.json",
+        "sha256": "101308a055932921734fb396945f240cfa61e7355596dd303b691353f7ede803"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_republic_0010",
+          "title": "The longer route to the greatest study",
+          "body": "Here the dialogue reopens the question of rule by tightening its standard. The discussion of women and children is marked complete, but the rulers’ case must be taken up again; the candidates must combine quick learning with steadiness and survive tests in pleasures, pains, fears, and study. The payoff is methodological: the earlier account of virtue was serviceable but not fully precise, and an incomplete measure cannot measure what it addresses. The “longer route” is therefore a demand for completion, not a decorative detour.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_republic_0520",
+              "claim_republic_0521",
+              "claim_republic_0522",
+              "claim_republic_0523",
+              "claim_republic_0524"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "republic",
+      "unit_key": "11-514b-521c",
+      "section_id": "comm_republic_0011",
+      "audit_output": {
+        "path": "scratch/commentary/audits/republic/11-514b-521c.json",
+        "sha256": "e4947c1874e405c642e184ec59c0d16f30a7eba11012f1b5f5520047ec17ed9e"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_republic_0011",
+          "title": "Ascent and civic return",
+          "body": "Read the image as a test of orientation, not merely of arrival: the prisoner is forced up a rough ascent, suffers pain, and sees in stages rather than all at once. The movement then turns outward. Socrates assigns the city’s specially educated guardians both contemplation and political work, and links good government to rulers least eager for office. My proposal is that the return tests vision: what one sees must shape how one serves others.",
+          "cites": {
+            "observations": [
+              "obs_republic_0286",
+              "obs_republic_0287"
+            ],
+            "claims": [
+              "claim_republic_0537",
+              "claim_republic_0538",
+              "claim_republic_0539"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "republic",
+      "unit_key": "16-576c-588a",
+      "section_id": "comm_republic_0016",
+      "audit_output": {
+        "path": "scratch/commentary/audits/republic/16-576c-588a.json",
+        "sha256": "34a44d2fbb57e2881785df6100e89bd57d54833810d3c8706c464a22076b30fd"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_republic_0016",
+          "title": "Tyranny as enslavement",
+          "body": "Power is turned inside out here. The tyrannized city and tyrannical soul are alike enslaved, so apparent command is not freedom for the whole. Poverty, insatiability, fear, disturbance, and regret mark their condition; the tyrant is pictured as confined, unable to live as free men do. The reversal suggests that command over others does not secure command of oneself. Socrates insists that the judgment requires examination, not mere belief.",
+          "cites": {
+            "observations": [
+              "obs_republic_0483",
+              "obs_republic_0828",
+              "obs_republic_0830"
+            ],
+            "claims": [
+              "claim_republic_0664",
+              "claim_republic_0665",
+              "claim_republic_0668",
+              "claim_republic_0669"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "republic",
+      "unit_key": "17-588b-595a",
+      "section_id": "comm_republic_0017",
+      "audit_output": {
+        "path": "scratch/commentary/audits/republic/17-588b-595a.json",
+        "sha256": "5932d8e507f608c9c8d435a904fac375bc04796590f0f420b3f8f96c7bbaf269"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_republic_0017",
+          "title": "A test in images",
+          "body": "Rather than simply restating the case for justice, Socrates makes the earlier claim answerable to a picture: a many-headed beast, a lion, and a human are fused beneath one human exterior. He then asks what the advocate of injustice is committed to: strengthening the beast and lion while weakening the human. The image is a device for testing the claim, not a claim that the soul literally has this shape.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_republic_0692",
+              "claim_republic_0693"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_republic_0003",
+      "body": "```yaml\ncommentary_id: comm_republic_0003\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"The city in speech\"\nstephanus_span: 368a-376e\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 368a-376e\n  start_marker: 368a\n  end_marker: 376e\n  start_char: 80611\n  end_char: 99710\n  text_sha256: \"f5eb3be3677be7c2e418feef377f33a0fcabc86abfd1aafbccb87465852eea9d\"\nbody: \"Socrates enlarges the problem from one person to a city, tracing how needs, specialization, luxury, and war produce political order. The city’s guardians then require an education whose stories, music, and bodily training shape the desires that will later govern the whole regime.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_republic_0004",
+      "body": "```yaml\ncommentary_id: comm_republic_0004\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"Censoring the poets and forming the guardian\"\nstephanus_span: 377a-392c\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 377a-392c\n  start_marker: 377a\n  end_marker: 392c\n  start_char: 99710\n  end_char: 126153\n  text_sha256: \"eb25f09c191a5fd497ee70dffa0d0ffabb6706161415e1b205be9d42bf96b4dc\"\nbody: \"The guardians’ education begins with stories about gods, heroes, death, and lamentation. The issue is not literary taste alone: repeated images train the soul’s expectations about courage, loss, and authority, so poetry becomes part of political formation.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_republic_0005",
+      "body": "```yaml\ncommentary_id: comm_republic_0005\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"Imitation, style, and guardian formation\"\nstephanus_span: 392d-412b\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 392d-412b\n  start_marker: 392d\n  end_marker: 412b\n  start_char: 126153\n  end_char: 166576\n  text_sha256: \"40bfb55cf58beb747c822a537477f9fc71565d6f01fdbda188f4e80a26cc8c94\"\nbody: \"The inquiry distinguishes narration from imitation and asks how style enters the soul. Music and gymnastics then form the guardian’s character, while selection tests whether gentleness toward citizens can coexist with spirited defense against enemies.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_republic_0009",
+      "body": "```yaml\ncommentary_id: comm_republic_0009\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"The third wave: philosopher-rule and the philosopher’s nature\"\nstephanus_span: 471d-502c\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 471d-502c\n  start_marker: 471d\n  end_marker: 502c\n  start_char: 278263\n  end_char: 333316\n  text_sha256: \"d8f0a67d30cdbb7e0ce6631eb77e4f765de0aba2653545dd8f75d6acc38779e3\"\nbody: \"The third wave demands that philosophers rule, and the dialogue defends the philosopher’s love of truth, memory, courage, and measured character. It also explains how the best nature can be corrupted by its city, setting up the contrast between genuine philosophy and its political imitations.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_republic_0010",
+      "body": "```yaml\ncommentary_id: comm_republic_0010\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"The philosopher’s rule and the good\"\nstephanus_span: 502d-514a\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 502d-514a\n  start_marker: 502d\n  end_marker: 514a\n  start_char: 333316\n  end_char: 352150\n  text_sha256: \"386a3d812b4c634638e052132d2d9eaae3febf979d360dd4e06978bfe56c5791\"\nbody: \"The rulers’ knowledge is finally tied to the good itself, the source by which justice and every intelligible object become knowable and valuable. The analogy of the sun prepares the cave: education is an ordered turning toward the condition of knowing.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_republic_0011",
+      "body": "```yaml\ncommentary_id: comm_republic_0011\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"The cave and the return\"\nstephanus_span: 514b-521c\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 514b-521c\n  start_marker: 514b\n  end_marker: 521c\n  start_char: 352150\n  end_char: 366099\n  text_sha256: \"ead540f4b65109d6be37f3c38c0f308d64acfd6b44f3f9764bee4fb4b2920f0e\"\nbody: \"The cave dramatizes education as liberation that hurts. The released prisoner must adjust to brighter realities, but the final demand is descent: the one who has seen more must return to govern, because the city’s justice cannot be secured by private contemplation alone.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_republic_0016",
+      "body": "```yaml\ncommentary_id: comm_republic_0016\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"The tyrannical soul\"\nstephanus_span: 576c-588a\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 576c-588a\n  start_marker: 576c\n  end_marker: 588a\n  start_char: 469930\n  end_char: 494641\n  text_sha256: \"d3acb6fae6c30b8d0a4e48682c72f2496c8a2224062ee66166d88822567db30a\"\nbody: \"The tyrant’s apparent freedom is revealed as slavery to lawless desire. Surrounded by flatterers and enemies, he must consume the city to protect himself, while the argument’s psychological parallel shows why the most commanding appetite produces the least genuine autonomy.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_republic_0017",
+      "body": "```yaml\ncommentary_id: comm_republic_0017\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"The many-headed beast and the image of justice\"\nstephanus_span: 588b-595a\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 588b-595a\n  start_marker: 588b\n  end_marker: 595a\n  start_char: 494641\n  end_char: 502887\n  text_sha256: \"7452bcbdf56d17a07eee64847b13ed5ebce881ac090cc3e2e2bf72f841f8e987\"\nbody: \"The many-headed beast, the lion, and the human being image the soul’s appetites, spirit, and reason. Injustice deforms the inner human by feeding the beast and starving what should rule; justice restores the proper order, and the ideal city reappears as the external image of that disciplined soul.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

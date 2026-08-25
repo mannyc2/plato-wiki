@@ -1,0 +1,140 @@
+dialogue: parmenides
+source_path: raw/plato/greek/parmenides.txt
+source_sha256: 63e6839a3de2e45238e2d427cb0a2310e4d54f0ddc1484068cc729e61240f1f2
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[133]:
+  group             | form      | start_char | end_char | marker | turn_id              | token_ids
+  assent_concession | πάνυ γε   | 552        | 559      | 126b   | turn_parmenides_0001 | tok_parmenides_000090,tok_parmenides_000091
+  aporia_reset      | πάλιν     | 2601       | 2606     | 127d   | turn_parmenides_0001 | tok_parmenides_000404
+  assent_concession | ναί       | 4057       | 4060     | 128b   | turn_parmenides_0001 | tok_parmenides_000651
+  definition_prompt | τί ἐστι   | 4450       | 4458     | 128c   | turn_parmenides_0001 | tok_parmenides_000713,tok_parmenides_000714
+  method_term       | ὑπόθεσις  | 4816       | 4824     | 128d   | turn_parmenides_0001 | tok_parmenides_000772
+  definition_prompt | εἶδος     | 5330       | 5335     | 129a   | turn_parmenides_0001 | tok_parmenides_000856
+  definition_prompt | εἶδος     | 8209       | 8214     | 130b   | turn_parmenides_0001 | tok_parmenides_001337
+  assent_concession | ναί       | 8283       | 8286     | 130b   | turn_parmenides_0001 | tok_parmenides_001350
+  definition_prompt | εἶδος     | 8322       | 8327     | 130c   | turn_parmenides_0001 | tok_parmenides_001355
+  definition_prompt | εἶδος     | 8380       | 8385     | 130c   | turn_parmenides_0001 | tok_parmenides_001366
+  definition_prompt | εἶδος     | 8713       | 8718     | 130d   | turn_parmenides_0001 | tok_parmenides_001423
+  definition_prompt | εἶδος     | 8880       | 8885     | 130d   | turn_parmenides_0001 | tok_parmenides_001450
+  assent_concession | πάνυ γε   | 9645       | 9652     | 131a   | turn_parmenides_0001 | tok_parmenides_001573,tok_parmenides_001574
+  definition_prompt | εἶδος     | 9855       | 9860     | 131a   | turn_parmenides_0001 | tok_parmenides_001607
+  definition_prompt | εἶδος     | 10796      | 10801    | 131c   | turn_parmenides_0001 | tok_parmenides_001767
+  definition_prompt | εἶδος     | 11762      | 11767    | 132a   | turn_parmenides_0001 | tok_parmenides_001924
+  definition_prompt | ἰδέα      | 11841      | 11845    | 132a   | turn_parmenides_0001 | tok_parmenides_001938
+  definition_prompt | εἶδος     | 12095      | 12100    | 132a   | turn_parmenides_0001 | tok_parmenides_001984
+  assent_concession | ναί       | 12637      | 12640    | 132b   | turn_parmenides_0001 | tok_parmenides_002074
+  assent_concession | ναί       | 12769      | 12772    | 132c   | turn_parmenides_0001 | tok_parmenides_002095
+  definition_prompt | εἶδος     | 12787      | 12792    | 132c   | turn_parmenides_0001 | tok_parmenides_002098
+  definition_prompt | εἶδος     | 13393      | 13398    | 132d   | turn_parmenides_0001 | tok_parmenides_002201
+  definition_prompt | εἶδος     | 13698      | 13703    | 132e   | turn_parmenides_0001 | tok_parmenides_002251
+  definition_prompt | εἶδος     | 13782      | 13787    | 132e   | turn_parmenides_0001 | tok_parmenides_002266
+  definition_prompt | εἶδος     | 13812      | 13817    | 132e   | turn_parmenides_0001 | tok_parmenides_002273
+  definition_prompt | εἶδος     | 13840      | 13845    | 132e   | turn_parmenides_0001 | tok_parmenides_002277
+  definition_prompt | εἶδος     | 13925      | 13930    | 133a   | turn_parmenides_0001 | tok_parmenides_002291
+  definition_prompt | εἶδος     | 13950      | 13955    | 133a   | turn_parmenides_0001 | tok_parmenides_002295
+  definition_prompt | εἶδος     | 14325      | 14330    | 133b   | turn_parmenides_0001 | tok_parmenides_002354
+  assent_concession | πάνυ γε   | 16170      | 16177    | 134a   | turn_parmenides_0001 | tok_parmenides_002658,tok_parmenides_002659
+  assent_concession | ναί       | 16275      | 16278    | 134a   | turn_parmenides_0001 | tok_parmenides_002677
+  assent_concession | ὁμολογεῖς | 16486      | 16495    | 134b   | turn_parmenides_0001 | tok_parmenides_002714
+  assent_concession | ναί       | 16653      | 16656    | 134b   | turn_parmenides_0001 | tok_parmenides_002743
+  assent_concession | ναί       | 17139      | 17142    | 134c   | turn_parmenides_0001 | tok_parmenides_002821
+  definition_prompt | εἶδος     | 18295      | 18300    | 135a   | turn_parmenides_0001 | tok_parmenides_003012
+  aporia_reset      | ἀπορεῖν   | 18307      | 18314    | 135a   | turn_parmenides_0001 | tok_parmenides_003014
+  definition_prompt | οὐσία     | 18616      | 18621    | 135a   | turn_parmenides_0001 | tok_parmenides_003066
+  definition_prompt | εἶδος     | 18988      | 18993    | 135b   | turn_parmenides_0001 | tok_parmenides_003125
+  aporia_reset      | πάλιν     | 20684      | 20689    | 136a   | turn_parmenides_0001 | tok_parmenides_003407
+  assent_concession | ναί       | 23616      | 23619    | 137c   | turn_parmenides_0001 | tok_parmenides_003893
+  assent_concession | πάνυ γε   | 23676      | 23683    | 137c   | turn_parmenides_0001 | tok_parmenides_003907,tok_parmenides_003908
+  assent_concession | ναί       | 24322      | 24325    | 137e   | turn_parmenides_0001 | tok_parmenides_004030
+  assent_concession | ναί       | 25421      | 25424    | 138c   | turn_parmenides_0001 | tok_parmenides_004236
+  assent_concession | ναί       | 26024      | 26027    | 138d   | turn_parmenides_0001 | tok_parmenides_004338
+  assent_concession | πάνυ γε   | 28244      | 28251    | 139e   | turn_parmenides_0001 | tok_parmenides_004758,tok_parmenides_004759
+  assent_concession | ναί       | 28621      | 28624    | 139e   | turn_parmenides_0001 | tok_parmenides_004833
+  assent_concession | ναί       | 28790      | 28793    | 140a   | turn_parmenides_0001 | tok_parmenides_004866
+  assent_concession | ναί       | 29482      | 29485    | 140b   | turn_parmenides_0001 | tok_parmenides_004995
+  assent_concession | ναί       | 29606      | 29609    | 140c   | turn_parmenides_0001 | tok_parmenides_005017
+  assent_concession | ναί       | 32525      | 32528    | 141e   | turn_parmenides_0001 | tok_parmenides_005513
+  aporia_reset      | πάλιν     | 33495      | 33500    | 142b   | turn_parmenides_0001 | tok_parmenides_005686
+  assent_concession | ναί       | 33692      | 33695    | 142b   | turn_parmenides_0001 | tok_parmenides_005717
+  definition_prompt | οὐσία     | 33804      | 33809    | 142b   | turn_parmenides_0001 | tok_parmenides_005741
+  definition_prompt | οὐσία     | 33877      | 33882    | 142b   | turn_parmenides_0001 | tok_parmenides_005757
+  method_term       | ὑπόθεσις  | 34004      | 34012    | 142c   | turn_parmenides_0001 | tok_parmenides_005782
+  assent_concession | πάνυ γε   | 34245      | 34252    | 142c   | turn_parmenides_0001 | tok_parmenides_005829,tok_parmenides_005830
+  aporia_reset      | πάλιν     | 34254      | 34259    | 142c   | turn_parmenides_0001 | tok_parmenides_005831
+  definition_prompt | οὐσία     | 34492      | 34497    | 142d   | turn_parmenides_0001 | tok_parmenides_005877
+  assent_concession | πάνυ γε   | 34827      | 34834    | 142d   | turn_parmenides_0001 | tok_parmenides_005941,tok_parmenides_005942
+  aporia_reset      | πάλιν     | 34993      | 34998    | 142e   | turn_parmenides_0001 | tok_parmenides_005975
+  assent_concession | ναί       | 35444      | 35447    | 143a   | turn_parmenides_0001 | tok_parmenides_006062
+  definition_prompt | οὐσία     | 35779      | 35784    | 143b   | turn_parmenides_0001 | tok_parmenides_006126
+  definition_prompt | οὐσία     | 35851      | 35856    | 143b   | turn_parmenides_0001 | tok_parmenides_006140
+  definition_prompt | οὐσία     | 35918      | 35923    | 143b   | turn_parmenides_0001 | tok_parmenides_006155
+  definition_prompt | οὐσία     | 35932      | 35937    | 143b   | turn_parmenides_0001 | tok_parmenides_006158
+  definition_prompt | οὐσία     | 36049      | 36054    | 143b   | turn_parmenides_0001 | tok_parmenides_006182
+  assent_concession | ναί       | 36394      | 36397    | 143c   | turn_parmenides_0001 | tok_parmenides_006242
+  definition_prompt | οὐσία     | 36415      | 36420    | 143c   | turn_parmenides_0001 | tok_parmenides_006247
+  assent_concession | πάνυ γε   | 36450      | 36457    | 143c   | turn_parmenides_0001 | tok_parmenides_006254,tok_parmenides_006255
+  definition_prompt | οὐσία     | 36474      | 36479    | 143c   | turn_parmenides_0001 | tok_parmenides_006259
+  assent_concession | ναί       | 36555      | 36558    | 143c   | turn_parmenides_0001 | tok_parmenides_006275
+  assent_concession | ναί       | 36919      | 36922    | 143d   | turn_parmenides_0001 | tok_parmenides_006339
+  assent_concession | πάνυ γε   | 37725      | 37732    | 144a   | turn_parmenides_0001 | tok_parmenides_006489,tok_parmenides_006490
+  assent_concession | ναί       | 37824      | 37827    | 144a   | turn_parmenides_0001 | tok_parmenides_006506
+  definition_prompt | οὐσία     | 37867      | 37872    | 144b   | turn_parmenides_0001 | tok_parmenides_006513
+  definition_prompt | οὐσία     | 38002      | 38007    | 144b   | turn_parmenides_0001 | tok_parmenides_006536
+  assent_concession | ναί       | 38825      | 38828    | 144d   | turn_parmenides_0001 | tok_parmenides_006669
+  definition_prompt | οὐσία     | 38956      | 38961    | 144d   | turn_parmenides_0001 | tok_parmenides_006692
+  assent_concession | ναί       | 40389      | 40392    | 145c   | turn_parmenides_0001 | tok_parmenides_006958
+  assent_concession | πάνυ γε   | 41390      | 41397    | 145e   | turn_parmenides_0001 | tok_parmenides_007169,tok_parmenides_007170
+  assent_concession | πάνυ γε   | 41813      | 41820    | 146a   | turn_parmenides_0001 | tok_parmenides_007256,tok_parmenides_007257
+  assent_concession | ναί       | 45011      | 45014    | 147c   | turn_parmenides_0001 | tok_parmenides_007892
+  assent_concession | πάνυ γε   | 45525      | 45532    | 147d   | turn_parmenides_0001 | tok_parmenides_007981,tok_parmenides_007982
+  assent_concession | ναί       | 46041      | 46044    | 148a   | turn_parmenides_0001 | tok_parmenides_008077
+  assent_concession | ναί       | 46216      | 46219    | 148a   | turn_parmenides_0001 | tok_parmenides_008109
+  assent_concession | πάνυ γε   | 46426      | 46433    | 148b   | turn_parmenides_0001 | tok_parmenides_008148,tok_parmenides_008149
+  assent_concession | ναί       | 46467      | 46470    | 148b   | turn_parmenides_0001 | tok_parmenides_008156
+  assent_concession | ναί       | 46569      | 46572    | 148b   | turn_parmenides_0001 | tok_parmenides_008173
+  assent_concession | πάνυ γε   | 47133      | 47140    | 148d   | turn_parmenides_0001 | tok_parmenides_008270,tok_parmenides_008271
+  assent_concession | ναί       | 47481      | 47484    | 148d   | turn_parmenides_0001 | tok_parmenides_008334
+  assent_concession | ναί       | 48556      | 48559    | 149b   | turn_parmenides_0001 | tok_parmenides_008533
+  assent_concession | ναί       | 50822      | 50825    | 150b   | turn_parmenides_0001 | tok_parmenides_008968
+  assent_concession | ναί       | 52564      | 52567    | 151a   | turn_parmenides_0001 | tok_parmenides_009285
+  assent_concession | ναί       | 54507      | 54510    | 151e   | turn_parmenides_0001 | tok_parmenides_009647
+  assent_concession | πάνυ γε   | 54735      | 54742    | 152a   | turn_parmenides_0001 | tok_parmenides_009687,tok_parmenides_009688
+  assent_concession | ναί       | 54775      | 54778    | 152a   | turn_parmenides_0001 | tok_parmenides_009693
+  assent_concession | ναί       | 55117      | 55120    | 152b   | turn_parmenides_0001 | tok_parmenides_009738
+  assent_concession | ναί       | 56026      | 56029    | 152d   | turn_parmenides_0001 | tok_parmenides_009893
+  assent_concession | ναί       | 57159      | 57162    | 153b   | turn_parmenides_0001 | tok_parmenides_010102
+  assent_concession | ναί       | 57666      | 57669    | 153c   | turn_parmenides_0001 | tok_parmenides_010195
+  assent_concession | ναί       | 60140      | 60143    | 154d   | turn_parmenides_0001 | tok_parmenides_010629
+  aporia_reset      | πάλιν     | 60145      | 60150    | 154d   | turn_parmenides_0001 | tok_parmenides_010630
+  assent_concession | ναί       | 60481      | 60484    | 154d   | turn_parmenides_0001 | tok_parmenides_010688
+  assent_concession | πάνυ γε   | 60719      | 60726    | 154e   | turn_parmenides_0001 | tok_parmenides_010729,tok_parmenides_010730
+  assent_concession | πάνυ γε   | 62541      | 62548    | 155d   | turn_parmenides_0001 | tok_parmenides_011034,tok_parmenides_011035
+  assent_concession | πάνυ γε   | 63609      | 63616    | 156a   | turn_parmenides_0001 | tok_parmenides_011227,tok_parmenides_011228
+  assent_concession | πάνυ γε   | 63854      | 63861    | 156b   | turn_parmenides_0001 | tok_parmenides_011270,tok_parmenides_011271
+  assent_concession | ναί       | 64027      | 64030    | 156b   | turn_parmenides_0001 | tok_parmenides_011298
+  assent_concession | πάνυ γε   | 67416      | 67423    | 157e   | turn_parmenides_0001 | tok_parmenides_011897,tok_parmenides_011898
+  assent_concession | πάνυ γε   | 69338      | 69345    | 158d   | turn_parmenides_0001 | tok_parmenides_012255,tok_parmenides_012256
+  assent_concession | πάνυ γε   | 69505      | 69512    | 158e   | turn_parmenides_0001 | tok_parmenides_012284,tok_parmenides_012285
+  assent_concession | ναί       | 69711      | 69714    | 159a   | turn_parmenides_0001 | tok_parmenides_012320
+  aporia_reset      | πάλιν     | 70242      | 70247    | 159b   | turn_parmenides_0001 | tok_parmenides_012409
+  assent_concession | ναί       | 70782      | 70785    | 159c   | turn_parmenides_0001 | tok_parmenides_012522
+  method_term       | ὑπόθεσις  | 72583      | 72591    | 160b   | turn_parmenides_0001 | tok_parmenides_012847
+  assent_concession | πάνυ γε   | 72917      | 72924    | 160c   | turn_parmenides_0001 | tok_parmenides_012913,tok_parmenides_012914
+  assent_concession | πάνυ γε   | 73548      | 73555    | 160d   | turn_parmenides_0001 | tok_parmenides_013028,tok_parmenides_013029
+  assent_concession | πάνυ γε   | 74351      | 74358    | 161a   | turn_parmenides_0001 | tok_parmenides_013182,tok_parmenides_013183
+  assent_concession | ναί       | 74460      | 74463    | 161a   | turn_parmenides_0001 | tok_parmenides_013203
+  method_term       | ὑπόθεσις  | 74907      | 74915    | 161b   | turn_parmenides_0001 | tok_parmenides_013288
+  assent_concession | πάνυ γε   | 74955      | 74969    | 161b   | turn_parmenides_0001 | tok_parmenides_013297,tok_parmenides_013298
+  assent_concession | ναί       | 75333      | 75336    | 161c   | turn_parmenides_0001 | tok_parmenides_013371
+  assent_concession | πάνυ γε   | 75645      | 75652    | 161d   | turn_parmenides_0001 | tok_parmenides_013424,tok_parmenides_013425
+  definition_prompt | οὐσία     | 77020      | 77025    | 162b   | turn_parmenides_0001 | tok_parmenides_013688
+  definition_prompt | οὐσία     | 77076      | 77081    | 162b   | turn_parmenides_0001 | tok_parmenides_013699
+  assent_concession | ναί       | 77375      | 77378    | 162c   | turn_parmenides_0001 | tok_parmenides_013758
+  assent_concession | ναί       | 78510      | 78513    | 163a   | turn_parmenides_0001 | tok_parmenides_013968
+  aporia_reset      | πάλιν     | 79134      | 79139    | 163b   | turn_parmenides_0001 | tok_parmenides_014076
+  assent_concession | ναί       | 79270      | 79273    | 163c   | turn_parmenides_0001 | tok_parmenides_014100
+  assent_concession | ναί       | 81452      | 81455    | 164c   | turn_parmenides_0001 | tok_parmenides_014512
+  assent_concession | πάνυ γε   | 82276      | 82283    | 164e   | turn_parmenides_0001 | tok_parmenides_014657,tok_parmenides_014658
+  assent_concession | πάνυ γε   | 83762      | 83776    | 165c   | turn_parmenides_0001 | tok_parmenides_014915,tok_parmenides_014916
+  aporia_reset      | πάλιν     | 84290      | 84295    | 165e   | turn_parmenides_0001 | tok_parmenides_014998

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "submission_id": "0017-structural-remediation-07-401a-404e",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "cratylus",
+  "unit_key": "07-401a-404e",
+  "source_path": "scratch/commentary/audits/cratylus/07-401a-404e.json",
+  "source_sha256": "d274e5dae4e88dd3f814db814bdd0d20e7711513f3f4f3b549d2c8a3f68a8ef9",
+  "target_path": "wiki/commentary/cratylus.md",
+  "target_sha256_before": "2552595799fca83262472c28ed687fa15ccf6650e6d040347ea5cbdf171dc30e",
+  "target_sha256_after": "9c8077a6741f3e7d50e1901a6aedfa7226c60d935de0f275edbfd63dcb8e27be",
+  "applied_at": "2026-08-23T22:33:35.123Z",
+  "applied_ids": [
+    "comm_cratylus_0033",
+    "comm_cratylus_0034",
+    "comm_cratylus_0035"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "cratylus",
+      "unitKey": "07-401a-404e",
+      "sectionId": "comm_cratylus_0007",
+      "auditOutputPath": "scratch/commentary/audits/cratylus/07-401a-404e.json",
+      "auditOutputSha256": "d274e5dae4e88dd3f814db814bdd0d20e7711513f3f4f3b549d2c8a3f68a8ef9",
+      "expectedLedgerSha256": "2552595799fca83262472c28ed687fa15ccf6650e6d040347ea5cbdf171dc30e",
+      "expectedAttributionSha256": "07c95f51f0d0ba69214b39b7d2d2070427a78cf703f0872cee19a8654b275da7",
+      "expectedEnglishSha256": "f7e7992f4cbb8d28e4f7420899517018d95cd594ac81e519c36a8cff59f20736",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_cratylus_0033"
+        },
+        {
+          "operation": "remove",
+          "commentaryId": "comm_cratylus_0034"
+        },
+        {
+          "operation": "remove",
+          "commentaryId": "comm_cratylus_0035"
+        }
+      ],
+      "reviewer": "lane-b-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna structural review confirms conservative rejection of audited remove findings and split originals; delegated Luna review only."
+    },
+    "audit_output_path": "scratch/commentary/audits/cratylus/07-401a-404e.json",
+    "audit_output_sha256": "d274e5dae4e88dd3f814db814bdd0d20e7711513f3f4f3b549d2c8a3f68a8ef9",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_cratylus_0033",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_cratylus_0034",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_cratylus_0035",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

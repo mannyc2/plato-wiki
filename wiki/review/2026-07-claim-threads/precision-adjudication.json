@@ -1,0 +1,194 @@
+{
+  "config_version": 3,
+  "rubric": "RELEVANT iff >=1 shared token belongs to the seed's inquiry (definiendum, definiens vocabulary, or the definitional stretch's test-case vocabulary); IRRELEVANT if all shared tokens are generic (names, discourse verbs, commonplaces)",
+  "adjudicator": "claude-fable-5 session under operator review, 2026-07-11 (v3 sample; supersedes the v2 verdicts that were never persisted)",
+  "relevant": 29,
+  "total": 30,
+  "weak_passes": [
+    "claim_theaetetus_0185|claim_theaetetus_0106",
+    "claim_theaetetus_0185|claim_theaetetus_0057",
+    "claim_theaetetus_0005|claim_theaetetus_0028"
+  ],
+  "adjudications": [
+    {
+      "seed": "claim_charmides_0007",
+      "member": "claim_charmides_0006",
+      "verdict": "RELEVANT",
+      "reason": "σωφροσύνη definiendum; member is the direct refutation of the quietness/shame line via καλόν predicate"
+    },
+    {
+      "seed": "claim_charmides_0007",
+      "member": "claim_charmides_0024",
+      "verdict": "RELEVANT",
+      "reason": "σωφροσύνη definiendum + ἀγαθόν benefit-definiens; member is the benefit examination"
+    },
+    {
+      "seed": "claim_charmides_0007",
+      "member": "claim_charmides_0029",
+      "verdict": "RELEVANT",
+      "reason": "σωφροσύνη definiendum; member argues temperance cannot be craftsman of benefit — same inquiry"
+    },
+    {
+      "seed": "claim_charmides_0007",
+      "member": "claim_charmides_0015",
+      "verdict": "RELEVANT",
+      "reason": "σωφροσύνη definiendum + ἑαυτόν self-knowledge definiens; member is the next definition proposal"
+    },
+    {
+      "seed": "claim_charmides_0007",
+      "member": "claim_charmides_0012",
+      "verdict": "RELEVANT",
+      "reason": "σωφροσύνη definiendum in both inflections; member challenges a sibling definition"
+    },
+    {
+      "seed": "claim_charmides_0015",
+      "member": "claim_charmides_0012",
+      "verdict": "RELEVANT",
+      "reason": "σωφρόνως/σωφροσύνη definiendum family"
+    },
+    {
+      "seed": "claim_charmides_0015",
+      "member": "claim_charmides_0013",
+      "verdict": "RELEVANT",
+      "reason": "σωφρονεῖν/σωφροσύνη definiendum; member is Critias' Hesiod defense inside the doing/making examination"
+    },
+    {
+      "seed": "claim_charmides_0015",
+      "member": "claim_charmides_0014",
+      "verdict": "RELEVANT",
+      "reason": "σωφρονεῖ/σωφροσύνη definiendum; member is the revised doing-good definition"
+    },
+    {
+      "seed": "claim_charmides_0001",
+      "member": "claim_charmides_0026",
+      "verdict": "RELEVANT",
+      "reason": "σωφροσύνη definiendum + πράττειν doing-definiens of the quietness definition"
+    },
+    {
+      "seed": "claim_charmides_0001",
+      "member": "claim_charmides_0025",
+      "verdict": "RELEVANT",
+      "reason": "σωφροσύνη definiendum; member is the too-readily-agreed concession in the same benefit examination"
+    },
+    {
+      "seed": "claim_euthyphro_0007",
+      "member": "claim_euthyphro_0033",
+      "verdict": "RELEVANT",
+      "reason": "ὅσιον/ὁσίου definiendum; member is the Daedalus-instability remark about this inquiry's arguments"
+    },
+    {
+      "seed": "claim_euthyphro_0007",
+      "member": "claim_euthyphro_0052",
+      "verdict": "RELEVANT",
+      "reason": "ὅσιον definiendum; member is the argument-circled-back diagnosis of this definition"
+    },
+    {
+      "seed": "claim_euthyphro_0007",
+      "member": "claim_euthyphro_0017",
+      "verdict": "RELEVANT",
+      "reason": "ὅσιον/ἀνόσιον/θεῶν definiendum + definiens; member is the god-hated-and-god-loved consequence"
+    },
+    {
+      "seed": "claim_euthyphro_0007",
+      "member": "claim_euthyphro_0008",
+      "verdict": "RELEVANT",
+      "reason": "ἀνόσιον + ἀδικοῦντι wrongdoer-definiens; member is the Zeus precedent supporting definition 1"
+    },
+    {
+      "seed": "claim_euthyphro_0007",
+      "member": "claim_euthyphro_0006",
+      "verdict": "RELEVANT",
+      "reason": "ἀνόσιον/ἀνοσιότητα + ἀδικοῦντι; member is the self-sameness requirement on the definiendum"
+    },
+    {
+      "seed": "claim_euthyphro_0043",
+      "member": "claim_euthyphro_0035",
+      "verdict": "RELEVANT",
+      "reason": "ὅσιον definiendum + διδάξαι teaching requirement; member is the adjacent justice-part definition"
+    },
+    {
+      "seed": "claim_euthyphro_0044",
+      "member": "claim_euthyphro_0013",
+      "verdict": "RELEVANT",
+      "reason": "ὅσιον/θεοῖς definiendum family; member restates the teach-the-single-idea requirement"
+    },
+    {
+      "seed": "claim_euthyphro_0023",
+      "member": "claim_euthyphro_0055",
+      "verdict": "RELEVANT",
+      "reason": "ὅσιον/ἀνόσιον definiendum; member is Euthyphro's expertise claim underwriting the definitions"
+    },
+    {
+      "seed": "claim_euthyphro_0035",
+      "member": "claim_euthyphro_0002",
+      "verdict": "RELEVANT",
+      "reason": "ἀσεβείας/εὐσεβές piety vocabulary + γράφεσθαι indictment test-case vocabulary; member is the dialogue's test case"
+    },
+    {
+      "seed": "claim_euthyphro_0042",
+      "member": "claim_euthyphro_0013",
+      "verdict": "RELEVANT",
+      "reason": "θεοῖς/ὅσια definiendum family; member is the teach-the-idea requirement"
+    },
+    {
+      "seed": "claim_theaetetus_0185",
+      "member": "claim_theaetetus_0107",
+      "verdict": "RELEVANT",
+      "reason": "ἕτερον is the allodoxia definiens of the seed; member is the Protagoras defense within the false-belief examination"
+    },
+    {
+      "seed": "claim_theaetetus_0185",
+      "member": "claim_theaetetus_0106",
+      "verdict": "RELEVANT",
+      "reason": "weak pass: ἕτερον is seed definiens, though the member uses it generically (wiser than another) in the adjacent measure examination"
+    },
+    {
+      "seed": "claim_theaetetus_0185",
+      "member": "claim_theaetetus_0098",
+      "verdict": "RELEVANT",
+      "reason": "δοξάζειν/δόξαν/ψευδῆ false-opinion vocabulary on both sides"
+    },
+    {
+      "seed": "claim_theaetetus_0185",
+      "member": "claim_theaetetus_0057",
+      "verdict": "RELEVANT",
+      "reason": "weak pass: ἕτερον seed definiens present; member (time-duration and truth) is inquiry-adjacent Protagoras material"
+    },
+    {
+      "seed": "claim_theaetetus_0185",
+      "member": "claim_theaetetus_0043",
+      "verdict": "IRRELEVANT",
+      "reason": "only shared tokens are discourse verbs δοκῶ/φαμέν; member is the wonder-origin-of-philosophy aside, not the false-belief inquiry"
+    },
+    {
+      "seed": "claim_theaetetus_0231",
+      "member": "claim_theaetetus_0230",
+      "verdict": "RELEVANT",
+      "reason": "δοξάζειν/ἐπιστήμη aviary vocabulary; member is the direct objection the aviary revision answers"
+    },
+    {
+      "seed": "claim_theaetetus_0005",
+      "member": "claim_theaetetus_0157",
+      "verdict": "RELEVANT",
+      "reason": "ἐπιστήμην definiendum; member is the procedural return to examining knowledge"
+    },
+    {
+      "seed": "claim_theaetetus_0005",
+      "member": "claim_theaetetus_0028",
+      "verdict": "RELEVANT",
+      "reason": "weak pass: ἐπιστήμη definiendum token present, though the member (not lawful to concede falsehood) uses it incidentally"
+    },
+    {
+      "seed": "claim_theaetetus_0029",
+      "member": "claim_theaetetus_0171",
+      "verdict": "RELEVANT",
+      "reason": "αἰσθάνεσθαι/ἐπιστήμη: the perception definition linked to its direct counter-instance"
+    },
+    {
+      "seed": "claim_theaetetus_0177",
+      "member": "claim_theaetetus_0212",
+      "verdict": "RELEVANT",
+      "reason": "δόξα/δόξαν/ψευδής: true-judgment definiens plus false-opinion vocabulary"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "submission_id": "0033-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "laws",
+  "source_path": "scratch/commentary/sample-repairs/laws/round3.json",
+  "source_sha256": "078d71880d3e3b779f0b1d0e4c3071d052e5063e1fbf3bf7a4d0abf036dca4c4",
+  "target_path": "wiki/commentary/laws.md",
+  "target_sha256_before": "a5c7cdbeea72f7046de5c0ac83fde90fcbce0568b203dde9d259d38adbec7466",
+  "target_sha256_after": "3d3d612eb808475154c8597cf83d32d1b31931bba624872a0aab01956c6ba35e",
+  "applied_at": "2026-08-23T23:59:40.354Z",
+  "applied_ids": [
+    "comm_laws_0009",
+    "comm_laws_0012"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "laws",
+    "ledger": {
+      "path": "wiki/commentary/laws.md",
+      "sha256": "a5c7cdbeea72f7046de5c0ac83fde90fcbce0568b203dde9d259d38adbec7466"
+    },
+    "sample_review": {
+      "reviewer": "sample-b-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna sample review found two bounded evidence and modality defects requiring repair.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_laws_0001",
+        "comm_laws_0002",
+        "comm_laws_0004",
+        "comm_laws_0005",
+        "comm_laws_0006",
+        "comm_laws_0008",
+        "comm_laws_0009",
+        "comm_laws_0012",
+        "comm_laws_0016",
+        "comm_laws_0017",
+        "comm_laws_0018",
+        "comm_laws_0021",
+        "comm_laws_0022",
+        "comm_laws_0024",
+        "comm_laws_0026"
+      ],
+      "failed_commentary_ids": [
+        "comm_laws_0009",
+        "comm_laws_0012"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_laws_0009",
+        "title": "What Musical Education Must Teach",
+        "body": "Musical training matters here because it teaches citizens what to enjoy. Its goal is not performance or pleasure as an end in itself, but a formed response to order and measure. The discussion therefore treats pleasure as something to be educated by order and measure.",
+        "cites": {
+          "observations": [],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_laws_0012",
+        "title": "From persuasive myth to an age rule",
+        "body": "The Sidonian tale is offered as an improbable but persuasive paradigm for the lawgiver. The Athenian then proposes age-related wine provisions: children would be kept from wine, younger adults would drink moderately, and men over forty could call on Dionysus at symposia to soften old age and make souls pliable. The proposal gives older participation in song a civic setting.",
+        "cites": {
+          "observations": [
+            "obs_laws_0205"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_laws_0009",
+      "body": "```yaml\ncommentary_id: comm_laws_0009\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"What Musical Education Must Teach\"\nstephanus_span: 652a-655b\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 652a-655b\n  start_marker: 652a\n  end_marker: 655b\n  start_char: 51352\n  end_char: 56699\n  text_sha256: \"5abc6fc04bee51f1217df489b99301c94d6c389c93b3d34c384b3725bbb41aa0\"\nbody: \"Musical training matters here because it teaches citizens what to enjoy. Its goal is not performance or pleasure treated as an end in itself, but the formation of taste that responds to order and measure. The city therefore judges music by the kind of character its pleasures cultivate.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0012",
+      "body": "```yaml\ncommentary_id: comm_laws_0012\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"From persuasive myth to an age rule\"\nstephanus_span: 662d-666d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 662d-666d\n  start_marker: 662d\n  end_marker: 666d\n  start_char: 71369\n  end_char: 80326\n  text_sha256: \"4a385426bfea246565aef8732ed4d267a0742e5af45bf234313f6e1f46bb402d\"\nbody: \"The Sidonian tale is introduced as an improbable but persuasive paradigm for the lawgiver. The Athenian then turns to a concrete age rule: children are kept from wine; younger adults drink moderately; men over forty may call on Dionysus at symposia to soften old age and make their souls pliable. The proposal gives older participation in song a civic setting.\"\ncites:\n  observations: [\"obs_laws_0205\"]\n  claims: [\"claim_laws_0132\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

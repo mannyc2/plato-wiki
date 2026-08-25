@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "submission_id": "0011-structural-remediation-04-27e-34a",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "philebus",
+  "unit_key": "04-27e-34a",
+  "source_path": "scratch/commentary/audits/philebus/04-27e-34a.json",
+  "source_sha256": "6e85312b366ff3bbcbd321952b02a66c3d08f2c48ca1694655a9602bb1ad237e",
+  "target_path": "wiki/commentary/philebus.md",
+  "target_sha256_before": "af1dcfb2af2269dccca673c81c3da3da80cdc780dc949a51b42bf3a8c9fa71f3",
+  "target_sha256_after": "4ccab155ca4d6e5836e70b2c17d8d9d5963033c8819aab13563220ac93642ea9",
+  "applied_at": "2026-08-23T23:04:18.108Z",
+  "applied_ids": [
+    "comm_philebus_0017"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "philebus",
+      "unitKey": "04-27e-34a",
+      "sectionId": "comm_philebus_0004",
+      "auditOutputPath": "scratch/commentary/audits/philebus/04-27e-34a.json",
+      "auditOutputSha256": "6e85312b366ff3bbcbd321952b02a66c3d08f2c48ca1694655a9602bb1ad237e",
+      "expectedLedgerSha256": "af1dcfb2af2269dccca673c81c3da3da80cdc780dc949a51b42bf3a8c9fa71f3",
+      "expectedAttributionSha256": "4ce49ca06f62a145f1bab5eea725ff98fc10ccc28ce32e6215c48ba4ce25560f",
+      "expectedEnglishSha256": "6d654deed2a570d0e342567a6ded9a882ca62696c6129301f72476b1f16f386b",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_philebus_0017",
+          "rewriteResolution": "reject-original"
+        }
+      ],
+      "reviewer": "round3-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Delegated Luna review finds no distinct supported teaching function: this classification cue duplicates the section's pivot; reject the original while retaining the scaffold."
+    },
+    "audit_output_path": "scratch/commentary/audits/philebus/04-27e-34a.json",
+    "audit_output_sha256": "6e85312b366ff3bbcbd321952b02a66c3d08f2c48ca1694655a9602bb1ad237e",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_philebus_0017",
+        "disposition": "rewrite",
+        "rewriteResolution": "reject-original"
+      }
+    ]
+  }
+}

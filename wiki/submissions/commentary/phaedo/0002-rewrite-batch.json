@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "phaedo",
+  "source_path": "scratch/commentary/rewrites/phaedo/02-61c-65a.json",
+  "source_sha256": "7424aa77b22d37ccc93539e60af16eb4b4e0192db60ce2eb5e0401ddaefe2b02",
+  "target_path": "wiki/commentary/phaedo.md",
+  "target_sha256_before": "b1d62b33e42563ee8dcd70a82fc39b7c0089041e10c57d2ac586fd5fc624343d",
+  "target_sha256_after": "c960481ef6e802f2837a819150e18b8462a69e8e5501a9516b605ee83815672c",
+  "applied_at": "2026-08-21T17:05:54.859Z",
+  "applied_ids": [
+    "comm_phaedo_0002",
+    "comm_phaedo_0007",
+    "comm_phaedo_0012"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "phaedo",
+      "unit_key": "02-61c-65a",
+      "section_id": "comm_phaedo_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/phaedo/02-61c-65a.json",
+        "sha256": "44cc0f163e6d4017d1bddfb1748c88921f0590cd65d8ffe2cbc4713b6990576c"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_phaedo_0002",
+          "title": "Readiness, or escape?",
+          "body": "I hear this stretch as refusing an easy answer. If readiness for death is supposed to mark philosophical seriousness, what keeps that readiness from becoming mere impatience with life? Hold that distinction in mind: it is the pressure point I think gives the exchange its shape, before we decide whether Socrates has resolved it.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "phaedo",
+      "unit_key": "07-80d-84c",
+      "section_id": "comm_phaedo_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/phaedo/07-80d-84c.json",
+        "sha256": "2f36ab84b615479374434e9422199d21fd85d2635d087e28e71d5a1c2dfe086b"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_phaedo_0007",
+          "title": "Release as discipline",
+          "body": "The passage can be heard as placing two possibilities side by side: a life repeatedly governed by bodily satisfactions, and a life trained to loosen that grip. On this reading, hope is not an automatic escape promised by death; it is the name we give to a discipline already being attempted. The question is whether that discipline changes what release could mean.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "phaedo",
+      "unit_key": "12-101a-104e",
+      "section_id": "comm_phaedo_0012",
+      "audit_output": {
+        "path": "scratch/commentary/audits/phaedo/12-101a-104e.json",
+        "sha256": "8eb0986386ec731aa27302b49974e91e4bac6cf040534e1da005870eb22bed9b"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_phaedo_0012",
+          "title": "When a contrary arrives",
+          "body": "I hear this stretch as a change in level. The question is no longer how one thing can be described with opposite qualities, but what happens when the contrary approaches the principle or pattern that gives it that description. On this reading, snow, fire, and three make the issue concrete: they do not become their opposites while remaining what they are; they withdraw or perish. The passage thus sharpens a rule for testing identity.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_phaedo_0002",
+      "body": "```yaml\ncommentary_id: comm_phaedo_0002\nsource_work: Phaedo\nblock_kind: section\nplacement: before\ntitle: \"The philosopher’s readiness for death\"\nstephanus_span: 61c-65a\nsource_ref:\n  source_path: raw/plato/greek/phaedo.txt\n  stephanus_span: 61c-65a\n  start_marker: 61c\n  end_marker: 65a\n  start_char: 9300\n  end_char: 18902\n  text_sha256: \"30f9468cfbc5bb2f8ef1661d9001cec9a2776455b02283ec8bbea76a79795b41\"\nbody: \"One way to hear this turn is as a reply to Cebes’ contradiction: if the gods guard us, why would a philosopher welcome death? Socrates answers by making philosophy a discipline of loosening the soul’s attachment to bodily pleasures and concerns. Death matters here because it completes that separation; the philosopher’s readiness is therefore presented as the culmination of a way of living, not as a wish to escape by force.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_phaedo_0007",
+      "body": "```yaml\ncommentary_id: comm_phaedo_0007\nsource_work: Phaedo\nblock_kind: section\nplacement: before\ntitle: \"Hope as a practiced release\"\nstephanus_span: 80d-84c\nsource_ref:\n  source_path: raw/plato/greek/phaedo.txt\n  stephanus_span: 80d-84c\n  start_marker: 80d\n  end_marker: 84c\n  start_char: 56170\n  end_char: 65444\n  text_sha256: \"56eccfce6bc53eb086244ab89bc2bc0299577e0ec1b9002273771a6876eefce8\"\nbody: \"One way to hear this passage is as a test of what “hope” means. Socrates does not offer a bare promise that death will solve everything; he ties hope to a practiced reorientation, away from letting pleasure and pain dictate what is real. The image of release therefore names a discipline, not an automatic escape.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_phaedo_0012",
+      "body": "```yaml\ncommentary_id: comm_phaedo_0012\nsource_work: Phaedo\nblock_kind: section\nplacement: before\ntitle: \"Participation and the exclusion of opposites\"\nstephanus_span: 101a-104e\nsource_ref:\n  source_path: raw/plato/greek/phaedo.txt\n  stephanus_span: 101a-104e\n  start_marker: 101a\n  end_marker: 104e\n  start_char: 103047\n  end_char: 112756\n  text_sha256: \"ae60708534045f4eb29c99fbac0ac8273e9348f9db9f8f5a94dc825eb527b64e\"\nbody: \"One way to read this unit is as a tightening of the explanatory method: participation supplies a stable answer to what makes something one or two, while the later examples test how opposites are excluded. Three is not itself the opposite of even, yet it cannot admit evenness while remaining three. The section prepares this logic; it does not yet apply it to the soul and life.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

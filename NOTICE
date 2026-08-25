@@ -1,0 +1,38 @@
+Plato Observation Wiki v2.0.0
+
+Software
+--------
+The software is Copyright (c) 2026 Christopher Carroll and contributors and is
+distributed under the MIT License. See LICENSE.
+
+Textual and data content
+------------------------
+Unless a file or source record states otherwise, textual and data content is
+distributed under Creative Commons Attribution-ShareAlike 4.0 International.
+See LICENSE-CONTENT and docs/publication-license.md.
+
+The Greek and English Plato editions are adapted from:
+
+  PerseusDL/canonical-greekLit
+  commit e37eed2e8a5fed710c3ab0d312249c3fb04d77e0
+  data/tlg0059, perseus-grc2 and perseus-eng2 editions
+  https://github.com/PerseusDL/canonical-greekLit
+
+Eight Greek files were copied byte-for-byte from:
+
+  jtauber/plato-texts
+  commit 3b482c7af8a43444a6e0316f8cb7044a18dbd094
+  raw-text/apology.txt, crito.txt, euthyphro.txt, ion.txt, meno.txt,
+  phaedo.txt, republic.txt, and symposium.txt
+  https://github.com/jtauber/plato-texts
+
+Modifications include TEI-to-text normalization, Stephanus marker indexing,
+one enumerated English marker correction, source-bound record extraction,
+reviewed commentary and classification, deterministic joins and metrics, and
+static HTML generation. Detailed source-by-source provenance is recorded in
+raw/plato/SOURCES.md.
+
+The four legacy files under raw/plato/translations/ are quarantined historical
+inputs and are not part of the v2.0.0 public distribution.
+
+No audio recording is included in the v2.0.0 knowledge-base release.

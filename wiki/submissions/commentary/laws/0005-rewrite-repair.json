@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "laws",
+  "source_path": "scratch/commentary/rewrite-repairs/laws/batch4-citation-repair.json",
+  "source_sha256": "b9eb64f4b2f6e98ac66d4acf6c3038382b5d6b53eb32c883d946b6b96b522e0f",
+  "target_path": "wiki/commentary/laws.md",
+  "target_sha256_before": "eb3650f27b7c36daf2a985e68ffbccba84e38187f7e745e9b9e98ba864851221",
+  "target_sha256_after": "2bcdeabf13dd8e20e7dc07853756bbc1f4a3577ebf239f65cadfccf428fbf4fd",
+  "applied_at": "2026-08-21T22:37:11.862Z",
+  "applied_ids": [
+    "comm_laws_0038",
+    "comm_laws_0055"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "laws",
+    "ledger": {
+      "path": "wiki/commentary/laws.md",
+      "sha256": "eb3650f27b7c36daf2a985e68ffbccba84e38187f7e745e9b9e98ba864851221"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/laws/0004-rewrite-batch.json",
+      "sha256": "17c34340a664fe2954302bfdbbd36ad6eeca15f25d3ea028f8fb67e8ae6c37f5"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-laws-0004-rewrite-batch-acceptance.md",
+      "sha256": "35679dd16d32c8b2cf8da5f40465a387329b2817f7ea37e0cdac12761f52cf5e"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-laws-batch4-combined",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_laws_0038",
+          "finding": "The block omits accepted records for its city-building, marriage, and public-meals assertions."
+        },
+        {
+          "commentary_id": "comm_laws_0055",
+          "finding": "The block omits accepted records for the interlocutors response and the turn toward the priority of soul."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-laws-batch4-citations",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_laws_0038",
+      "comm_laws_0055"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_laws_0038",
+        "title": "From household power to public order",
+        "body": "The unit’s shape matters: I hear it as a widening inquiry into how law orders power, not as a self-contained argument about slavery. The opening clash between praise and distrust of slaves, and the appeal to conduct toward the vulnerable as a test of justice, establishes the moral pressure. From there the discussion widens to city building, marriage, and public meals, asking whether public order can reach private life.",
+        "cites": {
+          "observations": [
+            "obs_laws_0739",
+            "obs_laws_0744",
+            "obs_laws_0751",
+            "obs_laws_0752"
+          ],
+          "claims": [
+            "claim_laws_0515"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_laws_0055",
+        "title": "Persuasion and the Priority of Soul",
+        "body": "The reported account makes the cosmos arise without mind, god, or art, then treats gods and justice as products of convention and force. The question for lawgiving is not merely how to punish dissent, but whether law should also persuade. I hear Clinias’s answer and the Athenian’s assent as closing that question; I hear the turn through 893a toward soul’s priority over body as deepening the defense, by grounding law in what governs.",
+        "cites": {
+          "observations": [
+            "obs_laws_1046",
+            "obs_laws_1049",
+            "obs_laws_1050",
+            "obs_laws_1051",
+            "obs_laws_1052",
+            "obs_laws_1054",
+            "obs_laws_1056",
+            "obs_laws_1057"
+          ],
+          "claims": [
+            "claim_laws_0892",
+            "claim_laws_0895",
+            "claim_laws_0896",
+            "claim_laws_0897"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_laws_0038",
+      "body": "```yaml\ncommentary_id: comm_laws_0038\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"From household power to public order\"\nstephanus_span: 776c-780e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 776c-780e\n  start_marker: 776c\n  end_marker: 780e\n  start_char: 285940\n  end_char: 295287\n  text_sha256: \"d87de5f6061be03ffa2a20dbbf3eec325b2a09f2dc15888ce660a18e26f82252\"\nbody: \"The unit’s shape matters: I hear it as a widening inquiry into how law orders power, not as a self-contained argument about slavery. The opening clash between praise and distrust of slaves, and the appeal to conduct toward the vulnerable as a test of justice, establishes the moral pressure. From there the discussion widens to city building, marriage, and public meals, asking whether public order can reach private life.\"\ncites:\n  observations: [\"obs_laws_0739\"]\n  claims: [\"claim_laws_0515\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0055",
+      "body": "```yaml\ncommentary_id: comm_laws_0055\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Persuasion and the Priority of Soul\"\nstephanus_span: 889a-893a\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 889a-893a\n  start_marker: 889a\n  end_marker: 893a\n  start_char: 497782\n  end_char: 506346\n  text_sha256: \"28421d18e4e94008a130beed6e1156ad9f4f1d8ac1290855fdc0eb29bedbfa38\"\nbody: \"The reported account makes the cosmos arise without mind, god, or art, then treats gods and justice as products of convention and force. The question for lawgiving is not merely how to punish dissent, but whether law should also persuade. I hear Clinias’s answer and the Athenian’s assent as closing that question; I hear the turn through 893a toward soul’s priority over body as deepening the defense, by grounding law in what governs.\"\ncites:\n  observations: [\"obs_laws_1046\", \"obs_laws_1049\", \"obs_laws_1050\", \"obs_laws_1051\"]\n  claims: [\"claim_laws_0892\", \"claim_laws_0895\", \"claim_laws_0896\", \"claim_laws_0897\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

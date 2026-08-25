@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "submission_id": "0028-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "cratylus",
+  "source_path": "scratch/commentary/rewrite-repairs/cratylus/0027-second.json",
+  "source_sha256": "324eeeb17f733617d264549cdc2da749f5cbacb6b0ffec240f095ce5bb78d1f6",
+  "target_path": "wiki/commentary/cratylus.md",
+  "target_sha256_before": "084e645f8668d40ceb512658d76695213d38513ad8a2ce3767a531f7df048f9b",
+  "target_sha256_after": "38b17f73c320963cdffebcd57228c7dd7a6aa6710d2dd7d77ffbe930927f3007",
+  "applied_at": "2026-08-24T00:16:35.703Z",
+  "applied_ids": [
+    "comm_cratylus_0006"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "cratylus",
+    "ledger": {
+      "path": "wiki/commentary/cratylus.md",
+      "sha256": "084e645f8668d40ceb512658d76695213d38513ad8a2ce3767a531f7df048f9b"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/cratylus/0027-rewrite-repair.json",
+      "sha256": "f53c80e6f82463eedb4131f9e2aa1c138611ec792cabed3494a81d9ee2daea06"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-23-commentary-rewrite-cratylus-0027-rewrite-repair-acceptance.md",
+      "sha256": "7051e83d9b2e272884a705888c1f2ebcd83b57b37e763643f3bdcc8bb7357862"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-cratylus-0027-citation-repair-independent",
+      "reviewed_on": "2026-08-23",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_cratylus_0006",
+          "finding": "The 0027 body is supportable, but its cited observations and claims do not support the full ordered gods-to-soul/body sequence; bind exact accepted evidence for each retained step."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-cratylus-0027-second-repair",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_cratylus_0006"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_cratylus_0006",
+        "title": "From gods to daimons to the body as sign",
+        "body": "The etymological survey moves in order from gods to daimons, heroes, human beings, and then soul and body. For soma, Socrates presents several possibilities: the body may be the soul's tomb, a sign through which the soul signifies, or an Orphic enclosure; he says the last account seems most persuasive, without settling the alternatives as doctrine.",
+        "cites": {
+          "observations": [
+            "obs_cratylus_0083",
+            "obs_cratylus_0089",
+            "obs_cratylus_0091",
+            "obs_cratylus_0087",
+            "obs_cratylus_0283",
+            "obs_cratylus_0103",
+            "obs_cratylus_0285",
+            "obs_cratylus_0092",
+            "obs_cratylus_0328"
+          ],
+          "claims": [
+            "claim_cratylus_0016",
+            "claim_cratylus_0025"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_cratylus_0006",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0006\nsource_work: Cratylus\nblock_kind: section\nplacement: before\ntitle: \"From gods to daimons to the body as sign\"\nstephanus_span: 397b-400e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 397b-400e\n  start_marker: 397b\n  end_marker: 400e\n  start_char: 26566\n  end_char: 34488\n  text_sha256: \"a7113cd0a420b847d030186f6c437d9d31aa877d566897165e49c321cfc39550\"\nbody: \"The etymological survey moves in order from gods to daimons, heroes, human beings, and then soul and body. For soma, Socrates presents several possibilities: the body may be the soul's tomb, a sign through which the soul signifies, or an Orphic enclosure; he says the last account seems most persuasive, without settling the alternatives as doctrine.\"\ncites:\n  observations: [\"obs_cratylus_0083\", \"obs_cratylus_0092\", \"obs_cratylus_0328\"]\n  claims: [\"claim_cratylus_0016\", \"claim_cratylus_0025\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    }
+  ]
+}

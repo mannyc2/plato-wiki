@@ -1,0 +1,34 @@
+dialogue: symposium
+source_path: raw/plato/greek/symposium.txt
+source_sha256: 260b7c575fc40bf88e74f793ebaccb48e536702b26d8780c111190e01a3447a7
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[27]:
+  group             | form      | start_char | end_char | marker | turn_id             | token_ids
+  aporia_reset      | πάλιν     | 15318      | 15323    | 179c   | turn_symposium_0005 | tok_symposium_002418
+  aporia_reset      | πάλιν     | 23312      | 23317    | 183d   | turn_symposium_0005 | tok_symposium_003687
+  aporia_reset      | πάλιν     | 31407      | 31412    | 187d   | turn_symposium_0005 | tok_symposium_004987
+  definition_prompt | εἶδος     | 35886      | 35891    | 189e   | turn_symposium_0005 | tok_symposium_005713
+  definition_prompt | εἶδος     | 36039      | 36044    | 189e   | turn_symposium_0005 | tok_symposium_005741
+  aporia_reset      | πάλιν     | 37762      | 37767    | 190d   | turn_symposium_0005 | tok_symposium_006019
+  aporia_reset      | πάλιν     | 41973      | 41978    | 192d   | turn_symposium_0005 | tok_symposium_006685
+  definition_prompt | εἶδος     | 48956      | 48961    | 196a   | turn_symposium_0005 | tok_symposium_007819
+  aporia_reset      | ἀπορεῖν   | 53513      | 53520    | 198b   | turn_symposium_0005 | tok_symposium_008544
+  assent_concession | πάνυ γε   | 56643      | 56650    | 199d   | turn_symposium_0005 | tok_symposium_009068,tok_symposium_009069
+  assent_concession | πάνυ γε   | 57236      | 57243    | 200a   | turn_symposium_0005 | tok_symposium_009159,tok_symposium_009160
+  assent_concession | πάνυ γε   | 58930      | 58937    | 200e   | turn_symposium_0005 | tok_symposium_009446,tok_symposium_009447
+  assent_concession | ναί       | 59312      | 59315    | 201a   | turn_symposium_0005 | tok_symposium_009515
+  assent_concession | ναί       | 59817      | 59820    | 201b   | turn_symposium_0005 | tok_symposium_009600
+  assent_concession | ὁμολογεῖς | 60007      | 60016    | 201b   | turn_symposium_0005 | tok_symposium_009631
+  assent_concession | ὁμολογεῖς | 62074      | 62083    | 202b   | turn_symposium_0005 | tok_symposium_009986
+  assent_concession | πάνυ γε   | 62832      | 62839    | 202c   | turn_symposium_0005 | tok_symposium_010114,tok_symposium_010115
+  aporia_reset      | πάλιν     | 65548      | 65553    | 203e   | turn_symposium_0005 | tok_symposium_010571
+  definition_prompt | εἶδος     | 68418      | 68423    | 205b   | turn_symposium_0005 | tok_symposium_011061
+  definition_prompt | εἶδος     | 69410      | 69415    | 205d   | turn_symposium_0005 | tok_symposium_011225
+  assent_concession | ναί       | 70178      | 70181    | 206a   | turn_symposium_0005 | tok_symposium_011358
+  aporia_reset      | πάλιν     | 74372      | 74377    | 208a   | turn_symposium_0005 | tok_symposium_012070
+  assent_concession | πάνυ γε   | 84856      | 84863    | 213b   | turn_symposium_0005 | tok_symposium_013788,tok_symposium_013789
+  definition_prompt | εἶδος     | 89379      | 89384    | 215b   | turn_symposium_0005 | tok_symposium_014502
+  definition_prompt | τί ἐστι   | 94004      | 94011    | 217c   | turn_symposium_0005 | tok_symposium_015252,tok_symposium_015253
+  assent_concession | πάνυ γε   | 105016     | 105023   | 222e   | turn_symposium_0005 | tok_symposium_017013,tok_symposium_017014
+  aporia_reset      | πάλιν     | 105392     | 105397   | 222e   | turn_symposium_0005 | tok_symposium_017078

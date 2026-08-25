@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "submission_id": "0006-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "cratylus",
+  "source_path": "scratch/commentary/rewrites/cratylus/05-395a-397a.json",
+  "source_sha256": "0a1b633c2804b640dfc7b45de5bf497b8ec3a784fea5da2b8469e374abf5ef90",
+  "target_path": "wiki/commentary/cratylus.md",
+  "target_sha256_before": "8fef71bb0bc434b069f70d249a51ea83ccc1fe175461951399f52864396b1985",
+  "target_sha256_after": "d0cacfc68136e7c7634e7478e6ebaccee0dc7e532c3ffe0fb005d766b3582567",
+  "applied_at": "2026-08-21T17:18:44.779Z",
+  "applied_ids": [
+    "comm_cratylus_0013",
+    "comm_cratylus_0028"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "cratylus",
+      "unit_key": "05-395a-397a",
+      "section_id": "comm_cratylus_0005",
+      "audit_output": {
+        "path": "scratch/commentary/audits/cratylus/05-395a-397a.json",
+        "sha256": "2a7c5ec4bfdf7a66656bf6014fff043cdc823beab1d9e679010fe6e0effaf515"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_cratylus_0028",
+          "title": "",
+          "body": "Socrates, not Atreus, supplies the example: he treats the name Ἀτρεύς as slightly deflected and veiled, so its indication of the man’s nature is available to those who understand names rather than plainly displayed to everyone. The move matters because it lets Socrates preserve a claim to meaningful naming while explaining why the meaning is not immediately visible. Atreus is therefore a test case for a qualified account, not evidence here that every name works by concealment. Whether this local explanation can bear that larger weight remains open.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0076"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "cratylus",
+      "unit_key": "13-428a-431e",
+      "section_id": "comm_cratylus_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/cratylus/13-428a-431e.json",
+        "sha256": "77d6fe310ee307619198539ab30a6e911a337d86313e5d4940622c50393d3f59"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_cratylus_0013",
+          "title": "Praise becomes a test",
+          "body": "Cratylus’s praise does not close the inquiry; it gives Socrates a reason to reopen it. Socrates first invites Cratylus to teach him, then turns that apparent deference into a test of the claim that every genuine name is correct: the name “Hermogenes” forces the question whether a misnaming is false speech or merely noise. From there, the name-as-image analogy shifts the standard from confidence to comparison. Read the unit as admiration converted into accountability.",
+          "cites": {
+            "observations": [
+              "obs_cratylus_0257",
+              "obs_cratylus_0240",
+              "obs_cratylus_0235",
+              "obs_cratylus_0237",
+              "obs_cratylus_0245",
+              "obs_cratylus_0244",
+              "obs_cratylus_0247"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_cratylus_0013",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0013\nsource_work: Cratylus\nblock_kind: section\nplacement: before\ntitle: \"Cratylus answers the summons — and the thesis meets an image test\"\nstephanus_span: 428a-431e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 428a-431e\n  start_marker: 428a\n  end_marker: 431e\n  start_char: 89669\n  end_char: 97984\n  text_sha256: \"d673d06e1eaf94c32b8e7d54ce6cf0b32ab110932e8ad2b02de5a80667fbcf2d\"\nbody: \"At 428a, Hermogenes—not Cratylus—answers the summons, quoting Hesiod to urge Socrates to keep contributing. Socrates then opens the floor at 428b, inviting Cratylus to supply a better account and even offering to become his pupil. Cratylus's substantive reply arrives in 428b-c: he accepts the invitation while casting Socrates' speech as inspired. The thesis soon becomes testable: Cratylus makes false speech impossible, and Socrates sets names beside portraits and other images, making the question of correct likeness concrete. The exchange turns apparent deference into argumentative pressure.\"\ncites:\n  observations: [\"obs_cratylus_0255\", \"obs_cratylus_0256\", \"obs_cratylus_0257\", \"obs_cratylus_0225\", \"obs_cratylus_0235\", \"obs_cratylus_0244\", \"obs_cratylus_0247\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0028",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0028\nsource_work: Cratylus\nblock_kind: argument\nplacement: after\nstephanus_span: 395b-395c\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 395b-395c\n  start_marker: 395b\n  end_marker: 395c\n  start_char: 22641\n  end_char: 23494\n  text_sha256: \"6576854e1da47f0e93f3141751f116f142936cf3abb0455b30ed683d20edf86b\"\nbody: \"Atreus gives Socrates a narrower point than a universal rule. The name is said to be slightly deflected and veiled: it does not disclose the man’s nature to everyone, yet remains intelligible to those versed in names. The passage thus makes the audience’s competence part of the proposed explanation. Whether that local exception can support a broader account of naming is a question the dialogue has not settled here.\"\ncites:\n  observations: [\"obs_cratylus_0076\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

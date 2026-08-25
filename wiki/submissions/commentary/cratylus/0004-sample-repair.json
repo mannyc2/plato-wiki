@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "submission_id": "0004-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "cratylus",
+  "source_path": "scratch/commentary/sample-repairs/cratylus/final-sample-0005-0013.json",
+  "source_sha256": "f5104934d79ec7ac051c9717758a1ef9c8ac70f367646a7418bec62013a4706c",
+  "target_path": "wiki/commentary/cratylus.md",
+  "target_sha256_before": "25a53f8489e3e221c920ce3411c2b1da13e79812803d88b550a3b7003ed79e15",
+  "target_sha256_after": "9ece7e647ebda86804b1a184dbe50ba895f771a6315980c553f8450a653942b2",
+  "applied_at": "2026-08-21T17:08:48.462Z",
+  "applied_ids": [
+    "comm_cratylus_0005",
+    "comm_cratylus_0013"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "cratylus",
+    "ledger": {
+      "path": "wiki/commentary/cratylus.md",
+      "sha256": "25a53f8489e3e221c920ce3411c2b1da13e79812803d88b550a3b7003ed79e15"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-cratylus-final-sample",
+      "reviewed_on": "2026-08-21",
+      "rationale": "The fresh section sample found 0005 misstated the target of Socrates' proposed purge and 0013 incorrectly said Cratylus had not spoken earlier.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_cratylus_0001",
+        "comm_cratylus_0002",
+        "comm_cratylus_0003",
+        "comm_cratylus_0004",
+        "comm_cratylus_0005",
+        "comm_cratylus_0006",
+        "comm_cratylus_0007",
+        "comm_cratylus_0008",
+        "comm_cratylus_0009",
+        "comm_cratylus_0010",
+        "comm_cratylus_0011",
+        "comm_cratylus_0012",
+        "comm_cratylus_0013",
+        "comm_cratylus_0014",
+        "comm_cratylus_0015"
+      ],
+      "failed_commentary_ids": [
+        "comm_cratylus_0005",
+        "comm_cratylus_0013"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_cratylus_0005",
+        "title": "A sudden wisdom descends",
+        "body": "Socrates presents his sudden fluency with etymology as a daimonic wisdom attributed to Euthyphro. He proposes using it for today's inquiry, then purifying himself tomorrow by finding a priest or sophist able to expel it. The joke matters because the proposed purification targets the inspiration itself, not the inquiry it temporarily fuels.",
+        "cites": {
+          "observations": [
+            "obs_cratylus_0082",
+            "obs_cratylus_0084"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": [
+            "irony_marker/mock_inspiration_claim"
+          ]
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_cratylus_0013",
+        "title": "Cratylus takes the handoff — and overreaches",
+        "body": "After a brief challenge at 427e, Cratylus takes up the exchange at 428a. He holds that a wrong name is no name and that false speech is impossible. Socrates tests the position through images: a portrait may resemble well or badly, so naming, too, can admit degrees of correctness.",
+        "cites": {
+          "observations": [
+            "obs_cratylus_0243",
+            "obs_cratylus_0240",
+            "obs_cratylus_0235",
+            "obs_cratylus_0231",
+            "obs_cratylus_0232",
+            "obs_cratylus_0234"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": [
+            "turn_geometry/interlocutor_characterization",
+            "craft_analogy/mimesis_appearance_reality_distinction",
+            "elenchus/refutation_by_counterexample",
+            "elenchus/respondent_strong_dissent"
+          ]
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_cratylus_0005",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0005\nsource_work: Cratylus\nblock_kind: section\nplacement: before\ntitle: \"A sudden wisdom descends\"\nstephanus_span: 395a-397a\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 395a-397a\n  start_marker: 395a\n  end_marker: 397a\n  start_char: 22293\n  end_char: 26566\n  text_sha256: \"0448bf3cf7a5e599b74b421a498ea2b28f10bdca25725bc60b76df5fe96686fa\"\nbody: \"Working down a heroic and divine family tree, Socrates finds each name strangely apt — and credits his fluency to an inspiration caught that morning from Euthyphro. Ask how seriously a method should be taken when its practitioner announces plans to purge it tomorrow.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"irony_marker/mock_inspiration_claim\", \"myth_demarcation/mythic_genealogy_as_argumentative_support\", \"irony_marker/knowledge_disavowal\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_cratylus_0013",
+      "body": "```yaml\ncommentary_id: comm_cratylus_0013\nsource_work: Cratylus\nblock_kind: section\nplacement: before\ntitle: \"Cratylus finally speaks — and overreaches\"\nstephanus_span: 428a-431e\nsource_ref:\n  source_path: raw/plato/greek/cratylus.txt\n  stephanus_span: 428a-431e\n  start_marker: 428a\n  end_marker: 431e\n  start_char: 89669\n  end_char: 97984\n  text_sha256: \"d673d06e1eaf94c32b8e7d54ce6cf0b32ab110932e8ad2b02de5a80667fbcf2d\"\nbody: \"Cratylus, silent so far, now defends naturalism so strictly that a wrong name is for him no name at all and false speaking impossible. Socrates answers with the logic of images: a portrait can resemble well or badly, so a name, as an image, admits degrees of correctness.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"turn_geometry/interlocutor_characterization\", \"craft_analogy/mimesis_appearance_reality_distinction\", \"elenchus/refutation_by_counterexample\", \"elenchus/respondent_strong_dissent\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

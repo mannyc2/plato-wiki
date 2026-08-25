@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "lesser-hippias",
+  "source_path": "scratch/commentary/rewrites/lesser-hippias/01-363a-363d.json",
+  "source_sha256": "dd87e14587c0967983f20338709b82966c4e743165f281ce1c39f8080d1daa77",
+  "target_path": "wiki/commentary/lesser-hippias.md",
+  "target_sha256_before": "64a878178a41b5cafe0e0c3b71da4cbbd48ecec10b87004fc1c6d30cf80da766",
+  "target_sha256_after": "cebdc6eb86e30da37f70cfd4609a08b411efab91c331700812b240bdbe305d33",
+  "applied_at": "2026-08-21T12:56:23.230Z",
+  "applied_ids": [
+    "comm_lesser-hippias_0002",
+    "comm_lesser-hippias_0009"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "lesser-hippias",
+      "unit_key": "01-363a-363d",
+      "section_id": "comm_lesser-hippias_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/lesser-hippias/01-363a-363d.json",
+        "sha256": "efa0ac69733c6eccab1d163a1d041574f1bad2ab5300781da191043b66a76fa6"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_lesser-hippias_0009",
+          "title": "",
+          "body": "Apemantus supplies the comparison that starts the inquiry: he ranked the Iliad above the Odyssey because Achilles was better than Odysseus. Socrates reports that ranking and asks Hippias which man is better. At this point, I would not treat the passage as settling Socrates’ own verdict; the immediate task is to make Hippias state his.",
+          "cites": {
+            "observations": [
+              "obs_lesser-hippias_0003"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "lesser-hippias",
+      "unit_key": "02-364a-365d",
+      "section_id": "comm_lesser-hippias_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/lesser-hippias/02-364a-365d.json",
+        "sha256": "489012014736069cde6aeb256c4e87e7d9a317c48e045e9512400f66a576d6e1"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_lesser-hippias_0002",
+          "title": "From self-confidence to the false man’s power",
+          "body": "Hippias’s confidence appears first as a boast, not as a title: since he began competing at Olympia, he says, he has met no one better in anything. He then distributes the superlatives: Achilles is bravest, Nestor wisest, and Odysseus wiliest. Socrates narrows the issue by asking what “wily” means. Hippias answers with Achilles’ truthfulness versus Odysseus’ falsity, then agrees that false men are powerful deceivers.",
+          "cites": {
+            "observations": [
+              "obs_lesser-hippias_0007",
+              "obs_lesser-hippias_0008",
+              "obs_lesser-hippias_0012",
+              "obs_lesser-hippias_0014",
+              "obs_lesser-hippias_0015",
+              "obs_lesser-hippias_0016",
+              "obs_lesser-hippias_0017"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_lesser-hippias_0002",
+      "body": "```yaml\ncommentary_id: comm_lesser-hippias_0002\nsource_work: Lesser Hippias\nblock_kind: section\nplacement: before\ntitle: \"From the wiliest hero to the powerful liar\"\nstephanus_span: 364a-365d\nsource_ref:\n  source_path: raw/plato/greek/lesser-hippias.txt\n  stephanus_span: 364a-365d\n  start_marker: 364a\n  end_marker: 365d\n  start_char: 1308\n  end_char: 4861\n  text_sha256: \"f902b1960a6428a32e7421a51e5707cd4e1f625a1faafebf9f4016a630824879\"\nbody: \"The self-proclaimed Olympic champion ranks Achilles best, Nestor wisest, Odysseus wiliest. Pressed on 'wily,' Hippias reads Achilles' Embassy speech so the many-turned Odysseus simply is the liar — an equation Socrates only draws out and pins down. Homer, and Hippias too, hold the true man and the false to be two different men. Homer set aside, Hippias must answer for himself: the false are not powerless but powerful.\"\ncites:\n  observations: [\"obs_lesser-hippias_0007\", \"obs_lesser-hippias_0008\", \"obs_lesser-hippias_0012\", \"obs_lesser-hippias_0014\", \"obs_lesser-hippias_0015\", \"obs_lesser-hippias_0016\", \"obs_lesser-hippias_0017\"]\n  claims: []\n  relations: []\n  dossiers: [\"prosopography/sophist_self_advertisement\", \"prosopography/homeric_hero_ranking\", \"prosopography/homeric_character_characterized\", \"definition_ladder/definition_proposed\", \"elenchus/definition_established_by_assent_chain\", \"definition_ladder/characteristic_catalogue_for_definiendum\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_lesser-hippias_0009",
+      "body": "```yaml\ncommentary_id: comm_lesser-hippias_0009\nsource_work: Lesser Hippias\nblock_kind: notice\nplacement: after\nstephanus_span: 363d\nsource_ref:\n  source_path: raw/plato/greek/lesser-hippias.txt\n  stephanus_span: 363d\n  start_marker: 363d\n  end_marker: 363d\n  start_char: 1080\n  end_char: 1308\n  text_sha256: \"a499c333179561108ae100497931740b7e54a7fa43ffaa4c3eaa953f617bbbcf\"\nbody: \"The preference in play belongs to Apemantus, Eudicus's father — not to Socrates. Socrates only relays that ranking of Achilles over Odysseus and hands the judgment to Hippias, keeping his own estimate of the two men out of it entirely.\"\ncites:\n  observations: [\"obs_lesser-hippias_0003\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

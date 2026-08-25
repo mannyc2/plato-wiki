@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "submission_id": "0007-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "meno",
+  "source_path": "scratch/commentary/sample-repairs/meno/0010-round5.json",
+  "source_sha256": "e2799ef02a8c5cad14e7e35ea0bcd76e6304a12ec9d45b5b7861e7e76ed8e3f8",
+  "target_path": "wiki/commentary/meno.md",
+  "target_sha256_before": "6eb6e39413c1b10af3bbc1ab4bc1b5a64f1f10c0f24927237337eaa9b83db46c",
+  "target_sha256_after": "34d7488c40fe4e690ff5b71d06d361340c150528228d66b5e75d4f42ab508759",
+  "applied_at": "2026-08-24T00:01:31.227Z",
+  "applied_ids": [
+    "comm_meno_0010"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "meno",
+    "ledger": {
+      "path": "wiki/commentary/meno.md",
+      "sha256": "6eb6e39413c1b10af3bbc1ab4bc1b5a64f1f10c0f24927237337eaa9b83db46c"
+    },
+    "sample_review": {
+      "reviewer": "sample-c-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna sample review found one bounded evidence defect in the doubled-square orientation.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_meno_0001",
+        "comm_meno_0002",
+        "comm_meno_0003",
+        "comm_meno_0004",
+        "comm_meno_0006",
+        "comm_meno_0007",
+        "comm_meno_0009",
+        "comm_meno_0010",
+        "comm_meno_0011",
+        "comm_meno_0012",
+        "comm_meno_0013",
+        "comm_meno_0014",
+        "comm_meno_0016",
+        "comm_meno_0018"
+      ],
+      "failed_commentary_ids": [
+        "comm_meno_0010"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_meno_0010",
+        "title": "Aporia before the diagonal",
+        "body": "The doubled-square exchange makes aporia concrete. The boy first proposes a doubled side and then a three-foot side; Socrates checks the resulting areas, and only after these answers fail does the questioning turn to the diagonal. The passage records a question-led move from confident error to recognition of not knowing.",
+        "cites": {
+          "observations": [
+            "obs_meno_0022"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": [
+            "elenchus/demonstration_by_questioning"
+          ]
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_meno_0010",
+      "body": "```yaml\ncommentary_id: comm_meno_0010\nsource_work: Meno\nblock_kind: section\nplacement: before\ntitle: \"Aporia before the diagonal\"\nstephanus_span: 82b-85a\nsource_ref:\n  source_path: raw/plato/greek/meno.txt\n  stephanus_span: 82b-85a\n  start_marker: 82b\n  end_marker: 85a\n  start_char: 23679\n  end_char: 29915\n  text_sha256: \"ccf0f893b72cf80d6237597707f8034025d7561be41c1d07c4ebe25be5423fcb\"\nbody: \"Socrates turns the doubled square into a test of how inquiry begins. The boy answers confidently—first that the side should double, then that it should be three feet—but the resulting areas are sixteen and nine, not eight. Questioning continues toward the diagonal only after this confidence has failed. One way to read the episode is as a miniature parallel to the dialogue’s larger inquiry, not as an exact repetition of Meno’s experience.\"\ncites:\n  observations: [\"obs_meno_0022\"]\n  claims: []\n  relations: []\n  dossiers: [\"elenchus/demonstration_by_questioning\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

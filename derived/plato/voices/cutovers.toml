@@ -1,0 +1,28 @@
+# Claim-speaker cutover activation, per dialogue.
+#
+# Hand-written and reviewed, like sigla.toml — never generated. This registry is
+# the ONLY thing that lets a dialogue's nested reported turns rewrite its claim
+# speakers. Accepting reported-turn records and compiling them to
+# derived/plato/voices/<dialogue>.toon are separate, earlier events that change
+# no claim, no observation, and no audio (the voice activation contract).
+#
+# A dialogue listed here must have a current compiled voice index, a current
+# voice join, and claim speakers equal to the owners that join resolves.
+# A dialogue NOT listed here may hold accepted, compiled reported-turn data and
+# must have no stored join at all.
+#
+# There is no "inactive" status: absence is the non-active state. Removing an
+# entry is a destructive semantic rollback that returns claim attribution to the
+# printed turn siglum, so it takes an explicit operator decision and its own
+# commit — never an automatic cleanup.
+#
+# Adding an entry requires, in the SAME commit: the authoritative join, the
+# migrated claim speakers, and a decision_note under wiki/review/ recording the
+# reviewed decision.
+
+schema_version = 1
+
+[[dialogues]]
+slug = "symposium"
+status = "active"
+decision_note = "wiki/review/2026-07-25-symposium-voice-cutover-execution.md"

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "menexenus",
+  "source_path": "scratch/commentary/sample-repairs/menexenus/post-sample-0009.json",
+  "source_sha256": "245b8b096595b2fe9ea8ceb9915580a85793fb9d6f234060ef3146c50896703d",
+  "target_path": "wiki/commentary/menexenus.md",
+  "target_sha256_before": "ed272626e12f45cbbbc194bd32b95147b3d9550778c04d7d2995e00883053784",
+  "target_sha256_after": "a8ee752959b791f975ba62ea77d8f112712d0cbad4a34216b727cfeec5d747c3",
+  "applied_at": "2026-08-21T16:45:09.467Z",
+  "applied_ids": [
+    "comm_menexenus_0009"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "menexenus",
+    "ledger": {
+      "path": "wiki/commentary/menexenus.md",
+      "sha256": "ed272626e12f45cbbbc194bd32b95147b3d9550778c04d7d2995e00883053784"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-menexenus-final-sample-fresh2",
+      "reviewed_on": "2026-08-21",
+      "rationale": "A fresh independent Luna sample of all 14 accepted blocks found only 0009 overlong, recap-heavy, multi-purpose, and hard to follow aloud.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_menexenus_0001",
+        "comm_menexenus_0002",
+        "comm_menexenus_0003",
+        "comm_menexenus_0004",
+        "comm_menexenus_0005",
+        "comm_menexenus_0006",
+        "comm_menexenus_0007",
+        "comm_menexenus_0008",
+        "comm_menexenus_0009",
+        "comm_menexenus_0010",
+        "comm_menexenus_0011",
+        "comm_menexenus_0012",
+        "comm_menexenus_0013",
+        "comm_menexenus_0014"
+      ],
+      "failed_commentary_ids": [
+        "comm_menexenus_0009"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_menexenus_0009",
+        "title": "The third war: Athens conquered by no one but Athens",
+        "body": "The speech’s key reversal is a change in the source of defeat. Athens is said to remain unconquered by external enemies, yet the orator attributes its defeat to the city’s own internal dissension. The sentence then folds victory and defeat together: Athens conquered itself and was conquered by itself. The point is not another item in the war catalogue, but the inward limit placed on an otherwise undefeated city.",
+        "cites": {
+          "observations": [
+            "obs_menexenus_0061"
+          ],
+          "claims": [
+            "claim_menexenus_0021"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_menexenus_0009",
+      "body": "```yaml\ncommentary_id: comm_menexenus_0009\nsource_work: Menexenus\nblock_kind: section\nplacement: before\ntitle: \"The third war: Athens conquered by no one but Athens\"\nstephanus_span: 242e-243e\nsource_ref:\n  source_path: raw/plato/greek/menexenus.txt\n  stephanus_span: 242e-243e\n  start_marker: 242e\n  end_marker: 243e\n  start_char: 16781\n  end_char: 19097\n  text_sha256: \"cd56041919265d3d925bcdd7ebc8cc479e4927b2caf89f092d81b9a60b82937a\"\nbody: \"The third war begins as an unexpected and terrible turn in the catalogue, moving through the Sicilian and Hellespont campaigns. The orator then names the shocking escalation: other Greeks summoned the Persian king—once expelled with Athens—against the city and gathered Greeks and barbarians for the attack. At Mytilene, sixty Athenian ships rescue the trapped fleet, defeat the enemy, and free their friends; the fallen rescuers make the city's strength and virtue visible. Their achievement gives Athens a reputation for never being conquered, and the orator says that reputation proved true. The defeat that follows is assigned inward: Athens was overcome by its own dissension, not by others. It remained unconquered by external enemies, yet it both defeated and was defeated by itself; after peace with the others, the conflict becomes the city's own war.\"\ncites:\n  observations: [\"obs_menexenus_0059\", \"obs_menexenus_0060\", \"obs_menexenus_0061\", \"obs_menexenus_0064\"]\n  claims: [\"claim_menexenus_0021\"]\n  relations: []\n  dossiers: [\"turn_geometry/argument_transition_marker\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

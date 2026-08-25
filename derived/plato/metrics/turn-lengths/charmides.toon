@@ -1,0 +1,11 @@
+dialogue: charmides
+turn_index_path: derived/plato/turns/charmides.toon
+turn_index_sha256: 2342c951ccdff8e6f7a089eeeb274341cf417d71d06ac0a736eb372a8ff82c9b
+token_index_path: derived/plato/tokens/charmides.toon
+token_index_sha256: ad847cce92cc41abb21724e21bb4e5abdf622069fc845ef9401d5029496d4132
+speakers[1]:
+  speaker | turns | total_tokens | median_tokens | p90_tokens | max_tokens | long_turns
+  (none)  | 1 | 8322 | 8322 | 8322 | 8322 | 0
+turns[1]:
+  turn_id             | speaker | start_marker | end_marker | start_char | end_char | greek_char_count | token_count | dialogue_long_turn | speaker_long_turn
+  turn_charmides_0001 | (none)  | 153a         | 176d       | 0 | 50785 | 38031 | 8322 | no | no

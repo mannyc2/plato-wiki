@@ -1,0 +1,47 @@
+dialogue: lysis
+source_path: raw/plato/greek/lysis.txt
+source_sha256: c52fbd7394b742fa245bd9f8a6c69dc14c2aa2a0569ecef78bcbe51b469a2d35
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[40]:
+  group             | form    | start_char | end_char | marker | turn_id         | token_ids
+  definition_prompt | εἶδος   | 2558       | 2563     | 204e   | turn_lysis_0001 | tok_lysis_000420
+  assent_concession | πάνυ γε | 3540       | 3547     | 205b   | turn_lysis_0001 | tok_lysis_000579,tok_lysis_000580
+  assent_concession | πάνυ γε | 8047       | 8054     | 207c   | turn_lysis_0001 | tok_lysis_001294,tok_lysis_001295
+  assent_concession | πάνυ γε | 8672       | 8679     | 207d   | turn_lysis_0001 | tok_lysis_001392,tok_lysis_001393
+  assent_concession | ναί     | 9123       | 9126     | 207e   | turn_lysis_0001 | tok_lysis_001469
+  aporia_reset      | πάλιν   | 15504      | 15509    | 211a   | turn_lysis_0001 | tok_lysis_002558
+  assent_concession | ναί     | 16281      | 16284    | 211b   | turn_lysis_0001 | tok_lysis_002690
+  assent_concession | ναί     | 17363      | 17366    | 211e   | turn_lysis_0001 | tok_lysis_002873
+  assent_concession | ναί     | 18625      | 18628    | 212c   | turn_lysis_0001 | tok_lysis_003089
+  assent_concession | ναί     | 19530      | 19533    | 212e   | turn_lysis_0001 | tok_lysis_003236
+  aporia_reset      | πάλιν   | 20417      | 20422    | 213b   | turn_lysis_0001 | tok_lysis_003388
+  assent_concession | ναί     | 22638      | 22641    | 214c   | turn_lysis_0001 | tok_lysis_003752
+  assent_concession | πάνυ γε | 23405      | 23412    | 214e   | turn_lysis_0001 | tok_lysis_003884,tok_lysis_003885
+  assent_concession | ναί     | 24113      | 24116    | 215a   | turn_lysis_0001 | tok_lysis_004016
+  assent_concession | πάνυ γε | 26090      | 26097    | 216a   | turn_lysis_0001 | tok_lysis_004349,tok_lysis_004350
+  assent_concession | ναί     | 27846      | 27849    | 216e   | turn_lysis_0001 | tok_lysis_004661
+  assent_concession | ναί     | 28380      | 28383    | 217b   | turn_lysis_0001 | tok_lysis_004752
+  assent_concession | πάνυ γε | 29032      | 29039    | 217c   | turn_lysis_0001 | tok_lysis_004866,tok_lysis_004867
+  assent_concession | ναί     | 29316      | 29319    | 217d   | turn_lysis_0001 | tok_lysis_004919
+  assent_concession | πάνυ γε | 29842      | 29849    | 217e   | turn_lysis_0001 | tok_lysis_005014,tok_lysis_005015
+  assent_concession | πάνυ γε | 30716      | 30723    | 218b   | turn_lysis_0001 | tok_lysis_005165,tok_lysis_005166
+  assent_concession | ναί     | 31939      | 31942    | 218e   | turn_lysis_0001 | tok_lysis_005370
+  assent_concession | ναί     | 31993      | 31996    | 218e   | turn_lysis_0001 | tok_lysis_005379
+  assent_concession | ναί     | 32347      | 32350    | 219a   | turn_lysis_0001 | tok_lysis_005444
+  assent_concession | πάνυ γε | 32408      | 32415    | 219a   | turn_lysis_0001 | tok_lysis_005457,tok_lysis_005458
+  assent_concession | ναί     | 32952      | 32955    | 219c   | turn_lysis_0001 | tok_lysis_005548
+  assent_concession | πάνυ γε | 32984      | 32991    | 219c   | turn_lysis_0001 | tok_lysis_005554,tok_lysis_005555
+  assent_concession | ναί     | 33018      | 33021    | 219c   | turn_lysis_0001 | tok_lysis_005561
+  assent_concession | πάνυ γε | 33081      | 33088    | 219c   | turn_lysis_0001 | tok_lysis_005571,tok_lysis_005572
+  assent_concession | ναί     | 33136      | 33139    | 219c   | turn_lysis_0001 | tok_lysis_005581
+  assent_concession | πάνυ γε | 33907      | 33914    | 219e   | turn_lysis_0001 | tok_lysis_005717,tok_lysis_005718
+  assent_concession | πάνυ γε | 34472      | 34479    | 220a   | turn_lysis_0001 | tok_lysis_005811,tok_lysis_005812
+  assent_concession | πάνυ γε | 36574      | 36581    | 221a   | turn_lysis_0001 | tok_lysis_006179,tok_lysis_006180
+  assent_concession | ναί     | 37094      | 37097    | 221c   | turn_lysis_0001 | tok_lysis_006262
+  assent_concession | ναί     | 37846      | 37849    | 221e   | turn_lysis_0001 | tok_lysis_006396
+  definition_prompt | εἶδος   | 38385      | 38390    | 222a   | turn_lysis_0001 | tok_lysis_006500
+  assent_concession | πάνυ γε | 38392      | 38399    | 222a   | turn_lysis_0001 | tok_lysis_006501,tok_lysis_006502
+  assent_concession | πάνυ γε | 39206      | 39213    | 222c   | turn_lysis_0001 | tok_lysis_006638,tok_lysis_006639
+  aporia_reset      | πάλιν   | 39464      | 39469    | 222d   | turn_lysis_0001 | tok_lysis_006683
+  assent_concession | πάνυ γε | 39765      | 39772    | 222d   | turn_lysis_0001 | tok_lysis_006741,tok_lysis_006742

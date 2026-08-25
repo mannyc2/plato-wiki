@@ -1,0 +1,411 @@
+{
+  "schemaVersion": 1,
+  "status": "accepted-deterministic-cast-decision",
+  "policy": "cast-auto-accept-v1",
+  "acceptedAt": "2026-07-15",
+  "characterId": "cephalus-of-clazomenae",
+  "sourceCharacterId": "cephalus-of-clazomenae",
+  "candidateSelection": "highest-ranked-passing",
+  "rankingPolicy": "mean-cosine-desc/minimum-window-cosine-desc/ordinary-word-errors-asc/speech-rate-distance-from-3-asc/seed-asc",
+  "inputs": {
+    "cast": {
+      "path": "audio/cast.json",
+      "sha256": "2b6cfcacb26f2658f8864d3af34db8fc0da47a04711ee31157e0a234d0a37057"
+    },
+    "characters": {
+      "path": "audio/characters.json",
+      "sha256": "3bb880509eadf402d18f3a1e57a9abfacc5722ab62eedc2b7dedce14ff31e24d"
+    },
+    "referenceSources": {
+      "path": "audio/reference-sources.json",
+      "sha256": "c65f15e02a23734020a5bdb6100c1d45abc50b13bcab9b0cd60cc52145f6440e"
+    },
+    "referenceSidecar": {
+      "path": "scratch/audio-references/cephalus-of-clazomenae/UDZdYZ0Q4Vs-000041520-000046800-51d2b50cef90.json",
+      "sha256": "d91718321d198ea28ab0db3307908646971c45c74e57229fa27dce8bd61e4f5e"
+    },
+    "speakerPurity": {
+      "path": "scratch/audio-narrative-cue-references/cast-candidate-reports/parmenides.report.json",
+      "sha256": "81fbbfa1b9a68a271490a7731eb1fd9678834255718a3568448fac0fc180e72c"
+    },
+    "cloneManifest": {
+      "path": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/audition-manifest.json",
+      "sha256": "9616ac72f70a1c12f562689f34143a4fa5cfc26c461398a783c6772e5f0db76c"
+    },
+    "asr": {
+      "path": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/asr-qa.json",
+      "sha256": "53cd210b4b1c51915dad3f68e48eca86ee22b9dcc81963c5131ed13b1f8ab18f"
+    },
+    "acoustic": {
+      "path": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/speaker-ranking.json",
+      "sha256": "da4ec796185f4e9c39c88622b04bda5ec8e7217a04b340211322903b9200127f"
+    }
+  },
+  "reference": {
+    "sourceUrl": "https://www.youtube.com/watch?v=UDZdYZ0Q4Vs",
+    "sourceRegistryPath": "audio/reference-sources.json",
+    "sourceRegistrySha256": "c65f15e02a23734020a5bdb6100c1d45abc50b13bcab9b0cd60cc52145f6440e",
+    "sourceDialogue": "parmenides",
+    "sourceVideoId": "UDZdYZ0Q4Vs",
+    "sourceCharacterId": "cephalus-of-clazomenae",
+    "videoStartSeconds": 41.52,
+    "videoEndSeconds": 46.8,
+    "localDurationSeconds": 5.28,
+    "localSha256": "adbd251eb9b4610d96c0c4dd02d01557afec04fbddbbef6d027d0aabeb884f5c",
+    "relativePath": "scratch/audio-references/cephalus-of-clazomenae/UDZdYZ0Q4Vs-000041520-000046800-51d2b50cef90.wav",
+    "promptText": "yes that is why I am here I wish to ask a favor of you",
+    "referenceAsr": {
+      "decision": "primary-zero-error",
+      "primaryExpectedWords": 15,
+      "primaryOrdinaryWordErrors": 0,
+      "primaryOrdinaryWordErrorRate": 0.0,
+      "primaryEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/asr-qa.json",
+      "primaryEvidenceSha256": "53cd210b4b1c51915dad3f68e48eca86ee22b9dcc81963c5131ed13b1f8ab18f"
+    },
+    "speakerPurityEvidencePath": "scratch/audio-narrative-cue-references/cast-candidate-reports/parmenides.report.json",
+    "speakerPurityEvidenceSha256": "81fbbfa1b9a68a271490a7731eb1fd9678834255718a3568448fac0fc180e72c",
+    "speakerPurityProofRecordId": "narrative-cue-56bb23b6f0d9dd6cd75f1092",
+    "speakerPuritySourceAgreementSha256": "1d202cd78ffc2d84b3df8c2182d46e7aee086b187a5d014a7ce2ac06ebb26520",
+    "speakerPurityMethod": "jowett-caption-turn-alignment-v1",
+    "dominantSpeakerCoverage": 1,
+    "competingSpeakerCoverage": 0,
+    "uncoveredSpeakerCoverage": 0
+  },
+  "gates": {
+    "referenceDuration": {
+      "minimumSeconds": 3,
+      "maximumSeconds": 15,
+      "maximumIntervalDeltaSeconds": 0.05
+    },
+    "speakerPurity": {
+      "minimumDominantCoverage": 0.95,
+      "maximumCompetingCoverage": 0.02,
+      "maximumUncoveredCoverage": 0.03
+    },
+    "asrFidelity": {
+      "minimumReferenceExpectedWords": 8,
+      "maximumReferenceOrdinaryWordErrors": 0,
+      "maximumReferenceOrdinaryWordErrorRate": 0,
+      "referenceFailureAdjudication": "exact-source-agreement-plus-pinned-independent-large-v3-zero-v1",
+      "minimumExpectedWords": 40,
+      "maximumOrdinaryWordErrors": 0,
+      "maximumOrdinaryWordErrorRate": 0
+    },
+    "acousticConsistency": {
+      "minimumMeanCosineSimilarity": 0.85,
+      "minimumWindowCosineSimilarity": 0.8
+    },
+    "signalSafety": {
+      "maximumClippedSamples": 0,
+      "maximumTruePeakDbtp": 0,
+      "maximumPeakAmplitude": 0.9999
+    },
+    "auditionDuration": {
+      "minimumSeconds": 8,
+      "maximumSeconds": 60,
+      "minimumWordsPerSecond": 1.5,
+      "maximumWordsPerSecond": 4.5
+    }
+  },
+  "candidates": [
+    {
+      "seed": 42,
+      "file": "cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed42.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed42.wav",
+        "sha256": "8435a92ddeb3e0c5f150fd692925c112ba7ad4b9ffd8265eb26e49d45bbb93b9",
+        "durationSeconds": 23.2,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/asr-qa.json",
+        "asrEvidenceSha256": "53cd210b4b1c51915dad3f68e48eca86ee22b9dcc81963c5131ed13b1f8ab18f",
+        "meanSpeakerCosineSimilarity": 0.8565777142842611,
+        "minimumWindowSpeakerCosineSimilarity": 0.8469078540802002,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/speaker-ranking.json",
+        "acousticEvidenceSha256": "da4ec796185f4e9c39c88622b04bda5ec8e7217a04b340211322903b9200127f",
+        "clippedSamples": 0,
+        "truePeakDbtp": -2.3,
+        "peakAmplitude": 0.7662353515625
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8565777142842611,
+        -0.8469078540802002,
+        0,
+        0.2413793103448274,
+        42
+      ],
+      "passingRank": 8
+    },
+    {
+      "seed": 43,
+      "file": "cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed43.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed43.wav",
+        "sha256": "618055ad9177d77e83bac6b988c5312040c73faabe4c11f0774efc61cf73c343",
+        "durationSeconds": 24.0,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/asr-qa.json",
+        "asrEvidenceSha256": "53cd210b4b1c51915dad3f68e48eca86ee22b9dcc81963c5131ed13b1f8ab18f",
+        "meanSpeakerCosineSimilarity": 0.8566766778628031,
+        "minimumWindowSpeakerCosineSimilarity": 0.841759443283081,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/speaker-ranking.json",
+        "acousticEvidenceSha256": "da4ec796185f4e9c39c88622b04bda5ec8e7217a04b340211322903b9200127f",
+        "clippedSamples": 0,
+        "truePeakDbtp": -3.5,
+        "peakAmplitude": 0.660064697265625
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8566766778628031,
+        -0.841759443283081,
+        0,
+        0.3333333333333335,
+        43
+      ],
+      "passingRank": 7
+    },
+    {
+      "seed": 44,
+      "file": "cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed44.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed44.wav",
+        "sha256": "94e77d708dc0e4d1050518ae4acdc6633896b0b5b78f4486bf69d05e56f1b38c",
+        "durationSeconds": 23.84,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/asr-qa.json",
+        "asrEvidenceSha256": "53cd210b4b1c51915dad3f68e48eca86ee22b9dcc81963c5131ed13b1f8ab18f",
+        "meanSpeakerCosineSimilarity": 0.8696819146474203,
+        "minimumWindowSpeakerCosineSimilarity": 0.8500245213508606,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/speaker-ranking.json",
+        "acousticEvidenceSha256": "da4ec796185f4e9c39c88622b04bda5ec8e7217a04b340211322903b9200127f",
+        "clippedSamples": 0,
+        "truePeakDbtp": -4.6,
+        "peakAmplitude": 0.582550048828125
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8696819146474203,
+        -0.8500245213508606,
+        0,
+        0.31543624161073813,
+        44
+      ],
+      "passingRank": 4
+    },
+    {
+      "seed": 45,
+      "file": "cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed45.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed45.wav",
+        "sha256": "de8bba7c9e57e261aae7f4387988dfd91663e967702555ae694a025058aa48da",
+        "durationSeconds": 22.72,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/asr-qa.json",
+        "asrEvidenceSha256": "53cd210b4b1c51915dad3f68e48eca86ee22b9dcc81963c5131ed13b1f8ab18f",
+        "meanSpeakerCosineSimilarity": 0.8694690267244974,
+        "minimumWindowSpeakerCosineSimilarity": 0.866077184677124,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/speaker-ranking.json",
+        "acousticEvidenceSha256": "da4ec796185f4e9c39c88622b04bda5ec8e7217a04b340211322903b9200127f",
+        "clippedSamples": 0,
+        "truePeakDbtp": -2.8,
+        "peakAmplitude": 0.725189208984375
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8694690267244974,
+        -0.866077184677124,
+        0,
+        0.18309859154929553,
+        45
+      ],
+      "passingRank": 5
+    },
+    {
+      "seed": 46,
+      "file": "cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed46.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed46.wav",
+        "sha256": "e45beb7afda329799102ef88f2552f5d0d79fd9e55dbd46aa48b18691ece66c9",
+        "durationSeconds": 22.72,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/asr-qa.json",
+        "asrEvidenceSha256": "53cd210b4b1c51915dad3f68e48eca86ee22b9dcc81963c5131ed13b1f8ab18f",
+        "meanSpeakerCosineSimilarity": 0.8727291623751322,
+        "minimumWindowSpeakerCosineSimilarity": 0.866156280040741,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/speaker-ranking.json",
+        "acousticEvidenceSha256": "da4ec796185f4e9c39c88622b04bda5ec8e7217a04b340211322903b9200127f",
+        "clippedSamples": 0,
+        "truePeakDbtp": -3.9,
+        "peakAmplitude": 0.637481689453125
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8727291623751322,
+        -0.866156280040741,
+        0,
+        0.18309859154929553,
+        46
+      ],
+      "passingRank": 2
+    },
+    {
+      "seed": 47,
+      "file": "cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed47.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed47.wav",
+        "sha256": "2b3f67fc243c42463221ac1a3d4dfca43845870da12b9e26c64b813d5b052a51",
+        "durationSeconds": 23.04,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/asr-qa.json",
+        "asrEvidenceSha256": "53cd210b4b1c51915dad3f68e48eca86ee22b9dcc81963c5131ed13b1f8ab18f",
+        "meanSpeakerCosineSimilarity": 0.8687237898508707,
+        "minimumWindowSpeakerCosineSimilarity": 0.8543670177459717,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/speaker-ranking.json",
+        "acousticEvidenceSha256": "da4ec796185f4e9c39c88622b04bda5ec8e7217a04b340211322903b9200127f",
+        "clippedSamples": 0,
+        "truePeakDbtp": -4.3,
+        "peakAmplitude": 0.607208251953125
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8687237898508707,
+        -0.8543670177459717,
+        0,
+        0.22222222222222232,
+        47
+      ],
+      "passingRank": 6
+    },
+    {
+      "seed": 48,
+      "file": "cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed48.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed48.wav",
+        "sha256": "cc64c541756360dfa597035b5756fa9b1921a403f2814d0b5544254b679218fa",
+        "durationSeconds": 25.28,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/asr-qa.json",
+        "asrEvidenceSha256": "53cd210b4b1c51915dad3f68e48eca86ee22b9dcc81963c5131ed13b1f8ab18f",
+        "meanSpeakerCosineSimilarity": 0.8770624399185181,
+        "minimumWindowSpeakerCosineSimilarity": 0.868262767791748,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/speaker-ranking.json",
+        "acousticEvidenceSha256": "da4ec796185f4e9c39c88622b04bda5ec8e7217a04b340211322903b9200127f",
+        "clippedSamples": 0,
+        "truePeakDbtp": -5.0,
+        "peakAmplitude": 0.559478759765625
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8770624399185181,
+        -0.868262767791748,
+        0,
+        0.4683544303797471,
+        48
+      ],
+      "passingRank": 1
+    },
+    {
+      "seed": 49,
+      "file": "cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed49.wav",
+      "audition": {
+        "relativePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/cephalus-of-clazomenae-UDZdYZ0Q4Vs-ef6260a40bd4-seed49.wav",
+        "sha256": "77db1d7175504ea385ad415d8529ec8aae27ed6022a25f40060cd35ffa602401",
+        "durationSeconds": 21.28,
+        "expectedWords": 64,
+        "ordinaryWordErrors": 0,
+        "ordinaryWordErrorRate": 0.0,
+        "asrEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/asr-qa.json",
+        "asrEvidenceSha256": "53cd210b4b1c51915dad3f68e48eca86ee22b9dcc81963c5131ed13b1f8ab18f",
+        "meanSpeakerCosineSimilarity": 0.8715264797210693,
+        "minimumWindowSpeakerCosineSimilarity": 0.8658770322799683,
+        "acousticEvidencePath": "scratch/audio-cast-batches/audition-artifacts/e64df29c562294bd2ee4bea0ace08164d815c6ec5ead878a77ec12872ebb375a/speaker-ranking.json",
+        "acousticEvidenceSha256": "da4ec796185f4e9c39c88622b04bda5ec8e7217a04b340211322903b9200127f",
+        "clippedSamples": 0,
+        "truePeakDbtp": -4.2,
+        "peakAmplitude": 0.61456298828125
+      },
+      "generation": {
+        "numSteps": 24,
+        "guidanceScale": 1.2,
+        "speakerScale": 1.5,
+        "language": "EN",
+        "precision": "bfloat16"
+      },
+      "failures": [],
+      "rankingKey": [
+        -0.8715264797210693,
+        -0.8658770322799683,
+        0,
+        0.007518796992481036,
+        49
+      ],
+      "passingRank": 3
+    }
+  ],
+  "selectedSeed": 48,
+  "selectedPassingRank": 1,
+  "decisionContentSha256": "4e6a8b582c1fdd2aa5a920de193f251da951d1300b914d78020767ce26f9d810"
+}

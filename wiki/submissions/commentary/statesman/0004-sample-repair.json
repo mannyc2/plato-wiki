@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "submission_id": "0004-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "statesman",
+  "source_path": "scratch/commentary/sample-repairs/statesman/final-sample-0012.json",
+  "source_sha256": "af15fed2b72c2825c6e15846e12465ff8ffd82a435d2e0f410c0ea4f1226060d",
+  "target_path": "wiki/commentary/statesman.md",
+  "target_sha256_before": "c139c488e324baf33569f98168fd20e1970bc8ba8a869e55096c9f8b3185800e",
+  "target_sha256_after": "a3e3e448097cfcd74dc36ace644ad4de0aa9e1aa9335a0d68ecab80f36d37dee",
+  "applied_at": "2026-08-21T15:54:13.630Z",
+  "applied_ids": [
+    "comm_statesman_0012"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "statesman",
+    "ledger": {
+      "path": "wiki/commentary/statesman.md",
+      "sha256": "c139c488e324baf33569f98168fd20e1970bc8ba8a869e55096c9f8b3185800e"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-statesman-final-sample",
+      "reviewed_on": "2026-08-21",
+      "rationale": "The final sample found one unsupported opening; the repair must stay bounded to imitation, law and custom, private gain or favor, and rule without knowledge.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_statesman_0001",
+        "comm_statesman_0002",
+        "comm_statesman_0003",
+        "comm_statesman_0004",
+        "comm_statesman_0005",
+        "comm_statesman_0006",
+        "comm_statesman_0007",
+        "comm_statesman_0008",
+        "comm_statesman_0009",
+        "comm_statesman_0010",
+        "comm_statesman_0011",
+        "comm_statesman_0012",
+        "comm_statesman_0013",
+        "comm_statesman_0016",
+        "comm_statesman_0022"
+      ],
+      "failed_commentary_ids": [
+        "comm_statesman_0012"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_statesman_0012",
+        "title": "Law as a second-best imitation",
+        "body": "The Stranger presents law as a second-best imitation of expert rule. Written rules imitate truth, and a regime without the genuine expert should follow its written laws and ancestral customs as closely as it can. The passage poses departure for private gain or favor, by someone acting without knowledge, as a worse error. Law therefore preserves a likeness of expertise without becoming expertise itself.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_statesman_0092",
+            "claim_statesman_0094",
+            "claim_statesman_0095",
+            "claim_statesman_0100",
+            "claim_statesman_0107"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_statesman_0012",
+      "body": "```yaml\ncommentary_id: comm_statesman_0012\nsource_work: Statesman\nblock_kind: section\nplacement: before\ntitle: \"The sophist's shadow and the limits of imitation\"\nstephanus_span: 300a-305e\nsource_ref:\n  source_path: raw/plato/greek/statesman.txt\n  stephanus_span: 300a-305e\n  start_marker: 300a\n  end_marker: 305e\n  start_char: 88568\n  end_char: 101263\n  text_sha256: \"f7cedc969f04ad29dfcb00435122512ecb9176f90c3e02b8d3c006e327079f25\"\nbody: \"The Stranger compares political imitation with the sophist's imitation. Regimes can preserve the outline of the genuine art, but they can also become distorted when power, wealth, or popular favor replaces knowledge. The dialogue's concern is therefore not simply which constitution has the right name, but how far an image has drifted from the expertise it imitates.\"\ncites:\n  observations: []\n  claims: [claim_statesman_0092, claim_statesman_0093, claim_statesman_0100, claim_statesman_0102, claim_statesman_0107]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+# Commentary quality-audit acceptance
+
+dialogue: cratylus
+decision: accepted
+reviewer: manifest-batch-1-delegated-luna-reviewer-20260823
+reviewed_on: 2026-08-23
+rationale: Independent Luna source, accepted-evidence, and placement sample passed for the current Cratylus ledger.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sampled_commentary_ids:
+- comm_cratylus_0001
+- comm_cratylus_0002
+- comm_cratylus_0003
+- comm_cratylus_0004
+- comm_cratylus_0005
+- comm_cratylus_0006
+- comm_cratylus_0007
+- comm_cratylus_0008
+- comm_cratylus_0009
+- comm_cratylus_0010
+- comm_cratylus_0012
+- comm_cratylus_0026
+- comm_cratylus_0044
+- comm_cratylus_0048
+- comm_cratylus_0057
+predecessor_manifest_path: wiki/commentary-audits/cratylus.json
+predecessor_manifest_sha256: 0aa8e08d2324c70c67850e65b4df47da87a1be595f251e1c3c0d2dd1a6b8259d
+predecessor_manifest_history_path: wiki/commentary-audits/history/cratylus/0aa8e08d2324c70c67850e65b4df47da87a1be595f251e1c3c0d2dd1a6b8259d.json
+predecessor_manifest_history_sha256: 0aa8e08d2324c70c67850e65b4df47da87a1be595f251e1c3c0d2dd1a6b8259d
+predecessor_review_note_path: wiki/review/2026-08-21-commentary-quality-cratylus-luna-sample.md
+predecessor_review_note_sha256: b7c0d4bef558da3752edfb8e388d33244cbf8435ce629982b3cdce0ab820b7f6
+predecessor_review_note_history_path: wiki/review/commentary-quality-history/cratylus/b7c0d4bef558da3752edfb8e388d33244cbf8435ce629982b3cdce0ab820b7f6.md
+predecessor_review_note_history_sha256: b7c0d4bef558da3752edfb8e388d33244cbf8435ce629982b3cdce0ab820b7f6

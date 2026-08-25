@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-delegated-audit-09-652a-655b",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "laws",
+  "unit_key": "09-652a-655b",
+  "source_path": "scratch/commentary/delegated-audits/laws/09-652a-655b.json",
+  "source_sha256": "794edee7d8405ccbd61f44f5be3c08bf79803a3882fab14f3ee651769432c40e",
+  "target_path": "wiki/submissions/commentary-audit/laws/09-652a-655b.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "3b6a4221ec1dbbb2bfe5eb987d586ba680102336305531517249ae0d18449282",
+  "applied_at": "2026-08-24T01:15:36.778Z",
+  "applied_ids": [
+    "comm_laws_0009"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "laws",
+    "unit_key": "09-652a-655b",
+    "job": {
+      "job_id": "audit:laws:09-652a-655b",
+      "input_sha256": "7975dea1bb607bceb0a99e3024a31155bde4de4f53ce546bc7192b7287fe5475",
+      "audit_brief_path": "scratch/commentary/audit-briefs/laws/09-652a-655b.md",
+      "audit_brief_sha256": "98eae19620cdad6eafc0e4cb99e32f3886d5f8039af9854bc20f1be179301a37",
+      "output_path": "scratch/commentary/audits/laws/09-652a-655b.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/laws/09-652a-655b.output.json",
+    "output_sha256": "3b6a4221ec1dbbb2bfe5eb987d586ba680102336305531517249ae0d18449282",
+    "provenance": {
+      "auditor": "final-laws-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

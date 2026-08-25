@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0012-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "philebus",
+  "source_path": "scratch/commentary/rewrites/philebus/08-50a-54d.json",
+  "source_sha256": "b9d48dc79292b09f9b35f0dcaa3ca588f18d2ba52af0b9d3750482a22b5da5d4",
+  "target_path": "wiki/commentary/philebus.md",
+  "target_sha256_before": "4ccab155ca4d6e5836e70b2c17d8d9d5963033c8819aab13563220ac93642ea9",
+  "target_sha256_after": "16b29c7fe38abd058fb975a32429e29178d0541bd6be6e201ec7147b4afd1042",
+  "applied_at": "2026-08-23T23:53:47.501Z",
+  "applied_ids": [
+    "comm_philebus_0018"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "philebus",
+      "unit_key": "08-50a-54d",
+      "section_id": "comm_philebus_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/philebus/08-50a-54d.json",
+        "sha256": "122966eccc93c2978bba12c5f2814fb0e6f57cee588e8966f37528871685ffe7"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_philebus_0018",
+          "title": "",
+          "body": "For comparison, the passage asks us to distinguish pleasures by their purity and truth: the purer and truer pleasure has greater value.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_philebus_0018",
+      "body": "```yaml\ncommentary_id: comm_philebus_0018\nsource_work: Philebus\nblock_kind: argument\nplacement: before\nstephanus_span: 52a-53c\nsource_ref:\n  source_path: raw/plato/greek/philebus.txt\n  stephanus_span: 52a-53c\n  start_marker: 52a\n  end_marker: 53c\n  start_char: 81943\n  end_char: 84990\n  text_sha256: \"e0115e26a115d1ac249aed52b559eea21102007bd273171fff128c4ff80ffe90\"\nbody: \"The comparison with pure whiteness changes the criterion of superiority. The strongest pleasure is not automatically the best; purity, truth, and proportion now do the evaluative work. The later ranking will depend on this quieter standard.\"\ncites:\n  observations: []\n  claims: [\"claim_philebus_0049\"]\n  relations: [\"rel_philebus_0003\"]\n  dossiers: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

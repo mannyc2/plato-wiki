@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "dialogue": "crito",
+  "ledger": {
+    "path": "wiki/commentary/crito.md",
+    "sha256": "70e51670525ea6eb8cf54498c1267bdafabe0760278c141009add7ab3ab639a1"
+  },
+  "protocol": {
+    "path": "docs/commentary-protocol.md",
+    "sha256": "5f5e6f47f2d39cb42dd8941762ca1b82b4c1371801576f9ec7875e76286e1a13"
+  },
+  "authoring": {
+    "model": "gpt-5.6-luna",
+    "effort": "medium"
+  },
+  "units": [
+    {
+      "unit_key": "01-43a-44a",
+      "section_id": "comm_crito_0001",
+      "audit_brief_sha256": "f46fd82855320a021491972e19ab1e9f32a39b7e5ee3aaddb238bf5da08fff59",
+      "output_path": "scratch/commentary/audits/crito/01-43a-44a.json",
+      "output_sha256": "852fa16751e591d39445c71f0d4868f0f38401baa897f2f09c812282ed470e74",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "crito",
+        "unit_key": "01-43a-44a",
+        "section_id": "comm_crito_0001",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_crito_0001",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames the before-dawn visit, Crito’s grief, the execution timetable, and Socrates’ composure; the opening edge precedes the first source line without disrupting flow."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "02-44b-46a",
+      "section_id": "comm_crito_0002",
+      "audit_brief_sha256": "cfc3af7f1b1f1faf610c4f7a7e98b50dc0681c25de23bc00a7f9cbe2bae51372",
+      "output_path": "scratch/commentary/audits/crito/02-44b-46a.json",
+      "output_sha256": "d075aa1fbd6c134a2cdd1e78b3f786139cf75f144e1f7d71fbd8fdd7fc008f85",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "crito",
+        "unit_key": "02-44b-46a",
+        "section_id": "comm_crito_0002",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_crito_0002",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately orients the dream and previews Crito’s sustained escape plea, with accepted support; the edge follows “Too clear” and precedes “But, my dear Socrates.”"
+          },
+          {
+            "commentary_id": "comm_crito_0009",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately contrasts Crito’s and Socrates’ measures of harm and notes their unresolved tension; the edge follows “That may well be” and precedes Crito’s financial worry."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "03-46b-48a",
+      "section_id": "comm_crito_0003",
+      "audit_brief_sha256": "233f29a34f99556096c654490ea7ece3b6efdadab1ed4eace269ecbeff1ae684",
+      "output_path": "scratch/commentary/audits/crito/03-46b-48a.json",
+      "output_sha256": "5ed7a51a7db178b03026bdb66bfb8a0d18493d81430f2a0424c11a672704f458",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "crito",
+        "unit_key": "03-46b-48a",
+        "section_id": "comm_crito_0003",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_crito_0003",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately orients the unit’s method, opinion hierarchy, trainer analogy, and justice application; the edge is clean before 46b and the spoken summary is clear."
+          },
+          {
+            "commentary_id": "comm_crito_0013",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Faithfully tracks the trainer analogy, conditional expert, justice application, and its unproven parallel; the edge follows Crito’s answer and precedes the body analogy clearly."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "04-48b-49d",
+      "section_id": "comm_crito_0004",
+      "audit_brief_sha256": "9993ce9c1867be13b4f44cfef7a99e797b723aee1ce5c392c8c0f197a81f367b",
+      "output_path": "scratch/commentary/audits/crito/04-48b-49d.json",
+      "output_sha256": "23dd8b1a04da0f3872995b2d3999897d1fc8e6065a4b696e8b67fde7b3b13f20",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "crito",
+        "unit_key": "04-48b-49d",
+        "section_id": "comm_crito_0004",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_crito_0004",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately tracks the assent chain from living well to escape and retaliation, with appropriate limits. It is coherent aloud and sits before Socrates resumes the 48b argument."
+          },
+          {
+            "commentary_id": "comm_crito_0017",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately explains the few-held principle, Crito’s considered assent, and the transition forward. It follows Crito’s reply and precedes Socrates’ next question without disrupting the exchange."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "05-49e-52c",
+      "section_id": "comm_crito_0005",
+      "audit_brief_sha256": "97257cec5e12dbccbfe08df2c6406308c3f60141083aadb0426254d98c289690",
+      "output_path": "scratch/commentary/audits/crito/05-49e-52c.json",
+      "output_sha256": "806d59a42b5e918a2750ff0d98b3fb1e69e0a354b0eaeebfacbad0677babcb5b",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "crito",
+        "unit_key": "05-49e-52c",
+        "section_id": "comm_crito_0005",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_crito_0005",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Evidence, exact edge, and listening all pass; the overview frames the Laws' personification without breaking the exchange."
+          },
+          {
+            "commentary_id": "comm_crito_0019",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Evidence, exact edge, and listening all pass; the block clearly traces the analogy from familial authority to persuasion or obedience."
+          },
+          {
+            "commentary_id": "comm_crito_0020",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Evidence, exact edge, and listening all pass; the block makes the implied-consent premise into a genuine question without answering it."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "06-52d-54e",
+      "section_id": "comm_crito_0006",
+      "audit_brief_sha256": "1e75f8eabdcb3e4b310143186bd1a9586fd3c1902731ecc9016bcb1ae66ccc6e",
+      "output_path": "scratch/commentary/audits/crito/06-52d-54e.json",
+      "output_sha256": "9f3b7b4451e79edcb54986c8de2232a1fe88c09ae9ca9ad4f9e54993cc8d975b",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "crito",
+        "unit_key": "06-52d-54e",
+        "section_id": "comm_crito_0006",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_crito_0006",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "The cited observations support the Laws’ agreement and hypothetical escape consequences. The edge follows Crito’s reply and prepares the Laws’ next question without splitting the exchange."
+          }
+        ]
+      }
+    }
+  ],
+  "acceptance": {
+    "decision": "accepted",
+    "reviewer": "cjpher-delegated-luna-reviewer-curie",
+    "reviewed_on": "2026-08-21",
+    "rationale": "All 11 blocks match the manifest and exact Greek anchors; cited records are accepted and support the assertions. Prose is focused, dialogue-specific, uncertainty-aware, and suitable for spoken delivery; no closed issue-code defect is present.",
+    "sampled_commentary_ids": [
+      "comm_crito_0001",
+      "comm_crito_0002",
+      "comm_crito_0003",
+      "comm_crito_0004",
+      "comm_crito_0005",
+      "comm_crito_0006",
+      "comm_crito_0009",
+      "comm_crito_0013",
+      "comm_crito_0017",
+      "comm_crito_0019",
+      "comm_crito_0020"
+    ],
+    "review_note": {
+      "path": "wiki/review/2026-08-21-commentary-quality-crito-luna-sample.md",
+      "sha256": "cd82a8f3d4c6d2b5c81086e2419a33637f6e0663a09c60732afe7832e4346a9b"
+    }
+  }
+}

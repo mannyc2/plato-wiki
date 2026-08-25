@@ -1,0 +1,287 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "symposium",
+  "source_path": "scratch/commentary/rewrites/symposium/01-172a-177e.json",
+  "source_sha256": "605958344442aceec04881de8a06ba009b63650c2f55e9d5f0a092d87a00d810",
+  "target_path": "wiki/commentary/symposium.md",
+  "target_sha256_before": "5e7f79a06e40c7aacb10d5e9a4d4a437f3208588f8ff0bcae522fc0843548f45",
+  "target_sha256_after": "0f6e5a42f3828f66caaac87195bc0567faf0910e503bb624318844842a85872b",
+  "applied_at": "2026-08-21T15:08:55.970Z",
+  "applied_ids": [
+    "comm_symposium_0015",
+    "comm_symposium_0033",
+    "comm_symposium_0034",
+    "comm_symposium_0035",
+    "comm_symposium_0053",
+    "comm_symposium_0057",
+    "comm_symposium_0060",
+    "comm_symposium_0066",
+    "comm_symposium_0067"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "01-172a-177e",
+      "section_id": "comm_symposium_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/01-172a-177e.json",
+        "sha256": "6688322d8da1c5916fa48eb9abf5bcf3ffa68811776f9392bfcde1511085dff0"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0015",
+          "title": "",
+          "body": "Once heavy drinking is ruled out, Eryximachus gives the evening a new engine: he replaces the just-arrived flute-girl’s performance with speeches among the men and takes charge of the next procedure. The point is not merely that talk begins. I read this change of medium as a rescue of the gathering from drift: bodily exhaustion becomes the reason to organize attention.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0012",
+              "obs_symposium_0013"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "04-185d-188e",
+      "section_id": "comm_symposium_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/04-185d-188e.json",
+        "sha256": "1d5d667734c3f6c1382cd73dd5819d06ad3b4e901e90a6ebfb9fb5da8f5e08f6"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0033",
+          "title": "",
+          "body": "The close turns incompletion into a handoff. Eryximachus admits that his praise may leave things out, then gives Aristophanes a choice: complete it or praise Eros another way. Hear the recovered hiccup as a comic reminder that this next speech arrives through the bodily interruption that reordered the speaking turns.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0036",
+              "obs_symposium_0044"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0034",
+          "title": "",
+          "body": "A compact contrast: Gorgias uses medicine analogically for correcting the soul, whereas Eryximachus defines it through the body's erotic regulation.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_symposium_0039"
+            ],
+            "relations": [
+              "rel_cross-dialogue_0361"
+            ],
+            "dossiers": []
+          },
+          "crossrefs": [
+            {
+              "source_work": "Gorgias",
+              "stephanus_span": "478d-478e",
+              "note": "medicine as analogy for the soul's correction, against medicine as the body's erotic science"
+            }
+          ]
+        },
+        {
+          "commentary_id": "comm_symposium_0035",
+          "title": "",
+          "body": "Does Eryximachus's final promise of happiness and friendship with the gods follow from the forms of erotic regulation he has described, or merely repeat his governing analogy?",
+          "cites": {
+            "observations": [
+              "obs_symposium_0044"
+            ],
+            "claims": [
+              "claim_symposium_0047",
+              "claim_symposium_0048"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "08-201d-212c",
+      "section_id": "comm_symposium_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/08-201d-212c.json",
+        "sha256": "85f3aa6c5860ddeff9121a1413ce28c17781fee7fa8f5851762d0257d97905b7"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0053",
+          "title": "",
+          "body": "Rather than continue in his own voice, Socrates introduces Diotima of Mantinea, whom he presents as his teacher in erotic matters. He says that, in his earlier exchange with her, he had spoken in much the same terms as Agathon had just used, and that she refuted him with the arguments he has now used against Agathon. The scene invites us to hear the exchange as a deliberate re-performance, while the speech that follows remains Diotima’s teaching reported within Socrates’ speech.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0094",
+              "obs_symposium_0095"
+            ],
+            "claims": [
+              "claim_symposium_0099"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0057",
+          "title": "",
+          "body": "The appearance of Alcestis and Achilles makes this passage sound like a return to the evening’s heroic examples. Here, however, Diotima places their deaths beside Codrus’s within an argument about the immortal memory of virtue. One way to hear the move is as a reframing rather than a correction: the heroic actions now serve as examples for Diotima’s claim that human striving reaches toward immortal virtue and renown.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0129",
+              "obs_symposium_0130"
+            ],
+            "claims": [
+              "claim_symposium_0144",
+              "claim_symposium_0145",
+              "claim_symposium_0146"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0060",
+          "title": "",
+          "body": "Socrates now steps out of Diotima’s reported speech: he says he is persuaded and seeks to persuade others that Love is the best helper for the human possession at issue. He does not merely report that conviction; he urges everyone to honor Love, says he practices erotic matters, and praises Love’s power and valor. If this is offered as an encomium, what kind of praise is it—an argument, a personal profession, or both?",
+          "cites": {
+            "observations": [
+              "obs_symposium_0156",
+              "obs_symposium_0157",
+              "obs_symposium_0158"
+            ],
+            "claims": [
+              "claim_symposium_0161"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "09-212d-222b",
+      "section_id": "comm_symposium_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/09-212d-222b.json",
+        "sha256": "9b307d7b874398fbcdb81ec71a7d54dde50a01b105088f5b5b9bb89fbe688a37"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0066",
+          "title": "",
+          "body": "Alcibiades presents two kinds of scene. His account of the night beside Socrates ends in a familial comparison rather than erotic intimacy, and he claims personal access to Socrates’s inner images. The campaign episodes widen the setting: soldiers notice the barefoot walk on ice, some Ionians keep watch through the night, and at Delium Alcibiades meets Socrates retreating with Laches. The contrast matters less as independent corroboration than as a change in scale: private testimony becomes a series of scenes observed within military life.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0195",
+              "obs_symposium_0209",
+              "obs_symposium_0217",
+              "obs_symposium_0221",
+              "obs_symposium_0225"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_symposium_0067",
+          "title": "",
+          "body": "Alcibiades does not say that every great man has an exact double. He grants that some features of other figures can be matched: Achilles with Brasidas and others, Pericles with Nestor and Antenor, with further examples possible. Socrates is then presented as unlike any human, ancient or present; only as a possible exception does Alcibiades suggest the Silenuses and satyrs, for Socrates and his speeches alike. The climax turns praise into a problem of comparison: what image could name a singularity?",
+          "cites": {
+            "observations": [
+              "obs_symposium_0227",
+              "obs_symposium_0229"
+            ],
+            "claims": [
+              "claim_symposium_0184",
+              "claim_symposium_0185"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_symposium_0015",
+      "body": "```yaml\ncommentary_id: comm_symposium_0015\nsource_work: Symposium\nblock_kind: argument\nplacement: before\nstephanus_span: 176a-177e\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 176a-177e\n  start_marker: 176a\n  end_marker: 177e\n  start_char: 7963\n  end_char: 12101\n  text_sha256: \"8d49904c0f59739a1a99ede9f498e45bf43cb7b07b408fdcaedd7bfc26598001\"\nbody: \"Eryximachus turns a fatigued drinking party into a different kind of gathering. After the company settles that no one must drink heavily, he immediately proposes sending the aulos-girl away and replacing her music with shared speeches. The important move is not simply that conversation begins; it is that the evening’s form is renegotiated in public, with consent marking the passage from bodily recovery to collective verbal performance. I read this as the dialogue making its own change of medium audible.\"\ncites:\n  observations: [\"obs_symposium_0012\", \"obs_symposium_0013\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0033",
+      "body": "```yaml\ncommentary_id: comm_symposium_0033\nsource_work: Symposium\nblock_kind: argument\nplacement: before\nstephanus_span: 187e-188e\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 187e-188e\n  start_marker: 187e\n  end_marker: 188e\n  start_char: 31619\n  end_char: 34011\n  text_sha256: \"787ccd98b8e8a3f089e8338ccab9b1c0314c8c908a2982b3118901326b78238e\"\nbody: \"Eryximachus’s closing extends his two-love framework beyond music and medicine to human and divine affairs, including the seasons, where he links orderly mixture with fertility and health and excess with disease. He then admits that his praise may omit things and hands Aristophanes the task of filling them in. One way to hear the gesture is as a wide explanatory map whose completion remains open.\"\ncites:\n  observations: [\"obs_symposium_0044\"]\n  claims: [\"claim_symposium_0047\", \"claim_symposium_0048\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0034",
+      "body": "```yaml\ncommentary_id: comm_symposium_0034\nsource_work: Symposium\nblock_kind: crossref\nplacement: after\nstephanus_span: 186c\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 186c\n  start_marker: 186c\n  end_marker: 186c\n  start_char: 28865\n  end_char: 29273\n  text_sha256: \"1862edfaf70fce6a193f1808cd186663ccea7b75c27e442798d199e5cb832ace\"\nbody: \"In the Gorgias, medicine is only a comparison: as the doctor heals the body, the judge heals the soul. Here Eryximachus drops the comparison and makes the claim literal - eros in the body is medicine's own subject matter.\"\ncites:\n  observations: []\n  claims: [\"claim_symposium_0039\"]\n  relations: [\"rel_cross-dialogue_0361\"]\n  dossiers: []\ncrossrefs:\n  - source_work: \"Gorgias\"\n    stephanus_span: 478d-478e\n    source_ref:\n      source_path: raw/plato/greek/gorgias.txt\n      stephanus_span: 478d-478e\n      start_marker: 478d\n      end_marker: 478e\n      start_char: 63380\n      end_char: 64201\n      text_sha256: \"b829c7a393acfadf12c282136019b4f85e4909f27506303d9abf39d019343994\"\n    note: \"medicine as analogy for the soul's correction, against medicine as the body's erotic science\"\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0035",
+      "body": "```yaml\ncommentary_id: comm_symposium_0035\nsource_work: Symposium\nblock_kind: question\nplacement: after\nstephanus_span: 188d\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 188d\n  start_marker: 188d\n  end_marker: 188d\n  start_char: 33313\n  end_char: 33781\n  text_sha256: \"d4601eac017c416dea21c40f7dca3ed6aca630fd25ace26e651410a951cff7d8\"\nbody: \"At the conclusion, Eryximachus gives the whole of Eros “all” power, yet reserves the greatest power for the Eros ordered toward goods with moderation and justice. Does his praise finally embrace love in general, or depend on a disciplined selection within it?\"\ncites:\n  observations: [\"obs_symposium_0044\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0053",
+      "body": "```yaml\ncommentary_id: comm_symposium_0053\nsource_work: Symposium\nblock_kind: context\nplacement: before\nstephanus_span: 201d-201e\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 201d-201e\n  start_marker: 201d\n  end_marker: 201e\n  start_char: 60548\n  end_char: 61535\n  text_sha256: \"42c6f3814a5a8d04ef298b22dae7043f99113e0bd7dd61ed524e56c6ee10a2d6\"\nbody: \"Rather than continue in his own voice, Socrates reports his teacher: Diotima of Mantinea, wise in erotics and more, credited with delaying the plague ten years by sacrifices. He tells the company that the young Socrates once held exactly Agathon's positions, and that Diotima refuted him with the same arguments he has just used. The refutation we watched was a re-performance; the encomium that follows is a lesson recalled, adding one more remove to a dialogue already full of them.\"\ncites:\n  observations: [obs_symposium_0094, obs_symposium_0095]\n  claims: [claim_symposium_0099]\n  relations: []\n  dossiers: [prosopography/named_cast_entry_or_catalog]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0057",
+      "body": "```yaml\ncommentary_id: comm_symposium_0057\nsource_work: Symposium\nblock_kind: notice\nplacement: before\nstephanus_span: 207d-209e\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 207d-209e\n  start_marker: 207d\n  end_marker: 209e\n  start_char: 73388\n  end_char: 78102\n  text_sha256: \"b53a8dfd5dbf09c8483cd820efb0004119792cbd0e46bc026dc675f518fc8b42\"\nbody: \"Alcestis and Achilles are about to return, and the reprise is worth catching. Phaedrus opened the evening by praising their deaths as love's supreme sacrifices. Diotima retells the same deaths as bids for a deathless memory of virtue: what they loved, on her account, was the immortal. The first speech of the night is being corrected here, without its speaker ever being named.\"\ncites:\n  observations: [\"obs_symposium_0127\", \"obs_symposium_0128\", \"obs_symposium_0129\", \"obs_symposium_0130\", \"obs_symposium_0131\", \"obs_symposium_0132\", \"obs_symposium_0133\", \"obs_symposium_0136\", \"obs_symposium_0137\"]\n  claims: [\"claim_symposium_0139\", \"claim_symposium_0140\", \"claim_symposium_0141\", \"claim_symposium_0144\", \"claim_symposium_0145\", \"claim_symposium_0146\", \"claim_symposium_0147\"]\n  relations: [\"rel_symposium_0008\"]\n  dossiers: [\"definition_ladder/identity_persistence_through_flux\", \"definition_ladder/biological_grounding_of_eros\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0060",
+      "body": "```yaml\ncommentary_id: comm_symposium_0060\nsource_work: Symposium\nblock_kind: question\nplacement: after\nstephanus_span: 212b-212c\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 212b-212c\n  start_marker: 212b\n  end_marker: 212c\n  start_char: 82471\n  end_char: 83351\n  text_sha256: \"6372027da1c190f7def73dfffb06f22554827befb3fde1ed0b2a526a81bc9f6d\"\nbody: \"Socrates says only that he is persuaded, and that he tries to persuade others. The vision itself comes to us through Diotima's reported voice, inside Socrates's speech, inside Aristodemus's memory, inside Apollodorus's retelling. What would it take for a reader at the end of that chain to check the claim rather than be charmed by it - and is the dialogue's frame a warning about exactly this?\"\ncites:\n  observations: [obs_symposium_0156, obs_symposium_0157, obs_symposium_0158]\n  claims: [claim_symposium_0161]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0066",
+      "body": "```yaml\ncommentary_id: comm_symposium_0066\nsource_work: Symposium\nblock_kind: context\nplacement: before\nstephanus_span: 219e-221c\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 219e-221c\n  start_marker: 219e\n  end_marker: 221c\n  start_char: 98667\n  end_char: 102526\n  text_sha256: \"8ce968451358d7d475c582527516abeae95e27d20dcd97dc6e89f296e0970e4b\"\nbody: \"The evidence now changes kind. For the bedroom, Alcibiades was the only witness; for the campaigns, he is not. Soldiers watched the barefoot walk on the ice and kept watch overnight on the standing trance; the generals handed out the prize of valor; Laches shared the retreat from Delium. Alcibiades even quotes the Clouds' mockery of Socrates's strut back at Aristophanes, reclining a few couches away — comic slander re-sworn as eyewitness testimony, in front of the man who wrote it.\"\ncites:\n  observations: [\"obs_symposium_0217\", \"obs_symposium_0221\", \"obs_symposium_0224\", \"obs_symposium_0225\", \"obs_symposium_0226\"]\n  claims: []\n  relations: []\n  dossiers: [\"prosopography/socratic_military_excellence_report\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0067",
+      "body": "```yaml\ncommentary_id: comm_symposium_0067\nsource_work: Symposium\nblock_kind: argument\nplacement: before\nstephanus_span: 221c-222b\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 221c-222b\n  start_marker: 221c\n  end_marker: 222b\n  start_char: 102109\n  end_char: 104090\n  text_sha256: \"717bc2833010e29ee2aa78412ef9d862a0a582b6ab9e225acd5e2780a5808ebd\"\nbody: \"The encomium closes on its strongest claim. Every other great man has a parallel: what Achilles was, Brasidas was; what Pericles was, Nestor was. But Socrates — the man and his speeches alike — is like no human being, past or present; only the silenuses and satyrs will serve. Notice what that does to the evening's game. A contest of praise is a contest of comparisons, and it has arrived at a subject who defeats comparison itself.\"\ncites:\n  observations: [\"obs_symposium_0227\", \"obs_symposium_0229\"]\n  claims: [\"claim_symposium_0184\", \"claim_symposium_0185\"]\n  relations: []\n  dossiers: [\"prosopography/socratic_incomparability_claim\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

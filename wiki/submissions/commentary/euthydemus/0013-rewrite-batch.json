@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0013-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "euthydemus",
+  "source_path": "scratch/commentary/rewrites/euthydemus/16-304c-306d.json",
+  "source_sha256": "1fea92c34b35bbf8e32d838406e9d91995134008e9fcc732b46cab8f79187812",
+  "target_path": "wiki/commentary/euthydemus.md",
+  "target_sha256_before": "cf925640dd67eb499a37e2d7cc3de79cf202481235077d961deb2ece4536a578",
+  "target_sha256_after": "6dc6d4885bc12e8934b7161271656a0be0daad84c45686bdded1e7367ff93eab",
+  "applied_at": "2026-08-23T23:20:46.403Z",
+  "applied_ids": [
+    "comm_euthydemus_0016"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "16-304c-306d",
+      "section_id": "comm_euthydemus_0016",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/16-304c-306d.json",
+        "sha256": "5a5f2362957388aa3929754a792a7453e22208b737649f13f13577a912a7a859"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0016",
+          "title": "Crito’s reaction and Socrates’ response",
+          "body": "The wisdom sentence is complete; the passage also establishes Crito’s reaction and Socrates’ response.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_euthydemus_0016",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0016\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"The completed wisdom sentence\"\nstephanus_span: 304c-306d\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 304c-306d\n  start_marker: 304c\n  end_marker: 306d\n  start_char: 70172\n  end_char: 75245\n  text_sha256: \"effd80125eb14e95dd27d58ac63811998022d5e8acaae225777a0ba22bc3b7c1\"\nbody: \"The sentence on wisdom is complete; the passage does not establish a reaction to the display.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

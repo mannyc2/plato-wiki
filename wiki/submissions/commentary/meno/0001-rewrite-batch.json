@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "meno",
+  "source_path": "scratch/commentary/rewrites/meno/01-70a-71d.json",
+  "source_sha256": "092bf3a4900d2d31f8857460949a5fae323dc717c75ca1e75dacb98bf38944c2",
+  "target_path": "wiki/commentary/meno.md",
+  "target_sha256_before": "091d53f320e80c8d5388fcba94f21e8ca2151336b97dc586adf9a24a33b8ce49",
+  "target_sha256_after": "9333a5fab8afe83f95227d176a77580becd6245138049d934e2d91c5f243cbe1",
+  "applied_at": "2026-08-21T17:38:10.219Z",
+  "applied_ids": [
+    "comm_meno_0001",
+    "comm_meno_0004",
+    "comm_meno_0010",
+    "comm_meno_0013",
+    "comm_meno_0016"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "meno",
+      "unit_key": "01-70a-71d",
+      "section_id": "comm_meno_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/meno/01-70a-71d.json",
+        "sha256": "d32fa64551c63481b15a6ef60e8cabc4a72308e4beabbef787f3424e963e7ada"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_meno_0001",
+          "title": "A question that returns to Meno",
+          "body": "Meno asks whether virtue is taught, practiced, or natural. Socrates contrasts Thessalian confidence, linked to Gorgias, with Athenian ignorance, then argues that knowing what virtue is precedes knowing what sort of thing it is. When Meno invokes Gorgias, Socrates says he cannot presently recall how Gorgias struck him. The passage leaves the lapse's sincerity open and returns the question to Meno.",
+          "cites": {
+            "observations": [
+              "obs_meno_0001",
+              "obs_meno_0002",
+              "obs_meno_0003",
+              "obs_meno_0004",
+              "obs_meno_0044",
+              "obs_meno_0045"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "meno",
+      "unit_key": "04-74c-76a",
+      "section_id": "comm_meno_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/meno/04-74c-76a.json",
+        "sha256": "0cff4467d4ef797fa584ee08b6935769a676cb8eac55b86f768473511daf53fa"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_meno_0004",
+          "title": "A definition must start somewhere shared",
+          "body": "Socrates turns the demand for a definition into a rehearsal. One way to read Meno’s objection is that the first proposal makes shape depend on color: someone who does not know color has learned nothing about shape. That is a failure of explanatory starting point, not a demonstrated proof of circularity. Socrates then shifts to terms Meno says he knows—end, limit, plane, and solid—and proposes shape as the limit of a solid.",
+          "cites": {
+            "observations": [
+              "obs_meno_0012",
+              "obs_meno_0013",
+              "obs_meno_0014"
+            ],
+            "claims": [
+              "claim_meno_0021",
+              "claim_meno_0022"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "meno",
+      "unit_key": "10-82b-85a",
+      "section_id": "comm_meno_0010",
+      "audit_output": {
+        "path": "scratch/commentary/audits/meno/10-82b-85a.json",
+        "sha256": "476223d8689ed56ed13e65a69b844597870e25fd5bd16bea4e75519c82e4561f"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_meno_0010",
+          "title": "Aporia before the diagonal",
+          "body": "Socrates turns the doubled square into a test of how inquiry begins. The boy answers confidently—first that the side should double, then that it should be three feet—but the resulting areas are sixteen and nine, not eight. Questioning continues toward the diagonal only after this confidence has failed. One way to read the episode is as a miniature parallel to the dialogue’s larger inquiry, not as an exact repetition of Meno’s experience.",
+          "cites": {
+            "observations": [
+              "obs_meno_0022"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": [
+              "elenchus/demonstration_by_questioning"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "meno",
+      "unit_key": "13-87e-89b",
+      "section_id": "comm_meno_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/meno/13-87e-89b.json",
+        "sha256": "64d50e4bcc46de20716ec9579f7c5c8a5a64c8b60f07d193f779306660cd95de"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_meno_0013",
+          "title": "The conditional inference: virtue as wisdom",
+          "body": "Socrates makes “beneficial” depend on guidance: health, wealth, courage, and temperance can help or harm according to whether wisdom governs their use. On premises Meno has accepted, he therefore infers that virtue is a kind of wisdom. Read this as a conditional argumentative result, not as a settled conclusion about how virtue is acquired.",
+          "cites": {
+            "observations": [
+              "obs_meno_0027"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "meno",
+      "unit_key": "16-94e-96d",
+      "section_id": "comm_meno_0016",
+      "audit_output": {
+        "path": "scratch/commentary/audits/meno/16-94e-96d.json",
+        "sha256": "68acb5b6f916a11e872fcf658ed6a88b05ddbbdc8d577c05732e75d813e0ee87"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_meno_0016",
+          "title": "The inference from no teachers",
+          "body": "Socrates turns a dispute about expertise into a test of teachability. Because neither the sophists nor the respected men can count as teachers of virtue, he and Meno infer that there can be no students—and therefore no teachable virtue. The conclusion is unsettling: Meno immediately asks how good people arise at all.",
+          "cites": {
+            "observations": [
+              "obs_meno_0038"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_meno_0001",
+      "body": "```yaml\ncommentary_id: comm_meno_0001\nsource_work: Meno\nblock_kind: section\nplacement: before\ntitle: \"A question without preliminaries\"\nstephanus_span: 70a-71d\nsource_ref:\n  source_path: raw/plato/greek/meno.txt\n  stephanus_span: 70a-71d\n  start_marker: 70a\n  end_marker: 71d\n  start_char: 0\n  end_char: 2501\n  text_sha256: \"d1a47288c689296d9c6061ec503f24a3cb47fd1e97efac6c1e207b462d3b41c2\"\nbody: \"Meno opens abruptly: is virtue teachable, trained, or natural? Socrates answers with Thessalian flattery, then a disavowal — he does not know what virtue is, and without knowing what a thing is one cannot know what it is like. Even his memory of Gorgias fails him.\"\ncites:\n  observations: [\"obs_meno_0001\", \"obs_meno_0002\", \"obs_meno_0003\", \"obs_meno_0004\", \"obs_meno_0044\", \"obs_meno_0045\"]\n  claims: [\"claim_meno_0001\", \"claim_meno_0002\", \"claim_meno_0003\", \"claim_meno_0006\"]\n  relations: []\n  dossiers: [\"dramatic_case_setup/initial_question_stated\", \"irony_marker/knowledge_disavowal\", \"elenchus/knowledge_priority_argument\", \"irony_marker/socratic_memory_disavowal\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_meno_0004",
+      "body": "```yaml\ncommentary_id: comm_meno_0004\nsource_work: Meno\nblock_kind: section\nplacement: before\ntitle: \"Practice on shape\"\nstephanus_span: 74c-76a\nsource_ref:\n  source_path: raw/plato/greek/meno.txt\n  stephanus_span: 74c-76a\n  start_marker: 74c\n  end_marker: 76a\n  start_char: 7843\n  end_char: 11493\n  text_sha256: \"b55e77733b66aed0c317e14e368db831879884ac1dbf1a631aa785b246f36b3a\"\nbody: \"Socrates demonstrates the method on an easier case. What is the same in round and straight? His first answer — shape is what always accompanies color — Meno rejects as circular. After distinguishing eristic from friendly answering, Socrates builds a better one from agreed terms: shape is the limit of a solid.\"\ncites:\n  observations: [\"obs_meno_0012\", \"obs_meno_0013\", \"obs_meno_0014\"]\n  claims: [\"claim_meno_0017\", \"claim_meno_0018\", \"claim_meno_0019\", \"claim_meno_0020\", \"claim_meno_0021\", \"claim_meno_0022\"]\n  relations: []\n  dossiers: [\"definition_ladder/definitional_method_demonstrated\", \"definition_ladder/definition_tested_by_case\", \"definition_ladder/definition_established_by_assent_chain\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_meno_0010",
+      "body": "```yaml\ncommentary_id: comm_meno_0010\nsource_work: Meno\nblock_kind: section\nplacement: before\ntitle: \"The slave boy and the doubled square\"\nstephanus_span: 82b-85a\nsource_ref:\n  source_path: raw/plato/greek/meno.txt\n  stephanus_span: 82b-85a\n  start_marker: 82b\n  end_marker: 85a\n  start_char: 23679\n  end_char: 29915\n  text_sha256: \"ccf0f893b72cf80d6237597707f8034025d7561be41c1d07c4ebe25be5423fcb\"\nbody: \"Socrates questions one of Meno's attendants about doubling a square. The boy answers confidently and wrongly, twice, is reduced to the same numbness Meno described, and then — still only answering questions — finds the true answer in the diagonal. The demonstration reenacts the whole dialogue in miniature.\"\ncites:\n  observations: [\"obs_meno_0022\"]\n  claims: []\n  relations: []\n  dossiers: [\"elenchus/demonstration_by_questioning\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_meno_0013",
+      "body": "```yaml\ncommentary_id: comm_meno_0013\nsource_work: Meno\nblock_kind: section\nplacement: before\ntitle: \"If virtue benefits, virtue is wisdom\"\nstephanus_span: 87e-89b\nsource_ref:\n  source_path: raw/plato/greek/meno.txt\n  stephanus_span: 87e-89b\n  start_marker: 87e\n  end_marker: 89b\n  start_char: 35445\n  end_char: 38470\n  text_sha256: \"f0fa4f3b932adb7da8ca3861ef2457edf1d7c4a55ce29f4ba754a020929687bf\"\nbody: \"Virtue is good and therefore beneficial. But health, wealth, even courage and temperance benefit only under the guidance of wisdom and harm under folly. So virtue must be a kind of wisdom — and since good men are evidently not good by nature, it seems it must come by teaching.\"\ncites:\n  observations: [\"obs_meno_0027\", \"obs_meno_0028\"]\n  claims: []\n  relations: []\n  dossiers: [\"definition_ladder/definition_proposed\", \"definition_ladder/not_by_nature\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_meno_0016",
+      "body": "```yaml\ncommentary_id: comm_meno_0016\nsource_work: Meno\nblock_kind: section\nplacement: before\ntitle: \"A warning, contradicting poets, no teachers\"\nstephanus_span: 94e-96d\nsource_ref:\n  source_path: raw/plato/greek/meno.txt\n  stephanus_span: 94e-96d\n  start_marker: 94e\n  end_marker: 96d\n  start_char: 49446\n  end_char: 53187\n  text_sha256: \"7df5cf1d19ca5a8cbe167ca19b2536b7e736417b7d71c9975510d7a7cab9c4bb\"\nbody: \"Anytus warns Socrates that in Athens it is easier to harm than to help — words worth remembering at this dialogue's date. Even Theognis says both that virtue is learned from the good and that it cannot be taught. With no consistent teachers and no students, virtue appears not teachable after all.\"\ncites:\n  observations: [\"obs_meno_0036\", \"obs_meno_0037\", \"obs_meno_0038\"]\n  claims: []\n  relations: []\n  dossiers: [\"prosopography/character_reacts_with_hostility\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

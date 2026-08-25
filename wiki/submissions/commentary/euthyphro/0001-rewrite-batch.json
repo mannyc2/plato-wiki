@@ -1,0 +1,448 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "euthyphro",
+  "source_path": "scratch/commentary/rewrites/euthyphro/01-2a-3e.json",
+  "source_sha256": "4e90c93543e80ac080833c1b88d0517dfce8464ae8f1d3db7204a57ea6828c10",
+  "target_path": "wiki/commentary/euthyphro.md",
+  "target_sha256_before": "83a183414e8459cf6493fca56212daf63a4cce624f04b1d7400d7c3941c65517",
+  "target_sha256_after": "1c70df08959fb0360a3d5abad044e38a3c5e47ee9ec9eb2fddbf39f6fb02326e",
+  "applied_at": "2026-08-21T13:09:29.158Z",
+  "applied_ids": [
+    "comm_euthyphro_0001",
+    "comm_euthyphro_0006",
+    "comm_euthyphro_0007",
+    "comm_euthyphro_0009",
+    "comm_euthyphro_0012",
+    "comm_euthyphro_0013",
+    "comm_euthyphro_0014",
+    "comm_euthyphro_0017",
+    "comm_euthyphro_0021",
+    "comm_euthyphro_0023",
+    "comm_euthyphro_0025",
+    "comm_euthyphro_0027",
+    "comm_euthyphro_0028"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "euthyphro",
+      "unit_key": "01-2a-3e",
+      "section_id": "comm_euthyphro_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthyphro/01-2a-3e.json",
+        "sha256": "f6f2068d438ed6bc9586f6e447d40fee9e4f1c37b366c6ff2dda995d2ec34f95"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthyphro_0001",
+          "title": "Two legal postures at the King Archon's court",
+          "body": "The opening brings Socrates and Euthyphro together at the King Archon's court, but it does not yet tell us what Euthyphro's case concerns. Socrates' case is identified as a public indictment, and Meletus' reported charge concerns making new gods and rejecting the old ones. Only at the end of the span does the dialogue clarify their opposite postures: Socrates is being prosecuted, while Euthyphro is prosecuting.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0001",
+              "obs_euthyphro_0003",
+              "obs_euthyphro_0048"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_euthyphro_0012",
+          "title": "",
+          "body": "Socrates turns Meletus' accusation into a generous picture of civic reform. The young are to be tended first, like young plants, and the elders afterward; the legal charge is thus recast as a program for cultivating the city. Because this sequence is Socrates' report, and because he presents Meletus' wisdom and future benefits with hedging, the praise sounds less like a settled account than a pointedly charitable reconstruction.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0032",
+              "obs_euthyphro_0033",
+              "obs_euthyphro_0045"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_euthyphro_0013",
+          "title": "",
+          "body": "Euthyphro groups himself with Socrates as a target of public mockery, but Socrates' reply shifts the issue from ridicule to teaching. Socrates suggests—not establishes—that Euthyphro may seem reserved while he himself may seem to distribute his wisdom freely. The contrast is therefore a conjecture within the exchange, and its force lies in the different public dangers it imagines: unusual cleverness versus making others like oneself.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0035",
+              "obs_euthyphro_0036",
+              "obs_euthyphro_0037"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthyphro",
+      "unit_key": "02-4a-5c",
+      "section_id": "comm_euthyphro_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthyphro/02-4a-5c.json",
+        "sha256": "d3c05ebc9bde6b83aa70f45fd6c6fff1617cfacc7260f961a6f1d15c56d50fc1"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthyphro_0014",
+          "title": "",
+          "body": "Euthyphro’s account makes the charge morally difficult without settling the facts for us. He narrates that a hired laborer killed a household slave in a drunken rage; his father then bound the man, sent for religious instructions, and neglected him until he died. But this remains Euthyphro’s own, independently unverified account. The details therefore complicate his prosecution rather than prove it. Listen for how confidently he builds a religious judgment on a story whose facts have not been established beyond his telling.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0005"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthyphro",
+      "unit_key": "03-5d-6e",
+      "section_id": "comm_euthyphro_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthyphro/03-5d-6e.json",
+        "sha256": "ec6424f1a569c8d31a36daa5b69b643837c53ad19f0d4af9a103f4193e3c1206"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthyphro_0017",
+          "title": "",
+          "body": "Euthyphro does offer a definition—but it is a definition by example. He identifies piety with the prosecution he is carrying out, even when the offender is a relative. That makes the answer vivid and morally forceful, but it still names one kind of action rather than the feature shared by pious actions generally. The point is not that the prosecution cannot be pious; it is that an example does not yet supply the form by which other cases can be judged.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0007"
+            ],
+            "claims": [
+              "claim_euthyphro_0007"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthyphro",
+      "unit_key": "04-7a-8a",
+      "section_id": "comm_euthyphro_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthyphro/04-7a-8a.json",
+        "sha256": "09da137714330e64b5783489bf8255e26be5d3daeb7d30e3b4e215f75e68efa0"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthyphro_0021",
+          "title": "",
+          "body": "Here Socrates tests Euthyphro’s definition against Euthyphro’s own concessions. If the gods disagree about justice and goodness, one god may love what another hates; and if holiness means what the gods love, the same things receive opposite classifications within that definition. The point is not to settle whether the gods truly agree, or to state Plato’s theology. It is a conditional refutation: Euthyphro’s definition cannot remain intact alongside his claim that the gods disagree.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0012"
+            ],
+            "claims": [
+              "claim_euthyphro_0014",
+              "claim_euthyphro_0017"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthyphro",
+      "unit_key": "05-8b-9e",
+      "section_id": "comm_euthyphro_0005",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthyphro/05-8b-9e.json",
+        "sha256": "199c16cd0da588b61c37fc5e10d0300a23cdfdfa39bd198453021623541dafe2"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthyphro_0023",
+          "title": "",
+          "body": "At 9c, Socrates does not show that Euthyphro’s promised proof cannot be given. He brackets it: even if Euthyphro proved that every god condemns the laborer’s death, Socrates still would not have learned what holiness is, because the proposed god-hated marker has already appeared as god-loved too. The proof would establish only the status of this act, not supply a definition. Socrates therefore redirects the inquiry and proposes a unanimity formula—what all gods hate is unholy, what all love holy—leaving it for Euthyphro to accept and examine.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0051",
+              "obs_euthyphro_0052"
+            ],
+            "claims": [
+              "claim_euthyphro_0022",
+              "claim_euthyphro_0023"
+            ],
+            "relations": [
+              "rel_euthyphro_0007"
+            ],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthyphro",
+      "unit_key": "06-10a-11a",
+      "section_id": "comm_euthyphro_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthyphro/06-10a-11a.json",
+        "sha256": "3f004d3191982692926419dceb452b1be68d328d1d8cc3052f30fa3d63e9d3fe"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthyphro_0006",
+          "title": "The direction of explanation",
+          "body": "Socrates turns Euthyphro's revised definition into a test of explanatory direction. The pious is loved because it is pious, while the god-loved is god-loved because it is loved; Socrates therefore treats them as different. The phrase \"loved by all the gods\" supplies a property of the pious, not its essence. The argument rejects the definition by showing that its explanation points in the wrong direction.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0017",
+              "obs_euthyphro_0018"
+            ],
+            "claims": [
+              "claim_euthyphro_0027",
+              "claim_euthyphro_0028",
+              "claim_euthyphro_0029",
+              "claim_euthyphro_0030"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_euthyphro_0025",
+          "title": "",
+          "body": "Socrates opens with the dilemma: is the holy loved because it is holy, or holy because it is loved? Euthyphro replies that he does not know what Socrates means. Socrates responds by separating active and passive expressions—carrying from being carried, seeing from being seen—and then asks whether loving differs from being loved. A careful reading should hear this as clarification in progress, not proof that Euthyphro lacks the distinction.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0016"
+            ],
+            "claims": [
+              "claim_euthyphro_0025"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_euthyphro_0027",
+          "title": "",
+          "body": "Socrates now names the kind of answer he thinks Euthyphro has supplied: a pathos, something that happens to the holy—being loved by all the gods—in place of making its ousia clear. That distinction shifts the question from what accompanies the holy to what the holy is. The passage sends Euthyphro back to the definition; it does not establish that he has no answer to give.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0018"
+            ],
+            "claims": [
+              "claim_euthyphro_0030"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthyphro",
+      "unit_key": "07-11b-12e",
+      "section_id": "comm_euthyphro_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthyphro/07-11b-12e.json",
+        "sha256": "4c6c8380477eefea922fcb079ff69d63f9dd370ad1acc17a535f90425e0d26e7"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthyphro_0007",
+          "title": "From instability to structure",
+          "body": "At 11b the discussion reaches a comic impasse: Euthyphro's proposed account will not stay put, and Socrates answers with a Daedalus comparison. The ancestry reference belongs to the joke, not to a settled claim about lineage; the immediate point is that the statements are Euthyphro's. The inquiry then resets: piety is treated as a part of justice, and Euthyphro identifies that part with care of the gods.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0019",
+              "obs_euthyphro_0020",
+              "obs_euthyphro_0021",
+              "obs_euthyphro_0022",
+              "obs_euthyphro_0023"
+            ],
+            "claims": [
+              "claim_euthyphro_0031",
+              "claim_euthyphro_0032",
+              "claim_euthyphro_0033"
+            ],
+            "relations": [
+              "rel_euthyphro_0022"
+            ],
+            "dossiers": [
+              "craft_analogy/daedalus_analogy",
+              "definition_ladder/definition_refined_by_part_whole_relation"
+            ]
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_euthyphro_0028",
+          "title": "",
+          "body": "Here the Daedalus image makes argumentative instability visible. Euthyphro says that whatever they propose keeps moving; Socrates compares the statements to Daedalus's works, then points out that the hypotheses are Euthyphro's. Socrates finally calls himself clever against his will, claiming that his questioning can make other people's arguments move as well as his own. The joke thus turns a technical difficulty into a comic negotiation of responsibility: the dialogue leaves the instability shared, rather than assigning it straightforwardly to one speaker.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0019"
+            ],
+            "claims": [
+              "claim_euthyphro_0031",
+              "claim_euthyphro_0032",
+              "claim_euthyphro_0033"
+            ],
+            "relations": [
+              "rel_euthyphro_0022"
+            ],
+            "dossiers": [
+              "craft_analogy/daedalus_analogy"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthyphro",
+      "unit_key": "09-14b-15c",
+      "section_id": "comm_euthyphro_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthyphro/09-14b-15c.json",
+        "sha256": "fae961e2161d37bd553c3f57bc2945d4721633d77f6f170010e362ac2d7b0081"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthyphro_0009",
+          "title": "Exchange, honor, and the return to god-loved",
+          "body": "Euthyphro’s ritual account shifts the discussion toward exchange: prayer asks, sacrifice gives, and Socrates tests what the gods receive. Euthyphro answers with honor and gratitude, then agrees that piety is what is dear to the gods. The return is the point: it reopens the earlier distinction between pious and god-loved, so the definition has not advanced—not because the record settles a final refutation, but because the conversation has reached an unresolved inconsistency.",
+          "cites": {
+            "observations": [
+              "obs_euthyphro_0027",
+              "obs_euthyphro_0028",
+              "obs_euthyphro_0029",
+              "obs_euthyphro_0030"
+            ],
+            "claims": [],
+            "relations": [
+              "rel_euthyphro_0011",
+              "rel_euthyphro_0033"
+            ],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_euthyphro_0001",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0001\nsource_work: Euthyphro\nblock_kind: section\nplacement: before\ntitle: \"Two men at the King Archon's porch\"\nstephanus_span: 2a-3e\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 2a-3e\n  start_marker: 2a\n  end_marker: 3e\n  start_char: 0\n  end_char: 3588\n  text_sha256: \"524590fc4b73964c9efaa1fb4f9b0d4172c7231b6f13c8fbad1c409d005b430b\"\nbody: \"Socrates and Euthyphro meet at the court of the King Archon, each entangled in a religious case. Socrates is the defendant: he describes his young, obscure accuser Meletus and the charge of making new gods. Euthyphro, mocked in the assembly for his prophecies, sees a fellow expert in divine matters. Their opposite legal postures — defendant and prosecutor — frame everything that follows.\"\ncites:\n  observations: [\"obs_euthyphro_0001\", \"obs_euthyphro_0002\", \"obs_euthyphro_0003\", \"obs_euthyphro_0035\", \"obs_euthyphro_0044\", \"obs_euthyphro_0045\", \"obs_euthyphro_0048\"]\n  claims: []\n  relations: []\n  dossiers: [\"dramatic_case_setup/legal_case_frame\", \"dramatic_case_setup/accusation_stated\", \"prosopography/character_distinctive_physical_markers\", \"prosopography/socrates_public_perception\", \"irony_marker/ironic_ascription_of_wisdom\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0006",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0006\nsource_work: Euthyphro\nblock_kind: section\nplacement: before\ntitle: \"Loved because pious, or pious because loved?\"\nstephanus_span: 10a-11a\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 10a-11a\n  start_marker: 10a\n  end_marker: 11a\n  start_char: 17257\n  end_char: 20100\n  text_sha256: \"84b52946f4d1e9d2e47937139a8d016c60f706522f37ad41ad5c8964e711f0bc\"\nbody: \"The dialogue's most famous question: is the pious loved by the gods because it is pious, or pious because it is loved? Through the grammar of carrying, leading, and seeing, Socrates shows that being loved follows from what a thing is. The god-loved therefore names a property of the pious, not its essence, and the revised definition falls.\"\ncites:\n  observations: [\"obs_euthyphro_0016\", \"obs_euthyphro_0017\", \"obs_euthyphro_0018\"]\n  claims: [\"claim_euthyphro_0025\", \"claim_euthyphro_0026\", \"claim_euthyphro_0027\", \"claim_euthyphro_0028\", \"claim_euthyphro_0029\", \"claim_euthyphro_0030\"]\n  relations: []\n  dossiers: [\"elenchus/causal_priority_refutation\", \"forms_trajectory/form_request\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0007",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0007\nsource_work: Euthyphro\nblock_kind: section\nplacement: before\ntitle: \"Runaway statues and a fresh start\"\nstephanus_span: 11b-12e\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 11b-12e\n  start_marker: 11b\n  end_marker: 12e\n  start_char: 20100\n  end_char: 24160\n  text_sha256: \"ef85a0a7dbfc0054987e3840c4abd19370e768345f2697bca5b5d05cdb907a56\"\nbody: \"Euthyphro complains that every definition walks away; Socrates jokes that his ancestor Daedalus is at work — though the moving statements are Euthyphro's. Socrates then restarts the inquiry with a structural proposal: all the pious is just, but not all the just is pious. As reverence is a part of fear, piety is a part of justice; the task is to say which part.\"\ncites:\n  observations: [\"obs_euthyphro_0019\", \"obs_euthyphro_0020\", \"obs_euthyphro_0021\", \"obs_euthyphro_0022\", \"obs_euthyphro_0023\"]\n  claims: [\"claim_euthyphro_0031\", \"claim_euthyphro_0032\", \"claim_euthyphro_0033\", \"claim_euthyphro_0034\", \"claim_euthyphro_0035\"]\n  relations: [\"rel_euthyphro_0022\"]\n  dossiers: [\"craft_analogy/daedalus_analogy\", \"definition_ladder/definition_refined_by_part_whole_relation\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0009",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0009\nsource_work: Euthyphro\nblock_kind: section\nplacement: before\ntitle: \"Prayer, sacrifice, and the circle closed\"\nstephanus_span: 14b-15c\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 14b-15c\n  start_marker: 14b\n  end_marker: 15c\n  start_char: 26900\n  end_char: 30182\n  text_sha256: \"fa82564dd8dd8e5905c1008d94824fc4d98088206f738ce5f74998063db3c2bd\"\nbody: \"Euthyphro retreats to ritual: piety is knowing how to please the gods in prayer and sacrifice. Socrates presses this into a trading art — asking and giving — and asks what the gods gain. Honor and gratitude, says Euthyphro; so piety is what is dear to the gods. The argument has circled back to the definition already refuted.\"\ncites:\n  observations: [\"obs_euthyphro_0027\", \"obs_euthyphro_0028\", \"obs_euthyphro_0029\", \"obs_euthyphro_0030\"]\n  claims: []\n  relations: [\"rel_euthyphro_0027\", \"rel_euthyphro_0028\", \"rel_euthyphro_0029\", \"rel_euthyphro_0031\", \"rel_euthyphro_0032\", \"rel_euthyphro_0033\", \"rel_euthyphro_0011\"]\n  dossiers: [\"craft_analogy/piety_service_exchange_analogy\", \"elenchus/circular_definition_rejected\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0012",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0012\nsource_work: Euthyphro\nblock_kind: argument\nplacement: after\nstephanus_span: 2c-3a\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 2c-3a\n  start_marker: 2c\n  end_marker: 3a\n  start_char: 745\n  end_char: 1826\n  text_sha256: \"aaaaa5a1df4c5a8eaf869f6679c7bb92c0cac1da0f60196a6953ba03c764a6f5\"\nbody: \"Socrates' praise of Meletus runs on two tracks at once. He calls his accuser apparently wise while pointing at his own ignorance, an ironic pairing the text sets up without resolving. He also builds Meletus a whole political program: care for the young first, like a farmer tending young plants, then purge the corrupters, then improve the elders. The generous reconstruction is Socrates' own report of the prosecution, not Meletus speaking — and Euthyphro hears the danger in it immediately, warning that the case begins at the city's hearth by wronging Socrates.\"\ncites:\n  observations: [\"obs_euthyphro_0033\", \"obs_euthyphro_0032\", \"obs_euthyphro_0045\", \"obs_euthyphro_0044\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0013",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0013\nsource_work: Euthyphro\nblock_kind: notice\nplacement: after\nstephanus_span: 3c-3d\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 3c-3d\n  start_marker: 3c\n  end_marker: 3d\n  start_char: 2267\n  end_char: 3215\n  text_sha256: \"920015ea45d8dda8f1c419f6642e721717fa404056a0207318c741d176d562af\"\nbody: \"Euthyphro assumes he and Socrates are fellow sufferers: the assembly laughs at him as a madman when he prophesies, and he blames envy of all such men. Socrates gently declines the partnership. On his account the Athenians do not mind a man thought clever; they grow angry only at one who seems to teach and make others like himself — and where Euthyphro keeps his wisdom scarce, Socrates fears he appears to pour his out freely to anyone who will listen. The comparison Euthyphro offers is exactly the one Socrates takes apart.\"\ncites:\n  observations: [\"obs_euthyphro_0035\", \"obs_euthyphro_0037\", \"obs_euthyphro_0036\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0014",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0014\nsource_work: Euthyphro\nblock_kind: context\nplacement: before\nstephanus_span: 4c-4d\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 4c-4d\n  start_marker: 4c\n  end_marker: 4d\n  start_char: 4459\n  end_char: 5416\n  text_sha256: \"e44b7d1e6f4af7d21cc94499f4b74c80c7477634e5de32fa29543cc239ea6fbc\"\nbody: \"The story that follows is Euthyphro's alone, and it is messier than the word murder suggests. The dead man was himself a killer, and Euthyphro's father did not strike him down: he bound him, consulted a religious adviser, and let him die of neglect while waiting for the answer. Every fact arrives through the prosecutor's own telling, with no one present to correct it. How the case sounds depends entirely on which of those details a listener chooses to weigh.\"\ncites:\n  observations: [\"obs_euthyphro_0005\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0017",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0017\nsource_work: Euthyphro\nblock_kind: argument\nplacement: after\nstephanus_span: 5d-5e\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 5d-5e\n  start_marker: 5d\n  end_marker: 5e\n  start_char: 7263\n  end_char: 8118\n  text_sha256: \"cabc95c70d7c3e8504914a9fbd984221a6539afe26c162e19624fe040f87581c\"\nbody: \"Euthyphro's first answer is not a definition at all but a pointing gesture: the holy is what he is doing right now, prosecuting a wrongdoer no matter who he is. He answers the question 'what is holiness?' by holding up his own lawsuit as the exemplar. The move is easy to miss because it sounds confident and even principled. But it identifies piety with one kind of action instead of saying what makes any action pious — the gap Socrates will spend the rest of this stretch prying open.\"\ncites:\n  observations: [\"obs_euthyphro_0007\"]\n  claims: [\"claim_euthyphro_0007\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0021",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0021\nsource_work: Euthyphro\nblock_kind: argument\nplacement: after\nstephanus_span: 8a\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 8a\n  start_marker: 8a\n  end_marker: 8a\n  start_char: 12705\n  end_char: 13181\n  text_sha256: \"cee786b0b290a70dbac3b01eafda8ba56f057cbb732cfc11106ce2079d699cb7\"\nbody: \"The trap closes here. Euthyphro said the holy is what is dear to the gods; he also said the gods quarrel. Since their quarrels concern justice and goodness, different gods must love and hate the very same things — so the same act comes out both god-loved and god-hated, both holy and unholy at once. Note what Socrates has and has not shown. He has not proved the gods agree or disagree; he has shown that Euthyphro's own two commitments cannot stand together. The definition fails on Euthyphro's premises, not on Plato's theology.\"\ncites:\n  observations: [\"obs_euthyphro_0012\"]\n  claims: [\"claim_euthyphro_0014\", \"claim_euthyphro_0017\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0023",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0023\nsource_work: Euthyphro\nblock_kind: argument\nplacement: after\nstephanus_span: 9c-9d\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 9c-9d\n  start_marker: 9c\n  end_marker: 9d\n  start_char: 15920\n  end_char: 16863\n  text_sha256: \"607b257973d7063ffdc67e3de3ac18524c66b85eaefd4fdc112f6eeecc7fafc6\"\nbody: \"Having demanded proof that all the gods condemn the laborer's death, Socrates abruptly waives it. The reason is precise: even a successful proof would only show this act is god-hated, and the god-hated has already turned out to be god-loved as well, so it cannot define the pious. He then does the repair work himself, proposing the unanimity version — unholy is what all the gods hate, holy what they all love. One turn releases Euthyphro from an impossible demonstration; the next hands him a stronger definition than the one he made for himself.\"\ncites:\n  observations: [\"obs_euthyphro_0051\", \"obs_euthyphro_0052\"]\n  claims: [\"claim_euthyphro_0022\", \"claim_euthyphro_0023\"]\n  relations: [\"rel_euthyphro_0007\"]\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0025",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0025\nsource_work: Euthyphro\nblock_kind: argument\nplacement: before\nstephanus_span: 10a\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 10a\n  start_marker: 10a\n  end_marker: 10a\n  start_char: 17257\n  end_char: 17738\n  text_sha256: \"55b1f44089a0a3ac7f8acab2d040ef3d1a45adff442bb1f8c181f1d7ce6c50d6\"\nbody: \"Socrates now asks the dialogue's defining dilemma, and Euthyphro's first response is bewilderment. Is the holy loved by the gods because it is holy, or holy because it is loved? The dilemma asks whether divine love tracks something already there in the holy thing, or whether the love itself is what makes it holy. Euthyphro cannot answer yet because the question requires a distinction he does not have, so Socrates builds it for him from ordinary grammar: carrying and being carried, seeing and being seen.\"\ncites:\n  observations: [\"obs_euthyphro_0016\"]\n  claims: [\"claim_euthyphro_0025\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0027",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0027\nsource_work: Euthyphro\nblock_kind: notice\nplacement: after\nstephanus_span: 11a\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 11a\n  start_marker: 11a\n  end_marker: 11a\n  start_char: 19577\n  end_char: 20100\n  text_sha256: \"dcdb44b780e384b3eec1751ca0fd34846f121f11709e751041bda0f142037c8d\"\nbody: \"Socrates names the failure in a new vocabulary: Euthyphro has given a pathos of the holy — something that happens to it, being loved by all the gods — rather than its ousia, what it actually is. The demand for a definition has become a demand for essence rather than an attribute. Euthyphro does not contest the distinction; he simply has nothing to put in the essence slot.\"\ncites:\n  observations: [\"obs_euthyphro_0018\"]\n  claims: [\"claim_euthyphro_0030\"]\n  relations: []\n  dossiers: [\"forms_trajectory/form_request\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthyphro_0028",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0028\nsource_work: Euthyphro\nblock_kind: context\nplacement: before\nstephanus_span: 11b-11e\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 11b-11e\n  start_marker: 11b\n  end_marker: 11e\n  start_char: 20100\n  end_char: 21791\n  text_sha256: \"a819ba0732e3704c77679b0ac3e5bc1329f6198b63659173eef1b7b495ee6db5\"\nbody: \"Daedalus, the legendary craftsman, was said to make statues so lifelike they walked off their pedestals — and Socrates the stonemason's son claims him as an ancestor. When Euthyphro complains that every definition they set down gets up and wanders away, each man tries to pin the Daedalus charge on the other. Socrates accepts it with a twist: he is clever against his will, setting even other people's statements in motion, when he would rather they stood still. The joke carries a real question about who is responsible when an argument collapses.\"\ncites:\n  observations: [\"obs_euthyphro_0019\"]\n  claims: [\"claim_euthyphro_0031\", \"claim_euthyphro_0033\"]\n  relations: [\"rel_euthyphro_0022\"]\n  dossiers: [\"craft_analogy/daedalus_analogy\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

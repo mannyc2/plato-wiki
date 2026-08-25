@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "sophist",
+  "source_path": "scratch/commentary/rewrites/sophist/01-216a-218e.json",
+  "source_sha256": "028363572586c03751e2b3c720a770218f22f6b1b82ce12f925a8587011ba87b",
+  "target_path": "wiki/commentary/sophist.md",
+  "target_sha256_before": "58b870f30ebd0d21fe651852bb2574d31fe46e7bd95a4345ef495f1eb51fe5f4",
+  "target_sha256_after": "af864827bc203578911043ea5287f1eeff91423c85c70eef0d6e30c804ca4c28",
+  "applied_at": "2026-08-23T21:18:29.983Z",
+  "applied_ids": [
+    "comm_sophist_0011"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "sophist",
+      "unit_key": "01-216a-218e",
+      "section_id": "comm_sophist_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/sophist/01-216a-218e.json",
+        "sha256": "13858a260b7f4531d6b01fbeeb398d88eb45591460fba6d1e7e81dfd78644053"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_sophist_0011",
+          "title": "",
+          "body": "Keep the scale shift and the unfinished method in view. Do not announce a result; let the method remain under test.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_sophist_0011",
+      "body": "```yaml\ncommentary_id: comm_sophist_0011\nsource_work: Sophist\nblock_kind: argument\nplacement: after\nstephanus_span: 218c-218e\nsource_ref:\n  source_path: raw/plato/greek/sophist.txt\n  stephanus_span: 218c-218e\n  start_marker: 218c\n  end_marker: 218e\n  start_char: 4210\n  end_char: 5315\n  text_sha256: \"f36bdade3e563bb5cd6abac854e6fe352a55fa2f46e485149289a0b607261dc0\"\nbody: \"I would hear the Stranger’s proposal as a change of scale, not as a completed method. The angler is a deliberately modest trial: familiar enough to approach, yet still worth giving an account. The point is not that the sophist has already been analyzed, but that the dialogue is looking for a manageable first case before it risks the harder one.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

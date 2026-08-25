@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-delegated-audit-10-115d-117e",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "critias",
+  "unit_key": "10-115d-117e",
+  "source_path": "scratch/commentary/delegated-audits/critias/10-115d-117e.json",
+  "source_sha256": "3c09b0aca64c2622e3da470fafccb9287c1b7eabdfe168a4aa7ff83feb61398b",
+  "target_path": "wiki/submissions/commentary-audit/critias/10-115d-117e.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "21dba15b0cb92386af23f0678ad66fbd4a635b6e36b30c48ec3a42f273455b48",
+  "applied_at": "2026-08-24T01:15:36.768Z",
+  "applied_ids": [
+    "comm_critias_0010"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "critias",
+    "unit_key": "10-115d-117e",
+    "job": {
+      "job_id": "audit:critias:10-115d-117e",
+      "input_sha256": "c1ce8e5a7e68172ea8c4da3fc75eb5ec4502298353e20af96bca7f11763ff284",
+      "audit_brief_path": "scratch/commentary/audit-briefs/critias/10-115d-117e.md",
+      "audit_brief_sha256": "5db9fb76ba875d41c8f76e9516aaf3e648f4310f46339fca95c2c6ae5da8feb3",
+      "output_path": "scratch/commentary/audits/critias/10-115d-117e.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/critias/10-115d-117e.output.json",
+    "output_sha256": "21dba15b0cb92386af23f0678ad66fbd4a635b6e36b30c48ec3a42f273455b48",
+    "provenance": {
+      "auditor": "batch-b-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

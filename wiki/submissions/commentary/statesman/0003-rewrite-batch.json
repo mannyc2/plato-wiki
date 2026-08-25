@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "statesman",
+  "source_path": "scratch/commentary/rewrites/statesman/02-258b-260b.json",
+  "source_sha256": "e907b156a2d7038b1de9429e378ba1467a99a82821a9abd685225326942f234c",
+  "target_path": "wiki/commentary/statesman.md",
+  "target_sha256_before": "9506e17dd9f22c9702bf63c9e408059010b17d558d7c6be0e250c3997b6d915d",
+  "target_sha256_after": "fd9564b9f908b416a3cd7f9ac99d5d65ce4a5221e4bf8088bf94f21d1552d4bc",
+  "applied_at": "2026-08-21T15:35:00.300Z",
+  "applied_ids": [
+    "comm_statesman_0013",
+    "comm_statesman_0015",
+    "comm_statesman_0019"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "statesman",
+      "unit_key": "02-258b-260b",
+      "section_id": "comm_statesman_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/statesman/02-258b-260b.json",
+        "sha256": "891f70ce921a7128448fde63ac0853183d0e00884cff2cf9c3fb66ef606cf684"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_statesman_0015",
+          "title": "",
+          "body": "The useful turn here is methodological: the Stranger refuses to let an office’s title determine the science under examination. One way to read the move is as a warning that “statesman,” “king,” and “householder” name different positions only at the surface; the inquiry groups them by the single governing science they are said to share. That move keeps the investigation focused on the capacity itself, before it decides where that capacity belongs within the proposed division of science.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_statesman_0001",
+              "claim_statesman_0002"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "statesman",
+      "unit_key": "08-277b-283b",
+      "section_id": "comm_statesman_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/statesman/08-277b-283b.json",
+        "sha256": "dbc7a7ff1bc656a8a87b4172af8af9292cf093dc5d7a52c04153c374d6feeb5f"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_statesman_0019",
+          "title": "",
+          "body": "The analogy between weaving and clothes-making, echoing the earlier relation between royal art and statecraft, invites a question about names: when one craft contains the largest share of another’s work, is a difference in name enough to identify them? Read this moment as a test of whether classificatory likeness can carry the weight of a definition.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_statesman_0040"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "statesman",
+      "unit_key": "13-306a-311c",
+      "section_id": "comm_statesman_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/statesman/13-306a-311c.json",
+        "sha256": "cd9b289e04f57d322b6d75ec9d98e1cab34a4f822069d83a8c829e9df29cfb9b"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_statesman_0013",
+          "title": "Weaving as Ordered Rule",
+          "body": "The final weaving makes political expertise a problem of composition: courageous and moderate characters are brought into common life, share civic offices, and are joined by friendship and concord. The Stranger also says that this fabric clothes the city’s inhabitants while the statesman rules and watches over them. I read the image, then, not as a rejection of rule, but as a proposal about the kind of mixture rule must sustain.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_statesman_0139",
+              "claim_statesman_0142"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_statesman_0013",
+      "body": "```yaml\ncommentary_id: comm_statesman_0013\nsource_work: Statesman\nblock_kind: section\nplacement: before\ntitle: \"The woven city\"\nstephanus_span: 306a-311c\nsource_ref:\n  source_path: raw/plato/greek/statesman.txt\n  stephanus_span: 306a-311c\n  start_marker: 306a\n  end_marker: 311c\n  start_char: 101263\n  end_char: 113538\n  text_sha256: \"499d0b8a18375348ddf0921597e80bb1b1836e3accb9867d62e8526f5f3f5f07\"\nbody: \"The final account returns to weaving. Courage and moderation are not left to separate themselves: the statesman's art binds their unlike tendencies into a common life, assigning offices and honors so that the city can act together. The ending gives political expertise a concrete task — not domination, but the durable composition of character into civic friendship.\"\ncites:\n  observations: []\n  claims: [claim_statesman_0125, claim_statesman_0128, claim_statesman_0130, claim_statesman_0139, claim_statesman_0142]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_statesman_0015",
+      "body": "```yaml\ncommentary_id: comm_statesman_0015\nsource_work: Statesman\nblock_kind: argument\nplacement: after\nstephanus_span: 258e\nsource_ref:\n  source_path: raw/plato/greek/statesman.txt\n  stephanus_span: 258e\n  start_marker: 258e\n  end_marker: 258e\n  start_char: 2992\n  end_char: 3474\n  text_sha256: \"d017595d1af39106c2fd7b011d7c13dec15e6351c34164c96ea11afed8977574\"\nbody: \"At 258e, the Stranger divides sciences into practical and purely cognitive kinds, and Young Socrates accepts the division. This is the inquiry’s first cut; it does not yet say which side contains the statesman’s art.\"\ncites:\n  observations: []\n  claims: [\"claim_statesman_0001\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_statesman_0019",
+      "body": "```yaml\ncommentary_id: comm_statesman_0019\nsource_work: Statesman\nblock_kind: notice\nplacement: after\nstephanus_span: 279c-280a\nsource_ref:\n  source_path: raw/plato/greek/statesman.txt\n  stephanus_span: 279c-280a\n  start_marker: 279c\n  end_marker: 280a\n  start_char: 45634\n  end_char: 47129\n  text_sha256: \"c938800a365a6ce01081d6fa0866c0c31a093a0a87efcefd710a528187fc41ac\"\nbody: \"At 279c–280a, the classificatory descent reaches a deliberately provisional stopping point. The Stranger names the art most concerned with clothes as clothes-making and says that weaving, insofar as it is the greatest part of making clothes, differs from it in name alone. That is the narrow claim secured here. The dialogue soon reopens the account, so the passage should not be heard as having already defined weaving’s subordinate preparations or its final operation.\"\ncites:\n  observations: []\n  claims: [\"claim_statesman_0040\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

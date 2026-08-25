@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "submission_id": "0021-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "gorgias",
+  "source_path": "scratch/commentary/sample-repairs/gorgias/round3.json",
+  "source_sha256": "ba240192c4322c8f516983fd25b667d94bae92b682e19abdce1d5d12bc86421e",
+  "target_path": "wiki/commentary/gorgias.md",
+  "target_sha256_before": "bebc9d70d7afaa65b27c7a484664d9d3ce2c08dad7ff9c44fd7b309b078c180d",
+  "target_sha256_after": "2463756307a018efbd4968519a5a4e5664061f25ec19fb62266dd557e6b557b2",
+  "applied_at": "2026-08-23T23:59:40.326Z",
+  "applied_ids": [
+    "comm_gorgias_0002",
+    "comm_gorgias_0034"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "gorgias",
+    "ledger": {
+      "path": "wiki/commentary/gorgias.md",
+      "sha256": "bebc9d70d7afaa65b27c7a484664d9d3ce2c08dad7ff9c44fd7b309b078c180d"
+    },
+    "sample_review": {
+      "reviewer": "sample-b-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna sample review found two bounded citation and source-category defects requiring repair.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_gorgias_0001",
+        "comm_gorgias_0002",
+        "comm_gorgias_0003",
+        "comm_gorgias_0006",
+        "comm_gorgias_0008",
+        "comm_gorgias_0009",
+        "comm_gorgias_0010",
+        "comm_gorgias_0013",
+        "comm_gorgias_0015",
+        "comm_gorgias_0016",
+        "comm_gorgias_0017",
+        "comm_gorgias_0020",
+        "comm_gorgias_0024",
+        "comm_gorgias_0025",
+        "comm_gorgias_0026",
+        "comm_gorgias_0034"
+      ],
+      "failed_commentary_ids": [
+        "comm_gorgias_0002",
+        "comm_gorgias_0034"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_gorgias_0002",
+        "title": "Speeches about what? Pinning down the subject matter",
+        "body": "Gorgias agrees to short answers, and Socrates presses the defining question: rhetoric works through speech, but so do arithmetic and medicine. He asks what rhetoric's speeches concern, using comparison with other arts to force a subject matter into view.",
+        "cites": {
+          "observations": [],
+          "claims": [],
+          "relations": [],
+          "dossiers": [
+            "definition_ladder/definiendum_marked_for_inquiry"
+          ]
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_gorgias_0034",
+        "title": "A logos you will call a mythos: naked souls judged",
+        "body": "Socrates introduces the account as a logos that Callicles may call a mythos. Zeus reforms the courts of the dead because judgments failed when souls arrived clothed in bodies and wealth and accompanied by witnesses. The dead now stand naked, soul scrutinizing soul.",
+        "cites": {
+          "observations": [],
+          "claims": [],
+          "relations": [],
+          "dossiers": [
+            "myth_demarcation/mythic_narrative_transition",
+            "myth_demarcation/underworld_judgment_sequence"
+          ]
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_gorgias_0002",
+      "body": "```yaml\ncommentary_id: comm_gorgias_0002\nsource_work: gorgias\nblock_kind: section\nplacement: before\ntitle: \"Speeches about what? Pinning down the subject matter\"\nstephanus_span: 449a-451e\nsource_ref:\n  source_path: raw/plato/greek/gorgias.txt\n  stephanus_span: 449a-451e\n  start_marker: 449a\n  end_marker: 451e\n  start_char: 3516\n  end_char: 9833\n  text_sha256: \"fe06dd49fb79747088c070bb014e2ebf422f36a5e892e7250e95e26fadf82325\"\nbody: \"Gorgias agrees to short answers, and Socrates presses the defining question: rhetoric works through speech, but so do arithmetic and medicine. What are rhetoric's speeches about? The comparison with other arts forces Gorgias toward an answer he has not yet had to give.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"definition_ladder/definiendum_marked_for_inquiry\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_gorgias_0034",
+      "body": "```yaml\ncommentary_id: comm_gorgias_0034\nsource_work: gorgias\nblock_kind: section\nplacement: before\ntitle: \"A logos you will call a mythos: naked souls judged\"\nstephanus_span: 523a-524a\nsource_ref:\n  source_path: raw/plato/greek/gorgias.txt\n  stephanus_span: 523a-524a\n  start_marker: 523a\n  end_marker: 524a\n  start_char: 154091\n  end_char: 156644\n  text_sha256: \"73655e4c35497f8a43e098cf24d531a7d78fe664638a11c64f122eb0cf323348\"\nbody: \"Socrates tells of Zeus reforming the courts of the dead: judgments were failing because souls came clothed in bodies, wealth, and witnesses. Now the dead are judged naked, soul scrutinizing soul. He calls it a logos, expecting Callicles to call it a mythos.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"myth_demarcation/mythic_narrative_transition\", \"myth_demarcation/underworld_judgment_sequence\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

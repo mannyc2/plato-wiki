@@ -1,0 +1,11 @@
+dialogue: apology
+turn_index_path: derived/plato/turns/apology.toon
+turn_index_sha256: b093ce5bf1903e2ba655f7a366f88b7bff76ee522b7569de5b93d71bc27d51dd
+token_index_path: derived/plato/tokens/apology.toon
+token_index_sha256: 7c115c3dee938eb24eecb3298d87ebe291769c6aacd824faade3d3986b4e55bd
+speakers[1]:
+  speaker | turns | total_tokens | median_tokens | p90_tokens | max_tokens | long_turns
+  (none)  | 1 | 8750 | 8750 | 8750 | 8750 | 0
+turns[1]:
+  turn_id           | speaker | start_marker | end_marker | start_char | end_char | greek_char_count | token_count | dialogue_long_turn | speaker_long_turn
+  turn_apology_0001 | (none)  | 17a          | 42a        | 0 | 54044 | 42247 | 8750 | no | no

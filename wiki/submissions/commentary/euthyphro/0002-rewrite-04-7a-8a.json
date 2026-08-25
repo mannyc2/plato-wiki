@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-04-7a-8a",
+  "lane": "commentary",
+  "kind": "rewrite",
+  "scope": "euthyphro",
+  "unit_key": "04-7a-8a",
+  "source_path": "scratch/commentary/rewrites/euthyphro/04-7a-8a.json",
+  "source_sha256": "1b9a2fcb17563bdf0a393aca8de314b27ef58f7b20d324e6f0b6de29e39e26ab",
+  "target_path": "wiki/commentary/euthyphro.md",
+  "target_sha256_before": "7d68d257f9e7568f13759ae61a79f2481d847529e0e40790cd22995dc8cd9b9f",
+  "target_sha256_after": "488240bcaebc440d8f231a60ef09b5c67f71acc86619685efc88629b3b5653c2",
+  "applied_at": "2026-08-21T13:23:18.264Z",
+  "applied_ids": [
+    "comm_euthyphro_0020"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "euthyphro",
+    "unit_key": "04-7a-8a",
+    "section_id": "comm_euthyphro_0004",
+    "audit_output": {
+      "path": "scratch/commentary/audits/euthyphro/04-7a-8a.json",
+      "sha256": "9611410cc6e074f9bbf9517701cd0c3dbeeaa6885741d3aeacfe4caf97337283"
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_euthyphro_0020",
+        "title": "",
+        "body": "Socrates begins with a contrast between disputes that can be settled by counting, measuring, or weighing and disputes about the just, the noble, and the good. In the latter, people become enemies when they cannot reach an adequate decision. Since Euthyphro has already said that the gods quarrel, Socrates asks whether their quarrels concern these same value-laden matters. The point is not that such questions have no possible way of being judged; it is that the dialogue places them where agreement has not been secured.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_euthyphro_0015",
+            "claim_euthyphro_0016"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_euthyphro_0020",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0020\nsource_work: Euthyphro\nblock_kind: argument\nplacement: before\nstephanus_span: 7b-7d\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 7b-7d\n  start_marker: 7b\n  end_marker: 7d\n  start_char: 10927\n  end_char: 12304\n  text_sha256: \"4d592072b03fabf83af77fe6fb47eab8ed7cb6c3793ff4212ce6e90b974a2a5c\"\nbody: \"Before touching the gods at all, Socrates builds a quiet classification of disputes. Disagreements about number, size, and weight dissolve the moment we count, measure, or weigh — there is a procedure, so no one stays angry. The disputes that make enemies are the ones with no such procedure: the just and unjust, the noble and shameful, the good and bad. That is his claim, and Euthyphro grants it. The move matters because it locates the gods' quarrels in exactly the territory where no decision method exists — which is what will make the definition unravel a moment from now.\"\ncites:\n  observations: []\n  claims: [\"claim_euthyphro_0015\", \"claim_euthyphro_0016\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

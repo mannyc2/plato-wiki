@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "submission_id": "0007-structural-remediation-08-113a-113e",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "critias",
+  "unit_key": "08-113a-113e",
+  "source_path": "scratch/commentary/audits/critias/08-113a-113e.json",
+  "source_sha256": "980433cdbae8aa3b963505a583fcccf248137faf557100033667d0ebfc2f60d2",
+  "target_path": "wiki/commentary/critias.md",
+  "target_sha256_before": "11309ba602cceaff98c12e94ce8ec5bc820f1eebb03d404dfa23ea079609a60c",
+  "target_sha256_after": "40798729c1a04bfd043a5e4cd62efc1d8d23d7e6d29634b832c5e77de019ae5a",
+  "applied_at": "2026-08-23T22:33:14.623Z",
+  "applied_ids": [
+    "comm_critias_0031",
+    "comm_critias_0032"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "critias",
+      "unitKey": "08-113a-113e",
+      "sectionId": "comm_critias_0008",
+      "auditOutputPath": "scratch/commentary/audits/critias/08-113a-113e.json",
+      "auditOutputSha256": "980433cdbae8aa3b963505a583fcccf248137faf557100033667d0ebfc2f60d2",
+      "expectedLedgerSha256": "11309ba602cceaff98c12e94ce8ec5bc820f1eebb03d404dfa23ea079609a60c",
+      "expectedAttributionSha256": "9b39b25c405313f94d9d09c9bcfe8ee2eec86e1200536f88ac4ddf1aaa10f831",
+      "expectedEnglishSha256": "4edcea49fb8083715e5e71c6ce8ccbd8930c6c8cf185cb367dca81ca69ede50e",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_critias_0031"
+        },
+        {
+          "operation": "remove",
+          "commentaryId": "comm_critias_0032"
+        }
+      ],
+      "reviewer": "lane-c-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna assessment confirms conservative rejection of audited remove findings and split originals; placement is retained and no reanchors are claimed."
+    },
+    "audit_output_path": "scratch/commentary/audits/critias/08-113a-113e.json",
+    "audit_output_sha256": "980433cdbae8aa3b963505a583fcccf248137faf557100033667d0ebfc2f60d2",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_critias_0031",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_critias_0032",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

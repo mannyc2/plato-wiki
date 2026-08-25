@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-delegated-audit-16-351c-358a",
+  "lane": "commentary-audit",
+  "kind": "delegated-audit",
+  "scope": "protagoras",
+  "unit_key": "16-351c-358a",
+  "source_path": "scratch/commentary/delegated-audits/protagoras/16-351c-358a.json",
+  "source_sha256": "0d94b05192e3208c83e39ce8eeba7af15dcfe58d9296f942b4e608dc940a58f0",
+  "target_path": "wiki/submissions/commentary-audit/protagoras/16-351c-358a.output.json",
+  "target_sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "target_sha256_after": "ce8ad5ea446c90bd5eacbae040634d50bce31e5244cc07beec62c2be67d796f7",
+  "applied_at": "2026-08-24T01:15:36.800Z",
+  "applied_ids": [
+    "comm_protagoras_0016"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "protagoras",
+    "unit_key": "16-351c-358a",
+    "job": {
+      "job_id": "audit:protagoras:16-351c-358a",
+      "input_sha256": "16387a0dfdb6da4dc8c282d63028f7742c1f0ad2581e1f6525f4e64a323fb17a",
+      "audit_brief_path": "scratch/commentary/audit-briefs/protagoras/16-351c-358a.md",
+      "audit_brief_sha256": "89937899a77fca8a252fd8178a21c5a473dd579ee640e5c4d583a1b723f615ee",
+      "output_path": "scratch/commentary/audits/protagoras/16-351c-358a.json",
+      "output_schema_sha256": "c11c5b24fce47404c34a9b39a51804aefe162d193a9ee5afebc5e6ff6ab1e4f6"
+    },
+    "output_path": "wiki/submissions/commentary-audit/protagoras/16-351c-358a.output.json",
+    "output_sha256": "ce8ad5ea446c90bd5eacbae040634d50bce31e5244cc07beec62c2be67d796f7",
+    "provenance": {
+      "auditor": "batch-c-delegated-luna-auditor-20260823",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "source": "operator-delegated",
+      "human_listening_or_review": "none claimed"
+    }
+  }
+}

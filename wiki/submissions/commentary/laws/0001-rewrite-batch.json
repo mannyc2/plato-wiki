@@ -1,0 +1,2022 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "laws",
+  "source_path": "scratch/commentary/rewrites/laws/01-624a-625c.json",
+  "source_sha256": "c576e09b052604f432522a27b89188c6f658ec0a8e0e951655b412e6b2beda12",
+  "target_path": "wiki/commentary/laws.md",
+  "target_sha256_before": "31daa91e073d27df4bd0a5eb795c308b956bfc3b72e9d502df25cb6b21050bc5",
+  "target_sha256_after": "6b30099abd8450ded217597bb63bea984f81439c74ed3c4d31bda2cfb2c4b5fe",
+  "applied_at": "2026-08-21T20:45:07.367Z",
+  "applied_ids": [
+    "comm_laws_0001",
+    "comm_laws_0002",
+    "comm_laws_0003",
+    "comm_laws_0004",
+    "comm_laws_0005",
+    "comm_laws_0006",
+    "comm_laws_0007",
+    "comm_laws_0008",
+    "comm_laws_0010",
+    "comm_laws_0011",
+    "comm_laws_0012",
+    "comm_laws_0013",
+    "comm_laws_0014",
+    "comm_laws_0015",
+    "comm_laws_0017",
+    "comm_laws_0018",
+    "comm_laws_0019",
+    "comm_laws_0024",
+    "comm_laws_0027",
+    "comm_laws_0028",
+    "comm_laws_0029",
+    "comm_laws_0030",
+    "comm_laws_0031",
+    "comm_laws_0032",
+    "comm_laws_0034",
+    "comm_laws_0035",
+    "comm_laws_0036",
+    "comm_laws_0037",
+    "comm_laws_0038",
+    "comm_laws_0039",
+    "comm_laws_0041",
+    "comm_laws_0044",
+    "comm_laws_0046",
+    "comm_laws_0047",
+    "comm_laws_0048",
+    "comm_laws_0049",
+    "comm_laws_0050",
+    "comm_laws_0051",
+    "comm_laws_0052",
+    "comm_laws_0054",
+    "comm_laws_0055",
+    "comm_laws_0056",
+    "comm_laws_0058",
+    "comm_laws_0059",
+    "comm_laws_0061",
+    "comm_laws_0062",
+    "comm_laws_0063",
+    "comm_laws_0064",
+    "comm_laws_0065",
+    "comm_laws_0066",
+    "comm_laws_0067"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "01-624a-625c",
+      "section_id": "comm_laws_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/01-624a-625c.json",
+        "sha256": "d09cd89916aef04f93221d30c9e44b27b52cc056175ce06596c254729f2dec01"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0001",
+          "title": "Divine credit, human inquiry",
+          "body": "The opening puts lawgiving under divine credit: Kleinias names Zeus for Crete and Apollo for Sparta, and calls that the most just answer (obs_laws_0001). I hear the rest of this opening as a deliberate counter-movement: the claim is not left standing as a final explanation. The road becomes a way of imagining inquiry itself—conversation can proceed by pauses, questions, and shared effort, even when the travelers begin from inherited reverence.",
+          "cites": {
+            "observations": [
+              "obs_laws_0001"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "02-625d-627e",
+      "section_id": "comm_laws_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/02-625d-627e.json",
+        "sha256": "7644d25e34a716cb60165e1596599fa889e3b154322a6405160eb88c7ccd3a93"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0002",
+          "title": "From war to the question of rule",
+          "body": "Cleinias’s war-centered account is still a thesis under examination, not the Athenian’s settled conclusion. The Athenian stretches its logic from city against city down to village, household, individual, and self; then reverses the direction, asking how a city divided between better and worse should be judged. The alternatives concern rule: destroy the bad, or let the good govern while the bad submit willingly. A third judge is then announced as a possibility.",
+          "cites": {
+            "observations": [
+              "obs_laws_0013"
+            ],
+            "claims": [
+              "claim_laws_0004",
+              "claim_laws_0007",
+              "claim_laws_0011"
+            ],
+            "relations": [],
+            "dossiers": [
+              "dramatic_case_setup/initial_question_stated",
+              "turn_geometry/explicit_procedure_control"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "03-628a-632d",
+      "section_id": "comm_laws_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/03-628a-632d.json",
+        "sha256": "fa6556917b4113c522a6d947f97dec0da68f0e76b40e242695f3ce439641b2e4"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0003",
+          "title": "The standard of lawgiving: reconciliation, not victory",
+          "body": "The opening analogy supplies the standard: the best judge destroys none of the divided kin, but reconciles them and makes friendship durable through law. The Athenian carries that standard into politics, ranking reconciliation and civil peace above factional victory. Tyrtaeus is introduced as a witness to be questioned; his martial praise is set against a broader account of excellence in the harder war, changing what a lawgiver must seek.",
+          "cites": {
+            "observations": [
+              "obs_laws_0026",
+              "obs_laws_0031"
+            ],
+            "claims": [
+              "claim_laws_0014",
+              "claim_laws_0016",
+              "claim_laws_0017",
+              "claim_laws_0018",
+              "claim_laws_0019",
+              "claim_laws_0020",
+              "claim_laws_0021"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "04-632e-634d",
+      "section_id": "comm_laws_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/04-632e-634d.json",
+        "sha256": "9dc65da4e46e552df2fd214643b89be2bfbe3f85cdb7213de94cc2aa80df9c5a"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0004",
+          "title": "Courage on both fronts",
+          "body": "The unit begins as a numbered model for examining virtue, with Spartan practices offered as examples of endurance. It then widens courage’s field: the Athenian asks whether courage must resist pleasures as well as pains, and Megillus agrees. Read carefully, the closing challenge tests whether the speakers can point to comparable laws; it should not be inflated into proof that Crete or Sparta has none.",
+          "cites": {
+            "observations": [
+              "obs_laws_0051",
+              "obs_laws_0057",
+              "obs_laws_0049",
+              "obs_laws_0062"
+            ],
+            "claims": [
+              "claim_laws_0036",
+              "claim_laws_0037",
+              "claim_laws_0038"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "05-634e-637e",
+      "section_id": "comm_laws_0005",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/05-634e-637e.json",
+        "sha256": "f82b43f3ba425015fdb8066eccc4dd1fd1cded1b72c0a045ce945edf371631c5"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0005",
+          "title": "A Protected Space for Critiquing the Cities' Laws",
+          "body": "The Athenian is not opening a general license for old men to criticize whenever the young are away. He describes a protocol: criticism of the interlocutors’ cities’ laws belongs before a magistrate or an age-mate, never before the young; here, the speakers’ age and the absence of youth make the exchange permissible. The inquiry then tests Megillus’s tentative praise of common meals and gymnasia against the Athenian’s mixed assessment of their benefits and dangers.",
+          "cites": {
+            "observations": [
+              "obs_laws_0066"
+            ],
+            "claims": [
+              "claim_laws_0044",
+              "claim_laws_0045",
+              "claim_laws_0046"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "06-638a-641a",
+      "section_id": "comm_laws_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/06-638a-641a.json",
+        "sha256": "3b2cf8e9120fe5dbc0fbe8ed7585ca4f990720bcc4231e43d186acc6f6009a35"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0006",
+          "title": "The test is the governed drinking party",
+          "body": "The Athenian changes the test for judging a practice. Victory and defeat are too disputed to settle its worth; we must ask how the practice is conducted and under what kind of ruler. Applied to the drinking party, the method blocks a verdict based only on badly managed examples. The section ends by opening a broader question: what benefit, if any, follows when drinking is rightly governed?",
+          "cites": {
+            "observations": [
+              "obs_laws_0079",
+              "obs_laws_0086"
+            ],
+            "claims": [
+              "claim_laws_0047",
+              "claim_laws_0051",
+              "claim_laws_0052",
+              "claim_laws_0054"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "07-641b-645c",
+      "section_id": "comm_laws_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/07-641b-645c.json",
+        "sha256": "1cc10514dcdd24130dd9440484bfdf5bd3aad0b0715a640f6da0381eb3cccc52"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0007",
+          "title": "Education, then the golden law",
+          "body": "The section separates two stages that should not be collapsed. First, the Athenian defines education as childhood nurture that turns play, pleasure, and desire toward the virtue of a future adult and citizen; this is a definition of education’s aim, not yet an account of the soul’s competing impulses. The puppet image then changes the question: pleasure and pain pull against one another, while calculation is named the city’s common law. The golden leading-string is therefore not law assisting calculation; it is calculation figured as the law’s gentle, guiding cord. Education forms the desires, while law gives the rational guide public authority.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_laws_0063",
+              "claim_laws_0064"
+            ],
+            "relations": [
+              "rel_laws_0025"
+            ],
+            "dossiers": [
+              "myth_demarcation/myth_logos_boundary"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "08-645d-650b",
+      "section_id": "comm_laws_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/08-645d-650b.json",
+        "sha256": "9fd95a8a6341f7c44bb174f67f593386c4132863e50dedc8b1a5e72271cecbf9"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0008",
+          "title": "The lawgiver’s wine test",
+          "body": "Wine is a paradoxical instrument: it weakens judgment, yet that exposure may become a trial of character. The Athenian makes drunkenness childlike and least self-controlled, then asks us to seek a later benefit as with bodily hardship. Read the final move as a lawgiver’s thought experiment, not a celebration: the citizen must be both fearless and fearful, with shame opposing pleasures that undo self-command.",
+          "cites": {
+            "observations": [
+              "obs_laws_0109",
+              "obs_laws_0110",
+              "obs_laws_1258"
+            ],
+            "claims": [
+              "claim_laws_0075",
+              "claim_laws_0079"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "10-655c-658e",
+      "section_id": "comm_laws_0010",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/10-655c-658e.json",
+        "sha256": "aa6effa1fc7655af643425b49711c1d38a5ca5a78145bb871dd00ea848c94158"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0010",
+          "title": "Egypt, imitation, and educated pleasure",
+          "body": "Egypt is offered as a precedent for fixing musical forms and resisting innovation. But one way to hear the Athenian’s move is not as the demolition of pleasure: he rejects the crude equation of musical correctness with whatever pleases a soul, because choral performances imitate character, and enjoyment can assimilate a person to what is enjoyed. Pleasure remains a criterion, now answerable to the best and adequately educated hearer.",
+          "cites": {
+            "observations": [
+              "obs_laws_0150",
+              "obs_laws_0151",
+              "obs_laws_1261"
+            ],
+            "claims": [
+              "claim_laws_0110"
+            ],
+            "relations": [],
+            "dossiers": [
+              "dramatic_case_setup/music_censorship_program"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "11-659a-662c",
+      "section_id": "comm_laws_0011",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/11-659a-662c.json",
+        "sha256": "cb0247bf3773dac540dcebb123ea1ec337890f327eab9c3724bced0aafc91564"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0011",
+          "title": "From judging pleasure to teaching justice",
+          "body": "The crucial movement is from judging pleasure to forming it. The true judge teaches rather than follows the crowd, while songs are treated as soul-charms that train the young to share the law’s pleasures and pains. When the Athenian turns to the just life, he frames happiness for the temperate and just, and misery for the wealthy unjust, as what poets are to teach. Read this as a demand for civic affirmation, not as knowingly false instruction.",
+          "cites": {
+            "observations": [
+              "obs_laws_0181",
+              "obs_laws_0174"
+            ],
+            "claims": [
+              "claim_laws_0112",
+              "claim_laws_0114",
+              "claim_laws_0115",
+              "claim_laws_0116",
+              "claim_laws_0117",
+              "claim_laws_0118"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "12-662d-666d",
+      "section_id": "comm_laws_0012",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/12-662d-666d.json",
+        "sha256": "ce54e0925fb9fd8058e33cefde62c889e3f00260cba69650b28040e757aee4cb"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0012",
+          "title": "From persuasive myth to age-graded song",
+          "body": "The unit's hinge is the movement from persuasion to institution. The Sidonian story supplies the example: even an improbable tale can help a lawgiver shape young souls. The proposed response is age-graded singing, not a three-part Dionysian chorus for the whole population: those no longer able to carry a song are left to tell stories, while wine is proposed for men over forty as an aid to older participation.",
+          "cites": {
+            "observations": [
+              "obs_laws_0205",
+              "obs_laws_0215"
+            ],
+            "claims": [
+              "claim_laws_0131",
+              "claim_laws_0132"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "13-666e-671a",
+      "section_id": "comm_laws_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/13-666e-671a.json",
+        "sha256": "638bd89f54a7ed008defd84799d6726cf573f6ac165a7142a2e79735ff1120cc"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0013",
+          "title": "Music judged by imitation, not pleasure",
+          "body": "The argument gives music a stricter test than immediate enjoyment. Since musical works are imitations, the judge must know the original, assess the copy’s correctness, and recognize how well it is made; pleasure cannot do that work. The older singers therefore need more thorough training than the majority or the poets, including the fuller judgment required to guide younger listeners toward virtue.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": [
+              "craft_analogy/criterion_triad_applied_to_crafts",
+              "craft_analogy/mimesis_appearance_reality_distinction",
+              "craft_analogy/music_speech_charm_comparison",
+              "craft_analogy/pleasure_imitation_criterion_rejected",
+              "music_censorship_program/musical_judgment_authority_restricted"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "14-671b-674c",
+      "section_id": "comm_laws_0014",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/14-671b-674c.json",
+        "sha256": "ddc73220c6bbbfcec880d75bdeb4d6f2ce5923805bcacb4abe72ecf6db775333"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0014",
+          "title": "Wine as a governed exercise",
+          "body": "The hinge here is conditional, not celebratory: the Athenian allows wine a civic place only when a symposium is treated as a serious, law-governed exercise in temperance. Sober Dionysian overseers guide the un-sober, and the promised result is that participants leave better friends rather than enemies. Hear the test being set: wine is useful only when an institution gives pleasure a form.",
+          "cites": {
+            "observations": [
+              "obs_laws_0257"
+            ],
+            "claims": [
+              "claim_laws_0162"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "15-676a-681e",
+      "section_id": "comm_laws_0015",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/15-676a-681e.json",
+        "sha256": "e312e5cee620ccbc81d9b4eefa1e909a30a37ffe18001a3f6def7e512fd8bec1"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0015",
+          "title": "From patriarchal custom to legislation",
+          "body": "Book 3 asks us to watch political order emerge, not appear whole. After catastrophe, the survivors are cut off from city arts and writing, but they are not without rule: they live by custom and patriarchal law. Separate clans preserve inherited usages; when settlements enlarge, representatives compare those usages and turn selected customs into legislation. The point is developmental: constitutional order grows by consolidating older forms, with Homer serving as witness.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": [
+              "myth_demarcation/catastrophic_destruction_narrative",
+              "definition_ladder/constitutional_form_named",
+              "dramatic_case_setup/city_foundation_sequence",
+              "myth_demarcation/natural_disaster_chronology_argument",
+              "myth_demarcation/poetic_authority_cited_in_argument"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "17-686c-689e",
+      "section_id": "comm_laws_0017",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/17-686c-689e.json",
+        "sha256": "5457a15d571a6ab703693e0bff4e053b455e0b58e04aa1f0ec2c50eaf25a5f90"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0017",
+          "title": "When desire disagrees with judgment",
+          "body": "Here the Athenian makes prayer answer to a problem inside the soul. The greatest ignorance is not merely lacking a skill; it is a divided will: reasoned judgment calls something noble and good while pleasure and pain turn toward its opposite. That is why the common wish for everything to obey us is unsafe as a prayer. The desired end must be governed by phronesis and nous, or it may become the opposite of what we wanted.",
+          "cites": {
+            "observations": [
+              "obs_laws_0298",
+              "obs_laws_0314"
+            ],
+            "claims": [
+              "claim_laws_0199",
+              "claim_laws_0200"
+            ],
+            "relations": [],
+            "dossiers": [
+              "definition_ladder/definition_proposed"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "18-690a-693e",
+      "section_id": "comm_laws_0018",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/18-690a-693e.json",
+        "sha256": "453cff8fc5870777d12138a7566dcc88b0558b3119c91e89e6716a14970e2eed"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0018",
+          "title": "The cure is cumulative",
+          "body": "At 690d the catalogue of rival titles to rule becomes a diagnosis of faction. But the Lacedaemonian case is not presented as kingship saved by one divine dilution. The Athenian’s retrospective sequence is cumulative: a god makes the royal line twin; a human element joined to divine power adds the council of elders; then a third saviour adds the ephors. The resulting mixture is measured enough for kingship to survive and to become a cause of safety for others. Read the theology here as the passage’s way of narrating institutional balance, not as a single-cause explanation.",
+          "cites": {
+            "observations": [
+              "obs_laws_0322",
+              "obs_laws_0335",
+              "obs_laws_0336",
+              "obs_laws_0406"
+            ],
+            "claims": [
+              "claim_laws_0218"
+            ],
+            "relations": [],
+            "dossiers": [
+              "constitutional_typology/mixed_constitution_required",
+              "myth_demarcation/divine_causation_with_logos_hedge",
+              "dramatic_case_setup/theological_type_established"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "19-694a-697e",
+      "section_id": "comm_laws_0019",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/19-694a-697e.json",
+        "sha256": "48c280b53bef34210aae929a181a46fb2289fad0fa48a46104020a9df4be4dca"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0019",
+          "title": "Persia’s reversal across generations",
+          "body": "Persia’s story is a reversal, not a single slide into decay. Under Cyrus, measured freedom and shared counsel make the regime prosper; then the Athenian asks how it was lost under Cambyses and nearly saved under Darius. Darius stands apart: not a king’s son, not luxuriously reared, he uses law to secure fellowship. The warning is about succession and education across generations—not about making every later ruler a son of Cyrus.",
+          "cites": {
+            "observations": [
+              "obs_laws_0407",
+              "obs_laws_0409",
+              "obs_laws_0412"
+            ],
+            "claims": [
+              "claim_laws_0232",
+              "claim_laws_0233",
+              "claim_laws_0236",
+              "claim_laws_0237"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "24-712b-715d",
+      "section_id": "comm_laws_0024",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/24-712b-715d.json",
+        "sha256": "4e138efe19847c1d868750db738053c65f3494a05638d5df241191c151c9f1d4"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0024",
+          "title": "From regime labels to a proposed rule of law",
+          "body": "Cleinias and Megillus cannot settle Sparta or Knossos under the familiar labels. The Athenian’s correction is that these names identify cities by the part that dominates them. The Cronus account is presented as a reported model, not a finished constitution; its practical proposal is to order public and private life by reason, and call that ordering law.",
+          "cites": {
+            "observations": [
+              "obs_laws_0492",
+              "obs_laws_0493"
+            ],
+            "claims": [
+              "claim_laws_0302",
+              "claim_laws_0304",
+              "claim_laws_0307"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "27-726a-729a",
+      "section_id": "comm_laws_0027",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/27-726a-729a.json",
+        "sha256": "a71545fce4b0b48bee305d86d26c70dd579c5d72b535e33cdfbc3cac0fd70552"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0027",
+          "title": "Honor is measured by betterment",
+          "body": "The speech makes “honor” answerable to what it does. The soul stands immediately after the gods, yet self-praise, blame-shifting, indulgence in pleasure, yielding to fear, preference for beauty over virtue, and dishonorable pursuit of wealth all damage what they claim to honor. The test is not the appearance of esteem but whether one’s conduct makes the soul better.",
+          "cites": {
+            "observations": [
+              "obs_laws_0547",
+              "obs_laws_0548",
+              "obs_laws_0549",
+              "obs_laws_0550",
+              "obs_laws_0551",
+              "obs_laws_0552",
+              "obs_laws_0553"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "28-729b-734e",
+      "section_id": "comm_laws_0028",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/28-729b-734e.json",
+        "sha256": "5c2113d3bfdaeea9669c72f0b92eae64fd62390ad751a2e8e0503f2cc1c12072"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0028",
+          "title": "Preparing the hearer for law",
+          "body": "The teaching point here is preparation, not inventory. Before the laws are stated, praise and blame are supposed to make people tractable and well-disposed toward them (obs_laws_0567). I would therefore hear the later comparison of lives as persuasion toward a law-shaped ideal, not as a pleasure-only proof or a special argument for unbelievers; that reading also fits the unit’s preference for noble lifelong service to home laws over contest victory (claim_laws_0355).",
+          "cites": {
+            "observations": [
+              "obs_laws_0567"
+            ],
+            "claims": [
+              "claim_laws_0355"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "29-735a-738e",
+      "section_id": "comm_laws_0029",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/29-735a-738e.json",
+        "sha256": "169d2b1b3d71eb088b24c88026edebbfd0c90b54496b9828f14edd86e8f578a3"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0029",
+          "title": "Purity as a founding premise",
+          "body": "One way to hear this turn is as a verbal bracket around purification. The herd analogy makes cleansing a lawgiver’s concern, but the present founding is not assigned a colony or a selection by purification. I take the next premise—that the collection is complete and its purity secured—as a stipulation, not a report of an already-purified citizen body. The question becomes: what institutional design can begin once purity is assumed?",
+          "cites": {
+            "observations": [
+              "obs_laws_0592",
+              "obs_laws_0593"
+            ],
+            "claims": [
+              "claim_laws_0380"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "30-739a-743e",
+      "section_id": "comm_laws_0030",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/30-739a-743e.json",
+        "sha256": "e3554976b06d418e306c2ec28544645fc924a7aabdebc517a1b7cf5ebddab885"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0030",
+          "title": "The second-best polity as an approximation",
+          "body": "The city where friends’ things are common is the paradigm, not the immediate settlement; the polity being attempted is second-best. Its approximation of unity is institutional: allotted land is regarded as common to the city, households remain fixed, and the original measure of property is protected from buying and selling. The closing lesson is ethical: extreme wealth cannot make anyone good or happy.",
+          "cites": {
+            "observations": [
+              "obs_laws_0612",
+              "obs_laws_0613",
+              "obs_laws_0614",
+              "obs_laws_0615"
+            ],
+            "claims": [
+              "claim_laws_0393",
+              "claim_laws_0395",
+              "claim_laws_0396",
+              "claim_laws_0399"
+            ],
+            "relations": [],
+            "dossiers": [
+              "economic_character_correlation/extreme_wealth_incompatible_with_goodness_and_happiness"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "31-744a-747e",
+      "section_id": "comm_laws_0031",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/31-744a-747e.json",
+        "sha256": "c0b99caf64fa2af4ac3fdefadec90aa1d02ade19306f1c36500a9ec2f96fcd83"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0031",
+          "title": "Designing the ideal, then adjusting it",
+          "body": "Here the Athenian treats founding as a problem of design rather than a single stroke of inspiration. Unequal starting wealth is organized through proportionate property assessments, while the land is divided into twelve parts and each lot joins near and distant ground to compensate for unequal terrain. The resulting city is a pattern, not a guarantee: when an ideal detail proves impossible, legislation should pursue the closest fitting alternative.",
+          "cites": {
+            "observations": [
+              "obs_laws_0630",
+              "obs_laws_0635",
+              "obs_laws_0636"
+            ],
+            "claims": [
+              "claim_laws_0409"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "32-751a-755b",
+      "section_id": "comm_laws_0032",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/32-751a-755b.json",
+        "sha256": "c67c2d39e49678e460fc87ddbecfe95d324a0aaa6e84fd81113413e582daaff9"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0032",
+          "title": "The first offices are a provisional bridge",
+          "body": "Here the Athenian makes officeholding the test of legislation: well-framed laws can be made useless and harmful by unsuitable magistrates. The colony cannot simply solve that problem through its first election, because its settlers are strangers to one another and uneducated in the laws. Knossos is therefore assigned founding help, beginning with thirty-seven law-guardians drawn from Knossians and settlers. This is a provisional bridge, not a solved bootstrap: after time and constitutional endurance, a more public, staged election is proposed.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_laws_0417",
+              "claim_laws_0419",
+              "claim_laws_0421",
+              "claim_laws_0422",
+              "claim_laws_0423"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "34-759a-764b",
+      "section_id": "comm_laws_0034",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/34-759a-764b.json",
+        "sha256": "0e765707da69e2c447f765a7cbccb08df47c877a2382a7230b374600af31edb7"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0034",
+          "title": "Sacred appointment and territorial guardianship",
+          "body": "Here the law separates sacred appointment from sacred interpretation: priests are assigned by lot after scrutiny, but the exegetes are nominated and voted for by the tribes, then sent to Delphi for the god to select one from each triad. The unit then extends its guarding scheme from civic offices to a rotating rural service.",
+          "cites": {
+            "observations": [
+              "obs_laws_0681"
+            ],
+            "claims": [
+              "claim_laws_0446",
+              "claim_laws_0448",
+              "claim_laws_0449",
+              "claim_laws_0451"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "35-764c-768e",
+      "section_id": "comm_laws_0035",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/35-764c-768e.json",
+        "sha256": "5e51cc5978ea35e5d6c729b4abab0d417e23fdddb2ebf1596192e186328078d7"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0035",
+          "title": "Civic formation and differentiated judgment",
+          "body": "Education is presented as the greatest of the city’s highest offices, because early formation is treated as decisive. The courts then distribute judgment by kind of case, not through one three-tier ladder: private disputes have a third-stage common court whose judges are selected by the offices, while private suits use tribal courts with jurors chosen by lot. Public indictments give the people the beginning and end of trial, with examination by three high offices.",
+          "cites": {
+            "observations": [
+              "obs_laws_0700"
+            ],
+            "claims": [
+              "claim_laws_0472",
+              "claim_laws_0474",
+              "claim_laws_0476"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "36-769a-771e",
+      "section_id": "comm_laws_0036",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/36-769a-771e.json",
+        "sha256": "21c5edb48ab3d3a358fd5c7ab00c4ec63ef587d9f32b99091f7bfc920e9e3dd0"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0036",
+          "title": "The lawgiver’s unfinished work",
+          "body": "Read this passage as a test of whether legislation can survive its maker. The painter analogy proposes that a work meant to improve needs a successor who can repair damage and finish what its maker missed. The Athenian turns that condition into a civic task: because the founders are old and the guardians young, the guardians must become future legislators and law-guardians, filling out the laws’ outline.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_laws_0478",
+              "claim_laws_0480",
+              "claim_laws_0482",
+              "claim_laws_0483"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "37-772a-776b",
+      "section_id": "comm_laws_0037",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/37-772a-776b.json",
+        "sha256": "123d1a1715a033298938215e1451e4d9599f314f10d88506f55e14e241e9ef26"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0037",
+          "title": "The limit of written marriage law",
+          "body": "The important turn here is not a list of wedding regulations but a limit on what written law can accomplish. A man becomes eligible at twenty-five and must marry before thirty-five, yet he is first given a prelude on how to seek what is fitting. The city wants marriages to temper wealth and character, but the result in children cannot be directly seen; persuasion and reproach therefore do work that blunt compulsion cannot.",
+          "cites": {
+            "observations": [
+              "obs_laws_0728"
+            ],
+            "claims": [
+              "claim_laws_0494",
+              "claim_laws_0495",
+              "claim_laws_0496"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "38-776c-780e",
+      "section_id": "comm_laws_0038",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/38-776c-780e.json",
+        "sha256": "10840721e5f6cedf4d8ffe5ad05d2d1d42f82e8e98e325dc9ffa41b0c4e02137"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0038",
+          "title": "When law must become lived practice",
+          "body": "One way to hear this whole turn is as a test of whether law can become lived practice. It begins with a dispute that is both practical and verbal—what is said about slaves cuts against need and follows it—and sharpens into a demand that conduct toward the powerless reveal genuine justice. The later shift to the new city distinguishes the order of speaking from the order of building. The question is not whether a rule sounds orderly, but whether people can inhabit it.",
+          "cites": {
+            "observations": [
+              "obs_laws_0737",
+              "obs_laws_0744"
+            ],
+            "claims": [
+              "claim_laws_0515"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "39-781a-785b",
+      "section_id": "comm_laws_0039",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/39-781a-785b.json",
+        "sha256": "da3839e347008653a3b6de09cfcced9ab5f194cbd25beeb8e4579493fdf967ad"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0039",
+          "title": "A Reforming Ideal Meets Civic Habit",
+          "body": "Here the Athenian turns women’s common meals into a test of legislation: he calls their omission an error and proposes practices shared by women and men for the city’s happiness. But the proposal is not presented as universally ready to impose. Where a city has not recognized common meals at all, even mentioning public eating for women would meet resistance. The passage holds reforming principle against institutional circumstance.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_laws_0524",
+              "claim_laws_0527",
+              "claim_laws_0528"
+            ],
+            "relations": [
+              "rel_laws_0154"
+            ],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "41-793e-799e",
+      "section_id": "comm_laws_0041",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/41-793e-799e.json",
+        "sha256": "6d8b2471bc91805e39b51b64e12757f148b7d2748495c90e3c24ba89cf912f2a"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0041",
+          "title": "Play as the first civic discipline",
+          "body": "The Athenian treats children’s play as the first place where civic order can be learned, not as a harmless interval before education. From ages three to six, children gather for shared games at village shrines, while nurses and appointed women supervise their conduct. I read this arrangement as a political decision: the city begins shaping common habits precisely where children experience themselves as merely playing.",
+          "cites": {
+            "observations": [
+              "obs_laws_0796",
+              "obs_laws_0797"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "44-810d-817e",
+      "section_id": "comm_laws_0044",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/44-810d-817e.json",
+        "sha256": "d80b873a78cb7037fd40be639f8cdc3639f504a662ac6eea0ef92948040ba910"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0044",
+          "title": "A standard for selective reading",
+          "body": "The issue here is not a ban on poetry but a test for what young people should absorb. The Athenian warns that memorizing whole poets or anthologies is dangerous because poets speak both well and badly. He therefore makes the Laws’ own measured speeches a model, while allowing other verse or prose only when it is genuinely akin to them. Read the move as a demand for selection, not as a rejection of poetry.",
+          "cites": {
+            "observations": [
+              "obs_laws_0857",
+              "obs_laws_0858"
+            ],
+            "claims": [
+              "claim_laws_0639",
+              "claim_laws_0640",
+              "claim_laws_0641"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "46-822e-824a",
+      "section_id": "comm_laws_0046",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/46-822e-824a.json",
+        "sha256": "9ddc607d09dd3046addc23da5225f243a39c33af2b69c00ec71bdcb80675df1e"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0046",
+          "title": "Praise, blame, and bounded permission",
+          "body": "Here hunting tests the lawgiver’s two registers: praise and blame shape the young, while the final rule marks actual permissions. The preferred hunt is not merely horse and hound but quadruped pursuit using horses, dogs, and the hunter’s own body. Yet fowling and water-hunting are not simply banned: each remains allowed in specified places and under stated restrictions.",
+          "cites": {
+            "observations": [
+              "obs_laws_0890",
+              "obs_laws_0895"
+            ],
+            "claims": [
+              "claim_laws_0689"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "47-828a-835d",
+      "section_id": "comm_laws_0047",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/47-828a-835d.json",
+        "sha256": "ce4059ee410bc1c9b0bbfa035e37b15c99969f901e2d43c68b864a6a13ea2864"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0047",
+          "title": "Peace as the training ground",
+          "body": "Here the Athenian turns peace from the opposite of war into its training ground. A good city’s peaceful life is not secured by neglecting conflict, but by rehearsing it while peace still holds: monthly campaigns, festive battles, and the athlete’s daily practice prepare citizens for the real contest over their lives, children, property, and city.",
+          "cites": {
+            "observations": [
+              "obs_laws_0900",
+              "obs_laws_0901",
+              "obs_laws_0903"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "48-835e-842a",
+      "section_id": "comm_laws_0048",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/48-835e-842a.json",
+        "sha256": "dba949fc970bbec3bdb261c72ea8afe38a4d2c585853aaa7ec9b6cb2c958e74a"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0048",
+          "title": "The virtue test for erotic law",
+          "body": "The section tests erotic law by its contribution to virtue. A nature-based argument is acknowledged as potentially persuasive but misaligned with the interlocutors’ cities; the Athenian then asks what the practice contributes to virtue. After distinguishing body-, soul-, and mixed-oriented loves, he frames the legal choice as selective. An adjacent example makes enforcement concrete: an unwritten norm gains force when the whole city repeats its shameful, god-hated character.",
+          "cites": {
+            "observations": [
+              "obs_laws_0916",
+              "obs_laws_0917",
+              "obs_laws_0920",
+              "obs_laws_0921"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "49-842b-850d",
+      "section_id": "comm_laws_0049",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/49-842b-850d.json",
+        "sha256": "597a00ce17181adbee935824ab59c7cec35a1ca9b0a990874a5e3cf77e1a4761"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0049",
+          "title": "Land-based sustenance, then agricultural law",
+          "body": "Here the Stranger links institutional design to the city’s material base: most Greek cities draw sustenance from land and sea, whereas this city is described as land-based. He therefore says the legislator can leave many maritime and commercial matters aside and turn to agriculture. That is narrower than a general ban on trade: the passage presents a legislative focus, then begins agricultural law with boundary protection before divine and civic judgment.",
+          "cites": {
+            "observations": [
+              "obs_laws_0934",
+              "obs_laws_0935",
+              "obs_laws_0936"
+            ],
+            "claims": [
+              "claim_laws_0746",
+              "claim_laws_0747"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "50-853a-857e",
+      "section_id": "comm_laws_0050",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/50-853a-857e.json",
+        "sha256": "bc46f5ea72a868c834516ece1f7916028ed4440e8f9afc6e9e7362e4721d624b"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0050",
+          "title": "When education must admit a limit",
+          "body": "Here the lawgiver confronts a limit in the city’s educational hope. A well-raised citizen is not expected to commit sacrilege, yet human beings may prove resistant even to strong laws, so the city must legislate for that failure. The prelude before the penalty is the key: law first addresses disordered desire and directs it toward rites and good company. Read the ensuing punishments as the boundary of education, not its simple replacement.",
+          "cites": {
+            "observations": [
+              "obs_laws_0955",
+              "obs_laws_0957",
+              "obs_laws_0958",
+              "obs_laws_0959"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "51-858a-864c",
+      "section_id": "comm_laws_0051",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/51-858a-864c.json",
+        "sha256": "baea4c59db8206df2555309fe721324d45886a1723759b3799d8f4d3acfdcdd6"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0051",
+          "title": "Retaining the legal distinction, refining its meaning",
+          "body": "The Athenian does not discard the law’s voluntary/involuntary categories. He insists that they must be defined before penalties can be judged, then separates harm from injustice: an unwilled injury is not automatically an injustice, and law must repair damage while trying to restore civic friendship. The shift is therefore not replacement, but clarification.",
+          "cites": {
+            "observations": [
+              "obs_laws_0978",
+              "obs_laws_0979"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "52-864d-874d",
+      "section_id": "comm_laws_0052",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/52-864d-874d.json",
+        "sha256": "fd691337d2a9367aa74659e65cfb9d2bb2576e29652f10b6ae97caf9e8b6612e"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0052",
+          "title": "Agency, not a binary",
+          "body": "Listen for the code’s governing question: not simply whether a death occurred, but what kind of agency produced it. The law limits penalties for acts committed in a diminished condition while retaining a distinct homicide consequence, and it places anger-killings between voluntary and involuntary homicide. One way to read the stretch is as a search for proportion, not a single rule for every killing.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_laws_0831",
+              "claim_laws_0838"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "54-884a-888e",
+      "section_id": "comm_laws_0054",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/54-884a-888e.json",
+        "sha256": "a995ad4b39028502ba19a8c50f7b368fdf1caa5c9dd74916fc6ec5828b373f01"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0054",
+          "title": "When law must persuade",
+          "body": "At 885b, the legal catalogue turns into a diagnosis: impiety is presented through three positions—denying gods, denying their care for humans, or treating them as persuadable by sacrifice and prayer. The imagined offenders demand persuasion before threats, while Clinias says a persuasive theological prelude matters more than brevity. One way to hear the shift is as a test of law’s reach: before punishing conduct, it must address the beliefs behind it.",
+          "cites": {
+            "observations": [
+              "obs_laws_1036",
+              "obs_laws_1038",
+              "obs_laws_1041"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "55-889a-893a",
+      "section_id": "comm_laws_0055",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/55-889a-893a.json",
+        "sha256": "819e9f09fec59746d6bfbdca1870de859167a255930e4a95fb613c1e0d260c9f"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0055",
+          "title": "From cosmology to civic persuasion",
+          "body": "Read this section as a movement from explanation to legislation. The reported account explains the elements and living things without mind, god, or art, treats gods and justice as products of convention, and connects that teaching with force, impiety, and faction. The Athenian then poses, rather than settles, whether law should pair penalties with persuasion.",
+          "cites": {
+            "observations": [
+              "obs_laws_1046",
+              "obs_laws_1049",
+              "obs_laws_1050",
+              "obs_laws_1051"
+            ],
+            "claims": [
+              "claim_laws_0892",
+              "claim_laws_0895",
+              "claim_laws_0896",
+              "claim_laws_0897"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "56-893b-899d",
+      "section_id": "comm_laws_0056",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/56-893b-899d.json",
+        "sha256": "d6af6e1fdfb473d7c28af92b8d9dfb9812688485cbd47df3f8f8a30278393b84"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0056",
+          "title": "From motion to soul",
+          "body": "One way to hear this unit is as a shift from classification to priority. The exchange first sorts motion by place and encounter, then adds two kinds expressly for the inquiry into soul. Self-moving motion is promoted to first and strongest because a chain of motions moved by others cannot supply its beginning. Soul is then identified with that motion and placed before body.",
+          "cites": {
+            "observations": [
+              "obs_laws_1059",
+              "obs_laws_1061",
+              "obs_laws_1062",
+              "obs_laws_1064",
+              "obs_laws_1065"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "58-905e-910d",
+      "section_id": "comm_laws_0058",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/58-905e-910d.json",
+        "sha256": "a89cc941def9b2d7203b6383599cb64da959b0d3e942cdc3e2456c87fd1dc1ad"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0058",
+          "title": "The third proposition: divine justice is not for sale",
+          "body": "Here the argument tests its third proposition: that gods cannot be turned aside from justice by gifts. The Athenian makes the contrary picture absurd by comparing bribable gods to wolves taming dogs with stolen plunder, and to pilots or charioteers who betray their task. He then asks whether the three propositions have been adequately demonstrated; Kleinias agrees. The passage presents this as their conclusion; the record does not independently verify the earlier proofs.",
+          "cites": {
+            "observations": [
+              "obs_laws_1088",
+              "obs_laws_1089"
+            ],
+            "claims": [
+              "claim_laws_0984"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "59-913a-920c",
+      "section_id": "comm_laws_0059",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/59-913a-920c.json",
+        "sha256": "31176c83769559407e685aed993927a3008c6ef70adb68c05be6906e81c9999e"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0059",
+          "title": "When law withdraws its protection",
+          "body": "This unit repeatedly makes legal protection depend on public procedure rather than private trust. A disputed object is kept with magistrates until judgment; an exchange made outside the appointed market or without immediate payment is left to the parties’ confidence, not ordinary legal action. One way to read the pattern is that the law protects commerce by making its conditions visible before the bargain is made.",
+          "cites": {
+            "observations": [
+              "obs_laws_1102",
+              "obs_laws_1106"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "61-926e-932d",
+      "section_id": "comm_laws_0061",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/61-926e-932d.json",
+        "sha256": "de145f25459d130c8db031c88f5275082cd5445ca707041c2e542ea232b22f19"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0061",
+          "title": "Making family protection public",
+          "body": "The governing thread here is the publicization of family protection. Orphanhood is framed as a second birth: law-guardians stand in for begetters, while guardians must care for the ward no less than for their own children; neglect is exposed to penalties and suits. The same principle governs disowning: a father cannot sever a son by private anger alone, but must face a kin-group hearing, equal replies, and a majority vote. One way to read the sequence is that household authority remains real, but never wholly private.",
+          "cites": {
+            "observations": [
+              "obs_laws_1135",
+              "obs_laws_1138",
+              "obs_laws_1139",
+              "obs_laws_1141"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "62-932e-938c",
+      "section_id": "comm_laws_0062",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/62-932e-938c.json",
+        "sha256": "f3948492bd3621c4b1de1b7890de4c053a231d9fe8c389c6efced4216bd6a2ab"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0062",
+          "title": "From hidden harm to public speech",
+          "body": "One way to hear the governing movement of this stretch is as a widening account of harm: from bodily poisoning and ritual practices that persuade both would-be agents and frightened victims, to penalties calibrated by expertise and future correction. The rule against reviling turns dispute toward teaching; the later bans on public ridicule and comic treatment extend that concern into civic speech and performance.",
+          "cites": {
+            "observations": [
+              "obs_laws_1153",
+              "obs_laws_1155",
+              "obs_laws_1156",
+              "obs_laws_1158",
+              "obs_laws_1159",
+              "obs_laws_1160"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "63-941a-945b",
+      "section_id": "comm_laws_0063",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/63-941a-945b.json",
+        "sha256": "48e4bb3259cff32a594e7a5eb0e9c37b4e276e861ca1ffbb5af3a963cfdfce90"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0063",
+          "title": "Judging the kind of fault",
+          "body": "The section’s governing question is not the size of the violation or the bare fact of loss, but the kind of fault the case reveals. Public theft is judged through the offender’s supposed curability, while arms-loss is divided between voluntary abandonment and forcible deprivation. That distinction is the unit’s legal and moral hinge.",
+          "cites": {
+            "observations": [
+              "obs_laws_1170"
+            ],
+            "claims": [
+              "claim_laws_1081"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "64-945c-949e",
+      "section_id": "comm_laws_0064",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/64-945c-949e.json",
+        "sha256": "03f21454878d156b4f051242becd59a13b6b61e89507488e7acc0269519d02f2"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0064",
+          "title": "Making a ruler of rulers",
+          "body": "Here the Athenian makes the auditor a “ruler of rulers”: the office must exceed the officials it judges in virtue, not merely outrank them. Then comes the revealing compromise. This supposedly superior authority is assembled through public nomination, voting, age rules, and lot. I hear the passage testing whether a city can institutionalize moral superiority without pretending that civic selection has made its candidates divine.",
+          "cites": {
+            "observations": [
+              "obs_laws_1181",
+              "obs_laws_1183"
+            ],
+            "claims": [
+              "claim_laws_1087",
+              "claim_laws_1090"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "65-950a-953e",
+      "section_id": "comm_laws_0065",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/65-950a-953e.json",
+        "sha256": "e45a7748b4f8315c72d7513966be8b9d7dddcb8f27f413f4b9f1a3ae85b22473"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0065",
+          "title": "The city’s gate has rules",
+          "body": "Read this passage as a case for controlled contact, not isolation. The danger is the ungoverned introduction of innovations into a well-ordered city; total refusal would also make it appear harsh. Ordinary private travel is barred below forty, while public missions remain possible. More deliberate inspection belongs to reputable citizens over fifty and under sixty, who return to confirm sound laws and correct omissions—not to copy foreign practices wholesale.",
+          "cites": {
+            "observations": [
+              "obs_laws_1195",
+              "obs_laws_1196",
+              "obs_laws_1198"
+            ],
+            "claims": [
+              "claim_laws_1109"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "66-954a-958c",
+      "section_id": "comm_laws_0066",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/66-954a-958c.json",
+        "sha256": "1cf607fec20bb53d1bf50caaa5241b1641cc77f9127784c91a764b7cfad4da11"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0066",
+          "title": "Keeping legal power public",
+          "body": "This long run can be heard as a test of whether private advantage may bend public process. The searcher must swear and search naked or ungirt; forceful obstruction can void a proceeding and trigger penalties; and service to the fatherland must be performed without gifts. One way to read the sequence is that law protects trust by making access, procedure, and public service answerable to the common rule.",
+          "cites": {
+            "observations": [
+              "obs_laws_1206",
+              "obs_laws_1208"
+            ],
+            "claims": [
+              "claim_laws_1123"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "laws",
+      "unit_key": "67-958d-960b",
+      "section_id": "comm_laws_0067",
+      "audit_output": {
+        "path": "scratch/commentary/audits/laws/67-958d-960b.json",
+        "sha256": "b7076a2a31925994fc5817cca7c9e528cd8c0fad5d9c950caff791e994810e7b"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_laws_0067",
+          "title": "Funeral law as a discipline of the living",
+          "body": "Across this unit, funeral law keeps death from taking more than the living can spare: graves are kept off workable soil, monuments and spending are capped, and public mourning is confined. The passage then states its rationale: the dead cannot receive great help, so relatives should have helped while the person was alive. I hear the whole passage as a law of proportion—grief is permitted, but it must not impoverish the living.",
+          "cites": {
+            "observations": [
+              "obs_laws_1218",
+              "obs_laws_1219",
+              "obs_laws_1221",
+              "obs_laws_1222"
+            ],
+            "claims": [
+              "claim_laws_1136"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_laws_0001",
+      "body": "```yaml\ncommentary_id: comm_laws_0001\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"A god takes the credit\"\nstephanus_span: 624a-625c\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 624a-625c\n  start_marker: 624a\n  end_marker: 625c\n  start_char: 5\n  end_char: 1741\n  text_sha256: \"10658b569fb92d752244d346fd33c464d07f134d5441d8f094e259fd00b00e66\"\nbody: \"Three old men — an Athenian stranger, the Cretan Kleinias, the Spartan Megillos — walk from Knossos toward the cave of Zeus. The dialogue's first word asks whether a god or a human being originated their laws, and the long summer road becomes the excuse for a conversation about lawgiving itself.\"\ncites:\n  observations: [\"obs_laws_0001\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0002",
+      "body": "```yaml\ncommentary_id: comm_laws_0002\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"The war thesis and its collapse inward\"\nstephanus_span: 625d-627e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 625d-627e\n  start_marker: 625d\n  end_marker: 627e\n  start_char: 1741\n  end_char: 6623\n  text_sha256: \"e19014fc13f3dfcab680e5772af32537e7e5317fc5491c198af9dd189fe6091b\"\nbody: \"Kleinias explains Cretan institutions as armament for a war of all cities against all, then extends the thesis inward: village against village, man against man, each man against himself. The Athenian takes control of the procedure and turns victory-over-self into a puzzle about what a good legislator should really aim at.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"dramatic_case_setup/legislative_purpose_framed\", \"dramatic_case_setup/central_thesis_restated_by_respondent\", \"turn_geometry/explicit_procedure_control\", \"dramatic_case_setup/initial_question_stated\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0003",
+      "body": "```yaml\ncommentary_id: comm_laws_0003\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Reconciliation over victory: the legislator's true target\"\nstephanus_span: 628a-632d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 628a-632d\n  start_marker: 628a\n  end_marker: 632d\n  start_char: 6623\n  end_char: 16296\n  text_sha256: \"da3e8a2b3dccb4c9a6f62d694729ffb4e08687727a74949af250f75e18f93af3\"\nbody: \"The Athenian forces a choice between the judge who destroys and the one who reconciles, corrects Tyrtaeus's poetry, and reorders the goods: divine goods led by prudence above human goods led by health. Lawgiving is recast as a comprehensive craft that looks to the whole of virtue.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"elenchus/forced_alternative\", \"prosopography/legislator_role_constraint\", \"myth_demarcation/poetic_citation_as_argument\", \"definition_ladder/definition_by_dichotomous_division\", \"craft_analogy/lawgiving_expertise_as_techne\", \"closure_type/reward_discussion_transition\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0004",
+      "body": "```yaml\ncommentary_id: comm_laws_0004\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Testing courage against pleasure, not only pain\"\nstephanus_span: 632e-634d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 632e-634d\n  start_marker: 632e\n  end_marker: 634d\n  start_char: 16296\n  end_char: 20245\n  text_sha256: \"6b1e2a6097ff8b4ec50fc8e5cfd94f2980de215253175f21baf44cae02d99ab7\"\nbody: \"The virtues are enumerated and the Dorian institutions catalogued as trainings in endurance. The Athenian then narrows the scope: courage should resist not only pains but pleasures, which soften men like wax — and Crete and Sparta have no institution that drills this second front.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"definition_ladder/virtue_parts_enumerated\", \"definition_ladder/characteristic_catalogue_for_definiendum\", \"craft_analogy/material_softening_analogy\", \"elenchus/scope_delimitation\", \"craft_analogy/military_craft_analogy_for_virtue\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0005",
+      "body": "```yaml\ncommentary_id: comm_laws_0005\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Criticizing the fatherland's laws politely\"\nstephanus_span: 634e-637e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 634e-637e\n  start_marker: 634e\n  end_marker: 637e\n  start_char: 20245\n  end_char: 26692\n  text_sha256: \"cfc02191c246dbf890f140d4f576072ecab3ff08ade0ad7f42e7014fc08debb7\"\nbody: \"Under the shelter of a rule that old men may criticize laws when no young men listen, the discussion turns to pleasure regimes: common meals, gymnastics, and their unintended corruptions, including the argument from nature about eros. Customs of Scythians, Persians, and others are marshaled against Spartan confidence.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"craft_analogy/bodily_psychic_condition_parallel\", \"nature_pleasure_norm/pleasure_nature_distinction\", \"dramatic_case_setup/sparta_as_dramatic_touchstone\", \"comparative_ethnography/ethnographic_custom_cited_in_argument\", \"turn_geometry/common_opinion_deployed_as_challenge\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0006",
+      "body": "```yaml\ncommentary_id: comm_laws_0006\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"A practice is judged by its use: the ruled drinking party\"\nstephanus_span: 638a-641a\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 638a-641a\n  start_marker: 638a\n  end_marker: 641a\n  start_char: 26692\n  end_char: 33002\n  text_sha256: \"cc9fb9af366bfd66247b112f96e641ddae1596ee3ffb254b7da21b2bc4ab47ee\"\nbody: \"Against judging institutions by battlefield outcomes, the Athenian insists a practice must be assessed by its correct use under a knowing ruler — as with goats, ships, and armies. The unruled symposium proves nothing; the question becomes what a rightly governed drinking party could contribute to education.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"turn_geometry/explicit_procedure_control\", \"craft_analogy/humble_craft_as_methodological_paradigm\", \"craft_analogy/herdsman_governance_analogy\", \"craft_analogy/expert_craft_analogy\", \"turn_geometry/dense_assent_chain\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0007",
+      "body": "```yaml\ncommentary_id: comm_laws_0007\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Education defined; the soul as a divine puppet\"\nstephanus_span: 641b-645c\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 641b-645c\n  start_marker: 641b\n  end_marker: 645c\n  start_char: 33002\n  end_char: 41927\n  text_sha256: \"7afb9cba14ec759f0222e84ea8a73427116812a14e8d17ce4d125a843522d998\"\nbody: \"After a self-conscious pause about Athenian talkativeness and mutual disclosures of goodwill, education is defined as the right training of pleasures and pains toward virtue. The famous image follows: each of us is a puppet of the gods, pulled by hard iron cords of passion and the soft golden cord of calculation, which law must assist.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"dramatic_case_setup/topic_transition_marked\", \"irony_marker/knowledge_disavowal\", \"prosopography/speaker_self_disclosure\", \"definition_ladder/definition_proposed\", \"definition_ladder/definition_established_by_assent_chain\", \"myth_demarcation/myth_logos_boundary\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0008",
+      "body": "```yaml\ncommentary_id: comm_laws_0008\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Wine as a cheap and safe test of souls\"\nstephanus_span: 645d-650b\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 645d-650b\n  start_marker: 645d\n  end_marker: 650b\n  start_char: 41927\n  end_char: 51352\n  text_sha256: \"b2360e3da02facde8a7a5c2b1befab1f6f1bbeeea5745b599bdc102e828ed13d\"\nbody: \"The book closes its defense of the symposium: wine intensifies pleasures and boldness, and drinking under a sober commander becomes a controlled test of self-restraint. The Athenian imagines a fear-drug as its counterpart, arguing that character can be examined and trained at little cost or risk.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"elenchus/assent_chain\", \"definition_ladder/definition_by_opposition\", \"elenchus/testing_as_criterion\", \"turn_geometry/addressee_shift\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0010",
+      "body": "```yaml\ncommentary_id: comm_laws_0010\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Consecrating the tunes: the Egyptian precedent\"\nstephanus_span: 655c-658e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 655c-658e\n  start_marker: 655c\n  end_marker: 658e\n  start_char: 56699\n  end_char: 64078\n  text_sha256: \"7553289baec1b8d9eb72ee1ed026a58087800549821984124585b14c33374df1\"\nbody: \"What counts as fine in posture and melody, and why do audiences disagree? Egypt is cited as the regime that consecrated correct forms ten thousand years ago, forbidding innovation. The theater's habit of judging by the pleasure of whoever happens to be present is set up for demolition.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"comparative_ethnography/ethnographic_custom_cited_in_argument\", \"dramatic_case_setup/music_censorship_program\", \"definition_ladder/criterion_for_evaluative_classification\", \"turn_geometry/explicit_procedure_control\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0011",
+      "body": "```yaml\ncommentary_id: comm_laws_0011\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"The judge educates the audience; the just life is pleasantest\"\nstephanus_span: 659a-662c\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 659a-662c\n  start_marker: 659a\n  end_marker: 662c\n  start_char: 64078\n  end_char: 71369\n  text_sha256: \"27b0629a354462110f29b073b24413be489c09d1e239f3ed553ea642d4ae7777\"\nbody: \"Judgment in music belongs to the best and best-educated, not the crowd; the poet composes under civic constraint. Then the harder thesis: the just life must be taught as the most pleasant, whether or not it is true — with the goods catalogue inverted for the unjust man.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"music_censorship_program/musical_judgment_authority_restricted\", \"definition_ladder/goods_catalogue_compiled\", \"elenchus/ethical_inversion_maxim\", \"poetry_civic_filter/poetry_civic_filter\", \"ethical_inversion_maxim/ethical_inversion_maxim\", \"dramatic_case_setup/poetry_exclusion_frame\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0012",
+      "body": "```yaml\ncommentary_id: comm_laws_0012\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"The lawgiver's most useful story and the three choruses\"\nstephanus_span: 662d-666d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 662d-666d\n  start_marker: 662d\n  end_marker: 666d\n  start_char: 71369\n  end_char: 80326\n  text_sha256: \"4a385426bfea246565aef8732ed4d267a0742e5af45bf234313f6e1f46bb402d\"\nbody: \"The Athenian argues the lawgiver would tell this beneficial doctrine even as a story, citing the Sidonian tale as proof of what persuasion can accomplish. The city's whole population is organized into three choruses — children, the young, and the elders of Dionysus, who need wine to loosen their reluctant song.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"dramatic_case_setup/lawgiver_persuasive_method_stated\", \"dramatic_case_setup/myth_censorship_program\", \"myth_demarcation/mythic_exemplum_in_argument\", \"definition_ladder/definition_proposed\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0013",
+      "body": "```yaml\ncommentary_id: comm_laws_0013\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Music as imitation: charm is not the criterion\"\nstephanus_span: 666e-671a\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 666e-671a\n  start_marker: 666e\n  end_marker: 671a\n  start_char: 80326\n  end_char: 89485\n  text_sha256: \"876dc6d33e1a37ed8e2dc459909603f915383a2ded5cfdc89f53360368c987ac\"\nbody: \"What makes music correct? All music is imitation, so its judge must know what was imitated, whether truly rendered, and whether rendered well — pleasure alone is rejected as the standard. This triple criterion demands knowers, not crowds, and explains why the elder chorus must be the best educated.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"craft_analogy/criterion_triad_applied_to_crafts\", \"craft_analogy/pleasure_imitation_criterion_rejected\", \"craft_analogy/mimesis_appearance_reality_distinction\", \"craft_analogy/music_speech_charm_comparison\", \"music_censorship_program/musical_judgment_authority_restricted\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0014",
+      "body": "```yaml\ncommentary_id: comm_laws_0014\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Drunkenness disciplined; the prelude ends\"\nstephanus_span: 671b-674c\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 671b-674c\n  start_marker: 671b\n  end_marker: 674c\n  start_char: 89485\n  end_char: 96331\n  text_sha256: \"ff947ded38352f885ce7e795226e35ba6fa55422e1162aa2180255974164b7ee\"\nbody: \"The drinking party gets its law: sober generals over drunken troops, age thresholds for wine, and a corrected common opinion about Dionysus's gift. With a courteous recapitulation the long defense of symposia closes, and the argument marks its own transition away from wine altogether.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"dramatic_case_setup/age_restriction_on_drinking_oversight\", \"elenchus/common_opinion_corrected\", \"turn_geometry/recapitulation_or_restart\", \"irony_marker/mock_deference\", \"closure_type/argument_transition_marker\", \"myth_demarcation/myth_logos_hedge\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0015",
+      "body": "```yaml\ncommentary_id: comm_laws_0015\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"After the flood: regimes grow from ruins\"\nstephanus_span: 676a-681e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 676a-681e\n  start_marker: 676a\n  end_marker: 681e\n  start_char: 96331\n  end_char: 107284\n  text_sha256: \"19f6c146a950f5fdcece6db0f8f7320538065fe9e5a1a7df8afa5512f148241d\"\nbody: \"Book 3 restarts from an immense question: what is the origin of political regimes? Periodic cataclysms destroy cities and arts, leaving simple hill-dwelling survivors without writing or law. From patriarchal clans to the first walled settlements, the sequence of constitutional forms is reconstructed with Homer called as witness.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"dramatic_case_setup/initial_question_stated\", \"myth_demarcation/natural_disaster_chronology_argument\", \"myth_demarcation/catastrophic_destruction_narrative\", \"craft_analogy/craft_transmission_doubt\", \"definition_ladder/constitutional_form_named\", \"dramatic_case_setup/city_foundation_sequence\", \"myth_demarcation/poetic_authority_cited_in_argument\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0017",
+      "body": "```yaml\ncommentary_id: comm_laws_0017\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"The greatest ignorance: hating what one judges good\"\nstephanus_span: 686c-689e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 686c-689e\n  start_marker: 686c\n  end_marker: 689e\n  start_char: 116288\n  end_char: 123551\n  text_sha256: \"0066714550d760895daf62f3fcd83e85b9f0ec1ab10540dfbf2aec101cd3243b\"\nbody: \"Why did two of the three kingdoms fail? Not from cowardice but from ignorance of the greatest human matters — the dissonance in a soul that loves what it judges bad. Wisdom is redefined as consonance between judgment, desire, and affection, and prayer itself becomes dangerous without it.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"irony_marker/knowledge_disavowal\", \"elenchus/elimination_of_alternatives\", \"definition_ladder/virtue_parts_enumerated\", \"proverb_citation/proverbial_formula_cited\", \"definition_ladder/definition_proposed\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0018",
+      "body": "```yaml\ncommentary_id: comm_laws_0018\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Seven claims to rule and the medicine of mixture\"\nstephanus_span: 690a-693e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 690a-693e\n  start_marker: 690a\n  end_marker: 693e\n  start_char: 123551\n  end_char: 131482\n  text_sha256: \"2f3d32297f68e2a5a92c54da5f1b2a8a2f279d381ebf0558f05eb2dfe0e25f34\"\nbody: \"The competing titles to rule — parents, the noble, the elder, masters, the stronger, the wise, the lucky — are catalogued as a standing cause of faction. Sparta survived because a god, or a diagnostician of political disease, diluted its kingship; unmixed authority is declared fatal, and mixture required.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"definition_ladder/characteristic_catalogue_for_definiendum\", \"craft_analogy/political_pathology_medical_analogy\", \"myth_demarcation/divine_causation_with_logos_hedge\", \"dramatic_case_setup/theological_type_established\", \"prosopography/historical_exemplum_in_argument\", \"constitutional_typology/mixed_constitution_required\", \"definition_ladder/constitutional_form_named\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0019",
+      "body": "```yaml\ncommentary_id: comm_laws_0019\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Persia: freedom lost to excessive mastery\"\nstephanus_span: 694a-697e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 694a-697e\n  start_marker: 694a\n  end_marker: 697e\n  start_char: 131482\n  end_char: 139249\n  text_sha256: \"46f0765553a5bb30680b7053b3fda30bec603dc649af71dedb32f88717ce4862\"\nbody: \"Persia under Cyrus balanced mastery and freedom, then decayed: royal sons raised by women and eunuchs in luxury became Cambyses and Xerxes. The Athenian reads imperial decline as an education failure and reorders civic honors — goods of the soul first, body second, property last.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"education_regime_contrast/harsh_ancestral_vs_luxurious_corrupted_education\", \"prosopography/ethical_type_profile\", \"prosopography/historical_exemplum_in_argument\", \"definition_ladder/ranked_goods_hierarchy\", \"definition_ladder/virtue_unified_under_one_heading\", \"political_regime_diagnosis/rulers_private_interest_replaces_common_good\", \"turn_geometry/respondent_cannot_answer\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0024",
+      "body": "```yaml\ncommentary_id: comm_laws_0024\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"The age of Cronus: why law must rule the rulers\"\nstephanus_span: 712b-715d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 712b-715d\n  start_marker: 712b\n  end_marker: 715d\n  start_char: 165096\n  end_char: 172489\n  text_sha256: \"fbaafae055787327f79c04a1adb52a69bb09a2a1a2d9b57611861f0dd4baab10\"\nbody: \"Asked which regime to found, the Athenian invokes the gods and tells of Cronus, who set daimons over men because no human nature can hold absolute power without corruption. Existing regimes are mere factions; the true city names its rulers servants of the laws.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"myth_demarcation/divine_assistance_invoked\", \"definition_ladder/constitutional_form_named\", \"myth_demarcation/myth_purpose_explicitly_stated\", \"myth_demarcation/mythic_narrative_transition\", \"mythological_scaling/divine_vs_human_ruler_contrast\", \"definition_ladder/definition_proposed\", \"political_regime_diagnosis/rulers_private_interest_replaces_common_good\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0027",
+      "body": "```yaml\ncommentary_id: comm_laws_0027\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"After the gods, the soul: honor rightly ordered\"\nstephanus_span: 726a-729a\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 726a-729a\n  start_marker: 726a\n  end_marker: 729a\n  start_char: 189760\n  end_char: 194570\n  text_sha256: \"571084d52fe5af932edd62df8313da098afccae643dfca251b39b532ce5170ab\"\nbody: \"Book 5 continues the great prelude. Of one's possessions the soul is most divine and second only to the gods — yet most people dishonor it precisely when they think they are honoring it, by gratifying it. The triad of soul, body, and property is ranked and each false honor corrected.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"definition_ladder/ranked_goods_hierarchy\", \"soul_honor_correction/apparent_soul_honor_reclassified_as_harm\", \"elenchus/soul_body_value_asymmetry\", \"definition_ladder/criterion_for_evaluative_classification\", \"tripartite_classification/possessions_body_soul_triad\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0028",
+      "body": "```yaml\ncommentary_id: comm_laws_0028\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Truth, moderation, and the arithmetic of pleasure\"\nstephanus_span: 729b-734e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 729b-734e\n  start_marker: 729b\n  end_marker: 734e\n  start_char: 194570\n  end_char: 206747\n  text_sha256: \"85a0a388f6c18395433a8554ada18aa633eac0d163bab185ed02b795ba715d1d\"\nbody: \"The address widens to conduct toward children, kin, strangers, and suppliants, then praises truthfulness and warns against excessive self-love, the source of every man's misjudgments. It closes by arguing on hedonic grounds alone that the moderate life outweighs the dissolute one in pleasure — persuasion aimed at unbelievers.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"myth_demarcation/divine_invocation_to_human_discourse_transition\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0029",
+      "body": "```yaml\ncommentary_id: comm_laws_0029\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Purging the flock and fixing the number\"\nstephanus_span: 735a-738e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 735a-738e\n  start_marker: 735a\n  end_marker: 738e\n  start_char: 206747\n  end_char: 214943\n  text_sha256: \"580f56270b0e38967dc08acc9b1f8f33065e80390e9014a33b369ab6349b3ae0\"\nbody: \"Legislation proper begins with the founder's advantage: like a herdsman, he can select his stock, purging the incurable gently or otherwise. The citizen households are fixed at 5,040 — a number chosen for its divisibility — and existing shrines and rites are left deliberately untouched.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"dramatic_case_setup/city_foundation_sequence\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0030",
+      "body": "```yaml\ncommentary_id: comm_laws_0030\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"The first-best city and the second sailing\"\nstephanus_span: 739a-743e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 739a-743e\n  start_marker: 739a\n  end_marker: 743e\n  start_char: 214943\n  end_char: 225700\n  text_sha256: \"fd78a2ac173609e01c63f9b85568c786bb7b4cae8f0c7cdf92cd092a903362f3\"\nbody: \"The truest city would hold women, children, and property in common — friends share everything. Since present humanity cannot bear that, the colony takes second place: inalienable lots, capped wealth in four property classes, and no gold. The argument that great wealth and goodness are incompatible anchors the whole economy.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"economic_character_correlation/extreme_wealth_incompatible_with_goodness_and_happiness\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0031",
+      "body": "```yaml\ncommentary_id: comm_laws_0031\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Dividing the land under ideal assumptions\"\nstephanus_span: 744a-747e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 744a-747e\n  start_marker: 744a\n  end_marker: 747e\n  start_char: 225700\n  end_char: 234235\n  text_sha256: \"ea809bebeb52213f448786ae0f1b3e27d0cf6072261c7689eb1d8ce71422daca\"\nbody: \"The mechanics of the founding: unequal property classes reconciled with equal lots, the city and country divided into twelve tribal sections, and household shrines distributed. The Athenian concedes the whole scheme assumes conditions never fully met — a legislator's model to be approximated, not a prophecy.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0032",
+      "body": "```yaml\ncommentary_id: comm_laws_0032\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Offices first: electing the guardians of the laws\"\nstephanus_span: 751a-755b\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 751a-755b\n  start_marker: 751a\n  end_marker: 755b\n  start_char: 234235\n  end_char: 242969\n  text_sha256: \"cf80b7b6d7bf4b1ba061ef2dadee8c5fe447b75955d6ceef6c03d1e4f447d4a4\"\nbody: \"Book 6 turns from laws to officers, since good laws under bad magistrates are worse than useless. The bootstrap problem of a new colony's first elections is solved with Knossian help, and the thirty-seven guardians of the laws are given their qualifications, tenure, and duties.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0034",
+      "body": "```yaml\ncommentary_id: comm_laws_0034\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Priests, country wardens, and city magistrates\"\nstephanus_span: 759a-764b\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 759a-764b\n  start_marker: 759a\n  end_marker: 764b\n  start_char: 250551\n  end_char: 261826\n  text_sha256: \"f60885507285c3f85a10c658dfb87312e0f286953b349d0e655bd340be58a555\"\nbody: \"The sacred and administrative offices follow: priests and interpreters chosen with Delphi's sanction, the agronomoi patrolling and fortifying the countryside in a two-year communal regimen, and the astynomoi and agoranomoi keeping order in city and market. Roads, water, and boundaries all find their keepers.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0035",
+      "body": "```yaml\ncommentary_id: comm_laws_0035\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"The supervisor of education and the shape of the courts\"\nstephanus_span: 764c-768e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 764c-768e\n  start_marker: 764c\n  end_marker: 768e\n  start_char: 261826\n  end_char: 271297\n  text_sha256: \"ee03c042d3f6cd642356320869376039ad26808096bb6438c4e774ce9382482e\"\nbody: \"Officers for music and gymnastics culminate in the city's most important office: the supervisor of all education, chosen from the guardians of the laws. A three-tier court system follows — arbitration, tribal courts, and select judges — with the principle that every citizen must share in judging.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0036",
+      "body": "```yaml\ncommentary_id: comm_laws_0036\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Painting that must be retouched: law's living successors\"\nstephanus_span: 769a-771e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 769a-771e\n  start_marker: 769a\n  end_marker: 771e\n  start_char: 271297\n  end_char: 277140\n  text_sha256: \"3897f16393626bd45913fe40fc2b66574e2201005b98e356ae242dbf0f5854bf\"\nbody: \"Legislation is compared to a painter's endless retouching: the original lawgivers will die, so younger guardians must be trained to correct and complete the work by the founders' own standard. The sacred mathematics of 5,040 organizes tribes, months, and festivals into a single fabric.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0037",
+      "body": "```yaml\ncommentary_id: comm_laws_0037\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Marriage: choosing for the city, not the purse\"\nstephanus_span: 772a-776b\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 772a-776b\n  start_marker: 772a\n  end_marker: 776b\n  start_char: 277140\n  end_char: 285940\n  text_sha256: \"f6b91269b6d13c0b126509b43cfdc50e9defece09d17879ed29c9763e8aeab1d\"\nbody: \"The marriage laws arrive with their preludes: marry between thirty and thirty-five, choose a partner to blend temperaments rather than to double wealth, and treat procreation as handing on the torch of life. Dowries are banned; wedding feasts are capped; the new household separates from the parents'.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0038",
+      "body": "```yaml\ncommentary_id: comm_laws_0038\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Slaves, walls, and the problem of the household\"\nstephanus_span: 776c-780e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 776c-780e\n  start_marker: 776c\n  end_marker: 780e\n  start_char: 285940\n  end_char: 295287\n  text_sha256: \"d87de5f6061be03ffa2a20dbbf3eec325b2a09f2dc15888ce660a18e26f82252\"\nbody: \"Property in persons: the discussion weighs the contradictory common opinions about slaves and legislates a mean — neither outrage nor familiarity. City walls are disparaged in Spartan fashion, and the lawgiver presses common meals as the proven device against private disorder.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0039",
+      "body": "```yaml\ncommentary_id: comm_laws_0039\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Bringing women into the open\"\nstephanus_span: 781a-785b\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 781a-785b\n  start_marker: 781a\n  end_marker: 785b\n  start_char: 295287\n  end_char: 304064\n  text_sha256: \"6bef579506f4b6b3c2d678655158f2d94f5bbdc79784e566f7d73344262a4a24\"\nbody: \"The boldest extension: common meals for women, the half of the city that legislation everywhere leaves in disorderly shadow. Regulation of procreation follows, with supervising matrons, age limits for marriage and office, and the book closes the domestic framework of the regime.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"turn_geometry/explicit_procedure_control\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0041",
+      "body": "```yaml\ncommentary_id: comm_laws_0041\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Sanctifying children's games and songs\"\nstephanus_span: 793e-799e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 793e-799e\n  start_marker: 793e\n  end_marker: 799e\n  start_char: 315571\n  end_char: 328547\n  text_sha256: \"7ebf8ccf82fd4ffc58a258c86e4772010ce285826dd175bdc9c431a3ba599e3d\"\nbody: \"Change in children's play quietly changes the characters of citizens, so games, songs, and dances are to be consecrated as in Egypt — fixed, festival by festival, with innovation treated as impiety. Ambidextrous training and the choral curriculum extend education's reach into the body.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0044",
+      "body": "```yaml\ncommentary_id: comm_laws_0044\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"What may the young read? The city as truest tragedy\"\nstephanus_span: 810d-817e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 810d-817e\n  start_marker: 810d\n  end_marker: 817e\n  start_char: 350658\n  end_char: 366623\n  text_sha256: \"a7e11cc7b4da535ab259c1fd0ce90bd4aeb237afd131e2b3df29e4ab2b3ad437\"\nbody: \"Which texts enter the schoolroom? The whole-poet curriculum is rejected; the discourse of the Laws itself is offered as the model text. To visiting tragedians the city gives its famous answer: we are ourselves poets of the truest tragedy, the imitation of the finest life.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0046",
+      "body": "```yaml\ncommentary_id: comm_laws_0046\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Hunting sorted: what the young may chase\"\nstephanus_span: 822e-824a\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 822e-824a\n  start_marker: 822e\n  end_marker: 824a\n  start_char: 376453\n  end_char: 380140\n  text_sha256: \"24bdc92454f634d12d7eb5ba0a45bad2009a68390ce9baf289e860dc8c507984\"\nbody: \"Education closes with hunting, taken as a test case for law's advisory voice: the lawgiver praises only the open chase of land animals by horse and hound — courage's exercise — while blaming night-snaring, fowling, and idle fishing. Praise and blame here do the work of statute.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0047",
+      "body": "```yaml\ncommentary_id: comm_laws_0047\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"A calendar of contests; peace armed for war\"\nstephanus_span: 828a-835d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 828a-835d\n  start_marker: 828a\n  end_marker: 835d\n  start_char: 380140\n  end_char: 396207\n  text_sha256: \"d5b5c30e08df0e4f2f37fc25ae1ab2410621be2fa681e2948a0ea4826730dfa6\"\nbody: \"Book 8 fixes the festival calendar — sacrifices every day, twelve tribal feasts — and mandates monthly military exercises with real risk, for a city that trains only in war games it never plays will lose the real contest. Athletic events are pruned to what serves war.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0048",
+      "body": "```yaml\ncommentary_id: comm_laws_0048\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Legislating desire: nature, shame, and ambition\"\nstephanus_span: 835e-842a\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 835e-842a\n  start_marker: 835e\n  end_marker: 842a\n  start_char: 396207\n  end_char: 408906\n  text_sha256: \"04fbc5324641b3f3731e44f42acd78646f1b3f8f914b58e70da7bda97b5678cc\"\nbody: \"The hardest regulation: sexual desire in a leisured, well-fed city. The law aims at procreative intercourse according to nature, arming itself with the same devices that already tame incest — consecrated report, shame, and love of honor — while a fallback rule settles for secrecy.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"turn_geometry/explicit_procedure_control\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0049",
+      "body": "```yaml\ncommentary_id: comm_laws_0049\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Boundary stones, water, and the citizen barred from trade\"\nstephanus_span: 842b-850d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 842b-850d\n  start_marker: 842b\n  end_marker: 850d\n  start_char: 408906\n  end_char: 427014\n  text_sha256: \"5cb9a93fb5c84f59527e2d0d2523e21f4f8f6b269d111e7255c4a66299e8481d\"\nbody: \"Agrarian and commercial law: immovable boundary stones, water rights, fruit-picking rules, and craft regulation. Citizens are barred from the crafts and from retail trade, which is left to resident aliens under strict terms — the economy is deliberately subordinated to the regime's character.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0050",
+      "body": "```yaml\ncommentary_id: comm_laws_0050\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Criminal law begins: temple robbery and treason\"\nstephanus_span: 853a-857e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 853a-857e\n  start_marker: 853a\n  end_marker: 857e\n  start_char: 427014\n  end_char: 437128\n  text_sha256: \"f7c858ba7738ab9d705681348faa61690a89f392ced08b660aeccf2fbc5b469a\"\nbody: \"Book 9 opens with embarrassment: legislating crime at all concedes the education may fail. Temple robbery, subversion, and theft receive their laws, with the incurable offender put to death as a benefit to himself and the city — and the free doctor's persuasive method is reaffirmed against penal shorthand.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0051",
+      "body": "```yaml\ncommentary_id: comm_laws_0051\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Punishment rethought: injustice is never voluntary\"\nstephanus_span: 858a-864c\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 858a-864c\n  start_marker: 858a\n  end_marker: 864c\n  start_char: 437128\n  end_char: 450819\n  text_sha256: \"6faeac44e56f051e2b800ef455a37be9561a785cf2ff7de9781453ccca0e408f\"\nbody: \"The penology's philosophical core: since no one is willingly unjust, the traditional split between voluntary and involuntary wrongs is replaced by a distinction between injury and injustice. Punishment aims at cure — teaching, habituating, or, where the soul is incurable, removal. Anger, pleasure, and ignorance are catalogued as the springs of wrongdoing.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0052",
+      "body": "```yaml\ncommentary_id: comm_laws_0052\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"The homicide code and its ancient fears\"\nstephanus_span: 864d-874d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 864d-874d\n  start_marker: 864d\n  end_marker: 874d\n  start_char: 450819\n  end_char: 472305\n  text_sha256: \"5bebcb4a8696ea93bbff2990ded36dd0169613b3573ba7af4e60c65d3cd71ae0\"\nbody: \"Homicide is graded — involuntary, in anger, voluntary — each with its purifications, exiles, and penalties, drawing on ancient beliefs about the victim's angry dead and inherited pollution. Kin-slaying receives the heaviest horror; the code speaks in both legal and religious registers at once.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0054",
+      "body": "```yaml\ncommentary_id: comm_laws_0054\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"The impiety law needs a theology\"\nstephanus_span: 884a-888e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 884a-888e\n  start_marker: 884a\n  end_marker: 888e\n  start_char: 488742\n  end_char: 497782\n  text_sha256: \"3a83bc1b4109391076a8e2700c717b3744ba8d93e325e02d801e2d585cafbb1c\"\nbody: \"Book 10 traces all impiety to three beliefs: that gods do not exist, that they do not care for men, or that they can be bought. Because the young say such things, the lawgiver must argue, not merely threaten — the prelude becomes philosophical demonstration addressed gently to an imagined young atheist.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0055",
+      "body": "```yaml\ncommentary_id: comm_laws_0055\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"The materialist creed stated in full strength\"\nstephanus_span: 889a-893a\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 889a-893a\n  start_marker: 889a\n  end_marker: 893a\n  start_char: 497782\n  end_char: 506346\n  text_sha256: \"28421d18e4e94008a130beed6e1156ad9f4f1d8ac1290855fdc0eb29bedbfa38\"\nbody: \"The opposing cosmology gets its fairest hearing: fire, water, earth, and air exist by nature and chance; art comes late; gods and justice are conventions differing city by city. The Athenian insists this root of impiety must be refuted head-on, whatever the labor of the digression.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0056",
+      "body": "```yaml\ncommentary_id: comm_laws_0056\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Ten motions and the priority of soul\"\nstephanus_span: 893b-899d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 893b-899d\n  start_marker: 893b\n  end_marker: 899d\n  start_char: 506346\n  end_char: 519946\n  text_sha256: \"7d887fa39ba7aa496f07460b2e5ebb1a79b8711ef60f698e97ba0a027863f60d\"\nbody: \"The refutation: a taxonomy of motions culminates in self-moving motion, which is soul — therefore soul is older than body, and mind-governed soul drives the heavens. The orderly circuit of the stars becomes evidence that the best soul steers, and the young atheist's cosmology is inverted.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0058",
+      "body": "```yaml\ncommentary_id: comm_laws_0058\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"No bribes for heaven; penalties for impiety\"\nstephanus_span: 905e-910d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 905e-910d\n  start_marker: 905e\n  end_marker: 910d\n  start_char: 532019\n  end_char: 542315\n  text_sha256: \"f391acbc1d998867cb54cf4a4931618c434ea9dfd371f2df69024cfa241caa83\"\nbody: \"The third heresy falls fastest: gods who took gifts from the unjust would be worse than watchdogs. The impiety statute then distinguishes honest atheists from hypocritical exploiters of superstition, grades imprisonment accordingly — including the reforming sophronisterion — and bans private shrines outright.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0059",
+      "body": "```yaml\ncommentary_id: comm_laws_0059\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Found treasure, honest sales, and the corruption of trade\"\nstephanus_span: 913a-920c\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 913a-920c\n  start_marker: 913a\n  end_marker: 920c\n  start_char: 542315\n  end_char: 558397\n  text_sha256: \"6bba55f08afd1e0272ce6bf114943980007d85a2f4270b69b943999ea49494e9\"\nbody: \"Book 11 opens the law of dealings: what I do not deposit I may not lift; found treasure, strays, and disputed slaves have their procedures. Sales must be for immediate payment, adulteration is impiety, and retail trade — useful in itself — is hedged because it tempts men without measure.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0061",
+      "body": "```yaml\ncommentary_id: comm_laws_0061\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Orphans' guardians and the honor owed the old\"\nstephanus_span: 926e-932d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 926e-932d\n  start_marker: 926e\n  end_marker: 932d\n  start_char: 571523\n  end_char: 584370\n  text_sha256: \"8d2cc686d20d937589427bc34f420686f93bbc32fa8d97892d85b3518d1c5af7\"\nbody: \"Orphans are placed under doubled care — the guardians of the laws as public parents — with penalties for negligent or predatory kin. Divorce, remarriage, and the duties owed aged parents follow: a parent is a living shrine whose curse no law can outweigh.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0062",
+      "body": "```yaml\ncommentary_id: comm_laws_0062\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Poisons, spells, and the abuse of the courts\"\nstephanus_span: 932e-938c\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 932e-938c\n  start_marker: 932e\n  end_marker: 938c\n  start_char: 584370\n  end_char: 596252\n  text_sha256: \"5e0ed790bd8215234a57e236fd3252e54d2ae41e6236deef730516c3ba9559a6\"\nbody: \"The book closes with harms that work through belief as much as body: poisoning and sorcery are punished by the doer's profession, waxen images taken seriously as social facts. Abusive speech, ridicule, flattering beggary, and profit-seeking advocacy round out the offenses against civic trust.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0063",
+      "body": "```yaml\ncommentary_id: comm_laws_0063\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Fraud on the city: embezzlement and military duty\"\nstephanus_span: 941a-945b\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 941a-945b\n  start_marker: 941a\n  end_marker: 945b\n  start_char: 596252\n  end_char: 604753\n  text_sha256: \"3dc0cd26ec89f0fc1dc8d6e933b2950831f60f95f00c5e51c8ccb866b2c2dcbb\"\nbody: \"Book 12 begins with offenses against public order: false embassy, theft of public property — where the educated citizen's guilt is the graver — and the military code. Discipline's principle is total: no one, in war or peace, should be without a commander, and the loss or casting of arms is dissected with mythic help.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"myth_demarcation/mythic_exemplum_in_argument\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0064",
+      "body": "```yaml\ncommentary_id: comm_laws_0064\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Who guards the guardians: the auditors\"\nstephanus_span: 945c-949e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 945c-949e\n  start_marker: 945c\n  end_marker: 949e\n  start_char: 604753\n  end_char: 614246\n  text_sha256: \"d48fa56b65a81b2ae3e6717f17345b1d09dbf03a0e515ae95fd66523465930e7\"\nbody: \"Every officer must render account, so the city elects euthynoi — auditors chosen by a solemn triple election, honored as priests of Helios and Apollo, and themselves auditable. Oaths are withdrawn from litigants, since half of a perjuring city's lawsuits would be sworn falsely.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0065",
+      "body": "```yaml\ncommentary_id: comm_laws_0065\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Travel abroad and the reception of strangers\"\nstephanus_span: 950a-953e\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 950a-953e\n  start_marker: 950a\n  end_marker: 953e\n  start_char: 614246\n  end_char: 622686\n  text_sha256: \"5810970703b1ba79e579ebfa0495b15e84aba3452d1ae1e97046e02858ad0cf0\"\nbody: \"A city that never mixes with others stays uncultivated, but promiscuous contact dissolves its laws. The compromise: regulated travel for approved observers over forty, official theoroi who inspect foreign institutions, and four classes of visiting strangers, each received with fitting honors and oversight.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0066",
+      "body": "```yaml\ncommentary_id: comm_laws_0066\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Suretyship, witnesses, and the tariff of remainders\"\nstephanus_span: 954a-958c\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 954a-958c\n  start_marker: 954a\n  end_marker: 958c\n  start_char: 622686\n  end_char: 631878\n  text_sha256: \"2585e0216de9dd471b2b0eaf362180533702168894cdd24a57c0ff7b9c9f805c\"\nbody: \"The code sweeps up its remainders: search procedures, prescription periods, witness rules, and the ban on selling one's advocacy for gain. Military awards, taxes, dedications, and the final structure of appeals are fixed, and the judged verdict is armed with execution.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0067",
+      "body": "```yaml\ncommentary_id: comm_laws_0067\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Burial measured: the corpse is not the person\"\nstephanus_span: 958d-960b\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 958d-960b\n  start_marker: 958d\n  end_marker: 960b\n  start_char: 631878\n  end_char: 635713\n  text_sha256: \"5becda00ee9f50ce6fefa67e7008a4779dee573b0089a3f2e1d3110b17c52992\"\nbody: \"Funeral law caps expense by property class and keeps graves off arable land, grounded in a doctrine: the corpse is only the abandoned image, the real person an immortal soul gone to give account. Mourning is bounded; piety redirected from flesh to memory and law.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0024-structural-remediation-11-415a-421e",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "cratylus",
+  "unit_key": "11-415a-421e",
+  "source_path": "scratch/commentary/audits/cratylus/11-415a-421e.json",
+  "source_sha256": "02afcf8dda7ad264ab5b152c46a8740e0c08f80b37fd51139758787663773d11",
+  "target_path": "wiki/commentary/cratylus.md",
+  "target_sha256_before": "2a3051dadd383f3413b553653e3e8486d847d970ba6d338054b87bf7e44de273",
+  "target_sha256_after": "99ee71afd88a712f8e8347c185a40de0a824b8828551ca93a6e537d7f5a4df61",
+  "applied_at": "2026-08-23T22:54:14.883Z",
+  "applied_ids": [
+    "comm_cratylus_0011"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "cratylus",
+      "unitKey": "11-415a-421e",
+      "sectionId": "comm_cratylus_0011",
+      "auditOutputPath": "scratch/commentary/audits/cratylus/11-415a-421e.json",
+      "auditOutputSha256": "02afcf8dda7ad264ab5b152c46a8740e0c08f80b37fd51139758787663773d11",
+      "expectedLedgerSha256": "2a3051dadd383f3413b553653e3e8486d847d970ba6d338054b87bf7e44de273",
+      "expectedAttributionSha256": "07c95f51f0d0ba69214b39b7d2d2070427a78cf703f0872cee19a8654b275da7",
+      "expectedEnglishSha256": "f7e7992f4cbb8d28e4f7420899517018d95cd594ac81e519c36a8cff59f20736",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_cratylus_0011"
+        }
+      ],
+      "reviewer": "round2-a-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna assessment supports conservative rejection of the current audited remove findings; no reanchors are proposed."
+    },
+    "audit_output_path": "scratch/commentary/audits/cratylus/11-415a-421e.json",
+    "audit_output_sha256": "02afcf8dda7ad264ab5b152c46a8740e0c08f80b37fd51139758787663773d11",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_cratylus_0011",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

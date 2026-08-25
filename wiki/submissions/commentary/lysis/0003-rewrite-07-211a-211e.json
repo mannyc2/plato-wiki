@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "submission_id": "0003-rewrite-07-211a-211e",
+  "lane": "commentary",
+  "kind": "rewrite",
+  "scope": "lysis",
+  "unit_key": "07-211a-211e",
+  "source_path": "scratch/commentary/rewrites/lysis/07-211a-211e.json",
+  "source_sha256": "b91c80bd66e8b554539ab08909865a7c071cae5c6f282ea5ba7ffa7fc514fb53",
+  "target_path": "wiki/commentary/lysis.md",
+  "target_sha256_before": "9964fea8ea0d285401a9cbbf12d9bdc4767fce41b017e5eb662ddf39322cf48a",
+  "target_sha256_after": "417adeb467a036cc3ff0f33e561dcf2bc2059991cea2ef9ae07d42ee9377e128",
+  "applied_at": "2026-08-21T16:00:00.266Z",
+  "applied_ids": [
+    "comm_lysis_0007"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "lysis",
+    "unit_key": "07-211a-211e",
+    "section_id": "comm_lysis_0007",
+    "audit_output": {
+      "path": "scratch/commentary/audits/lysis/07-211a-211e.json",
+      "sha256": "c75624ce0a96c5a7046034501b2674665e4464c95bf6badff97a940c9dae9d7b"
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_lysis_0007",
+        "title": "From a private prompt to Socrates’ declaration",
+        "body": "Menexenus, the returning boy, is beside Lysis when Lysis quietly asks Socrates to tell him what he has been saying to Lysis. Socrates accepts the turn and directs the exchange toward questioning Menexenus. He then frames that move through self-characterization: he is intensely devoted to acquiring friends, valuing a good friend above horses, dogs, gold, honors, and even Darius himself.",
+        "cites": {
+          "observations": [
+            "obs_lysis_0049",
+            "obs_lysis_0050",
+            "obs_lysis_0051",
+            "obs_lysis_0055"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_lysis_0007",
+      "body": "```yaml\ncommentary_id: comm_lysis_0007\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"A whispered request opens the inquiry\"\nstephanus_span: 211a-211e\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 211a-211e\n  start_marker: 211a\n  end_marker: 211e\n  start_char: 15453\n  end_char: 17575\n  text_sha256: \"d7b622c17a4f889cc4c093f48f6c757679875370ceb6e9aad27655d96ee1f5af\"\nbody: \"Lysis’s quiet request turns the scene toward Menexenus: he asks Socrates to repeat the same treatment with his friend, drawing the older man into a conversation not yet begun. Socrates accepts the assignment, then gives the request personal force by describing his own desire for a good friend as stronger than the usual hunger for horses, gold, or honors.\"\ncites:\n  observations: [\"obs_lysis_0049\", \"obs_lysis_0050\", \"obs_lysis_0051\", \"obs_lysis_0055\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

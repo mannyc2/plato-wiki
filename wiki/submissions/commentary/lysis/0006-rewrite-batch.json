@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "submission_id": "0006-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "lysis",
+  "source_path": "scratch/commentary/rewrites/lysis/02-204c-205e.json",
+  "source_sha256": "e114e90d19a06fe11418213912d3e711397045e0f64284269e0f8746e1502a91",
+  "target_path": "wiki/commentary/lysis.md",
+  "target_sha256_before": "0d7f2598366a14464ba21f850472191c7380720d744ea3d4e8d28cb750e35e2a",
+  "target_sha256_after": "d7da5ac5f1bc3254feb69524a22047ef5573b292da88630432251d7664b0c846",
+  "applied_at": "2026-08-23T21:17:33.441Z",
+  "applied_ids": [
+    "comm_lysis_0002",
+    "comm_lysis_0013"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "lysis",
+      "unit_key": "02-204c-205e",
+      "section_id": "comm_lysis_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/lysis/02-204c-205e.json",
+        "sha256": "008a44dc3fc8ec7e55c879336fd3239c27ff375319e175fec28f025200ed6118"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_lysis_0002",
+          "title": "Hippothales’s songs fill the company’s ears",
+          "body": "Ctesippus’s image concerns the ears of the companions gathered with him, not everyone without qualification.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "lysis",
+      "unit_key": "13-221a-222a",
+      "section_id": "comm_lysis_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/lysis/13-221a-222a.json",
+        "sha256": "13d1ca6f6c6b5de8279c31df3d58a1ddda8687c983dbeac273487000bdecd517"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_lysis_0013",
+          "title": "Desire and Harm",
+          "body": "The passage does not present desire as harmless: a desire can be harmful. Desire alone therefore cannot establish that its object is good.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_lysis_0002",
+      "body": "```yaml\ncommentary_id: comm_lysis_0002\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"Ctesippus tells on Hippothales: praise that aims at the singer\"\nstephanus_span: 204c-205e\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 204c-205e\n  start_marker: 204c\n  end_marker: 205e\n  start_char: 1500\n  end_char: 4917\n  text_sha256: \"b8914f5b971d3218326950773ba612395caa4c2321abc0415fbaea7a0fb7cbdf\"\nbody: \"Socrates claims a god-given knack for spotting lovers, and Ctesippus gleefully reports how Hippothales has deafened everyone with poems about Lysis' famous family. Socrates reframes the whole performance: songs about an unwon beloved are really encomia the lover composes for himself, staking victory or humiliating loss.\"\ncites:\n  observations: [\"obs_lysis_0007\", \"obs_lysis_0008\", \"obs_lysis_0009\", \"obs_lysis_0010\", \"obs_lysis_0011\", \"obs_lysis_0022\", \"obs_lysis_0023\", \"obs_lysis_0024\", \"obs_lysis_0142\", \"obs_lysis_0013\", \"obs_lysis_0014\", \"obs_lysis_0015\"]\n  claims: []\n  relations: []\n  dossiers: [\"irony_marker/socratic_divine_gift_claim\", \"frame_depth/reported_speech_chain\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_lysis_0013",
+      "body": "```yaml\ncommentary_id: comm_lysis_0013\nsource_work: Lysis\nblock_kind: section\nplacement: before\ntitle: \"Desire replaces the bad as cause\"\nstephanus_span: 221a-222a\nsource_ref:\n  source_path: raw/plato/greek/lysis.txt\n  stephanus_span: 221a-222a\n  start_marker: 221a\n  end_marker: 222a\n  start_char: 36213\n  end_char: 38603\n  text_sha256: \"863f81ca9c1c193541cd8a15e8cd8422da485b0e9dcb4df26a2e1b1c485ccd1b\"\nbody: \"Harmless desire survives even if bad disappears, so bad cannot be friendship's cause. Socrates offers desire as a new candidate, then connects it to need: what lacks something desires it, and the lacking thing is drawn toward its own (oikeion). For Lysis and Menexenus, this makes them akin in some way, but the relation remains open—perhaps soul, character, manner, or form—and is not yet a final definition.\"\ncites:\n  observations: []\n  claims: [\"claim_lysis_0023\", \"claim_lysis_0024\", \"claim_lysis_0025\", \"claim_lysis_0026\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

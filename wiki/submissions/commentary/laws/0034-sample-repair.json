@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "submission_id": "0034-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "laws",
+  "source_path": "scratch/commentary/sample-repairs/laws/final-sample.json",
+  "source_sha256": "81a36269ac9ddcc3117bafda98ebd59c1ddd204f9bf49898c11f66dab513b5af",
+  "target_path": "wiki/commentary/laws.md",
+  "target_sha256_before": "c8995742e39b649ba0c358691c9a1bce68755ad0242e01469fa204aa15916a7e",
+  "target_sha256_after": "4ff2018c5fc4b3da3092ee0c035914d09eab930bd70c46d6ab99527db2608fa4",
+  "applied_at": "2026-08-24T00:36:44.161Z",
+  "applied_ids": [
+    "comm_laws_0009",
+    "comm_laws_0012"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "laws",
+    "ledger": {
+      "path": "wiki/commentary/laws.md",
+      "sha256": "c8995742e39b649ba0c358691c9a1bce68755ad0242e01469fa204aa15916a7e"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-sampler",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna sample review found comm_laws_0009 uncited and recap-like, and comm_laws_0012 overclaimed beyond its sole citation; both replacements use direct accepted records.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_laws_0001",
+        "comm_laws_0002",
+        "comm_laws_0004",
+        "comm_laws_0005",
+        "comm_laws_0006",
+        "comm_laws_0008",
+        "comm_laws_0009",
+        "comm_laws_0012",
+        "comm_laws_0016",
+        "comm_laws_0017",
+        "comm_laws_0018",
+        "comm_laws_0021",
+        "comm_laws_0022",
+        "comm_laws_0024",
+        "comm_laws_0026"
+      ],
+      "failed_commentary_ids": [
+        "comm_laws_0009",
+        "comm_laws_0012"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_laws_0009",
+        "title": "Education teaches the pleasure of the beautiful",
+        "body": "The Athenian defines education through choral practice: song and dance are its parts, but bodily performance is not enough. The sharper criterion is whether pleasure and dislike are correctly trained toward the beautiful and shameful; the exchange then compresses this provisional account to keep the inquiry moving.",
+        "cites": {
+          "observations": [
+            "obs_laws_0138",
+            "obs_laws_0139",
+            "obs_laws_0141",
+            "obs_laws_0143",
+            "obs_laws_0144",
+            "obs_laws_0145"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_laws_0012",
+        "title": "A persuasive myth becomes an age-ranked chorus",
+        "body": "The Sidonian story is marked as improbable but useful as a paradigm for legislation. From that persuasive example the Athenian orders participation by age: children and younger adults sing in distinct choruses, while older men are assigned myth-telling and a Dionysian chorus; wine is introduced as the device that makes elder participation in song practicable.",
+        "cites": {
+          "observations": [
+            "obs_laws_0205",
+            "obs_laws_1263",
+            "obs_laws_1264",
+            "obs_laws_1265",
+            "obs_laws_0227",
+            "obs_laws_0228",
+            "obs_laws_0229",
+            "obs_laws_0220"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_laws_0009",
+      "body": "```yaml\ncommentary_id: comm_laws_0009\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"What Musical Education Must Teach\"\nstephanus_span: 652a-655b\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 652a-655b\n  start_marker: 652a\n  end_marker: 655b\n  start_char: 51352\n  end_char: 56699\n  text_sha256: \"5abc6fc04bee51f1217df489b99301c94d6c389c93b3d34c384b3725bbb41aa0\"\nbody: \"Musical training matters here because it teaches citizens what to enjoy. Its goal is not performance or pleasure as an end in itself, but a formed response to order and measure. The discussion therefore treats pleasure as something to be educated by order and measure.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0012",
+      "body": "```yaml\ncommentary_id: comm_laws_0012\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"From persuasive myth to an age rule\"\nstephanus_span: 662d-666d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 662d-666d\n  start_marker: 662d\n  end_marker: 666d\n  start_char: 71369\n  end_char: 80326\n  text_sha256: \"4a385426bfea246565aef8732ed4d267a0742e5af45bf234313f6e1f46bb402d\"\nbody: \"The Sidonian tale is offered as an improbable but persuasive paradigm for the lawgiver. The Athenian then proposes age-related wine provisions: children would be kept from wine, younger adults would drink moderately, and men over forty could call on Dionysus at symposia to soften old age and make souls pliable. The proposal gives older participation in song a civic setting.\"\ncites:\n  observations: [\"obs_laws_0205\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

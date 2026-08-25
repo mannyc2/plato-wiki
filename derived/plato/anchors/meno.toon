@@ -1,0 +1,97 @@
+dialogue: meno
+source_path: raw/plato/greek/meno.txt
+source_sha256: 91e9583fb58eaaee47228c2ad2c917b40c6a9cdd864727cfc1ef6e561ef79f99
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[90]:
+  group             | form      | start_char | end_char | marker | turn_id        | token_ids
+  definition_prompt | εἶδος     | 4139       | 4144     | 72c    | turn_meno_0018 | tok_meno_000700
+  definition_prompt | εἶδος     | 4651       | 4656     | 72d    | turn_meno_0020 | tok_meno_000788
+  assent_concession | ναί       | 5832       | 5835     | 73c    | turn_meno_0037 | tok_meno_000993
+  aporia_reset      | πάλιν     | 7220       | 7225     | 74a    | turn_meno_0054 | tok_meno_001246
+  assent_concession | πάνυ γε   | 7834       | 7841     | 74b    | turn_meno_0057 | tok_meno_001350,tok_meno_001351
+  assent_concession | ναί       | 7904       | 7907     | 74c    | turn_meno_0059 | tok_meno_001362
+  assent_concession | ναί       | 8322       | 8325     | 74d    | turn_meno_0065 | tok_meno_001436
+  assent_concession | πάνυ γε   | 9639       | 9646     | 75b    | turn_meno_0075 | tok_meno_001667,tok_meno_001668
+  assent_concession | πάνυ γε   | 12208      | 12215    | 76c    | turn_meno_0101 | tok_meno_002103,tok_meno_002104
+  assent_concession | ναί       | 13995      | 13998    | 77c    | turn_meno_0121 | tok_meno_002404
+  assent_concession | πάνυ γε   | 15826      | 15833    | 78b    | turn_meno_0149 | tok_meno_002714,tok_meno_002715
+  assent_concession | ναί       | 17381      | 17384    | 79a    | turn_meno_0169 | tok_meno_002982
+  assent_concession | ὁμολογεῖς | 17754      | 17763    | 79b    | turn_meno_0174 | tok_meno_003044
+  aporia_reset      | πάλιν     | 18199      | 18204    | 79c    | turn_meno_0174 | tok_meno_003117
+  aporia_reset      | πάλιν     | 18431      | 18436    | 79c    | turn_meno_0174 | tok_meno_003160
+  aporia_reset      | πάλιν     | 18977      | 18982    | 79e    | turn_meno_0178 | tok_meno_003246
+  aporia_reset      | πάλιν     | 19129      | 19134    | 79e    | turn_meno_0180 | tok_meno_003270
+  aporia_reset      | ἀπορεῖν   | 19316      | 19323    | 80a    | turn_meno_0181 | tok_meno_003305
+  definition_prompt | εἶδος     | 19505      | 19510    | 80a    | turn_meno_0181 | tok_meno_003336
+  aporia_reset      | ἀπορεῖν   | 20528      | 20535    | 80c    | turn_meno_0186 | tok_meno_003512
+  aporia_reset      | ἀπορεῖν   | 20602      | 20609    | 80d    | turn_meno_0186 | tok_meno_003523
+  aporia_reset      | πάλιν     | 21950      | 21955    | 81b    | turn_meno_0196 | tok_meno_003760
+  aporia_reset      | πάλιν     | 22160      | 22165    | 81b    | turn_meno_0196 | tok_meno_003791
+  assent_concession | ναί       | 23115      | 23118    | 81e    | turn_meno_0197 | tok_meno_003946
+  assent_concession | πάνυ γε   | 23769      | 23776    | 82b    | turn_meno_0201 | tok_meno_004057,tok_meno_004058
+  assent_concession | πάνυ γε   | 23833      | 23840    | 82b    | turn_meno_0203 | tok_meno_004068,tok_meno_004069
+  assent_concession | πάνυ γε   | 24152      | 24159    | 82c    | turn_meno_0209 | tok_meno_004119,tok_meno_004120
+  assent_concession | ναί       | 24216      | 24219    | 82c    | turn_meno_0211 | tok_meno_004132
+  assent_concession | πάνυ γε   | 24284      | 24291    | 82c    | turn_meno_0213 | tok_meno_004144,tok_meno_004145
+  assent_concession | ναί       | 24501      | 24504    | 82d    | turn_meno_0215 | tok_meno_004187
+  assent_concession | ναί       | 24628      | 24631    | 82d    | turn_meno_0219 | tok_meno_004210
+  assent_concession | ναί       | 24833      | 24836    | 82d    | turn_meno_0223 | tok_meno_004244
+  assent_concession | ναί       | 25299      | 25302    | 82e    | turn_meno_0233 | tok_meno_004329
+  assent_concession | πάνυ γε   | 25723      | 25730    | 83a    | turn_meno_0237 | tok_meno_004395,tok_meno_004396
+  assent_concession | ναί       | 25824      | 25827    | 83b    | turn_meno_0239 | tok_meno_004411
+  assent_concession | πάνυ γε   | 25927      | 25934    | 83b    | turn_meno_0241 | tok_meno_004431,tok_meno_004432
+  assent_concession | ναί       | 26023      | 26026    | 83b    | turn_meno_0243 | tok_meno_004448
+  assent_concession | ναί       | 26354      | 26357    | 83c    | turn_meno_0253 | tok_meno_004500
+  assent_concession | ναί       | 26492      | 26495    | 83c    | turn_meno_0257 | tok_meno_004523
+  assent_concession | ναί       | 26580      | 26583    | 83c    | turn_meno_0259 | tok_meno_004538
+  assent_concession | ναί       | 26816      | 26819    | 83d    | turn_meno_0263 | tok_meno_004580
+  assent_concession | ναί       | 27196      | 27199    | 83e    | turn_meno_0269 | tok_meno_004648
+  aporia_reset      | ἀπορεῖν   | 27889      | 27896    | 84a    | turn_meno_0280 | tok_meno_004773
+  aporia_reset      | ἀπορεῖν   | 27919      | 27926    | 84b    | turn_meno_0280 | tok_meno_004777
+  aporia_reset      | ἀπορεῖν   | 28078      | 28085    | 84b    | turn_meno_0284 | tok_meno_004806
+  assent_concession | ναί       | 29043      | 29046    | 84d    | turn_meno_0295 | tok_meno_004970
+  assent_concession | ναί       | 29094      | 29097    | 84d    | turn_meno_0297 | tok_meno_004979
+  assent_concession | πάνυ γε   | 29159      | 29166    | 84d    | turn_meno_0299 | tok_meno_004990,tok_meno_004991
+  assent_concession | ναί       | 29230      | 29233    | 84e    | turn_meno_0301 | tok_meno_005003
+  assent_concession | πάνυ γε   | 29367      | 29374    | 84e    | turn_meno_0305 | tok_meno_005026,tok_meno_005027
+  assent_concession | ναί       | 29496      | 29499    | 85a    | turn_meno_0307 | tok_meno_005045
+  assent_concession | ναί       | 29757      | 29760    | 85a    | turn_meno_0313 | tok_meno_005087
+  assent_concession | ναί       | 30059      | 30062    | 85b    | turn_meno_0325 | tok_meno_005139
+  assent_concession | ναί       | 30479      | 30482    | 85c    | turn_meno_0333 | tok_meno_005215
+  assent_concession | ναί       | 30909      | 30912    | 85d    | turn_meno_0339 | tok_meno_005285
+  assent_concession | πάνυ γε   | 30993      | 31000    | 85d    | turn_meno_0341 | tok_meno_005298,tok_meno_005299
+  assent_concession | ναί       | 31086      | 31089    | 85d    | turn_meno_0343 | tok_meno_005317
+  assent_concession | ναί       | 31750      | 31753    | 86a    | turn_meno_0351 | tok_meno_005436
+  assent_concession | πάνυ γε   | 34906      | 34913    | 87c    | turn_meno_0366 | tok_meno_005979,tok_meno_005980
+  method_term       | ὑπόθεσις  | 35141      | 35149    | 87d    | turn_meno_0369 | tok_meno_006022
+  assent_concession | ναί       | 35479      | 35482    | 87e    | turn_meno_0374 | tok_meno_006079
+  assent_concession | ναί       | 35549      | 35552    | 87e    | turn_meno_0376 | tok_meno_006091
+  assent_concession | ναί       | 35794      | 35797    | 87e    | turn_meno_0380 | tok_meno_006132
+  assent_concession | πάνυ γε   | 36042      | 36049    | 88a    | turn_meno_0384 | tok_meno_006177,tok_meno_006178
+  assent_concession | ναί       | 36496      | 36499    | 88b    | turn_meno_0388 | tok_meno_006254
+  assent_concession | πάνυ γε   | 37487      | 37494    | 88e    | turn_meno_0396 | tok_meno_006418,tok_meno_006419
+  assent_concession | πάνυ γε   | 37824      | 37831    | 89a    | turn_meno_0400 | tok_meno_006479,tok_meno_006480
+  assent_concession | πάνυ γε   | 40604      | 40611    | 90c    | turn_meno_0418 | tok_meno_006940,tok_meno_006941
+  assent_concession | ναί       | 40699      | 40702    | 90c    | turn_meno_0420 | tok_meno_006956
+  assent_concession | πάνυ γε   | 40729      | 40736    | 90c    | turn_meno_0422 | tok_meno_006962,tok_meno_006963
+  aporia_reset      | πάλιν     | 40753      | 40758    | 90c    | turn_meno_0423 | tok_meno_006968
+  assent_concession | ναί       | 41183      | 41186    | 90d    | turn_meno_0424 | tok_meno_007032
+  assent_concession | ναί       | 41645      | 41648    | 90e    | turn_meno_0426 | tok_meno_007102
+  assent_concession | ὁμολογεῖς | 47835      | 47844    | 93e    | turn_meno_0458 | tok_meno_008120
+  assent_concession | ὁμολογεῖς | 47949      | 47958    | 94a    | turn_meno_0458 | tok_meno_008137
+  assent_concession | πάνυ γε   | 50148      | 50155    | 95a    | turn_meno_0467 | tok_meno_008499,tok_meno_008500
+  aporia_reset      | πάλιν     | 51805      | 51810    | 96a    | turn_meno_0480 | tok_meno_008762
+  assent_concession | ναί       | 53607      | 53610    | 97a    | turn_meno_0499 | tok_meno_009057
+  assent_concession | ναί       | 53720      | 53723    | 97a    | turn_meno_0501 | tok_meno_009076
+  assent_concession | πάνυ γε   | 54008      | 54015    | 97a    | turn_meno_0505 | tok_meno_009125,tok_meno_009126
+  assent_concession | πάνυ γε   | 54145      | 54152    | 97b    | turn_meno_0507 | tok_meno_009151,tok_meno_009152
+  assent_concession | ναί       | 56800      | 56803    | 98c    | turn_meno_0531 | tok_meno_009613
+  assent_concession | ναί       | 57258      | 57261    | 98d    | turn_meno_0537 | tok_meno_009688
+  assent_concession | ναί       | 57323      | 57326    | 98d    | turn_meno_0539 | tok_meno_009699
+  assent_concession | πάνυ γε   | 57380      | 57387    | 98d    | turn_meno_0541 | tok_meno_009710,tok_meno_009711
+  assent_concession | πάνυ γε   | 57622      | 57629    | 98e    | turn_meno_0547 | tok_meno_009750,tok_meno_009751
+  assent_concession | ναί       | 57683      | 57686    | 98e    | turn_meno_0549 | tok_meno_009761
+  assent_concession | πάνυ γε   | 57746      | 57753    | 98e    | turn_meno_0551 | tok_meno_009772,tok_meno_009773
+  assent_concession | πάνυ γε   | 59021      | 59028    | 99c    | turn_meno_0563 | tok_meno_009984,tok_meno_009985
+  assent_concession | πάνυ γε   | 59353      | 59360    | 99d    | turn_meno_0565 | tok_meno_010035,tok_meno_010036

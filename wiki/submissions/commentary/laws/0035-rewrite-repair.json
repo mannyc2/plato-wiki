@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "submission_id": "0035-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "laws",
+  "source_path": "scratch/commentary/rewrite-repairs/laws/final-repair-0035.json",
+  "source_sha256": "19893b9a8d4733c2a984f3eb40da7c5f3b68b2f8c0fa819c055c79a91abc5d6f",
+  "target_path": "wiki/commentary/laws.md",
+  "target_sha256_before": "90e9d540a74c3bdc34f56e11dae26535ae0d41b93d22613d0265e75fa89dca67",
+  "target_sha256_after": "13b03c3e18f1350bde54415c7edf00ee94f97f34047ebe4133f4ff0b4d47cdb4",
+  "applied_at": "2026-08-24T00:49:07.997Z",
+  "applied_ids": [
+    "comm_laws_0009",
+    "comm_laws_0012"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "laws",
+    "ledger": {
+      "path": "wiki/commentary/laws.md",
+      "sha256": "90e9d540a74c3bdc34f56e11dae26535ae0d41b93d22613d0265e75fa89dca67"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/laws/0034-sample-repair.json",
+      "sha256": "b7407ec8d09cb1fd26b65bfdfe73ada961613c98cd9254eb23494ac46ca418c7"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-24-commentary-block-review-laws-rejected-8fc5c97fe5d7.md",
+      "sha256": "3b0daf720934aeeb77f39a3089e1a6ab1a80152964ad5e1dbeed33e2d2b3f5f9"
+    },
+    "prior_review": {
+      "reviewer": "sample-accept-c-delegated-luna-reviewer-20260824",
+      "reviewed_on": "2026-08-24",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_laws_0009",
+          "finding": "This prose is supportable, but submission 0034 could not be partially accepted because its paired comm_laws_0012 revision was defective."
+        },
+        {
+          "commentary_id": "comm_laws_0012",
+          "finding": "The prose conflates the 30-60 Dionysian singing chorus with later myth-tellers who can no longer bear songs; separate those age groups and cite each claim precisely."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-age-groups-20260824",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_laws_0009",
+      "comm_laws_0012"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_laws_0009",
+        "title": "Education teaches the pleasure of the beautiful",
+        "body": "The Athenian defines education through choral practice: song and dance are its parts, but bodily performance is not enough. The sharper criterion is whether pleasure and dislike are correctly trained toward the beautiful and shameful; the exchange then compresses this provisional account to keep the inquiry moving.",
+        "cites": {
+          "observations": [
+            "obs_laws_0138",
+            "obs_laws_0139",
+            "obs_laws_0141",
+            "obs_laws_0143",
+            "obs_laws_0144",
+            "obs_laws_0145"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_laws_0012",
+        "title": "Age separates the singing choruses from myth-telling",
+        "body": "The Sidonian story is marked as improbable but useful as a paradigm for legislation. The Athenian then separates the choruses by age: children and men up to thirty sing in the first two, while men over thirty through sixty form a third singing group later discussed as a chorus of Dionysus. Only after that singing range does he assign those who can no longer bear songs to myth-telling about the same ethical matters. Wine is then proposed for those from forty onward as a remedy for old age's harshness, making participation in song less shameful and more willing.",
+        "cites": {
+          "observations": [
+            "obs_laws_0205",
+            "obs_laws_1263",
+            "obs_laws_1264",
+            "obs_laws_1265",
+            "obs_laws_0227",
+            "obs_laws_0228",
+            "obs_laws_0229"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_laws_0009",
+      "body": "```yaml\ncommentary_id: comm_laws_0009\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"Education teaches the pleasure of the beautiful\"\nstephanus_span: 652a-655b\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 652a-655b\n  start_marker: 652a\n  end_marker: 655b\n  start_char: 51352\n  end_char: 56699\n  text_sha256: \"5abc6fc04bee51f1217df489b99301c94d6c389c93b3d34c384b3725bbb41aa0\"\nbody: \"The Athenian defines education through choral practice: song and dance are its parts, but bodily performance is not enough. The sharper criterion is whether pleasure and dislike are correctly trained toward the beautiful and shameful; the exchange then compresses this provisional account to keep the inquiry moving.\"\ncites:\n  observations: [\"obs_laws_0138\", \"obs_laws_0139\", \"obs_laws_0141\", \"obs_laws_0143\", \"obs_laws_0144\", \"obs_laws_0145\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_laws_0012",
+      "body": "```yaml\ncommentary_id: comm_laws_0012\nsource_work: Laws\nblock_kind: section\nplacement: before\ntitle: \"A persuasive myth becomes an age-ranked chorus\"\nstephanus_span: 662d-666d\nsource_ref:\n  source_path: raw/plato/greek/laws.txt\n  stephanus_span: 662d-666d\n  start_marker: 662d\n  end_marker: 666d\n  start_char: 71369\n  end_char: 80326\n  text_sha256: \"4a385426bfea246565aef8732ed4d267a0742e5af45bf234313f6e1f46bb402d\"\nbody: \"The Sidonian story is marked as improbable but useful as a paradigm for legislation. From that persuasive example the Athenian orders participation by age: children and younger adults sing in distinct choruses, while older men are assigned myth-telling and a Dionysian chorus; wine is introduced as the device that makes elder participation in song practicable.\"\ncites:\n  observations: [\"obs_laws_0205\", \"obs_laws_1263\", \"obs_laws_1264\", \"obs_laws_1265\", \"obs_laws_0227\", \"obs_laws_0228\", \"obs_laws_0229\", \"obs_laws_0220\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

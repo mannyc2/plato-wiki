@@ -1,0 +1,30 @@
+# Commentary quality-audit acceptance
+
+dialogue: critias
+decision: accepted
+reviewer: manifest-batch-1-delegated-luna-reviewer-20260823
+reviewed_on: 2026-08-23
+rationale: Independent Luna source, accepted-evidence, and placement sample passed for the current Critias ledger.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sampled_commentary_ids:
+- comm_critias_0001
+- comm_critias_0002
+- comm_critias_0005
+- comm_critias_0006
+- comm_critias_0008
+- comm_critias_0010
+- comm_critias_0012
+- comm_critias_0013
+- comm_critias_0016
+- comm_critias_0028
+- comm_critias_0029
+- comm_critias_0033
+predecessor_manifest_path: wiki/commentary-audits/critias.json
+predecessor_manifest_sha256: 0d3dbd73659d9c4ef8993b865a00f5eda26d83df6cd83be7a75b0eab8de16c00
+predecessor_manifest_history_path: wiki/commentary-audits/history/critias/0d3dbd73659d9c4ef8993b865a00f5eda26d83df6cd83be7a75b0eab8de16c00.json
+predecessor_manifest_history_sha256: 0d3dbd73659d9c4ef8993b865a00f5eda26d83df6cd83be7a75b0eab8de16c00
+predecessor_review_note_path: wiki/review/2026-08-21-commentary-quality-critias-luna-sample.md
+predecessor_review_note_sha256: e4c8379f310d12ccfd8abad15e7dabd1fdcd7b154ecc97c049384ec2f56140a5
+predecessor_review_note_history_path: wiki/review/commentary-quality-history/critias/e4c8379f310d12ccfd8abad15e7dabd1fdcd7b154ecc97c049384ec2f56140a5.md
+predecessor_review_note_history_sha256: e4c8379f310d12ccfd8abad15e7dabd1fdcd7b154ecc97c049384ec2f56140a5

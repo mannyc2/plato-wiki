@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "gorgias",
+  "source_path": "scratch/commentary/rewrite-repairs/gorgias/0007-round1.json",
+  "source_sha256": "024365b19745ff727659697ef6bd22a915389ce995595e9f5928ab9c48f5d42a",
+  "target_path": "wiki/commentary/gorgias.md",
+  "target_sha256_before": "7668fdca5cf7a12353a9c5f8b32b0487723e90877d427b3c5b03fea82eb150da",
+  "target_sha256_after": "d09082c7b832cd43df9afbeb8ebdfcf7622e7d76e4bc0c062edf6437ef4c3ce8",
+  "applied_at": "2026-08-21T19:35:21.327Z",
+  "applied_ids": [
+    "comm_gorgias_0007"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "gorgias",
+    "ledger": {
+      "path": "wiki/commentary/gorgias.md",
+      "sha256": "7668fdca5cf7a12353a9c5f8b32b0487723e90877d427b3c5b03fea82eb150da"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/gorgias/0001-rewrite-batch.json",
+      "sha256": "9900134d2270be823aec98b7842f15d7e8946b54841e82c2681dee046d39d9bb"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-gorgias-0001-rewrite-batch-acceptance.md",
+      "sha256": "a674fbc62ae990ac22dab8d1572883a507bf4547735d2aac8271107a2f8312ac"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-gorgias-round1",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_gorgias_0007",
+          "finding": "The body is not speakable because raw bracketed record labels remain embedded in the prose; remove those tokens while retaining the same verified structured cites."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-gorgias-round2",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_gorgias_0007"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_gorgias_0007",
+        "title": "A conclusion built from assent",
+        "body": "Gorgias says a student who lacks knowledge of justice will learn it from him. Socrates then extends the craft analogy: through this chain of assents, the learner becomes just, so the rhetorician appears unable to wish injustice. He recalls the earlier rule that misuse indicts the user, not the teacher. The collision is Socrates’ claimed result, not a settled proof; the qualified assents leave the tension open.",
+        "cites": {
+          "observations": [
+            "obs_gorgias_0445",
+            "obs_gorgias_0446",
+            "obs_gorgias_0023"
+          ],
+          "claims": [
+            "claim_gorgias_0040",
+            "claim_gorgias_0043",
+            "claim_gorgias_0044",
+            "claim_gorgias_0045",
+            "claim_gorgias_0046"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_gorgias_0007",
+      "body": "```yaml\ncommentary_id: comm_gorgias_0007\nsource_work: gorgias\nblock_kind: section\nplacement: before\ntitle: \"A conclusion built from assent\"\nstephanus_span: 460a-461b\nsource_ref:\n  source_path: raw/plato/greek/gorgias.txt\n  stephanus_span: 460a-461b\n  start_marker: 460a\n  end_marker: 461b\n  start_char: 26174\n  end_char: 28873\n  text_sha256: \"30e7f32ce476adf04fa6c90238d0537953e0793ef7a8dda7a55b5b6088cab7f6\"\nbody: \"Gorgias says a student who lacks knowledge of justice will learn it from him [claim_gorgias_0040]. Socrates then extends the craft analogy: within this chain of assents, the learner becomes just, so the rhetorician appears unable to wish injustice [obs_gorgias_0445; obs_gorgias_0446; claim_gorgias_0043; claim_gorgias_0044]. He recalls the earlier rule that misuse indicts the user, not the teacher [obs_gorgias_0023; claim_gorgias_0045]. The collision is Socrates’ claimed result, not a settled proof; the record notes qualified assents [claim_gorgias_0046].\"\ncites:\n  observations: [\"obs_gorgias_0445\", \"obs_gorgias_0446\", \"obs_gorgias_0023\"]\n  claims: [\"claim_gorgias_0040\", \"claim_gorgias_0043\", \"claim_gorgias_0044\", \"claim_gorgias_0045\", \"claim_gorgias_0046\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

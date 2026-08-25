@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "protagoras",
+  "source_path": "scratch/commentary/rewrite-repairs/protagoras/round1.json",
+  "source_sha256": "625383c1385aa5c37c69457d5fc9c812a4c043c9838cfc9ef79c6d144eb94616",
+  "target_path": "wiki/commentary/protagoras.md",
+  "target_sha256_before": "9e44c73624f55ce33e2fe4592613ae72e999f8db886e9ced11829095ba6ebf2a",
+  "target_sha256_after": "1d5a9558ff267ef0fb076b650be959906d9420374ab26f648df3bd4713aad2be",
+  "applied_at": "2026-08-21T20:29:17.727Z",
+  "applied_ids": [
+    "comm_protagoras_0002",
+    "comm_protagoras_0006",
+    "comm_protagoras_0014"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "protagoras",
+    "ledger": {
+      "path": "wiki/commentary/protagoras.md",
+      "sha256": "9e44c73624f55ce33e2fe4592613ae72e999f8db886e9ced11829095ba6ebf2a"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/protagoras/0001-rewrite-batch.json",
+      "sha256": "01a50050e1f66d2800870a57ea133a090a9eb01b3dbdcb47e789ee5948ecf9b5"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-protagoras-0001-rewrite-batch-acceptance.md",
+      "sha256": "fe7fbb46a7518d5449d691b53fc109a1ba0f68a90b40239be37d716b4a5bcc58"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-protagoras-round1",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_protagoras_0002",
+          "finding": "obs_protagoras_0006 supports the 310d legal framing, laughter, and money-for-wisdom remedy, but the rewrite also makes checkable claims about naming the sophist's object and entrusting the soul across 313a-313c without citing an accepted record for those moves."
+        },
+        {
+          "commentary_id": "comm_protagoras_0006",
+          "finding": "obs_protagoras_0079, obs_protagoras_0248, and obs_protagoras_0084 support the myth through 322c. The rewrite's added 322d claim about universal distribution and only a few being unable to make a city lacks matching accepted evidence."
+        },
+        {
+          "commentary_id": "comm_protagoras_0014",
+          "finding": "claim_protagoras_0034, claim_protagoras_0035, and claim_protagoras_0036 support the 343c-344b reading of Simonides as refuting Pittacus and shifting from being good to becoming good. They do not support the added 344c claim about remaining good or the exact 347a Hippias handoff."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-protagoras-round1",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_protagoras_0002",
+      "comm_protagoras_0006",
+      "comm_protagoras_0014"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_protagoras_0002",
+        "title": "When eagerness is treated as a grievance",
+        "body": "At the opening, Socrates treats Hippocrates’ agitation about Protagoras as if it might be a grievance. Hippocrates laughs and answers that Protagoras is wise but does not make him wise. Socrates then recasts the excitement as a transaction: give Protagoras money, persuade him, and he will make you wise. The laughter keeps that remedy unstable, inviting us to hear the buyer’s urgency as something to examine.",
+        "cites": {
+          "observations": [
+            "obs_protagoras_0006"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_protagoras_0006",
+        "title": "Technical wisdom is not civic wisdom",
+        "body": "The myth’s crucial contrast is between technical and political provision. Epimetheus distributes bodily powers by compensating among mortal kinds. Prometheus gives humans technical wisdom with fire, but political wisdom remains with Zeus. Zeus then sends Hermes with respect and right because, without those qualities, humans wrong one another and scatter. Civic order appears here as a distinct gift, not as a consequence of technical skill alone.",
+        "cites": {
+          "observations": [
+            "obs_protagoras_0079",
+            "obs_protagoras_0248",
+            "obs_protagoras_0084"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_protagoras_0014",
+        "title": "A poem read against Pittacus",
+        "body": "Socrates reads Simonides’ poem as a refutation of Pittacus. The hinge is a shift from being good to becoming good: becoming a good person is hard. He reinforces this by treating “truly” as a question of word order, then states that the poem’s chief work is to refute Pittacus. Hear the result as Socrates’ reconstruction, not a neutral report.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_protagoras_0034",
+            "claim_protagoras_0035",
+            "claim_protagoras_0036"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_protagoras_0002",
+      "body": "```yaml\ncommentary_id: comm_protagoras_0002\nsource_work: Protagoras\nblock_kind: section\nplacement: before\ntitle: \"Before buying wisdom, name its object\"\nstephanus_span: 310c-313c\nsource_ref:\n  source_path: raw/plato/greek/protagoras.txt\n  stephanus_span: 310c-313c\n  start_marker: 310c\n  end_marker: 313c\n  start_char: 2253\n  end_char: 9168\n  text_sha256: \"a5b4b8b7a7677e8bd74a7c8aa6b75a82105eec0a65bc878e7416f9ea97d1be27\"\nbody: \"Socrates turns Hippocrates’ urgency into a test of intelligibility. One way to read the passage is that desire must name its object before it spends money or entrusts a soul: “sophist” may announce a purchase without explaining its promise. The opening exchange prepares this pressure. Socrates recasts excitement as a possible wrong and answers it with money and a remedy; Hippocrates’ laughter marks the mismatch (obs_protagoras_0006). The scene delays judgment on Protagoras and questions the buyer’s readiness.\"\ncites:\n  observations: [\"obs_protagoras_0006\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_protagoras_0006",
+      "body": "```yaml\ncommentary_id: comm_protagoras_0006\nsource_work: Protagoras\nblock_kind: section\nplacement: before\ntitle: \"Two distributions, one city\"\nstephanus_span: 320d-323a\nsource_ref:\n  source_path: raw/plato/greek/protagoras.txt\n  stephanus_span: 320d-323a\n  start_marker: 320d\n  end_marker: 323a\n  start_char: 23718\n  end_char: 28664\n  text_sha256: \"e16492cd7bfa8a49b5a457156bbf910ca092aadfdbcdf1985b6bed47e2c906aa\"\nbody: \"The myth invites a distinction between two distributions. Epimetheus assigns protective capacities by compensating among kinds, while Prometheus gives humans technical wisdom but not the political art. Zeus’s later remedy is different: respect and right must be shared by everyone, because a city cannot exist if only a few possess them. The point I take is that the story shifts the question from who has a skill to what all must share for a city to exist.\"\ncites:\n  observations: [\"obs_protagoras_0079\", \"obs_protagoras_0248\", \"obs_protagoras_0084\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_protagoras_0014",
+      "body": "```yaml\ncommentary_id: comm_protagoras_0014\nsource_work: Protagoras\nblock_kind: section\nplacement: before\ntitle: \"From Simonides’ refutation to a new exposition\"\nstephanus_span: 342b-347a\nsource_ref:\n  source_path: raw/plato/greek/protagoras.txt\n  stephanus_span: 342b-347a\n  start_marker: 342b\n  end_marker: 347a\n  start_char: 67586\n  end_char: 78008\n  text_sha256: \"5638482b56435a7c2f8a16dfd332510ad0ee17bc9dc8f4e0645ad12af169d93f\"\nbody: \"Socrates’ reading makes the poem a contest with Pittacus: Simonides shifts the problem from being good to becoming good, then says that remaining good is impossible for a human being. That argument does not end by returning to the agreed exchange. As I hear 347a, it ends in a handoff: Socrates states his view, and Hippias offers another elegant exposition. The point is not closure but a fresh claim on the floor.\"\ncites:\n  observations: []\n  claims: [\"claim_protagoras_0034\", \"claim_protagoras_0035\", \"claim_protagoras_0036\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "submission_id": "0004-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "euthydemus",
+  "source_path": "scratch/commentary/rewrites/euthydemus/01-271a-272e.json",
+  "source_sha256": "8343d3606bdc58ea298a92de9fe33c6d8a139426cbab3ac8546f3fc00bb9bdf8",
+  "target_path": "wiki/commentary/euthydemus.md",
+  "target_sha256_before": "727a30e87fd599fe9f25e5d7e9751ec435c4f19615c606a3fb7a0722747b6f28",
+  "target_sha256_after": "a1ccaebe181498af23ecb9215b749755735a39c820cda710edf7c2b957a82933",
+  "applied_at": "2026-08-21T17:24:06.533Z",
+  "applied_ids": [
+    "comm_euthydemus_0001",
+    "comm_euthydemus_0007",
+    "comm_euthydemus_0015"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "01-271a-272e",
+      "section_id": "comm_euthydemus_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/01-271a-272e.json",
+        "sha256": "655486828b3b317942009cabc370e2be9cf0cd658691112e2ce8c3cff29bc232"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0001",
+          "title": "Socrates’ portrait of verbal combat",
+          "body": "Socrates presents the brothers’ eristic as a kind of verbal combat: they are said to refute whatever is said alike whether false or true. The point is not yet that this skill has been demonstrated; it is the unsettling portrait Socrates offers Crito, in which success in argument is detached from the truth of the claim.",
+          "cites": {
+            "observations": [
+              "obs_euthydemus_0007"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "07-285a-286e",
+      "section_id": "comm_euthydemus_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/07-285a-286e.json",
+        "sha256": "2eb4a55d4712d2b38f1f909d8bbcfa396c1c97d3c6bc46ac554f19cab909baf5"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0007",
+          "title": "The victory that leaves no room for correction",
+          "body": "Try hearing this passage not as a proof but as a trap for the proof-maker. Socrates lets the brothers’ rule expand until false belief, ignorance, and even refutation lose their place. My reading is that the comedy comes from this mismatch: a doctrine claiming total victory also removes the shared conditions that make correction—and therefore any serious exchange—possible.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "euthydemus",
+      "unit_key": "15-303a-304b",
+      "section_id": "comm_euthydemus_0015",
+      "audit_output": {
+        "path": "scratch/commentary/audits/euthydemus/15-303a-304b.json",
+        "sha256": "c9b6f67beddb01c4a9ea2dcd1ceedc77723102ef26c1f12f5ed1f8a261e3662b"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_euthydemus_0015",
+          "title": "When praise joins the joke",
+          "body": "The applause is not allowed to settle the scene. Socrates first joins it, praising the pair in a voice so lavish that the compliment becomes part of the joke. My reading is that the praise works as a trap: it lets the audience enjoy the display while making us hear how little separates admiration from ridicule. The scene therefore turns public delight into a question about what, exactly, the crowd is applauding.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": [
+              "dramatic_case_setup/audience_reaction_reported",
+              "irony_marker/socratic_mock_praise"
+            ]
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_euthydemus_0001",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0001\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"When argument becomes combat\"\nstephanus_span: 271a-272e\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 271a-272e\n  start_marker: 271a\n  end_marker: 272e\n  start_char: 0\n  end_char: 3524\n  text_sha256: \"e05d93b9fcf6ae7f56b57dfdba283948476533a384dea01bd9feec541ccef87c\"\nbody: \"The important signal here is not simply that the brothers claim universal expertise, but that Socrates translates their verbal skill into combat. Their words are weapons, and refutation is said to work the same way whether a claim is true or false. Hear that as the unit’s governing problem: what kind of skill can ignore truth?\"\ncites:\n  observations: [\"obs_euthydemus_0007\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0007",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0007\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"Socrates turns the denial of contradiction against itself\"\nstephanus_span: 285a-286e\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 285a-286e\n  start_marker: 285a\n  end_marker: 286e\n  start_char: 29019\n  end_char: 33256\n  text_sha256: \"89e1003cbfe71f7947176711a4d71e1eef30a3af0fcb0235adedb70d8f220481\"\nbody: \"One way to hear this exchange is as a reversal. Dionysodorus denies that anyone contradicts anyone else; Socrates then takes the questioner’s role and follows that denial past contradiction: if false speech is impossible, false belief and ignorance disappear with it, and even refutation becomes hard to name. The triumph starts to undermine the practice of argument itself.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"elenchus/inversion_counterargument\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_euthydemus_0015",
+      "body": "```yaml\ncommentary_id: comm_euthydemus_0015\nsource_work: Euthydemus\nblock_kind: section\nplacement: before\ntitle: \"Applause, then the scarcity joke\"\nstephanus_span: 303a-304b\nsource_ref:\n  source_path: raw/plato/greek/euthydemus.txt\n  stephanus_span: 303a-304b\n  start_marker: 303a\n  end_marker: 304b\n  start_char: 67206\n  end_char: 70172\n  text_sha256: \"5aaac71d1c0bf8a9c5fc6e1e9cb5b61d6466ef98122ef1e5a0f6d06ffb72b50a\"\nbody: \"Applause supplies the surface; Socrates' mock praise supplies the twist. He does not say that the arguments refute their own speakers. He imagines instead that most people would be ashamed to use them for refuting others. Then the closing advice turns compliment into warning: a trick learned instantly loses prestige, so its champions should keep it private—and charge for access. The praise begins to sound like an exposure of scarcity masquerading as excellence.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: [\"dramatic_case_setup/audience_reaction_reported\", \"irony_marker/socratic_mock_praise\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "submission_id": "0004-rewrite-03-5d-6e",
+  "lane": "commentary",
+  "kind": "rewrite",
+  "scope": "euthyphro",
+  "unit_key": "03-5d-6e",
+  "source_path": "scratch/commentary/rewrites/euthyphro/03-5d-6e.json",
+  "source_sha256": "021cd71095f7900a66283439b68cf22be68e45fd313df1308936bc5e07b9d1c4",
+  "target_path": "wiki/commentary/euthyphro.md",
+  "target_sha256_before": "02a3017bcb6c3a17486843707dc57b31202614f1b47b738b3badcbf430bc762a",
+  "target_sha256_after": "5f35fa0da215957ea7c328a27356fd64eaf5cbd937744918c6e9af8e54806d10",
+  "applied_at": "2026-08-21T14:30:41.538Z",
+  "applied_ids": [
+    "comm_euthyphro_0019"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "euthyphro",
+    "unit_key": "03-5d-6e",
+    "section_id": "comm_euthyphro_0003",
+    "audit_output": {
+      "path": "scratch/commentary/audits/euthyphro/03-5d-6e.json",
+      "sha256": "72d570df764d8a037ea3b61cb648112cadb5d71f09cc1aeb4ec18b972a6f396a"
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_euthyphro_0019",
+        "title": "",
+        "body": "Socrates narrows the question: he is not asking for one or two pious actions, but for the single form by which pious things are pious, a standard he could use to assess particular actions. The exchange then turns from that demand to Euthyphro’s next proposed definition, that piety is what is dear to the gods. The passage establishes the standard being requested; it does not yet establish whether this proposal can fulfill it.",
+        "cites": {
+          "observations": [
+            "obs_euthyphro_0010",
+            "obs_euthyphro_0011"
+          ],
+          "claims": [
+            "claim_euthyphro_0012",
+            "claim_euthyphro_0013",
+            "claim_euthyphro_0014"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_euthyphro_0019",
+      "body": "```yaml\ncommentary_id: comm_euthyphro_0019\nsource_work: Euthyphro\nblock_kind: argument\nplacement: after\nstephanus_span: 6d-6e\nsource_ref:\n  source_path: raw/plato/greek/euthyphro.txt\n  stephanus_span: 6d-6e\n  start_marker: 6d\n  end_marker: 6e\n  start_char: 9546\n  end_char: 10456\n  text_sha256: \"b469be4fcb23bcc192c2728a1214fa8dd748e72e4f61c48e988cb3f229eed416\"\nbody: \"Here Socrates states the method that will drive the whole dialogue. He does not want one or two holy deeds; he wants the single form by which all holy things are holy, something he can fix his eye on and use as a model for judging any action whatever. The demand is for more than instances: it is for a standard. Euthyphro's second attempt — the holy is what is dear to the gods — is his first real try at meeting that demand.\"\ncites:\n  observations: [\"obs_euthyphro_0010\", \"obs_euthyphro_0011\"]\n  claims: [\"claim_euthyphro_0012\", \"claim_euthyphro_0013\", \"claim_euthyphro_0014\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

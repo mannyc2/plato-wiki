@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "statesman",
+  "source_path": "scratch/commentary/rewrites/statesman/13-306a-311c.json",
+  "source_sha256": "25c37228d40fbff8f3056d2f49dda251fa8528be07ab7ff50830e4ab36ebd747",
+  "target_path": "wiki/commentary/statesman.md",
+  "target_sha256_before": "4cd28b819d0b1c44eae7e67668a4da12e167793551ebaa1cae5cbe259f41c4a3",
+  "target_sha256_after": "b69b9ee213df0fa651f2de517391b619cfd79748af89474cf650ba63c9d87a8a",
+  "applied_at": "2026-08-23T21:18:33.564Z",
+  "applied_ids": [
+    "comm_statesman_0023"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "statesman",
+      "unit_key": "13-306a-311c",
+      "section_id": "comm_statesman_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/statesman/13-306a-311c.json",
+        "sha256": "23db89e6654aebe5c50d6340dd286c48040d2650894491db82b5d536928105a7"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_statesman_0023",
+          "title": "",
+          "body": "Hold the image lightly; do not mistake this suggestive pattern for the completed account.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_statesman_0023",
+      "body": "```yaml\ncommentary_id: comm_statesman_0023\nsource_work: Statesman\nblock_kind: notice\nplacement: after\nstephanus_span: 311a\nsource_ref:\n  source_path: raw/plato/greek/statesman.txt\n  stephanus_span: 311a\n  start_marker: 311a\n  end_marker: 311a\n  start_char: 112273\n  end_char: 112696\n  text_sha256: \"fc7798c128bc8ec9768870e875de136ba50ebd2b42ff71228945bfcea24e97dc\"\nbody: \"The final image is not a decorative flourish added after the definition. It gives the definition its test: political art must make the city hold together through a measured interlacing of courage and moderation.\"\ncites:\n  observations: []\n  claims: [claim_statesman_0140, claim_statesman_0141, claim_statesman_0142]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0027-structural-remediation-11-659a-662c",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "laws",
+  "unit_key": "11-659a-662c",
+  "source_path": "scratch/commentary/audits/laws/11-659a-662c.json",
+  "source_sha256": "9a17f20bb17bd3779a0236358c09d5e1d4ed513d066e82d1c9d3ed7eb914d686",
+  "target_path": "wiki/commentary/laws.md",
+  "target_sha256_before": "ba9a64641a86add9be0f4cbe9b2ac221933ac1f8ce446ac496ad811e8b8d96e2",
+  "target_sha256_after": "203e6436a0609f0f3a4a8bd8eb67fc87a70e41b1eddcd5eecd6bf33bb6d65f4c",
+  "applied_at": "2026-08-23T22:36:39.402Z",
+  "applied_ids": [
+    "comm_laws_0011"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "laws",
+      "unitKey": "11-659a-662c",
+      "sectionId": "comm_laws_0011",
+      "auditOutputPath": "scratch/commentary/audits/laws/11-659a-662c.json",
+      "auditOutputSha256": "9a17f20bb17bd3779a0236358c09d5e1d4ed513d066e82d1c9d3ed7eb914d686",
+      "expectedLedgerSha256": "ba9a64641a86add9be0f4cbe9b2ac221933ac1f8ce446ac496ad811e8b8d96e2",
+      "expectedAttributionSha256": "7a09fbf015fcc946a2acc9373d26af206a6cbfbffa899afc76ccc172f53c32db",
+      "expectedEnglishSha256": "02294c19ba9df8bbe90881fa3e379898227f1bcd074afa0edbf169b91f92d168",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_laws_0011"
+        }
+      ],
+      "reviewer": "lane-a-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Operator-delegated independent Luna structural review confirms conservative rejection of audited remove findings and split originals; delegated model review only."
+    },
+    "audit_output_path": "scratch/commentary/audits/laws/11-659a-662c.json",
+    "audit_output_sha256": "9a17f20bb17bd3779a0236358c09d5e1d4ed513d066e82d1c9d3ed7eb914d686",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_laws_0011",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

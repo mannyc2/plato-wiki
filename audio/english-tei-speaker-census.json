@@ -1,0 +1,3287 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "english-tei-raw-speaker-census",
+  "editorial_status": "raw-source-attribution-only",
+  "scope_note": "This deterministic census preserves TEI labels and attribution strings. It is evidence for, not a substitute for, the required editorial character census.",
+  "source": {
+    "repository": "https://github.com/PerseusDL/canonical-greekLit",
+    "commit": "e37eed2e8a5fed710c3ab0d312249c3fb04d77e0",
+    "edition_id": "perseus-eng2"
+  },
+  "summary": {
+    "dialogues": 27,
+    "participants": 110,
+    "said_elements": 13536,
+    "dialogue_unique_raw_who_values": 105,
+    "anomaly_records": 49,
+    "dialogues_with_anomalies": 13
+  },
+  "dialogues": [
+    {
+      "dialogue": "apology",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg002",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg002/tlg0059.tlg002.perseus-eng2.xml",
+        "tei_sha256": "0f4c12045fc3d26a69d1120cf8eff04b64bedd401291f292f91bba593439e679"
+      },
+      "counts": {
+        "participants": 0,
+        "said_elements": 1,
+        "unique_raw_who_values": 1,
+        "anomaly_records": 1
+      },
+      "participants": [],
+      "said_attributions": [
+        {
+          "raw_who": null,
+          "occurrences": 1,
+          "classification": "missing",
+          "tokens": [],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": [
+        {
+          "code": "said-missing-who",
+          "raw_who": null,
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "dialogue": "charmides",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg018",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg018/tlg0059.tlg018.perseus-eng2.xml",
+        "tei_sha256": "3b69d80e7ef2153119e6d4079b9836eecc9ba720401b69dde5fdd812c7c75421"
+      },
+      "counts": {
+        "participants": 4,
+        "said_elements": 24,
+        "unique_raw_who_values": 2,
+        "anomaly_records": 4
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Chaerephon",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Chaerephon"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Critias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Critias"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Charmides",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Charmides"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 22,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Σωκράτης",
+          "occurrences": 2,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Σωκράτης"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": [
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 2,
+          "raw_label": "Chaerephon"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 3,
+          "raw_label": "Critias"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 4,
+          "raw_label": "Charmides"
+        },
+        {
+          "code": "said-fragment-no-exact-participant-label",
+          "raw_who": "#Σωκράτης",
+          "raw_fragment": "Σωκράτης",
+          "occurrences": 2
+        }
+      ]
+    },
+    {
+      "dialogue": "cratylus",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg005",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg005/tlg0059.tlg005.perseus-eng2.xml",
+        "tei_sha256": "1425489e475cd79e7fbad43730461965b61a8db90271e6720364d8e90b9625b8"
+      },
+      "counts": {
+        "participants": 3,
+        "said_elements": 771,
+        "unique_raw_who_values": 3,
+        "anomaly_records": 0
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Hermogenes",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Hermogenes"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Cratylus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Cratylus"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Cratylus",
+          "occurrences": 90,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Cratylus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Hermogenes",
+          "occurrences": 292,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Hermogenes"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 389,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": []
+    },
+    {
+      "dialogue": "critias",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg032",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg032/tlg0059.tlg032.perseus-eng2.xml",
+        "tei_sha256": "ebb3da759ee86a2e7411f18a10a8fe7e6129e3423fd6c6c01ace31b26219f8ce"
+      },
+      "counts": {
+        "participants": 4,
+        "said_elements": 20,
+        "unique_raw_who_values": 4,
+        "anomaly_records": 0
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Timaeus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Timaeus"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Critias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Critias"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Hermocrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Hermocrates"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Critias",
+          "occurrences": 17,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Critias"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Hermocrates",
+          "occurrences": 1,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Hermocrates"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 1,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Timaeus",
+          "occurrences": 1,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Timaeus"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": []
+    },
+    {
+      "dialogue": "crito",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg003",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg003/tlg0059.tlg003.perseus-eng2.xml",
+        "tei_sha256": "52351887351233ca662ef780f152be3a011a7bd32284086f52554c205b88e129"
+      },
+      "counts": {
+        "participants": 2,
+        "said_elements": 102,
+        "unique_raw_who_values": 2,
+        "anomaly_records": 0
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Crito",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Crito"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Crito",
+          "occurrences": 49,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Crito"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 53,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": []
+    },
+    {
+      "dialogue": "euthydemus",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg021",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg021/tlg0059.tlg021.perseus-eng2.xml",
+        "tei_sha256": "4bd2706bf67d5412103c5b6cd7f59a275fea8d998a886d75e20f5685f8ee7aa4"
+      },
+      "counts": {
+        "participants": 6,
+        "said_elements": 553,
+        "unique_raw_who_values": 9,
+        "anomaly_records": 3
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Crito",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Crito"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Euthydemus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Euthydemus"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Dionysodorus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Dionysodorus"
+        },
+        {
+          "ordinal": 5,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Cleinias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Cleinias"
+        },
+        {
+          "ordinal": 6,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Ctesippus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Ctesippus"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": null,
+          "occurrences": 9,
+          "classification": "missing",
+          "tokens": [],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Cleinias",
+          "occurrences": 66,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Cleinias"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Crito",
+          "occurrences": 33,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Crito"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Ctesippus",
+          "occurrences": 91,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Ctesippus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Dionysodorus",
+          "occurrences": 165,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Dionysodorus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Dionysodorus #Euthydemus",
+          "occurrences": 1,
+          "classification": "multiple-pointers",
+          "tokens": [
+            "#Dionysodorus",
+            "#Euthydemus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Euthydemus",
+          "occurrences": 123,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Euthydemus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Euthydemus #Dionysodorus",
+          "occurrences": 3,
+          "classification": "multiple-pointers",
+          "tokens": [
+            "#Euthydemus",
+            "#Dionysodorus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 62,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": [
+        {
+          "code": "said-missing-who",
+          "raw_who": null,
+          "occurrences": 9
+        },
+        {
+          "code": "said-multiple-who-tokens",
+          "raw_who": "#Dionysodorus #Euthydemus",
+          "tokens": [
+            "#Dionysodorus",
+            "#Euthydemus"
+          ],
+          "occurrences": 1
+        },
+        {
+          "code": "said-multiple-who-tokens",
+          "raw_who": "#Euthydemus #Dionysodorus",
+          "tokens": [
+            "#Euthydemus",
+            "#Dionysodorus"
+          ],
+          "occurrences": 3
+        }
+      ]
+    },
+    {
+      "dialogue": "euthyphro",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg001",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg001/tlg0059.tlg001.perseus-eng2.xml",
+        "tei_sha256": "3d3e1b93f43467ab7b3798c54384bac4d0c1bfdfc265e786192295f51455e5a5"
+      },
+      "counts": {
+        "participants": 2,
+        "said_elements": 233,
+        "unique_raw_who_values": 2,
+        "anomaly_records": 0
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Euthyphro",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Euthyphro"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Euthyphro",
+          "occurrences": 116,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Euthyphro"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 117,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": []
+    },
+    {
+      "dialogue": "gorgias",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg023",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg023/tlg0059.tlg023.perseus-eng2.xml",
+        "tei_sha256": "eba5cb89d8a8dfac300a1a7d444808531711ad1472a76865f96ea00523940759"
+      },
+      "counts": {
+        "participants": 5,
+        "said_elements": 1107,
+        "unique_raw_who_values": 5,
+        "anomaly_records": 0
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Callicles",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Callicles"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Chaerephon",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Chaerephon"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Gorgias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Gorgias"
+        },
+        {
+          "ordinal": 5,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Polus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Polus"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Callicles",
+          "occurrences": 240,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Callicles"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Chaerephon",
+          "occurrences": 14,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Chaerephon"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Gorgias",
+          "occurrences": 98,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Gorgias"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Polus",
+          "occurrences": 207,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Polus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 548,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": []
+    },
+    {
+      "dialogue": "greater-hippias",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg025",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg025/tlg0059.tlg025.perseus-eng2.xml",
+        "tei_sha256": "b4cdd3200494bca0dde6f064955b8b627f2d32a29649ea8f4bba18e21302803a"
+      },
+      "counts": {
+        "participants": 2,
+        "said_elements": 356,
+        "unique_raw_who_values": 2,
+        "anomaly_records": 0
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Hippias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Hippias"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Hippias",
+          "occurrences": 178,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Hippias"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 178,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": []
+    },
+    {
+      "dialogue": "ion",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg027",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg027/tlg0059.tlg027.perseus-eng2.xml",
+        "tei_sha256": "a282efa1c9bdc001c53986aef9c8c338d6a8950a7523ef69719176f360deff5a"
+      },
+      "counts": {
+        "participants": 2,
+        "said_elements": 174,
+        "unique_raw_who_values": 2,
+        "anomaly_records": 0
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Ion",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Ion"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Ion",
+          "occurrences": 85,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Ion"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 89,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": []
+    },
+    {
+      "dialogue": "laches",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg019",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg019/tlg0059.tlg019.perseus-eng2.xml",
+        "tei_sha256": "ca6fd7818ad1e525ec0488cb9edd6c01c9e9b118742bacd403eda99c9d3e0749"
+      },
+      "counts": {
+        "participants": 6,
+        "said_elements": 265,
+        "unique_raw_who_values": 6,
+        "anomaly_records": 2
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Lysimachus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Lysimachus"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Melesias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Melesias"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Nicias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Nicias"
+        },
+        {
+          "ordinal": 5,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Laches",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Laches"
+        },
+        {
+          "ordinal": 6,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Sons of Lysimachus and Melesias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Sons of Lysimachus and Melesias"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Laches",
+          "occurrences": 80,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Laches"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Lysimachus",
+          "occurrences": 15,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Lysimachus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Melesias",
+          "occurrences": 7,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Melesias"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Nicias",
+          "occurrences": 50,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Nicias"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 112,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Sons of Lysimachus and Melesias",
+          "occurrences": 1,
+          "classification": "malformed",
+          "tokens": [
+            "#Sons",
+            "of",
+            "Lysimachus",
+            "and",
+            "Melesias"
+          ],
+          "malformed_tokens": [
+            "of",
+            "Lysimachus",
+            "and",
+            "Melesias"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "code": "said-malformed-who-tokens",
+          "raw_who": "#Sons of Lysimachus and Melesias",
+          "malformed_tokens": [
+            "of",
+            "Lysimachus",
+            "and",
+            "Melesias"
+          ],
+          "occurrences": 1
+        },
+        {
+          "code": "said-multiple-who-tokens",
+          "raw_who": "#Sons of Lysimachus and Melesias",
+          "tokens": [
+            "#Sons",
+            "of",
+            "Lysimachus",
+            "and",
+            "Melesias"
+          ],
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "dialogue": "laws",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg034",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg034/tlg0059.tlg034.perseus-eng2.xml",
+        "tei_sha256": "5a0c359699ea967ee86b84ac7e5891dbdb7f3ad62c17049d8571e775dcf278a2"
+      },
+      "counts": {
+        "participants": 3,
+        "said_elements": 2007,
+        "unique_raw_who_values": 4,
+        "anomaly_records": 7
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Athenian Stranger",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Athenian Stranger"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Clinias of Crete",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Clinias of Crete"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Megillus of Lacedaemon",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Megillus of Lacedaemon"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Athenian",
+          "occurrences": 1090,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Athenian"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Clinias",
+          "occurrences": 799,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Clinias"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Megillus",
+          "occurrences": 116,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Megillus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Ἀθηναῖος",
+          "occurrences": 2,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Ἀθηναῖος"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": [
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 1,
+          "raw_label": "Athenian Stranger"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 2,
+          "raw_label": "Clinias of Crete"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 3,
+          "raw_label": "Megillus of Lacedaemon"
+        },
+        {
+          "code": "said-fragment-no-exact-participant-label",
+          "raw_who": "#Athenian",
+          "raw_fragment": "Athenian",
+          "occurrences": 1090
+        },
+        {
+          "code": "said-fragment-no-exact-participant-label",
+          "raw_who": "#Megillus",
+          "raw_fragment": "Megillus",
+          "occurrences": 116
+        },
+        {
+          "code": "said-fragment-no-exact-participant-label",
+          "raw_who": "#Ἀθηναῖος",
+          "raw_fragment": "Ἀθηναῖος",
+          "occurrences": 2
+        },
+        {
+          "code": "said-fragment-no-exact-participant-label",
+          "raw_who": "#Clinias",
+          "raw_fragment": "Clinias",
+          "occurrences": 799
+        }
+      ]
+    },
+    {
+      "dialogue": "lesser-hippias",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg026",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg026/tlg0059.tlg026.perseus-eng2.xml",
+        "tei_sha256": "d79c9c538f6eaaa53708520f2db1105fc05f847fcb0981f3b80a1da8d549df5a"
+      },
+      "counts": {
+        "participants": 3,
+        "said_elements": 231,
+        "unique_raw_who_values": 3,
+        "anomaly_records": 0
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Eudicus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Eudicus"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Hippias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Hippias"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Eudicus",
+          "occurrences": 4,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Eudicus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Hippias",
+          "occurrences": 112,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Hippias"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 115,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": []
+    },
+    {
+      "dialogue": "lysis",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg020",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg020/tlg0059.tlg020.perseus-eng2.xml",
+        "tei_sha256": "ae373dd5bf0a90b74ce245dccb2161de0194694b774eb0e03af13581103b67d7"
+      },
+      "counts": {
+        "participants": 5,
+        "said_elements": 239,
+        "unique_raw_who_values": 7,
+        "anomaly_records": 2
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Hippothales",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Hippothales"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Ctesippus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Ctesippus"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Menexenus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Menexenus"
+        },
+        {
+          "ordinal": 5,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Lysis",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Lysis"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Ctesippus",
+          "occurrences": 12,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Ctesippus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Hippothales",
+          "occurrences": 31,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Hippothales"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Lysis",
+          "occurrences": 70,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Lysis"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Lysis #Menexenus",
+          "occurrences": 2,
+          "classification": "multiple-pointers",
+          "tokens": [
+            "#Lysis",
+            "#Menexenus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Menexenus",
+          "occurrences": 101,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Menexenus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Menexenus #Lysis",
+          "occurrences": 2,
+          "classification": "multiple-pointers",
+          "tokens": [
+            "#Menexenus",
+            "#Lysis"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 21,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": [
+        {
+          "code": "said-multiple-who-tokens",
+          "raw_who": "#Lysis #Menexenus",
+          "tokens": [
+            "#Lysis",
+            "#Menexenus"
+          ],
+          "occurrences": 2
+        },
+        {
+          "code": "said-multiple-who-tokens",
+          "raw_who": "#Menexenus #Lysis",
+          "tokens": [
+            "#Menexenus",
+            "#Lysis"
+          ],
+          "occurrences": 2
+        }
+      ]
+    },
+    {
+      "dialogue": "menexenus",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg028",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg028/tlg0059.tlg028.perseus-eng2.xml",
+        "tei_sha256": "67d7db4202d4f1654d74219386530f539f7863f8d82a6a1eb4eafe94221553e2"
+      },
+      "counts": {
+        "participants": 2,
+        "said_elements": 46,
+        "unique_raw_who_values": 2,
+        "anomaly_records": 0
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Menexenus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Menexenus"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Menexenus",
+          "occurrences": 16,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Menexenus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 30,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": []
+    },
+    {
+      "dialogue": "meno",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg024",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg024/tlg0059.tlg024.perseus-eng2.xml",
+        "tei_sha256": "4076910e19611982035326947f22b778de8df6be7ab41b80f346437415d7282a"
+      },
+      "counts": {
+        "participants": 4,
+        "said_elements": 569,
+        "unique_raw_who_values": 4,
+        "anomaly_records": 2
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Meno",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Meno"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Meno's Boy",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Meno's Boy"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Anytus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Anytus"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Anytus",
+          "occurrences": 24,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Anytus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Meno",
+          "occurrences": 208,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Meno"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Meno's Boy",
+          "occurrences": 51,
+          "classification": "malformed",
+          "tokens": [
+            "#Meno's",
+            "Boy"
+          ],
+          "malformed_tokens": [
+            "#Meno's",
+            "Boy"
+          ]
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 286,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": [
+        {
+          "code": "said-malformed-who-tokens",
+          "raw_who": "#Meno's Boy",
+          "malformed_tokens": [
+            "#Meno's",
+            "Boy"
+          ],
+          "occurrences": 51
+        },
+        {
+          "code": "said-multiple-who-tokens",
+          "raw_who": "#Meno's Boy",
+          "tokens": [
+            "#Meno's",
+            "Boy"
+          ],
+          "occurrences": 51
+        }
+      ]
+    },
+    {
+      "dialogue": "parmenides",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg009",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg009/tlg0059.tlg009.perseus-eng2.xml",
+        "tei_sha256": "a2274d0fd8303f033b5a87a033400e7c07491010e00fc9eed82d370493ea8934"
+      },
+      "counts": {
+        "participants": 9,
+        "said_elements": 1300,
+        "unique_raw_who_values": 3,
+        "anomaly_records": 10
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Cephalus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Cephalus"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Adeimantus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Adeimantus"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Antiphon",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Antiphon"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Glaucon",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Glaucon"
+        },
+        {
+          "ordinal": 5,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Pythodorus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Pythodorus"
+        },
+        {
+          "ordinal": 6,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 7,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Zeno",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Zeno"
+        },
+        {
+          "ordinal": 8,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Parmenides",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Parmenides"
+        },
+        {
+          "ordinal": 9,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Aristoteles",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Aristoteles"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": null,
+          "occurrences": 1259,
+          "classification": "missing",
+          "tokens": [],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Cephalos",
+          "occurrences": 39,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Cephalos"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Cephalus",
+          "occurrences": 2,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Cephalus"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": [
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 2,
+          "raw_label": "Adeimantus"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 3,
+          "raw_label": "Antiphon"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 4,
+          "raw_label": "Glaucon"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 5,
+          "raw_label": "Pythodorus"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 6,
+          "raw_label": "Socrates"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 7,
+          "raw_label": "Zeno"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 8,
+          "raw_label": "Parmenides"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 9,
+          "raw_label": "Aristoteles"
+        },
+        {
+          "code": "said-fragment-no-exact-participant-label",
+          "raw_who": "#Cephalos",
+          "raw_fragment": "Cephalos",
+          "occurrences": 39
+        },
+        {
+          "code": "said-missing-who",
+          "raw_who": null,
+          "occurrences": 1259
+        }
+      ]
+    },
+    {
+      "dialogue": "phaedo",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg004",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg004/tlg0059.tlg004.perseus-eng2.xml",
+        "tei_sha256": "09af4aadfe9ebc3c0d9778818ab2b055c972639936ec078badeb6709c6563d83"
+      },
+      "counts": {
+        "participants": 8,
+        "said_elements": 93,
+        "unique_raw_who_values": 2,
+        "anomaly_records": 6
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Echecrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Echecrates"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Phaedo",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Phaedo"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Apollodorus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Apollodorus"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 5,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Cebes",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Cebes"
+        },
+        {
+          "ordinal": 6,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Simmias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Simmias"
+        },
+        {
+          "ordinal": 7,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Crito",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Crito"
+        },
+        {
+          "ordinal": 8,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "The Servant of the Eleven",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "The Servant of the Eleven"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Echecrates",
+          "occurrences": 17,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Echecrates"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Phaedo",
+          "occurrences": 76,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Phaedo"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": [
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 3,
+          "raw_label": "Apollodorus"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 4,
+          "raw_label": "Socrates"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 5,
+          "raw_label": "Cebes"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 6,
+          "raw_label": "Simmias"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 7,
+          "raw_label": "Crito"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 8,
+          "raw_label": "The Servant of the Eleven"
+        }
+      ]
+    },
+    {
+      "dialogue": "phaedrus",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg012",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg012/tlg0059.tlg012.perseus-eng2.xml",
+        "tei_sha256": "36bf8be9f1c0cb3d61e5b41de00e8902732a9347921288ec9c708eb63824f499"
+      },
+      "counts": {
+        "participants": 2,
+        "said_elements": 400,
+        "unique_raw_who_values": 2,
+        "anomaly_records": 0
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Phaedrus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Phaedrus"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Phaedrus",
+          "occurrences": 190,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Phaedrus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 210,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": []
+    },
+    {
+      "dialogue": "philebus",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg010",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg010/tlg0059.tlg010.perseus-eng2.xml",
+        "tei_sha256": "688c1f37ab3778ec1aa1319b46b98f3b4cf88b8cb4cc4afa4f3c5d79d731d547"
+      },
+      "counts": {
+        "participants": 3,
+        "said_elements": 1144,
+        "unique_raw_who_values": 3,
+        "anomaly_records": 0
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Protarchus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Protarchus"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Philebus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Philebus"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Philebus",
+          "occurrences": 14,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Philebus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Protarchus",
+          "occurrences": 560,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Protarchus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 570,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": []
+    },
+    {
+      "dialogue": "protagoras",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg022",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg022/tlg0059.tlg022.perseus-eng2.xml",
+        "tei_sha256": "13ae3ecaff1c6038ddb9ec10c603b5b76026f0903703713245ba0022cf661a12"
+      },
+      "counts": {
+        "participants": 9,
+        "said_elements": 308,
+        "unique_raw_who_values": 10,
+        "anomaly_records": 1
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Friend",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Friend"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Hippocrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Hippocrates"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Protagoras",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Protagoras"
+        },
+        {
+          "ordinal": 5,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Alcibiades",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Alcibiades"
+        },
+        {
+          "ordinal": 6,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Callias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Callias"
+        },
+        {
+          "ordinal": 7,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Critias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Critias"
+        },
+        {
+          "ordinal": 8,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Prodicus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Prodicus"
+        },
+        {
+          "ordinal": 9,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Hippias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Hippias"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": null,
+          "occurrences": 19,
+          "classification": "missing",
+          "tokens": [],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Alcibiades",
+          "occurrences": 4,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Alcibiades"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Callias",
+          "occurrences": 5,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Callias"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Critias",
+          "occurrences": 2,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Critias"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Friend",
+          "occurrences": 11,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Friend"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Hippias",
+          "occurrences": 4,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Hippias"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Hippocrates",
+          "occurrences": 33,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Hippocrates"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Prodicus",
+          "occurrences": 6,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Prodicus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Protagoras",
+          "occurrences": 161,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Protagoras"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 63,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": [
+        {
+          "code": "said-missing-who",
+          "raw_who": null,
+          "occurrences": 19
+        }
+      ]
+    },
+    {
+      "dialogue": "republic",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg030",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg030/tlg0059.tlg030.perseus-eng2.xml",
+        "tei_sha256": "36826064d30be3b40d20b820f4904ed170d375e41dd3f450cbe4eb733054766d"
+      },
+      "counts": {
+        "participants": 1,
+        "said_elements": 278,
+        "unique_raw_who_values": 1,
+        "anomaly_records": 0
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 278,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": []
+    },
+    {
+      "dialogue": "sophist",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg007",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg007/tlg0059.tlg007.perseus-eng2.xml",
+        "tei_sha256": "3cb5b0a3832778b9725395af24436f8a1a1c854355f7d7424dea93344feab1f5"
+      },
+      "counts": {
+        "participants": 4,
+        "said_elements": 1178,
+        "unique_raw_who_values": 4,
+        "anomaly_records": 2
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Theodorus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Theodorus"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "An Elean Stranger",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "An Elean Stranger"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Theaetetus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Theaetetus"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 6,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Stranger",
+          "occurrences": 585,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Stranger"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Theaetetus",
+          "occurrences": 581,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Theaetetus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Theodorus",
+          "occurrences": 6,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Theodorus"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": [
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 3,
+          "raw_label": "An Elean Stranger"
+        },
+        {
+          "code": "said-fragment-no-exact-participant-label",
+          "raw_who": "#Stranger",
+          "raw_fragment": "Stranger",
+          "occurrences": 585
+        }
+      ]
+    },
+    {
+      "dialogue": "statesman",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg008",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg008/tlg0059.tlg008.perseus-eng2.xml",
+        "tei_sha256": "f008a9c65761ad3f4819d97dfe3bc55afc646e7fa2554f7a93aee57b4f165ca0"
+      },
+      "counts": {
+        "participants": 4,
+        "said_elements": 898,
+        "unique_raw_who_values": 4,
+        "anomaly_records": 8
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Thedorus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Thedorus"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "The Stranger",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "The Stranger"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "The Younger Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "The Younger Socrates"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 5,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Stranger",
+          "occurrences": 448,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Stranger"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Theodorus",
+          "occurrences": 5,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Theodorus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Younger Socrates",
+          "occurrences": 440,
+          "classification": "malformed",
+          "tokens": [
+            "#Younger",
+            "Socrates"
+          ],
+          "malformed_tokens": [
+            "Socrates"
+          ]
+        }
+      ],
+      "anomalies": [
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 2,
+          "raw_label": "Thedorus"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 3,
+          "raw_label": "The Stranger"
+        },
+        {
+          "code": "participant-label-not-exactly-attributed",
+          "participant_ordinal": 4,
+          "raw_label": "The Younger Socrates"
+        },
+        {
+          "code": "said-fragment-no-exact-participant-label",
+          "raw_who": "#Younger Socrates",
+          "raw_fragment": "Younger Socrates",
+          "occurrences": 440
+        },
+        {
+          "code": "said-fragment-no-exact-participant-label",
+          "raw_who": "#Stranger",
+          "raw_fragment": "Stranger",
+          "occurrences": 448
+        },
+        {
+          "code": "said-fragment-no-exact-participant-label",
+          "raw_who": "#Theodorus",
+          "raw_fragment": "Theodorus",
+          "occurrences": 5
+        },
+        {
+          "code": "said-malformed-who-tokens",
+          "raw_who": "#Younger Socrates",
+          "malformed_tokens": [
+            "Socrates"
+          ],
+          "occurrences": 440
+        },
+        {
+          "code": "said-multiple-who-tokens",
+          "raw_who": "#Younger Socrates",
+          "tokens": [
+            "#Younger",
+            "Socrates"
+          ],
+          "occurrences": 440
+        }
+      ]
+    },
+    {
+      "dialogue": "symposium",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg011",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg011/tlg0059.tlg011.perseus-eng2.xml",
+        "tei_sha256": "4f71c9111db459e1b31a32694ea41602ecb7dc4ae4a582f9439a906c5c2edd8b"
+      },
+      "counts": {
+        "participants": 8,
+        "said_elements": 98,
+        "unique_raw_who_values": 9,
+        "anomaly_records": 1
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Apollodorus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Apollodorus"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Companion",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Companion"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Alcibiades",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Alcibiades"
+        },
+        {
+          "ordinal": 5,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Phaedrus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Phaedrus"
+        },
+        {
+          "ordinal": 6,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Pausanias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Pausanias"
+        },
+        {
+          "ordinal": 7,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Aristophanes",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Aristophanes"
+        },
+        {
+          "ordinal": 8,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Agathon",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Agathon"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Agathon",
+          "occurrences": 4,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Agathon"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Alcibiades",
+          "occurrences": 8,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Alcibiades"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Apollodorus",
+          "occurrences": 54,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Apollodorus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Aristophanes",
+          "occurrences": 6,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Aristophanes"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Companion",
+          "occurrences": 2,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Companion"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Eryximachus",
+          "occurrences": 3,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Eryximachus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Pausanias",
+          "occurrences": 6,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Pausanias"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Phaedrus",
+          "occurrences": 3,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Phaedrus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 12,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": [
+        {
+          "code": "said-fragment-no-exact-participant-label",
+          "raw_who": "#Eryximachus",
+          "raw_fragment": "Eryximachus",
+          "occurrences": 3
+        }
+      ]
+    },
+    {
+      "dialogue": "theaetetus",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg006",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg006/tlg0059.tlg006.perseus-eng2.xml",
+        "tei_sha256": "c672069ec54efbe9e1835db522498387b1e6edc5f0c32302b79e078071cf8b56"
+      },
+      "counts": {
+        "participants": 5,
+        "said_elements": 1028,
+        "unique_raw_who_values": 5,
+        "anomaly_records": 0
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Eucleides",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Eucleides"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Terpsion",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Terpsion"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Theodorus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Theodorus"
+        },
+        {
+          "ordinal": 5,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Theaetetus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Theaetetus"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Eucleides",
+          "occurrences": 11,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Eucleides"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 506,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Terpsion",
+          "occurrences": 10,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Terpsion"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Theaetetus",
+          "occurrences": 412,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Theaetetus"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Theodorus",
+          "occurrences": 89,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Theodorus"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": []
+    },
+    {
+      "dialogue": "timaeus",
+      "source": {
+        "author_id": "tlg0059",
+        "work_id": "tlg031",
+        "edition_id": "perseus-eng2",
+        "url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/e37eed2e8a5fed710c3ab0d312249c3fb04d77e0/data/tlg0059/tlg031/tlg0059.tlg031.perseus-eng2.xml",
+        "tei_sha256": "cabe59ce4805f468899a8a2c36645a69f1eccf34d39f6c2570aea9fddfc7ffa2"
+      },
+      "counts": {
+        "participants": 4,
+        "said_elements": 113,
+        "unique_raw_who_values": 4,
+        "anomaly_records": 0
+      },
+      "participants": [
+        {
+          "ordinal": 1,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Socrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Socrates"
+        },
+        {
+          "ordinal": 2,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Timaeus",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Timaeus"
+        },
+        {
+          "ordinal": 3,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Hermocrates",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Hermocrates"
+        },
+        {
+          "ordinal": 4,
+          "element": "person",
+          "attributes": {},
+          "labels": [
+            {
+              "element": "persName",
+              "raw_label": "Critias",
+              "attributes": {}
+            }
+          ],
+          "raw_text": "Critias"
+        }
+      ],
+      "said_attributions": [
+        {
+          "raw_who": "#Critias",
+          "occurrences": 10,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Critias"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Hermocrates",
+          "occurrences": 1,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Hermocrates"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Socrates",
+          "occurrences": 20,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Socrates"
+          ],
+          "malformed_tokens": []
+        },
+        {
+          "raw_who": "#Timaeus",
+          "occurrences": 82,
+          "classification": "single-pointer",
+          "tokens": [
+            "#Timaeus"
+          ],
+          "malformed_tokens": []
+        }
+      ],
+      "anomalies": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "submission_id": "0005-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "phaedrus",
+  "source_path": "scratch/commentary/rewrites/phaedrus/13-261d-264b.json",
+  "source_sha256": "2c8be72f4dc8c40faecddcfbba1686dcc91937af5f097ae261182f153ca44486",
+  "target_path": "wiki/commentary/phaedrus.md",
+  "target_sha256_before": "3136f24e83b4c9cc1172a05cbcabeb205cfbab0a7290e6eeb5a4171cb9eddf44",
+  "target_sha256_after": "5dc45fc0d10403c290f0c2e4d6fcddffb56c9de221c5049ebac9bbee2a3df178",
+  "applied_at": "2026-08-23T21:18:23.123Z",
+  "applied_ids": [
+    "comm_phaedrus_0013"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "phaedrus",
+      "unit_key": "13-261d-264b",
+      "section_id": "comm_phaedrus_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/phaedrus/13-261d-264b.json",
+        "sha256": "3e120afecb9afcc1e3e428f749af487290b5cdafc7361815896c631553bb154f"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_phaedrus_0013",
+          "title": "The Question of Order",
+          "body": "Listen for Socrates’ governing question: what makes the parts of a speech belong together? Keep that question in view as the passage examines order—not as a promised remedy, but as a standard for judging speech.",
+          "cites": {
+            "observations": [],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_phaedrus_0013",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0013\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"When order must be heard\"\nstephanus_span: 261d-264b\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 261d-264b\n  start_marker: 261d\n  end_marker: 264b\n  start_char: 69128\n  end_char: 74611\n  text_sha256: \"665b82910c9aec3385fae0d525b1f68016bd04ab9ed544141b839e9e94383b3c\"\nbody: \"One way to hear this stretch is as a challenge to the listener: before admiring a persuasive sequence, ask whether its parts feel guided by a visible necessity or merely placed one after another. I take the passage’s force to lie in making disorder audible before offering a remedy.\"\ncites:\n  observations: [\"obs_phaedrus_0231\", \"obs_phaedrus_0232\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

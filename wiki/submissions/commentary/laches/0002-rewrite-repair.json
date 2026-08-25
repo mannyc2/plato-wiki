@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "laches",
+  "source_path": "scratch/commentary/rewrite-repairs/laches/round2.json",
+  "source_sha256": "76e3860ab03cf39d7806675b38eef6d08aa44f35db0e4e316957c67eb710487a",
+  "target_path": "wiki/commentary/laches.md",
+  "target_sha256_before": "9fa0871e2e37805431357d4c6fd0d12894cc13d3f4044aa9ab19f293f975a7d6",
+  "target_sha256_after": "c141c118bd6095ece5561659b2c641bc85cf310fa10c2cdebd9eba287a0f1282",
+  "applied_at": "2026-08-21T15:23:39.738Z",
+  "applied_ids": [
+    "comm_laches_0007"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "laches",
+    "ledger": {
+      "path": "wiki/commentary/laches.md",
+      "sha256": "9fa0871e2e37805431357d4c6fd0d12894cc13d3f4044aa9ab19f293f975a7d6"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/laches/0001-rewrite-batch.json",
+      "sha256": "7a2959b13a074cc0da65fe871d462ff98bbfadb87863476259252ce18fba5457"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-laches-0001-rewrite-batch-acceptance.md",
+      "sha256": "34919de90824e61979ea3fc87331208634158e03c18c2ea0b8f2f1304adfef5f"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-laches-round1",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_laches_0007",
+          "finding": "The source defect is corrected, but the prose repeats One way to read and restates the same contrast; tighten the spoken cadence while retaining the supported conditional distinction."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-laches-round2",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_laches_0007"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_laches_0007",
+        "title": "Two standards for accepting examination",
+        "body": "Nicias welcomes examination because it reminds a person to live more providently and remain willing to learn throughout life. Laches sets a different condition: a speaker’s deeds must fit his words. He says Socrates may meet that standard because they shared danger and Socrates showed his virtue. Nicias offers a general reason to accept testing; Laches offers Socrates a conditional vote of confidence.",
+        "cites": {
+          "observations": [
+            "obs_laches_0084",
+            "obs_laches_0068"
+          ],
+          "claims": [
+            "claim_laches_0012",
+            "claim_laches_0013",
+            "claim_laches_0014"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_laches_0007",
+      "body": "```yaml\ncommentary_id: comm_laches_0007\nsource_work: Laches\nblock_kind: section\nplacement: before\ntitle: \"Two reasons to accept examination\"\nstephanus_span: 187c-189b\nsource_ref:\n  source_path: raw/plato/greek/laches.txt\n  stephanus_span: 187c-189b\n  start_marker: 187c\n  end_marker: 189b\n  start_char: 18386\n  end_char: 22589\n  text_sha256: \"0dbdb697b7d73db29eb39a956c9dcae13be8241cb69770ee2bfdecb68fd4c47e\"\nbody: \"One way to read this exchange is as a contrast between two reasons for accepting examination. Nicias treats Socratic testing as a useful reminder that can make one more provident and keep one learning. Laches is conditional: he judges a speaker by whether deeds fit words, then says Socrates may have that quality, citing shared danger and a displayed proof of virtue. One way to read the contrast is that Laches' trust remains conditional, not a verdict already secured.\"\ncites:\n  observations: [\"obs_laches_0084\", \"obs_laches_0068\"]\n  claims: [\"claim_laches_0012\", \"claim_laches_0013\", \"claim_laches_0014\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: unreviewed\n```"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "submission_id": "0007-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "lesser-hippias",
+  "source_path": "scratch/commentary/sample-repairs/lesser-hippias/final-sample.json",
+  "source_sha256": "d1333542a11a4471d4e460d608faa0f8bf977cca7bf8a273cbd8da1e76d77d81",
+  "target_path": "wiki/commentary/lesser-hippias.md",
+  "target_sha256_before": "e1c5db48b796fe73ff550584d8cb372a07100f679647525c8d06dea9e37fe822",
+  "target_sha256_after": "14cf6b0ba6384e0e8ce9993f869b16d235f69747ec5f49fa8abb53804db01125",
+  "applied_at": "2026-08-24T00:36:46.703Z",
+  "applied_ids": [
+    "comm_lesser-hippias_0010"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "lesser-hippias",
+    "ledger": {
+      "path": "wiki/commentary/lesser-hippias.md",
+      "sha256": "e1c5db48b796fe73ff550584d8cb372a07100f679647525c8d06dea9e37fe822"
+    },
+    "sample_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-sampler",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna sample review confirmed the target's conditional claim had no accepted citation; the replacement names the assent-chain mechanism and its precise contradiction.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_lesser-hippias_0001",
+        "comm_lesser-hippias_0002",
+        "comm_lesser-hippias_0003",
+        "comm_lesser-hippias_0004",
+        "comm_lesser-hippias_0005",
+        "comm_lesser-hippias_0006",
+        "comm_lesser-hippias_0007",
+        "comm_lesser-hippias_0008",
+        "comm_lesser-hippias_0010",
+        "comm_lesser-hippias_0012",
+        "comm_lesser-hippias_0013"
+      ],
+      "failed_commentary_ids": [
+        "comm_lesser-hippias_0010"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_lesser-hippias_0010",
+        "title": "",
+        "body": "Socrates turns Hippias's admissions into a forced identity: the expert calculator is most capable of speaking falsely about calculation and most capable of speaking truly about it. The contradiction is produced by the assent chain itself, which makes the good calculator no better than the false speaker on this measure.",
+        "cites": {
+          "observations": [
+            "obs_lesser-hippias_0027",
+            "obs_lesser-hippias_0028"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_lesser-hippias_0010",
+      "body": "```yaml\ncommentary_id: comm_lesser-hippias_0010\nsource_work: Lesser Hippias\nblock_kind: argument\nplacement: after\nstephanus_span: 367b\nsource_ref:\n  source_path: raw/plato/greek/lesser-hippias.txt\n  stephanus_span: 367b\n  start_marker: 367b\n  end_marker: 367b\n  start_char: 7757\n  end_char: 8138\n  text_sha256: \"98f8b2a057706c992e5fb5f6ef266fa6cd67bea1c7b267de13c366fd90cf6ae9\"\nbody: \"The contrast is conditional rather than absolute: the wise man can lie consistently if he wishes, while the ignorant man may happen to tell the truth.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

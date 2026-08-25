@@ -1,0 +1,19 @@
+dialogue: philebus
+ledger_path: wiki/voices/philebus.md
+ledger_sha256: 7b6ab951c2f642a98f0c99abb9473a1a775cccfbe3e5d1bb0adfe399fdce6a04
+source_path: raw/plato/greek/philebus.txt
+source_sha256: 8973a4d14e3967d651f18b18ae6fb5ca00f938b464bf8e3a47a1d66b2ade3807
+turn_index_path: derived/plato/turns/philebus.toon
+turn_index_sha256: 848bc6c8fbbd31a57d1b35434537a16ab08d19caa50c79ca9d6d3159e8419fba
+voices[10]:
+  voice_id            | outer_turn_id      | start_char | end_char | depth | voice_chain | resolution | evidence_kinds  | evidence_count
+  voice_philebus_0001 | turn_philebus_0540 | 54962      | 55139    | 1     | ΣΩ.         | resolved   | printed_siglum  | 1
+  voice_philebus_0003 | turn_philebus_1070 | 104146     | 104438   | 1     | ΣΩ.         | resolved   | printed_siglum  | 1
+  voice_philebus_0005 | turn_philebus_1072 | 104491     | 104719   | 1     | ΣΩ.         | resolved   | printed_siglum  | 1
+  voice_philebus_0007 | turn_philebus_1074 | 104731     | 105239   | 1     | ΣΩ.         | resolved   | printed_siglum  | 1
+  voice_philebus_0009 | turn_philebus_1075 | 105239     | 105920   | 1     | ΣΩ.         | resolved   | printed_siglum  | 1
+  voice_philebus_0002 | turn_philebus_0540 | 54966      | 55051    | 2     | ΣΩ.         | unresolved | (none)          | 0
+  voice_philebus_0004 | turn_philebus_1070 | 104180     | 104437   | 2     | ΣΩ.         | unresolved | (none)          | 0
+  voice_philebus_0006 | turn_philebus_1072 | 104671     | 104718   | 2     | ΣΩ.         | unresolved | (none)          | 0
+  voice_philebus_0008 | turn_philebus_1074 | 104931     | 105238   | 2     | ΣΩ.         | unresolved | (none)          | 0
+  voice_philebus_0010 | turn_philebus_1075 | 105243     | 105790   | 2     | ΣΩ.>ΝΟΥΣ.   | resolved   | closing_formula | 1

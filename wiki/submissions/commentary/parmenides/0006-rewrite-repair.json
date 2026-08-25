@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "submission_id": "0006-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "parmenides",
+  "source_path": "scratch/commentary/rewrite-repairs/parmenides/rewrite6.json",
+  "source_sha256": "7f720fc2f27c9b662518896eaf2cd01e1327d88f8478d772bf34a218859411cd",
+  "target_path": "wiki/commentary/parmenides.md",
+  "target_sha256_before": "a281960bbef9f5f26f3eff0fdfc77cab8c1ac925229be6c103a11b13cf01993b",
+  "target_sha256_after": "f95cd1d77b2a02d29a38cafd948cc0e390b20c83a6c2248cb08c20b006c1ec40",
+  "applied_at": "2026-08-21T15:46:41.999Z",
+  "applied_ids": [
+    "comm_parmenides_0003"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "parmenides",
+    "ledger": {
+      "path": "wiki/commentary/parmenides.md",
+      "sha256": "a281960bbef9f5f26f3eff0fdfc77cab8c1ac925229be6c103a11b13cf01993b"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/parmenides/0005-rewrite-03-131b-135d.json",
+      "sha256": "35d72593cd83795ec830e7ea1e0765067ff33a2023ae6e2eed09e1f0f20413b6"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-block-review-parmenides-rejected-fd2531d1a67d.md",
+      "sha256": "2078122a5faa59ec990f3ffac7460b4aa5c4effb0d1fc63677612e9464188509"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-parmenides-rewrite5",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_parmenides_0003",
+          "finding": "The rewrite misstates whole-presence as division and its regress, likeness, knowledge, and training claims exceed the cited accepted records."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-parmenides-six",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_parmenides_0003"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_parmenides_0003",
+        "title": "Unity and reach under pressure",
+        "body": "Parmenides tests whether participation can preserve the Form’s unity and reach. If one Form is wholly present in many things, it would be separate from itself; if each receives a part, the Form is divided, and largeness, equality, and smallness yield absurdities. The likeness proposal generates a further Form, while separated domains block human and divine knowledge. This pressure ends in a demand for dialectical training before Socrates defines Forms.",
+        "cites": {
+          "observations": [
+            "obs_parmenides_0029",
+            "obs_parmenides_0032",
+            "obs_parmenides_0035",
+            "obs_parmenides_0037",
+            "obs_parmenides_0053",
+            "obs_parmenides_0056",
+            "obs_parmenides_0060"
+          ],
+          "claims": [
+            "claim_parmenides_0001",
+            "claim_parmenides_0003"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_parmenides_0003",
+      "body": "```yaml\ncommentary_id: comm_parmenides_0003\nsource_work: Parmenides\nblock_kind: section\nplacement: before\ntitle: \"From refutation to training\"\nstephanus_span: 131b-135d\nsource_ref:\n  source_path: raw/plato/greek/parmenides.txt\n  stephanus_span: 131b-135d\n  start_marker: 131b\n  end_marker: 135d\n  start_char: 9977\n  end_char: 19907\n  text_sha256: \"06ed4c992dc4ab0a3125e382c8c54e3945c3944445cdabfd62a0aad97febf7f5\"\nbody: \"The whole-or-part dilemma is only the opening test, not the destination. A whole Form would be divided from itself; a part makes largeness, equality, and smallness incoherent. I read the later turns as a widening crisis: regress and likeness undermine the remedies, while separation threatens knowledge—even divine knowledge of human things. I hear the close refusing both denying Forms and defining them too soon. Socrates needs dialectical training.\"\ncites:\n  observations: [\"obs_parmenides_0029\", \"obs_parmenides_0032\"]\n  claims: [\"claim_parmenides_0001\", \"claim_parmenides_0003\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

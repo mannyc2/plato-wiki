@@ -1,0 +1,779 @@
+{
+  "schema_version": 1,
+  "submission_id": "0001-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "apology",
+  "source_path": "scratch/commentary/rewrites/apology/01-17a-18e.json",
+  "source_sha256": "59de06632174a41ce8c0099cdbb8b60b2ced665687cded581854c7a79dbe6a57",
+  "target_path": "wiki/commentary/apology.md",
+  "target_sha256_before": "a4fe765bfb296aede912a88ee82f65e0f1825c1981603eb949032171c1810b71",
+  "target_sha256_after": "a543a01a92fe8feedc6e1892955c7473f340af7e710149f1b7572f34aa0cb7a4",
+  "applied_at": "2026-08-21T17:44:23.091Z",
+  "applied_ids": [
+    "comm_apology_0011",
+    "comm_apology_0014",
+    "comm_apology_0020",
+    "comm_apology_0022",
+    "comm_apology_0024",
+    "comm_apology_0026",
+    "comm_apology_0028",
+    "comm_apology_0032",
+    "comm_apology_0033",
+    "comm_apology_0036",
+    "comm_apology_0037",
+    "comm_apology_0038",
+    "comm_apology_0039",
+    "comm_apology_0040",
+    "comm_apology_0041",
+    "comm_apology_0042",
+    "comm_apology_0047",
+    "comm_apology_0048",
+    "comm_apology_0051",
+    "comm_apology_0052",
+    "comm_apology_0054",
+    "comm_apology_0057",
+    "comm_apology_0058",
+    "comm_apology_0059"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "01-17a-18e",
+      "section_id": "comm_apology_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/01-17a-18e.json",
+        "sha256": "5b2ceb39a86bf22fc167c63976d512fda010c816f2550258c833dc4fbf0a4426"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0020",
+          "title": "",
+          "body": "Socrates asks the jury to shift its attention from the manner of his speech to whether what he says is just. He then gives each role its governing standard: the judge is to assess justice, while the orator is to speak the truth. One way to hear this is as a division of labor, not as a prediction about the verdict. Before answering the accusations, Socrates establishes how he wants his defense to be heard.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_apology_0001"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "02-19a-20c",
+      "section_id": "comm_apology_0002",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/02-19a-20c.json",
+        "sha256": "b5da046d6722ca0a2f12f77e265d6bd9d19d0ac8998ece7e8f974909450cd85a"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0022",
+          "title": "",
+          "body": "Socrates turns the inherited prejudice into a text he can examine. He says, in effect, “let us read the accusers’ sworn statement,” then recites the charge: investigating what lies beneath the earth and in the heavens, making the weaker argument stronger, and teaching others to do the same. He immediately links this public image to Aristophanes’ comedy, where, in his account, a Socrates is carried about and claims to walk on air. The important limit is that this is Socrates’ reconstruction of the charge behind Meletus’s suit—not evidence of a separate written slander or of what every juror believed.",
+          "cites": {
+            "observations": [
+              "obs_apology_0004"
+            ],
+            "claims": [
+              "claim_apology_0003"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "03-20d-23c",
+      "section_id": "comm_apology_0003",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/03-20d-23c.json",
+        "sha256": "b0fe910bd975706d18b57e7075eca683900a7cdfcfb3fe0abe5478bf55da61f1"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0024",
+          "title": "",
+          "body": "Instead of asking the jury to trust his self-description, Socrates shifts the source of his claim outward: he names Delphi as witness, reports Chaerephon’s question, and points to Chaerephon’s brother as witness because Chaerephon is dead. The oracle’s sentence is therefore presented as testimony before it becomes an argument. The important tension is not yet whether the jury must accept it, but what could make “no one wiser” intelligible alongside Socrates’ hesitation about what wisdom he possesses. That unresolved question drives the examination that follows.",
+          "cites": {
+            "observations": [
+              "obs_apology_0006"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_apology_0026",
+          "title": "",
+          "body": "The resolution is a redefinition, not a simple withdrawal of praise. Socrates says that the god is wise, while human wisdom has little or no value, and makes Socrates an example of the person who recognizes that limit. The passage then ties this interpretation to a practice he describes as current: he is still searching among citizens and foreigners and, when someone does not seem wise, presents that finding as aid to the god. The oracle thus supplies a standard for self-knowledge, while leaving the scope of the search open.",
+          "cites": {
+            "observations": [
+              "obs_apology_0009",
+              "obs_apology_0040"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "04-23d-24a",
+      "section_id": "comm_apology_0004",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/04-23d-24a.json",
+        "sha256": "1389a1c0bf054e599cf77c02e1018eda16a4e65fa5aa59912307a2ab8cc4a462"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0028",
+          "title": "",
+          "body": "At 23e–24a, Socrates gives the accumulated slander a more specific shape: he names Meletus, Anytus, and Lycon and assigns each a constituency—poets, craftsmen and politicians, and rhetoricians. This is Socrates’ account of the affiliations, with Meletus described as angered on account of the poets; the passage does not establish a unified establishment or show that every member of these groups was injured. Listen for the change in scale: a diffuse slander is now attached to three named litigants, while Socrates still stresses how long and persuasively it has filled the jury’s ears.",
+          "cites": {
+            "observations": [
+              "obs_apology_0010"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "06-26b-28a",
+      "section_id": "comm_apology_0006",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/06-26b-28a.json",
+        "sha256": "522f87d620c0760366fac425b99c24d0c8b9e4392954706928f132813f18844d"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0032",
+          "title": "",
+          "body": "Socrates answers the sun-and-moon charge by redirecting it to Anaxagoras: Meletus is attributing to him doctrines that the passage associates with Anaxagoras’s books, which young people can buy for a drachma. The point is not to settle cosmology. It is to separate Socrates from the alleged source and expose how an accusation can attach a public teaching to the wrong speaker. The exchange therefore weakens the attribution before the argument returns to the question of atheism.",
+          "cites": {
+            "observations": [
+              "obs_apology_0014"
+            ],
+            "claims": [
+              "claim_apology_0012"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_apology_0033",
+          "title": "",
+          "body": "Here Socrates turns Meletus’s own indictment into a chain of concessions. Meletus says that Socrates believes in no gods; yet he also accepts that Socrates teaches belief in daimonic things. Socrates then moves from daimonia to daimones, and from daimones to gods or children of gods. The point is forensic: Meletus’s sworn charge cannot coherently combine atheism with the introduction of divine beings. Socrates is not, in this passage, offering a full statement of his theology; he is testing the charge Meletus has made.",
+          "cites": {
+            "observations": [
+              "obs_apology_0015"
+            ],
+            "claims": [
+              "claim_apology_0010",
+              "claim_apology_0011",
+              "claim_apology_0014",
+              "claim_apology_0015"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "07-28b-29b",
+      "section_id": "comm_apology_0007",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/07-28b-29b.json",
+        "sha256": "d28ec606c4bcb6e55eb9200046aee2f88e9f5e5ab92c898b2c907cbb3efeb539"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0036",
+          "title": "",
+          "body": "The pressure in this passage falls on the word “know.” Socrates does not claim that death is good; he says that no one knows whether it is good or bad, so fearing it as the greatest evil goes beyond what can be established. By contrast, he presents injustice and disobedience to a better being as things he does know to be bad and shameful. One way to read this asymmetry is as a discipline of judgment: admit uncertainty where knowledge runs out, but do not let that uncertainty blur an ethical prohibition.",
+          "cites": {
+            "observations": [
+              "obs_apology_0018"
+            ],
+            "claims": [
+              "claim_apology_0019",
+              "claim_apology_0020"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "08-29c-31b",
+      "section_id": "comm_apology_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/08-29c-31b.json",
+        "sha256": "5acf5f9960ed4c5acda2b3020a2158ec9be26a72b3df47c9e7f7c6c37ade8cd3"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0037",
+          "title": "",
+          "body": "The hypothetical acquittal gives Socrates a sharp test: would survival require him to abandon the practice for which he has just accounted? He answers that, as he presents his position, obedience to the god means continuing to philosophize, exhort, and examine, even under threat of death. The point is not that the jury has stopped judging evidence. It is that Socrates makes the proposed condition incompatible with the life he is defending.",
+          "cites": {
+            "observations": [
+              "obs_apology_0019",
+              "obs_apology_0044"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_apology_0038",
+          "title": "",
+          "body": "Here Socrates states, rather than derives, a strong ethical ordering: virtue is prior to wealth and other goods. The Meno creates pressure on that confidence by questioning whether one can know a thing’s properties without knowing what it is. The comparison is therefore a live tension, not a verdict that the Apology’s sentence is forbidden. One possible reading is that the Apology speaks in the register of exhortation, while the Meno tests what can be claimed as knowledge.",
+          "cites": {
+            "observations": [
+              "obs_apology_0043"
+            ],
+            "claims": [
+              "claim_apology_0021"
+            ],
+            "relations": [
+              "rel_cross-dialogue_0014"
+            ],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_apology_0039",
+          "title": "",
+          "body": "The gadfly image is a warning about what Athens may lose, not a forecast stated with certainty. Socrates says another such figure would not easily come to the city, and that after killing him the Athenians might spend their lives asleep—unless the god sent someone else. The conditional phrasing leaves room for divine replacement; its force lies in making the loss of this particular examiner politically consequential.",
+          "cites": {
+            "observations": [
+              "obs_apology_0020"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "09-31c-32e",
+      "section_id": "comm_apology_0009",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/09-31c-32e.json",
+        "sha256": "fc7e4e5148e494c63efd10de647ab5c428356423ee5f77d4e0c1da9f679f56c7"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0040",
+          "title": "",
+          "body": "Socrates answers a puzzle he himself puts before the jury: why offer advice privately yet avoid advising the city in public? He first points to the daimonion, a childhood voice that, on his account, turns him away from intended acts and never urges him forward. He then widens the claim: anyone who genuinely opposes a populace and blocks injustice must live privately rather than politically. The argumentative turn matters: a personal explanation becomes a general claim about the risks of public resistance.",
+          "cites": {
+            "observations": [
+              "obs_apology_0021",
+              "obs_apology_0046"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_apology_0041",
+          "title": "",
+          "body": "At the hinge between general principle and evidence, Socrates shifts from speeches to deeds, then places two episodes side by side. In the first, he says he alone opposed the collective trial of the ten generals despite threats and shouting; in the second, he says he went home rather than carry out the Thirty’s order concerning Leon of Salamis. The pairing is his argument, not a neutral historical comparison: across two regimes, he presents the decisive test as whether an order requires injustice. That pattern invites the listener to weigh his consistency without treating the democracy as equivalent to the Thirty.",
+          "cites": {
+            "observations": [
+              "obs_apology_0047",
+              "obs_apology_0022"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "10-33a-34a",
+      "section_id": "comm_apology_0010",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/10-33a-34a.json",
+        "sha256": "674191c040fc5abf6e867e64aff641d643d15aa8361d880a19fc35f0a7586205"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0042",
+          "title": "",
+          "body": "The argumentative move is to separate being present for conversation from being a teacher accountable for results. Socrates says he does not reserve conversation for those who pay; he makes himself available to rich and poor, invites questions, and denies having promised anyone instruction. On that basis, he argues that another person’s good or bad outcome cannot simply be assigned to him. The passage is not a claim that money never enters the picture, but a denial that payment determines whom he will converse with.",
+          "cites": {
+            "observations": [
+              "obs_apology_0023"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "11-34b-35d",
+      "section_id": "comm_apology_0011",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/11-34b-35d.json",
+        "sha256": "07129c200bd6b45dc203c27e721df613ad1b105f5e0cd8731afb1167685670e5"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0011",
+          "title": "The oath against pity",
+          "body": "Socrates turns his refusal to parade his sons into an argument about what a trial is for. He will not seek acquittal through tears, and he invokes the juror’s oath to insist on judgment according to law. Read the move as a challenge: pity must not replace judgment.",
+          "cites": {
+            "observations": [
+              "obs_apology_0025"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "12-35e-36b",
+      "section_id": "comm_apology_0012",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/12-35e-36b.json",
+        "sha256": "98b02a8452e307c86cb8b9b26787c2bf52e4d1e371691aaea663f6220ae8e55d"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0047",
+          "title": "",
+          "body": "The number does more than measure how close the vote was: it changes the posture of the penalty speech. Socrates neither pleads nor treats the verdict as overwhelming. By making thirty votes audible, he presents the decision as contingent, then hands the court a question about what he deserves. I hear the arithmetic becoming a challenge to the court’s moral scale, not merely a report of the tally.",
+          "cites": {
+            "observations": [
+              "obs_apology_0026"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "13-36c-37a",
+      "section_id": "comm_apology_0013",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/13-36c-37a.json",
+        "sha256": "9d0c5403704e0660880d9a8603ed889db2e4129483c6fe906ab9962ba87423a5"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0048",
+          "title": "",
+          "body": "Socrates turns the question of penalty into a question of value. He presents himself as a poor benefactor who needs leisure to exhort the citizens, then proposes meals in the Prytaneum as fitting recognition. The force of the move lies in his comparison: an Olympic victor makes the city seem happy, while Socrates claims to make it happy in reality. Read this as his deliberate standard for measuring civic benefit, not as an appeal to established honors or procedure.",
+          "cites": {
+            "observations": [
+              "obs_apology_0027",
+              "obs_apology_0063"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "14-37b-38b",
+      "section_id": "comm_apology_0014",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/14-37b-38b.json",
+        "sha256": "e3dc07aca6c5c37673081bf3f3e2b0a6005955630ecb171e55fb58b8ff630970"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0014",
+          "title": "A penalty must not erase the examined life",
+          "body": "This unit turns the penalty question into a test of what Socrates will not give up. He refuses to propose a harm he regards as known evil; exile does not solve the conflict surrounding his conversations; and silence would abandon the daily examination he calls the greatest good. Read the sequence as a narrowing of acceptable compromises: the question is not merely where Socrates can live, but what kind of life he can still recognize as his.",
+          "cites": {
+            "observations": [
+              "obs_apology_0064",
+              "obs_apology_0028",
+              "obs_apology_0029"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_apology_0051",
+          "title": "",
+          "body": "The sentence arrives as part of Socrates’ defense of continuing inquiry. He says that daily discussion of virtue and examination of himself and others is the greatest good for a human being, while an unexamined life is not worth living; yet he immediately predicts that his hearers will believe this even less than his appeal to divine obedience. In this setting, the line works less like a detached maxim than like an admission that stating one’s highest commitment does not guarantee that an audience will accept it.",
+          "cites": {
+            "observations": [
+              "obs_apology_0029"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "15-38c-39b",
+      "section_id": "comm_apology_0015",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/15-38c-39b.json",
+        "sha256": "21a12c04c099f53e9a25731af9eee2dc63d67fe2907e7028b0f91a881d68a993"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0052",
+          "title": "",
+          "body": "Here Socrates stages a reversal in the meaning of defeat. He concedes that he has been caught in a lack, then immediately specifies that the lack was not of arguments but of the shamelessness he associates with the performance he refused. He describes that performance as lamenting and saying what would have pleased the jurors, words they were accustomed to hear from others. One way to read the passage is as a moral defense of his method: he says he would rather die after this defense than live by the alternative.",
+          "cites": {
+            "observations": [
+              "obs_apology_0048",
+              "obs_apology_0049",
+              "obs_apology_0054"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "16-39c-39e",
+      "section_id": "comm_apology_0016",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/16-39c-39e.json",
+        "sha256": "bb5c647f26dcfbfca1d0d070eec7a67314a2db547f8fb929e934349f47f97caa"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0054",
+          "title": "",
+          "body": "Socrates turns the jury’s idea of escape against itself. Killing him cannot end examination: he predicts that more critics will arise, younger and harsher than he was. The passage then names the ethical alternative—not silencing others, but making oneself as good as possible. Its force lies in this reversal: the verdict is presented not as an escape from scrutiny, but as a way of multiplying it.",
+          "cites": {
+            "observations": [
+              "obs_apology_0030",
+              "obs_apology_0052"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "17-40a-41c",
+      "section_id": "comm_apology_0017",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/17-40a-41c.json",
+        "sha256": "846399b733060760fcd995f85c85f7071811bf8d08a5fb350018f0871d745645"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0057",
+          "title": "",
+          "body": "The two pictures of death are deliberately unequal in emphasis. Dreamless sleep is praised through a compact comparison; the migration scenario opens into judges, poets, wrongly condemned figures, and finally the pleasure of examining who is wise and who only thinks he is. One way to read that expansion is as Socrates imagining his questioning continuing beyond this life—not as proof that this practice caused his condemnation. The final hedge matters: the happiness and immortality of those below remain conditional on the traditional reports being true.",
+          "cites": {
+            "observations": [
+              "obs_apology_0032"
+            ],
+            "claims": [
+              "claim_apology_0026",
+              "claim_apology_0027"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "apology",
+      "unit_key": "18-41d-42a",
+      "section_id": "comm_apology_0018",
+      "audit_output": {
+        "path": "scratch/commentary/audits/apology/18-41d-42a.json",
+        "sha256": "6d4d5e1371401101006e80c7c18cde6c2907f9d18f09be797207c0478d509e68"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_apology_0058",
+          "title": "",
+          "body": "At 41d, Socrates makes his consolatory thesis practical. He says that no evil comes to a good man in life or death and that the gods do not neglect him; then he explains his own case through the divine sign’s failure to turn him away, since death and release from troubles seemed better for him. One way to read the passage is as a deliberately personal inference: the sign’s silence does not demonstrate his conclusion, but becomes the reason he can inhabit it.",
+          "cites": {
+            "observations": [
+              "obs_apology_0066"
+            ],
+            "claims": [
+              "claim_apology_0028",
+              "claim_apology_0029"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        },
+        {
+          "commentary_id": "comm_apology_0059",
+          "title": "",
+          "body": "The request about his sons carries Socrates’ method beyond the courtroom. He asks the jurors to trouble and rebuke them if they place money or anything else before virtue, or mistake self-importance for worth. The passage thus turns correction into a test of what the community will pass on: the jurors are invited to continue the pressure Socrates has applied, not merely to remember it. One way to hear the request is as a final question about whether an unwelcome rebuke can serve moral care.",
+          "cites": {
+            "observations": [
+              "obs_apology_0033"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_apology_0011",
+      "body": "```yaml\ncommentary_id: comm_apology_0011\nsource_work: Apology\nblock_kind: section\nplacement: before\ntitle: \"Refusing tears: the juror's oath against the litigant's theater\"\nstephanus_span: 34b-35d\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 34b-35d\n  start_marker: 34b\n  end_marker: 35d\n  start_char: 37422\n  end_char: 40977\n  text_sha256: \"fd151001e1893882fd92b9381d9eedd081e85c3e544dcb27fd606078b6fd1f95\"\nbody: \"Socrates will not parade his three sons or beg with tears, though he knows the custom. The refusal is argued, not merely proud: supplication asks the juror to break his oath, and a defendant on trial for impiety should not teach the jury to gratify rather than judge.\"\ncites:\n  observations: [\"obs_apology_0025\"]\n  claims: []\n  relations: []\n  dossiers: [\"dramatic_case_setup/defendant_refuses_compromise\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0014",
+      "body": "```yaml\ncommentary_id: comm_apology_0014\nsource_work: Apology\nblock_kind: section\nplacement: before\ntitle: \"Prison, exile, silence: the alternatives rejected\"\nstephanus_span: 37b-38b\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 37b-38b\n  start_marker: 37b\n  end_marker: 38b\n  start_char: 43486\n  end_char: 46104\n  text_sha256: \"b959e586b5106289f136ce2bb3c043d03e7c1ebcd6ad3a6b88553221a43b43d2\"\nbody: \"Convinced he wrongs no one, Socrates refuses to propose an evil for himself. Exile only relocates the problem, and silence is impossible: the unexamined life is not worth living for a human being. A modest fine, backed by friends, is all he will offer.\"\ncites:\n  observations: [\"obs_apology_0064\", \"obs_apology_0028\", \"obs_apology_0029\"]\n  claims: []\n  relations: []\n  dossiers: [\"closure_type/socratic_final_directive\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0020",
+      "body": "```yaml\ncommentary_id: comm_apology_0020\nsource_work: Apology\nblock_kind: argument\nplacement: after\nstephanus_span: 18a\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 18a\n  start_marker: 18a\n  end_marker: 18a\n  start_char: 1629\n  end_char: 2095\n  text_sha256: \"67b8a762abf453e85b3dde070308e99a1ca4c4632c9bc1d1e643bf81507e6596\"\nbody: \"The formula Socrates offers here quietly swaps the usual assignments. The virtue of the judge is to examine whether what is said is just; the virtue of the orator is to speak the truth. On its face this is modest courtroom etiquette. But it makes truth-telling the speaker's whole excellence and justice the jury's whole job — so if the verdict goes wrong, the failure lies with the judges, not the defense. Before any charge has been answered, Socrates has already defined the terms on which his conviction would be their fault.\"\ncites:\n  observations: []\n  claims: [\"claim_apology_0001\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0022",
+      "body": "```yaml\ncommentary_id: comm_apology_0022\nsource_work: Apology\nblock_kind: context\nplacement: before\nstephanus_span: 19b-19c\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 19b-19c\n  start_marker: 19b\n  end_marker: 19c\n  start_char: 4154\n  end_char: 4900\n  text_sha256: \"efd4a49660ef7b3972e90c20449574b805a59f13bd99ed326a7fc571fcaa34e7\"\nbody: \"Socrates now does something unusual for a defendant: he drafts the charge himself. Since the old slander was never written down, he composes a mock affidavit for it — Socrates investigates things under the earth and in the heavens, makes the weaker argument stronger, and teaches others the same. He then names its source not as any accuser in court but as Aristophanes' comedy, where a stage Socrates floats in a basket claiming to walk on air. The real defense, in other words, begins against a character from the theater, a caricature the jurors absorbed as entertainment decades before Meletus filed anything.\"\ncites:\n  observations: [\"obs_apology_0004\", \"obs_apology_0056\"]\n  claims: [\"claim_apology_0003\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0024",
+      "body": "```yaml\ncommentary_id: comm_apology_0024\nsource_work: Apology\nblock_kind: context\nplacement: before\nstephanus_span: 20e-21a\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 20e-21a\n  start_marker: 20e\n  end_marker: 21a\n  start_char: 7673\n  end_char: 8577\n  text_sha256: \"4a33975c4a1d4e0be0926a258ea9655be2ebfd345d67ab5fb1c9e814c58efd05\"\nbody: \"Socrates now produces the strangest witness a defendant could call: the god at Delphi. His friend Chaerephon asked the oracle whether anyone was wiser than Socrates, and the Pythia answered that no one was. Chaerephon matters here for more than the anecdote. He shared the democrats' exile and returned with them, so the jury cannot dismiss him as one of the oligarchs' circle. Socrates is answering a charge of impiety by tracing his whole notorious career back to an act of piety, an attempt to understand what the god meant.\"\ncites:\n  observations: [\"obs_apology_0006\"]\n  claims: [\"claim_apology_0006\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0026",
+      "body": "```yaml\ncommentary_id: comm_apology_0026\nsource_work: Apology\nblock_kind: argument\nplacement: after\nstephanus_span: 23a-23b\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 23a-23b\n  start_marker: 23a\n  end_marker: 23b\n  start_char: 12503\n  end_char: 13464\n  text_sha256: \"fb8b750a8951b0d4901e0ac5dbe02b9869003c84697a502e2c73eb0dbff6559b\"\nbody: \"Here the riddle finally resolves, and the solution empties the compliment. The god, Socrates concludes, was not praising him at all: human wisdom is worth little or nothing, and the name Socrates simply marks whoever has recognized that about himself. This reading turns the oracle from a verdict into a standing assignment. Because the wisest human is defined by the recognition, Socrates must keep examining anyone who seems wise, serving the god by demonstrating that they are not, and each demonstration makes him another enemy.\"\ncites:\n  observations: [\"obs_apology_0009\", \"obs_apology_0040\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0028",
+      "body": "```yaml\ncommentary_id: comm_apology_0028\nsource_work: Apology\nblock_kind: context\nplacement: after\nstephanus_span: 23e-24a\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 23e-24a\n  start_marker: 23e\n  end_marker: 24a\n  start_char: 14420\n  end_char: 15140\n  text_sha256: \"92ddfe1e6b2b987a686bec007add87b2e124478583af511c5b8881a75456877d\"\nbody: \"The vague, long-standing slander finally acquires names here. Socrates sorts his three formal accusers by constituency: Meletus stepping forward for the poets, Anytus for the craftsmen and politicians, Lycon for the orators. That is Socrates' own mapping, and it completes his story of the case — diffuse resentment among the groups he examined has organized itself into a legal document, with one representative from each injured profession. It also quietly claims that the entire city's establishment, not three individuals, stands behind the prosecution.\"\ncites:\n  observations: [\"obs_apology_0010\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0032",
+      "body": "```yaml\ncommentary_id: comm_apology_0032\nsource_work: Apology\nblock_kind: context\nplacement: after\nstephanus_span: 26d-26e\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 26d-26e\n  start_marker: 26d\n  end_marker: 26e\n  start_char: 20479\n  end_char: 21415\n  text_sha256: \"231a6773548e035dfeb79569d270e497512e356302d60bfc3b062ad9e215298d\"\nbody: \"The stone sun and earthen moon were not Socratic teachings but the famous doctrines of Anaxagoras of Clazomenae, and Socrates says any juror could buy the books cheaply in the marketplace. The deflection does double work. It clears Socrates of a specific borrowed charge, and it quietly reminds the jury that Meletus has confused him with an earlier generation of natural philosophers — exactly the confusion Socrates blamed on Aristophanes and the old accusers at the start of the speech. Meletus is prosecuting a caricature, and the caricature predates him.\"\ncites:\n  observations: [\"obs_apology_0014\"]\n  claims: [\"claim_apology_0012\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0033",
+      "body": "```yaml\ncommentary_id: comm_apology_0033\nsource_work: Apology\nblock_kind: argument\nplacement: before\nstephanus_span: 27b-27d\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 27b-27d\n  start_marker: 27b\n  end_marker: 27d\n  start_char: 21898\n  end_char: 23350\n  text_sha256: \"fd76f4503b1b25c2fa27e200bf8da31f6f46af5afc0949a5baa93d58b868809c\"\nbody: \"Here Socrates springs the trap he built by forcing Meletus to say he believes in no gods at all. The steps are homely on purpose: no one believes in horse-matters without horses, or flute-playing without flute-players. Meletus concedes the parallel case — no one believes in daimonic things without daimones. But the sworn indictment itself charges Socrates with introducing new daimonic things, and daimones are gods or children of gods. So the indictment accuses an atheist of believing in gods. The refutation targets the document Meletus swore, not the beliefs Socrates actually holds — which he never states here.\"\ncites:\n  observations: [\"obs_apology_0015\"]\n  claims: [\"claim_apology_0013\", \"claim_apology_0014\", \"claim_apology_0015\", \"claim_apology_0010\", \"claim_apology_0011\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0036",
+      "body": "```yaml\ncommentary_id: comm_apology_0036\nsource_work: Apology\nblock_kind: argument\nplacement: after\nstephanus_span: 29a-29b\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 29a-29b\n  start_marker: 29a\n  end_marker: 29b\n  start_char: 26087\n  end_char: 27075\n  text_sha256: \"324c306c915cff398620e7526e1412896eca15f272802e60d6a4a2ef8c298ff7\"\nbody: \"Here the famous disavowal of knowledge turns into a weapon. Fearing death, Socrates argues, is thinking you know what no one knows, since death might be the greatest of goods. That converts cowardice from a moral failing into an intellectual one: the reprehensible ignorance of mistaking opinion for knowledge. But the argument is not pure agnosticism. Socrates carves out one thing he does claim to know, that doing injustice and disobeying one's better is bad and shameful. The whole defense balances on that asymmetry: total uncertainty about death, total certainty about wrongdoing.\"\ncites:\n  observations: [\"obs_apology_0018\"]\n  claims: [\"claim_apology_0019\", \"claim_apology_0020\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0037",
+      "body": "```yaml\ncommentary_id: comm_apology_0037\nsource_work: Apology\nblock_kind: argument\nplacement: before\nstephanus_span: 29c-30c\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 29c-30c\n  start_marker: 29c\n  end_marker: 30c\n  start_char: 27075\n  end_char: 29781\n  text_sha256: \"2d2ae65145e4f67c605f54bebc0bc5cbc524ac0513d0386a3998d914c537b283\"\nbody: \"Socrates now invents a deal no one has offered him: acquittal on the condition that he stop philosophizing. He rejects it in advance. The move changes what the trial is about. If he would refuse even a favorable verdict rather than change his life, then the jury is no longer weighing evidence against a defendant; it is being told the defendant cannot be bargained with at all. Obedience to the god outranks obedience to Athens, and he says he will not act otherwise even if he must die many times over. The speech stops being a defense in the ordinary sense the moment that condition is refused.\"\ncites:\n  observations: [\"obs_apology_0019\", \"obs_apology_0044\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0038",
+      "body": "```yaml\ncommentary_id: comm_apology_0038\nsource_work: Apology\nblock_kind: crossref\nplacement: after\nstephanus_span: 30b\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 30b\n  start_marker: 30b\n  end_marker: 30b\n  start_char: 28812\n  end_char: 29269\n  text_sha256: \"9c45662ba6133e1af9b0c4ddddc399663329a4ee128dc4cbd22d2d9ec228d3c0\"\nbody: \"The maxim tucked inside this exhortation — virtue does not come from money, but from virtue come money and every other good — inverts the ordinary assumption about which produces which. Elsewhere in the corpus this confidence gets pressured. In the Meno, Socrates insists he does not know what virtue is, and that without knowing what a thing is you cannot know its properties. Taken strictly, that rule would forbid the very assertion he makes here so freely. One way to read the difference: here he is preaching a mission, there he is doing dialectic, and the two registers make different demands on what may be claimed.\"\ncites:\n  observations: [\"obs_apology_0043\"]\n  claims: [\"claim_apology_0021\"]\n  relations: [\"rel_cross-dialogue_0014\"]\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0039",
+      "body": "```yaml\ncommentary_id: comm_apology_0039\nsource_work: Apology\nblock_kind: notice\nplacement: after\nstephanus_span: 30c-31b\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 30c-31b\n  start_marker: 30c\n  end_marker: 31b\n  start_char: 29269\n  end_char: 31526\n  text_sha256: \"8b87dd0de8b8eef39620aee05c938202fc0c943c0ea5d2cb97988cecb867fc6f\"\nbody: \"Before delivering the gadfly image, Socrates warns the jury not to shout — a sign he knows how this will land. What follows is a full reversal of the courtroom's roles: he claims to be defending Athens, not himself, since killing him would injure the city more than the man. The gadfly figure makes the insult affectionate — Athens is a noble horse, just a sluggish one — but the underlying assertion is severe: the city needs stinging, cannot supply its own, and will sleep through the rest of its life if it swats him.\"\ncites:\n  observations: [\"obs_apology_0045\", \"obs_apology_0062\", \"obs_apology_0020\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0040",
+      "body": "```yaml\ncommentary_id: comm_apology_0040\nsource_work: Apology\nblock_kind: argument\nplacement: before\nstephanus_span: 31c-32a\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 31c-32a\n  start_marker: 31c\n  end_marker: 32a\n  start_char: 31526\n  end_char: 33089\n  text_sha256: \"7ae217b5edd6cd4d1a9331a70308adbe03280e8a04ab3ee971b764ec31d049c6\"\nbody: \"Socrates now answers an obvious objection: if his mission benefits the city, why has he never advised it publicly? His answer moves in two steps. First comes the personal fact — the divine sign he has had since childhood, a voice that only ever blocks him and never urges him on, and it blocks a political career. Then he generalizes far beyond his own case: anyone who genuinely fights injustice must stay a private person, because no honest opponent of the crowd survives in public life. The sign explains Socrates; the second claim indicts Athens. It is worth hearing how quickly a private oddity becomes a thesis about democratic politics itself.\"\ncites:\n  observations: [\"obs_apology_0021\", \"obs_apology_0046\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0041",
+      "body": "```yaml\ncommentary_id: comm_apology_0041\nsource_work: Apology\nblock_kind: notice\nplacement: after\nstephanus_span: 32a-32e\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 32a-32e\n  start_marker: 32a\n  end_marker: 32e\n  start_char: 32628\n  end_char: 34707\n  text_sha256: \"964ef741f8e11bd1527eb7720a37c86caacd23ae85bb140c20e6d17aeec10f76\"\nbody: \"Socrates promised deeds rather than speeches — the proof the jury honors, he says — and the two deeds he chooses are carefully paired. Under the democracy, he alone among the prytanes voted against the illegal mass trial of the generals after Arginusae, with the crowd shouting for his arrest. Under the Thirty, he refused the order to fetch Leon of Salamis for execution and simply went home. One act defied the people, the other defied the oligarchs. The pairing suggests his loyalty runs to law and justice rather than to any regime, and it quietly reminds this democratic jury that they, too, have behaved like the Thirty.\"\ncites:\n  observations: [\"obs_apology_0047\", \"obs_apology_0022\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0042",
+      "body": "```yaml\ncommentary_id: comm_apology_0042\nsource_work: Apology\nblock_kind: argument\nplacement: before\nstephanus_span: 33a-33b\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 33a-33b\n  start_marker: 33a\n  end_marker: 33b\n  start_char: 34707\n  end_char: 35616\n  text_sha256: \"9e5f89ae3f9ee9b168977cde6fc523a6a0f22951de695ceabf6a72caedd1c2a0\"\nbody: \"Socrates now builds a defense out of an absence. He denies ever being anyone's teacher: he took no fees, promised no instruction, and spoke the same words to rich and poor alike. The point is legal, not modest. If there was no teaching, there can be no responsibility for how any listener turned out. That severs the causal link the corruption charge depends on. What follows is the empirical test: if he had harmed the young, the harmed — or their fathers and brothers — should be here demanding punishment. Instead, he is about to point at them sitting on his side of the room.\"\ncites:\n  observations: [\"obs_apology_0023\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0047",
+      "body": "```yaml\ncommentary_id: comm_apology_0047\nsource_work: Apology\nblock_kind: notice\nplacement: after\nstephanus_span: 36a-36b\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 36a-36b\n  start_marker: 36a\n  end_marker: 36b\n  start_char: 41038\n  end_char: 41979\n  text_sha256: \"67904c11bec983c3b32c31ea2e4c4a1b6a70c454741f88ddb33147d1216a02e4\"\nbody: \"Socrates does something odd with the numbers. He is not shaken by losing; he is surprised the loss was so narrow — a shift of thirty votes would have acquitted him. Then he splits the prosecution apart: against Meletus alone, he says, he actually won, since without Anytus and Lycon, Meletus would have missed the one-fifth threshold and owed a thousand drachmas. The man just condemned to argue for his life pauses to score the match, and finds that his formal accuser, taken by himself, lost it.\"\ncites:\n  observations: [\"obs_apology_0026\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0048",
+      "body": "```yaml\ncommentary_id: comm_apology_0048\nsource_work: Apology\nblock_kind: argument\nplacement: before\nstephanus_span: 36d-36e\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 36d-36e\n  start_marker: 36d\n  end_marker: 36e\n  start_char: 42429\n  end_char: 43056\n  text_sha256: \"ea7dfd15786c8e5bcbbe672498b441516ca44dc9dea711f292adbdd592ecc415\"\nbody: \"Athenian procedure asks the convicted man to propose a punishment. Socrates instead answers a different question: what does he deserve? Since he counts his private exhortation as the city's greatest benefit, the honest answer is a reward, and he names the highest one Athens gives — free meals in the Prytaneum, the honor reserved for Olympic victors. His comparison carries the argument: the victor makes the city seem happy, while Socrates claims to make it actually happy, and the victor needs no support while Socrates is poor. The logic is tight even as the proposal enrages the jury that just convicted him.\"\ncites:\n  observations: [\"obs_apology_0027\", \"obs_apology_0063\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0051",
+      "body": "```yaml\ncommentary_id: comm_apology_0051\nsource_work: Apology\nblock_kind: notice\nplacement: after\nstephanus_span: 38a\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 38a\n  start_marker: 38a\n  end_marker: 38a\n  start_char: 45150\n  end_char: 45603\n  text_sha256: \"35afe2c918eea3c3b46adf7d61615a326548838a75e3b415b794a799e407cce3\"\nbody: \"The most quoted sentence in the Apology — the unexamined life is not worth living for a human being — arrives here almost defensively. Socrates offers it not as a triumphant thesis but as the second of two answers to an imagined objector who asks why he cannot simply live quietly in exile. And he frames it as the answer his hearers will believe least: if he cites the god they will call it irony, and if he calls daily examination the greatest human good they will believe him even less. The line's fame has detached it from this admission that it was, to its first audience, unpersuasive.\"\ncites:\n  observations: [\"obs_apology_0029\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0052",
+      "body": "```yaml\ncommentary_id: comm_apology_0052\nsource_work: Apology\nblock_kind: argument\nplacement: before\nstephanus_span: 38d-38e\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 38d-38e\n  start_marker: 38d\n  end_marker: 38e\n  start_char: 46500\n  end_char: 47327\n  text_sha256: \"c16030684188ae873d9d60caaf7a3db132f436fb0ce3598bb26eba4a61119f08\"\nbody: \"Socrates grants his condemners a word he usually reserves for philosophy: he has been caught in an aporia, a lack. But he immediately relocates the lack. It was not arguments he ran out of, but impudence and shamelessness — the willingness to wail and grovel as jurors expect. The conviction thus becomes evidence of a choice, not a failure: he had the means of acquittal and judged them unworthy of a free man. Whether that reframing is honest self-knowledge or a last piece of rhetoric is exactly what the passage leaves for us to weigh.\"\ncites:\n  observations: [\"obs_apology_0048\", \"obs_apology_0049\", \"obs_apology_0054\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0054",
+      "body": "```yaml\ncommentary_id: comm_apology_0054\nsource_work: Apology\nblock_kind: argument\nplacement: before\nstephanus_span: 39c-39d\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 39c-39d\n  start_marker: 39c\n  end_marker: 39d\n  start_char: 48137\n  end_char: 49081\n  text_sha256: \"cb59200402329fb3b9b3b8dd5e0c42d361d0d3a102b1236ab4248ce1de46956c\"\nbody: \"Socrates claims the privilege Greeks granted the dying: prophecy. But his prediction has an argument inside it. The jurors killed him to escape giving an account of their lives. That escape, he says, is impossible, because he was holding back many younger examiners, and they will be harsher than he was. The prophecy ends by inverting the whole trial: the only real release from criticism is not silencing critics but becoming as good as possible. What sounded like a curse turns out to restate his life's teaching one last time.\"\ncites:\n  observations: [\"obs_apology_0030\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0057",
+      "body": "```yaml\ncommentary_id: comm_apology_0057\nsource_work: Apology\nblock_kind: notice\nplacement: after\nstephanus_span: 40c-41c\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 40c-41c\n  start_marker: 40c\n  end_marker: 41c\n  start_char: 50267\n  end_char: 52986\n  text_sha256: \"1f93ec281f800f7dd4342019f47b5083f4392ece05e443b651a3c95dd22bdbf3\"\nbody: \"The two pictures of death are not symmetric. The dreamless sleep is praised in one sentence, but the migration scenario gets a whole guest list, and its centerpiece is telling: the greatest pleasure in Hades would be examining the dead to find out who is wise and who only thinks he is. Socrates imagines the afterlife as an eternity of doing exactly what got him condemned. And he keeps hedging with 'if what we are told is true' — the happiness and immortality of those below stand only on that condition, which he never claims to have settled.\"\ncites:\n  observations: [\"obs_apology_0032\"]\n  claims: [\"claim_apology_0026\", \"claim_apology_0027\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0058",
+      "body": "```yaml\ncommentary_id: comm_apology_0058\nsource_work: Apology\nblock_kind: argument\nplacement: before\nstephanus_span: 41d\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 41d\n  start_marker: 41d\n  end_marker: 41d\n  start_char: 52986\n  end_char: 53436\n  text_sha256: \"5ac9452f1ecfd83b7a49a08147321b01fde3a0b36ca9ec2aa1606fafb0e7fa46\"\nbody: \"The whole defense compresses into one thesis here: nothing bad can happen to a good man, living or dead, and the gods do not neglect him. Socrates offers his own case as the evidence — his divine sign, which stops him whenever he is about to go wrong, stayed silent through the entire trial. He reads that silence backwards: if death were a harm, the sign would have intervened. The consolation is not wishful; it is an inference from the one witness he trusts most.\"\ncites:\n  observations: [\"obs_apology_0066\"]\n  claims: [\"claim_apology_0028\", \"claim_apology_0029\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_apology_0059",
+      "body": "```yaml\ncommentary_id: comm_apology_0059\nsource_work: Apology\nblock_kind: notice\nplacement: after\nstephanus_span: 41e\nsource_ref:\n  source_path: raw/plato/greek/apology.txt\n  stephanus_span: 41e\n  start_marker: 41e\n  end_marker: 41e\n  start_char: 53436\n  end_char: 53823\n  text_sha256: \"5077f9efbd4a3951edd50c2212e063eec1f48acee9e8664dcbf22a70287ab421\"\nbody: \"His last request to the men who condemned him is that they do to his sons exactly what he did to Athens: sting them if they care for money before virtue, rebuke them if they think they are something when they are worth nothing. He asks the jury to become gadflies. The punishment he assigns his own children is the very treatment the city just sentenced him to death for — and he calls it just treatment, for himself and for his sons alike.\"\ncites:\n  observations: [\"obs_apology_0033\"]\n  claims: []\n  relations: []\n  dossiers: [\"closure_type/socratic_final_directive\"]\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

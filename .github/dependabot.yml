@@ -1,0 +1,26 @@
+version: 2
+
+# Monthly only. This repository's verification is deterministic and offline,
+# so dependency churn is a review cost with no upside when batched weekly.
+#
+# Python is deliberately absent: the repo has no pyproject.toml/uv.lock yet.
+# Add the `uv` ecosystem only when a tracked Python lockfile exists.
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: ci
+
+  # bun.lock is tracked at the repo root. If the dependency service reports
+  # this ecosystem as unrecognized, delete this lane — do NOT add an npm or
+  # yarn lockfile to work around it (dependency-policy stop condition).
+  - package-ecosystem: bun
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: deps

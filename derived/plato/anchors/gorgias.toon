@@ -1,0 +1,154 @@
+dialogue: gorgias
+source_path: raw/plato/greek/gorgias.txt
+source_sha256: 5c56dd528433e113ac4ed3139227e6a18c81b39fe717b72c79ec402cebf6460a
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[147]:
+  group             | form      | start_char | end_char | marker | turn_id           | token_ids
+  assent_concession | πάνυ γε   | 2090       | 2097     | 448b   | turn_gorgias_0026 | tok_gorgias_000343,tok_gorgias_000344
+  assent_concession | ναί       | 2161       | 2164     | 448b   | turn_gorgias_0028 | tok_gorgias_000355
+  assent_concession | ναί       | 4866       | 4869     | 449d   | turn_gorgias_0054 | tok_gorgias_000802
+  assent_concession | ναί       | 4929       | 4932     | 449d   | turn_gorgias_0056 | tok_gorgias_000814
+  assent_concession | ναί       | 5423       | 5426     | 449e   | turn_gorgias_0066 | tok_gorgias_000900
+  assent_concession | ναί       | 5668       | 5671     | 450a   | turn_gorgias_0072 | tok_gorgias_000942
+  assent_concession | πάνυ γε   | 5815       | 5822     | 450a   | turn_gorgias_0076 | tok_gorgias_000968,tok_gorgias_000969
+  assent_concession | ναί       | 6568       | 6571     | 450c   | turn_gorgias_0082 | tok_gorgias_001096
+  definition_prompt | τί ἐστι   | 9274       | 9288     | 451d   | turn_gorgias_0093 | tok_gorgias_001555,tok_gorgias_001556
+  assent_concession | πάνυ γε   | 13469      | 13476    | 453c   | turn_gorgias_0106 | tok_gorgias_002260,tok_gorgias_002261
+  assent_concession | ναί       | 13563      | 13566    | 453d   | turn_gorgias_0108 | tok_gorgias_002276
+  aporia_reset      | πάλιν     | 13907      | 13912    | 453e   | turn_gorgias_0113 | tok_gorgias_002338
+  assent_concession | πάνυ γε   | 14047      | 14054    | 453e   | turn_gorgias_0114 | tok_gorgias_002362,tok_gorgias_002363
+  assent_concession | ναί       | 14084      | 14087    | 453e   | turn_gorgias_0116 | tok_gorgias_002369
+  assent_concession | ναί       | 14439      | 14442    | 454a   | turn_gorgias_0120 | tok_gorgias_002428
+  assent_concession | ναί       | 15865      | 15868    | 454d   | turn_gorgias_0136 | tok_gorgias_002670
+  assent_concession | πάνυ γε   | 16189      | 16196    | 454e   | turn_gorgias_0144 | tok_gorgias_002725,tok_gorgias_002726
+  assent_concession | ναί       | 16559      | 16562    | 455a   | turn_gorgias_0148 | tok_gorgias_002789
+  assent_concession | ναί       | 24087      | 24090    | 458e   | turn_gorgias_0166 | tok_gorgias_004024
+  assent_concession | πάνυ γε   | 24537      | 24551    | 459a   | turn_gorgias_0174 | tok_gorgias_004101,tok_gorgias_004102
+  assent_concession | ναί       | 24587      | 24590    | 459b   | turn_gorgias_0176 | tok_gorgias_004111
+  assent_concession | πάνυ γε   | 26522      | 26529    | 460b   | turn_gorgias_0186 | tok_gorgias_004447,tok_gorgias_004448
+  assent_concession | ναί       | 26591      | 26594    | 460b   | turn_gorgias_0188 | tok_gorgias_004460
+  assent_concession | ναί       | 26639      | 26642    | 460b   | turn_gorgias_0190 | tok_gorgias_004469
+  assent_concession | πάνυ γε   | 26788      | 26795    | 460b   | turn_gorgias_0192 | tok_gorgias_004494,tok_gorgias_004495
+  assent_concession | ναί       | 26926      | 26929    | 460b   | turn_gorgias_0196 | tok_gorgias_004519
+  assent_concession | ναί       | 27169      | 27172    | 460c   | turn_gorgias_0202 | tok_gorgias_004557
+  assent_concession | ναί       | 27885      | 27888    | 460e   | turn_gorgias_0210 | tok_gorgias_004682
+  aporia_reset      | ἀπορεῖν   | 30531      | 30538    | 462b   | turn_gorgias_0223 | tok_gorgias_005117
+  assent_concession | ὁμολογεῖς | 39737      | 39746    | 467a   | turn_gorgias_0296 | tok_gorgias_006672
+  assent_concession | πάνυ γε   | 41044      | 41051    | 467d   | turn_gorgias_0313 | tok_gorgias_006885,tok_gorgias_006886
+  assent_concession | ναί       | 41191      | 41194    | 467e   | turn_gorgias_0315 | tok_gorgias_006912
+  assent_concession | ναί       | 42075      | 42078    | 468b   | turn_gorgias_0325 | tok_gorgias_007067
+  assent_concession | πάνυ γε   | 42223      | 42230    | 468b   | turn_gorgias_0327 | tok_gorgias_007089,tok_gorgias_007090
+  assent_concession | ναί       | 43010      | 43013    | 468d   | turn_gorgias_0335 | tok_gorgias_007221
+  assent_concession | πάνυ γε   | 45894      | 45901    | 470a   | turn_gorgias_0371 | tok_gorgias_007725,tok_gorgias_007726
+  aporia_reset      | πάλιν     | 45957      | 45962    | 470a   | turn_gorgias_0372 | tok_gorgias_007734
+  assent_concession | πάνυ γε   | 46327      | 46334    | 470b   | turn_gorgias_0373 | tok_gorgias_007793,tok_gorgias_007794
+  assent_concession | ναί       | 46409      | 46412    | 470b   | turn_gorgias_0375 | tok_gorgias_007809
+  assent_concession | πάνυ γε   | 51493      | 51500    | 472d   | turn_gorgias_0399 | tok_gorgias_008665,tok_gorgias_008666
+  assent_concession | πάνυ γε   | 52273      | 52280    | 473a   | turn_gorgias_0407 | tok_gorgias_008804,tok_gorgias_008805
+  assent_concession | ναί       | 52312      | 52315    | 473a   | turn_gorgias_0409 | tok_gorgias_008812
+  assent_concession | ναί       | 52394      | 52397    | 473a   | turn_gorgias_0411 | tok_gorgias_008826
+  definition_prompt | εἶδος     | 53731      | 53736    | 473e   | turn_gorgias_0422 | tok_gorgias_009035
+  assent_concession | ναί       | 55967      | 55970    | 474e   | turn_gorgias_0443 | tok_gorgias_009423
+  assent_concession | πάνυ γε   | 56187      | 56194    | 475a   | turn_gorgias_0447 | tok_gorgias_009463,tok_gorgias_009464
+  assent_concession | πάνυ γε   | 56479      | 56486    | 475a   | turn_gorgias_0451 | tok_gorgias_009515,tok_gorgias_009516
+  assent_concession | ναί       | 56612      | 56615    | 475b   | turn_gorgias_0453 | tok_gorgias_009539
+  assent_concession | ναί       | 57257      | 57260    | 475c   | turn_gorgias_0465 | tok_gorgias_009648
+  assent_concession | ναί       | 57522      | 57525    | 475d   | turn_gorgias_0471 | tok_gorgias_009694
+  assent_concession | ναί       | 59092      | 59095    | 476c   | turn_gorgias_0489 | tok_gorgias_009972
+  assent_concession | πάνυ γε   | 59168      | 59175    | 476c   | turn_gorgias_0491 | tok_gorgias_009986,tok_gorgias_009987
+  assent_concession | πάνυ γε   | 59328      | 59335    | 476c   | turn_gorgias_0495 | tok_gorgias_010019,tok_gorgias_010020
+  assent_concession | ναί       | 59403      | 59406    | 476c   | turn_gorgias_0497 | tok_gorgias_010034
+  assent_concession | ὁμολογεῖς | 59562      | 59571    | 476d   | turn_gorgias_0500 | tok_gorgias_010062
+  assent_concession | ναί       | 59911      | 59914    | 476e   | turn_gorgias_0507 | tok_gorgias_010119
+  assent_concession | πάνυ γε   | 60063      | 60070    | 476e   | turn_gorgias_0513 | tok_gorgias_010145,tok_gorgias_010146
+  assent_concession | ναί       | 60138      | 60141    | 476e   | turn_gorgias_0515 | tok_gorgias_010160
+  assent_concession | ναί       | 60289      | 60292    | 477a   | turn_gorgias_0521 | tok_gorgias_010186
+  assent_concession | ναί       | 60459      | 60462    | 477a   | turn_gorgias_0525 | tok_gorgias_010213
+  assent_concession | ναί       | 61010      | 61013    | 477c   | turn_gorgias_0535 | tok_gorgias_010304
+  assent_concession | ναί       | 61954      | 61957    | 477e   | turn_gorgias_0551 | tok_gorgias_010461
+  assent_concession | ναί       | 62122      | 62125    | 477e   | turn_gorgias_0555 | tok_gorgias_010490
+  divine_legal      | δίκη      | 62612      | 62616    | 478b   | turn_gorgias_0566 | tok_gorgias_010568
+  divine_legal      | δίκη      | 62806      | 62810    | 478b   | turn_gorgias_0571 | tok_gorgias_010596
+  assent_concession | ναί       | 62903      | 62906    | 478b   | turn_gorgias_0573 | tok_gorgias_010612
+  assent_concession | ναί       | 63041      | 63044    | 478c   | turn_gorgias_0577 | tok_gorgias_010635
+  divine_legal      | δίκη      | 63736      | 63740    | 478d   | turn_gorgias_0588 | tok_gorgias_010748
+  assent_concession | ναί       | 63747      | 63750    | 478d   | turn_gorgias_0589 | tok_gorgias_010750
+  assent_concession | ναί       | 63995      | 63998    | 478e   | turn_gorgias_0595 | tok_gorgias_010791
+  assent_concession | ναί       | 65518      | 65521    | 479d   | turn_gorgias_0609 | tok_gorgias_011035
+  assent_concession | ναί       | 66096      | 66099    | 479e   | turn_gorgias_0613 | tok_gorgias_011126
+  assent_concession | πάνυ γε   | 66372      | 66379    | 480a   | turn_gorgias_0617 | tok_gorgias_011173,tok_gorgias_011174
+  assent_concession | ναί       | 67898      | 67901    | 480e   | turn_gorgias_0623 | tok_gorgias_011427
+  aporia_reset      | πάλιν     | 71818      | 71823    | 482d   | turn_gorgias_0630 | tok_gorgias_012091
+  assent_concession | ναί       | 74096      | 74099    | 483e   | turn_gorgias_0631 | tok_gorgias_012470
+  assent_concession | πάνυ γε   | 84152      | 84159    | 488d   | turn_gorgias_0647 | tok_gorgias_014076,tok_gorgias_014077
+  assent_concession | ναί       | 84253      | 84256    | 488e   | turn_gorgias_0649 | tok_gorgias_014093
+  aporia_reset      | πάλιν     | 85979      | 85984    | 489d   | turn_gorgias_0658 | tok_gorgias_014386
+  assent_concession | ναί       | 86470      | 86473    | 489e   | turn_gorgias_0663 | tok_gorgias_014466
+  assent_concession | πάνυ γε   | 87304      | 87311    | 490b   | turn_gorgias_0667 | tok_gorgias_014613,tok_gorgias_014614
+  assent_concession | πάνυ γε   | 90366      | 90373    | 491e   | turn_gorgias_0693 | tok_gorgias_015123,tok_gorgias_015124
+  assent_concession | πάνυ γε   | 96279      | 96286    | 494d   | turn_gorgias_0714 | tok_gorgias_016091,tok_gorgias_016092
+  assent_concession | πάνυ γε   | 97614      | 97621    | 495c   | turn_gorgias_0726 | tok_gorgias_016325,tok_gorgias_016326
+  assent_concession | ναί       | 99194      | 99197    | 496b   | turn_gorgias_0754 | tok_gorgias_016589
+  assent_concession | πάνυ γε   | 99233      | 99240    | 496b   | turn_gorgias_0756 | tok_gorgias_016596,tok_gorgias_016597
+  assent_concession | ὁμολογεῖς | 99931      | 99940    | 496d   | turn_gorgias_0767 | tok_gorgias_016717
+  assent_concession | ναί       | 100161     | 100164   | 496e   | turn_gorgias_0772 | tok_gorgias_016755
+  assent_concession | ναί       | 100223     | 100226   | 496e   | turn_gorgias_0774 | tok_gorgias_016767
+  assent_concession | ναί       | 100332     | 100335   | 496e   | turn_gorgias_0780 | tok_gorgias_016785
+  assent_concession | ναί       | 101837     | 101840   | 497d   | turn_gorgias_0800 | tok_gorgias_017038
+  assent_concession | ὁμολογεῖς | 101924     | 101933   | 497d   | turn_gorgias_0801 | tok_gorgias_017056
+  assent_concession | ναί       | 103216     | 103219   | 498b   | turn_gorgias_0824 | tok_gorgias_017279
+  assent_concession | ναί       | 103657     | 103660   | 498c   | turn_gorgias_0834 | tok_gorgias_017356
+  assent_concession | ναί       | 104231     | 104234   | 498d   | turn_gorgias_0844 | tok_gorgias_017455
+  assent_concession | πάνυ γε   | 104460     | 104467   | 498e   | turn_gorgias_0850 | tok_gorgias_017497,tok_gorgias_017498
+  assent_concession | ναί       | 104553     | 104556   | 498e   | turn_gorgias_0852 | tok_gorgias_017514
+  assent_concession | ναί       | 104941     | 104944   | 499a   | turn_gorgias_0856 | tok_gorgias_017579
+  assent_concession | πάνυ γε   | 104987     | 104994   | 499a   | turn_gorgias_0858 | tok_gorgias_017588,tok_gorgias_017589
+  assent_concession | ναί       | 105032     | 105035   | 499a   | turn_gorgias_0860 | tok_gorgias_017597
+  assent_concession | ναί       | 105170     | 105173   | 499a   | turn_gorgias_0864 | tok_gorgias_017622
+  assent_concession | ναί       | 106083     | 106086   | 499d   | turn_gorgias_0868 | tok_gorgias_017783
+  assent_concession | πάνυ γε   | 106151     | 106158   | 499d   | turn_gorgias_0870 | tok_gorgias_017796,tok_gorgias_017797
+  assent_concession | πάνυ γε   | 106487     | 106494   | 499e   | turn_gorgias_0874 | tok_gorgias_017859,tok_gorgias_017860
+  assent_concession | πάνυ γε   | 106665     | 106672   | 499e   | turn_gorgias_0878 | tok_gorgias_017892,tok_gorgias_017893
+  assent_concession | πάνυ γε   | 107098     | 107105   | 500a   | turn_gorgias_0884 | tok_gorgias_017970,tok_gorgias_017971
+  assent_concession | ναί       | 110855     | 110858   | 501e   | turn_gorgias_0900 | tok_gorgias_018608
+  assent_concession | πάνυ γε   | 112041     | 112048   | 502c   | turn_gorgias_0908 | tok_gorgias_018811,tok_gorgias_018812
+  assent_concession | πάνυ γε   | 112630     | 112637   | 502d   | turn_gorgias_0918 | tok_gorgias_018912,tok_gorgias_018913
+  definition_prompt | εἶδος     | 114970     | 114975   | 503e   | turn_gorgias_0927 | tok_gorgias_019293
+  assent_concession | ναί       | 115650     | 115653   | 504b   | turn_gorgias_0933 | tok_gorgias_019404
+  assent_concession | πάνυ γε   | 115704     | 115711   | 504b   | turn_gorgias_0935 | tok_gorgias_019415,tok_gorgias_019416
+  assent_concession | ναί       | 117426     | 117429   | 505a   | turn_gorgias_0951 | tok_gorgias_019722
+  assent_concession | πάνυ γε   | 117964     | 117971   | 505b   | turn_gorgias_0957 | tok_gorgias_019816,tok_gorgias_019817
+  assent_concession | ναί       | 118032     | 118035   | 505b   | turn_gorgias_0959 | tok_gorgias_019828
+  assent_concession | πάνυ γε   | 120564     | 120571   | 506d   | turn_gorgias_0975 | tok_gorgias_020259,tok_gorgias_020260
+  assent_concession | πάνυ γε   | 121545     | 121552   | 507a   | turn_gorgias_0978 | tok_gorgias_020428,tok_gorgias_020429
+  divine_legal      | ὅσιον     | 121855     | 121860   | 507b   | turn_gorgias_0978 | tok_gorgias_020482
+  divine_legal      | ὅσιον     | 122203     | 122208   | 507c   | turn_gorgias_0978 | tok_gorgias_020539
+  assent_concession | πάνυ γε   | 127679     | 127686   | 510a   | turn_gorgias_0987 | tok_gorgias_021448,tok_gorgias_021449
+  assent_concession | ναί       | 128846     | 128849   | 510d   | turn_gorgias_0997 | tok_gorgias_021653
+  assent_concession | ναί       | 129148     | 129151   | 510d   | turn_gorgias_0999 | tok_gorgias_021704
+  assent_concession | πάνυ γε   | 129270     | 129277   | 510e   | turn_gorgias_1001 | tok_gorgias_021724,tok_gorgias_021725
+  assent_concession | ναί       | 130420     | 130423   | 511c   | turn_gorgias_1009 | tok_gorgias_021920
+  assent_concession | ναί       | 134311     | 134314   | 513b   | turn_gorgias_1014 | tok_gorgias_022572
+  assent_concession | πάνυ γε   | 135148     | 135155   | 513d   | turn_gorgias_1017 | tok_gorgias_022708,tok_gorgias_022709
+  assent_concession | πάνυ γε   | 135395     | 135402   | 513e   | turn_gorgias_1021 | tok_gorgias_022753,tok_gorgias_022754
+  assent_concession | πάνυ γε   | 135776     | 135783   | 514a   | turn_gorgias_1023 | tok_gorgias_022813,tok_gorgias_022814
+  assent_concession | πάνυ γε   | 136140     | 136147   | 514b   | turn_gorgias_1025 | tok_gorgias_022872,tok_gorgias_022873
+  assent_concession | πάνυ γε   | 136834     | 136841   | 514d   | turn_gorgias_1027 | tok_gorgias_022982,tok_gorgias_022983
+  assent_concession | ναί       | 139081     | 139084   | 515d   | turn_gorgias_1035 | tok_gorgias_023338
+  assent_concession | πάνυ γε   | 140384     | 140391   | 516b   | turn_gorgias_1045 | tok_gorgias_023542,tok_gorgias_023543
+  assent_concession | ναί       | 140568     | 140571   | 516b   | turn_gorgias_1049 | tok_gorgias_023574
+  assent_concession | πάνυ γε   | 140741     | 140748   | 516c   | turn_gorgias_1051 | tok_gorgias_023599,tok_gorgias_023600
+  assent_concession | ναί       | 140828     | 140831   | 516c   | turn_gorgias_1053 | tok_gorgias_023617
+  aporia_reset      | πάλιν     | 141218     | 141223   | 516d   | turn_gorgias_1062 | tok_gorgias_023687
+  assent_concession | ὁμολογεῖς | 144287     | 144296   | 518a   | turn_gorgias_1067 | tok_gorgias_024189
+  aporia_reset      | πάλιν     | 148045     | 148050   | 520a   | turn_gorgias_1074 | tok_gorgias_024753
+  assent_concession | πάνυ γε   | 148693     | 148700   | 520c   | turn_gorgias_1075 | tok_gorgias_024853,tok_gorgias_024854
+  assent_concession | ναί       | 149131     | 149134   | 520d   | turn_gorgias_1077 | tok_gorgias_024922
+  assent_concession | ναί       | 149702     | 149705   | 520e   | turn_gorgias_1083 | tok_gorgias_025016
+  assent_concession | πάνυ γε   | 151351     | 151358   | 521d   | turn_gorgias_1093 | tok_gorgias_025295,tok_gorgias_025296
+  aporia_reset      | ἀπορεῖν   | 152070     | 152077   | 522a   | turn_gorgias_1095 | tok_gorgias_025417
+  assent_concession | πάνυ γε   | 152511     | 152518   | 522b   | turn_gorgias_1098 | tok_gorgias_025489,tok_gorgias_025490
+  aporia_reset      | ἀπορεῖν   | 152787     | 152794   | 522b   | turn_gorgias_1099 | tok_gorgias_025535
+  divine_legal      | δίκη      | 162064     | 162068   | 526e   | turn_gorgias_1106 | tok_gorgias_027023
+  assent_concession | ναί       | 163481     | 163484   | 527c   | turn_gorgias_1107 | tok_gorgias_027256

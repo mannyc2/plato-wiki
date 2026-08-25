@@ -1,0 +1,79 @@
+{
+  "config_version": 3,
+  "rule": "PASS iff every gold seed's thread contains at least one required sibling",
+  "results": [
+    {
+      "seed": "claim_theaetetus_0029",
+      "required_any_of": [
+        "claim_theaetetus_0173"
+      ],
+      "found": [
+        "claim_theaetetus_0173"
+      ],
+      "thread_size": 18,
+      "pass": true
+    },
+    {
+      "seed": "claim_theaetetus_0177",
+      "required_any_of": [
+        "claim_theaetetus_0235"
+      ],
+      "found": [
+        "claim_theaetetus_0235"
+      ],
+      "thread_size": 51,
+      "pass": true
+    },
+    {
+      "seed": "claim_theaetetus_0241",
+      "required_any_of": [
+        "claim_theaetetus_0275"
+      ],
+      "found": [
+        "claim_theaetetus_0275"
+      ],
+      "thread_size": 26,
+      "pass": true
+    },
+    {
+      "seed": "claim_charmides_0001",
+      "required_any_of": [
+        "claim_charmides_0006"
+      ],
+      "found": [
+        "claim_charmides_0006"
+      ],
+      "thread_size": 15,
+      "pass": true
+    },
+    {
+      "seed": "claim_charmides_0007",
+      "required_any_of": [
+        "claim_charmides_0009"
+      ],
+      "found": [
+        "claim_charmides_0009"
+      ],
+      "thread_size": 20,
+      "pass": true
+    },
+    {
+      "seed": "claim_euthyphro_0014",
+      "required_any_of": [
+        "claim_euthyphro_0025",
+        "claim_euthyphro_0027",
+        "claim_euthyphro_0029",
+        "claim_euthyphro_0030"
+      ],
+      "found": [
+        "claim_euthyphro_0025",
+        "claim_euthyphro_0027",
+        "claim_euthyphro_0029",
+        "claim_euthyphro_0030"
+      ],
+      "thread_size": 36,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

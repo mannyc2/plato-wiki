@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "submission_id": "0006-rewrite-batch",
+  "lane": "commentary",
+  "kind": "rewrite-batch",
+  "scope": "symposium",
+  "source_path": "scratch/commentary/rewrites/symposium/01-172a-177e.json",
+  "source_sha256": "1412cd5c4eb1ba8850cb931e6f022411f429006a2569e05e38890bd444998348",
+  "target_path": "wiki/commentary/symposium.md",
+  "target_sha256_before": "6daa93433bd09e025577d1e81892d71e1b25a236359b673ed3d7def1b5a8c1f1",
+  "target_sha256_after": "6ffdb728a2913388d763362758efecacd6c6f7c22c4f8b6da10d4bacca316fce",
+  "applied_at": "2026-08-21T15:22:50.992Z",
+  "applied_ids": [
+    "comm_symposium_0015",
+    "comm_symposium_0058"
+  ],
+  "submission": [
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "01-172a-177e",
+      "section_id": "comm_symposium_0001",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/01-172a-177e.json",
+        "sha256": "5d4e0546ad50f8bc45f800931968e3b00ff59317450f4a42ad802023ad6b61cc"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0015",
+          "title": "",
+          "body": "Here the group does not renounce drinking. It agrees that each person may drink as much as he wishes, but without compulsion and without making the gathering a bout of drunkenness. Eryximachus then turns that settlement into a new procedure: the aulos-girl is dismissed, and the men will spend the day with one another through speeches. I read the move as a redirection rather than a prohibition: pleasure remains available, while the gathering’s shared attention is organized around logoi.",
+          "cites": {
+            "observations": [
+              "obs_symposium_0012",
+              "obs_symposium_0013"
+            ],
+            "claims": [],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "dialogue": "symposium",
+      "unit_key": "08-201d-212c",
+      "section_id": "comm_symposium_0008",
+      "audit_output": {
+        "path": "scratch/commentary/audits/symposium/08-201d-212c.json",
+        "sha256": "cb9bd12fb3bcf4421e4d43c93e3b1fa0069ddc2cd795381efd74fc34f166836a"
+      },
+      "authoring": {
+        "model": "gpt-5.6-luna",
+        "effort": "high"
+      },
+      "revisions": [
+        {
+          "commentary_id": "comm_symposium_0058",
+          "title": "",
+          "body": "Do not hear the ladder as a syllabus of objects. Its decisive move is to loosen desire’s grip on one beautiful body: Diotima broadens attention to beauty across bodies and then directs it toward practices, learning, and the beautiful itself. I read that progression as a change in what the lover is trained to value. Because this is Diotima’s instruction inside Socrates’ report, the text does not establish that Socrates has independently endorsed the method.",
+          "cites": {
+            "observations": [],
+            "claims": [
+              "claim_symposium_0156"
+            ],
+            "relations": [],
+            "dossiers": []
+          },
+          "crossrefs": []
+        }
+      ]
+    }
+  ],
+  "superseded": [
+    {
+      "commentary_id": "comm_symposium_0015",
+      "body": "```yaml\ncommentary_id: comm_symposium_0015\nsource_work: Symposium\nblock_kind: argument\nplacement: before\nstephanus_span: 176a-177e\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 176a-177e\n  start_marker: 176a\n  end_marker: 177e\n  start_char: 7963\n  end_char: 12101\n  text_sha256: \"8d49904c0f59739a1a99ede9f498e45bf43cb7b07b408fdcaedd7bfc26598001\"\nbody: \"Once heavy drinking is ruled out, Eryximachus gives the evening a new engine: he replaces the just-arrived flute-girl’s performance with speeches among the men and takes charge of the next procedure. The point is not merely that talk begins. I read this change of medium as a rescue of the gathering from drift: bodily exhaustion becomes the reason to organize attention.\"\ncites:\n  observations: [\"obs_symposium_0012\", \"obs_symposium_0013\"]\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    },
+    {
+      "commentary_id": "comm_symposium_0058",
+      "body": "```yaml\ncommentary_id: comm_symposium_0058\nsource_work: Symposium\nblock_kind: argument\nplacement: before\nstephanus_span: 210a-212a\nsource_ref:\n  source_path: raw/plato/greek/symposium.txt\n  stephanus_span: 210a-212a\n  start_marker: 210a\n  end_marker: 212a\n  start_char: 78102\n  end_char: 82471\n  text_sha256: \"a46f84f45eafe576f34e7a28ee38a957ba1c2ec7c20f0915a3da524074cda311\"\nbody: \"Diotima asks Socrates to follow a method, and the method matters here more than any retrospective catalogue of the evening’s loves. The ascent moves from one beautiful body to two and then to all beautiful bodies, from bodies to practices and learnings, and finally to learning concerned with Beauty itself. The passage then presents Beauty itself in terms of permanence and independence, before linking its vision to true virtue. One may read earlier speeches against these rungs, but this text leaves that mapping interpretive rather than promising it.\"\ncites:\n  observations: [\"obs_symposium_0141\", \"obs_symposium_0144\"]\n  claims: [\"claim_symposium_0156\", \"claim_symposium_0155\", \"claim_symposium_0160\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

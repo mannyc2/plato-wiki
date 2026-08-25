@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "dialogue": "sophist",
+  "ledger": {
+    "path": "wiki/commentary/sophist.md",
+    "sha256": "58b870f30ebd0d21fe651852bb2574d31fe46e7bd95a4345ef495f1eb51fe5f4"
+  },
+  "protocol": {
+    "path": "docs/commentary-protocol.md",
+    "sha256": "ec82c17b1b3a289bc079181ac6bfe0f90df9dae4afa068ac6804aeb6e41978ad"
+  },
+  "authoring": {
+    "model": "gpt-5.6-luna",
+    "effort": "medium"
+  },
+  "units": [
+    {
+      "unit_key": "01-216a-218e",
+      "section_id": "comm_sophist_0001",
+      "audit_brief_sha256": "0d6baa63c50b4a939eb19ff52527e79db8f784d0f456d9c1ca3dc014b622bbda",
+      "output_path": "scratch/commentary/audits/sophist/01-216a-218e.json",
+      "output_sha256": "0289b3a62d7d00078d5d2b606645dfdfe407906f7f23cb9f2cbd3459463c72c1",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "sophist",
+        "unit_key": "01-216a-218e",
+        "section_id": "comm_sophist_0001",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_sophist_0001",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section efficiently orients the listener to the arrival, the classification problem, and the fact that the passage poses rather than resolves that problem. It adds useful framing without merely recapping the scene."
+          },
+          {
+            "commentary_id": "comm_sophist_0011",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "This concise interruption identifies the move from the difficult sophist to the smaller angler as a methodological trial. Its interpretive framing is appropriately marked, and it does not claim that the sophist has already been analyzed."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "02-219a-221c",
+      "section_id": "comm_sophist_0002",
+      "audit_brief_sha256": "752e0d09dba09e74a963e60e325d9e13cdc1c9f0a7738fbae318ac7e3a9b8389",
+      "output_path": "scratch/commentary/audits/sophist/02-219a-221c.json",
+      "output_sha256": "55066e1da97fc87ee571d4faf16f956cbbe4bf3504d6eeb0183a939bbb2d80fc",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "sophist",
+        "unit_key": "02-219a-221c",
+        "section_id": "comm_sophist_0002",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_sophist_0002",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section gives the passage a specific listening frame: the modest angler serves as a rehearsal for the division method, and the closing transition applies that method to the sophist. It is concise, clearly interpretive, and easy to follow aloud without merely recapping the classification."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "03-221d-231c",
+      "section_id": "comm_sophist_0003",
+      "audit_brief_sha256": "d7dc5277e76e9da9cdc5e1169b2eae83e8e4ef03590a8698e5f93aa2fde06d1f",
+      "output_path": "scratch/commentary/audits/sophist/03-221d-231c.json",
+      "output_sha256": "bd3715ad0e073842a88e7b00491b4bb4473e345ac8fcec3be72c85cc9a3dc308",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "sophist",
+        "unit_key": "03-221d-231c",
+        "section_id": "comm_sophist_0003",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_sophist_0003",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section gives the unit one clear orienting job: showing how successive captures alter the sophist’s apparent identity. The six-part overview adds structural value beyond recap and is concise enough to hear easily."
+          },
+          {
+            "commentary_id": "comm_sophist_0012",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "This interruption isolates the passage’s central pedagogical move: elenchus removes obstructive conceit before instruction. It distinguishes the Stranger’s proposal from the auditor’s interpretation, preserves that distinction, and remains focused and speakable."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "04-231d-236d",
+      "section_id": "comm_sophist_0004",
+      "audit_brief_sha256": "8fbc74ce6de19332b30f8193b1cc18ee5963fc9afe37a8def67f7c53fcdaa3e0",
+      "output_path": "scratch/commentary/audits/sophist/04-231d-236d.json",
+      "output_sha256": "0f5211111d92bcdc6c5a74fd265bc757a0b240409ff45b4f78e50fcc6da95573",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "sophist",
+        "unit_key": "04-231d-236d",
+        "section_id": "comm_sophist_0004",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_sophist_0004",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section makes one clear interpretive point: the visual example turns on viewpoint, distinguishes likeness from mere appearance, and preserves the unresolved placement of the sophist. It is concise, passage-specific, and easy to hear."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "05-236e-239c",
+      "section_id": "comm_sophist_0005",
+      "audit_brief_sha256": "c71b9d965a0fe7e99548e1a1d772e153cf3cc4b8603b9b01b1e56321a1ef4210",
+      "output_path": "scratch/commentary/audits/sophist/05-236e-239c.json",
+      "output_sha256": "6bb6a911c205fe8bc2e38b5098777986f5abcf37df00ff9fad5f807a87661621",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "sophist",
+        "unit_key": "05-236e-239c",
+        "section_id": "comm_sophist_0005",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_sophist_0005",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section gives one clear interpretive job: it highlights the passage’s self-refuting use of language without merely recapping the exchange. Its cautious first-person framing preserves the distinction between the text and the commentator’s reading, and the prose is concise and easy to hear."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "06-239d-242b",
+      "section_id": "comm_sophist_0006",
+      "audit_brief_sha256": "daffe7f9e2c3f275a00b18d8903e228cd0fa04ee98f0fee51ebe34136245a183",
+      "output_path": "scratch/commentary/audits/sophist/06-239d-242b.json",
+      "output_sha256": "dda3dc9f83920c3977cb8fc9e33b4002ae47b463443374a34efb2769ab4c4985",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "sophist",
+        "unit_key": "06-239d-242b",
+        "section_id": "comm_sophist_0006",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_sophist_0006",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section has one clear job: it frames the passage as the inquiry’s crisis over speaking about images and falsehood, then identifies the Stranger’s deliberate turn toward testing Parmenides. Its interpretive language is properly marked as a reading, adds value beyond recap, and is concise and easy"
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "07-242c-251a",
+      "section_id": "comm_sophist_0007",
+      "audit_brief_sha256": "74e6b264fc9328622168ddd0c51411b540c94369986e272dca26765ceef3f4ef",
+      "output_path": "scratch/commentary/audits/sophist/07-242c-251a.json",
+      "output_sha256": "0db2e31b3467bba549eee170c922192bcb02459489585f2a3cb85f83bf32d746",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "sophist",
+        "unit_key": "07-242c-251a",
+        "section_id": "comm_sophist_0007",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_sophist_0007",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section gives a concise, passage-specific orientation: it names the Giants-and-gods confrontation and identifies the Stranger’s provisional power-based account of being. Its two sentences are clear aloud, interpretive without overstating the argument, and add structure beyond simple recap."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "08-251b-259e",
+      "section_id": "comm_sophist_0008",
+      "audit_brief_sha256": "1d6f4d05a0f12b30e0e7d5b28188876924fc2b65edb0234fa9775d4daca260b3",
+      "output_path": "scratch/commentary/audits/sophist/08-251b-259e.json",
+      "output_sha256": "d609bbb45f023c1b04764467df615e82cab939a1ed49a875c8dc319e644439d0",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "sophist",
+        "unit_key": "08-251b-259e",
+        "section_id": "comm_sophist_0008",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_sophist_0008",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section offers one clear methodological point: complete separation would destroy the interweaving required for discourse. It adds interpretive value beyond recap, preserves the distinction between separation and usable differentiation, and is concise and easy to hear aloud."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "09-260a-264b",
+      "section_id": "comm_sophist_0009",
+      "audit_brief_sha256": "b3aec16d38269ce59fd6837d0745babaf3e25f9bc6e169848ab4b9e95d3e3f6f",
+      "output_path": "scratch/commentary/audits/sophist/09-260a-264b.json",
+      "output_sha256": "033ce43bf5764634db1e21eec27f67396e5445df42bfd90c3a42903571055a43",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "sophist",
+        "unit_key": "09-260a-264b",
+        "section_id": "comm_sophist_0009",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_sophist_0009",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section earns its interruption by identifying the Stranger’s provisional strategy: speech, opinion, and fancy are investigated as a new defensive line, with the option of abandoning it if it cannot contain the sophist. Its interpretive framing is clearly marked as the commentator’s reading and,可"
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "10-264c-268d",
+      "section_id": "comm_sophist_0010",
+      "audit_brief_sha256": "d6552e8739da42ba60dde815786959b374af0a6d0ca64738114cf70b1ece8887",
+      "output_path": "scratch/commentary/audits/sophist/10-264c-268d.json",
+      "output_sha256": "a22811a388e811b2ffe4a6b0675e92b438d3f61192f700f82162e790bef04a9c",
+      "output": {
+        "schema_version": 1,
+        "dialogue": "sophist",
+        "unit_key": "10-264c-268d",
+        "section_id": "comm_sophist_0010",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_sophist_0010",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The section clearly orients the listener to the passage's retracing of prior divisions and its narrowing toward the sophist as a kind of imitator. It adds structural guidance rather than merely repeating the dialogue."
+          },
+          {
+            "commentary_id": "comm_sophist_0013",
+            "disposition": "pass",
+            "issue_codes": [],
+            "rationale": "The question accurately isolates the knowledge-versus-opinion distinction, notes that imitation can successfully produce an appearance, and opens the next division without supplying a predetermined answer. Its cadence is clear for spoken delivery."
+          }
+        ]
+      }
+    }
+  ],
+  "acceptance": {
+    "decision": "accepted",
+    "reviewer": "cjpher-delegated-luna-reviewer-sophocles",
+    "reviewed_on": "2026-08-21",
+    "rationale": "All thirteen active blocks passed independent Luna review for exact source support, bounded certainty, distinct teaching value, and spoken clarity.",
+    "sampled_commentary_ids": [
+      "comm_sophist_0001",
+      "comm_sophist_0002",
+      "comm_sophist_0003",
+      "comm_sophist_0004",
+      "comm_sophist_0005",
+      "comm_sophist_0006",
+      "comm_sophist_0007",
+      "comm_sophist_0008",
+      "comm_sophist_0009",
+      "comm_sophist_0010",
+      "comm_sophist_0011",
+      "comm_sophist_0012",
+      "comm_sophist_0013"
+    ],
+    "review_note": {
+      "path": "wiki/review/2026-08-21-commentary-quality-sophist-luna-sample.md",
+      "sha256": "97c4477620c1dc610f07d1892f1c9014948971613d766e4e744e47b84fecc3fd"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+dialogue: lysis
+turn_index_path: derived/plato/turns/lysis.toon
+turn_index_sha256: acb69848a3e34f6465b67dadcd76009bd5a27b6195f4feb4ba47833c6cf67534
+token_index_path: derived/plato/tokens/lysis.toon
+token_index_sha256: 586dd849b3fd1e438d2a83c5c0619b5b5c10666b343297a2e2b42e3c0591f12c
+speakers[1]:
+  speaker | turns | total_tokens | median_tokens | p90_tokens | max_tokens | long_turns
+  (none)  | 1 | 6954 | 6954 | 6954 | 6954 | 0
+turns[1]:
+  turn_id         | speaker | start_marker | end_marker | start_char | end_char | greek_char_count | token_count | dialogue_long_turn | speaker_long_turn
+  turn_lysis_0001 | (none)  | 203a         | 223b       | 0 | 41070 | 31153 | 6954 | no | no

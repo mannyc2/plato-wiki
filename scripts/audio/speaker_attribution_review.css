@@ -1,0 +1,277 @@
+:root {
+  color-scheme: light dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --bg: #f4f1e8;
+  --panel: #fffdf7;
+  --ink: #211f1a;
+  --muted: #6d685d;
+  --line: #cfc6b3;
+  --accent: #315b67;
+  --accent-ink: #fff;
+  --warning: #8b3f24;
+  --mark: #ffe7a3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171916;
+    --panel: #22241f;
+    --ink: #ece9df;
+    --muted: #b4aea0;
+    --line: #4a4d43;
+    --accent: #79a9b6;
+    --accent-ink: #102126;
+    --warning: #f09875;
+    --mark: #5d4a1f;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+a {
+  color: var(--accent);
+}
+
+.topbar,
+.review-shell,
+.index-shell {
+  width: min(1180px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.topbar {
+  padding-block: 1.25rem 0.5rem;
+}
+
+.topbar h1,
+.index-shell h1 {
+  margin-bottom: 0.35rem;
+}
+
+.fatal {
+  padding: 1rem;
+  border: 2px solid var(--warning);
+  background: var(--panel);
+  color: var(--warning);
+  font-weight: 700;
+}
+
+.toolbar {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
+}
+
+.progress {
+  margin-right: auto;
+}
+
+button,
+select {
+  max-width: 100%;
+  min-height: 2.35rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: var(--panel);
+  color: var(--ink);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+button.primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+}
+
+button.danger {
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.policy-note {
+  margin-block: 1rem;
+  padding: 0.7rem 1rem;
+  border-left: 0.35rem solid var(--warning);
+  background: var(--panel);
+}
+
+.policy-note p {
+  margin-block: 0.25rem;
+}
+
+.viewport-status {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.load-more {
+  display: block;
+  width: min(24rem, 100%);
+  margin: 1rem auto 2rem;
+}
+
+.packet {
+  margin-block: 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background: var(--panel);
+}
+
+.packet-summary {
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.packet-body {
+  padding: 0 1rem 1rem;
+}
+
+.bulk-confirm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 2px solid var(--warning);
+  border-radius: 0.35rem;
+}
+
+.bulk-confirm p {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.atom-card {
+  margin-block: 0.75rem;
+  padding: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+}
+
+.atom-heading {
+  margin-top: 0;
+  font: 700 0.92rem ui-monospace, SFMono-Regular, Menlo, monospace;
+  overflow-wrap: anywhere;
+}
+
+.source-context {
+  padding: 0.8rem;
+  border-radius: 0.3rem;
+  background: var(--bg);
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  white-space: pre-wrap;
+}
+
+.context-before,
+.context-after {
+  color: var(--muted);
+}
+
+.atom-text {
+  padding: 0.1rem 0.2rem;
+  background: var(--mark);
+  color: var(--ink);
+}
+
+.atom-facts {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.atom-facts dt {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.atom-facts dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.provenance pre {
+  max-height: 22rem;
+  overflow: auto;
+  padding: 0.7rem;
+  background: var(--bg);
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+}
+
+.decision-controls {
+  display: grid;
+  grid-template-columns: minmax(12rem, 1fr) minmax(12rem, 1fr) auto;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+}
+
+.decision-controls[data-complete="true"] {
+  border-top-color: var(--accent);
+}
+
+.decision-status {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.index-shell {
+  padding-block: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+}
+
+th,
+td {
+  padding: 0.65rem;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+@media (max-width: 760px) {
+  .decision-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .index-shell {
+    overflow-x: auto;
+  }
+}

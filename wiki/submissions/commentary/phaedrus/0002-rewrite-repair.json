@@ -1,0 +1,386 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "phaedrus",
+  "source_path": "scratch/commentary/rewrite-repairs/phaedrus/round1-evidence.json",
+  "source_sha256": "1b773f160ef86f06ddc98e5915d77155127cc8f486c445eb229cb96c53e5d733",
+  "target_path": "wiki/commentary/phaedrus.md",
+  "target_sha256_before": "4b608b797088cb36c0fc65e172a9fc88d951aaed6d0a583e60ff0c347f712562",
+  "target_sha256_after": "4be4c5d634606c9a0efdd37bfbc3c3a10c6c3165e10d5211b17690bea908314b",
+  "applied_at": "2026-08-21T18:39:10.045Z",
+  "applied_ids": [
+    "comm_phaedrus_0002",
+    "comm_phaedrus_0003",
+    "comm_phaedrus_0004",
+    "comm_phaedrus_0005",
+    "comm_phaedrus_0006",
+    "comm_phaedrus_0007",
+    "comm_phaedrus_0008",
+    "comm_phaedrus_0011",
+    "comm_phaedrus_0012",
+    "comm_phaedrus_0013",
+    "comm_phaedrus_0014",
+    "comm_phaedrus_0016",
+    "comm_phaedrus_0018"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "phaedrus",
+    "ledger": {
+      "path": "wiki/commentary/phaedrus.md",
+      "sha256": "4b608b797088cb36c0fc65e172a9fc88d951aaed6d0a583e60ff0c347f712562"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/phaedrus/0001-rewrite-batch.json",
+      "sha256": "e72938f7a07050255b2d74df28e9a4e54da3fb1a351b11feb15ae7655ecb53c8"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-block-review-phaedrus-rejected-ddca769d6561.md",
+      "sha256": "18cdabd77df6f2b3b1105659913b8759a6e4239471295bd990e8c6eb38198976"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-phaedrus-round1",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_phaedrus_0002",
+          "finding": "The rewrite contains checkable source claims but cites no accepted canonical evidence."
+        },
+        {
+          "commentary_id": "comm_phaedrus_0003",
+          "finding": "The rewrite contains checkable source claims but cites no accepted canonical evidence."
+        },
+        {
+          "commentary_id": "comm_phaedrus_0004",
+          "finding": "The rewrite contains checkable source claims but cites no accepted canonical evidence."
+        },
+        {
+          "commentary_id": "comm_phaedrus_0005",
+          "finding": "The rewrite contains checkable source claims but cites no accepted canonical evidence."
+        },
+        {
+          "commentary_id": "comm_phaedrus_0006",
+          "finding": "The rewrite contains checkable source claims but cites no accepted canonical evidence."
+        },
+        {
+          "commentary_id": "comm_phaedrus_0007",
+          "finding": "The rewrite contains checkable source claims but cites no accepted canonical evidence."
+        },
+        {
+          "commentary_id": "comm_phaedrus_0008",
+          "finding": "The rewrite contains checkable source claims but cites no accepted canonical evidence."
+        },
+        {
+          "commentary_id": "comm_phaedrus_0011",
+          "finding": "The rewrite contains checkable source claims but cites no accepted canonical evidence."
+        },
+        {
+          "commentary_id": "comm_phaedrus_0012",
+          "finding": "The rewrite contains checkable source claims but cites no accepted canonical evidence."
+        },
+        {
+          "commentary_id": "comm_phaedrus_0013",
+          "finding": "The rewrite contains checkable source claims but cites no accepted canonical evidence."
+        },
+        {
+          "commentary_id": "comm_phaedrus_0014",
+          "finding": "The rewrite contains checkable source claims but cites no accepted canonical evidence."
+        },
+        {
+          "commentary_id": "comm_phaedrus_0016",
+          "finding": "The rewrite contains checkable source claims but cites no accepted canonical evidence."
+        },
+        {
+          "commentary_id": "comm_phaedrus_0018",
+          "finding": "The rewrite contains checkable source claims but cites no accepted canonical evidence."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-phaedrus-round1-evidence",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_phaedrus_0002",
+      "comm_phaedrus_0003",
+      "comm_phaedrus_0004",
+      "comm_phaedrus_0005",
+      "comm_phaedrus_0006",
+      "comm_phaedrus_0007",
+      "comm_phaedrus_0008",
+      "comm_phaedrus_0011",
+      "comm_phaedrus_0012",
+      "comm_phaedrus_0013",
+      "comm_phaedrus_0014",
+      "comm_phaedrus_0016",
+      "comm_phaedrus_0018"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_phaedrus_0002",
+        "title": "When polish begins to persuade",
+        "body": "I read this stretch as a small warning about rhetorical charm. The speech presents confidence in a form that invites assent before its reasoning has been tested; Socrates’ response lets that charm hang in the air, then introduces a hesitation. For a listener, the live question is whether verbal finish has earned judgment, or merely borrowed its authority.",
+        "cites": {
+          "observations": [
+            "obs_phaedrus_0089",
+            "obs_phaedrus_0049",
+            "obs_phaedrus_0051"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_phaedrus_0003",
+        "title": "When critique becomes performance",
+        "body": "One way to read this unit is as a rehearsal of the power it claims to discuss: the speech is not treated as a detached object but as something elicited, staged, and made part of a contest. That is why Socrates’ reluctance matters for listening: it turns the coming discourse into an event, not just an argument.",
+        "cites": {
+          "observations": [
+            "obs_phaedrus_0053",
+            "obs_phaedrus_0061"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_phaedrus_0004",
+        "title": "When desire takes command",
+        "body": "One way to hear this speech is as a test of what happens when appetite is allowed to govern care for another. Socrates sets desire beside an acquired opinion that seeks the best; his definition of love begins when desire wins that contest. The later catalogue then becomes an experiment: what follows when self-serving pleasure rules the relationship?",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_phaedrus_0023",
+            "claim_phaedrus_0025",
+            "claim_phaedrus_0030"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_phaedrus_0005",
+        "title": "Socrates takes responsibility",
+        "body": "One way to hear this turn is as Socrates’ refusal to let Phaedrus carry the whole blame: the divine sign stops his departure, and he treats the speech he has delivered as an offense requiring correction. The recantation matters because the speaker changes how he stands behind his own words.",
+        "cites": {
+          "observations": [
+            "obs_phaedrus_0105",
+            "obs_phaedrus_0102"
+          ],
+          "claims": [
+            "claim_phaedrus_0033",
+            "claim_phaedrus_0036"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_phaedrus_0006",
+        "title": "The difficulty of steering",
+        "body": "I would not hear the human team as two obedient horses. I hear the pair instead as unequal: one marked as noble, the other as its opposite, so that steering becomes difficult. The figure then works, for me, as a problem of direction amid resistance—not as a settled map of psychic order.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_phaedrus_0048"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_phaedrus_0007",
+        "title": "Seeing truth in motion",
+        "body": "One way to read this passage is to hear its heavenly vision as more than a picture of detached contemplation. The myth links seeing with a soul in motion, but that link need not be treated as a final theory of knowledge. It may instead dramatize a question for the listener: does truth become intelligible only when the soul is ordered enough to pursue it?",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_phaedrus_0050",
+            "claim_phaedrus_0051"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_phaedrus_0008",
+        "title": "Recollection without completed escape",
+        "body": "I suggest hearing this unit as a tension between recollection and earthly limitation. In my reading, recollection is not mere storage of the past but a renewed orientation toward what the soul once saw; that is an interpretation, not a settled fact. The winged image then names an upward pull that remains unfinished, since desire has not yet become escape.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_phaedrus_0052",
+            "claim_phaedrus_0053",
+            "claim_phaedrus_0055"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_phaedrus_0011",
+        "title": "Praise turns into writing",
+        "body": "I hear this turn as a comic demotion of political grandeur. Socrates makes the public document display its own admirers, so praise of the city becomes praise of the writer. His closing question is therefore not a lesson about what makes writing good or bad, but a reclassification: the impressive display is simply a written speech. The joke shifts our attention from the speech’s dignity to the vanity that sponsors it.",
+        "cites": {
+          "observations": [
+            "obs_phaedrus_0189",
+            "obs_phaedrus_0319",
+            "obs_phaedrus_0320"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_phaedrus_0012",
+        "title": "Truth before persuasion",
+        "body": "I would read this stretch as a challenge to rhetoric’s self-description. The pressure is not simply whether writing or speaking is respectable, but whether persuasion deserves to be called an art when it can succeed without understanding what it handles. I take the closing challenge to leave us with a live test: can a speaker guide a soul responsibly while remaining detached from truth?",
+        "cites": {
+          "observations": [
+            "obs_phaedrus_0184",
+            "obs_phaedrus_0185",
+            "obs_phaedrus_0193"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_phaedrus_0013",
+        "title": "When order must be heard",
+        "body": "One way to hear this stretch is as a challenge to the listener: before admiring a persuasive sequence, ask whether its parts feel guided by a visible necessity or merely placed one after another. I take the passage’s force to lie in making disorder audible before offering a remedy.",
+        "cites": {
+          "observations": [
+            "obs_phaedrus_0231",
+            "obs_phaedrus_0232"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_phaedrus_0014",
+        "title": "A test for rhetorical technique",
+        "body": "I read the living-body image here as more than advice about arrangement: it supplies a test for rhetoric. On this reading, collection and division ask whether a speaker can preserve the relation of parts to a whole, while the later list of rhetorical devices sounds deliberately less unified. The contrast is my interpretation, offered as a question for listening: does technique serve understanding, or merely display control?",
+        "cites": {
+          "observations": [
+            "obs_phaedrus_0201",
+            "obs_phaedrus_0205",
+            "obs_phaedrus_0242"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_phaedrus_0016",
+        "title": "What makes rhetoric an art",
+        "body": "I read this passage as setting a hard standard for rhetoric rather than endorsing the rhetoricians’ shortcut: genuine skill would fit kinds of speech to kinds of souls and to the right moment, while “the probable” cannot replace truth. Its likeness to truth is useful only when guided by knowledge of truth; otherwise the claim to possess an art collapses into verbal maneuvering.",
+        "cites": {
+          "observations": [],
+          "claims": [
+            "claim_phaedrus_0067",
+            "claim_phaedrus_0073",
+            "claim_phaedrus_0075",
+            "claim_phaedrus_0076"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_phaedrus_0018",
+        "title": "From written words to the soul",
+        "body": "One way to hear this closing movement is as a test of seriousness: the garden image makes writing feel provisional, while the final prayer turns the issue inward, toward the kind of soul a speaker hopes to form. I take the last gesture to redirect attention from polished language to the life that gives it weight.",
+        "cites": {
+          "observations": [
+            "obs_phaedrus_0260",
+            "obs_phaedrus_0261",
+            "obs_phaedrus_0306",
+            "obs_phaedrus_0307"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_phaedrus_0002",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0002\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"When polish begins to persuade\"\nstephanus_span: 229e-234e\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 229e-234e\n  start_marker: 229e\n  end_marker: 234e\n  start_char: 4899\n  end_char: 15173\n  text_sha256: \"f7c32b5a06fac2d5618cacbdb3b13fe35c6a733a531eed180bd686f0ea4f8290\"\nbody: \"I read this stretch as a small warning about rhetorical charm. The speech presents confidence in a form that invites assent before its reasoning has been tested; Socrates’ response lets that charm hang in the air, then introduces a hesitation. For a listener, the live question is whether verbal finish has earned judgment, or merely borrowed its authority.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_phaedrus_0003",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0003\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"When critique becomes performance\"\nstephanus_span: 235a-237b\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 235a-237b\n  start_marker: 235a\n  end_marker: 237b\n  start_char: 15173\n  end_char: 20178\n  text_sha256: \"5889451617da1e4c963a1d330b3256bbc9b43cf533f1eb082cdfc8f29dbdf4cc\"\nbody: \"One way to read this unit is as a rehearsal of the power it claims to discuss: the speech is not treated as a detached object but as something elicited, staged, and made part of a contest. That is why Socrates’ reluctance matters for listening: it turns the coming discourse into an event, not just an argument.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_phaedrus_0004",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0004\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"When desire takes command\"\nstephanus_span: 237c-241d\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 237c-241d\n  start_marker: 237c\n  end_marker: 241d\n  start_char: 20178\n  end_char: 28955\n  text_sha256: \"dcd8dde046ef0c295e2657369c94edc60741fbab865889e7f8e9dfdf973788ae\"\nbody: \"One way to hear this speech is as a test of what happens when appetite is allowed to govern care for another. Socrates sets desire beside an acquired opinion that seeks the best; his definition of love begins when desire wins that contest. The later catalogue then becomes an experiment: what follows when self-serving pleasure rules the relationship?\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_phaedrus_0005",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0005\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"Socrates takes responsibility\"\nstephanus_span: 241e-245e\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 241e-245e\n  start_marker: 241e\n  end_marker: 245e\n  start_char: 28955\n  end_char: 37529\n  text_sha256: \"a8d82b593755273029ca56ea3bf19192779427c53c995a7a2ce927eb51f40aef\"\nbody: \"One way to hear this turn is as Socrates’ refusal to let Phaedrus carry the whole blame: the divine sign stops his departure, and he treats the speech he has delivered as an offense requiring correction. The recantation matters because the speaker changes how he stands behind his own words.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_phaedrus_0006",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0006\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"The difficulty of steering\"\nstephanus_span: 246a-247b\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 246a-247b\n  start_marker: 246a\n  end_marker: 247b\n  start_char: 37529\n  end_char: 40352\n  text_sha256: \"78439e8dc3713a9b44bf976b950c181c684f5e4bd18b2e5abe3f0975f55a31f8\"\nbody: \"I would not hear the human team as two obedient horses. I hear the pair instead as unequal: one marked as noble, the other as its opposite, so that steering becomes difficult. The figure then works, for me, as a problem of direction amid resistance—not as a settled map of psychic order.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_phaedrus_0007",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0007\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"Seeing truth in motion\"\nstephanus_span: 247c-248b\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 247c-248b\n  start_marker: 247c\n  end_marker: 248b\n  start_char: 40352\n  end_char: 42324\n  text_sha256: \"2d7c16701dda164aba81a3a13407fe4147b5ab996b4d47279c1bc1b401372c29\"\nbody: \"One way to read this passage is to hear its heavenly vision as more than a picture of detached contemplation. The myth links seeing with a soul in motion, but that link need not be treated as a final theory of knowledge. It may instead dramatize a question for the listener: does truth become intelligible only when the soul is ordered enough to pursue it?\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_phaedrus_0008",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0008\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"Recollection without completed escape\"\nstephanus_span: 248c-249d\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 248c-249d\n  start_marker: 248c\n  end_marker: 249d\n  start_char: 42324\n  end_char: 45237\n  text_sha256: \"74ef420c42762b9fe1984ca7a65c5443296ae0be54d23ccf7fe13093bc4fc946\"\nbody: \"I suggest hearing this unit as a tension between recollection and earthly limitation. In my reading, recollection is not mere storage of the past but a renewed orientation toward what the soul once saw; that is an interpretation, not a settled fact. The winged image then names an upward pull that remains unfinished, since desire has not yet become escape.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_phaedrus_0011",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0011\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"Praise turns into writing\"\nstephanus_span: 255d-258b\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 255d-258b\n  start_marker: 255d\n  end_marker: 258b\n  start_char: 56909\n  end_char: 62627\n  text_sha256: \"2e8221fecff0cda81e70dc906587216bf60d3d319584d90b9cbb88729dc8a09b\"\nbody: \"I hear this turn as a comic demotion of political grandeur. Socrates makes the public document display its own admirers, so praise of the city becomes praise of the writer. His closing question is therefore not a lesson about what makes writing good or bad, but a reclassification: the impressive display is simply a written speech. The joke shifts our attention from the speech’s dignity to the vanity that sponsors it.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_phaedrus_0012",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0012\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"Truth before persuasion\"\nstephanus_span: 258c-261c\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 258c-261c\n  start_marker: 258c\n  end_marker: 261c\n  start_char: 62627\n  end_char: 69128\n  text_sha256: \"d3552232fab7569bde38b352f1b9d58de31f031146baa951dd3e7c9fea705267\"\nbody: \"I would read this stretch as a challenge to rhetoric’s self-description. The pressure is not simply whether writing or speaking is respectable, but whether persuasion deserves to be called an art when it can succeed without understanding what it handles. I take the closing challenge to leave us with a live test: can a speaker guide a soul responsibly while remaining detached from truth?\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_phaedrus_0013",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0013\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"When order must be heard\"\nstephanus_span: 261d-264b\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 261d-264b\n  start_marker: 261d\n  end_marker: 264b\n  start_char: 69128\n  end_char: 74611\n  text_sha256: \"665b82910c9aec3385fae0d525b1f68016bd04ab9ed544141b839e9e94383b3c\"\nbody: \"One way to hear this stretch is as a challenge to the listener: before admiring a persuasive sequence, ask whether its parts feel guided by a visible necessity or merely placed one after another. I take the passage’s force to lie in making disorder audible before offering a remedy.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_phaedrus_0014",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0014\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"A test for rhetorical technique\"\nstephanus_span: 264c-267b\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 264c-267b\n  start_marker: 264c\n  end_marker: 267b\n  start_char: 74611\n  end_char: 80359\n  text_sha256: \"cbe78c9e06fdbc2b0fba5acc7ea83c03e477875f9fe917ee1f44ae6a7cc752b3\"\nbody: \"I read the living-body image here as more than advice about arrangement: it supplies a test for rhetoric. On this reading, collection and division ask whether a speaker can preserve the relation of parts to a whole, while the later list of rhetorical devices sounds deliberately less unified. The contrast is my interpretation, offered as a question for listening: does technique serve understanding, or merely display control?\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_phaedrus_0016",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0016\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"What makes rhetoric an art\"\nstephanus_span: 270b-273d\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 270b-273d\n  start_marker: 270b\n  end_marker: 273d\n  start_char: 85582\n  end_char: 92687\n  text_sha256: \"34ecb9dbc25b9d1cefcbb6a00620d71b440541e0e4f37afc1fe83edbbe159a72\"\nbody: \"I read this passage as setting a hard standard for rhetoric rather than endorsing the rhetoricians’ shortcut: genuine skill would fit kinds of speech to kinds of souls and to the right moment, while “the probable” cannot replace truth. Its likeness to truth is useful only when guided by knowledge of truth; otherwise the claim to possess an art collapses into verbal maneuvering.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_phaedrus_0018",
+      "body": "```yaml\ncommentary_id: comm_phaedrus_0018\nsource_work: Phaedrus\nblock_kind: section\nplacement: before\ntitle: \"From written words to the soul\"\nstephanus_span: 276b-279c\nsource_ref:\n  source_path: raw/plato/greek/phaedrus.txt\n  stephanus_span: 276b-279c\n  start_marker: 276b\n  end_marker: 279c\n  start_char: 97611\n  end_char: 104425\n  text_sha256: \"bce5c75812c17e90284e417a4a195e279213ffe3013cba6e11e38f50863726f1\"\nbody: \"One way to hear this closing movement is as a test of seriousness: the garden image makes writing feel provisional, while the final prayer turns the issue inward, toward the kind of soul a speaker hopes to form. I take the last gesture to redirect attention from polished language to the life that gives it weight.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

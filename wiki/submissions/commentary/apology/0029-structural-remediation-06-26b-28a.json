@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "submission_id": "0029-structural-remediation-06-26b-28a",
+  "lane": "commentary",
+  "kind": "structural-remediation",
+  "scope": "apology",
+  "unit_key": "06-26b-28a",
+  "source_path": "scratch/commentary/audits/apology/06-26b-28a.json",
+  "source_sha256": "7cef1e714a1742eef85fef67c6ef9e334b91a3f326e4d50729bdb2040a226022",
+  "target_path": "wiki/commentary/apology.md",
+  "target_sha256_before": "7c586abc0d23ed7e55ce4fcaf4fa9f5bcf9a12dddf9a0eeb705cdc77db029af8",
+  "target_sha256_after": "3a16af83d843a5f30ef8f6f535c98b634d902bc3be8eeb75e740252bb25e2161",
+  "applied_at": "2026-08-23T23:10:18.112Z",
+  "applied_ids": [
+    "comm_apology_0034"
+  ],
+  "submission": {
+    "candidate": {
+      "dialogue": "apology",
+      "unitKey": "06-26b-28a",
+      "sectionId": "comm_apology_0006",
+      "auditOutputPath": "scratch/commentary/audits/apology/06-26b-28a.json",
+      "auditOutputSha256": "7cef1e714a1742eef85fef67c6ef9e334b91a3f326e4d50729bdb2040a226022",
+      "expectedLedgerSha256": "7c586abc0d23ed7e55ce4fcaf4fa9f5bcf9a12dddf9a0eeb705cdc77db029af8",
+      "expectedAttributionSha256": "1c41890210e4621e5e081de33b408e54572bd07af74640ea6964c45dda553f64",
+      "expectedEnglishSha256": "04bf6411654f814bc016d5a0f649d1c50aef4d0dcbeeb1820910ecf8d2107046",
+      "operations": [
+        {
+          "operation": "remove",
+          "commentaryId": "comm_apology_0034"
+        }
+      ],
+      "reviewer": "round4-delegated-luna-reviewer-structural-20260823",
+      "reviewedOn": "2026-08-23",
+      "rationale": "Independent delegated Luna structural review confirms source mismatch and semantic playback displacement; prose rewrite cannot repair the edge, so remove the original."
+    },
+    "audit_output_path": "scratch/commentary/audits/apology/06-26b-28a.json",
+    "audit_output_sha256": "7cef1e714a1742eef85fef67c6ef9e334b91a3f326e4d50729bdb2040a226022",
+    "audit_findings": [
+      {
+        "commentaryId": "comm_apology_0034",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "submission_id": "0002-rewrite-repair",
+  "lane": "commentary",
+  "kind": "rewrite-repair",
+  "scope": "republic",
+  "source_path": "scratch/commentary/rewrite-repairs/republic/round1.json",
+  "source_sha256": "aaaafb60cbaf3361aa805dfdec0b9e48e11a82bf590a2cc2d180e4c590dc660c",
+  "target_path": "wiki/commentary/republic.md",
+  "target_sha256_before": "50c554d8f79fa8a95a24a94a58dfde2173d9bcc487523ba5fee25abdc8c2b0c0",
+  "target_sha256_after": "4780e6f82aa04b6dc657b00f1fee35608f77c261c86555ae17b5883324e48f99",
+  "applied_at": "2026-08-21T20:39:44.443Z",
+  "applied_ids": [
+    "comm_republic_0005",
+    "comm_republic_0010"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "republic",
+    "ledger": {
+      "path": "wiki/commentary/republic.md",
+      "sha256": "50c554d8f79fa8a95a24a94a58dfde2173d9bcc487523ba5fee25abdc8c2b0c0"
+    },
+    "prior_submission": {
+      "path": "wiki/submissions/commentary/republic/0001-rewrite-batch.json",
+      "sha256": "55a2e551abb3625e1127c0a973dd1166656f926d0b50c448c060a88054bee4a2"
+    },
+    "acceptance_receipt": {
+      "path": "wiki/review/2026-08-21-commentary-rewrite-republic-0001-rewrite-batch-acceptance.md",
+      "sha256": "fd229f2483a86212661d708245781ab8fe9c50cdd3d3942ae8cb873a7f86bec0"
+    },
+    "prior_review": {
+      "reviewer": "cjpher-delegated-luna-reviewer-republic-round1",
+      "reviewed_on": "2026-08-21",
+      "rejection_findings": [
+        {
+          "commentary_id": "comm_republic_0005",
+          "finding": "The later turn toward music and gymnastics is checkable in the anchored passage but was not supported by the rewrite's cited accepted records."
+        },
+        {
+          "commentary_id": "comm_republic_0010",
+          "finding": "The opening claim that the women-and-children discussion is complete and that the rulers' case must be reopened is checkable at 502e but was not supported by the rewrite's cited accepted records."
+        }
+      ]
+    },
+    "repair_author": "cjpher-delegated-luna-repair-author-republic-round1",
+    "human_listening_or_review": "none claimed",
+    "target_commentary_ids": [
+      "comm_republic_0005",
+      "comm_republic_0010"
+    ],
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_republic_0005",
+        "title": "From imitation to habituation",
+        "body": "Here the argument turns representation into habituation. Socrates distinguishes the poet’s own narration from speech performed as another, then applies the one-work principle to mimesis. The question is no longer only what a story depicts, but what a guardian repeatedly practices: imitation can settle into body, voice, and thought. One way to read the turn toward music and gymnastics is as the search for stable formation. At this boundary, the emphasis is formation rather than selection.",
+        "cites": {
+          "observations": [
+            "obs_republic_0086",
+            "obs_republic_0087",
+            "obs_republic_0091"
+          ],
+          "claims": [
+            "claim_republic_0198",
+            "claim_republic_0199",
+            "claim_republic_0200",
+            "claim_republic_0248"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      },
+      {
+        "commentary_id": "comm_republic_0010",
+        "title": "The longer route to the greatest study",
+        "body": "Here the dialogue reopens the question of rule by tightening its standard. The discussion of women and children is marked complete, but the rulers’ case must be taken up again; the candidates must combine quick learning with steadiness and survive tests in pleasures, pains, fears, and study. The payoff is methodological: the earlier account of virtue was serviceable but not fully precise, and an incomplete measure cannot measure what it addresses. The “longer route” is therefore a demand for completion, not a decorative detour.",
+        "cites": {
+          "observations": [
+            "obs_republic_0224"
+          ],
+          "claims": [
+            "claim_republic_0520",
+            "claim_republic_0521",
+            "claim_republic_0522",
+            "claim_republic_0523",
+            "claim_republic_0524"
+          ],
+          "relations": [],
+          "dossiers": []
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_republic_0005",
+      "body": "```yaml\ncommentary_id: comm_republic_0005\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"From imitation to habituation\"\nstephanus_span: 392d-412b\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 392d-412b\n  start_marker: 392d\n  end_marker: 412b\n  start_char: 126153\n  end_char: 166576\n  text_sha256: \"40bfb55cf58beb747c822a537477f9fc71565d6f01fdbda188f4e80a26cc8c94\"\nbody: \"Here the argument turns representation into habituation. Socrates distinguishes the poet’s own narration from speech performed as another, then applies the one-work principle to mimesis. The question is no longer only what a story depicts, but what a guardian repeatedly practices: imitation can settle into body, voice, and thought. One way to read the turn toward music and gymnastics is as the search for stable formation. At this boundary, the emphasis is formation rather than selection.\"\ncites:\n  observations: [\"obs_republic_0086\", \"obs_republic_0087\", \"obs_republic_0091\"]\n  claims: [\"claim_republic_0198\", \"claim_republic_0199\", \"claim_republic_0200\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    },
+    {
+      "commentary_id": "comm_republic_0010",
+      "body": "```yaml\ncommentary_id: comm_republic_0010\nsource_work: Republic\nblock_kind: section\nplacement: before\ntitle: \"The longer route to the greatest study\"\nstephanus_span: 502d-514a\nsource_ref:\n  source_path: raw/plato/greek/republic.txt\n  stephanus_span: 502d-514a\n  start_marker: 502d\n  end_marker: 514a\n  start_char: 333316\n  end_char: 352150\n  text_sha256: \"386a3d812b4c634638e052132d2d9eaae3febf979d360dd4e06978bfe56c5791\"\nbody: \"Here the dialogue reopens the question of rule by tightening its standard. The discussion of women and children is marked complete, but the rulers’ case must be taken up again; the candidates must combine quick learning with steadiness and survive tests in pleasures, pains, fears, and study. The payoff is methodological: the earlier account of virtue was serviceable but not fully precise, and an incomplete measure cannot measure what it addresses. The “longer route” is therefore a demand for completion, not a decorative detour.\"\ncites:\n  observations: []\n  claims: [\"claim_republic_0520\", \"claim_republic_0521\", \"claim_republic_0522\", \"claim_republic_0523\", \"claim_republic_0524\"]\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: rejected\n```"
+    }
+  ]
+}

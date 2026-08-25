@@ -1,0 +1,30 @@
+{
+  "name": "plato-observation-wiki",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.3.9",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "cli": "bun packages/cli/src/cli.ts",
+    "harness": "bun packages/cli/src/cli.ts",
+    "commentary:structural-remediation": "bun scripts/commentary/structural-remediation-batch.ts",
+    "profiles": "bun packages/cli/src/cli.ts profiles",
+    "providers": "bun packages/cli/src/cli.ts providers",
+    "transcripts": "bun packages/cli/src/cli.ts transcripts",
+    "usage": "bun packages/cli/src/cli.ts usage",
+    "completeness": "bun packages/cli/src/cli.ts completeness",
+    "release:audit": "bun packages/cli/src/cli.ts release:audit",
+    "release:provenance": "bun scripts/release/generate-provenance.ts",
+    "public:export": "bun scripts/release/export-public-tree.ts",
+    "test": "bun run --cwd packages/harness test && bun run --cwd packages/cli test",
+    "typecheck": "bun run --cwd packages/harness typecheck && bun run --cwd packages/cli typecheck",
+    "validate": "bun packages/cli/src/cli.ts validate",
+    "ci": "bun scripts/ci.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  }
+}

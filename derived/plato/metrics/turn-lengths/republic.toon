@@ -1,0 +1,11 @@
+dialogue: republic
+turn_index_path: derived/plato/turns/republic.toon
+turn_index_sha256: 147bf0f6da8ba86c7611801e314f9aa5649e1bb72be9b4a9c868750f6eb01af1
+token_index_path: derived/plato/tokens/republic.toon
+token_index_sha256: a493bf5948d20378bac03e79c58b0dbca127e7abccd985b2d6956da1da86d281
+speakers[1]:
+  speaker | turns | total_tokens | median_tokens | p90_tokens | max_tokens | long_turns
+  (none)  | 1 | 88264 | 88264 | 88264 | 88264 | 0
+turns[1]:
+  turn_id            | speaker | start_marker | end_marker | start_char | end_char | greek_char_count | token_count | dialogue_long_turn | speaker_long_turn
+  turn_republic_0001 | (none)  | 327a         | 621d       | 0 | 557124 | 420637 | 88264 | no | no

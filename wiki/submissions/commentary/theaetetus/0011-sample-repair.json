@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "submission_id": "0011-sample-repair",
+  "lane": "commentary",
+  "kind": "sample-repair",
+  "scope": "theaetetus",
+  "source_path": "scratch/commentary/sample-repairs/theaetetus/0002-round5.json",
+  "source_sha256": "79b9e7bbc3505413523389af6af440c4f4e4fef64099bd0fbd5ce3ca37368624",
+  "target_path": "wiki/commentary/theaetetus.md",
+  "target_sha256_before": "07467fde9868a532d3eba7eef350dfa11c125503bc5a14cca474d2d05086b883",
+  "target_sha256_after": "ed3f903fc7a4f4e95d094752d315dd7ae50a79e6c8d7cbb9b86d8e03332742aa",
+  "applied_at": "2026-08-24T00:01:31.079Z",
+  "applied_ids": [
+    "comm_theaetetus_0002"
+  ],
+  "submission": {
+    "schema_version": 1,
+    "dialogue": "theaetetus",
+    "ledger": {
+      "path": "wiki/commentary/theaetetus.md",
+      "sha256": "07467fde9868a532d3eba7eef350dfa11c125503bc5a14cca474d2d05086b883"
+    },
+    "sample_review": {
+      "reviewer": "sample-c-delegated-luna-reviewer-20260823",
+      "reviewed_on": "2026-08-23",
+      "rationale": "Independent Luna sample review found one bounded evidence defect in the definition orientation.",
+      "human_listening_or_review": "none claimed",
+      "sampled_commentary_ids": [
+        "comm_theaetetus_0001",
+        "comm_theaetetus_0002",
+        "comm_theaetetus_0003",
+        "comm_theaetetus_0004",
+        "comm_theaetetus_0006",
+        "comm_theaetetus_0008",
+        "comm_theaetetus_0011",
+        "comm_theaetetus_0013",
+        "comm_theaetetus_0014"
+      ],
+      "failed_commentary_ids": [
+        "comm_theaetetus_0002"
+      ]
+    },
+    "authoring": {
+      "model": "gpt-5.6-luna",
+      "effort": "high"
+    },
+    "revisions": [
+      {
+        "commentary_id": "comm_theaetetus_0002",
+        "title": "Defining knowledge by naming its instances",
+        "body": "Keep the question at the level of a definition, not a catalogue. Theaetetus first offers craft-knowledges such as shoemaking and carpentry, but Socrates asks for the one thing knowledge itself is, not its many instances.",
+        "cites": {
+          "observations": [
+            "obs_theaetetus_0022",
+            "obs_theaetetus_0023"
+          ],
+          "claims": [],
+          "relations": [],
+          "dossiers": [
+            "definition_ladder/definition_by_enumeration_rejected",
+            "definition_ladder/definiendum_marked_for_inquiry"
+          ]
+        },
+        "crossrefs": []
+      }
+    ]
+  },
+  "superseded": [
+    {
+      "commentary_id": "comm_theaetetus_0002",
+      "body": "```yaml\ncommentary_id: comm_theaetetus_0002\nsource_work: Theaetetus\nblock_kind: section\nplacement: before\ntitle: \"Defining knowledge by naming its instances\"\nstephanus_span: 145d-151d\nsource_ref:\n  source_path: raw/plato/greek/theaetetus.txt\n  stephanus_span: 145d-151d\n  start_marker: 145d\n  end_marker: 151d\n  start_char: 6674\n  end_char: 19117\n  text_sha256: \"e65c94af11d0029af4b4e40f88e6678111d5595388738cabfaa4f0f9f4a51738\"\nbody: \"Theaetetus first answers the question by listing geometry, crafts, and other skills. Socrates distinguishes saying which things have knowledge from saying what knowledge itself is, and introduces his midwife image as a method for bringing an answer to birth and testing it.\"\ncites:\n  observations: []\n  claims: []\n  relations: []\n  dossiers: []\ncrossrefs: []\nauthor: model\nreview_status: accepted\n```"
+    }
+  ]
+}

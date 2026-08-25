@@ -1,0 +1,105 @@
+dialogue: statesman
+source_path: raw/plato/greek/statesman.txt
+source_sha256: f31b15a667c9c31b5b2d1e138310af71f442dabc65d284348733dae467ef85e9
+lexicon_path: derived/plato/anchors/lexicon.toml
+lexicon_sha256: e45e06cca6c2a7013789a982c4b7eebf9f88020dde9e582827fa64200d7e4f4e
+anchors[98]:
+  group             | form      | start_char | end_char | marker | turn_id             | token_ids
+  assent_concession | ναί       | 1771       | 1774     | 258a   | turn_statesman_0015 | tok_statesman_000279
+  definition_prompt | εἶδος     | 2475       | 2480     | 258c   | turn_statesman_0026 | tok_statesman_000398
+  assent_concession | ναί       | 3656       | 3659     | 259a   | turn_statesman_0039 | tok_statesman_000589
+  assent_concession | ναί       | 3893       | 3896     | 259b   | turn_statesman_0043 | tok_statesman_000628
+  assent_concession | πάνυ γε   | 4926       | 4933     | 259d   | turn_statesman_0059 | tok_statesman_000801,tok_statesman_000802
+  assent_concession | ναί       | 5083       | 5086     | 259e   | turn_statesman_0063 | tok_statesman_000829
+  assent_concession | ναί       | 5350       | 5353     | 259e   | turn_statesman_0069 | tok_statesman_000878
+  assent_concession | πάνυ γε   | 5496       | 5503     | 260a   | turn_statesman_0073 | tok_statesman_000901,tok_statesman_000902
+  aporia_reset      | πάλιν     | 6475       | 6480     | 260c   | turn_statesman_0086 | tok_statesman_001061
+  aporia_reset      | πάλιν     | 6760       | 6765     | 260d   | turn_statesman_0088 | tok_statesman_001106
+  aporia_reset      | πάλιν     | 6901       | 6906     | 260d   | turn_statesman_0090 | tok_statesman_001127
+  aporia_reset      | πάλιν     | 7605       | 7610     | 261a   | turn_statesman_0094 | tok_statesman_001228
+  assent_concession | πάνυ γε   | 7688       | 7695     | 261a   | turn_statesman_0095 | tok_statesman_001242,tok_statesman_001243
+  assent_concession | ναί       | 8059       | 8062     | 261b   | turn_statesman_0103 | tok_statesman_001303
+  definition_prompt | εἶδος     | 9864       | 9869     | 262b   | turn_statesman_0122 | tok_statesman_001594
+  method_term       | κατ' εἴδη | 10963      | 10972    | 262d   | turn_statesman_0126 | tok_statesman_001766,tok_statesman_001767
+  definition_prompt | εἶδος     | 11033      | 11038    | 262e   | turn_statesman_0126 | tok_statesman_001776
+  method_term       | κατ' εἴδη | 11191      | 11200    | 262e   | turn_statesman_0126 | tok_statesman_001804,tok_statesman_001805
+  aporia_reset      | πάλιν     | 11821      | 11826    | 263b   | turn_statesman_0128 | tok_statesman_001907
+  definition_prompt | εἶδος     | 12013      | 12018    | 263b   | turn_statesman_0130 | tok_statesman_001939
+  definition_prompt | εἶδος     | 12077      | 12082    | 263b   | turn_statesman_0132 | tok_statesman_001952
+  definition_prompt | εἶδος     | 12155      | 12160    | 263b   | turn_statesman_0132 | tok_statesman_001966
+  definition_prompt | εἶδος     | 12179      | 12184    | 263b   | turn_statesman_0132 | tok_statesman_001970
+  assent_concession | ναί       | 13429      | 13432    | 263e   | turn_statesman_0147 | tok_statesman_002184
+  assent_concession | ναί       | 13722      | 13725    | 264a   | turn_statesman_0151 | tok_statesman_002235
+  aporia_reset      | πάλιν     | 14037      | 14042    | 264b   | turn_statesman_0156 | tok_statesman_002286
+  assent_concession | πάνυ γε   | 16992      | 16999    | 265d   | turn_statesman_0193 | tok_statesman_002776,tok_statesman_002777
+  assent_concession | ναί       | 17223      | 17226    | 265e   | turn_statesman_0197 | tok_statesman_002818
+  aporia_reset      | πάλιν     | 17912      | 17917    | 266a   | turn_statesman_0208 | tok_statesman_002939
+  aporia_reset      | πάλιν     | 18156      | 18161    | 266b   | turn_statesman_0212 | tok_statesman_002984
+  assent_concession | ναί       | 18694      | 18697    | 266c   | turn_statesman_0219 | tok_statesman_003073
+  aporia_reset      | πάλιν     | 19533      | 19538    | 266e   | turn_statesman_0228 | tok_statesman_003215
+  aporia_reset      | πάλιν     | 20207      | 20212    | 267b   | turn_statesman_0232 | tok_statesman_003318
+  definition_prompt | εἶδος     | 20284      | 20289    | 267b   | turn_statesman_0232 | tok_statesman_003328
+  assent_concession | ναί       | 21286      | 21289    | 267d   | turn_statesman_0241 | tok_statesman_003486
+  aporia_reset      | πάλιν     | 23265      | 23270    | 268d   | turn_statesman_0258 | tok_statesman_003796
+  aporia_reset      | πάλιν     | 25038      | 25043    | 269c   | turn_statesman_0274 | tok_statesman_004102
+  aporia_reset      | πάλιν     | 26197      | 26202    | 270a   | turn_statesman_0277 | tok_statesman_004289
+  aporia_reset      | πάλιν     | 27708      | 27713    | 270d   | turn_statesman_0291 | tok_statesman_004534
+  aporia_reset      | πάλιν     | 27871      | 27876    | 270e   | turn_statesman_0291 | tok_statesman_004557
+  aporia_reset      | πάλιν     | 28013      | 28018    | 270e   | turn_statesman_0291 | tok_statesman_004578
+  aporia_reset      | πάλιν     | 28572      | 28577    | 271a   | turn_statesman_0293 | tok_statesman_004678
+  aporia_reset      | πάλιν     | 28991      | 28996    | 271b   | turn_statesman_0293 | tok_statesman_004744
+  aporia_reset      | πάλιν     | 32344      | 32349    | 272e   | turn_statesman_0300 | tok_statesman_005286
+  aporia_reset      | πάλιν     | 34060      | 34065    | 273e   | turn_statesman_0301 | tok_statesman_005551
+  aporia_reset      | πάλιν     | 34431      | 34436    | 273e   | turn_statesman_0301 | tok_statesman_005612
+  aporia_reset      | πάλιν     | 34593      | 34598    | 273e   | turn_statesman_0301 | tok_statesman_005639
+  aporia_reset      | πάλιν     | 37962      | 37967    | 275c   | turn_statesman_0316 | tok_statesman_006182
+  assent_concession | ναί       | 38163      | 38166    | 275d   | turn_statesman_0317 | tok_statesman_006212
+  aporia_reset      | πάλιν     | 40708      | 40713    | 276e   | turn_statesman_0344 | tok_statesman_006621
+  aporia_reset      | πάλιν     | 42342      | 42347    | 277d   | turn_statesman_0350 | tok_statesman_006870
+  aporia_reset      | πάλιν     | 42977      | 42982    | 278a   | turn_statesman_0360 | tok_statesman_006977
+  aporia_reset      | πάλιν     | 44222      | 44227    | 278d   | turn_statesman_0368 | tok_statesman_007175
+  definition_prompt | εἶδος     | 44670      | 44675    | 278e   | turn_statesman_0372 | tok_statesman_007248
+  aporia_reset      | πάλιν     | 44862      | 44867    | 279a   | turn_statesman_0374 | tok_statesman_007277
+  aporia_reset      | πάλιν     | 45728      | 45733    | 279c   | turn_statesman_0378 | tok_statesman_007416
+  aporia_reset      | πάλιν     | 47371      | 47376    | 280b   | turn_statesman_0386 | tok_statesman_007675
+  assent_concession | ναί       | 48787      | 48790    | 281a   | turn_statesman_0395 | tok_statesman_007888
+  assent_concession | πάνυ γε   | 49532      | 49539    | 281c   | turn_statesman_0405 | tok_statesman_008008,tok_statesman_008009
+  assent_concession | ναί       | 51559      | 51562    | 282b   | turn_statesman_0427 | tok_statesman_008341
+  aporia_reset      | πάλιν     | 51810      | 51815    | 282c   | turn_statesman_0430 | tok_statesman_008384
+  assent_concession | ναί       | 52668      | 52671    | 282e   | turn_statesman_0441 | tok_statesman_008519
+  assent_concession | ναί       | 54266      | 54269    | 283d   | turn_statesman_0457 | tok_statesman_008777
+  method_term       | κατ' εἴδη | 57642      | 57651    | 285a   | turn_statesman_0482 | tok_statesman_009356,tok_statesman_009357
+  definition_prompt | οὐσία     | 58150      | 58155    | 285b   | turn_statesman_0482 | tok_statesman_009430
+  method_term       | κατ' εἴδη | 61064      | 61073    | 286d   | turn_statesman_0499 | tok_statesman_009902,tok_statesman_009903
+  aporia_reset      | πάλιν     | 61853      | 61858    | 287b   | turn_statesman_0499 | tok_statesman_010021
+  assent_concession | ναί       | 62615      | 62618    | 287c   | turn_statesman_0508 | tok_statesman_010146
+  definition_prompt | εἶδος     | 63402      | 63407    | 287e   | turn_statesman_0515 | tok_statesman_010281
+  definition_prompt | εἶδος     | 63489      | 63494    | 287e   | turn_statesman_0515 | tok_statesman_010293
+  definition_prompt | εἶδος     | 63614      | 63619    | 288a   | turn_statesman_0517 | tok_statesman_010314
+  definition_prompt | εἶδος     | 64932      | 64937    | 288d   | turn_statesman_0529 | tok_statesman_010526
+  definition_prompt | εἶδος     | 66066      | 66071    | 289b   | turn_statesman_0535 | tok_statesman_010702
+  definition_prompt | ἰδέα      | 66250      | 66254    | 289b   | turn_statesman_0535 | tok_statesman_010729
+  assent_concession | ναί       | 68786      | 68789    | 290c   | turn_statesman_0556 | tok_statesman_011127
+  assent_concession | πάνυ γε   | 69754      | 69761    | 290e   | turn_statesman_0560 | tok_statesman_011287,tok_statesman_011288
+  assent_concession | ναί       | 70437      | 70440    | 291b   | turn_statesman_0567 | tok_statesman_011396
+  assent_concession | ναί       | 71001      | 71004    | 291d   | turn_statesman_0574 | tok_statesman_011491
+  assent_concession | πάνυ γε   | 71193      | 71200    | 291d   | turn_statesman_0578 | tok_statesman_011526,tok_statesman_011527
+  assent_concession | πάνυ γε   | 71693      | 71700    | 291e   | turn_statesman_0584 | tok_statesman_011607,tok_statesman_011608
+  assent_concession | ναί       | 72390      | 72393    | 292b   | turn_statesman_0594 | tok_statesman_011721
+  assent_concession | ναί       | 72500      | 72503    | 292b   | turn_statesman_0596 | tok_statesman_011740
+  assent_concession | πάνυ γε   | 77504      | 77511    | 294d   | turn_statesman_0628 | tok_statesman_012537,tok_statesman_012538
+  aporia_reset      | πάλιν     | 77544      | 77549    | 294d   | turn_statesman_0629 | tok_statesman_012544
+  aporia_reset      | πάλιν     | 79283      | 79288    | 295c   | turn_statesman_0645 | tok_statesman_012823
+  aporia_reset      | πάλιν     | 83985      | 83990    | 297e   | turn_statesman_0674 | tok_statesman_013613
+  assent_concession | ναί       | 97773      | 97776    | 304b   | turn_statesman_0755 | tok_statesman_015790
+  definition_prompt | εἶδος     | 98700      | 98705    | 304e   | turn_statesman_0768 | tok_statesman_015946
+  assent_concession | ναί       | 98739      | 98742    | 304e   | turn_statesman_0769 | tok_statesman_015953
+  aporia_reset      | πάλιν     | 101681     | 101686   | 306a   | turn_statesman_0802 | tok_statesman_016423
+  assent_concession | πάνυ γε   | 101762     | 101769   | 306b   | turn_statesman_0803 | tok_statesman_016436,tok_statesman_016437
+  assent_concession | ναί       | 101865     | 101868   | 306b   | turn_statesman_0805 | tok_statesman_016456
+  assent_concession | ναί       | 102193     | 102196   | 306c   | turn_statesman_0811 | tok_statesman_016513
+  assent_concession | ναί       | 102343     | 102346   | 306c   | turn_statesman_0813 | tok_statesman_016539
+  assent_concession | ναί       | 103482     | 103485   | 306e   | turn_statesman_0825 | tok_statesman_016725
+  definition_prompt | εἶδος     | 103533     | 103538   | 307a   | turn_statesman_0826 | tok_statesman_016734
+  aporia_reset      | πάλιν     | 104159     | 104164   | 307b   | turn_statesman_0832 | tok_statesman_016834
+  aporia_reset      | πάλιν     | 111344     | 111349   | 310d   | turn_statesman_0886 | tok_statesman_017978
