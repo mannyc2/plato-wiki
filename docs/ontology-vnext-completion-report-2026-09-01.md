@@ -55,7 +55,7 @@ Receipt-bound source-review JSONL is transport-canonical without altering JSON r
 | Implemented | Complete |
 | Audited | Complete |
 | Validated | Complete |
-| Committed | Pending delivery commit |
-| Branch pushed | Pending remote transport |
+| Committed | Complete; implementation commit `49249b04e332cabfabc820628b95afd856a2bdf8` |
+| Branch pushed | Complete; the implementation commit was independently observed at `origin/codex/ontology-vnext-full-audit` before this status-only report update |
 | Merged to `main` | No; not authorized |
 | Deployed/published | No; not authorized |
