@@ -7,6 +7,7 @@ const root = getRepoRoot();
 const workflowPath = join(root, ".github/workflows/ci.yml");
 const workflow = existsSync(workflowPath) ? readFileSync(workflowPath, "utf8") : "";
 const driver = readFileSync(join(root, "scripts/ci.ts"), "utf8");
+const publicFiles = readFileSync(join(root, "release/public-files.toml"), "utf8");
 const manifest = JSON.parse(readFileSync(join(root, "package.json"), "utf8")) as {
   scripts?: Record<string, string>;
   packageManager?: string;
@@ -15,6 +16,16 @@ const manifest = JSON.parse(readFileSync(join(root, "package.json"), "utf8")) as
 describe("ci contract", () => {
   it("exposes one verification entry point", () => {
     expect(manifest.scripts?.ci).toBe("bun scripts/ci.ts");
+  });
+
+  it("keeps the declared release-provenance generator executable", () => {
+    const command = manifest.scripts?.["release:provenance"];
+    expect(command).toBe("bun scripts/release/generate-provenance.ts");
+    const scriptPath = command?.split(" ").at(-1);
+    expect(scriptPath).toBeTruthy();
+    expect(existsSync(join(root, scriptPath!))).toBe(true);
+    expect(publicFiles).toContain('"scripts/"');
+    expect(publicFiles).not.toContain(`"${scriptPath}"`);
   });
 
   it("runs every required stage and cannot pass while one is skipped", () => {

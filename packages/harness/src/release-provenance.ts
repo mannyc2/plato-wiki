@@ -255,16 +255,18 @@ function receiptRoot(repoRoot: string, requested?: ReleaseProvenanceReceiptRoot)
   return existsSync(privateReplay) && existsSync(privateSources) ? "release/private" : "release/public";
 }
 
-export function validateReleaseProvenanceReceipts(
-  repoRoot = getRepoRoot(),
-  requestedRoot?: ReleaseProvenanceReceiptRoot,
+function validateReleaseProvenanceReceiptsWithReplay(
+  repoRoot: string,
+  requestedRoot: ReleaseProvenanceReceiptRoot | undefined,
+  replayCandidate?: ReplayProvenanceReceipt | PublicReplayProvenanceReceipt,
 ) {
   const issues: string[] = [];
   const root = receiptRoot(repoRoot, requestedRoot);
   const isPublic = root === "release/public";
   const replayPath = `${root}/replay-provenance.json`;
   const sourcePath = `${root}/source-acquisition-receipts.json`;
-  const replay = parseReceipt<ReplayProvenanceReceipt | PublicReplayProvenanceReceipt>(repoRoot, replayPath);
+  const replay = replayCandidate
+    ?? parseReceipt<ReplayProvenanceReceipt | PublicReplayProvenanceReceipt>(repoRoot, replayPath);
   const source = parseReceipt<SourceAcquisitionReceipt | PublicSourceAcquisitionReceipt>(repoRoot, sourcePath);
   if (!replay) issues.push(`${replayPath} is missing or malformed`);
   if (!source) issues.push(`${sourcePath} is missing or malformed`);
@@ -323,4 +325,18 @@ export function validateReleaseProvenanceReceipts(
     }
   }
   return [...new Set(issues)];
+}
+
+export function validateReleaseProvenanceReceipts(
+  repoRoot = getRepoRoot(),
+  requestedRoot?: ReleaseProvenanceReceiptRoot,
+) {
+  return validateReleaseProvenanceReceiptsWithReplay(repoRoot, requestedRoot);
+}
+
+export function validatePublicReplayProvenanceCandidate(
+  receipt: PublicReplayProvenanceReceipt,
+  repoRoot = getRepoRoot(),
+) {
+  return validateReleaseProvenanceReceiptsWithReplay(repoRoot, "release/public", receipt);
 }

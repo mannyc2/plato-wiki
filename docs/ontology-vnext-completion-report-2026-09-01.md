@@ -73,7 +73,7 @@ weakening the verified commit bytes.
 
 ## Validation
 
-- `bun run test`: passed, 1,222 tests and 0 failures
+- `bun run test`: passed, 1,224 tests and 0 failures
 - `bun run typecheck`: passed
 - `bun run validate`: passed
 - `git diff --check`: passed
