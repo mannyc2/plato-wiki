@@ -25,6 +25,11 @@ jobs:
     steps:
       # actions/checkout v5
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          # Snapshot-bound ontology verification reopens the frozen baseline
+          # commit. A depth-one PR checkout contains only the synthetic merge
+          # tip and makes that canonical commit unverifiable.
+          fetch-depth: 0
 
       # oven-sh/setup-bun v2
       - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6

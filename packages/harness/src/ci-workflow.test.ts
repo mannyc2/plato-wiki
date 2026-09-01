@@ -42,6 +42,14 @@ describe("ci contract", () => {
     }
   });
 
+  it("fetches history for snapshot-bound ontology verification", () => {
+    const [verifyWorkflow = ""] = workflow.split("\n  deploy:");
+    const checkoutStep = verifyWorkflow.match(
+      /- uses: actions\/checkout@[0-9a-f]{40}\n(?: {8,}[^\n]*\n)*/u,
+    )?.[0] ?? "";
+    expect(checkoutStep).toContain("fetch-depth: 0");
+  });
+
   it("keeps Pages authority job-scoped and protects the final repository deployment", () => {
     expect(workflow).toContain("permissions:\n  contents: read");
     const [verifyWorkflow, deployJob = ""] = workflow.split("\n  deploy:");
