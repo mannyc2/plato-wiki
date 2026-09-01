@@ -1,0 +1,26 @@
+# Commentary block reconsideration
+
+dialogue: sophist
+decision: accepted
+prior_review_status: rejected
+review_transition: rejected -> accepted
+ledger_path: wiki/commentary/sophist.md
+ledger_sha256_before: b201a40616c8843332381acb6adb8e22ab374918d63a2682fc474d2e96e25596
+ledger_sha256_after: 49a44de381d3c8638bb13e57bba601d6c5a56fefb95f6a3b8e2dd660ba88f899
+reviewer: sophist-reconsideration-ensemble-delegated-luna-reviewer-01
+reviewed_on: 2026-09-01
+rationale: Five isolated Luna reviews passed the exact current sophist blocks, accepted citations, and bound Greek spans; no translation was supplied.
+review_basis: operator-delegated independent Luna reconsideration of terminally rejected blocks
+human_listening_or_review: none claimed
+evidence_manifest_path: wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-b0e2b04c30e679e3ecf6cf345e1e26928954bfa0db4094728bc60e80676cf57b-commentary-reconsideration-evidence.json
+evidence_manifest_sha256: b0e2b04c30e679e3ecf6cf345e1e26928954bfa0db4094728bc60e80676cf57b
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-b0e2b04c30e679e3ecf6cf345e1e26928954bfa0db4094728bc60e80676cf57b-commentary-reconsideration-evidence.json`; sha256: `b0e2b04c30e679e3ecf6cf345e1e26928954bfa0db4094728bc60e80676cf57b`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-8a0ce752ff34e43807c6233cc560512d82e398f152b6b7cc8e9976dda3712fd8-sophist-commentary-reconsideration-review-bundle.json`; sha256: `8a0ce752ff34e43807c6233cc560512d82e398f152b6b7cc8e9976dda3712fd8`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-c678187b776ab73764ef513d0d70fd01a064dff937f73d00d000a8f41185c723-sophist-commentary-reconsideration-packet-bundle.json`; sha256: `c678187b776ab73764ef513d0d70fd01a064dff937f73d00d000a8f41185c723`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-e0425976418ceb3547fc6ad966e0d0703548c802c1ec73243a282f94439ab92b-sophist-commentary-reconsideration-schema-bundle.json`; sha256: `e0425976418ceb3547fc6ad966e0d0703548c802c1ec73243a282f94439ab92b`
+reviewed_commentary_ids:
+- comm_sophist_0002
+- comm_sophist_0004
+- comm_sophist_0005
+- comm_sophist_0008
+- comm_sophist_0009

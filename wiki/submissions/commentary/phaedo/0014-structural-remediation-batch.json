@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "submission_id": "0014-structural-remediation-batch",
+  "lane": "commentary",
+  "kind": "structural-remediation-batch",
+  "scope": "phaedo",
+  "source_path": "scratch/commentary/structural-remediation/phaedo/audit-failures-batch.json",
+  "source_sha256": "8b03968d105702ec47b7aaad89f84e30d5761dfc094654105cadc512c743722b",
+  "target_path": "wiki/commentary/phaedo.md",
+  "target_sha256_before": "b5ec46de3d694538e1822b507266bb057f4c195057fdd45b594e3adb4359df84",
+  "target_sha256_after": "4641ebc3afaa7442b2716a3467b8fdb869856ba75bb3f68aaea0cf467cb1ff8a",
+  "applied_at": "2026-09-01T13:22:28.054Z",
+  "applied_ids": [
+    "comm_phaedo_0014"
+  ],
+  "submission": {
+    "candidate": {
+      "schemaVersion": 1,
+      "dialogue": "phaedo",
+      "candidatePath": "scratch/commentary/structural-remediation/phaedo/audit-failures-batch.json",
+      "expectedLedgerSha256": "b5ec46de3d694538e1822b507266bb057f4c195057fdd45b594e3adb4359df84",
+      "expectedAttributionSha256": "9995fc409c1332aac68146ffcfd0a79b7847d33ba72999a4dcfd754df473ef76",
+      "expectedEnglishSha256": "36c763a34328edc2e92a927efc86178731c8b9f4661fd4731ad5a488d6624900",
+      "auditUnits": [
+        {
+          "unitKey": "01-57a-61b",
+          "sectionId": "comm_phaedo_0001",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/01-57a-61b.json",
+          "auditOutputSha256": "906624c60e16bfff71c0a179e4e41268221c955847f71b69b693d8a40bec7157",
+          "operations": []
+        },
+        {
+          "unitKey": "02-61c-65a",
+          "sectionId": "comm_phaedo_0002",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/02-61c-65a.json",
+          "auditOutputSha256": "c07cca78e0790c660cb89d971a34c0874fe543bbb6cc81d1437a06af75635ba6",
+          "operations": []
+        },
+        {
+          "unitKey": "03-65b-68e",
+          "sectionId": "comm_phaedo_0003",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/03-65b-68e.json",
+          "auditOutputSha256": "b5a9706a7701477afc5d7ffad333e2086380e8a9f8ff4f0b9a9fff879db2a704",
+          "operations": []
+        },
+        {
+          "unitKey": "04-69a-72e",
+          "sectionId": "comm_phaedo_0004",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/04-69a-72e.json",
+          "auditOutputSha256": "76c45733d6b82f8fc8d36ba5c4650869cb1400fa35da9c1820993d91284c218a",
+          "operations": []
+        },
+        {
+          "unitKey": "05-73a-76e",
+          "sectionId": "comm_phaedo_0005",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/05-73a-76e.json",
+          "auditOutputSha256": "165ce26b9dee71933c31823bd0712571522cb8f68299b4200142f3969e9b2fa7",
+          "operations": []
+        },
+        {
+          "unitKey": "06-77a-80c",
+          "sectionId": "comm_phaedo_0006",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/06-77a-80c.json",
+          "auditOutputSha256": "0b1d1fc835c383b7fd5b2710779b6a0a97d00fb729acb84e67e7656bf101c334",
+          "operations": []
+        },
+        {
+          "unitKey": "07-80d-84c",
+          "sectionId": "comm_phaedo_0007",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/07-80d-84c.json",
+          "auditOutputSha256": "b52577beb437b2b6fb44549d581669cbd27dd9ab398e7c108bfc4ed95f6c5392",
+          "operations": []
+        },
+        {
+          "unitKey": "08-84d-88c",
+          "sectionId": "comm_phaedo_0008",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/08-84d-88c.json",
+          "auditOutputSha256": "117b78d7914142d1546bd6c494a7c2ad9bb4016a7b802166f267b83bb4e96a54",
+          "operations": []
+        },
+        {
+          "unitKey": "09-88d-92c",
+          "sectionId": "comm_phaedo_0009",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/09-88d-92c.json",
+          "auditOutputSha256": "6eee45db3722525cf32ba8dbbb7305f818fb3d5d161f2bc207da2b878574001f",
+          "operations": []
+        },
+        {
+          "unitKey": "10-92d-96c",
+          "sectionId": "comm_phaedo_0010",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/10-92d-96c.json",
+          "auditOutputSha256": "d7e26f176b5557a4c282d604a2fbbd2e4d410c6800c5cec62dbe1a8b4a000204",
+          "operations": []
+        },
+        {
+          "unitKey": "11-96d-100e",
+          "sectionId": "comm_phaedo_0011",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/11-96d-100e.json",
+          "auditOutputSha256": "45fe3493a4896f620a3a5b3aa98981c26d7f2754b70451c267d498a79b310062",
+          "operations": []
+        },
+        {
+          "unitKey": "12-101a-104e",
+          "sectionId": "comm_phaedo_0012",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/12-101a-104e.json",
+          "auditOutputSha256": "4535e95fedb4dd5b23dd4fad9381eaf52a7498ba538905c5915084966be01f29",
+          "operations": []
+        },
+        {
+          "unitKey": "13-105a-109a",
+          "sectionId": "comm_phaedo_0013",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/13-105a-109a.json",
+          "auditOutputSha256": "eab677458d0c92d5707980fccdce3ff9389a5891c718dd6993b495ed6f6f4ef0",
+          "operations": []
+        },
+        {
+          "unitKey": "14-109b-113b",
+          "sectionId": "comm_phaedo_0014",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/14-109b-113b.json",
+          "auditOutputSha256": "aef0a9e4baf49156b2852bfe3608f94644491dbb1f2e82317af168efe9351e54",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_phaedo_0014",
+              "rewriteResolution": "reject-original"
+            }
+          ]
+        },
+        {
+          "unitKey": "15-113c-118a",
+          "sectionId": "comm_phaedo_0015",
+          "auditOutputPath": "scratch/commentary/audits/phaedo/15-113c-118a.json",
+          "auditOutputSha256": "d55f1e7ae5ebfdad2ac83e9d48b4f2943c324c591c94f0a6613cdfbc5c9948c9",
+          "operations": []
+        }
+      ],
+      "reviewer": "phaedo-audit-campaign-delegated-luna-reviewer-01",
+      "reviewedOn": "2026-09-01",
+      "rationale": "The fresh full-corpus Luna audit found an unsupported consoling-picture claim; the original block is rejected and the failed rewrite proposal remains noncanonical."
+    },
+    "audit_findings": [
+      {
+        "commentaryId": "comm_phaedo_0014",
+        "disposition": "rewrite",
+        "rewriteResolution": "reject-original"
+      }
+    ]
+  }
+}

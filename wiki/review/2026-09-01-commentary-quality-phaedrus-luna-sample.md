@@ -1,0 +1,30 @@
+# Commentary quality-audit acceptance
+
+dialogue: phaedrus
+decision: accepted
+reviewer: commentary-audit-delegated-luna-reviewer-phaedrus-50bd344b6685
+reviewed_on: 2026-09-01
+rationale: All eight sampled blocks are independently supported by their cited evidence, source anchors, resolved playback edges, and concise spoken commentary; no evidence, placement, or listening defect is shown.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sample_evidence_path: wiki/submissions/commentary-audit-sample/phaedrus/7388cb4c31ba686bd78ddfdcd4c829994b7a2ecd2015622faa41820b68184a2a.json
+sample_evidence_sha256: 7388cb4c31ba686bd78ddfdcd4c829994b7a2ecd2015622faa41820b68184a2a
+sample_input_sha256: a23b390e4ffa0385ec40976f4c6a265d3957cf89512b87236b976383b465375c
+pending_manifest_sha256: 50bd344b6685aba5d1e43fb591667b8e15353af2236930460cc8edbe20a82456
+commentary_ledger_sha256: ff69885148790518a776dace22dc06ffcf3adc8a00f4169e2cae2ef60df7d334
+sample_packet_sha256: 1985ef36596cd3af25bb1da5c0834f7e293c87745bbf0fe388c548c449eb5251
+sample_output_sha256: e7ebb7e1aa1bcf76092579e5b9718e87bc44acd64fca9c202b60a1616f5d505a
+sample_state_sha256: 8acee78528b93827ce91def8754dba9ee8e0527abad2329ff497a8ba4cbd17a7
+codex_execution_sha256: 00c4b31f596d4906ec8045ee4c93847f0a093e0ff2c9c008e892bf9a11fb355f
+output_schema_sha256: 26221da21685431241706588ec2cf06b92842ba780c138260b6ffec6d36cd243
+model_catalog_sha256: a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724
+sample_prompt_sha256: 495b4fbb4d3f01c550bc099edaaae905ea1844baf4dc0c6e2c5171c091521cef
+sampled_commentary_ids:
+- comm_phaedrus_0001
+- comm_phaedrus_0002
+- comm_phaedrus_0003
+- comm_phaedrus_0004
+- comm_phaedrus_0008
+- comm_phaedrus_0010
+- comm_phaedrus_0012
+- comm_phaedrus_0018

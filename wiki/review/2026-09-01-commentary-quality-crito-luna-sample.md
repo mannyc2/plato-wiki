@@ -1,0 +1,31 @@
+# Commentary quality-audit acceptance
+
+dialogue: crito
+decision: accepted
+reviewer: commentary-audit-delegated-luna-reviewer-crito-58c9eda0ef75
+reviewed_on: 2026-09-01
+rationale: All sampled blocks are independently supported by their cited evidence, exact source spans, and resolved playback edges; each also meets the contract’s clarity, focus, and dramatic-flow requirements.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sample_evidence_path: wiki/submissions/commentary-audit-sample/crito/b9de798c878061f8b52fb9f0b6117d38bf93c8fc421d0e97e2c50f96d1f2c10e.json
+sample_evidence_sha256: b9de798c878061f8b52fb9f0b6117d38bf93c8fc421d0e97e2c50f96d1f2c10e
+sample_input_sha256: 744d4d67e85c18b3bd3de43a069cdebc41e7f7aa8d4ed1d29d0ac976d00009fe
+pending_manifest_sha256: 58c9eda0ef75573786366ab4cb358ce406867ac1b88bc186031ea3a35a1a640e
+commentary_ledger_sha256: 3cd14423d025678555c4c5316b9cb1d2de0fd7178174e64a71836881ca307543
+sample_packet_sha256: 9e18f0cd64e24d3a94c7a7e48fa702ab76cb7352025928c864cff146a8060927
+sample_output_sha256: bfabc0b1385fb7136f24fbe9ae8a1ede46b9ee9b36a131084b44261d763287ce
+sample_state_sha256: 5c76b2a9577c45fa9cbf74ac8954ac9eafe8f77bea958f3fb62ec31e6d1ded37
+codex_execution_sha256: fd2f81c971e9b2ce4a5e39b324e674c8a45142536ba7dce01c7305f2286c6eeb
+output_schema_sha256: defabaec84895a3996eb3f0b7b2bca77297403100cb5db6f5d04bf04d7caa727
+model_catalog_sha256: a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724
+sample_prompt_sha256: 8cac8d17b2f1a82828ae08eca19de7db3fdd572c9d26447c9a9bbc3e9e89fff5
+sampled_commentary_ids:
+- comm_crito_0001
+- comm_crito_0003
+- comm_crito_0004
+- comm_crito_0005
+- comm_crito_0006
+- comm_crito_0009
+- comm_crito_0017
+- comm_crito_0019
+- comm_crito_0020

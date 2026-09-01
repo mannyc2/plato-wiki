@@ -1,14 +1,21 @@
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { buildCommentaryAuditBriefs } from "../src/commentary-audit.js";
 import { CAST_ACCEPTANCE_GATES } from "../src/audio-catalog.js";
+import { buildCommentaryAuditSampleJob } from "../src/commentary-audit-sample-campaign.js";
 import {
+  COMMENTARY_CODEX_CLI_VERSION,
   COMMENTARY_AUTHORING_MODEL,
+  COMMENTARY_MODEL_ARGUMENT,
+  COMMENTARY_MODEL_CATALOG_PATH,
+  COMMENTARY_PERMISSION_MODE,
   COMMENTARY_STAGE_EFFORT,
 } from "../src/commentary-authoring.js";
+import { buildCommentaryCampaignManifest } from "../src/commentary-campaign.js";
 import { writeEnglishStephanusIndex } from "../src/derived/stephanus.js";
 import { commentaryMarkdownBlocks } from "../src/wiki/commentary-ledger.js";
+import { applyCommentaryQualityAuditAcceptance } from "../src/wiki/commentary-quality-audit-acceptance.js";
+import { writeCommentaryQualityAuditManifestPreview } from "../src/wiki/commentary-quality-audit.js";
 import { fieldValue } from "../src/wiki/observation-ledger.js";
 import { COMMENTARY_PROTOCOL_FIXTURE } from "./commentary-protocol-fixture.js";
 
@@ -22,10 +29,14 @@ function wordCount(text: string) {
   return text.match(/[\p{L}\p{N}]+(?:[’'][\p{L}\p{N}]+)*/gu)?.length ?? 0;
 }
 
-function writeJson(root: string, path: string, value: unknown) {
+function writeText(root: string, path: string, content: string) {
   const absolutePath = join(root, path);
   mkdirSync(join(absolutePath, ".."), { recursive: true });
-  writeFileSync(absolutePath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+  writeFileSync(absolutePath, content, "utf8");
+}
+
+function writeJson(root: string, path: string, value: unknown) {
+  writeText(root, path, `${JSON.stringify(value, null, 2)}\n`);
 }
 
 function passingAuditChecks() {
@@ -39,12 +50,36 @@ function passingAuditChecks() {
   };
 }
 
+function codexSuccessJsonl(structuredOutput: unknown, usage: Record<string, number>) {
+  return [
+    JSON.stringify({ type: "thread.started", thread_id: "thread_audio_production_fixture" }),
+    JSON.stringify({ type: "turn.started" }),
+    JSON.stringify({
+      type: "item.completed",
+      item: { id: "item_audio_production_fixture", type: "agent_message", text: JSON.stringify(structuredOutput) },
+    }),
+    JSON.stringify({ type: "turn.completed", usage }),
+  ].join("\n");
+}
+
+function clearAcceptedCommentaryQualityAuditFixture(root: string, dialogue: string) {
+  for (const path of [
+    `wiki/commentary-audits/${dialogue}.json`,
+    `wiki/review/2026-07-13-commentary-quality-${dialogue}-luna-sample.md`,
+    `wiki/submissions/commentary-audit-sample/${dialogue}`,
+  ]) {
+    rmSync(join(root, path), { recursive: true, force: true });
+  }
+}
+
 export function writeAcceptedCommentaryQualityAuditFixture({
   root,
   dialogue,
+  auditRationaleByCommentaryId = {},
 }: {
   root: string;
   dialogue: string;
+  auditRationaleByCommentaryId?: Readonly<Record<string, string>>;
 }) {
   const protocolPath = "docs/commentary-protocol.md";
   const protocolAbsolutePath = join(root, protocolPath);
@@ -52,83 +87,135 @@ export function writeAcceptedCommentaryQualityAuditFixture({
     mkdirSync(join(protocolAbsolutePath, ".."), { recursive: true });
     writeFileSync(protocolAbsolutePath, COMMENTARY_PROTOCOL_FIXTURE, "utf8");
   }
-  const ledgerPath = `wiki/commentary/${dialogue}.md`;
-  const ledgerContent = readFileSync(join(root, ledgerPath), "utf8");
-  const briefs = buildCommentaryAuditBriefs(dialogue);
-  if (briefs.length === 0) throw new Error(`Fixture quality audit for ${dialogue} requires at least one section.`);
-  const allCommentaryIds = briefs.flatMap((brief) => brief.commentaryIds);
-  const units = briefs.map((brief) => {
+  const modelCatalogAbsolutePath = join(root, COMMENTARY_MODEL_CATALOG_PATH);
+  mkdirSync(join(modelCatalogAbsolutePath, ".."), { recursive: true });
+  writeFileSync(
+    modelCatalogAbsolutePath,
+    readFileSync(join(import.meta.dir, "../src/commentary-luna-model-catalog.json"), "utf8"),
+    "utf8",
+  );
+  const auditJobs = buildCommentaryCampaignManifest({ dialogue, stage: "audit" }).jobs;
+  if (auditJobs.length === 0) throw new Error(`Fixture quality audit for ${dialogue} requires at least one section.`);
+  for (const job of auditJobs) {
+    if (!job.unit_key || !job.section_id || !job.commentary_ids || job.commentary_ids.length === 0) {
+      throw new Error(`Fixture quality-audit job ${job.job_id} lacks one exact audit unit.`);
+    }
     const output = {
       schema_version: 3,
       dialogue,
-      unit_key: brief.unitKey,
-      section_id: brief.sectionId,
+      unit_key: job.unit_key,
+      section_id: job.section_id,
       authoring: {
         model: COMMENTARY_AUTHORING_MODEL,
         effort: COMMENTARY_STAGE_EFFORT.audit,
       },
       unit_verdict: "pass",
-      blocks: brief.commentaryIds.map((commentaryId) => ({
+      blocks: job.commentary_ids.map((commentaryId) => ({
         commentary_id: commentaryId,
         disposition: "pass",
         issue_codes: [],
         checks: passingAuditChecks(),
-        rationale: "The fixture block earns its place in the listening sequence.",
+        rationale: auditRationaleByCommentaryId[commentaryId] ??
+          "The block earns its place in the listening sequence.",
       })),
     };
     const outputContent = `${JSON.stringify(output, null, 2)}\n`;
-    return {
-      unit_key: brief.unitKey,
-      section_id: brief.sectionId,
-      audit_brief_sha256: brief.sha256,
-      output_path: `scratch/commentary/audits/${dialogue}/${brief.unitKey}.json`,
+    writeText(root, job.output_path, outputContent);
+    writeJson(root, job.state_path, {
+      schema_version: 3,
+      job_id: job.job_id,
+      stage: "audit",
+      input_sha256: job.input_sha256,
+      output_schema_sha256: job.output_schema_sha256,
+      model_argument: COMMENTARY_MODEL_ARGUMENT,
+      codex_cli_version: COMMENTARY_CODEX_CLI_VERSION,
+      model_catalog_path: COMMENTARY_MODEL_CATALOG_PATH,
+      model_catalog_sha256: job.model_catalog_sha256,
+      authoring_model: COMMENTARY_AUTHORING_MODEL,
+      effort: COMMENTARY_STAGE_EFFORT.audit,
+      permission_mode: COMMENTARY_PERMISSION_MODE,
+      output_path: job.output_path,
       output_sha256: sha256(outputContent),
-      output,
-    };
+    });
+  }
+  const pending = writeCommentaryQualityAuditManifestPreview(dialogue);
+  const pendingManifestContent = `${JSON.stringify(pending.manifest, null, 2)}\n`;
+  const sampleJob = buildCommentaryAuditSampleJob({
+    manifest: pending.manifest,
+    pendingManifestContent,
   });
-  const sampledCommentaryIds = allCommentaryIds.slice(0, Math.min(15, allCommentaryIds.length));
   const rationale = "The required fixture sample supports acceptance of the bounded audit output.";
-  const reviewNotePath = `wiki/review/2026-07-13-commentary-quality-${dialogue}.md`;
-  const reviewNote = [
-    `# ${dialogue} commentary quality acceptance`,
-    "",
-    `dialogue: ${dialogue}`,
-    "decision: accepted",
-    "reviewer: cjpher-delegated-luna-reviewer-fixture",
-    "reviewed_on: 2026-07-13",
-    `rationale: ${rationale}`,
-    "review_basis: operator-delegated independent Luna sample review",
-    "human_listening_or_review: none claimed",
-    "sampled_commentary_ids:",
-    ...sampledCommentaryIds.map((id) => `- ${id}`),
-    "",
-  ].join("\n");
-  const reviewNoteAbsolutePath = join(root, reviewNotePath);
-  mkdirSync(join(reviewNoteAbsolutePath, ".."), { recursive: true });
-  writeFileSync(reviewNoteAbsolutePath, reviewNote, "utf8");
-  const manifestPath = `wiki/commentary-audits/${dialogue}.json`;
-  writeJson(root, manifestPath, {
+  const review = {
     schema_version: 1,
     dialogue,
-    ledger: { path: ledgerPath, sha256: sha256(ledgerContent) },
-    protocol: { path: protocolPath, sha256: sha256(readFileSync(protocolAbsolutePath, "utf8")) },
-    authoring: {
+    reviewer: {
+      id: sampleJob.reviewer_id,
       model: COMMENTARY_AUTHORING_MODEL,
       effort: COMMENTARY_STAGE_EFFORT.audit,
     },
-    units,
-    acceptance: {
-      decision: "accepted",
-      reviewer: "cjpher-delegated-luna-reviewer-fixture",
-      reviewed_on: "2026-07-13",
-      rationale,
-      sampled_commentary_ids: sampledCommentaryIds,
-      review_note: { path: reviewNotePath, sha256: sha256(reviewNote) },
-    },
+    pending_manifest_sha256: sampleJob.pending_manifest_sha256,
+    sample_packet_sha256: sampleJob.packet_sha256,
+    sampled_commentary_ids: [...sampleJob.sampled_commentary_ids],
+    sample_verdict: "pass",
+    blocks: sampleJob.sampled_commentary_ids.map((commentaryId) => ({
+      commentary_id: commentaryId,
+      verdict: "pass",
+      rationale: "The exact source, evidence, placement, and spoken-audio checks pass.",
+    })),
+    rationale,
+  } as const;
+  const outputContent = `${JSON.stringify(review, null, 2)}\n`;
+  const usage = {
+    input_tokens: 120,
+    cached_input_tokens: 80,
+    cache_write_input_tokens: 4,
+    output_tokens: 30,
+    reasoning_output_tokens: 12,
+  };
+  const executionContent = codexSuccessJsonl(review, usage);
+  writeJson(root, sampleJob.output_schema_path, sampleJob.output_schema);
+  writeText(root, sampleJob.packet_path, sampleJob.packet_content);
+  writeText(root, sampleJob.output_path, outputContent);
+  writeText(root, sampleJob.execution_path, executionContent);
+  writeJson(root, sampleJob.state_path, {
+    schema_version: 1,
+    campaign: "plato-commentary-independent-luna-sample",
+    job_id: sampleJob.job_id,
+    dialogue: sampleJob.dialogue,
+    reviewer_id: sampleJob.reviewer_id,
+    input_sha256: sampleJob.input_sha256,
+    pending_manifest_sha256: sampleJob.pending_manifest_sha256,
+    pending_manifest_path: sampleJob.pending_manifest_path,
+    sample_packet_path: sampleJob.packet_path,
+    sample_packet_sha256: sampleJob.packet_sha256,
+    output_schema_path: sampleJob.output_schema_path,
+    output_schema_sha256: sampleJob.output_schema_sha256,
+    model_catalog_path: sampleJob.model_catalog_path,
+    model_catalog_sha256: sampleJob.model_catalog_sha256,
+    prompt_sha256: sampleJob.prompt_sha256,
+    model: COMMENTARY_AUTHORING_MODEL,
+    effort: COMMENTARY_STAGE_EFFORT.audit,
+    permission_mode: COMMENTARY_PERMISSION_MODE,
+    codex_cli_version: COMMENTARY_CODEX_CLI_VERSION,
+    output_path: sampleJob.output_path,
+    output_sha256: sha256(outputContent),
+    execution_path: sampleJob.execution_path,
+    execution_sha256: sha256(executionContent),
+    sample_verdict: "pass",
+    usage,
+  });
+  clearAcceptedCommentaryQualityAuditFixture(root, dialogue);
+  const applied = applyCommentaryQualityAuditAcceptance({
+    dialogue,
+    reviewer: sampleJob.reviewer_id,
+    reviewedOn: "2026-07-13",
+    rationale,
+    sampledCommentaryIds: [...sampleJob.sampled_commentary_ids],
+    sampleOutputPath: sampleJob.output_path,
   });
   return {
-    path: manifestPath,
-    sha256: sha256(readFileSync(join(root, manifestPath), "utf8")),
+    path: applied.manifestPath,
+    sha256: sha256(readFileSync(join(root, applied.manifestPath), "utf8")),
   };
 }
 

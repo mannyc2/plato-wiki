@@ -1,0 +1,335 @@
+{
+  "schema_version": 1,
+  "dialogue": "theaetetus",
+  "ledger": {
+    "path": "wiki/commentary/theaetetus.md",
+    "sha256": "5190bcad63ae32f28d3b57dab301b62add5267f2375c7b400ef2c07a485e1f2a"
+  },
+  "protocol": {
+    "path": "docs/commentary-protocol.md",
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
+  },
+  "authoring": {
+    "model": "gpt-5.6-luna",
+    "effort": "medium"
+  },
+  "units": [
+    {
+      "unit_key": "01-142a-145c",
+      "section_id": "comm_theaetetus_0001",
+      "audit_brief_sha256": "74ca3181d18ca298704e9bbe60bcc02f0d2bcaf5fbf7c9b1c2175f5a6f74fba8",
+      "output_path": "scratch/commentary/audits/theaetetus/01-142a-145c.json",
+      "output_sha256": "c1926ace8968713733123eb35a06d760fc5a9a50aab33b881b24d968804b08ba",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "01-142a-145c",
+        "section_id": "comm_theaetetus_0001",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "02-145d-151d",
+      "section_id": "comm_theaetetus_0002",
+      "audit_brief_sha256": "fc79c7645e569794c7a866dfc11cfbf46a49b4c18e3a30bee8ec1bb2d84cd926",
+      "output_path": "scratch/commentary/audits/theaetetus/02-145d-151d.json",
+      "output_sha256": "9b75c05679f92be6bf73c9fbd502599dee89ae476ca21daea5c9073b852c5f14",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "02-145d-151d",
+        "section_id": "comm_theaetetus_0002",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_theaetetus_0002",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately identifies the rejected catalogue and the definitional target. The edge follows a complete sentence and precedes the next sentence, preserving flow."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "03-151e-157c",
+      "section_id": "comm_theaetetus_0003",
+      "audit_brief_sha256": "a25869d1849fab2b8b4870fc45086adb75817fa708611f6d56c97c39256caf13",
+      "output_path": "scratch/commentary/audits/theaetetus/03-151e-157c.json",
+      "output_sha256": "0b2551cf55a72744d117d0f245c32de32cf38f61e4aa07a7efba8a3b56317a23",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "03-151e-157c",
+        "section_id": "comm_theaetetus_0003",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "04-157d-160d",
+      "section_id": "comm_theaetetus_0004",
+      "audit_brief_sha256": "7de1af0ee1a8dd5542ea776c15a7e8f4482feca7758a5e046d9a22ce1d6f101e",
+      "output_path": "scratch/commentary/audits/theaetetus/04-157d-160d.json",
+      "output_sha256": "9d4786aac09baa552b621272a9f4e15e9830eb81527055545eea616b693cbbf9",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "04-157d-160d",
+        "section_id": "comm_theaetetus_0004",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "05-160e-164e",
+      "section_id": "comm_theaetetus_0005",
+      "audit_brief_sha256": "9b396865ada66685defa6814c5094a7b0e1888a3af08a395789addd4671fd8b4",
+      "output_path": "scratch/commentary/audits/theaetetus/05-160e-164e.json",
+      "output_sha256": "75a6e5e937b90fef90f1e5b948f741d39fabd10a59dbeebe8c951a639809d8f1",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "05-160e-164e",
+        "section_id": "comm_theaetetus_0005",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "06-165a-168c",
+      "section_id": "comm_theaetetus_0006",
+      "audit_brief_sha256": "d182672f96fe99432184192b23681a3c564b6607917982563c042793697941ff",
+      "output_path": "scratch/commentary/audits/theaetetus/06-165a-168c.json",
+      "output_sha256": "2c4f6dfba79a32ef37f0bae861c1d81a5f8ec9c5443b083d4a8537d724a5043c",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "06-165a-168c",
+        "section_id": "comm_theaetetus_0006",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "07-168d-172c",
+      "section_id": "comm_theaetetus_0007",
+      "audit_brief_sha256": "c47c10a04db0b977c0737443aa98a4167c770ce5b59b2b1081e9298de91924df",
+      "output_path": "scratch/commentary/audits/theaetetus/07-168d-172c.json",
+      "output_sha256": "59826eafbefd31f471fb3a63e5f5ae29eda152bd18fe7bdcb86144385024366e",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "07-168d-172c",
+        "section_id": "comm_theaetetus_0007",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "08-172d-177c",
+      "section_id": "comm_theaetetus_0008",
+      "audit_brief_sha256": "201292d5406f3d72b7bb1f236f25ffb5a83e23f777a7842a59c306664d1dbf16",
+      "output_path": "scratch/commentary/audits/theaetetus/08-172d-177c.json",
+      "output_sha256": "cc68c44fc0ba72809a5fc0a68a43758ab8244f0b172445620e0ccf5bce3d8af6",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "08-172d-177c",
+        "section_id": "comm_theaetetus_0008",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "09-177d-184a",
+      "section_id": "comm_theaetetus_0009",
+      "audit_brief_sha256": "20b4f194b1485f44744120a05f1d6f9a4510912c45d6c8e7d24ad263d15ff86e",
+      "output_path": "scratch/commentary/audits/theaetetus/09-177d-184a.json",
+      "output_sha256": "446a5b9547d374dc83454cde56e34f1e5f546872f024b6511c67ed7c741f6d36",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "09-177d-184a",
+        "section_id": "comm_theaetetus_0009",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "10-184b-186e",
+      "section_id": "comm_theaetetus_0010",
+      "audit_brief_sha256": "1c7cd42b2625e1c5348b258a0cd6b4494f3ba575bac2e5d28db59f69521416e7",
+      "output_path": "scratch/commentary/audits/theaetetus/10-184b-186e.json",
+      "output_sha256": "0cbb03a4ccc142f8de539974f00fc95bea04604995784fa2c65b04cc89bfe35a",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "10-184b-186e",
+        "section_id": "comm_theaetetus_0010",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "11-187a-191b",
+      "section_id": "comm_theaetetus_0011",
+      "audit_brief_sha256": "d55b9a8798a07b3b4f4e9711d658a800c94b1b7eaa105bedda0b60622ad14959",
+      "output_path": "scratch/commentary/audits/theaetetus/11-187a-191b.json",
+      "output_sha256": "d187aa24e31f56272db80900313a6d6ca82e5d5aad023b8d5a1bfb0762ed1e10",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "11-187a-191b",
+        "section_id": "comm_theaetetus_0011",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "12-191c-197b",
+      "section_id": "comm_theaetetus_0012",
+      "audit_brief_sha256": "c40a832518e0faf9b27fcd55a6e7f28e0729cffcf101cc6175025b31557244b7",
+      "output_path": "scratch/commentary/audits/theaetetus/12-191c-197b.json",
+      "output_sha256": "9d49f4c65acc41eac672589c7787ef37a5ffc7426e27356df43f27596be84432",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "12-191c-197b",
+        "section_id": "comm_theaetetus_0012",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "13-197c-200c",
+      "section_id": "comm_theaetetus_0013",
+      "audit_brief_sha256": "0f0161c714ba1d024c4844e0297ea3a65c62616f599f6e53c4313966b13839fe",
+      "output_path": "scratch/commentary/audits/theaetetus/13-197c-200c.json",
+      "output_sha256": "1dc9a8cb599921aa61107e62c9d016090e206fa24ba1eb8c160a829d36de6094",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "13-197c-200c",
+        "section_id": "comm_theaetetus_0013",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "14-200d-201d",
+      "section_id": "comm_theaetetus_0014",
+      "audit_brief_sha256": "160f593483a02e01b127a891a8aa84c4ff519c8aaa6bf12e97482fb8a4adcfc5",
+      "output_path": "scratch/commentary/audits/theaetetus/14-200d-201d.json",
+      "output_sha256": "9b22cd4aa2497b7aed3b382b3004925e3267228e8cd4403f57247a0e06f0f5ac",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "14-200d-201d",
+        "section_id": "comm_theaetetus_0014",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "15-201e-205e",
+      "section_id": "comm_theaetetus_0015",
+      "audit_brief_sha256": "4ebba67474725278fc52e19ed05aa4f745982c5c74af7d738ecf0dd12411294f",
+      "output_path": "scratch/commentary/audits/theaetetus/15-201e-205e.json",
+      "output_sha256": "e58a208fb2b5e8952043abb714e244b5cc2ed9cb3828c3d3492496c330bc0cf0",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "theaetetus",
+        "unit_key": "15-201e-205e",
+        "section_id": "comm_theaetetus_0015",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    }
+  ],
+  "acceptance": {
+    "decision": "accepted",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-theaetetus-440779bed080",
+    "reviewed_on": "2026-09-01",
+    "rationale": "The sampled block is independently supported by the exact source and accepted records, adds concise explanatory value, and uses a clean playback edge with no placement hazard.",
+    "sampled_commentary_ids": [
+      "comm_theaetetus_0002"
+    ],
+    "review_note": {
+      "path": "wiki/review/2026-09-01-commentary-quality-theaetetus-luna-sample.md",
+      "sha256": "e3d0ca3fbf57acb6ad6755cf7236b8d83fa9ed871a8d1ef11fda79f4f6888eed"
+    }
+  }
+}

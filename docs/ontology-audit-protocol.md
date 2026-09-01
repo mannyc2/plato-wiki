@@ -151,6 +151,116 @@ explicit replacement targets, and every replacement must be live in the final
 canonical set. Source-unit additions likewise name the new live source-bound
 records that close the omission.
 
+## Post-acceptance final adjustments
+
+Any record or edge change after an accepted audit uses one hard-cut
+final-adjustment package. It may not fall back to the earlier semantic or
+concept receipt. The directory
+`review-inputs/final-adjustments/` contains exactly five regular files and no
+directories, symlinks, aliases, or extras:
+
+- one `sha256-<hash>-decisions.jsonl` table;
+- one `sha256-<hash>-prior-state.json` binding;
+- three `sha256-<hash>-prior-*.jsonl.gz` files preserving the exact accepted
+  record, graph, and adjudication partition bytes.
+
+Every gzip file is replayed. Its compressed bytes must match its filename and
+declared hash, its uncompressed bytes must match the accepted partition hash,
+and every embedded prior final pointer and superseded adjudication must occur
+exactly once in the appropriate replayed partition (or be provably absent for
+a new target). The prior-state artifact also embeds the exact accepted
+`acceptance.json` bytes and binds the three accepted partition hashes. Its
+acceptance path must name this exact audit package, and all acceptance and
+partition paths are normalized repo-relative paths with no empty, dot, parent,
+or alias segments. Opaque orphan hashes are not sufficient provenance.
+
+Each decision binds the exact prior final-pointer hash, expected new
+final-pointer hash, and superseded-adjudication hash. Its required
+`provenance_chain` is the ordered history of post-acceptance review stages.
+Every stage binds its own action, prior and expected pointer hashes, source
+receipt, and sorted durable evidence artifacts. The first stage must begin at
+the decision's preserved prior pointer, every adjacent pair must join on the
+same exact pointer hash, and the last stage must end at the decision's expected
+current pointer. Reordering, omitting, or silently overriding a stage therefore
+breaks the chain. Scratch paths are never durable evidence.
+
+The canonical stage kinds are `commentary_reconsideration`,
+`commentary_structural_review`, `commentary_sample_failure`,
+`relation_semantic_fiction`, and the strict receipt-bound
+`ontology_item_review`. There are no flat-receipt or evidence aliases. A
+commentary reconsideration may revise a rejected record to the exact accepted
+intermediate pointer and add its exact reviewed raw citation edges. If a later
+structural or independent-sample review rejects that same record, its rejection
+is a later stage whose prior pointer is that accepted intermediate pointer. The
+underlying receipts must independently prove the corresponding commentary
+ledger hash sequence; a matching pointer hash alone is insufficient.
+
+A single canonical final-adjustment receipt reciprocally hash-binds the
+decision table, prior-state artifact, all three preserved partitions, every
+stage receipt and canonical submission, and the complete reviewed evidence.
+The closure receipt in turn binds this entire set.
+
+Structural review evidence preserves every contributing complete audit object.
+The embedded object retains the review schema's property order so
+`JSON.stringify(audit, null, 2) + "\n"` must replay its declared reviewed-output
+SHA-256. Sequential reviewed batches may reuse a scratch unit/path only when
+the durable evidence preserves each distinct output hash, submission, and
+receipt version; operation IDs remain unique and target coverage is exact.
+
+Rejected-commentary reconsideration evidence uses one content-addressed
+manifest with exactly three dialogue-specific bundles in canonical order:
+`review_output`, `review_packet`, and `review_schema`. Each bundle embeds the
+exact bytes and SHA-256 of every isolated one-block invocation. Entries align
+by commentary ID, outcome, and attempt number; zero or more contiguous
+`superseded_failed_attempt` entries precede exactly one `terminal_pass` for
+every receipt target. Failed attempts remain durable evidence and may never be
+dropped or treated as passes. The verifier replays every embedded result,
+packet, and schema, requires the three entry sequences to be identical,
+checks each terminal result against its exact schema, and reconstructs the
+accepted citation-edge set from the terminal packet's rejected-form copy of
+the now-accepted commentary block. It also requires the exact canonical Greek
+source hash and span, byte-identical accepted citation records, and an
+aggregate all-pass result matching the receipt IDs, reviewer, rationale, and
+terminal findings. Scratch source paths are descriptive only; the durable
+embedded bytes are the authority. Dialogue-wide or unbundled compatibility
+artifacts are not accepted.
+
+Independent-sample rejection stages bind one canonical content-addressed
+sample evidence bundle and its normalized rejection submission. Verification
+historically replays the exact pending manifest, commentary ledger, sample
+packet, output schema, model catalog, prompt, provider output, state, and
+execution receipt; reconstructs the exact failed commentary IDs and rationales;
+and requires the source receipt and submission to encode the same accepted to
+rejected ledger transition. Multiple sequential batches for one dialogue form
+one unbranched hash chain ending at the current commentary ledger. Earlier
+batches remain verifiable after later batches and may not be collapsed into the
+latest receipt.
+
+The action names the structural transition from the previously accepted final
+set. `add` is null to live, `retire` is live to null, `revise` is a changed
+live nonrejected target, and `reject` is a changed live target whose new record
+status is rejected. Structural transition takes precedence over status: a new
+rejected record is `add`, with its final pointer independently carrying
+`review_status: rejected`. All actual record/edge core-pointer deltas require
+exactly one decision, unchanged targets require none, and partial application
+is invalid. Binding accepts only the exact preserved pre-state or the exact
+already-applied state; a second bind must reproduce identical adjudication
+IDs, finding IDs, actions, rationales, receipts, and empty replacement lists.
+
+Graph-unit rows are the baseline/final union of semantic links. Their immutable
+baseline pointers preserve historical provenance, while their final pointers
+name only links present in the live canonical graph. A rejected relation record
+therefore remains review provenance in the record partition, but its formerly
+accepted semantic edge has a null final pointer and an explicit `retire`
+decision. Non-null edge pointers always carry `review_status: null`; owner
+review status belongs to the record rather than edge identity.
+
+After the first successful bind, both `manifest.json` and `acceptance.json`
+set `final_adjustments.required: true` and bind the exact decision artifact,
+prior-state artifact, and reciprocal receipt hashes. Removing or replacing
+that package must then fail closed instead of resurrecting superseded semantic
+decisions.
+
 ## Acceptance
 
 `acceptance.json` is initially `pending`. Pending acceptance must not claim a

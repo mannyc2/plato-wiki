@@ -52,7 +52,10 @@ source_ref:
 body: "One way to hear this passage is as a rehearsal in intellectual discipline. The angler is deliberately modest: that small subject lets the Stranger make the search’s turns audible without asking us yet to settle the sophist’s identity. I take the final handoff as the real payoff: method becomes something to test, not merely something to admire."
 cites:
   observations:
-    []
+    - obs_sophist_0019
+    - obs_sophist_0020
+    - obs_sophist_0038
+    - obs_sophist_0042
   claims:
     []
   relations:
@@ -62,7 +65,7 @@ cites:
 crossrefs:
   []
 author: model
-review_status: rejected
+review_status: accepted
 ```
 
 ```yaml
@@ -120,12 +123,13 @@ source_ref:
   start_char: 29522
   end_char: 39632
   text_sha256: f5208a47ea64001af9226f3e6df08a870de4f42f6fcad502760aff57b7b77010
-body: "I take the visual example to turn on an unfavorable viewing position—not a favorable distance: a large work can appear like the beautiful from where it is seen, yet fail to resemble it to someone able to see it adequately. I take that contrast to open the split between likeness and appearance, while leaving the sophist’s placement unsettled."
+body: "I take the visual example to turn on an unfavorable viewing position—not a favorable distance: a large work can appear like the beautiful from where it is seen, yet fail to resemble it to someone able to see it adequately. I take that contrast to open the split between likeness and appearance."
 cites:
   observations:
     []
   claims:
-    []
+    - claim_sophist_0019
+    - claim_sophist_0020
   relations:
     []
   dossiers:
@@ -156,7 +160,10 @@ cites:
   observations:
     []
   claims:
-    []
+    - claim_sophist_0021
+    - claim_sophist_0026
+    - claim_sophist_0031
+    - claim_sophist_0032
   relations:
     []
   dossiers:
@@ -164,7 +171,7 @@ cites:
 crossrefs:
   []
 author: model
-review_status: rejected
+review_status: accepted
 ```
 
 ```yaml
@@ -247,9 +254,11 @@ source_ref:
 body: "One way to hear this turn is as a warning about method: if every kind were sealed off from every other, speech would lose the crossings that let it say anything at all. The point is not to erase distinctions, but to make distinctions usable. That is the pressure this section places on the listener."
 cites:
   observations:
-    []
+    - obs_sophist_0246
   claims:
-    []
+    - claim_sophist_0066
+    - claim_sophist_0067
+    - claim_sophist_0082
   relations:
     []
   dossiers:
@@ -280,7 +289,10 @@ cites:
   observations:
     []
   claims:
-    []
+    - claim_sophist_0084
+    - claim_sophist_0085
+    - claim_sophist_0091
+    - claim_sophist_0093
   relations:
     []
   dossiers:
@@ -288,7 +300,7 @@ cites:
 crossrefs:
   []
 author: model
-review_status: rejected
+review_status: accepted
 ```
 
 ```yaml

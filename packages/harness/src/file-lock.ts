@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
 import { existsSync, mkdirSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { getRepoRoot, normalizeRepoPath } from "./paths.js";
+import { canonicalRepoDirectoryForWrite } from "./repo-artifact-path.js";
 
 const DEFAULT_TIMEOUT_MS = 10 * 60 * 1_000;
 const DEFAULT_STALE_MS = 30 * 60 * 1_000;
@@ -58,6 +59,8 @@ export function resolveLockTargets(paths: string[]) {
 function removeStaleLock(path: string, staleMs: number) {
   if (!existsSync(path)) return;
 
+  canonicalRepoDirectoryForWrite(normalizeRepoPath(path).relativePath, "wiki write lock");
+
   const ageMs = Date.now() - statSync(path).mtimeMs;
   if (ageMs < staleMs) return;
 
@@ -69,7 +72,9 @@ function acquire(path: string, label: string, target: string, timeoutMs: number,
 
   for (;;) {
     try {
+      canonicalRepoDirectoryForWrite(normalizeRepoPath(dirname(path)).relativePath, "wiki write-lock root");
       mkdirSync(dirname(path), { recursive: true });
+      canonicalRepoDirectoryForWrite(normalizeRepoPath(dirname(path)).relativePath, "wiki write-lock root");
       mkdirSync(path);
       writeFileSync(
         join(path, "owner.json"),
@@ -112,6 +117,7 @@ export function withRepoWriteLock<T>(scope: WriteLockScope, body: () => T): T {
     return body();
   } finally {
     for (const path of held.reverse()) {
+      if (existsSync(path)) canonicalRepoDirectoryForWrite(normalizeRepoPath(path).relativePath, "wiki write lock");
       rmSync(path, { recursive: true, force: true });
     }
   }

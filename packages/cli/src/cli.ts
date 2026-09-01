@@ -75,21 +75,27 @@ import {
   applyCommentaryQualityAuditManifestRefresh,
   applyCommentaryQualityAuditAcceptance,
   applyCommentaryQualityAuditAcceptanceSupersede,
+  applyCommentarySampleFailureRejection,
   applyCommentaryRewriteAcceptance,
+  applyCommentaryBlockReconsideration,
   applyCommentaryBlockReview,
   applyCommentarySampleRepair,
   applyCommentaryRewriteRepair,
- applyCommentaryStructuralRemediation,
+  applyCommentaryStructuralRemediation,
+  applyCommentaryStructuralRemediationBatch,
   applyCommentaryDelegatedAudit,
   buildCommentaryCampaignManifest,
   previewCommentaryQualityAuditAcceptance,
   previewCommentaryQualityAuditAcceptanceSupersede,
+  previewCommentarySampleFailureRejection,
   previewCommentaryQualityAuditManifestRefresh,
   previewCommentaryRewriteAcceptance,
+  previewCommentaryBlockReconsideration,
   previewCommentaryBlockReview,
   previewCommentarySampleRepair,
   previewCommentaryRewriteRepair,
- previewCommentaryStructuralRemediation,
+  previewCommentaryStructuralRemediation,
+  previewCommentaryStructuralRemediationBatch,
   previewCommentaryDelegatedAudit,
   importCommentaryDraft,
   importCommentaryDraftBatch,
@@ -119,6 +125,7 @@ import {
   type TranscriptUsageSummary,
   type CommentaryRewriteReviewInput,
   type CommentaryBlockReviewDecision,
+  type CommentaryStructuralRemediationBatchInput,
   type CommentaryStructuralRemediationInput,
 } from "@plato-observation-wiki/harness";
 import { parseReportArgs, reportExitCode } from "./report-args.js";
@@ -219,10 +226,12 @@ Usage:
   bun run harness commentary audit-manifest-preview <dialogue>
   bun run harness commentary audit-manifest-refresh-preview <dialogue>
   bun run harness commentary audit-manifest-refresh-apply <dialogue>
-  bun run harness commentary audit-manifest-accept-preview <dialogue> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --sampled-ids <id,id,...>
-  bun run harness commentary audit-manifest-accept-apply <dialogue> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --sampled-ids <id,id,...>
-  bun run harness commentary audit-manifest-supersede-preview <dialogue> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --sampled-ids <id,id,...>
-  bun run harness commentary audit-manifest-supersede-apply <dialogue> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --sampled-ids <id,id,...>
+  bun run harness commentary audit-manifest-accept-preview <dialogue> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --sampled-ids <id,id,...> --sample-output <path>
+  bun run harness commentary audit-manifest-accept-apply <dialogue> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --sampled-ids <id,id,...> --sample-output <path>
+  bun run harness commentary audit-manifest-supersede-preview <dialogue> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --sampled-ids <id,id,...> --sample-output <path>
+  bun run harness commentary audit-manifest-supersede-apply <dialogue> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --sampled-ids <id,id,...> --sample-output <path>
+  bun run harness commentary sample-failure-reject-preview <dialogue> --reviewed-on <YYYY-MM-DD> --expected-ledger-sha256 <sha256> --failed-ids <id,id,...> --sample-output <path>
+  bun run harness commentary sample-failure-reject-apply <dialogue> --reviewed-on <YYYY-MM-DD> --expected-ledger-sha256 <sha256> --failed-ids <id,id,...> --sample-output <path>
   bun run harness commentary draft-preview <dialogue> <draft-path>
   bun run harness commentary draft-apply <dialogue> <draft-path>
   bun run harness commentary draft-batch-preview <dialogue> <draft-path>...
@@ -235,12 +244,16 @@ Usage:
   bun run harness commentary rewrite-review-apply <dialogue> <submission-path> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --reviewed-ids <id,id,...>
   bun run harness commentary block-review-preview <dialogue> --decision <accepted|rejected> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --reviewed-ids <id,id,...>
   bun run harness commentary block-review-apply <dialogue> --decision <accepted|rejected> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --reviewed-ids <id,id,...>
+  bun run harness commentary block-review-reconsider-preview <dialogue> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --reviewed-ids <id,id,...> --evidence-manifest <path> --evidence-manifest-sha256 <sha256>
+  bun run harness commentary block-review-reconsider-apply <dialogue> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --reviewed-ids <id,id,...> --evidence-manifest <path> --evidence-manifest-sha256 <sha256>
   bun run harness commentary sample-repair-preview <dialogue> <candidate-path>
   bun run harness commentary sample-repair-apply <dialogue> <candidate-path>
   bun run harness commentary rewrite-repair-preview <dialogue> <candidate-path>
   bun run harness commentary rewrite-repair-apply <dialogue> <candidate-path>
   bun run harness commentary structural-remediation-preview <candidate-path>
   bun run harness commentary structural-remediation-apply <candidate-path>
+  bun run harness commentary structural-remediation-batch-preview <candidate-path>
+  bun run harness commentary structural-remediation-batch-apply <candidate-path>
   bun run harness audio coverage [--write]
   bun run harness audio screenplay <dialogue> [--write-draft | --write-production]
   bun run harness anchors [--write] [dialogue]
@@ -349,6 +362,21 @@ function commentaryStructuralRemediationInput(candidatePath: string): Commentary
     throw new Error("Structural remediation candidate must be a JSON object");
   }
   return parsed as CommentaryStructuralRemediationInput;
+}
+
+function commentaryStructuralRemediationBatchInput(candidatePath: string): CommentaryStructuralRemediationBatchInput {
+  const absoluteCandidatePath = join(getRepoRoot(), candidatePath);
+  if (!existsSync(absoluteCandidatePath)) throw new Error(`Missing structural remediation batch candidate ${candidatePath}`);
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(readFileSync(absoluteCandidatePath, "utf8")) as unknown;
+  } catch (error) {
+    throw new Error(`Structural remediation batch candidate is malformed JSON: ${error instanceof Error ? error.message : String(error)}`);
+  }
+  if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
+    throw new Error("Structural remediation batch candidate must be a JSON object");
+  }
+  return parsed as CommentaryStructuralRemediationBatchInput;
 }
 
 function commentaryRewriteAcceptanceInput(
@@ -1603,7 +1631,7 @@ async function main() {
   }
 
   if (args.command === "commentary") {
-    const usage = "Usage: bun run harness commentary briefs <dialogue> | commentary audit-briefs <dialogue> | commentary delegated-audit-preview <dialogue> [<unit-key>] <candidate-path> | commentary delegated-audit-apply <dialogue> [<unit-key>] <candidate-path> | commentary audit-manifest-preview <dialogue> | commentary audit-manifest-refresh-preview <dialogue> | commentary audit-manifest-refresh-apply <dialogue> | commentary audit-manifest-accept-preview <dialogue> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --sampled-ids <id,id,...> | commentary audit-manifest-accept-apply <dialogue> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --sampled-ids <id,id,...> | commentary audit-manifest-supersede-preview <dialogue> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --sampled-ids <id,id,...> | commentary audit-manifest-supersede-apply <dialogue> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --sampled-ids <id,id,...> | commentary draft-preview <dialogue> <draft-path> | commentary draft-apply <dialogue> <draft-path> | commentary draft-batch-preview <dialogue> <draft-path>... | commentary draft-batch-apply <dialogue> <draft-path>... | commentary rewrite-preview <dialogue> <rewrite-path> | commentary rewrite-apply <dialogue> <rewrite-path> | commentary rewrite-batch-preview <dialogue> <rewrite-path>... | commentary rewrite-batch-apply <dialogue> <rewrite-path>... | commentary rewrite-review-preview <dialogue> <submission-path> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --reviewed-ids <id,id,...> | commentary rewrite-review-apply <dialogue> <submission-path> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --reviewed-ids <id,id,...> | commentary block-review-preview <dialogue> --decision <accepted|rejected> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --reviewed-ids <id,id,...> | commentary block-review-apply <dialogue> --decision <accepted|rejected> --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> --reviewed-ids <id,id,...> | commentary sample-repair-preview <dialogue> <candidate-path> | commentary sample-repair-apply <dialogue> <candidate-path> | commentary rewrite-repair-preview <dialogue> <candidate-path> | commentary rewrite-repair-apply <dialogue> <candidate-path> | commentary structural-remediation-preview <candidate-path> | commentary structural-remediation-apply <candidate-path>";
+    const usage = "Usage: bun run harness commentary <subject> ...; audit-manifest acceptance and supersede require --reviewer, --reviewed-on, --rationale, --sampled-ids, and --sample-output. Run bun run harness --help for exact subject arguments.";
     if (args.subject === "briefs") {
       const dialogue = requireDialogue(args.command, process.argv[4]?.startsWith("--") ? undefined : process.argv[4]);
       for (const brief of writeCommentaryBriefs(dialogue)) {
@@ -1619,13 +1647,17 @@ async function main() {
       return;
     }
     if (args.subject === "delegated-audit-preview" || args.subject === "delegated-audit-apply") {
+      const delegatedAuditUsage =
+        "Usage:\n" +
+        "  bun run harness commentary delegated-audit-preview <dialogue> [<unit-key>] <candidate-path>\n" +
+        "  bun run harness commentary delegated-audit-apply <dialogue> [<unit-key>] <candidate-path>";
       const dialogue = requireDialogue(args.command, process.argv[4]);
       const explicitUnitKey = process.argv[5] && !process.argv[5]!.includes("/") && !process.argv[5]!.endsWith(".json")
         ? process.argv[5]
         : undefined;
       const candidatePath = explicitUnitKey ? process.argv[6] : process.argv[5];
       if (!candidatePath || candidatePath.startsWith("--") || process.argv.slice(6).some((value) => value.startsWith("--"))) {
-        throw new Error(usage);
+        throw new Error(delegatedAuditUsage);
       }
       const unitKey = explicitUnitKey ?? candidatePath.split("/").at(-1)?.replace(/\.json$/u, "");
       const currentJob = buildCommentaryCampaignManifest({ dialogue, stage: "audit" }).jobs.find(
@@ -1666,8 +1698,9 @@ async function main() {
       const reviewedOn = optionValue(process.argv, "--reviewed-on");
       const rationale = optionValue(process.argv, "--rationale");
       const sampledCommentaryIds = optionList(process.argv, "--sampled-ids");
-      if (!reviewer || !reviewedOn || !rationale || !sampledCommentaryIds) throw new Error(usage);
-      const input = { dialogue, reviewer, reviewedOn, rationale, sampledCommentaryIds };
+      const sampleOutputPath = optionValue(process.argv, "--sample-output");
+      if (!reviewer || !reviewedOn || !rationale || !sampledCommentaryIds || !sampleOutputPath) throw new Error(usage);
+      const input = { dialogue, reviewer, reviewedOn, rationale, sampledCommentaryIds, sampleOutputPath };
       const result = args.subject === "audit-manifest-accept-apply"
         ? applyCommentaryQualityAuditAcceptance(input)
         : previewCommentaryQualityAuditAcceptance(input);
@@ -1682,8 +1715,9 @@ async function main() {
       const reviewedOn = optionValue(process.argv, "--reviewed-on");
       const rationale = optionValue(process.argv, "--rationale");
       const sampledCommentaryIds = optionList(process.argv, "--sampled-ids");
-      if (!reviewer || !reviewedOn || !rationale || !sampledCommentaryIds) throw new Error(usage);
-      const input = { dialogue, reviewer, reviewedOn, rationale, sampledCommentaryIds };
+      const sampleOutputPath = optionValue(process.argv, "--sample-output");
+      if (!reviewer || !reviewedOn || !rationale || !sampledCommentaryIds || !sampleOutputPath) throw new Error(usage);
+      const input = { dialogue, reviewer, reviewedOn, rationale, sampledCommentaryIds, sampleOutputPath };
       const result = args.subject === "audit-manifest-supersede-apply"
         ? applyCommentaryQualityAuditAcceptanceSupersede(input)
         : previewCommentaryQualityAuditAcceptanceSupersede(input);
@@ -1694,10 +1728,52 @@ async function main() {
       if (!result.applied) console.log("No canonical manifest, review note, or predecessor history was written.");
       return;
     }
-    if (args.subject === "structural-remediation-preview" || args.subject === "structural-remediation-apply") {
+    if (args.subject === "sample-failure-reject-preview" || args.subject === "sample-failure-reject-apply") {
+      const dialogue = requireDialogue(args.command, process.argv[4]?.startsWith("--") ? undefined : process.argv[4]);
+      const reviewedOn = optionValue(process.argv, "--reviewed-on");
+      const expectedLedgerSha256 = optionValue(process.argv, "--expected-ledger-sha256");
+      const failedCommentaryIds = optionList(process.argv, "--failed-ids");
+      const sampleOutputPath = optionValue(process.argv, "--sample-output");
+      if (!reviewedOn || !expectedLedgerSha256 || !failedCommentaryIds || !sampleOutputPath) throw new Error(usage);
+      const input = { dialogue, reviewedOn, expectedLedgerSha256, failedCommentaryIds, sampleOutputPath };
+      const result = args.subject === "sample-failure-reject-apply"
+        ? applyCommentarySampleFailureRejection(input)
+        : previewCommentarySampleFailureRejection(input);
+      console.log(`${result.applied ? "applied" : "preview"}: ${result.ledgerPath}`);
+      console.log(`rejected ids: ${result.failedBlocks.map((block) => block.commentary_id).join(", ")}`);
+      console.log(`sample evidence: ${result.sampleEvidencePath}`);
+      console.log(`review receipt: ${result.receiptPath}`);
+      console.log(`submission: ${result.submissionPath}`);
+      if (!result.applied) console.log("No canonical ledger, evidence, receipt, or submission was written.");
+      return;
+    }
+    if (args.subject === "structural-remediation-batch-preview" || args.subject === "structural-remediation-batch-apply") {
       const candidatePath = process.argv[4];
       if (!candidatePath || candidatePath.startsWith("--") || process.argv.slice(5).some((value) => value.startsWith("--"))) {
         throw new Error(usage);
+      }
+      const input = commentaryStructuralRemediationBatchInput(candidatePath);
+      const result = args.subject === "structural-remediation-batch-apply"
+        ? applyCommentaryStructuralRemediationBatch(input)
+        : previewCommentaryStructuralRemediationBatch(input);
+      console.log(`${result.applied ? "applied" : "preview"}: ${result.ledgerPath}`);
+      console.log(`audit units: ${result.auditUnits.length}`);
+      console.log(`remediated ids: ${result.operations.map((operation) => operation.commentaryId).join(", ")}`);
+      console.log(`review receipt: ${result.receiptPath}`);
+      if (result.applied) console.log(`submission: ${result.submissionRecordPath}`);
+      else console.log("No canonical ledger, submission record, or review receipt was written.");
+      return;
+    }
+    if (args.subject === "structural-remediation-preview" || args.subject === "structural-remediation-apply") {
+      const structuralRemediationUsage =
+        "Usage:\n" +
+        "  bun run harness commentary structural-remediation-preview <candidate-path>\n" +
+        "  bun run harness commentary structural-remediation-apply <candidate-path>\n" +
+        "  bun run harness commentary structural-remediation-batch-preview <candidate-path>\n" +
+        "  bun run harness commentary structural-remediation-batch-apply <candidate-path>";
+      const candidatePath = process.argv[4];
+      if (!candidatePath || candidatePath.startsWith("--") || process.argv.slice(5).some((value) => value.startsWith("--"))) {
+        throw new Error(structuralRemediationUsage);
       }
       const input = commentaryStructuralRemediationInput(candidatePath);
       const result = args.subject === "structural-remediation-apply"
@@ -1763,6 +1839,24 @@ async function main() {
       const result = args.subject === "block-review-apply"
         ? applyCommentaryBlockReview({ dialogue, decision: decision as CommentaryBlockReviewDecision, reviewer, reviewedOn, rationale, reviewedIds })
         : previewCommentaryBlockReview({ dialogue, decision: decision as CommentaryBlockReviewDecision, reviewer, reviewedOn, rationale, reviewedIds });
+      console.log(`${result.applied ? "applied" : "preview"}: ${result.ledgerPath}`);
+      console.log(`review receipt: ${result.receiptPath}`);
+      console.log(`reviewed ids: ${result.reviewedIds.join(", ")}`);
+      if (!result.applied) console.log("No canonical ledger or review receipt was written.");
+      return;
+    }
+    if (args.subject === "block-review-reconsider-preview" || args.subject === "block-review-reconsider-apply") {
+      const dialogue = requireDialogue(args.command, process.argv[4]?.startsWith("--") ? undefined : process.argv[4]);
+      const reviewer = optionValue(process.argv, "--reviewer");
+      const reviewedOn = optionValue(process.argv, "--reviewed-on");
+      const rationale = optionValue(process.argv, "--rationale");
+      const reviewedIds = optionList(process.argv, "--reviewed-ids");
+      const evidenceManifestPath = optionValue(process.argv, "--evidence-manifest");
+      const evidenceManifestSha256 = optionValue(process.argv, "--evidence-manifest-sha256");
+      if (!reviewer || !reviewedOn || !rationale || !reviewedIds || !evidenceManifestPath || !evidenceManifestSha256) throw new Error(usage);
+      const result = args.subject === "block-review-reconsider-apply"
+        ? applyCommentaryBlockReconsideration({ dialogue, reviewer, reviewedOn, rationale, reviewedIds, evidenceManifestPath, evidenceManifestSha256 })
+        : previewCommentaryBlockReconsideration({ dialogue, reviewer, reviewedOn, rationale, reviewedIds, evidenceManifestPath, evidenceManifestSha256 });
       console.log(`${result.applied ? "applied" : "preview"}: ${result.ledgerPath}`);
       console.log(`review receipt: ${result.receiptPath}`);
       console.log(`reviewed ids: ${result.reviewedIds.join(", ")}`);

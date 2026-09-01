@@ -51,6 +51,14 @@ membership or semantic relation. Rejection, a zero membership count, and a
 dialogue's omission from a projection are never absence or counterevidence.
 Accepted commentary has source or semantic citations.
 
+The shared-normalized-term relation candidate generator is discovery tooling,
+not ontology authority. Its output can propose claim pairs for later review,
+but it does not define the canonical relation set, prove that a relation is
+absent, or license a mechanical accepted/rejected decision. Relation
+completeness is established by strict canonical ledgers, terminal item-level
+adjudications, accepted semantic-edge invariants, reader-leak checks, and the
+verified snapshot-bound audit package.
+
 ## Hard cut only
 
 The old feature registry and observation-local feature fields are not readers,

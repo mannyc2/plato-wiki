@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "submission_id": "0016-structural-remediation-batch",
+  "lane": "commentary",
+  "kind": "structural-remediation-batch",
+  "scope": "euthyphro",
+  "source_path": "scratch/commentary/structural-remediation/euthyphro/audit-failures-batch.json",
+  "source_sha256": "ee1f9d093c591bfc0c7b7685fce0c7790cf36391a6b8a26c4df779fb7a6bc52c",
+  "target_path": "wiki/commentary/euthyphro.md",
+  "target_sha256_before": "63ac16a1f6a2bc018cd96f502a4b25f397ba2f8769d06baaaab77627143a99e8",
+  "target_sha256_after": "af72209910372978adcaa668e74c95787f152e543bd339f3bdee461c841bfa60",
+  "applied_at": "2026-09-01T12:03:02.270Z",
+  "applied_ids": [
+    "comm_euthyphro_0002"
+  ],
+  "submission": {
+    "candidate": {
+      "schemaVersion": 1,
+      "dialogue": "euthyphro",
+      "candidatePath": "scratch/commentary/structural-remediation/euthyphro/audit-failures-batch.json",
+      "expectedLedgerSha256": "63ac16a1f6a2bc018cd96f502a4b25f397ba2f8769d06baaaab77627143a99e8",
+      "expectedAttributionSha256": "fb94c60765e0b98880856c6e1b958d3f0231dcfbb114bdf97c3bb3d6d88cc07b",
+      "expectedEnglishSha256": "c7dfbda09d2477bb9610bebdf40a0c2e4ee8b4ad000b84b7143544ab1ebbf756",
+      "auditUnits": [
+        {
+          "unitKey": "01-2a-3e",
+          "sectionId": "comm_euthyphro_0001",
+          "auditOutputPath": "scratch/commentary/audits/euthyphro/01-2a-3e.json",
+          "auditOutputSha256": "ba207c8d70a748f6947a4ac8d899f95797ff53b756f592b27c4a9951ccb98b33",
+          "operations": []
+        },
+        {
+          "unitKey": "02-4a-5c",
+          "sectionId": "comm_euthyphro_0002",
+          "auditOutputPath": "scratch/commentary/audits/euthyphro/02-4a-5c.json",
+          "auditOutputSha256": "feb94fa7cb265ce33f0de3887028e7a2335810269bf853625d3f4f3408ef8f61",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_euthyphro_0002"
+            }
+          ]
+        },
+        {
+          "unitKey": "03-5d-6e",
+          "sectionId": "comm_euthyphro_0003",
+          "auditOutputPath": "scratch/commentary/audits/euthyphro/03-5d-6e.json",
+          "auditOutputSha256": "cf74e628bb29ce09922f652e6a6fbebccbeeaa722e2279a2b2969814a3a6dbae",
+          "operations": []
+        },
+        {
+          "unitKey": "04-7a-8a",
+          "sectionId": "comm_euthyphro_0004",
+          "auditOutputPath": "scratch/commentary/audits/euthyphro/04-7a-8a.json",
+          "auditOutputSha256": "ba638b2ad6fb5fd6394f5a5f7c812ef0fe87aa3e9ddbd82175224b1204955cab",
+          "operations": []
+        },
+        {
+          "unitKey": "05-8b-9e",
+          "sectionId": "comm_euthyphro_0005",
+          "auditOutputPath": "scratch/commentary/audits/euthyphro/05-8b-9e.json",
+          "auditOutputSha256": "26de33daf424ba34b35aa7c2b066b1c10d7784528a14a4ddd684549281d556d1",
+          "operations": []
+        },
+        {
+          "unitKey": "06-10a-11a",
+          "sectionId": "comm_euthyphro_0006",
+          "auditOutputPath": "scratch/commentary/audits/euthyphro/06-10a-11a.json",
+          "auditOutputSha256": "b07c13d2424610033ea323d748f657fda1f741733d87098c179950eead63ca89",
+          "operations": []
+        },
+        {
+          "unitKey": "07-11b-12e",
+          "sectionId": "comm_euthyphro_0007",
+          "auditOutputPath": "scratch/commentary/audits/euthyphro/07-11b-12e.json",
+          "auditOutputSha256": "859196795f6ebb366125401fcb688a90eed6ed90c3e32c859a96b52457d85566",
+          "operations": []
+        },
+        {
+          "unitKey": "08-13a-14a",
+          "sectionId": "comm_euthyphro_0008",
+          "auditOutputPath": "scratch/commentary/audits/euthyphro/08-13a-14a.json",
+          "auditOutputSha256": "b3e07f70a8a6e87466fd0f4639718ae86ad0fb3b0c307d47c7a1fa9769361978",
+          "operations": []
+        },
+        {
+          "unitKey": "09-14b-15c",
+          "sectionId": "comm_euthyphro_0009",
+          "auditOutputPath": "scratch/commentary/audits/euthyphro/09-14b-15c.json",
+          "auditOutputSha256": "3a8fc1b736df3c00c74125aff84d94ca6cb847911f31e53cbb0747a0828e1196",
+          "operations": []
+        },
+        {
+          "unitKey": "10-15d-16a",
+          "sectionId": "comm_euthyphro_0010",
+          "auditOutputPath": "scratch/commentary/audits/euthyphro/10-15d-16a.json",
+          "auditOutputSha256": "b80fff92578c675b485ecb081471d149baa07773315fe3163da5515daed190eb",
+          "operations": []
+        }
+      ],
+      "reviewer": "ontology-vnext-release-delegated-luna-20260901",
+      "reviewedOn": "2026-09-01",
+      "rationale": "Bound to current independent Luna placement-removal and rewrite findings; reject the defective originals conservatively."
+    },
+    "audit_findings": [
+      {
+        "commentaryId": "comm_euthyphro_0002",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

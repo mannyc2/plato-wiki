@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "submission_id": "0011-structural-remediation-batch",
+  "lane": "commentary",
+  "kind": "structural-remediation-batch",
+  "scope": "sophist",
+  "source_path": "scratch/commentary/structural-remediation/sophist/audit-failures-batch.json",
+  "source_sha256": "fe8226c6ffafcc4fd3327e95744631ccf2dcde775986c9104f7af89d0dd4ccaa",
+  "target_path": "wiki/commentary/sophist.md",
+  "target_sha256_before": "49a44de381d3c8638bb13e57bba601d6c5a56fefb95f6a3b8e2dd660ba88f899",
+  "target_sha256_after": "dc81405b006f6a89e3b6d8e08d812573bcf2ad8ca6173bb0eea7adbb72d00af7",
+  "applied_at": "2026-09-01T13:22:48.009Z",
+  "applied_ids": [
+    "comm_sophist_0004",
+    "comm_sophist_0008"
+  ],
+  "submission": {
+    "candidate": {
+      "schemaVersion": 1,
+      "dialogue": "sophist",
+      "candidatePath": "scratch/commentary/structural-remediation/sophist/audit-failures-batch.json",
+      "expectedLedgerSha256": "49a44de381d3c8638bb13e57bba601d6c5a56fefb95f6a3b8e2dd660ba88f899",
+      "expectedAttributionSha256": "b08297f1ae4b71ad9d92e1e0367e954bd41d6f6d6868c857e3345fd6af1bc2b8",
+      "expectedEnglishSha256": "baaea2322c69372db21dbebb3f2c1f2e86a0dd9717becf1b273ffd8e8023fe99",
+      "auditUnits": [
+        {
+          "unitKey": "01-216a-218e",
+          "sectionId": "comm_sophist_0001",
+          "auditOutputPath": "scratch/commentary/audits/sophist/01-216a-218e.json",
+          "auditOutputSha256": "b784084195951e5c57841a22456f829847d35a170c8232daf865dfa5f44aa273",
+          "operations": []
+        },
+        {
+          "unitKey": "02-219a-221c",
+          "sectionId": "comm_sophist_0002",
+          "auditOutputPath": "scratch/commentary/audits/sophist/02-219a-221c.json",
+          "auditOutputSha256": "435af7522bb827e467256e6e50c4d1b011b2ae5e67c461c90ea7c60bfed3bb52",
+          "operations": []
+        },
+        {
+          "unitKey": "03-221d-231c",
+          "sectionId": "comm_sophist_0003",
+          "auditOutputPath": "scratch/commentary/audits/sophist/03-221d-231c.json",
+          "auditOutputSha256": "a6f29cb7894bd42636cf79eaf5909dc69662e3066dfae773b6d9618e8ea048a3",
+          "operations": []
+        },
+        {
+          "unitKey": "04-231d-236d",
+          "sectionId": "comm_sophist_0004",
+          "auditOutputPath": "scratch/commentary/audits/sophist/04-231d-236d.json",
+          "auditOutputSha256": "53b6be1c568881ff0c00822da1b66bd8dac54871978225ec064ad5617fd8af95",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_sophist_0004"
+            }
+          ]
+        },
+        {
+          "unitKey": "05-236e-239c",
+          "sectionId": "comm_sophist_0005",
+          "auditOutputPath": "scratch/commentary/audits/sophist/05-236e-239c.json",
+          "auditOutputSha256": "11d773ee187573f8e6d49ef2ab104c870ba1188258a8f5f75e72333a993ca525",
+          "operations": []
+        },
+        {
+          "unitKey": "06-239d-242b",
+          "sectionId": "comm_sophist_0006",
+          "auditOutputPath": "scratch/commentary/audits/sophist/06-239d-242b.json",
+          "auditOutputSha256": "ad76666735926075d7887745bb8aa69e965045d5db0b937f47cda1953191284c",
+          "operations": []
+        },
+        {
+          "unitKey": "07-242c-251a",
+          "sectionId": "comm_sophist_0007",
+          "auditOutputPath": "scratch/commentary/audits/sophist/07-242c-251a.json",
+          "auditOutputSha256": "7e6d0c34883e8d15e76b0acc17822d847a7e6e90ccb3055df02a98d940d03fc4",
+          "operations": []
+        },
+        {
+          "unitKey": "08-251b-259e",
+          "sectionId": "comm_sophist_0008",
+          "auditOutputPath": "scratch/commentary/audits/sophist/08-251b-259e.json",
+          "auditOutputSha256": "6e52b99efbcce7a38ddbbc9f99f1e2a0da77b37b1c197ac936b8c50d8b5bb758",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_sophist_0008"
+            }
+          ]
+        },
+        {
+          "unitKey": "09-260a-264b",
+          "sectionId": "comm_sophist_0009",
+          "auditOutputPath": "scratch/commentary/audits/sophist/09-260a-264b.json",
+          "auditOutputSha256": "1ea29c42882bb0f271caa1447e2c835bb3756998defee7929df9ef43c8b2d1a8",
+          "operations": []
+        },
+        {
+          "unitKey": "10-264c-268d",
+          "sectionId": "comm_sophist_0010",
+          "auditOutputPath": "scratch/commentary/audits/sophist/10-264c-268d.json",
+          "auditOutputSha256": "354c0222298b0b648ba4f3ee7b036a65e98366efe0a724cd52cb75386e4da707",
+          "operations": []
+        }
+      ],
+      "reviewer": "sophist-audit-campaign-delegated-luna-reviewer-02",
+      "reviewedOn": "2026-09-01",
+      "rationale": "Fresh full-corpus Luna audits found two unsafe playback edges that interrupt direct replies; both blocks are rejected with exact audit evidence preserved."
+    },
+    "audit_findings": [
+      {
+        "commentaryId": "comm_sophist_0004",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_sophist_0008",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

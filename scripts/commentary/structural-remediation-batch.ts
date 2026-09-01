@@ -16,19 +16,17 @@ import {
 } from "../../packages/harness/src/commentary-audit.js";
 import { buildCommentaryCampaignPlan, type CommentaryCampaignJob } from "../../packages/harness/src/commentary-campaign.js";
 import {
-  applyCommentaryStructuralRemediation,
-  previewCommentaryStructuralRemediation,
-  type CommentaryStructuralRemediationInput,
+  applyCommentaryStructuralRemediationBatch,
+  previewCommentaryStructuralRemediationBatch,
+  type CommentaryStructuralRemediationBatchInput,
 } from "../../packages/harness/src/wiki/commentary-structural-remediation.js";
 import { isDelegatedLunaReviewer } from "../../packages/harness/src/wiki/commentary-quality-audit.js";
 import { getRepoRoot } from "../../packages/harness/src/paths.js";
 
 const DIALOGUE = /^[a-z0-9-]+$/u;
-const UNIT_KEY = /^[a-z0-9][a-z0-9-]*$/u;
 
 export type StructuralRemediationBatchOptions = {
   dialogues: readonly string[];
-  maxUnits?: number;
   reviewer: string;
   reviewedOn: string;
   rationale: string;
@@ -37,8 +35,7 @@ export type StructuralRemediationBatchOptions = {
 
 export type StructuralRemediationBatchCandidate = {
   candidatePath: string;
-  input: CommentaryStructuralRemediationInput;
-  sectionOrder: number;
+  input: CommentaryStructuralRemediationBatchInput;
 };
 
 export type StructuralRemediationBatchResult = {
@@ -136,49 +133,62 @@ export function planStructuralOperations(
   return brief.commentaryIds.flatMap((commentaryId) => {
     const block = byId.get(commentaryId);
     if (!block) throw new Error(`Current audit is missing ${commentaryId} in ${brief.path}`);
+    if (block.disposition === "pass") return [];
     if (block.disposition === "remove") return [{ operation: "remove" as const, commentaryId }];
-    if (block.disposition === "split") {
-      return [{ operation: "remove" as const, commentaryId, splitResolution: "reject-original" as const }];
+    if (block.disposition === "rewrite") {
+      return [{ operation: "remove" as const, commentaryId, rewriteResolution: "reject-original" as const }];
     }
-    return [];
+    throw new Error(`Structural remediation batch refuses ${block.disposition} finding for ${commentaryId}`);
   });
 }
 
-function candidatePath(dialogue: string, unitKey: string) {
-  return `scratch/commentary/structural-remediation/${dialogue}/${unitKey}.json`;
+function candidatePath(dialogue: string) {
+  return `scratch/commentary/structural-remediation/${dialogue}/audit-failures-batch.json`;
 }
 
-function candidateFor(dialogue: string, brief: CommentaryAuditBrief, job: CommentaryCampaignJob, reviewer: string, reviewedOn: string, rationale: string) {
-  const audit = loadCurrentAudit(dialogue, brief, job);
-  const operations = planStructuralOperations(brief, audit.audit);
-  if (operations.length === 0) return undefined;
+function candidateForDialogue(
+  dialogue: string,
+  briefs: readonly CommentaryAuditBrief[],
+  jobsByUnit: ReadonlyMap<string, CommentaryCampaignJob>,
+  reviewer: string,
+  reviewedOn: string,
+  rationale: string,
+) {
   const ledger = currentLedger(dialogue);
   const sources = currentSourceHashes(dialogue);
-  const input: CommentaryStructuralRemediationInput = {
+  const path = candidatePath(dialogue);
+  const auditUnits = briefs.map((brief) => {
+    const job = jobsByUnit.get(brief.unitKey);
+    if (!job) throw new Error(`Missing current audit job for ${dialogue}/${brief.unitKey}`);
+    const audit = loadCurrentAudit(dialogue, brief, job);
+    return {
+      unitKey: brief.unitKey,
+      sectionId: brief.sectionId,
+      auditOutputPath: audit.outputPath,
+      auditOutputSha256: audit.outputSha256,
+      operations: planStructuralOperations(brief, audit.audit),
+    };
+  });
+  if (auditUnits.every((unit) => unit.operations.length === 0)) return undefined;
+  const input: CommentaryStructuralRemediationBatchInput = {
+    schemaVersion: 1,
     dialogue,
-    unitKey: brief.unitKey,
-    sectionId: brief.sectionId,
-    auditOutputPath: audit.outputPath,
-    auditOutputSha256: audit.outputSha256,
+    candidatePath: path,
     expectedLedgerSha256: ledger.sha256,
     expectedAttributionSha256: sources.attributionSha256,
     expectedEnglishSha256: sources.englishSha256,
-    operations,
+    auditUnits,
     reviewer,
     reviewedOn,
     rationale,
   };
-  // Preview is deliberately part of planning: malformed, stale, or otherwise
-  // unapplicable findings never become candidate files.
-  const preview = previewCommentaryStructuralRemediation(input);
+  // Preview every bound unit against one before-ledger before materializing a
+  // candidate. Per-unit application would stale all sibling audit briefs.
+  const preview = previewCommentaryStructuralRemediationBatch(input);
   if (existsSync(join(getRepoRoot(), preview.receiptPath))) {
-    throw new Error(`Existing structural-remediation receipt collision: ${preview.receiptPath}`);
+    throw new Error(`Existing structural-remediation batch receipt collision: ${preview.receiptPath}`);
   }
-  return {
-    candidatePath: candidatePath(dialogue, brief.unitKey),
-    input,
-    sectionOrder: Number(brief.unitKey.split("-")[0]),
-  } satisfies StructuralRemediationBatchCandidate;
+  return { candidatePath: path, input } satisfies StructuralRemediationBatchCandidate;
 }
 
 export function planStructuralRemediationBatch(options: Omit<StructuralRemediationBatchOptions, "execute">) {
@@ -189,9 +199,6 @@ export function planStructuralRemediationBatch(options: Omit<StructuralRemediati
   }
   if (!isDelegatedLunaReviewer(options.reviewer)) throw new Error("reviewer must identify an operator-delegated Luna reviewer");
   if (!options.reviewedOn || !options.rationale) throw new Error("reviewedOn and rationale are required");
-  if (options.maxUnits !== undefined && (!Number.isInteger(options.maxUnits) || options.maxUnits < 1)) {
-    throw new Error("maxUnits must be a positive integer");
-  }
 
   const candidates: StructuralRemediationBatchCandidate[] = [];
   for (const dialogue of options.dialogues) {
@@ -200,15 +207,15 @@ export function planStructuralRemediationBatch(options: Omit<StructuralRemediati
     const jobsByUnit = new Map(jobs.map((job) => [job.unit_key ?? "", job]));
     if (briefs.length === 0) throw new Error(`No current commentary audit units for ${dialogue}`);
     assertNoUnexpectedAuditOutputs(dialogue, briefs);
-    for (const [sectionOrder, brief] of briefs.entries()) {
-      const job = jobsByUnit.get(brief.unitKey);
-      if (!job) throw new Error(`Missing current audit job for ${dialogue}/${brief.unitKey}`);
-      const candidate = candidateFor(dialogue, brief, job, options.reviewer, options.reviewedOn, options.rationale);
-      if (candidate) candidates.push({ ...candidate, sectionOrder });
-    }
-  }
-  if (options.maxUnits !== undefined && candidates.length > options.maxUnits) {
-    candidates.splice(options.maxUnits);
+    const candidate = candidateForDialogue(
+      dialogue,
+      briefs,
+      jobsByUnit,
+      options.reviewer,
+      options.reviewedOn,
+      options.rationale,
+    );
+    if (candidate) candidates.push(candidate);
   }
   if (candidates.length === 0) throw new Error("Structural remediation selection is empty");
   return candidates;
@@ -220,35 +227,15 @@ function writeCandidate(candidate: StructuralRemediationBatchCandidate) {
   writeFileSync(absolute, `${JSON.stringify(candidate.input, null, 2)}\n`, "utf8");
 }
 
-function refreshCandidate(candidate: StructuralRemediationBatchCandidate) {
-  const ledger = currentLedger(candidate.input.dialogue);
-  const sources = currentSourceHashes(candidate.input.dialogue);
-  return {
-    ...candidate,
-    input: {
-      ...candidate.input,
-      expectedLedgerSha256: ledger.sha256,
-      expectedAttributionSha256: sources.attributionSha256,
-      expectedEnglishSha256: sources.englishSha256,
-    },
-  } satisfies StructuralRemediationBatchCandidate;
-}
-
 export function runStructuralRemediationBatch(options: StructuralRemediationBatchOptions): StructuralRemediationBatchResult {
   const planned = planStructuralRemediationBatch(options);
   for (const candidate of planned) writeCandidate(candidate);
   if (!options.execute) return { applied: false, candidates: planned, appliedCandidates: [] };
 
-  // Reverse section order keeps earlier unit keys stable when applying a
-  // terminal rejection removes a section from the active ledger.
-  const executionOrder = [...planned].sort((a, b) =>
-    a.input.dialogue.localeCompare(b.input.dialogue) || b.sectionOrder - a.sectionOrder,
-  );
+  const executionOrder = [...planned].sort((a, b) => a.input.dialogue.localeCompare(b.input.dialogue));
   const appliedCandidates: string[] = [];
-  for (const original of executionOrder) {
-    const candidate = refreshCandidate(original);
-    writeCandidate(candidate);
-    applyCommentaryStructuralRemediation(candidate.input);
+  for (const candidate of executionOrder) {
+    applyCommentaryStructuralRemediationBatch(candidate.input);
     appliedCandidates.push(candidate.candidatePath);
   }
   return { applied: true, candidates: planned, appliedCandidates };
@@ -274,17 +261,12 @@ function parseArgs(args: string[]): StructuralRemediationBatchOptions {
       const value = args[++index];
       if (!value || value.startsWith("--")) throw new Error("--dialogue requires a value");
       dialogues.push(value);
-    } else if (["--max-units", "--reviewer", "--reviewed-on", "--rationale"].includes(argument)) {
+    } else if (["--reviewer", "--reviewed-on", "--rationale"].includes(argument)) {
       index += 1;
       if (!args[index] || args[index]!.startsWith("--")) throw new Error(`${argument} requires a value`);
     } else {
       throw new Error(`Unknown option: ${argument}`);
     }
-  }
-  const maxUnits = valueAfter(args, "--max-units");
-  const parsedMaxUnits = maxUnits === undefined ? undefined : Number(maxUnits);
-  if (maxUnits !== undefined && (!Number.isInteger(parsedMaxUnits) || parsedMaxUnits < 1)) {
-    throw new Error("--max-units must be a positive integer");
   }
   const reviewer = valueAfter(args, "--reviewer");
   const reviewedOn = valueAfter(args, "--reviewed-on");
@@ -292,12 +274,12 @@ function parseArgs(args: string[]): StructuralRemediationBatchOptions {
   if (!reviewer || !reviewedOn || !rationale) {
     throw new Error("--reviewer, --reviewed-on, and --rationale are required");
   }
-  return { dialogues, ...(parsedMaxUnits === undefined ? {} : { maxUnits: parsedMaxUnits }), reviewer, reviewedOn, rationale, execute };
+  return { dialogues, reviewer, reviewedOn, rationale, execute };
 }
 
 function usage(): never {
   throw new Error(
-    "Usage: bun scripts/commentary/structural-remediation-batch.ts [--dialogue <slug>]... [--max-units <n>] --reviewer <operator-delegated-luna-reviewer-id> --reviewed-on <YYYY-MM-DD> --rationale <text> [--execute]",
+    "Usage: bun scripts/commentary/structural-remediation-batch.ts [--dialogue <slug>]... --reviewer <operator-delegated-luna-reviewer-id> --reviewed-on <YYYY-MM-DD> --rationale <text> [--execute]",
   );
 }
 
@@ -308,7 +290,7 @@ export async function main(args = process.argv.slice(2)) {
     applied: result.applied,
     candidates: result.candidates.map((candidate) => candidate.candidatePath),
     applied_candidates: result.appliedCandidates,
-    next: result.applied ? "Run bun run validate after the audit units are refreshed." : "Preview only; rerun with --execute to apply sequentially.",
+    next: result.applied ? "Run bun run validate after the audit units are refreshed." : "Preview each candidate with the harness batch gate before applying dialogues sequentially.",
   }, null, 2)}\n`);
 }
 

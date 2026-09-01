@@ -152,15 +152,17 @@ const LANES: Partial<Record<CompletenessFamilyId, LaneDefinition>> = {
   },
   "CMP-RELATIONS": {
     lane: "relations",
-    automation: "harness",
+    automation: "manual",
     instructions: (scope) => [
-      `Close the deterministic relation candidate scope for ${scope} and terminally review every relation.`,
-      "A scope with zero deterministic candidates is an evidenced not_applicable leaf, not a missing ledger.",
+      `Repair the strict canonical relation ledger and vNext audit evidence for ${scope}.`,
+      "Accepted relations are substantive semantic edges; rejected relation decisions remain review provenance and never become reader output.",
+      "The shared-term candidate command is discovery-only. It does not define the canonical relation set, prove absence, or authorize automatic rejection.",
       REVIEW_RECEIPT_RULE,
     ],
-    submit: (scope) => [
-      `bun run harness relations-queue ${scope} --validate-each`,
-      `bun run harness relations-review-queue ${scope} --validate-each`,
+    submit: () => [
+      "bun run harness ontology-audit verify",
+      "bun run validate",
+      "bun run completeness -- --target knowledge-base --allow-incomplete",
     ],
     dependsOn: ["CMP-CLAIMS"],
   },

@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "submission_id": "0015-structural-remediation-batch",
+  "lane": "commentary",
+  "kind": "structural-remediation-batch",
+  "scope": "euthydemus",
+  "source_path": "scratch/commentary/structural-remediation/euthydemus/audit-failures-batch.json",
+  "source_sha256": "a26e5ccd7f3ed17840d977896f299a04148814582dfb02ef866b6b24b504b6bf",
+  "target_path": "wiki/commentary/euthydemus.md",
+  "target_sha256_before": "2246ba77747810fd477ed6ef50b5fd112db7984ee1c687c0704d9c26f1440297",
+  "target_sha256_after": "8a469ed8f4a3c939b8ed9aa4458a3a512607d1322f02815347af77ec917aa606",
+  "applied_at": "2026-09-01T12:02:47.171Z",
+  "applied_ids": [
+    "comm_euthydemus_0016"
+  ],
+  "submission": {
+    "candidate": {
+      "schemaVersion": 1,
+      "dialogue": "euthydemus",
+      "candidatePath": "scratch/commentary/structural-remediation/euthydemus/audit-failures-batch.json",
+      "expectedLedgerSha256": "2246ba77747810fd477ed6ef50b5fd112db7984ee1c687c0704d9c26f1440297",
+      "expectedAttributionSha256": "8cf2b2133e128dee04c9b4b0e16509ecafe938075f7af191fbea6d12449e40f2",
+      "expectedEnglishSha256": "20a50426f4a1aca5f23ff106c165a553c6bdf218e4b913084481569425760dd2",
+      "auditUnits": [
+        {
+          "unitKey": "01-271a-272e",
+          "sectionId": "comm_euthydemus_0001",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/01-271a-272e.json",
+          "auditOutputSha256": "8e3eef176568653c912a633b7ee6f051ce5f9ed39039a8afd53e224e405d7938",
+          "operations": []
+        },
+        {
+          "unitKey": "02-273a-274e",
+          "sectionId": "comm_euthydemus_0002",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/02-273a-274e.json",
+          "auditOutputSha256": "065347da9fa8d0df8ff02cbcac6cffc1b350d1a37dba206902209d9980e92a39",
+          "operations": []
+        },
+        {
+          "unitKey": "03-275a-277c",
+          "sectionId": "comm_euthydemus_0003",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/03-275a-277c.json",
+          "auditOutputSha256": "f28509c29b13e71d875b0e41645371c846dc75bed87510c9aaeea17b24980db0",
+          "operations": []
+        },
+        {
+          "unitKey": "04-277d-278e",
+          "sectionId": "comm_euthydemus_0004",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/04-277d-278e.json",
+          "auditOutputSha256": "1e5c73967bd653e0fcff5cc8302f54a7f5c9784bc59caebdb704689f494e33ad",
+          "operations": []
+        },
+        {
+          "unitKey": "05-279a-282e",
+          "sectionId": "comm_euthydemus_0005",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/05-279a-282e.json",
+          "auditOutputSha256": "408dcc46881edca34848601519363494e27f567a77bb56ed0777f8324e0c41d3",
+          "operations": []
+        },
+        {
+          "unitKey": "06-283a-284e",
+          "sectionId": "comm_euthydemus_0006",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/06-283a-284e.json",
+          "auditOutputSha256": "5a877338fce4f60f3f14422955012dba5cbf9c03682af723e945f4bba65056e5",
+          "operations": []
+        },
+        {
+          "unitKey": "07-285a-286e",
+          "sectionId": "comm_euthydemus_0007",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/07-285a-286e.json",
+          "auditOutputSha256": "0cd91bfc8d12a04fad52329b16dd919c8e938cb5cbe00e1480d031d7bd0ef904",
+          "operations": []
+        },
+        {
+          "unitKey": "08-287a-288d",
+          "sectionId": "comm_euthydemus_0008",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/08-287a-288d.json",
+          "auditOutputSha256": "f46a46789442be7efb7b1fb8c001fe20269e994b2ac5ceb33c3cdd34023bc056",
+          "operations": []
+        },
+        {
+          "unitKey": "09-288e-290e",
+          "sectionId": "comm_euthydemus_0009",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/09-288e-290e.json",
+          "auditOutputSha256": "c5b1475451442fa9fdd1d1f877132ea4f13a0300c7c269a5af057550268a5413",
+          "operations": []
+        },
+        {
+          "unitKey": "10-291a-293a",
+          "sectionId": "comm_euthydemus_0010",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/10-291a-293a.json",
+          "auditOutputSha256": "02bce6d4e3f296ad757f6a0ec00035f378eb50a7a414fd5e1594c10981edc7c5",
+          "operations": []
+        },
+        {
+          "unitKey": "11-293b-296d",
+          "sectionId": "comm_euthydemus_0011",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/11-293b-296d.json",
+          "auditOutputSha256": "d768a3108cc63cb0a8d49bcbc7dfca1cede05378e226b265204294a5f273eada",
+          "operations": []
+        },
+        {
+          "unitKey": "12-296e-298e",
+          "sectionId": "comm_euthydemus_0012",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/12-296e-298e.json",
+          "auditOutputSha256": "d007b2d91a5a712d039b643b8a5401b1e1f96874fdaacc0471eb9129510c39af",
+          "operations": []
+        },
+        {
+          "unitKey": "13-299a-300d",
+          "sectionId": "comm_euthydemus_0013",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/13-299a-300d.json",
+          "auditOutputSha256": "e544d981a0d07cea5bfcb8031ad905d968750267e6a7e9f1eec1ca406ebca729",
+          "operations": []
+        },
+        {
+          "unitKey": "14-300e-302e",
+          "sectionId": "comm_euthydemus_0014",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/14-300e-302e.json",
+          "auditOutputSha256": "5b13f57e35fbcca264947abe1fda2afa167b4d2d40ff4c343dfa125370198ad7",
+          "operations": []
+        },
+        {
+          "unitKey": "15-303a-304b",
+          "sectionId": "comm_euthydemus_0015",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/15-303a-304b.json",
+          "auditOutputSha256": "c84949713a7b795ba29178e63c84abe049769b56e35379c22190672c1c1113cf",
+          "operations": []
+        },
+        {
+          "unitKey": "16-304c-306d",
+          "sectionId": "comm_euthydemus_0016",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/16-304c-306d.json",
+          "auditOutputSha256": "aa9b1aaf338efc1bbcc001931ec7dcca4f00d06ed8025aebca023366414eceb0",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_euthydemus_0016",
+              "rewriteResolution": "reject-original"
+            }
+          ]
+        },
+        {
+          "unitKey": "17-306e-307c",
+          "sectionId": "comm_euthydemus_0017",
+          "auditOutputPath": "scratch/commentary/audits/euthydemus/17-306e-307c.json",
+          "auditOutputSha256": "1f142759a6a6d384ee4a0a62a6571ce38d5f1add8e9f89cae4aa095e1611fe1e",
+          "operations": []
+        }
+      ],
+      "reviewer": "ontology-vnext-release-delegated-luna-20260901",
+      "reviewedOn": "2026-09-01",
+      "rationale": "Bound to current independent Luna placement-removal and rewrite findings; reject the defective originals conservatively."
+    },
+    "audit_findings": [
+      {
+        "commentaryId": "comm_euthydemus_0016",
+        "disposition": "rewrite",
+        "rewriteResolution": "reject-original"
+      }
+    ]
+  }
+}

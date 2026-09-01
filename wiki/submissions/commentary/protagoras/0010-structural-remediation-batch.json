@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "submission_id": "0010-structural-remediation-batch",
+  "lane": "commentary",
+  "kind": "structural-remediation-batch",
+  "scope": "protagoras",
+  "source_path": "scratch/commentary/structural-remediation/protagoras/audit-failures-batch.json",
+  "source_sha256": "16d17d0d9dc7aafdb5c1f50dbf12190bb91a839149502e1020a155ff7f146a99",
+  "target_path": "wiki/commentary/protagoras.md",
+  "target_sha256_before": "ba5a389909e388000be216b574cd8f19052e49b37360d52ad8cd8861ba6c3568",
+  "target_sha256_after": "2ea6148bcfd01ae7bf7646d2e3decb3d12395e10307770dafdbdb06395e29394",
+  "applied_at": "2026-09-01T12:04:45.369Z",
+  "applied_ids": [
+    "comm_protagoras_0001",
+    "comm_protagoras_0008"
+  ],
+  "submission": {
+    "candidate": {
+      "schemaVersion": 1,
+      "dialogue": "protagoras",
+      "candidatePath": "scratch/commentary/structural-remediation/protagoras/audit-failures-batch.json",
+      "expectedLedgerSha256": "ba5a389909e388000be216b574cd8f19052e49b37360d52ad8cd8861ba6c3568",
+      "expectedAttributionSha256": "9ebdb20751552ca63e1852a2d63f1991a85b35e0441b929c5e52d9fc440e7b4f",
+      "expectedEnglishSha256": "db290ad5c3d30f9444722ca97fae306a7c0f1a26f98ac388531b145bbccb645c",
+      "auditUnits": [
+        {
+          "unitKey": "01-309a-310b",
+          "sectionId": "comm_protagoras_0001",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/01-309a-310b.json",
+          "auditOutputSha256": "103bd85081b430ef9f66848804bd7d7c0e73ae5be4065180e61f394a56dc28f0",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_protagoras_0001",
+              "rewriteResolution": "reject-original"
+            }
+          ]
+        },
+        {
+          "unitKey": "02-310c-313c",
+          "sectionId": "comm_protagoras_0002",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/02-310c-313c.json",
+          "auditOutputSha256": "2f720e6bd542df6fb853193374cd096b871411b7372123f5cec06fe932d5d5a1",
+          "operations": []
+        },
+        {
+          "unitKey": "03-313d-314e",
+          "sectionId": "comm_protagoras_0003",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/03-313d-314e.json",
+          "auditOutputSha256": "e960453593f6ee2e3152eb1f3325f9e3645eab22b25fe6cae558e291c38e1a03",
+          "operations": []
+        },
+        {
+          "unitKey": "04-315a-318a",
+          "sectionId": "comm_protagoras_0004",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/04-315a-318a.json",
+          "auditOutputSha256": "e622374443fb6fcf674191bc7d31255d565289a161ded88de4b5a9627887f134",
+          "operations": []
+        },
+        {
+          "unitKey": "05-318b-320c",
+          "sectionId": "comm_protagoras_0005",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/05-318b-320c.json",
+          "auditOutputSha256": "f9084c25b290580089a94c79ca10a93621aa92571af61b87b25e87c84dec480f",
+          "operations": []
+        },
+        {
+          "unitKey": "06-320d-323a",
+          "sectionId": "comm_protagoras_0006",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/06-320d-323a.json",
+          "auditOutputSha256": "284ccd34c3ab3025c915df57c6aee4d7f9352fc50e4f50b3ae6507d4a9b91a74",
+          "operations": []
+        },
+        {
+          "unitKey": "07-323b-324e",
+          "sectionId": "comm_protagoras_0007",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/07-323b-324e.json",
+          "auditOutputSha256": "6e87d82f045f58d2d2730265ac0a2b0f69963422069724312273f94598c9204d",
+          "operations": []
+        },
+        {
+          "unitKey": "08-325a-326e",
+          "sectionId": "comm_protagoras_0008",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/08-325a-326e.json",
+          "auditOutputSha256": "7cd0345ab2ad10b2fffa9da7b03a2a226d4204a8c955660636af55beff5f427d",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_protagoras_0008"
+            }
+          ]
+        },
+        {
+          "unitKey": "09-327a-328d",
+          "sectionId": "comm_protagoras_0009",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/09-327a-328d.json",
+          "auditOutputSha256": "7ac9296b87fb6ee1d97be56a85c20768b25250add42337607e6124771475dad4",
+          "operations": []
+        },
+        {
+          "unitKey": "10-328e-331d",
+          "sectionId": "comm_protagoras_0010",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/10-328e-331d.json",
+          "auditOutputSha256": "752f416801211caabaff167fb62f8e4ddd0a913d38cab6678ac5316d20fed919",
+          "operations": []
+        },
+        {
+          "unitKey": "11-331e-334c",
+          "sectionId": "comm_protagoras_0011",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/11-331e-334c.json",
+          "auditOutputSha256": "08576fccf9092bc81bbc25e7648d3530ce6fb819d77aa71bdd4175361df2567a",
+          "operations": []
+        },
+        {
+          "unitKey": "12-334d-338e",
+          "sectionId": "comm_protagoras_0012",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/12-334d-338e.json",
+          "auditOutputSha256": "ba04848a87b0963c6c63d88eb95ac712bcd87bd5d7de77cbac3b3d060892cb6b",
+          "operations": []
+        },
+        {
+          "unitKey": "13-339a-342a",
+          "sectionId": "comm_protagoras_0013",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/13-339a-342a.json",
+          "auditOutputSha256": "bb43ff544fb255fd173b49f874a639697e44f594c327c72154a4d5d7cc9dc6e9",
+          "operations": []
+        },
+        {
+          "unitKey": "14-342b-347a",
+          "sectionId": "comm_protagoras_0014",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/14-342b-347a.json",
+          "auditOutputSha256": "b46b21f73a4010efdc67ebd8a3cc82a049bcc87009345e6d61781b94bb5a47c1",
+          "operations": []
+        },
+        {
+          "unitKey": "15-347b-351b",
+          "sectionId": "comm_protagoras_0015",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/15-347b-351b.json",
+          "auditOutputSha256": "74c0230844a1796a476ef6ec6d0a5d74f7c1889e1652fba44c24fa06bd6496e8",
+          "operations": []
+        },
+        {
+          "unitKey": "16-351c-358a",
+          "sectionId": "comm_protagoras_0016",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/16-351c-358a.json",
+          "auditOutputSha256": "f1c6799fae7f76e317befa1550e03c51bbe79f5de76962c2e679aef4453e5d79",
+          "operations": []
+        },
+        {
+          "unitKey": "17-358b-360e",
+          "sectionId": "comm_protagoras_0017",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/17-358b-360e.json",
+          "auditOutputSha256": "8769838f76bbeb8e076ddcb83506b46be7c5f575860f028abb5f9db39b3b2a7d",
+          "operations": []
+        },
+        {
+          "unitKey": "18-361a-362a",
+          "sectionId": "comm_protagoras_0018",
+          "auditOutputPath": "scratch/commentary/audits/protagoras/18-361a-362a.json",
+          "auditOutputSha256": "a5b6f4def769758546bae584dada7f56187f87d4e2160ad027e1c7d0f10f22d4",
+          "operations": []
+        }
+      ],
+      "reviewer": "ontology-vnext-release-delegated-luna-20260901",
+      "reviewedOn": "2026-09-01",
+      "rationale": "Bound to current independent Luna placement-removal and rewrite findings; reject the defective originals conservatively."
+    },
+    "audit_findings": [
+      {
+        "commentaryId": "comm_protagoras_0001",
+        "disposition": "rewrite",
+        "rewriteResolution": "reject-original"
+      },
+      {
+        "commentaryId": "comm_protagoras_0008",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

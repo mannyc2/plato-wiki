@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "submission_id": "0014-structural-remediation-batch",
+  "lane": "commentary",
+  "kind": "structural-remediation-batch",
+  "scope": "phaedrus",
+  "source_path": "scratch/commentary/structural-remediation/phaedrus/audit-failures-batch.json",
+  "source_sha256": "0d2ab8a3c9ef60826bdf775a70b5d5ce8b5b3d3f886d44cef50c45cdc27fda97",
+  "target_path": "wiki/commentary/phaedrus.md",
+  "target_sha256_before": "046fa765c79b7515a43f94912e7f7699edebda729b83dcb4d8960fa27553e396",
+  "target_sha256_after": "ff69885148790518a776dace22dc06ffcf3adc8a00f4169e2cae2ef60df7d334",
+  "applied_at": "2026-09-01T12:04:27.351Z",
+  "applied_ids": [
+    "comm_phaedrus_0017"
+  ],
+  "submission": {
+    "candidate": {
+      "schemaVersion": 1,
+      "dialogue": "phaedrus",
+      "candidatePath": "scratch/commentary/structural-remediation/phaedrus/audit-failures-batch.json",
+      "expectedLedgerSha256": "046fa765c79b7515a43f94912e7f7699edebda729b83dcb4d8960fa27553e396",
+      "expectedAttributionSha256": "f568c4368eba1b8f13abd58deb2546a400bcabf9b09227b5db36472e75d92e72",
+      "expectedEnglishSha256": "291b96e1e4642ce38656f85ef8819fc38b44171155e65194862b466367cd7f02",
+      "auditUnits": [
+        {
+          "unitKey": "01-227a-229d",
+          "sectionId": "comm_phaedrus_0001",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/01-227a-229d.json",
+          "auditOutputSha256": "44663fa92cf24aa20a632dfe61f5c5abf2a9fdedff204ed3d315d5c292254cd6",
+          "operations": []
+        },
+        {
+          "unitKey": "02-229e-234e",
+          "sectionId": "comm_phaedrus_0002",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/02-229e-234e.json",
+          "auditOutputSha256": "93d7f4824afdc679b71cdc0c4b753729451da59455a4040f681410772591a8c2",
+          "operations": []
+        },
+        {
+          "unitKey": "03-235a-237b",
+          "sectionId": "comm_phaedrus_0003",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/03-235a-237b.json",
+          "auditOutputSha256": "960216faaaf4f3d7edfb2ca50cc2d1b7d6adcb07a5270bf06fb97c813b0a20cb",
+          "operations": []
+        },
+        {
+          "unitKey": "04-237c-241d",
+          "sectionId": "comm_phaedrus_0004",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/04-237c-241d.json",
+          "auditOutputSha256": "a5a15faf7f1788d8a2f76274c61a898acd8fe81d6c24873edabe6206db333891",
+          "operations": []
+        },
+        {
+          "unitKey": "05-241e-245e",
+          "sectionId": "comm_phaedrus_0005",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/05-241e-245e.json",
+          "auditOutputSha256": "6547bb21d4388b3614d9db2e786d64c9cf8eeebf0afc8110638c549ef72fd709",
+          "operations": []
+        },
+        {
+          "unitKey": "06-246a-247b",
+          "sectionId": "comm_phaedrus_0006",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/06-246a-247b.json",
+          "auditOutputSha256": "f664e6e535d6b577258a0900e380ba477ce259679e20e35913ae91b15845d172",
+          "operations": []
+        },
+        {
+          "unitKey": "07-247c-248b",
+          "sectionId": "comm_phaedrus_0007",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/07-247c-248b.json",
+          "auditOutputSha256": "ce2c0371bc34d46ed78f376e77d02378bd6730568f810abb560ab20f375f937d",
+          "operations": []
+        },
+        {
+          "unitKey": "08-248c-249d",
+          "sectionId": "comm_phaedrus_0008",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/08-248c-249d.json",
+          "auditOutputSha256": "8e9256c336f8564693724393ea74627b1374a88bd618b58419e0092e73fb1f3b",
+          "operations": []
+        },
+        {
+          "unitKey": "09-249e-252c",
+          "sectionId": "comm_phaedrus_0009",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/09-249e-252c.json",
+          "auditOutputSha256": "227067bd2cca8cc847a2c290edd008cef87f2463e8653fadc1aa77a37666ed01",
+          "operations": []
+        },
+        {
+          "unitKey": "10-252d-255c",
+          "sectionId": "comm_phaedrus_0010",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/10-252d-255c.json",
+          "auditOutputSha256": "60c72320b7b7b4db13ddc15cd294bd69b2d19b419904cca747ffd964c4267a48",
+          "operations": []
+        },
+        {
+          "unitKey": "11-255d-258b",
+          "sectionId": "comm_phaedrus_0011",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/11-255d-258b.json",
+          "auditOutputSha256": "947614dbbfb6e5407f20889bf182d99bbe1485e0b8e221302dd7dcde8608d00f",
+          "operations": []
+        },
+        {
+          "unitKey": "12-258c-261c",
+          "sectionId": "comm_phaedrus_0012",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/12-258c-261c.json",
+          "auditOutputSha256": "978fba1635dfd53885d566dd6c9750093609f556fd9456fb7f240796739dd265",
+          "operations": []
+        },
+        {
+          "unitKey": "13-261d-264b",
+          "sectionId": "comm_phaedrus_0013",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/13-261d-264b.json",
+          "auditOutputSha256": "a47abcc93131dd974dc505a09262ec7be3daa23459fd507266acc376e6a5c855",
+          "operations": []
+        },
+        {
+          "unitKey": "14-264c-267b",
+          "sectionId": "comm_phaedrus_0014",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/14-264c-267b.json",
+          "auditOutputSha256": "9f5d1ef3b9df757315c91ba537ba4f8fe7db87ff00e720fd6c1dab99064bb2b5",
+          "operations": []
+        },
+        {
+          "unitKey": "15-267c-270a",
+          "sectionId": "comm_phaedrus_0015",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/15-267c-270a.json",
+          "auditOutputSha256": "f1cb07e557bf2de4fb8527a8a26cf6da27bdec55cd5aeb61f826d8f23480a123",
+          "operations": []
+        },
+        {
+          "unitKey": "16-270b-273d",
+          "sectionId": "comm_phaedrus_0016",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/16-270b-273d.json",
+          "auditOutputSha256": "e37ca7a1238a43429ef38fe3dea5561e838aa6c6d68a0538f335b128c0d35a36",
+          "operations": []
+        },
+        {
+          "unitKey": "17-273e-276a",
+          "sectionId": "comm_phaedrus_0017",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/17-273e-276a.json",
+          "auditOutputSha256": "164a724369ab86e41e444074ee4b7c9f2f00e9519a531a547b4aac45ed386d99",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_phaedrus_0017"
+            }
+          ]
+        },
+        {
+          "unitKey": "18-276b-279c",
+          "sectionId": "comm_phaedrus_0018",
+          "auditOutputPath": "scratch/commentary/audits/phaedrus/18-276b-279c.json",
+          "auditOutputSha256": "3e3da88c348c9e5c1d18ee5bc4b36157549c1973254235906b4ee14ab4446685",
+          "operations": []
+        }
+      ],
+      "reviewer": "ontology-vnext-release-delegated-luna-20260901",
+      "reviewedOn": "2026-09-01",
+      "rationale": "Bound to current independent Luna placement-removal and rewrite findings; reject the defective originals conservatively."
+    },
+    "audit_findings": [
+      {
+        "commentaryId": "comm_phaedrus_0017",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

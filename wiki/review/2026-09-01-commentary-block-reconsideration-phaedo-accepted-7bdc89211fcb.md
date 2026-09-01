@@ -1,0 +1,26 @@
+# Commentary block reconsideration
+
+dialogue: phaedo
+decision: accepted
+prior_review_status: rejected
+review_transition: rejected -> accepted
+ledger_path: wiki/commentary/phaedo.md
+ledger_sha256_before: 96215fea311862c23e533a90e68355c3ce2e482e4049f043ae4ade8c41ab63d5
+ledger_sha256_after: b5ec46de3d694538e1822b507266bb057f4c195057fdd45b594e3adb4359df84
+reviewer: phaedo-reconsideration-ensemble-delegated-luna-reviewer-01
+reviewed_on: 2026-09-01
+rationale: Five isolated Luna reviews passed the exact current phaedo blocks, accepted citations, and bound Greek spans; no translation was supplied.
+review_basis: operator-delegated independent Luna reconsideration of terminally rejected blocks
+human_listening_or_review: none claimed
+evidence_manifest_path: wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-d861b13bfb92cf622cc1b137670901348db63b96903460e6c4e26eeab6a5bfdd-commentary-reconsideration-evidence.json
+evidence_manifest_sha256: d861b13bfb92cf622cc1b137670901348db63b96903460e6c4e26eeab6a5bfdd
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-d861b13bfb92cf622cc1b137670901348db63b96903460e6c4e26eeab6a5bfdd-commentary-reconsideration-evidence.json`; sha256: `d861b13bfb92cf622cc1b137670901348db63b96903460e6c4e26eeab6a5bfdd`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-67a557d8bc11e932c00562edfeddb8fae9a13d912681ada177dae662f6b26861-phaedo-commentary-reconsideration-review-bundle.json`; sha256: `67a557d8bc11e932c00562edfeddb8fae9a13d912681ada177dae662f6b26861`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-ac81311c7fddee007c8aed16d98c9611be8823ad0dc92b708267439819db2e7a-phaedo-commentary-reconsideration-packet-bundle.json`; sha256: `ac81311c7fddee007c8aed16d98c9611be8823ad0dc92b708267439819db2e7a`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-a0611b12d1035f19ef80812147e9bc8a91b1bbe569860718a335ee910bf1c642-phaedo-commentary-reconsideration-schema-bundle.json`; sha256: `a0611b12d1035f19ef80812147e9bc8a91b1bbe569860718a335ee910bf1c642`
+reviewed_commentary_ids:
+- comm_phaedo_0003
+- comm_phaedo_0005
+- comm_phaedo_0010
+- comm_phaedo_0013
+- comm_phaedo_0014

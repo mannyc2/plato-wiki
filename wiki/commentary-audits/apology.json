@@ -1,0 +1,492 @@
+{
+  "schema_version": 1,
+  "dialogue": "apology",
+  "ledger": {
+    "path": "wiki/commentary/apology.md",
+    "sha256": "d970f0bc79e759fba0e4ce69f79a7f82844f8eb6a6a0ae49c82772f41647d4f2"
+  },
+  "protocol": {
+    "path": "docs/commentary-protocol.md",
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
+  },
+  "authoring": {
+    "model": "gpt-5.6-luna",
+    "effort": "medium"
+  },
+  "units": [
+    {
+      "unit_key": "01-17a-18e",
+      "section_id": "comm_apology_0001",
+      "audit_brief_sha256": "748d06099778e0116ccae9b68e8469730bcc44d743cf361d7281a8a297b0e0b5",
+      "output_path": "scratch/commentary/audits/apology/01-17a-18e.json",
+      "output_sha256": "89fc92c1868f5756fe546eb28ea93e4c6971750521c03b232f79d9032447f05e",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "01-17a-18e",
+        "section_id": "comm_apology_0001",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "02-19a-20c",
+      "section_id": "comm_apology_0002",
+      "audit_brief_sha256": "802642bc65043ef764aa46a46163b3d8e55294e72fd7a99d1e71132ed24e0320",
+      "output_path": "scratch/commentary/audits/apology/02-19a-20c.json",
+      "output_sha256": "ceb01493f1dd9c69a2aed5212f4149a017ed8adb58df3a4110d3eb3b61a6a31e",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "02-19a-20c",
+        "section_id": "comm_apology_0002",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "03-20d-23c",
+      "section_id": "comm_apology_0003",
+      "audit_brief_sha256": "eeb62b3bd4bf8ef6b8ec4f7c0500bbba366559ca3dccc2d8d34ba7316effa770",
+      "output_path": "scratch/commentary/audits/apology/03-20d-23c.json",
+      "output_sha256": "426f4d2d7bd40e842e4b54c0774133d63f7f63b6771acf754fc83d60bb00f33b",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "03-20d-23c",
+        "section_id": "comm_apology_0003",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0003",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately previews the oracle, examinations, repeated outcome, and human-wisdom conclusion. The edge follows the Delphi-witness sentence and precedes Chaerephon's introduction."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "04-23d-24a",
+      "section_id": "comm_apology_0004",
+      "audit_brief_sha256": "55325625ee43783c5d8e52fd1cc4fd0141a8f145b3de3640116a903919991a5c",
+      "output_path": "scratch/commentary/audits/apology/04-23d-24a.json",
+      "output_sha256": "08ccac094ff3e75d504d2a33ea3aef81823bc23eddd7c727552bdb97cef3ff12",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "04-23d-24a",
+        "section_id": "comm_apology_0004",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "05-24b-26a",
+      "section_id": "comm_apology_0005",
+      "audit_brief_sha256": "a756db6c59b3be060adc4be28d9df2b8e7d5cbfb96181d3dc044adc4662c8230",
+      "output_path": "scratch/commentary/audits/apology/05-24b-26a.json",
+      "output_sha256": "4e0f1b0d15ae0e460b8f15df178f5aa1ac5d710c05bde78b8edcbb05cdb6e54a",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "05-24b-26a",
+        "section_id": "comm_apology_0005",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "06-26b-28a",
+      "section_id": "comm_apology_0006",
+      "audit_brief_sha256": "7b86556c5208da510e146316027c7acc79cedff0ff32b9c0abc0b20a67d3cb61",
+      "output_path": "scratch/commentary/audits/apology/06-26b-28a.json",
+      "output_sha256": "f90a9db3e6d00e9feb21d2e7936e47e69f303f6ee74ba108e1af02c2bf7a6169",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "06-26b-28a",
+        "section_id": "comm_apology_0006",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "07-28b-29b",
+      "section_id": "comm_apology_0007",
+      "audit_brief_sha256": "16da475e8ecc3e051e970625b063fe674c2fec57356b107c87f8d71e642c063e",
+      "output_path": "scratch/commentary/audits/apology/07-28b-29b.json",
+      "output_sha256": "fb4cde0df39713bc1472888281511eccb99e303a29690ebd969142ad3eb84ac1",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "07-28b-29b",
+        "section_id": "comm_apology_0007",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "08-29c-31b",
+      "section_id": "comm_apology_0008",
+      "audit_brief_sha256": "05a1488c593fc4b4b88a7140469475fe7fc46cfbe9c867a51b61b0e7a4cd7ce6",
+      "output_path": "scratch/commentary/audits/apology/08-29c-31b.json",
+      "output_sha256": "e89db2fe5f3769ee4e6466f9c5d9e1125e1e42175210440ad2ffb7dee7364054",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "08-29c-31b",
+        "section_id": "comm_apology_0008",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "09-31c-32e",
+      "section_id": "comm_apology_0009",
+      "audit_brief_sha256": "1f269a2b6e5dad4ce611ce3709dd418102ee8d072b96a37742f67d60005dbcc4",
+      "output_path": "scratch/commentary/audits/apology/09-31c-32e.json",
+      "output_sha256": "b7cb67a820270cf6d423c33da7bc8a3d938d6be9eaee9b3eeaea79ac6994b286",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "09-31c-32e",
+        "section_id": "comm_apology_0009",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0041",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "The comparison accurately frames the two cited episodes as evidence of consistency across regimes, adds interpretive value, and falls at a complete edge after the question and before its continuation."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "10-33a-34a",
+      "section_id": "comm_apology_0010",
+      "audit_brief_sha256": "f4166be8d0c4154a7c1784d713f84f693163454fe75f4242321682bef77dd810",
+      "output_path": "scratch/commentary/audits/apology/10-33a-34a.json",
+      "output_sha256": "603b49e7a0f21871c82afdab5e44c255bc69d18b06d959d2021af4bd88affdc4",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "10-33a-34a",
+        "section_id": "comm_apology_0010",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0010",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately synthesizes Socrates’ teacher denial and his appeal to present associates as witnesses. Before ends with “any other man”; after begins a complete “But” sentence, preserving flow."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "11-34b-35d",
+      "section_id": "comm_apology_0011",
+      "audit_brief_sha256": "89b75b0e7abdae6bb59a5fb6580dd34d2ad0b29627a3c3ed535ced84280cc795",
+      "output_path": "scratch/commentary/audits/apology/11-34b-35d.json",
+      "output_sha256": "3450028f06dda60ba848969780f9e507c1aa7154634cf0cf69d983a269798041",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "11-34b-35d",
+        "section_id": "comm_apology_0011",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "12-35e-36b",
+      "section_id": "comm_apology_0012",
+      "audit_brief_sha256": "a25fcd2ad9a9a2e124c815f4a592a2de87b0f65de368c5b2645c40d63f06f977",
+      "output_path": "scratch/commentary/audits/apology/12-35e-36b.json",
+      "output_sha256": "22010a29a949470b84fd7116af42f645bcfc38c11c930cbd6659fe91c59db2d4",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "12-35e-36b",
+        "section_id": "comm_apology_0012",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0012",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "The commentary accurately frames the vote arithmetic and penalty transition, with accepted support; it follows the prior divine-defense passage and precedes the 35e opening cleanly."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "13-36c-37a",
+      "section_id": "comm_apology_0013",
+      "audit_brief_sha256": "a0fbd1cd1517c7f690ebe22fb032f41beab9b10b84024952973425ca6a99791e",
+      "output_path": "scratch/commentary/audits/apology/13-36c-37a.json",
+      "output_sha256": "a1c24501f7e84ee10f60022bd8902ea42b95a037a9eb3b97c08cc69189d14da6",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "13-36c-37a",
+        "section_id": "comm_apology_0013",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0013",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames Socrates’ benefaction, Prytaneum proposal, and Olympic comparison; the edge follows the comparison and precedes the penalty proposal, making the setup clear."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "14-37b-38b",
+      "section_id": "comm_apology_0014",
+      "audit_brief_sha256": "3cc1671930c2b323760ef2225ad18630bf74d27aa75eb8eb77dcd16168d14a67",
+      "output_path": "scratch/commentary/audits/apology/14-37b-38b.json",
+      "output_sha256": "de882def9092e7068812a5218ff51bc6d5c752012c44b4569ef74b884abd05da",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "14-37b-38b",
+        "section_id": "comm_apology_0014",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "15-38c-39b",
+      "section_id": "comm_apology_0015",
+      "audit_brief_sha256": "56f74abad824a9d2ba806684e66cdedcb7a25796a543ece0976a454c178c3f37",
+      "output_path": "scratch/commentary/audits/apology/15-38c-39b.json",
+      "output_sha256": "4cbdbc473444f442a1d729dea0c9b201afec8a4b315f77f24d9ff2540519c3ff",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "15-38c-39b",
+        "section_id": "comm_apology_0015",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "16-39c-39e",
+      "section_id": "comm_apology_0016",
+      "audit_brief_sha256": "2875313ba047c56874f4aa119a2273873e774c576561841887cd55d3060b8a6a",
+      "output_path": "scratch/commentary/audits/apology/16-39c-39e.json",
+      "output_sha256": "dae59b150512e9cdbc75f32439d842af8dbff626aaa8cf29191b279267c7e9e0",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "16-39c-39e",
+        "section_id": "comm_apology_0016",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "17-40a-41c",
+      "section_id": "comm_apology_0017",
+      "audit_brief_sha256": "9a201b1673c004dc717d54929420c48fe29f2f62110ea85dca65c7710b2f17ad",
+      "output_path": "scratch/commentary/audits/apology/17-40a-41c.json",
+      "output_sha256": "70a8b7965a6bd796ad060a0b5db909062ec86e3a444c8a75d9c6d4864053ae2f",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "17-40a-41c",
+        "section_id": "comm_apology_0017",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_apology_0017",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "The summary accurately frames Socrates’ sign-based inference and the two conditional accounts of death. The edge follows “while there is time” and precedes “I feel that you are my friends.”"
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "18-41d-42a",
+      "section_id": "comm_apology_0018",
+      "audit_brief_sha256": "b2309b56cbefbc72286a88b557332be01b7531178c8befa82dfc29542eef0d0b",
+      "output_path": "scratch/commentary/audits/apology/18-41d-42a.json",
+      "output_sha256": "faee2d9f31c8fb23ba67731d651b52f1a90ba83962fa8c7c6ef2e315bd8ed1fd",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "apology",
+        "unit_key": "18-41d-42a",
+        "section_id": "comm_apology_0018",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    }
+  ],
+  "acceptance": {
+    "decision": "accepted",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-apology-19aba2688f64",
+    "reviewed_on": "2026-09-01",
+    "rationale": "All six sampled blocks are independently supported by their cited evidence, remain anchored to the relevant source movement, and use complete playback edges without detected prose, placement, or spoken-audio defects.",
+    "sampled_commentary_ids": [
+      "comm_apology_0003",
+      "comm_apology_0010",
+      "comm_apology_0012",
+      "comm_apology_0013",
+      "comm_apology_0017",
+      "comm_apology_0041"
+    ],
+    "review_note": {
+      "path": "wiki/review/2026-09-01-commentary-quality-apology-luna-sample.md",
+      "sha256": "9904baea92f38c29298fd1203a536ae0360cce8001d0d12b5335f4c63692276d"
+    }
+  }
+}

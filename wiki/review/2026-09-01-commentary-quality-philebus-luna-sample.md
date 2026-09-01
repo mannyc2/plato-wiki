@@ -1,0 +1,31 @@
+# Commentary quality-audit acceptance
+
+dialogue: philebus
+decision: accepted
+reviewer: commentary-audit-delegated-luna-reviewer-philebus-bddffcd97ae0
+reviewed_on: 2026-09-01
+rationale: All nine sampled blocks are independently supported by the supplied source and accepted evidence, use valid playback edges, and meet the contract’s focus, attribution, and spoken-cadence requirements.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sample_evidence_path: wiki/submissions/commentary-audit-sample/philebus/c812a725681fba07bc60e0076010697f0574a98fe8af3cc6f431cc24f6996315.json
+sample_evidence_sha256: c812a725681fba07bc60e0076010697f0574a98fe8af3cc6f431cc24f6996315
+sample_input_sha256: c670b55ce6c22dfeda9d3aad4ba01f2327f44d4e3c69cfae019c2dacc82fc4f3
+pending_manifest_sha256: bddffcd97ae095ec5619a1565ef54c1e3d2066e3a81061449d76f7931813c6b5
+commentary_ledger_sha256: 94841b71fd489617777407864bd1c081a0362805885057d30fb02e6b55998930
+sample_packet_sha256: b807802a6f77081339b7656da0989b39b42bed94d5b7312c71666f9d07ef91a4
+sample_output_sha256: 4e08f67634ebf631524bf6f305fd8f89f8571421cde0e770da5e1d003f20d94c
+sample_state_sha256: e0eaa4f686ddfe0f43a9a75b483eb9d4b8d383ed566b6ddab38ae42aa3aaa776
+codex_execution_sha256: 2ceb49ea644315d4c042c1efe8f325bfeff8250c93ce81a9fc3c934e4473e06d
+output_schema_sha256: a90f080b3265bdc01a2bdd80d34f613b0cabe31a4019ed30256410f5895a0970
+model_catalog_sha256: a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724
+sample_prompt_sha256: 398925914f35370efe3d807b6cfba8e1dc3ac13ff1c07e96ba8293179298e362
+sampled_commentary_ids:
+- comm_philebus_0004
+- comm_philebus_0005
+- comm_philebus_0006
+- comm_philebus_0011
+- comm_philebus_0013
+- comm_philebus_0014
+- comm_philebus_0018
+- comm_philebus_0019
+- comm_philebus_0020

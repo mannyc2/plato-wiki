@@ -1,15 +1,19 @@
-import { createHash } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
+import { spawnSync } from "node:child_process";
 import {
+  closeSync,
   existsSync,
+  fsyncSync,
   mkdirSync,
   mkdtempSync,
+  openSync,
   readFileSync,
-  readdirSync,
+  renameSync,
   rmSync,
-  unlinkSync,
   writeFileSync,
 } from "node:fs";
 import { dirname, join, relative } from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { validateAudioCoverageReport, writeAudioCoverageReport } from "../audio-coverage.js";
 import { writeClusterArtifacts, validateClusterArtifacts } from "../clusters.js";
 import {
@@ -27,305 +31,583 @@ import { buildStaticSite } from "../site/index.js";
 import {
   formatOntologyAuditIssues,
   listOntologyAuditPackagePaths,
-  verifyOntologyAuditPackage,
+  verifyOntologyAuditSemanticPreacceptance,
 } from "./ontology-audit.js";
-import { acceptOntologyAuditClosure, bindOntologyAuditFinalState } from "./ontology-audit-finalization.js";
-import { fencedYamlRecordBlocks, type CanonicalYamlRecord, type CanonicalYamlValue } from "./fenced-record.js";
+import {
+  acceptOntologyAuditClosure,
+  beginOntologyAuditFinalizationTransition,
+  bindOntologyAuditFinalState,
+} from "./ontology-audit-finalization.js";
+import { readOntologyAuditFinalAdjustments } from "./ontology-audit-final-adjustments.js";
+import {
+  assertCanonicalOntologyRegenerationWorkerPaths,
+  createCanonicalOntologyRegenerationWorkspace,
+  ensureCanonicalOntologyWorkRoot,
+  resolveCanonicalOntologyAuditPackage,
+  resolveCanonicalOntologyRepoFileWriteTarget,
+} from "./ontology-audit-package-path.js";
+import {
+  assertOntologyClosureEvidenceIsZero,
+  recomputeOntologyClosureEvidence,
+  verifyOntologyClosureEvidenceFile,
+  type OntologyClosureEvidence,
+  type VerifiedOntologyClosureEvidenceProof,
+} from "./ontology-closure-evidence.js";
+import {
+  assertOntologyRegenerationFixedWriteTargets,
+  cleanOntologyGeneratedProjectionRoots,
+  collectOntologyRegenerationArtifacts,
+  ontologyRegenerationArtifactsEqual,
+  ontologyRegenerationDigest,
+  type OntologyRegenerationArtifact,
+} from "./ontology-regeneration-tree.js";
 
-export type OntologyRegenerationArtifact = {
-  path: string;
-  bytes: number;
-  sha256: string;
+export {
+  assertOntologyClosureEvidenceIsZero,
+  assertOntologyClosureEvidenceProof,
+  collectAcceptedRelationFictionIssues,
+  forbiddenOntologyAliasPaths,
+  ontologyReaderProjectionPaths,
+  recomputeOntologyClosureEvidence,
+  rejectedRecordIdsInReaderFiles,
+  renderOntologyClosureEvidence,
+  verifyOntologyClosureEvidenceFile,
+  type OntologyClosureEvidence,
+  type VerifiedOntologyClosureEvidenceProof,
+} from "./ontology-closure-evidence.js";
+
+export {
+  assertOntologyRegenerationFixedWriteTargets,
+  cleanOntologyGeneratedProjectionRoots,
+  collectOntologyCanonicalRegenerationArtifacts,
+  collectOntologyRegenerationArtifacts,
+  ONTOLOGY_ARTIFACT_HASH_CHUNK_BYTES,
+  ontologyRegenerationArtifact,
+  ontologyRegenerationArtifactsEqual,
+  ontologyRegenerationDigest,
+  type OntologyRegenerationArtifact,
+} from "./ontology-regeneration-tree.js";
+
+export type OntologyRegenerationRun = {
+  artifacts: OntologyRegenerationArtifact[];
+  digest: string;
+  closure_evidence: OntologyRegenerationArtifact;
 };
 
-export type OntologyClosureEvidence = {
-  staleAliasIssues: string[];
-  rejectedReaderLeaks: string[];
-  terminalStateIssues: string[];
-  acceptedClaimLinkIssues: string[];
-  acceptedCommentaryCitationIssues: string[];
-  acceptedRelationFictionIssues: string[];
+export function ontologyRegenerationRunsEqual(
+  first: OntologyRegenerationRun,
+  second: OntologyRegenerationRun,
+) {
+  return first.digest === second.digest
+    && ontologyRegenerationArtifactsEqual(first.artifacts, second.artifacts)
+    && ontologyRegenerationArtifactsEqual([first.closure_evidence], [second.closure_evidence]);
+}
+
+export function ontologyRegenerationBindsClosureEvidenceSite(
+  artifacts: readonly OntologyRegenerationArtifact[],
+  siteArtifacts: readonly OntologyRegenerationArtifact[],
+) {
+  return ontologyRegenerationArtifactsEqual(
+    artifacts.filter((entry) => entry.path.startsWith("site/")),
+    siteArtifacts.map((entry) => ({ ...entry, path: `site/${entry.path}` })),
+  );
+}
+
+type OntologyRegenerationWorkerManifest = OntologyRegenerationRun & {
+  schema_version: 1;
+  artifact_count: number;
 };
 
 function sha256(content: string | Uint8Array) {
   return createHash("sha256").update(content).digest("hex");
 }
 
-function canonicalJson(value: unknown): string {
-  if (Array.isArray(value)) return `[${value.map(canonicalJson).join(",")}]`;
-  if (value !== null && typeof value === "object") {
-    return `{${Object.entries(value as Record<string, unknown>)
-      .sort(([left], [right]) => left.localeCompare(right))
-      .map(([key, entry]) => `${JSON.stringify(key)}:${canonicalJson(entry)}`)
-      .join(",")}}`;
-  }
-  return JSON.stringify(value);
-}
-
-function filesRecursively(directory: string): string[] {
-  if (!existsSync(directory)) return [];
-  return readdirSync(directory, { withFileTypes: true })
-    .flatMap((entry) => {
-      const path = join(directory, entry.name);
-      return entry.isDirectory() ? filesRecursively(path) : entry.isFile() ? [path] : [];
-    })
-    .sort();
-}
-
-function isRecord(value: CanonicalYamlValue | undefined): value is CanonicalYamlRecord {
-  return value !== null && typeof value === "object" && !Array.isArray(value);
-}
-
-function scalar(record: CanonicalYamlRecord, field: string) {
-  const value = record[field];
-  return typeof value === "string" || typeof value === "number" || typeof value === "boolean"
-    ? String(value)
-    : "";
-}
-
-function strings(value: CanonicalYamlValue | undefined) {
-  return Array.isArray(value) ? value.filter((entry): entry is string => typeof entry === "string") : [];
-}
-
-function semanticLedgers(repoRoot: string) {
-  const lanes = [
-    ["observation", "wiki/observations", "observation_id"],
-    ["claim", "wiki/claims", "claim_id"],
-    ["relation", "wiki/relations", "relation_id"],
-    ["commentary", "wiki/commentary", "commentary_id"],
-    ["voice", "wiki/voices", "voice_id"],
-  ] as const;
-  return lanes.flatMap(([lane, directory, idField]) =>
-    filesRecursively(join(repoRoot, directory))
-      .filter((path) => path.endsWith(".md"))
-      .flatMap((path) => fencedYamlRecordBlocks(readFileSync(path, "utf8")).map((block) => ({
-        lane,
-        path: relative(repoRoot, path).split("\\").join("/"),
-        id: scalar(block.record, idField),
-        record: block.record,
-      })))
-  );
-}
-
-const LEGACY_ALIAS_VALUE_RE = /(?:\bfeature(?:_candidate)?_[a-z0-9_]+\b|\b[a-z0-9_]+::[a-z0-9_]+\b)/gu;
-
-export function forbiddenOntologyAliasPaths(value: unknown, prefix = ""): string[] {
-  if (typeof value === "string") {
-    return [...new Set([...value.matchAll(LEGACY_ALIAS_VALUE_RE)].map((match) => `${prefix}:value=${match[0]}`))];
-  }
-  if (Array.isArray(value)) {
-    return value.flatMap((entry, index) => forbiddenOntologyAliasPaths(entry, `${prefix}[${index}]`));
-  }
-  if (value === null || typeof value !== "object") return [];
-  const issues: string[] = [];
-  for (const [key, entry] of Object.entries(value as Record<string, unknown>)) {
-    const path = prefix ? `${prefix}.${key}` : key;
-    if (["feature_id", "feature_family", "feature_label", "legacy_family", "legacy_label"].includes(key)) issues.push(path);
-    issues.push(...forbiddenOntologyAliasPaths(entry, path));
-  }
-  return issues;
-}
-
-function forbiddenAliasTokens(content: string) {
-  const pattern = /\b(feature_id|feature_family|feature_label|legacy_family|legacy_label|feature(?:_candidate)?_[a-z0-9_]+|[a-z0-9_]+::[a-z0-9_]+)\b/gu;
-  return [...new Set([...content.matchAll(pattern)].map((match) => match[1]!))].sort();
-}
-
-function parsedJsonLines(path: string) {
-  const content = readFileSync(path, "utf8");
-  if (path.endsWith(".jsonl")) return content.split(/\r?\n/u).filter(Boolean).map((line) => JSON.parse(line) as unknown);
-  return [JSON.parse(content) as unknown];
-}
-
-function publicProjectionPaths(repoRoot: string) {
-  return ["wiki/ontology", "wiki/clusters", "wiki/dossiers"].flatMap((root) =>
-    filesRecursively(join(repoRoot, root)).filter((path) => path.endsWith(".json") || path.endsWith(".jsonl"))
-  );
-}
-
-export function ontologyReaderProjectionPaths(repoRoot: string) {
-  return [
-    ...publicProjectionPaths(repoRoot),
-    ...["derived/plato/joins", "derived/plato/voices"].flatMap((root) =>
-      filesRecursively(join(repoRoot, root)).filter((path) => path.endsWith(".toon"))
-    ),
-  ].sort();
-}
-
-function recordIdsInReaderFiles(paths: readonly string[]) {
-  const ids = new Set<string>();
-  const pattern = /\b(?:obs|claim|rel|comm|voice)_[a-z0-9-]+_\d{4}\b/gu;
-  for (const path of paths) {
-    const content = readFileSync(path, "utf8");
-    for (const match of content.matchAll(pattern)) ids.add(match[0]!);
-  }
-  return ids;
-}
-
-export function rejectedRecordIdsInReaderFiles(
-  paths: readonly string[],
-  rejectedRecordIds: ReadonlySet<string>,
-) {
-  const readerIds = recordIdsInReaderFiles(paths);
-  return [...rejectedRecordIds].filter((id) => readerIds.has(id)).sort();
-}
-
-export function collectOntologyClosureEvidence({ repoRoot = getRepoRoot() }: { repoRoot?: string } = {}): OntologyClosureEvidence {
-  if (repoRoot !== getRepoRoot()) throw new Error("Closure evidence must be collected from the active canonical repository.");
-  const ledgers = semanticLedgers(repoRoot);
-  const staleAliasIssues = ledgers.flatMap((entry) =>
-    forbiddenOntologyAliasPaths(entry.record).map((field) => `${entry.path}:${entry.id}:${field}`)
-  );
-  for (const path of publicProjectionPaths(repoRoot)) {
-    for (const [index, value] of parsedJsonLines(path).entries()) {
-      for (const field of forbiddenOntologyAliasPaths(value)) {
-        staleAliasIssues.push(`${relative(repoRoot, path).split("\\").join("/")}:${index + 1}:${field}`);
-      }
+function atomicWriteFile(path: string, content: string) {
+  mkdirSync(dirname(path), { recursive: true });
+  const temporary = `${path}.tmp-${process.pid}-${randomUUID()}`;
+  try {
+    writeFileSync(temporary, content, { encoding: "utf8", flag: "wx" });
+    const temporaryDescriptor = openSync(temporary, "r");
+    try {
+      fsyncSync(temporaryDescriptor);
+    } finally {
+      closeSync(temporaryDescriptor);
     }
-  }
-  for (const path of ontologyReaderProjectionPaths(repoRoot).filter((entry) => entry.endsWith(".toon"))) {
-    for (const field of forbiddenAliasTokens(readFileSync(path, "utf8"))) {
-      staleAliasIssues.push(`${relative(repoRoot, path).split("\\").join("/")}:${field}`);
+    renameSync(temporary, path);
+    const parentDescriptor = openSync(dirname(path), "r");
+    try {
+      fsyncSync(parentDescriptor);
+    } finally {
+      closeSync(parentDescriptor);
     }
+  } catch (error) {
+    rmSync(temporary, { force: true });
+    throw error;
   }
+}
 
-  const terminalStateIssues = ledgers.flatMap((entry) => {
-    const status = scalar(entry.record, "review_status");
-    return status === "unreviewed" || status === "needs_split" || /\b(?:todo|tbd)\b/iu.test(status)
-      ? [`${entry.path}:${entry.id}:review_status=${status}`]
-      : [];
+function resolveOntologyAuditPackage(repoRoot: string, packagePath?: string) {
+  const packages = packagePath ? [packagePath] : listOntologyAuditPackagePaths(repoRoot);
+  if (packages.length !== 1) throw new Error(`Expected exactly one ontology audit package; found ${packages.length}.`);
+  return resolveCanonicalOntologyAuditPackage({
+    repoRoot,
+    packagePath: packages[0]!,
   });
-  const observationsById = new Map(
-    ledgers.filter((entry) => entry.lane === "observation").map((entry) => [entry.id, entry]),
-  );
-  const claimsById = new Map(
-    ledgers.filter((entry) => entry.lane === "claim").map((entry) => [entry.id, entry]),
-  );
-  const acceptedClaimLinkIssues: string[] = [];
-  for (const claim of claimsById.values()) {
-    if (scalar(claim.record, "review_status") !== "accepted") continue;
-    const observationIds = strings(claim.record.observation_ids);
-    if (observationIds.length === 0) acceptedClaimLinkIssues.push(`${claim.path}:${claim.id}:missing observation_ids`);
-    for (const observationId of observationIds) {
-      const observation = observationsById.get(observationId);
-      if (!observation || scalar(observation.record, "review_status") !== "accepted") {
-        acceptedClaimLinkIssues.push(`${claim.path}:${claim.id}:non-accepted observation ${observationId}`);
-      } else if (!strings(observation.record.supports_claim_ids).includes(claim.id)) {
-        acceptedClaimLinkIssues.push(`${claim.path}:${claim.id}:non-reciprocal observation ${observationId}`);
-      }
-    }
-  }
-  for (const observation of observationsById.values()) {
-    if (scalar(observation.record, "review_status") !== "accepted") continue;
-    for (const claimId of strings(observation.record.supports_claim_ids)) {
-      const claim = claimsById.get(claimId);
-      if (!claim || scalar(claim.record, "review_status") !== "accepted") {
-        acceptedClaimLinkIssues.push(`${observation.path}:${observation.id}:non-accepted supported claim ${claimId}`);
-      } else if (!strings(claim.record.observation_ids).includes(observation.id)) {
-        acceptedClaimLinkIssues.push(`${observation.path}:${observation.id}:non-reciprocal supported claim ${claimId}`);
-      }
-    }
-  }
-  const acceptedCommentaryCitationIssues = ledgers
-    .filter((entry) => entry.lane === "commentary" && scalar(entry.record, "review_status") === "accepted")
-    .filter((entry) => {
-      const cites = isRecord(entry.record.cites) ? entry.record.cites : {};
-      return ["observations", "claims", "relations", "concepts", "dossiers"]
-        .reduce((count, field) => count + strings(cites[field]).length, 0) === 0;
-    })
-    .map((entry) => `${entry.path}:${entry.id}`);
-  const acceptedRelationFictionIssues = ledgers
-    .filter((entry) => entry.lane === "relation" && scalar(entry.record, "review_status") === "accepted")
-    .filter((entry) => /(?:no substantive relation|does not establish (?:a )?(?:semantic )?relation|mere (?:lexical |topic )?overlap|lexical overlap alone)/iu.test(
-      [scalar(entry.record, "basis"), scalar(entry.record, "resolution")].join(" "),
-    ))
-    .map((entry) => `${entry.path}:${entry.id}`);
+}
 
-  const rejected = new Set(
-    ledgers
-      .filter((entry) => scalar(entry.record, "review_status") === "rejected")
-      .map((entry) => entry.id)
-      .filter(Boolean),
+function assertOntologySemanticPreacceptance(
+  repoRoot: string,
+  packagePath: string,
+  siteDirectory: string,
+  closureEvidenceProof: VerifiedOntologyClosureEvidenceProof,
+) {
+  const issues = verifyOntologyAuditSemanticPreacceptance({
+    repoRoot,
+    packagePath,
+    siteDirectory,
+    closureEvidenceProof,
+  });
+  if (issues.length > 0) {
+    throw new Error(
+      `Ontology semantic preacceptance failed before regeneration:\n${formatOntologyAuditIssues(issues)}`,
+    );
+  }
+}
+
+function verifyOntologySemanticPreacceptanceForSite(
+  repoRoot: string,
+  packagePath: string,
+  siteDirectory: string,
+): VerifiedOntologyClosureEvidenceProof {
+  const auditPackage = resolveOntologyAuditPackage(repoRoot, packagePath);
+  const proof = verifyOntologyClosureEvidenceFile({
+    repoRoot,
+    packagePath: auditPackage.absolute,
+    siteDirectory,
+  });
+  assertOntologyClosureEvidenceIsZero(proof.evidence);
+  assertOntologySemanticPreacceptance(
+    repoRoot,
+    auditPackage.absolute,
+    siteDirectory,
+    proof,
   );
-  const workRoot = join(repoRoot, "../work");
-  mkdirSync(workRoot, { recursive: true });
+  return proof;
+}
+
+export function collectOntologyClosureEvidence({
+  repoRoot = getRepoRoot(),
+  siteDirectory,
+}: {
+  repoRoot?: string;
+  siteDirectory?: string;
+} = {}): OntologyClosureEvidence {
+  if (repoRoot !== getRepoRoot()) {
+    throw new Error("Closure evidence must be collected from the active canonical repository.");
+  }
+  if (siteDirectory) {
+    return recomputeOntologyClosureEvidence({ repoRoot, siteDirectory }).evidence;
+  }
+  const workRoot = ensureCanonicalOntologyWorkRoot(repoRoot);
   const temporary = mkdtempSync(join(workRoot, "ontology-reader-leak-"));
-  let rejectedReaderLeaks: string[];
   try {
     buildStaticSite({ outDir: temporary });
-    const siteFiles = filesRecursively(temporary).filter((path) => /\.(?:html|json|js|css|xml|txt)$/u.test(path));
-    rejectedReaderLeaks = rejectedRecordIdsInReaderFiles(
-      [...ontologyReaderProjectionPaths(repoRoot), ...siteFiles],
-      rejected,
-    );
+    return recomputeOntologyClosureEvidence({ repoRoot, siteDirectory: temporary }).evidence;
   } finally {
     rmSync(temporary, { recursive: true, force: true });
   }
-  return {
-    staleAliasIssues: [...new Set(staleAliasIssues)].sort(),
-    rejectedReaderLeaks,
-    terminalStateIssues: [...new Set(terminalStateIssues)].sort(),
-    acceptedClaimLinkIssues: [...new Set(acceptedClaimLinkIssues)].sort(),
-    acceptedCommentaryCitationIssues: acceptedCommentaryCitationIssues.sort(),
-    acceptedRelationFictionIssues: acceptedRelationFictionIssues.sort(),
-  };
 }
 
-function removeToonFiles(directory: string) {
-  for (const path of filesRecursively(directory)) if (path.endsWith(".toon")) unlinkSync(path);
-}
+export const ONTOLOGY_REGENERATION_PHASES = [
+  "projections",
+  "write-audio",
+  "site",
+  "write-closure-evidence",
+  "validate-semantic-preacceptance",
+  "write-completeness",
+  "validate-clusters",
+  "validate-dossiers",
+  "validate-audio",
+  "validate-completeness",
+] as const;
+type OntologyRegenerationPhase = typeof ONTOLOGY_REGENERATION_PHASES[number];
 
-function artifact(path: string, logicalPath: string): OntologyRegenerationArtifact {
-  const content = readFileSync(path);
-  return { path: logicalPath, bytes: content.byteLength, sha256: sha256(content) };
-}
+const REGENERATION_WORKER_FLAG = "--ontology-regeneration-worker";
+const REGENERATION_PHASE_WORKER_FLAG = "--ontology-regeneration-phase-worker";
+const ONTOLOGY_CLOSURE_RECEIPT_PATH = "wiki/review/2026-08-30-ontology-vnext-closure.md";
 
-export function ontologyRegenerationDigest(artifacts: readonly OntologyRegenerationArtifact[]) {
-  return sha256(canonicalJson([...artifacts].sort((left, right) => left.path.localeCompare(right.path))));
-}
-
-function generatedArtifacts(repoRoot: string, siteDirectory: string): OntologyRegenerationArtifact[] {
-  const canonicalRoots = [
-    "derived/plato/joins",
-    "derived/plato/voices",
-    "wiki/clusters",
-    "wiki/dossiers",
-  ];
-  const canonical = canonicalRoots.flatMap((root) =>
-    filesRecursively(join(repoRoot, root))
-      .filter((path) => !path.endsWith(".toml"))
-      .map((path) => artifact(path, relative(repoRoot, path).split("\\").join("/")))
-  );
-  canonical.push(artifact(join(repoRoot, "audio/coverage.md"), "audio/coverage.md"));
-  canonical.push(artifact(join(repoRoot, "wiki/completeness.md"), "wiki/completeness.md"));
-  const site = filesRecursively(siteDirectory).map((path) =>
-    artifact(path, `site/${relative(siteDirectory, path).split("\\").join("/")}`)
-  );
-  return [...canonical, ...site].sort((left, right) => left.path.localeCompare(right.path));
-}
-
-function regenerateOnce(repoRoot: string, siteDirectory: string) {
-  removeToonFiles(join(repoRoot, "derived/plato/joins"));
-  removeToonFiles(join(repoRoot, "derived/plato/voices"));
-  writeObservationTurnJoins();
-  writeVoiceIndexes();
-  writeVoiceJoins();
-  writeClusterArtifacts();
-  writeDossierArtifacts();
-  writeAudioCoverageReport();
-  writeCompletenessReport(buildCompletenessReport(auditCompletenessFacts()));
-  buildStaticSite({ outDir: siteDirectory });
-  const validationFailures = [
-    ...validateClusterArtifacts(),
-    ...validateDossierArtifacts(),
-    ...validateAudioCoverageReport().map((issue) => issue.message),
-    ...validateCompletenessReport().map((issue) => issue.message),
-  ];
+function runRegenerationPhase(
+  phase: OntologyRegenerationPhase,
+  repoRoot: string,
+  siteDirectory: string,
+  packagePath: string,
+) {
+  if (phase === "projections") {
+    cleanOntologyGeneratedProjectionRoots(repoRoot);
+    writeObservationTurnJoins();
+    writeVoiceIndexes();
+    writeVoiceJoins();
+    writeClusterArtifacts();
+    writeDossierArtifacts();
+    return;
+  }
+  if (phase === "write-audio") {
+    assertOntologyRegenerationFixedWriteTargets(repoRoot);
+    writeAudioCoverageReport();
+    return;
+  }
+  if (phase === "write-completeness") {
+    const closureEvidenceProof = verifyOntologySemanticPreacceptanceForSite(
+      repoRoot,
+      packagePath,
+      siteDirectory,
+    );
+    const report = buildCompletenessReport(auditCompletenessFacts({
+      siteDirectory,
+      closureEvidenceProof,
+    }));
+    assertOntologyRegenerationFixedWriteTargets(repoRoot);
+    writeCompletenessReport(report);
+    return;
+  }
+  if (phase === "site") {
+    buildStaticSite({ outDir: siteDirectory });
+    return;
+  }
+  if (phase === "write-closure-evidence") {
+    const auditPackage = resolveOntologyAuditPackage(repoRoot, packagePath);
+    const evidence = recomputeOntologyClosureEvidence({ repoRoot, siteDirectory });
+    atomicWriteFile(
+      join(auditPackage.absolute, "closure-evidence.json"),
+      evidence.content,
+    );
+    return;
+  }
+  if (phase === "validate-semantic-preacceptance") {
+    verifyOntologySemanticPreacceptanceForSite(repoRoot, packagePath, siteDirectory);
+    return;
+  }
+  if (phase === "validate-completeness") {
+    const closureEvidenceProof = verifyOntologySemanticPreacceptanceForSite(
+      repoRoot,
+      packagePath,
+      siteDirectory,
+    );
+    const validationFailures = validateCompletenessReport(
+      "wiki/completeness.md",
+      undefined,
+      { siteDirectory, closureEvidenceProof },
+    ).map((issue) => issue.message);
+    if (validationFailures.length > 0) {
+      throw new Error(`Generated ontology projections failed validation:\n${validationFailures.join("\n")}`);
+    }
+    return;
+  }
+  const validationFailures = phase === "validate-clusters"
+    ? validateClusterArtifacts()
+    : phase === "validate-dossiers"
+      ? validateDossierArtifacts()
+      : validateAudioCoverageReport().map((issue) => issue.message);
   if (validationFailures.length > 0) {
     throw new Error(`Generated ontology projections failed validation:\n${validationFailures.join("\n")}`);
   }
-  const artifacts = generatedArtifacts(repoRoot, siteDirectory);
-  return { artifacts, digest: ontologyRegenerationDigest(artifacts) };
+}
+
+function runRegenerationPhaseWorker(
+  phase: OntologyRegenerationPhase,
+  repoRoot: string,
+  siteDirectory: string,
+  packagePath: string,
+) {
+  assertCanonicalOntologyRegenerationWorkerPaths({ repoRoot, siteDirectory });
+  const auditPackage = resolveOntologyAuditPackage(repoRoot, packagePath);
+  const result = spawnSync(
+    process.execPath,
+    [
+      fileURLToPath(import.meta.url),
+      REGENERATION_PHASE_WORKER_FLAG,
+      phase,
+      repoRoot,
+      siteDirectory,
+      auditPackage.logical,
+    ],
+    {
+      cwd: repoRoot,
+      env: process.env,
+      stdio: ["ignore", "inherit", "inherit"],
+    },
+  );
+  if (result.error) throw result.error;
+  if (result.status !== 0) {
+    const suffix = result.signal ? ` (signal ${result.signal})` : "";
+    throw new Error(
+      `Ontology regeneration ${phase} phase failed with status ${String(result.status)}${suffix}.`,
+    );
+  }
+}
+
+function regenerateOnce(
+  repoRoot: string,
+  siteDirectory: string,
+  packagePath: string,
+): OntologyRegenerationRun {
+  // Each phase gets a fresh JavaScript heap. This is an execution boundary,
+  // not a second representation: the only inter-phase state is the generated
+  // filesystem projection that the final content manifest hashes and binds.
+  for (const phase of ONTOLOGY_REGENERATION_PHASES) {
+    runRegenerationPhaseWorker(phase, repoRoot, siteDirectory, packagePath);
+  }
+  const auditPackage = resolveOntologyAuditPackage(repoRoot, packagePath);
+  const artifacts = collectOntologyRegenerationArtifacts(repoRoot, siteDirectory);
+  const closureEvidenceProof = verifyOntologyClosureEvidenceFile({
+    repoRoot,
+    packagePath: auditPackage.absolute,
+    siteDirectory,
+  });
+  assertOntologyClosureEvidenceIsZero(closureEvidenceProof.evidence);
+  if (!ontologyRegenerationBindsClosureEvidenceSite(artifacts, closureEvidenceProof.site_artifacts)) {
+    throw new Error("Ontology regeneration artifacts do not exactly bind the verified closure-evidence site tree.");
+  }
+  return {
+    artifacts,
+    digest: ontologyRegenerationDigest(artifacts),
+    closure_evidence: {
+      path: `${auditPackage.logical}/closure-evidence.json`,
+      bytes: Buffer.byteLength(closureEvidenceProof.content),
+      sha256: closureEvidenceProof.sha256,
+    },
+  };
+}
+
+function isOntologyRegenerationArtifact(value: unknown): value is OntologyRegenerationArtifact {
+  if (value === null || typeof value !== "object") return false;
+  const candidate = value as Partial<OntologyRegenerationArtifact>;
+  return typeof candidate.path === "string" && candidate.path.length > 0
+    && typeof candidate.bytes === "number" && Number.isSafeInteger(candidate.bytes) && candidate.bytes >= 0
+    && typeof candidate.sha256 === "string" && /^[a-f0-9]{64}$/u.test(candidate.sha256);
+}
+
+function readRegenerationWorkerManifest(path: string): OntologyRegenerationRun {
+  const parsed = JSON.parse(readFileSync(path, "utf8")) as Partial<OntologyRegenerationWorkerManifest>;
+  if (parsed.schema_version !== 1 || !Array.isArray(parsed.artifacts)
+    || !parsed.artifacts.every(isOntologyRegenerationArtifact)
+    || new Set(parsed.artifacts.map((entry) => entry.path)).size !== parsed.artifacts.length
+    || parsed.artifact_count !== parsed.artifacts.length
+    || !isOntologyRegenerationArtifact(parsed.closure_evidence)
+    || typeof parsed.digest !== "string" || !/^[a-f0-9]{64}$/u.test(parsed.digest)) {
+    throw new Error(`Malformed ontology regeneration worker manifest: ${path}`);
+  }
+  const digest = ontologyRegenerationDigest(parsed.artifacts);
+  if (digest !== parsed.digest) {
+    throw new Error(`Ontology regeneration worker manifest digest mismatch: ${path}`);
+  }
+  return { artifacts: parsed.artifacts, digest, closure_evidence: parsed.closure_evidence };
+}
+
+function runRegenerationWorker({
+  repoRoot,
+  siteDirectory,
+  manifestPath,
+  packagePath,
+}: {
+  repoRoot: string;
+  siteDirectory: string;
+  manifestPath: string;
+  packagePath: string;
+}): OntologyRegenerationRun {
+  assertCanonicalOntologyRegenerationWorkerPaths({ repoRoot, siteDirectory, manifestPath });
+  const auditPackage = resolveOntologyAuditPackage(repoRoot, packagePath);
+  const result = spawnSync(
+    process.execPath,
+    [
+      fileURLToPath(import.meta.url),
+      REGENERATION_WORKER_FLAG,
+      repoRoot,
+      siteDirectory,
+      manifestPath,
+      auditPackage.logical,
+    ],
+    {
+      cwd: repoRoot,
+      env: process.env,
+      stdio: ["ignore", "inherit", "inherit"],
+    },
+  );
+  if (result.error) throw result.error;
+  if (result.status !== 0) {
+    const suffix = result.signal ? ` (signal ${result.signal})` : "";
+    throw new Error(`Ontology regeneration worker failed with status ${String(result.status)}${suffix}.`);
+  }
+  const run = readRegenerationWorkerManifest(manifestPath);
+  const expectedEvidencePath = `${auditPackage.logical}/closure-evidence.json`;
+  if (run.closure_evidence.path !== expectedEvidencePath) {
+    throw new Error(
+      `Ontology regeneration worker bound the wrong closure evidence path: ${run.closure_evidence.path} != ${expectedEvidencePath}.`,
+    );
+  }
+  return run;
+}
+
+function runRegenerationWorkerEntryPoint() {
+  const scriptPath = process.argv[1];
+  if (!scriptPath || pathToFileURL(scriptPath).href !== import.meta.url) return;
+  if (process.argv[2] === REGENERATION_PHASE_WORKER_FLAG) {
+    const [rawPhase, repoRoot, siteDirectory, packagePath] = process.argv.slice(3);
+    if (!rawPhase || !ONTOLOGY_REGENERATION_PHASES.includes(rawPhase as OntologyRegenerationPhase)
+      || !repoRoot || !siteDirectory || !packagePath) {
+      throw new Error(
+        `Ontology regeneration phase worker requires one of ${ONTOLOGY_REGENERATION_PHASES.join(", ")}, repo root, site directory, and package path.`,
+      );
+    }
+    if (repoRoot !== getRepoRoot()) {
+      throw new Error(`Ontology regeneration phase worker must use the active canonical repository root ${getRepoRoot()}.`);
+    }
+    assertCanonicalOntologyRegenerationWorkerPaths({ repoRoot, siteDirectory });
+    const auditPackage = resolveOntologyAuditPackage(repoRoot, packagePath);
+    runRegenerationPhase(
+      rawPhase as OntologyRegenerationPhase,
+      repoRoot,
+      siteDirectory,
+      auditPackage.logical,
+    );
+    const usage = process.resourceUsage();
+    console.error(
+      `ontology_regeneration_phase=${rawPhase} max_rss_bytes=${usage.maxRSS} user_cpu_us=${usage.userCPUTime} system_cpu_us=${usage.systemCPUTime}`,
+    );
+    return;
+  }
+  if (process.argv[2] !== REGENERATION_WORKER_FLAG) return;
+  const [repoRoot, siteDirectory, manifestPath, packagePath] = process.argv.slice(3);
+  if (!repoRoot || !siteDirectory || !manifestPath || !packagePath) {
+    throw new Error("Ontology regeneration worker requires repo root, site directory, manifest path, and package path.");
+  }
+  if (repoRoot !== getRepoRoot()) {
+    throw new Error(`Ontology regeneration worker must use the active canonical repository root ${getRepoRoot()}.`);
+  }
+  assertCanonicalOntologyRegenerationWorkerPaths({ repoRoot, siteDirectory, manifestPath });
+  const auditPackage = resolveOntologyAuditPackage(repoRoot, packagePath);
+  const run = regenerateOnce(repoRoot, siteDirectory, auditPackage.logical);
+  const manifest: OntologyRegenerationWorkerManifest = {
+    schema_version: 1,
+    artifact_count: run.artifacts.length,
+    ...run,
+  };
+  assertCanonicalOntologyRegenerationWorkerPaths({ repoRoot, siteDirectory, manifestPath });
+  atomicWriteFile(manifestPath, `${JSON.stringify(manifest)}\n`);
+}
+
+function regenerateOntologyArtifactsTwiceAfterPendingTransition({
+  repoRoot,
+  auditPackage,
+  preserveFinalSiteForAcceptance = false,
+}: {
+  repoRoot: string;
+  auditPackage: ReturnType<typeof resolveOntologyAuditPackage>;
+  preserveFinalSiteForAcceptance?: boolean;
+}) {
+  // Reject a symlinked/misplaced scratch root before changing the durable
+  // acceptance authority marker.
+  ensureCanonicalOntologyWorkRoot(repoRoot);
+  // Idempotently reassert the fail-closed authority boundary immediately
+  // before the first canonical generator mutation.
+  beginOntologyAuditFinalizationTransition({ repoRoot, packagePath: auditPackage.absolute });
+  const workspace = createCanonicalOntologyRegenerationWorkspace(repoRoot);
+  const temporary = workspace.temporaryRoot;
+  let removeTemporary = true;
+  try {
+    const finalSiteDirectory = workspace.siteTwo;
+    const first = runRegenerationWorker({
+      repoRoot,
+      siteDirectory: workspace.siteOne,
+      manifestPath: workspace.manifestOne,
+      packagePath: auditPackage.logical,
+    });
+    const second = runRegenerationWorker({
+      repoRoot,
+      siteDirectory: finalSiteDirectory,
+      manifestPath: workspace.manifestTwo,
+      packagePath: auditPackage.logical,
+    });
+    if (!ontologyRegenerationRunsEqual(first, second)) {
+      throw new Error(
+        `Ontology regeneration is not byte-stable: artifacts ${first.digest} != ${second.digest}; closure evidence ${first.closure_evidence.sha256} != ${second.closure_evidence.sha256}.`,
+      );
+    }
+    const observedArtifacts = collectOntologyRegenerationArtifacts(repoRoot, finalSiteDirectory);
+    const observedDigest = ontologyRegenerationDigest(observedArtifacts);
+    const observedClosureProof = verifyOntologyClosureEvidenceFile({
+      repoRoot,
+      packagePath: auditPackage.absolute,
+      siteDirectory: finalSiteDirectory,
+    });
+    assertOntologyClosureEvidenceIsZero(observedClosureProof.evidence);
+    const observedClosureEvidence: OntologyRegenerationArtifact = {
+      path: `${auditPackage.logical}/closure-evidence.json`,
+      bytes: Buffer.byteLength(observedClosureProof.content),
+      sha256: observedClosureProof.sha256,
+    };
+    if (
+      !ontologyRegenerationArtifactsEqual(second.artifacts, observedArtifacts)
+      || !ontologyRegenerationArtifactsEqual([second.closure_evidence], [observedClosureEvidence])
+      || !ontologyRegenerationBindsClosureEvidenceSite(
+        observedArtifacts,
+        observedClosureProof.site_artifacts,
+      )
+      || second.digest !== observedDigest
+    ) {
+      throw new Error(
+        `Final ontology artifacts changed after the second worker manifest: ${second.digest} != ${observedDigest}.`,
+      );
+    }
+    const receipt = {
+      schema_version: 1,
+      state: "complete",
+      clean_state_policy: "Each run rejects symlinks and non-regular entries, removes the complete generated joins, voices, clusters, and dossiers scopes while preserving only voice cutovers.toml and sigla.toml, then rebuilds and re-enumerates the exact regular-file path set.",
+      generators: [
+        "writeObservationTurnJoins",
+        "writeVoiceIndexes",
+        "writeVoiceJoins",
+        "writeClusterArtifacts",
+        "writeDossierArtifacts",
+        "writeAudioCoverageReport",
+        "buildStaticSite",
+        "writeCompletenessReport",
+      ],
+      regeneration_one_sha256: first.digest,
+      regeneration_two_sha256: second.digest,
+      closure_evidence_one_sha256: first.closure_evidence.sha256,
+      closure_evidence_two_sha256: second.closure_evidence.sha256,
+      closure_evidence_sha256: observedClosureProof.sha256,
+      closure_evidence_site_tree_sha256: observedClosureProof.site_tree_sha256,
+      closure_evidence_bytes: observedClosureEvidence.bytes,
+      artifact_count: observedArtifacts.length,
+      artifacts: observedArtifacts,
+    };
+    const receiptPath = join(auditPackage.absolute, "regeneration.json");
+    atomicWriteFile(receiptPath, `${JSON.stringify(receipt, null, 2)}\n`);
+    const result = {
+      receiptPath: relative(repoRoot, receiptPath).split("\\").join("/"),
+      regenerationOneSha256: first.digest,
+      regenerationTwoSha256: second.digest,
+      artifacts: observedArtifacts,
+      closureEvidenceArtifact: observedClosureEvidence,
+    };
+    if (!preserveFinalSiteForAcceptance) return result;
+    removeTemporary = false;
+    let cleaned = false;
+    return {
+      ...result,
+      finalSiteDirectory,
+      closureEvidenceProof: observedClosureProof,
+      cleanup: () => {
+        if (cleaned) return;
+        cleaned = true;
+        rmSync(temporary, { recursive: true, force: true });
+      },
+    };
+  } finally {
+    if (removeTemporary) rmSync(temporary, { recursive: true, force: true });
+  }
 }
 
 export function regenerateOntologyArtifactsTwice({
@@ -339,48 +621,14 @@ export function regenerateOntologyArtifactsTwice({
   if (repoRoot !== canonicalRoot) {
     throw new Error(`Regeneration must run against the active canonical repository root ${canonicalRoot}.`);
   }
-  const packages = packagePath ? [packagePath] : listOntologyAuditPackagePaths(repoRoot);
-  if (packages.length !== 1) throw new Error(`Expected exactly one ontology audit package; found ${packages.length}.`);
-  const absolutePackage = packages[0]!.startsWith("/") ? packages[0]! : join(repoRoot, packages[0]!);
-  const workRoot = join(repoRoot, "../work");
-  mkdirSync(workRoot, { recursive: true });
-  const temporary = mkdtempSync(join(workRoot, "ontology-regeneration-"));
-  try {
-    const first = regenerateOnce(repoRoot, join(temporary, "site-one"));
-    const second = regenerateOnce(repoRoot, join(temporary, "site-two"));
-    if (canonicalJson(first.artifacts) !== canonicalJson(second.artifacts) || first.digest !== second.digest) {
-      throw new Error(`Ontology regeneration is not byte-stable: ${first.digest} != ${second.digest}.`);
-    }
-    const receipt = {
-      schema_version: 1,
-      state: "complete",
-      clean_state_policy: "Each run removes every generated TOON table before rebuilding joins and voice indexes; cluster, dossier, and site writers replace their output trees.",
-      generators: [
-        "writeObservationTurnJoins",
-        "writeVoiceIndexes",
-        "writeVoiceJoins",
-        "writeClusterArtifacts",
-        "writeDossierArtifacts",
-        "buildStaticSite",
-      ],
-      regeneration_one_sha256: first.digest,
-      regeneration_two_sha256: second.digest,
-      artifact_count: second.artifacts.length,
-      artifacts: second.artifacts,
-    };
-    const receiptPath = join(absolutePackage, "regeneration.json");
-    mkdirSync(dirname(receiptPath), { recursive: true });
-    writeFileSync(receiptPath, `${JSON.stringify(receipt, null, 2)}\n`, "utf8");
-    return {
-      receiptPath: relative(repoRoot, receiptPath).split("\\").join("/"),
-      regenerationOneSha256: first.digest,
-      regenerationTwoSha256: second.digest,
-      artifacts: second.artifacts,
-    };
-  } finally {
-    rmSync(temporary, { recursive: true, force: true });
-  }
+  const auditPackage = resolveOntologyAuditPackage(repoRoot, packagePath);
+  return regenerateOntologyArtifactsTwiceAfterPendingTransition({
+    repoRoot,
+    auditPackage,
+  });
 }
+
+runRegenerationWorkerEntryPoint();
 
 export function closeOntologyVNextAudit({
   repoRoot = getRepoRoot(),
@@ -389,95 +637,136 @@ export function closeOntologyVNextAudit({
   repoRoot?: string;
   packagePath?: string;
 } = {}) {
-  const regeneration = regenerateOntologyArtifactsTwice({
-    repoRoot,
-    ...(packagePath === undefined ? {} : { packagePath }),
-  });
-  const evidence = collectOntologyClosureEvidence({ repoRoot });
-  const evidenceGroups: Array<[string, readonly string[]]> = [
-    ["stale ontology aliases", evidence.staleAliasIssues],
-    ["rejected reader leaks", evidence.rejectedReaderLeaks],
-    ["non-terminal semantic records", evidence.terminalStateIssues],
-    ["accepted claims without observations", evidence.acceptedClaimLinkIssues],
-    ["accepted commentary without citations", evidence.acceptedCommentaryCitationIssues],
-    ["accepted schema-compliance non-relations", evidence.acceptedRelationFictionIssues],
-  ];
-  const failed = evidenceGroups.filter(([, issues]) => issues.length > 0);
-  if (failed.length > 0) {
-    throw new Error(
-      `Ontology closure evidence failed:\n${failed.flatMap(([label, issues]) => [
-        `${label}: ${issues.length}`,
-        ...issues.slice(0, 20).map((issue) => `  ${issue}`),
-      ]).join("\n")}`,
-    );
+  const canonicalRoot = getRepoRoot();
+  if (repoRoot !== canonicalRoot) {
+    throw new Error(`Ontology closure must run against the active canonical repository root ${canonicalRoot}.`);
   }
+  const initialPackage = resolveOntologyAuditPackage(repoRoot, packagePath);
+  ensureCanonicalOntologyWorkRoot(repoRoot);
+  resolveCanonicalOntologyRepoFileWriteTarget({
+    repoRoot,
+    relativePath: ONTOLOGY_CLOSURE_RECEIPT_PATH,
+    label: "Ontology closure receipt",
+  });
+  // Demote global authority before binding partitions or writing any derived
+  // closure artifact. Every failure from this point leaves an explicit pending
+  // marker, never a stale accepted label over partially changed bytes.
+  beginOntologyAuditFinalizationTransition({ repoRoot, packagePath: initialPackage.absolute });
   const bound = bindOntologyAuditFinalState({
     repoRoot,
-    ...(packagePath === undefined ? {} : { packagePath }),
+    packagePath: initialPackage.absolute,
   });
-  const packageAbsolute = join(repoRoot, bound.packagePath);
-  const evidencePath = join(packageAbsolute, "closure-evidence.json");
-  writeFileSync(evidencePath, `${JSON.stringify({ schema_version: 1, state: "complete", ...evidence }, null, 2)}\n`, "utf8");
-  const evidenceRelativePath = relative(repoRoot, evidencePath).split("\\").join("/");
-  if (!bound.manifest.baseline_evidence) {
-    throw new Error("Cannot close ontology audit without snapshot-bound baseline evidence.");
-  }
-  const baselineEvidenceRelativePath = `${bound.packagePath}/${bound.manifest.baseline_evidence.path}`;
-  const closureArtifactPaths = [...new Set([
-    baselineEvidenceRelativePath,
-    regeneration.receiptPath,
-    evidenceRelativePath,
-    ...bound.rows.adjudications
-      .map((row) => row.receipt_path)
-      .filter((path): path is string => path !== null),
-  ])].sort();
-  const closureArtifactBindings = closureArtifactPaths.map((path) => {
-    const absolute = join(repoRoot, path);
-    if (!existsSync(absolute)) throw new Error(`Closure artifact is missing: ${path}`);
-    return `- artifact: \`${path}\`; sha256: \`${sha256(readFileSync(absolute))}\``;
-  });
-  const receiptPath = "wiki/review/2026-08-30-ontology-vnext-closure.md";
-  const receipt = [
-    "# Ontology vNext full-corpus closure receipt",
-    "",
-    `- frozen baseline: \`${bound.manifest.baseline.git_commit}\``,
-    `- audit snapshot: \`${bound.manifest.snapshot_id}\``,
-    "- final corpus digest: bound after this receipt in the snapshot acceptance record, avoiding a self-referential receipt hash",
-    `- final record units: ${bound.rows.records.length}`,
-    `- final concept/membership union units: ${bound.rows.concepts.length}`,
-    `- final graph union units: ${bound.rows.graphs.length}`,
-    `- terminal adjudications: ${bound.rows.adjudications.length}`,
-    "- source-first coverage: primary and independent dispositions complete for every frozen Greek source unit; all disagreements reconciled",
-    "- record-first coverage: every frozen and final record, edge, concept, and membership occurs exactly once in its required partition with a terminal item-level adjudication",
-    "- alias policy: zero legacy feature identity fields, feature_candidate ids, family::label aliases, compatibility aliases, dual readers, or fallback identities in canonical records and public projections",
-    "- reader policy: zero rejected observation, claim, relation, commentary, or voice ids in generated joins, public ontology projections, or site output",
-    "- semantic gates: zero pending review status, empty accepted-claim observation linkage, citationless accepted commentary, or accepted non-relation fiction",
-    `- regeneration one sha256: \`${regeneration.regenerationOneSha256}\``,
-    `- regeneration two sha256: \`${regeneration.regenerationTwoSha256}\``,
-    `- regeneration artifacts: ${regeneration.artifacts.length}`,
-    `- machine evidence: \`${evidenceRelativePath}\``,
-    `- baseline evidence: \`${baselineEvidenceRelativePath}\``,
-    ...closureArtifactBindings,
-    "- required validation commands: `bun run test`, `bun run typecheck`, `bun run validate`, `git diff --check`, and `bun run harness ontology-audit verify`",
-    "",
-  ].join("\n");
-  writeFileSync(join(repoRoot, receiptPath), receipt, "utf8");
-  const accepted = acceptOntologyAuditClosure({
+  const auditPackage = resolveOntologyAuditPackage(repoRoot, bound.packagePath);
+  const regeneration = regenerateOntologyArtifactsTwiceAfterPendingTransition({
     repoRoot,
-    ...(packagePath === undefined ? {} : { packagePath }),
-    regenerationOneSha256: regeneration.regenerationOneSha256,
-    regenerationTwoSha256: regeneration.regenerationTwoSha256,
-    staleAliases: evidence.staleAliasIssues.length,
-    rejectedReaderLeaks: evidence.rejectedReaderLeaks.length,
-    receiptPath,
+    auditPackage,
+    preserveFinalSiteForAcceptance: true,
   });
-  const verificationIssues = verifyOntologyAuditPackage({
-    repoRoot,
-    packagePath: packageAbsolute,
-    verifyLiveFinal: true,
-  });
-  if (verificationIssues.length > 0) {
-    throw new Error(`Closed ontology audit failed verification:\n${formatOntologyAuditIssues(verificationIssues)}`);
+  if (!("cleanup" in regeneration)) {
+    throw new Error("Ontology closure lost its verified final-site handoff.");
   }
-  return { regeneration, evidence, bound, accepted, receiptPath };
+  try {
+    const packageAbsolute = join(repoRoot, bound.packagePath);
+    const evidenceRelativePath = `${bound.packagePath}/closure-evidence.json`;
+    const finalClosureEvidenceProof = verifyOntologyClosureEvidenceFile({
+      repoRoot,
+      packagePath: packageAbsolute,
+      siteDirectory: regeneration.finalSiteDirectory,
+    });
+    const evidence = finalClosureEvidenceProof.evidence;
+    assertOntologyClosureEvidenceIsZero(evidence);
+    const reboundEvidence: OntologyRegenerationArtifact = {
+      path: evidenceRelativePath,
+      bytes: Buffer.byteLength(finalClosureEvidenceProof.content),
+      sha256: finalClosureEvidenceProof.sha256,
+    };
+    if (!ontologyRegenerationArtifactsEqual([regeneration.closureEvidenceArtifact], [reboundEvidence])) {
+      throw new Error("Final ontology closure evidence changed after deterministic regeneration.");
+    }
+    if (!bound.manifest.baseline_evidence) {
+      throw new Error("Cannot close ontology audit without snapshot-bound baseline evidence.");
+    }
+    const baselineEvidenceRelativePath = `${bound.packagePath}/${bound.manifest.baseline_evidence.path}`;
+    const finalAdjustmentArtifact = readOntologyAuditFinalAdjustments({
+      repoRoot,
+      packagePath: packageAbsolute,
+    });
+    const closureArtifactPaths = [...new Set([
+      baselineEvidenceRelativePath,
+      regeneration.receiptPath,
+      evidenceRelativePath,
+      ...(finalAdjustmentArtifact
+        ? [
+          finalAdjustmentArtifact.receiptPath,
+          ...finalAdjustmentArtifact.receiptBindings.keys(),
+        ]
+        : []),
+      ...bound.rows.adjudications
+        .map((row) => row.receipt_path)
+        .filter((path): path is string => path !== null),
+    ])].sort();
+    const closureArtifactBindings = closureArtifactPaths.map((path) => {
+      const absolute = join(repoRoot, path);
+      if (!existsSync(absolute)) throw new Error(`Closure artifact is missing: ${path}`);
+      return `- artifact: \`${path}\`; sha256: \`${sha256(readFileSync(absolute))}\``;
+    });
+    const receiptPath = ONTOLOGY_CLOSURE_RECEIPT_PATH;
+    const receipt = [
+      "# Ontology vNext full-corpus closure receipt",
+      "",
+      `- frozen baseline: \`${bound.manifest.baseline.git_commit}\``,
+      `- audit snapshot: \`${bound.manifest.snapshot_id}\``,
+      "- final corpus digest: bound after this receipt in the snapshot acceptance record, avoiding a self-referential receipt hash",
+      `- final record units: ${bound.rows.records.length}`,
+      `- final concept/membership union units: ${bound.rows.concepts.length}`,
+      `- final graph union units: ${bound.rows.graphs.length}`,
+      `- terminal adjudications: ${bound.rows.adjudications.length}`,
+      "- source-first coverage: primary and independent dispositions complete for every frozen Greek source unit; all disagreements reconciled",
+      "- record-first coverage: every frozen and final record, edge, concept, and membership occurs exactly once in its required partition with a terminal item-level adjudication",
+      "- alias policy: zero legacy feature identity fields, feature_candidate ids, family::label aliases, compatibility aliases, dual readers, or fallback identities in canonical records and public projections",
+      "- reader policy: zero rejected observation, claim, relation, commentary, or voice ids in generated joins, public ontology projections, or site output",
+      "- semantic gates: zero pending review status, empty accepted-claim observation linkage, citationless accepted commentary, or accepted non-relation fiction",
+      `- regeneration one sha256: \`${regeneration.regenerationOneSha256}\``,
+      `- regeneration two sha256: \`${regeneration.regenerationTwoSha256}\``,
+      `- regeneration artifacts: ${regeneration.artifacts.length}`,
+      `- machine evidence: \`${evidenceRelativePath}\``,
+      `- baseline evidence: \`${baselineEvidenceRelativePath}\``,
+      ...closureArtifactBindings,
+      "- required validation commands: `bun run test`, `bun run typecheck`, `bun run validate`, `git diff --check`, and `bun run harness ontology-audit verify`",
+      "",
+    ].join("\n");
+    const receiptAbsolute = resolveCanonicalOntologyRepoFileWriteTarget({
+      repoRoot,
+      relativePath: receiptPath,
+      label: "Ontology closure receipt",
+    });
+    atomicWriteFile(receiptAbsolute, receipt);
+    const accepted = acceptOntologyAuditClosure({
+      repoRoot,
+      packagePath: packageAbsolute,
+      regenerationOneSha256: regeneration.regenerationOneSha256,
+      regenerationTwoSha256: regeneration.regenerationTwoSha256,
+      staleAliases: evidence.staleAliasIssues.length,
+      rejectedReaderLeaks: evidence.rejectedReaderLeaks.length,
+      receiptPath,
+      siteDirectory: regeneration.finalSiteDirectory,
+      closureEvidenceProof: finalClosureEvidenceProof,
+    });
+    // acceptOntologyAuditClosure already performs both a full candidate
+    // verification while authority is pending and a full verification after
+    // publishing the accepted marker. Repeating that whole-corpus verifier a
+    // third time here retains another complete audit graph in this long-lived
+    // orchestration process and can exhaust the host after two clean
+    // regenerations without adding a distinct proof obligation.
+    const publicRegeneration = {
+      receiptPath: regeneration.receiptPath,
+      regenerationOneSha256: regeneration.regenerationOneSha256,
+      regenerationTwoSha256: regeneration.regenerationTwoSha256,
+      artifacts: regeneration.artifacts,
+      closureEvidenceArtifact: regeneration.closureEvidenceArtifact,
+    };
+    return { regeneration: publicRegeneration, evidence, bound, accepted, receiptPath };
+  } finally {
+    regeneration.cleanup();
+  }
 }

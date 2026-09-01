@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "submission_id": "0015-structural-remediation-batch",
+  "lane": "commentary",
+  "kind": "structural-remediation-batch",
+  "scope": "philebus",
+  "source_path": "scratch/commentary/structural-remediation/philebus/audit-failures-batch.json",
+  "source_sha256": "d5bc04df218a40dbec1f786842d844ae78089e44334a0bab522c39f54021dac4",
+  "target_path": "wiki/commentary/philebus.md",
+  "target_sha256_before": "4dfb530361d337baa6dc4ded98815545e17a3b8cbfd85ad74d44782dd1c57873",
+  "target_sha256_after": "94841b71fd489617777407864bd1c081a0362805885057d30fb02e6b55998930",
+  "applied_at": "2026-09-01T12:04:35.605Z",
+  "applied_ids": [
+    "comm_philebus_0002"
+  ],
+  "submission": {
+    "candidate": {
+      "schemaVersion": 1,
+      "dialogue": "philebus",
+      "candidatePath": "scratch/commentary/structural-remediation/philebus/audit-failures-batch.json",
+      "expectedLedgerSha256": "4dfb530361d337baa6dc4ded98815545e17a3b8cbfd85ad74d44782dd1c57873",
+      "expectedAttributionSha256": "4ce49ca06f62a145f1bab5eea725ff98fc10ccc28ce32e6215c48ba4ce25560f",
+      "expectedEnglishSha256": "6d654deed2a570d0e342567a6ded9a882ca62696c6129301f72476b1f16f386b",
+      "auditUnits": [
+        {
+          "unitKey": "01-11a-16e",
+          "sectionId": "comm_philebus_0001",
+          "auditOutputPath": "scratch/commentary/audits/philebus/01-11a-16e.json",
+          "auditOutputSha256": "77c12576f8d3894dcd6dd6992f7eb94030c6276e50168b467054409c506d5448",
+          "operations": []
+        },
+        {
+          "unitKey": "02-17a-20c",
+          "sectionId": "comm_philebus_0002",
+          "auditOutputPath": "scratch/commentary/audits/philebus/02-17a-20c.json",
+          "auditOutputSha256": "2d2261098f1eacb97e58144f3cc71ec7912ca281bb02beda477808acac1d01d0",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_philebus_0002"
+            }
+          ]
+        },
+        {
+          "unitKey": "03-20d-27d",
+          "sectionId": "comm_philebus_0003",
+          "auditOutputPath": "scratch/commentary/audits/philebus/03-20d-27d.json",
+          "auditOutputSha256": "7e9d75faa3b5b0b08de2ea07e6d1bd6c634c9c0d92f294b64953ca8af5674fa6",
+          "operations": []
+        },
+        {
+          "unitKey": "04-27e-34a",
+          "sectionId": "comm_philebus_0004",
+          "auditOutputPath": "scratch/commentary/audits/philebus/04-27e-34a.json",
+          "auditOutputSha256": "4a6c3ae1b3573e295c4dffe1bb9540e4c1c3c8a96d5d8193838b53cd243f5c86",
+          "operations": []
+        },
+        {
+          "unitKey": "05-34b-39a",
+          "sectionId": "comm_philebus_0005",
+          "auditOutputPath": "scratch/commentary/audits/philebus/05-34b-39a.json",
+          "auditOutputSha256": "740b86335f754239d81e76aa1f80fe70532e25d56668fde3724ac0cf66ab2f26",
+          "operations": []
+        },
+        {
+          "unitKey": "06-39b-44e",
+          "sectionId": "comm_philebus_0006",
+          "auditOutputPath": "scratch/commentary/audits/philebus/06-39b-44e.json",
+          "auditOutputSha256": "c14bdd84feac1f4fb44d41432218d72cb5bf6738b5c6a4ce4652eddc8bf418c8",
+          "operations": []
+        },
+        {
+          "unitKey": "07-45a-49e",
+          "sectionId": "comm_philebus_0007",
+          "auditOutputPath": "scratch/commentary/audits/philebus/07-45a-49e.json",
+          "auditOutputSha256": "718e57b59e7ed4a0931804f58f8224773782ae9c7d19a871f20925c54c58f522",
+          "operations": []
+        },
+        {
+          "unitKey": "08-50a-54d",
+          "sectionId": "comm_philebus_0008",
+          "auditOutputPath": "scratch/commentary/audits/philebus/08-50a-54d.json",
+          "auditOutputSha256": "f142192176e2e76eba65f61d3e06594b1010d066d7cbb0cf7809b4ea62aedf6b",
+          "operations": []
+        },
+        {
+          "unitKey": "09-54e-59e",
+          "sectionId": "comm_philebus_0009",
+          "auditOutputPath": "scratch/commentary/audits/philebus/09-54e-59e.json",
+          "auditOutputSha256": "b9d4c7eadc86cddf2ebc0bbfaee5908ffd41cb114cd2535278b22dec1800ecd3",
+          "operations": []
+        },
+        {
+          "unitKey": "10-60a-63c",
+          "sectionId": "comm_philebus_0010",
+          "auditOutputPath": "scratch/commentary/audits/philebus/10-60a-63c.json",
+          "auditOutputSha256": "6d91725390c00f82949fbbc490a6ee1f4acada73c7fae78484879e4889684119",
+          "operations": []
+        },
+        {
+          "unitKey": "11-63d-67b",
+          "sectionId": "comm_philebus_0011",
+          "auditOutputPath": "scratch/commentary/audits/philebus/11-63d-67b.json",
+          "auditOutputSha256": "277b0b07c62b1d7716dbe88b2bf10ab6160d4dd39a9f29cecd2f51f40b819569",
+          "operations": []
+        }
+      ],
+      "reviewer": "ontology-vnext-release-delegated-luna-20260901",
+      "reviewedOn": "2026-09-01",
+      "rationale": "Bound to current independent Luna placement-removal and rewrite findings; reject the defective originals conservatively."
+    },
+    "audit_findings": [
+      {
+        "commentaryId": "comm_philebus_0002",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

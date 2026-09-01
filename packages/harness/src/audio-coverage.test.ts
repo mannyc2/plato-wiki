@@ -10,13 +10,9 @@ import {
   writeAudioCoverageReport,
 } from "./audio-coverage.js";
 import { CAST_ACCEPTANCE_GATES } from "./audio-catalog.js";
-import { buildCommentaryAuditBriefs } from "./commentary-audit.js";
-import {
-  COMMENTARY_AUTHORING_MODEL,
-  COMMENTARY_STAGE_EFFORT,
-} from "./commentary-authoring.js";
 import { writeEnglishStephanusIndex } from "./derived/stephanus.js";
 import { setRepoRootForTesting } from "./paths.js";
+import { writeAcceptedCommentaryQualityAuditFixture } from "../test-support/audio-production-fixture.js";
 import { writeMasteringEvidenceFixture } from "../test-support/mastering-evidence-fixture.js";
 import {
   COMMENTARY_PROTOCOL_FIXTURE,
@@ -101,87 +97,7 @@ function writeAcceptedQualityAudit() {
     status: "accepted",
     segments: [{ id: "turn-0001", start_char: 0, end_char: englishContent.length, character_id: "speaker" }],
   });
-  const [brief] = buildCommentaryAuditBriefs(DIALOGUE);
-  if (!brief) throw new Error("fixture commentary audit brief missing");
-  const output = {
-    schema_version: 3,
-    dialogue: DIALOGUE,
-    unit_key: brief.unitKey,
-    section_id: brief.sectionId,
-    authoring: {
-      model: COMMENTARY_AUTHORING_MODEL,
-      effort: COMMENTARY_STAGE_EFFORT.audit,
-    },
-    unit_verdict: "pass",
-    blocks: [
-      {
-        commentary_id: "comm_fixture_0001",
-        disposition: "pass",
-        issue_codes: [],
-        checks: {
-          evidence: { verdict: "pass" },
-          placement: {
-            verdict: "pass",
-            hazard_codes: [],
-          },
-          listening: { verdict: "pass" },
-        },
-        rationale: "The concise section orientation earns its place in the recording.",
-      },
-    ],
-  };
-  const outputContent = `${JSON.stringify(output, null, 2)}\n`;
-  const rationale = "The complete one-block Luna sample supports acceptance and the interruption improves orientation.";
-  const notePath = "wiki/review/2026-07-13-commentary-quality-fixture.md";
-  const note = [
-    "# Fixture commentary quality acceptance",
-    "",
-    `dialogue: ${DIALOGUE}`,
-    "decision: accepted",
-    "reviewer: cjpher-delegated-luna-reviewer-fixture",
-    "reviewed_on: 2026-07-13",
-    `rationale: ${rationale}`,
-    "review_basis: operator-delegated independent Luna sample review",
-    "human_listening_or_review: none claimed",
-    "sampled_commentary_ids:",
-    "- comm_fixture_0001",
-    "",
-  ].join("\n");
-  write(notePath, note);
-  writeJson(`wiki/commentary-audits/${DIALOGUE}.json`, {
-    schema_version: 1,
-    dialogue: DIALOGUE,
-    ledger: {
-      path: `wiki/commentary/${DIALOGUE}.md`,
-      sha256: fileSha256(`wiki/commentary/${DIALOGUE}.md`),
-    },
-    protocol: {
-      path: "docs/commentary-protocol.md",
-      sha256: fileSha256("docs/commentary-protocol.md"),
-    },
-    authoring: {
-      model: COMMENTARY_AUTHORING_MODEL,
-      effort: COMMENTARY_STAGE_EFFORT.audit,
-    },
-    units: [
-      {
-        unit_key: brief.unitKey,
-        section_id: brief.sectionId,
-        audit_brief_sha256: brief.sha256,
-        output_path: `scratch/commentary/audits/${DIALOGUE}/${brief.unitKey}.json`,
-        output_sha256: sha256(outputContent),
-        output,
-      },
-    ],
-    acceptance: {
-      decision: "accepted",
-      reviewer: "cjpher-delegated-luna-reviewer-fixture",
-      reviewed_on: "2026-07-13",
-      rationale,
-      sampled_commentary_ids: ["comm_fixture_0001"],
-      review_note: { path: notePath, sha256: sha256(note) },
-    },
-  });
+  writeAcceptedCommentaryQualityAuditFixture({ root, dialogue: DIALOGUE });
 }
 
 function writeCompleteAudioEdition() {

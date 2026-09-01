@@ -4,8 +4,11 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { buildCommentaryCampaignManifest } from "../commentary-campaign.js";
+import { buildCommentaryAuditEvidenceSnapshot } from "../commentary-audit.js";
+import { buildCommentaryAuditSampleJob } from "../commentary-audit-sample-campaign.js";
 import {
   COMMENTARY_AUTHORING_MODEL,
+  COMMENTARY_CODEX_CLI_VERSION,
   COMMENTARY_MODEL_ARGUMENT,
   COMMENTARY_PERMISSION_MODE,
   COMMENTARY_STAGE_EFFORT,
@@ -19,6 +22,7 @@ import {
 import {
   applyCommentaryQualityAuditManifestRefresh,
   buildCommentaryQualityAuditManifestPreview,
+  inspectValidatedCommentaryQualityAuditManifest,
   listCommentaryQualityAuditManifestPaths,
   parseCommentaryQualityAuditManifest,
   previewCommentaryQualityAuditManifestRefresh,
@@ -27,6 +31,7 @@ import {
   writeCommentaryQualityAuditManifestPreview,
   type CommentaryQualityAuditManifest,
 } from "./commentary-quality-audit.js";
+import { previewCommentaryQualityAuditAcceptance } from "./commentary-quality-audit-acceptance.js";
 
 const DIALOGUE = "fixture";
 const GREEK = "{2a} alpha {2b} beta {3a} gamma {3b} delta";
@@ -47,6 +52,18 @@ function writeJson(path: string, value: unknown) {
 
 function sha256(content: string | Buffer) {
   return createHash("sha256").update(content).digest("hex");
+}
+
+function codexSuccessJsonl(structuredOutput: unknown, usage: Record<string, number>) {
+  return [
+    JSON.stringify({ type: "thread.started", thread_id: "thread_fixture" }),
+    JSON.stringify({ type: "turn.started" }),
+    JSON.stringify({
+      type: "item.completed",
+      item: { id: "item_fixture", type: "agent_message", text: JSON.stringify(structuredOutput) },
+    }),
+    JSON.stringify({ type: "turn.completed", usage }),
+  ].join("\n");
 }
 
 function passingAuditChecks() {
@@ -201,34 +218,81 @@ function writeAllCompletedScratchAudits() {
 }
 
 function acceptedManifest(preview: CommentaryQualityAuditManifest) {
-  const manifest = structuredClone(preview) as CommentaryQualityAuditManifest;
-  const notePath = "wiki/review/2026-07-13-commentary-quality-fixture.md";
   const rationale = "The required hand sample confirms that both interruptions earn their place in audio.";
-  const note = [
-    "# Fixture commentary quality acceptance",
-    "",
-    `dialogue: ${DIALOGUE}`,
-    "decision: accepted",
-    "reviewer: cjpher-delegated-luna-reviewer-fixture",
-    "reviewed_on: 2026-07-13",
-    `rationale: ${rationale}`,
-    "review_basis: operator-delegated independent Luna sample review",
-    "human_listening_or_review: none claimed",
-    "sampled_commentary_ids:",
-    "- comm_fixture_0001",
-    "- comm_fixture_0002",
-    "",
-  ].join("\n");
-  write(notePath, note);
-  manifest.acceptance = {
-    decision: "accepted",
-    reviewer: "cjpher-delegated-luna-reviewer-fixture",
-    reviewed_on: "2026-07-13",
+  const pendingManifestContent = `${JSON.stringify(preview, null, 2)}\n`;
+  const job = buildCommentaryAuditSampleJob({ manifest: preview, pendingManifestContent });
+  const review = {
+    schema_version: 1 as const,
+    dialogue: DIALOGUE,
+    reviewer: {
+      id: job.reviewer_id,
+      model: COMMENTARY_AUTHORING_MODEL,
+      effort: COMMENTARY_STAGE_EFFORT.audit,
+    },
+    pending_manifest_sha256: job.pending_manifest_sha256,
+    sample_packet_sha256: job.packet_sha256,
+    sampled_commentary_ids: [...job.sampled_commentary_ids],
+    sample_verdict: "pass" as const,
+    blocks: job.sampled_commentary_ids.map((commentaryId) => ({
+      commentary_id: commentaryId,
+      verdict: "pass" as const,
+      rationale: "The exact source, evidence, placement, and spoken-audio checks pass.",
+    })),
     rationale,
-    sampled_commentary_ids: ["comm_fixture_0001", "comm_fixture_0002"],
-    review_note: { path: notePath, sha256: sha256(note) },
   };
-  return manifest;
+  const outputContent = `${JSON.stringify(review, null, 2)}\n`;
+  const usage = {
+    input_tokens: 120,
+    cached_input_tokens: 80,
+    cache_write_input_tokens: 4,
+    output_tokens: 30,
+    reasoning_output_tokens: 12,
+  };
+  const executionContent = codexSuccessJsonl(review, usage);
+  const stateContent = `${JSON.stringify({
+    schema_version: 1,
+    campaign: "plato-commentary-independent-luna-sample",
+    job_id: job.job_id,
+    dialogue: job.dialogue,
+    reviewer_id: job.reviewer_id,
+    input_sha256: job.input_sha256,
+    pending_manifest_sha256: job.pending_manifest_sha256,
+    pending_manifest_path: job.pending_manifest_path,
+    sample_packet_path: job.packet_path,
+    sample_packet_sha256: job.packet_sha256,
+    output_schema_path: job.output_schema_path,
+    output_schema_sha256: job.output_schema_sha256,
+    model_catalog_path: job.model_catalog_path,
+    model_catalog_sha256: job.model_catalog_sha256,
+    prompt_sha256: job.prompt_sha256,
+    model: COMMENTARY_AUTHORING_MODEL,
+    effort: COMMENTARY_STAGE_EFFORT.audit,
+    permission_mode: COMMENTARY_PERMISSION_MODE,
+    codex_cli_version: COMMENTARY_CODEX_CLI_VERSION,
+    output_path: job.output_path,
+    output_sha256: sha256(outputContent),
+    execution_path: job.execution_path,
+    execution_sha256: sha256(executionContent),
+    sample_verdict: "pass",
+    usage,
+  }, null, 2)}\n`;
+  write(job.pending_manifest_path, pendingManifestContent);
+  write(job.packet_path, job.packet_content);
+  write(job.output_schema_path, `${JSON.stringify(job.output_schema, null, 2)}\n`);
+  write(job.output_path, outputContent);
+  write(job.state_path, stateContent);
+  write(job.execution_path, executionContent);
+  const acceptance = previewCommentaryQualityAuditAcceptance({
+    dialogue: DIALOGUE,
+    reviewer: job.reviewer_id,
+    reviewedOn: "2026-07-13",
+    rationale,
+    sampledCommentaryIds: [...job.sampled_commentary_ids],
+    sampleOutputPath: job.output_path,
+  });
+  write(acceptance.sampleEvidencePath, acceptance.sampleEvidence);
+  write(acceptance.reviewNotePath, acceptance.reviewNote);
+  return acceptance.manifest;
 }
 
 beforeEach(() => {
@@ -381,6 +445,30 @@ describe("canonical commentary quality-audit manifests", () => {
     write(path, content);
     expect(listCommentaryQualityAuditManifestPaths()).toEqual([path]);
     expect(validateCommentaryQualityAuditManifests()).toEqual([]);
+  });
+
+  it("uses one supplied evidence snapshot for equivalent strict inspection, validation, and parsing", () => {
+    writeCompletedScratchAudit();
+    const manifest = acceptedManifest(buildCommentaryQualityAuditManifestPreview(DIALOGUE));
+    const path = `wiki/commentary-audits/${DIALOGUE}.json`;
+    const content = `${JSON.stringify(manifest, null, 2)}\n`;
+    const evidence = buildCommentaryAuditEvidenceSnapshot();
+
+    const inspected = inspectValidatedCommentaryQualityAuditManifest(path, content, evidence);
+    expect(inspected.issues).toEqual([]);
+    expect(inspected.manifest).toEqual(manifest);
+    expect(validateCommentaryQualityAuditManifest(path, content, evidence)).toEqual(inspected.issues);
+    expect(parseCommentaryQualityAuditManifest(path, content, evidence)).toEqual(manifest);
+
+    const tampered = structuredClone(manifest);
+    tampered.units[0]!.output.blocks[0]!.rationale = "Tampered after the output digest was bound.";
+    const tamperedContent = `${JSON.stringify(tampered, null, 2)}\n`;
+    const tamperedInspection = inspectValidatedCommentaryQualityAuditManifest(path, tamperedContent, evidence);
+    expect(tamperedInspection.issues.map((issue) => issue.code)).toContain("audit_output_hash_mismatch");
+    expect(validateCommentaryQualityAuditManifest(path, tamperedContent, evidence)).toEqual(tamperedInspection.issues);
+    expect(() => parseCommentaryQualityAuditManifest(path, tamperedContent, evidence)).toThrow(
+      "audit_output_hash_mismatch",
+    );
   });
 
   it("rebuilds the batch evidence snapshot on the next validation invocation", () => {
@@ -576,33 +664,10 @@ describe("canonical commentary quality-audit manifests", () => {
       ].join("\n"),
     );
     writeCompletedScratchAudit(passOutput(commentaryIds));
-    const preview = buildCommentaryQualityAuditManifestPreview(DIALOGUE);
-    const sample = commentaryIds.slice(0, 15);
-    const rationale = "The required fifteen-block sample supports acceptance of the bounded audit output.";
-    const notePath = "wiki/review/2026-07-13-commentary-quality-long-fixture.md";
-    const note = [
-      "# Long fixture commentary quality acceptance",
-      "",
-      `dialogue: ${DIALOGUE}`,
-      "decision: accepted",
-      "reviewer: cjpher-delegated-luna-reviewer-fixture",
-      "reviewed_on: 2026-07-13",
-      `rationale: ${rationale}`,
-      "review_basis: operator-delegated independent Luna sample review",
-      "human_listening_or_review: none claimed",
-      "sampled_commentary_ids:",
-      ...sample.map((id) => `- ${id}`),
-      "",
-    ].join("\n");
-    write(notePath, note);
-    preview.acceptance = {
-      decision: "accepted",
-      reviewer: "cjpher-delegated-luna-reviewer-fixture",
-      reviewed_on: "2026-07-13",
-      rationale,
-      sampled_commentary_ids: sample,
-      review_note: { path: notePath, sha256: sha256(note) },
-    };
+    const preview = acceptedManifest(buildCommentaryQualityAuditManifestPreview(DIALOGUE));
+    if (preview.acceptance.decision !== "accepted") throw new Error("fixture acceptance missing");
+    const sample = preview.acceptance.sampled_commentary_ids;
+    expect(sample).toHaveLength(15);
     const path = `wiki/commentary-audits/${DIALOGUE}.json`;
     expect(validateCommentaryQualityAuditManifest(path, JSON.stringify(preview))).toEqual([]);
 

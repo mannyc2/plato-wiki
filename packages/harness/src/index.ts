@@ -32,6 +32,7 @@ export {
   refreshOntologyAuditBaselineDefinitions,
   validateOntologyBaselineEvidence,
   verifyOntologyAuditPackage,
+  verifyOntologyAuditSemanticPreacceptance,
   writeOntologyBaselineEvidence,
   type OntologyBaselineEvidence,
   type OntologyAuditAcceptance,
@@ -133,6 +134,7 @@ export { buildDossiers, validateDossierArtifacts, writeDossierArtifacts } from "
 export { buildCoverageReport, renderCoverageReport, writeCoverageReport } from "./coverage.js";
 export {
   auditCompletenessFacts,
+  auditPrebuiltStaticSite,
   buildCompletenessFacts,
   buildCompletenessReport,
   CANONICAL_DIALOGUES,
@@ -143,6 +145,7 @@ export {
   writeCompletenessReport,
 } from "./completeness.js";
 export type {
+  CompletenessAuditOptions,
   CompletenessFacts,
   CompletenessFamily,
   CompletenessFamilyId,
@@ -162,11 +165,18 @@ export {
 } from "./commentary-audit.js";
 export {
   applyCommentaryStructuralRemediation,
+  applyCommentaryStructuralRemediationBatch,
   previewCommentaryStructuralRemediation,
+  previewCommentaryStructuralRemediationBatch,
 } from "./wiki/commentary-structural-remediation.js";
 export type {
   CommentaryStructuralRemediationApply,
   CommentaryStructuralAuditFinding,
+  CommentaryStructuralRemediationBatchApply,
+  CommentaryStructuralRemediationBatchInput,
+  CommentaryStructuralRemediationBatchOperation,
+  CommentaryStructuralRemediationBatchPreview,
+  CommentaryStructuralRemediationBatchUnit,
   CommentaryStructuralRemediationInput,
   CommentaryStructuralRemediationOperation,
   CommentaryStructuralRemediationPreview,
@@ -336,6 +346,7 @@ export {
   applyCommentaryQualityAuditManifestRefresh,
   buildCommentaryQualityAuditManifestPreview,
   formatCommentaryQualityAuditManifestIssues,
+  inspectValidatedCommentaryQualityAuditManifest,
   listCommentaryQualityAuditManifestPaths,
   parseCommentaryQualityAuditManifest,
   previewCommentaryQualityAuditManifestRefresh,
@@ -365,6 +376,17 @@ export type {
   CommentaryQualityAuditAcceptanceSupersedePreview,
 } from "./wiki/commentary-quality-audit-acceptance.js";
 export {
+  applyCommentarySampleFailureRejection,
+  previewCommentarySampleFailureRejection,
+  verifyCommentarySampleFailureRejection,
+} from "./wiki/commentary-sample-failure-rejection.js";
+export type {
+  CommentarySampleFailureRejectedBlock,
+  CommentarySampleFailureRejectionApply,
+  CommentarySampleFailureRejectionInput,
+  CommentarySampleFailureRejectionPreview,
+} from "./wiki/commentary-sample-failure-rejection.js";
+export {
   applyCommentaryRewriteAcceptance,
   previewCommentaryRewriteAcceptance,
 } from "./wiki/commentary-rewrite-review.js";
@@ -375,15 +397,55 @@ export type {
   CommentaryRewriteStatusSnapshot,
 } from "./wiki/commentary-rewrite-review.js";
 export {
+  applyCommentaryBlockReconsideration,
   applyCommentaryBlockReview,
+  previewCommentaryBlockReconsideration,
   previewCommentaryBlockReview,
 } from "./wiki/commentary-block-review.js";
 export type {
+  CommentaryBlockReconsiderationInput,
   CommentaryBlockReviewApply,
   CommentaryBlockReviewDecision,
   CommentaryBlockReviewInput,
   CommentaryBlockReviewPreview,
 } from "./wiki/commentary-block-review.js";
+export {
+  expectedOntologyAuditFinalAdjustmentAction,
+  ontologyAuditFinalAdjustmentArtifactName,
+  ontologyAuditFinalAdjustmentPriorStateArtifactName,
+  ontologyAuditFinalPointerCoreSha256,
+  ontologyAuditFinalPointerSha256,
+  ontologyAuditAdjudicationSha256,
+  ONTOLOGY_AUDIT_FINAL_ADJUSTMENT_RECEIPT,
+  ONTOLOGY_AUDIT_RELATION_FICTION_REVIEW_RECEIPT,
+  ontologyAuditRelationFictionReviewArtifactName,
+  readOntologyAuditRelationFictionReviewEvidence,
+  readOntologyAuditFinalAdjustments,
+  renderOntologyAuditFinalAdjustmentPriorState,
+  renderOntologyAuditFinalAdjustmentReceipt,
+  renderOntologyAuditFinalAdjustments,
+  renderOntologyAuditRelationFictionReviewEvidence,
+  verifyOntologyAuditFinalAdjustmentProvenance,
+  verifyOntologyAuditReconsiderationReviewEvidence,
+  verifyOntologyAuditRelationFictionFinalAdjustments,
+  verifyOntologyAuditSampleFailureReviewEvidence,
+  verifyOntologyAuditStructuralReviewReplay,
+  verifyPreservedPriorPartitions,
+} from "./wiki/ontology-audit-final-adjustments.js";
+export type {
+  OntologyAuditArtifactBinding,
+  OntologyAuditFinalAdjustment,
+  OntologyAuditFinalAdjustmentArtifact,
+  OntologyAuditFinalAdjustmentAction,
+  OntologyAuditFinalAdjustmentPriorState,
+  OntologyAuditFinalAdjustmentPriorTarget,
+  OntologyAuditFinalAdjustmentProvenanceKind,
+  OntologyAuditFinalAdjustmentProvenanceStage,
+  OntologyAuditPriorPartitionBinding,
+  OntologyAuditRelationFictionReviewArtifact,
+  OntologyAuditRelationFictionReviewEntry,
+  OntologyAuditRelationFictionReviewEvidence,
+} from "./wiki/ontology-audit-final-adjustments.js";
 export {
   applyCommentarySampleRepair,
   previewCommentarySampleRepair,
@@ -482,6 +544,7 @@ export type {
 export type {
   CommentaryQualityAuditAcceptance,
   CommentaryQualityAuditManifest,
+  CommentaryQualityAuditManifestInspection,
   CommentaryQualityAuditManifestIssue,
   CommentaryQualityAuditManifestUnit,
   WrittenCommentaryQualityAuditManifestPreview,

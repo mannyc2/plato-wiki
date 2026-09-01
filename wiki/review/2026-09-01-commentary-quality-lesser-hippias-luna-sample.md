@@ -1,0 +1,28 @@
+# Commentary quality-audit acceptance
+
+dialogue: lesser-hippias
+decision: accepted
+reviewer: commentary-audit-delegated-luna-reviewer-lesser-hippias-9703bce0e08f
+reviewed_on: 2026-09-01
+rationale: All six sampled blocks are supported by the exact source and accepted evidence, use complete-sentence playback edges without displacement, and provide focused, clear teaching value without substantive defects.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sample_evidence_path: wiki/submissions/commentary-audit-sample/lesser-hippias/0c8f7e997353dfaf4da98541ca04dfd4f0bc21d096094d400a380e03d439fb90.json
+sample_evidence_sha256: 0c8f7e997353dfaf4da98541ca04dfd4f0bc21d096094d400a380e03d439fb90
+sample_input_sha256: d888651263b21dedda528ec50fcdac92c24bcc4d76506b9f9408ac3a375255fb
+pending_manifest_sha256: 9703bce0e08f7199bc285edcba89400eb5580bc58ed422b8292646faf4ab7b82
+commentary_ledger_sha256: 94612d32fcd72b75db318c3fdf7dc6b9128da0f23a3accae9d85ed07f7bf89cb
+sample_packet_sha256: dce97e0e88db8fbf0818773da6bf3e343d4c3c7594644bdc9098f64a359fd093
+sample_output_sha256: 9acca660cea5b2e4197dcf70ec3c2abdbb7dffbc1e61435e2080703655ee993a
+sample_state_sha256: 208af86301d3bf8ef92c9c9ba62ed532d60cc566008cf548d95a58fa29bd4440
+codex_execution_sha256: 0667912ff9ce571ca48977c807bac720a1dc280645ef66422e18705cd8996cbd
+output_schema_sha256: 4267da372a3f3988fc2bbfbd5bcb4b67e2db9e8a1b4644a374f62171e0c19f45
+model_catalog_sha256: a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724
+sample_prompt_sha256: 541ea5c2f7925386ae7b6761ea1a5e8a902f0f38e8e5331b9236a36cfed04fb1
+sampled_commentary_ids:
+- comm_lesser-hippias_0003
+- comm_lesser-hippias_0004
+- comm_lesser-hippias_0007
+- comm_lesser-hippias_0008
+- comm_lesser-hippias_0010
+- comm_lesser-hippias_0013

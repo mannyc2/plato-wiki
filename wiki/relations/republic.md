@@ -303,7 +303,7 @@ relation_kind: tension
 resolution: verbal_only
 basis: "Both claims share the term ἀμαθία but deploy it in different argumentative frames and with different scope. Claim A (351a) equates injustice with ἀμαθία in the context of an argument that justice, as σοφία and ἀρετή, is stronger than injustice. Here ἀμαθία is a contrary of σοφία/ἀρετή and is predicated of injustice itself. Claim B (411c-411e) describes a psychological-educational etiology: a person trained only in gymnastic, without music and philosophy, becomes μισόλογος and ἄμουσος, and lives ἐν ἀμαθίᾳ καὶ σκαιότητι — ignorance is the resulting condition of a soul whose love of learning has atrophied. The apparent tension is that claim A makes ἀμαθία an attribute of injustice full stop, while claim B makes ἀμαθία an outcome of a specific one-sided training regimen. These are distinct claims about distinct subjects in distinct argumentative contexts: one is a premise in a dialectical move against Thrasymachus about justice's power; the other is a developmental claim about the soul's condition under imbalanced education in Book 3's city-founder analysis. No contradiction obtains because the predicate ἀμαθία is not being asserted of the same subject under the same respects."
 limits: This resolution does not address whether the two uses of ἀμαθία are conceptually compatible in a broader Platonic psychology; it only records that the two claims, as stated in their respective spans, do not formally contradict. Claim A is posed_only; claim B is left_standing. The shared term alone does not create a contradiction or substantive tension.
-review_status: accepted
+review_status: rejected
 resolution_ref:
   stephanus_span: 351a
   source_ref:

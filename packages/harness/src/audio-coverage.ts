@@ -14,6 +14,10 @@ import {
   type CharacterCatalog,
 } from "./audio-catalog.js";
 import { validateAudioQaArtifact, validateAudioScriptArtifact } from "./audio-production.js";
+import {
+  buildCommentaryAuditEvidenceSnapshot,
+  type CommentaryAuditEvidenceSnapshot,
+} from "./commentary-audit.js";
 import { commentaryMarkdownBlocks } from "./wiki/commentary-ledger.js";
 import { validateCommentaryLedger } from "./wiki/commentary-validator.js";
 import { fieldValue } from "./wiki/observation-ledger.js";
@@ -25,8 +29,7 @@ import {
   validateRecordingManifest,
 } from "./wiki/recording-manifest.js";
 import {
-  parseCommentaryQualityAuditManifest,
-  validateCommentaryQualityAuditManifest,
+  inspectValidatedCommentaryQualityAuditManifest,
 } from "./wiki/commentary-quality-audit.js";
 
 export type AudioCoverageStatusCounts = {
@@ -276,7 +279,10 @@ function commentaryCoverage(dialogue: string) {
   };
 }
 
-function qualityAuditCoverage(dialogue: string) {
+function qualityAuditCoverage(
+  dialogue: string,
+  auditEvidence: () => CommentaryAuditEvidenceSnapshot,
+) {
   const path = `wiki/commentary-audits/${dialogue}.json`;
   const absolutePath = join(getRepoRoot(), path);
   const present = nonEmptyFile(absolutePath);
@@ -290,23 +296,22 @@ function qualityAuditCoverage(dialogue: string) {
     } as const;
   }
   const content = readFileSync(absolutePath, "utf8");
-  const issues = validateCommentaryQualityAuditManifest(path, content);
-  if (issues.length > 0) {
+  const inspected = inspectValidatedCommentaryQualityAuditManifest(path, content, auditEvidence());
+  if (inspected.issues.length > 0 || !inspected.manifest) {
     return {
       path,
       present,
-      validationIssueCount: issues.length,
+      validationIssueCount: inspected.issues.length,
       acceptanceDecision: null,
       passed: false,
     } as const;
   }
-  const manifest = parseCommentaryQualityAuditManifest(path, content);
   return {
     path,
     present,
     validationIssueCount: 0,
-    acceptanceDecision: manifest.acceptance.decision,
-    passed: manifest.acceptance.decision === "accepted",
+    acceptanceDecision: inspected.manifest.acceptance.decision,
+    passed: inspected.manifest.acceptance.decision === "accepted",
   } as const;
 }
 
@@ -567,10 +572,11 @@ function coverageForDialogue(
   characterCatalog: ReturnType<typeof characterCatalogState>,
   castCatalog: ReturnType<typeof selectedCastState>,
   strictRecordingDialogues: ReadonlySet<string>,
+  auditEvidence: () => CommentaryAuditEvidenceSnapshot,
 ): DialogueAudioCoverage {
   const english = englishCoverage(dialogue);
   const commentary = commentaryCoverage(dialogue);
-  const qualityAudit = qualityAuditCoverage(dialogue);
+  const qualityAudit = qualityAuditCoverage(dialogue, auditEvidence);
   const census = rawCensus.get(dialogue) ?? { participants: 0, anomalies: 0 };
   const dialogueCharacters = characterCatalog.dialogues.get(dialogue);
   const canonicalIds = sortedUnique(stringArray(dialogueCharacters?.characterIds));
@@ -674,8 +680,17 @@ export function buildAudioCoverageReport(): AudioCoverageReport {
   const castCatalog = selectedCastState(validationIssues, characterCatalog.catalog);
   const canonicalDialogues = listGreekDialogues();
   const strictRecordingDialogues = strictWebsiteRecordingDialogues(canonicalDialogues);
+  let commentaryAuditEvidence: CommentaryAuditEvidenceSnapshot | undefined;
+  const auditEvidence = () => commentaryAuditEvidence ??= buildCommentaryAuditEvidenceSnapshot();
   const dialogues = canonicalDialogues.map((dialogue) =>
-    coverageForDialogue(dialogue, rawCensus, characterCatalog, castCatalog, strictRecordingDialogues),
+    coverageForDialogue(
+      dialogue,
+      rawCensus,
+      characterCatalog,
+      castCatalog,
+      strictRecordingDialogues,
+      auditEvidence,
+    ),
   );
   const unresolvedCharacters = new Set(dialogues.flatMap((entry) => entry.characters.unresolvedCharacterIds));
   const unselectedCastRoles = new Set(dialogues.flatMap((entry) => entry.cast.unselectedCharacterIds));

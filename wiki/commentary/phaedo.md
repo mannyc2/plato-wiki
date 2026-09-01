@@ -78,12 +78,16 @@ source_ref:
   start_char: 18902
   end_char: 27806
   text_sha256: 56246258d9db0653852c141b6001e8de64ade84769a6b51eaa5e361cbd4ce3f1
-body: "I read this stretch as a test of what philosophical courage means. The point is not simply to welcome death, but to ask what desire or fear rules the person who appears calm. The contrast invites us to distinguish a life oriented toward the soul’s independence from a mere exchange of one pleasure or fear for another. That keeps “practice of dying” from becoming a slogan: what kind of freedom does this composure express?"
+body: "I read this stretch as a test of what philosophical courage means. The point is not simply to welcome death, but to ask what desire or fear rules the person who appears calm. The contrast invites us to distinguish a life oriented toward the soul’s independence from conduct still ruled by desire or fear. That keeps “practice of dying” from becoming a slogan: what kind of freedom does this composure express?"
 cites:
   observations:
     []
   claims:
-    []
+    - claim_phaedo_0033
+    - claim_phaedo_0034
+    - claim_phaedo_0037
+    - claim_phaedo_0038
+    - claim_phaedo_0039
   relations:
     []
   dossiers:
@@ -91,7 +95,7 @@ cites:
 crossrefs:
   []
 author: model
-review_status: rejected
+review_status: accepted
 ```
 
 ```yaml
@@ -140,12 +144,15 @@ source_ref:
   start_char: 37541
   end_char: 47395
   text_sha256: c7cb4b5801d76e8fa029d08f23605ebad9dd0a2d03f69622cb606c6556cfe54d
-body: Simmias’s objection prompts the recollection argument. Perception of equal things is never exact, yet it awakens the thought of equality itself. The friends therefore distinguish sensible reminders from the intelligible standard they must already in some way possess.
+body: Simmias asks to hear how Socrates argues that learning is recollection. The argument turns to sensible equals, which sometimes appear unequal and fall short of the Equal itself. Seeing those things brings the Equal to mind, while the argument says knowledge of that standard must precede perception.
 cites:
   observations:
-    []
+    - obs_phaedo_0073
   claims:
-    []
+    - claim_phaedo_0087
+    - claim_phaedo_0089
+    - claim_phaedo_0091
+    - claim_phaedo_0097
   relations:
     []
   dossiers:
@@ -153,7 +160,7 @@ cites:
 crossrefs:
   []
 author: model
-review_status: rejected
+review_status: accepted
 ```
 
 ```yaml
@@ -300,7 +307,8 @@ cites:
   observations:
     []
   claims:
-    []
+    - claim_phaedo_0170
+    - claim_phaedo_0176
   relations:
     []
   dossiers:
@@ -308,7 +316,7 @@ cites:
 crossrefs:
   []
 author: model
-review_status: rejected
+review_status: accepted
 ```
 
 ```yaml
@@ -378,7 +386,7 @@ commentary_id: comm_phaedo_0013
 source_work: Phaedo
 block_kind: section
 placement: before
-title: Immortality, hesitation, and ethical stakes
+title: Immortality, renewed examination, and care
 stephanus_span: 105a-109a
 source_ref:
   source_path: raw/plato/greek/phaedo.txt
@@ -388,12 +396,16 @@ source_ref:
   start_char: 112756
   end_char: 122192
   text_sha256: f2cc9953516e120e608691a4124c789907af169bae13404b8f45ab9efc562b5b
-body: One way to hear this section is as a hinge, not as a settled map of the soul’s future. I hear Cebes accepting the conclusion, while Simmias’s hesitation keeps it from sounding unanimously settled. Socrates then shifts from what immortality may establish to how one should care for the soul, before offering a qualified picture of its postmortem journey.
+body: One way to hear this section is as a hinge, not as a settled map of the soul’s future. Cebes accepts the preceding arguments, but Socrates still says the first hypotheses require clearer examination. He then shifts from immortality’s conditional practical consequence to care for the soul and to a traditionally reported account of its postmortem journey.
 cites:
   observations:
     []
   claims:
-    []
+    - claim_phaedo_0237
+    - claim_phaedo_0238
+    - claim_phaedo_0239
+    - claim_phaedo_0240
+    - claim_phaedo_0241
   relations:
     []
   dossiers:
@@ -401,7 +413,7 @@ cites:
 crossrefs:
   []
 author: model
-review_status: rejected
+review_status: accepted
 ```
 
 ```yaml
@@ -422,7 +434,10 @@ source_ref:
 body: "I would hear this passage as a speculative story rather than a demonstrated geography. On that reading, the elaborate upper earth changes the scale of the conversation: our familiar world becomes a limited viewpoint, and the myth invites us to imagine what lies beyond it. Its force is imaginative enlargement, not a demand that we mistake a consoling picture for established fact."
 cites:
   observations:
-    []
+    - obs_phaedo_0228
+    - obs_phaedo_0229
+    - obs_phaedo_0230
+    - obs_phaedo_0246
   claims:
     []
   relations:

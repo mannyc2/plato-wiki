@@ -1,0 +1,36 @@
+# Commentary quality-audit acceptance
+
+dialogue: gorgias
+decision: accepted
+reviewer: commentary-audit-delegated-luna-reviewer-gorgias-365c55c5a514
+reviewed_on: 2026-09-01
+rationale: Every sampled block is anchored, evidence-supported, focused, and placed at a clean playback edge; no sampled unit shows a concrete defect in evidence, placement, or spoken-audio quality.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sample_evidence_path: wiki/submissions/commentary-audit-sample/gorgias/dc111e5f6851446f712cb566f768b55bf99e323be3c2e15ec5eec12bcf4069ae.json
+sample_evidence_sha256: dc111e5f6851446f712cb566f768b55bf99e323be3c2e15ec5eec12bcf4069ae
+sample_input_sha256: 49f08918bf2ae03b50a8f183b458f3280e097e43cfc1930ce91817fce61d8f5d
+pending_manifest_sha256: 365c55c5a5147ee454d71b8285a5ec6666229ad46d3267c7cd42250ec03fe1ab
+commentary_ledger_sha256: 9baf20a0b377f799cd8e73cfa8751c314b295c5dddcaf3dc591355f3c1bbddd4
+sample_packet_sha256: 1a658f4b46f62d8616852df70bfd06d37de3d2a9d6fc083e0259518355e0fb12
+sample_output_sha256: bf4848c70432bde2721200b73636629e03b5944fdcf31df13eba8450592ad8e5
+sample_state_sha256: 4b7caf407360e85cad6db1c681577735bb9a67e820b42e56fa2cb2785d9a0f98
+codex_execution_sha256: 25d76921569716a5ee08dabb012ead39660939561a60c438059b3ffe8add38e2
+output_schema_sha256: 52873c06ae337258037b065fffc29ca9b997c19da97b38d1686cf4e1c5a7b7ae
+model_catalog_sha256: a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724
+sample_prompt_sha256: 13ba8d47e1e69fd88d64ee61891e1989c66296bbeb146ef2decba28a468dfcd2
+sampled_commentary_ids:
+- comm_gorgias_0001
+- comm_gorgias_0006
+- comm_gorgias_0008
+- comm_gorgias_0013
+- comm_gorgias_0015
+- comm_gorgias_0016
+- comm_gorgias_0017
+- comm_gorgias_0020
+- comm_gorgias_0024
+- comm_gorgias_0025
+- comm_gorgias_0026
+- comm_gorgias_0027
+- comm_gorgias_0028
+- comm_gorgias_0033

@@ -7905,7 +7905,7 @@ relation_kind: tension
 resolution: standing
 basis: "Both claims involve the soul (ψυχήν) but address different questions. The Laws claim ranks goods for correct civic honor-distribution: soul-goods (with moderation) first, body-goods second, wealth third. The Republic claim argues that the soul cannot be killed by its own evil or by an evil appointed for something else's destruction. The shared term ψυχήν does not indicate a shared thesis; one is a political ranking of goods, the other is a metaphysical argument about the soul's indestructibility. They neither contradict nor restate each other."
 limits: This adjudication is confined to the two claim records as written. It does not address whether the Laws ranking presupposes or conflicts with the Republic's claim about the soul's indestructibility, nor whether a broader thematic reading of soul across the corpus would reveal a deeper relation.
-review_status: accepted
+review_status: rejected
 ```
 
 ```yaml

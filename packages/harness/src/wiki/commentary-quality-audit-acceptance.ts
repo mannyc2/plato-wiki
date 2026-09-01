@@ -1,7 +1,11 @@
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { dirname } from "node:path";
 import { parseCommentaryQualityAudit } from "../commentary-audit.js";
+import {
+  buildCommentaryAuditSampleEvidenceBundle,
+  type CommentaryAuditSampleEvidenceBundle,
+} from "../commentary-audit-sample-campaign.js";
 import { COMMENTARY_AUTHORING_MODEL, COMMENTARY_STAGE_EFFORT } from "../commentary-authoring.js";
 import {
   buildCommentaryQualityAuditManifestPreview,
@@ -16,8 +20,17 @@ import {
 } from "./commentary-quality-audit.js";
 import { commentaryMarkdownBlocks } from "./commentary-ledger.js";
 import { fieldValue } from "./observation-ledger.js";
+import {
+  readCommentaryAuditSampleLedgerEvidence,
+  validateAcceptedCommentaryQualityAuditProvenance,
+} from "./commentary-quality-audit-provenance.js";
 import { withRepoWriteLock } from "../file-lock.js";
-import { getRepoRoot } from "../paths.js";
+import { normalizeRepoPath } from "../paths.js";
+import {
+  assertCanonicalRepoFileParent,
+  canonicalRepoFileForRead,
+  canonicalRepoFileForWrite,
+} from "../repo-artifact-path.js";
 
 const DIALOGUE = /^[a-z0-9-]+$/u;
 const REVIEW_DATE = /^\d{4}-\d{2}-\d{2}$/u;
@@ -39,6 +52,7 @@ export type CommentaryQualityAuditAcceptanceInput = {
   reviewedOn: string;
   rationale: string;
   sampledCommentaryIds: string[];
+  sampleOutputPath: string;
   pendingPreviewPath?: string;
 };
 
@@ -47,6 +61,9 @@ export type CommentaryQualityAuditAcceptancePreview = {
   pendingPreviewPath: string;
   manifestPath: string;
   reviewNotePath: string;
+  sampleEvidencePath: string;
+  sampleEvidenceSha256: string;
+  sampleEvidence: string;
   manifest: CommentaryQualityAuditManifest;
   reviewNote: string;
 };
@@ -71,6 +88,13 @@ export type CommentaryQualityAuditAcceptanceSupersedePreview = {
   predecessorReviewNotePath: string;
   predecessorReviewNoteSha256: string;
   predecessorReviewNoteHistoryPath: string;
+  predecessorLedgerPath: string;
+  predecessorLedgerSha256: string;
+  predecessorLedgerHistoryPath: string;
+  predecessorLedgerContent: string;
+  sampleEvidencePath: string;
+  sampleEvidenceSha256: string;
+  sampleEvidence: string;
 };
 
 export type CommentaryQualityAuditAcceptanceSupersedeApply =
@@ -82,6 +106,46 @@ function sha256(content: string | Uint8Array) {
 
 function prettyJson(value: unknown) {
   return `${JSON.stringify(value, null, 2)}\n`;
+}
+
+function renameNewCanonicalFile(temporaryAbsolutePath: string, targetRelativePath: string, label: string) {
+  const temporaryRelativePath = normalizeRepoPath(temporaryAbsolutePath).relativePath;
+  canonicalRepoFileForRead(temporaryRelativePath, `temporary ${label}`);
+  const targetAbsolutePath = canonicalRepoFileForWrite(targetRelativePath, label);
+  assertCanonicalRepoFileParent(targetRelativePath, label);
+  if (existsSync(targetAbsolutePath)) throw new Error(`Refusing concurrent ${label} creation at ${targetRelativePath}`);
+  renameSync(temporaryAbsolutePath, targetAbsolutePath);
+}
+
+function replaceCanonicalFile(
+  temporaryAbsolutePath: string,
+  targetRelativePath: string,
+  expectedCurrentSha256: string,
+  label: string,
+) {
+  const temporaryRelativePath = normalizeRepoPath(temporaryAbsolutePath).relativePath;
+  canonicalRepoFileForRead(temporaryRelativePath, `temporary ${label}`);
+  const targetAbsolutePath = canonicalRepoFileForRead(targetRelativePath, label);
+  assertCanonicalRepoFileParent(targetRelativePath, label);
+  if (sha256(readFileSync(targetAbsolutePath)) !== expectedCurrentSha256) {
+    throw new Error(`Refusing stale ${label} replacement at ${targetRelativePath}`);
+  }
+  renameSync(temporaryAbsolutePath, targetAbsolutePath);
+}
+
+function removeCanonicalFileIfCreated(relativePath: string, label: string) {
+  try {
+    const absolutePath = canonicalRepoFileForRead(relativePath, label);
+    rmSync(absolutePath, { force: true });
+  } catch {
+    // Never follow an aliased cleanup path. A noncanonical orphan requires
+    // explicit inspection instead of best-effort deletion through the alias.
+  }
+}
+
+function removeCanonicalTemporaryFile(absolutePath: string, label: string) {
+  const relativePath = normalizeRepoPath(absolutePath).relativePath;
+  if (existsSync(absolutePath)) removeCanonicalFileIfCreated(relativePath, label);
 }
 
 function expectedPendingPreviewPath(dialogue: string) {
@@ -102,6 +166,10 @@ function predecessorManifestHistoryPath(dialogue: string, manifestSha256: string
 
 function predecessorReviewNoteHistoryPath(dialogue: string, reviewNoteSha256: string) {
   return `wiki/review/commentary-quality-history/${dialogue}/${reviewNoteSha256}.md`;
+}
+
+function predecessorLedgerHistoryPath(dialogue: string, ledgerSha256: string) {
+  return `wiki/commentary-audits/history/${dialogue}/ledgers/${ledgerSha256}.md`;
 }
 
 function validDate(value: string) {
@@ -138,6 +206,13 @@ function validateInput(input: CommentaryQualityAuditAcceptanceInput) {
   if (new Set(input.sampledCommentaryIds).size !== input.sampledCommentaryIds.length) {
     throw new Error("sampledCommentaryIds must be unique");
   }
+  const expectedSampleOutput = new RegExp(
+    `^scratch/commentary/audit-sample-reviews/${input.dialogue}/[a-f0-9]{16}\\.json$`,
+    "u",
+  );
+  if (!expectedSampleOutput.test(input.sampleOutputPath)) {
+    throw new Error(`sampleOutputPath must identify the current bounded scratch result for ${input.dialogue}`);
+  }
   const expectedPreviewPath = expectedPendingPreviewPath(input.dialogue);
   if (input.pendingPreviewPath !== undefined && input.pendingPreviewPath !== expectedPreviewPath) {
     throw new Error(`pendingPreviewPath must be ${expectedPreviewPath}; legacy or alternate paths are not supported`);
@@ -145,7 +220,7 @@ function validateInput(input: CommentaryQualityAuditAcceptanceInput) {
 }
 
 function activeLedgerIds(manifest: CommentaryQualityAuditManifest) {
-  const ledgerContent = readFileSync(join(getRepoRoot(), manifest.ledger.path), "utf8");
+  const ledgerContent = readFileSync(canonicalRepoFileForRead(manifest.ledger.path, "commentary ledger"), "utf8");
   return commentaryMarkdownBlocks(ledgerContent)
     .filter((block) => fieldValue(block.content, "review_status") === "accepted")
     .map((block) => fieldValue(block.content, "commentary_id") ?? "");
@@ -167,29 +242,6 @@ export function validateCommentaryQualityAuditAcceptanceSample(sampledIds: strin
   }
 }
 
-function validateHistoricalPredecessorSample(sampledIds: string[], historicalIds: string[]) {
-  const minimumSample = Math.min(15, historicalIds.length);
-  const historicalIdSet = new Set(historicalIds);
-  if (sampledIds.length < minimumSample) {
-    throw new Error(`sampledCommentaryIds must contain at least ${minimumSample} historical IDs`);
-  }
-  if (sampledIds.length > historicalIds.length) {
-    throw new Error("sampledCommentaryIds cannot exceed the embedded historical ID count");
-  }
-  if (new Set(sampledIds).size !== sampledIds.length) {
-    throw new Error("sampledCommentaryIds must be unique");
-  }
-  if (sampledIds.some((id) => !historicalIdSet.has(id))) {
-    throw new Error("sampledCommentaryIds must contain only embedded historical IDs");
-  }
-  if (
-    historicalIds.length <= 15 &&
-    (sampledIds.length !== historicalIds.length || historicalIds.some((id) => !sampledIds.includes(id)))
-  ) {
-    throw new Error("all embedded historical IDs must be sampled when there are 15 or fewer");
-  }
-}
-
 function reviewReceiptSampledCommentaryIds(content: string) {
   const lines = content.split(/\r?\n/u).map((line) => line.trim());
   const markerIndexes = lines.flatMap((line, index) => line === "sampled_commentary_ids:" ? [index] : []);
@@ -203,7 +255,10 @@ function reviewReceiptSampledCommentaryIds(content: string) {
   return sampledIds;
 }
 
-function renderReviewNote(input: CommentaryQualityAuditAcceptanceInput) {
+function renderReviewNote(
+  input: CommentaryQualityAuditAcceptanceInput,
+  evidence: CommentaryAuditSampleEvidenceBundle,
+) {
   return [
     "# Commentary quality-audit acceptance",
     "",
@@ -214,6 +269,18 @@ function renderReviewNote(input: CommentaryQualityAuditAcceptanceInput) {
     `rationale: ${input.rationale}`,
     COMMENTARY_QUALITY_AUDIT_REVIEW_BASIS,
     COMMENTARY_QUALITY_AUDIT_NO_HUMAN_LISTENING,
+    `sample_evidence_path: ${evidence.path}`,
+    `sample_evidence_sha256: ${evidence.sha256}`,
+    `sample_input_sha256: ${evidence.record.input_sha256}`,
+    `pending_manifest_sha256: ${evidence.record.pending_manifest.sha256}`,
+    `commentary_ledger_sha256: ${evidence.record.commentary_ledger.sha256}`,
+    `sample_packet_sha256: ${evidence.record.sample_packet.sha256}`,
+    `sample_output_sha256: ${evidence.record.sample_output.sha256}`,
+    `sample_state_sha256: ${evidence.record.sample_state.sha256}`,
+    `codex_execution_sha256: ${evidence.record.codex_execution.sha256}`,
+    `output_schema_sha256: ${evidence.record.output_schema.sha256}`,
+    `model_catalog_sha256: ${evidence.record.model_catalog.sha256}`,
+    `sample_prompt_sha256: ${evidence.record.prompt.sha256}`,
     "sampled_commentary_ids:",
     ...input.sampledCommentaryIds.map((id) => `- ${id}`),
     "",
@@ -222,6 +289,7 @@ function renderReviewNote(input: CommentaryQualityAuditAcceptanceInput) {
 
 function renderSupersedeReviewNote(
   input: CommentaryQualityAuditAcceptanceInput,
+  evidence: CommentaryAuditSampleEvidenceBundle,
   predecessor: {
     manifestPath: string;
     manifestSha256: string;
@@ -229,10 +297,13 @@ function renderSupersedeReviewNote(
     reviewNotePath: string;
     reviewNoteSha256: string;
     reviewNoteHistoryPath: string;
+    ledgerPath: string;
+    ledgerSha256: string;
+    ledgerHistoryPath: string;
   },
 ) {
   return [
-    renderReviewNote(input).trimEnd(),
+    renderReviewNote(input, evidence).trimEnd(),
     `predecessor_manifest_path: ${predecessor.manifestPath}`,
     `predecessor_manifest_sha256: ${predecessor.manifestSha256}`,
     `predecessor_manifest_history_path: ${predecessor.manifestHistoryPath}`,
@@ -241,6 +312,10 @@ function renderSupersedeReviewNote(
     `predecessor_review_note_sha256: ${predecessor.reviewNoteSha256}`,
     `predecessor_review_note_history_path: ${predecessor.reviewNoteHistoryPath}`,
     `predecessor_review_note_history_sha256: ${predecessor.reviewNoteSha256}`,
+    `predecessor_ledger_path: ${predecessor.ledgerPath}`,
+    `predecessor_ledger_sha256: ${predecessor.ledgerSha256}`,
+    `predecessor_ledger_history_path: ${predecessor.ledgerHistoryPath}`,
+    `predecessor_ledger_history_sha256: ${predecessor.ledgerSha256}`,
     "",
   ].join("\n");
 }
@@ -252,6 +327,9 @@ type AcceptedPredecessor = {
   reviewNotePath: string;
   reviewNoteContent: string;
   reviewNoteSha256: string;
+  ledgerPath: string;
+  ledgerContent: string;
+  ledgerSha256: string;
 };
 
 function record(value: unknown): value is Record<string, unknown> {
@@ -265,7 +343,7 @@ function hasExactFields(value: Record<string, unknown>, fields: ReadonlySet<stri
 
 function loadAcceptedPredecessor(dialogue: string): AcceptedPredecessor {
   const path = manifestPath(dialogue);
-  const absolutePath = join(getRepoRoot(), path);
+  const absolutePath = canonicalRepoFileForRead(path, "accepted predecessor commentary audit manifest");
   if (!existsSync(absolutePath)) throw new Error(`Cannot supersede missing accepted commentary quality-audit manifest ${path}`);
   const content = readFileSync(absolutePath, "utf8");
   const sha256Value = sha256(content);
@@ -314,7 +392,7 @@ function loadAcceptedPredecessor(dialogue: string): AcceptedPredecessor {
   }
   const sampledCommentaryIds = acceptance.sampled_commentary_ids as string[];
   const units = Array.isArray(value.units) && value.units.length > 0 ? value.units : undefined;
-  const historicalIds: string[] = [];
+  const historicalAuditedIds: string[] = [];
   const seenUnitKeys = new Set<string>();
   if (units) {
     for (const [index, unitValue] of units.entries()) {
@@ -346,8 +424,13 @@ function loadAcceptedPredecessor(dialogue: string): AcceptedPredecessor {
         ) {
           throw new Error(`Refusing invalid predecessor manifest ${path}: units[${index}].provenance is malformed`);
         }
-        const provenanceAbsolutePath = join(getRepoRoot(), provenance.path);
-        if (!existsSync(provenanceAbsolutePath) || sha256(readFileSync(provenanceAbsolutePath)) !== provenance.sha256) {
+        let provenanceAbsolutePath: string;
+        try {
+          provenanceAbsolutePath = canonicalRepoFileForRead(provenance.path, "delegated commentary provenance");
+        } catch {
+          throw new Error(`Refusing invalid predecessor manifest ${path}: units[${index}].provenance is stale`);
+        }
+        if (sha256(readFileSync(provenanceAbsolutePath)) !== provenance.sha256) {
           throw new Error(`Refusing invalid predecessor manifest ${path}: units[${index}].provenance is stale`);
         }
       }
@@ -370,7 +453,7 @@ function loadAcceptedPredecessor(dialogue: string): AcceptedPredecessor {
         ) {
           throw new Error("identity, verdict, or output hash does not match");
         }
-        historicalIds.push(...output.blocks.map((block) => block.commentary_id));
+        historicalAuditedIds.push(...output.blocks.map((block) => block.commentary_id));
       } catch (error) {
         throw new Error(
           `Refusing invalid predecessor manifest ${path}: units[${index}] has an invalid embedded audit output: ${error instanceof Error ? error.message : String(error)}`,
@@ -379,20 +462,11 @@ function loadAcceptedPredecessor(dialogue: string): AcceptedPredecessor {
     }
   }
   if (
-    !units || historicalIds.length === 0 ||
-    historicalIds.some((id) => !COMMENTARY_ID.test(id)) ||
-    new Set(historicalIds).size !== historicalIds.length
+    !units || historicalAuditedIds.length === 0 ||
+    historicalAuditedIds.some((id) => !COMMENTARY_ID.test(id)) ||
+    new Set(historicalAuditedIds).size !== historicalAuditedIds.length
   ) {
     throw new Error(`Refusing invalid predecessor manifest ${path}: embedded audit coverage is malformed`);
-  }
-  try {
-    // The predecessor ledger bytes are no longer canonical after a changed-ledger
-    // supersede, while embedded outputs retain campaign-unit order rather than
-    // ledger order. Validate the durable historical coverage here; the receipt
-    // below remains the exact ordered record of the independently accepted sample.
-    validateHistoricalPredecessorSample(sampledCommentaryIds, historicalIds);
-  } catch (error) {
-    throw new Error(`Refusing invalid predecessor manifest ${path}: ${error instanceof Error ? error.message : String(error)}`);
   }
   const reviewNote = record(acceptance.review_note) ? acceptance.review_note : undefined;
   const reviewNotePathValue = reviewNote?.path;
@@ -405,8 +479,7 @@ function loadAcceptedPredecessor(dialogue: string): AcceptedPredecessor {
   ) {
     throw new Error(`Refusing invalid predecessor manifest ${path}: review receipt binding is malformed`);
   }
-  const absoluteReviewNotePath = join(getRepoRoot(), reviewNotePathValue);
-  if (!existsSync(absoluteReviewNotePath)) throw new Error(`Refusing missing predecessor review receipt ${reviewNotePathValue}`);
+  const absoluteReviewNotePath = canonicalRepoFileForRead(reviewNotePathValue, "predecessor commentary review receipt");
   const reviewNoteContent = readFileSync(absoluteReviewNotePath, "utf8");
   if (sha256(reviewNoteContent) !== reviewNoteSha256) {
     throw new Error(`Refusing stale predecessor review receipt ${reviewNotePathValue}`);
@@ -433,6 +506,49 @@ function loadAcceptedPredecessor(dialogue: string): AcceptedPredecessor {
   ) {
     throw new Error(`Refusing invalid predecessor review receipt ${reviewNotePathValue}`);
   }
+  const ledgerEvidence = readCommentaryAuditSampleLedgerEvidence({
+    dialogue,
+    noteContent: reviewNoteContent,
+    expectedSha256: ledger.sha256 as string,
+  });
+  const historicalLedgerIds = commentaryMarkdownBlocks(ledgerEvidence.content).flatMap((block) => {
+    if (fieldValue(block.content, "review_status") !== "accepted") return [];
+    const id = fieldValue(block.content, "commentary_id");
+    return id ? [id] : [];
+  });
+  const auditedSet = new Set(historicalAuditedIds);
+  if (
+    historicalLedgerIds.length !== historicalAuditedIds.length ||
+    new Set(historicalLedgerIds).size !== historicalLedgerIds.length ||
+    historicalLedgerIds.some((id) => !auditedSet.has(id))
+  ) {
+    throw new Error(`Refusing invalid predecessor manifest ${path}: preserved ledger and embedded audit coverage differ`);
+  }
+  validateCommentaryQualityAuditAcceptanceSample(sampledCommentaryIds, historicalLedgerIds);
+  const predecessorProvenanceIssues = validateAcceptedCommentaryQualityAuditProvenance({
+    dialogue,
+    reviewer: acceptance.reviewer,
+    reviewedOn: acceptance.reviewed_on,
+    rationale: acceptance.rationale,
+    sampledCommentaryIds,
+    reviewNote,
+    activeCommentaryIds: historicalLedgerIds,
+    pendingManifestContent: prettyJson({
+      ...value,
+      acceptance: {
+        decision: "pending",
+        reviewer: null,
+        reviewed_on: null,
+        rationale: null,
+        sampled_commentary_ids: [],
+        review_note: null,
+      },
+    }),
+    historical: true,
+  });
+  if (predecessorProvenanceIssues.length > 0) {
+    throw new Error(`Refusing invalid predecessor sample provenance ${path}: ${predecessorProvenanceIssues.map((issue) => issue.message).join("; ")}`);
+  }
   return {
     path,
     content,
@@ -440,16 +556,19 @@ function loadAcceptedPredecessor(dialogue: string): AcceptedPredecessor {
     reviewNotePath: reviewNotePathValue,
     reviewNoteContent,
     reviewNoteSha256,
+    ledgerPath: ledgerEvidence.path,
+    ledgerContent: ledgerEvidence.content,
+    ledgerSha256: ledgerEvidence.sha256,
   };
 }
 
 function loadCurrentPending(input: CommentaryQualityAuditAcceptanceInput) {
   const pendingPath = expectedPendingPreviewPath(input.dialogue);
-  const absolutePendingPath = join(getRepoRoot(), pendingPath);
+  const absolutePendingPath = canonicalRepoFileForWrite(pendingPath, "pending commentary audit preview");
   if (!existsSync(absolutePendingPath)) {
     throw new Error(`Missing pending commentary audit preview ${pendingPath}; run audit-manifest-preview first`);
   }
-  const pendingContent = readFileSync(absolutePendingPath, "utf8");
+  const pendingContent = readFileSync(canonicalRepoFileForRead(pendingPath, "pending commentary audit preview"), "utf8");
   const currentPending = buildCommentaryQualityAuditManifestPreview(input.dialogue);
   const currentPendingContent = prettyJson(currentPending);
   if (pendingContent !== currentPendingContent) {
@@ -467,16 +586,39 @@ function loadCurrentPending(input: CommentaryQualityAuditAcceptanceInput) {
   return currentPending;
 }
 
+function loadCurrentPassingSample(
+  input: CommentaryQualityAuditAcceptanceInput,
+  pending: CommentaryQualityAuditManifest,
+) {
+  const evidence = buildCommentaryAuditSampleEvidenceBundle({
+    dialogue: input.dialogue,
+    sampleOutputPath: input.sampleOutputPath,
+  });
+  if (evidence.record.pending_manifest.content !== prettyJson(pending)) {
+    throw new Error(`Independent sample evidence for ${input.dialogue} does not bind the current pending manifest`);
+  }
+  const review = evidence.review;
+  if (
+    review.reviewer.id !== input.reviewer || review.rationale !== input.rationale ||
+    review.sampled_commentary_ids.length !== input.sampledCommentaryIds.length ||
+    review.sampled_commentary_ids.some((id, index) => id !== input.sampledCommentaryIds[index])
+  ) {
+    throw new Error(`Acceptance inputs for ${input.dialogue} must exactly match the current passing sample output`);
+  }
+  return evidence;
+}
+
 export function previewCommentaryQualityAuditAcceptance(
   input: CommentaryQualityAuditAcceptanceInput,
 ): CommentaryQualityAuditAcceptancePreview {
   validateInput(input);
   const pending = loadCurrentPending(input);
+  const evidence = loadCurrentPassingSample(input, pending);
   const activeIds = activeLedgerIds(pending);
   validateCommentaryQualityAuditAcceptanceSample(input.sampledCommentaryIds, activeIds);
 
   const reviewPath = reviewNotePath(input.dialogue, input.reviewedOn);
-  const reviewNote = renderReviewNote(input);
+  const reviewNote = renderReviewNote(input, evidence);
   const manifest: CommentaryQualityAuditManifest = {
     ...pending,
     acceptance: {
@@ -493,6 +635,9 @@ export function previewCommentaryQualityAuditAcceptance(
     pendingPreviewPath: expectedPendingPreviewPath(input.dialogue),
     manifestPath: manifestPath(input.dialogue),
     reviewNotePath: reviewPath,
+    sampleEvidencePath: evidence.path,
+    sampleEvidenceSha256: evidence.sha256,
+    sampleEvidence: evidence.content,
     manifest,
     reviewNote,
   };
@@ -501,18 +646,26 @@ export function previewCommentaryQualityAuditAcceptance(
 export function applyCommentaryQualityAuditAcceptance(
   input: CommentaryQualityAuditAcceptanceInput,
 ): CommentaryQualityAuditAcceptanceApply {
+  const candidate = previewCommentaryQualityAuditAcceptance(input);
   const targetManifestPath = manifestPath(input.dialogue);
   const targetReviewPath = reviewNotePath(input.dialogue, input.reviewedOn);
   return withRepoWriteLock(
     {
-      paths: [targetManifestPath, targetReviewPath],
+      paths: [targetManifestPath, targetReviewPath, candidate.sampleEvidencePath],
       label: `commentary-quality-audit-acceptance:${input.dialogue}`,
     },
     () => {
       const preview = previewCommentaryQualityAuditAcceptance(input);
-      const manifestAbsolutePath = join(getRepoRoot(), preview.manifestPath);
-      const reviewAbsolutePath = join(getRepoRoot(), preview.reviewNotePath);
-      if (existsSync(manifestAbsolutePath) || existsSync(reviewAbsolutePath)) {
+      if (
+        preview.sampleEvidencePath !== candidate.sampleEvidencePath ||
+        preview.sampleEvidenceSha256 !== candidate.sampleEvidenceSha256
+      ) {
+        throw new Error(`Independent sample evidence for ${input.dialogue} changed before apply`);
+      }
+      const manifestAbsolutePath = canonicalRepoFileForWrite(preview.manifestPath, "commentary audit manifest");
+      const reviewAbsolutePath = canonicalRepoFileForWrite(preview.reviewNotePath, "commentary audit review note");
+      const evidenceAbsolutePath = canonicalRepoFileForWrite(preview.sampleEvidencePath, "commentary sample evidence");
+      if (existsSync(manifestAbsolutePath) || existsSync(reviewAbsolutePath) || existsSync(evidenceAbsolutePath)) {
         throw new Error(`Refusing to overwrite existing canonical acceptance files for ${input.dialogue}`);
       }
 
@@ -535,25 +688,46 @@ export function applyCommentaryQualityAuditAcceptance(
       }
 
       mkdirSync(dirname(reviewAbsolutePath), { recursive: true });
-      const reviewTempPath = `${reviewAbsolutePath}.tmp-${process.pid}`;
-      const manifestTempPath = `${manifestAbsolutePath}.tmp-${process.pid}`;
-      writeFileSync(reviewTempPath, preview.reviewNote, "utf8");
-      renameSync(reviewTempPath, reviewAbsolutePath);
+      mkdirSync(dirname(evidenceAbsolutePath), { recursive: true });
+      mkdirSync(dirname(manifestAbsolutePath), { recursive: true });
+      assertCanonicalRepoFileParent(preview.reviewNotePath, "commentary audit review note");
+      assertCanonicalRepoFileParent(preview.sampleEvidencePath, "commentary sample evidence");
+      assertCanonicalRepoFileParent(preview.manifestPath, "commentary audit manifest");
+      const suffix = `${process.pid}-${Date.now()}`;
+      const evidenceTempPath = canonicalRepoFileForWrite(
+        `${preview.sampleEvidencePath}.tmp-${suffix}`,
+        "temporary commentary sample evidence",
+      );
+      const reviewTempPath = canonicalRepoFileForWrite(
+        `${preview.reviewNotePath}.tmp-${suffix}`,
+        "temporary commentary audit review note",
+      );
+      const manifestTempPath = canonicalRepoFileForWrite(
+        `${preview.manifestPath}.tmp-${suffix}`,
+        "temporary commentary audit manifest",
+      );
+      let evidenceCreated = false;
+      let reviewCreated = false;
       try {
+        writeFileSync(evidenceTempPath, preview.sampleEvidence, { encoding: "utf8", flag: "wx" });
+        writeFileSync(reviewTempPath, preview.reviewNote, { encoding: "utf8", flag: "wx" });
+        renameNewCanonicalFile(evidenceTempPath, preview.sampleEvidencePath, "commentary sample evidence");
+        evidenceCreated = true;
+        renameNewCanonicalFile(reviewTempPath, preview.reviewNotePath, "commentary audit review note");
+        reviewCreated = true;
         const acceptedContent = prettyJson(preview.manifest);
         const issues = validateCommentaryQualityAuditManifest(preview.manifestPath, acceptedContent);
         if (issues.length > 0) {
           throw new Error(`Refusing invalid canonical acceptance:\n${formatCommentaryQualityAuditManifestIssues(issues)}`);
         }
-        mkdirSync(dirname(manifestAbsolutePath), { recursive: true });
-        writeFileSync(manifestTempPath, acceptedContent, "utf8");
-        renameSync(manifestTempPath, manifestAbsolutePath);
+        writeFileSync(manifestTempPath, acceptedContent, { encoding: "utf8", flag: "wx" });
+        renameNewCanonicalFile(manifestTempPath, preview.manifestPath, "commentary audit manifest");
       } catch (error) {
-        // The note was created by this operation and is not useful without its
-        // manifest; remove only that newly-created file on failed apply.
-        rmSync(reviewAbsolutePath, { force: true });
-        rmSync(reviewTempPath, { force: true });
-        rmSync(manifestTempPath, { force: true });
+        removeCanonicalTemporaryFile(evidenceTempPath, "temporary commentary sample evidence");
+        removeCanonicalTemporaryFile(reviewTempPath, "temporary commentary audit review note");
+        removeCanonicalTemporaryFile(manifestTempPath, "temporary commentary audit manifest");
+        if (reviewCreated) removeCanonicalFileIfCreated(preview.reviewNotePath, "commentary audit review note");
+        if (evidenceCreated) removeCanonicalFileIfCreated(preview.sampleEvidencePath, "commentary sample evidence");
         throw error;
       }
       return { ...preview, applied: true };
@@ -567,8 +741,7 @@ function buildSupersedePreview(
   validateInput(input);
   const predecessor = loadAcceptedPredecessor(input.dialogue);
   const ledgerPath = `wiki/commentary/${input.dialogue}.md`;
-  const ledgerAbsolutePath = join(getRepoRoot(), ledgerPath);
-  if (!existsSync(ledgerAbsolutePath)) throw new Error(`Missing commentary ledger ${ledgerPath}`);
+  const ledgerAbsolutePath = canonicalRepoFileForRead(ledgerPath, "commentary ledger");
   const currentLedgerSha256 = sha256(readFileSync(ledgerAbsolutePath));
   const predecessorValue = JSON.parse(predecessor.content) as Record<string, unknown>;
   const predecessorLedger = predecessorValue.ledger as Record<string, unknown>;
@@ -583,6 +756,7 @@ function buildSupersedePreview(
   }
 
   const pending = loadCurrentPending(input);
+  const evidence = loadCurrentPassingSample(input, pending);
   if (pending.ledger.sha256 === predecessorLedger.sha256) {
     throw new Error(`Refusing unchanged commentary quality-audit candidate for ${input.dialogue}`);
   }
@@ -593,19 +767,23 @@ function buildSupersedePreview(
   const targetReviewNotePath = reviewNotePath(input.dialogue, input.reviewedOn);
   const manifestHistoryPath = predecessorManifestHistoryPath(input.dialogue, predecessor.sha256);
   const reviewNoteHistoryPath = predecessorReviewNoteHistoryPath(input.dialogue, predecessor.reviewNoteSha256);
-  const collisionPaths = [targetReviewNotePath, manifestHistoryPath, reviewNoteHistoryPath];
-  const collisions = collisionPaths.filter((path) => existsSync(join(getRepoRoot(), path)));
+  const ledgerHistoryPath = predecessorLedgerHistoryPath(input.dialogue, predecessor.ledgerSha256);
+  const collisionPaths = [targetReviewNotePath, manifestHistoryPath, reviewNoteHistoryPath, ledgerHistoryPath, evidence.path];
+  const collisions = collisionPaths.filter((path) => existsSync(canonicalRepoFileForWrite(path, "supersede artifact")));
   if (collisions.length > 0) {
     throw new Error(`Refusing supersede path collision: ${collisions.join(", ")}`);
   }
 
-  const reviewNote = renderSupersedeReviewNote(input, {
+  const reviewNote = renderSupersedeReviewNote(input, evidence, {
     manifestPath: predecessor.path,
     manifestSha256: predecessor.sha256,
     manifestHistoryPath,
     reviewNotePath: predecessor.reviewNotePath,
     reviewNoteSha256: predecessor.reviewNoteSha256,
     reviewNoteHistoryPath,
+    ledgerPath: predecessor.ledgerPath,
+    ledgerSha256: predecessor.ledgerSha256,
+    ledgerHistoryPath,
   });
   const manifest: CommentaryQualityAuditManifest = {
     ...pending,
@@ -635,6 +813,13 @@ function buildSupersedePreview(
     predecessorReviewNotePath: predecessor.reviewNotePath,
     predecessorReviewNoteSha256: predecessor.reviewNoteSha256,
     predecessorReviewNoteHistoryPath: reviewNoteHistoryPath,
+    predecessorLedgerPath: predecessor.ledgerPath,
+    predecessorLedgerSha256: predecessor.ledgerSha256,
+    predecessorLedgerHistoryPath: ledgerHistoryPath,
+    predecessorLedgerContent: predecessor.ledgerContent,
+    sampleEvidencePath: evidence.path,
+    sampleEvidenceSha256: evidence.sha256,
+    sampleEvidence: evidence.content,
   };
 }
 
@@ -656,25 +841,56 @@ export function previewCommentaryQualityAuditAcceptanceSupersede(
 export function applyCommentaryQualityAuditAcceptanceSupersede(
   input: CommentaryQualityAuditAcceptanceSupersedeInput,
 ): CommentaryQualityAuditAcceptanceSupersedeApply {
+  const candidate = buildSupersedePreview(input);
   const manifestPathValue = manifestPath(input.dialogue);
   return withRepoWriteLock(
     {
-      paths: [manifestPathValue, reviewNotePath(input.dialogue, input.reviewedOn)],
+      paths: [
+        manifestPathValue,
+        reviewNotePath(input.dialogue, input.reviewedOn),
+        candidate.sampleEvidencePath,
+        candidate.predecessorManifestHistoryPath,
+        candidate.predecessorReviewNoteHistoryPath,
+        candidate.predecessorLedgerHistoryPath,
+      ],
       label: `commentary-quality-audit-acceptance-supersede:${input.dialogue}`,
     },
     () => {
       const preview = buildSupersedePreview(input);
-      const root = getRepoRoot();
-      const manifestAbsolutePath = join(root, preview.manifestPath);
-      const reviewNoteAbsolutePath = join(root, preview.reviewNotePath);
-      const historyManifestAbsolutePath = join(root, preview.predecessorManifestHistoryPath);
-      const historyReviewNoteAbsolutePath = join(root, preview.predecessorReviewNoteHistoryPath);
-      if (existsSync(reviewNoteAbsolutePath) || existsSync(historyManifestAbsolutePath) || existsSync(historyReviewNoteAbsolutePath)) {
+      if (
+        preview.sampleEvidencePath !== candidate.sampleEvidencePath ||
+        preview.sampleEvidenceSha256 !== candidate.sampleEvidenceSha256
+      ) {
+        throw new Error(`Independent sample evidence for ${input.dialogue} changed before supersede apply`);
+      }
+      const manifestAbsolutePath = canonicalRepoFileForRead(preview.manifestPath, "current commentary audit manifest");
+      const reviewNoteAbsolutePath = canonicalRepoFileForWrite(preview.reviewNotePath, "supersede review note");
+      const historyManifestAbsolutePath = canonicalRepoFileForWrite(
+        preview.predecessorManifestHistoryPath,
+        "predecessor manifest history",
+      );
+      const historyReviewNoteAbsolutePath = canonicalRepoFileForWrite(
+        preview.predecessorReviewNoteHistoryPath,
+        "predecessor review-note history",
+      );
+      const historyLedgerAbsolutePath = canonicalRepoFileForWrite(
+        preview.predecessorLedgerHistoryPath,
+        "predecessor commentary-ledger history",
+      );
+      const sampleEvidenceAbsolutePath = canonicalRepoFileForWrite(preview.sampleEvidencePath, "commentary sample evidence");
+      if (
+        existsSync(reviewNoteAbsolutePath) || existsSync(historyManifestAbsolutePath) ||
+        existsSync(historyReviewNoteAbsolutePath) || existsSync(historyLedgerAbsolutePath) ||
+        existsSync(sampleEvidenceAbsolutePath)
+      ) {
         throw new Error(`Refusing supersede path collision for ${input.dialogue}`);
       }
 
       const predecessorManifestContent = readFileSync(manifestAbsolutePath, "utf8");
-      const predecessorReviewNoteContent = readFileSync(join(root, preview.predecessorReviewNotePath), "utf8");
+      const predecessorReviewNoteContent = readFileSync(
+        canonicalRepoFileForRead(preview.predecessorReviewNotePath, "predecessor commentary review note"),
+        "utf8",
+      );
       if (
         sha256(predecessorManifestContent) !== preview.predecessorManifestSha256 ||
         sha256(predecessorReviewNoteContent) !== preview.predecessorReviewNoteSha256
@@ -685,38 +901,105 @@ export function applyCommentaryQualityAuditAcceptanceSupersede(
       const acceptedContent = prettyJson(preview.manifest);
       mkdirSync(dirname(historyManifestAbsolutePath), { recursive: true });
       mkdirSync(dirname(historyReviewNoteAbsolutePath), { recursive: true });
+      mkdirSync(dirname(historyLedgerAbsolutePath), { recursive: true });
       mkdirSync(dirname(reviewNoteAbsolutePath), { recursive: true });
+      mkdirSync(dirname(sampleEvidenceAbsolutePath), { recursive: true });
+      assertCanonicalRepoFileParent(preview.predecessorManifestHistoryPath, "predecessor manifest history");
+      assertCanonicalRepoFileParent(preview.predecessorReviewNoteHistoryPath, "predecessor review-note history");
+      assertCanonicalRepoFileParent(preview.predecessorLedgerHistoryPath, "predecessor commentary-ledger history");
+      assertCanonicalRepoFileParent(preview.reviewNotePath, "supersede review note");
+      assertCanonicalRepoFileParent(preview.sampleEvidencePath, "commentary sample evidence");
       const suffix = `${process.pid}-${Date.now()}`;
       const tempPaths = {
-        historyManifest: `${historyManifestAbsolutePath}.tmp-${suffix}`,
-        historyReviewNote: `${historyReviewNoteAbsolutePath}.tmp-${suffix}`,
-        reviewNote: `${reviewNoteAbsolutePath}.tmp-${suffix}`,
-        manifest: `${manifestAbsolutePath}.tmp-${suffix}`,
+        historyManifest: canonicalRepoFileForWrite(
+          `${preview.predecessorManifestHistoryPath}.tmp-${suffix}`,
+          "temporary predecessor manifest history",
+        ),
+        historyReviewNote: canonicalRepoFileForWrite(
+          `${preview.predecessorReviewNoteHistoryPath}.tmp-${suffix}`,
+          "temporary predecessor review-note history",
+        ),
+        historyLedger: canonicalRepoFileForWrite(
+          `${preview.predecessorLedgerHistoryPath}.tmp-${suffix}`,
+          "temporary predecessor commentary-ledger history",
+        ),
+        reviewNote: canonicalRepoFileForWrite(
+          `${preview.reviewNotePath}.tmp-${suffix}`,
+          "temporary supersede review note",
+        ),
+        sampleEvidence: canonicalRepoFileForWrite(
+          `${preview.sampleEvidencePath}.tmp-${suffix}`,
+          "temporary commentary sample evidence",
+        ),
+        manifest: canonicalRepoFileForWrite(
+          `${preview.manifestPath}.tmp-${suffix}`,
+          "temporary commentary audit manifest",
+        ),
       };
       let historyManifestCreated = false;
       let historyReviewNoteCreated = false;
+      let historyLedgerCreated = false;
       let reviewNoteCreated = false;
+      let sampleEvidenceCreated = false;
       try {
-        writeFileSync(tempPaths.historyManifest, predecessorManifestContent, "utf8");
-        writeFileSync(tempPaths.historyReviewNote, predecessorReviewNoteContent, "utf8");
-        writeFileSync(tempPaths.reviewNote, preview.reviewNote, "utf8");
-        renameSync(tempPaths.reviewNote, reviewNoteAbsolutePath);
+        writeFileSync(tempPaths.historyManifest, predecessorManifestContent, { encoding: "utf8", flag: "wx" });
+        writeFileSync(tempPaths.historyReviewNote, predecessorReviewNoteContent, { encoding: "utf8", flag: "wx" });
+        if (sha256(preview.predecessorLedgerContent) !== preview.predecessorLedgerSha256) {
+          throw new Error("Refusing stale supersede candidate: preserved predecessor ledger hash changed after preview");
+        }
+        writeFileSync(tempPaths.historyLedger, preview.predecessorLedgerContent, { encoding: "utf8", flag: "wx" });
+        writeFileSync(tempPaths.reviewNote, preview.reviewNote, { encoding: "utf8", flag: "wx" });
+        writeFileSync(tempPaths.sampleEvidence, preview.sampleEvidence, { encoding: "utf8", flag: "wx" });
+        renameNewCanonicalFile(tempPaths.sampleEvidence, preview.sampleEvidencePath, "commentary sample evidence");
+        sampleEvidenceCreated = true;
+        renameNewCanonicalFile(tempPaths.reviewNote, preview.reviewNotePath, "supersede review note");
         reviewNoteCreated = true;
+        renameNewCanonicalFile(
+          tempPaths.historyManifest,
+          preview.predecessorManifestHistoryPath,
+          "predecessor manifest history",
+        );
+        historyManifestCreated = true;
+        renameNewCanonicalFile(
+          tempPaths.historyReviewNote,
+          preview.predecessorReviewNoteHistoryPath,
+          "predecessor review-note history",
+        );
+        historyReviewNoteCreated = true;
+        renameNewCanonicalFile(
+          tempPaths.historyLedger,
+          preview.predecessorLedgerHistoryPath,
+          "predecessor commentary-ledger history",
+        );
+        historyLedgerCreated = true;
         const issues = validateCommentaryQualityAuditManifest(preview.manifestPath, acceptedContent);
         if (issues.length > 0) {
           throw new Error(`Refusing invalid superseded canonical acceptance:\n${formatCommentaryQualityAuditManifestIssues(issues)}`);
         }
-        writeFileSync(tempPaths.manifest, acceptedContent, "utf8");
-        renameSync(tempPaths.historyManifest, historyManifestAbsolutePath);
-        historyManifestCreated = true;
-        renameSync(tempPaths.historyReviewNote, historyReviewNoteAbsolutePath);
-        historyReviewNoteCreated = true;
-        renameSync(tempPaths.manifest, manifestAbsolutePath);
+        writeFileSync(tempPaths.manifest, acceptedContent, { encoding: "utf8", flag: "wx" });
+        replaceCanonicalFile(
+          tempPaths.manifest,
+          preview.manifestPath,
+          preview.predecessorManifestSha256,
+          "current commentary audit manifest",
+        );
       } catch (error) {
-        for (const path of Object.values(tempPaths)) rmSync(path, { force: true });
-        if (reviewNoteCreated) rmSync(reviewNoteAbsolutePath, { force: true });
-        if (historyReviewNoteCreated) rmSync(historyReviewNoteAbsolutePath, { force: true });
-        if (historyManifestCreated) rmSync(historyManifestAbsolutePath, { force: true });
+        for (const path of Object.values(tempPaths)) {
+          removeCanonicalTemporaryFile(path, "temporary supersede artifact");
+        }
+        if (reviewNoteCreated) removeCanonicalFileIfCreated(preview.reviewNotePath, "supersede review note");
+        if (historyReviewNoteCreated) {
+          removeCanonicalFileIfCreated(preview.predecessorReviewNoteHistoryPath, "predecessor review-note history");
+        }
+        if (historyLedgerCreated) {
+          removeCanonicalFileIfCreated(preview.predecessorLedgerHistoryPath, "predecessor commentary-ledger history");
+        }
+        if (historyManifestCreated) {
+          removeCanonicalFileIfCreated(preview.predecessorManifestHistoryPath, "predecessor manifest history");
+        }
+        if (sampleEvidenceCreated) {
+          removeCanonicalFileIfCreated(preview.sampleEvidencePath, "commentary sample evidence");
+        }
         throw error;
       }
       return { ...preview, applied: true };

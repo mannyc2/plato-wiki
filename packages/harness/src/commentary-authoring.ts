@@ -10,6 +10,26 @@ export const COMMENTARY_MODEL_CATALOG_PATH = "packages/harness/src/commentary-lu
 export const COMMENTARY_CAMPAIGN_SCHEMA_VERSION = 3 as const;
 export const COMMENTARY_JOB_STATE_SCHEMA_VERSION = 3 as const;
 
+export const COMMENTARY_AUDIT_SAMPLE_ISOLATION_CONFIG = [
+  "project_doc_max_bytes=0",
+  "include_permissions_instructions=false",
+  "include_apps_instructions=false",
+  "include_collaboration_mode_instructions=false",
+  "include_environment_context=false",
+  "skills.include_instructions=false",
+  "features.shell_tool=false",
+  "features.unified_exec=false",
+  "features.multi_agent=false",
+  "features.goals=false",
+  "features.apps=false",
+  "features.plugins=false",
+  "features.image_generation=false",
+  "features.in_app_browser=false",
+  "features.browser_use=false",
+  "features.computer_use=false",
+  "features.workspace_dependencies=false",
+] as const;
+
 export const COMMENTARY_STAGE_EFFORT = {
   outline: "high",
   draft: "medium",

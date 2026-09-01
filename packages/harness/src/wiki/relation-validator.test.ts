@@ -154,6 +154,92 @@ review_status: accepted
     expect(issues.map((issue) => issue.code)).toContain("accepted_relation_denial");
   });
 
+  it("rejects accepted typed relations whose own basis and limits deny the edge", () => {
+    const fixtures = [
+      {
+        path: "wiki/relations/republic.md",
+        content: `\`\`\`yaml
+relation_id: rel_republic_0024
+pair_id: pair_republic_00024
+claim_a: claim_republic_0088
+claim_b: claim_republic_0247
+relation_kind: tension
+resolution: verbal_only
+basis: Both claims share the term ἀμαθία but deploy it in different argumentative frames and with different scope. No contradiction obtains because the predicate is not asserted of the same subject under the same respects.
+limits: The shared term alone does not create a contradiction or substantive tension.
+review_status: accepted
+\`\`\``,
+      },
+      {
+        path: "wiki/relations/cross-dialogue.md",
+        content: `\`\`\`yaml
+relation_id: rel_cross-dialogue_0638
+pair_id: pair_cross-dialogue_00638
+claim_a: claim_laws_0246
+claim_b: claim_republic_0777
+relation_kind: tension
+resolution: standing
+basis: The shared term ψυχήν does not indicate a shared thesis; one is a political ranking of goods, the other is a metaphysical argument about the soul's indestructibility. They neither contradict nor restate each other.
+limits: This adjudication is confined to the two claim records as written.
+review_status: accepted
+\`\`\``,
+      },
+      {
+        path: "wiki/relations/timaeus.md",
+        content: `\`\`\`yaml
+relation_id: rel_timaeus_0050
+pair_id: pair_timaeus_00050
+claim_a: claim_timaeus_0216
+claim_b: claim_timaeus_0226
+relation_kind: tension
+resolution: standing
+basis: These are thematically linked by πνεῦμα but address different bodily processes.
+limits: The claims do not conflict. The relation is limited to the shared substance-term πνεῦμα across different explanatory contexts.
+review_status: accepted
+\`\`\``,
+      },
+    ];
+
+    for (const fixture of fixtures) {
+      expect(
+        validateRelationLedger(fixture.path, fixture.content).map((issue) => issue.code),
+        fixture.path,
+      ).toContain("accepted_relation_denial");
+    }
+  });
+
+  it("does not confuse a non-contradictory substantive tension with a denied edge", () => {
+    const content = `\`\`\`yaml
+relation_id: rel_meno_0001
+pair_id: pair_meno_00001
+claim_a: claim_meno_0001
+claim_b: claim_meno_0002
+relation_kind: tension
+resolution: standing
+basis: The claims are not formally contradictory, but they pull against each other because one makes knowledge sufficient while the other identifies a further condition.
+limits: The tension is substantive even though both claims can remain left standing.
+review_status: accepted
+\`\`\``;
+
+    expect(validateRelationLedger("wiki/relations/meno.md", content)).toEqual([]);
+  });
+
+  it("does not treat an unresolved-tension limit as denial of the tension", () => {
+    const content = `\`\`\`yaml
+relation_id: rel_meno_0001
+pair_id: pair_meno_00001
+claim_a: claim_meno_0001
+claim_b: claim_meno_0002
+relation_kind: tension
+resolution: standing
+basis: The two claim contents pull in different directions while both remain left standing.
+limits: The checked span does not resolve whether the tension is addressed later.
+review_status: accepted
+\`\`\``;
+
+    expect(validateRelationLedger("wiki/relations/meno.md", content)).toEqual([]);
+  });
+
   it("rejects an accepted relation that references a rejected claim", () => {
     const content = `\`\`\`yaml
 relation_id: rel_meno_0001

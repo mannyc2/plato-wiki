@@ -5,8 +5,11 @@ import { join } from "node:path";
 import { setRepoRootForTesting } from "../paths.js";
 import { resolveSourceSpan } from "../source.js";
 import {
+  applyCommentaryBlockReconsideration,
   applyCommentaryBlockReview,
+  previewCommentaryBlockReconsideration,
   previewCommentaryBlockReview,
+  type CommentaryBlockReconsiderationInput,
   type CommentaryBlockReviewInput,
 } from "./commentary-block-review.js";
 
@@ -15,6 +18,8 @@ const ID = "comm_fixture_0001";
 const ID2 = "comm_fixture_0002";
 let root = "";
 let restoreRoot: (() => void) | undefined;
+let evidenceManifestPath = "";
+let evidenceManifestSha256 = "";
 
 function write(path: string, content: string) {
   const absolute = join(root, path);
@@ -73,18 +78,39 @@ function input(overrides: Partial<CommentaryBlockReviewInput> = {}): CommentaryB
   };
 }
 
+function reconsiderationInput(
+  overrides: Partial<CommentaryBlockReconsiderationInput> = {},
+): CommentaryBlockReconsiderationInput {
+  const { decision: _decision, ...review } = input();
+  return { ...review, evidenceManifestPath, evidenceManifestSha256, ...overrides };
+}
+
 beforeEach(() => {
   root = mkdtempSync(join(tmpdir(), "commentary-block-review-"));
   restoreRoot = setRepoRootForTesting(root);
   write("raw/plato/greek/fixture.txt", "{2a} alpha {2b} beta {3a} gamma {3b} delta");
   write("raw/plato/english/fixture.txt", "{2a} first {2b} second {3a} third {3b} fourth");
   write("wiki/commentary/fixture.md", ledger("unreviewed"));
+  const artifacts = [
+    ["review_output", "wiki/review/evidence/fixture-output.json", "output"],
+    ["review_packet", "wiki/review/evidence/fixture-packet.json", "packet"],
+    ["review_schema", "wiki/review/evidence/fixture-schema.json", "schema"],
+  ].map(([kind, path, content]) => {
+    write(path!, content!);
+    return { kind, path, sha256: new Bun.CryptoHasher("sha256").update(content!).digest("hex") };
+  });
+  const manifest = `${JSON.stringify({ schema_version: 1, artifacts }, null, 2)}\n`;
+  evidenceManifestSha256 = new Bun.CryptoHasher("sha256").update(manifest).digest("hex");
+  evidenceManifestPath = `wiki/review/evidence/sha256-${evidenceManifestSha256}-commentary-reconsideration-evidence.json`;
+  write(evidenceManifestPath, manifest);
 });
 
 afterEach(() => {
   restoreRoot?.();
   rmSync(root, { recursive: true, force: true });
   root = "";
+  evidenceManifestPath = "";
+  evidenceManifestSha256 = "";
 });
 
 describe("commentary block review", () => {
@@ -133,5 +159,42 @@ describe("commentary block review", () => {
     expect(second.receiptPath).not.toBe(first.receiptPath);
     expect(existsSync(join(root, first.receiptPath))).toBe(true);
     expect(existsSync(join(root, second.receiptPath))).toBe(true);
+  });
+
+  it("reconsiders exact rejected IDs only through the explicit receipt-bound path", () => {
+    write("wiki/commentary/fixture.md", ledger("rejected"));
+    expect(() => previewCommentaryBlockReview(input())).toThrow("currently be unreviewed");
+
+    const preview = previewCommentaryBlockReconsideration(reconsiderationInput());
+    expect(preview.applied).toBe(false);
+    expect(preview.receiptPath).toContain("commentary-block-reconsideration");
+    expect(preview.receipt).toContain("prior_review_status: rejected");
+    expect(preview.receipt).toContain("review_transition: rejected -> accepted");
+    expect(preview.receipt).toContain(`- artifact: \`${evidenceManifestPath}\`; sha256: \`${evidenceManifestSha256}\``);
+    expect(existsSync(join(root, preview.receiptPath))).toBe(false);
+
+    const applied = applyCommentaryBlockReconsideration(reconsiderationInput());
+    const current = readFileSync(join(root, applied.ledgerPath), "utf8");
+    expect(applied.applied).toBe(true);
+    expect(current.match(/review_status: accepted/gu)).toHaveLength(1);
+    expect(current.match(/review_status: rejected/gu)).toHaveLength(1);
+    expect(readFileSync(join(root, applied.receiptPath), "utf8")).toBe(applied.receipt);
+  });
+
+  it("fails closed instead of accidentally resurrecting unreviewed, accepted, or weakly justified blocks", () => {
+    expect(() => previewCommentaryBlockReconsideration(reconsiderationInput())).toThrow("currently be rejected");
+
+    write("wiki/commentary/fixture.md", ledger("accepted"));
+    expect(() => previewCommentaryBlockReconsideration(reconsiderationInput())).toThrow("currently be rejected");
+
+    write("wiki/commentary/fixture.md", ledger("rejected"));
+    expect(() => previewCommentaryBlockReconsideration(reconsiderationInput({ rationale: "Too short." }))).toThrow(
+      "rationale of at least 40 characters",
+    );
+    expect(() => previewCommentaryBlockReconsideration(reconsiderationInput({ reviewedIds: [ID2, ID] }))).toThrow(
+      "canonical ledger order",
+    );
+    write("wiki/review/evidence/fixture-output.json", "tampered");
+    expect(() => previewCommentaryBlockReconsideration(reconsiderationInput())).toThrow("hash-mismatched");
   });
 });

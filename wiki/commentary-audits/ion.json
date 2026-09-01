@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "dialogue": "ion",
+  "ledger": {
+    "path": "wiki/commentary/ion.md",
+    "sha256": "7eaeef381ece807caf7e8b50d814477b235ea82984b17c3b461c1455ecb14e57"
+  },
+  "protocol": {
+    "path": "docs/commentary-protocol.md",
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
+  },
+  "authoring": {
+    "model": "gpt-5.6-luna",
+    "effort": "medium"
+  },
+  "units": [
+    {
+      "unit_key": "01-530a-530d",
+      "section_id": "comm_ion_0001",
+      "audit_brief_sha256": "dfd9387578aa89eac09a3805df43420d345ec628f293149efcc2ac12a5a189a7",
+      "output_path": "scratch/commentary/audits/ion/01-530a-530d.json",
+      "output_sha256": "80e624ef86bd24dc0e5855bca7e85def8b266278f48395182bdf3f7b64a0ee8f",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "ion",
+        "unit_key": "01-530a-530d",
+        "section_id": "comm_ion_0001",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_ion_0001",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately condenses the opening exchange, Socrates’ stated standard, and Ion’s boast; the start edge has no preceding text and is followed by the opening welcome."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "02-531a-532b",
+      "section_id": "comm_ion_0002",
+      "audit_brief_sha256": "5c199e92bf635976dc9a697fb2b46516965ff628f47d6e645b2bc49119cd703f",
+      "output_path": "scratch/commentary/audits/ion/02-531a-532b.json",
+      "output_sha256": "d03037351d22c8a9fd45267e7aa8712214c6a0ef9325cb423a11bb6de86eb794",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "ion",
+        "unit_key": "02-531a-532b",
+        "section_id": "comm_ion_0002",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "03-532c-533c",
+      "section_id": "comm_ion_0003",
+      "audit_brief_sha256": "2cf2500c5d3a71fac10d34878e9bef95ba0e5112e5a0753b7244ccc063c0012f",
+      "output_path": "scratch/commentary/audits/ion/03-532c-533c.json",
+      "output_sha256": "3281841608b82c094f329eea590eee471e1745e6407ba34cf662f4d27b58eb73",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "ion",
+        "unit_key": "03-532c-533c",
+        "section_id": "comm_ion_0003",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "04-533d-535a",
+      "section_id": "comm_ion_0004",
+      "audit_brief_sha256": "e70428168ea0c766570c8094ba4bc7b11b224d432ab84e2a54d0f139c8a81176",
+      "output_path": "scratch/commentary/audits/ion/04-533d-535a.json",
+      "output_sha256": "7c3de95ff826ecfe06726367919273bf7dd9efd2986d5edc5667ac4713848133",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "ion",
+        "unit_key": "04-533d-535a",
+        "section_id": "comm_ion_0004",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_ion_0004",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames Socrates’ shift, the inspiration thesis, interpreters, and Tynnichus as illustration rather than proof; the edge falls between complete sentences within the same argument."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "05-535b-536d",
+      "section_id": "comm_ion_0005",
+      "audit_brief_sha256": "60d2098acf17fe1355fe02d2cb12e670f0f128e6ff6ac80ac7072c7e677bb119",
+      "output_path": "scratch/commentary/audits/ion/05-535b-536d.json",
+      "output_sha256": "7d0e012f7d1f10a5f1d7bc0289e6f7fe98b37aef36507bf3d070ca57748d1acc",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "ion",
+        "unit_key": "05-535b-536d",
+        "section_id": "comm_ion_0005",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "06-536e-538b",
+      "section_id": "comm_ion_0006",
+      "audit_brief_sha256": "82d076f55299497b41350ee492afb7fc7ffac15d22b01c146282902306e670d2",
+      "output_path": "scratch/commentary/audits/ion/06-536e-538b.json",
+      "output_sha256": "980582be44a1908addfc34c062eb22d40353d85e4e5539716cc5861342d37497",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "ion",
+        "unit_key": "06-536e-538b",
+        "section_id": "comm_ion_0006",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "07-538c-539d",
+      "section_id": "comm_ion_0007",
+      "audit_brief_sha256": "f44d992cac4ce62b4c41b05111577b8fc40e5c4496d0c10b74236792387bad7b",
+      "output_path": "scratch/commentary/audits/ion/07-538c-539d.json",
+      "output_sha256": "44043f7a96e28cae7e38876a70eca6a3632fa7cd212d79ca7ec611f7494bce36",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "ion",
+        "unit_key": "07-538c-539d",
+        "section_id": "comm_ion_0007",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "08-539e-541b",
+      "section_id": "comm_ion_0008",
+      "audit_brief_sha256": "d764f500db444cb185409a5960e4570d1d86f8fbbe16a8f39f7e1fba68125a55",
+      "output_path": "scratch/commentary/audits/ion/08-539e-541b.json",
+      "output_sha256": "c7d1c8b652493cd01030a6dd9b2af8f879e39ea273ff44f0ac6d0db304f738fa",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "ion",
+        "unit_key": "08-539e-541b",
+        "section_id": "comm_ion_0008",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "09-541c-542b",
+      "section_id": "comm_ion_0009",
+      "audit_brief_sha256": "faf1fff9f219909a8f73f55790e44305c63467b386de37880235948e1dec0dd2",
+      "output_path": "scratch/commentary/audits/ion/09-541c-542b.json",
+      "output_sha256": "b81ba3c06e94a1c8952055841158ae597b4059e74f746cf0fee14c97d306c281",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "ion",
+        "unit_key": "09-541c-542b",
+        "section_id": "comm_ion_0009",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    }
+  ],
+  "acceptance": {
+    "decision": "accepted",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-ion-0a3c8d610538",
+    "reviewed_on": "2026-09-01",
+    "rationale": "Both sampled sections are evidence-supported, accurately anchored, well placed at their deterministic playback edges, and concise enough to add interpretive value without harming spoken flow.",
+    "sampled_commentary_ids": [
+      "comm_ion_0001",
+      "comm_ion_0004"
+    ],
+    "review_note": {
+      "path": "wiki/review/2026-09-01-commentary-quality-ion-luna-sample.md",
+      "sha256": "d25be3ce89d0fdcee2101ed086bc17a005df243176245d4811ea74b61915245f"
+    }
+  }
+}

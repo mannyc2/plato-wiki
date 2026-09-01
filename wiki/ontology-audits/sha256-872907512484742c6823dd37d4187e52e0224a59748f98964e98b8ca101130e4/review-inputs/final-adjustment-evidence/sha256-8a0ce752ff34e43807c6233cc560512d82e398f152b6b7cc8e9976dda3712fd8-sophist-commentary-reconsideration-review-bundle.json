@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "mode": "one-block-independent-reviews",
+  "dialogue": "sophist",
+  "aggregate": {
+    "schema_version": 1,
+    "dialogue": "sophist",
+    "reviewer": "sophist-reconsideration-ensemble-delegated-luna-reviewer-01",
+    "human_listening_or_review": "none claimed",
+    "verdict": "pass",
+    "reviewed_ids": [
+      "comm_sophist_0002",
+      "comm_sophist_0004",
+      "comm_sophist_0005",
+      "comm_sophist_0008",
+      "comm_sophist_0009"
+    ],
+    "findings": [
+      {
+        "commentary_id": "comm_sophist_0002",
+        "verdict": "pass",
+        "rationale": "The cited observations support the modest angler paradigm, the completed methodological sequence, and the explicit handoff to testing the method on the sophist. The interpretive framing remains coherent and adds no unsupported factual claim."
+      },
+      {
+        "commentary_id": "comm_sophist_0004",
+        "verdict": "pass",
+        "rationale": "Claims 0019 and 0020 exactly support the distorted appearance from viewing position/distance and the contrast between phantasma and adequate seeing. The title and interpretive framing remain compatible with the Greek anchor and form one coherent section."
+      },
+      {
+        "commentary_id": "comm_sophist_0005",
+        "verdict": "pass",
+        "rationale": "The four exact accepted claim citations support the passage’s impasse, semantic commitments, contradictory self-reference, and posed methodological restriction. The commentary remains interpretive, compatible with the Greek anchor, and performs one coherent explanatory job."
+      },
+      {
+        "commentary_id": "comm_sophist_0008",
+        "verdict": "pass",
+        "rationale": "The cited observation and claim 0082 support the warning that total separation destroys discourse; claims 0066–0067 support selective communion and usable distinctions. The remaining framing is clearly interpretive and the section has one coherent methodological job."
+      },
+      {
+        "commentary_id": "comm_sophist_0009",
+        "verdict": "pass",
+        "rationale": "The cited claims support the sophist’s provisional counterclaim, the Stranger’s conditional plan to bind or release and search elsewhere, and the staged examination of logos, opinion, appearance, and falsehood. The interpretive framing remains compatible with the Greek anchor."
+      }
+    ],
+    "rationale": "Five isolated Luna reviews passed the exact current sophist blocks, accepted citations, and bound Greek spans; no translation was supplied."
+  },
+  "reviews": [
+    {
+      "commentary_id": "comm_sophist_0002",
+      "outcome": "terminal_pass",
+      "attempt": null,
+      "source_path": "scratch/commentary/reconsideration/sophist-comm_sophist_0002-result.json",
+      "sha256": "52b4857a6b79a9a5675044405d9bf53bad2d5b97505ae418c7ffd348dd774c9f",
+      "content": "{\"schema_version\":1,\"dialogue\":\"sophist\",\"reviewer\":\"sophist-reconsideration-0002-delegated-luna-reviewer-01\",\"human_listening_or_review\":\"none claimed\",\"verdict\":\"pass\",\"reviewed_ids\":[\"comm_sophist_0002\"],\"findings\":[{\"commentary_id\":\"comm_sophist_0002\",\"verdict\":\"pass\",\"rationale\":\"The cited observations support the modest angler paradigm, the completed methodological sequence, and the explicit handoff to testing the method on the sophist. The interpretive framing remains coherent and adds no unsupported factual claim.\"}],\"rationale\":\"Pass: the previously citationless block now supplies relevant accepted observations, and its concise interpretive thesis remains compatible with the Greek anchor and citation limits.\"}"
+    },
+    {
+      "commentary_id": "comm_sophist_0004",
+      "outcome": "superseded_failed_attempt",
+      "attempt": 1,
+      "source_path": "scratch/commentary/reconsideration/sophist-comm_sophist_0004-attempt-01-result.json",
+      "sha256": "6d25a59ade8ec14ed3f23828d417126c02da3274ddabc326e8222cc2175ae385",
+      "content": "{\"schema_version\":1,\"dialogue\":\"sophist\",\"reviewer\":\"sophist-reconsideration-0004-delegated-luna-reviewer-01\",\"human_listening_or_review\":\"none claimed\",\"verdict\":\"fail\",\"reviewed_ids\":[\"comm_sophist_0004\"],\"findings\":[{\"commentary_id\":\"comm_sophist_0004\",\"verdict\":\"fail\",\"rationale\":\"The title and body are substantively supported by claim_sophist_0019 (236a) and claim_sophist_0020 (236b), but cites.claims is empty. The prior citation defect therefore remains uncorrected.\"}],\"rationale\":\"Fail: the commentary’s assertions fit the Greek anchors and accepted claims, but it supplies no accepted citations, so the required citation support is absent.\"}"
+    },
+    {
+      "commentary_id": "comm_sophist_0004",
+      "outcome": "terminal_pass",
+      "attempt": null,
+      "source_path": "scratch/commentary/reconsideration/sophist-comm_sophist_0004-result.json",
+      "sha256": "4ff96b13abe49b8b38de520c18ca20dae55d65a66ac8af6695cd9dc1b2d8b727",
+      "content": "{\"schema_version\":1,\"dialogue\":\"sophist\",\"reviewer\":\"sophist-reconsideration-0004-delegated-luna-reviewer-01\",\"human_listening_or_review\":\"none claimed\",\"verdict\":\"pass\",\"reviewed_ids\":[\"comm_sophist_0004\"],\"findings\":[{\"commentary_id\":\"comm_sophist_0004\",\"verdict\":\"pass\",\"rationale\":\"Claims 0019 and 0020 exactly support the distorted appearance from viewing position/distance and the contrast between phantasma and adequate seeing. The title and interpretive framing remain compatible with the Greek anchor and form one coherent section.\"}],\"rationale\":\"The repaired block has exact accepted claim citations supporting every source-bound assertion. Its framing accurately synthesizes the Greek passage’s viewing-position distinction and the likeness/appearance split without exceeding the records’ limits.\"}"
+    },
+    {
+      "commentary_id": "comm_sophist_0005",
+      "outcome": "terminal_pass",
+      "attempt": null,
+      "source_path": "scratch/commentary/reconsideration/sophist-comm_sophist_0005-result.json",
+      "sha256": "00b7245efd9daccfd034aba5f99f15ce88621940d8cc6861e64c9ec4361667f0",
+      "content": "{\"schema_version\":1,\"dialogue\":\"sophist\",\"reviewer\":\"sophist-reconsideration-0005-delegated-luna-reviewer-01\",\"human_listening_or_review\":\"none claimed\",\"verdict\":\"pass\",\"reviewed_ids\":[\"comm_sophist_0005\"],\"findings\":[{\"commentary_id\":\"comm_sophist_0005\",\"verdict\":\"pass\",\"rationale\":\"The four exact accepted claim citations support the passage’s impasse, semantic commitments, contradictory self-reference, and posed methodological restriction. The commentary remains interpretive, compatible with the Greek anchor, and performs one coherent explanatory job.\"}],\"rationale\":\"Pass: exact accepted claim citations repair the prior citation defect and support every source-bound assertion without overstating the passage or treating its hypothetical rule as settled doctrine.\"}"
+    },
+    {
+      "commentary_id": "comm_sophist_0008",
+      "outcome": "terminal_pass",
+      "attempt": null,
+      "source_path": "scratch/commentary/reconsideration/sophist-comm_sophist_0008-result.json",
+      "sha256": "4d063b1a0e270e26a9bab7d257fac289932fac963eb489e3f94fb0589b0cd5c2",
+      "content": "{\"schema_version\":1,\"dialogue\":\"sophist\",\"reviewer\":\"sophist-reconsideration-0008-delegated-luna-reviewer-01\",\"human_listening_or_review\":\"none claimed\",\"verdict\":\"pass\",\"reviewed_ids\":[\"comm_sophist_0008\"],\"findings\":[{\"commentary_id\":\"comm_sophist_0008\",\"verdict\":\"pass\",\"rationale\":\"The cited observation and claim 0082 support the warning that total separation destroys discourse; claims 0066–0067 support selective communion and usable distinctions. The remaining framing is clearly interpretive and the section has one coherent methodological job.\"}],\"rationale\":\"Current accepted citations directly support the commentary’s claims about total separation, discourse, and selective kind-communion. Its interpretive framing stays compatible with the Greek anchor and does not exceed the section’s methodological focus.\"}"
+    },
+    {
+      "commentary_id": "comm_sophist_0009",
+      "outcome": "terminal_pass",
+      "attempt": null,
+      "source_path": "scratch/commentary/reconsideration/sophist-comm_sophist_0009-result.json",
+      "sha256": "6b4c8150c913f2407792ae16a0a07aac97d145282e98b1a8117adef5631b9c02",
+      "content": "{\"schema_version\":1,\"dialogue\":\"sophist\",\"reviewer\":\"sophist-reconsideration-0009-delegated-luna-reviewer-01\",\"human_listening_or_review\":\"none claimed\",\"verdict\":\"pass\",\"reviewed_ids\":[\"comm_sophist_0009\"],\"findings\":[{\"commentary_id\":\"comm_sophist_0009\",\"verdict\":\"pass\",\"rationale\":\"The cited claims support the sophist’s provisional counterclaim, the Stranger’s conditional plan to bind or release and search elsewhere, and the staged examination of logos, opinion, appearance, and falsehood. The interpretive framing remains compatible with the Greek anchor.\"}],\"rationale\":\"The repaired block’s assertions are supported by its exact accepted claim citations and remain compatible with 260a–264b. Its framing presents one coherent transition from a provisional defense to the examination required to establish falsehood.\"}"
+    }
+  ]
+}

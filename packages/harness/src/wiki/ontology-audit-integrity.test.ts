@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { afterEach, describe, expect, test } from "bun:test";
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, realpathSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { terminalOntologyAuditManifest } from "./ontology-audit-finalization.js";
@@ -236,8 +236,8 @@ test("accepted manifests leave no contradictory pending lane state", () => {
 
 test("audit change classification is fully determined by baseline and final pointers", () => {
   const baseline = { path: "wiki/input.md", ordinal: 0, raw_sha256: HASH, review_status: "accepted" };
-  const unchanged = { path: "wiki/input.md", ordinal: 1, canonical_sha256: HASH };
-  const modified = { path: "wiki/input.md", ordinal: 1, canonical_sha256: "b".repeat(64) };
+  const unchanged = { path: "wiki/input.md", ordinal: 1, canonical_sha256: HASH, review_status: "accepted" };
+  const modified = { path: "wiki/input.md", ordinal: 1, canonical_sha256: "b".repeat(64), review_status: "rejected" };
 
   expect(ontologyAuditChangeKind(null, null)).toBeNull();
   expect(ontologyAuditChangeKind(null, unchanged)).toBe("added");
@@ -247,10 +247,15 @@ test("audit change classification is fully determined by baseline and final poin
 });
 
 test("accepted machine evidence is content-bound and internally recomputable", () => {
-  const root = mkdtempSync(join(tmpdir(), "ontology-audit-machine-evidence-"));
+  const root = realpathSync(mkdtempSync(join(realpathSync(tmpdir()), "ontology-audit-machine-evidence-")));
   roots.push(root);
   const packagePath = join(root, "wiki/ontology-audits/snapshot");
   const canonicalGeneratedPath = join(root, "derived/plato/joins/fixture.toon");
+  for (const directory of [
+    "derived/plato/voices",
+    "wiki/clusters",
+    "wiki/dossiers",
+  ]) mkdirSync(join(root, directory), { recursive: true });
   write(canonicalGeneratedPath, "x");
   write(join(root, "audio/coverage.md"), "audio");
   write(join(root, "wiki/completeness.md"), "complete");
@@ -263,15 +268,7 @@ test("accepted machine evidence is content-bound and internally recomputable", (
   const digest = sha256(canonicalJson([...artifacts].sort((left, right) => left.path.localeCompare(right.path))));
   const regenerationPath = join(packagePath, "regeneration.json");
   const evidencePath = join(packagePath, "closure-evidence.json");
-  write(regenerationPath, `${JSON.stringify({
-    schema_version: 1,
-    state: "complete",
-    regeneration_one_sha256: digest,
-    regeneration_two_sha256: digest,
-    artifact_count: artifacts.length,
-    artifacts,
-  }, null, 2)}\n`);
-  write(evidencePath, `${JSON.stringify({
+  const evidenceContent = `${JSON.stringify({
     schema_version: 1,
     state: "complete",
     staleAliasIssues: [],
@@ -280,6 +277,22 @@ test("accepted machine evidence is content-bound and internally recomputable", (
     acceptedClaimLinkIssues: [],
     acceptedCommentaryCitationIssues: [],
     acceptedRelationFictionIssues: [],
+  }, null, 2)}\n`;
+  write(evidencePath, evidenceContent);
+  write(regenerationPath, `${JSON.stringify({
+    schema_version: 1,
+    state: "complete",
+    regeneration_one_sha256: digest,
+    regeneration_two_sha256: digest,
+    closure_evidence_one_sha256: sha256(evidenceContent),
+    closure_evidence_two_sha256: sha256(evidenceContent),
+    closure_evidence_sha256: sha256(evidenceContent),
+    closure_evidence_site_tree_sha256: sha256(canonicalJson([
+      { path: "index.html", bytes: 1, sha256: HASH },
+    ])),
+    closure_evidence_bytes: Buffer.byteLength(evidenceContent),
+    artifact_count: artifacts.length,
+    artifacts,
   }, null, 2)}\n`);
   const bindings = new Map([
     ["wiki/ontology-audits/snapshot/regeneration.json", sha256(readFileSync(regenerationPath))],
@@ -297,6 +310,23 @@ test("accepted machine evidence is content-bound and internally recomputable", (
     acceptance,
     receiptArtifacts: bindings,
   })).toEqual([]);
+
+  const originalRegeneration = readFileSync(regenerationPath, "utf8");
+  const tamperedRegeneration = JSON.parse(originalRegeneration);
+  tamperedRegeneration.closure_evidence_two_sha256 = "b".repeat(64);
+  write(regenerationPath, `${JSON.stringify(tamperedRegeneration, null, 2)}\n`);
+  bindings.set("wiki/ontology-audits/snapshot/regeneration.json", sha256(readFileSync(regenerationPath)));
+  const descriptorIssues = validateOntologyAcceptedMachineEvidence({
+    repoRoot: root,
+    packagePath,
+    acceptance,
+    receiptArtifacts: bindings,
+  });
+  expect(descriptorIssues.some((entry) =>
+    entry.message.includes("byte-identical pass-one/pass-two closure evidence")
+  )).toBe(true);
+  write(regenerationPath, originalRegeneration);
+  bindings.set("wiki/ontology-audits/snapshot/regeneration.json", sha256(readFileSync(regenerationPath)));
 
   const failedEvidence = JSON.parse(readFileSync(evidencePath, "utf8"));
   failedEvidence.rejectedReaderLeaks = ["record:observation:rejected"];
@@ -317,5 +347,15 @@ test("accepted machine evidence is content-bound and internally recomputable", (
     acceptance,
     receiptArtifacts: bindings,
   });
-  expect(mutationIssues.some((entry) => entry.message.includes("canonical generated artifact differs"))).toBe(true);
+  expect(mutationIssues.some((entry) => entry.message.includes("canonical non-site artifact path/hash set"))).toBe(true);
+
+  write(canonicalGeneratedPath, "x");
+  write(join(root, "derived/plato/joins/unlisted.toon"), "extra");
+  const extraIssues = validateOntologyAcceptedMachineEvidence({
+    repoRoot: root,
+    packagePath,
+    acceptance,
+    receiptArtifacts: bindings,
+  });
+  expect(extraIssues.some((entry) => entry.message.includes("canonical non-site artifact path/hash set"))).toBe(true);
 });

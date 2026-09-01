@@ -219,15 +219,10 @@ function reverseRejectedUnacceptedIds(dialogue: string, currentLedger: string, u
     const reviewedIds = receiptList(lines, "reviewed_commentary_ids", path);
     const before = receiptField(lines, "ledger_sha256_before", path);
     const after = receiptField(lines, "ledger_sha256_after", path);
-    const expectedReviewKeys = [
-      sha256(`rejected\n${reviewedIds.join("\n")}`).slice(0, 12),
-      sha256(`rejected\n${reviewedIds.join("\n")}\n${before}`).slice(0, 12),
-    ];
-    const expectedPaths = expectedReviewKeys.map(
-      (reviewKey) => `wiki/review/${reviewedOn}-commentary-block-review-${dialogue}-rejected-${reviewKey}.md`,
-    );
+    const expectedReviewKey = sha256(`rejected\n${reviewedIds.join("\n")}\n${before}\n`).slice(0, 12);
+    const expectedPath = `wiki/review/${reviewedOn}-commentary-block-review-${dialogue}-rejected-${expectedReviewKey}.md`;
     if (
-      !expectedPaths.includes(path) ||
+      path !== expectedPath ||
       receiptField(lines, "dialogue", path) !== dialogue ||
       receiptField(lines, "decision", path) !== "rejected" ||
       receiptField(lines, "ledger_path", path) !== `wiki/commentary/${dialogue}.md` ||
@@ -505,15 +500,10 @@ function loadBlockRejectionReceipt(
   const reviewedIds = receiptList(lines, "reviewed_commentary_ids", normalized.relativePath);
   const before = receiptField(lines, "ledger_sha256_before", normalized.relativePath);
   const after = receiptField(lines, "ledger_sha256_after", normalized.relativePath);
-  const expectedReviewKeys = [
-    sha256(`rejected\n${reviewedIds.join("\n")}`).slice(0, 12),
-    sha256(`rejected\n${reviewedIds.join("\n")}\n${before}`).slice(0, 12),
-  ];
-  const expectedPaths = expectedReviewKeys.map(
-    (reviewKey) => `wiki/review/${reviewedOn}-commentary-block-review-${dialogue}-rejected-${reviewKey}.md`,
-  );
+  const expectedReviewKey = sha256(`rejected\n${reviewedIds.join("\n")}\n${before}\n`).slice(0, 12);
+  const expectedPath = `wiki/review/${reviewedOn}-commentary-block-review-${dialogue}-rejected-${expectedReviewKey}.md`;
   if (
-    !expectedPaths.includes(normalized.relativePath) ||
+    normalized.relativePath !== expectedPath ||
     receiptField(lines, "dialogue", normalized.relativePath) !== dialogue ||
     receiptField(lines, "decision", normalized.relativePath) !== "rejected" ||
     receiptField(lines, "ledger_path", normalized.relativePath) !== submission.target_path ||

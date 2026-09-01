@@ -1139,7 +1139,7 @@ cites:
 crossrefs:
   []
 author: model
-review_status: accepted
+review_status: rejected
 ```
 
 ```yaml
@@ -1170,7 +1170,7 @@ cites:
 crossrefs:
   []
 author: model
-review_status: accepted
+review_status: rejected
 ```
 
 ```yaml
@@ -1531,7 +1531,7 @@ cites:
 crossrefs:
   []
 author: model
-review_status: accepted
+review_status: rejected
 ```
 
 ```yaml
@@ -1790,7 +1790,7 @@ cites:
 crossrefs:
   []
 author: model
-review_status: accepted
+review_status: rejected
 ```
 
 ```yaml
@@ -2188,7 +2188,7 @@ cites:
 crossrefs:
   []
 author: model
-review_status: accepted
+review_status: rejected
 ```
 
 ```yaml

@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { execFileSync, spawnSync } from "node:child_process";
 import {
   existsSync,
+  lstatSync,
   mkdirSync,
   mkdtempSync,
   readFileSync,
@@ -15,6 +16,7 @@ import { Type } from "typebox";
 import type { TSchema } from "typebox";
 import { Check, Errors } from "typebox/value";
 import { getRepoRoot } from "../paths.js";
+import { buildStaticSite } from "../site/index.js";
 import { stephanusMarkers } from "../source.js";
 import { parseCanonicalYamlRecord, rawFencedYamlBlocks } from "./fenced-record.js";
 import {
@@ -25,6 +27,24 @@ import {
   readObservationReviewStatuses,
   readOntologyVNextDocuments,
 } from "./ontology-vnext-repository.js";
+import {
+  collectOntologyCanonicalRegenerationArtifacts,
+  ontologyRegenerationArtifactsEqual,
+} from "./ontology-regeneration-tree.js";
+import {
+  ontologyAuditFinalPointerSha256,
+  readOntologyAuditFinalAdjustments,
+  type OntologyAuditFinalAdjustmentArtifact,
+} from "./ontology-audit-final-adjustments.js";
+import { ensureCanonicalOntologyWorkRoot } from "./ontology-audit-package-path.js";
+import {
+  assertOntologyClosureEvidenceProof,
+  assertOntologyClosureEvidenceRegenerationBinding,
+  ontologyClosureEvidenceSiteTreeSha256,
+  verifyOntologyClosureEvidenceFile,
+  type OntologyClosureEvidenceSiteArtifact,
+  type VerifiedOntologyClosureEvidenceProof,
+} from "./ontology-closure-evidence.js";
 import { parseSnapshotLegacyFeatureEntries } from "./snapshot-legacy-feature-registry.js";
 import { parseAllDocuments } from "yaml";
 
@@ -112,6 +132,7 @@ export type FinalPointer = {
   path: string;
   ordinal: number;
   canonical_sha256: string;
+  review_status: string | null;
 };
 
 export function ontologyAuditChangeKind(
@@ -372,6 +393,13 @@ type PartitionDescriptor = {
   key_set_sha256: string;
 };
 
+export type OntologyAuditFinalAdjustmentState = {
+  required: boolean;
+  decision_artifact: { path: string; sha256: string } | null;
+  prior_state_artifact: { path: string; sha256: string } | null;
+  receipt: { path: string; sha256: string } | null;
+};
+
 export type OntologyAuditManifest = {
   schema_version: 1;
   snapshot_id: string;
@@ -391,6 +419,7 @@ export type OntologyAuditManifest = {
   protocol: { path: string; sha256: string };
   projections: ProjectionDescriptor[];
   baseline_evidence: { path: typeof BASELINE_EVIDENCE_PATH; sha256: string } | null;
+  final_adjustments: OntologyAuditFinalAdjustmentState;
   partitions: Record<PartitionFile, PartitionDescriptor>;
   lane_states: Array<{ lane: string; count: number; state: "pending" | "complete" | "zero_result" }>;
   acceptance_path: "acceptance.json";
@@ -404,6 +433,7 @@ export type OntologyAuditAcceptance = {
   partitions: Record<PartitionFile, { sha256: string; rows: number; key_set_sha256: string }>;
   final_corpus_digest: string | null;
   receipt: { path: string; sha256: string } | null;
+  final_adjustments: OntologyAuditFinalAdjustmentState;
   closure: {
     baseline_set_equal: boolean;
     final_set_equal: boolean;
@@ -501,6 +531,7 @@ const FinalPointerSchema = Type.Object(
     path: Type.String({ minLength: 1 }),
     ordinal: Type.Integer({ minimum: 0 }),
     canonical_sha256: Sha256Schema,
+    review_status: Type.Union([Type.String(), Type.Null()]),
   },
   { additionalProperties: false },
 );
@@ -789,6 +820,30 @@ const PartitionMapSchema = Type.Object(
   Object.fromEntries(ONTOLOGY_AUDIT_PARTITION_FILES.map((path) => [path, PartitionDescriptorSchema])),
   { additionalProperties: false },
 );
+const ContentBindingSchema = Type.Object(
+  { path: Type.String({ minLength: 1 }), sha256: Sha256Schema },
+  { additionalProperties: false },
+);
+const FinalAdjustmentStateSchema = Type.Union([
+  Type.Object(
+    {
+      required: Type.Literal(false),
+      decision_artifact: Type.Null(),
+      prior_state_artifact: Type.Null(),
+      receipt: Type.Null(),
+    },
+    { additionalProperties: false },
+  ),
+  Type.Object(
+    {
+      required: Type.Literal(true),
+      decision_artifact: ContentBindingSchema,
+      prior_state_artifact: ContentBindingSchema,
+      receipt: ContentBindingSchema,
+    },
+    { additionalProperties: false },
+  ),
+]);
 const ManifestSchema = Type.Object(
   {
     schema_version: Type.Literal(1),
@@ -824,6 +879,7 @@ const ManifestSchema = Type.Object(
       ),
       Type.Null(),
     ]),
+    final_adjustments: FinalAdjustmentStateSchema,
     partitions: PartitionMapSchema,
     lane_states: Type.Array(
       Type.Object(
@@ -869,6 +925,7 @@ const AcceptanceSchema = Type.Object(
       ),
       Type.Null(),
     ]),
+    final_adjustments: FinalAdjustmentStateSchema,
     closure: Type.Object(
       {
         baseline_set_equal: Type.Boolean(),
@@ -914,6 +971,77 @@ function canonicalJson(value: unknown): string {
 
 function prettyJson(value: unknown) {
   return `${JSON.stringify(value, null, 2)}\n`;
+}
+
+function emptyFinalAdjustmentState(): OntologyAuditFinalAdjustmentState {
+  return { required: false, decision_artifact: null, prior_state_artifact: null, receipt: null };
+}
+
+function parseFinalAdjustmentState(
+  value: unknown,
+  location: string,
+): OntologyAuditFinalAdjustmentState {
+  if (value === undefined || value === null) return emptyFinalAdjustmentState();
+  if (typeof value !== "object" || Array.isArray(value)) {
+    throw new Error(`${location} final_adjustments must be an object or legacy null`);
+  }
+  const record = value as Record<string, unknown>;
+  const keys = Object.keys(record).sort();
+  if (canonicalJson(keys) !== canonicalJson([
+    "decision_artifact",
+    "prior_state_artifact",
+    "receipt",
+    "required",
+  ])) {
+    throw new Error(`${location} final_adjustments has noncanonical fields`);
+  }
+  const binding = (entry: unknown, field: string) => {
+    if (entry === null) return null;
+    if (typeof entry !== "object" || Array.isArray(entry)) {
+      throw new Error(`${location} final_adjustments.${field} must be a path/hash binding or null`);
+    }
+    const item = entry as Record<string, unknown>;
+    if (
+      canonicalJson(Object.keys(item).sort()) !== canonicalJson(["path", "sha256"])
+      || typeof item.path !== "string"
+      || item.path.length === 0
+      || typeof item.sha256 !== "string"
+      || !SHA256_RE.test(item.sha256)
+    ) {
+      throw new Error(`${location} final_adjustments.${field} is malformed`);
+    }
+    return { path: item.path, sha256: item.sha256 };
+  };
+  if (typeof record.required !== "boolean") {
+    throw new Error(`${location} final_adjustments.required must be boolean`);
+  }
+  const parsed: OntologyAuditFinalAdjustmentState = {
+    required: record.required,
+    decision_artifact: binding(record.decision_artifact, "decision_artifact"),
+    prior_state_artifact: binding(record.prior_state_artifact, "prior_state_artifact"),
+    receipt: binding(record.receipt, "receipt"),
+  };
+  const bindings = [parsed.decision_artifact, parsed.prior_state_artifact, parsed.receipt];
+  if (parsed.required ? bindings.some((entry) => entry === null) : bindings.some((entry) => entry !== null)) {
+    throw new Error(
+      `${location} final_adjustments must have all three bindings exactly when required is true`,
+    );
+  }
+  return parsed;
+}
+
+export function reconcileOntologyAuditFinalAdjustmentState(
+  acceptanceValue: unknown,
+  manifestValue: unknown,
+) {
+  const acceptance = parseFinalAdjustmentState(acceptanceValue, "acceptance");
+  const manifest = parseFinalAdjustmentState(manifestValue, "manifest");
+  const required = [acceptance, manifest].filter((entry) => entry.required);
+  if (required.length === 0) return emptyFinalAdjustmentState();
+  if (required.length === 2 && canonicalJson(required[0]) !== canonicalJson(required[1])) {
+    throw new Error("Manifest and acceptance declare conflicting required final-adjustment bindings");
+  }
+  return required[0]!;
 }
 
 function renderJsonl(rows: readonly unknown[]) {
@@ -1128,7 +1256,12 @@ function baselinePointer(path: string, ordinal: number, raw: string, reviewStatu
 }
 
 function finalPointer(pointer: BaselinePointer): FinalPointer {
-  return { path: pointer.path, ordinal: pointer.ordinal, canonical_sha256: pointer.raw_sha256 };
+  return {
+    path: pointer.path,
+    ordinal: pointer.ordinal,
+    canonical_sha256: pointer.raw_sha256,
+    review_status: pointer.review_status,
+  };
 }
 
 function numberValue(value: string) {
@@ -1735,7 +1868,7 @@ function graphPointer(owner: OntologyAuditRecordUnit, ordinal: number, raw: unkn
   const path = owner.baseline?.path ?? owner.final?.path;
   if (!path) throw new Error(`Graph owner ${owner.key} has no path`);
   const baseline = baselinePointer(path, ordinal, canonicalJson(raw), owner.baseline?.review_status ?? null);
-  return { baseline, final: finalPointer(baseline) };
+  return { baseline, final: { ...finalPointer(baseline), review_status: null } };
 }
 
 function graphEdge(
@@ -2192,6 +2325,7 @@ function buildManifest(repoRoot: string, model: AuditModel): OntologyAuditManife
     protocol: { path: PROTOCOL_PATH, sha256: sha256(readFileSync(join(repoRoot, PROTOCOL_PATH))) },
     projections: model.projections,
     baseline_evidence: null,
+    final_adjustments: emptyFinalAdjustmentState(),
     partitions,
     lane_states: model.laneStates,
     acceptance_path: "acceptance.json",
@@ -2213,6 +2347,7 @@ function buildPendingAcceptance(manifest: OntologyAuditManifest, manifestContent
     ) as OntologyAuditAcceptance["partitions"],
     final_corpus_digest: null,
     receipt: null,
+    final_adjustments: emptyFinalAdjustmentState(),
     closure: {
       baseline_set_equal: true,
       final_set_equal: true,
@@ -2308,6 +2443,12 @@ export function refreshOntologyAuditBindings({
   const acceptancePath = join(absolutePackagePath, "acceptance.json");
   const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as OntologyAuditManifest;
   const acceptance = JSON.parse(readFileSync(acceptancePath, "utf8")) as OntologyAuditAcceptance;
+  const finalAdjustments = reconcileOntologyAuditFinalAdjustmentState(
+    acceptance.final_adjustments,
+    manifest.final_adjustments,
+  );
+  acceptance.final_adjustments = finalAdjustments;
+  manifest.final_adjustments = finalAdjustments;
   manifest.baseline.counts.findings ??= 0;
   manifest.partitions = partitionDescriptorsFromDisk(absolutePackagePath);
   manifest.schema = {
@@ -2883,10 +3024,10 @@ function validationErrorPath(error: unknown) {
   return value.path ?? value.instancePath ?? "/";
 }
 
-function parseJson(path: string, schema: TSchema, issues: OntologyAuditIssue[]) {
+function parseJsonContent(content: string, path: string, schema: TSchema, issues: OntologyAuditIssue[]) {
   let value: unknown;
   try {
-    value = JSON.parse(readFileSync(path, "utf8"));
+    value = JSON.parse(content);
   } catch (error) {
     issue(issues, "malformed_json", path, error instanceof Error ? error.message : String(error));
     return undefined;
@@ -2896,6 +3037,10 @@ function parseJson(path: string, schema: TSchema, issues: OntologyAuditIssue[]) 
     return undefined;
   }
   return value;
+}
+
+function parseJson(path: string, schema: TSchema, issues: OntologyAuditIssue[]) {
+  return parseJsonContent(readFileSync(path, "utf8"), path, schema, issues);
 }
 
 function parseJsonl(path: string, schema: TSchema, issues: OntologyAuditIssue[]) {
@@ -3224,6 +3369,7 @@ function appendAcceptedMachineEvidenceIssues({
   receiptArtifacts,
   issues,
   acceptancePath,
+  closureEvidenceProof,
 }: {
   repoRoot: string;
   packagePath: string;
@@ -3231,6 +3377,7 @@ function appendAcceptedMachineEvidenceIssues({
   receiptArtifacts: ReadonlyMap<string, string>;
   issues: OntologyAuditIssue[];
   acceptancePath: string;
+  closureEvidenceProof?: VerifiedOntologyClosureEvidenceProof | null;
 }) {
   const boundPackageArtifact = (name: "regeneration.json" | "closure-evidence.json") => {
     const absolute = join(packagePath, name);
@@ -3257,6 +3404,11 @@ function appendAcceptedMachineEvidenceIssues({
   if (regeneration) {
     const first = regeneration.regeneration_one_sha256;
     const second = regeneration.regeneration_two_sha256;
+    const closureEvidenceOne = regeneration.closure_evidence_one_sha256;
+    const closureEvidenceTwo = regeneration.closure_evidence_two_sha256;
+    const closureEvidenceSha256 = regeneration.closure_evidence_sha256;
+    const closureEvidenceSiteTreeSha256 = regeneration.closure_evidence_site_tree_sha256;
+    const closureEvidenceBytes = regeneration.closure_evidence_bytes;
     const artifacts = regeneration.artifacts;
     if (
       regeneration.schema_version !== 1
@@ -3265,12 +3417,40 @@ function appendAcceptedMachineEvidenceIssues({
       || !SHA256_RE.test(first)
       || typeof second !== "string"
       || !SHA256_RE.test(second)
+      || typeof closureEvidenceOne !== "string"
+      || !SHA256_RE.test(closureEvidenceOne)
+      || typeof closureEvidenceTwo !== "string"
+      || !SHA256_RE.test(closureEvidenceTwo)
+      || typeof closureEvidenceSha256 !== "string"
+      || !SHA256_RE.test(closureEvidenceSha256)
+      || typeof closureEvidenceSiteTreeSha256 !== "string"
+      || !SHA256_RE.test(closureEvidenceSiteTreeSha256)
+      || !Number.isInteger(closureEvidenceBytes)
+      || (closureEvidenceBytes as number) < 0
       || !Array.isArray(artifacts)
       || !Number.isInteger(regeneration.artifact_count)
       || regeneration.artifact_count !== artifacts.length
     ) {
       issue(issues, "acceptance", join(packagePath, "regeneration.json"), "regeneration receipt has an invalid shape");
     } else {
+      const closureEvidencePath = join(packagePath, "closure-evidence.json");
+      if (!existsSync(closureEvidencePath) || lstatSync(closureEvidencePath).isSymbolicLink() ||
+        !lstatSync(closureEvidencePath).isFile()) {
+        issue(issues, "acceptance", closureEvidencePath, "regeneration receipt closure evidence target is not a regular file");
+      } else {
+        const closureEvidenceContent = readFileSync(closureEvidencePath);
+        if (closureEvidenceOne !== closureEvidenceTwo ||
+          closureEvidenceOne !== closureEvidenceSha256 ||
+          closureEvidenceOne !== sha256(closureEvidenceContent) ||
+          closureEvidenceBytes !== closureEvidenceContent.byteLength) {
+          issue(
+            issues,
+            "acceptance",
+            join(packagePath, "regeneration.json"),
+            "regeneration receipt does not bind byte-identical pass-one/pass-two closure evidence to the current durable file",
+          );
+        }
+      }
       const normalized: InputDescriptor[] = [];
       const paths = new Set<string>();
       for (const [index, value] of artifacts.entries()) {
@@ -3292,36 +3472,52 @@ function appendAcceptedMachineEvidenceIssues({
         const artifactPath = row.path;
         paths.add(artifactPath);
         normalized.push({ path: artifactPath, sha256: row.sha256, bytes: row.bytes! });
-        if (!artifactPath.startsWith("site/")) {
-          const canonicalGeneratedRoots = [
-            "derived/plato/joins/",
-            "derived/plato/voices/",
-            "wiki/clusters/",
-            "wiki/dossiers/",
-          ];
-          const canonicalGeneratedFiles = new Set([
-            "audio/coverage.md",
-            "wiki/completeness.md",
-          ]);
-          const absoluteArtifactPath = canonicalGeneratedRoots.some((root) => artifactPath.startsWith(root))
-            || canonicalGeneratedFiles.has(artifactPath)
-            ? repositoryArtifactPath(repoRoot, artifactPath)
-            : null;
-          const currentBytes = absoluteArtifactPath && existsSync(absoluteArtifactPath)
-            ? readFileSync(absoluteArtifactPath)
-            : null;
-          if (
-            !currentBytes
-            || currentBytes.byteLength !== row.bytes
-            || sha256(currentBytes) !== row.sha256
-          ) {
-            issue(
-              issues,
-              "acceptance",
-              join(packagePath, "regeneration.json"),
-              `canonical generated artifact differs from the accepted regeneration: ${artifactPath}`,
-            );
-          }
+      }
+      try {
+        const acceptedCanonicalArtifacts = normalized.filter((entry) => !entry.path.startsWith("site/"));
+        const liveCanonicalArtifacts = collectOntologyCanonicalRegenerationArtifacts(repoRoot);
+        if (!ontologyRegenerationArtifactsEqual(acceptedCanonicalArtifacts, liveCanonicalArtifacts)) {
+          issue(
+            issues,
+            "acceptance",
+            join(packagePath, "regeneration.json"),
+            "accepted regeneration does not exactly equal the current canonical non-site artifact path/hash set",
+          );
+        }
+      } catch (error) {
+        issue(
+          issues,
+          "acceptance",
+          join(packagePath, "regeneration.json"),
+          `current canonical regeneration artifact tree is invalid: ${error instanceof Error ? error.message : String(error)}`,
+        );
+      }
+      const acceptedSiteArtifacts: OntologyClosureEvidenceSiteArtifact[] = normalized
+        .filter((entry) => entry.path.startsWith("site/"))
+        .map((entry) => ({ ...entry, path: entry.path.slice("site/".length) }))
+        .sort((left, right) => left.path.localeCompare(right.path));
+      if (ontologyClosureEvidenceSiteTreeSha256(acceptedSiteArtifacts) !== closureEvidenceSiteTreeSha256) {
+        issue(
+          issues,
+          "acceptance",
+          join(packagePath, "regeneration.json"),
+          "regeneration receipt site-tree hash does not bind its exact site artifact descriptors",
+        );
+      }
+      if (closureEvidenceProof) {
+        try {
+          assertOntologyClosureEvidenceRegenerationBinding(closureEvidenceProof, {
+            closureEvidenceSha256,
+            siteTreeSha256: closureEvidenceSiteTreeSha256,
+            siteArtifacts: acceptedSiteArtifacts,
+          });
+        } catch (error) {
+          issue(
+            issues,
+            "acceptance",
+            join(packagePath, "regeneration.json"),
+            error instanceof Error ? error.message : String(error),
+          );
         }
       }
       const observedDigest = sha256(canonicalJson(normalized.sort((left, right) => left.path.localeCompare(right.path))));
@@ -3338,25 +3534,89 @@ function appendAcceptedMachineEvidenceIssues({
   }
 
   const evidence = boundPackageArtifact("closure-evidence.json");
-  if (evidence) {
-    const groups = [
-      "staleAliasIssues",
-      "rejectedReaderLeaks",
-      "terminalStateIssues",
-      "acceptedClaimLinkIssues",
-      "acceptedCommentaryCitationIssues",
-      "acceptedRelationFictionIssues",
-    ] as const;
-    if (evidence.schema_version !== 1 || evidence.state !== "complete") {
-      issue(issues, "acceptance", join(packagePath, "closure-evidence.json"), "closure evidence is not terminal");
+  if (evidence) appendOntologyClosureEvidenceIssues(packagePath, evidence, issues);
+}
+
+const ONTOLOGY_CLOSURE_EVIDENCE_GROUPS = [
+  "staleAliasIssues",
+  "rejectedReaderLeaks",
+  "terminalStateIssues",
+  "acceptedClaimLinkIssues",
+  "acceptedCommentaryCitationIssues",
+  "acceptedRelationFictionIssues",
+] as const;
+
+function appendOntologyClosureEvidenceIssues(
+  packagePath: string,
+  evidence: Record<string, unknown>,
+  issues: OntologyAuditIssue[],
+) {
+  const evidencePath = join(packagePath, "closure-evidence.json");
+  if (evidence.schema_version !== 1 || evidence.state !== "complete") {
+    issue(issues, "acceptance", evidencePath, "closure evidence is not terminal");
+  }
+  for (const group of ONTOLOGY_CLOSURE_EVIDENCE_GROUPS) {
+    if (!Array.isArray(evidence[group]) || evidence[group].some((entry) => typeof entry !== "string")) {
+      issue(issues, "acceptance", evidencePath, `${group} is not a string array`);
+    } else if (evidence[group].length !== 0) {
+      issue(issues, "acceptance", evidencePath, `${group} is not empty`);
     }
-    for (const group of groups) {
-      if (!Array.isArray(evidence[group]) || evidence[group].some((entry) => typeof entry !== "string")) {
-        issue(issues, "acceptance", join(packagePath, "closure-evidence.json"), `${group} is not a string array`);
-      } else if (evidence[group].length !== 0) {
-        issue(issues, "acceptance", join(packagePath, "closure-evidence.json"), `${group} is not empty`);
-      }
-    }
+  }
+}
+
+/**
+ * Prove closure evidence by deterministic replay over the current semantic
+ * ledgers/projections and one exact prebuilt site.  A normal standalone audit
+ * verification builds an isolated site for this proof; regeneration and
+ * completeness workers pass their already-built site and verified proof.
+ */
+function validateOntologySemanticClosureEvidence({
+  repoRoot,
+  packagePath,
+  siteDirectory,
+  closureEvidenceProof,
+  issues,
+}: {
+  repoRoot: string;
+  packagePath: string;
+  siteDirectory?: string;
+  closureEvidenceProof?: VerifiedOntologyClosureEvidenceProof;
+  issues: OntologyAuditIssue[];
+}) {
+  const evidencePath = join(packagePath, "closure-evidence.json");
+  let temporarySite: string | undefined;
+  try {
+    const proof = closureEvidenceProof
+      ? assertOntologyClosureEvidenceProof(closureEvidenceProof, {
+          repoRoot,
+          packagePath,
+          siteDirectory: siteDirectory ?? closureEvidenceProof.siteDirectory,
+        })
+      : (() => {
+          const exactSite = siteDirectory ?? (() => {
+            const workRoot = ensureCanonicalOntologyWorkRoot(repoRoot);
+            temporarySite = mkdtempSync(join(workRoot, "ontology-closure-evidence-site-"));
+            buildStaticSite({ outDir: temporarySite });
+            return temporarySite;
+          })();
+          return verifyOntologyClosureEvidenceFile({ repoRoot, packagePath, siteDirectory: exactSite });
+        })();
+    appendOntologyClosureEvidenceIssues(packagePath, {
+      schema_version: 1,
+      state: "complete",
+      ...proof.evidence,
+    }, issues);
+    return proof;
+  } catch (error) {
+    issue(
+      issues,
+      "acceptance",
+      evidencePath,
+      `semantic closure evidence is not the deterministic current projection: ${error instanceof Error ? error.message : String(error)}`,
+    );
+    return null;
+  } finally {
+    if (temporarySite) rmSync(temporarySite, { recursive: true, force: true });
   }
 }
 
@@ -3366,12 +3626,14 @@ export function validateOntologyAcceptedMachineEvidence({
   acceptance,
   receiptArtifacts,
   acceptancePath = join(packagePath, "acceptance.json"),
+  closureEvidenceProof,
 }: {
   repoRoot: string;
   packagePath: string;
   acceptance: OntologyAuditAcceptance;
   receiptArtifacts: ReadonlyMap<string, string>;
   acceptancePath?: string;
+  closureEvidenceProof?: VerifiedOntologyClosureEvidenceProof;
 }) {
   const issues: OntologyAuditIssue[] = [];
   appendAcceptedMachineEvidenceIssues({
@@ -3381,6 +3643,7 @@ export function validateOntologyAcceptedMachineEvidence({
     receiptArtifacts,
     issues,
     acceptancePath,
+    ...(closureEvidenceProof === undefined ? {} : { closureEvidenceProof }),
   });
   return issues;
 }
@@ -3540,15 +3803,26 @@ function verifyExplicitConceptAuditProjection(
   }
 }
 
-export function verifyOntologyAuditPackage({
-  repoRoot = getRepoRoot(),
+type OntologyAuditVerificationScope = "full_acceptance" | "semantic_preacceptance" | "final_binding";
+
+function verifyOntologyAuditPackageInternal({
+  repoRoot,
   packagePath,
-  verifyLiveFinal: shouldVerifyLiveFinal = true,
+  shouldVerifyLiveFinal,
+  verificationScope,
+  acceptanceContent,
+  siteDirectory,
+  closureEvidenceProof,
 }: {
-  repoRoot?: string;
+  repoRoot: string;
   packagePath: string;
-  verifyLiveFinal?: boolean;
+  shouldVerifyLiveFinal: boolean;
+  verificationScope: OntologyAuditVerificationScope;
+  acceptanceContent?: string;
+  siteDirectory?: string;
+  closureEvidenceProof?: VerifiedOntologyClosureEvidenceProof;
 }) {
+  const semanticPreacceptance = verificationScope === "semantic_preacceptance";
   const absolutePackagePath = packagePath.startsWith("/") ? packagePath : join(repoRoot, packagePath);
   const issues: OntologyAuditIssue[] = [];
   if (!existsSync(absolutePackagePath)) {
@@ -3562,7 +3836,9 @@ export function verifyOntologyAuditPackage({
     return issues;
   }
   const manifest = parseJson(manifestPath, ManifestSchema, issues) as OntologyAuditManifest | undefined;
-  const acceptance = parseJson(acceptancePath, AcceptanceSchema, issues) as OntologyAuditAcceptance | undefined;
+  const acceptance = (acceptanceContent === undefined
+    ? parseJson(acceptancePath, AcceptanceSchema, issues)
+    : parseJsonContent(acceptanceContent, acceptancePath, AcceptanceSchema, issues)) as OntologyAuditAcceptance | undefined;
   if (!manifest || !acceptance) return issues;
   if (basename(absolutePackagePath) !== manifest.snapshot_id) issue(issues, "snapshot_id", manifestPath, "package directory does not match snapshot_id");
   if (manifest.snapshot_id !== `${SNAPSHOT_PREFIX}${manifest.baseline.corpus_digest}`) issue(issues, "snapshot_id", manifestPath, "snapshot_id does not match corpus digest");
@@ -3670,6 +3946,103 @@ export function verifyOntologyAuditPackage({
   }
   for (const target of requiredTargets) if (!adjudicationByTarget.has(target)) issue(issues, "missing_adjudication", join(absolutePackagePath, "adjudications.jsonl"), `no adjudication for ${target}`);
 
+  let finalAdjustmentArtifact: OntologyAuditFinalAdjustmentArtifact | null = null;
+  try {
+    finalAdjustmentArtifact = readOntologyAuditFinalAdjustments({ repoRoot, packagePath: absolutePackagePath });
+  } catch (error) {
+    issue(
+      issues,
+      "adjudication",
+      join(absolutePackagePath, "review-inputs/final-adjustments"),
+      `final-adjustment artifact is invalid: ${error instanceof Error ? error.message : String(error)}`,
+    );
+  }
+  if (canonicalJson(manifest.final_adjustments) !== canonicalJson(acceptance.final_adjustments)) {
+    issue(issues, "acceptance", acceptancePath, "manifest and acceptance disagree on final-adjustment binding");
+  }
+  if (acceptance.final_adjustments?.required && !finalAdjustmentArtifact) {
+    issue(issues, "acceptance", acceptancePath, "bound final-adjustment artifact is required but missing or invalid");
+  }
+  if (!acceptance.final_adjustments?.required && finalAdjustmentArtifact) {
+    issue(issues, "acceptance", acceptancePath, "final-adjustment artifact exists without a required manifest/acceptance binding");
+  }
+  if (acceptance.final_adjustments?.required && finalAdjustmentArtifact) {
+    const decisionPath = relative(absolutePackagePath, finalAdjustmentArtifact.artifactPath).split("\\").join("/");
+    const priorStatePath = relative(absolutePackagePath, finalAdjustmentArtifact.priorStateArtifactPath).split("\\").join("/");
+    if (
+      acceptance.final_adjustments.decision_artifact?.path !== decisionPath ||
+      acceptance.final_adjustments.decision_artifact.sha256 !== finalAdjustmentArtifact.sha256 ||
+      acceptance.final_adjustments.prior_state_artifact?.path !== priorStatePath ||
+      acceptance.final_adjustments.prior_state_artifact.sha256 !== finalAdjustmentArtifact.priorStateSha256 ||
+      acceptance.final_adjustments.receipt?.path !== finalAdjustmentArtifact.receiptPath ||
+      acceptance.final_adjustments.receipt.sha256 !== finalAdjustmentArtifact.receiptSha256
+    ) {
+      issue(issues, "acceptance", acceptancePath, "bound final-adjustment descriptors differ from the exact durable artifacts");
+    }
+  }
+  if (finalAdjustmentArtifact) {
+    const terminalUnits = new Map(
+      [...rows.records, ...rows.graphs].map((row) => [row.key, row]),
+    );
+    for (const adjustment of finalAdjustmentArtifact.decisions.values()) {
+      const unit = terminalUnits.get(adjustment.target_key);
+      const adjudication = adjudicationByTarget.get(adjustment.target_key);
+      if (!unit) {
+        issue(
+          issues,
+          "adjudication",
+          finalAdjustmentArtifact.artifactPath,
+          `${adjustment.target_key} is not a terminal record or edge`,
+        );
+        continue;
+      }
+      if (
+        !adjudication ||
+        adjudication.action !== adjustment.action ||
+        adjudication.rationale !== adjustment.rationale ||
+        adjudication.receipt_path !== adjustment.receipt_path
+      ) {
+        issue(
+          issues,
+          "adjudication",
+          finalAdjustmentArtifact.artifactPath,
+          `${adjustment.target_key} is not exactly reflected in adjudications.jsonl`,
+        );
+      }
+      if (ontologyAuditFinalPointerSha256(unit.final) !== adjustment.expected_final_pointer_sha256) {
+        issue(
+          issues,
+          "adjudication",
+          finalAdjustmentArtifact.artifactPath,
+          `${adjustment.target_key} final pointer is not the exact pointer bound by the adjustment`,
+        );
+      }
+      const finalStatus = unit.kind === "record" && unit.final ? unit.final.review_status : null;
+      if (
+        (adjustment.action === "add" && (adjustment.prior_final_pointer_sha256 !== null || unit.final === null)) ||
+        (adjustment.action === "retire" && (adjustment.prior_final_pointer_sha256 === null || unit.final !== null)) ||
+        (adjustment.action === "reject" && (
+          adjustment.prior_final_pointer_sha256 === null ||
+          unit.kind !== "record" ||
+          unit.final === null ||
+          finalStatus !== "rejected"
+        )) ||
+        (adjustment.action === "revise" && (
+          adjustment.prior_final_pointer_sha256 === null ||
+          unit.final === null ||
+          finalStatus === "rejected"
+        ))
+      ) {
+        issue(
+          issues,
+          "adjudication",
+          finalAdjustmentArtifact.artifactPath,
+          `${adjustment.target_key} action ${adjustment.action} conflicts with its terminal pointer shape or review status ${finalStatus ?? "null"}`,
+        );
+      }
+    }
+  }
+
   const internalKeys = new Set(ownedKeys);
   for (const finding of rows.findings) {
     for (const target of finding.target_keys) {
@@ -3701,6 +4074,14 @@ export function verifyOntologyAuditPackage({
     if (!internalKeys.has(edge.owner_key) || !internalKeys.has(edge.from_key)) issue(issues, "foreign_key", join(absolutePackagePath, "graph-units.jsonl"), `${edge.key} has unknown owner/from key`);
     if (edge.to_key !== null && !internalKeys.has(edge.to_key)) issue(issues, "foreign_key", join(absolutePackagePath, "graph-units.jsonl"), `${edge.key} references unknown target ${edge.to_key}`);
     if ((edge.to_key === null) === (edge.external_target === null)) issue(issues, "foreign_key", join(absolutePackagePath, "graph-units.jsonl"), `${edge.key} must have exactly one internal or external target`);
+    if (edge.final !== null && edge.final.review_status !== null) {
+      issue(
+        issues,
+        "projection_binding",
+        join(absolutePackagePath, "graph-units.jsonl"),
+        `${edge.key} final pointer must keep review_status null because owner status is record state, not raw edge identity`,
+      );
+    }
   }
 
   let baselineReader: CorpusReader | undefined;
@@ -3794,10 +4175,10 @@ export function verifyOntologyAuditPackage({
   const finalSetEqual = liveFinalTargetKeys === undefined
     ? acceptance.closure.final_set_equal
     : equalStringSets(finalKeys, liveFinalTargetKeys);
-  if (acceptance.closure.baseline_set_equal !== baselineSetEqual) issue(issues, "acceptance", acceptancePath, "baseline_set_equal does not match package rows");
-  if (acceptance.closure.final_set_equal !== finalSetEqual) issue(issues, "acceptance", acceptancePath, "final_set_equal does not match package rows");
   const unresolved = rows.adjudications.filter((row) => row.state === "pending").length;
-  if (acceptance.closure.unresolved_adjudications !== unresolved) issue(issues, "acceptance", acceptancePath, "unresolved adjudication count is stale");
+  const sourcePassesComplete = rows.sources.every((row) => row.primary.state === "complete" && row.independent.state === "complete");
+  const reconciliationsComplete = rows.sources.every((row) => row.reconciliation.state !== "pending");
+  const adjudicationsComplete = unresolved === 0;
   const baselineLaneCounts = countBy(
     rows.records.filter((row) => row.baseline !== null),
     (row) => row.lane,
@@ -3811,54 +4192,97 @@ export function verifyOntologyAuditPackage({
     }
   }
   let acceptanceReceiptArtifacts: ReadonlyMap<string, string> | null = null;
-  if (acceptance.state === "accepted") {
-    const sourcePassesComplete = rows.sources.every((row) => row.primary.state === "complete" && row.independent.state === "complete");
-    const reconciliationsComplete = rows.sources.every((row) => row.reconciliation.state !== "pending");
-    const adjudicationsComplete = unresolved === 0;
-    if (manifest.audit_state !== "accepted") issue(issues, "acceptance", manifestPath, "accepted package retains a pending manifest state");
-    for (const lane of manifest.lane_states) {
-      const expected = lane.count === 0 ? "zero_result" : "complete";
-      if (lane.state !== expected) issue(issues, "acceptance", manifestPath, `${lane.lane} lane is ${lane.state}, expected terminal state ${expected}`);
-    }
+  const verifiedClosureEvidenceProof = verificationScope === "final_binding"
+    ? null
+    : validateOntologySemanticClosureEvidence({
+      repoRoot,
+      packagePath: absolutePackagePath,
+      ...(siteDirectory === undefined ? {} : { siteDirectory }),
+      ...(closureEvidenceProof === undefined ? {} : { closureEvidenceProof }),
+      issues,
+    });
+  if (semanticPreacceptance) {
+    if (!baselineSetEqual) issue(issues, "acceptance", acceptancePath, "semantic proof does not preserve the exact frozen baseline key set");
+    if (!finalSetEqual) issue(issues, "acceptance", acceptancePath, "semantic proof does not equal the exact live final key set");
     for (const row of [...rows.records, ...rows.concepts, ...rows.graphs]) {
-      if (row.audit_state !== "complete") issue(issues, "acceptance", acceptancePath, `${row.key} retains pending audit state after acceptance`);
+      if (row.audit_state !== "complete") issue(issues, "acceptance", acceptancePath, `${row.key} retains pending semantic audit state`);
     }
-    if (!sourcePassesComplete || !reconciliationsComplete || !adjudicationsComplete) issue(issues, "acceptance", acceptancePath, "accepted package still has pending review work");
-    if (
-      acceptance.closure.source_passes_complete !== sourcePassesComplete
-      || acceptance.closure.reconciliations_complete !== reconciliationsComplete
-      || acceptance.closure.adjudications_complete !== adjudicationsComplete
-    ) {
-      issue(issues, "acceptance", acceptancePath, "accepted closure completion flags do not match the audit partitions");
+    if (!sourcePassesComplete) {
+      issue(issues, "acceptance", acceptancePath, "semantic proof has incomplete source review passes");
     }
-    if (!acceptance.receipt || !acceptance.final_corpus_digest) issue(issues, "acceptance", acceptancePath, "accepted package lacks receipt or final corpus digest");
-    if (liveFinalCorpusDigest && acceptance.final_corpus_digest !== liveFinalCorpusDigest) {
-      issue(issues, "acceptance", acceptancePath, "accepted final corpus digest differs from an independent live re-observation");
+    if (!reconciliationsComplete) {
+      issue(issues, "acceptance", acceptancePath, "semantic proof has pending source reconciliations");
     }
-    if (!acceptance.closure.baseline_set_equal || !acceptance.closure.final_set_equal || acceptance.closure.stale_aliases !== 0 || acceptance.closure.rejected_reader_leaks !== 0) issue(issues, "acceptance", acceptancePath, "accepted package has an open closure condition");
-    if (!acceptance.closure.regeneration_one_sha256 || acceptance.closure.regeneration_one_sha256 !== acceptance.closure.regeneration_two_sha256) issue(issues, "acceptance", acceptancePath, "accepted package lacks byte-identical regeneration hashes");
-    if (acceptance.receipt) {
-      const inspection = createReceiptInspector(repoRoot)(acceptance.receipt.path, acceptance.receipt.sha256, true);
-      if (inspection.problem) issue(issues, "acceptance", acceptancePath, `acceptance ${inspection.problem}`);
-      else {
-        acceptanceReceiptArtifacts = inspection.artifacts;
-        issues.push(...validateOntologyAcceptedMachineEvidence({
-          repoRoot,
-          packagePath: absolutePackagePath,
-          acceptance,
-          receiptArtifacts: inspection.artifacts,
-          acceptancePath,
-        }));
-      }
+    if (!adjudicationsComplete) {
+      issue(issues, "acceptance", acceptancePath, `semantic proof has ${unresolved} pending adjudication(s)`);
     }
   } else {
-    if (manifest.audit_state !== "pending") issue(issues, "acceptance", manifestPath, "pending acceptance has a terminal manifest state");
-    for (const lane of manifest.lane_states) {
-      const expected = lane.count === 0 ? "zero_result" : "pending";
-      if (lane.state !== expected) issue(issues, "acceptance", manifestPath, `${lane.lane} lane is ${lane.state}, expected pre-acceptance state ${expected}`);
+    if (acceptance.closure.baseline_set_equal !== baselineSetEqual) issue(issues, "acceptance", acceptancePath, "baseline_set_equal does not match package rows");
+    if (acceptance.closure.final_set_equal !== finalSetEqual) issue(issues, "acceptance", acceptancePath, "final_set_equal does not match package rows");
+    if (acceptance.closure.unresolved_adjudications !== unresolved) issue(issues, "acceptance", acceptancePath, "unresolved adjudication count is stale");
+    if (acceptance.state === "accepted") {
+      if (manifest.audit_state !== "accepted") issue(issues, "acceptance", manifestPath, "accepted package retains a pending manifest state");
+      for (const lane of manifest.lane_states) {
+        const expected = lane.count === 0 ? "zero_result" : "complete";
+        if (lane.state !== expected) issue(issues, "acceptance", manifestPath, `${lane.lane} lane is ${lane.state}, expected terminal state ${expected}`);
+      }
+      for (const row of [...rows.records, ...rows.concepts, ...rows.graphs]) {
+        if (row.audit_state !== "complete") issue(issues, "acceptance", acceptancePath, `${row.key} retains pending audit state after acceptance`);
+      }
+      if (!sourcePassesComplete || !reconciliationsComplete || !adjudicationsComplete) issue(issues, "acceptance", acceptancePath, "accepted package still has pending review work");
+      if (
+        acceptance.closure.source_passes_complete !== sourcePassesComplete
+        || acceptance.closure.reconciliations_complete !== reconciliationsComplete
+        || acceptance.closure.adjudications_complete !== adjudicationsComplete
+      ) {
+        issue(issues, "acceptance", acceptancePath, "accepted closure completion flags do not match the audit partitions");
+      }
+      if (!acceptance.receipt || !acceptance.final_corpus_digest) issue(issues, "acceptance", acceptancePath, "accepted package lacks receipt or final corpus digest");
+      if (liveFinalCorpusDigest && acceptance.final_corpus_digest !== liveFinalCorpusDigest) {
+        issue(issues, "acceptance", acceptancePath, "accepted final corpus digest differs from an independent live re-observation");
+      }
+      if (!acceptance.closure.baseline_set_equal || !acceptance.closure.final_set_equal || acceptance.closure.stale_aliases !== 0 || acceptance.closure.rejected_reader_leaks !== 0) issue(issues, "acceptance", acceptancePath, "accepted package has an open closure condition");
+      if (!acceptance.closure.regeneration_one_sha256 || acceptance.closure.regeneration_one_sha256 !== acceptance.closure.regeneration_two_sha256) issue(issues, "acceptance", acceptancePath, "accepted package lacks byte-identical regeneration hashes");
+      if (acceptance.receipt) {
+        const inspection = createReceiptInspector(repoRoot)(acceptance.receipt.path, acceptance.receipt.sha256, true);
+        if (inspection.problem) issue(issues, "acceptance", acceptancePath, `acceptance ${inspection.problem}`);
+        else {
+          acceptanceReceiptArtifacts = inspection.artifacts;
+          issues.push(...validateOntologyAcceptedMachineEvidence({
+            repoRoot,
+            packagePath: absolutePackagePath,
+            acceptance,
+            receiptArtifacts: inspection.artifacts,
+            acceptancePath,
+            ...(verifiedClosureEvidenceProof === null
+              ? {}
+              : { closureEvidenceProof: verifiedClosureEvidenceProof }),
+          }));
+        }
+      }
+    } else {
+      if (manifest.audit_state !== "pending") issue(issues, "acceptance", manifestPath, "pending acceptance has a terminal manifest state");
+      for (const lane of manifest.lane_states) {
+        const expected = lane.count === 0 ? "zero_result" : "pending";
+        if (lane.state !== expected) issue(issues, "acceptance", manifestPath, `${lane.lane} lane is ${lane.state}, expected pre-acceptance state ${expected}`);
+      }
+      if (acceptance.receipt !== null || acceptance.final_corpus_digest !== null) issue(issues, "acceptance", acceptancePath, "pending acceptance must not claim a receipt or final digest");
+      if (acceptance.closure.source_passes_complete || acceptance.closure.reconciliations_complete || acceptance.closure.adjudications_complete) issue(issues, "acceptance", acceptancePath, "pending acceptance falsely claims completed review work");
     }
-    if (acceptance.receipt !== null || acceptance.final_corpus_digest !== null) issue(issues, "acceptance", acceptancePath, "pending acceptance must not claim a receipt or final digest");
-    if (acceptance.closure.source_passes_complete || acceptance.closure.reconciliations_complete || acceptance.closure.adjudications_complete) issue(issues, "acceptance", acceptancePath, "pending acceptance falsely claims completed review work");
+  }
+  if (acceptanceReceiptArtifacts && finalAdjustmentArtifact) {
+    const requiredFinalAdjustmentBindings = new Map(finalAdjustmentArtifact.receiptBindings);
+    requiredFinalAdjustmentBindings.set(finalAdjustmentArtifact.receiptPath, finalAdjustmentArtifact.receiptSha256);
+    for (const [path, digest] of requiredFinalAdjustmentBindings) {
+      if (acceptanceReceiptArtifacts.get(path) !== digest) {
+        issue(
+          issues,
+          "acceptance",
+          acceptancePath,
+          `acceptance receipt does not hash-bind final-adjustment provenance ${path}`,
+        );
+      }
+    }
   }
   issues.push(...validateOntologyAuditReviewEvidence({
     repoRoot,
@@ -3869,6 +4293,113 @@ export function verifyOntologyAuditPackage({
     path: join(absolutePackagePath, "adjudications.jsonl"),
   }));
   return issues;
+}
+
+/**
+ * Verify the pending final partition/manifest binding before downstream closure
+ * evidence and regeneration exist. This scope still re-observes the live
+ * corpus and all durable review/final-adjustment provenance, but cannot claim
+ * semantic preacceptance or global acceptance.
+ */
+export function verifyOntologyAuditFinalBinding({
+  repoRoot = getRepoRoot(),
+  packagePath,
+}: {
+  repoRoot?: string;
+  packagePath: string;
+}) {
+  return verifyOntologyAuditPackageInternal({
+    repoRoot,
+    packagePath,
+    shouldVerifyLiveFinal: true,
+    verificationScope: "final_binding",
+  });
+}
+
+/**
+ * Verify the complete audit and its downstream global acceptance receipt.
+ * `verifyLiveFinal: false` remains available only for the historical frozen-
+ * package inspection path; semantic consumers must use the separately named
+ * preacceptance verifier below.
+ */
+export function verifyOntologyAuditPackage({
+  repoRoot = getRepoRoot(),
+  packagePath,
+  verifyLiveFinal: shouldVerifyLiveFinal = true,
+  siteDirectory,
+  closureEvidenceProof,
+}: {
+  repoRoot?: string;
+  packagePath: string;
+  verifyLiveFinal?: boolean;
+  siteDirectory?: string;
+  closureEvidenceProof?: VerifiedOntologyClosureEvidenceProof;
+}) {
+  return verifyOntologyAuditPackageInternal({
+    repoRoot,
+    packagePath,
+    shouldVerifyLiveFinal,
+    verificationScope: "full_acceptance",
+    ...(siteDirectory === undefined ? {} : { siteDirectory }),
+    ...(closureEvidenceProof === undefined ? {} : { closureEvidenceProof }),
+  });
+}
+
+/**
+ * Verify proposed acceptance bytes against the already-published canonical
+ * manifest and payloads while the durable on-disk authority marker is still
+ * pending.  Callers may rename these exact bytes only after this returns zero.
+ */
+export function verifyOntologyAuditAcceptanceCandidate({
+  repoRoot = getRepoRoot(),
+  packagePath,
+  acceptanceContent,
+  siteDirectory,
+  closureEvidenceProof,
+}: {
+  repoRoot?: string;
+  packagePath: string;
+  acceptanceContent: string;
+  siteDirectory?: string;
+  closureEvidenceProof?: VerifiedOntologyClosureEvidenceProof;
+}) {
+  return verifyOntologyAuditPackageInternal({
+    repoRoot,
+    packagePath,
+    shouldVerifyLiveFinal: true,
+    verificationScope: "full_acceptance",
+    acceptanceContent,
+    ...(siteDirectory === undefined ? {} : { siteDirectory }),
+    ...(closureEvidenceProof === undefined ? {} : { closureEvidenceProof }),
+  });
+}
+
+/**
+ * Verify the stable source/record/concept/graph proof that must exist before
+ * deterministic regeneration and global release acceptance can occur.
+ *
+ * This always re-observes the live corpus and intentionally ignores only the
+ * downstream regeneration hashes, global acceptance receipt and final digest.
+ */
+export function verifyOntologyAuditSemanticPreacceptance({
+  repoRoot = getRepoRoot(),
+  packagePath,
+  siteDirectory,
+  closureEvidenceProof,
+}: {
+  repoRoot?: string;
+  packagePath: string;
+  siteDirectory?: string;
+  closureEvidenceProof?: VerifiedOntologyClosureEvidenceProof;
+}) {
+  return verifyOntologyAuditPackageInternal({
+    repoRoot,
+    packagePath,
+    shouldVerifyLiveFinal: true,
+    verificationScope: "semantic_preacceptance",
+    ...(siteDirectory === undefined ? {} : { siteDirectory }),
+    ...(closureEvidenceProof === undefined ? {} : { closureEvidenceProof }),
+  });
 }
 
 export function listOntologyAuditPackagePaths(repoRoot = getRepoRoot()) {

@@ -1,11 +1,16 @@
 import { afterEach, beforeEach, describe, expect, it } from "bun:test";
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { buildCommentaryCampaignManifest } from "../commentary-campaign.js";
 import {
+  assertCommentaryAuditSampleEvidenceReplay,
+  buildCommentaryAuditSampleJob,
+} from "../commentary-audit-sample-campaign.js";
+import {
   COMMENTARY_AUTHORING_MODEL,
+  COMMENTARY_CODEX_CLI_VERSION,
   COMMENTARY_PERMISSION_MODE,
   COMMENTARY_MODEL_ARGUMENT,
   COMMENTARY_STAGE_EFFORT,
@@ -13,13 +18,18 @@ import {
 import { setRepoRootForTesting } from "../paths.js";
 import { resolveSourceSpan } from "../source.js";
 import { COMMENTARY_PROTOCOL_FIXTURE } from "../../test-support/commentary-protocol-fixture.js";
-import { writeCommentaryQualityAuditManifestPreview, validateCommentaryQualityAuditManifest } from "./commentary-quality-audit.js";
+import {
+  buildCommentaryQualityAuditManifestPreview,
+  writeCommentaryQualityAuditManifestPreview,
+  validateCommentaryQualityAuditManifest,
+} from "./commentary-quality-audit.js";
 import {
   applyCommentaryQualityAuditAcceptance,
   applyCommentaryQualityAuditAcceptanceSupersede,
   previewCommentaryQualityAuditAcceptance,
   previewCommentaryQualityAuditAcceptanceSupersede,
   validateCommentaryQualityAuditAcceptanceSample,
+  type CommentaryQualityAuditAcceptanceInput,
 } from "./commentary-quality-audit-acceptance.js";
 
 const DIALOGUE = "fixture";
@@ -29,6 +39,7 @@ const ENGLISH = "{2a} first {2b} second";
 
 let root = "";
 let restoreRepoRoot: (() => void) | undefined;
+let validInput: CommentaryQualityAuditAcceptanceInput;
 
 function write(path: string, content: string) {
   const absolute = join(root, path);
@@ -38,6 +49,18 @@ function write(path: string, content: string) {
 
 function sha256(content: string | Uint8Array) {
   return createHash("sha256").update(content).digest("hex");
+}
+
+function codexSuccessJsonl(structuredOutput: unknown, usage: Record<string, number>) {
+  return [
+    JSON.stringify({ type: "thread.started", thread_id: "thread_fixture" }),
+    JSON.stringify({ type: "turn.started" }),
+    JSON.stringify({
+      type: "item.completed",
+      item: { id: "item_fixture", type: "agent_message", text: JSON.stringify(structuredOutput) },
+    }),
+    JSON.stringify({ type: "turn.completed", usage }),
+  ].join("\n");
 }
 
 function writeFixtureLedger() {
@@ -125,6 +148,85 @@ function writeCompletedAudit() {
   );
 }
 
+function writePassingSample(
+  reviewedOn: string,
+  rationale: string,
+  options: { includeExecution?: boolean } = {},
+): CommentaryQualityAuditAcceptanceInput {
+  const manifest = buildCommentaryQualityAuditManifestPreview(DIALOGUE);
+  const pendingManifestContent = `${JSON.stringify(manifest, null, 2)}\n`;
+  const job = buildCommentaryAuditSampleJob({ manifest, pendingManifestContent });
+  const review = {
+    schema_version: 1 as const,
+    dialogue: DIALOGUE,
+    reviewer: {
+      id: job.reviewer_id,
+      model: COMMENTARY_AUTHORING_MODEL,
+      effort: COMMENTARY_STAGE_EFFORT.audit,
+    },
+    pending_manifest_sha256: job.pending_manifest_sha256,
+    sample_packet_sha256: job.packet_sha256,
+    sampled_commentary_ids: [...job.sampled_commentary_ids],
+    sample_verdict: "pass" as const,
+    blocks: job.sampled_commentary_ids.map((commentaryId) => ({
+      commentary_id: commentaryId,
+      verdict: "pass" as const,
+      rationale: "The exact source, evidence, placement, and spoken-audio checks pass.",
+    })),
+    rationale,
+  };
+  const outputContent = `${JSON.stringify(review, null, 2)}\n`;
+  const usage = {
+    input_tokens: 120,
+    cached_input_tokens: 80,
+    cache_write_input_tokens: 4,
+    output_tokens: 30,
+    reasoning_output_tokens: 12,
+  };
+  const executionContent = codexSuccessJsonl(review, usage);
+  const stateContent = `${JSON.stringify({
+    schema_version: 1,
+    campaign: "plato-commentary-independent-luna-sample",
+    job_id: job.job_id,
+    dialogue: job.dialogue,
+    reviewer_id: job.reviewer_id,
+    input_sha256: job.input_sha256,
+    pending_manifest_sha256: job.pending_manifest_sha256,
+    pending_manifest_path: job.pending_manifest_path,
+    sample_packet_path: job.packet_path,
+    sample_packet_sha256: job.packet_sha256,
+    output_schema_path: job.output_schema_path,
+    output_schema_sha256: job.output_schema_sha256,
+    model_catalog_path: job.model_catalog_path,
+    model_catalog_sha256: job.model_catalog_sha256,
+    prompt_sha256: job.prompt_sha256,
+    model: COMMENTARY_AUTHORING_MODEL,
+    effort: COMMENTARY_STAGE_EFFORT.audit,
+    permission_mode: COMMENTARY_PERMISSION_MODE,
+    codex_cli_version: COMMENTARY_CODEX_CLI_VERSION,
+    output_path: job.output_path,
+    output_sha256: sha256(outputContent),
+    execution_path: job.execution_path,
+    execution_sha256: sha256(executionContent),
+    sample_verdict: "pass",
+    usage,
+  }, null, 2)}\n`;
+  write(job.pending_manifest_path, pendingManifestContent);
+  write(job.packet_path, job.packet_content);
+  write(job.output_schema_path, `${JSON.stringify(job.output_schema, null, 2)}\n`);
+  write(job.output_path, outputContent);
+  write(job.state_path, stateContent);
+  if (options.includeExecution ?? true) write(job.execution_path, executionContent);
+  return {
+    dialogue: DIALOGUE,
+    reviewer: job.reviewer_id,
+    reviewedOn,
+    rationale,
+    sampledCommentaryIds: [...job.sampled_commentary_ids],
+    sampleOutputPath: job.output_path,
+  };
+}
+
 beforeEach(() => {
   root = mkdtempSync(join(tmpdir(), "commentary-quality-audit-acceptance-"));
   restoreRepoRoot = setRepoRootForTesting(root);
@@ -148,20 +250,16 @@ beforeEach(() => {
   writeFixtureLedger();
   writeCompletedAudit();
   writeCommentaryQualityAuditManifestPreview(DIALOGUE);
+  validInput = writePassingSample(
+    "2026-08-21",
+    "The independent Luna sample supports acceptance of the bounded audit output.",
+  );
 });
 
 afterEach(() => {
   restoreRepoRoot?.();
   rmSync(root, { recursive: true, force: true });
 });
-
-const validInput = {
-  dialogue: DIALOGUE,
-  reviewer: "cjpher-delegated-luna-reviewer-fixture",
-  reviewedOn: "2026-08-21",
-  rationale: "The independent Luna sample supports acceptance of the bounded audit output.",
-  sampledCommentaryIds: [ID],
-};
 
 describe("commentary quality-audit acceptance lane", () => {
   it("requires truthful delegated-Luna metadata and never infers acceptance inputs", () => {
@@ -174,6 +272,37 @@ describe("commentary quality-audit acceptance lane", () => {
     expect(() => previewCommentaryQualityAuditAcceptance({ ...validInput, sampledCommentaryIds: [] })).toThrow(
       "explicitly provided",
     );
+  });
+
+  it("rejects hand-written pass output and state without the exact raw Codex execution", () => {
+    rmSync(join(root, validInput.sampleOutputPath.replace("audit-sample-reviews", "audit-sample-executions").replace(/\.json$/u, ".jsonl")));
+    expect(() => previewCommentaryQualityAuditAcceptance(validInput)).toThrow(
+      "sample output, state, and raw Codex execution must either all exist or all be absent",
+    );
+  });
+
+  it("recomputes the durable job identity instead of trusting copied evidence hashes", () => {
+    const preview = previewCommentaryQualityAuditAcceptance(validInput);
+    const evidence = JSON.parse(preview.sampleEvidence) as Parameters<
+      typeof assertCommentaryAuditSampleEvidenceReplay
+    >[0]["evidence"];
+    evidence.job_id = "sample:fixture:forged0000000000";
+    const pending = buildCommentaryQualityAuditManifestPreview(DIALOGUE);
+    expect(() => assertCommentaryAuditSampleEvidenceReplay({
+      evidence,
+      pendingManifestContent: `${JSON.stringify(pending, null, 2)}\n`,
+      activeCommentaryIds: [ID],
+    })).toThrow("durable job identity is stale or forged");
+
+    const forgedInvocation = JSON.parse(preview.sampleEvidence) as Parameters<
+      typeof assertCommentaryAuditSampleEvidenceReplay
+    >[0]["evidence"];
+    forgedInvocation.invocation.model_argument = "forged-model" as typeof forgedInvocation.invocation.model_argument;
+    expect(() => assertCommentaryAuditSampleEvidenceReplay({
+      evidence: forgedInvocation,
+      pendingManifestContent: `${JSON.stringify(pending, null, 2)}\n`,
+      activeCommentaryIds: [ID],
+    })).toThrow("durable invocation does not replay exactly");
   });
 
   it("rejects missing, short, duplicate, out-of-order, and unknown samples", () => {
@@ -196,13 +325,25 @@ describe("commentary quality-audit acceptance lane", () => {
     expect(preview.applied).toBe(false);
     expect(existsSync(join(root, preview.manifestPath))).toBe(false);
     expect(existsSync(join(root, preview.reviewNotePath))).toBe(false);
+    expect(existsSync(join(root, preview.sampleEvidencePath))).toBe(false);
     expect(preview.manifest.acceptance).toMatchObject({ decision: "accepted", sampled_commentary_ids: [ID] });
 
     const applied = applyCommentaryQualityAuditAcceptance(validInput);
     expect(applied.applied).toBe(true);
+    expect(sha256(readFileSync(join(root, applied.sampleEvidencePath), "utf8"))).toBe(applied.sampleEvidenceSha256);
+    expect(applied.reviewNote).toContain(`sample_evidence_path: ${applied.sampleEvidencePath}`);
+    expect(applied.reviewNote).toContain(`sample_evidence_sha256: ${applied.sampleEvidenceSha256}`);
     expect(readFileSync(join(root, applied.manifestPath), "utf8")).toBe(`${JSON.stringify(applied.manifest, null, 2)}\n`);
     expect(validateCommentaryQualityAuditManifest(applied.manifestPath, readFileSync(join(root, applied.manifestPath), "utf8"))).toEqual([]);
     expect(() => applyCommentaryQualityAuditAcceptance(validInput)).toThrow("Refusing to overwrite");
+
+    write(applied.sampleEvidencePath, `${applied.sampleEvidence.trimEnd()} \n`);
+    expect(
+      validateCommentaryQualityAuditManifest(
+        applied.manifestPath,
+        readFileSync(join(root, applied.manifestPath), "utf8"),
+      ).map((issue) => issue.code),
+    ).toContain("invalid_review_note");
   });
 
   it("rejects a pending preview when the canonical ledger changes after preview", () => {
@@ -211,10 +352,36 @@ describe("commentary quality-audit acceptance lane", () => {
     expect(() => previewCommentaryQualityAuditAcceptance(validInput)).toThrow("is stale");
   });
 
+  it("rejects a symlinked scratch sample output even when the target bytes are valid", () => {
+    const outputAbsolutePath = join(root, validInput.sampleOutputPath);
+    const content = readFileSync(outputAbsolutePath, "utf8");
+    const aliasTarget = join(root, "outside-scratch/sample.json");
+    mkdirSync(join(aliasTarget, ".."), { recursive: true });
+    writeFileSync(aliasTarget, content, "utf8");
+    rmSync(outputAbsolutePath);
+    symlinkSync(aliasTarget, outputAbsolutePath);
+    expect(() => previewCommentaryQualityAuditAcceptance(validInput)).toThrow(
+      "canonical regular non-symlink file",
+    );
+  });
+
+  it("rejects a symlinked canonical evidence parent before any acceptance write", () => {
+    const canonicalParent = join(root, "wiki/submissions/commentary-audit-sample");
+    const aliasTarget = join(root, "outside-canonical-evidence");
+    mkdirSync(join(canonicalParent, ".."), { recursive: true });
+    mkdirSync(aliasTarget, { recursive: true });
+    symlinkSync(aliasTarget, canonicalParent, "dir");
+    expect(() => applyCommentaryQualityAuditAcceptance(validInput)).toThrow(
+      "traverses a symlink or realpath alias",
+    );
+    expect(existsSync(join(root, "wiki/commentary-audits/fixture.json"))).toBe(false);
+  });
+
   it("supersedes a changed-ledger acceptance with content-addressed predecessor history", () => {
     const initial = applyCommentaryQualityAuditAcceptance(validInput);
     const oldManifest = readFileSync(join(root, initial.manifestPath), "utf8");
     const oldReviewNote = readFileSync(join(root, initial.reviewNotePath), "utf8");
+    const oldLedger = readFileSync(join(root, `wiki/commentary/${DIALOGUE}.md`), "utf8");
 
     write(
       `wiki/commentary/${DIALOGUE}.md`,
@@ -226,12 +393,10 @@ describe("commentary quality-audit acceptance lane", () => {
     writeCompletedAudit();
     writeCommentaryQualityAuditManifestPreview(DIALOGUE);
 
-    const nextInput = {
-      ...validInput,
-      reviewer: "cjpher-delegated-luna-reviewer-fixture-round2",
-      reviewedOn: "2026-08-22",
-      rationale: "A fresh independent Luna sample supports the changed-ledger audit acceptance.",
-    };
+    const nextInput = writePassingSample(
+      "2026-08-22",
+      "A fresh independent Luna sample supports the changed-ledger audit acceptance.",
+    );
     const preview = previewCommentaryQualityAuditAcceptanceSupersede(nextInput);
     expect(preview.applied).toBe(false);
     expect(readFileSync(join(root, initial.manifestPath), "utf8")).toBe(oldManifest);
@@ -245,12 +410,29 @@ describe("commentary quality-audit acceptance lane", () => {
     expect(applied.applied).toBe(true);
     expect(readFileSync(join(root, applied.predecessorManifestHistoryPath), "utf8")).toBe(oldManifest);
     expect(readFileSync(join(root, applied.predecessorReviewNoteHistoryPath), "utf8")).toBe(oldReviewNote);
+    expect(readFileSync(join(root, applied.predecessorLedgerHistoryPath), "utf8")).toBe(oldLedger);
     expect(readFileSync(join(root, initial.reviewNotePath), "utf8")).toBe(oldReviewNote);
     expect(validateCommentaryQualityAuditManifest(applied.manifestPath, readFileSync(join(root, applied.manifestPath), "utf8"))).toEqual([]);
     expect(() => applyCommentaryQualityAuditAcceptanceSupersede(nextInput)).toThrow("unchanged");
+
+    writeFileSync(join(root, applied.predecessorManifestHistoryPath), `${oldManifest.trimEnd()} \n`, "utf8");
+    expect(
+      validateCommentaryQualityAuditManifest(
+        applied.manifestPath,
+        readFileSync(join(root, applied.manifestPath), "utf8"),
+      ).map((issue) => issue.code),
+    ).toContain("invalid_review_note");
+    writeFileSync(join(root, applied.predecessorManifestHistoryPath), oldManifest, "utf8");
+    rmSync(join(root, applied.predecessorLedgerHistoryPath));
+    expect(
+      validateCommentaryQualityAuditManifest(
+        applied.manifestPath,
+        readFileSync(join(root, applied.manifestPath), "utf8"),
+      ).map((issue) => issue.code),
+    ).toContain("invalid_review_note");
   });
 
-  it("supersedes a predecessor whose historical audit-unit order differs from its receipt sample order", () => {
+  it("rejects a predecessor whose embedded audit bytes drift from its durable sample evidence", () => {
     const initial = applyCommentaryQualityAuditAcceptance(validInput);
     const manifestAbsolutePath = join(root, initial.manifestPath);
     const predecessor = JSON.parse(readFileSync(manifestAbsolutePath, "utf8")) as {
@@ -289,13 +471,13 @@ describe("commentary quality-audit acceptance lane", () => {
     writeCompletedAudit();
     writeCommentaryQualityAuditManifestPreview(DIALOGUE);
 
-    const preview = previewCommentaryQualityAuditAcceptanceSupersede({
-      ...validInput,
-      reviewer: "cjpher-delegated-luna-reviewer-fixture-round2",
-      reviewedOn: "2026-08-22",
-      rationale: "A fresh independent Luna sample supports the changed-ledger audit acceptance.",
-    });
-    expect(preview.predecessorManifestSha256).toBe(sha256(readFileSync(manifestAbsolutePath, "utf8")));
+    const nextInput = writePassingSample(
+      "2026-08-22",
+      "A fresh independent Luna sample supports the changed-ledger audit acceptance.",
+    );
+    expect(() => previewCommentaryQualityAuditAcceptanceSupersede(nextInput)).toThrow(
+      "preserved ledger and embedded audit coverage differ",
+    );
   });
 
   it("rejects a predecessor when its receipt changes the accepted historical sample order", () => {
@@ -386,12 +568,10 @@ describe("commentary quality-audit acceptance lane", () => {
     );
     writeCompletedAudit();
     writeCommentaryQualityAuditManifestPreview(DIALOGUE);
-    const nextInput = {
-      ...validInput,
-      reviewer: "cjpher-delegated-luna-reviewer-fixture-round2",
-      reviewedOn: "2026-08-22",
-      rationale: "A fresh independent Luna sample supports the changed-ledger audit acceptance.",
-    };
+    const nextInput = writePassingSample(
+      "2026-08-22",
+      "A fresh independent Luna sample supports the changed-ledger audit acceptance.",
+    );
     expect(() => previewCommentaryQualityAuditAcceptanceSupersede({ ...nextInput, sampledCommentaryIds: [] })).toThrow(
       "explicitly provided",
     );

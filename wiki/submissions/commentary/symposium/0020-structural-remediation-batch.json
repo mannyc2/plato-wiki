@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "submission_id": "0020-structural-remediation-batch",
+  "lane": "commentary",
+  "kind": "structural-remediation-batch",
+  "scope": "symposium",
+  "source_path": "scratch/commentary/structural-remediation/symposium/audit-failures-batch.json",
+  "source_sha256": "e364bf45e65a7db0c7e305888bcdfa86c89c4fa0883dfc615bba904aa7fa0e65",
+  "target_path": "wiki/commentary/symposium.md",
+  "target_sha256_before": "9a199becb2586540f8fbbc73f0e3358f97ed4c7e8df7c229d18404ca633ed1e0",
+  "target_sha256_after": "39b693bf21558498b57d4245a4c3c67cf342cfbeebafb4c383362d345a742e77",
+  "applied_at": "2026-09-01T12:05:08.278Z",
+  "applied_ids": [
+    "comm_symposium_0021"
+  ],
+  "submission": {
+    "candidate": {
+      "schemaVersion": 1,
+      "dialogue": "symposium",
+      "candidatePath": "scratch/commentary/structural-remediation/symposium/audit-failures-batch.json",
+      "expectedLedgerSha256": "9a199becb2586540f8fbbc73f0e3358f97ed4c7e8df7c229d18404ca633ed1e0",
+      "expectedAttributionSha256": "0dd2047f2bf3ead5c2c1e5eb64892b95adc162bc513ce1f1472eba3046f8a809",
+      "expectedEnglishSha256": "3f985d42c68d058deabdb9d61dc9b5e44bbe2bac5e0f1bdf03d7a88a10e8d13d",
+      "auditUnits": [
+        {
+          "unitKey": "01-172a-177e",
+          "sectionId": "comm_symposium_0001",
+          "auditOutputPath": "scratch/commentary/audits/symposium/01-172a-177e.json",
+          "auditOutputSha256": "1bb707630f0f4c923a62b75ad6d38f14412a81adf6caf509441cbd0abed262cd",
+          "operations": []
+        },
+        {
+          "unitKey": "02-178a-180b",
+          "sectionId": "comm_symposium_0002",
+          "auditOutputPath": "scratch/commentary/audits/symposium/02-178a-180b.json",
+          "auditOutputSha256": "9133f0490bdd36410f7ea5c6dd2b200e87b85cabb7d86d3465ede1cfc1af7835",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_symposium_0021"
+            }
+          ]
+        },
+        {
+          "unitKey": "03-180c-185c",
+          "sectionId": "comm_symposium_0003",
+          "auditOutputPath": "scratch/commentary/audits/symposium/03-180c-185c.json",
+          "auditOutputSha256": "4427585adc2b16f25fc99488643cba2e63bda6f9748e363c42cdfb83b6438ea0",
+          "operations": []
+        },
+        {
+          "unitKey": "04-185d-188e",
+          "sectionId": "comm_symposium_0004",
+          "auditOutputPath": "scratch/commentary/audits/symposium/04-185d-188e.json",
+          "auditOutputSha256": "56edf35b2f70cd733d739dfaa2d8ceab4b1305f663fac5d4f7ccd6ee82b5584c",
+          "operations": []
+        },
+        {
+          "unitKey": "05-189a-193e",
+          "sectionId": "comm_symposium_0005",
+          "auditOutputPath": "scratch/commentary/audits/symposium/05-189a-193e.json",
+          "auditOutputSha256": "3394f385092b1584386f782e15fae06d55dc6cc1e19cf080ee9e90bde0f73db4",
+          "operations": []
+        },
+        {
+          "unitKey": "06-194a-197e",
+          "sectionId": "comm_symposium_0006",
+          "auditOutputPath": "scratch/commentary/audits/symposium/06-194a-197e.json",
+          "auditOutputSha256": "085b65a30d609427e04caf99f7b208f8afcce8c0ec3c3d8968733357245fe6a8",
+          "operations": []
+        },
+        {
+          "unitKey": "07-198a-201c",
+          "sectionId": "comm_symposium_0007",
+          "auditOutputPath": "scratch/commentary/audits/symposium/07-198a-201c.json",
+          "auditOutputSha256": "7d0bef36d7c1dae5a6fac668106880edccef60f48b26975931f6293f5e04ea2e",
+          "operations": []
+        },
+        {
+          "unitKey": "08-201d-212c",
+          "sectionId": "comm_symposium_0008",
+          "auditOutputPath": "scratch/commentary/audits/symposium/08-201d-212c.json",
+          "auditOutputSha256": "7819a09f24e81bde80b0bcd7a4c1cb6f34db0bf4dc8cc1c2d6977b9ebf090f21",
+          "operations": []
+        },
+        {
+          "unitKey": "09-212d-222b",
+          "sectionId": "comm_symposium_0009",
+          "auditOutputPath": "scratch/commentary/audits/symposium/09-212d-222b.json",
+          "auditOutputSha256": "04f6007089456008717a9a79b0d8d6627763482e3be3e596fc8c63a75f31ecb3",
+          "operations": []
+        },
+        {
+          "unitKey": "10-222c-223d",
+          "sectionId": "comm_symposium_0010",
+          "auditOutputPath": "scratch/commentary/audits/symposium/10-222c-223d.json",
+          "auditOutputSha256": "cab5368fd1d3441b30da74e02df990e4aee9962bb932ebd96f143e1ffe8f079c",
+          "operations": []
+        }
+      ],
+      "reviewer": "ontology-vnext-release-delegated-luna-20260901",
+      "reviewedOn": "2026-09-01",
+      "rationale": "Bound to current independent Luna placement-removal and rewrite findings; reject the defective originals conservatively."
+    },
+    "audit_findings": [
+      {
+        "commentaryId": "comm_symposium_0021",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

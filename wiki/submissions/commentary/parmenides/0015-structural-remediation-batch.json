@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "submission_id": "0015-structural-remediation-batch",
+  "lane": "commentary",
+  "kind": "structural-remediation-batch",
+  "scope": "parmenides",
+  "source_path": "scratch/commentary/structural-remediation/parmenides/audit-failures-batch.json",
+  "source_sha256": "9745918858f15aa0b29ef61f94f076514c21c731308898c38579ac8693e305ac",
+  "target_path": "wiki/commentary/parmenides.md",
+  "target_sha256_before": "562c1a2d647354a67488a65fd9d537b5c2a6f8d7225356a713963dd3b5a801e3",
+  "target_sha256_after": "abf406efd645237d8216dccdab051a46688504316b45825bd688bf70f8d56e29",
+  "applied_at": "2026-09-01T12:04:18.303Z",
+  "applied_ids": [
+    "comm_parmenides_0005",
+    "comm_parmenides_0006",
+    "comm_parmenides_0010"
+  ],
+  "submission": {
+    "candidate": {
+      "schemaVersion": 1,
+      "dialogue": "parmenides",
+      "candidatePath": "scratch/commentary/structural-remediation/parmenides/audit-failures-batch.json",
+      "expectedLedgerSha256": "562c1a2d647354a67488a65fd9d537b5c2a6f8d7225356a713963dd3b5a801e3",
+      "expectedAttributionSha256": "61b78b31efe8ceb1999e63afae8a49384ef7877d37eb29aae6ec1dfd33383d17",
+      "expectedEnglishSha256": "689dc1108d395dfda666828112f52613640074a3be1f22a36c8eed96ccde3dab",
+      "auditUnits": [
+        {
+          "unitKey": "01-126a-128e",
+          "sectionId": "comm_parmenides_0001",
+          "auditOutputPath": "scratch/commentary/audits/parmenides/01-126a-128e.json",
+          "auditOutputSha256": "2bc8f4fe1444c010a0030df4ebf2560b76fc3aaa73a08aeb5378ecb42827c1f9",
+          "operations": []
+        },
+        {
+          "unitKey": "02-129a-131a",
+          "sectionId": "comm_parmenides_0002",
+          "auditOutputPath": "scratch/commentary/audits/parmenides/02-129a-131a.json",
+          "auditOutputSha256": "bc3ab7b2336b17b732d6a12c53c072bf73cba78f7783f9e5ecf1b327243ed60a",
+          "operations": []
+        },
+        {
+          "unitKey": "03-131b-135d",
+          "sectionId": "comm_parmenides_0003",
+          "auditOutputPath": "scratch/commentary/audits/parmenides/03-131b-135d.json",
+          "auditOutputSha256": "1ae4b87f2754db55446236e5207d486474f0991f5c3fc66ce93ed847e1e394c4",
+          "operations": []
+        },
+        {
+          "unitKey": "04-135e-137b",
+          "sectionId": "comm_parmenides_0004",
+          "auditOutputPath": "scratch/commentary/audits/parmenides/04-135e-137b.json",
+          "auditOutputSha256": "886128ba971147d0e2dfc8676d0b5c7fd94dff6af68eaec9ff825fa731b877c8",
+          "operations": []
+        },
+        {
+          "unitKey": "05-137c-139e",
+          "sectionId": "comm_parmenides_0005",
+          "auditOutputPath": "scratch/commentary/audits/parmenides/05-137c-139e.json",
+          "auditOutputSha256": "55612d8836ff8d4909c113442604516df454363edf764432e1a7f43b72b01fed",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_parmenides_0005"
+            }
+          ]
+        },
+        {
+          "unitKey": "06-140a-142a",
+          "sectionId": "comm_parmenides_0006",
+          "auditOutputPath": "scratch/commentary/audits/parmenides/06-140a-142a.json",
+          "auditOutputSha256": "13ffce7730c4970d8b3030ce58772998fbb251def0dd19e184663f5123a77f27",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_parmenides_0006"
+            }
+          ]
+        },
+        {
+          "unitKey": "07-142b-145a",
+          "sectionId": "comm_parmenides_0007",
+          "auditOutputPath": "scratch/commentary/audits/parmenides/07-142b-145a.json",
+          "auditOutputSha256": "a3ce4e90d347c7804cfa789fe70082ca4ec43323f0cf9ca8d9b70a2d2905c3a5",
+          "operations": []
+        },
+        {
+          "unitKey": "08-145b-149c",
+          "sectionId": "comm_parmenides_0008",
+          "auditOutputPath": "scratch/commentary/audits/parmenides/08-145b-149c.json",
+          "auditOutputSha256": "6e0f45eeebe6b8b1308996d4c2e88cdffa7634d9f25174767edff8a6b4d9c9fb",
+          "operations": []
+        },
+        {
+          "unitKey": "09-149d-155d",
+          "sectionId": "comm_parmenides_0009",
+          "auditOutputPath": "scratch/commentary/audits/parmenides/09-149d-155d.json",
+          "auditOutputSha256": "665f53f442b3ad5f2dbcdcc54515aa5c0cd8170caec590a561a2be55f2dec018",
+          "operations": []
+        },
+        {
+          "unitKey": "10-155e-160a",
+          "sectionId": "comm_parmenides_0010",
+          "auditOutputPath": "scratch/commentary/audits/parmenides/10-155e-160a.json",
+          "auditOutputSha256": "84117a37a4bb6809b33e27f5beb44d5d1734af62c71e1400dbc5bae5b0f9f6af",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_parmenides_0010"
+            }
+          ]
+        },
+        {
+          "unitKey": "11-160b-163a",
+          "sectionId": "comm_parmenides_0011",
+          "auditOutputPath": "scratch/commentary/audits/parmenides/11-160b-163a.json",
+          "auditOutputSha256": "6f3e6b7b5728d2bede30c4d2b94711d5103669c7cdcd8268f1ce63bfed30b219",
+          "operations": []
+        },
+        {
+          "unitKey": "12-163b-164c",
+          "sectionId": "comm_parmenides_0012",
+          "auditOutputPath": "scratch/commentary/audits/parmenides/12-163b-164c.json",
+          "auditOutputSha256": "c5faf7f497fa116f7e89324684c7f325bcd9a3886f1b1773e63fd1f830c4f2bf",
+          "operations": []
+        },
+        {
+          "unitKey": "13-164d-166c",
+          "sectionId": "comm_parmenides_0013",
+          "auditOutputPath": "scratch/commentary/audits/parmenides/13-164d-166c.json",
+          "auditOutputSha256": "424544ddbb185743ceb50f5402c780544e50ce447fc4751309a0262d8a8b58f0",
+          "operations": []
+        }
+      ],
+      "reviewer": "ontology-vnext-release-delegated-luna-20260901",
+      "reviewedOn": "2026-09-01",
+      "rationale": "Bound to current independent Luna placement-removal and rewrite findings; reject the defective originals conservatively."
+    },
+    "audit_findings": [
+      {
+        "commentaryId": "comm_parmenides_0005",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_parmenides_0006",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_parmenides_0010",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

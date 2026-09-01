@@ -308,11 +308,8 @@ function parseBlockReviewReceipt(dialogue: string, path: string): BlockReviewRec
   if (ids.length === 0 || ids.some((id) => !COMMENTARY_ID.test(id)) || new Set(ids).size !== ids.length) {
     throw new Error(`Invalid block-review IDs ${path}`);
   }
-  const expectedReviewKeys = [
-    sha256(`${decision}\n${ids.join("\n")}`).slice(0, 12),
-    sha256(`${decision}\n${ids.join("\n")}\n${before}`).slice(0, 12),
-  ];
-  if (!expectedReviewKeys.includes(fileMatch[4]!)) {
+  const expectedReviewKey = sha256(`${decision}\n${ids.join("\n")}\n${before}\n`).slice(0, 12);
+  if (fileMatch[4] !== expectedReviewKey) {
     throw new Error(`Block-review receipt filename hash mismatch ${path}`);
   }
   return { path, decision, before, after, ids };

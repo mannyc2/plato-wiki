@@ -5942,11 +5942,11 @@
   },
   "schema": {
     "implementation_path": "packages/harness/src/wiki/ontology-audit.ts",
-    "implementation_sha256": "951131362074a35a30a747b645eeb20f070fb9712a1c45b223fcb0e18badf86a"
+    "implementation_sha256": "f68cce9a78cf852a7a1d8ea2657534360533438e42a7919ba0527b4f37369783"
   },
   "protocol": {
     "path": "docs/ontology-audit-protocol.md",
-    "sha256": "18af493bb098ca75e2a48867cee13efca8c7a5a5e3f6ccdb72447b06e52232fe"
+    "sha256": "fa2db5ef64fbfafb51cd1b80edfdd186053428444097bcc57f8eb454cbf0550a"
   },
   "projections": [
     {
@@ -16432,24 +16432,24 @@
     },
     "record-units.jsonl": {
       "path": "record-units.jsonl",
-      "sha256": "3d4e4b4169963aad4c4c97e809b5afe63ca5b1c919a5d2977f31706a8f3c240d",
+      "sha256": "86a0be73fec6ff620a4df7eb7a67a3f6fef4737ffb122f6e90298c187c795963",
       "rows": 24285,
       "key_field": "key",
       "key_set_sha256": "1765b60214e4a2088fb88ef20f8aa778161eb169f1459ab9bd1f16734cdb7121"
     },
     "concept-membership-units.jsonl": {
       "path": "concept-membership-units.jsonl",
-      "sha256": "cfdfb02abab4aab730551841bc9c98be7352258b22d5a15b1d3fc844f8d8539e",
+      "sha256": "e6e5dac9c63cc4b87f31651593ebb714a0ae52ea22a209c0a14acb5c257f6455",
       "rows": 23259,
       "key_field": "key",
       "key_set_sha256": "969f28596cdc9250dc06249ca5b42bec2bbf543b337e4a6eb50ddc40bc81c9d2"
     },
     "graph-units.jsonl": {
       "path": "graph-units.jsonl",
-      "sha256": "7f208788f8196150ff5c6376fcef16d415ca1ac5b01885cf8f4ad04d797678e9",
-      "rows": 26059,
+      "sha256": "faf7da8d86619a04ace95dfafa786ee1860cc7828b7eb159af597bf50074a070",
+      "rows": 26098,
       "key_field": "key",
-      "key_set_sha256": "bc363798ec0de687be482239c9ede4a95096e2b9b57bf4a738b6bee005469f94"
+      "key_set_sha256": "b3578ddca16553b64fe1bc19a609d05db4617fcda304b02f37083796a0022e1c"
     },
     "findings.jsonl": {
       "path": "findings.jsonl",
@@ -16460,10 +16460,10 @@
     },
     "adjudications.jsonl": {
       "path": "adjudications.jsonl",
-      "sha256": "fbfd53f04ff1947e062e354c1efcaab73e4667cc63102af733e044c9833a01d0",
-      "rows": 73650,
+      "sha256": "d685593a905e5cd1e4a6034e722ecc19df16089295584f575ee5297da5c42c2e",
+      "rows": 73689,
       "key_field": "target_key",
-      "key_set_sha256": "84a6edb31be4ba1bf192ba9f45e337fe07374da6ebd2325fec49b43a61eb8d52"
+      "key_set_sha256": "fe0b76b0afdc885e9b0a6d405cfb7c7acec27a5fd6273ff49f6954f73fe3fd6e"
     }
   },
   "lane_states": [
@@ -16512,5 +16512,20 @@
   "baseline_evidence": {
     "path": "baseline-evidence.json",
     "sha256": "03ea62a8bd097cf9ebc09636d267999702409fc6e224ee26609dd836739e944c"
+  },
+  "final_adjustments": {
+    "required": true,
+    "decision_artifact": {
+      "path": "review-inputs/final-adjustments/sha256-93dc2b6adc4dbafe479ee7a50d403a8ac986c9271a821d052384340a8df832fa-decisions.jsonl",
+      "sha256": "93dc2b6adc4dbafe479ee7a50d403a8ac986c9271a821d052384340a8df832fa"
+    },
+    "prior_state_artifact": {
+      "path": "review-inputs/final-adjustments/sha256-f554bc08464fbfae6c5da57a6c3ac971f509dce1d14a6d486c3b5c545a60b63d-prior-state.json",
+      "sha256": "f554bc08464fbfae6c5da57a6c3ac971f509dce1d14a6d486c3b5c545a60b63d"
+    },
+    "receipt": {
+      "path": "wiki/review/2026-09-01-ontology-vnext-final-adjustments.md",
+      "sha256": "d3582b0d7d55a9321350faa9cafd00874dc65990451fb7103bdc3da635e2b04d"
+    }
   }
 }

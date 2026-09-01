@@ -1,0 +1,37 @@
+# Commentary independent-sample failure rejection
+
+dialogue: charmides
+decision: rejected
+prior_review_status: accepted
+review_transition: accepted -> rejected
+ledger_path: wiki/commentary/charmides.md
+ledger_sha256_before: 962da334f844aca5d20e7d8663f813407dfd50792067f68a8f2e5372bbed0405
+ledger_sha256_after: a480bf1ef9c34a7eb1b73d11dfee9f7c6670192092cb03f2f4d613698540417c
+reviewer: commentary-audit-delegated-luna-reviewer-charmides-3b8014a7437a
+reviewed_on: 2026-09-01
+review_basis: current operator-delegated independent Luna sample failure
+human_listening_or_review: none claimed
+sample_verdict: fail
+sample_evidence_path: wiki/submissions/commentary-audit-sample/charmides/45a09f64e9b40dfd8c3d0a484c119a76dfc05610726059f248e33dd6ec5dd930.json
+sample_evidence_sha256: 45a09f64e9b40dfd8c3d0a484c119a76dfc05610726059f248e33dd6ec5dd930
+sample_job_id: sample:charmides:3d3fe72c2cdde992
+sample_input_sha256: 3d3fe72c2cdde992eb2b1a6c711eedbe1d67af62c6ba6bb4d404530d24311088
+pending_manifest_sha256: 3b8014a7437aed108541d88c5cb0f4d46f7dfb76d57df98dec59350ae56e3036
+commentary_ledger_sha256: 962da334f844aca5d20e7d8663f813407dfd50792067f68a8f2e5372bbed0405
+sample_packet_sha256: 99fd3042fc941962bd856e9039b3bf778f1d908b2d597ea1590c51021380e78f
+output_schema_sha256: 4456e6a23aa1e6d15cb3901126d120fe21d3974f296443e6ac3ae87ae1d90e5b
+model_catalog_sha256: a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724
+sample_prompt_sha256: e61821c1789f3941e9772b787138b579139e7895c3352a2adbb0b568ea819b8c
+sample_output_sha256: ad04825bcf82c8c22a8a8cb6a03c8eb3c3c83ea94fc3e1e2e2bcef690b1b6efa
+sample_state_sha256: 82b57fff358beddf8231654a08bc7b9944c4b0c265388786d330f95b1746d857
+codex_execution_sha256: c442f5d9e7fbf8a932ce26ed6eb0ca50ddf86b019f459094a4cbd0e2b78bb942
+failed_commentary:
+- commentary_id: comm_charmides_0010
+  rationale_sha256: 13accdf6f96cee2a676c691b25cf39f9c61f07802d88d55bb5f7d9f80c136198
+  rationale: "Its summary substantially overlaps the two additional blocks at the identical playback edge, creating a redundant three-block interruption before the dream argument."
+- commentary_id: comm_charmides_0038
+  rationale_sha256: fb9a6f17cc15fc81960b363c1e663804ec88db5eab36326bdb590b568d46c325
+  rationale: "Although accurate alone, it duplicates the adjacent section and notice at the same playback edge, so the stacked interruption is unnecessarily repetitive."
+- commentary_id: comm_charmides_0039
+  rationale_sha256: d183e27cc9f15b0318f556f80b5bb50b42b5605823a66d2a2bd2b577d6a0531c
+  rationale: "Its accurate dream-and-happiness analysis overlaps the section and neighboring argument at the same edge, producing an overpacked redundant interruption."

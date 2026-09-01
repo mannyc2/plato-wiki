@@ -595,7 +595,7 @@ relation_kind: tension
 resolution: standing
 basis: Both claims involve πνεῦμα (breath) in a physiological context. Claim 0216 (78a-78b) describes breath as finer-grained than the stomach's structure, explaining why the stomach cannot contain it — part of the respiratory-digestive mechanism. Claim 0226 (84c-84d) describes breath as one of three disease-causing substances (with phlegm and bile), where blocked lung passages cause maldistributed breath that rots or strains body parts. The same substance (breath) appears in a normal physiological role in 0216 and a pathological role in 0226. These are thematically linked by πνεῦμα but address different bodily processes.
 limits: The claims do not conflict; 0216 describes normal function while 0226 describes disease. Both are left standing. The relation is limited to the shared substance-term πνεῦμα across different explanatory contexts.
-review_status: accepted
+review_status: rejected
 ```
 
 ```yaml

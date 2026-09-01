@@ -1,0 +1,35 @@
+# Commentary quality-audit acceptance
+
+dialogue: timaeus
+decision: accepted
+reviewer: commentary-audit-delegated-luna-reviewer-timaeus-112f750c9323
+reviewed_on: 2026-09-01
+rationale: All sampled blocks are independently supported by their exact sources, accepted evidence, resolved playback edges, and clear spoken prose; no evidence, placement, or listening defect appears.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sample_evidence_path: wiki/submissions/commentary-audit-sample/timaeus/641f3da09497fbdfafdf3e10afc1de67234898e7059c1379dc6741cf239b8d6f.json
+sample_evidence_sha256: 641f3da09497fbdfafdf3e10afc1de67234898e7059c1379dc6741cf239b8d6f
+sample_input_sha256: f6076eae8bec0b9b88d2cf7b2c9327e081eadbf7d9f6c1e936959e53d36b1db4
+pending_manifest_sha256: 112f750c9323bfc8ee9e2649c854235d78befb5428ef636389aab3da259ce152
+commentary_ledger_sha256: b802298734a82595a3719e7e53275653907086ab2d2b13bbf0efbac176fbf6cf
+sample_packet_sha256: 83410046b1739786879c56c00346a6c54a53fb54a9ef2b43bd3742a7a4b9e9ff
+sample_output_sha256: 2792a399fe675215ef642585a8e619750d00d75222a1773bd9c842dc29bd146c
+sample_state_sha256: c0e982e169c84b366720ee0b71776f340e09e1ee2ee4db4166d2624479486d50
+codex_execution_sha256: e2c9aad9a048d344e1ae4f7493bab5a30c113538ac09ccb0edf3da7fb56071f9
+output_schema_sha256: 2c45a3e351ad35cf21cde763fc175fea49501c41b98b64340a7a46ca0477eed4
+model_catalog_sha256: a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724
+sample_prompt_sha256: 3c820130c47d90dc4114aabf50dde76ec633297a6f51d545a9215e76d8d39c74
+sampled_commentary_ids:
+- comm_timaeus_0001
+- comm_timaeus_0003
+- comm_timaeus_0004
+- comm_timaeus_0005
+- comm_timaeus_0007
+- comm_timaeus_0008
+- comm_timaeus_0009
+- comm_timaeus_0016
+- comm_timaeus_0017
+- comm_timaeus_0018
+- comm_timaeus_0019
+- comm_timaeus_0020
+- comm_timaeus_0021

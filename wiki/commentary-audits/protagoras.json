@@ -1,0 +1,532 @@
+{
+  "schema_version": 1,
+  "dialogue": "protagoras",
+  "ledger": {
+    "path": "wiki/commentary/protagoras.md",
+    "sha256": "2ea6148bcfd01ae7bf7646d2e3decb3d12395e10307770dafdbdb06395e29394"
+  },
+  "protocol": {
+    "path": "docs/commentary-protocol.md",
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
+  },
+  "authoring": {
+    "model": "gpt-5.6-luna",
+    "effort": "medium"
+  },
+  "units": [
+    {
+      "unit_key": "01-309a-310b",
+      "section_id": "comm_protagoras_0001",
+      "audit_brief_sha256": "f15b8bdded405c448a456dabedda91809ebe9e129e7755fb04bf22ac4aa3daec",
+      "output_path": "scratch/commentary/audits/protagoras/01-309a-310b.json",
+      "output_sha256": "0cd9342fff038147a243a1c3b1af04764dc23883b561c6c56cd89198ebb65916",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "01-309a-310b",
+        "section_id": "comm_protagoras_0001",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "02-310c-313c",
+      "section_id": "comm_protagoras_0002",
+      "audit_brief_sha256": "ad37b8908dd49a46b3553fae7300a18657d4c0cf74eb18637d715aa125781b70",
+      "output_path": "scratch/commentary/audits/protagoras/02-310c-313c.json",
+      "output_sha256": "2f720e6bd542df6fb853193374cd096b871411b7372123f5cec06fe932d5d5a1",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "02-310c-313c",
+        "section_id": "comm_protagoras_0002",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "03-313d-314e",
+      "section_id": "comm_protagoras_0003",
+      "audit_brief_sha256": "d201095f784762d61d1933c595846ecfdeb6d5ae039bc80390ab7830c4033c04",
+      "output_path": "scratch/commentary/audits/protagoras/03-313d-314e.json",
+      "output_sha256": "e960453593f6ee2e3152eb1f3325f9e3645eab22b25fe6cae558e291c38e1a03",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "03-313d-314e",
+        "section_id": "comm_protagoras_0003",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_protagoras_0003",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "The analogy and its consequence are accurately grounded by claim_protagoras_0001; the edge follows the prior warning and precedes Socrates’ elaboration without disrupting flow."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "04-315a-318a",
+      "section_id": "comm_protagoras_0004",
+      "audit_brief_sha256": "ccb1eb1f10181a8ec8ab65a5d6d90fc57de1808aaf0b8e54ca45099779c7a0b1",
+      "output_path": "scratch/commentary/audits/protagoras/04-315a-318a.json",
+      "output_sha256": "e622374443fb6fcf674191bc7d31255d565289a161ded88de4b5a9627887f134",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "04-315a-318a",
+        "section_id": "comm_protagoras_0004",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "05-318b-320c",
+      "section_id": "comm_protagoras_0005",
+      "audit_brief_sha256": "fc4e64b05d148b48d29d2061b93090713c46a8abddd22280bf13a81845aa253d",
+      "output_path": "scratch/commentary/audits/protagoras/05-318b-320c.json",
+      "output_sha256": "f9084c25b290580089a94c79ca10a93621aa92571af61b87b25e87c84dec480f",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "05-318b-320c",
+        "section_id": "comm_protagoras_0005",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_protagoras_0005",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames Socrates’ demand, Protagoras’ stated teaching, and the teachability problem. The edge falls after Protagoras’ answer and before Socrates’ question, preserving the transition."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "06-320d-323a",
+      "section_id": "comm_protagoras_0006",
+      "audit_brief_sha256": "62d99aff1f31f087ef76b60773e6bee4c4a33f5fdc1eb76c695615b8d90c15d2",
+      "output_path": "scratch/commentary/audits/protagoras/06-320d-323a.json",
+      "output_sha256": "284ccd34c3ab3025c915df57c6aee4d7f9352fc50e4f50b3ae6507d4a9b91a74",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "06-320d-323a",
+        "section_id": "comm_protagoras_0006",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_protagoras_0006",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "A concise, clear overview adds the passage’s technical-versus-civic contrast beyond recap; all claims match the cited observations, and the edge preserves a complete narrative boundary."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "07-323b-324e",
+      "section_id": "comm_protagoras_0007",
+      "audit_brief_sha256": "28b346a717864ff48e5c682e5298dfe09c5c3c9599c583f54a0b0967dbcf809e",
+      "output_path": "scratch/commentary/audits/protagoras/07-323b-324e.json",
+      "output_sha256": "6e87d82f045f58d2d2730265ac0a2b0f69963422069724312273f94598c9204d",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "07-323b-324e",
+        "section_id": "comm_protagoras_0007",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "08-325a-326e",
+      "section_id": "comm_protagoras_0008",
+      "audit_brief_sha256": "5c331367424cfb0ee0fda7405133c57191b645b596964bc1e0724bb3b9e71411",
+      "output_path": "scratch/commentary/audits/protagoras/08-325a-326e.json",
+      "output_sha256": "075fe732e6db0e05dbca6e8ab508c9b24274cb39cd2261d19a539b08b633675c",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "08-325a-326e",
+        "section_id": "comm_protagoras_0008",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "09-327a-328d",
+      "section_id": "comm_protagoras_0009",
+      "audit_brief_sha256": "8ad37106c1d4e1117d0b2df682f6a90f0e97a3e19223f0cb2be42a34e963d106",
+      "output_path": "scratch/commentary/audits/protagoras/09-327a-328d.json",
+      "output_sha256": "7ac9296b87fb6ee1d97be56a85c20768b25250add42337607e6124771475dad4",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "09-327a-328d",
+        "section_id": "comm_protagoras_0009",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "10-328e-331d",
+      "section_id": "comm_protagoras_0010",
+      "audit_brief_sha256": "38ee4c0c7ea9f7cd6cb0b6b298ee9febf6974f6754ee0c194eb1874cd064223b",
+      "output_path": "scratch/commentary/audits/protagoras/10-328e-331d.json",
+      "output_sha256": "752f416801211caabaff167fb62f8e4ddd0a913d38cab6678ac5316d20fed919",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "10-328e-331d",
+        "section_id": "comm_protagoras_0010",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_protagoras_0010",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately previews the passage’s shift, face-parts analogy, self-predication test, and disagreement. The edge follows the opening paragraph and precedes Socrates’ public-speaker discussion."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "11-331e-334c",
+      "section_id": "comm_protagoras_0011",
+      "audit_brief_sha256": "f9f4ea6a6f17dd158549ce5420a69a330d75c29bf6603c88515ad785c72dc073",
+      "output_path": "scratch/commentary/audits/protagoras/11-331e-334c.json",
+      "output_sha256": "08576fccf9092bc81bbc25e7648d3530ce6fb819d77aa71bdd4175361df2567a",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "11-331e-334c",
+        "section_id": "comm_protagoras_0011",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "12-334d-338e",
+      "section_id": "comm_protagoras_0012",
+      "audit_brief_sha256": "d3dfef71707730d54d2b1d689fc624772c9b06ea2d5d5fd35512c126d7baebba",
+      "output_path": "scratch/commentary/audits/protagoras/12-334d-338e.json",
+      "output_sha256": "ba04848a87b0963c6c63d88eb95ac712bcd87bd5d7de77cbac3b3d060892cb6b",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "12-334d-338e",
+        "section_id": "comm_protagoras_0012",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "13-339a-342a",
+      "section_id": "comm_protagoras_0013",
+      "audit_brief_sha256": "8f0ad96c64b5c7273b19ba483fe6e15a1b739012de2bc5758cc0aec663ed212f",
+      "output_path": "scratch/commentary/audits/protagoras/13-339a-342a.json",
+      "output_sha256": "bb43ff544fb255fd173b49f874a639697e44f594c327c72154a4d5d7cc9dc6e9",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "13-339a-342a",
+        "section_id": "comm_protagoras_0013",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "14-342b-347a",
+      "section_id": "comm_protagoras_0014",
+      "audit_brief_sha256": "e1590ed3fc3691749f3712d85c99c8e74503db9d0dece5fd866926c5db99e001",
+      "output_path": "scratch/commentary/audits/protagoras/14-342b-347a.json",
+      "output_sha256": "b46b21f73a4010efdc67ebd8a3cc82a049bcc87009345e6d61781b94bb5a47c1",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "14-342b-347a",
+        "section_id": "comm_protagoras_0014",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_protagoras_0014",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames Socrates’ interpretation with accepted support; the edge follows the Spartan setup and precedes Socrates’ exposition, making the section a clear, well-timed orientation."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "15-347b-351b",
+      "section_id": "comm_protagoras_0015",
+      "audit_brief_sha256": "693f6d5759237998357a7de8bb9030de27d54b9b7f131f0d8839733668904d29",
+      "output_path": "scratch/commentary/audits/protagoras/15-347b-351b.json",
+      "output_sha256": "74c0230844a1796a476ef6ec6d0a5d74f7c1889e1652fba44c24fa06bd6496e8",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "15-347b-351b",
+        "section_id": "comm_protagoras_0015",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_protagoras_0015",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames the shift from poetry to direct examination and the five-part virtue question; the edge follows the poetry discussion and precedes Socrates’ direct-conversation proposal."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "16-351c-358a",
+      "section_id": "comm_protagoras_0016",
+      "audit_brief_sha256": "0935d7c08d2b5b5c10f1bcad3334242cef7251cfdbdad5aa36a14fd33b2b1015",
+      "output_path": "scratch/commentary/audits/protagoras/16-351c-358a.json",
+      "output_sha256": "f1c6799fae7f76e317befa1550e03c51bbe79f5de76962c2e679aef4453e5d79",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "16-351c-358a",
+        "section_id": "comm_protagoras_0016",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_protagoras_0016",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames the pleasure-good test, the shift to knowledge, and measurement without overclaiming. The edge follows the leadership handoff and precedes Socrates’ knowledge inquiry."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "17-358b-360e",
+      "section_id": "comm_protagoras_0017",
+      "audit_brief_sha256": "674c1a2862da36cb84af983e05da7927429076fd23b9d210f681044770511933",
+      "output_path": "scratch/commentary/audits/protagoras/17-358b-360e.json",
+      "output_sha256": "8769838f76bbeb8e076ddcb83506b46be7c5f575860f028abb5f9db39b3b2a7d",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "17-358b-360e",
+        "section_id": "comm_protagoras_0017",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "18-361a-362a",
+      "section_id": "comm_protagoras_0018",
+      "audit_brief_sha256": "f079e2212f6fbfae902c9f1b852b2e934e2cb624410ec2c646686c7f8b98a769",
+      "output_path": "scratch/commentary/audits/protagoras/18-361a-362a.json",
+      "output_sha256": "a5b6f4def769758546bae584dada7f56187f87d4e2160ad027e1c7d0f10f22d4",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "protagoras",
+        "unit_key": "18-361a-362a",
+        "section_id": "comm_protagoras_0018",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_protagoras_0018",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames the reversal, proposed inquiry sequence, Prometheus image, deferral, and departure. The edge follows a complete prior exchange and precedes 361a."
+          }
+        ]
+      }
+    }
+  ],
+  "acceptance": {
+    "decision": "accepted",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-protagoras-2a075fe1cdb2",
+    "reviewed_on": "2026-09-01",
+    "rationale": "All eight sampled blocks are supported by exact source passages and accepted evidence, use suitable spoken length and focus, and sit at complete playback boundaries that preserve each surrounding exchange.",
+    "sampled_commentary_ids": [
+      "comm_protagoras_0003",
+      "comm_protagoras_0005",
+      "comm_protagoras_0006",
+      "comm_protagoras_0010",
+      "comm_protagoras_0014",
+      "comm_protagoras_0015",
+      "comm_protagoras_0016",
+      "comm_protagoras_0018"
+    ],
+    "review_note": {
+      "path": "wiki/review/2026-09-01-commentary-quality-protagoras-luna-sample.md",
+      "sha256": "71548569f11adde1989660e52fb38886ec5067c83b18d90454d2b1b10d9dd8c2"
+    }
+  }
+}

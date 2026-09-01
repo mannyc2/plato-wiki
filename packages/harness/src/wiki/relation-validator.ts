@@ -161,23 +161,104 @@ const SUBSTANTIVE_RELATION_DENIAL_RULES = [
   },
 ] as const;
 
-export type AcceptedRelationDenial = {
-  field: "basis" | "limits";
-  rule: (typeof SUBSTANTIVE_RELATION_DENIAL_RULES)[number]["rule"];
+export type AcceptedRelationSemanticFields = {
+  reviewStatus: string;
+  relationKind: string;
+  resolution: string;
+  basis: string;
+  limits: string;
 };
 
-export function acceptedRelationDenial(block: string): AcceptedRelationDenial | undefined {
-  if (fieldValue(block, "review_status") !== "accepted") return undefined;
+export type AcceptedRelationDenialRule =
+  | (typeof SUBSTANTIVE_RELATION_DENIAL_RULES)[number]["rule"]
+  | "declared_kind_denial"
+  | "shared_term_no_shared_thesis"
+  | "lexical_only_standing_tension";
+
+export type AcceptedRelationDenial = {
+  field: "basis" | "limits" | "basis+limits";
+  rule: AcceptedRelationDenialRule;
+};
+
+function normalizedRelationProse(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/[–—]/gu, "-")
+    .replace(/\s+/gu, " ");
+}
+
+function declaredKindDenialPattern(relationKind: string) {
+  if (!RELATION_KINDS.has(relationKind)) return undefined;
+  const escapedKind = relationKind.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
+  return new RegExp(
+    [
+      `\\b(?:does|do) not (?:create|constitute|establish|produce|amount to|show|indicate|supply|form)\\b[^.;]{0,48}\\b(?:substantive )?${escapedKind}\\b`,
+      `\\bno (?:substantive )?${escapedKind}\\b`,
+      `\\bnot (?:a )?(?:substantive )?${escapedKind}\\b`,
+    ].join("|"),
+    "u",
+  );
+}
+
+function lexicalOnlyStandingTension(fields: AcceptedRelationSemanticFields) {
+  if (fields.relationKind !== "tension" || fields.resolution !== "standing") return false;
+  const combined = `${normalizedRelationProse(fields.basis)} ${normalizedRelationProse(fields.limits)}`;
+  const lexicalLink = /(?:\bthematically linked by\b|\bshared (?:[a-z-]+ )?(?:term|lexical item|word|vocabulary)\b)/u.test(combined);
+  const lexicalScopeOnly = /(?:\brelation is limited to (?:the )?shared\b[^.]{0,80}\b(?:term|lexical item|word|vocabulary)\b|\bshared (?:term|lexical item|word|vocabulary) alone\b)/u.test(combined);
+  const deniesPull = /(?:\bclaims? do(?:es)? not conflict\b|\bneither contradict nor restate\b|\bdoes not create (?:a )?(?:substantive )?(?:tension|contradiction|relation)\b)/u.test(combined);
+  const separatesContexts = /(?:\b(?:address|concern|describe) different (?:bodily )?(?:processes|questions|topics|contexts|domains)\b|\b(?:operate|occur) in different (?:argumentative )?(?:contexts|domains)\b|\bargumentative (?:purposes|contexts) differ\b)/u.test(combined);
+  return lexicalLink && lexicalScopeOnly && deniesPull && separatesContexts;
+}
+
+/**
+ * Detect accepted records whose own typed relation assertion denies the edge it
+ * purports to add. A statement that two claims are not formally contradictory
+ * is not enough: a tension can be non-contradictory. The cross-field rule only
+ * fires when a standing tension is explicitly limited to lexical overlap, also
+ * denies any pull, and separates the claims into different contexts.
+ */
+export function acceptedRelationDenialFromFields(
+  fields: AcceptedRelationSemanticFields,
+): AcceptedRelationDenial | undefined {
+  if (fields.reviewStatus !== "accepted") return undefined;
+  const normalized = {
+    basis: normalizedRelationProse(fields.basis),
+    limits: normalizedRelationProse(fields.limits),
+  };
   for (const field of ["basis", "limits"] as const) {
-    const value = fieldValueOrEmpty(block, field)
-      .toLowerCase()
-      .replace(/[–—]/gu, "-")
-      .replace(/\s+/gu, " ");
+    const value = normalized[field];
     for (const { rule, pattern } of SUBSTANTIVE_RELATION_DENIAL_RULES) {
       if (pattern.test(value)) return { field, rule };
     }
   }
+
+  const kindDenial = declaredKindDenialPattern(fields.relationKind);
+  if (kindDenial) {
+    for (const field of ["basis", "limits"] as const) {
+      if (kindDenial.test(normalized[field])) return { field, rule: "declared_kind_denial" };
+    }
+  }
+
+  for (const field of ["basis", "limits"] as const) {
+    if (/\bshared (?:term|lexical item|word|vocabulary)\b[^.;]{0,100}\bdoes not (?:indicate|establish|show) (?:a )?shared thesis\b/u.test(normalized[field])) {
+      return { field, rule: "shared_term_no_shared_thesis" };
+    }
+  }
+
+  if (lexicalOnlyStandingTension(fields)) {
+    return { field: "basis+limits", rule: "lexical_only_standing_tension" };
+  }
   return undefined;
+}
+
+export function acceptedRelationDenial(block: string): AcceptedRelationDenial | undefined {
+  return acceptedRelationDenialFromFields({
+    reviewStatus: fieldValueOrEmpty(block, "review_status"),
+    relationKind: fieldValueOrEmpty(block, "relation_kind"),
+    resolution: fieldValueOrEmpty(block, "resolution"),
+    basis: fieldValueOrEmpty(block, "basis"),
+    limits: fieldValueOrEmpty(block, "limits"),
+  });
 }
 
 function validateAcceptedRelationAssertion(block: RelationMarkdownBlock, issues: RelationLedgerValidationIssue[]) {

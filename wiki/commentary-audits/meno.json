@@ -1,0 +1,532 @@
+{
+  "schema_version": 1,
+  "dialogue": "meno",
+  "ledger": {
+    "path": "wiki/commentary/meno.md",
+    "sha256": "e0a9e6ae6f539054e5d17f9827ccd9091cf60ffd657b6a54859005827693fe04"
+  },
+  "protocol": {
+    "path": "docs/commentary-protocol.md",
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
+  },
+  "authoring": {
+    "model": "gpt-5.6-luna",
+    "effort": "medium"
+  },
+  "units": [
+    {
+      "unit_key": "01-70a-71d",
+      "section_id": "comm_meno_0001",
+      "audit_brief_sha256": "49b7aed46afb536a62f9907ec217f3075f0a13f1ca7ad30e6f3ef70e2ae2efdd",
+      "output_path": "scratch/commentary/audits/meno/01-70a-71d.json",
+      "output_sha256": "3315bfb9083de03302ddf3f9f4712a2d7320da68ebd1e46ba44ff4536ed46c79",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "01-70a-71d",
+        "section_id": "comm_meno_0001",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_meno_0001",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately maps the passage's question, contrast, definitional priority, and return to Meno; it is clear aloud and placed before the opening question without disrupting an exchange."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "02-71e-73c",
+      "section_id": "comm_meno_0002",
+      "audit_brief_sha256": "2da709c411e0723e64bcffdcba020c3ffe849dc96425fb78bafe41681d9d161d",
+      "output_path": "scratch/commentary/audits/meno/02-71e-73c.json",
+      "output_sha256": "e4d13a67a835d72c5e7ad599e95c1b75062a4801fad536b929913d70caa544a0",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "02-71e-73c",
+        "section_id": "comm_meno_0002",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "03-73d-74b",
+      "section_id": "comm_meno_0003",
+      "audit_brief_sha256": "a08ce91d5a68cbd2409a8c7816bf9a68511ac975a0c6d7537e7460f71e7c8418",
+      "output_path": "scratch/commentary/audits/meno/03-73d-74b.json",
+      "output_sha256": "17b98656a12ae908f6d22f3c96e0940b053b691db26a46e8842694c679b280f8",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "03-73d-74b",
+        "section_id": "comm_meno_0003",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "04-74c-76a",
+      "section_id": "comm_meno_0004",
+      "audit_brief_sha256": "2d6f384aa6c2bbbaeb70e09897e22a44c9d013aa3f2d626cebeef28f8a0709ce",
+      "output_path": "scratch/commentary/audits/meno/04-74c-76a.json",
+      "output_sha256": "d29271bb68f9630dba8b58fe72e0dc066d1834b78c8527ff3fa53d2524025729",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "04-74c-76a",
+        "section_id": "comm_meno_0004",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_meno_0004",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "The commentary accurately frames the rehearsal, Meno’s objection, and the shift to shared terms. Before is a complete prior exchange; after begins a new sentence at 74c, preserving flow."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "05-76b-77a",
+      "section_id": "comm_meno_0005",
+      "audit_brief_sha256": "db56fe86332084c1a58255175dc8698428f8eff42c3b77c986364baaf1ed86ba",
+      "output_path": "scratch/commentary/audits/meno/05-76b-77a.json",
+      "output_sha256": "8994c88551770579f440610abf96e47e4dfb6711a5fa56311321ab51814e7a0e",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "05-76b-77a",
+        "section_id": "comm_meno_0005",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "06-77b-78c",
+      "section_id": "comm_meno_0006",
+      "audit_brief_sha256": "1804e7264b5c561e92647dae443c4ebceb3c1b60fadcf93cc09d1e0219221387",
+      "output_path": "scratch/commentary/audits/meno/06-77b-78c.json",
+      "output_sha256": "0385f44cb8ab80587d7d50628e25deaf76bb2bcc44eeaae9691c561d0b047932",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "06-77b-78c",
+        "section_id": "comm_meno_0006",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_meno_0006",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames Meno’s definition and Socrates’ reduction from universal desire to the ability to procure goods. The edge falls after the prior sentence and before Meno’s reply, preserving flow."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "07-78d-79d",
+      "section_id": "comm_meno_0007",
+      "audit_brief_sha256": "e598e0c3d3c1bbefc45cbc9b71dc20c6f9e500a79923766f29797064f7a4124b",
+      "output_path": "scratch/commentary/audits/meno/07-78d-79d.json",
+      "output_sha256": "8d5513d5f990d8e46e5fa5a115efb500d045fdb237aead71fb4f31fc83ffba09",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "07-78d-79d",
+        "section_id": "comm_meno_0007",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_meno_0007",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately identifies the justice qualification, part-whole circularity, prior rejected method, and renewed question. The edge follows a complete exchange and precedes the new procurement question."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "08-79e-80e",
+      "section_id": "comm_meno_0008",
+      "audit_brief_sha256": "de7961060e23d6fd728629ec834ea6d956907f25e87efa429d514244126656e0",
+      "output_path": "scratch/commentary/audits/meno/08-79e-80e.json",
+      "output_sha256": "4b30ff67afc1d43856aa98fd1ffd3024b02a61e22775c6de199132c3c3e3f635",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "08-79e-80e",
+        "section_id": "comm_meno_0008",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "09-81a-82a",
+      "section_id": "comm_meno_0009",
+      "audit_brief_sha256": "4982487681e4ca8c91c320ba49e020e9b0e85d20495edeaed4eb32c4fd26f4c8",
+      "output_path": "scratch/commentary/audits/meno/09-81a-82a.json",
+      "output_sha256": "6e96d08193bc670011a3935d9c40a8dbfee3096f823b0844387a69ce07905efd",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "09-81a-82a",
+        "section_id": "comm_meno_0009",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_meno_0009",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames the recollection account, its tension with teaching, and the coming demonstration. The edge follows a complete sentence and precedes Meno’s response."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "10-82b-85a",
+      "section_id": "comm_meno_0010",
+      "audit_brief_sha256": "b5d6a32db19c23e3d5c4b3ab5414c726af5085a3e632611322ee76876056d8b5",
+      "output_path": "scratch/commentary/audits/meno/10-82b-85a.json",
+      "output_sha256": "d16e0195e52646d24d26d861ef5b9a7262214d4d976c2f5599ff527fd3ef02bf",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "10-82b-85a",
+        "section_id": "comm_meno_0010",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_meno_0010",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames the boy’s doubled-side and three-foot errors as a question-led movement into recognized perplexity; the edge follows “demonstration” and precedes Meno’s reply."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "11-85b-86d",
+      "section_id": "comm_meno_0011",
+      "audit_brief_sha256": "f52fe97c78b3578e8f31636125f866f82762c0af0018c315a0c6ee4322cef928",
+      "output_path": "scratch/commentary/audits/meno/11-85b-86d.json",
+      "output_sha256": "023b3ea0d47b8ff012b1338d8a0d601c0afa15844ec720f2a5a13d5d5aa9ac98",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "11-85b-86d",
+        "section_id": "comm_meno_0011",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "12-86e-87d",
+      "section_id": "comm_meno_0012",
+      "audit_brief_sha256": "e08b68d8169a11da59d65c6b4956817d159520e53281969e83c60dcb765506d9",
+      "output_path": "scratch/commentary/audits/meno/12-86e-87d.json",
+      "output_sha256": "dc0f6ac036fa9b64bd9643d4cfa4d6686e7db561fbea1395ca73318a89f6cc9f",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "12-86e-87d",
+        "section_id": "comm_meno_0012",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_meno_0012",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames the hypothesis method and its conditional knowledge test. It follows a complete sentence and precedes Socrates’ geometric explanation without disrupting the exchange."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "13-87e-89b",
+      "section_id": "comm_meno_0013",
+      "audit_brief_sha256": "98d0f7b7da1515158acd6be4fb2d8ac2bf1da23ecfd1eea2cc8db67e850d073e",
+      "output_path": "scratch/commentary/audits/meno/13-87e-89b.json",
+      "output_sha256": "2755f8c75d1a563853dbaa3a5065633f5a02b70d0280adf37c9ce1bb0b8fb8c7",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "13-87e-89b",
+        "section_id": "comm_meno_0013",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": [
+          {
+            "commentary_id": "comm_meno_0013",
+            "disposition": "pass",
+            "issue_codes": [],
+            "checks": {
+              "evidence": {
+                "verdict": "pass"
+              },
+              "placement": {
+                "verdict": "pass",
+                "hazard_codes": []
+              },
+              "listening": {
+                "verdict": "pass"
+              }
+            },
+            "rationale": "Accurately frames Socrates’ conditional inference and preserves its provisional status. The edge follows Meno’s assent that virtue is good and precedes the profitable-things argument."
+          }
+        ]
+      }
+    },
+    {
+      "unit_key": "14-89c-91c",
+      "section_id": "comm_meno_0014",
+      "audit_brief_sha256": "df895fad1dea4d8e1c7222c20d8f03c816e873ae6cfbb374628e203a5c006136",
+      "output_path": "scratch/commentary/audits/meno/14-89c-91c.json",
+      "output_sha256": "5042bdaa59ea2f982adf0880d7b8f69ce04f59cdb805308a0289e267e43683d1",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "14-89c-91c",
+        "section_id": "comm_meno_0014",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "15-91d-94d",
+      "section_id": "comm_meno_0015",
+      "audit_brief_sha256": "4c550b3323269d6d83e55ec1559a423a1346c0fa9899dc1e13f939e7da19e0c2",
+      "output_path": "scratch/commentary/audits/meno/15-91d-94d.json",
+      "output_sha256": "925b1e7c2308e5831cd982deaa86ac06069b8d25b588debc0213f23daf7454cb",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "15-91d-94d",
+        "section_id": "comm_meno_0015",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "16-94e-96d",
+      "section_id": "comm_meno_0016",
+      "audit_brief_sha256": "36d1b152bd59e441de2c32c9a6887b06a169d838862b74c4d5ed246dba6ea82a",
+      "output_path": "scratch/commentary/audits/meno/16-94e-96d.json",
+      "output_sha256": "7c9e225319770130b9cb2cfab419b04e7b9f504cc2b1076bb4f5c0bda5b45500",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "16-94e-96d",
+        "section_id": "comm_meno_0016",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "17-96e-98a",
+      "section_id": "comm_meno_0017",
+      "audit_brief_sha256": "cd038f4942c1dbd30858c0ee857dfd72742b730d95726cd5f925dca94d267a85",
+      "output_path": "scratch/commentary/audits/meno/17-96e-98a.json",
+      "output_sha256": "cbc7a153386366b9f84000feb7dd8ca2deaddb58283f69ed85c257ddea56e947",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "17-96e-98a",
+        "section_id": "comm_meno_0017",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    },
+    {
+      "unit_key": "18-98b-100c",
+      "section_id": "comm_meno_0018",
+      "audit_brief_sha256": "a8596e51cd682260b1f9c327155973bd470f69f54431dcd52870bfc990b0c1a8",
+      "output_path": "scratch/commentary/audits/meno/18-98b-100c.json",
+      "output_sha256": "d86544e0cd30c406eaa3035eb83392ccfc7d914bfd00c371c18fd8694246fd79",
+      "output": {
+        "schema_version": 3,
+        "dialogue": "meno",
+        "unit_key": "18-98b-100c",
+        "section_id": "comm_meno_0018",
+        "authoring": {
+          "model": "gpt-5.6-luna",
+          "effort": "medium"
+        },
+        "unit_verdict": "pass",
+        "blocks": []
+      }
+    }
+  ],
+  "acceptance": {
+    "decision": "accepted",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-meno-72568bc66bfa",
+    "reviewed_on": "2026-09-01",
+    "rationale": "All eight sampled blocks are source-supported, correctly anchored, placed at complete playback edges without hazards, and concise enough to add clear argumentative value without harming dramatic flow.",
+    "sampled_commentary_ids": [
+      "comm_meno_0001",
+      "comm_meno_0004",
+      "comm_meno_0006",
+      "comm_meno_0007",
+      "comm_meno_0009",
+      "comm_meno_0010",
+      "comm_meno_0012",
+      "comm_meno_0013"
+    ],
+    "review_note": {
+      "path": "wiki/review/2026-09-01-commentary-quality-meno-luna-sample.md",
+      "sha256": "f6b856a5d451d3a37ffabc1689701e6320c64e50143d1d01b0d3eebd9350712d"
+    }
+  }
+}
