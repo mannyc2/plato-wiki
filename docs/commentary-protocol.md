@@ -72,9 +72,9 @@ status.
   lane exactly as before; inside the lane, interpretation is voiced, not
   recorded.
 - Leak into the neutral layers. Nothing under `wiki/observations/`,
-  `wiki/claims/`, `wiki/relations/`, `wiki/dossiers/`, `wiki/clusters/`, or
-  `wiki/features-so-far.md` may be created, modified, or renamed on behalf of
-  commentary work.
+  `wiki/claims/`, `wiki/relations/`, `wiki/ontology/`, `wiki/dossiers/`, or
+  `wiki/clusters/` may be created, modified, or renamed on behalf of commentary
+  work.
 - Be read by the neutral pipelines. Citations run one way: commentary cites
   accepted records by id; no extraction, review, claims, or relations prompt,
   no skill under `.pi/`, and no derived-data generator ever opens
@@ -262,8 +262,9 @@ Field rules (the validator enforces every one):
 - `body`: required non-empty English teaching prose, plain text. Short
   inline Greek is allowed; contiguous Greek runs over 80 chars are rejected.
 - `cites`: listed ids must exist in the corresponding ledgers with
-  `review_status: accepted`; `dossiers` entries are `<family>/<label>` paths
-  that must resolve to an existing dossier file.
+  `review_status: accepted`; `dossiers` entries are
+  `<axis_key>/<concept_key>` paths that must resolve to an existing ontology
+  vNext JSON dossier projection. Legacy family/label paths are not aliases.
 - `crossrefs`: each entry names a canonical dialogue, a span, and a
   `source_ref` recomputed against THAT dialogue. `crossref` blocks must carry
   at least one crossrefs entry or one non-empty cites list.

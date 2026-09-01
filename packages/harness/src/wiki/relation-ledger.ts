@@ -2,8 +2,7 @@ import { existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { getRepoRoot } from "../paths.js";
 import { fieldValue } from "./observation-ledger.js";
-
-const YAML_BLOCK_RE = /```yaml\n([\s\S]*?)\n```/gu;
+import { fencedYamlRecordBlocks, replaceFencedYamlRecordBlocks } from "./fenced-record.js";
 
 export type RelationMarkdownBlock = {
   content: string;
@@ -13,19 +12,14 @@ export type RelationMarkdownBlock = {
   relationId: string | undefined;
 };
 
-function countLinesBefore(content: string, index: number) {
-  return content.slice(0, index).split("\n").length;
-}
-
 export function relationMarkdownBlocks(content: string): RelationMarkdownBlock[] {
-  return [...content.matchAll(YAML_BLOCK_RE)].map((match, index) => {
-    const block = match[1] ?? "";
+  return fencedYamlRecordBlocks(content).map((block) => {
     return {
-      content: block,
-      fullMatch: match[0],
-      startLine: countLinesBefore(content, match.index ?? 0) + 1,
-      index,
-      relationId: fieldValue(block, "relation_id"),
+      content: block.content,
+      fullMatch: block.fullMatch,
+      startLine: block.startLine,
+      index: block.index,
+      relationId: fieldValue(block.content, "relation_id"),
     };
   });
 }
@@ -35,7 +29,7 @@ export function relationYamlBlocks(content: string) {
 }
 
 export function replaceRelationYamlBlocks(content: string, replacer: (block: string, fullMatch: string) => string) {
-  return content.replace(YAML_BLOCK_RE, (fullMatch, block: string) => replacer(block, fullMatch));
+  return replaceFencedYamlRecordBlocks(content, (block) => replacer(block.content, block.fullMatch));
 }
 
 export function listRelationLedgerPaths({ absolute = false }: { absolute?: boolean } = {}) {

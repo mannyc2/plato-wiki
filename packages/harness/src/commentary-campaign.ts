@@ -74,6 +74,7 @@ import {
   type CommentaryCitationIndex,
 } from "./wiki/commentary-validator.js";
 import { fieldValue, observationYamlBlocks } from "./wiki/observation-ledger.js";
+import { ontologyDossierPathsByObservation } from "./wiki/ontology-vnext-repository.js";
 
 const CAMPAIGN_SCHEMA_VERSION = COMMENTARY_CAMPAIGN_SCHEMA_VERSION;
 const OUTLINE_SCHEMA_VERSION = 1 as const;
@@ -1128,17 +1129,13 @@ function relevantDossierPaths(dialogue: string) {
   const path = join(getRepoRoot(), `wiki/observations/${dialogue}.md`);
   if (!existsSync(path)) return [];
   const repoRoot = getRepoRoot();
+  const dossierPathsByObservation = ontologyDossierPathsByObservation(repoRoot);
   return [
     ...new Set(
       observationYamlBlocks(readFileSync(path, "utf8"))
         .filter((block) => fieldValue(block, "review_status") === "accepted")
-        .map((block) => {
-          const family = fieldValue(block, "feature_family");
-          const label = fieldValue(block, "feature_label");
-          if (!family || !label) return undefined;
-          const dossierPath = `wiki/dossiers/${family}/${label}.md`;
-          return existsSync(join(repoRoot, dossierPath)) ? dossierPath : undefined;
-        })
+        .flatMap((block) => dossierPathsByObservation.get(fieldValue(block, "observation_id") ?? "") ?? [])
+        .map((dossierPath) => existsSync(join(repoRoot, dossierPath)) ? dossierPath : undefined)
         .filter((value): value is string => value !== undefined),
     ),
   ].sort();
@@ -1260,7 +1257,7 @@ function outlinePrompt(dialogue: string, sourceWork: string, inputPaths: string[
     "- Never copy a long Greek passage; the reading spine supplies the source text.",
     "- Every checkable statement must cite only an ID or dossier path that is present in the listed files and accepted there.",
     "- Never invent, repair, infer, or autocomplete a citation ID. If support is absent, omit the assertion and leave that cite list empty.",
-    "- Dossier citations use family/label only and must correspond to a listed wiki/dossiers/<family>/<label>.md file.",
+    "- Dossier citations use axis_key/concept_key only and must correspond to a listed wiki/dossiers/<axis_key>/<concept_key>.json vNext projection.",
     "- Do not assign review_status, author, source_ref, commentary_id, crossrefs, or non-section blocks.",
   ].join("\n");
 }

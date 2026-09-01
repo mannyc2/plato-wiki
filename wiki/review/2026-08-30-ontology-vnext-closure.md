@@ -1,0 +1,25 @@
+# Ontology vNext full-corpus closure receipt
+
+- frozen baseline: `8a131909e83180bd7d5b47bc83f063e7b1d8d140`
+- audit snapshot: `sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4`
+- final corpus digest: bound after this receipt in the snapshot acceptance record, avoiding a self-referential receipt hash
+- final record units: 24285
+- final concept/membership union units: 23259
+- final graph union units: 26059
+- terminal adjudications: 73650
+- source-first coverage: primary and independent dispositions complete for every frozen Greek source unit; all disagreements reconciled
+- record-first coverage: every frozen and final record, edge, concept, and membership occurs exactly once in its required partition with a terminal item-level adjudication
+- alias policy: zero legacy feature identity fields, feature_candidate ids, family::label aliases, compatibility aliases, dual readers, or fallback identities in canonical records and public projections
+- reader policy: zero rejected observation, claim, relation, commentary, or voice ids in generated joins, public ontology projections, or site output
+- semantic gates: zero pending review status, empty accepted-claim observation linkage, citationless accepted commentary, or accepted non-relation fiction
+- regeneration one sha256: `b6a46fbf63fe9b4164e1725509542660df6e800f2747f1fe057091652ed1994f`
+- regeneration two sha256: `b6a46fbf63fe9b4164e1725509542660df6e800f2747f1fe057091652ed1994f`
+- regeneration artifacts: 8261
+- machine evidence: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/closure-evidence.json`
+- baseline evidence: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/baseline-evidence.json`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/baseline-evidence.json`; sha256: `03ea62a8bd097cf9ebc09636d267999702409fc6e224ee26609dd836739e944c`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/closure-evidence.json`; sha256: `9b1e8cc5277be87ddcdb97388849bf467bb9ef0a968ba221e8c33bf32faaebbb`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/regeneration.json`; sha256: `5941dac21fdf43f7397269ad746283c21fcdf1c305e373f6cb3c78af342d2570`
+- artifact: `wiki/review/2026-08-30-ontology-vnext-concept-audit.md`; sha256: `9e966005453b2ff747ece93ebb6aa84bb1dbb5c4927a8723d11f89cf5b34d144`
+- artifact: `wiki/review/2026-08-30-ontology-vnext-semantic-remediation.md`; sha256: `f1e34a6156b8ed60fcf275acaa0f217967e2521cb24c86186c7ab9c6737b6d4b`
+- required validation commands: `bun run test`, `bun run typecheck`, `bun run validate`, `git diff --check`, and `bun run harness ontology-audit verify`

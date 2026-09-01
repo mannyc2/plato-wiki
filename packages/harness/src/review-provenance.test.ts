@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from "bun:test";
+import { createHash } from "node:crypto";
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -103,6 +104,48 @@ function initSnapshotFixture() {
   ]);
 }
 
+function writeOntologyAuditBaseline(status = "accepted") {
+  const snapshotId = `sha256-${"a".repeat(64)}`;
+  const packagePath = join(root, "wiki/ontology-audits", snapshotId);
+  mkdirSync(packagePath, { recursive: true });
+  const recordUnits = `${JSON.stringify({
+    key: "record:observation:obs_fixture_0001",
+    kind: "record",
+    lane: "observation",
+    stable_id: "obs_fixture_0001",
+    source: null,
+    references: [],
+    baseline: {
+      path: "wiki/observations/fixture.md",
+      ordinal: 0,
+      raw_sha256: "b".repeat(64),
+      review_status: status,
+    },
+    final: null,
+    change: "removed",
+    audit_state: "complete",
+  })}\n`;
+  writeFileSync(
+    join(packagePath, "manifest.json"),
+    `${JSON.stringify({ snapshot_id: snapshotId, baseline: { git_commit: "fixture-head" } })}\n`,
+    "utf8",
+  );
+  writeFileSync(join(packagePath, "record-units.jsonl"), recordUnits, "utf8");
+  writeFileSync(
+    join(packagePath, "acceptance.json"),
+    `${JSON.stringify({
+      snapshot_id: snapshotId,
+      partitions: {
+        "record-units.jsonl": {
+          sha256: createHash("sha256").update(recordUnits).digest("hex"),
+          rows: 1,
+        },
+      },
+    })}\n`,
+    "utf8",
+  );
+}
+
 beforeEach(() => {
   root = mkdtempSync(join(tmpdir(), "review-provenance-"));
   restoreRepoRoot = setRepoRootForTesting(root);
@@ -125,6 +168,18 @@ describe("review provenance", () => {
 
   it("returns no failures when the working files match the HEAD snapshot", () => {
     initSnapshotFixture();
+
+    expect(collectFailures()).toEqual([]);
+  });
+
+  it("uses the snapshot audit baseline instead of reparsing legacy HEAD ledgers", () => {
+    initSnapshotFixture();
+    writeLedger("fixture", [record({ status: "accepted" })]);
+    headFiles.set(
+      "wiki/observations/fixture.md",
+      "```yaml\nobservation_id: obs_fixture_0001\nreview_status: accepted\ncontent: Legacy: compact mapping\n```\n",
+    );
+    writeOntologyAuditBaseline();
 
     expect(collectFailures()).toEqual([]);
   });

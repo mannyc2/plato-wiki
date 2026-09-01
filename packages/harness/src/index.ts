@@ -1,5 +1,68 @@
 export { getRepoRoot } from "./paths.js";
 export {
+  fencedYamlRecordBlocks,
+  fieldValue,
+  fieldValueOrEmpty,
+  listFieldValue,
+  nestedFieldValue,
+  nestedFieldValueInParent,
+  parseCanonicalYamlRecord,
+  rawFencedYamlBlocks,
+  replaceFencedYamlRecordBlocks,
+  serializeCanonicalYamlRecord,
+  type CanonicalYamlRecord,
+  type CanonicalYamlValue,
+  type FencedYamlRecordBlock,
+} from "./wiki/fenced-record.js";
+export {
+  applyFencedRecordMigration,
+  canonicalizeLegacyFencedRecord,
+  migrateFencedRecordMarkdown,
+  planFencedRecordMigration,
+  type FencedRecordMigrationEntry,
+  type FencedRecordMigrationPlan,
+} from "./wiki/fenced-record-migration.js";
+export {
+  collectOntologyAuditFailures,
+  formatOntologyAuditIssues,
+  generateOntologyAuditPackage,
+  listOntologyAuditPackagePaths,
+  ontologyBaselineEvidenceContract,
+  ONTOLOGY_AUDIT_PARTITION_FILES,
+  refreshOntologyAuditBaselineDefinitions,
+  validateOntologyBaselineEvidence,
+  verifyOntologyAuditPackage,
+  writeOntologyBaselineEvidence,
+  type OntologyBaselineEvidence,
+  type OntologyAuditAcceptance,
+  type OntologyAuditAdjudication,
+  type OntologyAuditConceptUnit,
+  type OntologyAuditGraphUnit,
+  type OntologyAuditIssue,
+  type OntologyAuditManifest,
+  type OntologyAuditRecordUnit,
+  type OntologyAuditSourceUnit,
+} from "./wiki/ontology-audit.js";
+export {
+  canonicalizeOntologySourceReviewArtifacts,
+  importOntologySourceReview,
+  normalizeOntologyAuditFindingIds,
+} from "./wiki/ontology-audit-review.js";
+export { reconcileOntologySourceReviews } from "./wiki/ontology-audit-reconciliation.js";
+export {
+  acceptOntologyAuditClosure,
+  bindOntologyAuditFinalState,
+} from "./wiki/ontology-audit-finalization.js";
+export { applyOntologyVNextHardCut } from "./wiki/ontology-vnext-hard-cut.js";
+export {
+  collectOntologyClosureEvidence,
+  closeOntologyVNextAudit,
+  ontologyRegenerationDigest,
+  regenerateOntologyArtifactsTwice,
+} from "./wiki/ontology-vnext-closure.js";
+export { applyOntologyVNextMigration, planOntologyVNextMigration } from "./wiki/ontology-vnext-migration.js";
+export { applySemanticRemediation, planSemanticRemediation } from "./wiki/semantic-remediation.js";
+export {
   applyAcceptedActiveSpeakerPolicy,
   buildCharacterCatalogFromSpeakerCensus,
   formatAudioCatalogValidationError,
@@ -187,22 +250,6 @@ export {
   parseCodexExecResult,
 } from "./commentary-campaign-telemetry.js";
 export { readConfig } from "./config.js";
-export { collectLabelAudit, formatLabelAuditMarkdown, writeLabelAudit } from "./labels.js";
-export {
-  buildAdjudicationSample,
-  collectLabelQuality,
-  formatLabelQualityMarkdown,
-  writeAdjudicationSample,
-  writeLabelQuality,
-} from "./labels-report.js";
-export {
-  applyLabelMergeMap,
-  assertLabelMergeMapValid,
-  planLabelMergeMap,
-  readLabelMergeMap,
-  validateLabelMergeMap,
-  writeLabelDependentArtifacts,
-} from "./labels-normalization.js";
 export { planSegmentedIngestQueue, runSegmentedIngestQueue } from "./ingest-queue.js";
 export {
   buildJobManifest,
@@ -406,9 +453,8 @@ export type {
   HarnessRunCommand,
   HarnessRunOptions,
   HarnessRunResult,
-  FeatureFamilyDriftEntry,
-  FeatureLabelDriftEntry,
-  LabelDriftSummary,
+  OntologyAxisSummary,
+  OntologySummary,
   ModelInfo,
   ProfileInfo,
   ProviderInfo,
@@ -422,16 +468,6 @@ export type {
   UsageRecord,
   ValidationReport,
 } from "./types.js";
-
-export type {
-  AppliedLabelMergeMap,
-  LabelMergeDisposition,
-  LabelMergeMap,
-  LabelMergeMapMetrics,
-  LabelMergeMapValidationResult,
-  LabelMergeTarget,
-  WrittenLabelMergeMap,
-} from "./labels-normalization.js";
 
 export type {
   RecordingAudio,

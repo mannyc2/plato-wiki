@@ -47,8 +47,8 @@ const records: SearchRecord[] = [
     target: "dialogues/meno/observations-a.html#obs_meno_0001",
     kind: "observation",
     dialogue: "meno",
-    family: "answer-form",
-    label: "direct",
+    axis: "answer_form turn_geometry",
+    concept: "direct_answer respondent_turn",
     status: "unreviewed",
     title: "A turn toward knowledge",
   },
@@ -155,12 +155,43 @@ describe("deterministic static index projections", () => {
     expect(() => buildSearchIndex([{ ...records[0]! }, { ...records[0]! }])).toThrow("duplicate record ID");
   });
 
-  it("bounds both title and snippet projections and rejects an oversized natural shard", () => {
+  it("bounds projections, partitions oversized natural shards, and rejects an oversized record", () => {
     const built = buildSearchIndex(
       [{ ...records[0]!, scope: "meno", title: "A😀BCD", snippet: "Z😀YXW" }],
       { maxTitleCodePoints: 4, maxSnippetCodePoints: 4 },
     );
     expect(built.shards[0]?.records[0]).toMatchObject({ title: "A😀B…", snippet: "Z😀Y…" });
+
+    const repeated = Array.from({ length: 8 }, (_, index) => ({
+      ...records[0]!,
+      id: `claim_meno_${String(index + 1).padStart(4, "0")}`,
+      scope: "meno",
+    }));
+    const partitioned = buildSearchIndex(repeated, { maxShardBytes: 500 });
+    expect(partitioned.shards.length).toBeGreaterThan(1);
+    expect(new Set(partitioned.shards.map((shard) => shard.path)).size).toBe(partitioned.shards.length);
+    expect(partitioned.shards.every((shard) => shard.scope === "meno")).toBe(true);
+    expect(partitioned.shards.every((shard) => new TextEncoder().encode(shard.json).byteLength < 500)).toBe(true);
+    expect(partitioned.shards.flatMap((shard) => shard.records.map((record) => record.id)).sort()).toEqual(
+      repeated.map((record) => record.id).sort(),
+    );
+    expect(planSearchShardLoads(partitioned.manifest, { query: "knowledge", filters: { dialogue: "meno" } })
+      .shards.map((shard) => shard.path)).toEqual(partitioned.shards.map((shard) => shard.path));
+    expect(buildSearchIndex([...repeated].reverse(), { maxShardBytes: 500 }).manifestJson).toBe(
+      partitioned.manifestJson,
+    );
+
+    const pair = repeated.slice(0, 2);
+    const unpartitionedPair = buildSearchIndex(pair);
+    const exactBoundary = new TextEncoder().encode(unpartitionedPair.shards[0]!.json).byteLength;
+    const boundaryPartitioned = buildSearchIndex(pair, { maxShardBytes: exactBoundary });
+    expect(boundaryPartitioned.shards).toHaveLength(2);
+    expect(
+      boundaryPartitioned.shards.every(
+        (shard) => new TextEncoder().encode(shard.json).byteLength < exactBoundary,
+      ),
+    ).toBe(true);
+
     expect(() =>
       buildSearchIndex([{ ...records[0]!, scope: "meno" }], { maxShardBytes: 50 }),
     ).toThrow("refine its scope");
@@ -272,9 +303,11 @@ describe("pure matching, ranking, filtering, and result status", () => {
     expect(matchesStructuralFilters(records[0]!, { status: "unreviewed" })).toBe(false);
     const response = searchRecords(records, {
       query: "knowledge",
-      filters: { kind: "observation", family: "answer form", status: "UNREVIEWED" },
+      filters: { kind: "observation", axis: "answer form", concept: "direct answer", status: "UNREVIEWED" },
     });
     expect(response.results.map(({ record }) => record.id)).toEqual(["obs_meno_0001"]);
+    expect(matchesStructuralFilters(records[2]!, { axis: "turn geometry", concept: "respondent turn" })).toBe(true);
+    expect(matchesStructuralFilters(records[2]!, { axis: "geometry" })).toBe(false);
   });
 
   it("returns idle, no-results, bounded, and refine-query states", () => {

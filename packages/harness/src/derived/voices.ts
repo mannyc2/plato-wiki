@@ -5,7 +5,7 @@ import { getRepoRoot } from "../paths.js";
 import { listVoicesLedgerPaths, parseVoiceLedger, type VoiceRecord } from "../wiki/voices-ledger.js";
 import { formatVoicesLedgerValidationError, validateVoicesLedger } from "../wiki/voices-validator.js";
 import { listGreekDialogues } from "./stephanus.js";
-import { parseTurnIndexToon, type TurnIndex, turnIndexPath } from "./turns.js";
+import { parseTurnIndexToon, semanticTurnStartChar, type TurnIndex, turnIndexPath } from "./turns.js";
 
 export type VoiceIndexRecord = {
   voiceId: string;
@@ -146,7 +146,11 @@ function uncoveredIntervals(
  *      while the rest of a rejected child's range fell back to its parent;
  *   3. every accepted deep record has an accepted parent.
  */
-export function collectAcceptedProjectionFailures(records: VoiceRecord[], turnIndex: TurnIndex): string[] {
+export function collectAcceptedProjectionFailures(
+  records: VoiceRecord[],
+  turnIndex: TurnIndex,
+  sourceText: string,
+): string[] {
   const failures: string[] = [];
   const all = records.filter((record) => usable(record));
   if (all.length === 0) return failures;
@@ -175,7 +179,7 @@ export function collectAcceptedProjectionFailures(records: VoiceRecord[], turnIn
     // 1. Accepted records must tile the turn at their shallowest depth.
     const minDepth = Math.min(...acceptedHere.map((record) => record.depth));
     const base = acceptedHere.filter((record) => record.depth === minDepth);
-    for (const gap of uncoveredIntervals(turn.startChar, turn.endChar, base)) {
+    for (const gap of uncoveredIntervals(semanticTurnStartChar(turn, sourceText), turn.endChar, base)) {
       failures.push(
         `${turn.turnId}: accepted records leave [${gap.startChar}, ${gap.endChar}) uncovered at depth ${minDepth}.`,
       );
@@ -286,7 +290,7 @@ function buildVoiceIndexInternal(dialogue: string, { preview }: { preview: boole
     }
   }
 
-  const projectionFailures = preview ? [] : collectAcceptedProjectionFailures(ledger, turnIndex);
+  const projectionFailures = preview ? [] : collectAcceptedProjectionFailures(ledger, turnIndex, sourceContent);
   if (projectionFailures.length > 0) {
     throw new Error(
       `Incomplete review cohort for ${dialogue}; deriving nothing rather than a partial projection.\n` +

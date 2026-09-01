@@ -1,5 +1,9 @@
 # Label Normalization Standards
 
+> Historical v1 normalization contract, retained because prior review receipts
+> cite it. It is no longer an active writer contract; use
+> `docs/ontology-vnext.md` and `docs/ontology-audit-protocol.md`.
+
 ## Purpose
 
 Use these standards for every global label-normalization pass in this Plato

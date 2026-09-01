@@ -1,0 +1,219 @@
+{
+  "accepted_observations": 4,
+  "axis_id": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+  "axis_key": "dramatic_case_setup",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record section transition marker within the dramatic case setup axis?",
+  "concept_id": "concept_sha256_ef7b69c4abe1c8a1faa1caa8cdc5c038d7eb8d203f56ee9019188818a5ad55a5",
+  "concept_key": "section_transition_marker",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_63926f2f070d54fa17465644d9f8505e79daba43e1456eb368f969dfa22b6474",
+      "conceptKey": "respondent_minimal_assent",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_68bf29f620f71d7f25103cff2cc5fb7c434e411677402be60af56ed8d226e27c",
+      "conceptKey": "argument_transition_marker",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_92abeffeff96cb2cba7c8bcd05c7dd42fadbd135a5f125828ced49fd77d1d96a",
+      "conceptKey": "assent_marker",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_b2b90d32d2ce789b531706988a4495479f3f47da6355cde68b679ba48c0d60c2",
+      "conceptKey": "recapitulation_or_restart",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_344e394ea1b45ae5ce3a2751a410bacb90e8d8ffb0f3d752e60fe72d20b26d88",
+      "axisKey": "craft_analogy",
+      "conceptId": "concept_sha256_e3075b474dcc5275de01d373e7c43a67cdf28471ed485e4df61ad98484b31143",
+      "conceptKey": "poet_as_praise_singer_of_tyranny",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_7dc770bb74baf5ff062220951175468a0fa1c2fb936c14a2e71eb983f23c35d8",
+      "axisKey": "closure_type",
+      "conceptId": "concept_sha256_bad3337028992dcba3b697eccdee685b1143f93ea116f4a66ce6ec54dc6a52cc",
+      "conceptKey": "argument_unit_transition",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_9791a05a3c77492d9f59ed68b54e30b71e3535fe91a87fd7c425fcb39272f666",
+      "axisKey": "prosopography",
+      "conceptId": "concept_sha256_2efe1f32245e059ae3eaaa2ae1c2f24f0407a2fb5c37bdd2653f2e05637aec52",
+      "conceptKey": "socratic_stationary_absorption",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 3,
+  "dimension": "dramatic_context",
+  "instance_ids": [
+    "obs_republic_0225",
+    "obs_republic_0460",
+    "obs_symposium_0222",
+    "obs_timaeus_0011"
+  ],
+  "instances": [
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0225",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "502d-502e",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0460",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "568b-568e",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "symposium",
+      "observationId": "obs_symposium_0222",
+      "speakers": [
+        "ΑΠΟΛ."
+      ],
+      "stephanusSpan": "220d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "timaeus",
+      "observationId": "obs_timaeus_0011",
+      "speakers": [
+        "ΣΩ.",
+        "ΤΙ."
+      ],
+      "stephanusSpan": "18c-18d",
+      "turnCount": 5
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_ef7b69c4abe1c8a1faa1caa8cdc5c038d7eb8d203f56ee9019188818a5ad55a5",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

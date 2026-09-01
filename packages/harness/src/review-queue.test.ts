@@ -19,8 +19,6 @@ beforeEach(() => {
       return `\`\`\`yaml
 observation_id: obs_ion_${id}
 stephanus_span: 2a
-feature_family: elenchus
-feature_label: test_label_${id}
 review_status: ${index === 0 ? "accepted" : "unreviewed"}
 \`\`\``;
     }).join("\n\n"),

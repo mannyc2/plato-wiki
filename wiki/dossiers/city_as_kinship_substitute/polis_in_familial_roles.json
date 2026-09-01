@@ -1,0 +1,170 @@
+{
+  "accepted_observations": 2,
+  "axis_id": "axis_sha256_672e90ec42f222feb868815da9e7f0b3bb307fd1effcd7d07af71496387db23b",
+  "axis_key": "city_as_kinship_substitute",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record polis in familial roles within the city as kinship substitute axis?",
+  "concept_id": "concept_sha256_da18948362ac4a92a838925fc6784b45c995e72f482ef971350de0553c983dba",
+  "concept_key": "polis_in_familial_roles",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_7dc770bb74baf5ff062220951175468a0fa1c2fb936c14a2e71eb983f23c35d8",
+      "axisKey": "closure_type",
+      "conceptId": "concept_sha256_97d4ce47656f7fabb570f99fa646aa97878d620270fac4bb1f4cc7b2e85f43d7",
+      "conceptKey": "explicit_departure_command",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_9094c9928fcba4c37ffb184fa5d0b845d6bf58f7ad94df8c3948d84a2ced9f72",
+      "axisKey": "funerary_institution",
+      "conceptId": "concept_sha256_482cfbe7b4e3a7473b9d583ea9056ce896e744dd2e4548bfd99975ddfbb0dc40",
+      "conceptKey": "annual_public_rites_for_war_dead",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_a621c9ee78202ffb4f5261045688f196ca7a93efcfb28446a6dbe406eb6832e3",
+      "axisKey": "frame_depth",
+      "conceptId": "concept_sha256_321451ee3a0fb0e1c2f0a092b96f307eeb15a20ce11181ad9e53f2aeedfa6225",
+      "conceptKey": "transmission_chain_cited",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 1,
+  "dimension": "subject_matter",
+  "instance_ids": [
+    "obs_menexenus_0093",
+    "obs_menexenus_0096"
+  ],
+  "instances": [
+    {
+      "dialogue": "menexenus",
+      "observationId": "obs_menexenus_0093",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "249b-249c",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "menexenus",
+      "observationId": "obs_menexenus_0096",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "248e-249a",
+      "turnCount": 2
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_da18948362ac4a92a838925fc6784b45c995e72f482ef971350de0553c983dba",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

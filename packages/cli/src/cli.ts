@@ -10,14 +10,11 @@ import {
   buildPublicReleaseReport,
   buildScreenplayGenerationReport,
   buildAnchorsReport,
-  buildAdjudicationSample,
   buildClusters,
   buildCoverageReport,
   buildDossiers,
   buildRelationCandidates,
   clusterGateReport,
-  collectLabelAudit,
-  collectLabelQuality,
   listModels,
   listGreekDialogues,
   planSegmentedIngest,
@@ -28,7 +25,6 @@ import {
   listProviders,
   listTranscripts,
   getRepoRoot,
-  applyLabelMergeMap,
   runClaimQueue,
   runClaimReviewQueue,
   runRelationQueue,
@@ -36,17 +32,27 @@ import {
   runSegmentedIngestQueue,
   runSegmentedReviewQueue,
   runHarnessCommand,
-  planLabelMergeMap,
   summarizeTranscriptTrace,
-  validateLabelMergeMap,
   validateRepo,
+  acceptOntologyAuditClosure,
+  applyOntologyVNextHardCut,
+  bindOntologyAuditFinalState,
+  closeOntologyVNextAudit,
+  collectOntologyClosureEvidence,
+  formatOntologyAuditIssues,
+  generateOntologyAuditPackage,
+  canonicalizeOntologySourceReviewArtifacts,
+  importOntologySourceReview,
+  reconcileOntologySourceReviews,
+  listOntologyAuditPackagePaths,
+  verifyOntologyAuditPackage,
+  writeOntologyBaselineEvidence,
+  planSemanticRemediation,
+  regenerateOntologyArtifactsTwice,
   renderAnchorsReportText,
   renderAudioCoverageReport,
   renderCompletenessReport,
   renderPublicReleaseReport,
-  writeLabelAudit,
-  writeAdjudicationSample,
-  writeLabelQuality,
   writeAnchorIndex,
   writeDossierArtifacts,
   writeObservationTurnJoins,
@@ -109,6 +115,7 @@ import {
   writeJobManifest,
   type JobManifest,
   type ValidationReport,
+  type OntologyAuditAcceptance,
   type TranscriptUsageSummary,
   type CommentaryRewriteReviewInput,
   type CommentaryBlockReviewDecision,
@@ -128,6 +135,7 @@ type Command =
   | "job"
   | "release:audit"
   | "validate"
+  | "ontology-audit"
   | "derive"
   | "commentary"
   | "audio"
@@ -136,7 +144,6 @@ type Command =
   | "coverage"
   | "relations"
   | "dossiers"
-  | "labels"
   | "site"
   | "profiles"
   | "providers"
@@ -237,17 +244,23 @@ Usage:
   bun run harness audio coverage [--write]
   bun run harness audio screenplay <dialogue> [--write-draft | --write-production]
   bun run harness anchors [--write] [dialogue]
-  bun run harness clusters [--include-unreviewed]
+  bun run harness clusters
   bun run harness clusters --write
   bun run harness dossiers [--write]
   bun run harness coverage [--write] [dialogue]
   bun run harness relations candidates [--write]
-  bun run harness labels audit [--write]
-  bun run harness labels report [--write]
-  bun run harness labels sample [--write]
-  bun run harness labels plan <path>
-  bun run harness labels validate <path> [--family <feature_family>]
-  bun run harness labels apply <path> [--family <feature_family>]
+  bun run harness ontology-audit generate
+  bun run harness ontology-audit baseline-evidence
+  bun run harness ontology-audit import-source-review --pass <primary|independent> --inputs <path,...> --receipt <wiki/review/path.md>
+  bun run harness ontology-audit canonicalize-source-review-inputs
+  bun run harness ontology-audit reconcile-source-review --dialogues <slug,...> --reviewer <id> --receipt <wiki/review/path.md>
+  bun run harness ontology-audit semantic-plan [--atomic-split-overlay <path>] [--source-omission-overlay <path>] [--relation-dependency-overlay <path>]
+  bun run harness ontology-audit hard-cut [--atomic-split-overlay <path>] [--source-omission-overlay <path>] [--relation-dependency-overlay <path>]
+  bun run harness ontology-audit evidence
+  bun run harness ontology-audit regenerate
+  bun run harness ontology-audit bind-final
+  bun run harness ontology-audit close
+  bun run harness ontology-audit verify [--baseline-only]
   bun run harness site [--out-dir <path>] [--recording-artifact-root <absolute-path>] [--include-draft-recordings]
   bun run harness job manifest [--target corpus|knowledge-base|audio-edition] [--write] [--json]
   bun run harness job list [--target <t>] [--lane <lane>] [--family <CMP-*>] [--scope <slug>] [--refresh] [--json]
@@ -481,6 +494,7 @@ function parseCommand(argv: string[]): ParsedArgs {
     command !== "job" &&
     command !== "release:audit" &&
     command !== "validate" &&
+    command !== "ontology-audit" &&
     command !== "derive" &&
     command !== "commentary" &&
     command !== "audio" &&
@@ -489,7 +503,6 @@ function parseCommand(argv: string[]): ParsedArgs {
     command !== "dossiers" &&
     command !== "coverage" &&
     command !== "relations" &&
-    command !== "labels" &&
     command !== "site" &&
     command !== "profiles" &&
     command !== "providers" &&
@@ -601,30 +614,20 @@ function printValidationReport(report: ValidationReport) {
   console.log(`Apparatus ledgers validated: ${report.apparatusLedgerCount}`);
   console.log(`Voice ledgers validated: ${report.voicesLedgerCount}`);
   console.log(`Commentary quality-audit manifests validated: ${report.commentaryQualityAuditManifestCount}`);
-  console.log("Feature families:");
-
-  if (report.featureFamilies.length === 0) {
-    console.log("- none");
-  } else {
-    for (const family of report.featureFamilies) {
-      const samples =
-        family.sampleObservationIds.length > 0 ? `; examples=${family.sampleObservationIds.join(", ")}` : "";
-      console.log(
-        `- ${family.family}: ${family.kind}; observations=${family.observationCount}; candidates=${family.featureCandidateCount}${samples}`,
-      );
-    }
-  }
-
-  console.log("Label drift:");
-  console.log(`- total labels: ${report.labelDrift.totalLabels}`);
-  console.log(`- singleton labels (1 observation): ${report.labelDrift.singletonLabels}`);
-  console.log(`- cross-dialogue labels: ${report.labelDrift.crossDialogueLabels}`);
-  console.log("- example singletons:");
-  if (report.labelDrift.singletonExamples.length === 0) {
+  console.log("Ontology vNext:");
+  console.log(`- axes: ${report.ontology.axisCount}`);
+  console.log(`- concepts: ${report.ontology.conceptCount}`);
+  console.log(`- memberships: ${report.ontology.membershipCount}`);
+  console.log(`- singleton concepts: ${report.ontology.singletonConceptCount}`);
+  console.log(`- cross-dialogue concepts: ${report.ontology.crossDialogueConceptCount}`);
+  console.log("- axis coverage:");
+  if (report.ontology.axes.length === 0) {
     console.log("  - none");
   } else {
-    for (const entry of report.labelDrift.singletonExamples) {
-      console.log(`  - ${entry.family} / ${entry.label}: ${entry.observationIds.join(", ")}`);
+    for (const axis of report.ontology.axes) {
+      console.log(
+        `  - ${axis.axisKey} (${axis.dimension}): concepts=${axis.conceptCount} memberships=${axis.membershipCount}`,
+      );
     }
   }
 
@@ -1061,6 +1064,221 @@ async function main() {
   if (args.command === "validate") {
     printValidationReport(validateRepo());
     return;
+  }
+
+  if (args.command === "ontology-audit") {
+    if (args.subject === "generate") {
+      const result = generateOntologyAuditPackage();
+      console.log(`snapshot=${result.snapshotId}`);
+      console.log(`package=${result.packagePath}`);
+      console.log(`owned_keys=${result.manifest.baseline.owned_key_count}`);
+      console.log(`adjudications=${result.manifest.partitions["adjudications.jsonl"].rows}`);
+      return;
+    }
+    if (args.subject === "baseline-evidence") {
+      const result = writeOntologyBaselineEvidence();
+      console.log(`evidence=${result.path}`);
+      console.log(`validation_all_passed=${result.validationAllPassed}`);
+      console.log(`projection_artifacts=${result.projectionArtifacts}`);
+      console.log(`projection_sha256=${result.projectionSha256}`);
+      console.log(`registry_concepts=${result.registryConcepts}`);
+      console.log(`registry_memberships=${result.registryMemberships}`);
+      return;
+    }
+    if (args.subject === "import-source-review") {
+      const pass = optionValue(process.argv, "--pass");
+      const inputs = optionList(process.argv, "--inputs");
+      const receipt = optionValue(process.argv, "--receipt");
+      if ((pass !== "primary" && pass !== "independent") || !inputs || !receipt) {
+        throw new Error(
+          "Usage: bun run harness ontology-audit import-source-review --pass <primary|independent> --inputs <path,...> --receipt <wiki/review/path.md>",
+        );
+      }
+      const packagePaths = listOntologyAuditPackagePaths();
+      if (packagePaths.length !== 1) {
+        throw new Error(`Expected exactly one ontology audit package; found ${packagePaths.length}.`);
+      }
+      const result = importOntologySourceReview({
+        packagePath: packagePaths[0]!,
+        pass,
+        inputPaths: inputs,
+        receiptPath: receipt,
+      });
+      console.log(`pass=${result.pass}`);
+      console.log(`dialogues=${result.dialogues.length}`);
+      console.log(`source_units=${result.sourceUnits}`);
+      console.log(`findings=${result.findings}`);
+      console.log(`receipt=${result.receiptPath}`);
+      return;
+    }
+    if (args.subject === "canonicalize-source-review-inputs") {
+      const packagePaths = listOntologyAuditPackagePaths();
+      if (packagePaths.length !== 1) {
+        throw new Error(`Expected exactly one ontology audit package; found ${packagePaths.length}.`);
+      }
+      const packagePath = packagePaths[0]!;
+      const priorAcceptance = JSON.parse(
+        readFileSync(join(getRepoRoot(), packagePath, "acceptance.json"), "utf8"),
+      ) as OntologyAuditAcceptance;
+      const result = canonicalizeOntologySourceReviewArtifacts({ packagePath });
+      console.log(`artifacts_changed=${result.artifactsChanged}`);
+      console.log(`receipts_changed=${result.receiptsChanged}`);
+      console.log(`source_units_rebound=${result.sourceUnitsRebound}`);
+      console.log(`mapping_artifacts=${result.mappingArtifacts.length}`);
+      if (priorAcceptance.state === "accepted") {
+        const regenerationOneSha256 = priorAcceptance.closure.regeneration_one_sha256;
+        const regenerationTwoSha256 = priorAcceptance.closure.regeneration_two_sha256;
+        if (!regenerationOneSha256 || !regenerationTwoSha256 || !priorAcceptance.receipt) {
+          throw new Error("Accepted ontology audit lacks reusable closure bindings.");
+        }
+        bindOntologyAuditFinalState({ packagePath });
+        const accepted = acceptOntologyAuditClosure({
+          packagePath,
+          regenerationOneSha256,
+          regenerationTwoSha256,
+          staleAliases: priorAcceptance.closure.stale_aliases,
+          rejectedReaderLeaks: priorAcceptance.closure.rejected_reader_leaks,
+          receiptPath: priorAcceptance.receipt.path,
+        });
+        const issues = verifyOntologyAuditPackage({ packagePath });
+        if (issues.length > 0) {
+          throw new Error(`Reaccepted ontology audit verification failed:\n${formatOntologyAuditIssues(issues)}`);
+        }
+        console.log(`final_corpus_digest=${accepted.live.corpusDigest}`);
+        console.log("ontology_audit=accepted");
+      }
+      return;
+    }
+    if (args.subject === "reconcile-source-review") {
+      const dialogues = optionList(process.argv, "--dialogues");
+      const reviewer = optionValue(process.argv, "--reviewer");
+      const receipt = optionValue(process.argv, "--receipt");
+      if (!dialogues || !reviewer || !receipt) {
+        throw new Error(
+          "Usage: bun run harness ontology-audit reconcile-source-review --dialogues <slug,...> --reviewer <id> --receipt <wiki/review/path.md>",
+        );
+      }
+      const packagePaths = listOntologyAuditPackagePaths();
+      if (packagePaths.length !== 1) {
+        throw new Error(`Expected exactly one ontology audit package; found ${packagePaths.length}.`);
+      }
+      const result = reconcileOntologySourceReviews({
+        packagePath: packagePaths[0]!,
+        dialogues,
+        reviewer,
+        receiptPath: receipt,
+      });
+      console.log(`dialogues=${result.dialogues.length}`);
+      console.log(`source_units=${result.sourceUnits}`);
+      console.log(`agreed=${result.agreed}`);
+      console.log(`adjudicated=${result.adjudicated}`);
+      console.log(`receipt=${result.receiptPath}`);
+      return;
+    }
+    if (args.subject === "semantic-plan") {
+      const atomicSplitOverlayPath = optionValue(process.argv, "--atomic-split-overlay");
+      const sourceOmissionOverlayPath = optionValue(process.argv, "--source-omission-overlay");
+      const relationDependencyOverlayPath = optionValue(process.argv, "--relation-dependency-overlay");
+      const result = planSemanticRemediation({
+        ...(atomicSplitOverlayPath === undefined ? {} : { atomicSplitOverlayPath }),
+        ...(sourceOmissionOverlayPath === undefined ? {} : { sourceOmissionOverlayPath }),
+        ...(relationDependencyOverlayPath === undefined ? {} : { relationDependencyOverlayPath }),
+      });
+      console.log(`records=${result.counts.records}`);
+      console.log(`findings=${result.counts.findings}`);
+      console.log(`records_rejected=${result.counts.recordsRejected}`);
+      console.log(`records_split=${result.counts.recordsSplit}`);
+      console.log(`split_replacements=${result.counts.splitReplacements}`);
+      console.log(`claims_linked=${result.counts.claimsLinked}`);
+      console.log(`commentary_citations_added=${result.counts.commentaryCitationsAdded}`);
+      console.log(`commentary_citations_remapped=${result.counts.commentaryCitationsRemapped}`);
+      console.log(`relation_dependencies_reviewed=${result.counts.relationDependenciesReviewed}`);
+      console.log(`relations_revised_for_replacement_claims=${result.counts.relationsRevisedForReplacementClaims}`);
+      console.log(`relations_rejected_for_invalid_endpoints=${result.counts.relationsRejectedForInvalidEndpoints}`);
+      console.log(`relations_rejected_for_invalid_resolution=${result.counts.relationsRejectedForInvalidResolution}`);
+      console.log(`claim_observation_links_pruned=${result.counts.claimObservationLinksPruned}`);
+      console.log(`observation_claim_links_rebuilt=${result.counts.observationClaimLinksRebuilt}`);
+      console.log(`claims_rejected_after_evidence_closure=${result.counts.claimsRejectedAfterEvidenceClosure}`);
+      console.log(`rejected_record_prose_references_rewritten=${result.counts.rejectedRecordProseReferencesRewritten}`);
+      console.log(`recordings_withdrawn_for_rejected_chapters=${result.counts.recordingsWithdrawnForRejectedChapters}`);
+      console.log(`recording_rejected_chapter_targets=${result.counts.recordingRejectedChapterTargets}`);
+      console.log(`atomic_split_sha256=${result.splitOverlay.sha256}`);
+      console.log(`source_omission_sha256=${result.omissionOverlay.sha256}`);
+      console.log(`relation_dependency_sha256=${result.relationOverlay.sha256}`);
+      return;
+    }
+    if (args.subject === "hard-cut") {
+      const atomicSplitOverlayPath = optionValue(process.argv, "--atomic-split-overlay");
+      const sourceOmissionOverlayPath = optionValue(process.argv, "--source-omission-overlay");
+      const relationDependencyOverlayPath = optionValue(process.argv, "--relation-dependency-overlay");
+      const result = applyOntologyVNextHardCut({
+        ...(atomicSplitOverlayPath === undefined ? {} : { atomicSplitOverlayPath }),
+        ...(sourceOmissionOverlayPath === undefined ? {} : { sourceOmissionOverlayPath }),
+        ...(relationDependencyOverlayPath === undefined ? {} : { relationDependencyOverlayPath }),
+      });
+      console.log(`semantic_receipt=${result.semantic.receiptPath}`);
+      console.log(`semantic_decisions=${result.semantic.decisionArtifactPath}`);
+      console.log(`atomic_splits=${result.semantic.splitOverlayArtifactPath}`);
+      console.log(`source_omissions=${result.semantic.omissionOverlayArtifactPath}`);
+      console.log(`relation_dependencies=${result.semantic.relationOverlayArtifactPath}`);
+      console.log(`concept_receipt=${result.ontology.receiptPath}`);
+      console.log(`axes=${result.ontology.plan.counts.activeAxes}`);
+      console.log(`concepts=${result.ontology.plan.counts.activeConcepts}`);
+      console.log(`memberships=${result.ontology.plan.counts.activeMemberships}`);
+      return;
+    }
+    if (args.subject === "bind-final") {
+      const result = bindOntologyAuditFinalState();
+      console.log(`package=${result.packagePath}`);
+      console.log(`records=${result.rows.records.length}`);
+      console.log(`concept_units=${result.rows.concepts.length}`);
+      console.log(`graph_units=${result.rows.graphs.length}`);
+      console.log(`adjudications=${result.rows.adjudications.length}`);
+      console.log(`final_corpus_digest=${result.live.corpusDigest}`);
+      return;
+    }
+    if (args.subject === "evidence") {
+      const evidence = collectOntologyClosureEvidence();
+      for (const [key, issues] of Object.entries(evidence)) {
+        console.log(`${key}=${issues.length}`);
+        for (const issue of issues.slice(0, 20)) console.log(`  ${issue}`);
+      }
+      return;
+    }
+    if (args.subject === "regenerate") {
+      const result = regenerateOntologyArtifactsTwice();
+      console.log(`receipt=${result.receiptPath}`);
+      console.log(`artifacts=${result.artifacts.length}`);
+      console.log(`regeneration_one_sha256=${result.regenerationOneSha256}`);
+      console.log(`regeneration_two_sha256=${result.regenerationTwoSha256}`);
+      return;
+    }
+    if (args.subject === "close") {
+      const result = closeOntologyVNextAudit();
+      console.log(`receipt=${result.receiptPath}`);
+      console.log(`final_corpus_digest=${result.accepted.live.corpusDigest}`);
+      console.log(`adjudications=${result.bound.rows.adjudications.length}`);
+      console.log(`regeneration_sha256=${result.regeneration.regenerationOneSha256}`);
+      console.log("ontology_audit=accepted");
+      return;
+    }
+    if (args.subject === "verify") {
+      const packagePaths = listOntologyAuditPackagePaths();
+      if (packagePaths.length !== 1) {
+        throw new Error(`Expected exactly one ontology audit package; found ${packagePaths.length}.`);
+      }
+      const issues = verifyOntologyAuditPackage({
+        packagePath: packagePaths[0]!,
+        verifyLiveFinal: !process.argv.includes("--baseline-only"),
+      });
+      if (issues.length > 0) throw new Error(`Ontology audit verification failed:\n${formatOntologyAuditIssues(issues)}`);
+      console.log(`package=${packagePaths[0]}`);
+      console.log("ontology_audit=valid");
+      return;
+    }
+    throw new Error(
+      "Usage: bun run harness ontology-audit generate | ontology-audit baseline-evidence | ontology-audit import-source-review --pass <primary|independent> --inputs <path,...> --receipt <wiki/review/path.md> | ontology-audit canonicalize-source-review-inputs | ontology-audit reconcile-source-review --dialogues <slug,...> --reviewer <id> --receipt <wiki/review/path.md> | ontology-audit semantic-plan [--atomic-split-overlay <path>] [--source-omission-overlay <path>] [--relation-dependency-overlay <path>] | ontology-audit hard-cut [--atomic-split-overlay <path>] [--source-omission-overlay <path>] [--relation-dependency-overlay <path>] | ontology-audit evidence | ontology-audit regenerate | ontology-audit bind-final | ontology-audit close | ontology-audit verify [--baseline-only]",
+    );
   }
 
   if (args.command === "claims-queue") {
@@ -1660,13 +1878,15 @@ async function main() {
   }
 
   if (args.command === "clusters") {
-    const includeUnreviewed = process.argv.includes("--include-unreviewed");
+    if (process.argv.includes("--include-unreviewed")) {
+      throw new Error("Ontology vNext clusters contain accepted memberships only; --include-unreviewed is not supported.");
+    }
     const write = process.argv.includes("--write");
     if (write) {
-      const written = writeClusterArtifacts({ includeUnreviewed });
+      const written = writeClusterArtifacts();
       const gate = clusterGateReport();
       console.log(
-        `wrote ${written.length} cluster file(s); gate accepted=${gate.acceptedObservations} cross_dialogue=${gate.crossDialogueLabels} median_non_singleton=${gate.medianNonSingletonObservations}`,
+        `wrote ${written.length} cluster file(s); gate accepted=${gate.acceptedObservations} cross_dialogue_concepts=${gate.crossDialogueConcepts} median_non_singleton=${gate.medianNonSingletonObservations}`,
       );
       for (const artifact of written) {
         console.log(`- ${artifact.path}: clusters=${artifact.clusterCount}`);
@@ -1674,14 +1894,11 @@ async function main() {
       return;
     }
 
-    const clusters = buildClusters({ includeUnreviewed });
-    if (includeUnreviewed) {
-      console.log("PRE-CONVERGENCE PREVIEW - not meaningful until labels recur and observations are accepted.");
-    }
+    const clusters = buildClusters();
     console.log(`clusters: ${clusters.length}`);
     for (const cluster of clusters.slice(0, 25)) {
       console.log(
-        `- ${cluster.family}/${cluster.label}: observations=${cluster.observations.length} dialogues=${cluster.dialogues.join(",") || "none"}`,
+        `- ${cluster.axisKey}/${cluster.conceptKey}: observations=${cluster.observations.length} dialogues=${cluster.dialogues.join(",") || "none"}`,
       );
     }
     return;
@@ -1696,10 +1913,10 @@ async function main() {
     }
 
     const dossiers = buildDossiers();
-    console.log(`dossiers=${dossiers.length} labels_covered=${dossiers.length}`);
+    console.log(`dossiers=${dossiers.length} concepts_covered=${dossiers.length}`);
     for (const dossier of dossiers.slice(0, 25)) {
       console.log(
-        `- ${dossier.family}/${dossier.label}: accepted_obs=${dossier.instances.length} dialogues=${dossier.presence.filter((entry) => entry.acceptedObservations > 0).length} counter_records=${dossier.counterevidence.length}`,
+        `- ${dossier.axisKey}/${dossier.conceptKey}: accepted_obs=${dossier.instances.length} dialogues=${dossier.presence.filter((entry) => entry.acceptedObservations > 0).length}`,
       );
     }
     return;
@@ -1741,85 +1958,6 @@ async function main() {
     return;
   }
 
-  if (args.command === "labels") {
-    if (args.subject === "audit") {
-      const result = process.argv.includes("--write")
-        ? writeLabelAudit()
-        : { path: "(dry run)", report: collectLabelAudit() };
-      console.log(
-        `labels=${result.report.totalLabels} observations=${result.report.totalObservations} singletons=${result.report.singletonLabels} cross_dialogue=${result.report.crossDialogueLabels}`,
-      );
-      console.log(`audit: ${result.path}`);
-      return;
-    }
-
-    if (args.subject === "report") {
-      const result = process.argv.includes("--write")
-        ? writeLabelQuality()
-        : { path: "(dry run)", report: collectLabelQuality() };
-      console.log(
-        `labels=${result.report.allRecords.totalLabels} uncovered_singletons=${result.report.dispositionCoverage.uncoveredSingletons} reuse_mass_accepted=${(result.report.acceptedOnly.reuseMass.nonSingletonShare * 100).toFixed(1)}%`,
-      );
-      console.log(`report: ${result.path}`);
-      return;
-    }
-
-    if (args.subject === "sample") {
-      const result = process.argv.includes("--write")
-        ? writeAdjudicationSample()
-        : { path: "(dry run)", sample: buildAdjudicationSample() };
-      console.log(`sample=${result.sample.entries.length} universe=${result.sample.universeSize} seed=${result.sample.seed}`);
-      console.log(`sample: ${result.path}`);
-      return;
-    }
-
-    const path = process.argv[4]?.startsWith("--") ? undefined : process.argv[4];
-    if (!path) {
-      throw new Error("Usage: bun run harness labels audit [--write] | labels report [--write] | labels sample [--write] | labels plan <path> | labels validate <path> | labels apply <path> [--family <feature_family>]");
-    }
-
-    if (args.subject === "plan") {
-      const result = planLabelMergeMap(path);
-      console.log(`merge-map: ${result.path}`);
-      console.log(`labels=${result.map.sourceMetrics.totalLabels} todos=${result.todoCount}`);
-      return;
-    }
-
-    if (args.subject === "validate") {
-      const result = validateLabelMergeMap(path, args.family ? { family: args.family } : {});
-      if (result.failures.length > 0) {
-        const visibleFailures = result.failures.slice(0, 25);
-        const omitted = result.failures.length - visibleFailures.length;
-        throw new Error(
-          [
-            `Label merge map validation failed: ${result.failures.length} failure(s)`,
-            ...visibleFailures,
-            omitted > 0 ? `... ${omitted} more failure(s)` : "",
-          ]
-            .filter(Boolean)
-            .join("\n"),
-        );
-      }
-      console.log(
-        `merge-map valid: dispositions=${result.dispositionCount} keeps=${result.keepCount} merges=${result.mergeCount}${args.family ? ` family=${args.family}` : ""}`,
-      );
-      return;
-    }
-
-    if (args.subject === "apply") {
-      const result = applyLabelMergeMap(path, args.family ? { family: args.family } : {});
-      console.log(
-        `merge-map applied: changed_observations=${result.changedObservations} updated_ledgers=${result.updatedLedgers.length} updated_commentary_ledgers=${result.updatedCommentaryLedgers.length}`,
-      );
-      console.log(
-        `derived: label_audit=${result.labelAuditPath ?? "(skipped)"} label_quality=${result.labelQualityPath ?? "(skipped)"} clusters=${result.clusterFiles ?? "(skipped)"} dossiers=${result.dossierFiles ?? "(skipped)"} site_pages=${result.sitePages ?? "(skipped)"}`,
-      );
-      return;
-    }
-
-    throw new Error("Usage: bun run harness labels audit [--write] | labels report [--write] | labels sample [--write] | labels plan <path> | labels validate <path> | labels apply <path> [--family <feature_family>]");
-  }
-
   if (args.command === "site") {
     const result = buildStaticSite({
       ...(args.outDir ? { outDir: args.outDir } : {}),
@@ -1829,7 +1967,7 @@ async function main() {
       includeDraftRecordings: args.includeDraftRecordings,
     });
     console.log(`wrote ${result.pages.length} site file(s) to ${relative(getRepoRoot(), result.outDir)}`);
-    console.log(`observations=${result.observationCount} registry_entries=${result.registryEntryCount} clusters=${result.clusterCount}`);
+    console.log(`observations=${result.observationCount} ontology_concepts=${result.ontologyConceptCount} clusters=${result.clusterCount}`);
     console.log(
       `recordings accepted=${result.acceptedRecordingCount} review_candidates=${result.reviewCandidateRecordingCount}`,
     );

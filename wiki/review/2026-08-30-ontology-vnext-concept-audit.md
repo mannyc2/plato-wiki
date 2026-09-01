@@ -1,0 +1,32 @@
+# Ontology vNext concept-first audit receipt
+
+- snapshot: sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4
+- baseline commit: 8a131909e83180bd7d5b47bc83f063e7b1d8d140
+- source policy: frozen audit records, canonical observation records, and canonical Greek source references only; no translations read
+- denominator: 505 axes, 3600 concepts, 7470 frozen observation assignments, and 1275 split-child membership proposals
+- atomic source-anchor repairs: 66 item-level corrections re-resolved against canonical Greek bytes
+- source-omission repairs: 13 accepted neutral observation(s) with 13 direct reviewed membership addition(s); 1 explicit parent-level zero result(s)
+- independent false-fanout register: 273 proposal memberships, all terminally dropped
+- reconciled membership disagreements: 100, with primary and independent decisions preserved in content-addressed artifacts
+- each axis states one precise cross-dialogue comparison question
+- every concept, frozen membership, and split-child proposal has an item-level terminal decision and meaningful rationale
+- canonical vNext projection: 483 axes, 3557 concepts, 7644 memberships
+- split-child dispositions: 807 added; 468 dropped
+- retired parent dispositions: 157 split to retained children; 12 dropped with no live child assignment
+- hard cut: no compatibility aliases, automatic split-child inheritance, or rejected-observation memberships
+- raw decision package: wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first
+- raw receipt SHA-256: cd16cf43eb4101388960fe2feb93803055ab2213a88b10e163d5a949ebce233e
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first/axes.jsonl`; sha256: `4c4072e3c2b837e6f39250f45285d15f92a5ccdf49dea746abe1ccd53cce5c6a`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first/concepts.jsonl`; sha256: `6f4280585f544b5df209c2bffb1c604019f075584a4290ad423ee79369f851bb`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first/memberships.jsonl`; sha256: `7a9a0cfe4b0e76d123eb5f3b34adbef9a41d63aa9e5c2c27e2991369804a4cb9`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first/proposed-concepts.jsonl`; sha256: `827f342d598372b9c44009f40fb8d1bb15df232fc448329a61858342cbe5fa8c`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first/receipt.json`; sha256: `cd16cf43eb4101388960fe2feb93803055ab2213a88b10e163d5a949ebce233e`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first/split-membership-reviews/sha256-070187be9af502791689e8eed3e997a62de56c3591ddbf274ebd7fda4cb13791-source-omissions.jsonl`; sha256: `070187be9af502791689e8eed3e997a62de56c3591ddbf274ebd7fda4cb13791`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first/split-membership-reviews/sha256-1183115bebf06c5df62276e6401c649c074b7fa09c009b3116441b451de25e1b-known-false-memberships.jsonl`; sha256: `1183115bebf06c5df62276e6401c649c074b7fa09c009b3116441b451de25e1b`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first/split-membership-reviews/sha256-158d3709cc19329a0c3e3cc98babdfe1b90eab3744615a5547f80add2b26650f-pass-b.jsonl`; sha256: `158d3709cc19329a0c3e3cc98babdfe1b90eab3744615a5547f80add2b26650f`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first/split-membership-reviews/sha256-24d79b65b3c8ac37c6213f1ea4b32b1eba63356573daac671e731108bd5c7b22-pass-a.jsonl`; sha256: `24d79b65b3c8ac37c6213f1ea4b32b1eba63356573daac671e731108bd5c7b22`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first/split-membership-reviews/sha256-3eeda647986eb09ae54cc8480fa314af99103ec1469cd20430711d3d174e1e47-disagreement-adjudications.jsonl`; sha256: `3eeda647986eb09ae54cc8480fa314af99103ec1469cd20430711d3d174e1e47`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first/split-membership-reviews/sha256-487815b9177cd62440f8776727a7aae8fbdb285a0cdc3aeb4368061a1ac8479f-source-anchor-corrections.jsonl`; sha256: `487815b9177cd62440f8776727a7aae8fbdb285a0cdc3aeb4368061a1ac8479f`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first/split-membership-reviews/sha256-609cec55c014494326ac7dd18c92d89191aab0b1c173c12cac65e70f723443c4-primary-pass-a.jsonl`; sha256: `609cec55c014494326ac7dd18c92d89191aab0b1c173c12cac65e70f723443c4`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first/split-membership-reviews/sha256-683c378b0b34db4581ff9f6382279d55fc2acbfb02413ffa60d1362445d0d88e-source-omission-zero-results.jsonl`; sha256: `683c378b0b34db4581ff9f6382279d55fc2acbfb02413ffa60d1362445d0d88e`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/concept-first/split-membership-reviews/sha256-b80056db44e0f6e2bed1f43c62887a238fd82db75cdfd2be7e815d5ea8187180-primary-pass-b.jsonl`; sha256: `b80056db44e0f6e2bed1f43c62887a238fd82db75cdfd2be7e815d5ea8187180`

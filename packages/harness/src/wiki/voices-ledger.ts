@@ -1,11 +1,15 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { getRepoRoot } from "../paths.js";
-import { fieldValue, listFieldValue } from "./observation-ledger.js";
+import {
+  fencedYamlRecordBlocks,
+  parseCanonicalYamlRecord,
+  replaceFencedYamlRecordBlocks,
+  type CanonicalYamlRecord,
+  type CanonicalYamlValue,
+} from "./fenced-record.js";
 
 declare const Bun: { TOML: { parse(content: string): unknown } };
-
-const YAML_BLOCK_RE = /```yaml\n([\s\S]*?)\n```/gu;
 
 export type VoiceMarkdownBlock = {
   content: string;
@@ -202,21 +206,14 @@ export type VoiceRecord = {
   reviewStatus: string;
 };
 
-function countLinesBefore(content: string, index: number) {
-  return content.slice(0, index).split("\n").length;
-}
-
 export function voiceMarkdownBlocks(content: string): VoiceMarkdownBlock[] {
-  return [...content.matchAll(YAML_BLOCK_RE)].map((match, index) => {
-    const block = match[1] ?? "";
-    return {
-      content: block,
-      fullMatch: match[0],
-      startLine: countLinesBefore(content, match.index ?? 0) + 1,
-      index,
-      voiceId: fieldValue(block, "voice_id"),
-    };
-  });
+  return fencedYamlRecordBlocks(content).map((block) => ({
+    content: block.content,
+    fullMatch: block.fullMatch,
+    startLine: block.startLine,
+    index: block.index,
+    voiceId: scalarString(block.record.voice_id),
+  }));
 }
 
 export function voiceYamlBlocks(content: string) {
@@ -224,58 +221,49 @@ export function voiceYamlBlocks(content: string) {
 }
 
 export function replaceVoiceYamlBlocks(content: string, replacer: (block: string, fullMatch: string) => string) {
-  return content.replace(YAML_BLOCK_RE, (fullMatch, block: string) => replacer(block, fullMatch));
+  return replaceFencedYamlRecordBlocks(content, (block) => replacer(block.content, block.fullMatch));
 }
 
-function parseNumber(value: string | undefined) {
-  if (value === undefined || value === "") return undefined;
+function isRecord(value: CanonicalYamlValue | undefined): value is CanonicalYamlRecord {
+  return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+
+function scalarString(value: CanonicalYamlValue | undefined) {
+  if (typeof value === "string") return value;
+  if (typeof value === "number" || typeof value === "boolean") return String(value);
+  return undefined;
+}
+
+function integerValue(value: CanonicalYamlValue | undefined) {
+  if (typeof value === "number") return Number.isInteger(value) ? value : undefined;
+  if (typeof value !== "string" || value === "") return undefined;
   const parsed = Number(value);
   return Number.isInteger(parsed) ? parsed : undefined;
 }
 
-function unquote(value: string) {
-  return value.trim().replace(/^"([\s\S]*)"$/u, "$1").replace(/\\"/gu, '"').replace(/\\\\/gu, "\\");
+function stringList(value: CanonicalYamlValue | undefined) {
+  if (!Array.isArray(value)) return [];
+  return value.flatMap((entry) => scalarString(entry) ?? []);
 }
 
-/**
- * Pull the nested block under a top-level `key:` — the indented lines that
- * follow it, stopping at the next unindented line.
- */
-function nestedBlock(block: string, key: string) {
-  const match = new RegExp(`^${key}:\\s*$`, "mu").exec(block);
-  if (!match) return undefined;
-  const lines: string[] = [];
-  for (const line of block.slice((match.index ?? 0) + match[0].length).split("\n").slice(1)) {
-    if (line.trim().length > 0 && /^\S/u.test(line)) break;
-    lines.push(line);
-  }
-  return lines.join("\n");
-}
-
-function parseEvidenceRefs(block: string): VoiceEvidenceRef[] {
-  const body = nestedBlock(block, "evidence_refs");
-  if (body === undefined) return [];
-  const entries: string[] = [];
-  for (const line of body.split("\n")) {
-    if (/^\s+-\s/u.test(line)) entries.push(line.replace(/^\s+-\s/u, "  "));
-    else if (entries.length > 0) entries[entries.length - 1] += `\n${line}`;
-  }
-  const scalar = (entry: string, name: string) => {
-    const match = new RegExp(`^\\s*${name}:\\s*(.*)$`, "mu").exec(entry);
-    return match ? unquote(match[1] ?? "") : undefined;
-  };
-  return entries.map((entry) => ({
-    kind: scalar(entry, "kind") ?? "",
+function parseEvidenceRefs(record: CanonicalYamlRecord): VoiceEvidenceRef[] {
+  const values = record.evidence_refs;
+  if (!Array.isArray(values)) return [];
+  return values.map((value) => {
+    const entry = isRecord(value) ? value : {};
+    return {
+    kind: scalarString(entry.kind) ?? "",
     // `cue` is the default: a ref that says nothing about its role is evidence
     // for this span's own owner, and is held to the in-span requirement.
-    role: scalar(entry, "role") ?? "cue",
-    text: scalar(entry, "text") ?? "",
-    startChar: parseNumber(scalar(entry, "start_char")) ?? Number.NaN,
-    endChar: parseNumber(scalar(entry, "end_char")) ?? Number.NaN,
-    antecedentText: scalar(entry, "antecedent_text"),
-    antecedentStartChar: parseNumber(scalar(entry, "antecedent_start_char")),
-    antecedentEndChar: parseNumber(scalar(entry, "antecedent_end_char")),
-  }));
+    role: scalarString(entry.role) ?? "cue",
+    text: scalarString(entry.text) ?? "",
+    startChar: integerValue(entry.start_char) ?? Number.NaN,
+    endChar: integerValue(entry.end_char) ?? Number.NaN,
+    antecedentText: scalarString(entry.antecedent_text),
+    antecedentStartChar: integerValue(entry.antecedent_start_char),
+    antecedentEndChar: integerValue(entry.antecedent_end_char),
+  };
+  });
 }
 
 /**
@@ -285,31 +273,28 @@ function parseEvidenceRefs(block: string): VoiceEvidenceRef[] {
  * position in every source file.
  */
 export function parseVoiceRecord(block: string): VoiceRecord {
-  const charSpan = nestedBlock(block, "char_span") ?? "";
-  const limits = fieldValue(block, "limits");
-  const nested = (name: string) => {
-    const match = new RegExp(`^\\s*${name}:\\s*(.*)$`, "mu").exec(charSpan);
-    return match ? unquote(match[1] ?? "") : undefined;
-  };
+  const record = parseCanonicalYamlRecord(block, { context: "voice record" });
+  const charSpan = isRecord(record.char_span) ? record.char_span : {};
+  const limits = scalarString(record.limits);
   return {
-    voiceId: fieldValue(block, "voice_id") ?? "",
-    sourceWork: fieldValue(block, "source_work") ?? "",
-    outerTurnId: fieldValue(block, "outer_turn_id") ?? "",
-    stephanusSpan: fieldValue(block, "stephanus_span") ?? "",
-    startChar: parseNumber(nested("start_char")) ?? Number.NaN,
-    endChar: parseNumber(nested("end_char")) ?? Number.NaN,
-    sourcePath: fieldValue(block, "source_path") ?? "",
-    sourceSha256: fieldValue(block, "source_sha256") ?? "",
-    spanSha256: fieldValue(block, "span_sha256") ?? "",
-    voiceChain: listFieldValue(block, "voice_chain"),
-    depth: parseNumber(fieldValue(block, "depth")) ?? Number.NaN,
-    resolution: (fieldValue(block, "resolution") ?? "") as VoiceResolution,
-    evidenceRefs: parseEvidenceRefs(block),
-    reviewedAttribution: parseReviewedAttribution(block),
-    candidateOwners: listFieldValue(block, "candidate_owners"),
-    unresolvedReason: fieldValue(block, "unresolved_reason") ?? "",
+    voiceId: scalarString(record.voice_id) ?? "",
+    sourceWork: scalarString(record.source_work) ?? "",
+    outerTurnId: scalarString(record.outer_turn_id) ?? "",
+    stephanusSpan: scalarString(record.stephanus_span) ?? "",
+    startChar: integerValue(charSpan.start_char) ?? Number.NaN,
+    endChar: integerValue(charSpan.end_char) ?? Number.NaN,
+    sourcePath: scalarString(record.source_path) ?? "",
+    sourceSha256: scalarString(record.source_sha256) ?? "",
+    spanSha256: scalarString(record.span_sha256) ?? "",
+    voiceChain: stringList(record.voice_chain),
+    depth: integerValue(record.depth) ?? Number.NaN,
+    resolution: (scalarString(record.resolution) ?? "") as VoiceResolution,
+    evidenceRefs: parseEvidenceRefs(record),
+    reviewedAttribution: parseReviewedAttribution(record),
+    candidateOwners: stringList(record.candidate_owners),
+    unresolvedReason: scalarString(record.unresolved_reason) ?? "",
     ...(limits === undefined ? {} : { limits }),
-    reviewStatus: fieldValue(block, "review_status") ?? "unreviewed",
+    reviewStatus: scalarString(record.review_status) ?? "unreviewed",
   };
 }
 
@@ -320,41 +305,17 @@ export function parseVoiceRecord(block: string): VoiceRecord {
  * from "this record carries explicit evidence instead", and the validator could
  * not tell the two apart to complain about the right one.
  */
-function parseReviewedAttribution(block: string): VoiceReviewedAttribution | undefined {
-  const body = nestedBlock(block, "reviewed_attribution");
-  if (body === undefined) return undefined;
-  const scalar = (name: string) => {
-    const match = new RegExp(`^\\s*${name}:\\s*(.*)$`, "mu").exec(body);
-    return match ? unquote(match[1] ?? "") : undefined;
-  };
-  const contextBody = (() => {
-    const match = /^\s*context_span:\s*$/mu.exec(body);
-    if (!match) return "";
-    const after = body.slice((match.index ?? 0) + match[0].length).split("\n").slice(1);
-    const lines: string[] = [];
-    for (const line of after) {
-      if (line.trim().length > 0 && /^\s{0,2}\S/u.test(line)) break;
-      lines.push(line);
-    }
-    return lines.join("\n");
-  })();
-  const contextScalar = (name: string) => {
-    const match = new RegExp(`^\\s*${name}:\\s*(.*)$`, "mu").exec(contextBody);
-    return match ? unquote(match[1] ?? "") : undefined;
-  };
-
-  const owners = /^\s*candidate_owners:\s*(.*)$/mu.exec(body)?.[1] ?? "";
+function parseReviewedAttribution(record: CanonicalYamlRecord): VoiceReviewedAttribution | undefined {
+  if (!Object.hasOwn(record, "reviewed_attribution")) return undefined;
+  const body = isRecord(record.reviewed_attribution) ? record.reviewed_attribution : {};
+  const context = isRecord(body.context_span) ? body.context_span : {};
   return {
-    kind: scalar("kind") ?? "",
-    candidateOwners: owners
-      .replace(/^\[|\]$/gu, "")
-      .split(",")
-      .map((entry) => unquote(entry.trim()))
-      .filter((entry) => entry.length > 0),
-    contextStartChar: parseNumber(contextScalar("start_char")) ?? Number.NaN,
-    contextEndChar: parseNumber(contextScalar("end_char")) ?? Number.NaN,
-    contextSha256: contextScalar("text_sha256") ?? "",
-    rationale: scalar("rationale") ?? "",
+    kind: scalarString(body.kind) ?? "",
+    candidateOwners: stringList(body.candidate_owners),
+    contextStartChar: integerValue(context.start_char) ?? Number.NaN,
+    contextEndChar: integerValue(context.end_char) ?? Number.NaN,
+    contextSha256: scalarString(context.text_sha256) ?? "",
+    rationale: scalarString(body.rationale) ?? "",
   };
 }
 

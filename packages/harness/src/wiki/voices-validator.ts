@@ -8,7 +8,7 @@ import {
   voiceJoinPath,
 } from "../derived/voice-joins.js";
 import { isVoiceCutoverActive, voiceCutoverRegistryPath } from "../derived/voice-cutovers.js";
-import { parseTurnIndexToon, type TurnIndex, turnIndexPath } from "../derived/turns.js";
+import { parseTurnIndexToon, semanticTurnStartChar, type TurnIndex, turnIndexPath } from "../derived/turns.js";
 import { getRepoRoot } from "../paths.js";
 import { stephanusMarkers } from "../source.js";
 import { claimYamlBlocks } from "./claim-ledger.js";
@@ -560,7 +560,7 @@ export function validateVoicesLedger(path: string, content: string): VoicesLedge
     records.push({ record, line: block.startLine });
   }
 
-  issues.push(...validateVoiceGeometry(records, turnIndex));
+  issues.push(...validateVoiceGeometry(records, turnIndex, sourceText));
   return issues;
 }
 
@@ -1192,6 +1192,7 @@ function validateFlankedRecord(
 function validateVoiceGeometry(
   records: Array<{ record: VoiceRecord; line: number }>,
   turnIndex: TurnIndex | undefined,
+  sourceText: string | undefined,
 ): VoicesLedgerValidationIssue[] {
   const issues: VoicesLedgerValidationIssue[] = [];
   const usable = records.filter(
@@ -1280,7 +1281,7 @@ function validateVoiceGeometry(
         .filter(({ record }) => record.depth === minDepth)
         .map(({ record }) => record)
         .sort((a, b) => a.startChar - b.startChar);
-      let cursor = turn.startChar;
+      let cursor = sourceText === undefined ? turn.startChar : semanticTurnStartChar(turn, sourceText);
       for (const record of base) {
         if (record.startChar > cursor) {
           issues.push({

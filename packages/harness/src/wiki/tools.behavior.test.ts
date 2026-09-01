@@ -40,13 +40,15 @@ function readFixture(path: string) {
 function fixtureLedger({
   observationId = "obs_testdialogue_0001",
   span = "2a-2b",
-  featureLabel = "test_label_one",
   observation = "The speaker makes a testable procedural claim.",
+  reviewStatus = "unreviewed",
+  supportsClaimIds = [] as string[],
 }: {
   observationId?: string;
   span?: string;
-  featureLabel?: string;
   observation?: string;
+  reviewStatus?: string;
+  supportsClaimIds?: string[];
 } = {}) {
   const { source_ref } = resolveSourceSpan("testdialogue", span);
 
@@ -66,12 +68,10 @@ source_ref:
   text_sha256: ${source_ref.text_sha256}
 greek_terms: []
 english_gloss: Test gloss.
-feature_family: elenchus
-feature_label: ${featureLabel}
 observation: ${observation}
 textual_basis: The cited span contains the procedural exchange.
 limits: This observation records only the local exchange.
-review_status: unreviewed
+${supportsClaimIds.length > 0 ? `supports_claim_ids: [${supportsClaimIds.join(", ")}]\n` : ""}review_status: ${reviewStatus}
 \`\`\`
 `;
 }
@@ -82,12 +82,14 @@ function fixtureClaimLedger({
   speaker = '"ΣΩ."',
   content = "The speaker makes a testable claim.",
   reviewStatus = "unreviewed",
+  observationIds = [] as string[],
 }: {
   claimId?: string;
   span?: string;
   speaker?: string;
   content?: string;
   reviewStatus?: string;
+  observationIds?: string[];
 } = {}) {
   const { source_ref } = resolveSourceSpan("testdialogue", span);
 
@@ -121,7 +123,7 @@ stance_events:
       end_char: ${source_ref.end_char}
       text_sha256: ${source_ref.text_sha256}
 final_status: left_standing
-observation_ids: []
+observation_ids: [${observationIds.join(", ")}]
 limits: "No later span in this test ledger coverage retracts this claim."
 review_status: ${reviewStatus}
 \`\`\`
@@ -175,9 +177,7 @@ describe("wiki tool behavior", () => {
 
     await tools.wiki_commit_observation!.execute("call-commit", { path });
 
-    expect(readFixture(path)).toContain("feature_id: feature_candidate_001");
-    expect(readFixture("wiki/features-so-far.md")).toContain("test_label_one");
-    expect(readFixture("wiki/features-so-far.md")).toContain("obs_testdialogue_0001");
+    expect(readFixture(path)).toContain("observation_id: obs_testdialogue_0001");
   });
 
   it("rejects commit without a staged ledger", async () => {
@@ -233,7 +233,7 @@ describe("wiki tool behavior", () => {
       fixtureLedger({
         observationId: "obs_testdialogue_0002",
         span: "2b-3a",
-        featureLabel: "test_label_two",
+        observation: "The second span contains a distinct procedural exchange.",
       }),
     ].join("\n\n");
     writeFileSync(join(root, path), existingLedger, "utf8");
@@ -257,7 +257,7 @@ describe("wiki tool behavior", () => {
         fixtureLedger({
           observationId: "obs_testdialogue_0002",
           span: "2b-3a",
-          featureLabel: "test_label_two",
+          observation: "The second span contains a distinct procedural exchange.",
         }),
       ].join("\n\n"),
     });
@@ -274,26 +274,6 @@ describe("wiki tool behavior", () => {
     expect(ledger).toContain("review_status: unreviewed");
   });
 
-  it("validates registry sync and reuses existing feature entries on commit", async () => {
-    const tools = toolMap();
-    const path = "wiki/observations/testdialogue.md";
-    await tools.wiki_stage_observation!.execute("call-stage-1", {
-      path,
-      content: fixtureLedger(),
-    });
-    await tools.wiki_commit_observation!.execute("call-commit-1", { path });
-
-    await tools.wiki_stage_observation!.execute("call-stage-2", {
-      path,
-      content: fixtureLedger({ observationId: "obs_testdialogue_0002" }),
-    });
-    await tools.wiki_commit_observation!.execute("call-commit-2", { path });
-
-    const registry = readFixture("wiki/features-so-far.md");
-    expect([...registry.matchAll(/^### feature_candidate_001$/gmu)]).toHaveLength(1);
-    expect(registry).toContain("- **observations:** obs_testdialogue_0001, obs_testdialogue_0002");
-  });
-
   it("appends new observation records even when incoming draft ids collide", async () => {
     const tools = toolMap("ingest-segmented");
     const path = "wiki/observations/testdialogue.md";
@@ -308,7 +288,7 @@ describe("wiki tool behavior", () => {
         fixtureLedger({
           observationId: "obs_testdialogue_0001",
           span: "2b-3a",
-          featureLabel: "test_label_two",
+          observation: "The second span contains a distinct procedural exchange.",
         }),
       ].join("\n\n"),
     });
@@ -318,11 +298,6 @@ describe("wiki tool behavior", () => {
     expect(ledger).toContain("observation_id: obs_testdialogue_0001");
     expect(ledger).toContain("observation_id: obs_testdialogue_0002");
 
-    const registry = readFixture("wiki/features-so-far.md");
-    expect(registry).toContain("test_label_one");
-    expect(registry).toContain("test_label_two");
-    expect(registry).toContain("obs_testdialogue_0001");
-    expect(registry).toContain("obs_testdialogue_0002");
   });
 
   it("terminates segmented ingest when an empty append marks no observations", async () => {
@@ -351,7 +326,6 @@ describe("wiki tool behavior", () => {
       content: fixtureLedger({
         observationId: "obs_testdialogue_0002",
         span: "2b-3a",
-        featureLabel: "test_label_two",
         observation: "ΣΩ. Greek text was copied into prose.",
       }),
     })).rejects.toThrow(/greek_outside_terms/);
@@ -361,7 +335,7 @@ describe("wiki tool behavior", () => {
       content: fixtureLedger({
         observationId: "obs_testdialogue_0003",
         span: "2b-3a",
-        featureLabel: "test_label_two",
+        observation: "The second span contains a distinct procedural exchange.",
       }),
     });
 
@@ -371,8 +345,6 @@ describe("wiki tool behavior", () => {
     expect(ledger).toContain("observation_id: obs_testdialogue_0002");
     expect(ledger).not.toContain("observation_id: obs_testdialogue_0003");
 
-    const registry = readFixture("wiki/features-so-far.md");
-    expect(registry).toContain("- **observations:** obs_testdialogue_0002");
   });
 
   it("rejects bare YAML observation appends instead of silently no-oping", async () => {
@@ -403,7 +375,7 @@ describe("wiki tool behavior", () => {
     })).rejects.toThrow(/source-span call limit exceeded/);
   });
 
-  it("allows distinct feature labels on the same source span", async () => {
+  it("allows distinct observations on the same source span", async () => {
     const tools = toolMap("ingest-segmented");
     const path = "wiki/observations/testdialogue.md";
 
@@ -417,17 +389,17 @@ describe("wiki tool behavior", () => {
       content: fixtureLedger({
         observationId: "obs_testdialogue_0002",
         span: "2a-2b",
-        featureLabel: "test_label_two",
+        observation: "The speaker also gives a distinct procedural answer.",
       }),
     });
 
     const ledger = readFixture(path);
     expect([...ledger.matchAll(/^observation_id:/gmu)]).toHaveLength(2);
-    expect(ledger).toContain("feature_label: test_label_one");
-    expect(ledger).toContain("feature_label: test_label_two");
+    expect(ledger).toContain("The speaker makes a testable procedural claim.");
+    expect(ledger).toContain("The speaker also gives a distinct procedural answer.");
   });
 
-  it("rejects segmented appends that duplicate an existing source span and feature label", async () => {
+  it("rejects an exact duplicate source-bound observation", async () => {
     const tools = toolMap("ingest-segmented");
     const path = "wiki/observations/testdialogue.md";
 
@@ -441,14 +413,13 @@ describe("wiki tool behavior", () => {
       content: fixtureLedger({
         observationId: "obs_testdialogue_0002",
         span: "2a-2b",
-        observation: "The speaker makes the same kind of procedural claim again.",
       }),
-    })).rejects.toThrow(/Duplicate source span\/feature label/);
+    })).rejects.toThrow(/Duplicate source-bound observation/);
 
     expect([...readFixture(path).matchAll(/^observation_id:/gmu)]).toHaveLength(1);
   });
 
-  it("appends claim records with assigned ids and no feature registry sync", async () => {
+  it("appends claim records with assigned ids", async () => {
     const tools = toolMap("claims-segmented");
     const path = "wiki/claims/testdialogue.md";
 
@@ -465,7 +436,6 @@ describe("wiki tool behavior", () => {
     expect([...ledger.matchAll(/^claim_id:/gmu)]).toHaveLength(2);
     expect(ledger).toContain("claim_id: claim_testdialogue_0001");
     expect(ledger).toContain("claim_id: claim_testdialogue_0002");
-    expect(existsSync(join(root, "wiki/features-so-far.md"))).toBe(false);
   });
 
   it("canonicalizes segmented claim source refs before validation", async () => {
@@ -526,11 +496,16 @@ describe("wiki tool behavior", () => {
     const appendTools = toolMap("claims-segmented");
     const reviewTools = toolMap("claims-review-segmented");
     const path = "wiki/claims/testdialogue.md";
+    writeFileSync(
+      join(root, "wiki/observations/testdialogue.md"),
+      fixtureLedger({ reviewStatus: "accepted", supportsClaimIds: ["claim_testdialogue_0001"] }),
+      "utf8",
+    );
 
     await appendTools.wiki_append_claims!.execute("call-claim-append-review-fixture", {
       path,
       content: [
-        fixtureClaimLedger(),
+        fixtureClaimLedger({ observationIds: ["obs_testdialogue_0001"] }),
         fixtureClaimLedger({ claimId: "claim_testdialogue_0002", span: "2b-3a" }),
       ].join("\n\n"),
     });

@@ -1,0 +1,823 @@
+{
+  "accepted_observations": 56,
+  "axis_id": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+  "axis_key": "turn_geometry",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record argument transition marker within the turn geometry axis?",
+  "concept_id": "concept_sha256_68bf29f620f71d7f25103cff2cc5fb7c434e411677402be60af56ed8d226e27c",
+  "concept_key": "argument_transition_marker",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_73be147bc9b536edc5ec6f3ddd77d1584a4253a892a9164b8600dd7463aed95e",
+      "conceptKey": "explicit_procedure_control",
+      "overlappingObservations": 4
+    },
+    {
+      "axisId": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+      "axisKey": "elenchus",
+      "conceptId": "concept_sha256_ca19f2ff49aa88032e414cbe0234e4c52d0ae2e3d8ae66a62beaca1049e4485b",
+      "conceptKey": "assent_chain",
+      "overlappingObservations": 3
+    },
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_b2b90d32d2ce789b531706988a4495479f3f47da6355cde68b679ba48c0d60c2",
+      "conceptKey": "recapitulation_or_restart",
+      "overlappingObservations": 3
+    },
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_048971ac1f8b5b2e87ca756c035b8afec489aacad5ea11bb46d176aa1e4f05f4",
+      "conceptKey": "definition_proposed",
+      "overlappingObservations": 2
+    },
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_12f02173655b2b3f9d0c5ad478c3c195309db7b81175ab186f242d52f0360e47",
+      "conceptKey": "definition_by_dichotomous_division",
+      "overlappingObservations": 2
+    },
+    {
+      "axisId": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+      "axisKey": "elenchus",
+      "conceptId": "concept_sha256_76a28b86eea8dba63b05f315f7c7b58260d71aee19db9797e58cc17582516feb",
+      "conceptKey": "hypothesis_condition_stated",
+      "overlappingObservations": 2
+    },
+    {
+      "axisId": "axis_sha256_344e394ea1b45ae5ce3a2751a410bacb90e8d8ffb0f3d752e60fe72d20b26d88",
+      "axisKey": "craft_analogy",
+      "conceptId": "concept_sha256_79ee57aae2c06392fd4a7d8de90439bc55d86f78ac09dfb1f30d4a9ab73a461d",
+      "conceptKey": "craft_analogy",
+      "overlappingObservations": 2
+    },
+    {
+      "axisId": "axis_sha256_344e394ea1b45ae5ce3a2751a410bacb90e8d8ffb0f3d752e60fe72d20b26d88",
+      "axisKey": "craft_analogy",
+      "conceptId": "concept_sha256_ba0ce063938ac325d8721cadcbe1c86b1413cf66c8600098a0d57d646a8bc99d",
+      "conceptKey": "expert_craft_analogy",
+      "overlappingObservations": 2
+    },
+    {
+      "axisId": "axis_sha256_9791a05a3c77492d9f59ed68b54e30b71e3535fe91a87fd7c425fcb39272f666",
+      "axisKey": "prosopography",
+      "conceptId": "concept_sha256_8dfb1cf61e184dd8f5c65e3d43e66b2045818f99ed67a45d564910617761e6f9",
+      "conceptKey": "named_interlocutor_role",
+      "overlappingObservations": 2
+    },
+    {
+      "axisId": "axis_sha256_b1977b0b6a213778cae77c4b4d390795f58b6bfa028f188496292233a47cf4a8",
+      "axisKey": "myth_demarcation",
+      "conceptId": "concept_sha256_9942ec14824418f1e32c53562d68f0abdda813e9954c17bfa9007f81da678931",
+      "conceptKey": "myth_logos_boundary",
+      "overlappingObservations": 2
+    },
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_39a5dbcc6cfb83b920c0cb345483a4c61addc8a9cfd22b1ca10abc5fc90a17d5",
+      "conceptKey": "definition_by_near_synonym_equivalence",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_5036e70b2e53d90ea1b34f2b947e3a2b913d6f0e3efe31f7103cce489c19ff71",
+      "conceptKey": "definiendum_marked_for_inquiry",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_9d2136162f2ade91156f55f3f672177529ee29bc75fc2bfa76dd1a987dcbf2d0",
+      "conceptKey": "definition_established_by_assent_chain",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_c8d93eabf1866b296ea8ff37079db307c35e6ecd49168dfd5df7a3326fcfa1bc",
+      "conceptKey": "definition_revised_after_objection",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_d3b94d7870c7f0b36f3bf1a112ae7ea6ea1785232cbf4afc966687a244802bb2",
+      "conceptKey": "deficiendum_marked_for_inquiry",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 17,
+  "dimension": "discourse_structure",
+  "instance_ids": [
+    "obs_cratylus_0033",
+    "obs_cratylus_0199",
+    "obs_critias_0051",
+    "obs_euthydemus_0045",
+    "obs_gorgias_0313",
+    "obs_greater-hippias_0021",
+    "obs_laws_0036",
+    "obs_laws_0072",
+    "obs_laws_0102",
+    "obs_laws_0121",
+    "obs_laws_0262",
+    "obs_laws_0331",
+    "obs_laws_0339",
+    "obs_laws_0360",
+    "obs_laws_0397",
+    "obs_laws_0404",
+    "obs_laws_0425",
+    "obs_laws_0435",
+    "obs_laws_0442",
+    "obs_laws_0446",
+    "obs_laws_0481",
+    "obs_laws_0500",
+    "obs_menexenus_0078",
+    "obs_parmenides_0073",
+    "obs_parmenides_0123",
+    "obs_parmenides_0137",
+    "obs_parmenides_0151",
+    "obs_parmenides_0166",
+    "obs_phaedo_0132",
+    "obs_phaedo_0149",
+    "obs_phaedrus_0274",
+    "obs_phaedrus_0283",
+    "obs_philebus_0067",
+    "obs_philebus_0147",
+    "obs_philebus_0173",
+    "obs_philebus_0278",
+    "obs_philebus_0282",
+    "obs_protagoras_0028",
+    "obs_protagoras_0137",
+    "obs_protagoras_0182",
+    "obs_protagoras_0221",
+    "obs_republic_0223",
+    "obs_republic_0317",
+    "obs_republic_0335",
+    "obs_republic_0497",
+    "obs_republic_0697",
+    "obs_republic_0900",
+    "obs_republic_0901",
+    "obs_republic_0903",
+    "obs_republic_0904",
+    "obs_sophist_0244",
+    "obs_sophist_0265",
+    "obs_sophist_0275",
+    "obs_statesman_0008",
+    "obs_symposium_0053",
+    "obs_theaetetus_0245"
+  ],
+  "instances": [
+    {
+      "dialogue": "cratylus",
+      "observationId": "obs_cratylus_0033",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΡΜ."
+      ],
+      "stephanusSpan": "388e-389a",
+      "turnCount": 8
+    },
+    {
+      "dialogue": "cratylus",
+      "observationId": "obs_cratylus_0199",
+      "speakers": [
+        "ΕΡΜ.",
+        "ΣΩ."
+      ],
+      "stephanusSpan": "414e-415a",
+      "turnCount": 4
+    },
+    {
+      "dialogue": "critias",
+      "observationId": "obs_critias_0051",
+      "speakers": [
+        "ΚΡΙ."
+      ],
+      "stephanusSpan": "113a",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "euthydemus",
+      "observationId": "obs_euthydemus_0045",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "278c-278d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "gorgias",
+      "observationId": "obs_gorgias_0313",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "508c-508d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "greater-hippias",
+      "observationId": "obs_greater-hippias_0021",
+      "speakers": [
+        "ΙΠ.",
+        "ΣΩ."
+      ],
+      "stephanusSpan": "284a-284b",
+      "turnCount": 10
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0036",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "630a-630b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0072",
+      "speakers": [
+        "ΑΘ.",
+        "ΚΛ."
+      ],
+      "stephanusSpan": "635d-635e",
+      "turnCount": 3
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0102",
+      "speakers": [
+        "ΑΘ.",
+        "ΜΕ."
+      ],
+      "stephanusSpan": "642a-642b",
+      "turnCount": 2
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0121",
+      "speakers": [
+        "ΑΘ.",
+        "ΚΛ."
+      ],
+      "stephanusSpan": "645c",
+      "turnCount": 2
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0262",
+      "speakers": [
+        "ΑΘ.",
+        "ΚΛ."
+      ],
+      "stephanusSpan": "672d-672e",
+      "turnCount": 9
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0331",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "692e-693a",
+      "turnCount": 2
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0339",
+      "speakers": [
+        "ΑΘ.",
+        "ΚΛ."
+      ],
+      "stephanusSpan": "689d-689e",
+      "turnCount": 4
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0360",
+      "speakers": [
+        "ΑΘ.",
+        "ΚΛ."
+      ],
+      "stephanusSpan": "652a-652b",
+      "turnCount": 3
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0397",
+      "speakers": [
+        "ΑΘ.",
+        "ΜΕ."
+      ],
+      "stephanusSpan": "691b",
+      "turnCount": 6
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0404",
+      "speakers": [
+        "ΑΘ.",
+        "ΚΛ."
+      ],
+      "stephanusSpan": "693c",
+      "turnCount": 2
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0425",
+      "speakers": [
+        "ΑΘ.",
+        "ΜΕ."
+      ],
+      "stephanusSpan": "698a",
+      "turnCount": 5
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0435",
+      "speakers": [
+        "ΜΕ.",
+        "ΑΘ."
+      ],
+      "stephanusSpan": "700a",
+      "turnCount": 4
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0442",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "701c",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0446",
+      "speakers": [
+        "ΑΘ.",
+        "ΚΛ."
+      ],
+      "stephanusSpan": "702b",
+      "turnCount": 2
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0481",
+      "speakers": [
+        "ΚΛ.",
+        "ΑΘ."
+      ],
+      "stephanusSpan": "710c",
+      "turnCount": 4
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0500",
+      "speakers": [
+        "ΑΘ.",
+        "ΚΛ."
+      ],
+      "stephanusSpan": "714b",
+      "turnCount": 3
+    },
+    {
+      "dialogue": "menexenus",
+      "observationId": "obs_menexenus_0078",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "246a-246b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "parmenides",
+      "observationId": "obs_parmenides_0073",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "138a-138b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "parmenides",
+      "observationId": "obs_parmenides_0123",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "146e-147a",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "parmenides",
+      "observationId": "obs_parmenides_0137",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "148c-148d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "parmenides",
+      "observationId": "obs_parmenides_0151",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "149c-149d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "parmenides",
+      "observationId": "obs_parmenides_0166",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "153e-154a",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "phaedo",
+      "observationId": "obs_phaedo_0132",
+      "speakers": [
+        "ΦΑΙΔ."
+      ],
+      "stephanusSpan": "86d-86e",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "phaedo",
+      "observationId": "obs_phaedo_0149",
+      "speakers": [
+        "ΦΑΙΔ."
+      ],
+      "stephanusSpan": "91a-91b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "phaedrus",
+      "observationId": "obs_phaedrus_0274",
+      "speakers": [
+        "ΦΑΙ.",
+        "ΣΩ."
+      ],
+      "stephanusSpan": "265b-265c",
+      "turnCount": 6
+    },
+    {
+      "dialogue": "phaedrus",
+      "observationId": "obs_phaedrus_0283",
+      "speakers": [
+        "ΣΩ.",
+        "ΦΑΙ."
+      ],
+      "stephanusSpan": "277a",
+      "turnCount": 5
+    },
+    {
+      "dialogue": "philebus",
+      "observationId": "obs_philebus_0067",
+      "speakers": [
+        "ΣΩ.",
+        "ΠΡΩ."
+      ],
+      "stephanusSpan": "21c-21d",
+      "turnCount": 7
+    },
+    {
+      "dialogue": "philebus",
+      "observationId": "obs_philebus_0147",
+      "speakers": [
+        "ΠΡΩ.",
+        "ΣΩ."
+      ],
+      "stephanusSpan": "34b-34c",
+      "turnCount": 14
+    },
+    {
+      "dialogue": "philebus",
+      "observationId": "obs_philebus_0173",
+      "speakers": [
+        "ΠΡΩ.",
+        "ΣΩ."
+      ],
+      "stephanusSpan": "41e-42a",
+      "turnCount": 8
+    },
+    {
+      "dialogue": "philebus",
+      "observationId": "obs_philebus_0278",
+      "speakers": [
+        "ΣΩ.",
+        "ΠΡΩ."
+      ],
+      "stephanusSpan": "50d-50e",
+      "turnCount": 3
+    },
+    {
+      "dialogue": "philebus",
+      "observationId": "obs_philebus_0282",
+      "speakers": [
+        "ΣΩ.",
+        "ΠΡΩ."
+      ],
+      "stephanusSpan": "55c-55d",
+      "turnCount": 10
+    },
+    {
+      "dialogue": "protagoras",
+      "observationId": "obs_protagoras_0028",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "314a-314b",
+      "turnCount": 2
+    },
+    {
+      "dialogue": "protagoras",
+      "observationId": "obs_protagoras_0137",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "332a-332b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "protagoras",
+      "observationId": "obs_protagoras_0182",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "339a-339b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "protagoras",
+      "observationId": "obs_protagoras_0221",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "347b-347c",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0223",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "502d-502e",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0317",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "528a-528d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0335",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "534a",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0497",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "580d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0697",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "611d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0900",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "457e-458a",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0901",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "457e-458a",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0903",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "458a-458b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0904",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "458b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "sophist",
+      "observationId": "obs_sophist_0244",
+      "speakers": [
+        "ΞΕ.",
+        "ΘΕΑΙ."
+      ],
+      "stephanusSpan": "260a-260b",
+      "turnCount": 10
+    },
+    {
+      "dialogue": "sophist",
+      "observationId": "obs_sophist_0265",
+      "speakers": [
+        "ΞΕ.",
+        "ΘΕΑΙ."
+      ],
+      "stephanusSpan": "264e-265a",
+      "turnCount": 7
+    },
+    {
+      "dialogue": "sophist",
+      "observationId": "obs_sophist_0275",
+      "speakers": [
+        "ΞΕ.",
+        "ΘΕΑΙ."
+      ],
+      "stephanusSpan": "264c-264d",
+      "turnCount": 13
+    },
+    {
+      "dialogue": "statesman",
+      "observationId": "obs_statesman_0008",
+      "speakers": [
+        "ΣΩ.",
+        "ΞΕ.",
+        "ΝΕ. ΣΩ."
+      ],
+      "stephanusSpan": "258a-258b",
+      "turnCount": 11
+    },
+    {
+      "dialogue": "symposium",
+      "observationId": "obs_symposium_0053",
+      "speakers": [
+        "ΑΠΟΛ."
+      ],
+      "stephanusSpan": "185e-186a",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "theaetetus",
+      "observationId": "obs_theaetetus_0245",
+      "speakers": [
+        "ΣΩ.",
+        "ΘΕΟ."
+      ],
+      "stephanusSpan": "183e-184a",
+      "turnCount": 3
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 16,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 5,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 5,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 4,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 9,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 3,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_68bf29f620f71d7f25103cff2cc5fb7c434e411677402be60af56ed8d226e27c",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

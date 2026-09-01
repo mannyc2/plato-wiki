@@ -1,5 +1,8 @@
 # v1.0 Completion Audit Report
 
+> Historical v1 receipt. Its counts and label-keyed projections are preserved
+> as provenance; the active corpus contract is `docs/ontology-vnext.md`.
+
 Audit date: 2026-07-07 to 2026-07-08 local time. This report records the
 post-relation rollout state after the structural relation-ledger repair commit
 `0084b17` and the operator source-publication posture sign-off in

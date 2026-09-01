@@ -357,7 +357,12 @@ function terminal(counts: ReviewCounts) {
 
 function blocksAt(root: string, path: string, parser: (content: string) => string[]) {
   const absolute = join(root, path);
-  return file(absolute) ? parser(readFileSync(absolute, "utf8")) : [];
+  if (!file(absolute)) return [];
+  try {
+    return parser(readFileSync(absolute, "utf8"));
+  } catch {
+    return [];
+  }
 }
 
 function ledgerValid(
@@ -694,7 +699,11 @@ function reportedTurnFacts(
   let atomicCohort = false;
   if (file(turnIndexAbsolute)) {
     try {
-      atomicCohort = collectAcceptedProjectionFailures(records, parseTurnIndexToon(readFileSync(turnIndexAbsolute, "utf8"))).length === 0;
+      atomicCohort = collectAcceptedProjectionFailures(
+        records,
+        parseTurnIndexToon(readFileSync(turnIndexAbsolute, "utf8")),
+        readFileSync(join(root, `raw/plato/greek/${dialogue}.txt`), "utf8"),
+      ).length === 0;
     } catch {
       atomicCohort = false;
     }

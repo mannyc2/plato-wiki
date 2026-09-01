@@ -109,49 +109,13 @@ inside the same lock that mutates the ledger. Generated artifacts live in
 gitignored `scratch/`, so merging one used to destroy the only copy of what was
 submitted and what it replaced. See `wiki/submissions/README.md`.
 
-## Label Normalization
+## Ontology vNext
 
-Label normalization is a separate hard-cutover workflow after extraction and
-review. Follow `docs/label-normalization-standards.md` and the project-local Pi
-skill `.pi/skills/plato-label-normalization/SKILL.md`. Treat the standards doc
-as the governing contract for humans, Codex subagents, and harness runs.
-
-Generate the current audit and merge-map skeleton:
-
-```bash
-bun run harness labels audit --write
-bun run harness labels plan wiki/label-consolidation/<date>.json
-```
-
-Validate and apply only after every label has an explicit `keep` or `merge`
-disposition:
-
-```bash
-bun run harness labels validate wiki/label-consolidation/<date>.json
-bun run harness labels apply wiki/label-consolidation/<date>.json
-```
-
-For staged application of a complete map, apply one family at a time:
-
-```bash
-bun run harness labels validate wiki/label-consolidation/<date>.json --family craft_analogy
-bun run harness labels apply wiki/label-consolidation/<date>.json --family craft_analogy
-```
-
-Family-scoped validation allows other families to remain `todo`; the selected
-family must have no `todo` entries and must pass the same merge-map checks.
-
-The apply step rewrites feature family, label, id, the feature registry, and
-derived artifacts. It must not edit observation prose, source refs, Greek
-terms, limits, review status, raw source files, or transcript artifacts.
-
-Regenerate and verify derived comparison artifacts:
-
-```bash
-bun run harness labels audit --write
-bun run harness clusters --write
-bun run harness site
-```
+Observation extraction is deliberately unclassified. After source and record
+review, comparison axes, concepts, and many-to-many memberships are curated in
+the strict `wiki/ontology/*.jsonl` model described by `docs/ontology-vnext.md`.
+Clusters, dossiers, and site pages are regenerated projections of that model.
+There is no compatibility reader or parallel registry.
 
 Configured DeepSeek profiles use `DEEPSEEK_API_KEY`:
 

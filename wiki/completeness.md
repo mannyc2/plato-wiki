@@ -6,9 +6,9 @@ Completeness is conjunctive. There is deliberately no aggregate percentage.
 
 ## Targets
 
-- **corpus**: READY
-- **knowledge-base**: READY
-- **audio-edition**: INCOMPLETE — CMP-AUDIO-SCREENPLAY, CMP-AUDIO-RENDER, CMP-AUDIO-MASTERING, CMP-AUDIO-MECHANICAL-QA, CMP-AUDIO-ACCEPTANCE, CMP-AUDIO-RECORDING, CMP-AUDIO-WEBSITE
+- **corpus**: INCOMPLETE — CMP-RELATIONS
+- **knowledge-base**: INCOMPLETE — CMP-RELATIONS, CMP-READINGS, CMP-WRITING-AUDIT
+- **audio-edition**: INCOMPLETE — CMP-RELATIONS, CMP-READINGS, CMP-WRITING-AUDIT, CMP-AUDIO-SCREENPLAY, CMP-AUDIO-RENDER, CMP-AUDIO-MASTERING, CMP-AUDIO-MECHANICAL-QA, CMP-AUDIO-ACCEPTANCE, CMP-AUDIO-RECORDING, CMP-AUDIO-WEBSITE
 
 ## Family summary
 
@@ -17,14 +17,14 @@ Completeness is conjunctive. There is deliberately no aggregate percentage.
 | CMP-SOURCE | pass | corpus, knowledge-base, audio-edition | 28/28 |
 | CMP-OBSERVATIONS | pass | corpus, knowledge-base, audio-edition | 27/27 |
 | CMP-CLAIMS | pass | corpus, knowledge-base, audio-edition | 27/27 |
-| CMP-RELATIONS | pass | corpus, knowledge-base, audio-edition | 29/29 |
+| CMP-RELATIONS | FAIL | corpus, knowledge-base, audio-edition | 3/29 |
 | CMP-DERIVED | pass | corpus, knowledge-base, audio-edition | 27/27 |
 | CMP-REPORTED-TURNS | pass | corpus, knowledge-base, audio-edition | 28/28 |
 | CMP-COMPARISON | pass | corpus, knowledge-base, audio-edition | 1/1 |
 | CMP-SITE | pass | corpus, knowledge-base, audio-edition | 1/1 |
 | CMP-ENGLISH | pass | knowledge-base, audio-edition | 28/28 |
-| CMP-READINGS | pass | knowledge-base, audio-edition | 27/27 |
-| CMP-WRITING-AUDIT | pass | knowledge-base, audio-edition | 27/27 |
+| CMP-READINGS | FAIL | knowledge-base, audio-edition | 25/27 |
+| CMP-WRITING-AUDIT | FAIL | knowledge-base, audio-edition | 0/27 |
 | CMP-AUDIO-TRUTH | pass | knowledge-base, audio-edition | 27/27 |
 | CMP-AUDIO-ATTRIBUTION | pass | audio-edition | 27/27 |
 | CMP-AUDIO-SCREENPLAY | FAIL | audio-edition | 0/27 |
@@ -40,39 +40,39 @@ Completeness is conjunctive. There is deliberately no aggregate percentage.
 
 | dialogue | source | observations | claims | relations | derived | reported turns | English | reading | audit | recording |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| apology | pass | pass | pass | n/a | pass | pass | pass | pass | pass | FAIL |
-| charmides | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| cratylus | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| critias | pass | pass | pass | n/a | pass | n/a | pass | pass | pass | FAIL |
-| crito | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| euthydemus | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| euthyphro | pass | pass | pass | pass | pass | n/a | pass | pass | pass | FAIL |
-| gorgias | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| greater-hippias | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| ion | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| laches | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| laws | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| lesser-hippias | pass | pass | pass | pass | pass | n/a | pass | pass | pass | FAIL |
-| lysis | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| menexenus | pass | pass | pass | n/a | pass | pass | pass | pass | pass | FAIL |
-| meno | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| parmenides | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| phaedo | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| phaedrus | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| philebus | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| protagoras | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| republic | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| sophist | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| statesman | pass | pass | pass | pass | pass | n/a | pass | pass | pass | FAIL |
-| symposium | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| theaetetus | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
-| timaeus | pass | pass | pass | pass | pass | pass | pass | pass | pass | FAIL |
+| apology | pass | pass | pass | n/a | pass | pass | pass | pass | FAIL | FAIL |
+| charmides | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| cratylus | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| critias | pass | pass | pass | FAIL | pass | n/a | pass | pass | FAIL | FAIL |
+| crito | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| euthydemus | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| euthyphro | pass | pass | pass | FAIL | pass | n/a | pass | pass | FAIL | FAIL |
+| gorgias | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| greater-hippias | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| ion | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| laches | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| laws | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| lesser-hippias | pass | pass | pass | FAIL | pass | n/a | pass | pass | FAIL | FAIL |
+| lysis | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| menexenus | pass | pass | pass | n/a | pass | pass | pass | pass | FAIL | FAIL |
+| meno | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| parmenides | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| phaedo | pass | pass | pass | FAIL | pass | pass | pass | FAIL | FAIL | FAIL |
+| phaedrus | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| philebus | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| protagoras | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| republic | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| sophist | pass | pass | pass | FAIL | pass | pass | pass | FAIL | FAIL | FAIL |
+| statesman | pass | pass | pass | FAIL | pass | n/a | pass | pass | FAIL | FAIL |
+| symposium | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| theaetetus | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
+| timaeus | pass | pass | pass | FAIL | pass | pass | pass | pass | FAIL | FAIL |
 
 ## Reported turns
 
 Nested reported turns are counted as standalone structural data. Claim joins, `derived/plato/voices/cutovers.toml` membership, and audio attribution are deliberately irrelevant to this family; accepted genuine ambiguity passes and is counted, never treated as missing data.
 
-- required=23; none=4; cohorts=261; accepted=3732; explicit=1353; reviewed_discourse=767; unresolved=1612; blocked: none
+- required=23; none=4; cohorts=260; accepted=3730; explicit=1351; reviewed_discourse=809; unresolved=1570; blocked: none
 
 ## Apparatus
 
@@ -80,6 +80,61 @@ Capability implemented; content scope `contract_pending`; required by current ta
 
 ## Blockers
 
+- **CMP-RELATIONS / charmides**: ledger=true; valid=true; 39/96; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / cratylus**: ledger=true; valid=true; 2/10; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / critias**: ledger=false; valid=false; 0/6; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / crito**: ledger=true; valid=true; 4/82; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / euthydemus**: ledger=true; valid=true; 5/9; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / euthyphro**: ledger=true; valid=true; 33/22; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / gorgias**: ledger=true; valid=true; 54/104; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / greater-hippias**: ledger=true; valid=true; 31/39; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / ion**: ledger=true; valid=true; 2/13; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / laches**: ledger=true; valid=true; 10/8; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / laws**: ledger=true; valid=true; 212/233; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / lesser-hippias**: ledger=true; valid=true; 2/1; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / lysis**: ledger=true; valid=true; 1/3; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / meno**: ledger=true; valid=true; 33/18; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / parmenides**: ledger=true; valid=true; 17/15; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / phaedo**: ledger=true; valid=true; 63/97; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / phaedrus**: ledger=true; valid=true; 1/18; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / philebus**: ledger=true; valid=true; 4/5; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / protagoras**: ledger=true; valid=true; 51/28; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / republic**: ledger=true; valid=true; 89/208; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / sophist**: ledger=true; valid=true; 11/29; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / statesman**: ledger=true; valid=true; 27/21; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / symposium**: ledger=true; valid=true; 10/22; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / theaetetus**: ledger=true; valid=true; 70/27; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / timaeus**: ledger=true; valid=true; 55/73; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current candidate set, and close review
+- **CMP-RELATIONS / cross-dialogue**: ledger=true; valid=true; 1448/3163; exact_candidate_keys=false; unreviewed=0; needs_split=0. repair the ledger, adjudicate exactly the current cross-dialogue candidate set, and close review
+- **CMP-READINGS / phaedo**: ledger=true; accepted=false; page=false. finish and accept the guided reading
+- **CMP-READINGS / sophist**: ledger=true; accepted=false; page=false. finish and accept the guided reading
+- **CMP-WRITING-AUDIT / apology**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / charmides**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / cratylus**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / critias**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / crito**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / euthydemus**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / euthyphro**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / gorgias**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / greater-hippias**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / ion**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / laches**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / laws**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / lesser-hippias**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / lysis**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / menexenus**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / meno**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / parmenides**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / phaedo**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / phaedrus**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / philebus**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / protagoras**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / republic**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / sophist**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / statesman**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / symposium**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / theaetetus**: accepted=false. complete and accept the writing audit
+- **CMP-WRITING-AUDIT / timaeus**: accepted=false. complete and accept the writing audit
 - **CMP-AUDIO-SCREENPLAY / apology**: complete=false. produce a valid screenplay
 - **CMP-AUDIO-SCREENPLAY / charmides**: complete=false. produce a valid screenplay
 - **CMP-AUDIO-SCREENPLAY / cratylus**: complete=false. produce a valid screenplay
@@ -272,12 +327,12 @@ Capability implemented; content scope `contract_pending`; required by current ta
 
 ## Quality warnings
 
-- apology: 27 accepted reported-turn record(s) record genuine ambiguity
+- apology: 3 accepted reported-turn record(s) record genuine ambiguity
 - apology: current turn index contains explicit unattributed `(none)` turns
 - charmides: 264 accepted reported-turn record(s) record genuine ambiguity
 - charmides: current turn index contains explicit unattributed `(none)` turns
 - cratylus: 1 accepted reported-turn record(s) record genuine ambiguity
-- crito: 15 accepted reported-turn record(s) record genuine ambiguity
+- crito: 1 accepted reported-turn record(s) record genuine ambiguity
 - euthydemus: 194 accepted reported-turn record(s) record genuine ambiguity
 - gorgias: 13 accepted reported-turn record(s) record genuine ambiguity
 - greater-hippias: 81 accepted reported-turn record(s) record genuine ambiguity
@@ -285,8 +340,7 @@ Capability implemented; content scope `contract_pending`; required by current ta
 - laws: 23 accepted reported-turn record(s) record genuine ambiguity
 - lysis: 332 accepted reported-turn record(s) record genuine ambiguity
 - lysis: current turn index contains explicit unattributed `(none)` turns
-- menexenus: 3 accepted reported-turn record(s) record genuine ambiguity
-- meno: 9 accepted reported-turn record(s) record genuine ambiguity
+- meno: 8 accepted reported-turn record(s) record genuine ambiguity
 - parmenides: 146 accepted reported-turn record(s) record genuine ambiguity
 - parmenides: current turn index contains explicit unattributed `(none)` turns
 - phaedo: 3 accepted reported-turn record(s) record genuine ambiguity

@@ -5,6 +5,7 @@ import { join } from "node:path";
 import { writeCommentaryBriefs } from "./commentary-briefs.js";
 import { setRepoRootForTesting } from "./paths.js";
 import { resolveSourceSpan } from "./source.js";
+import { writeOntologyVNextFixture } from "../test-support/ontology-vnext-fixture.js";
 
 let root = "";
 let restoreRepoRoot: (() => void) | undefined;
@@ -51,8 +52,6 @@ function observationBlock(id: string, span: string, status = "accepted") {
   return [
     "```yaml",
     `observation_id: ${id}`,
-    "feature_family: frame_depth",
-    "feature_label: reported_dialogue_frame",
     'observation: "An observation about the frame."',
     'limits: "Limits text."',
     "source_ref:",
@@ -127,8 +126,7 @@ function writeFixtureRepo({ withEnglish = true } = {}) {
     "utf8",
   );
 
-  mkdirSync(join(root, "wiki/dossiers/frame_depth"), { recursive: true });
-  writeFileSync(join(root, "wiki/dossiers/frame_depth/reported_dialogue_frame.md"), "# dossier\n", "utf8");
+  writeOntologyVNextFixture(root);
 }
 
 describe("commentary briefs", () => {
@@ -162,7 +160,7 @@ describe("commentary briefs", () => {
     expect(first).toContain("obs_fixture_0001");
     expect(first).toContain("claim_fixture_0001 (thesis, SPK., left_standing)");
     expect(first).toContain("rel_fixture_0001 (restatement, standing)");
-    expect(first).toContain("- wiki/dossiers/frame_depth/reported_dialogue_frame.md");
+    expect(first).toContain("- wiki/dossiers/reported_frame_structure/reported_dialogue_frame.json");
 
     const second = readFileSync(join(root, results[1]!.path), "utf8");
     expect(second).toContain("obs_fixture_0001");

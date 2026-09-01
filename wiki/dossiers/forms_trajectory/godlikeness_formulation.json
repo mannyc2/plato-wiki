@@ -1,0 +1,229 @@
+{
+  "accepted_observations": 5,
+  "axis_id": "axis_sha256_5c81cf395b56e4a5deabc1c459f7e8074e66334a4948d830b4be747f4537eb34",
+  "axis_key": "forms_trajectory",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record godlikeness formulation within the forms trajectory axis?",
+  "concept_id": "concept_sha256_8e3772ca9f0e73b2df9bf1e5fbd9acee56d56b2665288d4130eac6064e0e09f6",
+  "concept_key": "godlikeness_formulation",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_09695a561d92466e93ef6df8a2dce4ba971693ab362daf427ece777ff224c118",
+      "axisKey": "cultic_norm",
+      "conceptId": "concept_sha256_55bcfe22b0fe46f5c3e176cc8c65f07e40bbe9afb693082376c8885581672e64",
+      "conceptKey": "cultic_service_conditioned_by_soul_purity",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+      "axisKey": "elenchus",
+      "conceptId": "concept_sha256_c19f277c012bde30e96867237c1ca8ed3ef23d583eb6507859725f8c53cab0ff",
+      "conceptKey": "common_opinion_corrected",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_b2b90d32d2ce789b531706988a4495479f3f47da6355cde68b679ba48c0d60c2",
+      "conceptKey": "recapitulation_or_restart",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_344e394ea1b45ae5ce3a2751a410bacb90e8d8ffb0f3d752e60fe72d20b26d88",
+      "axisKey": "craft_analogy",
+      "conceptId": "concept_sha256_344a87b24fdd0cf18e5fe2332121c69ae01fa2bd425d5b688430b22b910fe9cf",
+      "conceptKey": "running_race_analogy",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_7dc770bb74baf5ff062220951175468a0fa1c2fb936c14a2e71eb983f23c35d8",
+      "axisKey": "closure_type",
+      "conceptId": "concept_sha256_06d037dd997063315442b0206c5d1e29a2cdf080148f91cad3758e3a542953c7",
+      "conceptKey": "reward_catalogue",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_7dc770bb74baf5ff062220951175468a0fa1c2fb936c14a2e71eb983f23c35d8",
+      "axisKey": "closure_type",
+      "conceptId": "concept_sha256_2cc3ae33527fd90c35e628a726d17848c09fda27d25adf4cbdea311228cdfebd",
+      "conceptKey": "ethical_exhortation",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_b1977b0b6a213778cae77c4b4d390795f58b6bfa028f188496292233a47cf4a8",
+      "axisKey": "myth_demarcation",
+      "conceptId": "concept_sha256_9f27ae3ab676b93a487e2fb73845b48593360a3bfc00dda63e5cf1f89a6ae73c",
+      "conceptKey": "bounded_mythic_narrative",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 5,
+  "dimension": "subject_matter",
+  "instance_ids": [
+    "obs_laws_0510",
+    "obs_phaedrus_0172",
+    "obs_philebus_0154",
+    "obs_republic_0706",
+    "obs_theaetetus_0201"
+  ],
+  "instances": [
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0510",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "716c-716d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "phaedrus",
+      "observationId": "obs_phaedrus_0172",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "254e-255a",
+      "turnCount": 2
+    },
+    {
+      "dialogue": "philebus",
+      "observationId": "obs_philebus_0154",
+      "speakers": [
+        "ΠΡΩ.",
+        "ΣΩ."
+      ],
+      "stephanusSpan": "33b",
+      "turnCount": 6
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0706",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "613b-613e",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "theaetetus",
+      "observationId": "obs_theaetetus_0201",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "176b-176c",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_8e3772ca9f0e73b2df9bf1e5fbd9acee56d56b2665288d4130eac6064e0e09f6",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

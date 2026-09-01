@@ -17,6 +17,7 @@ import {
   observationYamlBlocks,
 } from "./wiki/observation-ledger.js";
 import { listRelationLedgerPaths, relationYamlBlocks } from "./wiki/relation-ledger.js";
+import { ontologyDossierPathsByObservation } from "./wiki/ontology-vnext-repository.js";
 
 const AUDIT_SCHEMA_VERSION = 3 as const;
 const COMMENTARY_ID = /^comm_[a-z0-9-]+_\d{4}$/u;
@@ -630,6 +631,7 @@ export function buildCommentaryRewriteEvidenceSupplement(
   context = buildCommentaryRewriteEvidenceContext(dialogue),
 ): CommentaryRewriteEvidenceSupplement | undefined {
   const repoRoot = getRepoRoot();
+  const dossierPathsByObservation = ontologyDossierPathsByObservation(repoRoot);
   if (context.dialogue !== dialogue) {
     throw new Error(`Rewrite evidence context for ${context.dialogue} cannot be used for ${dialogue}`);
   }
@@ -677,13 +679,8 @@ export function buildCommentaryRewriteEvidenceSupplement(
     .map(({ record, id }) => ({ ...record, id }));
 
   const dossierPaths = [...new Set(selectedObservations
-    .map((record) => {
-      const family = fieldValue(record.block, "feature_family");
-      const label = fieldValue(record.block, "feature_label");
-      if (!family || !label) return undefined;
-      const path = `wiki/dossiers/${family}/${label}.md`;
-      return existsSync(join(repoRoot, path)) ? path : undefined;
-    })
+    .flatMap((record) => dossierPathsByObservation.get(record.id) ?? [])
+    .map((path) => existsSync(join(repoRoot, path)) ? path : undefined)
     .filter((path): path is string => path !== undefined))]
     .sort()
     .slice(0, REWRITE_EVIDENCE_MAX_DOSSIERS);
@@ -819,7 +816,7 @@ export function buildCommentaryAuditBriefsFromSnapshot(
     const observationIds = cites.flatMap((entry) => entry.observations);
     const claimIds = cites.flatMap((entry) => entry.claims);
     const relationIds = cites.flatMap((entry) => entry.relations);
-    const dossierPaths = [...new Set(cites.flatMap((entry) => entry.dossiers).map((entry) => `wiki/dossiers/${entry}.md`))].sort();
+    const dossierPaths = [...new Set(cites.flatMap((entry) => entry.dossiers).map((entry) => `wiki/dossiers/${entry}.json`))].sort();
     const evidenceForHash = [
       ...new Set([
         ...observationIds,

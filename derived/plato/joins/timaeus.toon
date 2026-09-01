@@ -1,9 +1,9 @@
 dialogue: timaeus
 ledger_path: wiki/observations/timaeus.md
-ledger_sha256: 6e07ea005b07a1d4202acdbc846d4cc94996748850c555259c2867401bf5f57f
+ledger_sha256: 8b67123516b12e60d44e21290503c09ae0b2830ef12d194ecbcda2332be03a5e
 turn_index_path: derived/plato/turns/timaeus.toon
 turn_index_sha256: 0c3ebdfe987f3224455427bd3bcd9ce9faeafb2740968e421a0bf4a01fc05165
-joins[364]:
+joins[628]:
   observation_id   | review_status | turn_ids                                                                                                                                        | speakers        | attributed
   obs_timaeus_0001 | accepted      | turn_timaeus_0007,turn_timaeus_0008,turn_timaeus_0009,turn_timaeus_0010,turn_timaeus_0011                                                       | ΣΩ.,ΤΙ.         | true
   obs_timaeus_0002 | accepted      | turn_timaeus_0007,turn_timaeus_0008,turn_timaeus_0009,turn_timaeus_0010,turn_timaeus_0011                                                       | ΣΩ.,ΤΙ.         | true
@@ -17,10 +17,7 @@ joins[364]:
   obs_timaeus_0010 | accepted      | turn_timaeus_0019,turn_timaeus_0020,turn_timaeus_0021,turn_timaeus_0022,turn_timaeus_0023                                                       | ΣΩ.,ΤΙ.         | true
   obs_timaeus_0011 | accepted      | turn_timaeus_0019,turn_timaeus_0020,turn_timaeus_0021,turn_timaeus_0022,turn_timaeus_0023                                                       | ΣΩ.,ΤΙ.         | true
   obs_timaeus_0012 | accepted      | turn_timaeus_0019,turn_timaeus_0020,turn_timaeus_0021,turn_timaeus_0022,turn_timaeus_0023                                                       | ΣΩ.,ΤΙ.         | true
-  obs_timaeus_0013 | accepted      | turn_timaeus_0023,turn_timaeus_0024,turn_timaeus_0025,turn_timaeus_0026,turn_timaeus_0027                                                       | ΣΩ.,ΤΙ.         | true
   obs_timaeus_0014 | accepted      | turn_timaeus_0023,turn_timaeus_0024,turn_timaeus_0025,turn_timaeus_0026,turn_timaeus_0027                                                       | ΣΩ.,ΤΙ.         | true
-  obs_timaeus_0015 | accepted      | turn_timaeus_0029                                                                                                                               | ΣΩ.             | true
-  obs_timaeus_0016 | rejected      | turn_timaeus_0029,turn_timaeus_0030                                                                                                             | ΣΩ.             | true
   obs_timaeus_0017 | accepted      | turn_timaeus_0029,turn_timaeus_0030                                                                                                             | ΣΩ.             | true
   obs_timaeus_0018 | accepted      | turn_timaeus_0030                                                                                                                               | ΣΩ.             | true
   obs_timaeus_0019 | accepted      | turn_timaeus_0030                                                                                                                               | ΣΩ.             | true
@@ -43,7 +40,6 @@ joins[364]:
   obs_timaeus_0036 | accepted      | turn_timaeus_0038                                                                                                                               | ΚΡ.             | true
   obs_timaeus_0037 | accepted      | turn_timaeus_0039                                                                                                                               | ΚΡ.             | true
   obs_timaeus_0038 | accepted      | turn_timaeus_0039                                                                                                                               | ΚΡ.             | true
-  obs_timaeus_0039 | rejected      | turn_timaeus_0039                                                                                                                               | ΚΡ.             | true
   obs_timaeus_0040 | accepted      | turn_timaeus_0039                                                                                                                               | ΚΡ.             | true
   obs_timaeus_0041 | accepted      | turn_timaeus_0039                                                                                                                               | ΚΡ.             | true
   obs_timaeus_0042 | accepted      | turn_timaeus_0040                                                                                                                               | ΚΡ.             | true
@@ -59,7 +55,6 @@ joins[364]:
   obs_timaeus_0052 | accepted      | turn_timaeus_0041                                                                                                                               | ΚΡ.             | true
   obs_timaeus_0053 | accepted      | turn_timaeus_0041,turn_timaeus_0042                                                                                                             | ΚΡ.             | true
   obs_timaeus_0054 | accepted      | turn_timaeus_0041,turn_timaeus_0042                                                                                                             | ΚΡ.             | true
-  obs_timaeus_0055 | accepted      | turn_timaeus_0042                                                                                                                               | ΚΡ.             | true
   obs_timaeus_0056 | accepted      | turn_timaeus_0042                                                                                                                               | ΚΡ.             | true
   obs_timaeus_0057 | accepted      | turn_timaeus_0042                                                                                                                               | ΚΡ.             | true
   obs_timaeus_0058 | accepted      | turn_timaeus_0042,turn_timaeus_0043,turn_timaeus_0044                                                                                           | ΚΡ.,ΣΩ.         | true
@@ -100,7 +95,6 @@ joins[364]:
   obs_timaeus_0093 | accepted      | turn_timaeus_0055,turn_timaeus_0056,turn_timaeus_0057                                                                                           | ΤΙ.             | true
   obs_timaeus_0094 | accepted      | turn_timaeus_0059                                                                                                                               | ΤΙ.             | true
   obs_timaeus_0095 | accepted      | turn_timaeus_0059                                                                                                                               | ΤΙ.             | true
-  obs_timaeus_0096 | accepted      | turn_timaeus_0059                                                                                                                               | ΤΙ.             | true
   obs_timaeus_0097 | accepted      | turn_timaeus_0060                                                                                                                               | ΤΙ.             | true
   obs_timaeus_0098 | accepted      | turn_timaeus_0060                                                                                                                               | ΤΙ.             | true
   obs_timaeus_0099 | accepted      | turn_timaeus_0060                                                                                                                               | ΤΙ.             | true
@@ -109,10 +103,8 @@ joins[364]:
   obs_timaeus_0102 | accepted      | turn_timaeus_0057,turn_timaeus_0058                                                                                                             | ΤΙ.             | true
   obs_timaeus_0103 | accepted      | turn_timaeus_0057,turn_timaeus_0058                                                                                                             | ΤΙ.             | true
   obs_timaeus_0104 | accepted      | turn_timaeus_0059,turn_timaeus_0060                                                                                                             | ΤΙ.             | true
-  obs_timaeus_0105 | accepted      | turn_timaeus_0059,turn_timaeus_0060                                                                                                             | ΤΙ.             | true
   obs_timaeus_0106 | accepted      | turn_timaeus_0060,turn_timaeus_0061                                                                                                             | ΤΙ.             | true
   obs_timaeus_0107 | accepted      | turn_timaeus_0061                                                                                                                               | ΤΙ.             | true
-  obs_timaeus_0108 | accepted      | turn_timaeus_0061                                                                                                                               | ΤΙ.             | true
   obs_timaeus_0109 | accepted      | turn_timaeus_0061                                                                                                                               | ΤΙ.             | true
   obs_timaeus_0110 | accepted      | turn_timaeus_0062                                                                                                                               | ΤΙ.             | true
   obs_timaeus_0111 | accepted      | turn_timaeus_0062                                                                                                                               | ΤΙ.             | true
@@ -121,7 +113,6 @@ joins[364]:
   obs_timaeus_0114 | accepted      | turn_timaeus_0060,turn_timaeus_0061                                                                                                             | ΤΙ.             | true
   obs_timaeus_0115 | accepted      | turn_timaeus_0063                                                                                                                               | ΤΙ.             | true
   obs_timaeus_0116 | accepted      | turn_timaeus_0063,turn_timaeus_0064                                                                                                             | ΤΙ.             | true
-  obs_timaeus_0117 | accepted      | turn_timaeus_0063                                                                                                                               | ΤΙ.             | true
   obs_timaeus_0118 | accepted      | turn_timaeus_0061                                                                                                                               | ΤΙ.             | true
   obs_timaeus_0119 | accepted      | turn_timaeus_0061                                                                                                                               | ΤΙ.             | true
   obs_timaeus_0120 | accepted      | turn_timaeus_0061                                                                                                                               | ΤΙ.             | true
@@ -369,3 +360,276 @@ joins[364]:
   obs_timaeus_0362 | accepted      | turn_timaeus_0064,turn_timaeus_0065                                                                                                             | ΤΙ.             | true
   obs_timaeus_0363 | accepted      | turn_timaeus_0064,turn_timaeus_0065                                                                                                             | ΤΙ.             | true
   obs_timaeus_0364 | accepted      | turn_timaeus_0064,turn_timaeus_0065                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0365 | accepted      | turn_timaeus_0042                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0366 | accepted      | turn_timaeus_0042                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0367 | accepted      | turn_timaeus_0042                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0368 | accepted      | turn_timaeus_0042                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0369 | accepted      | turn_timaeus_0042                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0370 | accepted      | turn_timaeus_0051                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0371 | accepted      | turn_timaeus_0051                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0372 | accepted      | turn_timaeus_0051                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0373 | accepted      | turn_timaeus_0051                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0374 | accepted      | turn_timaeus_0061,turn_timaeus_0062                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0375 | accepted      | turn_timaeus_0061,turn_timaeus_0062                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0376 | accepted      | turn_timaeus_0061,turn_timaeus_0062                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0377 | accepted      | turn_timaeus_0062                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0378 | accepted      | turn_timaeus_0062                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0379 | accepted      | turn_timaeus_0113                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0380 | accepted      | turn_timaeus_0113                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0381 | accepted      | turn_timaeus_0113                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0382 | accepted      | turn_timaeus_0113                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0383 | accepted      | turn_timaeus_0007,turn_timaeus_0008,turn_timaeus_0009,turn_timaeus_0010,turn_timaeus_0011                                                       | ΣΩ.,ΤΙ.         | true
+  obs_timaeus_0384 | accepted      | turn_timaeus_0011,turn_timaeus_0012,turn_timaeus_0013,turn_timaeus_0014,turn_timaeus_0015                                                       | ΣΩ.,ΤΙ.         | true
+  obs_timaeus_0385 | accepted      | turn_timaeus_0011,turn_timaeus_0012,turn_timaeus_0013,turn_timaeus_0014,turn_timaeus_0015                                                       | ΣΩ.,ΤΙ.         | true
+  obs_timaeus_0386 | accepted      | turn_timaeus_0016,turn_timaeus_0017,turn_timaeus_0018                                                                                           | ΤΙ.,ΣΩ.         | true
+  obs_timaeus_0387 | accepted      | turn_timaeus_0019,turn_timaeus_0020,turn_timaeus_0021                                                                                           | ΣΩ.,ΤΙ.         | true
+  obs_timaeus_0388 | accepted      | turn_timaeus_0019,turn_timaeus_0020,turn_timaeus_0021,turn_timaeus_0022,turn_timaeus_0023                                                       | ΣΩ.,ΤΙ.         | true
+  obs_timaeus_0389 | accepted      | turn_timaeus_0021,turn_timaeus_0022,turn_timaeus_0023,turn_timaeus_0024                                                                         | ΣΩ.,ΤΙ.         | true
+  obs_timaeus_0390 | accepted      | turn_timaeus_0025,turn_timaeus_0026,turn_timaeus_0027                                                                                           | ΣΩ.,ΤΙ.         | true
+  obs_timaeus_0391 | accepted      | turn_timaeus_0028,turn_timaeus_0029                                                                                                             | ΤΙ.,ΣΩ.         | true
+  obs_timaeus_0392 | accepted      | turn_timaeus_0029                                                                                                                               | ΣΩ.             | true
+  obs_timaeus_0393 | accepted      | turn_timaeus_0029                                                                                                                               | ΣΩ.             | true
+  obs_timaeus_0394 | accepted      | turn_timaeus_0031,turn_timaeus_0032,turn_timaeus_0033,turn_timaeus_0034                                                                         | ΕΡ.,ΚΡ.,ΤΙ.     | true
+  obs_timaeus_0395 | accepted      | turn_timaeus_0037                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0396 | accepted      | turn_timaeus_0037                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0397 | accepted      | turn_timaeus_0037,turn_timaeus_0038                                                                                                             | ΚΡ.             | true
+  obs_timaeus_0398 | accepted      | turn_timaeus_0037,turn_timaeus_0038                                                                                                             | ΚΡ.             | true
+  obs_timaeus_0399 | accepted      | turn_timaeus_0038                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0400 | accepted      | turn_timaeus_0038                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0401 | accepted      | turn_timaeus_0038                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0402 | accepted      | turn_timaeus_0038                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0403 | accepted      | turn_timaeus_0038,turn_timaeus_0039                                                                                                             | ΚΡ.             | true
+  obs_timaeus_0404 | accepted      | turn_timaeus_0039                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0405 | accepted      | turn_timaeus_0039                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0406 | accepted      | turn_timaeus_0039                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0407 | accepted      | turn_timaeus_0039,turn_timaeus_0040                                                                                                             | ΚΡ.             | true
+  obs_timaeus_0408 | accepted      | turn_timaeus_0040                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0409 | accepted      | turn_timaeus_0040                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0410 | accepted      | turn_timaeus_0040,turn_timaeus_0041                                                                                                             | ΚΡ.             | true
+  obs_timaeus_0411 | accepted      | turn_timaeus_0040,turn_timaeus_0041                                                                                                             | ΚΡ.             | true
+  obs_timaeus_0412 | accepted      | turn_timaeus_0040,turn_timaeus_0041                                                                                                             | ΚΡ.             | true
+  obs_timaeus_0413 | accepted      | turn_timaeus_0041                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0414 | accepted      | turn_timaeus_0041                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0415 | accepted      | turn_timaeus_0041                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0416 | accepted      | turn_timaeus_0041                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0417 | accepted      | turn_timaeus_0041,turn_timaeus_0042                                                                                                             | ΚΡ.             | true
+  obs_timaeus_0418 | accepted      | turn_timaeus_0042                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0419 | accepted      | turn_timaeus_0042                                                                                                                               | ΚΡ.             | true
+  obs_timaeus_0420 | accepted      | turn_timaeus_0042,turn_timaeus_0043                                                                                                             | ΚΡ.,ΣΩ.         | true
+  obs_timaeus_0421 | accepted      | turn_timaeus_0046,turn_timaeus_0047                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0422 | accepted      | turn_timaeus_0046,turn_timaeus_0047                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0423 | accepted      | turn_timaeus_0047                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0424 | accepted      | turn_timaeus_0047,turn_timaeus_0048                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0425 | accepted      | turn_timaeus_0047                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0426 | accepted      | turn_timaeus_0047,turn_timaeus_0048                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0427 | accepted      | turn_timaeus_0047,turn_timaeus_0048                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0428 | accepted      | turn_timaeus_0048                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0429 | accepted      | turn_timaeus_0048                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0430 | accepted      | turn_timaeus_0048,turn_timaeus_0049,turn_timaeus_0050                                                                                           | ΤΙ.,ΣΩ.         | true
+  obs_timaeus_0431 | accepted      | turn_timaeus_0050,turn_timaeus_0051                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0432 | accepted      | turn_timaeus_0054,turn_timaeus_0055                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0433 | accepted      | turn_timaeus_0054,turn_timaeus_0055                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0434 | accepted      | turn_timaeus_0054,turn_timaeus_0055                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0435 | accepted      | turn_timaeus_0054                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0436 | accepted      | turn_timaeus_0054,turn_timaeus_0055                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0437 | accepted      | turn_timaeus_0054,turn_timaeus_0055                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0438 | accepted      | turn_timaeus_0054,turn_timaeus_0055                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0439 | accepted      | turn_timaeus_0055                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0440 | accepted      | turn_timaeus_0055                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0441 | accepted      | turn_timaeus_0055,turn_timaeus_0056                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0442 | accepted      | turn_timaeus_0055                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0443 | accepted      | turn_timaeus_0055,turn_timaeus_0056                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0444 | accepted      | turn_timaeus_0055,turn_timaeus_0056                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0445 | accepted      | turn_timaeus_0056,turn_timaeus_0057                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0446 | accepted      | turn_timaeus_0057                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0447 | accepted      | turn_timaeus_0057                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0448 | accepted      | turn_timaeus_0057                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0449 | accepted      | turn_timaeus_0057,turn_timaeus_0058                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0450 | accepted      | turn_timaeus_0058                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0451 | accepted      | turn_timaeus_0058                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0452 | accepted      | turn_timaeus_0058                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0453 | accepted      | turn_timaeus_0058                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0454 | accepted      | turn_timaeus_0058,turn_timaeus_0059                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0455 | accepted      | turn_timaeus_0058,turn_timaeus_0059                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0456 | accepted      | turn_timaeus_0059                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0457 | accepted      | turn_timaeus_0059                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0458 | accepted      | turn_timaeus_0059                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0459 | accepted      | turn_timaeus_0059                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0460 | accepted      | turn_timaeus_0062                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0461 | accepted      | turn_timaeus_0062                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0462 | accepted      | turn_timaeus_0063,turn_timaeus_0064                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0463 | accepted      | turn_timaeus_0064                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0464 | accepted      | turn_timaeus_0064                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0465 | accepted      | turn_timaeus_0067,turn_timaeus_0068                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0466 | accepted      | turn_timaeus_0067,turn_timaeus_0068                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0467 | accepted      | turn_timaeus_0067,turn_timaeus_0068                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0468 | accepted      | turn_timaeus_0068                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0469 | accepted      | turn_timaeus_0068,turn_timaeus_0069                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0470 | accepted      | turn_timaeus_0068,turn_timaeus_0069                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0471 | accepted      | turn_timaeus_0069                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0472 | accepted      | turn_timaeus_0069                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0473 | accepted      | turn_timaeus_0069                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0474 | accepted      | turn_timaeus_0069,turn_timaeus_0070                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0475 | accepted      | turn_timaeus_0069,turn_timaeus_0070                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0476 | accepted      | turn_timaeus_0070                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0477 | accepted      | turn_timaeus_0070                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0478 | accepted      | turn_timaeus_0070                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0479 | accepted      | turn_timaeus_0070,turn_timaeus_0071                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0480 | accepted      | turn_timaeus_0070,turn_timaeus_0071                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0481 | accepted      | turn_timaeus_0071                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0482 | accepted      | turn_timaeus_0071                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0483 | accepted      | turn_timaeus_0071                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0484 | accepted      | turn_timaeus_0071                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0485 | accepted      | turn_timaeus_0071                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0486 | accepted      | turn_timaeus_0072                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0487 | accepted      | turn_timaeus_0072                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0488 | accepted      | turn_timaeus_0072                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0489 | accepted      | turn_timaeus_0072                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0490 | accepted      | turn_timaeus_0072                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0491 | accepted      | turn_timaeus_0072,turn_timaeus_0073                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0492 | accepted      | turn_timaeus_0072,turn_timaeus_0073                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0493 | accepted      | turn_timaeus_0073                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0494 | accepted      | turn_timaeus_0073                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0495 | accepted      | turn_timaeus_0073                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0496 | accepted      | turn_timaeus_0073                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0497 | accepted      | turn_timaeus_0073                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0498 | accepted      | turn_timaeus_0073                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0499 | accepted      | turn_timaeus_0074                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0500 | accepted      | turn_timaeus_0074                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0501 | accepted      | turn_timaeus_0075                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0502 | accepted      | turn_timaeus_0075                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0503 | accepted      | turn_timaeus_0075,turn_timaeus_0076                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0504 | accepted      | turn_timaeus_0076                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0505 | accepted      | turn_timaeus_0076                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0506 | accepted      | turn_timaeus_0076                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0507 | accepted      | turn_timaeus_0076,turn_timaeus_0077                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0508 | accepted      | turn_timaeus_0077                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0509 | accepted      | turn_timaeus_0077                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0510 | accepted      | turn_timaeus_0077                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0511 | accepted      | turn_timaeus_0077,turn_timaeus_0078                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0512 | accepted      | turn_timaeus_0077,turn_timaeus_0078                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0513 | accepted      | turn_timaeus_0078                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0514 | accepted      | turn_timaeus_0078                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0515 | accepted      | turn_timaeus_0078                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0516 | accepted      | turn_timaeus_0078,turn_timaeus_0079                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0517 | accepted      | turn_timaeus_0078,turn_timaeus_0079                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0518 | accepted      | turn_timaeus_0079                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0519 | accepted      | turn_timaeus_0079                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0520 | accepted      | turn_timaeus_0079                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0521 | accepted      | turn_timaeus_0079                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0522 | accepted      | turn_timaeus_0079                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0523 | accepted      | turn_timaeus_0079,turn_timaeus_0080                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0524 | accepted      | turn_timaeus_0080                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0525 | accepted      | turn_timaeus_0080                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0526 | accepted      | turn_timaeus_0080                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0527 | accepted      | turn_timaeus_0080,turn_timaeus_0081                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0528 | accepted      | turn_timaeus_0081                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0529 | accepted      | turn_timaeus_0081                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0530 | accepted      | turn_timaeus_0081                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0531 | accepted      | turn_timaeus_0081,turn_timaeus_0082                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0532 | accepted      | turn_timaeus_0081,turn_timaeus_0082                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0533 | accepted      | turn_timaeus_0082                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0534 | accepted      | turn_timaeus_0082                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0535 | accepted      | turn_timaeus_0082                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0536 | accepted      | turn_timaeus_0082                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0537 | accepted      | turn_timaeus_0082,turn_timaeus_0083                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0538 | accepted      | turn_timaeus_0083                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0539 | accepted      | turn_timaeus_0083                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0540 | accepted      | turn_timaeus_0083                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0541 | accepted      | turn_timaeus_0086                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0542 | accepted      | turn_timaeus_0086                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0543 | accepted      | turn_timaeus_0086                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0544 | accepted      | turn_timaeus_0087                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0545 | accepted      | turn_timaeus_0087                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0546 | accepted      | turn_timaeus_0087,turn_timaeus_0088                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0547 | accepted      | turn_timaeus_0088                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0548 | accepted      | turn_timaeus_0088                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0549 | accepted      | turn_timaeus_0088                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0550 | accepted      | turn_timaeus_0088                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0551 | accepted      | turn_timaeus_0088                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0552 | accepted      | turn_timaeus_0088,turn_timaeus_0089                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0553 | accepted      | turn_timaeus_0088,turn_timaeus_0089                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0554 | accepted      | turn_timaeus_0089                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0555 | accepted      | turn_timaeus_0089                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0556 | accepted      | turn_timaeus_0089                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0557 | accepted      | turn_timaeus_0089                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0558 | accepted      | turn_timaeus_0089                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0559 | accepted      | turn_timaeus_0089,turn_timaeus_0090                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0560 | accepted      | turn_timaeus_0089,turn_timaeus_0090                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0561 | accepted      | turn_timaeus_0090                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0562 | accepted      | turn_timaeus_0090                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0563 | accepted      | turn_timaeus_0090                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0564 | accepted      | turn_timaeus_0090                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0565 | accepted      | turn_timaeus_0090                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0566 | accepted      | turn_timaeus_0090,turn_timaeus_0091                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0567 | accepted      | turn_timaeus_0090,turn_timaeus_0091                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0568 | accepted      | turn_timaeus_0091                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0569 | accepted      | turn_timaeus_0091                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0570 | accepted      | turn_timaeus_0091                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0571 | accepted      | turn_timaeus_0091,turn_timaeus_0092                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0572 | accepted      | turn_timaeus_0092                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0573 | accepted      | turn_timaeus_0092                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0574 | accepted      | turn_timaeus_0092                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0575 | accepted      | turn_timaeus_0092,turn_timaeus_0093                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0576 | accepted      | turn_timaeus_0093                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0577 | accepted      | turn_timaeus_0095,turn_timaeus_0096                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0578 | accepted      | turn_timaeus_0096                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0579 | accepted      | turn_timaeus_0096                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0580 | accepted      | turn_timaeus_0096                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0581 | accepted      | turn_timaeus_0096                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0582 | accepted      | turn_timaeus_0096,turn_timaeus_0097                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0583 | accepted      | turn_timaeus_0096,turn_timaeus_0097                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0584 | accepted      | turn_timaeus_0097                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0585 | accepted      | turn_timaeus_0097,turn_timaeus_0098                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0586 | accepted      | turn_timaeus_0097,turn_timaeus_0098                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0587 | accepted      | turn_timaeus_0098                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0588 | accepted      | turn_timaeus_0098                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0589 | accepted      | turn_timaeus_0099                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0590 | accepted      | turn_timaeus_0099                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0591 | accepted      | turn_timaeus_0099,turn_timaeus_0100                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0592 | accepted      | turn_timaeus_0100                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0593 | accepted      | turn_timaeus_0100,turn_timaeus_0101                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0594 | accepted      | turn_timaeus_0101                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0595 | accepted      | turn_timaeus_0101                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0596 | accepted      | turn_timaeus_0101,turn_timaeus_0102                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0597 | accepted      | turn_timaeus_0102                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0598 | accepted      | turn_timaeus_0104,turn_timaeus_0105                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0599 | accepted      | turn_timaeus_0105                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0600 | accepted      | turn_timaeus_0105                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0601 | accepted      | turn_timaeus_0105,turn_timaeus_0106                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0602 | accepted      | turn_timaeus_0106                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0603 | accepted      | turn_timaeus_0106                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0604 | accepted      | turn_timaeus_0106,turn_timaeus_0107                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0605 | accepted      | turn_timaeus_0106,turn_timaeus_0107                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0606 | accepted      | turn_timaeus_0107                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0607 | accepted      | turn_timaeus_0107                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0608 | accepted      | turn_timaeus_0107                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0609 | accepted      | turn_timaeus_0107,turn_timaeus_0108                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0610 | accepted      | turn_timaeus_0107                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0611 | accepted      | turn_timaeus_0107,turn_timaeus_0108                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0612 | accepted      | turn_timaeus_0108                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0613 | accepted      | turn_timaeus_0108                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0614 | accepted      | turn_timaeus_0108                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0615 | accepted      | turn_timaeus_0108,turn_timaeus_0109                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0616 | accepted      | turn_timaeus_0109                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0617 | accepted      | turn_timaeus_0109                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0618 | accepted      | turn_timaeus_0109                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0619 | accepted      | turn_timaeus_0109,turn_timaeus_0110                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0620 | accepted      | turn_timaeus_0109,turn_timaeus_0110                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0621 | accepted      | turn_timaeus_0110                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0622 | accepted      | turn_timaeus_0110                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0623 | accepted      | turn_timaeus_0110,turn_timaeus_0111                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0624 | accepted      | turn_timaeus_0111                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0625 | accepted      | turn_timaeus_0111                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0626 | accepted      | turn_timaeus_0111                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0627 | accepted      | turn_timaeus_0111                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0628 | accepted      | turn_timaeus_0111                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0629 | accepted      | turn_timaeus_0111,turn_timaeus_0112                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0630 | accepted      | turn_timaeus_0112                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0631 | accepted      | turn_timaeus_0112                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0632 | accepted      | turn_timaeus_0112,turn_timaeus_0113                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0633 | accepted      | turn_timaeus_0112,turn_timaeus_0113                                                                                                             | ΤΙ.             | true
+  obs_timaeus_0634 | accepted      | turn_timaeus_0113                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0635 | accepted      | turn_timaeus_0063                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0636 | accepted      | turn_timaeus_0063                                                                                                                               | ΤΙ.             | true
+  obs_timaeus_0637 | accepted      | turn_timaeus_0063                                                                                                                               | ΤΙ.             | true

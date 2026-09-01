@@ -7,7 +7,7 @@ import { claimYamlBlocks, listClaimLedgerPaths } from "./claim-ledger.js";
 import {
   fieldValue,
   fieldValueOrEmpty,
-  nestedFieldValueInParent,
+  nestedFieldValueInPath,
 } from "./observation-ledger.js";
 import { relationMarkdownBlocks, type RelationMarkdownBlock } from "./relation-ledger.js";
 
@@ -46,6 +46,7 @@ export type RelationLedgerValidationIssue = {
     | "missing_resolution_ref"
     | "invalid_source_ref"
     | "missing_limits"
+    | "accepted_relation_denial"
     | "duplicate_field";
   relationId?: string | undefined;
   line?: number | undefined;
@@ -86,12 +87,13 @@ function numberField(value: string) {
 }
 
 function resolutionSourceRef(block: string): SourceRef {
+  const sourceRefPath = ["resolution_ref", "source_ref"] as const;
   return {
-    sourcePath: nestedFieldValueInParent(block, "resolution_ref", "source_path"),
-    stephanusSpan: nestedFieldValueInParent(block, "resolution_ref", "stephanus_span"),
-    startChar: numberField(nestedFieldValueInParent(block, "resolution_ref", "start_char")),
-    endChar: numberField(nestedFieldValueInParent(block, "resolution_ref", "end_char")),
-    textSha256: nestedFieldValueInParent(block, "resolution_ref", "text_sha256"),
+    sourcePath: nestedFieldValueInPath(block, sourceRefPath, "source_path"),
+    stephanusSpan: nestedFieldValueInPath(block, sourceRefPath, "stephanus_span"),
+    startChar: numberField(nestedFieldValueInPath(block, sourceRefPath, "start_char")),
+    endChar: numberField(nestedFieldValueInPath(block, sourceRefPath, "end_char")),
+    textSha256: nestedFieldValueInPath(block, sourceRefPath, "text_sha256"),
   };
 }
 
@@ -137,6 +139,57 @@ function readClaimSummaries() {
 
 function addIssue(issues: RelationLedgerValidationIssue[], issue: RelationLedgerValidationIssue) {
   issues.push(issue);
+}
+
+const SUBSTANTIVE_RELATION_DENIAL_RULES = [
+  {
+    rule: "schema_compliance",
+    pattern: /\b(?:filed|classified|recorded|retained)\b[^.!?;\n]{0,80}\b(?:for|to satisfy) (?:the )?schema(?: compliance)?\b/u,
+  },
+  { rule: "non_relation", pattern: /\bnon[- ]relation\b/u },
+  {
+    rule: "no_substantive_relation",
+    pattern: /\bno (?:[a-z-]+ ){0,5}substantive (?:doctrinal )?(?:relation|connection|restatement)\b/u,
+  },
+  {
+    rule: "not_substantive_relation",
+    pattern: /\bnot (?:a )?substantive (?:doctrinal )?(?:relation|connection|restatement)\b/u,
+  },
+  {
+    rule: "denies_substantive_relation",
+    pattern: /\bdoes not (?:constitute|establish|produce) (?:a )?substantive (?:doctrinal )?(?:relation|connection|restatement)\b/u,
+  },
+] as const;
+
+export type AcceptedRelationDenial = {
+  field: "basis" | "limits";
+  rule: (typeof SUBSTANTIVE_RELATION_DENIAL_RULES)[number]["rule"];
+};
+
+export function acceptedRelationDenial(block: string): AcceptedRelationDenial | undefined {
+  if (fieldValue(block, "review_status") !== "accepted") return undefined;
+  for (const field of ["basis", "limits"] as const) {
+    const value = fieldValueOrEmpty(block, field)
+      .toLowerCase()
+      .replace(/[–—]/gu, "-")
+      .replace(/\s+/gu, " ");
+    for (const { rule, pattern } of SUBSTANTIVE_RELATION_DENIAL_RULES) {
+      if (pattern.test(value)) return { field, rule };
+    }
+  }
+  return undefined;
+}
+
+function validateAcceptedRelationAssertion(block: RelationMarkdownBlock, issues: RelationLedgerValidationIssue[]) {
+  const denial = acceptedRelationDenial(block.content);
+  if (!denial) return;
+  addIssue(issues, {
+    code: "accepted_relation_denial",
+    relationId: block.relationId,
+    line: block.startLine,
+    message: `Accepted relation ${denial.field} explicitly denies a substantive relation (${denial.rule}).`,
+    fix: "Reject the review candidate or replace it with an explicitly modeled evidence state; do not retain a schema-only semantic edge.",
+  });
 }
 
 function requireField(block: RelationMarkdownBlock, field: string, issues: RelationLedgerValidationIssue[]) {
@@ -361,7 +414,13 @@ function validateClaimLinks(
 
   const resolution = fieldValueOrEmpty(block.content, "resolution");
   const relationKind = fieldValueOrEmpty(block.content, "relation_kind");
-  if (resolution === "standing" && claimA && claimB && (claimA.finalStatus !== "left_standing" || claimB.finalStatus !== "left_standing")) {
+  if (
+    relationReviewStatus !== "rejected"
+    && resolution === "standing"
+    && claimA
+    && claimB
+    && (claimA.finalStatus !== "left_standing" || claimB.finalStatus !== "left_standing")
+  ) {
     addIssue(issues, {
       code: "invalid_resolution",
       relationId: block.relationId,
@@ -371,6 +430,7 @@ function validateClaimLinks(
     });
   }
   if (
+    relationReviewStatus !== "rejected" &&
     resolution === "refuted_resolved" &&
     claimA &&
     claimB &&
@@ -385,7 +445,7 @@ function validateClaimLinks(
       fix: "Use refuted_resolved only when a linked claim's final_status supports it.",
     });
   }
-  if (relationKind === "restatement" && resolution === "refuted_resolved") {
+  if (relationReviewStatus !== "rejected" && relationKind === "restatement" && resolution === "refuted_resolved") {
     addIssue(issues, {
       code: "invalid_resolution",
       relationId: block.relationId,
@@ -461,7 +521,17 @@ function validateResolutionFields(block: RelationMarkdownBlock, issues: Relation
 
 export function validateRelationLedger(path: string, content: string) {
   const issues: RelationLedgerValidationIssue[] = [];
-  const blocks = relationMarkdownBlocks(content);
+  let blocks: RelationMarkdownBlock[];
+  try {
+    blocks = relationMarkdownBlocks(content);
+  } catch (error) {
+    addIssue(issues, {
+      code: "duplicate_field",
+      message: `Relation fence is not one strict YAML record: ${error instanceof Error ? error.message : String(error)}`,
+      fix: "Keep exactly one strict YAML mapping in each fenced record; run the canonical fenced-record migration for legacy syntax.",
+    });
+    return issues;
+  }
   const claims = readClaimSummaries();
   const seen = new Set<string>();
   const seenPairs = new Set<string>();
@@ -488,6 +558,7 @@ export function validateRelationLedger(path: string, content: string) {
     validateEnums(block, issues);
     validateClaimLinks(path, block, claims, issues);
     validateResolutionFields(block, issues, sourceCache);
+    validateAcceptedRelationAssertion(block, issues);
 
     const claimAId = fieldValueOrEmpty(block.content, "claim_a");
     const claimBId = fieldValueOrEmpty(block.content, "claim_b");

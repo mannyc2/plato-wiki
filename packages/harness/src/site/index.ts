@@ -5,13 +5,10 @@ import { createSourceSpanResolver } from "../source.js";
 import { workNameToSlug } from "../wiki/commentary-validator.js";
 import {
   dialogueEpigraph,
-  dialogueSpecimenId,
   dialogueTags,
   englishSpeakerLabels,
-  FAMILY_GUIDE,
   greekSpeakerName,
   LAYER_GUIDE,
-  patternOneliner,
   SPEAKER_OTHER,
   SPEAKER_PALETTE,
   STANDING_SPECIMEN_IDS,
@@ -19,9 +16,6 @@ import {
   topPatternDossiers,
 } from "./curation.js";
 import {
-  crossDialogueLabelCount,
-  dossierFamilyLabelKey,
-  familyRows,
   groupBy,
   parseObservationLedger,
   readSiteData,
@@ -29,7 +23,6 @@ import {
   type DialogueDerived,
   type ObservationShard,
   type RelationShard,
-  type RegistryShard,
   type SiteClaim,
   type SiteCluster,
   type SiteApparatusRecord,
@@ -77,7 +70,7 @@ export type BuiltStaticSite = {
   outDir: string;
   pages: string[];
   observationCount: number;
-  registryEntryCount: number;
+  ontologyConceptCount: number;
   clusterCount: number;
   acceptedRecordingCount: number;
   reviewCandidateRecordingCount: number;
@@ -117,16 +110,30 @@ type ReadingPagePlan = {
   markers: string[];
 };
 
+function visibleCommentaryBlocks(commentary: SiteCommentaryDialogue | undefined) {
+  return (commentary?.blocks ?? []).filter(
+    (block) => block.reviewStatus === "accepted" || block.reviewStatus === "unreviewed",
+  );
+}
+
+function hasVisibleCommentary(commentary: SiteCommentaryDialogue | undefined) {
+  return visibleCommentaryBlocks(commentary).length > 0;
+}
+
+function visibleCommentaryDialogueCount(data: SiteData) {
+  return [...data.commentaryByDialogue.values()].filter(hasVisibleCommentary).length;
+}
+
 function navState(data: SiteData): NavCounts {
   return {
     dossiers: data.dossiers.length,
     clusters: data.clusters.length,
-    families: familyRows(data.observations, data.registry).length,
+    axes: data.axes.length,
+    concepts: data.concepts.length,
     anchors: [...data.derivedByDialogue.values()].reduce((sum, row) => sum + row.anchors.length, 0),
     claims: data.claims.length,
     relations: data.relations.length,
-    registry: data.registry.length,
-    readings: data.commentaryByDialogue.size,
+    readings: visibleCommentaryDialogueCount(data),
   };
 }
 
@@ -153,6 +160,10 @@ function claimLink(pagePath: string, data: SiteData, claimId: string) {
 
 function dossierLink(pagePath: string, dossier: SiteDossier | undefined, label: string) {
   return dossier ? pageLink(pagePath, dossier.pagePath, label, `#${dossier.dossierId}`) : escapeHtml(label);
+}
+
+function conceptPagePath(axisKey: string, conceptKey: string) {
+  return `concepts/${axisKey}/${conceptKey}.html`;
 }
 
 function relationLink(pagePath: string, data: SiteData, relationId: string) {
@@ -256,24 +267,28 @@ function sourceDialog({
 }
 
 function observationCard(pagePath: string, data: SiteData, observation: SiteObservation) {
-  const familyTag = `<a class="badge badge-family" href="${pathToRoot(pagePath)}families/${escapeHtml(
-    observation.featureFamily,
-  )}.html">${escapeHtml(titleCase(observation.featureFamily))}</a>`;
+  const conceptBadges = observation.concepts.length > 0
+    ? observation.concepts.map((assignment) =>
+        `<a class="badge" href="${pathToRoot(pagePath)}${conceptPagePath(assignment.axisKey, assignment.conceptKey)}">${escapeHtml(titleCase(assignment.conceptKey))}</a>` +
+        `<a class="badge badge-axis" href="${pathToRoot(pagePath)}axes/${escapeHtml(assignment.axisKey)}.html">${escapeHtml(titleCase(assignment.axisKey))}</a>`,
+      ).join("\n")
+    : `<span class="badge">No ontology membership</span>`;
+  const axisKeys = observation.concepts.map((assignment) => assignment.axisKey).join(" ");
+  const conceptKeys = observation.concepts.map((assignment) => assignment.conceptKey).join(" ");
   const turnIds = data.turnIdsByObservationId.get(observation.observationId) ?? [];
   return `<article class="record" id="${escapeHtml(observation.observationId)}" data-dialogue="${escapeHtml(
     observation.dialogue,
-  )}" data-family="${escapeHtml(observation.featureFamily)}" data-label="${escapeHtml(
-    observation.featureLabel,
+  )}" data-axis="${escapeHtml(axisKeys)}" data-concept="${escapeHtml(
+    conceptKeys,
   )}" data-status="${escapeHtml(observation.reviewStatus)}" data-search="${escapeHtml(
-    `${observation.observationId} ${observation.observation} ${observation.textualBasis} ${observation.featureLabel}`.toLowerCase(),
+    `${observation.observationId} ${observation.observation} ${observation.textualBasis} ${conceptKeys} ${axisKeys}`.toLowerCase(),
   )}">
   <header class="record-context">
     <p class="record-eyebrow"><a class="record-anchor" href="#${escapeHtml(
       observation.observationId,
     )}"><span class="ref">${escapeHtml(observation.sourceWork)} ${escapeHtml(observation.stephanusSpan)}</span></a></p>
     <div class="badges">
-      ${badge(titleCase(observation.featureLabel))}
-      ${familyTag}
+      ${conceptBadges}
       ${statusChip(observation.reviewStatus)}
     </div>
   </header>
@@ -340,6 +355,9 @@ function claimCard(pagePath: string, data: SiteData, claim: SiteClaim) {
 }
 
 function relationCard(pagePath: string, data: SiteData, relation: SiteRelation) {
+  if (relation.reviewStatus !== "accepted") {
+    throw new Error(`Refusing to render non-accepted relation ${relation.relationId}.`);
+  }
   return `<article class="record" id="${escapeHtml(relation.relationId)}" data-dialogue="${escapeHtml(
     relation.dialogue,
   )}" data-status="${escapeHtml(relation.reviewStatus)}" data-search="${escapeHtml(
@@ -404,7 +422,7 @@ function commentaryCitesFold(pagePath: string, data: SiteData, block: SiteCommen
       if (!observation) return `<li>${escapeHtml(id)}</li>`;
       return item(
         data.observationPageById.get(id),
-        `${titleCase(observation.featureLabel)} — ${observation.sourceWork} ${observation.stephanusSpan}`,
+        `${observation.concepts.map((assignment) => titleCase(assignment.conceptKey)).join("; ") || "Observation"} — ${observation.sourceWork} ${observation.stephanusSpan}`,
       );
     }),
     ...block.cites.claims.map((id) => {
@@ -424,9 +442,8 @@ function commentaryCitesFold(pagePath: string, data: SiteData, block: SiteCommen
       );
     }),
     ...block.cites.dossiers.map((entry) => {
-      const [family, label] = entry.split("/");
-      const dossier = data.dossiers.find((candidate) => candidate.family === family && candidate.label === label);
-      const text = `${titleCase(label ?? entry)} dossier`;
+      const dossier = data.dossiers.find((candidate) => candidate.conceptId === entry);
+      const text = `${titleCase(dossier?.conceptKey ?? entry)} dossier`;
       return dossier ? `<li>${pageLink(pagePath, dossier.pagePath, text, `#${dossier.dossierId}`)}</li>` : `<li>${escapeHtml(text)}</li>`;
     }),
   ];
@@ -558,7 +575,7 @@ function marginCandidates(data: SiteData, dialogue: string): MarginCandidate[] {
     candidates.push({
       id: observation.observationId,
       kind: "observation",
-      label: titleCase(observation.featureLabel),
+      label: observation.concepts.map((assignment) => titleCase(assignment.conceptKey)).join("; ") || "Observation",
       target,
       lead: observation.observation,
       work: observation.sourceWork,
@@ -963,8 +980,7 @@ function apparatusEntryHtml(
     ...record.cites.claims.map((id) => claimLink(pagePath, data, id)),
     ...record.cites.relations.map((id) => relationLink(pagePath, data, id)),
     ...record.cites.dossiers.map((entry) => {
-      const [family, label] = entry.split("/");
-      const dossier = data.dossiers.find((candidate) => candidate.family === family && candidate.label === label);
+      const dossier = data.dossiers.find((candidate) => candidate.conceptId === entry);
       return dossierLink(pagePath, dossier, entry);
     }),
   ];
@@ -1213,9 +1229,8 @@ function planReadingPages(data: SiteData, targetBytes: number) {
   for (const commentary of [...data.commentaryByDialogue.values()].sort((a, b) =>
     a.dialogue.localeCompare(b.dialogue),
   )) {
-    const visible = commentary.blocks.filter(
-      (block) => block.reviewStatus === "accepted" || block.reviewStatus === "unreviewed",
-    );
+    const visible = visibleCommentaryBlocks(commentary);
+    if (visible.length === 0) continue;
     const sections = visible.filter((block) => block.blockKind === "section");
     const others = visible.filter((block) => block.blockKind !== "section");
     if (sections.length === 0) {
@@ -1286,7 +1301,7 @@ function planReadingPages(data: SiteData, targetBytes: number) {
 const MARKS_KEY = `<details class="marks-key">
   <summary>Key</summary>
   <div class="marks-key-panel">
-    <p><span class="mark mark-observation"></span><span>Observation — a labeled feature of the text, anchored at its span. Open the entry for its lead and record link.</span></p>
+    <p><span class="mark mark-observation"></span><span>Observation — a neutral textual fact anchored at its source span and linked through canonical ontology memberships.</span></p>
     <p><span class="mark mark-claim"></span><span>Claim — content asserted in the text, recorded at its span.</span></p>
     <p><span class="mark mark-commentary"></span><span>Model commentary — a section title opens the model&#39;s introduction to that stretch; a note opens at its marker. Authored teaching material; the record layers do not depend on it.</span></p>
     <p><span class="key-sign">†</span><span>Obelus — surface tension noted in the apparatus</span></p>
@@ -1298,9 +1313,7 @@ const MARKS_KEY = `<details class="marks-key">
 
 function readingPage(data: SiteData, plan: ReadingPagePlan, dialoguePlans: readonly ReadingPagePlan[]) {
   const { commentary, dialogue, path: pagePath } = plan;
-  const visible = commentary.blocks.filter(
-    (block) => block.reviewStatus === "accepted" || block.reviewStatus === "unreviewed",
-  );
+  const visible = visibleCommentaryBlocks(commentary);
   const others = visible.filter((block) => block.blockKind !== "section");
   const readingLayout = dialogueReadingLayout(data, commentary);
   const sections = visible.filter((block) => block.blockKind === "section");
@@ -1409,7 +1422,7 @@ const SEARCH_GLYPH = `<svg viewBox="0 0 180 104" aria-hidden="true" focusable="f
 </svg>`;
 
 function isCompleteReading(commentary: SiteCommentaryDialogue, recording: SiteRecording) {
-  const activeBlocks = commentary.blocks.filter((block) => block.reviewStatus !== "rejected");
+  const activeBlocks = visibleCommentaryBlocks(commentary);
   const acceptedSections = activeBlocks.filter(
     (block) => block.blockKind === "section" && block.reviewStatus === "accepted",
   );
@@ -1452,7 +1465,7 @@ function homeFeaturedReading(data: SiteData, pagePath: string): string {
   if (!commentary) return "";
   const recording = data.recordingsByDialogue.get(commentary.dialogue);
   if (!recording) return "";
-  const activeBlocks = commentary.blocks.filter((block) => block.reviewStatus !== "rejected");
+  const activeBlocks = visibleCommentaryBlocks(commentary);
   const modelWritten = activeBlocks.every((block) => block.author === "model");
   const commentaryDescription = `${activeBlocks.length} accepted ${modelWritten ? "model-written " : ""}commentary notes`;
   const reviewNotice =
@@ -1519,6 +1532,7 @@ function oxfordList(items: readonly string[]): string {
 
 function patternRow(pagePath: string, dossier: SiteDossier, dialogueCount: number) {
   const strongest = [...dossier.presence]
+    .filter((entry) => entry.acceptedObservations > 0)
     .sort(
       (a, b) =>
         b.acceptedObservations - a.acceptedObservations ||
@@ -1535,8 +1549,8 @@ function patternRow(pagePath: string, dossier: SiteDossier, dialogueCount: numbe
       : `attested in ${dossier.dialogues} of the ${dialogueCount} dialogues`;
   return `<div class="pat-row">
   <div class="pat-main">
-    <h3>${dossierLink(pagePath, dossier, titleCase(dossier.label))}</h3>
-    <p class="pat-liner">${escapeHtml(patternOneliner(dossier.family, dossier.label))}</p>
+    <h3>${dossierLink(pagePath, dossier, titleCase(dossier.conceptKey))}</h3>
+    <p class="pat-liner">${escapeHtml(dossier.comparisonQuestion)}</p>
     <p class="pat-where">Strongest in ${oxfordList(strongest)}; ${attested}.</p>
   </div>
   <b class="n">${dossier.acceptedObservations}</b>
@@ -1599,7 +1613,7 @@ function patternsPage(data: SiteData) {
     data.dossiers.length > 0
       ? `<section>
   <h2>What recurs, and where</h2>
-  <p class="section-lede">The labels that recur most widely. The figure is the label's accepted observations corpus-wide; each dialogue named links straight into the dossier's evidence for it.</p>
+  <p class="section-lede">The concepts that recur most widely. The figure is each concept's accepted observations corpus-wide; each dialogue named links straight into its evidence dossier.</p>
   <div class="pat-rows">
 ${patternRows}
   </div>
@@ -1627,11 +1641,11 @@ ${patternRows}
   const layerCounts: Record<(typeof LAYER_GUIDE)[number]["title"], number> = {
     Dossiers: data.dossiers.length,
     Clusters: data.clusters.length,
-    Families: familyRows(data.observations, data.registry).length,
+    Axes: data.axes.length,
+    Concepts: data.concepts.length,
     Anchors: anchorOccurrences,
     Claims: data.claims.length,
     Relations: data.relations.length,
-    "Feature registry": data.registry.length,
   };
   const layerRows = LAYER_GUIDE.map((layer) =>
     layerRow(pagePath, layer.path, layer.title, layer.description, layerCounts[layer.title]),
@@ -1642,7 +1656,7 @@ ${patternRows}
     "Patterns",
     `<section class="hero compact">
   <h1>Patterns across the dialogues</h1>
-  <p>Observations are labeled by textual function; labels that recur become evidence dossiers; claims made in the text are linked by relation records where they support or strain against each other. This page is the corpus-level view of those layers.</p>
+  <p>Source-bound observations may belong to multiple ratified comparison concepts on independent axes; recurring concepts become evidence dossiers. Claims made in the text are linked by accepted relation records where they support or strain against each other.</p>
 </section>
 ${patternsSection}
 ${relationsSection}
@@ -1657,12 +1671,12 @@ ${relationsSection}
 function dialoguesHubPage(data: SiteData) {
   const pagePath = "dialogues/index.html";
   const observationsByDialogue = groupBy(data.observations, (observation) => observation.dialogue);
-  // Recurring labels attested per dialogue, for the honest "+ N more" tail.
-  const labelsPresent = new Map<string, number>();
+  // Recurring concepts attested per dialogue, for the honest "+ N more" tail.
+  const conceptsPresent = new Map<string, number>();
   for (const dossier of data.dossiers) {
     for (const entry of dossier.presence) {
       if (entry.acceptedObservations > 0) {
-        labelsPresent.set(entry.dialogue, (labelsPresent.get(entry.dialogue) ?? 0) + 1);
+        conceptsPresent.set(entry.dialogue, (conceptsPresent.get(entry.dialogue) ?? 0) + 1);
       }
     }
   }
@@ -1676,17 +1690,17 @@ function dialoguesHubPage(data: SiteData) {
         const parsed = Number.parseInt(row.total_tokens ?? "0", 10);
         return sum + (Number.isFinite(parsed) ? parsed : 0);
       }, 0);
-      const readLink = data.commentaryByDialogue.has(dialogue)
+      const readLink = hasVisibleCommentary(data.commentaryByDialogue.get(dialogue))
         ? `<span class="dlg-read">${pageLink(pagePath, `dialogues/${dialogue}/reading.html`, "Read")}</span>`
         : "";
       const tags = dialogueTags(dialogue, data.dossiers);
       const chips = tags.map(
         (tag) =>
           `<a class="tag" href="${pathToRoot(pagePath)}${
-            data.dossierPageByFamilyLabel.get(dossierFamilyLabelKey(tag.family, tag.label)) ?? ""
-          }" title="${escapeHtml(`${tag.count} of the label's ${tag.corpus} accepted instances are here`)}">${escapeHtml(tag.display)}</a>`,
+            data.dossierPageByConceptId.get(tag.conceptId) ?? ""
+          }" title="${escapeHtml(`${tag.count} of the concept's ${tag.corpus} accepted instances are here`)}">${escapeHtml(tag.display)}</a>`,
       );
-      const more = (labelsPresent.get(dialogue) ?? 0) - tags.length;
+      const more = (conceptsPresent.get(dialogue) ?? 0) - tags.length;
       if (more > 0) {
         chips.push(
           `<a class="tag more" href="${pathToRoot(pagePath)}dialogues/${dialogue}/records.html">+ ${more} more</a>`,
@@ -1705,7 +1719,7 @@ function dialoguesHubPage(data: SiteData) {
     pagePath,
     "Dialogues",
     `<section class="hero compact"><h1>Dialogues</h1>
-<p class="section-lede">Every dialogue, with the labels the reading found most concentrated in it — each tag links its dossier of evidence, and the tail counts the rest.</p></section>
+<p class="section-lede">Every dialogue, with the comparison concepts most concentrated in it — each tag links its dossier of evidence, and the tail counts the rest.</p></section>
 <section class="ledger-controls" data-filters>
   <span class="dlg-order" role="group" aria-label="Order">Order ${orderButton("title", "Title", true)}${orderButton("length", "Length")}${orderButton("records", "Records")}</span>
   <label class="search">Filter<input data-filter-search type="search" placeholder="Dialogue"></label>
@@ -1718,21 +1732,20 @@ ${rows}
   );
 }
 
-function familiesHubPage(data: SiteData) {
-  const pagePath = "families/index.html";
-  const families = familyRows(data.observations, data.registry);
-  const rows = families
+function axesHubPage(data: SiteData) {
+  const pagePath = "axes/index.html";
+  const rows = data.ontologyQuality.axisRows
     .map(
-      (family) =>
-        `<tr class="filter-item" data-family="${escapeHtml(family.family)}" data-search="${escapeHtml(`${family.family} ${family.kind}`)}"><td>${pageLink(pagePath, `families/${family.family}.html`, family.family)}</td><td>${escapeHtml(family.kind)}</td><td>${family.observationCount}</td><td>${family.featureCandidateCount}</td></tr>`,
+      (axis) =>
+        `<tr class="filter-item" data-axis="${escapeHtml(axis.axisKey)}" data-search="${escapeHtml(`${axis.axisKey} ${axis.dimension} ${axis.comparisonQuestion}`)}"><td>${pageLink(pagePath, `axes/${axis.axisKey}.html`, axis.axisKey)}</td><td>${escapeHtml(titleCase(axis.dimension))}</td><td>${axis.conceptCount}</td><td>${axis.membershipCount}</td><td>${axis.dialogueCount}</td></tr>`,
     )
     .join("");
   return layout(
     pagePath,
-    "Families",
-    `<section class="hero compact"><p>${pageLink(pagePath, "index.html", "Index")}</p><h1>Families</h1><div class="metrics">${metric("families", families.length)}</div></section>
-${filterControls({ families: families.map((family) => family.family), placeholder: "Family" })}
-<table><thead><tr><th>Family</th><th>Kind</th><th>Observations</th><th>Candidates</th></tr></thead><tbody>${rows}</tbody></table>`,
+    "Ontology axes",
+    `<section class="hero compact"><p>${pageLink(pagePath, "index.html", "Index")}</p><h1>Ontology axes</h1><div class="metrics">${metric("axes", data.axes.length)}${metric("concepts", data.concepts.length)}${metric("memberships", data.memberships.length)}</div></section>
+${filterControls({ axes: data.axes.map((axis) => axis.axis_key), placeholder: "Axis" })}
+<table><thead><tr><th>Axis</th><th>Dimension</th><th>Concepts</th><th>Memberships</th><th>Dialogues</th></tr></thead><tbody>${rows}</tbody></table>`,
     navState(data),
   );
 }
@@ -1774,18 +1787,17 @@ function relationsHubPage(data: SiteData) {
 function readingsHubPage(data: SiteData) {
   const pagePath = "readings/index.html";
   const rows = [...data.commentaryByDialogue.entries()]
+    .filter(([, commentary]) => hasVisibleCommentary(commentary))
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([dialogue, commentary]) => {
-      const visible = commentary.blocks.filter(
-        (block) => block.reviewStatus === "accepted" || block.reviewStatus === "unreviewed",
-      );
+      const visible = visibleCommentaryBlocks(commentary);
       return `<tr><td>${pageLink(pagePath, `dialogues/${dialogue}/reading.html`, titleCase(dialogue))}</td><td>${visible.length}</td><td>${visible.filter((block) => block.reviewStatus === "accepted").length}</td></tr>`;
     })
     .join("");
   return layout(
     pagePath,
     "Guided Readings",
-    `<section class="hero compact"><p>${pageLink(pagePath, "index.html", "Index")}</p><h1>Guided Readings</h1><div class="metrics">${metric("dialogues", data.commentaryByDialogue.size)}</div></section>
+    `<section class="hero compact"><p>${pageLink(pagePath, "index.html", "Index")}</p><h1>Guided Readings</h1><div class="metrics">${metric("dialogues", visibleCommentaryDialogueCount(data))}</div></section>
 <table><thead><tr><th>Dialogue</th><th>Visible Blocks</th><th>Accepted</th></tr></thead><tbody>${rows}</tbody></table>`,
     navState(data),
   );
@@ -1801,7 +1813,7 @@ function audioEditionsPage(data: SiteData) {
       const recording = data.recordingsByDialogue.get(dialogue);
       const commentary = data.commentaryByDialogue.get(dialogue);
       if (!recording) {
-        const action = commentary
+        const action = hasVisibleCommentary(commentary)
           ? `${pageLink(pagePath, `dialogues/${dialogue}/reading.html`, "Open guided reading")}<br><span class="dim">Audio not yet published.</span>`
           : '<span class="status-unavailable">Not yet published.</span>';
         return `<tr class="filter-item" data-dialogue="${escapeHtml(dialogue)}" data-status="unavailable" data-search="${escapeHtml(`${dialogue} unavailable`)}"><td>${pageLink(pagePath, `dialogues/${dialogue}/index.html`, titleCase(dialogue))}</td><td><span class="status-unavailable">Unavailable</span></td><td>—</td><td>—</td><td>${action}</td></tr>`;
@@ -1976,7 +1988,7 @@ function voicesSection(pagePath: string, data: SiteData, dialogue: string, accep
 // open columns, each row a deep link into the reading at that section's start.
 function courseSection(pagePath: string, data: SiteData, dialogue: string): string {
   const commentary = data.commentaryByDialogue.get(dialogue);
-  const sections = (commentary?.blocks ?? []).filter((block) => block.blockKind === "section");
+  const sections = visibleCommentaryBlocks(commentary).filter((block) => block.blockKind === "section");
   if (sections.length === 0) return "";
 
   const entry = (block: SiteCommentaryBlock) => {
@@ -2008,103 +2020,104 @@ function courseSection(pagePath: string, data: SiteData, dialogue: string): stri
 </section>`;
 }
 
-// Family label chips: this dialogue's labels for the family, count desc then
-// label asc, greedy under a summed-display-character budget, at least one, then
-// "+ N more". Chips land on the label's dossier when one exists, else the family.
-const FAMILY_CHIP_BUDGET = 72;
-function familyLabelChips(
+// Concept chips for one canonical axis: membership count desc, then key asc.
+const AXIS_CHIP_BUDGET = 72;
+function axisConceptChips(
   pagePath: string,
   data: SiteData,
   dialogue: string,
-  family: string,
+  axisKey: string,
   observations: readonly SiteObservation[],
 ): string {
-  const labelCounts = new Map<string, number>();
+  const conceptCounts = new Map<string, { assignment: SiteObservation["concepts"][number]; count: number }>();
   for (const observation of observations) {
-    labelCounts.set(observation.featureLabel, (labelCounts.get(observation.featureLabel) ?? 0) + 1);
+    for (const assignment of observation.concepts.filter((entry) => entry.axisKey === axisKey)) {
+      const current = conceptCounts.get(assignment.conceptId);
+      conceptCounts.set(assignment.conceptId, { assignment, count: (current?.count ?? 0) + 1 });
+    }
   }
-  const labels = [...labelCounts.entries()]
-    .sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))
-    .map(([label]) => label);
+  const concepts = [...conceptCounts.values()].sort(
+    (left, right) => right.count - left.count || (left.assignment.conceptKey < right.assignment.conceptKey ? -1 : left.assignment.conceptKey > right.assignment.conceptKey ? 1 : 0),
+  );
 
-  const shown: string[] = [];
+  const shown: typeof concepts = [];
   let used = 0;
-  for (const label of labels) {
-    const display = titleCase(label);
-    if (shown.length && used + display.length > FAMILY_CHIP_BUDGET) break;
-    shown.push(label);
+  for (const concept of concepts) {
+    const display = titleCase(concept.assignment.conceptKey);
+    if (shown.length && used + display.length > AXIS_CHIP_BUDGET) break;
+    shown.push(concept);
     used += display.length;
   }
-  const familyHref = rel(pagePath, `families/${family}.html`);
-  const chip = (label: string) => {
-    const target = data.dossierPageByFamilyLabel.get(dossierFamilyLabelKey(family, label));
-    const href = target ? rel(pagePath, target) : familyHref;
-    return tagAnchor(href, titleCase(label));
+  const axisHref = rel(pagePath, `axes/${axisKey}.html`);
+  const chip = ({ assignment }: (typeof concepts)[number]) => {
+    const target = data.dossierPageByConceptId.get(assignment.conceptId);
+    const href = target ? rel(pagePath, target) : rel(pagePath, conceptPagePath(axisKey, assignment.conceptKey));
+    return tagAnchor(href, titleCase(assignment.conceptKey));
   };
-  const rest = labels.length - shown.length;
+  const rest = concepts.length - shown.length;
   const chips = shown.map(chip).join("");
-  const more = rest > 0 ? tagAnchor(familyHref, `+ ${rest} more`, "tag more") : "";
+  const more = rest > 0 ? tagAnchor(axisHref, `+ ${rest} more`, "tag more") : "";
   return `<div class="tags">${chips}${more}</div>`;
 }
 
-// Families on the overview: ledger row grammar, top eight unfolded with guide
+// Axes on the overview: ledger row grammar, top eight unfolded with guide
 // line and chips; the rest folded as head lines only.
-function familiesSection(
+function axesSection(
   pagePath: string,
   data: SiteData,
   dialogue: string,
   accepted: readonly SiteObservation[],
 ): string {
-  const byFamily = new Map<string, SiteObservation[]>();
+  const byAxis = new Map<string, SiteObservation[]>();
   for (const observation of accepted) {
-    const entries = byFamily.get(observation.featureFamily) ?? [];
-    entries.push(observation);
-    byFamily.set(observation.featureFamily, entries);
+    for (const axisKey of new Set(observation.concepts.map((assignment) => assignment.axisKey))) {
+      const entries = byAxis.get(axisKey) ?? [];
+      entries.push(observation);
+      byAxis.set(axisKey, entries);
+    }
   }
-  const families = [...byFamily.entries()].sort(
+  const axes = [...byAxis.entries()].sort(
     (a, b) => b[1].length - a[1].length || (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0),
   );
-  if (families.length === 0) return "";
+  if (axes.length === 0) return "";
 
-  const recordsFor = (family: string, count: number) =>
-    `<a class="lgr-act" href="${rel(pagePath, `dialogues/${dialogue}/records.html`)}#fam=${escapeHtml(
-      family,
+  const recordsFor = (axisKey: string, count: number) =>
+    `<a class="lgr-act" href="${rel(pagePath, `dialogues/${dialogue}/records.html`)}#axis=${escapeHtml(
+      axisKey,
     )}">${groupDigits(count)} record${count === 1 ? "" : "s"}</a>`;
 
-  const unfolded = families
+  const unfolded = axes
     .slice(0, 8)
-    .map(([family, entries]) => {
-      const name = `<a class="lgr-name" href="${rel(pagePath, `families/${family}.html`)}">${escapeHtml(
-        titleCase(family),
+    .map(([axisKey, entries]) => {
+      const name = `<a class="lgr-name" href="${rel(pagePath, `axes/${axisKey}.html`)}">${escapeHtml(
+        titleCase(axisKey),
       )}</a>`;
-      // Soft lookup here so subset/fixture families still render; the full
-      // top-eight-union census (every unfolded family has a line) is enforced in
-      // curation.test over real ledgers.
-      const guide = FAMILY_GUIDE[family];
-      const guideLine = guide ? `\n    <p class="lgr-epi">${escapeHtml(guide)}</p>` : "";
+      const axis = data.axes.find((candidate) => candidate.axis_key === axisKey);
+      if (!axis) throw new Error(`Missing canonical axis for ${axisKey}.`);
+      const guideLine = `\n    <p class="lgr-epi">${escapeHtml(axis.comparison_question)}</p>`;
       return `<div class="lgr-row">
-    <div class="lgr-head">${name}${recordsFor(family, entries.length)}</div>${guideLine}
-    ${familyLabelChips(pagePath, data, dialogue, family, entries)}
+    <div class="lgr-head">${name}${recordsFor(axisKey, entries.length)}</div>${guideLine}
+    ${axisConceptChips(pagePath, data, dialogue, axisKey, entries)}
   </div>`;
     })
     .join("\n  ");
 
-  const rest = families.slice(8);
+  const rest = axes.slice(8);
   const fold = rest.length
-    ? `<details class="lgr-fold"><summary>All ${families.length} families</summary>${rest
+    ? `<details class="lgr-fold"><summary>All ${axes.length} axes</summary>${rest
         .map(
-          ([family, entries]) =>
+          ([axisKey, entries]) =>
             `<div class="lgr-row"><div class="lgr-head"><a class="lgr-name" href="${rel(
               pagePath,
-              `families/${family}.html`,
-            )}">${escapeHtml(titleCase(family))}</a>${recordsFor(family, entries.length)}</div></div>`,
+              `axes/${axisKey}.html`,
+            )}">${escapeHtml(titleCase(axisKey))}</a>${recordsFor(axisKey, entries.length)}</div></div>`,
         )
         .join("")}</details>`
     : "";
 
   return `<section>
-  <h2>Families</h2>
-  <p class="section-lede">The kinds of observation recorded in this dialogue, most frequent first.</p>
+  <h2>Comparison axes</h2>
+  <p class="section-lede">Independent questions under which accepted observations in this dialogue are compared, most frequent first.</p>
   <div class="lgr">
   ${unfolded}
   </div>
@@ -2124,14 +2137,14 @@ function dialogueIndexPage(data: SiteData, dialogue: string, observations: SiteO
   const tagChips = tags.length
     ? `<div class="tags">${tags
         .map((tag) => {
-          const target = data.dossierPageByFamilyLabel.get(dossierFamilyLabelKey(tag.family, tag.label));
-          const href = target ? rel(pagePath, target) : rel(pagePath, `families/${tag.family}.html`);
+          const target = data.dossierPageByConceptId.get(tag.conceptId);
+          const href = target ? rel(pagePath, target) : rel(pagePath, conceptPagePath(tag.axisKey, tag.conceptKey));
           return tagAnchor(href, tag.display);
         })
         .join("")}</div>`
     : "";
 
-  const readDoor = commentary
+  const readDoor = hasVisibleCommentary(commentary)
     ? `<article class="door">${READ_GLYPH}<h2>${pageLink(
         pagePath,
         `dialogues/${dialogue}/reading.html`,
@@ -2150,17 +2163,11 @@ function dialogueIndexPage(data: SiteData, dialogue: string, observations: SiteO
     "Records & data",
   )}</h2><p>Everything recorded against this text — ${recordsDoorCounts[0]}, ${recordsDoorCounts[1]}, ${recordsDoorCounts[2]}, and ${recordsDoorCounts[3]} — mapped onto the text and browsable in full.</p></article>`;
 
-  // Curated specimen. Renders only when the id resolves to an accepted
-  // observation of this dialogue; subset/fixture builds that lack it (or carry a
-  // same-named unaccepted stub) simply drop the section, like dialogueTags drops
-  // an absent dossier. The full exists/accepted/of-dialogue census over live
-  // ledgers is enforced in curation.test.
-  const specimenId = dialogueSpecimenId(dialogue);
-  const specimenCandidate = data.observationsById.get(specimenId);
-  const specimen =
-    specimenCandidate && specimenCandidate.reviewStatus === "accepted" && specimenCandidate.dialogue === dialogue
-      ? specimenCandidate
-      : undefined;
+  const specimen = [...accepted].sort(
+    (left, right) =>
+      left.sourceRef.startChar - right.sourceRef.startChar ||
+      (left.observationId < right.observationId ? -1 : left.observationId > right.observationId ? 1 : 0),
+  )[0];
   const fromRecords = specimen
     ? `<section>
   <h2>From the records</h2>
@@ -2188,7 +2195,7 @@ function dialogueIndexPage(data: SiteData, dialogue: string, observations: SiteO
 </section>
 ${voicesSection(pagePath, data, dialogue, accepted.length)}
 ${courseSection(pagePath, data, dialogue)}
-${familiesSection(pagePath, data, dialogue, accepted)}
+${axesSection(pagePath, data, dialogue, accepted)}
 ${fromRecords}`,
     navState(data),
   );
@@ -2207,7 +2214,7 @@ type MapMark = {
   kind: "obs" | "claim" | "anch" | "section";
   startChar: number;
   endChar: number;
-  family?: string | undefined;
+  axisKeys?: string[] | undefined;
   name: string;
   ref: string;
   lead: string;
@@ -2232,7 +2239,7 @@ function recordMapSvg(
   if (total <= 0) return null;
 
   const commentary = data.commentaryByDialogue.get(dialogue);
-  const sections = (commentary?.blocks ?? []).filter((block) => block.blockKind === "section");
+  const sections = visibleCommentaryBlocks(commentary).filter((block) => block.blockKind === "section");
   const derived = data.derivedByDialogue.get(dialogue);
   const anchors = derived?.anchors ?? [];
 
@@ -2268,9 +2275,9 @@ function recordMapSvg(
   const obsSpans = observations.map((observation) => ({
     startChar: observation.sourceRef.startChar,
     endChar: observation.sourceRef.endChar,
-    family: observation.featureFamily,
-    name: titleCase(observation.featureLabel),
-    ref: `${sourceWork} ${observation.stephanusSpan} — ${titleCase(observation.featureFamily)}`,
+    axisKeys: [...new Set(observation.concepts.map((assignment) => assignment.axisKey))],
+    name: observation.concepts.map((assignment) => titleCase(assignment.conceptKey)).join("; ") || "Observation",
+    ref: `${sourceWork} ${observation.stephanusSpan}`,
     lead: truncateLead(observation.observation),
     href: data.observationPageById.get(observation.observationId),
   }));
@@ -2339,7 +2346,7 @@ function recordMapSvg(
 
   const markData = (mark: MapMark) =>
     `class="map-mark" tabindex="0" data-k="${mark.kind}"${
-      mark.family ? ` data-f="${svgAttr(mark.family)}"` : ""
+      mark.axisKeys?.length ? ` data-a="${svgAttr(mark.axisKeys.join(" "))}"` : ""
     }${mark.href ? ` data-h="${svgAttr(rel(`dialogues/${dialogue}/records.html`, mark.href))}"` : ""} data-t="${svgAttr(
       mark.ref,
     )}" data-n="${svgAttr(mark.name)}"${includeLeads && mark.lead ? ` data-l="${svgAttr(mark.lead)}"` : ""}`;
@@ -2466,7 +2473,7 @@ function whatTheTextAssertsSection(pagePath: string, data: SiteData, dialogue: s
   // Specimen (a): the accepted claim most cited by commentary blocks (ties →
   // lowest claim id).
   const citeCounts = new Map<string, number>();
-  for (const block of data.commentaryByDialogue.get(dialogue)?.blocks ?? []) {
+  for (const block of visibleCommentaryBlocks(data.commentaryByDialogue.get(dialogue))) {
     for (const claimId of block.cites.claims) citeCounts.set(claimId, (citeCounts.get(claimId) ?? 0) + 1);
   }
   const byId = new Map(claims.map((claim) => [claim.claimId, claim]));
@@ -2700,24 +2707,23 @@ function dialogueRecordsPage(data: SiteData, dialogue: string, observations: Sit
   // axis would exceed its budget (a plan STOP condition; the layer directory
   // and card lists below still reach every record).
   const map = recordMapSvg(data, dialogue, sourceWork, accepted, claims, markers);
-  const familyCounts = orderedCounts(
-    new Map(
-      [...groupBy(accepted, (observation) => observation.featureFamily).entries()].map(([family, entries]) => [
-        family,
-        entries.length,
-      ]),
-    ),
-  );
+  const axisCountMap = new Map<string, number>();
+  for (const observation of accepted) {
+    for (const axisKey of new Set(observation.concepts.map((assignment) => assignment.axisKey))) {
+      axisCountMap.set(axisKey, (axisCountMap.get(axisKey) ?? 0) + 1);
+    }
+  }
+  const axisCounts = orderedCounts(axisCountMap);
   const chips = map
-    ? `<div class="lane-chips" role="group" aria-label="Filter observations by family" data-map-chips>
+    ? `<div class="lane-chips" role="group" aria-label="Filter observations by ontology axis" data-map-chips>
     <span class="chips-label">Observations</span>
-    <button type="button" class="map-chip is-on" data-fam="" data-label="All">All</button>
-    ${familyCounts
+    <button type="button" class="map-chip is-on" data-axis="" data-label="All">All</button>
+    ${axisCounts
       .map(
-        ([family, count]) =>
-          `<button type="button" class="map-chip" data-fam="${escapeHtml(family)}" data-label="${escapeHtml(
-            titleCase(family),
-          )}">${escapeHtml(titleCase(family))}<b class="n">${groupDigits(count)}</b></button>`,
+        ([axisKey, count]) =>
+          `<button type="button" class="map-chip" data-axis="${escapeHtml(axisKey)}" data-label="${escapeHtml(
+            titleCase(axisKey),
+          )}">${escapeHtml(titleCase(axisKey))}<b class="n">${groupDigits(count)}</b></button>`,
       )
       .join("\n    ")}
   </div>`
@@ -2803,13 +2809,14 @@ function dialogueRecordsPage(data: SiteData, dialogue: string, observations: Sit
       ),
     );
   }
-  if (commentary) {
+  const visibleCommentary = visibleCommentaryBlocks(commentary);
+  if (visibleCommentary.length > 0) {
     layers.push(
       recordsLayerRow(
         pagePath,
         `dialogues/${dialogue}/reading.html`,
         "Commentary",
-        commentary.blocks.length,
+        visibleCommentary.length,
         "The guided reading's sections and notes, in the model's voice, citing the records above. Read alongside the text.",
       ),
     );
@@ -2851,8 +2858,8 @@ function observationShardPage(data: SiteData, shard: ObservationShard) {
   <div class="metrics">${metric("observations", observations.length)}</div>
 </section>
 ${filterControls({
-  families: [...new Set(observations.map((observation) => observation.featureFamily))].sort(),
-  labels: [...new Set(observations.map((observation) => observation.featureLabel))].sort(),
+  axes: [...new Set(observations.flatMap((observation) => observation.concepts.map((entry) => entry.axisKey)))].sort(),
+  concepts: [...new Set(observations.flatMap((observation) => observation.concepts.map((entry) => entry.conceptKey)))].sort(),
   statuses: [...new Set(observations.map((observation) => observation.reviewStatus))].sort(),
   placeholder: "Observation text",
 })}
@@ -3103,131 +3110,106 @@ function relationsPage(data: SiteData, shard: RelationShard, hasDialogueIndex: b
   );
 }
 
-function familyPage(data: SiteData, family: string, observations: SiteObservation[]) {
-  const pagePath = `families/${family}.html`;
-  const clusterLink = data.clusters.some((cluster) => cluster.family === family)
-    ? ` ${pageLink(pagePath, `clusters/${family}.html`, "Cluster page")}`
-    : "";
-  const dossiersByLabel = new Map(data.dossiers.filter((dossier) => dossier.family === family).map((dossier) => [dossier.label, dossier]));
-  const grouped = [...groupBy(observations, (observation) => observation.featureLabel).entries()].sort(([a], [b]) =>
-    a.localeCompare(b),
-  );
-  const recurring = grouped.filter(([, entries]) => entries.length > 1);
-  const singletons = grouped.filter(([, entries]) => entries.length === 1);
-  const rows = (entries: Array<[string, SiteObservation[]]>) =>
-    entries
-      .map(([label, labelObservations]) => {
-        const sampleLinks = labelObservations
-          .slice(0, 12)
-          .map((observation) => observationLink(pagePath, data, observation))
-          .join(", ");
-        return `<tr class="filter-item" data-label="${escapeHtml(label)}" data-search="${escapeHtml(
-          `${label} ${labelObservations.map((observation) => observation.observationId).join(" ")}`.toLowerCase(),
-        )}"><td>${dossierLink(pagePath, dossiersByLabel.get(label), label)}</td><td>${labelObservations.length}</td><td>${
-          new Set(labelObservations.map((observation) => observation.dialogue)).size
-        }</td><td>${sampleLinks}</td></tr>`;
-      })
-      .join("");
-
+function axisPage(data: SiteData, axisId: string) {
+  const axis = data.axesById.get(axisId);
+  if (!axis) throw new Error(`Unknown ontology axis ${axisId}.`);
+  const pagePath = `axes/${axis.axis_key}.html`;
+  const concepts = data.concepts.filter((concept) => concept.axis_id === axis.axis_id);
+  const rows = concepts.map((concept) => {
+    const observations = data.observationsByConceptId.get(concept.concept_id) ?? [];
+    const dossier = data.dossiers.find((entry) => entry.conceptId === concept.concept_id);
+    const target = dossier
+      ? dossierLink(pagePath, dossier, concept.concept_key)
+      : pageLink(pagePath, conceptPagePath(axis.axis_key, concept.concept_key), concept.concept_key);
+    return `<tr class="filter-item" data-concept="${escapeHtml(concept.concept_key)}" data-search="${escapeHtml(`${concept.concept_key} ${concept.definition} ${concept.comparison_question}`)}"><td>${target}</td><td>${escapeHtml(concept.definition)}</td><td>${observations.length}</td><td>${new Set(observations.map((entry) => entry.dialogue)).size}</td></tr>`;
+  }).join("");
   return layout(
     pagePath,
-    family,
-    `<section class="hero compact">
-  <p>${pageLink(pagePath, "index.html", "Index")}${clusterLink}</p>
-  <h1>${escapeHtml(family)}</h1>
-  <div class="metrics">
-    ${metric("observations", observations.length)}
-    ${metric("recurring labels", recurring.length)}
-    ${metric("singletons", singletons.length)}
-    ${metric("dialogues", new Set(observations.map((observation) => observation.dialogue)).size)}
-  </div>
-</section>
-${filterControls({ labels: grouped.map(([label]) => label), placeholder: "Label or record id" })}
-<section>
-  <h2>Recurring Labels</h2>
-  <table><thead><tr><th>Label</th><th>Observations</th><th>Dialogues</th><th>Sample Records</th></tr></thead><tbody>${rows(recurring)}</tbody></table>
-</section>
-<section>
-  <h2>Singleton Labels</h2>
-  <table><thead><tr><th>Label</th><th>Observations</th><th>Dialogues</th><th>Record</th></tr></thead><tbody>${rows(singletons)}</tbody></table>
-</section>`,
+    axis.axis_key,
+    `<section class="hero compact" id="${escapeHtml(axis.axis_id)}"><p>${pageLink(pagePath, "axes/index.html", "Axes")}</p><h1>${escapeHtml(titleCase(axis.axis_key))}</h1><p>${escapeHtml(axis.comparison_question)}</p><div class="metrics">${metric("dimension", titleCase(axis.dimension))}${metric("concepts", concepts.length)}</div></section>
+${filterControls({ concepts: concepts.map((concept) => concept.concept_key), placeholder: "Concept or definition" })}
+<table><thead><tr><th>Concept</th><th>Definition</th><th>Observations</th><th>Dialogues</th></tr></thead><tbody>${rows}</tbody></table>`,
     navState(data),
   );
 }
 
-function registryPage(data: SiteData) {
-  const pagePath = "registry.html";
-  const parts = data.registryShards
-    .map(
-      (shard) =>
-        `<li>${pageLink(pagePath, shard.path, `Part ${shard.part}`)} <span>${shard.entries.length} entries</span></li>`,
-    )
-    .join("");
-  return layout(
-    pagePath,
-    "Registry",
-    `<section class="hero compact">
-  <p>${pageLink(pagePath, "index.html", "Index")}</p>
-  <h1>Feature Registry</h1>
-  <div class="metrics">${metric("candidates", data.registry.length)}${metric("parts", data.registryShards.length)}</div>
-</section>
-<section><h2>Registry Parts</h2><ul class="link-list">${parts}</ul></section>`,
-    navState(data),
+type ConceptDirectoryShard<T> = {
+  part: number;
+  partCount: number;
+  path: string;
+  concepts: T[];
+};
+
+export function buildConceptDirectoryShards<T extends { concept_id: string }>(
+  concepts: readonly T[],
+  chunkSize = 500,
+): ConceptDirectoryShard<T>[] {
+  if (!Number.isSafeInteger(chunkSize) || chunkSize <= 0) {
+    throw new Error("Concept directory shard size must be a positive integer.");
+  }
+  const sorted = [...concepts].sort((left, right) =>
+    left.concept_id < right.concept_id ? -1 : left.concept_id > right.concept_id ? 1 : 0,
   );
+  const partCount = Math.max(1, Math.ceil(sorted.length / chunkSize));
+  return Array.from({ length: partCount }, (_, index) => ({
+    part: index + 1,
+    partCount,
+    path: index === 0 ? "concepts/index.html" : `concepts/index-${index + 1}.html`,
+    concepts: sorted.slice(index * chunkSize, (index + 1) * chunkSize),
+  }));
 }
 
-function registryShardPage(data: SiteData, shard: RegistryShard) {
+function conceptsHubPage(data: SiteData, shard: ConceptDirectoryShard<SiteData["concepts"][number]>) {
   const pagePath = shard.path;
-  const rows = shard.entries
-    .map((entry) => {
-      const observationLinks = entry.observations
-        .slice(0, 20)
-        .map((observationId) => {
-          const observation = data.observationsById.get(observationId);
-          return observation ? observationLink(pagePath, data, observation) : escapeHtml(observationId);
-        })
-        .join(", ");
-      return `<tr class="filter-item" id="${escapeHtml(entry.id)}" data-family="${escapeHtml(entry.family)}" data-status="${escapeHtml(entry.status)}" data-search="${escapeHtml(`${entry.id} ${entry.proposedName} ${entry.notes}`.toLowerCase())}"><td><a href="#${escapeHtml(entry.id)}">${escapeHtml(entry.id)}</a></td><td>${pageLink(
-        pagePath,
-        `families/${entry.family}.html`,
-        entry.family,
-      )}</td><td>${escapeHtml(entry.proposedName)}</td><td>${badge(entry.status)}</td><td>${entry.observations.length}</td><td>${observationLinks}</td><td>${escapeHtml(
-        entry.notes,
-      )}</td></tr>`;
-    })
-    .join("");
-  const partLinks = data.registryShards
-    .map((entry) =>
-      entry.part === shard.part ? `<strong>${entry.part}</strong>` : pageLink(pagePath, entry.path, String(entry.part)),
-    )
-    .join(" ");
-
+  const rows = shard.concepts.map((concept) => {
+    const axis = data.axesById.get(concept.axis_id)!;
+    const observations = data.observationsByConceptId.get(concept.concept_id) ?? [];
+    return `<tr class="filter-item" data-axis="${escapeHtml(axis.axis_key)}" data-concept="${escapeHtml(concept.concept_key)}" data-search="${escapeHtml(`${axis.axis_key} ${concept.concept_key}`)}"><td>${pageLink(pagePath, `axes/${axis.axis_key}.html`, axis.axis_key, `#${axis.axis_id}`)}</td><td>${pageLink(pagePath, conceptPagePath(axis.axis_key, concept.concept_key), concept.concept_key)}</td><td>${observations.length}</td><td>${new Set(observations.map((entry) => entry.dialogue)).size}</td></tr>`;
+  }).join("");
+  const partSuffix = shard.partCount > 1 ? ` (part ${shard.part} of ${shard.partCount})` : "";
+  const partLinks = shard.partCount > 1
+    ? `<nav class="part-nav" aria-label="Concept directory pages">${buildConceptDirectoryShards(data.concepts)
+        .map((entry) =>
+          entry.part === shard.part
+            ? `<strong aria-current="page">${entry.part}</strong>`
+            : pageLink(pagePath, entry.path, String(entry.part)),
+        )
+        .join(" ")}</nav>`
+    : "";
+  const axes = [...new Set(shard.concepts.map((concept) => data.axesById.get(concept.axis_id)!.axis_key))].sort();
   return layout(
     pagePath,
-    `Registry Part ${shard.part}`,
-    `<section class="hero compact">
-  <p>${pageLink(pagePath, "registry.html", "Feature Registry")}</p>
-  <h1>Feature Registry (part ${shard.part} of ${shard.partCount})</h1>
-  <div class="metrics">${metric("total candidates", data.registry.length)}${metric("this part", shard.entries.length)}</div>
-  <p>${partLinks}</p>
-</section>
-${filterControls({
-  families: [...new Set(shard.entries.map((entry) => entry.family))].sort(),
-  statuses: [...new Set(shard.entries.map((entry) => entry.status))].sort(),
-  placeholder: "Registry ID, name, or notes",
-})}
-<table><thead><tr><th>ID</th><th>Family</th><th>Name</th><th>Status</th><th>Observation Count</th><th>Sample Observations</th><th>Notes</th></tr></thead><tbody>${rows}</tbody></table>`,
+    `Ontology concepts${partSuffix}`,
+    `<section class="hero compact"><p>${pageLink(pagePath, "index.html", "Index")}</p><h1>Ontology concepts${escapeHtml(partSuffix)}</h1><div class="metrics">${metric("concepts", data.concepts.length)}${metric("this part", shard.concepts.length)}${metric("memberships", data.memberships.length)}</div>${partLinks}</section>
+${filterControls({ axes, placeholder: "Concept or axis" })}
+<table><thead><tr><th>Axis</th><th>Concept</th><th>Observations</th><th>Dialogues</th></tr></thead><tbody>${rows}</tbody></table>`,
+    navState(data),
+  );
+}
+
+function conceptPage(data: SiteData, conceptId: string) {
+  const concept = data.conceptsById.get(conceptId);
+  if (!concept) throw new Error(`Unknown ontology concept ${conceptId}.`);
+  const axis = data.axesById.get(concept.axis_id)!;
+  const pagePath = conceptPagePath(axis.axis_key, concept.concept_key);
+  const observations = data.observationsByConceptId.get(concept.concept_id) ?? [];
+  const dossier = data.dossiers.find((entry) => entry.conceptId === concept.concept_id);
+  const records = observations.map((observation) => `<li>${observationLink(pagePath, data, observation)} <span>${escapeHtml(titleCase(observation.dialogue))} ${escapeHtml(observation.stephanusSpan)}</span></li>`).join("");
+  return layout(
+    pagePath,
+    concept.concept_key,
+    `<section class="hero compact" id="${escapeHtml(concept.concept_id)}"><p>${pageLink(pagePath, `axes/${axis.axis_key}.html`, titleCase(axis.axis_key))}</p><h1>${escapeHtml(titleCase(concept.concept_key))}</h1><p>${escapeHtml(concept.definition)}</p><p><strong>Comparison question.</strong> ${escapeHtml(concept.comparison_question)}</p><div class="metrics">${metric("observations", observations.length)}${metric("dialogues", new Set(observations.map((entry) => entry.dialogue)).size)}</div>${dossier ? `<p>${dossierLink(pagePath, dossier, "Open evidence dossier")}</p>` : ""}</section><ul class="source-list">${records}</ul>`,
     navState(data),
   );
 }
 
 function clusterIndexPage(data: SiteData, clusters: SiteCluster[]) {
   const pagePath = "clusters/index.html";
-  const byFamily = [...groupBy(clusters, (cluster) => cluster.family).entries()].sort(([a], [b]) => a.localeCompare(b));
-  const rows = byFamily
+  const byAxis = [...groupBy(clusters, (cluster) => cluster.axisId).entries()].sort(([left], [right]) => left.localeCompare(right));
+  const rows = byAxis
     .map(
-      ([family, entries]) =>
-        `<tr><td>${pageLink(pagePath, `clusters/${family}.html`, family)}</td><td>${entries.length}</td><td>${[
+      ([, entries]) =>
+        `<tr><td>${pageLink(pagePath, `clusters/${entries[0]!.axisKey}.html`, entries[0]!.axisKey)}</td><td>${escapeHtml(titleCase(entries[0]!.dimension))}</td><td>${entries.length}</td><td>${[
           ...new Set(entries.flatMap((entry) => entry.dialogues)),
         ]
           .sort()
@@ -3241,15 +3223,15 @@ function clusterIndexPage(data: SiteData, clusters: SiteCluster[]) {
     `<section class="hero compact">
   <p>${pageLink(pagePath, "index.html", "Index")}</p>
   <h1>Clusters</h1>
-  <div class="metrics">${metric("clusters", clusters.length)}${metric("families", byFamily.length)}</div>
+  <div class="metrics">${metric("clusters", clusters.length)}${metric("axes", byAxis.length)}</div>
 </section>
-<table><thead><tr><th>Family</th><th>Clusters</th><th>Dialogues</th></tr></thead><tbody>${rows}</tbody></table>`,
+<table><thead><tr><th>Axis</th><th>Dimension</th><th>Concept clusters</th><th>Dialogues</th></tr></thead><tbody>${rows}</tbody></table>`,
     navState(data),
   );
 }
 
-function clusterFamilyPage(data: SiteData, family: string, clusters: SiteCluster[]) {
-  const pagePath = `clusters/${family}.html`;
+function clusterAxisPage(data: SiteData, axisKey: string, clusters: SiteCluster[]) {
+  const pagePath = `clusters/${axisKey}.html`;
   const body = clusters
     .map((cluster) => {
       const links = cluster.observations
@@ -3263,7 +3245,7 @@ function clusterFamilyPage(data: SiteData, family: string, clusters: SiteCluster
         .join("");
       return `<article class="record">
   <div class="record-head">
-    <div><h2>${escapeHtml(cluster.label)}</h2><p>${escapeHtml(cluster.dialogues.join(", "))}</p></div>
+    <div><h2>${pageLink(pagePath, conceptPagePath(cluster.axisKey, cluster.conceptKey), titleCase(cluster.conceptKey))}</h2><p>${escapeHtml(cluster.comparisonQuestion)}</p><p>${escapeHtml(cluster.dialogues.join(", "))}</p></div>
     ${badge(`${cluster.observations.length} observations`)}
   </div>
   <ul class="source-list">${links}</ul>
@@ -3273,10 +3255,10 @@ function clusterFamilyPage(data: SiteData, family: string, clusters: SiteCluster
 
   return layout(
     pagePath,
-    `${family} Clusters`,
+    `${axisKey} Clusters`,
     `<section class="hero compact">
-  <p>${pageLink(pagePath, "clusters/index.html", "Clusters")} ${pageLink(pagePath, `families/${family}.html`, "Family page")}</p>
-  <h1>${escapeHtml(family)} clusters</h1>
+  <p>${pageLink(pagePath, "clusters/index.html", "Clusters")} ${pageLink(pagePath, `axes/${axisKey}.html`, "Axis page")}</p>
+  <h1>${escapeHtml(titleCase(axisKey))} clusters</h1>
   <div class="metrics">${metric("clusters", clusters.length)}</div>
 </section>
 <section class="records">${body}</section>`,
@@ -3289,15 +3271,15 @@ function dossierIndexPage(data: SiteData) {
   const rows = data.dossiers
     .map(
       (dossier) =>
-        `<tr class="filter-item" data-family="${escapeHtml(dossier.family)}" data-label="${escapeHtml(
-          dossier.label,
-        )}" data-search="${escapeHtml(`${dossier.family} ${dossier.label}`.toLowerCase())}"><td>${pageLink(
+        `<tr class="filter-item" data-axis="${escapeHtml(dossier.axisKey)}" data-concept="${escapeHtml(
+          dossier.conceptKey,
+        )}" data-search="${escapeHtml(`${dossier.axisKey} ${dossier.conceptKey}`.toLowerCase())}"><td>${pageLink(
           pagePath,
-          dossier.pagePath,
-          dossier.family,
-        )}</td><td>${pageLink(pagePath, dossier.pagePath, dossier.label, `#${dossier.dossierId}`)}</td><td>${
+          `axes/${dossier.axisKey}.html`,
+          dossier.axisKey,
+        )}</td><td>${pageLink(pagePath, dossier.pagePath, dossier.conceptKey, `#${dossier.dossierId}`)}</td><td>${
           dossier.acceptedObservations
-        }</td><td>${dossier.dialogues}</td><td>${dossier.counterRecords}</td></tr>`,
+        }</td><td>${dossier.dialogues}</td></tr>`,
     )
     .join("");
   return layout(
@@ -3307,16 +3289,16 @@ function dossierIndexPage(data: SiteData) {
   <p>${pageLink(pagePath, "index.html", "Index")}</p>
   <h1>Dossiers</h1>
   <div class="metrics">${metric("dossiers", data.dossiers.length)}${metric(
-    "families",
-    new Set(data.dossiers.map((dossier) => dossier.family)).size,
+    "axes",
+    new Set(data.dossiers.map((dossier) => dossier.axisId)).size,
   )}</div>
 </section>
 ${filterControls({
-  families: [...new Set(data.dossiers.map((dossier) => dossier.family))].sort(),
-  labels: [...new Set(data.dossiers.map((dossier) => dossier.label))].sort(),
+  axes: [...new Set(data.dossiers.map((dossier) => dossier.axisKey))].sort(),
+  concepts: [...new Set(data.dossiers.map((dossier) => dossier.conceptKey))].sort(),
   placeholder: "Dossier",
 })}
-<table><thead><tr><th>Family</th><th>Label</th><th>Accepted</th><th>Dialogues</th><th>Counter Records</th></tr></thead><tbody>${rows}</tbody></table>`,
+<table><thead><tr><th>Axis</th><th>Concept</th><th>Accepted</th><th>Dialogues</th></tr></thead><tbody>${rows}</tbody></table>`,
     navState(data),
   );
 }
@@ -3325,10 +3307,10 @@ function dossierPage(data: SiteData, dossier: SiteDossier) {
   const pagePath = dossier.pagePath;
   const instanceRows = dossier.instances
     .map((instance) => {
-      const observation = data.observationsById.get(instance.id);
-      return `<tr><td>${observation ? observationLink(pagePath, data, observation) : escapeHtml(instance.id)}</td><td>${escapeHtml(
+      const observation = data.observationsById.get(instance.observationId);
+      return `<tr><td>${observation ? observationLink(pagePath, data, observation) : escapeHtml(instance.observationId)}</td><td>${escapeHtml(
         instance.dialogue,
-      )}</td><td>${escapeHtml(instance.span)}</td><td>${escapeHtml(instance.speakers)}</td><td>${instance.turnCount}</td></tr>`;
+      )}</td><td>${escapeHtml(instance.stephanusSpan)}</td><td>${escapeHtml(instance.speakers.join(", "))}</td><td>${instance.turnCount}</td></tr>`;
     })
     .join("");
   const presenceRows = dossier.presence
@@ -3343,36 +3325,21 @@ function dossierPage(data: SiteData, dossier: SiteDossier) {
     .join("");
   const coRows = dossier.cooccurrence
     .map((entry) => {
-      const target = data.dossierPageByFamilyLabel.get(dossierFamilyLabelKey(entry.family, entry.label));
-      const label = target ? idLink(pagePath, target, entry.label) : escapeHtml(entry.label);
-      return `<tr><td>${pageLink(pagePath, `families/${entry.family}.html`, entry.family)}</td><td>${label}</td><td>${entry.overlappingObservations}</td></tr>`;
+      const target = data.dossierPageByConceptId.get(entry.conceptId);
+      const concept = target ? idLink(pagePath, target, entry.conceptKey) : pageLink(pagePath, conceptPagePath(entry.axisKey, entry.conceptKey), entry.conceptKey);
+      return `<tr><td>${pageLink(pagePath, `axes/${entry.axisKey}.html`, entry.axisKey)}</td><td>${concept}</td><td>${entry.overlappingObservations}</td></tr>`;
     })
     .join("");
-  const counterevidence = dossier.counterIds.length
-    ? `<ul class="source-list">${dossier.counterIds
-        .map((observationId) => {
-          const observation = data.observationsById.get(observationId);
-          if (!observation) throw new Error(`Unknown dossier counter-record target: ${observationId}.`);
-          return `<li>${requiredIdLink(
-            pagePath,
-            data.observationPageById.get(observationId),
-            observationId,
-            "dossier counter-record",
-          )}</li>`;
-        })
-        .join("")}</ul>`
-    : '<p class="dim">No counterevidence recorded.</p>';
-
   return layout(
     pagePath,
-    `${dossier.family}/${dossier.label}`,
+    `${dossier.axisKey}/${dossier.conceptKey}`,
     `<section class="hero compact" id="${escapeHtml(dossier.dossierId)}">
-  <p>${pageLink(pagePath, "dossiers/index.html", "Dossiers")} ${pageLink(pagePath, `families/${dossier.family}.html`, "Family")}</p>
-  <h1>${escapeHtml(dossier.label)}</h1>
+  <p>${pageLink(pagePath, "dossiers/index.html", "Dossiers")} ${pageLink(pagePath, `axes/${dossier.axisKey}.html`, "Axis")} ${pageLink(pagePath, conceptPagePath(dossier.axisKey, dossier.conceptKey), "Concept")}</p>
+  <h1>${escapeHtml(titleCase(dossier.conceptKey))}</h1>
+  <p>${escapeHtml(dossier.comparisonQuestion)}</p>
   <div class="metrics">
     ${metric("accepted observations", dossier.acceptedObservations)}
     ${metric("dialogues", dossier.dialogues)}
-    ${metric("counter records", dossier.counterRecords)}
   </div>
 </section>
 <section>
@@ -3386,12 +3353,8 @@ function dossierPage(data: SiteData, dossier: SiteDossier) {
   </div>
   <div>
     <h2>Co-occurrence</h2>
-    <table><thead><tr><th>Family</th><th>Label</th><th>Overlap</th></tr></thead><tbody>${coRows}</tbody></table>
+    <table><thead><tr><th>Axis</th><th>Concept</th><th>Overlap</th></tr></thead><tbody>${coRows}</tbody></table>
   </div>
-</section>
-<section>
-  <h2>Counterevidence</h2>
-  ${counterevidence}
 </section>`,
     navState(data),
   );
@@ -3474,82 +3437,15 @@ function provenanceDetails(summary: string, content: string, unavailable: string
 
 function qualityPage(data: SiteData) {
   const pagePath = "quality.html";
-  const accepted = data.labelQuality.acceptedOnly;
-  const coverage = data.labelQuality.dispositionCoverage;
-  const singletonShare = share(accepted.singletonLabels, accepted.totalLabels);
-  const singletonCoverage = share(
-    coverage.coveredSingletons,
-    coverage.coveredSingletons + coverage.uncoveredSingletons,
-  );
-  const participationRows = [...data.labelQuality.perDialogueParticipation]
-    .sort(
-      (a, b) =>
-        a.crossDialogueObservationShare - b.crossDialogueObservationShare ||
-        a.dialogue.localeCompare(b.dialogue),
-    )
-    .map(
-      (entry) => `<tr>
-  <td>${pageLink(pagePath, `dialogues/${entry.dialogue}/index.html`, titleCase(entry.dialogue))}</td>
-  <td>${entry.acceptedObservations}</td>
-  <td>${entry.crossDialogueLabels}</td>
-  <td>${entry.crossDialogueObservations}</td>
-  <td>${percent(entry.crossDialogueObservationShare)}</td>
-</tr>`,
-    )
-    .join("");
-  const uncoveredRows = coverage.topUncoveredSingletonFamilies
-    .map(
-      (entry) => `<tr><td>${pageLink(
-        pagePath,
-        `families/${entry.family}.html`,
-        entry.family,
-      )}</td><td>${entry.uncoveredSingletons}</td></tr>`,
-    )
-    .join("");
-  const familyProfiles = data.labelQuality.familyProfiles
-    .map(
-      (entry) => `<tr class="filter-item" data-kind="${escapeHtml(entry.kind)}" data-all-singleton="${entry.allSingleton}" data-observations="${entry.observationCount}" data-search="${escapeHtml(
-        entry.family.toLowerCase(),
-      )}">
-  <td>${pageLink(pagePath, `families/${entry.family}.html`, entry.family)}</td>
-  <td>${escapeHtml(entry.kind)}</td>
-  <td>${entry.labelCount}</td>
-  <td>${entry.singletonCount}</td>
-  <td>${entry.observationCount}</td>
-  <td>${entry.allSingleton ? "yes" : "no"}</td>
-  <td>${entry.lawsOnlySingletonCount}</td>
-</tr>`,
-    )
-    .join("");
-  const tokenRows = data.labelQuality.labelNameShape.tokenLengthDistribution
-    .map((entry) => `<tr><td>${entry.tokens}</td><td>${entry.labels}</td></tr>`)
-    .join("");
-  const longestRows = data.labelQuality.labelNameShape.longestLabels
-    .map((entry) => {
-      const observation = data.observationsById.get(entry.observationId);
-      return `<tr>
-  <td>${pageLink(pagePath, `families/${entry.family}.html`, entry.family)}</td>
-  <td>${observation ? observationLink(pagePath, data, observation) : escapeHtml(entry.label)}<span class="dim"> — ${escapeHtml(entry.label)}</span></td>
-  <td>${entry.tokens}</td>
-</tr>`;
-    })
-    .join("");
-  const adjudication = data.singletonAdjudication;
-  const adjudicationPanel = adjudication
-    ? `<section>
-  <h2>Singleton Adjudication Composition</h2>
-  <p>The validated stratified sample contains ${adjudication.sampleSize} labels from a universe of ${adjudication.universeSize}. Weighted shares account for each stratum's population.</p>
-  <table>
-    <caption>Observed and population-weighted disposition composition for the reviewed singleton sample.</caption>
-    <thead><tr><th>Disposition</th><th>Count</th><th>Sample share</th><th>Weighted share</th></tr></thead>
-    <tbody>${adjudication.composition
-      .map(
-        (entry) => `<tr><td>${escapeHtml(entry.adjudication)}</td><td>${entry.count}</td><td>${percent(entry.sampleShare)}</td><td>${percent(entry.weightedShare)}</td></tr>`,
-      )
-      .join("")}</tbody>
-  </table>
-</section>`
-    : `<section><h2>Singleton Adjudication Composition</h2><p class="dim">Validated singleton adjudication sample unavailable.</p></section>`;
+  const quality = data.ontologyQuality;
+  const membershipCoverage = share(quality.acceptedObservationsWithMemberships, quality.acceptedObservations);
+  const singletonShare = share(quality.singletonConcepts, quality.concepts);
+  const axisRows = quality.axisRows.map((axis) => `<tr class="filter-item" data-axis="${escapeHtml(axis.axisKey)}" data-search="${escapeHtml(`${axis.axisKey} ${axis.dimension} ${axis.comparisonQuestion}`)}">
+  <td>${pageLink(pagePath, `axes/${axis.axisKey}.html`, axis.axisKey, `#${axis.axisId}`)}</td>
+  <td>${escapeHtml(titleCase(axis.dimension))}</td>
+  <td>${escapeHtml(axis.comparisonQuestion)}</td>
+  <td>${axis.conceptCount}</td><td>${axis.membershipCount}</td><td>${axis.observationCount}</td><td>${axis.dialogueCount}</td>
+</tr>`).join("");
   return layout(
     pagePath,
     "Quality",
@@ -3557,77 +3453,20 @@ function qualityPage(data: SiteData) {
   <p>${pageLink(pagePath, "index.html", "Index")}</p>
   <h1>Quality</h1>
   <div class="metrics">
-    ${metric("accepted labels", accepted.totalLabels)}
-    ${metric("singleton labels", accepted.singletonLabels)}
-    ${metric("singleton share", percent(singletonShare))}
-    ${metric("cross-dialogue labels", accepted.crossDialogueLabels)}
-    ${metric("non-singleton observation share", percent(accepted.reuseMass.nonSingletonShare))}
-    ${metric("cross-dialogue observation share", percent(accepted.reuseMass.crossDialogueShare))}
-    ${metric("covered labels", coverage.coveredLabels)}
-    ${metric("uncovered labels", coverage.uncoveredLabels)}
-    ${metric("singleton coverage", percent(singletonCoverage))}
+    ${metric("axes", quality.axes)}
+    ${metric("concepts", quality.concepts)}
+    ${metric("memberships", quality.memberships)}
+    ${metric("cross-dialogue concepts", quality.crossDialogueConcepts)}
+    ${metric("singleton concepts", quality.singletonConcepts)}
+    ${metric("singleton concept share", percent(singletonShare))}
+    ${metric("accepted observation membership coverage", percent(membershipCoverage))}
   </div>
 </section>
 <section>
-  <h2>Cross-Dialogue Participation</h2>
-  <p>Dialogues with the lowest accepted-observation participation in cross-dialogue labels appear first.</p>
-  <table>
-    <caption>Accepted observations and their participation in labels attested in more than one dialogue.</caption>
-    <thead><tr><th>Dialogue</th><th>Accepted observations</th><th>Cross-dialogue labels</th><th>Cross-dialogue observations</th><th>Share</th></tr></thead>
-    <tbody>${participationRows}</tbody>
-  </table>
-</section>
-<section>
-  <h2>Disposition Coverage</h2>
-  <p>${coverage.coveredSingletons} singleton labels are covered by disposition maps; ${coverage.uncoveredSingletons} remain uncovered.</p>
-  <table>
-    <caption>Families with the largest number of singleton labels not covered by a disposition map.</caption>
-    <thead><tr><th>Family</th><th>Uncovered singletons</th></tr></thead>
-    <tbody>${uncoveredRows}</tbody>
-  </table>
-</section>
-<section>
-  <h2>Family Profiles</h2>
-  <p>Filter families by registry kind, whether every label is a singleton, or a minimum observation count.</p>
-  <section class="filters" data-filters>
-    <label>Kind<select data-filter="kind"><option value="">All</option><option value="seed">seed</option><option value="passthrough">passthrough</option></select></label>
-    <label>All singleton<select data-filter="allSingleton"><option value="">All</option><option value="true">yes</option><option value="false">no</option></select></label>
-    <label>Minimum observations<input data-filter-min="observations" type="number" min="0" step="1" value="0"></label>
-    <label class="search">Search<input data-filter-search type="search" placeholder="Family"></label>
-    <p class="filter-status" role="status" aria-live="polite" data-filter-status></p>
-  </section>
-  <table>
-    <caption>All-record label and observation counts by family; laws-only singletons are called out separately.</caption>
-    <thead><tr><th>Family</th><th>Kind</th><th>Labels</th><th>Singletons</th><th>Observations</th><th>All singleton</th><th>Laws-only singletons</th></tr></thead>
-    <tbody>${familyProfiles}</tbody>
-  </table>
-</section>
-<section class="grid">
-  <div>
-    <h2>Label Length Distribution</h2>
-    <p>Label length is counted in underscore-separated tokens across all records.</p>
-    <table>
-      <caption>Number of labels at each token length.</caption>
-      <thead><tr><th>Tokens</th><th>Labels</th></tr></thead>
-      <tbody>${tokenRows}</tbody>
-    </table>
-  </div>
-  <div>
-    <h2>Longest Labels</h2>
-    <p>The bounded longest-label list links each label to a representative observation.</p>
-    <table>
-      <caption>The 20 longest current label names, ordered by token count.</caption>
-      <thead><tr><th>Family</th><th>Label evidence</th><th>Tokens</th></tr></thead>
-      <tbody>${longestRows}</tbody>
-    </table>
-  </div>
-</section>
-${adjudicationPanel}
-<section>
-  <h2>Provenance</h2>
-  <p>These source artifacts are retained for inspection; the tables above are rendered from validated typed data.</p>
-  ${provenanceDetails("Raw generated report", data.rawLabelQualityMarkdown, "Raw generated report unavailable.")}
-  ${provenanceDetails("Signed memo", data.rawSingletonMemoMarkdown, "Signed memo unavailable.")}
+  <h2>Axis profiles</h2>
+  <p>Every row is computed from the validated axes, concepts, and many-to-many membership files.</p>
+  ${filterControls({ axes: quality.axisRows.map((axis) => axis.axisKey), placeholder: "Axis or question" })}
+  <table><thead><tr><th>Axis</th><th>Dimension</th><th>Comparison question</th><th>Concepts</th><th>Memberships</th><th>Observations</th><th>Dialogues</th></tr></thead><tbody>${axisRows}</tbody></table>
 </section>`,
     navState(data),
   );
@@ -3661,13 +3500,20 @@ function weakSpotsPage(data: SiteData) {
 </tr>`,
     )
     .join("");
-  const singletonRows = [...data.labelQuality.familyProfiles]
-    .filter((entry) => entry.singletonCount > 0)
-    .sort((a, b) => b.singletonCount - a.singletonCount || a.family.localeCompare(b.family))
+  const membershipsByConcept = groupBy(data.memberships, (entry) => entry.concept_id);
+  const singletonRows = data.ontologyQuality.axisRows
+    .map((axis) => ({
+      ...axis,
+      singletonConcepts: data.concepts.filter(
+        (concept) => concept.axis_id === axis.axisId && (membershipsByConcept.get(concept.concept_id)?.length ?? 0) === 1,
+      ).length,
+    }))
+    .filter((entry) => entry.singletonConcepts > 0)
+    .sort((left, right) => right.singletonConcepts - left.singletonConcepts || left.axisKey.localeCompare(right.axisKey))
     .slice(0, 30)
     .map(
       (entry) =>
-        `<tr><td>${pageLink(pagePath, `families/${entry.family}.html`, entry.family)}</td><td>${entry.singletonCount}</td><td>${entry.labelCount}</td><td>${entry.observationCount}</td></tr>`,
+        `<tr><td>${pageLink(pagePath, `axes/${entry.axisKey}.html`, entry.axisKey)}</td><td>${entry.singletonConcepts}</td><td>${entry.conceptCount}</td><td>${entry.observationCount}</td></tr>`,
     )
     .join("");
   const issueStatuses = new Set(["rejected", "needs_split"]);
@@ -3680,7 +3526,7 @@ function weakSpotsPage(data: SiteData) {
         dialogue: entry.dialogue,
         id: entry.observationId,
         target: observationLink(pagePath, data, entry),
-        context: entry.featureFamily,
+        context: entry.concepts.map((assignment) => assignment.axisKey).join(", ") || "no ontology membership",
       })),
     ...data.claims
       .filter((entry) => issueStatuses.has(entry.reviewStatus))
@@ -3692,16 +3538,6 @@ function weakSpotsPage(data: SiteData) {
         target: claimLink(pagePath, data, entry.claimId),
         context: entry.claimKind,
       })),
-    ...data.relations
-      .filter((entry) => issueStatuses.has(entry.reviewStatus))
-      .map((entry) => ({
-        layer: "relations",
-        status: entry.reviewStatus,
-        dialogue: entry.dialogue,
-        id: entry.relationId,
-        target: relationLink(pagePath, data, entry.relationId),
-        context: entry.relationKind,
-      })),
   ].sort(
     (a, b) =>
       a.layer.localeCompare(b.layer) ||
@@ -3711,9 +3547,7 @@ function weakSpotsPage(data: SiteData) {
   );
   const issueRows = issues
     .map((entry) => {
-      const dialogueTarget = entry.dialogue === "cross-dialogue" && entry.layer === "relations"
-        ? splitTarget(data.relationPageById.get(entry.id) ?? "").path
-        : `dialogues/${entry.dialogue}/index.html`;
+      const dialogueTarget = `dialogues/${entry.dialogue}/index.html`;
       const dialogue = dialogueTarget
         ? pageLink(pagePath, dialogueTarget, titleCase(entry.dialogue))
         : escapeHtml(titleCase(entry.dialogue));
@@ -3788,7 +3622,7 @@ function weakSpotsPage(data: SiteData) {
 </section>
 <section>
   <h2>Review Status by Layer</h2>
-  <p>Counts are computed directly from the observation, claim, and relation ledgers.</p>
+  <p>Observation and claim counts cover their ledgers; relation counts cover the accepted-only public relation projection.</p>
   <table>
     <caption>Review-status counts for every issue-bearing record layer.</caption>
     <thead><tr><th>Layer</th><th>Total</th><th>Accepted</th><th>Rejected</th><th>Needs split</th><th>Unreviewed</th><th>Other</th></tr></thead>
@@ -3797,11 +3631,11 @@ function weakSpotsPage(data: SiteData) {
 </section>
 <section>
   <h2>Review Issue Queue</h2>
-  <p>Rejected and needs-split observations, claims, and relations share one linked, filterable queue.</p>
+  <p>Rejected and needs-split observations and claims share one linked, filterable queue. Non-accepted relations are not public site records.</p>
   ${issues.length === 0
-    ? `<p class="zero">No review-status issues in observations, claims, or relations.</p>`
+    ? `<p class="zero">No review-status issues in observations or claims.</p>`
     : `<section class="filters" data-filters>
-      <label>Layer<select data-filter="layer"><option value="">All</option><option value="observations">observations</option><option value="claims">claims</option><option value="relations">relations</option></select></label>
+      <label>Layer<select data-filter="layer"><option value="">All</option><option value="observations">observations</option><option value="claims">claims</option></select></label>
       <label>Status<select data-filter="status"><option value="">All</option>${allStatuses
         .filter((status) => issueStatuses.has(status))
         .map((status) => `<option value="${escapeHtml(status)}">${escapeHtml(status)}</option>`)
@@ -3817,9 +3651,9 @@ function weakSpotsPage(data: SiteData) {
 </section>
 <section class="grid">
   <div>
-    <h2>Singleton-Heavy Families</h2>
-    <p>Families with the most singleton labels appear first.</p>
-    <table><caption>The 30 families with the largest singleton-label counts.</caption><thead><tr><th>Family</th><th>Singleton labels</th><th>Labels</th><th>Observations</th></tr></thead><tbody>${singletonRows}</tbody></table>
+    <h2>Singleton-heavy axes</h2>
+    <p>Axes with the most one-observation concepts appear first.</p>
+    <table><caption>The 30 axes with the largest singleton-concept counts.</caption><thead><tr><th>Axis</th><th>Singleton concepts</th><th>Concepts</th><th>Observations</th></tr></thead><tbody>${singletonRows}</tbody></table>
   </div>
   <div class="panel"><h2>Unattributed Dialogues</h2><p>Dialogues listed here have derived speaker summaries containing no attributed speaker.</p>${unattributed}</div>
 </section>
@@ -3875,9 +3709,10 @@ function aboutPage(data: SiteData) {
   <h2>Method &amp; data quality</h2>
   <p>These are the working dashboards behind the site; they are reference material, not reading material.</p>
   <ul class="link-list">
-    <li>${pageLink(pagePath, "quality.html", "Label quality")} <span class="dim">label-quality dashboard</span></li>
+    <li>${pageLink(pagePath, "quality.html", "Ontology quality")} <span class="dim">axis, concept, and membership dashboard</span></li>
     <li>${pageLink(pagePath, "weak-spots.html", "Weak spots")} <span class="dim">coverage gaps and review issues</span></li>
-    <li>${pageLink(pagePath, "registry.html", "Feature registry")} <span class="dim">feature-candidate registry</span></li>
+    <li>${pageLink(pagePath, "axes/index.html", "Ontology axes")} <span class="dim">canonical comparison questions</span></li>
+    <li>${pageLink(pagePath, "concepts/index.html", "Ontology concepts")} <span class="dim">ratified definitions and memberships</span></li>
   </ul>
 </section>
 ${markdownPanel("Source Attribution", data.sourceAttribution)}`,
@@ -3924,10 +3759,10 @@ function buildCatalogRecords(data: SiteData) {
       {
         dialogue: observation.dialogue,
         stephanusSpan: observation.stephanusSpan,
-        family: observation.featureFamily,
-        label: observation.featureLabel,
+        axis: [...new Set(observation.concepts.map((entry) => entry.axisKey))].join(" "),
+        concept: observation.concepts.map((entry) => entry.conceptKey).join(" "),
         status: observation.reviewStatus,
-        title: observation.featureLabel,
+        title: observation.concepts.map((entry) => entry.conceptKey).join("; ") || "Observation",
         snippet: observation.observation,
       },
     );
@@ -3986,20 +3821,25 @@ function buildCatalogRecords(data: SiteData) {
   for (const dossier of data.dossiers) {
     const target = `${dossier.pagePath}#${dossier.dossierId}`;
     add(
-      { id: dossier.dossierId, target, kind: "dossier", scope: dossier.family },
-      { family: dossier.family, label: dossier.label, title: dossier.label },
+      { id: dossier.dossierId, target, kind: "dossier", scope: dossier.axisKey },
+      { axis: dossier.axisKey, concept: dossier.conceptKey, title: dossier.conceptKey },
     );
   }
-  for (const entry of data.registry) {
-    const target = data.registryPageById.get(entry.id);
-    if (!target) continue;
+  for (const axis of data.axes) {
     add(
-      { id: entry.id, target, kind: "registry", scope: entry.family },
-      { family: entry.family, label: entry.proposedName, status: entry.status, title: entry.proposedName },
+      { id: axis.axis_id, target: `axes/${axis.axis_key}.html#${axis.axis_id}`, kind: "axis", scope: axis.dimension },
+      { axis: axis.axis_key, title: axis.axis_key, snippet: axis.comparison_question },
+    );
+  }
+  for (const concept of data.concepts) {
+    const axis = data.axesById.get(concept.axis_id)!;
+    add(
+      { id: concept.concept_id, target: `${conceptPagePath(axis.axis_key, concept.concept_key)}#${concept.concept_id}`, kind: "concept", scope: axis.axis_key },
+      { axis: axis.axis_key, concept: concept.concept_key, title: concept.concept_key, snippet: `${concept.definition} ${concept.comparison_question}` },
     );
   }
   for (const commentary of data.commentaryByDialogue.values()) {
-    for (const block of commentary.blocks) {
+    for (const block of visibleCommentaryBlocks(commentary)) {
       const target = data.commentaryPageById.get(block.commentaryId);
       if (!target) continue;
       add(
@@ -4019,8 +3859,16 @@ function buildCatalogRecords(data: SiteData) {
 
 function searchPage(data: SiteData, records: readonly SearchRecordInput[]) {
   const pagePath = "search.html";
-  const values = (field: "kind" | "dialogue" | "family" | "status") =>
-    [...new Set(records.map((record) => record[field]).filter((value): value is string => Boolean(value)))].sort();
+  const values = (field: "kind" | "dialogue" | "axis" | "status") =>
+    [
+      ...new Set(
+        records.flatMap((record) => {
+          const value = record[field];
+          if (!value) return [];
+          return field === "axis" ? value.split(/\s+/u) : [value];
+        }),
+      ),
+    ].sort();
   const options = (entries: readonly string[]) =>
     entries.map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(titleCase(value))}</option>`).join("");
 
@@ -4036,8 +3884,8 @@ function searchPage(data: SiteData, records: readonly SearchRecordInput[]) {
   <label class="search">Query<input data-search-query name="q" type="search" autocomplete="off" placeholder="Record ID, title, or text"></label>
   <label>Record kind<select data-search-filter="kind"><option value="">All</option>${options(values("kind"))}</select></label>
   <label>Dialogue<select data-search-filter="dialogue"><option value="">All</option>${options(values("dialogue"))}</select></label>
-  <label>Family<select data-search-filter="family"><option value="">All</option>${options(values("family"))}</select></label>
-  <label>Label<input data-search-filter="label" autocomplete="off"></label>
+  <label>Axis<select data-search-filter="axis"><option value="">All</option>${options(values("axis"))}</select></label>
+  <label>Concept<input data-search-filter="concept" autocomplete="off"></label>
   <label>Status<select data-search-filter="status"><option value="">All</option>${options(values("status"))}</select></label>
   <button type="submit">Search</button>
 </form>
@@ -4108,15 +3956,16 @@ export function buildStaticSite(options: BuildStaticSiteOptions = {}): BuiltStat
 
   writePage(outDir, "index.html", indexPage(data), pages);
   writePage(outDir, "search.html", searchPage(data, catalogRecords.search), pages);
-  writePage(outDir, "registry.html", registryPage(data), pages);
-  for (const shard of data.registryShards) writePage(outDir, shard.path, registryShardPage(data, shard), pages);
   writePage(outDir, "quality.html", qualityPage(data), pages);
   writePage(outDir, "weak-spots.html", weakSpotsPage(data), pages);
   writePage(outDir, "about.html", aboutPage(data), pages);
   writePage(outDir, "license.html", licensePage(data), pages);
   writePage(outDir, "patterns/index.html", patternsPage(data), pages);
   writePage(outDir, "dialogues/index.html", dialoguesHubPage(data), pages);
-  writePage(outDir, "families/index.html", familiesHubPage(data), pages);
+  writePage(outDir, "axes/index.html", axesHubPage(data), pages);
+  for (const shard of buildConceptDirectoryShards(data.concepts)) {
+    writePage(outDir, shard.path, conceptsHubPage(data, shard), pages);
+  }
   writePage(outDir, "claims/index.html", claimsHubPage(data), pages);
   writePage(outDir, "relations/index.html", relationsHubPage(data), pages);
   writePage(outDir, "readings/index.html", readingsHubPage(data), pages);
@@ -4147,13 +3996,15 @@ export function buildStaticSite(options: BuildStaticSiteOptions = {}): BuiltStat
 
   for (const shard of data.shards) writePage(outDir, shard.path, observationShardPage(data, shard), pages);
 
-  for (const [family, entries] of [...groupBy(data.observations, (observation) => observation.featureFamily).entries()].sort()) {
-    writePage(outDir, `families/${family}.html`, familyPage(data, family, entries), pages);
+  for (const axis of data.axes) writePage(outDir, `axes/${axis.axis_key}.html`, axisPage(data, axis.axis_id), pages);
+  for (const concept of data.concepts) {
+    const axis = data.axesById.get(concept.axis_id)!;
+    writePage(outDir, conceptPagePath(axis.axis_key, concept.concept_key), conceptPage(data, concept.concept_id), pages);
   }
 
   writePage(outDir, "clusters/index.html", clusterIndexPage(data, data.clusters), pages);
-  for (const [family, familyClusters] of [...groupBy(data.clusters, (cluster) => cluster.family).entries()].sort()) {
-    writePage(outDir, `clusters/${family}.html`, clusterFamilyPage(data, family, familyClusters), pages);
+  for (const [axisKey, axisClusters] of [...groupBy(data.clusters, (cluster) => cluster.axisKey).entries()].sort()) {
+    writePage(outDir, `clusters/${axisKey}.html`, clusterAxisPage(data, axisKey, axisClusters), pages);
   }
 
   writePage(outDir, "dossiers/index.html", dossierIndexPage(data), pages);
@@ -4208,7 +4059,7 @@ export function buildStaticSite(options: BuildStaticSiteOptions = {}): BuiltStat
     outDir,
     pages,
     observationCount: data.observations.length,
-    registryEntryCount: data.registry.length,
+    ontologyConceptCount: data.concepts.length,
     clusterCount: data.clusters.length,
     acceptedRecordingCount,
     reviewCandidateRecordingCount,

@@ -1,5 +1,8 @@
 # Known Limits
 
+> Historical v1 audit snapshot. Current ontology limits and invariants are
+> recorded in `docs/ontology-vnext.md` and the content-addressed audit package.
+
 Generated for the v1.0 completion audit. Numeric claims below name the
 artifact or command that reproduced them.
 

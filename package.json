@@ -10,6 +10,7 @@
     "cli": "bun packages/cli/src/cli.ts",
     "harness": "bun packages/cli/src/cli.ts",
     "commentary:structural-remediation": "bun scripts/commentary/structural-remediation-batch.ts",
+    "migrate:ledger-yaml": "bun scripts/wiki/migrate-fenced-records.ts",
     "profiles": "bun packages/cli/src/cli.ts profiles",
     "providers": "bun packages/cli/src/cli.ts providers",
     "transcripts": "bun packages/cli/src/cli.ts transcripts",

@@ -1,11 +1,12 @@
 import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { getRepoRoot } from "../paths.js";
 import { readSiglaRegistry } from "../derived/turns.js";
 import { isVoiceCutoverActive } from "../derived/voice-cutovers.js";
 import { claimMarkdownBlocks } from "./claim-ledger.js";
 import { readVoiceSiglaRegistry } from "./voices-ledger.js";
-import { fieldValue } from "./observation-ledger.js";
+import { fieldValue, listFieldValue, listObservationLedgerPaths, observationYamlBlocks } from "./observation-ledger.js";
 import { readSourceCached } from "./observation-validator.js";
 
 export type ClaimLedgerValidationIssue = {
@@ -20,6 +21,8 @@ export type ClaimLedgerValidationIssue = {
     | "invalid_review_status"
     | "source_ref_mismatch"
     | "source_ref_hash_mismatch"
+    | "speaker_source_ref_mismatch"
+    | "speaker_source_ref_hash_mismatch"
     | "event_order_violation"
     | "greek_outside_terms"
     | "empty_content"
@@ -27,6 +30,8 @@ export type ClaimLedgerValidationIssue = {
     | "claim_count_mismatch"
     | "orphan_ledger_field"
     | "duplicate_field"
+    | "missing_observation_link"
+    | "invalid_observation_link"
     | "nul_byte";
   message: string;
   fix: string;
@@ -95,10 +100,12 @@ const REVIEW_STATUSES = new Set(["unreviewed", "accepted", "rejected", "needs_sp
 const CRITICAL_TOP_LEVEL_FIELDS = [
   "claim_id",
   "speaker",
+  "speaker_source_ref",
   "claim_kind",
   "content",
   "stance_events",
   "final_status",
+  "observation_ids",
   "limits",
   "review_status",
 ] as const;
@@ -182,9 +189,9 @@ function sourceRefFromLines(lines: string[]): ParsedSourceRef {
   };
 }
 
-function topLevelSourceRef(block: string) {
+function topLevelNamedSourceRef(block: string, field: string) {
   const lines = block.split("\n");
-  const startIndex = lines.findIndex((line) => /^source_ref:\s*$/u.test(line));
+  const startIndex = lines.findIndex((line) => line === `${field}:`);
   if (startIndex === -1) return sourceRefFromLines([]);
 
   const section: string[] = [];
@@ -194,6 +201,10 @@ function topLevelSourceRef(block: string) {
   }
 
   return sourceRefFromLines(section);
+}
+
+function topLevelSourceRef(block: string) {
+  return topLevelNamedSourceRef(block, "source_ref");
 }
 
 function sourceRefFromIndentedLines(lines: string[]) {
@@ -475,6 +486,88 @@ function validateSourceRef(
   }
 }
 
+function validateSpeakerSourceRef(
+  path: string,
+  block: ClaimBlock,
+  claimSourceRef: ParsedSourceRef,
+  issues: ClaimLedgerValidationIssue[],
+  sourceTextCache: Map<string, string | undefined>,
+) {
+  if (!/^speaker_source_ref:\s*$/mu.test(block.content)) return;
+
+  const speakerSourceRef = topLevelNamedSourceRef(block.content, "speaker_source_ref");
+  const requiredFields = [
+    ["source_path", speakerSourceRef.source_path],
+    ["start_char", speakerSourceRef.start_char],
+    ["end_char", speakerSourceRef.end_char],
+    ["text_sha256", speakerSourceRef.text_sha256],
+  ] as const;
+  for (const [field, value] of requiredFields) {
+    if (value !== undefined && value !== "") continue;
+    issues.push({
+      code: "speaker_source_ref_mismatch",
+      claimId: block.claimId,
+      message: `speaker_source_ref is missing required field \`${field}\`.`,
+      fix: "Record an exact Greek source range and its SHA-256; do not infer a claim owner from the stored speaker field.",
+    });
+  }
+
+  const dialogue = dialogueFromClaimPath(path);
+  if (
+    !dialogue ||
+    !speakerSourceRef.source_path ||
+    speakerSourceRef.start_char === undefined ||
+    speakerSourceRef.end_char === undefined ||
+    !speakerSourceRef.text_sha256 ||
+    !claimSourceRef.source_path ||
+    claimSourceRef.start_char === undefined ||
+    claimSourceRef.end_char === undefined
+  ) {
+    return;
+  }
+
+  const expectedSourcePath = `raw/plato/greek/${dialogue}.txt`;
+  const contained =
+    claimSourceRef.start_char <= speakerSourceRef.start_char &&
+    speakerSourceRef.start_char < speakerSourceRef.end_char &&
+    speakerSourceRef.end_char <= claimSourceRef.end_char;
+  if (
+    speakerSourceRef.source_path !== expectedSourcePath ||
+    speakerSourceRef.source_path !== claimSourceRef.source_path ||
+    !contained
+  ) {
+    issues.push({
+      code: "speaker_source_ref_mismatch",
+      claimId: block.claimId,
+      message: "speaker_source_ref must be a non-empty range inside the claim source_ref in the same canonical Greek file.",
+      fix: "Choose exact owner-identifying Greek bytes contained by this claim's source_ref.",
+    });
+    return;
+  }
+
+  const sourceText = readSourceCached(sourceTextCache, join(getRepoRoot(), speakerSourceRef.source_path));
+  if (sourceText === undefined) {
+    issues.push({
+      code: "speaker_source_ref_mismatch",
+      claimId: block.claimId,
+      message: "speaker_source_ref points to a missing canonical Greek source file.",
+      fix: "Use the claim's canonical raw/plato/greek source_path.",
+    });
+    return;
+  }
+  const actualHash = createHash("sha256")
+    .update(sourceText.slice(speakerSourceRef.start_char, speakerSourceRef.end_char))
+    .digest("hex");
+  if (actualHash !== speakerSourceRef.text_sha256) {
+    issues.push({
+      code: "speaker_source_ref_hash_mismatch",
+      claimId: block.claimId,
+      message: "speaker_source_ref text_sha256 does not match the exact canonical Greek source slice.",
+      fix: "Recompute the hash from the cited bytes; do not hand-edit attribution evidence.",
+    });
+  }
+}
+
 function validateClaimId(path: string, block: ClaimBlock, issues: ClaimLedgerValidationIssue[]) {
   const dialogue = dialogueFromClaimPath(path);
   const claimId = fieldValue(block.content, "claim_id");
@@ -554,6 +647,62 @@ function validateContentAndLimits(block: ClaimBlock, issues: ClaimLedgerValidati
       message: "left_standing claims must state the checked scope in limits.",
       fix: "State what coverage was checked and what the record does not establish.",
     });
+  }
+}
+
+function observationEvidenceIndex() {
+  const statuses = new Map<string, string>();
+  const supportedClaims = new Map<string, string[]>();
+  for (const path of listObservationLedgerPaths({ absolute: true })) {
+    const content = readFileSync(path, "utf8");
+    for (const block of observationYamlBlocks(content)) {
+      const observationId = fieldValue(block, "observation_id");
+      const reviewStatus = fieldValue(block, "review_status");
+      if (observationId && reviewStatus) {
+        statuses.set(observationId, reviewStatus);
+        supportedClaims.set(observationId, listFieldValue(block, "supports_claim_ids"));
+      }
+    }
+  }
+  return { statuses, supportedClaims };
+}
+
+function validateObservationLinks(
+  block: ClaimBlock,
+  statuses: ReadonlyMap<string, string>,
+  supportedClaims: ReadonlyMap<string, readonly string[]> | undefined,
+  issues: ClaimLedgerValidationIssue[],
+) {
+  if (fieldValue(block.content, "review_status") !== "accepted") return;
+  const observationIds = listFieldValue(block.content, "observation_ids");
+  if (observationIds.length === 0) {
+    issues.push({
+      code: "missing_observation_link",
+      claimId: block.claimId,
+      message: "Accepted claims must cite at least one accepted source-bound observation.",
+      fix: "Add the accepted overlapping observation ids, or reject the unsupported claim.",
+    });
+    return;
+  }
+  for (const observationId of observationIds) {
+    const status = statuses.get(observationId);
+    if (status !== "accepted") {
+      issues.push({
+        code: "invalid_observation_link",
+        claimId: block.claimId,
+        message: `observation_ids references ${observationId}, whose review status is ${status ?? "missing"}.`,
+        fix: "Reference only existing accepted observations that provide source evidence for the claim.",
+      });
+      continue;
+    }
+    if (supportedClaims && !supportedClaims.get(observationId)?.includes(block.claimId)) {
+      issues.push({
+        code: "invalid_observation_link",
+        claimId: block.claimId,
+        message: `observation_ids references ${observationId}, but that observation does not reciprocally declare support for ${block.claimId}.`,
+        fix: "Use a reviewed source-bound observation whose supports_claim_ids explicitly includes this claim.",
+      });
+    }
   }
 }
 
@@ -646,10 +795,23 @@ function validateStanceEvents(
   }
 }
 
-export function validateClaimLedger(path: string, content: string) {
+export function validateClaimLedger(
+  path: string,
+  content: string,
+  options: {
+    observationReviewStatuses?: ReadonlyMap<string, string>;
+    observationSupportedClaims?: ReadonlyMap<string, readonly string[]>;
+  } = {},
+) {
   const issues: ClaimLedgerValidationIssue[] = [];
   const blocks = extractClaimBlocks(content);
   const sourceTextCache = new Map<string, string | undefined>();
+  const needsObservationEvidence = blocks.some((block) => fieldValue(block.content, "review_status") === "accepted");
+  const observed = options.observationReviewStatuses === undefined && needsObservationEvidence
+    ? observationEvidenceIndex()
+    : undefined;
+  const statuses = options.observationReviewStatuses ?? observed?.statuses ?? new Map<string, string>();
+  const supportedClaims = options.observationSupportedClaims ?? observed?.supportedClaims;
 
   if (content.includes("\0")) {
     issues.push({
@@ -704,7 +866,10 @@ export function validateClaimLedger(path: string, content: string) {
     validateSpeaker(path, block, issues);
     validateEnums(block, issues);
     validateContentAndLimits(block, issues);
-    validateSourceRef(path, block, topLevelSourceRef(block.content), fieldValue(block.content, "stephanus_span"), issues, sourceTextCache, "claim");
+    validateObservationLinks(block, statuses, supportedClaims, issues);
+    const claimSourceRef = topLevelSourceRef(block.content);
+    validateSourceRef(path, block, claimSourceRef, fieldValue(block.content, "stephanus_span"), issues, sourceTextCache, "claim");
+    validateSpeakerSourceRef(path, block, claimSourceRef, issues, sourceTextCache);
     validateStanceEvents(path, block, issues, sourceTextCache);
     validateGreekPlacement(block, issues);
   }

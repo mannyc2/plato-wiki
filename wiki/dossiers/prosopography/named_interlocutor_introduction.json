@@ -1,0 +1,230 @@
+{
+  "accepted_observations": 4,
+  "axis_id": "axis_sha256_9791a05a3c77492d9f59ed68b54e30b71e3535fe91a87fd7c425fcb39272f666",
+  "axis_key": "prosopography",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record named interlocutor introduction within the prosopography axis?",
+  "concept_id": "concept_sha256_abd4ad0dc6e2f205b302ba54a122e36de75bd45843033c18999aa8a9a9df0e8b",
+  "concept_key": "named_interlocutor_introduction",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_5036e70b2e53d90ea1b34f2b947e3a2b913d6f0e3efe31f7103cce489c19ff71",
+      "conceptKey": "definiendum_marked_for_inquiry",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_f83d395ab90aac4e9bee838a0adc4da38b348b066efcbad5a4f44b73a3845736",
+      "conceptKey": "account_giving_as_knowledge_criterion",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_73be147bc9b536edc5ec6f3ddd77d1584a4253a892a9164b8600dd7463aed95e",
+      "conceptKey": "explicit_procedure_control",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_344e394ea1b45ae5ce3a2751a410bacb90e8d8ffb0f3d752e60fe72d20b26d88",
+      "axisKey": "craft_analogy",
+      "conceptId": "concept_sha256_89e456c3916c6e530d59b3c7e49ca57655806c874974d4b9d897c11b90a255df",
+      "conceptKey": "painting_as_speech_analogy",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+      "axisKey": "dramatic_case_setup",
+      "conceptId": "concept_sha256_0ad274b667856b57a3a0e2afed462e32242784b947942ada78a7972a844de426",
+      "conceptKey": "inquiry_termination_avowal",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+      "axisKey": "dramatic_case_setup",
+      "conceptId": "concept_sha256_528b3f9b79e01be1044bcd16dd5921100eddbfaa6c218102d5f597eb5b49593c",
+      "conceptKey": "public_spectator_crowd",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+      "axisKey": "dramatic_case_setup",
+      "conceptId": "concept_sha256_c01b16e294c13d7adb4749a4af0477227329a7a4cf88a6fbc6fa998af00ef66a",
+      "conceptKey": "initial_question_stated",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_a621c9ee78202ffb4f5261045688f196ca7a93efcfb28446a6dbe406eb6832e3",
+      "axisKey": "frame_depth",
+      "conceptId": "concept_sha256_a9a2f85f3cb4b16417b030a398cec6b38cf54e35939fce6ebe8f4088b62c9d2c",
+      "conceptKey": "reported_prior_conversation",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 4,
+  "dimension": "dramatic_context",
+  "instance_ids": [
+    "obs_euthydemus_0002",
+    "obs_sophist_0017",
+    "obs_statesman_0005",
+    "obs_timaeus_0023"
+  ],
+  "instances": [
+    {
+      "dialogue": "euthydemus",
+      "observationId": "obs_euthydemus_0002",
+      "speakers": [
+        "ΚΡ.",
+        "ΣΩ."
+      ],
+      "stephanusSpan": "271a-271b",
+      "turnCount": 5
+    },
+    {
+      "dialogue": "sophist",
+      "observationId": "obs_sophist_0017",
+      "speakers": [
+        "ΘΕΑΙ.",
+        "ΞΕ."
+      ],
+      "stephanusSpan": "218b-218c",
+      "turnCount": 2
+    },
+    {
+      "dialogue": "statesman",
+      "observationId": "obs_statesman_0005",
+      "speakers": [
+        "ΘΕΟ.",
+        "ΞΕ.",
+        "ΣΩ."
+      ],
+      "stephanusSpan": "257c-257d",
+      "turnCount": 7
+    },
+    {
+      "dialogue": "timaeus",
+      "observationId": "obs_timaeus_0023",
+      "speakers": [
+        "ΤΙ.",
+        "ΣΩ."
+      ],
+      "stephanusSpan": "19b-19c",
+      "turnCount": 2
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_abd4ad0dc6e2f205b302ba54a122e36de75bd45843033c18999aa8a9a9df0e8b",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

@@ -780,6 +780,20 @@ describe("voices validator", () => {
   });
 
   describe("geometry", () => {
+    it("allows an unlabelled frame to begin at the first Greek marker after presentation-only markup", () => {
+      const source = `{sp1} ${SOURCE}`;
+      writeUnlabelledFixture(source);
+      const exactFrame = block({
+        sourceText: source,
+        start: 6,
+        end: source.length,
+        span: "2a-2b",
+        refs: [{ kind: "unlabelled_turn_frame", text: "ΝΑΡΡ.", start: 11, end: 16 }],
+      });
+
+      expect(validateVoicesLedger(LEDGER_PATH, exactFrame)).toEqual([]);
+    });
+
     it("rejects overlapping spans at the same depth", () => {
       const first = block({ id: "voice_fixture_0001", start: 0, end: 30, span: "2a-2b" });
       const second = block({ id: "voice_fixture_0002", start: 20, end: SOURCE.length, span: "2a-2b" });

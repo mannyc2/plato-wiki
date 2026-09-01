@@ -1,0 +1,193 @@
+{
+  "accepted_observations": 5,
+  "axis_id": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+  "axis_key": "dramatic_case_setup",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record mythical cult ritual procedure within the dramatic case setup axis?",
+  "concept_id": "concept_sha256_11240f300286423f803c833302c354e1e3324061a0ae362b2ed14696e99c6b68",
+  "concept_key": "mythical_cult_ritual_procedure",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+      "axisKey": "dramatic_case_setup",
+      "conceptId": "concept_sha256_f575c4a87e30ded26414d819c68b012a75e5c4d46d9269f9d8fb84a60d934592",
+      "conceptKey": "inscribed_oath_with_curse_sanction",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_b1977b0b6a213778cae77c4b4d390795f58b6bfa028f188496292233a47cf4a8",
+      "axisKey": "myth_demarcation",
+      "conceptId": "concept_sha256_62b43a6c045c311cdb0efcf7f854070dede0237acf6adcb67cfae5839ce6fd75",
+      "conceptKey": "divine_law_as_constitution",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 1,
+  "dimension": "dramatic_context",
+  "instance_ids": [
+    "obs_critias_0135",
+    "obs_critias_0136",
+    "obs_critias_0137",
+    "obs_critias_0138",
+    "obs_critias_0188"
+  ],
+  "instances": [
+    {
+      "dialogue": "critias",
+      "observationId": "obs_critias_0135",
+      "speakers": [
+        "ΚΡΙ."
+      ],
+      "stephanusSpan": "119d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "critias",
+      "observationId": "obs_critias_0136",
+      "speakers": [
+        "ΚΡΙ."
+      ],
+      "stephanusSpan": "119d-119e",
+      "turnCount": 2
+    },
+    {
+      "dialogue": "critias",
+      "observationId": "obs_critias_0137",
+      "speakers": [
+        "ΚΡΙ."
+      ],
+      "stephanusSpan": "119c-119e",
+      "turnCount": 2
+    },
+    {
+      "dialogue": "critias",
+      "observationId": "obs_critias_0138",
+      "speakers": [
+        "ΚΡΙ."
+      ],
+      "stephanusSpan": "119c-119e",
+      "turnCount": 2
+    },
+    {
+      "dialogue": "critias",
+      "observationId": "obs_critias_0188",
+      "speakers": [
+        "ΚΡΙ."
+      ],
+      "stephanusSpan": "119d",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 5,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_11240f300286423f803c833302c354e1e3324061a0ae362b2ed14696e99c6b68",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

@@ -525,7 +525,7 @@ function validateAcceptedProduction(manifest: RecordingManifest, path: string) {
   return issues;
 }
 
-function acceptedSectionIds(dialogue: string) {
+function commentarySectionIds(dialogue: string, acceptedOnly: boolean) {
   const path = join(getRepoRoot(), `wiki/commentary/${dialogue}.md`);
   if (!existsSync(path)) return new Set<string>();
 
@@ -535,7 +535,7 @@ function acceptedSectionIds(dialogue: string) {
     if (
       commentaryId &&
       fieldValue(block.content, "block_kind") === "section" &&
-      fieldValue(block.content, "review_status") === "accepted"
+      (!acceptedOnly || fieldValue(block.content, "review_status") === "accepted")
     ) {
       sectionIds.add(commentaryId);
     }
@@ -618,7 +618,7 @@ export function validateRecordingManifest(path: string, content: string) {
     });
   }
 
-  const sectionIds = acceptedSectionIds(manifest.dialogue);
+  const sectionIds = commentarySectionIds(manifest.dialogue, manifest.status !== "withdrawn");
   const seenTargets = new Set<string>();
   const seenChapterIds = new Set<string>();
   let previousFrame = Number.NEGATIVE_INFINITY;
@@ -671,7 +671,9 @@ export function validateRecordingManifest(path: string, content: string) {
       issues.push({
         code: "missing_section_target",
         path,
-        message: `Chapter target \`${chapter.commentary_id}\` is not an accepted section in wiki/commentary/${manifest.dialogue}.md.`,
+        message: manifest.status === "withdrawn"
+          ? `Withdrawn chapter target \`${chapter.commentary_id}\` does not exist as a section in wiki/commentary/${manifest.dialogue}.md.`
+          : `Chapter target \`${chapter.commentary_id}\` is not an accepted section in wiki/commentary/${manifest.dialogue}.md.`,
       });
     }
   }

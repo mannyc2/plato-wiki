@@ -5,6 +5,7 @@ import { join } from "node:path";
 import {
   buildObservationTurnJoin,
   formatObservationTurnJoinToon,
+  parseObservationTurnJoinToon,
   writeObservationTurnJoin,
 } from "./joins.js";
 import { setRepoRootForTesting } from "../paths.js";
@@ -26,8 +27,6 @@ source_ref:
   start_char: ${startChar}
   end_char: ${endChar}
   text_sha256: ${HASH}
-feature_family: elenchus
-feature_label: shared_move
 review_status: ${reviewStatus}
 \`\`\``;
 }
@@ -102,6 +101,29 @@ describe("observation-turn joins", () => {
     writeTurnIndex("meno", [{ id: "turn_meno_0001", speaker: "A.", start: 0, end: 10 }]);
 
     expect(() => buildObservationTurnJoin("meno")).toThrow(/overlaps zero turns/);
+  });
+
+  it("excludes rejected observations from the generated join", () => {
+    writeLedger("meno", [
+      record("obs_meno_0001", 0, 10),
+      record("obs_meno_0002", 30, 40, "rejected"),
+    ]);
+    writeTurnIndex("meno", [{ id: "turn_meno_0001", speaker: "A.", start: 0, end: 10 }]);
+
+    expect(buildObservationTurnJoin("meno").rows.map((row) => row.observationId)).toEqual([
+      "obs_meno_0001",
+    ]);
+  });
+
+  it("rejects a non-accepted row in a stored join", () => {
+    writeLedger("meno", [record("obs_meno_0001", 0, 10)]);
+    writeTurnIndex("meno", [{ id: "turn_meno_0001", speaker: "A.", start: 0, end: 10 }]);
+    const forged = formatObservationTurnJoinToon(buildObservationTurnJoin("meno")).replace(
+      /(^\s*obs_meno_0001\s*\|\s*)accepted/mu,
+      "$1rejected",
+    );
+
+    expect(() => parseObservationTurnJoinToon(forged)).toThrow(/Malformed observation-turn join row values/u);
   });
 
   it("writes byte-stable join files", () => {

@@ -37,9 +37,8 @@ import type { HarnessConfig, HarnessRunCommand, HarnessRunOptions, HarnessRunRes
 import { assistantText } from "./usage.js";
 import { assertLedgerAppendPath, prepareLedgerAppend } from "./wiki/guards.js";
 import { claimYamlBlocks } from "./wiki/claim-ledger.js";
-import { formatIngestLogEntry, ingestLogCountsFromLinks } from "./wiki/ingest-log.js";
-import { SEED_FEATURE_FAMILIES, extractObservationFeatureLinks } from "./wiki/observation-feature-index.js";
-import { fieldValue } from "./wiki/observation-ledger.js";
+import { formatIngestLogEntry } from "./wiki/ingest-log.js";
+import { fieldValue, observationYamlBlocks } from "./wiki/observation-ledger.js";
 import { relationYamlBlocks } from "./wiki/relation-ledger.js";
 import { createWikiTools, type WikiToolOptions } from "./wiki/tools.js";
 
@@ -54,10 +53,6 @@ const DEFAULT_RELATION_REVIEW_TARGET_RELATIONS = 20;
 
 function isIngestCommand(command: HarnessRunCommand) {
   return command === "ingest" || command === "ingest-segmented";
-}
-
-function isReviewCommand(command: HarnessRunCommand) {
-  return command === "review" || command === "review-segmented";
 }
 
 function isClaimExtractionCommand(command: HarnessRunCommand) {
@@ -94,7 +89,7 @@ function promptTemplateName(command: HarnessRunCommand) {
   if (command === "claims-review-segmented") return "review-plato-claims-segment";
   if (command === "claims-segmented") return "extract-plato-claims-segment";
   if (command === "review-segmented") return "review-plato-segment";
-  if (command === "review") return "review-plato-features";
+  if (command === "review") return "review-plato-observations";
   if (command === "ingest-segmented") return "ingest-plato-segment";
   return "ingest-plato-dialogue";
 }
@@ -128,18 +123,6 @@ function readContextFile(relativePath: string, required: boolean) {
   }
 
   return readFileSync(path, "utf8");
-}
-
-function readFeatureRegistry() {
-  return readContextFile("wiki/features-so-far.md", false);
-}
-
-function featureCandidateIds(content: string) {
-  return new Set([...content.matchAll(/^###\s+(feature_candidate_\d+)\s*$/gmu)].map((match) => match[1]!));
-}
-
-function sortedSetDifference(after: Set<string>, before: Set<string>) {
-  return [...after].filter((id) => !before.has(id)).sort();
 }
 
 function stephanusRangeEnd(span: string) {
@@ -254,105 +237,6 @@ export function reviewLedgerComplete(dialogue: string) {
   return statuses.length > 0 && statuses.every((status) => status !== "unreviewed");
 }
 
-export function featureRegistrySystemSection(content: string) {
-  const compactIndex = compactFeatureRegistryIndex(content);
-  return [
-    ["## Current features-so-far compact index", compactIndex || "(none yet)"].join("\n\n"),
-    existingLabelsByFamilySection(content),
-  ].join("\n\n");
-}
-
-export function existingLabelsByFamilySection(content: string) {
-  const labelsByFamily = new Map<string, Set<string>>();
-  let current: { family?: string; proposedName?: string } | undefined;
-
-  const flush = () => {
-    if (!current?.family || !current.proposedName) return;
-    const labels = labelsByFamily.get(current.family) ?? new Set<string>();
-    labels.add(current.proposedName);
-    labelsByFamily.set(current.family, labels);
-  };
-
-  for (const line of content.split(/\r?\n/u)) {
-    if (/^###\s+\S+\s*$/u.test(line)) {
-      flush();
-      current = {};
-      continue;
-    }
-
-    if (!current) continue;
-
-    const field = /^-\s+\*\*(family|proposed_name):\*\*\s*(.*)$/u.exec(line);
-    if (!field) continue;
-
-    const value = field[2]?.trim() ?? "";
-    if (field[1] === "family") {
-      current.family = value;
-    } else {
-      current.proposedName = value;
-    }
-  }
-
-  flush();
-
-  const lines = [...labelsByFamily.entries()]
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([family, labels]) => `- ${family}: ${[...labels].sort().join(", ")}`);
-
-  return [
-    "## Existing feature labels by family (reuse these before creating new ones)",
-    lines.length > 0 ? lines.join("\n") : "(none yet)",
-  ].join("\n\n");
-}
-
-function compactFeatureRegistryIndex(content: string) {
-  const entries: string[] = [];
-  let current:
-    | {
-        id: string;
-        proposedName?: string;
-        family?: string;
-        status?: string;
-        observationCount?: number;
-      }
-    | undefined;
-
-  const flush = () => {
-    if (!current) return;
-    entries.push(
-      `- ${current.id}: family=${current.family ?? "(missing family)"}; proposed_name=${current.proposedName ?? "(missing proposed_name)"}; status=${current.status ?? "(missing status)"}; observations=${current.observationCount ?? 0}`,
-    );
-  };
-
-  for (const line of content.split(/\r?\n/u)) {
-    const heading = /^###\s+(\S+)\s*$/u.exec(line);
-    if (heading) {
-      flush();
-      current = { id: heading[1]! };
-      continue;
-    }
-
-    if (!current) continue;
-
-    const field = /^-\s+\*\*(family|proposed_name|status|observations):\*\*\s*(.*)$/u.exec(line);
-    if (!field) continue;
-
-    const value = field[2]?.trim() ?? "";
-    if (field[1] === "family") {
-      current.family = value;
-    } else if (field[1] === "proposed_name") {
-      current.proposedName = value;
-    } else if (field[1] === "status") {
-      current.status = value;
-    } else {
-      current.observationCount = value.match(/\bobs_[a-z0-9-]+_\d{4}\b/gu)?.length ?? 0;
-    }
-  }
-
-  flush();
-  return entries.join("\n");
-}
-
 async function buildHarness(
   config: HarnessConfig,
   selection: ModelSelection,
@@ -462,7 +346,7 @@ async function buildHarness(
         "Never ask the model to find esotericism or generate hypotheses.",
         isPromptInjectedLedgerCommand(command)
           ? "The extraction protocol is provided in this system prompt. The run prompt injects the exact records and context for the current batch."
-          : "The extraction protocol is provided in this system prompt. The current feature registry is injected at run start and refreshed if it changes during a run.",
+          : "The extraction protocol is provided in this system prompt.",
         command === "claims-segmented"
           ? "Use only the prompt-injected segment text, prompt-injected allowed marker list, prompt-injected turn table, and wiki_append_claims; claim extraction exposes no repository read or source-span tools."
           : command === "claims-review-segmented"
@@ -490,12 +374,12 @@ async function buildHarness(
           ? "Relations classify textual compatibility between two reviewed claim records. Do not infer speaker intent or use school vocabulary."
           : isClaimCommand(command)
           ? "Claims restate what is asserted, reported, posed, challenged, revised, withdrawn, reaffirmed, or refuted at cited spans. Do not infer hidden intent."
-          : `Every observation must include feature_family. Prefer these seed families: ${SEED_FEATURE_FAMILIES.join(", ")}. If no seed family fits, use a narrow lowercase snake_case passthrough family.`,
+          : "Observations are neutral source-bound records. Do not add classification fields; comparison-axis and concept memberships are maintained separately in wiki/ontology.",
         isRelationCommand(command)
           ? "resolution is constrained by the linked claims' final_status values and any cited resolving span."
           : isClaimCommand(command)
           ? "final_status is mechanical: derive it only from the last stance event kind."
-          : "feature_label names a RECURRING textual phenomenon, not the content of one passage. Reuse an existing label from the labels-by-family list whenever the phenomenon matches. Put passage-specific content in the observation field, not the label. Create a new label only when no existing label names the phenomenon.",
+          : "Keep each observation atomic and limited to what the cited Greek span supports.",
         command === "claims-segmented"
           ? "If wiki_append_claims rejects a segment delta, fix the concise validation feedback and call it again."
           : command === "claims-review-segmented"
@@ -525,8 +409,8 @@ async function buildHarness(
           : command === "ingest-segmented"
           ? "During segmented ingest, write only new observation records for the current segment with wiki_append_observations. Do not call wiki_stage_observation or wiki_commit_observation."
           : command === "ingest"
-          ? "During ingest, validate drafts with wiki_stage_observation, then persist the final accepted staged ledger exactly once with wiki_commit_observation. The harness normalizes feature_family and feature_label, then assigns feature_id."
-          : "During review, persist observation ledgers with wiki_write_observation. The harness normalizes feature_family and feature_label, then assigns feature_id.",
+          ? "During ingest, validate drafts with wiki_stage_observation, then persist the final accepted staged ledger exactly once with wiki_commit_observation."
+          : "During review, persist observation ledgers with wiki_write_observation.",
         command === "claims-review-segmented"
           ? "A segmented claim review batch is complete only when every target claim id in the batch is no longer unreviewed."
           : command === "relations-segmented"
@@ -539,18 +423,11 @@ async function buildHarness(
             ? "A segmented review batch is complete only when every target observation id in the batch is no longer unreviewed. Leave non-target observation statuses unchanged."
           : "",
         isRelationCommand(command)
-          ? "Relation commands do not synchronize wiki/features-so-far.md and must not edit claim or observation ledgers."
+          ? "Relation commands must not edit claim or observation ledgers."
           : isClaimCommand(command)
-          ? "Claim commands do not synchronize wiki/features-so-far.md and must not edit observation ledgers."
-          : command === "ingest-segmented"
-          ? "During segmented ingest, only wiki_append_observations synchronizes wiki/features-so-far.md. Do not write the feature registry yourself."
-          : command === "ingest"
-          ? "During ingest, only wiki_commit_observation synchronizes wiki/features-so-far.md. Do not write the feature registry yourself."
-          : "During review, persist feature registry changes by writing the full updated wiki/features-so-far.md with wiki_write_feature_registry.",
+          ? "Claim commands must not edit observation ledgers."
+          : "Observation commands must not edit wiki/ontology; comparison memberships require their own reviewed workflow.",
         "The harness writes the ingest-log entry automatically; do not write run history yourself.",
-        isReviewCommand(command)
-          ? "If wiki_write_feature_registry rejects the registry, fix the concise validation feedback and call it again."
-          : "",
         "Do not say that a file was created or updated unless the corresponding tool call succeeded.",
         formatSkillsForSystemPrompt(resources.skills ?? []),
         "## Plato Wiki Extraction Protocol",
@@ -560,53 +437,6 @@ async function buildHarness(
       ]
         .filter((part) => part.length > 0)
         .join("\n\n"),
-  });
-
-  let lastFeatureContextContent = "";
-
-  agent.on("before_agent_start", (event) => {
-    if (isPromptInjectedLedgerCommand(command)) return undefined;
-
-    const featuresContext = readFeatureRegistry();
-    lastFeatureContextContent = featuresContext;
-    const featureRegistrySection = featureRegistrySystemSection(featuresContext);
-    transcript.write("features_system_context_refreshed", {
-      path: "wiki/features-so-far.md",
-      bytes: Buffer.byteLength(featuresContext),
-      messageBytes: Buffer.byteLength(featureRegistrySection),
-    });
-
-    return {
-      systemPrompt: [event.systemPrompt, featureRegistrySection].join("\n\n"),
-    };
-  });
-
-  agent.on("context", (event) => {
-    if (isPromptInjectedLedgerCommand(command)) return undefined;
-
-    const featuresContext = readFeatureRegistry();
-    if (featuresContext === lastFeatureContextContent) return undefined;
-
-    lastFeatureContextContent = featuresContext;
-    const compactIndex = compactFeatureRegistryIndex(featuresContext);
-    const text = ["## Current features-so-far compact index", compactIndex || "(none yet)"].join("\n\n");
-
-    transcript.write("features_context_index_injected", {
-      path: "wiki/features-so-far.md",
-      sourceBytes: Buffer.byteLength(featuresContext),
-      messageBytes: Buffer.byteLength(text),
-    });
-
-    return {
-      messages: [
-        {
-          role: "user" as const,
-          content: [{ type: "text" as const, text }],
-          timestamp: Date.now(),
-        },
-        ...event.messages,
-      ],
-    };
   });
 
   agent.on("before_provider_payload", (event) => {
@@ -671,18 +501,7 @@ async function buildHarness(
       };
     }
 
-    if (event.toolName !== "wiki_write_feature_registry" || !event.isError) return undefined;
-
-    if (!text.includes("Repeated feature registry rejection threshold reached.")) return undefined;
-
-    transcript.write("feature_registry_repeated_rejection_terminated", {
-      toolCallId: event.toolCallId,
-      toolName: event.toolName,
-    });
-
-    return {
-      terminate: true,
-    };
+    return undefined;
   });
 
   agent.subscribe((event) => {
@@ -790,14 +609,11 @@ function appendHarnessIngestLog(
   dialogue: string,
   transcript: TranscriptWriter,
   selection: ModelSelection,
-  beforeFeatureIds: Set<string>,
 ) {
   const repoRoot = getRepoRoot();
   const observationPath = join(repoRoot, "wiki/observations", `${dialogue}.md`);
   const observationContent = existsSync(observationPath) ? readFileSync(observationPath, "utf8") : "";
-  const links = extractObservationFeatureLinks(observationContent);
-  const { observationCount, familyCounts } = ingestLogCountsFromLinks(links);
-  const afterFeatureIds = featureCandidateIds(readFeatureRegistry());
+  const observationCount = observationYamlBlocks(observationContent).length;
   const spanRange = ledgerSpanRange(observationContent);
   const entry = formatIngestLogEntry({
     command,
@@ -808,8 +624,6 @@ function appendHarnessIngestLog(
     model: selection.model.id,
     profile: selection.profileName,
     observationCount,
-    familyCounts,
-    newFeatureIds: sortedSetDifference(afterFeatureIds, beforeFeatureIds),
     ...(spanRange ? { spanRange } : {}),
   });
   const relativePath = "wiki/ingest-log.md";
@@ -1017,7 +831,6 @@ export async function runHarnessCommand(
 
   if (command === "review" && !options.dryRun && reviewLedgerComplete(dialogue)) {
     writeRunSummary(transcript, command, dialogue, false, selection, "(review already complete)");
-    const beforeFeatureIds = featureCandidateIds(readFeatureRegistry());
     const responseText = `Review already complete for ${dialogue}; no observations remain unreviewed.\n`;
     transcript.write("review_already_complete", {
       command,
@@ -1025,7 +838,7 @@ export async function runHarnessCommand(
       templateName,
     });
     transcript.writeResponse(responseText);
-    appendHarnessIngestLog(command, dialogue, transcript, selection, beforeFeatureIds);
+    appendHarnessIngestLog(command, dialogue, transcript, selection);
     transcript.write("run_completed", {
       command,
       dialogue,
@@ -1091,7 +904,6 @@ export async function runHarnessCommand(
       );
     }
 
-    const beforeFeatureIds = featureCandidateIds(readFeatureRegistry());
     let firstSessionPath = "";
     let skillCount = 0;
     let promptCount = 0;
@@ -1194,7 +1006,7 @@ export async function runHarnessCommand(
       responsePath: transcript.responsePath,
       sessionPath: firstSessionPath,
     });
-    appendHarnessIngestLog(command, dialogue, transcript, selection, beforeFeatureIds);
+    appendHarnessIngestLog(command, dialogue, transcript, selection);
 
     return {
       command,
@@ -1995,7 +1807,6 @@ export async function runHarnessCommand(
       );
     }
 
-    const beforeFeatureIds = featureCandidateIds(readFeatureRegistry());
     let firstSessionPath = "";
     let skillCount = 0;
     let promptCount = 0;
@@ -2134,7 +1945,7 @@ export async function runHarnessCommand(
       responsePath: transcript.responsePath,
       sessionPath: firstSessionPath,
     });
-    appendHarnessIngestLog(command, dialogue, transcript, selection, beforeFeatureIds);
+    appendHarnessIngestLog(command, dialogue, transcript, selection);
 
     return {
       command,
@@ -2220,7 +2031,6 @@ export async function runHarnessCommand(
     );
   }
 
-  const beforeFeatureIds = featureCandidateIds(readFeatureRegistry());
   let responseText: string;
   try {
     const commitCountBefore = transcript.eventCount("wiki_tool_commit_observation");
@@ -2264,7 +2074,7 @@ export async function runHarnessCommand(
     throw error;
   }
 
-  appendHarnessIngestLog(command, dialogue, transcript, selection, beforeFeatureIds);
+  appendHarnessIngestLog(command, dialogue, transcript, selection);
 
   return {
     command,

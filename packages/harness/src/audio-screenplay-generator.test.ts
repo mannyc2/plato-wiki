@@ -201,7 +201,7 @@ function insertCommentaryBlock({
     "```yaml",
     `commentary_id: ${id}`,
     "source_work: Fixture",
-    "block_kind: argument",
+    "block_kind: context",
     `placement: ${placement}`,
     `stephanus_span: ${span}`,
     "source_ref:",

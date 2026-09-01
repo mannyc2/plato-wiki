@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import { getRepoRoot } from "./paths.js";
 import {
@@ -7,238 +7,242 @@ import {
   listObservationLedgerPaths,
   observationYamlBlocks,
 } from "./wiki/observation-ledger.js";
+import { readOntologyVNextRepository, readObservationReviewStatuses } from "./wiki/ontology-vnext-repository.js";
 
 export type ClusterObservation = {
   observationId: string;
   dialogue: string;
   stephanusSpan: string;
-  featureId: string;
-  featureFamily: string;
-  featureLabel: string;
-  reviewStatus: string;
 };
 
 export type ObservationCluster = {
-  family: string;
-  label: string;
+  axisId: string;
+  axisKey: string;
+  dimension: string;
+  conceptId: string;
+  conceptKey: string;
+  comparisonQuestion: string;
   observations: ClusterObservation[];
   dialogues: string[];
-  preConvergence: boolean;
 };
 
 export type ClusterGateReport = {
   acceptedObservations: number;
-  crossDialogueLabels: number;
+  crossDialogueConcepts: number;
   medianNonSingletonObservations: number;
   passed: boolean;
 };
 
 export type WrittenClusterArtifact = {
-  family: string;
+  axisId: string;
+  axisKey: string;
   path: string;
   clusterCount: number;
 };
 
-function observationLedgerPaths() {
-  return listObservationLedgerPaths({ absolute: true });
+type ClusterProjectionRow = {
+  schema_version: 1;
+  projection_kind: "observation_cluster";
+  axis_id: string;
+  axis_key: string;
+  dimension: string;
+  concept_id: string;
+  concept_key: string;
+  comparison_question: string;
+  observation_ids: string[];
+  dialogues: string[];
+  spans: Record<string, string>;
+};
+
+function compareStrings(left: string, right: string) {
+  return left < right ? -1 : left > right ? 1 : 0;
 }
 
-function observationsFromDisk() {
-  const observations: ClusterObservation[] = [];
+function canonicalValue(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(canonicalValue);
+  if (value === null || typeof value !== "object") return value;
+  return Object.fromEntries(
+    Object.entries(value as Record<string, unknown>)
+      .sort(([left], [right]) => compareStrings(left, right))
+      .map(([key, entry]) => [key, canonicalValue(entry)]),
+  );
+}
 
-  for (const path of observationLedgerPaths()) {
+function canonicalJson(value: unknown) {
+  return JSON.stringify(canonicalValue(value));
+}
+
+function observationMetadata() {
+  const observations = new Map<string, ClusterObservation>();
+  for (const path of listObservationLedgerPaths({ absolute: true })) {
     const content = readFileSync(path, "utf8");
     for (const block of observationYamlBlocks(content)) {
       const observationId = fieldValue(block, "observation_id");
-      const featureId = fieldValue(block, "feature_id");
-      const featureFamily = fieldValue(block, "feature_family");
-      const featureLabel = fieldValue(block, "feature_label");
       const stephanusSpan = fieldValue(block, "stephanus_span");
-      const reviewStatus = fieldValue(block, "review_status") ?? "unreviewed";
-      if (!observationId || !featureId || !featureFamily || !featureLabel || !stephanusSpan) continue;
-
-      observations.push({
+      if (!observationId || !stephanusSpan) continue;
+      observations.set(observationId, {
         observationId,
         dialogue: dialogueFromObservationId(observationId),
         stephanusSpan,
-        featureId,
-        featureFamily,
-        featureLabel,
-        reviewStatus,
       });
     }
   }
-
   return observations;
 }
 
 function median(values: number[]) {
   if (values.length === 0) return 0;
-
-  const sorted = [...values].sort((a, b) => a - b);
+  const sorted = [...values].sort((left, right) => left - right);
   const middle = Math.floor(sorted.length / 2);
-  if (sorted.length % 2 === 1) return sorted[middle] ?? 0;
+  return sorted.length % 2 === 1
+    ? (sorted[middle] ?? 0)
+    : ((sorted[middle - 1] ?? 0) + (sorted[middle] ?? 0)) / 2;
+}
 
-  return ((sorted[middle - 1] ?? 0) + (sorted[middle] ?? 0)) / 2;
+export function buildClusters(): ObservationCluster[] {
+  const ontology = readOntologyVNextRepository();
+  const metadata = observationMetadata();
+  const membershipsByConcept = new Map<string, string[]>();
+  for (const membership of ontology.memberships) {
+    const bucket = membershipsByConcept.get(membership.concept_id) ?? [];
+    bucket.push(membership.observation_id);
+    membershipsByConcept.set(membership.concept_id, bucket);
+  }
+
+  return ontology.concepts
+    .flatMap((concept): ObservationCluster[] => {
+      const observationIds = membershipsByConcept.get(concept.concept_id) ?? [];
+      if (observationIds.length === 0) return [];
+      const axis = ontology.axis(concept.axis_id)!;
+      const observations = observationIds
+        .map((observationId) => {
+          const observation = metadata.get(observationId);
+          if (!observation) throw new Error(`Ontology membership references missing observation ${observationId}.`);
+          return observation;
+        })
+        .sort((left, right) => compareStrings(left.observationId, right.observationId));
+      return [
+        {
+          axisId: axis.axis_id,
+          axisKey: axis.axis_key,
+          dimension: axis.dimension,
+          conceptId: concept.concept_id,
+          conceptKey: concept.concept_key,
+          comparisonQuestion: concept.comparison_question,
+          observations,
+          dialogues: [...new Set(observations.map((observation) => observation.dialogue))].sort(compareStrings),
+        },
+      ];
+    })
+    .sort((left, right) => compareStrings(left.axisId, right.axisId) || compareStrings(left.conceptId, right.conceptId));
 }
 
 export function clusterGateReport(): ClusterGateReport {
-  const observations = observationsFromDisk();
-  const labels = new Map<string, { observationIds: Set<string>; dialogues: Set<string> }>();
-
-  for (const observation of observations) {
-    const key = `${observation.featureFamily}::${observation.featureLabel}`;
-    const entry = labels.get(key) ?? { observationIds: new Set<string>(), dialogues: new Set<string>() };
-    entry.observationIds.add(observation.observationId);
-    entry.dialogues.add(observation.dialogue);
-    labels.set(key, entry);
-  }
-
-  const nonSingletonCounts = [...labels.values()]
-    .map((entry) => entry.observationIds.size)
-    .filter((count) => count > 1);
+  const statuses = readObservationReviewStatuses();
+  const clusters = buildClusters();
   const report = {
-    acceptedObservations: observations.filter((observation) => observation.reviewStatus === "accepted").length,
-    crossDialogueLabels: [...labels.values()].filter((entry) => entry.dialogues.size >= 2).length,
-    medianNonSingletonObservations: median(nonSingletonCounts),
+    acceptedObservations: [...statuses.values()].filter((status) => status === "accepted").length,
+    crossDialogueConcepts: clusters.filter((cluster) => cluster.dialogues.length >= 2).length,
+    medianNonSingletonObservations: median(
+      clusters.map((cluster) => cluster.observations.length).filter((count) => count > 1),
+    ),
   };
-
   return {
     ...report,
     passed:
       report.acceptedObservations > 0 &&
-      report.crossDialogueLabels >= 10 &&
+      report.crossDialogueConcepts >= 10 &&
       report.medianNonSingletonObservations >= 2,
   };
 }
 
-export function buildClusters({ includeUnreviewed = false }: { includeUnreviewed?: boolean } = {}) {
-  const grouped = new Map<string, ObservationCluster>();
-  const observations = observationsFromDisk().filter(
-    (observation) => observation.reviewStatus === "accepted" || includeUnreviewed,
-  );
+function projectionRow(cluster: ObservationCluster): ClusterProjectionRow {
+  return {
+    schema_version: 1,
+    projection_kind: "observation_cluster",
+    axis_id: cluster.axisId,
+    axis_key: cluster.axisKey,
+    dimension: cluster.dimension,
+    concept_id: cluster.conceptId,
+    concept_key: cluster.conceptKey,
+    comparison_question: cluster.comparisonQuestion,
+    observation_ids: cluster.observations.map((observation) => observation.observationId),
+    dialogues: cluster.dialogues,
+    spans: Object.fromEntries(
+      cluster.observations.map((observation) => [observation.observationId, observation.stephanusSpan]),
+    ),
+  };
+}
 
-  for (const observation of observations) {
-    const key = `${observation.featureFamily}::${observation.featureLabel}`;
-    const cluster =
-      grouped.get(key) ??
-      {
-        family: observation.featureFamily,
-        label: observation.featureLabel,
-        observations: [],
-        dialogues: [],
-        preConvergence: includeUnreviewed,
-      };
-    cluster.observations.push(observation);
-    cluster.dialogues = [...new Set(cluster.observations.map((entry) => entry.dialogue))].sort();
-    grouped.set(key, cluster);
+export function formatClusterAxisJsonl(clusters: ObservationCluster[]) {
+  return clusters.length === 0 ? "" : `${clusters.map((cluster) => canonicalJson(projectionRow(cluster))).join("\n")}\n`;
+}
+
+function expectedClusterArtifacts() {
+  const byAxis = new Map<string, ObservationCluster[]>();
+  for (const cluster of buildClusters()) {
+    const bucket = byAxis.get(cluster.axisId) ?? [];
+    bucket.push(cluster);
+    byAxis.set(cluster.axisId, bucket);
   }
-
-  return [...grouped.values()]
-    .map((cluster) => ({
-      ...cluster,
-      observations: cluster.observations.sort((a, b) => a.observationId.localeCompare(b.observationId)),
+  return [...byAxis.values()]
+    .map((clusters) => ({
+      axisId: clusters[0]!.axisId,
+      axisKey: clusters[0]!.axisKey,
+      relativePath: `wiki/clusters/${clusters[0]!.axisKey}.jsonl`,
+      content: formatClusterAxisJsonl(clusters),
+      clusterCount: clusters.length,
     }))
-    .sort((a, b) => a.family.localeCompare(b.family) || a.label.localeCompare(b.label));
+    .sort((left, right) => compareStrings(left.axisId, right.axisId));
 }
 
-function clusterId(cluster: ObservationCluster) {
-  return `cluster_${cluster.family}_${cluster.label}`;
-}
-
-export function formatClusterFamilyMarkdown(family: string, clusters: ObservationCluster[]) {
-  const body = clusters
-    .map((cluster) =>
-      [
-        "```yaml",
-        `cluster_id: ${clusterId(cluster)}`,
-        `feature_family: ${cluster.family}`,
-        `feature_label: ${cluster.label}`,
-        `observation_ids: [${cluster.observations.map((observation) => observation.observationId).join(", ")}]`,
-        `dialogues: [${cluster.dialogues.join(", ")}]`,
-        "spans:",
-        ...cluster.observations.map((observation) => `  ${observation.observationId}: ${observation.stephanusSpan}`),
-        "```",
-      ].join("\n"),
-    )
-    .join("\n\n");
-
-  return [`# Cluster Family: ${family}`, "", body, ""].join("\n");
-}
-
-export function writeClusterArtifacts({ includeUnreviewed = false }: { includeUnreviewed?: boolean } = {}) {
-  if (includeUnreviewed) {
-    throw new Error("Refusing to write pre-convergence preview clusters. Omit --include-unreviewed.");
-  }
-
+export function writeClusterArtifacts(): WrittenClusterArtifact[] {
   const gate = clusterGateReport();
   if (!gate.passed) {
     throw new Error(
       [
         "Cluster convergence gate is not met.",
         `accepted observations: ${gate.acceptedObservations} (must be > 0)`,
-        `cross-dialogue labels: ${gate.crossDialogueLabels} (must be >= 10)`,
+        `cross-dialogue concepts: ${gate.crossDialogueConcepts} (must be >= 10)`,
         `median non-singleton observations: ${gate.medianNonSingletonObservations} (must be >= 2)`,
       ].join("\n"),
     );
   }
 
-  const clusters = buildClusters();
-  const clustersByFamily = new Map<string, ObservationCluster[]>();
-  for (const cluster of clusters) {
-    const familyClusters = clustersByFamily.get(cluster.family) ?? [];
-    familyClusters.push(cluster);
-    clustersByFamily.set(cluster.family, familyClusters);
-  }
-
   const repoRoot = getRepoRoot();
   const clusterDir = join(repoRoot, "wiki/clusters");
+  rmSync(clusterDir, { recursive: true, force: true });
   mkdirSync(clusterDir, { recursive: true });
-  for (const entry of readdirSync(clusterDir, { withFileTypes: true })) {
-    if (entry.isFile() && entry.name.endsWith(".md")) {
-      unlinkSync(join(clusterDir, entry.name));
-    }
-  }
-
-  const written: WrittenClusterArtifact[] = [];
-  for (const [family, familyClusters] of [...clustersByFamily.entries()].sort(([a], [b]) => a.localeCompare(b))) {
-    const path = join(clusterDir, `${family}.md`);
-    writeFileSync(path, formatClusterFamilyMarkdown(family, familyClusters), "utf8");
-    written.push({ family, path: relative(repoRoot, path), clusterCount: familyClusters.length });
-  }
-
-  return written;
+  return expectedClusterArtifacts().map((artifact) => {
+    const path = join(repoRoot, artifact.relativePath);
+    writeFileSync(path, artifact.content, "utf8");
+    return {
+      axisId: artifact.axisId,
+      axisKey: artifact.axisKey,
+      path: relative(repoRoot, path),
+      clusterCount: artifact.clusterCount,
+    };
+  });
 }
 
 export function validateClusterArtifacts() {
   const repoRoot = getRepoRoot();
   const clusterDir = join(repoRoot, "wiki/clusters");
-  if (!existsSync(clusterDir)) return [];
-
-  const acceptedObservationIds = new Set(
-    observationsFromDisk()
-      .filter((observation) => observation.reviewStatus === "accepted")
-      .map((observation) => observation.observationId),
-  );
-  const failures: string[] = [];
-
-  for (const entry of readdirSync(clusterDir, { withFileTypes: true })) {
-    if (!entry.isFile() || !entry.name.endsWith(".md")) continue;
-
-    const relativePath = `wiki/clusters/${entry.name}`;
-    const content = readFileSync(join(clusterDir, entry.name), "utf8");
-    for (const match of content.matchAll(/^observation_ids:\s*\[([^\]]*)\]\s*$/gmu)) {
-      const observationIds = match[1]!
-        .split(",")
-        .map((value) => value.trim())
-        .filter((value) => value.length > 0);
-      for (const observationId of observationIds) {
-        if (!acceptedObservationIds.has(observationId)) {
-          failures.push(`${relativePath}: cluster references missing or non-accepted observation ${observationId}`);
-        }
-      }
+  const expected = new Map(expectedClusterArtifacts().map((artifact) => [artifact.relativePath, artifact.content]));
+  const actual = new Set<string>();
+  if (existsSync(clusterDir)) {
+    for (const entry of readdirSync(clusterDir, { withFileTypes: true })) {
+      if (entry.isFile()) actual.add(`wiki/clusters/${entry.name}`);
     }
   }
 
-  return failures;
+  const failures: string[] = [];
+  for (const path of expected.keys()) if (!actual.has(path)) failures.push(`${path}: missing cluster artifact`);
+  for (const path of actual) if (!expected.has(path)) failures.push(`${path}: stale cluster artifact`);
+  for (const [path, content] of expected) {
+    if (actual.has(path) && readFileSync(join(repoRoot, path), "utf8") !== content) {
+      failures.push(`${path}: cluster artifact does not equal its canonical ontology projection`);
+    }
+  }
+  return failures.sort(compareStrings);
 }

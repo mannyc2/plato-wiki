@@ -1,0 +1,206 @@
+{
+  "accepted_observations": 4,
+  "axis_id": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+  "axis_key": "turn_geometry",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record respondent set speech within the turn geometry axis?",
+  "concept_id": "concept_sha256_135783c2bc34bee52c3d1d6850a9229c14d6dc6385c1cd64db5f435e5e0c0381",
+  "concept_key": "respondent_set_speech",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_efba68dc22e1bb410de2aeede53d9df8387809fb6058927a994fa047be2b84d8",
+      "conceptKey": "definition_by_relational_opposition",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+      "axisKey": "elenchus",
+      "conceptId": "concept_sha256_2b1d4258151b8b948b7c3a6bd7bb39a368b009515e4937bc7588620577c80de8",
+      "conceptKey": "respondent_rejects_socratic_microanalysis",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+      "axisKey": "elenchus",
+      "conceptId": "concept_sha256_962727b5409ea88cd87316b570540f03603ed732b06dd0eea47a458f5a7df2c4",
+      "conceptKey": "comparative_advantage_claim",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_8d3c081a629addbc2877cc5aa51696a298a418b3091cd318b8064be2876011b6",
+      "conceptKey": "temporal_framing_argument",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_344e394ea1b45ae5ce3a2751a410bacb90e8d8ffb0f3d752e60fe72d20b26d88",
+      "axisKey": "craft_analogy",
+      "conceptId": "concept_sha256_b5e18a5c43b721c1f97fc50e2b26cbc1ba192e8d026c6dbb71666b8bdd5a551a",
+      "conceptKey": "biological_nature_nurture_analogy",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 3,
+  "dimension": "discourse_structure",
+  "instance_ids": [
+    "obs_greater-hippias_0027",
+    "obs_greater-hippias_0127",
+    "obs_phaedrus_0035",
+    "obs_protagoras_0154"
+  ],
+  "instances": [
+    {
+      "dialogue": "greater-hippias",
+      "observationId": "obs_greater-hippias_0027",
+      "speakers": [
+        "ΣΩ.",
+        "ΙΠ."
+      ],
+      "stephanusSpan": "285d-285e",
+      "turnCount": 7
+    },
+    {
+      "dialogue": "greater-hippias",
+      "observationId": "obs_greater-hippias_0127",
+      "speakers": [
+        "ΣΩ.",
+        "ΙΠ."
+      ],
+      "stephanusSpan": "304a-304b",
+      "turnCount": 3
+    },
+    {
+      "dialogue": "phaedrus",
+      "observationId": "obs_phaedrus_0035",
+      "speakers": [
+        "ΦΑΙ."
+      ],
+      "stephanusSpan": "232e-233a",
+      "turnCount": 2
+    },
+    {
+      "dialogue": "protagoras",
+      "observationId": "obs_protagoras_0154",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "334a-334b",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_135783c2bc34bee52c3d1d6850a9229c14d6dc6385c1cd64db5f435e5e0c0381",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

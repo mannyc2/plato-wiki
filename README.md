@@ -85,8 +85,8 @@ bun run harness ingest <slug>
 - `packages/cli`: thin command parser and terminal output layer.
 - `raw/plato`: canonical Greek source files, translations kept out of extraction,
   the source manifest, and the source provenance record (`SOURCES.md`).
-- `wiki/`: observation ledgers, feature registry, ingest log, review notes, and
-  ignored local transcript artifacts.
+- `wiki/`: semantic ledgers, ontology vNext JSONL, generated comparison
+  projections, content-addressed audit packages, and review receipts.
 - `docs/`: extraction protocol, harness operations, runner design, and research
   requests.
 - `.pi/`: project-local skills and prompts used by the harness.

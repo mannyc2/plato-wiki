@@ -1,12 +1,11 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { basename, join, relative } from "node:path";
-import { buildClusters, type ObservationCluster } from "../clusters.js";
+import { validateClusterArtifacts, type ObservationCluster } from "../clusters.js";
 import { buildCoverageReport, type DialogueCoverage } from "../coverage.js";
 import {
   parseObservationTurnJoinToon,
   type ObservationTurnJoinIndex,
 } from "../derived/joins.js";
-import { collectLabelQuality, type LabelQualityReport } from "../labels-report.js";
 import { buildStephanusIndex } from "../derived/stephanus.js";
 import { getRepoRoot } from "../paths.js";
 import { createSourceSpanResolver, type SourceSpanResolver } from "../source.js";
@@ -31,11 +30,14 @@ import {
   nestedFieldValueInParent,
   observationYamlBlocks,
 } from "../wiki/observation-ledger.js";
-import {
-  parseFeatureEntries,
-  SEED_FEATURE_FAMILIES,
-  type FeatureRegistryEntry,
-} from "../wiki/observation-feature-index.js";
+import { readOntologyVNextRepository } from "../wiki/ontology-vnext-repository.js";
+import type {
+  OntologyVNextAxis,
+  OntologyVNextConcept,
+  OntologyVNextMembership,
+  OntologyVNextModel,
+} from "../wiki/ontology-vnext.js";
+import { validateDossierArtifacts } from "../dossiers.js";
 import { titleCase } from "./layout.js";
 import { discoverSiteRecordings, type SiteRecording } from "./recordings.js";
 
@@ -57,14 +59,22 @@ export type SiteObservation = {
   sourceRef: SiteSourceRef;
   greekTerms: string[];
   englishGloss: string;
-  featureFamily: string;
-  featureId: string;
-  featureLabel: string;
+  concepts: SiteConceptAssignment[];
   observation: string;
   textualBasis: string;
   limits: string;
   reviewStatus: string;
   greekExcerpt: string;
+};
+
+export type SiteConceptAssignment = {
+  axisId: string;
+  axisKey: string;
+  dimension: string;
+  conceptId: string;
+  conceptKey: string;
+  comparisonQuestion: string;
+  definition: string;
 };
 
 export type SiteClaim = {
@@ -100,10 +110,10 @@ export type SiteCluster = ObservationCluster & {
 };
 
 export type DossierInstance = {
-  id: string;
+  observationId: string;
   dialogue: string;
-  span: string;
-  speakers: string;
+  stephanusSpan: string;
+  speakers: string[];
   turnCount: number;
 };
 
@@ -113,22 +123,26 @@ export type DossierPresence = {
 };
 
 export type DossierCooccurrence = {
-  family: string;
-  label: string;
+  axisId: string;
+  axisKey: string;
+  conceptId: string;
+  conceptKey: string;
   overlappingObservations: number;
 };
 
 export type SiteDossier = {
   dossierId: string;
-  family: string;
-  label: string;
+  axisId: string;
+  axisKey: string;
+  dimension: string;
+  conceptId: string;
+  conceptKey: string;
+  comparisonQuestion: string;
   path: string;
   pagePath: string;
   acceptedObservations: number;
   dialogues: number;
-  counterRecords: number;
   instanceIds: string[];
-  counterIds: string[];
   instances: DossierInstance[];
   presence: DossierPresence[];
   cooccurrence: DossierCooccurrence[];
@@ -212,13 +226,6 @@ export type ClaimShard = {
   claims: SiteClaim[];
 };
 
-export type RegistryShard = {
-  part: number;
-  partCount: number;
-  path: string;
-  entries: FeatureRegistryEntry[];
-};
-
 export type TurnShard = {
   dialogue: string;
   part: number;
@@ -232,27 +239,6 @@ export type ObservationTurnMaps = {
   observationIdsByTurnId: Map<string, string[]>;
 };
 
-export const SINGLETON_ADJUDICATIONS = [
-  "keep_distinct_function",
-  "merge_candidate",
-  "passage_summary_relabel",
-  "topic_registry",
-] as const;
-
-export type SingletonAdjudication = (typeof SINGLETON_ADJUDICATIONS)[number];
-
-export type SingletonAdjudicationSummary = {
-  path: string;
-  universeSize: number;
-  sampleSize: number;
-  composition: Array<{
-    adjudication: SingletonAdjudication;
-    count: number;
-    sampleShare: number;
-    weightedShare: number;
-  }>;
-};
-
 export type ReviewLayer = "observations" | "claims" | "relations";
 
 export type ReviewStatusSummary = {
@@ -262,10 +248,40 @@ export type ReviewStatusSummary = {
 
 export type LayerReviewCounts = Record<ReviewLayer, ReviewStatusSummary>;
 
+export type OntologyAxisRow = {
+  axisId: string;
+  axisKey: string;
+  dimension: string;
+  comparisonQuestion: string;
+  conceptCount: number;
+  membershipCount: number;
+  observationCount: number;
+  dialogueCount: number;
+};
+
+export type OntologyQualitySummary = {
+  axes: number;
+  concepts: number;
+  memberships: number;
+  acceptedObservations: number;
+  acceptedObservationsWithMemberships: number;
+  singletonConcepts: number;
+  crossDialogueConcepts: number;
+  axisRows: OntologyAxisRow[];
+};
+
 export type SiteData = {
   observations: SiteObservation[];
   observationsById: Map<string, SiteObservation>;
-  registry: FeatureRegistryEntry[];
+  ontology: OntologyVNextModel;
+  axes: readonly Readonly<OntologyVNextAxis>[];
+  concepts: readonly Readonly<OntologyVNextConcept>[];
+  memberships: readonly Readonly<OntologyVNextMembership>[];
+  axesById: Map<string, Readonly<OntologyVNextAxis>>;
+  conceptsById: Map<string, Readonly<OntologyVNextConcept>>;
+  conceptsByObservationId: Map<string, SiteConceptAssignment[]>;
+  observationsByConceptId: Map<string, SiteObservation[]>;
+  ontologyQuality: OntologyQualitySummary;
   clusters: SiteCluster[];
   claims: SiteClaim[];
   claimsById: Map<string, SiteClaim>;
@@ -287,21 +303,15 @@ export type SiteData = {
   observationPageById: Map<string, string>;
   relationShards: RelationShard[];
   relationPageById: Map<string, string>;
-  registryShards: RegistryShard[];
-  registryPageById: Map<string, string>;
   commentaryPageById: Map<string, string>;
-  dossierPageByFamilyLabel: Map<string, string>;
+  dossierPageByConceptId: Map<string, string>;
   recordingsByDialogue: Map<string, SiteRecording>;
   sourceResolver: SourceSpanResolver;
   sourceAttribution: string;
-  labelQuality: LabelQualityReport;
   coverage: DialogueCoverage[];
-  singletonAdjudication: SingletonAdjudicationSummary | undefined;
   reviewStatusCounts: LayerReviewCounts;
   unattributedDialogues: string[];
   rawCoverageMarkdown: string;
-  rawLabelQualityMarkdown: string;
-  rawSingletonMemoMarkdown: string;
 };
 
 function numberField(value: string) {
@@ -341,7 +351,7 @@ function guardedBody(recordId: string, field: string, value: string) {
       `${recordId} ${field} parsed as a bare block-scalar indicator (${value.trim()}) — ledger loader dropped the body.`,
     );
   }
-  return value;
+  return value.trimEnd();
 }
 
 export function parseObservationLedger(
@@ -367,9 +377,7 @@ export function parseObservationLedger(
       sourceRef,
       greekTerms: listFieldValue(block, "greek_terms"),
       englishGloss: fieldValueOrEmpty(block, "english_gloss"),
-      featureFamily: fieldValueOrEmpty(block, "feature_family"),
-      featureId: fieldValueOrEmpty(block, "feature_id"),
-      featureLabel: fieldValueOrEmpty(block, "feature_label"),
+      concepts: [],
       observation: guardedBody(observationId, "observation", fieldValueOrEmpty(block, "observation")),
       textualBasis: guardedBody(observationId, "textual_basis", fieldValueOrEmpty(block, "textual_basis")),
       limits: fieldValueOrEmpty(block, "limits"),
@@ -464,6 +472,7 @@ function readRelationsFromDisk() {
   return readdirSync(relationDir, { withFileTypes: true })
     .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
     .flatMap((entry) => parseRelationBlocks(readFileSync(join(relationDir, entry.name), "utf8"), basename(entry.name, ".md")))
+    .filter((relation) => relation.reviewStatus === "accepted")
     .sort((a, b) => a.relationId.localeCompare(b.relationId));
 }
 
@@ -572,122 +581,185 @@ function readApparatusFromDisk() {
   return byDialogue;
 }
 
-function parseClusterFile(path: string, content: string): SiteCluster[] {
-  return observationYamlBlocks(content).map((block) => {
-    const family = fieldValueOrEmpty(block, "feature_family");
-    const label = fieldValueOrEmpty(block, "feature_label");
-    const observationIds = listFieldValue(block, "observation_ids");
-    const dialogues = listFieldValue(block, "dialogues");
-    const spans = new Map<string, string>();
-    const spansMatch = /^spans:\s*$(?<body>[\s\S]*)/mu.exec(block);
-    if (spansMatch?.groups?.body) {
-      for (const line of spansMatch.groups.body.split("\n")) {
-        const parsed = /^\s+(obs_[a-z0-9-]+_\d{4}):\s*(\S+)\s*$/u.exec(line);
-        if (parsed) spans.set(parsed[1]!, parsed[2]!);
-      }
-    }
+function plainObject(value: unknown): value is Record<string, unknown> {
+  return value !== null && typeof value === "object" && !Array.isArray(value);
+}
 
-    return {
-      family,
-      label,
-      observations: observationIds.map((observationId) => ({
+function canonicalValue(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(canonicalValue);
+  if (!plainObject(value)) return value;
+  return Object.fromEntries(
+    Object.entries(value)
+      .sort(([left], [right]) => compareStableText(left, right))
+      .map(([key, entry]) => [key, canonicalValue(entry)]),
+  );
+}
+
+function exactKeys(value: Record<string, unknown>, keys: readonly string[], context: string) {
+  const actual = Object.keys(value).sort(compareStableText);
+  const expected = [...keys].sort(compareStableText);
+  if (actual.length !== expected.length || actual.some((key, index) => key !== expected[index])) {
+    throw new Error(`${context}: expected fields ${expected.join(", ")}; found ${actual.join(", ")}.`);
+  }
+}
+
+function requiredProjectionString(value: unknown, context: string) {
+  if (typeof value !== "string" || value.trim() === "") throw new Error(`${context}: expected non-empty string.`);
+  return value;
+}
+
+function requiredProjectionInteger(value: unknown, context: string) {
+  if (!Number.isSafeInteger(value) || Number(value) < 0) throw new Error(`${context}: expected non-negative integer.`);
+  return Number(value);
+}
+
+function requiredProjectionStrings(value: unknown, context: string) {
+  if (!Array.isArray(value) || !value.every((entry) => typeof entry === "string" && entry.trim() !== "")) {
+    throw new Error(`${context}: expected string array.`);
+  }
+  return value as string[];
+}
+
+export function parseClusterFile(path: string, content: string): SiteCluster[] {
+  if (content === "" || !content.endsWith("\n") || content.endsWith("\n\n") || content.includes("\r")) {
+    throw new Error(`${path}: cluster JSONL must contain canonical LF-terminated rows.`);
+  }
+  return content
+    .slice(0, -1)
+    .split("\n")
+    .map((line, index) => {
+      const context = `${path}:${index + 1}`;
+      let parsed: unknown;
+      try {
+        parsed = JSON.parse(line) as unknown;
+      } catch (error) {
+        throw new Error(`${context}: invalid JSON: ${error instanceof Error ? error.message : String(error)}`);
+      }
+      if (!plainObject(parsed)) throw new Error(`${context}: expected one JSON object.`);
+      if (JSON.stringify(canonicalValue(parsed)) !== line) throw new Error(`${context}: non-canonical JSON.`);
+      exactKeys(parsed, [
+        "schema_version", "projection_kind", "axis_id", "axis_key", "dimension", "concept_id",
+        "concept_key", "comparison_question", "observation_ids", "dialogues", "spans",
+      ], context);
+      if (parsed.schema_version !== 1 || parsed.projection_kind !== "observation_cluster") {
+        throw new Error(`${context}: unsupported cluster projection.`);
+      }
+      const observationIds = requiredProjectionStrings(parsed.observation_ids, `${context}/observation_ids`);
+      const dialogues = requiredProjectionStrings(parsed.dialogues, `${context}/dialogues`);
+      if (!plainObject(parsed.spans)) throw new Error(`${context}/spans: expected object.`);
+      const spans = parsed.spans;
+      exactKeys(spans, observationIds, `${context}/spans`);
+      const observations = observationIds.map((observationId) => ({
         observationId,
         dialogue: dialogueFromObservationId(observationId),
-        stephanusSpan: spans.get(observationId) ?? "",
-        featureId: "",
-        featureFamily: family,
-        featureLabel: label,
-        reviewStatus: "accepted",
-      })),
-      dialogues,
-      preConvergence: false,
-      path,
-    };
-  });
+        stephanusSpan: requiredProjectionString(spans[observationId], `${context}/spans/${observationId}`),
+      }));
+      return {
+        axisId: requiredProjectionString(parsed.axis_id, `${context}/axis_id`),
+        axisKey: requiredProjectionString(parsed.axis_key, `${context}/axis_key`),
+        dimension: requiredProjectionString(parsed.dimension, `${context}/dimension`),
+        conceptId: requiredProjectionString(parsed.concept_id, `${context}/concept_id`),
+        conceptKey: requiredProjectionString(parsed.concept_key, `${context}/concept_key`),
+        comparisonQuestion: requiredProjectionString(parsed.comparison_question, `${context}/comparison_question`),
+        observations,
+        dialogues,
+        path,
+      };
+    });
 }
 
 function readClustersFromDisk() {
+  const failures = validateClusterArtifacts();
+  if (failures.length > 0) throw new Error(`Invalid cluster projections:\n${failures.join("\n")}`);
   const clusterDir = join(getRepoRoot(), "wiki/clusters");
-  if (!existsSync(clusterDir)) {
-    return buildClusters().map((cluster) => ({ ...cluster, path: `wiki/clusters/${cluster.family}.md` }));
-  }
-
+  if (!existsSync(clusterDir)) throw new Error("wiki/clusters is required for the site build.");
   return readdirSync(clusterDir, { withFileTypes: true })
-    .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
-    .flatMap((entry) =>
-      parseClusterFile(`wiki/clusters/${entry.name}`, readFileSync(join(clusterDir, entry.name), "utf8")),
-    )
-    .sort((a, b) => a.family.localeCompare(b.family) || a.label.localeCompare(b.label));
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".jsonl"))
+    .flatMap((entry) => parseClusterFile(
+      `wiki/clusters/${entry.name}`,
+      readFileSync(join(clusterDir, entry.name), "utf8"),
+    ))
+    .sort((left, right) => compareStableText(left.axisId, right.axisId) || compareStableText(left.conceptId, right.conceptId));
 }
 
-function readRegistryEntries() {
-  const path = join(getRepoRoot(), "wiki/features-so-far.md");
-  return existsSync(path) ? parseFeatureEntries(readFileSync(path, "utf8")) : [];
-}
-
-function cleanInlineValue(value: string | undefined) {
-  return value?.trim().replace(/^["']|["']$/gu, "") ?? "";
-}
-
-function parseSemicolonFields(line: string) {
-  const fields = new Map<string, string>();
-  for (const part of line.replace(/^\s*-\s*/u, "").split(/;\s*/u)) {
-    const parsed = /^([^:]+):\s*(.*)$/u.exec(part.trim());
-    if (parsed) fields.set(parsed[1]!.trim(), cleanInlineValue(parsed[2]));
+export function parseDossierFile(filePath: string, content: string): SiteDossier {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(content) as unknown;
+  } catch (error) {
+    throw new Error(`${filePath}: invalid JSON: ${error instanceof Error ? error.message : String(error)}`);
   }
-  return fields;
-}
-
-function parseYamlListSection(content: string, heading: string) {
-  const match = new RegExp(`## ${heading}\\n\\n\`\`\`yaml\\n([\\s\\S]*?)\\n\`\`\``, "u").exec(content);
-  return match?.[1]?.split("\n").filter((line) => line.trim().startsWith("- ")) ?? [];
-}
-
-function parseDossierFile(filePath: string, content: string): SiteDossier | undefined {
-  const firstBlock = /```yaml\n([\s\S]*?)\n```/u.exec(content)?.[1];
-  if (!firstBlock) return undefined;
-
-  const family = fieldValueOrEmpty(firstBlock, "feature_family");
-  const label = fieldValueOrEmpty(firstBlock, "feature_label");
-  if (!family || !label) return undefined;
-
-  const instances = parseYamlListSection(content, "Instances").map((line) => {
-    const fields = parseSemicolonFields(line);
+  if (!plainObject(parsed)) throw new Error(`${filePath}: expected one JSON object.`);
+  if (`${JSON.stringify(canonicalValue(parsed), null, 2)}\n` !== content) {
+    throw new Error(`${filePath}: non-canonical JSON.`);
+  }
+  exactKeys(parsed, [
+    "schema_version", "projection_kind", "projection_id", "axis_id", "axis_key", "dimension",
+    "concept_id", "concept_key", "comparison_question", "accepted_observations", "dialogues",
+    "instance_ids", "instances", "presence", "cooccurrence",
+  ], filePath);
+  if (parsed.schema_version !== 1 || parsed.projection_kind !== "concept_dossier") {
+    throw new Error(`${filePath}: unsupported dossier projection.`);
+  }
+  const instancesRaw = parsed.instances;
+  if (!Array.isArray(instancesRaw)) throw new Error(`${filePath}/instances: expected array.`);
+  const instances = instancesRaw.map((entry, index): DossierInstance => {
+    const context = `${filePath}/instances/${index}`;
+    if (!plainObject(entry)) throw new Error(`${context}: expected object.`);
+    exactKeys(entry, ["observationId", "dialogue", "stephanusSpan", "speakers", "turnCount"], context);
     return {
-      id: fields.get("id") ?? "",
-      dialogue: fields.get("dialogue") ?? "",
-      span: fields.get("span") ?? "",
-      speakers: fields.get("speakers") ?? "",
-      turnCount: numberField(fields.get("turn_count") ?? "0"),
+      observationId: requiredProjectionString(entry.observationId, `${context}/observationId`),
+      dialogue: requiredProjectionString(entry.dialogue, `${context}/dialogue`),
+      stephanusSpan: requiredProjectionString(entry.stephanusSpan, `${context}/stephanusSpan`),
+      speakers: requiredProjectionStrings(entry.speakers, `${context}/speakers`),
+      turnCount: requiredProjectionInteger(entry.turnCount, `${context}/turnCount`),
     };
   });
-  const presence = parseYamlListSection(content, "Presence").map((line) => {
-    const fields = parseSemicolonFields(line);
+  if (!Array.isArray(parsed.presence)) throw new Error(`${filePath}/presence: expected array.`);
+  const presence = parsed.presence.map((entry, index): DossierPresence => {
+    const context = `${filePath}/presence/${index}`;
+    if (!plainObject(entry)) throw new Error(`${context}: expected object.`);
+    exactKeys(entry, ["dialogue", "acceptedObservations"], context);
     return {
-      dialogue: fields.get("dialogue") ?? "",
-      acceptedObservations: numberField(fields.get("accepted_observations") ?? "0"),
+      dialogue: requiredProjectionString(entry.dialogue, `${context}/dialogue`),
+      acceptedObservations: requiredProjectionInteger(entry.acceptedObservations, `${context}/acceptedObservations`),
     };
   });
-  const cooccurrence = parseYamlListSection(content, "Co-occurrence").map((line) => {
-    const fields = parseSemicolonFields(line);
+  if (!Array.isArray(parsed.cooccurrence)) throw new Error(`${filePath}/cooccurrence: expected array.`);
+  const cooccurrence = parsed.cooccurrence.map((entry, index): DossierCooccurrence => {
+    const context = `${filePath}/cooccurrence/${index}`;
+    if (!plainObject(entry)) throw new Error(`${context}: expected object.`);
+    exactKeys(entry, ["axisId", "axisKey", "conceptId", "conceptKey", "overlappingObservations"], context);
     return {
-      family: fields.get("family") ?? "",
-      label: fields.get("label") ?? "",
-      overlappingObservations: numberField(fields.get("overlapping_observations") ?? "0"),
+      axisId: requiredProjectionString(entry.axisId, `${context}/axisId`),
+      axisKey: requiredProjectionString(entry.axisKey, `${context}/axisKey`),
+      conceptId: requiredProjectionString(entry.conceptId, `${context}/conceptId`),
+      conceptKey: requiredProjectionString(entry.conceptKey, `${context}/conceptKey`),
+      overlappingObservations: requiredProjectionInteger(entry.overlappingObservations, `${context}/overlappingObservations`),
     };
   });
-
+  const axisKey = requiredProjectionString(parsed.axis_key, `${filePath}/axis_key`);
+  const conceptKey = requiredProjectionString(parsed.concept_key, `${filePath}/concept_key`);
+  const conceptId = requiredProjectionString(parsed.concept_id, `${filePath}/concept_id`);
+  const dossierId = requiredProjectionString(parsed.projection_id, `${filePath}/projection_id`);
+  if (dossierId !== `dossier:${conceptId}`) throw new Error(`${filePath}: projection_id does not match concept_id.`);
+  const instanceIds = requiredProjectionStrings(parsed.instance_ids, `${filePath}/instance_ids`);
+  if (instanceIds.length !== instances.length || instanceIds.some((id, index) => id !== instances[index]?.observationId)) {
+    throw new Error(`${filePath}: instance_ids do not exactly match instances.`);
+  }
   return {
-    dossierId: fieldValueOrEmpty(firstBlock, "dossier_id"),
-    family,
-    label,
+    dossierId,
+    axisId: requiredProjectionString(parsed.axis_id, `${filePath}/axis_id`),
+    axisKey,
+    dimension: requiredProjectionString(parsed.dimension, `${filePath}/dimension`),
+    conceptId,
+    conceptKey,
+    comparisonQuestion: requiredProjectionString(parsed.comparison_question, `${filePath}/comparison_question`),
     path: relative(getRepoRoot(), filePath),
-    pagePath: `dossiers/${family}/${label}.html`,
-    acceptedObservations: numberField(fieldValue(firstBlock, "accepted_observations") ?? "0"),
-    dialogues: numberField(fieldValue(firstBlock, "dialogues") ?? "0"),
-    counterRecords: numberField(fieldValue(firstBlock, "counter_records") ?? "0"),
-    instanceIds: listFieldValue(firstBlock, "instance_ids"),
-    counterIds: listFieldValue(firstBlock, "counter_ids"),
+    pagePath: `dossiers/${axisKey}/${conceptKey}.html`,
+    acceptedObservations: requiredProjectionInteger(parsed.accepted_observations, `${filePath}/accepted_observations`),
+    dialogues: requiredProjectionInteger(parsed.dialogues, `${filePath}/dialogues`),
+    instanceIds,
     instances,
     presence,
     cooccurrence,
@@ -695,22 +767,21 @@ function parseDossierFile(filePath: string, content: string): SiteDossier | unde
 }
 
 function readDossiersFromDisk() {
+  const failures = validateDossierArtifacts();
+  if (failures.length > 0) throw new Error(`Invalid dossier projections:\n${failures.join("\n")}`);
   const dossierDir = join(getRepoRoot(), "wiki/dossiers");
-  if (!existsSync(dossierDir)) {
-    throw new Error("wiki/dossiers is required for the v2 site build.");
-  }
-
+  if (!existsSync(dossierDir)) throw new Error("wiki/dossiers is required for the site build.");
   const dossiers: SiteDossier[] = [];
-  for (const familyEntry of readdirSync(dossierDir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
-    if (!familyEntry.isDirectory()) continue;
-    const familyDir = join(dossierDir, familyEntry.name);
-    for (const fileEntry of readdirSync(familyDir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
-      if (!fileEntry.isFile() || !fileEntry.name.endsWith(".md")) continue;
-      const parsed = parseDossierFile(join(familyDir, fileEntry.name), readFileSync(join(familyDir, fileEntry.name), "utf8"));
-      if (parsed) dossiers.push(parsed);
+  for (const axisEntry of readdirSync(dossierDir, { withFileTypes: true }).sort((a, b) => compareStableText(a.name, b.name))) {
+    if (!axisEntry.isDirectory()) continue;
+    const axisDir = join(dossierDir, axisEntry.name);
+    for (const fileEntry of readdirSync(axisDir, { withFileTypes: true }).sort((a, b) => compareStableText(a.name, b.name))) {
+      if (!fileEntry.isFile() || !fileEntry.name.endsWith(".json")) continue;
+      const path = join(axisDir, fileEntry.name);
+      dossiers.push(parseDossierFile(path, readFileSync(path, "utf8")));
     }
   }
-  return dossiers.sort((a, b) => a.family.localeCompare(b.family) || a.label.localeCompare(b.label));
+  return dossiers.sort((left, right) => compareStableText(left.axisId, right.axisId) || compareStableText(left.conceptId, right.conceptId));
 }
 
 export function parseToonTable(content: string, section: string, path = "<inline>"): ToonRow[] {
@@ -837,6 +908,7 @@ function readStephanusByDialogue(dialogues: string[]) {
 export function buildRelationsByClaimId(relations: readonly SiteRelation[]) {
   const index = new Map<string, SiteRelation[]>();
   for (const relation of relations) {
+    if (relation.reviewStatus !== "accepted") continue;
     for (const claimId of [relation.claimA, relation.claimB]) {
       if (!claimId) continue;
       const list = index.get(claimId) ?? [];
@@ -1036,7 +1108,10 @@ function buildObservationShards(observations: SiteObservation[]) {
 export function buildRelationShards(relations: SiteRelation[], chunkSize = 400) {
   const shards: RelationShard[] = [];
   const pageById = new Map<string, string>();
-  const byDialogue = groupBy(relations, (relation) => relation.dialogue);
+  const byDialogue = groupBy(
+    relations.filter((relation) => relation.reviewStatus === "accepted"),
+    (relation) => relation.dialogue,
+  );
 
   for (const [dialogue, entries] of [...byDialogue.entries()].sort(([a], [b]) => a.localeCompare(b))) {
     for (const shard of buildNumberedShards(
@@ -1097,22 +1172,6 @@ export function buildTurnShards(
   return { shards, pageById };
 }
 
-export function dossierFamilyLabelKey(family: string, label: string) {
-  return `${family}/${label}`;
-}
-
-export function buildDossierPageByFamilyLabel(dossiers: readonly SiteDossier[]) {
-  const pageByFamilyLabel = new Map<string, string>();
-  for (const dossier of [...dossiers].sort((a, b) =>
-    compareStableText(dossierFamilyLabelKey(a.family, a.label), dossierFamilyLabelKey(b.family, b.label)),
-  )) {
-    const key = dossierFamilyLabelKey(dossier.family, dossier.label);
-    if (pageByFamilyLabel.has(key)) throw new Error(`Duplicate dossier family/label target: ${key}.`);
-    pageByFamilyLabel.set(key, `${dossier.pagePath}#${dossier.dossierId}`);
-  }
-  return pageByFamilyLabel;
-}
-
 export function buildClaimShards(claims: SiteClaim[], chunkSize = 250) {
   const shards: ClaimShard[] = [];
   const pageById = new Map<string, string>();
@@ -1132,237 +1191,9 @@ export function buildClaimShards(claims: SiteClaim[], chunkSize = 250) {
   return { shards, pageById };
 }
 
-export function buildRegistryShards(entries: FeatureRegistryEntry[], chunkSize = 500) {
-  const pageById = new Map<string, string>();
-  const shards = buildNumberedShards(
-    [...entries].sort((a, b) => a.id.localeCompare(b.id)),
-    chunkSize,
-    (part) => `registry/part-${part}.html`,
-  ).map((shard): RegistryShard => ({ ...shard, entries: shard.items }));
-  for (const shard of shards) {
-    for (const entry of shard.entries) pageById.set(entry.id, `${shard.path}#${entry.id}`);
-  }
-  return { shards, pageById };
-}
-
 function readOptionalMarkdown(repoPath: string) {
   const path = join(getRepoRoot(), repoPath);
   return existsSync(path) ? readFileSync(path, "utf8") : "";
-}
-
-const SINGLETON_SAMPLE_PATH = "wiki/review/2026-07-singleton-adjudication/sample.json";
-const TARGET_REQUIRED_ADJUDICATIONS = new Set<SingletonAdjudication>([
-  "merge_candidate",
-  "passage_summary_relabel",
-]);
-const TARGET_FORBIDDEN_ADJUDICATIONS = new Set<SingletonAdjudication>([
-  "keep_distinct_function",
-  "topic_registry",
-]);
-
-function recordValue(value: unknown): value is Record<string, unknown> {
-  return typeof value === "object" && value !== null && !Array.isArray(value);
-}
-
-function singletonSampleError(detail: string): never {
-  throw new Error(`Malformed singleton adjudication sample ${SINGLETON_SAMPLE_PATH}: ${detail}`);
-}
-
-function positiveInteger(value: unknown, field: string) {
-  if (!Number.isSafeInteger(value) || Number(value) <= 0) {
-    singletonSampleError(`${field} must be a positive integer.`);
-  }
-  return Number(value);
-}
-
-function requiredString(value: unknown, field: string) {
-  if (typeof value !== "string" || value.trim().length === 0) {
-    singletonSampleError(`${field} must be a non-empty string.`);
-  }
-  return value.trim();
-}
-
-function isSingletonAdjudication(value: string): value is SingletonAdjudication {
-  return (SINGLETON_ADJUDICATIONS as readonly string[]).includes(value);
-}
-
-export function readSingletonAdjudicationSummary(): SingletonAdjudicationSummary | undefined {
-  const absolutePath = join(getRepoRoot(), SINGLETON_SAMPLE_PATH);
-  if (!existsSync(absolutePath)) return undefined;
-
-  let sample: unknown;
-  try {
-    sample = JSON.parse(readFileSync(absolutePath, "utf8"));
-  } catch (error) {
-    singletonSampleError(`invalid JSON: ${error instanceof Error ? error.message : String(error)}`);
-  }
-  if (!recordValue(sample)) singletonSampleError("root must be an object.");
-  if (sample.version !== 1) singletonSampleError("version must be 1.");
-  const universeSize = positiveInteger(sample.universeSize, "universeSize");
-  const sampleStrata = sample.strata;
-  if (!recordValue(sampleStrata) || Object.keys(sampleStrata).length === 0) {
-    singletonSampleError("strata must be a non-empty object.");
-  }
-  const sampleEntries = sample.entries;
-  if (!Array.isArray(sampleEntries) || sampleEntries.length === 0) {
-    singletonSampleError("entries must be a non-empty array.");
-  }
-
-  const strata = new Map<string, { population: number; drawn: number }>();
-  for (const [name, value] of Object.entries(sampleStrata)) {
-    if (!recordValue(value)) singletonSampleError(`strata.${name} must be an object.`);
-    const population = positiveInteger(value.population, `strata.${name}.population`);
-    const drawn = positiveInteger(value.drawn, `strata.${name}.drawn`);
-    if (drawn > population) singletonSampleError(`strata.${name}.drawn must not exceed its population.`);
-    strata.set(name, { population, drawn });
-  }
-
-  const populationTotal = [...strata.values()].reduce((sum, stratum) => sum + stratum.population, 0);
-  if (populationTotal !== universeSize) {
-    singletonSampleError(`strata populations total ${populationTotal}; expected universeSize ${universeSize}.`);
-  }
-  const drawnTotal = [...strata.values()].reduce((sum, stratum) => sum + stratum.drawn, 0);
-  if (sampleEntries.length !== drawnTotal) {
-    singletonSampleError(`entries contains ${sampleEntries.length} rows; strata drawn totals ${drawnTotal}.`);
-  }
-
-  const stratumCounts = new Map<string, number>();
-  const compositionByStratum = new Map<string, Record<SingletonAdjudication, number>>();
-  const totals = Object.fromEntries(SINGLETON_ADJUDICATIONS.map((value) => [value, 0])) as Record<
-    SingletonAdjudication,
-    number
-  >;
-  for (const name of strata.keys()) {
-    compositionByStratum.set(
-      name,
-      Object.fromEntries(SINGLETON_ADJUDICATIONS.map((value) => [value, 0])) as Record<
-        SingletonAdjudication,
-        number
-      >,
-    );
-  }
-
-  for (const [index, value] of sampleEntries.entries()) {
-    if (!recordValue(value)) singletonSampleError(`entries[${index}] must be an object.`);
-    requiredString(value.family, `entries[${index}].family`);
-    const sourceLabel = requiredString(value.label, `entries[${index}].label`);
-    requiredString(value.observation_id, `entries[${index}].observation_id`);
-    const stratum = requiredString(value.stratum, `entries[${index}].stratum`);
-    if (!strata.has(stratum)) singletonSampleError(`entries[${index}].stratum names unknown stratum ${stratum}.`);
-    const adjudication = requiredString(value.adjudication, `entries[${index}].adjudication`);
-    if (!isSingletonAdjudication(adjudication)) {
-      singletonSampleError(`entries[${index}].adjudication has unsupported value ${adjudication}.`);
-    }
-
-    if (TARGET_REQUIRED_ADJUDICATIONS.has(adjudication)) {
-      if (!recordValue(value.target)) {
-        singletonSampleError(`entries[${index}].target is required for ${adjudication}.`);
-      }
-      const targetLabel = requiredString(value.target.label, `entries[${index}].target.label`);
-      if (targetLabel === sourceLabel) singletonSampleError(`entries[${index}].target.label must differ from its source label.`);
-    } else if (TARGET_FORBIDDEN_ADJUDICATIONS.has(adjudication) && value.target !== null) {
-      singletonSampleError(`entries[${index}].target must be null for ${adjudication}.`);
-    }
-
-    stratumCounts.set(stratum, (stratumCounts.get(stratum) ?? 0) + 1);
-    compositionByStratum.get(stratum)![adjudication] += 1;
-    totals[adjudication] += 1;
-  }
-
-  for (const [name, header] of strata) {
-    const count = stratumCounts.get(name) ?? 0;
-    if (count !== header.drawn) {
-      singletonSampleError(`strata.${name}.drawn is ${header.drawn}; entries contain ${count} rows.`);
-    }
-  }
-
-  const composition = SINGLETON_ADJUDICATIONS.map((adjudication) => {
-    const count = totals[adjudication];
-    const sampleShare = count / sampleEntries.length;
-    const weightedShare = [...strata.entries()].reduce((sum, [name, header]) => {
-      const stratumCount = compositionByStratum.get(name)![adjudication];
-      return sum + (header.population / universeSize) * (stratumCount / header.drawn);
-    }, 0);
-    return { adjudication, count, sampleShare, weightedShare };
-  });
-  for (const entry of composition) {
-    for (const [field, value] of [
-      ["sampleShare", entry.sampleShare],
-      ["weightedShare", entry.weightedShare],
-    ] as const) {
-      if (!Number.isFinite(value) || value < 0 || value > 1) {
-        singletonSampleError(`${entry.adjudication}.${field} must be a finite share from 0 to 1.`);
-      }
-    }
-  }
-
-  return {
-    path: SINGLETON_SAMPLE_PATH,
-    universeSize,
-    sampleSize: sampleEntries.length,
-    composition,
-  };
-}
-
-function dashboardDataError(detail: string): never {
-  throw new Error(`Invalid structure-quality dashboard data: ${detail}`);
-}
-
-function assertDashboardShare(path: string, value: number) {
-  if (!Number.isFinite(value) || value < 0 || value > 1) {
-    dashboardDataError(`${path} must be a finite share from 0 to 1; found ${String(value)}.`);
-  }
-}
-
-export function validateDashboardTargets({
-  labelQuality,
-  coverage,
-  knownDialogues,
-  knownFamilies,
-}: {
-  labelQuality: LabelQualityReport;
-  coverage: DialogueCoverage[];
-  knownDialogues: ReadonlySet<string>;
-  knownFamilies: ReadonlySet<string>;
-}) {
-  assertDashboardShare("allRecords.reuseMass.nonSingletonShare", labelQuality.allRecords.reuseMass.nonSingletonShare);
-  assertDashboardShare("allRecords.reuseMass.crossDialogueShare", labelQuality.allRecords.reuseMass.crossDialogueShare);
-  assertDashboardShare("acceptedOnly.reuseMass.nonSingletonShare", labelQuality.acceptedOnly.reuseMass.nonSingletonShare);
-  assertDashboardShare("acceptedOnly.reuseMass.crossDialogueShare", labelQuality.acceptedOnly.reuseMass.crossDialogueShare);
-
-  const requireDialogue = (path: string, dialogue: string) => {
-    if (!knownDialogues.has(dialogue)) dashboardDataError(`${path} references missing dialogue target ${dialogue}.`);
-  };
-  const requireFamily = (path: string, family: string) => {
-    if (!knownFamilies.has(family)) dashboardDataError(`${path} references missing family target ${family}.`);
-  };
-
-  for (const [index, entry] of labelQuality.perDialogueParticipation.entries()) {
-    requireDialogue(`perDialogueParticipation[${index}]`, entry.dialogue);
-    assertDashboardShare(`perDialogueParticipation[${index}].crossDialogueObservationShare`, entry.crossDialogueObservationShare);
-  }
-  for (const [index, entry] of coverage.entries()) {
-    requireDialogue(`coverage[${index}]`, entry.dialogue);
-    assertDashboardShare(`coverage[${index}].coverageRatio`, entry.coverageRatio);
-  }
-  for (const [index, entry] of labelQuality.familyProfiles.entries()) {
-    requireFamily(`familyProfiles[${index}]`, entry.family);
-  }
-  for (const [index, entry] of labelQuality.dispositionCoverage.topUncoveredSingletonFamilies.entries()) {
-    requireFamily(`dispositionCoverage.topUncoveredSingletonFamilies[${index}]`, entry.family);
-  }
-  for (const [index, entry] of labelQuality.labelNameShape.longestLabels.entries()) {
-    requireFamily(`labelNameShape.longestLabels[${index}]`, entry.family);
-  }
-  for (const [lensName, lens] of [
-    ["allRecords", labelQuality.allRecords],
-    ["acceptedOnly", labelQuality.acceptedOnly],
-  ] as const) {
-    for (const [index, entry] of lens.entries.entries()) {
-      requireFamily(`${lensName}.entries[${index}]`, entry.family);
-      for (const dialogue of entry.dialogues) requireDialogue(`${lensName}.entries[${index}]`, dialogue);
-    }
-  }
 }
 
 function reviewStatusSummary(items: readonly { reviewStatus: string }[]): ReviewStatusSummary {
@@ -1380,27 +1211,111 @@ function readSourceAttribution() {
   return upstream.replace(/https?:\/\/\S+/gu, "(external URL omitted)");
 }
 
-export function familyRows(observations: SiteObservation[], registry: FeatureRegistryEntry[]) {
-  const observationsByFamily = groupBy(observations, (observation) => observation.featureFamily);
-  const registryByFamily = groupBy(registry, (entry) => entry.family);
-  const seedFamilies = new Set<string>(SEED_FEATURE_FAMILIES);
-  const families = new Set([...observationsByFamily.keys(), ...registryByFamily.keys()]);
-
-  return [...families]
-    .sort((a, b) => a.localeCompare(b))
-    .map((family) => ({
-      family,
-      kind: seedFamilies.has(family) ? "seed" : "passthrough",
-      observationCount: observationsByFamily.get(family)?.length ?? 0,
-      acceptedCount: observationsByFamily.get(family)?.filter((observation) => observation.reviewStatus === "accepted").length ?? 0,
-      featureCandidateCount: registryByFamily.get(family)?.length ?? 0,
-    }));
+function conceptAssignment(
+  axis: Readonly<OntologyVNextAxis>,
+  concept: Readonly<OntologyVNextConcept>,
+): SiteConceptAssignment {
+  return {
+    axisId: axis.axis_id,
+    axisKey: axis.axis_key,
+    dimension: axis.dimension,
+    conceptId: concept.concept_id,
+    conceptKey: concept.concept_key,
+    comparisonQuestion: concept.comparison_question,
+    definition: concept.definition,
+  };
 }
 
-export function crossDialogueLabelCount(observations: SiteObservation[]) {
-  return [
-    ...groupBy(observations, (observation) => `${observation.featureFamily}::${observation.featureLabel}`).values(),
-  ].filter((entries) => new Set(entries.map((entry) => entry.dialogue)).size >= 2).length;
+function buildOntologySiteIndexes(
+  ontology: OntologyVNextModel,
+  observations: SiteObservation[],
+) {
+  const axesById = new Map(ontology.axes.map((axis) => [axis.axis_id, axis]));
+  const conceptsById = new Map(ontology.concepts.map((concept) => [concept.concept_id, concept]));
+  const observationsById = new Map(observations.map((observation) => [observation.observationId, observation]));
+  const conceptsByObservationId = new Map<string, SiteConceptAssignment[]>();
+  const observationsByConceptId = new Map<string, SiteObservation[]>();
+
+  for (const membership of ontology.memberships) {
+    const observation = observationsById.get(membership.observation_id);
+    const concept = conceptsById.get(membership.concept_id);
+    if (!observation || !concept) throw new Error(`Ontology membership ${membership.membership_id} has an unresolved target.`);
+    const axis = axesById.get(concept.axis_id);
+    if (!axis) throw new Error(`Ontology concept ${concept.concept_id} has an unresolved axis.`);
+    const assignment = conceptAssignment(axis, concept);
+    const assignments = conceptsByObservationId.get(observation.observationId) ?? [];
+    assignments.push(assignment);
+    conceptsByObservationId.set(observation.observationId, assignments);
+    const conceptObservations = observationsByConceptId.get(concept.concept_id) ?? [];
+    conceptObservations.push(observation);
+    observationsByConceptId.set(concept.concept_id, conceptObservations);
+  }
+  for (const observation of observations) {
+    observation.concepts = [...(conceptsByObservationId.get(observation.observationId) ?? [])].sort(
+      (left, right) => compareStableText(left.axisId, right.axisId) || compareStableText(left.conceptId, right.conceptId),
+    );
+  }
+  for (const entries of observationsByConceptId.values()) {
+    entries.sort((left, right) => compareStableText(left.observationId, right.observationId));
+  }
+
+  const conceptsByAxis = groupBy(ontology.concepts, (concept) => concept.axis_id);
+  const membershipsByConcept = groupBy(ontology.memberships, (membership) => membership.concept_id);
+  const axisRows = ontology.axes.map((axis): OntologyAxisRow => {
+    const concepts = conceptsByAxis.get(axis.axis_id) ?? [];
+    const conceptIds = new Set(concepts.map((concept) => concept.concept_id));
+    const memberships = ontology.memberships.filter((membership) => conceptIds.has(membership.concept_id));
+    const observationIds = new Set(memberships.map((membership) => membership.observation_id));
+    const dialogues = new Set(
+      [...observationIds].map((observationId) => observationsById.get(observationId)?.dialogue).filter((value): value is string => Boolean(value)),
+    );
+    return {
+      axisId: axis.axis_id,
+      axisKey: axis.axis_key,
+      dimension: axis.dimension,
+      comparisonQuestion: axis.comparison_question,
+      conceptCount: concepts.length,
+      membershipCount: memberships.length,
+      observationCount: observationIds.size,
+      dialogueCount: dialogues.size,
+    };
+  });
+  const acceptedObservations = observations.filter((observation) => observation.reviewStatus === "accepted");
+  const ontologyQuality: OntologyQualitySummary = {
+    axes: ontology.axes.length,
+    concepts: ontology.concepts.length,
+    memberships: ontology.memberships.length,
+    acceptedObservations: acceptedObservations.length,
+    acceptedObservationsWithMemberships: acceptedObservations.filter((observation) => observation.concepts.length > 0).length,
+    singletonConcepts: ontology.concepts.filter((concept) => (membershipsByConcept.get(concept.concept_id)?.length ?? 0) === 1).length,
+    crossDialogueConcepts: ontology.concepts.filter((concept) => {
+      const dialogueSet = new Set(
+        (observationsByConceptId.get(concept.concept_id) ?? []).map((observation) => observation.dialogue),
+      );
+      return dialogueSet.size >= 2;
+    }).length,
+    axisRows,
+  };
+  return {
+    axesById,
+    conceptsById,
+    conceptsByObservationId,
+    observationsByConceptId,
+    ontologyQuality,
+  };
+}
+
+export function dossierConceptKey(conceptId: string) {
+  return conceptId;
+}
+
+export function buildDossierPageByConceptId(dossiers: readonly SiteDossier[]) {
+  const pageByConceptId = new Map<string, string>();
+  for (const dossier of [...dossiers].sort((left, right) => compareStableText(left.conceptId, right.conceptId))) {
+    if (pageByConceptId.has(dossier.conceptId)) throw new Error(`Duplicate dossier concept target: ${dossier.conceptId}.`);
+    pageByConceptId.set(dossier.conceptId, `${dossier.pagePath}#${dossier.dossierId}`);
+  }
+  return pageByConceptId;
 }
 
 export function readSiteData({
@@ -1410,11 +1325,19 @@ export function readSiteData({
   includeDraftRecordings?: boolean;
   sourceResolver?: SourceSpanResolver;
 } = {}): SiteData {
-  const observations = readObservationsFromDisk(sourceResolver);
+  const allObservations = readObservationsFromDisk(sourceResolver);
+  const rejectedObservationIds = new Set(
+    allObservations
+      .filter((observation) => observation.reviewStatus === "rejected")
+      .map((observation) => observation.observationId),
+  );
+  const observations = allObservations.filter((observation) => observation.reviewStatus !== "rejected");
   const observationsById = new Map(observations.map((observation) => [observation.observationId, observation]));
-  const registry = readRegistryEntries();
+  const ontology = readOntologyVNextRepository();
+  const ontologyIndexes = buildOntologySiteIndexes(ontology, observations);
   const clusters = readClustersFromDisk();
-  const claims = readClaimsFromDisk();
+  const allClaims = readClaimsFromDisk();
+  const claims = allClaims.filter((claim) => claim.reviewStatus !== "rejected");
   const claimsById = new Map(claims.map((claim) => [claim.claimId, claim]));
   const relations = readRelationsFromDisk();
   const dossiers = readDossiersFromDisk();
@@ -1423,7 +1346,11 @@ export function readSiteData({
   // Fail loud: an accepted apparatus record must have a reading page to surface
   // its sign (mirrors the recording→reading-page presence check below).
   for (const dialogue of apparatusByDialogue.keys()) {
-    if (!commentaryByDialogue.has(dialogue)) {
+    const commentary = commentaryByDialogue.get(dialogue);
+    const hasVisibleCommentary = commentary?.blocks.some(
+      (block) => block.reviewStatus === "accepted" || block.reviewStatus === "unreviewed",
+    );
+    if (!hasVisibleCommentary) {
       throw new Error(`Apparatus records for ${dialogue} have no reading page target.`);
     }
   }
@@ -1431,7 +1358,15 @@ export function readSiteData({
   const dialogues = [...new Set([...listGreekDialoguesFromDisk(), ...observations.map((observation) => observation.dialogue)])].sort();
   const derivedByDialogue = readDerivedByDialogue(dialogues);
   const stephanusByDialogue = readStephanusByDialogue(dialogues);
-  const observationTurnJoinsByDialogue = readObservationTurnJoinsFromDisk();
+  const observationTurnJoinsByDialogue = new Map(
+    [...readObservationTurnJoinsFromDisk()].map(([dialogue, index]) => [
+      dialogue,
+      {
+        ...index,
+        rows: index.rows.filter((row) => !rejectedObservationIds.has(row.observationId)),
+      },
+    ]),
+  );
   const { turnIdsByObservationId, observationIdsByTurnId } = buildObservationTurnMaps(
     observationTurnJoinsByDialogue,
     observationsById,
@@ -1441,8 +1376,7 @@ export function readSiteData({
   const { shards, pageById } = buildObservationShards(observations);
   const { shards: claimShards, pageById: claimPageById } = buildClaimShards(claims);
   const { shards: relationShards, pageById: relationPageById } = buildRelationShards(relations);
-  const { shards: registryShards, pageById: registryPageById } = buildRegistryShards(registry);
-  const dossierPageByFamilyLabel = buildDossierPageByFamilyLabel(dossiers);
+  const dossierPageByConceptId = buildDossierPageByConceptId(dossiers);
   const recordingsByDialogue = discoverSiteRecordings({ includeDraftRecordings });
   for (const dialogue of recordingsByDialogue.keys()) {
     if (!derivedByDialogue.has(dialogue)) {
@@ -1452,18 +1386,10 @@ export function readSiteData({
       throw new Error(`Playable recording references missing reading target for ${dialogue}.`);
     }
   }
-  const labelQuality = collectLabelQuality();
   const coverage = buildCoverageReport();
-  validateDashboardTargets({
-    labelQuality,
-    coverage,
-    knownDialogues: new Set(derivedByDialogue.keys()),
-    knownFamilies: new Set(observations.map((observation) => observation.featureFamily)),
-  });
-  const singletonAdjudication = readSingletonAdjudicationSummary();
   const reviewStatusCounts: LayerReviewCounts = {
-    observations: reviewStatusSummary(observations),
-    claims: reviewStatusSummary(claims),
+    observations: reviewStatusSummary(allObservations),
+    claims: reviewStatusSummary(allClaims),
     relations: reviewStatusSummary(relations),
   };
   const unattributedDialogues = [...derivedByDialogue.entries()]
@@ -1486,7 +1412,11 @@ export function readSiteData({
   return {
     observations,
     observationsById,
-    registry,
+    ontology,
+    axes: ontology.axes,
+    concepts: ontology.concepts,
+    memberships: ontology.memberships,
+    ...ontologyIndexes,
     clusters,
     claims,
     claimsById,
@@ -1508,21 +1438,15 @@ export function readSiteData({
     observationPageById: pageById,
     relationShards,
     relationPageById,
-    registryShards,
-    registryPageById,
     commentaryPageById,
-    dossierPageByFamilyLabel,
+    dossierPageByConceptId,
     recordingsByDialogue,
     sourceResolver,
     sourceAttribution: readSourceAttribution(),
-    labelQuality,
     coverage,
-    singletonAdjudication,
     reviewStatusCounts,
     unattributedDialogues,
     rawCoverageMarkdown: readOptionalMarkdown("wiki/coverage-gaps.md"),
-    rawLabelQualityMarkdown: readOptionalMarkdown("wiki/label-quality.md"),
-    rawSingletonMemoMarkdown: readOptionalMarkdown("docs/singleton-adjudication-memo-2026-07.md"),
   };
 }
 

@@ -1,0 +1,175 @@
+{
+  "accepted_observations": 3,
+  "axis_id": "axis_sha256_78710ddf5ee449f8d4ef7d375289c480e8e5965d6132f3b947ccb6f82404c69b",
+  "axis_key": "music_censorship_program",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record musical judgment authority restricted within the music censorship program axis?",
+  "concept_id": "concept_sha256_0a17070f3a8c96707321a8b738607d3d4af1e15840f17eea8d3ea184ca750aa5",
+  "concept_key": "musical_judgment_authority_restricted",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_0840aef3b0632a8d22e7a812750243717f43d4bd92069dd1e320f1229dd810f9",
+      "conceptKey": "criterion_proposed",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_78710ddf5ee449f8d4ef7d375289c480e8e5965d6132f3b947ccb6f82404c69b",
+      "axisKey": "music_censorship_program",
+      "conceptId": "concept_sha256_d2248e70cadd38828069990a69b6a99b066aef1da0cf02bf0575da94d6aea64d",
+      "conceptKey": "age_stratified_chorus_assignment",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 1,
+  "dimension": "subject_matter",
+  "instance_ids": [
+    "obs_laws_0181",
+    "obs_laws_0244",
+    "obs_laws_0437"
+  ],
+  "instances": [
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0181",
+      "speakers": [
+        "ΑΘ.",
+        "ΚΛ."
+      ],
+      "stephanusSpan": "659b-659c",
+      "turnCount": 3
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0244",
+      "speakers": [
+        "ΑΘ.",
+        "ΚΛ."
+      ],
+      "stephanusSpan": "670b-670c",
+      "turnCount": 7
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0437",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "700c",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 3,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_0a17070f3a8c96707321a8b738607d3d4af1e15840f17eea8d3ea184ca750aa5",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

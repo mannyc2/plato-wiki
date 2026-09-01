@@ -399,8 +399,7 @@ describe("canonical commentary quality-audit manifests", () => {
         "```yaml",
         "observation_id: obs_fixture_0001",
         "source_work: Fixture",
-        "feature_family: frame_depth",
-        "feature_label: reported_dialogue_frame",
+        "observation: Initial accepted evidence.",
         "review_status: accepted",
         "```",
         "",
@@ -414,8 +413,8 @@ describe("canonical commentary quality-audit manifests", () => {
     write(
       observationPath,
       readFileSync(join(root, observationPath), "utf8").replace(
-        "feature_label: reported_dialogue_frame",
-        "feature_label: changed_after_first_validation",
+        "observation: Initial accepted evidence.",
+        "observation: Changed accepted evidence.",
       ),
     );
     const content = readFileSync(join(root, path), "utf8");

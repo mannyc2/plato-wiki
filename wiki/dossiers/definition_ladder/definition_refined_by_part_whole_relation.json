@@ -1,0 +1,398 @@
+{
+  "accepted_observations": 22,
+  "axis_id": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+  "axis_key": "definition_ladder",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record definition refined by part whole relation within the definition ladder axis?",
+  "concept_id": "concept_sha256_b7236d3827d4d7c11ce2afaaf16cc870960b6d44bb6fdb108f7b9cf36ad0912f",
+  "concept_key": "definition_refined_by_part_whole_relation",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_5036e70b2e53d90ea1b34f2b947e3a2b913d6f0e3efe31f7103cce489c19ff71",
+      "conceptKey": "definiendum_marked_for_inquiry",
+      "overlappingObservations": 2
+    },
+    {
+      "axisId": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+      "axisKey": "elenchus",
+      "conceptId": "concept_sha256_33f0e05e1eda69caeb1a2dd12d1e94b3e25453792fd742467e5a4fae98ff3d34",
+      "conceptKey": "circular_definition_rejected",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+      "axisKey": "elenchus",
+      "conceptId": "concept_sha256_ced13140c80ce05897af28f2c8afb4631c2e13eb4e5cddeb13ec9b448879eb7e",
+      "conceptKey": "knowledge_priority_argument",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_344e394ea1b45ae5ce3a2751a410bacb90e8d8ffb0f3d752e60fe72d20b26d88",
+      "axisKey": "craft_analogy",
+      "conceptId": "concept_sha256_1ccf9aa906f0a62cf170f25f6366a1a9924192245953ee944e48a2d3b32476bb",
+      "conceptKey": "piety_service_exchange_analogy",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 5,
+  "dimension": "discourse_structure",
+  "instance_ids": [
+    "obs_euthyphro_0023",
+    "obs_euthyphro_0029",
+    "obs_euthyphro_0071",
+    "obs_euthyphro_0072",
+    "obs_euthyphro_0073",
+    "obs_euthyphro_0075",
+    "obs_euthyphro_0076",
+    "obs_euthyphro_0077",
+    "obs_euthyphro_0078",
+    "obs_euthyphro_0079",
+    "obs_euthyphro_0080",
+    "obs_euthyphro_0081",
+    "obs_euthyphro_0082",
+    "obs_laches_0083",
+    "obs_meno_0141",
+    "obs_meno_0142",
+    "obs_meno_0145",
+    "obs_meno_0146",
+    "obs_meno_0147",
+    "obs_meno_0148",
+    "obs_protagoras_0126",
+    "obs_theaetetus_0369"
+  ],
+  "instances": [
+    {
+      "dialogue": "euthyphro",
+      "observationId": "obs_euthyphro_0023",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΥΘ."
+      ],
+      "stephanusSpan": "12e-13a",
+      "turnCount": 9
+    },
+    {
+      "dialogue": "euthyphro",
+      "observationId": "obs_euthyphro_0029",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΥΘ."
+      ],
+      "stephanusSpan": "15a-15b",
+      "turnCount": 9
+    },
+    {
+      "dialogue": "euthyphro",
+      "observationId": "obs_euthyphro_0071",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΥΘ."
+      ],
+      "stephanusSpan": "11e",
+      "turnCount": 3
+    },
+    {
+      "dialogue": "euthyphro",
+      "observationId": "obs_euthyphro_0072",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΥΘ."
+      ],
+      "stephanusSpan": "12a",
+      "turnCount": 3
+    },
+    {
+      "dialogue": "euthyphro",
+      "observationId": "obs_euthyphro_0073",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΥΘ."
+      ],
+      "stephanusSpan": "12a",
+      "turnCount": 3
+    },
+    {
+      "dialogue": "euthyphro",
+      "observationId": "obs_euthyphro_0075",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΥΘ."
+      ],
+      "stephanusSpan": "12b",
+      "turnCount": 5
+    },
+    {
+      "dialogue": "euthyphro",
+      "observationId": "obs_euthyphro_0076",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΥΘ."
+      ],
+      "stephanusSpan": "12c",
+      "turnCount": 5
+    },
+    {
+      "dialogue": "euthyphro",
+      "observationId": "obs_euthyphro_0077",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΥΘ."
+      ],
+      "stephanusSpan": "12c",
+      "turnCount": 5
+    },
+    {
+      "dialogue": "euthyphro",
+      "observationId": "obs_euthyphro_0078",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΥΘ."
+      ],
+      "stephanusSpan": "12c",
+      "turnCount": 5
+    },
+    {
+      "dialogue": "euthyphro",
+      "observationId": "obs_euthyphro_0079",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΥΘ."
+      ],
+      "stephanusSpan": "12d",
+      "turnCount": 4
+    },
+    {
+      "dialogue": "euthyphro",
+      "observationId": "obs_euthyphro_0080",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΥΘ."
+      ],
+      "stephanusSpan": "12d",
+      "turnCount": 4
+    },
+    {
+      "dialogue": "euthyphro",
+      "observationId": "obs_euthyphro_0081",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΥΘ."
+      ],
+      "stephanusSpan": "12d",
+      "turnCount": 4
+    },
+    {
+      "dialogue": "euthyphro",
+      "observationId": "obs_euthyphro_0082",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΥΘ."
+      ],
+      "stephanusSpan": "12e",
+      "turnCount": 3
+    },
+    {
+      "dialogue": "laches",
+      "observationId": "obs_laches_0083",
+      "speakers": [
+        "ΣΩ.",
+        "ΛΑ."
+      ],
+      "stephanusSpan": "190b-190c",
+      "turnCount": 11
+    },
+    {
+      "dialogue": "meno",
+      "observationId": "obs_meno_0141",
+      "speakers": [
+        "ΜΕΝ.",
+        "ΣΩ."
+      ],
+      "stephanusSpan": "78d-78e",
+      "turnCount": 10
+    },
+    {
+      "dialogue": "meno",
+      "observationId": "obs_meno_0142",
+      "speakers": [
+        "ΣΩ.",
+        "ΜΕΝ."
+      ],
+      "stephanusSpan": "78e",
+      "turnCount": 5
+    },
+    {
+      "dialogue": "meno",
+      "observationId": "obs_meno_0145",
+      "speakers": [
+        "ΣΩ.",
+        "ΜΕΝ."
+      ],
+      "stephanusSpan": "78e-79a",
+      "turnCount": 11
+    },
+    {
+      "dialogue": "meno",
+      "observationId": "obs_meno_0146",
+      "speakers": [
+        "ΣΩ.",
+        "ΜΕΝ."
+      ],
+      "stephanusSpan": "79a",
+      "turnCount": 7
+    },
+    {
+      "dialogue": "meno",
+      "observationId": "obs_meno_0147",
+      "speakers": [
+        "ΣΩ.",
+        "ΜΕΝ."
+      ],
+      "stephanusSpan": "79a-79b",
+      "turnCount": 9
+    },
+    {
+      "dialogue": "meno",
+      "observationId": "obs_meno_0148",
+      "speakers": [
+        "ΣΩ.",
+        "ΜΕΝ."
+      ],
+      "stephanusSpan": "79b-79c",
+      "turnCount": 4
+    },
+    {
+      "dialogue": "protagoras",
+      "observationId": "obs_protagoras_0126",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "329d-329e",
+      "turnCount": 2
+    },
+    {
+      "dialogue": "theaetetus",
+      "observationId": "obs_theaetetus_0369",
+      "speakers": [
+        "ΣΩ.",
+        "ΘΕΑΙ."
+      ],
+      "stephanusSpan": "203c",
+      "turnCount": 5
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 13,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 6,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_b7236d3827d4d7c11ce2afaaf16cc870960b6d44bb6fdb108f7b9cf36ad0912f",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

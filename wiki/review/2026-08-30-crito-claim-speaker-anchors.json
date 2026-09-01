@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "dialogue": "crito",
+  "source_path": "raw/plato/greek/crito.txt",
+  "decision_note": "wiki/review/2026-08-30-crito-voice-claim-cutover.md",
+  "records": [
+    {
+      "claim_id": "claim_crito_0004",
+      "decision": "bind_semantic_owner",
+      "owner": "ΚΡ.",
+      "speaker_source_ref": {
+        "source_path": "raw/plato/greek/crito.txt",
+        "start_char": 3130,
+        "end_char": 3192,
+        "text_sha256": "42751b5738f5eda857cc057d57c8edda76d99b8614ee39337428ca3dde90d9d6"
+      },
+      "authority_id": "turn_crito_0028",
+      "rationale": "The exact reviewed Greek term lies wholly within turn_crito_0028 and resolves to ΚΡ.; it binds ownership without treating the broader multi-speaker context as one voice.",
+      "review_status": "accepted"
+    },
+    {
+      "claim_id": "claim_crito_0005",
+      "decision": "bind_semantic_owner",
+      "owner": "ΣΩ.",
+      "speaker_source_ref": {
+        "source_path": "raw/plato/greek/crito.txt",
+        "start_char": 3331,
+        "end_char": 3347,
+        "text_sha256": "8abc453e9e61ac789eafe6e5658642df34de774444bb7e524f632add445709d4"
+      },
+      "authority_id": "turn_crito_0029",
+      "rationale": "The exact reviewed Greek term lies wholly within turn_crito_0029 and resolves to ΣΩ.; it binds ownership without treating the broader multi-speaker context as one voice.",
+      "review_status": "accepted"
+    },
+    {
+      "claim_id": "claim_crito_0006",
+      "decision": "bind_semantic_owner",
+      "owner": "ΚΡ.",
+      "speaker_source_ref": {
+        "source_path": "raw/plato/greek/crito.txt",
+        "start_char": 3473,
+        "end_char": 3673,
+        "text_sha256": "bef8f2a3498c051b8d263724060f93c254b9f85084bd1d304b99db3026e3e10f"
+      },
+      "authority_id": "turn_crito_0030",
+      "rationale": "No unique term settled ownership, so this exact Greek range was reviewed inside turn_crito_0030; that terminal authority resolves to ΚΡ. without consulting the stored speaker at runtime.",
+      "review_status": "accepted"
+    },
+    {
+      "claim_id": "claim_crito_0007",
+      "decision": "bind_semantic_owner",
+      "owner": "ΚΡ.",
+      "speaker_source_ref": {
+        "source_path": "raw/plato/greek/crito.txt",
+        "start_char": 4029,
+        "end_char": 4229,
+        "text_sha256": "456a706ec96dfb0565d0b3bdfd5b86aee0d93df94c3b39699e5c9c832b978a98"
+      },
+      "authority_id": "turn_crito_0033",
+      "rationale": "No unique term settled ownership, so this exact Greek range was reviewed inside turn_crito_0033; that terminal authority resolves to ΚΡ. without consulting the stored speaker at runtime.",
+      "review_status": "accepted"
+    },
+    {
+      "claim_id": "claim_crito_0038",
+      "decision": "bind_semantic_owner",
+      "owner": "ΚΡ.",
+      "speaker_source_ref": {
+        "source_path": "raw/plato/greek/crito.txt",
+        "start_char": 18157,
+        "end_char": 18175,
+        "text_sha256": "9229f9dc2edfcf0e06f5e22939f8a08a0c5fa4ec6305f4b5283de78161c9b5e2"
+      },
+      "authority_id": "turn_crito_0094",
+      "rationale": "No unique term settled ownership, so this exact Greek range was reviewed inside turn_crito_0094; that terminal authority resolves to ΚΡ. without consulting the stored speaker at runtime.",
+      "review_status": "accepted"
+    },
+    {
+      "claim_id": "claim_crito_0042",
+      "decision": "bind_semantic_owner",
+      "owner": "ΝΟΜ.",
+      "speaker_source_ref": {
+        "source_path": "raw/plato/greek/crito.txt",
+        "start_char": 20058,
+        "end_char": 20082,
+        "text_sha256": "e81fa2c62fef6336fff5c5fed8490a7cd8de56d191a286fe8b45ed9d673ceeba"
+      },
+      "authority_id": "voice_crito_0019",
+      "rationale": "The exact reviewed Greek term lies wholly within voice_crito_0019 and resolves to ΝΟΜ.; it binds ownership without treating the broader multi-speaker context as one voice.",
+      "review_status": "accepted"
+    },
+    {
+      "claim_id": "claim_crito_0043",
+      "decision": "bind_semantic_owner",
+      "owner": "ΝΟΜ.",
+      "speaker_source_ref": {
+        "source_path": "raw/plato/greek/crito.txt",
+        "start_char": 20811,
+        "end_char": 20849,
+        "text_sha256": "6eb287552cff4b3ecc6f281d220e9cb2cb06a93c3f38d5141bc31ba1e336ad65"
+      },
+      "authority_id": "voice_crito_0019",
+      "rationale": "The exact reviewed Greek term lies wholly within voice_crito_0019 and resolves to ΝΟΜ.; it binds ownership without treating the broader multi-speaker context as one voice.",
+      "review_status": "accepted"
+    },
+    {
+      "claim_id": "claim_crito_0048",
+      "decision": "bind_semantic_owner",
+      "owner": "ΝΟΜ.",
+      "speaker_source_ref": {
+        "source_path": "raw/plato/greek/crito.txt",
+        "start_char": 22936,
+        "end_char": 23136,
+        "text_sha256": "7b3c2653164f3c995e61b97c913d5549b22eb43d76d569da775df2b50f9ba7e0"
+      },
+      "authority_id": "voice_crito_0024",
+      "rationale": "No unique term settled ownership, so this exact Greek range was reviewed inside voice_crito_0024; that terminal authority resolves to ΝΟΜ. without consulting the stored speaker at runtime.",
+      "review_status": "accepted"
+    }
+  ]
+}

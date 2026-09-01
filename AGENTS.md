@@ -38,12 +38,10 @@ For multi-step tasks, state a brief plan:
   receipt are treated as unreviewed. `bun run validate` enforces this for
   uncommitted status changes. `wiki/ingest-log.md` may record harness run
   history, but it is not required review-decision provenance.
-- During label normalization, follow
-  `docs/label-normalization-standards.md` and the project-local Pi skill
-  `.pi/skills/plato-label-normalization/SKILL.md`: merge repeatable textual
-  functions, not topics, and use hard cutovers with no legacy aliases. If a
-  prompt, subagent instruction, or harness summary conflicts with the standards
-  document, the standards document wins.
+- Keep observation extraction unclassified. Comparison axes, concepts, and
+  many-to-many memberships live only in `wiki/ontology` and follow
+  `docs/ontology-vnext.md`; clusters and dossiers are deterministic projections,
+  not peer ontologies. Use hard cutovers with no legacy aliases.
 
 ## Corpus Curation Operating Model
 

@@ -98,27 +98,21 @@ export type HarnessRunResult = {
   pendingSegmentCount?: number;
 };
 
-export type FeatureFamilyDriftEntry = {
-  family: string;
-  kind: "seed" | "passthrough";
-  observationCount: number;
-  featureCandidateCount: number;
-  sampleObservationIds: string[];
+export type OntologyAxisSummary = {
+  axisId: string;
+  axisKey: string;
+  dimension: string;
+  conceptCount: number;
+  membershipCount: number;
 };
 
-export type FeatureLabelDriftEntry = {
-  family: string;
-  label: string;
-  observationCount: number;
-  observationIds: string[];
-  dialogues: string[];
-};
-
-export type LabelDriftSummary = {
-  totalLabels: number;
-  singletonLabels: number;
-  crossDialogueLabels: number;
-  singletonExamples: FeatureLabelDriftEntry[];
+export type OntologySummary = {
+  axisCount: number;
+  conceptCount: number;
+  membershipCount: number;
+  singletonConceptCount: number;
+  crossDialogueConceptCount: number;
+  axes: OntologyAxisSummary[];
 };
 
 export type ReviewCoverageEntry = {
@@ -137,8 +131,7 @@ export type ValidationReport = {
   apparatusLedgerCount: number;
   voicesLedgerCount: number;
   commentaryQualityAuditManifestCount: number;
-  featureFamilies: FeatureFamilyDriftEntry[];
-  labelDrift: LabelDriftSummary;
+  ontology: OntologySummary;
   reviewCoverage: ReviewCoverageEntry[];
 };
 

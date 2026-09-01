@@ -42,6 +42,7 @@ function claim(options: {
   terms?: string[];
   inlineTerms?: string;
   stance?: Array<[number, number]>;
+  speakerRange?: [number, number];
 }) {
   const lines = [
     "```yaml",
@@ -54,6 +55,15 @@ function claim(options: {
   else if (options.terms) {
     lines.push("greek_terms:");
     for (const term of options.terms) lines.push(`  - ${term}`);
+  }
+  if (options.speakerRange) {
+    lines.push(
+      "speaker_source_ref:",
+      "  source_path: raw/plato/greek/fixture.txt",
+      `  start_char: ${options.speakerRange[0]}`,
+      `  end_char: ${options.speakerRange[1]}`,
+      `  text_sha256: "${sha256(SOURCE.slice(...options.speakerRange))}"`,
+    );
   }
   if (options.stance) {
     lines.push("stance_events:");
@@ -149,10 +159,17 @@ describe("claim support ranges", () => {
     expect(support.contextEndChar).toBe(20);
     expect(support.stanceEvents).toEqual([{ index: 0, kind: "challenged", startChar: 29, endChar: 38 }]);
   });
+
+  it("reads speaker_source_ref by field name without treating it as a stance event", () => {
+    writeClaims([claim({ start: 0, end: SOURCE.length, speakerRange: [6, 12], stance: [[29, 38]] })]);
+    const support = buildClaimSupport("fixture")[0]!;
+    expect(support.speakerRange).toEqual({ startChar: 6, endChar: 12 });
+    expect(support.stanceEvents).toEqual([{ index: 0, kind: "challenged", startChar: 29, endChar: 38 }]);
+  });
 });
 
-describe("live Symposium greek_terms YAML shapes", () => {
-  it("preserves all seven claim 0054 terms, including an apostrophe in an unquoted flow scalar", () => {
+describe("live Symposium source-bound greek_terms", () => {
+  it("retains only claim 0054 terms that occur exactly in its cited Greek bytes", () => {
     const support = buildClaimSupport("symposium").find(
       (candidate) => candidate.claimId === "claim_symposium_0054",
     );
@@ -160,21 +177,16 @@ describe("live Symposium greek_terms YAML shapes", () => {
       "ὅλον",
       "στρογγύλον",
       "νῶτον",
-      "πλευράς",
-      "χεῖρας τέτταρας",
-      "πρόσωπα δύ'",
-      "κεφαλὴν μίαν",
     ]);
   });
 
-  it("preserves claim 0172's apostrophe as content rather than opening a quote", () => {
+  it("drops claim 0172's normalized apostrophe variant outside the exact source bytes", () => {
     const support = buildClaimSupport("symposium").find(
       (candidate) => candidate.claimId === "claim_symposium_0172",
     );
     expect(support?.terms).toEqual([
       "πολλοῦ ἐνδεὴς ὢν",
       "ἐμαυτοῦ μὲν ἀμελῶ",
-      "τὰ δ' Ἀθηναίων πράττω",
     ]);
   });
 });

@@ -1,0 +1,37 @@
+# Ontology vNext semantic remediation receipt
+
+- source policy: canonical Greek source spans only; no translations used
+- normalized findings considered: 14113
+- invalid Greek terms removed: 5339
+- accepted claims linked to accepted observations: 3980
+- claims rejected for absent resolvable evidence: 0
+- semantic records rejected: 2013
+- non-atomic records split: 173
+- atomic replacements added: 1247
+- source-first omission observations added: 277
+- claim-provenance observations added: 3980
+- accepted commentary citations added: 0
+- accepted commentary records with replacement citations remapped: 257
+- rejected empty cross-reference presentation blocks retyped: 1
+- stale ledger-bound commentary quality-audit acceptances retired to content-addressed history: 27
+- commentary rejected for absent resolvable citation: 65
+- split-claim relation dependencies reviewed: 19
+- relations revised to an accepted atomic claim successor: 0
+- accepted relations rejected for terminal invalid endpoints: 292
+- accepted standing relations rejected for terminal resolution mismatch: 0
+- invalid claim-to-observation links pruned: 0
+- accepted observation reciprocal claim-link sets rebuilt: 0
+- claims rejected after terminal evidence closure: 0
+- rejected peer-record references removed or remapped in accepted reader prose: 4
+- recordings withdrawn because a chapter target was rejected: 1
+- rejected commentary chapter targets retained only in withdrawn recording provenance: 3
+- exact source-span corrections: 17
+- claim-kind corrections: 3
+- claim-trajectory corrections: 13
+- reader policy: rejected records remain review provenance and are excluded from semantic output
+- counterevidence policy: rejection is not absence or counterevidence
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/semantic-remediation/sha256-692f0fd9a6f33ab53ae33a634dcda8d2ca6a522d4abfe1bb4697184025891b16-decisions.jsonl`; sha256: `692f0fd9a6f33ab53ae33a634dcda8d2ca6a522d4abfe1bb4697184025891b16`
+- atomic split overlay: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/semantic-remediation/sha256-221902d4152f44f3bacfb89fafd8d99a22d7634ef948e2981410ee7f820095dc-atomic-splits.jsonl`; sha256: `221902d4152f44f3bacfb89fafd8d99a22d7634ef948e2981410ee7f820095dc`
+- source omission overlay: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/semantic-remediation/sha256-c4f0e2b9e64221efd70b4548f1fc1ad658c48a59e4ba956f97b8ba650a0627df-source-omissions.jsonl`; sha256: `c4f0e2b9e64221efd70b4548f1fc1ad658c48a59e4ba956f97b8ba650a0627df`
+- relation dependency overlay: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/semantic-remediation/sha256-5d8cabfe0a21f4ef23257a9c5b2f60099bfe69015cca384ad472fdc2e9e6a5e7-relation-dependencies.jsonl`; sha256: `5d8cabfe0a21f4ef23257a9c5b2f60099bfe69015cca384ad472fdc2e9e6a5e7`
+- commentary quality-audit retirement ledger: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/semantic-remediation/sha256-3bec215fe1870d09d0c41ccf681cbdecd61266edfcf77e02eb4a85a3f615dc66-commentary-quality-audit-retirements.jsonl`; sha256: `3bec215fe1870d09d0c41ccf681cbdecd61266edfcf77e02eb4a85a3f615dc66`

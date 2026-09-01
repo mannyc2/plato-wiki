@@ -48,6 +48,7 @@ import {
   COMMENTARY_PROTOCOL_FIXTURE,
   driftedCommentaryProtocolFixture,
 } from "../test-support/commentary-protocol-fixture.js";
+import { writeOntologyVNextFixture } from "../test-support/ontology-vnext-fixture.js";
 
 let root = "";
 let restoreRepoRoot: (() => void) | undefined;
@@ -179,13 +180,13 @@ function writeDialogue(dialogue: string) {
       "```yaml",
       `observation_id: obs_${dialogue}_0001`,
       `source_work: ${work}`,
-      "feature_family: frame_depth",
-      "feature_label: reported_dialogue_frame",
+      "observation: A reported dialogue frame is present.",
       "review_status: accepted",
       "```",
       "",
     ].join("\n"),
   );
+  writeOntologyVNextFixture(root);
 }
 
 function acceptedAudioInsertion(dialogue: string, turnId: string, edge: "before" | "after") {
@@ -2866,8 +2867,8 @@ describe("Codex gpt-5.6-luna commentary campaign", () => {
         write(
           observationPath,
           readFileSync(join(root, observationPath), "utf8").replace(
-            "feature_label: reported_dialogue_frame",
-            "feature_label: changed_after_execution_started",
+            "observation: A reported dialogue frame is present.",
+            "observation: This changed after execution started.",
           ),
         );
       }
@@ -2906,8 +2907,8 @@ describe("Codex gpt-5.6-luna commentary campaign", () => {
     expect(results.map((result) => result.status)).toEqual(["generated", "generated"]);
     expect(generationCalls).toBe(2);
     expect(packets).toHaveLength(2);
-    expect(packets.every((packet) => packet.includes("feature_label: reported_dialogue_frame"))).toBe(true);
-    expect(packets.some((packet) => packet.includes("changed_after_execution_started"))).toBe(false);
+    expect(packets.every((packet) => packet.includes("observation: A reported dialogue frame is present."))).toBe(true);
+    expect(packets.some((packet) => packet.includes("This changed after execution started."))).toBe(false);
     expect(packets[0]).toContain(`brief_path: ${expectedBriefs[0]!.path}`);
     expect(packets[0]).toContain(expectedBriefs[0]!.commentaryIds.join(", "));
     expect(packets[1]).toContain(`brief_path: ${expectedBriefs[1]!.path}`);

@@ -25,7 +25,7 @@ function writeRepoFixture() {
   mkdirSync(join(root, "wiki/relations"), { recursive: true });
   writeFileSync(join(root, "wiki/relations/fixture.md"), "```yaml\nrelation_id: rel_fixture_0001\nreview_status: accepted\n```\n", "utf8");
   mkdirSync(join(root, "wiki/dossiers/elenchus"), { recursive: true });
-  writeFileSync(join(root, "wiki/dossiers/elenchus/assent_chain.md"), "# dossier\n", "utf8");
+  writeFileSync(join(root, "wiki/dossiers/elenchus/assent_chain.json"), "{}\n", "utf8");
 }
 
 function refLines(span: string) {

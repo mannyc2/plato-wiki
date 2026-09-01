@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "dialogue": "apology",
+  "source_path": "raw/plato/greek/apology.txt",
+  "decision_note": "wiki/review/2026-08-30-apology-voice-claim-cutover.md",
+  "records": [
+    {
+      "claim_id": "claim_apology_0003",
+      "decision": "bind_semantic_owner",
+      "owner": "ΠΑΛΔ.",
+      "speaker_source_ref": {
+        "source_path": "raw/plato/greek/apology.txt",
+        "start_char": 4348,
+        "end_char": 4413,
+        "text_sha256": "2e4992adeb8b1bdf9ee035ce6f1fb0caeb0f23ed2d816b82c8e87530a55c0bbe"
+      },
+      "authority_id": "voice_apology_0002",
+      "rationale": "The exact reviewed Greek term lies wholly within voice_apology_0002 and resolves to ΠΑΛΔ.; it binds ownership without treating the broader multi-speaker context as one voice.",
+      "review_status": "accepted"
+    },
+    {
+      "claim_id": "claim_apology_0004",
+      "decision": "bind_semantic_owner",
+      "owner": "ΣΩ.",
+      "speaker_source_ref": {
+        "source_path": "raw/plato/greek/apology.txt",
+        "start_char": 4490,
+        "end_char": 4690,
+        "text_sha256": "85ff807bfcc5331b144fa309c79f0da222cf09feb0d71b42710e89509a60febb"
+      },
+      "authority_id": "voice_apology_0001",
+      "rationale": "No unique term settled ownership, so this exact Greek range was reviewed inside voice_apology_0001; that terminal authority resolves to ΣΩ. without consulting the stored speaker at runtime.",
+      "review_status": "accepted"
+    },
+    {
+      "claim_id": "claim_apology_0005",
+      "decision": "bind_semantic_owner",
+      "owner": "ΣΩ.",
+      "speaker_source_ref": {
+        "source_path": "raw/plato/greek/apology.txt",
+        "start_char": 7508,
+        "end_char": 7545,
+        "text_sha256": "787f0732d7973d0cbae3bf4cb4ce84973d7064d19fd933cfc5adcb70e9d523b6"
+      },
+      "authority_id": "voice_apology_0001",
+      "rationale": "The exact reviewed Greek term lies wholly within voice_apology_0001 and resolves to ΣΩ.; it binds ownership without treating the broader multi-speaker context as one voice.",
+      "review_status": "accepted"
+    },
+    {
+      "claim_id": "claim_apology_0011",
+      "decision": "bind_semantic_owner",
+      "owner": "ΜΕΛ.",
+      "speaker_source_ref": {
+        "source_path": "raw/plato/greek/apology.txt",
+        "start_char": 20430,
+        "end_char": 20479,
+        "text_sha256": "1e638f18b4d82722a1cb443e0ad765e17906a5bc1cba2828545cfbe241458f36"
+      },
+      "authority_id": "voice_apology_0021",
+      "rationale": "No unique term settled ownership, so this exact Greek range was reviewed inside voice_apology_0021; that terminal authority resolves to ΜΕΛ. without consulting the stored speaker at runtime.",
+      "review_status": "accepted"
+    },
+    {
+      "claim_id": "claim_apology_0017",
+      "decision": "bind_semantic_owner",
+      "owner": "ΣΩ.",
+      "speaker_source_ref": {
+        "source_path": "raw/plato/greek/apology.txt",
+        "start_char": 24399,
+        "end_char": 24599,
+        "text_sha256": "7ddff7485063696b53baeee93c88f0948c92dc0c5be650019b5a5442b1592408"
+      },
+      "authority_id": "voice_apology_0001",
+      "rationale": "No unique term settled ownership, so this exact Greek range was reviewed inside voice_apology_0001; that terminal authority resolves to ΣΩ. without consulting the stored speaker at runtime.",
+      "review_status": "accepted"
+    }
+  ]
+}

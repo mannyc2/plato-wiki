@@ -22,17 +22,18 @@ char_span:
   start_char: 14609
   end_char: 14909
 source_path: raw/plato/greek/ion.txt
-source_sha256: "0528d703134b2f59f3db31bad84bafb320e5022e1d7660cf64d72034cb29c93d"
-span_sha256: "c07e1c05d816bef488c13830fb88232dc4de367ae51d6e01912c81550b5ef165"
-voice_chain: ["ΙΩΝ."]
+source_sha256: 0528d703134b2f59f3db31bad84bafb320e5022e1d7660cf64d72034cb29c93d
+span_sha256: c07e1c05d816bef488c13830fb88232dc4de367ae51d6e01912c81550b5ef165
+voice_chain:
+  - ΙΩΝ.
 depth: 1
 resolution: resolved
 evidence_refs:
   - kind: printed_siglum
-    text: "ΙΩΝ."
+    text: ΙΩΝ.
     start_char: 14609
     end_char: 14613
-limits: "The printed siglum opens Ion's recitation; it does not assign the bounded Homeric advice below to Ion."
+limits: The printed siglum opens Ion's recitation; it does not assign the bounded Homeric advice below to Ion.
 review_status: accepted
 ```
 
@@ -45,17 +46,19 @@ char_span:
   start_char: 14614
   end_char: 14908
 source_path: raw/plato/greek/ion.txt
-source_sha256: "0528d703134b2f59f3db31bad84bafb320e5022e1d7660cf64d72034cb29c93d"
-span_sha256: "84faab4b55a46221d4ff63fb1444d0a0336dde71e7a448d00a1fab44fcd1f870"
-voice_chain: ["ΙΩΝ.", "ΝΕΣ."]
+source_sha256: 0528d703134b2f59f3db31bad84bafb320e5022e1d7660cf64d72034cb29c93d
+span_sha256: 84faab4b55a46221d4ff63fb1444d0a0336dde71e7a448d00a1fab44fcd1f870
+voice_chain:
+  - ΙΩΝ.
+  - ΝΕΣ.
 depth: 2
 resolution: resolved
 evidence_refs:
   - kind: named_reporting_formula
-    text: "λέγει Νέστωρ"
+    text: λέγει Νέστωρ
     start_char: 14508
     end_char: 14520
-limits: "The preceding 537a formula names Nestor as the owner of the directly quoted advice; it begins 106 characters before this child and is the source's introduction to this recitation."
+limits: The preceding 537a formula names Nestor as the owner of the directly quoted advice; it begins 106 characters before this child and is the source's introduction to this recitation.
 review_status: accepted
 ```
 
@@ -68,17 +71,18 @@ char_span:
   start_char: 17471
   end_char: 18752
 source_path: raw/plato/greek/ion.txt
-source_sha256: "0528d703134b2f59f3db31bad84bafb320e5022e1d7660cf64d72034cb29c93d"
-span_sha256: "2f01754a54bafd067a2c834e725200f1cf3bc6d3e54dfd579329b2eec28f6fdf"
-voice_chain: ["ΣΩ."]
+source_sha256: 0528d703134b2f59f3db31bad84bafb320e5022e1d7660cf64d72034cb29c93d
+span_sha256: 2f01754a54bafd067a2c834e725200f1cf3bc6d3e54dfd579329b2eec28f6fdf
+voice_chain:
+  - ΣΩ.
 depth: 1
 resolution: resolved
 evidence_refs:
   - kind: printed_siglum
-    text: "ΣΩ."
+    text: ΣΩ.
     start_char: 17471
     end_char: 17474
-limits: "The printed siglum opens Socrates' turn. Its two later Homeric verse blocks are citations held inside his argument and do not create further records."
+limits: The printed siglum opens Socrates' turn. Its two later Homeric verse blocks are citations held inside his argument and do not create further records.
 review_status: accepted
 ```
 
@@ -91,16 +95,18 @@ char_span:
   start_char: 17513
   end_char: 17757
 source_path: raw/plato/greek/ion.txt
-source_sha256: "0528d703134b2f59f3db31bad84bafb320e5022e1d7660cf64d72034cb29c93d"
-span_sha256: "af1785f445188eef68b9bc7365d717c957670530730f0803e6ccfbe36c42ede2"
-voice_chain: ["ΣΩ.", "ΙΩΝ."]
+source_sha256: 0528d703134b2f59f3db31bad84bafb320e5022e1d7660cf64d72034cb29c93d
+span_sha256: af1785f445188eef68b9bc7365d717c957670530730f0803e6ccfbe36c42ede2
+voice_chain:
+  - ΣΩ.
+  - ΙΩΝ.
 depth: 2
 resolution: resolved
 evidence_refs:
   - kind: person_marked_reporting_formula
-    text: "σοῦ ἐρομένου, εἰ ἔροιό με"
+    text: σοῦ ἐρομένου, εἰ ἔροιό με
     start_char: 17486
     end_char: 17511
-limits: "The second-person genitive absolute and optative introduce the {q}-bounded counterfactual utterance as Ion's question to Socrates. The text identifies the staged owner despite its counterfactual mood."
+limits: The second-person genitive absolute and optative introduce the {q}-bounded counterfactual utterance as Ion's question to Socrates. The text identifies the staged owner despite its counterfactual mood.
 review_status: accepted
 ```

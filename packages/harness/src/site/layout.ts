@@ -41,11 +41,11 @@ export function metric(label: string, value: string | number) {
 export type NavCounts = {
   dossiers: number;
   clusters: number;
-  families: number;
+  axes: number;
+  concepts: number;
   anchors: number;
   claims: number;
   relations: number;
-  registry: number;
   readings: number;
 };
 
@@ -61,7 +61,7 @@ export function layout(pagePath: string, title: string, body: string, counts: Na
     if (scope === "patterns") {
       return (
         pagePath === "patterns/index.html" ||
-        ["families/", "clusters/", "dossiers/", "anchors/", "relations/", "claims/", "registry"].some((prefix) =>
+        ["axes/", "concepts/", "clusters/", "dossiers/", "anchors/", "relations/", "claims/"].some((prefix) =>
           pagePath.startsWith(prefix),
         )
       );
@@ -100,13 +100,13 @@ export function layout(pagePath: string, title: string, body: string, counts: Na
         <summary aria-label="Patterns menu">Patterns</summary>
         <div class="nav-panel">
           ${panelRow("patterns/index.html", "Overview", "The corpus-level view of every layer")}
-          ${panelRow("dossiers/index.html", "Dossiers", "Evidence files per recurring label", counts.dossiers)}
-          ${panelRow("clusters/index.html", "Clusters", "Recurring textual functions", counts.clusters)}
-          ${panelRow("families/index.html", "Families", "Observation types", counts.families)}
+          ${panelRow("dossiers/index.html", "Dossiers", "Evidence files per recurring concept", counts.dossiers)}
+          ${panelRow("clusters/index.html", "Clusters", "Canonical concept projections", counts.clusters)}
+          ${panelRow("axes/index.html", "Axes", "Independent comparison questions", counts.axes)}
+          ${panelRow("concepts/index.html", "Concepts", "Ratified ontology concepts", counts.concepts)}
           ${panelRow("anchors/index.html", "Anchors", "Verbal formulae occurrences", counts.anchors)}
           ${panelRow("claims/index.html", "Claims", "Asserted-content records", counts.claims)}
           ${panelRow("relations/index.html", "Relations", "Support and tension links", counts.relations)}
-          ${panelRow("registry.html", "Feature registry", "Raw candidate index", counts.registry)}
         </div>
       </details>
       ${navLink("audio/index.html", "Listen", "audio")}
@@ -115,7 +115,7 @@ export function layout(pagePath: string, title: string, body: string, counts: Na
         <summary aria-label="About menu">About</summary>
         <div class="nav-panel">
           ${panelRow("about.html", "About this edition", "What the records are and how they are made")}
-          ${panelRow("quality.html", "Label quality", "Ontology dashboards")}
+          ${panelRow("quality.html", "Ontology quality", "Axes, concepts, and memberships")}
           ${panelRow("weak-spots.html", "Weak spots", "Coverage gaps and review issues")}
           ${panelRow("license.html", "License", "CC BY-SA 4.0 and attribution")}
         </div>
@@ -168,14 +168,14 @@ export function contrastRatio(foreground: string, background: string) {
 
 export function filterControls({
   dialogues,
-  families,
-  labels,
+  axes,
+  concepts,
   statuses,
   placeholder = "Search",
 }: {
   dialogues?: string[];
-  families?: string[];
-  labels?: string[];
+  axes?: string[];
+  concepts?: string[];
   statuses?: string[];
   placeholder?: string;
 }) {
@@ -189,11 +189,11 @@ export function filterControls({
       : ""
   }
   ${
-    families
-      ? `<label>Family<select data-filter="family"><option value="">All</option>${options(families)}</select></label>`
+    axes
+      ? `<label>Axis<select data-filter="axis"><option value="">All</option>${options(axes)}</select></label>`
       : ""
   }
-  ${labels ? `<label>Label<select data-filter="label"><option value="">All</option>${options(labels)}</select></label>` : ""}
+  ${concepts ? `<label>Concept<select data-filter="concept"><option value="">All</option>${options(concepts)}</select></label>` : ""}
   ${
     statuses
       ? `<label>Status<select data-filter="status"><option value="">All</option>${options(statuses)}</select></label>`
@@ -468,8 +468,8 @@ button { cursor: pointer; background: #f1f3f6; }
 .record-anchor:hover { text-decoration: underline; }
 .record-lead { font-family: var(--sans); font-size: 16px; line-height: 1.55; font-weight: 500; color: var(--ink); margin: 6px 0 10px; }
 .stance-line { color: var(--muted); }
-.badge-family { background: transparent; border: 1px solid var(--line); color: var(--muted); text-decoration: none; }
-.badge-family:hover { text-decoration: underline; }
+.badge-axis { background: transparent; border: 1px solid var(--line); color: var(--muted); text-decoration: none; }
+.badge-axis:hover { text-decoration: underline; }
 .source-open { width: auto; border: 0; background: transparent; color: var(--accent); font: inherit; font-size: 12.5px; padding: 2px 0; cursor: pointer; }
 .source-open:hover { text-decoration: underline; }
 .source-dialog { border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; max-width: 640px; width: calc(100vw - 40px); color: var(--ink); background: var(--panel); }
@@ -735,7 +735,9 @@ if (filters) {
     const query = (search?.value || "").trim().toLowerCase();
     let visible = 0;
     for (const item of items) {
-      const matchesControls = Object.entries(wanted).every(([key, value]) => !value || item.dataset[key] === value);
+      const matchesControls = Object.entries(wanted).every(([key, value]) =>
+        !value || String(item.dataset[key] || "").split(" ").includes(value)
+      );
       const matchesMinimums = minimumControls.every((control) => {
         const minimum = Number(control.value || 0);
         const actual = Number(item.dataset[control.dataset.filterMin] || 0);
@@ -841,7 +843,7 @@ if (corpusSearch) {
   const resultsList = document.querySelector("[data-search-results]");
   const resultCap = 50;
   const allowedRecordFields = new Set([
-    "id", "target", "kind", "dialogue", "stephanusSpan", "family", "label", "status",
+    "id", "target", "kind", "dialogue", "stephanusSpan", "axis", "concept", "status",
     "speaker", "relationKind", "resolution", "title", "snippet"
   ]);
   const normalizeSearch = (value) => String(value || "")
@@ -852,7 +854,7 @@ if (corpusSearch) {
     .trim()
     .replace(/\\s+/gu, " ");
   const searchableFields = (record) => [
-    record.id, record.kind, record.dialogue, record.stephanusSpan, record.family, record.label,
+    record.id, record.kind, record.dialogue, record.stephanusSpan, record.axis, record.concept,
     record.status, record.speaker, record.relationKind, record.resolution, record.title, record.snippet
   ].filter((value) => typeof value === "string").map(normalizeSearch);
   const rank = (record, query, normalizedQuery) => {
@@ -886,7 +888,7 @@ if (corpusSearch) {
       heading.append(link);
       item.append(heading);
       const metadata = [
-        record.kind, record.dialogue, record.stephanusSpan, record.family, record.label,
+        record.kind, record.dialogue, record.stephanusSpan, record.axis, record.concept,
         record.status, record.speaker, record.relationKind, record.resolution
       ].filter(Boolean);
       if (metadata.length > 0) {
@@ -931,7 +933,10 @@ if (corpusSearch) {
       }));
       const ranked = shards.flatMap((shard) => shard.records)
         .filter((record) => Object.entries(selected).every(([field, value]) =>
-          !value || normalizeSearch(record[field]) === normalizeSearch(value)
+          !value ||
+          String(record[field] || "")
+            .split(/\s+/u)
+            .some((candidate) => normalizeSearch(candidate) === normalizeSearch(value))
         ))
         .map((record) => ({ record, match: rank(record, query, normalizedQuery) }))
         .filter((result) => result.match !== undefined)
@@ -1097,8 +1102,8 @@ if (courseMore && typeof matchMedia === "function" && matchMedia("(max-width: 86
   courseMore.removeAttribute("open");
 }
 
-// The record map (the dialogue-pages v3.3 rollout): static SVG is the no-JS base; family filtering, the
-// floating card, click-through, and the #fam= preselect are enhancements.
+// The record map: static SVG is the no-JS base; ontology-axis filtering, the
+// floating card, click-through, and the #axis= preselect are enhancements.
 const recordMap = document.querySelector?.("[data-record-map]");
 if (recordMap && document.body) {
   const marks = [...recordMap.querySelectorAll(".map-mark")];
@@ -1112,20 +1117,20 @@ if (recordMap && document.body) {
   const allText = "Showing all " + obsTotal + " observations, " + claimTotal +
     " claims, and " + anchTotal + " anchor occurrences.";
 
-  const applyFilter = (fam, label) => {
+  const applyFilter = (axis, label) => {
     let shown = 0;
     for (const mark of marks) {
       if (mark.dataset.k !== "obs") continue;
-      const hit = !fam || mark.dataset.f === fam;
+      const hit = !axis || String(mark.dataset.a || "").split(" ").includes(axis);
       mark.style.display = hit ? "" : "none";
       if (hit) shown += 1;
     }
-    const dim = fam ? "0.22" : "";
+    const dim = axis ? "0.22" : "";
     if (claimsGroup) claimsGroup.style.opacity = dim;
     if (anchGroup) anchGroup.style.opacity = dim;
     if (status) {
-      status.textContent = fam
-        ? "Showing " + shown + " of " + obsTotal + " observations — " + (label || fam) +
+      status.textContent = axis
+        ? "Showing " + shown + " of " + obsTotal + " observations — " + (label || axis) +
           ". Claims and anchors dimmed."
         : allText;
     }
@@ -1135,17 +1140,17 @@ if (recordMap && document.body) {
     const chips = [...chipsHost.querySelectorAll(".map-chip")];
     const activate = (chip) => {
       for (const other of chips) other.classList.toggle("is-on", other === chip);
-      applyFilter(chip.dataset.fam || "", (chip.dataset.label || "").trim());
+      applyFilter(chip.dataset.axis || "", (chip.dataset.label || "").trim());
     };
     chipsHost.addEventListener("click", (event) => {
       const chip = event.target.closest?.(".map-chip");
       if (chip) activate(chip);
     });
-    const famMatch = /^fam=(.+)$/.exec((location.hash || "").replace(/^#/, ""));
-    if (famMatch) {
-      let wanted = famMatch[1];
-      try { wanted = decodeURIComponent(famMatch[1]); } catch { /* keep raw */ }
-      const chip = chips.find((candidate) => candidate.dataset.fam === wanted);
+    const axisMatch = /^axis=(.+)$/.exec((location.hash || "").replace(/^#/, ""));
+    if (axisMatch) {
+      let wanted = axisMatch[1];
+      try { wanted = decodeURIComponent(axisMatch[1]); } catch { /* keep raw */ }
+      const chip = chips.find((candidate) => candidate.dataset.axis === wanted);
       if (chip) activate(chip);
     }
   }

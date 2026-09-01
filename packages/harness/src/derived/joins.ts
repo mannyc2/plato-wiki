@@ -13,7 +13,7 @@ import { parseTurnIndexToon, turnIndexPath } from "./turns.js";
 
 export type ObservationTurnJoinRow = {
   observationId: string;
-  reviewStatus: string;
+  reviewStatus: "accepted";
   turnIds: string[];
   speakers: string[];
   attributed: boolean;
@@ -36,7 +36,7 @@ export type WrittenObservationTurnJoin = {
 
 type ObservationSpan = {
   observationId: string;
-  reviewStatus: string;
+  reviewStatus: "accepted";
   startChar: number;
   endChar: number;
 };
@@ -67,15 +67,16 @@ export function observationTurnJoinPath(dialogue: string) {
 
 function parseObservationSpans(content: string): ObservationSpan[] {
   return observationYamlBlocks(content)
-    .map((block) => {
+    .flatMap((block): ObservationSpan[] => {
       const observationId = fieldValue(block, "observation_id");
       const reviewStatus = fieldValue(block, "review_status") ?? "unreviewed";
+      if (reviewStatus !== "accepted") return [];
       const startChar = Number(nestedFieldValueInParent(block, "source_ref", "start_char"));
       const endChar = Number(nestedFieldValueInParent(block, "source_ref", "end_char"));
       if (!observationId || !Number.isInteger(startChar) || !Number.isInteger(endChar) || endChar < startChar) {
         throw new Error(`Malformed observation source_ref for ${observationId ?? "(missing id)"}.`);
       }
-      return { observationId, reviewStatus, startChar, endChar };
+      return [{ observationId, reviewStatus, startChar, endChar }];
     })
     .sort((a, b) => a.observationId.localeCompare(b.observationId));
 }
@@ -189,7 +190,7 @@ export function parseObservationTurnJoinToon(content: string): ObservationTurnJo
     throw new Error("Malformed observation-turn join header.");
   }
 
-  const rows = lines.slice(7).map((line) => {
+  const rows = lines.slice(7).map((line): ObservationTurnJoinRow => {
     const columns = line.split("|").map((column) => column.trim());
     if (columns.length !== 5) {
       throw new Error(`Malformed observation-turn join row: ${line}`);
@@ -201,7 +202,7 @@ export function parseObservationTurnJoinToon(content: string): ObservationTurnJo
     if (
       !observationId ||
       !/^obs_[a-z0-9-]+_\d{4}$/u.test(observationId) ||
-      !reviewStatus ||
+      reviewStatus !== "accepted" ||
       turnIds.length === 0 ||
       turnIds.some((turnId) => !new RegExp(`^turn_${dialogue}_\\d{4}$`, "u").test(turnId)) ||
       speakers.length === 0 ||
