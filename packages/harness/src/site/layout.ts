@@ -935,7 +935,7 @@ if (corpusSearch) {
         .filter((record) => Object.entries(selected).every(([field, value]) =>
           !value ||
           String(record[field] || "")
-            .split(/\s+/u)
+            .split(/\\s+/u)
             .some((candidate) => normalizeSearch(candidate) === normalizeSearch(value))
         ))
         .map((record) => ({ record, match: rank(record, query, normalizedQuery) }))
