@@ -1,0 +1,33 @@
+# Commentary quality-audit acceptance
+
+dialogue: critias
+decision: accepted
+reviewer: commentary-audit-delegated-luna-reviewer-critias-5cb801957a34
+reviewed_on: 2026-09-01
+rationale: All sampled blocks are independently supported by the supplied source and accepted evidence, with clean playback edges and concise, useful spoken commentary.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sample_evidence_path: wiki/submissions/commentary-audit-sample/critias/f5a4d1714fe4b2d5a49ccaf6a487ca3257a20cfaeb53c299e80eca3f7b33256c.json
+sample_evidence_sha256: f5a4d1714fe4b2d5a49ccaf6a487ca3257a20cfaeb53c299e80eca3f7b33256c
+sample_input_sha256: 91d125bc8ac199105758ca57a79e0e0bce4580f7074c33e0cfcc9c628d4f025d
+pending_manifest_sha256: 5cb801957a34e23df053fcf5378c78318a665bd5f7291c0fbf34fedc722e5d44
+commentary_ledger_sha256: c536ea9c29a33c324cfd9b3fd376ac00a60ddfe5168f4486cf28c5c8df95e01e
+sample_packet_sha256: 38c0376a2bb6d5e80ae603edddc04a0c6f22b39c7fe787791993da4819fc8776
+sample_output_sha256: 9293f07f9253e4e980220eddf68e78b938ab308462114eec5791017a3848695d
+sample_state_sha256: ec13e272d4e4caf9c4c7940d3bf6473ae6673bc835e6d436f35982de52bca2b1
+codex_execution_sha256: 365098b09467362496e52c848eae134039032b7e6cd7ec9197601e53793612db
+output_schema_sha256: 42f4579cc64353eb6b407df2da2711dbb19ac5151c2bd39cc1b5d6c6b9c9d7da
+model_catalog_sha256: a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724
+sample_prompt_sha256: 178b618ad847288540367dca3ba4ff1bb1ca50707d9aab88c1c30177c9488126
+sampled_commentary_ids:
+- comm_critias_0001
+- comm_critias_0002
+- comm_critias_0005
+- comm_critias_0006
+- comm_critias_0010
+- comm_critias_0012
+- comm_critias_0013
+- comm_critias_0016
+- comm_critias_0028
+- comm_critias_0029
+- comm_critias_0033

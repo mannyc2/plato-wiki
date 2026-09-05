@@ -72,9 +72,9 @@ status.
   lane exactly as before; inside the lane, interpretation is voiced, not
   recorded.
 - Leak into the neutral layers. Nothing under `wiki/observations/`,
-  `wiki/claims/`, `wiki/relations/`, `wiki/dossiers/`, `wiki/clusters/`, or
-  `wiki/features-so-far.md` may be created, modified, or renamed on behalf of
-  commentary work.
+  `wiki/claims/`, `wiki/relations/`, `wiki/ontology/`, `wiki/dossiers/`, or
+  `wiki/clusters/` may be created, modified, or renamed on behalf of commentary
+  work.
 - Be read by the neutral pipelines. Citations run one way: commentary cites
   accepted records by id; no extraction, review, claims, or relations prompt,
   no skill under `.pi/`, and no derived-data generator ever opens
@@ -262,8 +262,9 @@ Field rules (the validator enforces every one):
 - `body`: required non-empty English teaching prose, plain text. Short
   inline Greek is allowed; contiguous Greek runs over 80 chars are rejected.
 - `cites`: listed ids must exist in the corresponding ledgers with
-  `review_status: accepted`; `dossiers` entries are `<family>/<label>` paths
-  that must resolve to an existing dossier file.
+  `review_status: accepted`; `dossiers` entries are
+  `<axis_key>/<concept_key>` paths that must resolve to an existing ontology
+  vNext JSON dossier projection. Legacy family/label paths are not aliases.
 - `crossrefs`: each entry names a canonical dialogue, a span, and a
   `source_ref` recomputed against THAT dialogue. `crossref` blocks must carry
   at least one crossrefs entry or one non-empty cites list.
@@ -541,17 +542,37 @@ It requires complete non-stale campaign output/state pairs and writes a
 `pending` candidate only to
 `scratch/commentary/audit-manifests/<dialogue>.json`. It never accepts the
 candidate, writes `wiki/commentary-audits/`, or changes the commentary ledger.
-The operator delegates an independent Luna reviewer to sample at least 15
-distinct blocks in ledger order, or every block when the ledger has fewer than
-15. Record the dialogue, accepted decision, delegated Luna reviewer,
-`YYYY-MM-DD` date, rationale, independent Luna sample basis, explicit
-`human_listening_or_review: none claimed` statement, and each sampled
-commentary id in a committed `wiki/review/*.md` note; bind that note's exact
-path and hash; then deliberately place the reviewed manifest at the canonical
-path. Pending manifests keep the reviewer/date/rationale and note null and the
-sample empty.
-`bun run validate` rejects weak or unordered samples, stale note/ledger/protocol
-hashes, failed units, and partial or duplicated id coverage.
+The independent sample campaign delegates one fresh isolated Luna reviewer to
+sample at least 15 distinct blocks in ledger order, or every block when the
+ledger has fewer than 15. Its passing handoff includes the exact scratch result
+path. Acceptance must consume that path explicitly:
+
+```bash
+bun run harness commentary audit-manifest-accept-preview <dialogue> \
+  --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> \
+  --sampled-ids <id,id,...> --sample-output <path>
+bun run harness commentary audit-manifest-accept-apply <dialogue> \
+  --reviewer <id> --reviewed-on <YYYY-MM-DD> --rationale <text> \
+  --sampled-ids <id,id,...> --sample-output <path>
+```
+
+There is no metadata-only acceptance path. Apply atomically commits the
+accepted manifest, a `wiki/review/*.md` receipt, and a content-addressed
+`wiki/submissions/commentary-audit-sample/<dialogue>/<sha256>.json` evidence
+record. The receipt and evidence bind the exact pending manifest, complete
+commentary-ledger bytes, sample packet, output schema, model catalog, prompt,
+normalized passing output, state, raw Codex JSONL execution, and isolated
+invocation contract. Validation reconstructs and replays the exact job rather
+than trusting copied hashes. They also record the dialogue, delegated
+Luna reviewer, `YYYY-MM-DD` date, rationale, independent Luna sample basis,
+explicit `human_listening_or_review: none claimed` statement, and every sampled
+commentary id. Pending manifests keep the reviewer/date/rationale and note null
+and the sample empty. `bun run validate` rejects weak or unordered samples,
+missing or stale sample evidence, stale note/ledger/protocol hashes, failed
+units, partial or duplicated id coverage, and any symlink or realpath alias.
+Changed-ledger supersedes preserve the exact predecessor manifest, review note,
+and ledger bytes under content-addressed history; the successor receipt binds
+all three and validation replays the predecessor chain.
 
 Campaign workers never edit `wiki/commentary/`. Outline, unit-draft, and rewrite
 results cross that boundary only through explicit serial commands:

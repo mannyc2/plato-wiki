@@ -9,8 +9,6 @@ import {
   disableDeepSeekThinkingPayload,
   assertObservationWriteOccurred,
   claimSegmentSourceSection,
-  existingLabelsByFamilySection,
-  featureRegistrySystemSection,
   requireToolChoicePayload,
   reviewLedgerComplete,
 } from "./run.js";
@@ -27,69 +25,6 @@ beforeEach(() => {
 afterEach(() => {
   restoreRepoRoot?.();
   rmSync(root, { recursive: true, force: true });
-});
-
-describe("featureRegistrySystemSection", () => {
-  it("injects the compact feature index without registry prose", () => {
-    const section = featureRegistrySystemSection(`# Feature Registry
-
-### feature_candidate_001
-
-- **family:** elenchus
-- **proposed_name:** test_elencus_label
-- **status:** candidate
-- **observations:** obs_euthyphro_0001, obs_euthyphro_0002
-- **notes:** NOTES_SENTINEL_DO_NOT_INJECT
-
-### feature_candidate_002
-
-- **family:** craft_analogy
-- **proposed_name:** test_craft_label
-- **status:** accepted
-- **observations:** obs_crito_0001
-- **notes:** More prose that should stay out of the system prompt.
-`);
-
-    expect(section).toContain("## Current features-so-far compact index");
-    expect(section).toContain("feature_candidate_001: family=elenchus");
-    expect(section).toContain("feature_candidate_002: family=craft_analogy");
-    expect(section).toContain("observations=2");
-    expect(section).not.toContain("NOTES_SENTINEL_DO_NOT_INJECT");
-    expect(section).not.toContain("More prose that should stay out");
-  });
-});
-
-describe("existingLabelsByFamilySection", () => {
-  it("groups existing labels by family and removes duplicates", () => {
-    const section = existingLabelsByFamilySection(`# Feature Registry
-
-### feature_candidate_001
-
-- **family:** definition_ladder
-- **proposed_name:** definition_by_example
-- **status:** candidate
-- **observations:** obs_euthyphro_0001
-
-### feature_candidate_002
-
-- **family:** elenchus
-- **proposed_name:** assent_chain
-- **status:** candidate
-- **observations:** obs_meno_0001
-
-### feature_candidate_003
-
-- **family:** definition_ladder
-- **proposed_name:** definition_by_example
-- **status:** accepted
-- **observations:** obs_crito_0001
-`);
-
-    expect(section).toContain("## Existing feature labels by family");
-    expect(section).toContain("- definition_ladder: definition_by_example");
-    expect(section).toContain("- elenchus: assent_chain");
-    expect(section.match(/definition_by_example/gu)).toHaveLength(1);
-  });
 });
 
 describe("reviewLedgerComplete", () => {

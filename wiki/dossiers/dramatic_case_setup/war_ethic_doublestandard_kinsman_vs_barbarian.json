@@ -1,0 +1,170 @@
+{
+  "accepted_observations": 2,
+  "axis_id": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+  "axis_key": "dramatic_case_setup",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record war ethic doublestandard kinsman vs barbarian within the dramatic case setup axis?",
+  "concept_id": "concept_sha256_16eeb6d915073a38d559b2848952273383762c849c0ce526aa950ae6088d041c",
+  "concept_key": "war_ethic_doublestandard_kinsman_vs_barbarian",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+      "axisKey": "dramatic_case_setup",
+      "conceptId": "concept_sha256_09d839fefd00ab5f5d9b59e187845f292d017a7ac186957d4dee6403e277a966",
+      "conceptKey": "civil_war_attributed_to_misfortune",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+      "axisKey": "dramatic_case_setup",
+      "conceptId": "concept_sha256_3249f617dc2808256c41f5df3c272b56b4b94386d064808f00188eca3f71c81b",
+      "conceptKey": "enemy_assessment_triggers_policy",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_a621c9ee78202ffb4f5261045688f196ca7a93efcfb28446a6dbe406eb6832e3",
+      "axisKey": "frame_depth",
+      "conceptId": "concept_sha256_f582bca08684d0aa0a34bdf6a5fad4e22f20be2df59b71dbb54f1579b51f967d",
+      "conceptKey": "speaker_introduces_argumentative_procedure",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 1,
+  "dimension": "dramatic_context",
+  "instance_ids": [
+    "obs_menexenus_0055",
+    "obs_menexenus_0063"
+  ],
+  "instances": [
+    {
+      "dialogue": "menexenus",
+      "observationId": "obs_menexenus_0055",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "242c-242d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "menexenus",
+      "observationId": "obs_menexenus_0063",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "244b-244c",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_16eeb6d915073a38d559b2848952273383762c849c0ce526aa950ae6088d041c",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

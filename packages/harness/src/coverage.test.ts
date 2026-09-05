@@ -27,9 +27,6 @@ function record({
   return `\`\`\`yaml
 observation_id: ${id}
 stephanus_span: 1a
-feature_id: feature_candidate_001
-feature_family: test_family
-feature_label: test_label
 review_status: ${status}
 source_ref:
   source_path: raw/plato/greek/fixture.txt

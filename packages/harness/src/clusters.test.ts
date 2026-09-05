@@ -4,40 +4,80 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { buildClusters, validateClusterArtifacts, writeClusterArtifacts } from "./clusters.js";
 import { setRepoRootForTesting } from "./paths.js";
+import {
+  deriveOntologyVNextAxisId,
+  deriveOntologyVNextConceptId,
+  deriveOntologyVNextMembershipId,
+  renderOntologyVNextDocuments,
+  type OntologyVNextConcept,
+} from "./wiki/ontology-vnext.js";
 
 let root = "";
 let restoreRepoRoot: (() => void) | undefined;
 
-function record({
-  observationId,
-  family,
-  label,
-  status = "accepted",
-}: {
-  observationId: string;
-  family: string;
-  label: string;
-  status?: string;
-}) {
+function record(observationId: string, status = "accepted") {
   return `\`\`\`yaml
 observation_id: ${observationId}
 stephanus_span: 2a-2b
-feature_id: feature_candidate_001
-feature_family: ${family}
-feature_label: ${label}
 review_status: ${status}
 \`\`\``;
 }
 
-function writeLedger(fileName: string, records: string[]) {
-  writeFileSync(join(root, "wiki/observations", fileName), records.join("\n\n"), "utf8");
+function writeLedger(fileName: string, observationIds: string[]) {
+  writeFileSync(
+    join(root, "wiki/observations", fileName),
+    observationIds.map((observationId) => record(observationId)).join("\n\n"),
+    "utf8",
+  );
 }
 
-describe("buildClusters", () => {
+function writeOntology(assignments: Array<{ conceptKey: string; observationIds: string[] }>) {
+  const axisId = deriveOntologyVNextAxisId("textual_function", "argument_move");
+  const concepts: OntologyVNextConcept[] = assignments.map(({ conceptKey }) => ({
+    schema_version: 1,
+    concept_id: deriveOntologyVNextConceptId(axisId, conceptKey),
+    axis_id: axisId,
+    concept_key: conceptKey,
+    definition: `The cited span performs the ${conceptKey} textual function.`,
+    comparison_question: "What argumentative move does the cited span perform?",
+  }));
+  const conceptByKey = new Map(concepts.map((concept) => [concept.concept_key, concept]));
+  const memberships = assignments.flatMap(({ conceptKey, observationIds }) =>
+    observationIds.map((observationId) => {
+      const conceptId = conceptByKey.get(conceptKey)!.concept_id;
+      return {
+        schema_version: 1 as const,
+        membership_id: deriveOntologyVNextMembershipId(observationId, conceptId),
+        observation_id: observationId,
+        concept_id: conceptId,
+        assignment_basis: "The cited Greek span instantiates this comparison category.",
+      };
+    }),
+  );
+  const documents = renderOntologyVNextDocuments({
+    axes: [
+      {
+        schema_version: 1,
+        axis_id: axisId,
+        axis_key: "argument_move",
+        dimension: "textual_function",
+        comparison_question: "What argumentative move does the cited span perform?",
+      },
+    ],
+    concepts,
+    memberships,
+  });
+  writeFileSync(join(root, "wiki/ontology/axes.jsonl"), documents.axes);
+  writeFileSync(join(root, "wiki/ontology/concepts.jsonl"), documents.concepts);
+  writeFileSync(join(root, "wiki/ontology/memberships.jsonl"), documents.memberships);
+}
+
+describe("ontology cluster projections", () => {
   beforeEach(() => {
     root = mkdtempSync(join(tmpdir(), "clusters-test-"));
     restoreRepoRoot = setRepoRootForTesting(root);
     mkdirSync(join(root, "wiki/observations"), { recursive: true });
+    mkdirSync(join(root, "wiki/ontology"), { recursive: true });
   });
 
   afterEach(() => {
@@ -45,71 +85,43 @@ describe("buildClusters", () => {
     rmSync(root, { recursive: true, force: true });
   });
 
-  it("groups accepted observations by family and label across dialogues", () => {
-    writeLedger("meno.md", [
-      record({ observationId: "obs_meno_0001", family: "elenchus", label: "assent_chain" }),
-      record({ observationId: "obs_meno_0002", family: "elenchus", label: "assent_chain" }),
-    ]);
-    writeLedger("crito.md", [
-      record({ observationId: "obs_crito_0001", family: "elenchus", label: "assent_chain" }),
-      record({ observationId: "obs_crito_0002", family: "craft_analogy", label: "craft_example" }),
+  it("groups accepted observations by canonical concept id across dialogues", () => {
+    writeLedger("meno.md", ["obs_meno_0001", "obs_meno_0002"]);
+    writeLedger("crito.md", ["obs_crito_0001", "obs_crito_0002"]);
+    writeOntology([
+      { conceptKey: "assent_chain", observationIds: ["obs_meno_0001", "obs_meno_0002", "obs_crito_0001"] },
+      { conceptKey: "craft_example", observationIds: ["obs_crito_0002"] },
     ]);
 
     const clusters = buildClusters();
-
+    const assent = clusters.find((cluster) => cluster.conceptKey === "assent_chain")!;
     expect(clusters).toHaveLength(2);
-    expect(clusters[1]).toMatchObject({
-      family: "elenchus",
-      label: "assent_chain",
-      dialogues: ["crito", "meno"],
-    });
-    expect(clusters[1]?.observations.map((observation) => observation.observationId)).toEqual([
+    expect(assent.axisKey).toBe("argument_move");
+    expect(assent.dialogues).toEqual(["crito", "meno"]);
+    expect(assent.observations.map((observation) => observation.observationId)).toEqual([
       "obs_crito_0001",
       "obs_meno_0001",
       "obs_meno_0002",
     ]);
   });
 
-  it("excludes unreviewed observations unless preview mode is enabled", () => {
-    writeLedger("meno.md", [
-      record({ observationId: "obs_meno_0001", family: "elenchus", label: "assent_chain", status: "unreviewed" }),
-    ]);
-
-    expect(buildClusters()).toHaveLength(0);
-    expect(buildClusters({ includeUnreviewed: true })).toHaveLength(1);
-    expect(buildClusters({ includeUnreviewed: true })[0]?.preConvergence).toBe(true);
-  });
-
-  it("refuses to write accepted-only clusters before the convergence gate passes", () => {
-    writeLedger("meno.md", [
-      record({ observationId: "obs_meno_0001", family: "elenchus", label: "assent_chain" }),
-    ]);
-
+  it("refuses to write before the concept convergence gate passes", () => {
+    writeLedger("meno.md", ["obs_meno_0001"]);
+    writeOntology([{ conceptKey: "assent_chain", observationIds: ["obs_meno_0001"] }]);
     expect(() => writeClusterArtifacts()).toThrow("Cluster convergence gate is not met.");
   });
 
-  it("writes deterministic family cluster files after the convergence gate passes", () => {
-    const menoRecords: string[] = [];
-    const critoRecords: string[] = [];
-    for (let index = 1; index <= 10; index += 1) {
-      const label = `shared_label_${String(index).padStart(2, "0")}`;
-      menoRecords.push(
-        record({
-          observationId: `obs_meno_${String(index).padStart(4, "0")}`,
-          family: "elenchus",
-          label,
-        }),
-      );
-      critoRecords.push(
-        record({
-          observationId: `obs_crito_${String(index).padStart(4, "0")}`,
-          family: "elenchus",
-          label,
-        }),
-      );
-    }
-    writeLedger("meno.md", menoRecords);
-    writeLedger("crito.md", critoRecords);
+  it("writes deterministic strict JSONL projections after convergence", () => {
+    const meno = Array.from({ length: 10 }, (_, index) => `obs_meno_${String(index + 1).padStart(4, "0")}`);
+    const crito = Array.from({ length: 10 }, (_, index) => `obs_crito_${String(index + 1).padStart(4, "0")}`);
+    writeLedger("meno.md", meno);
+    writeLedger("crito.md", crito);
+    writeOntology(
+      meno.map((observationId, index) => ({
+        conceptKey: `shared_move_${String(index + 1).padStart(2, "0")}`,
+        observationIds: [observationId, crito[index]!],
+      })),
+    );
 
     const written = writeClusterArtifacts();
     const path = join(root, written[0]!.path);
@@ -117,36 +129,30 @@ describe("buildClusters", () => {
     writeClusterArtifacts();
     const second = readFileSync(path, "utf8");
 
-    expect(written).toEqual([{ family: "elenchus", path: "wiki/clusters/elenchus.md", clusterCount: 10 }]);
+    expect(written).toHaveLength(1);
+    expect(written[0]).toMatchObject({ axisKey: "argument_move", path: "wiki/clusters/argument_move.jsonl", clusterCount: 10 });
     expect(first).toBe(second);
-    expect(first).toContain("cluster_id: cluster_elenchus_shared_label_01");
-    expect(first).toContain("observation_ids: [obs_crito_0001, obs_meno_0001]");
+    expect(first).toContain('"concept_key":"shared_move_01"');
+    expect(first).toContain('"observation_ids":["obs_crito_0001","obs_meno_0001"]');
+    expect(validateClusterArtifacts()).toEqual([]);
   });
 
-  it("reports cluster references that are missing or not accepted", () => {
-    mkdirSync(join(root, "wiki/clusters"), { recursive: true });
-    writeLedger("meno.md", [
-      record({ observationId: "obs_meno_0001", family: "elenchus", label: "assent_chain", status: "unreviewed" }),
-    ]);
-    writeFileSync(
-      join(root, "wiki/clusters/elenchus.md"),
-      `# Cluster Family: elenchus
-
-\`\`\`yaml
-cluster_id: cluster_elenchus_assent_chain
-feature_family: elenchus
-feature_label: assent_chain
-observation_ids: [obs_meno_0001]
-dialogues: [meno]
-spans:
-  obs_meno_0001: 2a-2b
-\`\`\`
-`,
-      "utf8",
+  it("detects any byte that is not the canonical ontology projection", () => {
+    const meno = Array.from({ length: 10 }, (_, index) => `obs_meno_${String(index + 1).padStart(4, "0")}`);
+    const crito = Array.from({ length: 10 }, (_, index) => `obs_crito_${String(index + 1).padStart(4, "0")}`);
+    writeLedger("meno.md", meno);
+    writeLedger("crito.md", crito);
+    writeOntology(
+      meno.map((observationId, index) => ({
+        conceptKey: `shared_move_${String(index + 1).padStart(2, "0")}`,
+        observationIds: [observationId, crito[index]!],
+      })),
     );
-
+    writeClusterArtifacts();
+    const path = join(root, "wiki/clusters/argument_move.jsonl");
+    writeFileSync(path, readFileSync(path, "utf8").replace("obs_crito_0001", "obs_crito_9999"), "utf8");
     expect(validateClusterArtifacts()).toEqual([
-      "wiki/clusters/elenchus.md: cluster references missing or non-accepted observation obs_meno_0001",
+      "wiki/clusters/argument_move.jsonl: cluster artifact does not equal its canonical ontology projection",
     ]);
   });
 });

@@ -3,11 +3,11 @@
   "dialogue": "phaedrus",
   "ledger": {
     "path": "wiki/commentary/phaedrus.md",
-    "sha256": "1c6b512aaf2da359722d2c8b7ffa5fe79579ffeac741aa339f307ebb74b312ad"
+    "sha256": "ff69885148790518a776dace22dc06ffcf3adc8a00f4169e2cae2ef60df7d334"
   },
   "protocol": {
     "path": "docs/commentary-protocol.md",
-    "sha256": "5f5e6f47f2d39cb42dd8941762ca1b82b4c1371801576f9ec7875e76286e1a13"
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
   },
   "authoring": {
     "model": "gpt-5.6-luna",
@@ -17,9 +17,9 @@
     {
       "unit_key": "01-227a-229d",
       "section_id": "comm_phaedrus_0001",
-      "audit_brief_sha256": "18a0dbde6c9374da6c056eac056a6f7499cf295119ca42876f383b40e473a447",
+      "audit_brief_sha256": "b8885caad124ae2741271608d75ce53d53988176d35fdc60de8575f3d3ea3234",
       "output_path": "scratch/commentary/audits/phaedrus/01-227a-229d.json",
-      "output_sha256": "bbd6c16d7e8fd20a5890a18a6e17fc5906c8c5b9f8543cd77a875a9dd379f67f",
+      "output_sha256": "44663fa92cf24aa20a632dfe61f5c5abf2a9fdedff204ed3d315d5c292254cd6",
       "output": {
         "schema_version": 3,
         "dialogue": "phaedrus",
@@ -47,7 +47,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The overview accurately traces Phaedrus's walk, Socrates' eagerness, and the Ilissus-to-Boreas transition; citations support it, and placement cleanly precedes the opening exchange."
+            "rationale": "Accurately orients the walk, Socrates’ eagerness, and the later myth question; the edge is before the source, with the opening exchange immediately after, preserving flow."
           }
         ]
       }
@@ -55,9 +55,9 @@
     {
       "unit_key": "02-229e-234e",
       "section_id": "comm_phaedrus_0002",
-      "audit_brief_sha256": "1f042b758f4eeaf11dfb421c87a4428280083ef2800c8c040c3f2938fa2d330b",
+      "audit_brief_sha256": "60f560cb6b379ad76a3c923deace2ecb599c3f27fd3a3a38850872d036f1ad8d",
       "output_path": "scratch/commentary/audits/phaedrus/02-229e-234e.json",
-      "output_sha256": "23e1f9667b131eea1875bb241db56cff74b5f10e705f74b712079dde299d3105",
+      "output_sha256": "93d7f4824afdc679b71cdc0c4b753729451da59455a4040f681410772591a8c2",
       "output": {
         "schema_version": 3,
         "dialogue": "phaedrus",
@@ -85,21 +85,17 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The section distinguishes polished delivery from substantive judgment, a focused interpretive frame supported by the cited records and clear at the edge before Socrates’ reply."
+            "rationale": "The cited observations support the distinct style/content axes and unresolved play/seriousness question. The edge follows the leisure sentence and precedes Socrates' reply, preserving the transition."
           }
         ]
-      },
-      "provenance": {
-        "path": "wiki/submissions/commentary-audit/phaedrus/0001-delegated-audit-02-229e-234e.json",
-        "sha256": "a28d31c0cbae56ed5b16aae1baed01f30e0a9922dc9f402050eb518cfa24074f"
       }
     },
     {
       "unit_key": "03-235a-237b",
       "section_id": "comm_phaedrus_0003",
-      "audit_brief_sha256": "e4de60275f9e1bf6652064d6dd552f1cce0c81576edab970ab2be631f5f3b198",
+      "audit_brief_sha256": "4060cc3b39b64afc2d9a8f4ac6fe279c2f0e5655046027dc1ec550630f64edea",
       "output_path": "scratch/commentary/audits/phaedrus/03-235a-237b.json",
-      "output_sha256": "06874f107a0106d68f26a393e449244858f2f29d4e51a2b8e25299c604bf4078",
+      "output_sha256": "960216faaaf4f3d7edfb2ca50cc2d1b7d6adcb07a5270bf06fb97c813b0a20cb",
       "output": {
         "schema_version": 3,
         "dialogue": "phaedrus",
@@ -127,7 +123,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The voiced interpretation is supported by the contest and oath evidence; the edge follows Socrates’ critique and precedes Phaedrus’ reply without disrupting the exchange."
+            "rationale": "Interpretive framing is grounded in the elicited contest and Socrates’ compelled speech; the edge follows his complete critique and precedes Phaedrus’ reply cleanly."
           }
         ]
       }
@@ -135,9 +131,9 @@
     {
       "unit_key": "04-237c-241d",
       "section_id": "comm_phaedrus_0004",
-      "audit_brief_sha256": "34a066631aeb426f8c18505b074d0d4c51ad02c7955380ff88e9e52692937037",
+      "audit_brief_sha256": "35fea134a50edb78abbc8237e0b1f3658e08b498a59f6839bff57a8a0a39a7e9",
       "output_path": "scratch/commentary/audits/phaedrus/04-237c-241d.json",
-      "output_sha256": "e1cd2d854d24f73e4c2276dc447460352589488cdcdb715622118cbf08ffc8b6",
+      "output_sha256": "a5a15faf7f1788d8a2f76274c61a898acd8fe81d6c24873edabe6206db333891",
       "output": {
         "schema_version": 3,
         "dialogue": "phaedrus",
@@ -165,7 +161,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Interpretive framing accurately tracks the two principles, eros’s definition, and the later consequences; the edge follows the completed 237e thought and prepares the 238a definition."
+            "rationale": "Interpretive framing accurately tracks the two principles, eros's definition, and the later consequences. At the edge, the two principles precede it and self-restraint/excess follows; the transition remains clear aloud."
           }
         ]
       }
@@ -173,7 +169,7 @@
     {
       "unit_key": "05-241e-245e",
       "section_id": "comm_phaedrus_0005",
-      "audit_brief_sha256": "c1a8e8c08875f012fa2a201d01dfb9847b75268090ad5eab89a1450d2b08b6f3",
+      "audit_brief_sha256": "427ff720e8c9a604b5d4d9ae4aeda114e872a92970c933d07db15c87d8eb1aad",
       "output_path": "scratch/commentary/audits/phaedrus/05-241e-245e.json",
       "output_sha256": "6547bb21d4388b3614d9db2e786d64c9cf8eeebf0afc8110638c549ef72fd709",
       "output": {
@@ -192,7 +188,7 @@
     {
       "unit_key": "06-246a-247b",
       "section_id": "comm_phaedrus_0006",
-      "audit_brief_sha256": "08d977614a02b1e8c2f8ee2577ca0018f277147d69634dc8a86d038d805cf8ba",
+      "audit_brief_sha256": "f8091b15b4548a8dde6a125c3c935c77f9548a6768ce2eaf6d71507d5a7c1586",
       "output_path": "scratch/commentary/audits/phaedrus/06-246a-247b.json",
       "output_sha256": "f664e6e535d6b577258a0900e380ba477ce259679e20e35913ae91b15845d172",
       "output": {
@@ -211,7 +207,7 @@
     {
       "unit_key": "07-247c-248b",
       "section_id": "comm_phaedrus_0007",
-      "audit_brief_sha256": "e3c575ddf16f80630d52eb258271678f01de973e4c9a79e354d6a3a7fbc18d7e",
+      "audit_brief_sha256": "dc429a1f281af0d2d285a97dafb8db2fd7a4b557c841cf33a560b01e413117a5",
       "output_path": "scratch/commentary/audits/phaedrus/07-247c-248b.json",
       "output_sha256": "ce2c0371bc34d46ed78f376e77d02378bd6730568f810abb560ab20f375f937d",
       "output": {
@@ -230,9 +226,9 @@
     {
       "unit_key": "08-248c-249d",
       "section_id": "comm_phaedrus_0008",
-      "audit_brief_sha256": "2b1a5e7697e793c5008c2897f5af779545c538d079fac1043f97cf95b05eba75",
+      "audit_brief_sha256": "2d8cda39f23091e86c21fee09d16923455d424a2a048d246931f46545377055b",
       "output_path": "scratch/commentary/audits/phaedrus/08-248c-249d.json",
-      "output_sha256": "4a9f1155c7b80d237301f006e4fb4b49079bcdccc23fe8f13775f4cabe641a8b",
+      "output_sha256": "8e9256c336f8564693724393ea74627b1374a88bd618b58419e0092e73fb1f3b",
       "output": {
         "schema_version": 3,
         "dialogue": "phaedrus",
@@ -260,7 +256,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The marked interpretation accurately synthesizes recollection, earthly limitation, and unfinished ascent. The edge follows the tyrant sentence and precedes Socrates’ justice discussion without splitting the exchange."
+            "rationale": "The interpretation is clearly voiced as interpretation and matches the cited claims. The edge follows the hierarchy and precedes Socrates’ consequences; it is a complete, natural turn boundary."
           }
         ]
       }
@@ -268,9 +264,9 @@
     {
       "unit_key": "09-249e-252c",
       "section_id": "comm_phaedrus_0009",
-      "audit_brief_sha256": "0064f6a741af031cc75e47f56ba965f9aa9c98628e92185ca4d815c9affbbb52",
+      "audit_brief_sha256": "410fc1d75a20a7a8b835cfd15e577e69153267c64a09208842126a6e693d4be6",
       "output_path": "scratch/commentary/audits/phaedrus/09-249e-252c.json",
-      "output_sha256": "e762a32ae2e67d6b78b2c4269b05152ec307dcb2a983149ea8acb961363f861b",
+      "output_sha256": "227067bd2cca8cc847a2c290edd008cef87f2463e8653fadc1aa77a37666ed01",
       "output": {
         "schema_version": 3,
         "dialogue": "phaedrus",
@@ -281,34 +277,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_phaedrus_0009",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The body accurately identifies beauty’s visible role, recollection, pain, and wing-growth tension. It follows a complete 249e sentence and prepares the 250a continuation without disrupting the exchange."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "10-252d-255c",
       "section_id": "comm_phaedrus_0010",
-      "audit_brief_sha256": "70955783df119355636c6a41305425f4b52e1dce339d0aab042197fab779f49f",
+      "audit_brief_sha256": "c03e9428c2057f78bec444b24ef004ace8736e681292a5315ca3aa6960e44e1e",
       "output_path": "scratch/commentary/audits/phaedrus/10-252d-255c.json",
-      "output_sha256": "2f50c14d90814e8eb50c49e922e9732a03d864462325bdea2bd56b333b7881dc",
+      "output_sha256": "60c72320b7b7b4db13ddc15cd294bd69b2d19b419904cca747ffd964c4267a48",
       "output": {
         "schema_version": 3,
         "dialogue": "phaedrus",
@@ -336,19 +313,15 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The section coherently frames desire as guided by a divine model and disciplined into friendship; cited records support it, and the edge follows the god-model exchange cleanly."
+            "rationale": "Accurately synthesizes the god-model and opposed-horse imagery. The edge follows the Zeus-lover passage and precedes Socrates' experience-based elaboration, a coherent transition."
           }
         ]
-      },
-      "provenance": {
-        "path": "wiki/submissions/commentary-audit/phaedrus/0002-delegated-audit-10-252d-255c.json",
-        "sha256": "ddb1b314f833d5f1f5694047c6bd3a20f295b62f20f82bc31bd837fbf7710005"
       }
     },
     {
       "unit_key": "11-255d-258b",
       "section_id": "comm_phaedrus_0011",
-      "audit_brief_sha256": "cfa2b4a63ec5f5cc09da910ba243b9b6c1857033e10b3d44681c7ead3e15ece6",
+      "audit_brief_sha256": "34d74e4214f810a869725460568253409dce8975cd1630c15738560ba371c9c5",
       "output_path": "scratch/commentary/audits/phaedrus/11-255d-258b.json",
       "output_sha256": "947614dbbfb6e5407f20889bf182d99bbe1485e0b8e221302dd7dcde8608d00f",
       "output": {
@@ -367,9 +340,9 @@
     {
       "unit_key": "12-258c-261c",
       "section_id": "comm_phaedrus_0012",
-      "audit_brief_sha256": "d21e9ddbf2915b659aab7333e209ad3385fb4731a6f3a7685b1f4c9cb3f8e1da",
+      "audit_brief_sha256": "e57b6584b1bfa2a66f8e815c8c50a178559e45daf7fbdb4e1ebdb8440db5fce5",
       "output_path": "scratch/commentary/audits/phaedrus/12-258c-261c.json",
-      "output_sha256": "5581c26e589575bd12e24397e3295acb5180a99049567e98221bebf9b1e0287c",
+      "output_sha256": "978fba1635dfd53885d566dd6c9750093609f556fd9456fb7f240796739dd265",
       "output": {
         "schema_version": 3,
         "dialogue": "phaedrus",
@@ -397,7 +370,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Interpretive framing is supported by the cited source: rhetoric’s art-status is tested against truth. The edge follows the prior exchange and precedes 258c’s opening question cleanly."
+            "rationale": "Voiced interpretation accurately synthesizes the passage’s art-versus-knack and truth-versus-appearance tensions. The edge follows a complete exchange and precedes 258c’s new argument."
           }
         ]
       }
@@ -405,7 +378,7 @@
     {
       "unit_key": "13-261d-264b",
       "section_id": "comm_phaedrus_0013",
-      "audit_brief_sha256": "03276b7d37a3a95e88dbb6e3e3e2b9de0da74148009aae84a711d93f13082ecf",
+      "audit_brief_sha256": "27d191e7efacfb7f73cb99d98a18543159c2d87fd5655fbaf1a8ea4b651f2f84",
       "output_path": "scratch/commentary/audits/phaedrus/13-261d-264b.json",
       "output_sha256": "a47abcc93131dd974dc505a09262ec7be3daa23459fd507266acc376e6a5c855",
       "output": {
@@ -424,7 +397,7 @@
     {
       "unit_key": "14-264c-267b",
       "section_id": "comm_phaedrus_0014",
-      "audit_brief_sha256": "543e8c9004669c691ad1aca605536ad8b446f05758827f33963a3fdec625a740",
+      "audit_brief_sha256": "5471dcd159a9f7a051c9f4ed92c04f577d5a253a96e90a46a2e4e15c39eb0dff",
       "output_path": "scratch/commentary/audits/phaedrus/14-264c-267b.json",
       "output_sha256": "9f5d1ef3b9df757315c91ba537ba4f8fe7db87ff00e720fd6c1dab99064bb2b5",
       "output": {
@@ -443,9 +416,9 @@
     {
       "unit_key": "15-267c-270a",
       "section_id": "comm_phaedrus_0015",
-      "audit_brief_sha256": "e810f5889bfa559f763a2d107ea78971d74a1aec13614a3bbe64f6c8529df9d1",
+      "audit_brief_sha256": "0225dced3ce24ab28a5784f2a4eac241edfe02e2947e5c2edc3775083249f43d",
       "output_path": "scratch/commentary/audits/phaedrus/15-267c-270a.json",
-      "output_sha256": "7dca4a4180d1b3ef003a390e4dde82270ade47e09045656ac89d201634dec48f",
+      "output_sha256": "f1cb07e557bf2de4fb8527a8a26cf6da27bdec55cd5aeb61f826d8f23480a123",
       "output": {
         "schema_version": 3,
         "dialogue": "phaedrus",
@@ -456,32 +429,13 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_phaedrus_0015",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately orients the section's movement from rhetorical devices through the medical analogy to knowledge, practice, nature, and Pericles; the edge follows a complete exchange and precedes 267c."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "16-270b-273d",
       "section_id": "comm_phaedrus_0016",
-      "audit_brief_sha256": "0c3bbb3f018ce21ecc5c8ca4f165d094f2f63fff1b36abe5877d99980bb87cf0",
+      "audit_brief_sha256": "097238a178da9d679917cf550df4d7fa864bde28013c6c062414efd2923235e7",
       "output_path": "scratch/commentary/audits/phaedrus/16-270b-273d.json",
       "output_sha256": "e37ca7a1238a43429ef38fe3dea5561e838aa6c6d68a0538f335b128c0d35a36",
       "output": {
@@ -500,9 +454,9 @@
     {
       "unit_key": "17-273e-276a",
       "section_id": "comm_phaedrus_0017",
-      "audit_brief_sha256": "142008eb3cceb14b4050ceaa923ce69e642a64af3f8392dc1e09d4b9ed4b43d0",
+      "audit_brief_sha256": "fabf07c6e1a7ff7752c52eb4cb6f5ba244b4316036c61479fdbb6823bf802e56",
       "output_path": "scratch/commentary/audits/phaedrus/17-273e-276a.json",
-      "output_sha256": "525b5f47c439ffae1a4e5f5174dbde3268fe1ccbc58a79c2aeab732fac3632b5",
+      "output_sha256": "b45496e292059727c1232bb0d11696120c970a98d38e992ec7fc0d5842de1082",
       "output": {
         "schema_version": 3,
         "dialogue": "phaedrus",
@@ -513,34 +467,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_phaedrus_0017",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately synthesizes the passage’s reversal, limits of writing, and living speech; citations support the claims. The edge follows a complete sentence and preserves the ongoing topic."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "18-276b-279c",
       "section_id": "comm_phaedrus_0018",
-      "audit_brief_sha256": "74cb2cf82224578615a9e3839a539e927662c450090cb4764947afcf554edcd0",
+      "audit_brief_sha256": "2cd0a377fc2a0514e6fe84e45cc09c94ce911284fa52ac3256e5be852c0f9314",
       "output_path": "scratch/commentary/audits/phaedrus/18-276b-279c.json",
-      "output_sha256": "b49741f79c26e2a0fe5345f1a77f449308916b26228ca9cd5b38df524e6a27a8",
+      "output_sha256": "3e3da88c348c9e5c1d18ee5bc4b36157549c1973254235906b4ee14ab4446685",
       "output": {
         "schema_version": 3,
         "dialogue": "phaedrus",
@@ -568,7 +503,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The interpretation is grounded in the garden analogy and closing prayer, adds a coherent thematic frame, and sits between complete sentences before the anchored movement."
+            "rationale": "The interpretation is grounded in the garden analogy and closing prayer; the edge follows the prior complete exchange and precedes the section's opening question."
           }
         ]
       }
@@ -576,25 +511,22 @@
   ],
   "acceptance": {
     "decision": "accepted",
-    "reviewer": "manifest-batch-2-delegated-luna-reviewer-20260823",
-    "reviewed_on": "2026-08-23",
-    "rationale": "All 11 active accepted IDs sampled in ledger order; prose, Greek source, cited evidence, placement, and audit checks pass with no defects.",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-phaedrus-50bd344b6685",
+    "reviewed_on": "2026-09-01",
+    "rationale": "All eight sampled blocks are independently supported by their cited evidence, source anchors, resolved playback edges, and concise spoken commentary; no evidence, placement, or listening defect is shown.",
     "sampled_commentary_ids": [
       "comm_phaedrus_0001",
       "comm_phaedrus_0002",
       "comm_phaedrus_0003",
       "comm_phaedrus_0004",
       "comm_phaedrus_0008",
-      "comm_phaedrus_0009",
       "comm_phaedrus_0010",
       "comm_phaedrus_0012",
-      "comm_phaedrus_0015",
-      "comm_phaedrus_0017",
       "comm_phaedrus_0018"
     ],
     "review_note": {
-      "path": "wiki/review/2026-08-23-commentary-quality-phaedrus-luna-sample.md",
-      "sha256": "512cc3c9bfcfa7ceb3d3fc0b80333d494a0ea18cd92f4d0dec485b5d669e8a8f"
+      "path": "wiki/review/2026-09-01-commentary-quality-phaedrus-luna-sample.md",
+      "sha256": "658df49f9f6a1fa1b64c78226b773a459a6edff9c21403353fd11a99e6d85da0"
     }
   }
 }

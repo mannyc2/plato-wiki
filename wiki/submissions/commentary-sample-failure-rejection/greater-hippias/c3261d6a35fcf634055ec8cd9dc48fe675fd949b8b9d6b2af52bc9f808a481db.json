@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "lane": "commentary-sample-failure-rejection",
+  "dialogue": "greater-hippias",
+  "sample_verdict": "fail",
+  "reviewer": "commentary-audit-delegated-luna-reviewer-greater-hippias-36fa2fd323f0",
+  "reviewed_on": "2026-09-01",
+  "sample_evidence": {
+    "path": "wiki/submissions/commentary-audit-sample/greater-hippias/c4cf0b8154f4c261873d37203614c4d0b50c24d119e7d3d1c9cbb68fa29aae89.json",
+    "sha256": "c4cf0b8154f4c261873d37203614c4d0b50c24d119e7d3d1c9cbb68fa29aae89"
+  },
+  "sample_components": {
+    "pending_manifest": {
+      "path": "scratch/commentary/audit-manifests/greater-hippias.json",
+      "sha256": "36fa2fd323f0f3c50d3188172f5ce1bf9a195e9b3feb7994545826300a22c346"
+    },
+    "commentary_ledger": {
+      "path": "wiki/commentary/greater-hippias.md",
+      "sha256": "cca4b92ebe7d368fe6aa23eb75195ca69e86eb311882d51110221cce26789f9d"
+    },
+    "sample_packet": {
+      "path": "scratch/commentary/audit-sample-packets/greater-hippias/aba173d2bb7a209c.md",
+      "sha256": "7b47b0ebf084ac17d6b795ce1575330ac6ef4b6e887c233ac100adb8860baa9f"
+    },
+    "output_schema": {
+      "path": "scratch/commentary/audit-sample-schemas/greater-hippias/aba173d2bb7a209c.json",
+      "sha256": "b5fc8d5d2bfc53e835ee2d6f650405fc3001322a94abbdb6d7f8ceb7b9321623"
+    },
+    "model_catalog": {
+      "path": "packages/harness/src/commentary-luna-model-catalog.json",
+      "sha256": "a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724"
+    },
+    "prompt": {
+      "sha256": "6dd3043b1875544d95bd3713790ed868d57f154281f3996e371b1823416c4712"
+    },
+    "sample_output": {
+      "path": "scratch/commentary/audit-sample-reviews/greater-hippias/aba173d2bb7a209c.json",
+      "sha256": "e88068541158f9e25a9c0bb92f33aec3a0e66a4423f404ab3f639d065f274771"
+    },
+    "sample_state": {
+      "path": "scratch/commentary/audit-sample-state/greater-hippias/aba173d2bb7a209c.json",
+      "sha256": "4fffb25164a6ca3e92fa221c2c4c9f3d2779287750f6d69579fac8ab6e29953f"
+    },
+    "codex_execution": {
+      "path": "scratch/commentary/audit-sample-executions/greater-hippias/aba173d2bb7a209c.jsonl",
+      "sha256": "8198ae4abc8a30f30bcd067c64899888637fc5efdfbbf43b4dd42a016db88bad"
+    }
+  },
+  "ledger": {
+    "path": "wiki/commentary/greater-hippias.md",
+    "sha256_before": "cca4b92ebe7d368fe6aa23eb75195ca69e86eb311882d51110221cce26789f9d",
+    "sha256_after": "f9b72dc4f417f134f98d86ece02f3adb7b71825372e75816d4a1dd512910b0de"
+  },
+  "failed_commentary": [
+    {
+      "commentary_id": "comm_greater-hippias_0007",
+      "rationale": "The playback edge follows Socrates’ question, “Then are not all beautiful things beautiful by the beautiful?”, and precedes Hippias’s immediate answer, creating a question_answer_split hazard.",
+      "rationale_sha256": "3674aaeaadb700d9e2b6f4611e85756b2ce790f70ed27deab336c235f5338eff"
+    },
+    {
+      "commentary_id": "comm_greater-hippias_0009",
+      "rationale": "The playback edge follows Socrates’ question asking what the beautiful is and precedes Hippias’s immediate definition, creating a question_answer_split hazard.",
+      "rationale_sha256": "782447c23f75cce1eb8f9abd870ac9b7d288182afe483298f1e11f3e016ef091"
+    }
+  ],
+  "review_receipt": {
+    "path": "wiki/review/2026-09-01-commentary-sample-failure-rejection-greater-hippias-43dd20921c86.md",
+    "sha256": "17caf08f5d11bfdfaffc3c5de551a7a373b30b586bf6d02799c84445c8822128"
+  }
+}

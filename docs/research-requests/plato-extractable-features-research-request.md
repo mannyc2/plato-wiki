@@ -1,4 +1,10 @@
-# Research Request: Extractable Literary Features In Plato
+# Historical Research Request: Extractable Literary Features In Plato
+
+> Archived pre-vNext research input. Its sample feature fields and requested
+> output shape are preserved as provenance, not as a live schema or extraction
+> instruction. Current source records and comparison ontology are governed by
+> `SPEC.md`, `docs/plato-wiki-extraction-protocol.md`, and
+> `docs/ontology-vnext.md`.
 
 You are a literary research agent with strong knowledge of Plato, Greek
 literature, dialogue form, philology, narratology, rhetoric, and ancient

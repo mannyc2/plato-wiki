@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "submission_id": "0009-structural-remediation-batch",
+  "lane": "commentary",
+  "kind": "structural-remediation-batch",
+  "scope": "greater-hippias",
+  "source_path": "scratch/commentary/structural-remediation/greater-hippias/audit-failures-batch.json",
+  "source_sha256": "ee020c0b459f122abf48956a28888e2911a860e11c0ff2147e9a02db1a2f67f1",
+  "target_path": "wiki/commentary/greater-hippias.md",
+  "target_sha256_before": "bb1bcd1b18050569e588f3ab909b602ce67a9279e5383f15507d1d7a3ca02ec7",
+  "target_sha256_after": "cca4b92ebe7d368fe6aa23eb75195ca69e86eb311882d51110221cce26789f9d",
+  "applied_at": "2026-09-01T12:03:20.729Z",
+  "applied_ids": [
+    "comm_greater-hippias_0002"
+  ],
+  "submission": {
+    "candidate": {
+      "schemaVersion": 1,
+      "dialogue": "greater-hippias",
+      "candidatePath": "scratch/commentary/structural-remediation/greater-hippias/audit-failures-batch.json",
+      "expectedLedgerSha256": "bb1bcd1b18050569e588f3ab909b602ce67a9279e5383f15507d1d7a3ca02ec7",
+      "expectedAttributionSha256": "78f33614ab7d74469a428e347acd1afdbe1fee8d43496fa121af23c73ccd1b51",
+      "expectedEnglishSha256": "958a9957de5681d6f68c2fc0cbd0ee30da1ba38ad47814ded13922ab13b33c8c",
+      "auditUnits": [
+        {
+          "unitKey": "01-281a-282b",
+          "sectionId": "comm_greater-hippias_0001",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/01-281a-282b.json",
+          "auditOutputSha256": "27c9964da962462145cd7a084b8df4e0bf8f54aa523238190e6ed9f1d2e7ee11",
+          "operations": []
+        },
+        {
+          "unitKey": "02-282c-283a",
+          "sectionId": "comm_greater-hippias_0002",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/02-282c-283a.json",
+          "auditOutputSha256": "7af576ce09ab07c6e4ee42b42d8fde18e5222600134bc5a6657e45485a48a348",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_greater-hippias_0002",
+              "rewriteResolution": "reject-original"
+            }
+          ]
+        },
+        {
+          "unitKey": "03-283b-284b",
+          "sectionId": "comm_greater-hippias_0003",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/03-283b-284b.json",
+          "auditOutputSha256": "19c56ce17d88c5a929525f6856fcf3f6261b524cfcd94791237ac9a46d2c862e",
+          "operations": []
+        },
+        {
+          "unitKey": "04-284c-285a",
+          "sectionId": "comm_greater-hippias_0004",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/04-284c-285a.json",
+          "auditOutputSha256": "6591fa7e8c097fbd49049203d941753759a101b0c35001da5565f6adc48dafeb",
+          "operations": []
+        },
+        {
+          "unitKey": "05-285b-286c",
+          "sectionId": "comm_greater-hippias_0005",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/05-285b-286c.json",
+          "auditOutputSha256": "8a4f4dd2144826eeadaf13d1df2190cbe08fd04abce9cf134b173db069932fd4",
+          "operations": []
+        },
+        {
+          "unitKey": "06-286d-287c",
+          "sectionId": "comm_greater-hippias_0006",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/06-286d-287c.json",
+          "auditOutputSha256": "0d2ba0e2e516e7eb83dc698be06203be717feb4e166ed916e964cf679f7553ab",
+          "operations": []
+        },
+        {
+          "unitKey": "07-287d-289c",
+          "sectionId": "comm_greater-hippias_0007",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/07-287d-289c.json",
+          "auditOutputSha256": "5b4e65e9e5711974b9a5dda7cb0914aa6ea7004f59bf66fbc144b1c64818c9b7",
+          "operations": []
+        },
+        {
+          "unitKey": "08-289d-291c",
+          "sectionId": "comm_greater-hippias_0008",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/08-289d-291c.json",
+          "auditOutputSha256": "dd530497ecfe095b2719db9da53ca446c1443d968cb5272f5f3a65b8eec08a46",
+          "operations": []
+        },
+        {
+          "unitKey": "09-291d-293c",
+          "sectionId": "comm_greater-hippias_0009",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/09-291d-293c.json",
+          "auditOutputSha256": "484fa754e300385951d06448bb4fb2086d830d19687a63582fdff4825d4acf95",
+          "operations": []
+        },
+        {
+          "unitKey": "10-293d-294e",
+          "sectionId": "comm_greater-hippias_0010",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/10-293d-294e.json",
+          "auditOutputSha256": "0e18d829bdc6ad4bfc85b691cd4343ac367448d70a0a800116e21dd732e2c96d",
+          "operations": []
+        },
+        {
+          "unitKey": "11-295a-297d",
+          "sectionId": "comm_greater-hippias_0011",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/11-295a-297d.json",
+          "auditOutputSha256": "cd589e3775f21fc631b3e396cde5f66de12f857a12b219a93ed8363fa67fca96",
+          "operations": []
+        },
+        {
+          "unitKey": "12-297e-298e",
+          "sectionId": "comm_greater-hippias_0012",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/12-297e-298e.json",
+          "auditOutputSha256": "cfb9da12ab35a07959687c8ecac2ed863a4760f66a3e58d993689fccb432f682",
+          "operations": []
+        },
+        {
+          "unitKey": "13-299a-300d",
+          "sectionId": "comm_greater-hippias_0013",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/13-299a-300d.json",
+          "auditOutputSha256": "e6935ca15c2b6fd884e5c0a7f1fab6e4bd51090a43a5f333d0c33d0257c259ab",
+          "operations": []
+        },
+        {
+          "unitKey": "14-300e-303b",
+          "sectionId": "comm_greater-hippias_0014",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/14-300e-303b.json",
+          "auditOutputSha256": "8425dd93bd741a708043553bb4ac6419627de59629654a452bc95e90b070bd0b",
+          "operations": []
+        },
+        {
+          "unitKey": "15-303c-304e",
+          "sectionId": "comm_greater-hippias_0015",
+          "auditOutputPath": "scratch/commentary/audits/greater-hippias/15-303c-304e.json",
+          "auditOutputSha256": "872ab1d914342a94d278276d29724b998b9788a30da94b3fa552dc1493655c7b",
+          "operations": []
+        }
+      ],
+      "reviewer": "ontology-vnext-release-delegated-luna-20260901",
+      "reviewedOn": "2026-09-01",
+      "rationale": "Bound to current independent Luna placement-removal and rewrite findings; reject the defective originals conservatively."
+    },
+    "audit_findings": [
+      {
+        "commentaryId": "comm_greater-hippias_0002",
+        "disposition": "rewrite",
+        "rewriteResolution": "reject-original"
+      }
+    ]
+  }
+}

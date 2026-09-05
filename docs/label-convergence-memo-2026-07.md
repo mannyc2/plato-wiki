@@ -1,5 +1,8 @@
 # Label Convergence Memo, 2026-07
 
+> Historical v1 adjudication record. The label-keyed ontology it evaluated was
+> retired by the ontology vNext hard cut and is not a peer representation.
+
 ## Context
 
 The corpus now has 27 dialogues and the current accepted-only lens reports

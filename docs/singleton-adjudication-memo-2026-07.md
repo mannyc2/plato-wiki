@@ -1,5 +1,8 @@
 # Singleton Adjudication Memo, 2026-07
 
+> Historical v1 adjudication record. Its label decisions remain provenance,
+> not an active ontology or alias layer.
+
 ## Context
 
 The label quality review produced a 320-entry stratified sample of uncovered singleton labels

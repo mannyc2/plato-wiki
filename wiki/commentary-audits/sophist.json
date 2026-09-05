@@ -3,11 +3,11 @@
   "dialogue": "sophist",
   "ledger": {
     "path": "wiki/commentary/sophist.md",
-    "sha256": "339d22be70c0e0fd5dd0a99d6b669f79b61ee9b52844a9cff3715c28d0e21960"
+    "sha256": "dc81405b006f6a89e3b6d8e08d812573bcf2ad8ca6173bb0eea7adbb72d00af7"
   },
   "protocol": {
     "path": "docs/commentary-protocol.md",
-    "sha256": "5f5e6f47f2d39cb42dd8941762ca1b82b4c1371801576f9ec7875e76286e1a13"
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
   },
   "authoring": {
     "model": "gpt-5.6-luna",
@@ -17,9 +17,9 @@
     {
       "unit_key": "01-216a-218e",
       "section_id": "comm_sophist_0001",
-      "audit_brief_sha256": "81773f6a91f5334afe3324c268043b69cebe564207ff29cb15cd85cc1624b9c1",
+      "audit_brief_sha256": "4692879b1f56ce0b5247304e81887c3ab6913d15c3f0aae5a54fa2edb021244f",
       "output_path": "scratch/commentary/audits/sophist/01-216a-218e.json",
-      "output_sha256": "da358761b7ed52ba6b7b0efcfc954beae7e5dd5754f4ecee397d4c11bb4be8d2",
+      "output_sha256": "b784084195951e5c57841a22456f829847d35a170c8232daf865dfa5f44aa273",
       "output": {
         "schema_version": 3,
         "dialogue": "sophist",
@@ -30,34 +30,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_sophist_0011",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately frames the shift to the angler and the method still being tested; after Theaetetus’ “Yes,” it prepares the Stranger’s method without disrupting the exchange."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "02-219a-221c",
       "section_id": "comm_sophist_0002",
-      "audit_brief_sha256": "4cae1ffa1ad246c898c9063459d19c591fd7971c17ecd1a0cb372a43feb7c58f",
+      "audit_brief_sha256": "b3046abbf846c72e1a06918c28400e24817179820fd72e004eb0163b8680b7a7",
       "output_path": "scratch/commentary/audits/sophist/02-219a-221c.json",
-      "output_sha256": "523c2fb2a5e77ef0c0a960941f8b83283ba86fe9b321ca98fa9dad54cd60605d",
+      "output_sha256": "435af7522bb827e467256e6e50c4d1b011b2ae5e67c461c90ea7c60bfed3bb52",
       "output": {
         "schema_version": 3,
         "dialogue": "sophist",
@@ -85,7 +66,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Interpretive framing matches the angler method-search and final handoff; the 57-word section is focused and clear. It sits between the setup and the 219a method inquiry without disrupting either."
+            "rationale": "The commentary accurately frames the angler as a modest methodological rehearsal and the closing handoff as a test of method; the edge falls between the setup and its execution."
           }
         ]
       }
@@ -93,7 +74,7 @@
     {
       "unit_key": "03-221d-231c",
       "section_id": "comm_sophist_0003",
-      "audit_brief_sha256": "2d5edea904784548a51bf8a5620866d663e6d5d6759fd9748fbbc599a3cac55e",
+      "audit_brief_sha256": "6e487855e15e2d478a95ac14cddc7d5b0b7c119566d243a5775440635f90679b",
       "output_path": "scratch/commentary/audits/sophist/03-221d-231c.json",
       "output_sha256": "a6f29cb7894bd42636cf79eaf5909dc69662e3066dfae773b6d9618e8ea048a3",
       "output": {
@@ -112,9 +93,9 @@
     {
       "unit_key": "04-231d-236d",
       "section_id": "comm_sophist_0004",
-      "audit_brief_sha256": "ce6db242b804cec3528e3f31cd6412ea8352d2abd59bf3d1522fff305422adb8",
+      "audit_brief_sha256": "4a62e5a44d83af6ae57f883102940837954f5801ffb629fbfecb5201dd96264c",
       "output_path": "scratch/commentary/audits/sophist/04-231d-236d.json",
-      "output_sha256": "b998f93b6131443ea0bfd700f921b9a92194488a612fdeac6f90de48a4be98a5",
+      "output_sha256": "78ceb83b6b266965b46f2ebdc697d3c6bf89ce443e21d880b1f21e6c06e220de",
       "output": {
         "schema_version": 3,
         "dialogue": "sophist",
@@ -125,34 +106,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_sophist_0004",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately interprets the source’s unfavorable viewpoint, likeness/appearance contrast, and unsettled sophist classification; the section-level edge cleanly precedes the enumeration."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "05-236e-239c",
       "section_id": "comm_sophist_0005",
-      "audit_brief_sha256": "e406c1be4b96c242c0d82e0bb5106ff6e01e26bd151426325f68b43d6b3223e5",
+      "audit_brief_sha256": "3790711b0ed2a28015733b761853a5783aa6f253ddc4b18938cb2d4fe44c720f",
       "output_path": "scratch/commentary/audits/sophist/05-236e-239c.json",
-      "output_sha256": "3649e91915d1f3c3508d0eb1d066177ee4dd469187e03bf5dafbc5fa17dc0b28",
+      "output_sha256": "11d773ee187573f8e6d49ef2ab104c870ba1188258a8f5f75e72333a993ca525",
       "output": {
         "schema_version": 3,
         "dialogue": "sophist",
@@ -180,7 +142,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The interpretation accurately tracks the passage’s self-undermining language; placement follows the opening statement and precedes Theaetetus’ question without disrupting the exchange."
+            "rationale": "The interpretive synthesis is supported by the cited claims, adds one clear thesis, and follows a complete opening turn before Theaetetus’ next turn."
           }
         ]
       }
@@ -188,7 +150,7 @@
     {
       "unit_key": "06-239d-242b",
       "section_id": "comm_sophist_0006",
-      "audit_brief_sha256": "8c0160e0295c9e543c61833cde7b2810e0f78b38a616df64db2a63c136800ede",
+      "audit_brief_sha256": "d1bad55e5d4e7eaaf1d70c57f6d81f0d6cd1740b641dae704460a0bf16e4f49c",
       "output_path": "scratch/commentary/audits/sophist/06-239d-242b.json",
       "output_sha256": "ad76666735926075d7887745bb8aa69e965045d5db0b937f47cda1953191284c",
       "output": {
@@ -207,7 +169,7 @@
     {
       "unit_key": "07-242c-251a",
       "section_id": "comm_sophist_0007",
-      "audit_brief_sha256": "187890f5cc2a6d291ba43869bcdbab6ab76eb0a8dbf72799d130839e4a124939",
+      "audit_brief_sha256": "e6c09ddb900d5e93bb7b8142915d570ac1bae530e7a79eaeded77630b271599a",
       "output_path": "scratch/commentary/audits/sophist/07-242c-251a.json",
       "output_sha256": "7e6d0c34883e8d15e76b0acc17822d847a7e6e90ccb3055df02a98d940d03fc4",
       "output": {
@@ -226,9 +188,9 @@
     {
       "unit_key": "08-251b-259e",
       "section_id": "comm_sophist_0008",
-      "audit_brief_sha256": "a52215085c8a3fd6e89753b7fb223794c7546302ca876c28b269bcf328e11c00",
+      "audit_brief_sha256": "6d84fbe7e160e1150b115bfa75a4cb7d115bd851782eeae9d632c39f80f7e2e0",
       "output_path": "scratch/commentary/audits/sophist/08-251b-259e.json",
-      "output_sha256": "bad3db733f5ef1c55a784ac8ae80f5edf0ca793e654e3b626182e1d4cd116dcc",
+      "output_sha256": "964e5114a78f8e845928cc0322753229e7e46ae163b8c1e608a1e80c19d9929c",
       "output": {
         "schema_version": 3,
         "dialogue": "sophist",
@@ -239,34 +201,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_sophist_0008",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Interpretive method claim is grounded in the section's argument; the 55-word setup has one clear job and lands at a complete turn edge before Theaetetus replies."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "09-260a-264b",
       "section_id": "comm_sophist_0009",
-      "audit_brief_sha256": "1b49ade447711659408bd823bba632ee8f09e7ead79d16fbf2b8165787718ffe",
+      "audit_brief_sha256": "317fe1fcd21cdfdde19f412bfa92e6abd733ec204cbeeac765657bd00c82e9d1",
       "output_path": "scratch/commentary/audits/sophist/09-260a-264b.json",
-      "output_sha256": "34ad959e41e545b3c891fc9385af64b6d84dddc23e64d90d4a6b69b8f9ae8976",
+      "output_sha256": "1ea29c42882bb0f271caa1447e2c835bb3756998defee7929df9ef43c8b2d1a8",
       "output": {
         "schema_version": 3,
         "dialogue": "sophist",
@@ -294,7 +237,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The interpretation tracks the passage’s provisional strategy and conceptual aim, adds orientation beyond recap, and sits at a clean section boundary before the new inquiry."
+            "rationale": "The interpretation matches the source and cited claims, adds a clear dramatic frame, and sits between a completed prior exchange and the section’s opening sentence."
           }
         ]
       }
@@ -302,7 +245,7 @@
     {
       "unit_key": "10-264c-268d",
       "section_id": "comm_sophist_0010",
-      "audit_brief_sha256": "5edfe139a4d96271040f70569b29777d78cab3bcb5fbbe49045b54a3de7469c7",
+      "audit_brief_sha256": "a51e4a8c9215c5fe84e085ccdb7fe110125f895fdee0378a888382663e07a1d8",
       "output_path": "scratch/commentary/audits/sophist/10-264c-268d.json",
       "output_sha256": "354c0222298b0b648ba4f3ee7b036a65e98366efe0a724cd52cb75386e4da707",
       "output": {
@@ -321,20 +264,17 @@
   ],
   "acceptance": {
     "decision": "accepted",
-    "reviewer": "manifest-batch-3-delegated-luna-reviewer-20260823",
-    "reviewed_on": "2026-08-23",
-    "rationale": "Fresh independent sophist quality sample of all active accepted commentary IDs in ledger order; inspected prose, title, placement, Greek source slice, cited accepted evidence, and current schema-v3 audit outputs; no defects found.",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-sophist-e30b2bcd0d65",
+    "reviewed_on": "2026-09-01",
+    "rationale": "All three sampled blocks are independently supported by their cited evidence, accurately interpret their exact spans, use concise spoken prose, and occupy complete, contextually appropriate playback edges.",
     "sampled_commentary_ids": [
       "comm_sophist_0002",
-      "comm_sophist_0004",
       "comm_sophist_0005",
-      "comm_sophist_0008",
-      "comm_sophist_0009",
-      "comm_sophist_0011"
+      "comm_sophist_0009"
     ],
     "review_note": {
-      "path": "wiki/review/2026-08-23-commentary-quality-sophist-luna-sample.md",
-      "sha256": "2875f17e5dd81bc1fdec4ff8f10739a4eaac5cceb2350cdeb9c6abbe7613a54c"
+      "path": "wiki/review/2026-09-01-commentary-quality-sophist-luna-sample.md",
+      "sha256": "6bde621627e9ef37fd3e91c5a74b625a9038fad346bddd15c6a8d0784f92f261"
     }
   }
 }

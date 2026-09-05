@@ -1,5 +1,10 @@
 # Straussian Experiment Diagnosis (2026-07)
 
+> Historical v1 diagnosis, retained as snapshot-bound provenance. References to
+> label families, label-keyed dossiers, or missing v1 layers describe the
+> 2026-07 corpus and are not current ontology contracts. See
+> `docs/ontology-vnext.md` for the active comparison model.
+
 Status: analysis artifact, 2026-07-19. Read-only diagnosis of the unfinished founding
 experiment, produced under the analysis brief of 2026-07-19. No repository data, code, or
 corpus state was modified in producing it. Planning artifacts derived from this diagnosis

@@ -3,11 +3,11 @@
   "dialogue": "euthydemus",
   "ledger": {
     "path": "wiki/commentary/euthydemus.md",
-    "sha256": "0a739a896654c580e28058b151868b738de806a815c1b18ba657c9e2f996853f"
+    "sha256": "8a469ed8f4a3c939b8ed9aa4458a3a512607d1322f02815347af77ec917aa606"
   },
   "protocol": {
     "path": "docs/commentary-protocol.md",
-    "sha256": "5f5e6f47f2d39cb42dd8941762ca1b82b4c1371801576f9ec7875e76286e1a13"
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
   },
   "authoring": {
     "model": "gpt-5.6-luna",
@@ -17,9 +17,9 @@
     {
       "unit_key": "01-271a-272e",
       "section_id": "comm_euthydemus_0001",
-      "audit_brief_sha256": "9069030390f80e4acea3624caaca1ca5a082f16c376648c7ec896777cfff9fc6",
+      "audit_brief_sha256": "a0ebcdb51a7e60174a2d6ee591d88111e36125867c52bd9a490f7739a93b1984",
       "output_path": "scratch/commentary/audits/euthydemus/01-271a-272e.json",
-      "output_sha256": "776e9a5fc64582573cddae1fa72a3ccefc556f4424fb008f57cc6ca37452394a",
+      "output_sha256": "8e3eef176568653c912a633b7ee6f051ce5f9ed39039a8afd53e224e405d7938",
       "output": {
         "schema_version": 3,
         "dialogue": "euthydemus",
@@ -47,7 +47,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames Socrates’ reported portrait and preserves its uncertainty; the accepted observation supports the truth-indifferent refutation. Start-of-source placement cleanly prepares the dialogue."
+            "rationale": "Accurately frames Socrates’ reported portrait, preserves its truth-indifferent scope, and adds interpretive value. At the edge, nothing precedes it; 271a begins immediately after without disrupting flow."
           }
         ]
       }
@@ -55,7 +55,7 @@
     {
       "unit_key": "02-273a-274e",
       "section_id": "comm_euthydemus_0002",
-      "audit_brief_sha256": "92f57cbcebe52e80e730063bcc593030debafa3460fa9d8a8e476faba0d2ac65",
+      "audit_brief_sha256": "b2afda31395b7177a6c51399a6163e0e0b4f1f66ffc0d85e19dc125f759ba6fc",
       "output_path": "scratch/commentary/audits/euthydemus/02-273a-274e.json",
       "output_sha256": "065347da9fa8d0df8ff02cbcac6cffc1b350d1a37dba206902209d9980e92a39",
       "output": {
@@ -74,7 +74,7 @@
     {
       "unit_key": "03-275a-277c",
       "section_id": "comm_euthydemus_0003",
-      "audit_brief_sha256": "ff912408492bb33bbd54e5e1118bd753b06aaf89d18440876ec0b4aa05c6e3e2",
+      "audit_brief_sha256": "d466a8bd5970e6e66a3e349e1bcd36a296f5fab803a8284f3162b78f490a025f",
       "output_path": "scratch/commentary/audits/euthydemus/03-275a-277c.json",
       "output_sha256": "f28509c29b13e71d875b0e41645371c846dc75bed87510c9aaeea17b24980db0",
       "output": {
@@ -93,9 +93,9 @@
     {
       "unit_key": "04-277d-278e",
       "section_id": "comm_euthydemus_0004",
-      "audit_brief_sha256": "2aee3d06615f8319423de87ee31e70ca2487f05c259c5e6c744d1450b94c982d",
+      "audit_brief_sha256": "641f719d4a0ef237f0ae7a9a0d3a41a63f774dbdfbd94c14f78f1580ecee1b37",
       "output_path": "scratch/commentary/audits/euthydemus/04-277d-278e.json",
-      "output_sha256": "cad5eb8b2b4800df72a000e3b1dbcf8dc8ec20d1d1f55a214c4ed51e7496d83f",
+      "output_sha256": "1e5c73967bd653e0fcff5cc8302f54a7f5c9784bc59caebdb704689f494e33ad",
       "output": {
         "schema_version": 3,
         "dialogue": "euthydemus",
@@ -123,7 +123,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The cited observation supports the two senses of manthanein, and the interpretation fits Socrates’ contrast. The edge follows the initiation setup and precedes Socrates’ word analysis."
+            "rationale": "Accurately identifies the equivocation and distinguishes wordplay from understanding, with interpretation marked as such. It follows the initiation imagery and directly prepares Socrates’ examination."
           }
         ]
       }
@@ -131,9 +131,9 @@
     {
       "unit_key": "05-279a-282e",
       "section_id": "comm_euthydemus_0005",
-      "audit_brief_sha256": "a94d3ce25422b837eabbba1348db4fc2cfb75ca2855793adca58f308a961b9e4",
+      "audit_brief_sha256": "df9fb7bece7576e0240a628da05ab434bf48169b5bc40bcac0676cfd9650c928",
       "output_path": "scratch/commentary/audits/euthydemus/05-279a-282e.json",
-      "output_sha256": "2e9129c45a9d986539a0348fb5ebe3afa1a2360b33d086f53d640093a0e64e7c",
+      "output_sha256": "408dcc46881edca34848601519363494e27f567a77bb56ed0777f8324e0c41d3",
       "output": {
         "schema_version": 3,
         "dialogue": "euthydemus",
@@ -144,34 +144,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_euthydemus_0005",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The body accurately frames the passage's contrast between wisdom and the sophists' display, adds orientation beyond recap, and begins at a clean edge before the 279a exchange."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "06-283a-284e",
       "section_id": "comm_euthydemus_0006",
-      "audit_brief_sha256": "01f8ac5bd714dd18f2042da9125dae487e3d493230b4aed9f0fcba889bb8b10b",
+      "audit_brief_sha256": "a9abc29c04ebbeb5612ed60b8391da876d134886883b4ec95ed886b7be23e9dd",
       "output_path": "scratch/commentary/audits/euthydemus/06-283a-284e.json",
-      "output_sha256": "fceadc2bb336a1812e3fcf685617fd498f9fd5d4636c1d79491a3476685a5a80",
+      "output_sha256": "5a877338fce4f60f3f14422955012dba5cbf9c03682af723e945f4bba65056e5",
       "output": {
         "schema_version": 3,
         "dialogue": "euthydemus",
@@ -182,34 +163,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_euthydemus_0006",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately identifies Dionysodorus’s overreaching inference and Ctesippus’s rejection. The edge follows “wise and good” and precedes Socrates’ narration, preserving the setup."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "07-285a-286e",
       "section_id": "comm_euthydemus_0007",
-      "audit_brief_sha256": "924c6f30234e19a017730c75dc14e7413488ee558618c9838228b50cd1a563b6",
+      "audit_brief_sha256": "b5cf5d35faf6b7c0248a8391973a9b0cad22eba99a991998b3dcd7ff8a49a782",
       "output_path": "scratch/commentary/audits/euthydemus/07-285a-286e.json",
-      "output_sha256": "1fab4c36be25a0090cf47a5df6cd91fc889b78aae89c91ff0707978fcbbe7a2a",
+      "output_sha256": "0cd91bfc8d12a04fad52329b16dd919c8e938cb5cbe00e1480d031d7bd0ef904",
       "output": {
         "schema_version": 3,
         "dialogue": "euthydemus",
@@ -237,7 +199,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The commentary accurately frames the reductio and its comic consequence, cites both accepted observations, and lands before the formal argument without splitting the exchange."
+            "rationale": "The voiced interpretation accurately tracks the reductio and the brothers’ refutation problem; it is concise, clear aloud, and sits between the setup exchange and Socrates’ argument."
           }
         ]
       }
@@ -245,7 +207,7 @@
     {
       "unit_key": "08-287a-288d",
       "section_id": "comm_euthydemus_0008",
-      "audit_brief_sha256": "641060858ea369cf43956b07b9e0efa93d848686575dbc134b779aaf553ef3ce",
+      "audit_brief_sha256": "4956e32d54ab97cb1090056c589e6f01d308a86ee86541da97d465ad70a96d56",
       "output_path": "scratch/commentary/audits/euthydemus/08-287a-288d.json",
       "output_sha256": "f46a46789442be7efb7b1fb8c001fe20269e994b2ac5ceb33c3cdd34023bc056",
       "output": {
@@ -264,9 +226,9 @@
     {
       "unit_key": "09-288e-290e",
       "section_id": "comm_euthydemus_0009",
-      "audit_brief_sha256": "34a6a1c038ba7a10b9eb8bc595d097aad4c932cfbcfa68b4d7b09b0c722aa174",
+      "audit_brief_sha256": "419cd901197f0dfc90a60e647c7e3a55097545471f14f35b1b8ca3056c496d31",
       "output_path": "scratch/commentary/audits/euthydemus/09-288e-290e.json",
-      "output_sha256": "dc57b1c2c8f5707e8695bdf1baa51166350ea6fd0909b2431b2d142f45f22d4f",
+      "output_sha256": "c5b1475451442fa9fdd1d1f877132ea4f13a0300c7c269a5af057550268a5413",
       "output": {
         "schema_version": 3,
         "dialogue": "euthydemus",
@@ -277,34 +239,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_euthydemus_0009",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately condenses Socrates’ move from acquiring goods to knowing their use. The edge follows the gold question-answer and precedes Socrates’ correction, preserving the dramatic turn."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "10-291a-293a",
       "section_id": "comm_euthydemus_0010",
-      "audit_brief_sha256": "4a72b3a56cf6be1ba8b80b79f57bc158435bdde6dae1496c04fa87ae49b8d90f",
+      "audit_brief_sha256": "f370b376a454a95bbe9da55c775a9f42ce30a3372141b7a529992b81772f092a",
       "output_path": "scratch/commentary/audits/euthydemus/10-291a-293a.json",
-      "output_sha256": "3a9fbc4fed1843e63b039b2b862328b29d32702dd8a77a522692843de69565bf",
+      "output_sha256": "02bce6d4e3f296ad757f6a0ec00035f378eb50a7a414fd5e1594c10981edc7c5",
       "output": {
         "schema_version": 3,
         "dialogue": "euthydemus",
@@ -332,7 +275,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames the unresolved search and reported aporia, adds orientation beyond recap, and sits between a completed exchange before and a new sentence after."
+            "rationale": "Accurately frames the kingly-art inquiry as unresolved aporia, supported by the source and cited observation; it is concise, clear aloud, and placed between complete exchanges before 291a."
           }
         ]
       }
@@ -340,9 +283,9 @@
     {
       "unit_key": "11-293b-296d",
       "section_id": "comm_euthydemus_0011",
-      "audit_brief_sha256": "b4e0323efb26fd9c7046a35a84ebdfe5323822a523e7699694f1f5e8491ae53f",
+      "audit_brief_sha256": "2f47f415e424a61558df317f912b8cff5f2eff843323db1313d4698416aabbc4",
       "output_path": "scratch/commentary/audits/euthydemus/11-293b-296d.json",
-      "output_sha256": "433c10a3baee209373f460b2ed75063e3cc35933db355bb2ea9d79991ee71367",
+      "output_sha256": "d768a3108cc63cb0a8d49bcbc7dfca1cede05378e226b265204294a5f273eada",
       "output": {
         "schema_version": 3,
         "dialogue": "euthydemus",
@@ -353,32 +296,13 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_euthydemus_0011",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately identifies the qualification-to-admission maneuver and its contested premise; the edge falls between complete exchanges, before Socrates extends the claim to everything."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "12-296e-298e",
       "section_id": "comm_euthydemus_0012",
-      "audit_brief_sha256": "833e2e50cc084982aeb4ed0caabd99bdc17350ad9e4242feac7604b831617def",
+      "audit_brief_sha256": "85619a248fb12948a1c9ff895e869e95c35a91c1386ef8d9d7db042ccd419494",
       "output_path": "scratch/commentary/audits/euthydemus/12-296e-298e.json",
       "output_sha256": "d007b2d91a5a712d039b643b8a5401b1e1f96874fdaacc0471eb9129510c39af",
       "output": {
@@ -397,9 +321,9 @@
     {
       "unit_key": "13-299a-300d",
       "section_id": "comm_euthydemus_0013",
-      "audit_brief_sha256": "5c4d83347a8751318b3b33d9d55a6a0e6d51765a79f2e96e49fbdd69d08847d9",
+      "audit_brief_sha256": "e278b965e8bcef04c9ce1c8724573da88c6d0bb02740375b229bcde3b0b2f174",
       "output_path": "scratch/commentary/audits/euthydemus/13-299a-300d.json",
-      "output_sha256": "d210956ec4473137c1036d12e8957ffb38b132fae6538fad9f8d593ed0fa2fd3",
+      "output_sha256": "e544d981a0d07cea5bfcb8031ad905d968750267e6a7e9f1eec1ca406ebca729",
       "output": {
         "schema_version": 3,
         "dialogue": "euthydemus",
@@ -427,7 +351,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The commentary accurately identifies the condition-stripping move and its absurd quantitative result. It sits after the dog exchange and before Socrates’ new speech, a clean dramatic edge."
+            "rationale": "The block accurately identifies the passage’s escalation from conditional usefulness to absurd quantity, with accepted support. It sits between complete exchanges and clearly prepares the next passage."
           }
         ]
       }
@@ -435,7 +359,7 @@
     {
       "unit_key": "14-300e-302e",
       "section_id": "comm_euthydemus_0014",
-      "audit_brief_sha256": "53010670a84671e871b667339f88d12c5cea4f211eb7ceee8a7a67c3fa26b3ac",
+      "audit_brief_sha256": "3e6159335d6a1f0615a324830cd3486fccdc816f966d2f8d962398a7a54f2770",
       "output_path": "scratch/commentary/audits/euthydemus/14-300e-302e.json",
       "output_sha256": "5b13f57e35fbcca264947abe1fda2afa167b4d2d40ff4c343dfa125370198ad7",
       "output": {
@@ -454,7 +378,7 @@
     {
       "unit_key": "15-303a-304b",
       "section_id": "comm_euthydemus_0015",
-      "audit_brief_sha256": "115bde973a18d37b1aa8337a282be6aa18fc7d2167317e89ee1f0b1221010dd1",
+      "audit_brief_sha256": "df0fa178eada06e705945d04679bba4d8a068fceea07d66baf9be1b7cfa088b9",
       "output_path": "scratch/commentary/audits/euthydemus/15-303a-304b.json",
       "output_sha256": "c84949713a7b795ba29178e63c84abe049769b56e35379c22190672c1c1113cf",
       "output": {
@@ -473,9 +397,9 @@
     {
       "unit_key": "16-304c-306d",
       "section_id": "comm_euthydemus_0016",
-      "audit_brief_sha256": "66c22921ee165d2832e3ff050fc1869021fff37f93c7f23d5f5cd61bf0916bdf",
+      "audit_brief_sha256": "9c0707d0b1605abfb15c855736d606766f36b3f35b7787c6f364910bfb3c7437",
       "output_path": "scratch/commentary/audits/euthydemus/16-304c-306d.json",
-      "output_sha256": "a5ef86482b6482e9e5534e34e2e80520e11947ee7e49a435ef4ea8c69f926493",
+      "output_sha256": "ed642a8e1ff0a78ec52694ef47b14cecd790c1306c8d20234288da2090b9976e",
       "output": {
         "schema_version": 3,
         "dialogue": "euthydemus",
@@ -486,38 +410,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_euthydemus_0016",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The section accurately frames the reported critic, preserves the second-level narration, and returns to the sons' differing ages and educational need; citations and edge are sound."
-          }
-        ]
-      },
-      "provenance": {
-        "path": "wiki/submissions/commentary-audit/euthydemus/0001-delegated-audit-16-304c-306d.json",
-        "sha256": "923c3b13de20a383dea3b1b3bbf817b91416d9064128c447ccdf0be5ba7ab503"
+        "blocks": []
       }
     },
     {
       "unit_key": "17-306e-307c",
       "section_id": "comm_euthydemus_0017",
-      "audit_brief_sha256": "78a5bbe9364c03d02af933e3f6b2e4a50c6145f017641296348f3044c3b433b9",
+      "audit_brief_sha256": "78e65c9ee0d5bfbe6b4078585a91e0a8a94b28f315544e095337defb43e15ac3",
       "output_path": "scratch/commentary/audits/euthydemus/17-306e-307c.json",
-      "output_sha256": "9f9689a55d1cce23e07a389a6a8136c0744646c433986c0c9d1ff5cb70957c10",
+      "output_sha256": "1f142759a6a6d384ee4a0a62a6571ce38d5f1add8e9f89cae4aa095e1611fe1e",
       "output": {
         "schema_version": 3,
         "dialogue": "euthydemus",
@@ -545,7 +446,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames Crito’s concern and Socrates’ test of philosophy; it follows Crito’s inability to recommend philosophy and precedes Socrates’ poor-practitioner analogy."
+            "rationale": "Accurately frames Crito’s concern and Socrates’ test of philosophy. At the edge, Crito’s speech ends before it and Socrates’ reply begins after it; the interruption prepares the exchange."
           }
         ]
       }
@@ -553,25 +454,20 @@
   ],
   "acceptance": {
     "decision": "accepted",
-    "reviewer": "manifest-batch-1-delegated-luna-reviewer-20260823",
-    "reviewed_on": "2026-08-23",
-    "rationale": "Independent Luna source, accepted-evidence, and placement sample passed for the current Euthydemus ledger.",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-euthydemus-7a0d09d0bba3",
+    "reviewed_on": "2026-09-01",
+    "rationale": "All six blocks are evidence-supported, correctly anchored, well placed at complete exchange boundaries, and concise enough to add clear spoken value without documented flow or repetition defects.",
     "sampled_commentary_ids": [
       "comm_euthydemus_0001",
       "comm_euthydemus_0004",
-      "comm_euthydemus_0005",
-      "comm_euthydemus_0006",
       "comm_euthydemus_0007",
-      "comm_euthydemus_0009",
       "comm_euthydemus_0010",
-      "comm_euthydemus_0011",
       "comm_euthydemus_0013",
-      "comm_euthydemus_0016",
       "comm_euthydemus_0017"
     ],
     "review_note": {
-      "path": "wiki/review/2026-08-23-commentary-quality-euthydemus-luna-sample.md",
-      "sha256": "cf9cb6b15fc6ffa94a0fceb2b0ea5dd53076691f200bf6bd7ce95cd26d537ac1"
+      "path": "wiki/review/2026-09-01-commentary-quality-euthydemus-luna-sample.md",
+      "sha256": "b682f4e3efceb531ef0ede817bc5eb3572be0a489784235730d8d55606713551"
     }
   }
 }

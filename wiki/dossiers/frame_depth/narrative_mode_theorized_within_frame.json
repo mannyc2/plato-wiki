@@ -1,0 +1,173 @@
+{
+  "accepted_observations": 3,
+  "axis_id": "axis_sha256_a621c9ee78202ffb4f5261045688f196ca7a93efcfb28446a6dbe406eb6832e3",
+  "axis_key": "frame_depth",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record narrative mode theorized within frame within the frame depth axis?",
+  "concept_id": "concept_sha256_f5aa5345ee85b031c0956608aa6eddee2d573607032d49721ec5efbf8e813c0b",
+  "concept_key": "narrative_mode_theorized_within_frame",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_9d2136162f2ade91156f55f3f672177529ee29bc75fc2bfa76dd1a987dcbf2d0",
+      "conceptKey": "definition_established_by_assent_chain",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_73be147bc9b536edc5ec6f3ddd77d1584a4253a892a9164b8600dd7463aed95e",
+      "conceptKey": "explicit_procedure_control",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 1,
+  "dimension": "dramatic_context",
+  "instance_ids": [
+    "obs_republic_0086",
+    "obs_republic_0088",
+    "obs_republic_0089"
+  ],
+  "instances": [
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0086",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "393b-393e",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0088",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "393b-393e",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0089",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "394a-394d",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 3,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_f5aa5345ee85b031c0956608aa6eddee2d573607032d49721ec5efbf8e813c0b",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

@@ -2,8 +2,7 @@ import { existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { getRepoRoot } from "../paths.js";
 import { fieldValue } from "./observation-ledger.js";
-
-const YAML_BLOCK_RE = /```yaml\n([\s\S]*?)\n```/gu;
+import { fencedYamlRecordBlocks } from "./fenced-record.js";
 
 export type CommentaryMarkdownBlock = {
   content: string;
@@ -13,19 +12,14 @@ export type CommentaryMarkdownBlock = {
   commentaryId: string | undefined;
 };
 
-function countLinesBefore(content: string, index: number) {
-  return content.slice(0, index).split("\n").length;
-}
-
 export function commentaryMarkdownBlocks(content: string): CommentaryMarkdownBlock[] {
-  return [...content.matchAll(YAML_BLOCK_RE)].map((match, index) => {
-    const block = match[1] ?? "";
+  return fencedYamlRecordBlocks(content).map((block) => {
     return {
-      content: block,
-      fullMatch: match[0],
-      startLine: countLinesBefore(content, match.index ?? 0) + 1,
-      index,
-      commentaryId: fieldValue(block, "commentary_id"),
+      content: block.content,
+      fullMatch: block.fullMatch,
+      startLine: block.startLine,
+      index: block.index,
+      commentaryId: fieldValue(block.content, "commentary_id"),
     };
   });
 }

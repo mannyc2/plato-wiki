@@ -1,0 +1,37 @@
+# Commentary quality-audit acceptance
+
+dialogue: laws
+decision: accepted
+reviewer: commentary-audit-delegated-luna-reviewer-laws-68bf9d416f05
+reviewed_on: 2026-09-01
+rationale: All 15 sampled blocks are independently supported in evidence, placement, and spoken-audio quality; each playback edge is clean and no concrete defect warrants failure.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sample_evidence_path: wiki/submissions/commentary-audit-sample/laws/e8ea3030e6a3270498e9cc9c831ff34f001ad2a04472260a3eb60b734a13f6f4.json
+sample_evidence_sha256: e8ea3030e6a3270498e9cc9c831ff34f001ad2a04472260a3eb60b734a13f6f4
+sample_input_sha256: 4fcf18de6e524807c5eef0b0b92dbfbb482dbf01a1453c011da44dc9506e52f2
+pending_manifest_sha256: 68bf9d416f05c33ed4a1b466e18e002ed03c4c76fa6072573aa99177623d8901
+commentary_ledger_sha256: 4e145199fac67000d662b527730f82dba76a261a38150bf3c498517e65afeba4
+sample_packet_sha256: 9ea0ba67b5a8cd58b2329423e5ef64e660f75b28f59ddbf7be16d8a8f64366d6
+sample_output_sha256: a886fa67b2f8c3c49f8661128fa89da0c0c7be44aea4909a2bfae868e8ecaecb
+sample_state_sha256: 2f516068079b038e3065098fefd2eae05643fcb96f7e14627850d15843fca109
+codex_execution_sha256: 179bcbfab8196a839822655d0c448f712c054f015bb8ed608032f0919518c6f5
+output_schema_sha256: 4ddcef124c32448bc9a205a2a73a1152f934499d821a942c395e243383c7609e
+model_catalog_sha256: a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724
+sample_prompt_sha256: 2499df7a7acf97b430190998bbdfc8cfab09b597fe0bb74d2e1b1b319fc163a6
+sampled_commentary_ids:
+- comm_laws_0001
+- comm_laws_0004
+- comm_laws_0006
+- comm_laws_0009
+- comm_laws_0018
+- comm_laws_0029
+- comm_laws_0032
+- comm_laws_0038
+- comm_laws_0041
+- comm_laws_0044
+- comm_laws_0050
+- comm_laws_0053
+- comm_laws_0061
+- comm_laws_0063
+- comm_laws_0068

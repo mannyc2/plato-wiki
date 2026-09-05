@@ -1,0 +1,35 @@
+# Commentary quality-audit acceptance
+
+dialogue: symposium
+decision: accepted
+reviewer: commentary-audit-delegated-luna-reviewer-symposium-9eb8771d9b7b
+reviewed_on: 2026-09-01
+rationale: All sampled blocks are independently supported by their exact source, accepted evidence, resolved playback edges, and spoken-quality checks; no concrete evidence, placement, or listening defect appears.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sample_evidence_path: wiki/submissions/commentary-audit-sample/symposium/c7397386caac409216c2baa68b01ba30a2e4349c71b2e404160ac50fb4ed6133.json
+sample_evidence_sha256: c7397386caac409216c2baa68b01ba30a2e4349c71b2e404160ac50fb4ed6133
+sample_input_sha256: 081b20d5d9347f1c3bdd18be16952927cf6f69d54e5735e31050749f0df39062
+pending_manifest_sha256: 9eb8771d9b7b71a3ef172c2360d4a36c1b7becb114a9c0a0ce2cf97b6e83ae6a
+commentary_ledger_sha256: 39b693bf21558498b57d4245a4c3c67cf342cfbeebafb4c383362d345a742e77
+sample_packet_sha256: 5d7b8774160b8547e888eaafcc31b694eeff436fbbc400910dba0e096a4baa78
+sample_output_sha256: 28d9b8b9293644915758e92229ee01cf0cb4e5e95bac8f21a774095c6211b9d4
+sample_state_sha256: 4d13518d479d7b168a7bf5c8f0fcfd332f270fbd43d4e467a8554f7d7e45eb50
+codex_execution_sha256: ee0999250b33d40ea4ba23f5d8195fade8101a109781784c06aa59fe9efe3df5
+output_schema_sha256: 7ec67edbbbb92db3952919fc62372e591725e76f1bfcd2242877dfaeac59e706
+model_catalog_sha256: a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724
+sample_prompt_sha256: e7887d4ed91726c5e105694672df4da27b4894b2f8b064dd2322b44fc7258730
+sampled_commentary_ids:
+- comm_symposium_0003
+- comm_symposium_0004
+- comm_symposium_0006
+- comm_symposium_0013
+- comm_symposium_0016
+- comm_symposium_0020
+- comm_symposium_0032
+- comm_symposium_0036
+- comm_symposium_0042
+- comm_symposium_0048
+- comm_symposium_0064
+- comm_symposium_0065
+- comm_symposium_0071

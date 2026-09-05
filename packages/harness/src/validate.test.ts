@@ -7,12 +7,18 @@ import { writeEnglishStephanusIndex, writeStephanusIndex } from "./derived/steph
 import { setRepoRootForTesting } from "./paths.js";
 import { collectReportedTurnScopeFailures } from "./reported-turn-scopes.js";
 import {
-  collectLabelDriftReport,
+  collectOntologySummary,
   collectReviewCoverage,
   validateEnglishSpines,
   validateHarnessInstructionContract,
   verifySha256Manifest,
 } from "./validate.js";
+import {
+  deriveOntologyVNextAxisId,
+  deriveOntologyVNextConceptId,
+  deriveOntologyVNextMembershipId,
+  renderOntologyVNextDocuments,
+} from "./wiki/ontology-vnext.js";
 
 let root = "";
 let restoreRepoRoot: (() => void) | undefined;
@@ -30,31 +36,23 @@ ${records.join("\n\n")}
 
 function record({
   observationId,
-  family,
-  label,
-  featureId,
   reviewStatus = "unreviewed",
 }: {
   observationId: string;
-  family: string;
-  label: string;
-  featureId: string;
   reviewStatus?: string;
 }) {
   return `\`\`\`yaml
 observation_id: ${observationId}
-feature_id: ${featureId}
-feature_family: ${family}
-feature_label: ${label}
 review_status: ${reviewStatus}
 \`\`\``;
 }
 
-describe("collectLabelDriftReport", () => {
+describe("collectOntologySummary", () => {
   beforeEach(() => {
     root = mkdtempSync(join(tmpdir(), "validate-test-"));
     restoreRepoRoot = setRepoRootForTesting(root);
     mkdirSync(join(root, "wiki/observations"), { recursive: true });
+    mkdirSync(join(root, "wiki/ontology"), { recursive: true });
   });
 
   afterEach(() => {
@@ -62,94 +60,109 @@ describe("collectLabelDriftReport", () => {
     rmSync(root, { recursive: true, force: true });
   });
 
-  it("counts singleton and cross-dialogue labels", () => {
+  function writeOntology() {
+    const axisId = deriveOntologyVNextAxisId("textual_function", "argument_move");
+    const assentId = deriveOntologyVNextConceptId(axisId, "assent_chain");
+    const exampleId = deriveOntologyVNextConceptId(axisId, "craft_example");
+    const memberships = [
+      ["obs_meno_0001", assentId],
+      ["obs_crito_0003", assentId],
+      ["obs_meno_0002", exampleId],
+    ].map(([observationId, conceptId]) => ({
+      schema_version: 1 as const,
+      membership_id: deriveOntologyVNextMembershipId(observationId!, conceptId!),
+      observation_id: observationId!,
+      concept_id: conceptId!,
+      assignment_basis: "The cited Greek span instantiates the comparison category.",
+    }));
+    const documents = renderOntologyVNextDocuments({
+      axes: [
+        {
+          schema_version: 1,
+          axis_id: axisId,
+          axis_key: "argument_move",
+          dimension: "textual_function",
+          comparison_question: "What argumentative move does the cited span perform?",
+        },
+      ],
+      concepts: [
+        {
+          schema_version: 1,
+          concept_id: assentId,
+          axis_id: axisId,
+          concept_key: "assent_chain",
+          definition: "A sequence of short assents advances the exchange.",
+          comparison_question: "What argumentative move does the cited span perform?",
+        },
+        {
+          schema_version: 1,
+          concept_id: exampleId,
+          axis_id: axisId,
+          concept_key: "craft_example",
+          definition: "A craft example supplies the comparison case.",
+          comparison_question: "What argumentative move does the cited span perform?",
+        },
+      ],
+      memberships,
+    });
+    writeFileSync(join(root, "wiki/ontology/axes.jsonl"), documents.axes);
+    writeFileSync(join(root, "wiki/ontology/concepts.jsonl"), documents.concepts);
+    writeFileSync(join(root, "wiki/ontology/memberships.jsonl"), documents.memberships);
+  }
+
+  it("counts singleton and cross-dialogue concepts", () => {
     writeLedger("meno.md", [
       record({
         observationId: "obs_meno_0001",
-        family: "elenchus",
-        label: "assent_chain",
-        featureId: "feature_candidate_001",
+        reviewStatus: "accepted",
       }),
       record({
         observationId: "obs_meno_0002",
-        family: "craft_analogy",
-        label: "craft_example",
-        featureId: "feature_candidate_002",
+        reviewStatus: "accepted",
       }),
     ]);
     writeLedger("crito.md", [
       record({
         observationId: "obs_crito_0003",
-        family: "elenchus",
-        label: "assent_chain",
-        featureId: "feature_candidate_001",
+        reviewStatus: "accepted",
       }),
     ]);
+    writeOntology();
 
-    const report = collectLabelDriftReport();
+    const report = collectOntologySummary();
 
-    expect(report.totalLabels).toBe(2);
-    expect(report.singletonLabels).toBe(1);
-    expect(report.crossDialogueLabels).toBe(1);
-    expect(report.singletonExamples).toMatchObject([
+    expect(report.axisCount).toBe(1);
+    expect(report.conceptCount).toBe(2);
+    expect(report.membershipCount).toBe(3);
+    expect(report.singletonConceptCount).toBe(1);
+    expect(report.crossDialogueConceptCount).toBe(1);
+    expect(report.axes).toMatchObject([
       {
-        family: "craft_analogy",
-        label: "craft_example",
-        observationIds: ["obs_meno_0002"],
-        dialogues: ["meno"],
+        axisKey: "argument_move",
+        conceptCount: 2,
+        membershipCount: 3,
       },
     ]);
-  });
-
-  it("derives dialogue slugs from observation ids", () => {
-    writeLedger("mixed.md", [
-      record({
-        observationId: "obs_meno_0001",
-        family: "definition_ladder",
-        label: "definition_revision",
-        featureId: "feature_candidate_003",
-      }),
-      record({
-        observationId: "obs_crito_0003",
-        family: "definition_ladder",
-        label: "definition_revision",
-        featureId: "feature_candidate_003",
-      }),
-    ]);
-
-    expect(collectLabelDriftReport().crossDialogueLabels).toBe(1);
   });
 
   it("counts review coverage by ledger", () => {
     writeLedger("crito.md", [
       record({
         observationId: "obs_crito_0001",
-        family: "elenchus",
-        label: "assent_chain",
-        featureId: "feature_candidate_001",
         reviewStatus: "accepted",
       }),
       record({
         observationId: "obs_crito_0002",
-        family: "elenchus",
-        label: "assent_chain",
-        featureId: "feature_candidate_001",
         reviewStatus: "needs_split",
       }),
     ]);
     writeLedger("meno.md", [
       record({
         observationId: "obs_meno_0001",
-        family: "craft_analogy",
-        label: "craft_example",
-        featureId: "feature_candidate_002",
         reviewStatus: "unreviewed",
       }),
       record({
         observationId: "obs_meno_0002",
-        family: "craft_analogy",
-        label: "craft_example",
-        featureId: "feature_candidate_002",
         reviewStatus: "rejected",
       }),
     ]);
@@ -305,7 +318,6 @@ describe("validateHarnessInstructionContract", () => {
     root = mkdtempSync(join(tmpdir(), "instruction-contract-test-"));
     restoreRepoRoot = setRepoRootForTesting(root);
     mkdirSync(join(root, "docs"), { recursive: true });
-    mkdirSync(join(root, ".pi/skills/plato-label-normalization"), { recursive: true });
   });
 
   afterEach(() => {
@@ -313,43 +325,32 @@ describe("validateHarnessInstructionContract", () => {
     rmSync(root, { recursive: true, force: true });
   });
 
-  function writeInstructionContract({ omitSkillStop = false } = {}) {
+  function writeInstructionContract({ omitHardCut = false } = {}) {
     writeFileSync(
-      join(root, "docs/label-normalization-standards.md"),
+      join(root, "docs/ontology-vnext.md"),
       [
-        "# Label Normalization Standards",
-        "## Reusable Agent And Harness Contract",
-        "Function before topic",
-        "Hard cutover after acceptance",
-        "The reusable output is the merge map",
-        "bun run harness labels validate",
-      ].join("\n"),
-      "utf8",
-    );
-    writeFileSync(
-      join(root, ".pi/skills/plato-label-normalization/SKILL.md"),
-      [
-        "# Plato Label Normalization",
-        "## Reusable Contract",
-        "load the standards document and this skill before proposing merge-map entries",
-        "persist decisions only in the merge map",
-        omitSkillStop ? "" : "stop before apply when validation fails",
+        "# Ontology vNext",
+        "## Canonical model",
+        "Source-bound observations do not own classification identity",
+        "Rejected observations have no memberships",
+        omitHardCut ? "" : "Hard cut only",
+        "Question-driven projections",
       ].join("\n"),
       "utf8",
     );
   }
 
-  it("accepts the reusable standards and skill contract", () => {
+  it("accepts the vNext ontology contract", () => {
     writeInstructionContract();
 
     expect(validateHarnessInstructionContract()).toEqual([]);
   });
 
   it("reports missing contract phrases", () => {
-    writeInstructionContract({ omitSkillStop: true });
+    writeInstructionContract({ omitHardCut: true });
 
     expect(validateHarnessInstructionContract()).toContain(
-      '.pi/skills/plato-label-normalization/SKILL.md: missing required contract phrase "stop before apply when validation fails"',
+      'docs/ontology-vnext.md: missing required contract phrase "Hard cut only"',
     );
   });
 });

@@ -3,11 +3,11 @@
   "dialogue": "menexenus",
   "ledger": {
     "path": "wiki/commentary/menexenus.md",
-    "sha256": "ddb242ca5638635fad492a6a7f452dfec6692b860376d443bf1b4c7cecc21c43"
+    "sha256": "ec4f780bb40a83e8eb953d342df2c07325c440eb7303fcc0fa9fff3b2a184603"
   },
   "protocol": {
     "path": "docs/commentary-protocol.md",
-    "sha256": "5f5e6f47f2d39cb42dd8941762ca1b82b4c1371801576f9ec7875e76286e1a13"
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
   },
   "authoring": {
     "model": "gpt-5.6-luna",
@@ -17,9 +17,9 @@
     {
       "unit_key": "01-234a-235c",
       "section_id": "comm_menexenus_0001",
-      "audit_brief_sha256": "c9d2ef292da06812354be44750892e86d39715279f8f26c6efe1da4ecd8bdec9",
+      "audit_brief_sha256": "57b4e5a1f43e1549a6eea7dfee779e3891ac89dc37ad335fa8a23108ffd864d5",
       "output_path": "scratch/commentary/audits/menexenus/01-234a-235c.json",
-      "output_sha256": "271993cff8c9775fdde591ec1b9bda0d46c05cfaea96b38e292fbe38309ed193",
+      "output_sha256": "2105e92161586bcb7a626d30e1b23363510da0c63ad23e929a01b7a2a1381ef3",
       "output": {
         "schema_version": 3,
         "dialogue": "menexenus",
@@ -47,21 +47,21 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately previews the council setup, Socrates’ forecast of rhetorical enchantment, and Menexenus’ accusation of mockery. At the edge, the source begins immediately after the start, with no split."
+            "rationale": "Accurately frames the council’s postponed selection, Socrates’ forecast of rhetorical enchantment, and Menexenus’ charge of mockery; the edge is before source start and after is the opening exchange."
           }
         ]
       }
     },
     {
-      "unit_key": "02-235d-236d",
+      "unit_key": "02-235d-236c",
       "section_id": "comm_menexenus_0002",
-      "audit_brief_sha256": "497b9bf04ca63edc2813dff6a4979ef6658c0a5656de8acfecb30b7f03cbb581",
-      "output_path": "scratch/commentary/audits/menexenus/02-235d-236d.json",
-      "output_sha256": "407b183f79476cf75a6d571274d1d03fb528221bebea1b5f412a8706d0e0c4ca",
+      "audit_brief_sha256": "705bebb4631a5555cfc04409262f0361b7abdbf24808172a987ac4665b8ce89c",
+      "output_path": "scratch/commentary/audits/menexenus/02-235d-236c.json",
+      "output_sha256": "8c1641d0702ceb0456e00b030a062c6d3f2cf5139a050119e167df7de167b988",
       "output": {
         "schema_version": 3,
         "dialogue": "menexenus",
-        "unit_key": "02-235d-236d",
+        "unit_key": "02-235d-236c",
         "section_id": "comm_menexenus_0002",
         "authoring": {
           "model": "gpt-5.6-luna",
@@ -85,55 +85,36 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately tracks the reported-speech layers and Socrates’ disavowal, with clear focus and cadence. It sits cleanly between the preceding setup and Socrates’ opening reply."
+            "rationale": "The layered authorship, Aspasia and Pericles reports, Socrates’ disavowal, memory, and fear are supported; the edge follows Menexenus’ prompt and precedes Socrates’ reply."
           }
         ]
       }
     },
     {
-      "unit_key": "03-236e-237c",
+      "unit_key": "03-236d-237c",
       "section_id": "comm_menexenus_0003",
-      "audit_brief_sha256": "7dc1b802e9df036e1f9ac3d072cc796321919fa777c825deaf12d5d399fc0924",
-      "output_path": "scratch/commentary/audits/menexenus/03-236e-237c.json",
-      "output_sha256": "c47382cd3471f977378b5d7975d9bd99de812801c94053e58b72a8c732ddd168",
+      "audit_brief_sha256": "a63e9648105e15b871942aa4bd36c9beef87a631f86186f6ebedfa98edb8449c",
+      "output_path": "scratch/commentary/audits/menexenus/03-236d-237c.json",
+      "output_sha256": "9ebeaed952f7a1e67e6ee493d4ea70d00d6b13b23d3941be852a58983cb3ca2b",
       "output": {
         "schema_version": 3,
         "dialogue": "menexenus",
-        "unit_key": "03-236e-237c",
+        "unit_key": "03-236d-237c",
         "section_id": "comm_menexenus_0003",
         "authoring": {
           "model": "gpt-5.6-luna",
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_menexenus_0003",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The overview accurately tracks the speech’s tasks, praise sequence, autochthony claim, and divine contest; after the 236e setup, it cleanly prepares the 237a question."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "04-237d-238b",
       "section_id": "comm_menexenus_0004",
-      "audit_brief_sha256": "b2631f371190d94872da632241d5aa5d1ec56a5e570ba7022d3b73cb8ab38b70",
+      "audit_brief_sha256": "17533e5a5e3c84d3695fec147d9a9ce78c9b58bbdf97c949bf74badaa5404430",
       "output_path": "scratch/commentary/audits/menexenus/04-237d-238b.json",
-      "output_sha256": "a08d62fc5b7728f43568a658b0fa92a7450c72641ea1df5575dbd3f6cedf4684",
+      "output_sha256": "670143d2e3f4361a55769392998ffb75520384a46771d83bf95636f53d8cf1c0",
       "output": {
         "schema_version": 3,
         "dialogue": "menexenus",
@@ -144,32 +125,13 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_menexenus_0004",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The interpretation is grounded in the passage’s mother-land nourishment metaphor and adds a clear civic consequence. The edge falls between complete sentences before Soc.’s continuation, preserving flow."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "05-238c-239a",
       "section_id": "comm_menexenus_0005",
-      "audit_brief_sha256": "88abc3c07f3c5e39ad828480e39da7141b83e623d08b828248e7d20a7646532e",
+      "audit_brief_sha256": "71dae2e84e637912e8b0a444871a8193bc8945d38087372e9c6905d14e36dd9e",
       "output_path": "scratch/commentary/audits/menexenus/05-238c-239a.json",
       "output_sha256": "818ba794176c1099b3b8a0f003841d87717ff818cb91e478d74a1bc6b33e6a98",
       "output": {
@@ -188,7 +150,7 @@
     {
       "unit_key": "06-239b-240b",
       "section_id": "comm_menexenus_0006",
-      "audit_brief_sha256": "43830aafecfcfb1f167eb73bc0bafb882a92f3df5a69aa0cfb6f5d90ea4a5a44",
+      "audit_brief_sha256": "379fc929776260e7f2b4822bf94033139b664f49637224f73c1f2ca35519d48f",
       "output_path": "scratch/commentary/audits/menexenus/06-239b-240b.json",
       "output_sha256": "f100072f904e58269e67e4ab4d7af5dd51767c495a0a8ef2186966714194c0f8",
       "output": {
@@ -207,9 +169,9 @@
     {
       "unit_key": "07-240c-241c",
       "section_id": "comm_menexenus_0007",
-      "audit_brief_sha256": "395fef8859da25bf82f1ef806f83638e06ddfb6807480043e2c9b763a13f5033",
+      "audit_brief_sha256": "5f747bad6be9e211c6a490f2f296e5513e75c80eaffa67805d9a87857804418a",
       "output_path": "scratch/commentary/audits/menexenus/07-240c-241c.json",
-      "output_sha256": "006219da92a68998761a22a7b661ac1269c9ad2d2cf18e182783d6e6b92463a3",
+      "output_sha256": "f456b0c910fc5abb62272328ccbf7efeaa812bc2e1583071a82e83f3622edef4",
       "output": {
         "schema_version": 3,
         "dialogue": "menexenus",
@@ -220,34 +182,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_menexenus_0007",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The passage explicitly presents battle as teaching Greeks courage; the edge follows Marathon’s lesson and precedes Socrates’ sea-fight comparison, giving this concise framing a clear role."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "08-241d-242d",
       "section_id": "comm_menexenus_0008",
-      "audit_brief_sha256": "f6e0f4fa054e68c4331f125d11d09729e899a67f8698587f59c9f46ea27acf0b",
+      "audit_brief_sha256": "e8d117c433285a0342fa32a04d7dd1166f36dbc370887d3075b31f1d0c059839",
       "output_path": "scratch/commentary/audits/menexenus/08-241d-242d.json",
-      "output_sha256": "74930b49b3880aa44ce367992b5615725da8de5c38d9603829505d1210827541",
+      "output_sha256": "2175190e5d2a131ed0e0359a3047577e86f889543e86ea2ecb4805d69e17e9ff",
       "output": {
         "schema_version": 3,
         "dialogue": "menexenus",
@@ -275,7 +218,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames the catalogue, Greek conflict, clemency, and stated war ethic, then poses an open interpretive question. The edge falls between completed catalogue and the next war turn."
+            "rationale": "Accurately frames the campaign catalogue and Greek/barbarian war ethic, with an open interpretive question. The edge falls after the 241e catalogue and before Socrates’ 242a transition."
           }
         ]
       }
@@ -283,9 +226,9 @@
     {
       "unit_key": "09-242e-243e",
       "section_id": "comm_menexenus_0009",
-      "audit_brief_sha256": "603acfcf39249f6e314fd9afdbc2eea99624cbef318cad39d60ede252ae13621",
+      "audit_brief_sha256": "c9af674eeac03a8987fd6f8970db671bff4149c359d93e98a8dbfb50a48f2c18",
       "output_path": "scratch/commentary/audits/menexenus/09-242e-243e.json",
-      "output_sha256": "e23507a63cf62adc3e5b21fa1c01863aa190c146adee145f1c8aa88779e975bf",
+      "output_sha256": "43f2b3e859383210fc678c736ad0587841ea652232f4cc85c357183f0d216068",
       "output": {
         "schema_version": 3,
         "dialogue": "menexenus",
@@ -296,32 +239,13 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_menexenus_0009",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately frames the source’s internal-defeat reversal, cites matching accepted evidence, and sits at a clean edge before the third-war passage without disrupting the flow."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "10-244a-245b",
       "section_id": "comm_menexenus_0010",
-      "audit_brief_sha256": "e10d0cc594889587e40832cba1ddd50faf6585225c2e8ea7ebbb74975d39700b",
+      "audit_brief_sha256": "4d7f02115ab0af1e09470e32b4316cd96d998b88ff8a2597750eeee2d014d60a",
       "output_path": "scratch/commentary/audits/menexenus/10-244a-245b.json",
       "output_sha256": "4dd6545ee493b605158239dc044bee9ec02aaa98471cf041bf22975fc33d4924",
       "output": {
@@ -340,7 +264,7 @@
     {
       "unit_key": "11-245c-246b",
       "section_id": "comm_menexenus_0011",
-      "audit_brief_sha256": "3534399bf8fde88c08eb7f8ca321ac4648c8fb142e7b9d42d54426faa77fe9a2",
+      "audit_brief_sha256": "abda73d4fdfbc5b2f145a9c7727f61226af179dbd161e66f2d5ab9e091b7f239",
       "output_path": "scratch/commentary/audits/menexenus/11-245c-246b.json",
       "output_sha256": "0008dd2249330dac85905e19e2407ab9b4f2a794b120b068f2b8d76d4c0a9779",
       "output": {
@@ -359,7 +283,7 @@
     {
       "unit_key": "12-246c-247c",
       "section_id": "comm_menexenus_0012",
-      "audit_brief_sha256": "4f8f4f5d240bcda9f36611b07654b6dfe4e1dcf2a2ae2d0c5eed506811fb20bd",
+      "audit_brief_sha256": "ab535373af06dab9a500cbed03849b74f378f2ed5b87fb2e75cab7e5f3229294",
       "output_path": "scratch/commentary/audits/menexenus/12-246c-247c.json",
       "output_sha256": "ed1db0abd04ea96cd6fb2382930a5a384e8d5396b0ee7ea2f90c61797db0a85e",
       "output": {
@@ -378,9 +302,9 @@
     {
       "unit_key": "13-247d-248d",
       "section_id": "comm_menexenus_0013",
-      "audit_brief_sha256": "2cc3b69cb4ab02958cd116da84ebcaf9261954f8621cad4f4e76d54963b03210",
+      "audit_brief_sha256": "c058b2aafdaa9b45bbc5f49708b6442d703bd51903ccdf1133ee22f3d8edf06a",
       "output_path": "scratch/commentary/audits/menexenus/13-247d-248d.json",
-      "output_sha256": "afb38af36116bb8b203ba1c7583d818bc9cf384461d5094b650ee90ce017ed75",
+      "output_sha256": "3291a080752e9f598d1abe2f3ab2dbc9f5f44a55934b39fbb342f597468a89c6",
       "output": {
         "schema_version": 3,
         "dialogue": "menexenus",
@@ -391,34 +315,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_menexenus_0013",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately synthesizes the consolation, proverb, self-reliance, and ventriloquized request of the dead. The edge follows the 247e closure and precedes Socrates' 248a explanation cleanly."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "14-248e-249e",
       "section_id": "comm_menexenus_0014",
-      "audit_brief_sha256": "9f0b2a9964b44e8010bfe656ae7ba3a6708d2c4db1e6549a8c245b9954729796",
+      "audit_brief_sha256": "2bf44c72a7165472cce4b812eebed9a035203dae9e87a1abd496713d4aabc3d6",
       "output_path": "scratch/commentary/audits/menexenus/14-248e-249e.json",
-      "output_sha256": "0f81875a2ad5703c21210aff7db8d72adf43378f5a1cf25a6eee8bf8abcf3961",
+      "output_sha256": "7a44d717519035b76cac9a4fb25bf5cbd9bc0bdeaaf323ce573b6142f76c035f",
       "output": {
         "schema_version": 3,
         "dialogue": "menexenus",
@@ -446,7 +351,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately synthesizes the city’s familial roles, ongoing rites, consolation, and departure command. It follows the completed opening speech and prepares the city-care exchange without disrupting flow."
+            "rationale": "Accurately organizes the city’s familial roles, annual honors, consolation, and explicit dismissal. The edge follows the prior speech and precedes Socrates’ city-care speech, preserving flow."
           }
         ]
       }
@@ -454,23 +359,18 @@
   ],
   "acceptance": {
     "decision": "accepted",
-    "reviewer": "manifest-batch-2-delegated-luna-reviewer-20260823",
-    "reviewed_on": "2026-08-23",
-    "rationale": "All 9 active accepted IDs sampled in ledger order; prose, Greek source, cited evidence, placement, and audit checks pass with no defects.",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-menexenus-9b857a3fd24e",
+    "reviewed_on": "2026-09-01",
+    "rationale": "All four blocks are anchored, evidence-supported, clearly phrased, and placed at compatible English playback edges; none introduces a substantive source, evidence, or dramatic-flow defect.",
     "sampled_commentary_ids": [
       "comm_menexenus_0001",
       "comm_menexenus_0002",
-      "comm_menexenus_0003",
-      "comm_menexenus_0004",
-      "comm_menexenus_0007",
       "comm_menexenus_0008",
-      "comm_menexenus_0009",
-      "comm_menexenus_0013",
       "comm_menexenus_0014"
     ],
     "review_note": {
-      "path": "wiki/review/2026-08-23-commentary-quality-menexenus-luna-sample.md",
-      "sha256": "8969b04d6ef5136e7136012d96f7882b16f5e4ec436da68bbea75f71153cc3c6"
+      "path": "wiki/review/2026-09-01-commentary-quality-menexenus-luna-sample.md",
+      "sha256": "0ca9b69abf18c227b01d871328f14b0a7c12b0a7afa1ad159699baf2269a49d2"
     }
   }
 }

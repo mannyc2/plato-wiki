@@ -1,0 +1,200 @@
+{
+  "accepted_observations": 5,
+  "axis_id": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+  "axis_key": "definition_ladder",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record divided line mapping within the definition ladder axis?",
+  "concept_id": "concept_sha256_9a49182d3a9d1388c29993b334347ac4c2ab9038afc0f93d68f74f632341a546",
+  "concept_key": "divided_line_mapping",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_92abeffeff96cb2cba7c8bcd05c7dd42fadbd135a5f125828ced49fd77d1d96a",
+      "conceptKey": "assent_marker",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_e9efa61cd8e6ccc19594ede1bdb23d4b6a7e55c269b4f13fead547730d18f2ee",
+      "conceptKey": "terminological_control",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_5c81cf395b56e4a5deabc1c459f7e8074e66334a4948d830b4be747f4537eb34",
+      "axisKey": "forms_trajectory",
+      "conceptId": "concept_sha256_d89bd90568c5287f88d7a6171f594453d8931488f21531a7190de06575734fb3",
+      "conceptKey": "hexis_in_soul_clarity",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 1,
+  "dimension": "discourse_structure",
+  "instance_ids": [
+    "obs_republic_0267",
+    "obs_republic_0268",
+    "obs_republic_0279",
+    "obs_republic_0280",
+    "obs_republic_0332"
+  ],
+  "instances": [
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0267",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "509e-510a",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0268",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "509e-510a",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0279",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "511e",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0280",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "511e",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0332",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "533e",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 5,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_9a49182d3a9d1388c29993b334347ac4c2ab9038afc0f93d68f74f632341a546",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

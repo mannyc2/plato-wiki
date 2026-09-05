@@ -3,11 +3,11 @@
   "dialogue": "cratylus",
   "ledger": {
     "path": "wiki/commentary/cratylus.md",
-    "sha256": "a51c604058192ae7a1dfc7a62659272c9e2782e681862e6c73fa13154a3ae7fc"
+    "sha256": "4f10bc3400327e6af658658e608d3f1ecc0f88a116b08fb44780ce598774d428"
   },
   "protocol": {
     "path": "docs/commentary-protocol.md",
-    "sha256": "5f5e6f47f2d39cb42dd8941762ca1b82b4c1371801576f9ec7875e76286e1a13"
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
   },
   "authoring": {
     "model": "gpt-5.6-luna",
@@ -17,9 +17,9 @@
     {
       "unit_key": "01-383a-384e",
       "section_id": "comm_cratylus_0001",
-      "audit_brief_sha256": "9afce7d68385af3e1bf57c2817de17eba64ce1dc8b462d11b905ea21566f879a",
+      "audit_brief_sha256": "917ecd3884e2bc17c01094cf9e4b68e14a052a5e054c3054b9ef9d785fb0123a",
       "output_path": "scratch/commentary/audits/cratylus/01-383a-384e.json",
-      "output_sha256": "eef05fc41312dc39d8ec03a15c274980b703d3a2a62ee3635fe9a75d01bf03be",
+      "output_sha256": "de5be77500ce328a861ee594d52553eaac4e98a379bfe15c1849a28deb349da5",
       "output": {
         "schema_version": 3,
         "dialogue": "cratylus",
@@ -31,24 +31,6 @@
         },
         "unit_verdict": "pass",
         "blocks": [
-          {
-            "commentary_id": "comm_cratylus_0001",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately orients the passage's nature-versus-convention contrast and its fee comparison; the opening edge preserves the source's dramatic setup."
-          },
           {
             "commentary_id": "comm_cratylus_0018",
             "disposition": "pass",
@@ -65,7 +47,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames Hermogenes' thesis and slave-renaming example, then poses a qualified interpretive tension; it follows 384e and precedes Socrates' examination."
+            "rationale": "Accurately presents Hermogenes’ thesis and slave-renaming example, then proposes a clearly marked interpretive pressure. After 384e, Socrates immediately tests that thesis; the edge preserves the exchange."
           }
         ]
       }
@@ -73,9 +55,9 @@
     {
       "unit_key": "02-385a-386e",
       "section_id": "comm_cratylus_0002",
-      "audit_brief_sha256": "2fe822112ec1543f12c54587e64897cbb5a6d9c2f50eee1a0faffee4d8e2724c",
+      "audit_brief_sha256": "24a9849823f5e19da111b75867eb550636ca0c5a6398eafa379c03f62aeebd65",
       "output_path": "scratch/commentary/audits/cratylus/02-385a-386e.json",
-      "output_sha256": "27d3338306da93eec8815464e9e5a45c6e1e5e90a84fa153e028ed78ecab7c38",
+      "output_sha256": "d074ac0152c1c99087c3789aff2f2bf1fbb22e5e9e3d75a0642dbad27d4db0d9",
       "output": {
         "schema_version": 3,
         "dialogue": "cratylus",
@@ -86,70 +68,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_cratylus_0002",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately synthesizes the passage’s refutation and stable-nature conclusion; the edge follows a complete prior sentence and precedes the 385a exchange cleanly."
-          },
-          {
-            "commentary_id": "comm_cratylus_0019",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Precisely highlights the narrowing assent sequence without adding claims; the edge follows Hermogenes’ completed response and precedes Socrates’ Protagoras question."
-          },
-          {
-            "commentary_id": "comm_cratylus_0021",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Carefully limits the conclusion while identifying its relevance to naming; the edge follows the actions exchange and cleanly prepares the next discussion of action’s nature."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "03-387a-390e",
       "section_id": "comm_cratylus_0003",
-      "audit_brief_sha256": "a1b9bbba7c76acdde1169628d62576fb1bf8385aaf5931d6d436bcae03f973f6",
+      "audit_brief_sha256": "f98f1949e2817195d89594b61a4966b4427e49f2e5d7511b06f443624b8f333d",
       "output_path": "scratch/commentary/audits/cratylus/03-387a-390e.json",
-      "output_sha256": "cb9eb7fb18166dfbd0ee4234b742530aa0504073c04217687c0d541316df0c13",
+      "output_sha256": "1f7116261288c432351381d90aecb0a60c4f9ea05fdc875f761a53fbe8c1bfd5",
       "output": {
         "schema_version": 3,
         "dialogue": "cratylus",
@@ -161,24 +88,6 @@
         },
         "unit_verdict": "pass",
         "blocks": [
-          {
-            "commentary_id": "comm_cratylus_0003",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately distinguishes the carpenter’s shuttle from the smith’s borer and adds useful focus; it follows the prior exchange and precedes the action-nature argument cleanly."
-          },
           {
             "commentary_id": "comm_cratylus_0022",
             "disposition": "pass",
@@ -195,7 +104,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately presents the working definition and the pressure around “well”; it follows the skilled-carpenter answer and precedes the borer exchange without disrupting the topic."
+            "rationale": "Accurately frames the working definition and the pressure around “well”; the edge follows the 388d carpenter exchange and precedes the hole-maker exchange without splitting flow."
           }
         ]
       }
@@ -203,9 +112,9 @@
     {
       "unit_key": "04-391a-394e",
       "section_id": "comm_cratylus_0004",
-      "audit_brief_sha256": "c87e1eaff416aee7b495db6a12b2549bed46be6ef254742d287ea2a816ba44d0",
+      "audit_brief_sha256": "2d46b0e097189202188dea22fc30dc0e24c233fcc3532f5f1bd98b6ef7680bc8",
       "output_path": "scratch/commentary/audits/cratylus/04-391a-394e.json",
-      "output_sha256": "05b3e771bc3ae1abf9900349bbf3050ec907caa61fc50a05e79442e6b1a2cfcb",
+      "output_sha256": "1b042c11310a980d2ce1110be499ac4f011bde263c36fa24d52cedc9428f295b",
       "output": {
         "schema_version": 3,
         "dialogue": "cratylus",
@@ -233,7 +142,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately orients the move from sophists and divine names to Hector’s son; the edge falls between complete sentences before Socrates’ reply and preserves the setup."
+            "rationale": "The section accurately orients the move from sophists to Homer and Hector’s son; before is after Hermogenes’ request and before Socrates’ reply, a clean opening edge."
           },
           {
             "commentary_id": "comm_cratylus_0026",
@@ -251,7 +160,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately isolates Socrates’ assent chain and inference beyond Homer’s naming report; the edge falls after Hermogenes’ answer and before Socrates’ next question."
+            "rationale": "The argument accurately identifies Hermogenes’ assent chain and Socrates’ inference; after is following Hermogenes’ admission and before Socrates’ next question, preserving the exchange."
           }
         ]
       }
@@ -259,9 +168,9 @@
     {
       "unit_key": "05-395a-397a",
       "section_id": "comm_cratylus_0005",
-      "audit_brief_sha256": "2ff8c352d87ea64748fb9a95bca068738e0d17c51d2fb320d025998bacce0708",
+      "audit_brief_sha256": "5549b6fb95fa97e3072d396dc4f5568b005927bab4eb41123e73a5d1c462af7e",
       "output_path": "scratch/commentary/audits/cratylus/05-395a-397a.json",
-      "output_sha256": "321ca87163c2a097036bb025a9afdc0dd7b681df5eb5d628262deb45ea7353c8",
+      "output_sha256": "874251d38b196118b645712faaef906904caf7ddfc78b7ee6ab957efa151eb16",
       "output": {
         "schema_version": 3,
         "dialogue": "cratylus",
@@ -272,34 +181,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_cratylus_0005",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The body accurately frames Socrates’ Euthyphro-inspired fluency, today’s inquiry, and tomorrow’s purification, adding a concise interpretive point. The edge falls between prior Orestes discussion and 395a."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "06-397b-400e",
       "section_id": "comm_cratylus_0006",
-      "audit_brief_sha256": "34cdb76b4a4027e9faed07b5bb481b40a26b46249bb579551552db3546a336c3",
+      "audit_brief_sha256": "78fb5c0253c6e440ad4ff36dcebea69d455b92683120e90082fac7841c1e4aa1",
       "output_path": "scratch/commentary/audits/cratylus/06-397b-400e.json",
-      "output_sha256": "d27cf9e358b1a917b35fbce8f97827d664bc2ed751e82dc67ec54664c28de67e",
+      "output_sha256": "dde1f999b1c3fe1716674441aada383e255b9eea72a8261969bbe3a5e4e24d7f",
       "output": {
         "schema_version": 3,
         "dialogue": "cratylus",
@@ -327,7 +217,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The section preserves the ordered etymological survey and the qualified alternatives for soma; evidence supports each scope and the edge follows a complete sentence."
+            "rationale": "Accurately maps the sequence and preserves the qualified alternatives for soma. The edge falls after the opening claim and before Hermogenes’ response, a usable section transition."
           },
           {
             "commentary_id": "comm_cratylus_0030",
@@ -345,7 +235,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "This argument accurately preserves the non-universal examples about inherited and parental names; its concise prose adds the needed qualification and placement is clean."
+            "rationale": "Correctly preserves the passage’s non-universal qualifications in a concise, useful point. The edge falls after Hermogenes’ agreement and before Socrates’ next plan, without splitting an exchange."
           },
           {
             "commentary_id": "comm_cratylus_0031",
@@ -363,7 +253,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The notice accurately distinguishes the three soma readings and the Orphic preference without turning it into doctrine; citations and complete edge support it."
+            "rationale": "Accurately distinguishes the tomb, sign, and Orphic readings and keeps Socrates’ preference qualified. The edge falls after the body discussion and before Hermogenes’ next question."
           },
           {
             "commentary_id": "comm_cratylus_0032",
@@ -381,21 +271,17 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The argument accurately limits Socrates' claim to human naming practice and avoids an absolute future claim; cited evidence and placement support the narrow reading."
+            "rationale": "Accurately presents Socrates’ limited methodological claim without turning it into a permanent prohibition. The edge falls after the prayer custom and before the next inquiry announcement."
           }
         ]
-      },
-      "provenance": {
-        "path": "wiki/submissions/commentary-audit/cratylus/0001-delegated-audit-06-397b-400e.json",
-        "sha256": "083f09e46a8e6af9c115e07513f375279159c52b944b5087e487be430aff1624"
       }
     },
     {
       "unit_key": "07-401a-404e",
       "section_id": "comm_cratylus_0007",
-      "audit_brief_sha256": "22251fd8c9bb7681f9c6f880bb4a1802a763f42f469361ba821fd8a7990c603e",
+      "audit_brief_sha256": "2623a4ec04b6b8cebb68d9b9828d8898e628aeae64269fedfee9932990502bcf",
       "output_path": "scratch/commentary/audits/cratylus/07-401a-404e.json",
-      "output_sha256": "018f6601997fc7b7e87973accdcd72f418fd8d9cbc1f7609d3c16fa3cabd3221",
+      "output_sha256": "ccbc540a2f70b75659b01c450e5f6bc4510e290453469c4a4a90bbfa64b96a42",
       "output": {
         "schema_version": 3,
         "dialogue": "cratylus",
@@ -423,21 +309,17 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The section accurately states Socrates' human-opinion boundary and prayer-like convention without claiming divine knowledge; cited support and complete-edge placement are sound."
+            "rationale": "Accurately frames Socrates’ human-opinion boundary and prayer-like convention, with accepted support. The edge follows a complete sentence and precedes the inquiry it introduces."
           }
         ]
-      },
-      "provenance": {
-        "path": "wiki/submissions/commentary-audit/cratylus/0002-delegated-audit-07-401a-404e.json",
-        "sha256": "79c3af9f6cc4c8ae3a5a8f13432b07aa739172422a7015724467d477927ff514"
       }
     },
     {
       "unit_key": "08-405a-408e",
       "section_id": "comm_cratylus_0008",
-      "audit_brief_sha256": "af551309f9bb432f9bbd4da55e699ef336457863d02813bdc651144b10c48eec",
+      "audit_brief_sha256": "8b9f6751809f0f9e053fbfae913248289165a9e5c96692f2066c5eaa80a8ba83",
       "output_path": "scratch/commentary/audits/cratylus/08-405a-408e.json",
-      "output_sha256": "87851568aa1e87d08888ff5acc12551b8b79c4f48b4d1fc1f2e736f33246ea13",
+      "output_sha256": "2c03d393d7a31795dbe37c78c41b7b53c36007e5aa5dc0ca9034dcb3763ce5dc",
       "output": {
         "schema_version": 3,
         "dialogue": "cratylus",
@@ -449,24 +331,6 @@
         },
         "unit_verdict": "pass",
         "blocks": [
-          {
-            "commentary_id": "comm_cratylus_0008",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately frames the section's multiple etymologies and letter manipulations, with accepted dossier support; the edge follows Apollo's opening claim and precedes Hermogenes' reply."
-          },
           {
             "commentary_id": "comm_cratylus_0037",
             "disposition": "pass",
@@ -483,7 +347,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Faithfully identifies Artemis's disjunctive derivations and their methodological force, supported by the accepted observation; the edge follows Aphrodite and precedes Hermogenes' Athena prompt."
+            "rationale": "Accurately identifies Artemis’s disjunctive etymologies and their unresolved scope; it adds a focused interpretive point and sits between complete sentences before Athena."
           },
           {
             "commentary_id": "comm_cratylus_0038",
@@ -501,7 +365,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately connects Hermes's proposed derivation to Hermogenes' self-assessment and frames the dramatic test; the edge follows Ares and precedes Socrates' transition to Hermes."
+            "rationale": "Citations support the Hermes derivation and Hermogenes’s self-application; the brief offers one focused dramatic reading and sits after Ares’s reply, before Socrates’s transition and Hermes exchange."
           }
         ]
       }
@@ -509,9 +373,9 @@
     {
       "unit_key": "09-409a-410e",
       "section_id": "comm_cratylus_0009",
-      "audit_brief_sha256": "89eaa5fa9db132f5310f9560ba53baaa024537888587a7bd4f9dae337677d699",
+      "audit_brief_sha256": "ff4fd2f53e175619043ded906ae1560c0285eb89f1851832580c01eb9ee88832",
       "output_path": "scratch/commentary/audits/cratylus/09-409a-410e.json",
-      "output_sha256": "1fe5f2336c9bdea2dfeff0a8c36a93dabf82b74e1f7b1281315d0047a3a44504",
+      "output_sha256": "c1fbd37a138bb46c53b54ff5b80ed52044b2dace9a164011548b05ef1bfdfc83",
       "output": {
         "schema_version": 3,
         "dialogue": "cratylus",
@@ -522,34 +386,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_cratylus_0009",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately frames the cosmic etymologies and the foreign-origin fallback, adds a useful critical question, and sits cleanly after the sun passage before the moon exchange."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "10-411a-414e",
       "section_id": "comm_cratylus_0010",
-      "audit_brief_sha256": "c7142f789181737de2b415c6528fe3e1d48288fb25f8f5f39ece6def97c61197",
+      "audit_brief_sha256": "fc1af02bc9c24c0e31e545da75cb225fc553284a6081dfb28130433a30fdf7b2",
       "output_path": "scratch/commentary/audits/cratylus/10-411a-414e.json",
-      "output_sha256": "e46c2209f98f8ea63f7f73a9f992803b6e8ba997886b1e9df45a9fd734240d57",
+      "output_sha256": "29f71773d280e07c19c388220c3ed492a7f07bb6324a8dc7abe02045c753f4dd",
       "output": {
         "schema_version": 3,
         "dialogue": "cratylus",
@@ -561,24 +406,6 @@
         },
         "unit_verdict": "pass",
         "blocks": [
-          {
-            "commentary_id": "comm_cratylus_0010",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately identifies the passage’s recurring motion pattern and preserves its uncertainty about historical name-givers. It cleanly introduces the new section at a complete turn edge."
-          },
           {
             "commentary_id": "comm_cratylus_0041",
             "disposition": "pass",
@@ -595,7 +422,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Faithfully presents Socrates’ vertigo diagnosis, the flux premise, and its methodological limits. The edge follows Hermogenes’ prompt and prepares Socrates’ reply without splitting the exchange."
+            "rationale": "Accurately frames Socrates’ tentative diagnosis and the names’ flux premise, adds methodological stakes, and cleanly prepares the response after the edge."
           },
           {
             "commentary_id": "comm_cratylus_0042",
@@ -613,7 +440,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames the secret report, competing justice accounts, and resulting aporia. The edge follows the justice etymology and precedes Socrates’ inquiry narrative at a complete turn boundary."
+            "rationale": "Accurately tracks secret instruction, rival justice accounts, and Socrates’ deeper aporia; it adds the name-versus-thing distinction and cleanly precedes the 413a inquiry."
           }
         ]
       }
@@ -621,9 +448,9 @@
     {
       "unit_key": "11-415a-421e",
       "section_id": "comm_cratylus_0011",
-      "audit_brief_sha256": "b5635dfd1ae33cc199b8e47ac6c3eb30d06a73b86bdae686641c09d663a01599",
+      "audit_brief_sha256": "751fbdba4cabc2666eba047a25a83f41dbdc74f2bcd865cc1e0af5832fd7165f",
       "output_path": "scratch/commentary/audits/cratylus/11-415a-421e.json",
-      "output_sha256": "86fd9c21ff3ad091e88edfc4fb913981a84041e72e4053d4058d773acc7a715a",
+      "output_sha256": "4ff09c6ea6b9efc1fb3057e80d4be5128a23ae67eb2c4f245e5f88d51565e32d",
       "output": {
         "schema_version": 3,
         "dialogue": "cratylus",
@@ -651,7 +478,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The context accurately presents the comic hedge and conditional virtue derivation while locating the inquiry's unfinished ascent; evidence and edge placement support it."
+            "rationale": "Accurately frames the transition, conditional virtue etymology, and comic hedge. It falls between Hermogenes’ moderation reply and Socrates’ next turn without disrupting the exchange."
           },
           {
             "commentary_id": "comm_cratylus_0046",
@@ -669,21 +496,17 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The question accurately exposes the regress problem and leaves its significance open; its edge follows a complete exchange and the long but coherent prose is listener-ready."
+            "rationale": "Accurately identifies the regress problem, methodological escape hatches, and an open interpretive question. It follows Hermogenes’ reply and precedes Socrates’ continuation at a clean turn edge."
           }
         ]
-      },
-      "provenance": {
-        "path": "wiki/submissions/commentary-audit/cratylus/0003-delegated-audit-11-415a-421e.json",
-        "sha256": "1030772ae1c5f118463f5a9a1fd81a4337f50545a9745a54ce8006f6402f30d2"
       }
     },
     {
       "unit_key": "12-422a-427e",
       "section_id": "comm_cratylus_0012",
-      "audit_brief_sha256": "3273afb6cafcc9d1621f7b0eb9cacd6d27444ab04b49d43d81ed50af57118c0e",
+      "audit_brief_sha256": "2fab9bd27f29cff39532f4373cdc157335271edf87974c8fc0f7a6c7565f803d",
       "output_path": "scratch/commentary/audits/cratylus/12-422a-427e.json",
-      "output_sha256": "8b90c2cb9869e41dad51008c3f673d609f8644927620afe6ee4e96148c37c5b4",
+      "output_sha256": "8e036a23540f44a10d584ccd7bfa8152a67acbd203b515a1f49deb7bb3438f56",
       "output": {
         "schema_version": 3,
         "dialogue": "cratylus",
@@ -695,24 +518,6 @@
         },
         "unit_verdict": "pass",
         "blocks": [
-          {
-            "commentary_id": "comm_cratylus_0012",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The section accurately introduces primary names and vocal imitation, with its claims bounded by the cited analogy; the opening edge follows a complete sentence."
-          },
           {
             "commentary_id": "comm_cratylus_0048",
             "disposition": "pass",
@@ -729,19 +534,15 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The notice accurately preserves Socrates' knowledge disclaimer, comic and divine escape routes, and conditional primary-name dependency; citations support each claim and the edge is clean."
+            "rationale": "Accurately tracks Socrates’ provisional method, rejected escape routes, and conditional dependence of later names on primary ones. The edge follows Hermogenes’ reply and precedes Socrates’ proposal to continue."
           }
         ]
-      },
-      "provenance": {
-        "path": "wiki/submissions/commentary-audit/cratylus/0004-delegated-audit-12-422a-427e.json",
-        "sha256": "7e56d2502addcabbd6df5cc51ba511e8548ec30fbcd98bb730c4472b6e4ed70a"
       }
     },
     {
       "unit_key": "13-428a-431e",
       "section_id": "comm_cratylus_0013",
-      "audit_brief_sha256": "d30ec31b1426b9040dd7487dc401da0d092b30f45a56c619070036a235e208b5",
+      "audit_brief_sha256": "54088f067e9002903d5dfb10dd501f9e29ad067fedcb7ffb18a127b3f5fff426",
       "output_path": "scratch/commentary/audits/cratylus/13-428a-431e.json",
       "output_sha256": "9c3275319ed4b3e0adc08ca0d510efbc14fb0ba3b1401f8d97e367b7e2a72dd2",
       "output": {
@@ -760,7 +561,7 @@
     {
       "unit_key": "14-432a-435d",
       "section_id": "comm_cratylus_0014",
-      "audit_brief_sha256": "f3ac75b0f942610782ab1f89fceb34b222bf507720345fb29d6d5455a0623a22",
+      "audit_brief_sha256": "b11c27f122c5e8f9807a08d9a6437b53df806fd3c8f19d14d4f1a415c6874cf3",
       "output_path": "scratch/commentary/audits/cratylus/14-432a-435d.json",
       "output_sha256": "a85dd49e2f86ae1309ecfb40404b2f6fcdec4201f6904867686ce7fe1c4a380a",
       "output": {
@@ -779,9 +580,9 @@
     {
       "unit_key": "15-435e-440e",
       "section_id": "comm_cratylus_0015",
-      "audit_brief_sha256": "53916050b0bcc7927f08f6ad340e31712893d85659356a7bb22e050173e42db3",
+      "audit_brief_sha256": "bddf471e62c6d75980feff0742706f1c8c6d480c2bb33dd08b65082e77aebfac",
       "output_path": "scratch/commentary/audits/cratylus/15-435e-440e.json",
-      "output_sha256": "b8992ef80330fff04f9512ca43ab3c649cfc284447b7f7ff1d8ea11f1fb7a7d2",
+      "output_sha256": "75c4445a8aeeec921d98b3b389d1720898201f1f980ded11a6a566cb59603a93",
       "output": {
         "schema_version": 3,
         "dialogue": "cratylus",
@@ -792,58 +593,35 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_cratylus_0057",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The context accurately preserves Socrates' uncertainty, Cratylus' current preference, and the request to investigate further; end placement does not split the closing exchange."
-          }
-        ]
-      },
-      "provenance": {
-        "path": "wiki/submissions/commentary-audit/cratylus/0005-delegated-audit-15-435e-440e.json",
-        "sha256": "d33f121b515de9040ed94f9632473edc6a217fd1e971739073b68b60ed76e892"
+        "blocks": []
       }
     }
   ],
   "acceptance": {
     "decision": "accepted",
-    "reviewer": "manifest-batch-1-delegated-luna-reviewer-20260823",
-    "reviewed_on": "2026-08-23",
-    "rationale": "Independent Luna source, accepted-evidence, and placement sample passed for the current Cratylus ledger.",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-cratylus-d9c2d9bc6c81",
+    "reviewed_on": "2026-09-01",
+    "rationale": "All 15 sampled blocks are independently supported by their cited evidence, exact source passages, and clean complete-sentence playback edges; each adds a focused, qualified teaching point without a substantive listening or flow defect.",
     "sampled_commentary_ids": [
-      "comm_cratylus_0001",
-      "comm_cratylus_0002",
-      "comm_cratylus_0003",
       "comm_cratylus_0004",
-      "comm_cratylus_0005",
       "comm_cratylus_0006",
       "comm_cratylus_0007",
-      "comm_cratylus_0008",
-      "comm_cratylus_0009",
-      "comm_cratylus_0010",
-      "comm_cratylus_0012",
+      "comm_cratylus_0018",
+      "comm_cratylus_0022",
       "comm_cratylus_0026",
+      "comm_cratylus_0030",
+      "comm_cratylus_0031",
+      "comm_cratylus_0032",
+      "comm_cratylus_0037",
+      "comm_cratylus_0038",
+      "comm_cratylus_0041",
+      "comm_cratylus_0042",
       "comm_cratylus_0044",
-      "comm_cratylus_0048",
-      "comm_cratylus_0057"
+      "comm_cratylus_0048"
     ],
     "review_note": {
-      "path": "wiki/review/2026-08-23-commentary-quality-cratylus-luna-sample.md",
-      "sha256": "b02ab708da54fe36c372a9fcdb89b0568d67f44dd258161f6d07c317d66c14dc"
+      "path": "wiki/review/2026-09-01-commentary-quality-cratylus-luna-sample.md",
+      "sha256": "2984dedac2b008ab7d571578be7cd45fc5eea548d9557a34e542e75d58cf9b27"
     }
   }
 }

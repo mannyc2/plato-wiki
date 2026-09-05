@@ -1,0 +1,222 @@
+{
+  "accepted_observations": 5,
+  "axis_id": "axis_sha256_9791a05a3c77492d9f59ed68b54e30b71e3535fe91a87fd7c425fcb39272f666",
+  "axis_key": "prosopography",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record ethical self account profile within the prosopography axis?",
+  "concept_id": "concept_sha256_11dc3147f057b8294c10a2f7c1a4c98cf6108f1770a7784e69878085b982d103",
+  "concept_key": "ethical_self_account_profile",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_3226054d4f60818cde04cfad335650e4f9ae2570db5414ec06b9144c1e7daa7c",
+      "conceptKey": "sustained_narrative_speech",
+      "overlappingObservations": 2
+    },
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_73be147bc9b536edc5ec6f3ddd77d1584a4253a892a9164b8600dd7463aed95e",
+      "conceptKey": "explicit_procedure_control",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_9791a05a3c77492d9f59ed68b54e30b71e3535fe91a87fd7c425fcb39272f666",
+      "axisKey": "prosopography",
+      "conceptId": "concept_sha256_160410770feda0aafd4d1f0237b4415687d02add9fcc5043420fea535a626fc8",
+      "conceptKey": "character_description_by_speaker",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_9791a05a3c77492d9f59ed68b54e30b71e3535fe91a87fd7c425fcb39272f666",
+      "axisKey": "prosopography",
+      "conceptId": "concept_sha256_9eaf2aa22ca1787f65dea6c02132e0e95ce9c25a34c7ad2af7d77f03963fdbdf",
+      "conceptKey": "socratic_habit_named_by_associate",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_9791a05a3c77492d9f59ed68b54e30b71e3535fe91a87fd7c425fcb39272f666",
+      "axisKey": "prosopography",
+      "conceptId": "concept_sha256_d82201f22badb0aa762e5dec6722e909a1cfc4a761c87681c3e6b947f9a752e4",
+      "conceptKey": "socratic_military_excellence_report",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_b1977b0b6a213778cae77c4b4d390795f58b6bfa028f188496292233a47cf4a8",
+      "axisKey": "myth_demarcation",
+      "conceptId": "concept_sha256_add34475f74102e71c483b351aa4477386b47a5ff149789d3ff5c4fc7cce3077",
+      "conceptKey": "poetic_quotation_as_authority",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 2,
+  "dimension": "dramatic_context",
+  "instance_ids": [
+    "obs_laches_0055",
+    "obs_laches_0067",
+    "obs_republic_0004",
+    "obs_republic_0006",
+    "obs_republic_0014"
+  ],
+  "instances": [
+    {
+      "dialogue": "laches",
+      "observationId": "obs_laches_0055",
+      "speakers": [
+        "ΝΙ.",
+        "ΛΥ."
+      ],
+      "stephanusSpan": "187e-188a",
+      "turnCount": 3
+    },
+    {
+      "dialogue": "laches",
+      "observationId": "obs_laches_0067",
+      "speakers": [
+        "ΛΑ."
+      ],
+      "stephanusSpan": "189a-189b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0004",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "328d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0006",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "329a-329b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0014",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "331a-331b",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 3,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_11dc3147f057b8294c10a2f7c1a4c98cf6108f1770a7784e69878085b982d103",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

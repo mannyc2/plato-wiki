@@ -1,0 +1,3 @@
+$ bun run --cwd packages/harness typecheck && bun run --cwd packages/cli typecheck
+$ tsc -p tsconfig.json --noEmit
+$ tsc -p tsconfig.json --noEmit

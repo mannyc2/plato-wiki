@@ -1,5 +1,9 @@
 # Cross-Dialogue Comparison Design
 
+> Historical v1 design, retained as provenance. The active comparison model is
+> ontology vNext; `feature_family + feature_label` is not a runtime identity or
+> compatibility alias.
+
 ## Cluster Keys
 
 The primary cluster key is `feature_family + feature_label`. That pair is deterministic, already assigned in every observation, and is the field the label reuse contract pressures the model to reuse as a recurring textual type. Secondary display keys are dialogue slug, Stephanus span, review status, and short `greek_terms`; these refine browsing but do not decide membership. Speaker and structural role are deferred until speaker-turn and anchor indexes exist.

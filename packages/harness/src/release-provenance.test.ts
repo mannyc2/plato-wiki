@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
+import { mkdtempSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import {
@@ -9,6 +9,7 @@ import {
   type SourceAcquisitionReceipt,
   validateReleaseProvenanceReceipts,
 } from "./release-provenance.js";
+import { writePublicReplayProvenance } from "../../../scripts/release/generate-provenance.js";
 
 function write(root: string, path: string, content: string) {
   mkdirSync(join(root, path, ".."), { recursive: true });
@@ -79,6 +80,22 @@ describe("release provenance", () => {
       const issues = validateReleaseProvenanceReceipts(root);
       expect(issues).toContain("release/public/replay-provenance.json has invalid release identity");
       expect(issues).toContain("release/public/source-acquisition-receipts.json has invalid release identity");
+    } finally {
+      rmSync(root, { recursive: true, force: true });
+    }
+  });
+
+  it("does not publish or leave a temporary receipt when candidate validation fails", () => {
+    const root = mkdtempSync(join(tmpdir(), "release-provenance-"));
+    try {
+      const prior = "prior receipt bytes\n";
+      write(root, "release/public/replay-provenance.json", prior);
+
+      expect(() => writePublicReplayProvenance(root)).toThrow(
+        "release/public/source-acquisition-receipts.json is missing or malformed",
+      );
+      expect(readFileSync(join(root, "release/public/replay-provenance.json"), "utf8")).toBe(prior);
+      expect(readdirSync(join(root, "release/public"))).toEqual(["replay-provenance.json"]);
     } finally {
       rmSync(root, { recursive: true, force: true });
     }

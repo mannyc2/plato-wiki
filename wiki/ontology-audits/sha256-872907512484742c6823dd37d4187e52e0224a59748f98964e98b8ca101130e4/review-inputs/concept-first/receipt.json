@@ -1,0 +1,156 @@
+{
+  "artifacts": {
+    "axes.jsonl": {
+      "bytes": 466426,
+      "rows": 505,
+      "sha256": "4c4072e3c2b837e6f39250f45285d15f92a5ccdf49dea746abe1ccd53cce5c6a"
+    },
+    "concepts.jsonl": {
+      "bytes": 5306420,
+      "rows": 3600,
+      "sha256": "6f4280585f544b5df209c2bffb1c604019f075584a4290ad423ee79369f851bb"
+    },
+    "memberships.jsonl": {
+      "bytes": 11381925,
+      "rows": 8758,
+      "sha256": "7a9a0cfe4b0e76d123eb5f3b34adbef9a41d63aa9e5c2c27e2991369804a4cb9"
+    },
+    "proposed-concepts.jsonl": {
+      "bytes": 2323,
+      "rows": 2,
+      "sha256": "827f342d598372b9c44009f40fb8d1bb15df232fc448329a61858342cbe5fa8c"
+    },
+    "split-membership-reviews/sha256-070187be9af502791689e8eed3e997a62de56c3591ddbf274ebd7fda4cb13791-source-omissions.jsonl": {
+      "bytes": 40239,
+      "rows": 13,
+      "sha256": "070187be9af502791689e8eed3e997a62de56c3591ddbf274ebd7fda4cb13791"
+    },
+    "split-membership-reviews/sha256-1183115bebf06c5df62276e6401c649c074b7fa09c009b3116441b451de25e1b-known-false-memberships.jsonl": {
+      "bytes": 127292,
+      "rows": 273,
+      "sha256": "1183115bebf06c5df62276e6401c649c074b7fa09c009b3116441b451de25e1b"
+    },
+    "split-membership-reviews/sha256-158d3709cc19329a0c3e3cc98babdfe1b90eab3744615a5547f80add2b26650f-pass-b.jsonl": {
+      "bytes": 1543612,
+      "rows": 668,
+      "sha256": "158d3709cc19329a0c3e3cc98babdfe1b90eab3744615a5547f80add2b26650f"
+    },
+    "split-membership-reviews/sha256-24d79b65b3c8ac37c6213f1ea4b32b1eba63356573daac671e731108bd5c7b22-pass-a.jsonl": {
+      "bytes": 1311229,
+      "rows": 607,
+      "sha256": "24d79b65b3c8ac37c6213f1ea4b32b1eba63356573daac671e731108bd5c7b22"
+    },
+    "split-membership-reviews/sha256-3eeda647986eb09ae54cc8480fa314af99103ec1469cd20430711d3d174e1e47-disagreement-adjudications.jsonl": {
+      "bytes": 84076,
+      "rows": 100,
+      "sha256": "3eeda647986eb09ae54cc8480fa314af99103ec1469cd20430711d3d174e1e47"
+    },
+    "split-membership-reviews/sha256-487815b9177cd62440f8776727a7aae8fbdb285a0cdc3aeb4368061a1ac8479f-source-anchor-corrections.jsonl": {
+      "bytes": 85421,
+      "rows": 66,
+      "sha256": "487815b9177cd62440f8776727a7aae8fbdb285a0cdc3aeb4368061a1ac8479f"
+    },
+    "split-membership-reviews/sha256-609cec55c014494326ac7dd18c92d89191aab0b1c173c12cac65e70f723443c4-primary-pass-a.jsonl": {
+      "bytes": 493945,
+      "rows": 607,
+      "sha256": "609cec55c014494326ac7dd18c92d89191aab0b1c173c12cac65e70f723443c4"
+    },
+    "split-membership-reviews/sha256-683c378b0b34db4581ff9f6382279d55fc2acbfb02413ffa60d1362445d0d88e-source-omission-zero-results.jsonl": {
+      "bytes": 2227,
+      "rows": 1,
+      "sha256": "683c378b0b34db4581ff9f6382279d55fc2acbfb02413ffa60d1362445d0d88e"
+    },
+    "split-membership-reviews/sha256-b80056db44e0f6e2bed1f43c62887a238fd82db75cdfd2be7e815d5ea8187180-primary-pass-b.jsonl": {
+      "bytes": 643930,
+      "rows": 668,
+      "sha256": "b80056db44e0f6e2bed1f43c62887a238fd82db75cdfd2be7e815d5ea8187180"
+    }
+  },
+  "audit_snapshot": "sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4",
+  "baseline_commit": "8a131909e83180bd7d5b47bc83f063e7b1d8d140",
+  "baseline_corpus_digest": "872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4",
+  "canonical_vnext_counts": {
+    "axes": 483,
+    "concepts": 3557,
+    "memberships": 7644
+  },
+  "checks": {
+    "all_dropped_parent_assignments_resolved": 12,
+    "compatibility_aliases": 0,
+    "dropped_parent_memberships": 12,
+    "duplicate_audit_keys": 0,
+    "exact_axis_key_equality": true,
+    "exact_concept_key_equality": true,
+    "exact_membership_key_equality": true,
+    "independently_identified_false_memberships_dropped": 273,
+    "membership_disagreements_reconciled": 100,
+    "rejected_membership_reader_leaks": 0,
+    "source_anchor_corrections_applied": 66,
+    "source_omission_memberships_added": 13,
+    "source_omission_observations_added": 13,
+    "source_omission_parent_zero_results": 1,
+    "split_child_memberships_added": 807,
+    "split_child_memberships_dropped": 468,
+    "split_child_memberships_reviewed": 1275,
+    "split_child_proposal_key_equality": true,
+    "split_parent_memberships": 157,
+    "unreviewed_items": 0
+  },
+  "conflicts": {
+    "canonical_concept_identity_collisions": 4,
+    "mismatched_feature_id_pair_memberships": 8,
+    "missing_registry_semantic_pairs": 2,
+    "overloaded_legacy_feature_ids": 3
+  },
+  "decision_counts": {
+    "axes": {
+      "merge": 24,
+      "ratify": 10,
+      "retype": 471
+    },
+    "concepts": {
+      "merge": 4,
+      "ratify": 2135,
+      "retire": 41,
+      "retype": 1417,
+      "split": 3
+    },
+    "memberships": {
+      "add": 820,
+      "drop": 957,
+      "keep": 6805,
+      "move": 19,
+      "split": 157
+    },
+    "proposals": {
+      "ratify": 2
+    }
+  },
+  "exact_denominator": {
+    "axes": 505,
+    "concepts": 3600,
+    "frozen_memberships": 7470,
+    "independently_identified_false_memberships": 273,
+    "membership_disagreements": 100,
+    "memberships": 8758,
+    "proposed_concepts": 2,
+    "singleton_registry_concepts": 2833,
+    "singleton_semantic_pairs": 2837,
+    "source_anchor_corrections": 66,
+    "source_omission_membership_additions": 13,
+    "source_omission_observations": 13,
+    "source_omission_zero_results": 1,
+    "split_child_membership_proposals": 1275
+  },
+  "frozen_source_parse_findings": {
+    "exact_locations": [
+      "wiki/observations/lesser-hippias.md#20:temp",
+      "wiki/observations/lesser-hippias.md#21:temp",
+      "wiki/observations/lesser-hippias.md#22:temp"
+    ],
+    "known_stray_identity_tokens": 3
+  },
+  "hard_cut": "vNext ids are derived from semantic identity; compatibility aliases are prohibited and none are emitted",
+  "schema_version": 1,
+  "source_policy": "frozen ontology audit plus canonical observation records and Greek source refs only; no translations read"
+}

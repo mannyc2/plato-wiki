@@ -1,0 +1,224 @@
+{
+  "accepted_observations": 5,
+  "axis_id": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+  "axis_key": "definition_ladder",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record virtue parts enumerated within the definition ladder axis?",
+  "concept_id": "concept_sha256_ba4a5c5876ec112d87080c9ce2f97b8fc74f54211d777cf15055249a3e1dbc17",
+  "concept_key": "virtue_parts_enumerated",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_73be147bc9b536edc5ec6f3ddd77d1584a4253a892a9164b8600dd7463aed95e",
+      "conceptKey": "explicit_procedure_control",
+      "overlappingObservations": 4
+    },
+    {
+      "axisId": "axis_sha256_344e394ea1b45ae5ce3a2751a410bacb90e8d8ffb0f3d752e60fe72d20b26d88",
+      "axisKey": "craft_analogy",
+      "conceptId": "concept_sha256_5bdc99d2756ac1f50035ec9e83dc3532c0504340d156ee2cfb485c7d03a1b752",
+      "conceptKey": "facial_parts_analogy",
+      "overlappingObservations": 2
+    },
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_265960d5a836f708a13af373a19f9a8a2a164d1e1d50f17447e71eb7fea4e68c",
+      "conceptKey": "recapitulation_or_restart",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_00939260b6f80d040f6808045981c8ea2a6db6958b97c36350e2493ca506de80",
+      "conceptKey": "seriousness_play_challenge",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_b2b90d32d2ce789b531706988a4495479f3f47da6355cde68b679ba48c0d60c2",
+      "conceptKey": "recapitulation_or_restart",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_b1977b0b6a213778cae77c4b4d390795f58b6bfa028f188496292233a47cf4a8",
+      "axisKey": "myth_demarcation",
+      "conceptId": "concept_sha256_412bb53e01aa168fda5a07ce24d8a86a6f396379daedce77d48f2c967ac75f8a",
+      "conceptKey": "divine_condition_on_exposition",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 3,
+  "dimension": "discourse_structure",
+  "instance_ids": [
+    "obs_laches_0127",
+    "obs_laws_0051",
+    "obs_laws_0315",
+    "obs_protagoras_0123",
+    "obs_protagoras_0228"
+  ],
+  "instances": [
+    {
+      "dialogue": "laches",
+      "observationId": "obs_laches_0127",
+      "speakers": [
+        "ΣΩ.",
+        "ΛΑ.",
+        "ΝΙ."
+      ],
+      "stephanusSpan": "197e-198a",
+      "turnCount": 9
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0051",
+      "speakers": [
+        "ΑΘ.",
+        "ΜΕ."
+      ],
+      "stephanusSpan": "632e-633a",
+      "turnCount": 5
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0315",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "688a-688b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "protagoras",
+      "observationId": "obs_protagoras_0123",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "330a-330b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "protagoras",
+      "observationId": "obs_protagoras_0228",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "349b-349c",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_ba4a5c5876ec112d87080c9ce2f97b8fc74f54211d777cf15055249a3e1dbc17",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

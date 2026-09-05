@@ -35,6 +35,7 @@ export type CommentaryLedgerValidationIssue = {
     | "cite_unknown_id"
     | "cite_not_accepted"
     | "cite_dossier_missing"
+    | "accepted_citation_required"
     | "body_empty"
     | "body_internal_id"
     | "body_incomplete_sentence"
@@ -428,20 +429,50 @@ function validateCiteList(
   }
 }
 
+function dossierCitePath(entry: string) {
+  const match = /^([a-z0-9_-]+)\/([a-z0-9_-]+)$/u.exec(entry);
+  return match ? join(getRepoRoot(), "wiki/dossiers", match[1]!, `${match[2]}.json`) : undefined;
+}
+
 function validateDossierCites(block: CommentaryBlock, dossiers: string[], issues: CommentaryLedgerValidationIssue[]) {
-  const repoRoot = getRepoRoot();
   for (const entry of dossiers) {
-    const match = /^([a-z0-9_-]+)\/([a-z0-9_-]+)$/u.exec(entry);
-    const path = match ? join(repoRoot, "wiki/dossiers", match[1]!, `${match[2]}.md`) : undefined;
+    const path = dossierCitePath(entry);
     if (!path || !existsSync(path)) {
       issues.push({
         code: "cite_dossier_missing",
         commentaryId: block.commentaryId,
-        message: `cites.dossiers entry \`${entry}\` does not resolve to a wiki/dossiers/<family>/<label>.md file.`,
-        fix: "Use the <family>/<label> path of an existing dossier file.",
+        message: `cites.dossiers entry \`${entry}\` does not resolve to a wiki/dossiers/<axis_key>/<concept_key>.json file.`,
+        fix: "Use the <axis_key>/<concept_key> path of an existing vNext dossier projection.",
       });
     }
   }
+}
+
+function hasCanonicalCitation(parsedCites: ParsedCites, citationIndex: CommentaryCitationIndex) {
+  return (
+    parsedCites.observations.some((id) => citationIndex.observations.get(id) === "accepted") ||
+    parsedCites.claims.some((id) => citationIndex.claims.get(id) === "accepted") ||
+    parsedCites.relations.some((id) => citationIndex.relations.get(id) === "accepted") ||
+    parsedCites.dossiers.some((entry) => {
+      const path = dossierCitePath(entry);
+      return path !== undefined && existsSync(path);
+    })
+  );
+}
+
+function requiresSemanticCitation(blockKind: string | undefined) {
+  return blockKind === "argument" || blockKind === "question";
+}
+
+export function acceptedCommentaryMissingCanonicalCitation(
+  block: string,
+  citationIndex: CommentaryCitationIndex = buildCommentaryCitationIndex(),
+) {
+  return (
+    fieldValue(block, "review_status") === "accepted" &&
+    requiresSemanticCitation(fieldValue(block, "block_kind")) &&
+    !hasCanonicalCitation(parseCites(block).cites, citationIndex)
+  );
 }
 
 function firstLongGreekRun(text: string) {
@@ -724,7 +755,7 @@ export function validateCommentaryLedger(
         code: "missing_field",
         commentaryId: block.commentaryId,
         message: "Missing required commentary field `cites`.",
-        fix: "Add a cites map with observations, claims, relations, and dossiers lists (empty lists are fine).",
+        fix: "Add a cites map; accepted blocks require at least one resolving observation, claim, relation, or dossier target.",
       });
     }
     for (const field of citeUnknownFields) {
@@ -739,6 +770,18 @@ export function validateCommentaryLedger(
     validateCiteList(block, "claims", parsedCites.claims, cites, issues);
     validateCiteList(block, "relations", parsedCites.relations, cites, issues);
     validateDossierCites(block, parsedCites.dossiers, issues);
+    if (
+      reviewStatus === "accepted" &&
+      requiresSemanticCitation(blockKind) &&
+      !hasCanonicalCitation(parsedCites, cites)
+    ) {
+      issues.push({
+        code: "accepted_citation_required",
+        commentaryId: block.commentaryId,
+        message: "Accepted argument or question commentary must cite at least one canonical accepted observation, claim, relation, or dossier target.",
+        fix: "Add a resolving canonical citation, or keep the semantic commentary non-accepted until evidence is linked.",
+      });
+    }
 
     const { crossrefs } = parseCrossrefs(block.content, block.startLine);
     for (const crossref of crossrefs) {

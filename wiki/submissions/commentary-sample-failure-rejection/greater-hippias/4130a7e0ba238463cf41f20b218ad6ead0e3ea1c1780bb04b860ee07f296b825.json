@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "lane": "commentary-sample-failure-rejection",
+  "dialogue": "greater-hippias",
+  "sample_verdict": "fail",
+  "reviewer": "commentary-audit-delegated-luna-reviewer-greater-hippias-413673568f98",
+  "reviewed_on": "2026-09-01",
+  "sample_evidence": {
+    "path": "wiki/submissions/commentary-audit-sample/greater-hippias/c5b9b7fdfd6af83ce5812e882644071d9fd428041899607a60e4d9f09b70f16a.json",
+    "sha256": "c5b9b7fdfd6af83ce5812e882644071d9fd428041899607a60e4d9f09b70f16a"
+  },
+  "sample_components": {
+    "pending_manifest": {
+      "path": "scratch/commentary/audit-manifests/greater-hippias.json",
+      "sha256": "413673568f989e102bf05e203a14940ca3a1f0b5e323e8e87fc050f21947bd4d"
+    },
+    "commentary_ledger": {
+      "path": "wiki/commentary/greater-hippias.md",
+      "sha256": "f9b72dc4f417f134f98d86ece02f3adb7b71825372e75816d4a1dd512910b0de"
+    },
+    "sample_packet": {
+      "path": "scratch/commentary/audit-sample-packets/greater-hippias/12a277247cddf4df.md",
+      "sha256": "faad94eaee39ecbea6c87b31d88074a05ff1e3d93eaf66255f84b3467925f53c"
+    },
+    "output_schema": {
+      "path": "scratch/commentary/audit-sample-schemas/greater-hippias/12a277247cddf4df.json",
+      "sha256": "39b54e3c77a5efdbdca881d6d7b12636fbddfa970514dc28bb229d1833cd6e89"
+    },
+    "model_catalog": {
+      "path": "packages/harness/src/commentary-luna-model-catalog.json",
+      "sha256": "a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724"
+    },
+    "prompt": {
+      "sha256": "86d474bd7907ed5d8547c9c6895dcfabb6e62ca35e966bdf37110bcb39d585b8"
+    },
+    "sample_output": {
+      "path": "scratch/commentary/audit-sample-reviews/greater-hippias/12a277247cddf4df.json",
+      "sha256": "44c18674cb8d8aad28121a4c305e1207de723be929bcd182a099b1462723e809"
+    },
+    "sample_state": {
+      "path": "scratch/commentary/audit-sample-state/greater-hippias/12a277247cddf4df.json",
+      "sha256": "d65488b18a619e216bddd7a5829394a345db4c24eb57a4d34cbae55ca9cde48d"
+    },
+    "codex_execution": {
+      "path": "scratch/commentary/audit-sample-executions/greater-hippias/12a277247cddf4df.jsonl",
+      "sha256": "aa2bf4f14afee1eb18c94bc192a0372236934f6bed14e782e937bbb795ee7b2b"
+    }
+  },
+  "ledger": {
+    "path": "wiki/commentary/greater-hippias.md",
+    "sha256_before": "f9b72dc4f417f134f98d86ece02f3adb7b71825372e75816d4a1dd512910b0de",
+    "sha256_after": "5f44b07dc47ecd3d34928da60a968c5c38fe107784b3c7e42f74317afc8df356"
+  },
+  "failed_commentary": [
+    {
+      "commentary_id": "comm_greater-hippias_0006",
+      "rationale": "The playback edge falls between Socrates’ request to teach him and Hippias’s immediate reply, splitting a direct prompt and response; this requires prompt_reply_split and interrupts_dramatic_flow.",
+      "rationale_sha256": "744c51207b91bbc381f96244b26fb06364970acce980d22a287295d03ae86fd1"
+    }
+  ],
+  "review_receipt": {
+    "path": "wiki/review/2026-09-01-commentary-sample-failure-rejection-greater-hippias-3c73d6ba0d11.md",
+    "sha256": "f7a3c21f0d75dbe1731316963475fac9a6ea104776b3306df6f59b7b055c23ff"
+  }
+}

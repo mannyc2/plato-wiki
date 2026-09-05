@@ -3,11 +3,11 @@
   "dialogue": "lysis",
   "ledger": {
     "path": "wiki/commentary/lysis.md",
-    "sha256": "e8287c2cc29363ca4f045f37011491b7261ce57813cc837ac628777ee7d80203"
+    "sha256": "62114efc925ae227ab82d3ceee5afbbb5e5ce17bf2d5456aeaa4a449fcca41e1"
   },
   "protocol": {
     "path": "docs/commentary-protocol.md",
-    "sha256": "5f5e6f47f2d39cb42dd8941762ca1b82b4c1371801576f9ec7875e76286e1a13"
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
   },
   "authoring": {
     "model": "gpt-5.6-luna",
@@ -17,9 +17,9 @@
     {
       "unit_key": "01-203a-204b",
       "section_id": "comm_lysis_0001",
-      "audit_brief_sha256": "c6bdf977da1a0aaf597f6c4bd89454c3112ecdb6d28566e5db13bc328046cb30",
+      "audit_brief_sha256": "be68974db8ed3ee3b4929f8edfc68b0e635f92c6f1ca322ecf930649af36d5f0",
       "output_path": "scratch/commentary/audits/lysis/01-203a-204b.json",
-      "output_sha256": "776f79976578a68022b6ca729ba03eb07e1beac4945cd79f692aa05f6800cc50",
+      "output_sha256": "8ed96b976589d4b2cd17f415776697aed24aaf90e8ebb28a1691ff303e04feea",
       "output": {
         "schema_version": 3,
         "dialogue": "lysis",
@@ -47,7 +47,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames the route, invitation, conditional entry, and erotic diagnosis, adding useful structure beyond recap. At the opening edge, nothing precedes it and the source begins immediately after."
+            "rationale": "Accurately orients the route, invitation, venue, conditional entry, and erotic reveal; the summary adds the passage’s dramatic structure. It plays cleanly before the opening."
           }
         ]
       }
@@ -55,9 +55,9 @@
     {
       "unit_key": "02-204c-205e",
       "section_id": "comm_lysis_0002",
-      "audit_brief_sha256": "c73e42a7f320f674f21c9a4a020a1dc5dab9f5ee6106320699a31bb217094192",
+      "audit_brief_sha256": "0576a3db1c63c5166caffbc2fc6a1730baaf39eb9403c5357c312bf3ef55043b",
       "output_path": "scratch/commentary/audits/lysis/02-204c-205e.json",
-      "output_sha256": "d4b869bc68246d57d5a5da2aedd82b4d511a64db742ec8c431f45dd507e6951e",
+      "output_sha256": "0bc19c19cbda78ea9845f94b4480794856e97aeafe0078778f18b8d8789e7c38",
       "output": {
         "schema_version": 3,
         "dialogue": "lysis",
@@ -68,32 +68,13 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_lysis_0002",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately narrows Ctesippus’s “our ears” to the assembled companions, adds useful scope, and lands cleanly between the identification exchange and Socrates’s request for a performance."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "03-206a-206d",
       "section_id": "comm_lysis_0003",
-      "audit_brief_sha256": "5a259e73427bf667470480546a5595a58632d7becfd06c32d0200f514aa3f07e",
+      "audit_brief_sha256": "a23770cf9a4832903477ead864323daec8df15b417845a2f9bf3aafd476a864d",
       "output_path": "scratch/commentary/audits/lysis/03-206a-206d.json",
       "output_sha256": "cd5915c632e4bcef66a5a5a1eb914246b0cfbaeca246f027c4c0050ab6a7ed47",
       "output": {
@@ -112,9 +93,9 @@
     {
       "unit_key": "04-206e-207c",
       "section_id": "comm_lysis_0004",
-      "audit_brief_sha256": "4c49456c3a82512b9bcaac22f408f272951e91b0dbfbd3012b3981c84dcb9125",
+      "audit_brief_sha256": "f3b58a9954e2b46d152b00bde983aaa8124a7a093d4124b414b11f959228cbee",
       "output_path": "scratch/commentary/audits/lysis/04-206e-207c.json",
-      "output_sha256": "dc7b94a487eefd2eb99a866c8003c065f4f021fe0154c26fffe816a386cdfd7d",
+      "output_sha256": "f4687bcfcc1d6ddae046097379cfffcd89ed2598556f5bab5f90ad34055e97f1",
       "output": {
         "schema_version": 3,
         "dialogue": "lysis",
@@ -142,7 +123,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Citations support the staging and question sequence; interpretation is marked as such. The edge falls after the game setup and before Lysis enters, cleanly preparing the scene."
+            "rationale": "The commentary accurately synthesizes the staged approach, concealment, and turn to comparative questions. It sits cleanly between the boys’ games and Lysis’s introduction."
           }
         ]
       }
@@ -150,9 +131,9 @@
     {
       "unit_key": "05-207d-209a",
       "section_id": "comm_lysis_0005",
-      "audit_brief_sha256": "78180bc4922203e65e39c7904e87f068ccf50bcd4f7285e31b2f9f1d7d364404",
+      "audit_brief_sha256": "06e7fc3eb4ba3387b79ecacd7ee549800f1ff59c4862ab2ad8738aac8492871b",
       "output_path": "scratch/commentary/audits/lysis/05-207d-209a.json",
-      "output_sha256": "0a70c47887bb9afeee4aa3c2423ba020acb44b53d3e0292b0965a46fbf522751",
+      "output_sha256": "c980f6849dcb002fbe3904ac92817722d1458fb5cf28ae4c102a6d4d41db0e1e",
       "output": {
         "schema_version": 3,
         "dialogue": "lysis",
@@ -163,32 +144,13 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_lysis_0005",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately frames Menexenus's departure, Lysis's restrictions, slave tutor, age reply, and unresolved question; the edge follows Lysis's answer and precedes Socrates's clarification."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "06-209b-210e",
       "section_id": "comm_lysis_0006",
-      "audit_brief_sha256": "b06da046f85fb89c0b06fbe2343cdab0289fe6d6059467067f996c362280871c",
+      "audit_brief_sha256": "81b4f184e4a4b07ba0b5f5bb345dee01d0e89e9cc7eba5c2acb9f43bd76f6471",
       "output_path": "scratch/commentary/audits/lysis/06-209b-210e.json",
       "output_sha256": "cb8473d5d5709e04f09310e5fb54a15acba8f92d7e66c9162a8db4aa16080808",
       "output": {
@@ -207,9 +169,9 @@
     {
       "unit_key": "07-211a-211e",
       "section_id": "comm_lysis_0007",
-      "audit_brief_sha256": "936c5c787c7a8e3b40325b4e9be721c08d82f5f156345c844015e6923320cef6",
+      "audit_brief_sha256": "3c3c7fc7c4c7b225dee0af79a15ec2aa3b5fbe1bfe9e9cd2c5f435052b3166bd",
       "output_path": "scratch/commentary/audits/lysis/07-211a-211e.json",
-      "output_sha256": "74563712b27695762b05aac128bbfd932177700bc213a1e7aaa70e0db62e3636",
+      "output_sha256": "c1f556532546b006d74d01922d3f8f0e37c2728cac6ff0a5365fec16abe37986",
       "output": {
         "schema_version": 3,
         "dialogue": "lysis",
@@ -220,34 +182,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_lysis_0007",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately traces the private prompt, procedural handoff, and Socrates’ friendship declaration; citations support the checkable details. The edge follows 211e and precedes 212a coherently."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "08-212a-213d",
       "section_id": "comm_lysis_0008",
-      "audit_brief_sha256": "acce171719d4c798293dbbf2d863aecff124303c4e8e9134f135face790eaf94",
+      "audit_brief_sha256": "601ae5ba9d69af5243c2b2154950cfeb44213beabd1e1a6594409b946d0e0264",
       "output_path": "scratch/commentary/audits/lysis/08-212a-213d.json",
-      "output_sha256": "5ae8ed4f13f483e980923dbd54e05ea62df9ec620397bdc321730b980eef7be9",
+      "output_sha256": "ab55a00275abede37fbca3f76897675deaf7aa4bc38e7f3cb35eae364467d161",
       "output": {
         "schema_version": 3,
         "dialogue": "lysis",
@@ -275,7 +218,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately tracks the reversal, Lysis’s blushing response, and Socrates’ turn to him; the edge follows a complete thought and precedes the anchored passage."
+            "rationale": "Accurately tracks the reversal, Lysis’s blush, and the turn toward him. The edge follows a complete sentence and precedes the new 212a sentence, preserving the transition."
           }
         ]
       }
@@ -283,9 +226,9 @@
     {
       "unit_key": "09-213e-215c",
       "section_id": "comm_lysis_0009",
-      "audit_brief_sha256": "df5c7d606e93a4b5dc8702ada3010416b4139d28227221465331ebf1d44f229a",
+      "audit_brief_sha256": "5942c68038716b417877335722fdbf77b33997c28b3f3c7b2de1c764e1e50ca2",
       "output_path": "scratch/commentary/audits/lysis/09-213e-215c.json",
-      "output_sha256": "c26ac273141189ce647d013f851466763d5dae321dbc338254f650ae7f69e829",
+      "output_sha256": "eb07a3c7a94c786ecf8cda22b6ab42ef0b29275e64c195dcfed6ffe1f267d86e",
       "output": {
         "schema_version": 3,
         "dialogue": "lysis",
@@ -313,7 +256,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately maps the poets’ authority, hedging, revision, self-sufficiency problem, and restart. The edge follows Lysis’s opening sentence and precedes the poets’ proposal."
+            "rationale": "Accurately orients the passage's tentative authority appeal, collapse of the proposed account, and turn to a counter-thesis; the edge falls after 213e and before “Well, let us...”."
           }
         ]
       }
@@ -321,7 +264,7 @@
     {
       "unit_key": "10-215d-216b",
       "section_id": "comm_lysis_0010",
-      "audit_brief_sha256": "618de886c6a13127280f1ebab17bf722a0665690d4d756c7fcb97411eaf33e8e",
+      "audit_brief_sha256": "de6303fe3dd48652a71a67eb50628ed1c3a5567f95d8c7a3ee1dd9aad52e143f",
       "output_path": "scratch/commentary/audits/lysis/10-215d-216b.json",
       "output_sha256": "dae5900f457296c51c2e76d1cd8b7e430e6b712245d6429ee0428a57b2dfed22",
       "output": {
@@ -340,9 +283,9 @@
     {
       "unit_key": "11-216c-218c",
       "section_id": "comm_lysis_0011",
-      "audit_brief_sha256": "7ced1309ed9ea00bbf03a640fc5502239f0e68e8fcd87340105d1d292b6c47dc",
+      "audit_brief_sha256": "e4fbdd820448e8455b8fc30ec5c59c6cbaeee88d56bd19e053a32cecb8afa5ff",
       "output_path": "scratch/commentary/audits/lysis/11-216c-218c.json",
-      "output_sha256": "a85fd8966798f0092e2ac53101ff3838af29f6d3385d152e6f18859dcef5bb4e",
+      "output_sha256": "ca49ca299ffc08e2b9d5b70bfb29264a114eb8e750ee794be904773180c73296",
       "output": {
         "schema_version": 3,
         "dialogue": "lysis",
@@ -370,7 +313,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately presents the provisional intermediate theory and its philosophy analogy, with cited support and appropriately bounded certainty. The edge falls after the completed rejection and before the conclusion it frames."
+            "rationale": "Accurately tracks the rejected alternatives, intermediate condition, and provisional discovery. The edge follows “Apparently not” and prepares “Then only…” without splitting the exchange."
           }
         ]
       }
@@ -378,7 +321,7 @@
     {
       "unit_key": "12-218d-220e",
       "section_id": "comm_lysis_0012",
-      "audit_brief_sha256": "6bf8f9b3ed6b0a1c683080e9c6d6f4bc0fab8b2721e5a920c20bdaf03bbf1fdd",
+      "audit_brief_sha256": "0ce75365c08c15a026fe0a8ba804eb55941cf6f7b8daddfccc10fb02ba2d989d",
       "output_path": "scratch/commentary/audits/lysis/12-218d-220e.json",
       "output_sha256": "a276b84afe65708459cecf83c132c07cee43d3a3a2790fe4289366b5757fe9cd",
       "output": {
@@ -397,9 +340,9 @@
     {
       "unit_key": "13-221a-222a",
       "section_id": "comm_lysis_0013",
-      "audit_brief_sha256": "7aa0832f0cb3498384c7f2d10c5e363ad8675ffe46fecea054febd86cdeae287",
+      "audit_brief_sha256": "acbb0eb50c1693644ac20a0cf2078b9eb4b2f54500a96ac3a2c44256a5768983",
       "output_path": "scratch/commentary/audits/lysis/13-221a-222a.json",
-      "output_sha256": "be9650543e73d3678ac8dc1b80aa172b54bf3df9d7ce75faccb0227dd2a8a7b6",
+      "output_sha256": "80308f352574137504e4287383d8e052cdd840f628c299a0392b74f92808e997",
       "output": {
         "schema_version": 3,
         "dialogue": "lysis",
@@ -410,34 +353,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_lysis_0013",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The source explicitly allows desire to be harmful, so the inference is supported; the edge follows “Precisely, they said” and precedes “And in a case where,” preserving flow."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "14-222b-223b",
       "section_id": "comm_lysis_0014",
-      "audit_brief_sha256": "95d2e8e84452e9ad1b5378c259402ad8a104f04f63e7ea5d9b0c3af9588d3b99",
+      "audit_brief_sha256": "69352160d9ba93cf5bb67f83222b700063710aaae976b404eb812960be9fd79f",
       "output_path": "scratch/commentary/audits/lysis/14-222b-223b.json",
-      "output_sha256": "d46d1fde61a05597a046f4a28203ea06d23c05a6c1a5ddf38f2211c2d56dbb56",
+      "output_sha256": "6b357f5999524de350f265af7b70dd52b50f6dbcf237dc9e5239e42ec2a5c6cc",
       "output": {
         "schema_version": 3,
         "dialogue": "lysis",
@@ -465,7 +389,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The commentary accurately links the conditional aporia to the paidagogoi’s interruption and unanswered close. It follows the complete 222e sentence and precedes the 223a interruption without splitting the exchange."
+            "rationale": "Accurately synthesizes the unresolved inquiry and its interruption. The edge follows the aporetic conclusion and precedes the tutors’ arrival, supporting the closing arc without disrupting it."
           }
         ]
       }
@@ -473,24 +397,20 @@
   ],
   "acceptance": {
     "decision": "accepted",
-    "reviewer": "manifest-batch-2-delegated-luna-reviewer-20260823",
-    "reviewed_on": "2026-08-23",
-    "rationale": "All 10 active accepted IDs sampled in ledger order; prose, Greek source, cited evidence, placement, and audit checks pass with no defects.",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-lysis-b905f9557f9b",
+    "reviewed_on": "2026-09-01",
+    "rationale": "All six sampled blocks are source-grounded, properly anchored, cleanly placed at complete English edges, and concise enough to preserve argumentative and dramatic flow.",
     "sampled_commentary_ids": [
       "comm_lysis_0001",
-      "comm_lysis_0002",
       "comm_lysis_0004",
-      "comm_lysis_0005",
-      "comm_lysis_0007",
       "comm_lysis_0008",
       "comm_lysis_0009",
       "comm_lysis_0011",
-      "comm_lysis_0013",
       "comm_lysis_0014"
     ],
     "review_note": {
-      "path": "wiki/review/2026-08-23-commentary-quality-lysis-luna-sample.md",
-      "sha256": "2b47a2657f359c2730d16f0663e2ac5e998f1d8685239b201b1cbef18fa2fb1e"
+      "path": "wiki/review/2026-09-01-commentary-quality-lysis-luna-sample.md",
+      "sha256": "6f4226cba505c93735421b22a336009280697d42a012b6c0b15758ecb5580ca0"
     }
   }
 }

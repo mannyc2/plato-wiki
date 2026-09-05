@@ -64,6 +64,25 @@ function greekCharCount(content: string) {
   return [...content.matchAll(GREEK_LETTER)].length;
 }
 
+/**
+ * First semantic character of a turn whose derived partition may include a
+ * presentation-only prefix.
+ *
+ * Turn derivation deliberately folds non-Greek leading markup into the first
+ * turn. Voice spans are semantic records, however, and must not claim that a
+ * package tag such as `{sp1} ` is speech. Only a prefix made entirely of
+ * brace-delimited presentation tokens and whitespace may be skipped, and only
+ * up to the first canonical Stephanus marker. Greek or ordinary prose before a
+ * marker remains part of the turn and still requires voice coverage.
+ */
+export function semanticTurnStartChar(turn: TurnRecord, sourceText: string) {
+  const turnText = sourceText.slice(turn.startChar, turn.endChar);
+  const marker = /\{\d+[a-e]\}/u.exec(turnText);
+  if (!marker) return turn.startChar;
+  const prefix = turnText.slice(0, marker.index);
+  return /^(?:\s*\{[^}\n]+\})*\s*$/u.test(prefix) ? turn.startChar + marker.index : turn.startChar;
+}
+
 function readGreekFileSlugs() {
   const greekDir = join(getRepoRoot(), "raw/plato/greek");
   if (!existsSync(greekDir)) return [];

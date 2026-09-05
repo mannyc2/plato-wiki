@@ -48,6 +48,8 @@ import {
   COMMENTARY_PROTOCOL_FIXTURE,
   driftedCommentaryProtocolFixture,
 } from "../test-support/commentary-protocol-fixture.js";
+import { writeAcceptedCommentaryQualityAuditFixture } from "../test-support/audio-production-fixture.js";
+import { writeOntologyVNextFixture } from "../test-support/ontology-vnext-fixture.js";
 
 let root = "";
 let restoreRepoRoot: (() => void) | undefined;
@@ -179,13 +181,13 @@ function writeDialogue(dialogue: string) {
       "```yaml",
       `observation_id: obs_${dialogue}_0001`,
       `source_work: ${work}`,
-      "feature_family: frame_depth",
-      "feature_label: reported_dialogue_frame",
+      "observation: A reported dialogue frame is present.",
       "review_status: accepted",
       "```",
       "",
     ].join("\n"),
   );
+  writeOntologyVNextFixture(root);
 }
 
 function acceptedAudioInsertion(dialogue: string, turnId: string, edge: "before" | "after") {
@@ -2452,27 +2454,10 @@ describe("Codex gpt-5.6-luna commentary campaign", () => {
     const invalidSiblingOutput = { invalid: "sibling output" };
     const invalidSiblingOutputContent = `${JSON.stringify(invalidSiblingOutput, null, 2)}\n`;
     const digest = (content: string) => createHash("sha256").update(content).digest("hex");
-    const reviewNotePath = "wiki/review/2026-08-22-commentary-quality-accepted.md";
-    const reviewer = "cjpher-delegated-luna-reviewer-accepted";
-    const reviewedOn = "2026-08-22";
-    const rationale = "The independent sample confirms that each block earns its place in audio.";
-    const reviewNote = [
-      "# Commentary quality-audit acceptance",
-      "",
-      "dialogue: accepted",
-      "decision: accepted",
-      `reviewer: ${reviewer}`,
-      `reviewed_on: ${reviewedOn}`,
-      `rationale: ${rationale}`,
-      "review_basis: operator-delegated independent Luna sample review",
-      "human_listening_or_review: none claimed",
-      "sampled_commentary_ids:",
-      ...sampledCommentaryIds.map((id) => `- ${id}`),
-      "",
-    ].join("\n");
+    const reviewNotePath = "wiki/review/2026-07-13-commentary-quality-accepted-luna-sample.md";
     const ledgerPath = "wiki/commentary/accepted.md";
     const protocolPath = "docs/commentary-protocol.md";
-    const canonicalManifest = {
+    let canonicalManifest: Record<string, any> = {
       schema_version: 1,
       dialogue: "accepted",
       ledger: { path: ledgerPath, sha256: digest(readFileSync(join(root, ledgerPath), "utf8")) },
@@ -2502,18 +2487,25 @@ describe("Codex gpt-5.6-luna commentary campaign", () => {
     write("wiki/commentary-audits/accepted.json", `${JSON.stringify(canonicalManifest, null, 2)}\n`);
     expect(reusableCanonicalAuditOutput(job)).toBeUndefined();
 
-    write(reviewNotePath, reviewNote);
-    canonicalManifest.acceptance = {
-      decision: "accepted",
-      reviewer,
-      reviewed_on: reviewedOn,
-      rationale,
-      sampled_commentary_ids: sampledCommentaryIds,
-      review_note: { path: reviewNotePath, sha256: digest(reviewNote) },
-    };
-    write("wiki/commentary-audits/accepted.json", `${JSON.stringify(canonicalManifest, null, 2)}\n`);
+    writeAcceptedCommentaryQualityAuditFixture({
+      root,
+      dialogue: "accepted",
+      auditRationaleByCommentaryId: Object.fromEntries(
+        sampledCommentaryIds.map((commentaryId) => [
+          commentaryId,
+          "The block earns its place in the listening sequence.",
+        ]),
+      ),
+    });
+    canonicalManifest = JSON.parse(
+      readFileSync(join(root, "wiki/commentary-audits/accepted.json"), "utf8"),
+    ) as Record<string, any>;
+    for (const candidate of [job, sibling]) {
+      rmSync(join(root, candidate.output_path), { force: true });
+      rmSync(join(root, candidate.state_path), { force: true });
+    }
     expect(reusableCanonicalAuditOutput(job)?.output).toEqual(output);
-    expect(reusableCanonicalAuditOutput(sibling)).toBeUndefined();
+    expect(reusableCanonicalAuditOutput(sibling)?.output).toEqual(canonicalManifest.units[1]!.output);
 
     write(
       "wiki/commentary-audits/accepted.json",
@@ -2675,61 +2667,21 @@ describe("Codex gpt-5.6-luna commentary campaign", () => {
     const digest = (content: string) => createHash("sha256").update(content).digest("hex");
     const manifestPath = "wiki/commentary-audits/accepted.json";
     const sibling = plan.manifest.jobs[1]!;
-    const siblingOutput = {
-      ...canonicalOutput,
-      unit_key: sibling.unit_key,
-      section_id: sibling.section_id,
-      blocks: sibling.commentary_ids!.map((commentaryId) => ({
-        ...canonicalOutput.blocks[0],
-        commentary_id: commentaryId,
-      })),
-    };
-    const reviewNotePath = "wiki/review/2026-08-22-commentary-quality-accepted-precedence.md";
-    const reviewer = "cjpher-delegated-luna-reviewer-precedence";
-    const reviewedOn = "2026-08-22";
-    const rationale = "The independent sample confirms the accepted canonical judgments.";
-    const reviewNote = [
-      "# Commentary quality-audit acceptance", "", "dialogue: accepted", "decision: accepted",
-      `reviewer: ${reviewer}`, `reviewed_on: ${reviewedOn}`, `rationale: ${rationale}`,
-      "review_basis: operator-delegated independent Luna sample review",
-      "human_listening_or_review: none claimed", "sampled_commentary_ids:",
-      ...plan.manifest.jobs.flatMap((candidate) => candidate.commentary_ids ?? []).map((id) => `- ${id}`), "",
-    ].join("\n");
-    write(reviewNotePath, reviewNote);
-    const accepted = {
-      schema_version: 1,
+    writeAcceptedCommentaryQualityAuditFixture({
+      root,
       dialogue: "accepted",
-      ledger: { path: "wiki/commentary/accepted.md", sha256: digest(readFileSync(join(root, "wiki/commentary/accepted.md"), "utf8")) },
-      protocol: { path: "docs/commentary-protocol.md", sha256: digest(readFileSync(join(root, "docs/commentary-protocol.md"), "utf8")) },
-      authoring: { model: COMMENTARY_AUTHORING_MODEL, effort: COMMENTARY_STAGE_EFFORT.audit },
-      units: [job, sibling].map((candidate, index) => {
-        const unitOutput = index === 0 ? canonicalOutput : siblingOutput;
-        const unit = {
-          unit_key: candidate.unit_key,
-          section_id: candidate.section_id,
-          audit_brief_sha256: candidate.audit_brief_sha256,
-          output_path: candidate.output_path,
-          output_sha256: digest(`${JSON.stringify(unitOutput, null, 2)}\n`),
-          output: unitOutput,
-        };
-        if (index === 0) {
-          unit.provenance = {
-            path: delegated.submissionRecordPath,
-            sha256: digest(readFileSync(join(root, delegated.submissionRecordPath), "utf8")),
-          };
-        }
-        return unit;
-      }),
-      acceptance: {
-        decision: "accepted",
-        reviewer,
-        reviewed_on: reviewedOn,
-        rationale,
-        sampled_commentary_ids: plan.manifest.jobs.flatMap((candidate) => candidate.commentary_ids ?? []),
-        review_note: { path: reviewNotePath, sha256: digest(reviewNote) },
-      },
-    } as Record<string, any>;
-    write(manifestPath, `${JSON.stringify(accepted, null, 2)}\n`);
+      auditRationaleByCommentaryId: Object.fromEntries([
+        ...job.commentary_ids!.map((commentaryId, index) => [
+          commentaryId,
+          canonicalOutput.blocks[index]!.rationale,
+        ]),
+        ...sibling.commentary_ids!.map((commentaryId) => [
+          commentaryId,
+          canonicalOutput.blocks[0]!.rationale,
+        ]),
+      ]),
+    });
+    const accepted = JSON.parse(readFileSync(join(root, manifestPath), "utf8")) as Record<string, any>;
     expect(reusableCanonicalAuditOutput(job)?.output).toEqual(canonicalOutput);
 
     const omittedPointer = structuredClone(accepted);
@@ -2740,7 +2692,12 @@ describe("Codex gpt-5.6-luna commentary campaign", () => {
       "invalid_manifest_shape",
     );
     const mutatedPointer = structuredClone(accepted);
-    mutatedPointer.units[0]!.provenance.sha256 = "0".repeat(64);
+    mutatedPointer.units[0]!.output = output;
+    mutatedPointer.units[0]!.output_sha256 = digest(`${JSON.stringify(output, null, 2)}\n`);
+    mutatedPointer.units[0]!.provenance = {
+      path: delegated.submissionRecordPath,
+      sha256: "0".repeat(64),
+    };
     expect(validateCommentaryQualityAuditManifest(manifestPath, JSON.stringify(mutatedPointer)).map((issue) => issue.code)).toContain(
       "invalid_manifest_shape",
     );
@@ -2866,8 +2823,8 @@ describe("Codex gpt-5.6-luna commentary campaign", () => {
         write(
           observationPath,
           readFileSync(join(root, observationPath), "utf8").replace(
-            "feature_label: reported_dialogue_frame",
-            "feature_label: changed_after_execution_started",
+            "observation: A reported dialogue frame is present.",
+            "observation: This changed after execution started.",
           ),
         );
       }
@@ -2906,8 +2863,8 @@ describe("Codex gpt-5.6-luna commentary campaign", () => {
     expect(results.map((result) => result.status)).toEqual(["generated", "generated"]);
     expect(generationCalls).toBe(2);
     expect(packets).toHaveLength(2);
-    expect(packets.every((packet) => packet.includes("feature_label: reported_dialogue_frame"))).toBe(true);
-    expect(packets.some((packet) => packet.includes("changed_after_execution_started"))).toBe(false);
+    expect(packets.every((packet) => packet.includes("observation: A reported dialogue frame is present."))).toBe(true);
+    expect(packets.some((packet) => packet.includes("This changed after execution started."))).toBe(false);
     expect(packets[0]).toContain(`brief_path: ${expectedBriefs[0]!.path}`);
     expect(packets[0]).toContain(expectedBriefs[0]!.commentaryIds.join(", "));
     expect(packets[1]).toContain(`brief_path: ${expectedBriefs[1]!.path}`);

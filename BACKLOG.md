@@ -5,52 +5,60 @@ provide to the agent. The goal is to make the model responsible for local
 judgment, not for counting, offset math, source hashing, span lookup, speaker
 segmentation, or token census.
 
-## Priority 0: Validation And Audit Baseline
+## Priority 0: Ontology vNext Validation And Audit Closure
 
-### Validate Observation Ledgers From `validate`
+### Validate Every Canonical Semantic Lane From `validate`
 
-Problem: `bun run validate` currently checks prerequisites and feature registry
-shape, but observation ledgers are validated separately.
+Problem: repository validation must establish one coherent source-to-view graph,
+not a collection of independently valid files.
 
 Work:
 
-- Include `wiki/observations/*.md` in repo validation.
-- Report ledger path and concise issue counts.
-- Keep direct validator tests focused on malformed ledgers.
+- Validate every `wiki/observations/*.md` ledger and exact Greek source anchor.
+- Validate strict `wiki/ontology/{axes,concepts,memberships}.jsonl` together,
+  including derived IDs, closed schemas, comparison questions, references, and
+  accepted-observation membership targets.
+- Validate claims, relations, commentary citations, voices, and every graph
+  reference against the same accepted canonical set.
+- Reject classification fields in observation records and reject any reader or
+  projection that bypasses the canonical ontology lane.
+- Report paths and concise issue counts while keeping malformed-input cases in
+  focused validator tests.
 
 Output:
 
-- `bun run validate` fails on invalid observation ledgers.
+- `bun run validate` fails on any invalid semantic record, edge, ontology row,
+  or deterministic projection.
 
 Why it matters:
 
 - Schema changes become safer.
-- Generated wiki artifacts cannot silently rot.
+- Generated wiki artifacts cannot silently drift from their canonical inputs.
 
-### Family Drift Report
+### Axis, Concept, And Membership Quality Report
 
-Problem: passthrough feature families are useful, but they need an audit view.
+Problem: question-driven comparison still needs an audit view for overly broad,
+singleton-heavy, or weakly populated concepts.
 
 Work:
 
-- Add a command or validation report that lists all `feature_family` values.
-- Mark seed versus passthrough families.
-- Count observations and feature candidates per family.
-- Show first few observation IDs for each passthrough family.
+- List every axis with its dimension and exact cross-dialogue question.
+- Count concepts, memberships, accepted observations, and represented dialogues
+  per axis.
+- Report cross-dialogue concepts, singleton concepts, and accepted observations
+  without a membership.
+- Show a bounded set of observation IDs for each quality finding.
 
 Output:
 
-```text
-feature families:
-- definition_ladder: seed, 9 observations
-- claimed_expertise: passthrough, 1 observation
-- formal_relation_model: passthrough, 1 observation
-```
+- The static quality page and validation summary derive only from validated
+  axes, concepts, memberships, and accepted observations.
 
 Why it matters:
 
-- We can discover schema holes without blocking runs.
-- Review can promote recurring passthrough families intentionally.
+- Review can refine comparison questions without changing source-bound facts.
+- Quality work remains measurable without creating a second classification
+  authority.
 
 ## Priority 1: Citation Geometry
 
@@ -538,15 +546,18 @@ model impressions.
 
 Work:
 
-- Group accepted observations by family, label, Greek anchors, speaker, or
-  structural role.
+- Join accepted observations through canonical concept memberships.
+- Emit one validated JSONL projection per comparison axis, with concepts as the
+  grouping units.
+- Keep Greek anchors, speakers, and structural roles as secondary filters, not
+  competing membership keys.
 - Emit descriptive clusters only.
 - No doctrinal synthesis.
 
 Suggested output:
 
 ```text
-wiki/clusters/*.md
+wiki/clusters/<axis_key>.jsonl
 ```
 
 Why it matters:
@@ -577,16 +588,19 @@ A derived dataset should become agent-visible only when:
 - output size is bounded enough for tool use
 - the agent instructions explain when to use it
 
-## Immediate Next Slice
+## Canonical Change Closure Gate
 
-The smallest useful next implementation slice:
+A change to canonical corpus data is complete only when:
 
-1. Done: add observation-ledger validation to `bun run validate`.
-2. Done: add family drift report.
-3. Done: cut ingest over to staged observation writes and final commit sync.
-4. Build `derived/plato/stephanus/*.toon`.
-5. Add tests for span-index generation.
-6. Update `wiki_source_span` to use the span index.
+1. Greek source spans, semantic ledgers, ontology rows, and dependent graph
+   references all validate.
+2. Every affected item has a terminal disposition and required review receipt.
+3. Clusters, dossiers, joins, indexes, and site artifacts regenerate twice from
+   a clean output state with byte-identical results.
+4. The snapshot-bound audit verifier proves exact partition coverage and final
+   set equality.
+5. `bun run test`, `bun run typecheck`, `bun run validate`, and
+   `git diff --check` all pass on the exact committed candidate.
 
-That slice improves safety and creates the base coordinate grid for every later
-deterministic dataset.
+These gates preserve the source coordinate grid while preventing a generated
+view or review artifact from becoming a second source of truth.

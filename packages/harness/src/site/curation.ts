@@ -364,141 +364,79 @@ export function fingerprintOpacity(count: number): number {
 }
 
 // Deterministic top-pattern selection: most dialogues first, then most accepted
-// observations, then family/label code-unit ascending (no locale compare).
+// observations, then canonical axis/concept key ascending (no locale compare).
 export function topPatternDossiers(dossiers: readonly SiteDossier[], limit = 12): SiteDossier[] {
   return [...dossiers]
     .sort(
       (a, b) =>
         b.dialogues - a.dialogues ||
         b.acceptedObservations - a.acceptedObservations ||
-        (`${a.family}/${a.label}` < `${b.family}/${b.label}`
+        (`${a.axisKey}/${a.conceptKey}` < `${b.axisKey}/${b.conceptKey}`
           ? -1
-          : `${a.family}/${a.label}` > `${b.family}/${b.label}`
+          : `${a.axisKey}/${a.conceptKey}` > `${b.axisKey}/${b.conceptKey}`
             ? 1
             : 0),
     )
     .slice(0, limit);
 }
 
-// Operator-reviewable public copy: one strictly descriptive line per top
-// pattern, keyed `${family}/${label}`. Every dossier selected by
-// topPatternDossiers over the real corpus must have an entry or the build fails
-// (curation as an invariant, like the dialogue epigraphs). Drafted from each
-// dossier's own instances; no interpretive claims.
-export const PATTERN_ONELINERS: Record<string, string> = {
-  "turn_geometry/explicit_procedure_control":
-    "Socrates, or whoever is examining, stops the conversation to set its rules.",
-  "definition_ladder/definition_proposed":
-    "Someone ventures a definition and puts it on the table to be tested.",
-  "elenchus/assent_chain":
-    "A run of agreed steps is built up, each answer conceded before the next question is put.",
-  "craft_analogy/expert_craft_analogy":
-    "The argument reaches for a craft — piloting, medicine, cobbling — as a model for the matter at hand.",
-  "turn_geometry/recapitulation_or_restart":
-    "The discussion is summed up, or begun again from an earlier point.",
-  "irony_marker/mock_deference":
-    "The speaker professes deference to an interlocutor's wisdom or standing.",
-  "turn_geometry/argument_transition_marker":
-    "A phrase marks the move from one stage of the argument to the next.",
-  "irony_marker/knowledge_disavowal":
-    "Socrates disavows knowledge of the matter under discussion.",
-  "definition_ladder/definiendum_marked_for_inquiry":
-    "The term to be defined is singled out and set down as the question.",
-  "definition_ladder/definition_revised_after_objection":
-    "A proposed definition is amended once an objection has landed.",
-  "elenchus/aporia_reported":
-    "The interlocutors report themselves at a loss, unable to say what they meant.",
-  "elenchus/forced_alternative":
-    "The questioning presses a choice between two stated alternatives.",
-};
-
-export function patternOneliner(family: string, label: string): string {
-  const oneliner = PATTERN_ONELINERS[`${family}/${label}`];
-  if (!oneliner) {
-    throw new Error(`No curated one-liner for pattern ${family}/${label}.`);
-  }
-  return oneliner;
-}
-
-// Curated tag sets for the dialogues index, keyed `${family}/${label}`. Two or
-// three per dialogue, drafted from the computed candidates (a label qualifies
+// Curated tag sets for the dialogues index, keyed by canonical
+// `${axisKey}/${conceptKey}`. Two or
+// three per dialogue, drafted from the computed candidates (a concept qualifies
 // by having at least two accepted instances in the dialogue). Operator-owned
 // copy under two build-enforced invariants: every tag must still be a real
 // candidate in the dossier evidence, and a row's summed display text must fit
 // one line (TAG_ROW_BUDGET). A 28th dialogue without an entry fails the build.
 export const TAG_ROW_BUDGET = 72;
 export const TAG_MIN_SUPPORT = 2;
-export const DIALOGUE_TAGS: Record<string, string[]> = {
-  apology: ["dramatic_case_setup/socratic_defense_mission_frame", "closure_type/prophecy", "dramatic_case_setup/legal_case_frame"],
-  charmides: ["irony_marker/riddle_characterization_of_definition", "elenchus/aporia_reported"],
-  cratylus: ["definition_ladder/definition_by_name_etymology", "etymological_analysis/etymology_from_compound"],
-  critias: ["dramatic_case_setup/soil_fertility_catalogue", "frame_depth/transmission_chain_cited", "myth_demarcation/mythic_aetiology"],
-  crito: ["dramatic_case_setup/prison_execution_frame", "elenchus/assent_chain"],
-  euthydemus: ["elenchus/equivocation_sophism", "elenchus/homonymy_exploitation", "craft_analogy/rhetoric_as_incantation"],
-  euthyphro: ["craft_analogy/piety_service_exchange_analogy", "dramatic_case_setup/legal_case_frame", "forms_trajectory/form_request"],
-  gorgias: ["nature_convention_contrast/physis_nomos_antithesis", "craft_analogy/craft_order_extends_to_soul"],
-  "greater-hippias": ["definition_ladder/definition_tested_by_case", "definition_ladder/definition_rejected", "irony_marker/mock_deference"],
-  ion: ["divine_inspiration/inspiration_chain_model", "craft_analogy/expert_craft_analogy"],
-  laches: ["craft_analogy/expert_craft_analogy", "irony_marker/knowledge_disavowal", "elenchus/knowledge_priority_argument"],
-  laws: ["myth_demarcation/poetic_authority_cited_in_argument", "dramatic_case_setup/city_foundation_sequence"],
-  "lesser-hippias": ["prosopography/homeric_hero_ranking", "elenchus/forced_alternative", "irony_marker/knowledge_disavowal"],
-  lysis: ["elenchus/aporia_reported", "elenchus/assent_chain", "dramatic_case_setup/interlocutor_emotional_reaction"],
-  menexenus: ["dramatic_case_setup/autochthony_claim", "prosopography/ally_catalogue", "turn_geometry/speaker_ventriloquism"],
-  meno: ["irony_marker/knowledge_disavowal", "definition_ladder/definition_proposed", "definition_ladder/hypothesis_condition_stated"],
-  parmenides: ["forms_trajectory/participation_vocabulary_in_deduction", "elenchus/whole_mereology_argument"],
-  phaedo: ["myth_demarcation/cosmological_myth", "forms_trajectory/form_name_extension", "forms_trajectory/body_impediment_catalog"],
-  phaedrus: ["myth_demarcation/divine_madness_classification", "craft_analogy/agriculture_writing_analogy"],
-  philebus: ["forms_trajectory/one_over_many_problem_introduced", "closure_type/ranked_prize_closure"],
-  protagoras: ["elenchus/pleasant_good_identity_test", "myth_demarcation/mythic_origin_of_political_virtue"],
-  republic: ["craft_analogy/mimesis_appearance_reality_distinction", "dramatic_case_setup/tyrant_emergence_sequence"],
-  sophist: ["definition_ladder/definition_by_dichotomous_division", "forms_trajectory/non_being_as_other_not_contrary"],
-  statesman: ["definition_ladder/law_obedience_as_second_best", "myth_demarcation/cosmic_cycle_narrative"],
-  symposium: ["definition_ladder/biological_grounding_of_eros", "prosopography/socratic_associate_testimony"],
-  theaetetus: ["craft_analogy/midwife_craft_claimed", "craft_analogy/aviary_knowledge_possession_analogy"],
-  timaeus: ["myth_demarcation/likely_account_hedge", "methodological_distinction/cause_co_cause_distinction", "mathematical_cosmology/cosmos_is_one_not_many"],
-};
 
 export type DialogueTag = {
-  family: string;
-  label: string;
+  axisId: string;
+  axisKey: string;
+  conceptId: string;
+  conceptKey: string;
   display: string;
   count: number;
   corpus: number;
 };
 
 export function dialogueTags(dialogue: string, dossiers: readonly SiteDossier[]): DialogueTag[] {
-  const keys = DIALOGUE_TAGS[dialogue];
-  if (!keys) {
-    throw new Error(`No curated tags for dialogue ${dialogue}. Add an entry to DIALOGUE_TAGS.`);
-  }
-  const byKey = new Map(dossiers.map((dossier) => [`${dossier.family}/${dossier.label}`, dossier]));
+  if (!DIALOGUE_EPIGRAPHS[dialogue]) throw new Error(`No curated epigraph for dialogue ${dialogue}.`);
+  const candidates = dossiers
+    .map((dossier) => ({
+      dossier,
+      count: dossier.presence.find((entry) => entry.dialogue === dialogue)?.acceptedObservations ?? 0,
+    }))
+    .filter(({ count }) => count >= TAG_MIN_SUPPORT)
+    .sort(
+      (left, right) =>
+        right.count - left.count ||
+        right.dossier.dialogues - left.dossier.dialogues ||
+        right.dossier.acceptedObservations - left.dossier.acceptedObservations ||
+        (`${left.dossier.axisKey}/${left.dossier.conceptKey}` <
+        `${right.dossier.axisKey}/${right.dossier.conceptKey}`
+          ? -1
+          : `${left.dossier.axisKey}/${left.dossier.conceptKey}` >
+              `${right.dossier.axisKey}/${right.dossier.conceptKey}`
+            ? 1
+            : 0),
+    );
   const tags: DialogueTag[] = [];
-  for (const key of keys) {
-    // A key with no dossier at all is skipped rather than fatal so partial
-    // fixtures and subset builds still render; a dossier that EXISTS but has
-    // lost its support here fails loudly — that is the decay the invariant
-    // guards against.
-    const dossier = byKey.get(key);
-    if (!dossier) continue;
-    const count = dossier.presence.find((entry) => entry.dialogue === dialogue)?.acceptedObservations ?? 0;
-    if (count < TAG_MIN_SUPPORT) {
-      throw new Error(
-        `Curated tag ${key} for ${dialogue} has ${count} accepted instances there (needs ${TAG_MIN_SUPPORT}).`,
-      );
-    }
+  let budget = 0;
+  for (const { dossier, count } of candidates) {
+    const display = titleCaseDialogue(dossier.conceptKey);
+    if (budget + display.length > TAG_ROW_BUDGET) continue;
     tags.push({
-      family: dossier.family,
-      label: dossier.label,
-      display: titleCaseDialogue(dossier.label),
+      axisId: dossier.axisId,
+      axisKey: dossier.axisKey,
+      conceptId: dossier.conceptId,
+      conceptKey: dossier.conceptKey,
+      display,
       count,
       corpus: dossier.acceptedObservations,
     });
-  }
-  const budget = tags.reduce((sum, tag) => sum + tag.display.length, 0);
-  if (budget > TAG_ROW_BUDGET) {
-    throw new Error(
-      `Curated tags for ${dialogue} run ${budget} characters (budget ${TAG_ROW_BUDGET}); pick shorter labels.`,
-    );
+    budget += display.length;
+    if (tags.length === 3) break;
   }
   return tags;
 }
@@ -515,7 +453,7 @@ export const LAYER_GUIDE = [
     title: "Dossiers",
     path: "dossiers/index.html",
     description:
-      "One evidence file per recurring label: every instance with its span, speakers, and turns, the counter-records that cut against the pattern, and the labels it co-occurs with.",
+      "One evidence file per recurring concept: every accepted instance with its span, speakers, and turns, plus the canonical concepts it co-occurs with.",
   },
   {
     title: "Clusters",
@@ -524,10 +462,10 @@ export const LAYER_GUIDE = [
       "Observations grouped by the textual work they do — the same device gathered from every dialogue it appears in, so a move can be read across its settings.",
   },
   {
-    title: "Families",
-    path: "families/index.html",
+    title: "Axes",
+    path: "axes/index.html",
     description:
-      "The observation ontology itself: every type of textual fact the reading records, from the structural families down to the topical law codes, with their labels and candidates.",
+      "Independent comparison questions that keep textual function, subject matter, presentation form, dramatic context, discourse structure, and lexical form distinct.",
   },
   {
     title: "Anchors",
@@ -548,123 +486,12 @@ export const LAYER_GUIDE = [
       "Links between claims that support or strain against each other, within and across dialogues, each carrying the limits of what the link asserts.",
   },
   {
-    title: "Feature registry",
-    path: "registry.html",
+    title: "Concepts",
+    path: "concepts/index.html",
     description:
-      "The raw candidate index behind the ontology — proposed features awaiting review, with their status and sample records.",
+      "Ratified comparison concepts with stable semantic identities, precise definitions, and their complete accepted observation memberships.",
   },
 ] as const;
-
-// Operator-editable one-line descriptions for the observation families that can
-// render UNFOLDED on a dialogue overview — the top-eight-per-dialogue union
-// census, exactly the 23 families below. Strictly descriptive site chrome, no
-// interpretive claims. `familyGuide(family)` throws on a missing entry so a
-// family that climbs into some dialogue's top eight without a line fails the
-// build; families that only ever render folded (name + count) need no line.
-export const FAMILY_GUIDE: Record<string, string> = {
-  closure_type:
-    "How an argument or the whole work ends: verdict, prophecy, myth, aporia, or an exit from the scene.",
-  constitutional_design:
-    "How a constitution is put together in argument: offices, laws, and the reasons the text gives for their arrangement.",
-  constitutional_typology:
-    "The sorting of regimes into kinds — rule by one, few, or many, and the lawful and lawless form of each.",
-  craft_analogy:
-    "A craft — medicine, piloting, horse-training — reached for as the model of the matter at hand.",
-  definition_ladder:
-    "The career of a definition: proposed, tested against cases, revised after objections, rejected or let stand.",
-  divine_inspiration:
-    "Claims that a skill or speech comes by divine possession rather than knowledge — chains, seizures, oracles.",
-  dramatic_case_setup:
-    "How the text stages its own occasion — scene, charges, cast, and the frame the argument happens inside.",
-  elemental_theory:
-    "Accounts built from the elements — fire, air, water, earth — and their transformations.",
-  elenchus:
-    "Question-and-answer testing of a position — assent chains, forced alternatives, refutations, reported dead ends.",
-  ethical_training:
-    "Statements about how character is formed: practice, exhortation, the ordering of cares.",
-  etymological_analysis:
-    "A name taken apart to argue from its parts — derivations offered as evidence about the thing named.",
-  etymology_analysis: "Derivations of particular names traced to their supposed sources.",
-  forms_trajectory:
-    "The forms at work in argument: requested, named, participated in, extended to new cases.",
-  frame_depth:
-    "How many hands a story passes through — narrators, witnesses, and cited chains of transmission.",
-  irony_marker:
-    "Marked gaps between what is said and what is meant — disavowals, mock deference, riddling praise.",
-  legislative_method:
-    "How the lawgiver is said to work: preludes before statutes, persuasion before compulsion, codes ordered by rank.",
-  mathematical_cosmology:
-    "The cosmos described through number and figure — proportions, solids, and the one-and-many of its construction.",
-  myth_demarcation:
-    "Where the text marks a story as story: likely accounts, poetic authority, myth set against argument.",
-  perception_generation:
-    "Accounts of how perceiving arises — motion meeting motion, organs and objects generating appearance together.",
-  prosopography:
-    "Named persons and types put to argumentative work — catalogues, rankings, figures cited as evidence.",
-  teleological_structure:
-    "Explanations that run through purpose: what a thing is for, and how its arrangement serves that end.",
-  temporal_argument:
-    "Arguments that turn on time — priority, cycles, coming-to-be, and what eternity excludes.",
-  turn_geometry:
-    "The mechanics of the exchange itself — who sets procedure, where arguments restart or change stage.",
-  virtue_ruler_alignment:
-    "Statements aligning the ruler's soul with the city's order — what governing requires of character.",
-};
-
-export function familyGuide(family: string): string {
-  const line = FAMILY_GUIDE[family];
-  if (!line) {
-    throw new Error(
-      `No curated FAMILY_GUIDE line for family ${family}; it renders unfolded on some dialogue overview. Add one.`,
-    );
-  }
-  return line;
-}
-
-// One curated specimen observation per dialogue for the overview's "From the
-// records" card. Seeded by rule — the accepted observation instantiating the
-// dialogue's first curated tag (DIALOGUE_TAGS[dialogue][0]), earliest by
-// sourceRef.startChar, tiebreak lowest id — then written as literals. apology is
-// the one override: obs_apology_0029 (the 38a-38b card the operator approved in
-// the ratified artifact). Validated at render time: exists, accepted, of that
-// dialogue.
-export const DIALOGUE_SPECIMEN_IDS: Record<string, string> = {
-  apology: "obs_apology_0029",
-  charmides: "obs_charmides_0057",
-  cratylus: "obs_cratylus_0056",
-  critias: "obs_critias_0031",
-  crito: "obs_crito_0001",
-  euthydemus: "obs_euthydemus_0162",
-  euthyphro: "obs_euthyphro_0024",
-  gorgias: "obs_gorgias_0171",
-  "greater-hippias": "obs_greater-hippias_0045",
-  ion: "obs_ion_0007",
-  laches: "obs_laches_0031",
-  laws: "obs_laws_0247",
-  "lesser-hippias": "obs_lesser-hippias_0008",
-  lysis: "obs_lysis_0061",
-  menexenus: "obs_menexenus_0030",
-  meno: "obs_meno_0003",
-  parmenides: "obs_parmenides_0104",
-  phaedo: "obs_phaedo_0227",
-  phaedrus: "obs_phaedrus_0121",
-  philebus: "obs_philebus_0009",
-  protagoras: "obs_protagoras_0260",
-  republic: "obs_republic_0538",
-  sophist: "obs_sophist_0025",
-  statesman: "obs_statesman_0237",
-  symposium: "obs_symposium_0120",
-  theaetetus: "obs_theaetetus_0041",
-  timaeus: "obs_timaeus_0135",
-};
-
-export function dialogueSpecimenId(dialogue: string): string {
-  const id = DIALOGUE_SPECIMEN_IDS[dialogue];
-  if (!id) {
-    throw new Error(`No curated specimen observation for dialogue ${dialogue}. Add one to DIALOGUE_SPECIMEN_IDS.`);
-  }
-  return id;
-}
 
 // Local title-caser for the aria-label (avoids importing the whole layout
 // surface); mirrors layout.titleCase for slugs.

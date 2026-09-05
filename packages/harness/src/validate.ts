@@ -23,14 +23,10 @@ import { collectReviewProvenanceFailures } from "./review-provenance.js";
 import { collectChangedCorpusWorkflowFailures } from "./workflow-policy.js";
 import { discoverSiteRecordings, validateSiteRecordingEvidence } from "./site/recordings.js";
 import type {
-  FeatureFamilyDriftEntry,
-  FeatureLabelDriftEntry,
-  LabelDriftSummary,
+  OntologySummary,
   ReviewCoverageEntry,
   ValidationReport,
 } from "./types.js";
-import { assertFeatureRegistryContent } from "./wiki/feature-registry-validator.js";
-import { SEED_FEATURE_FAMILIES, extractObservationFeatureLinks } from "./wiki/observation-feature-index.js";
 import { claimYamlBlocks, listClaimLedgerPaths } from "./wiki/claim-ledger.js";
 import { formatClaimLedgerValidationError, validateClaimLedger } from "./wiki/claim-validator.js";
 import { listApparatusLedgerPaths } from "./wiki/apparatus-ledger.js";
@@ -55,10 +51,17 @@ import { formatRelationLedgerValidationError, validateRelationLedger } from "./w
 import {
   dialogueFromObservationId,
   fieldValue,
+  listFieldValue,
   listObservationLedgerPaths,
   observationYamlBlocks,
 } from "./wiki/observation-ledger.js";
 import { formatObservationLedgerValidationError, validateObservationLedger } from "./wiki/observation-validator.js";
+import { collectOntologyAuditFailures } from "./wiki/ontology-audit.js";
+import {
+  readOntologyVNextRepository,
+  readObservationReviewStatuses,
+  validateOntologyVNextRepository,
+} from "./wiki/ontology-vnext-repository.js";
 import {
   formatRecordingManifestValidationError,
   validateRecordingManifests,
@@ -115,19 +118,17 @@ function scanForBannedInstructionText() {
   ];
   const files = [
     ".pi/skills/plato-observation-extraction/SKILL.md",
-    ".pi/skills/plato-label-normalization/SKILL.md",
     ".pi/prompts/ingest-plato-dialogue.md",
     ".pi/prompts/ingest-plato-segment.md",
     ".pi/prompts/extract-plato-claims-segment.md",
     ".pi/prompts/adjudicate-plato-relations.md",
-    ".pi/prompts/review-plato-features.md",
     ".pi/prompts/review-plato-segment.md",
     ".pi/prompts/review-plato-claims-segment.md",
     ".pi/prompts/review-plato-relations.md",
-    "docs/label-normalization-standards.md",
+    "docs/ontology-vnext.md",
+    "docs/ontology-audit-protocol.md",
     "docs/plato-wiki-extraction-protocol.md",
     "docs/pi-agent-core-wiki-runner.md",
-    "wiki/features-so-far.md",
   ];
 
   const failures: string[] = [];
@@ -150,22 +151,13 @@ export function validateHarnessInstructionContract() {
   const repoRoot = getRepoRoot();
   const requiredPhrases = [
     {
-      file: "docs/label-normalization-standards.md",
+      file: "docs/ontology-vnext.md",
       phrases: [
-        "## Reusable Agent And Harness Contract",
-        "Function before topic",
-        "Hard cutover after acceptance",
-        "The reusable output is the merge map",
-        "bun run harness labels validate",
-      ],
-    },
-    {
-      file: ".pi/skills/plato-label-normalization/SKILL.md",
-      phrases: [
-        "## Reusable Contract",
-        "load the standards document and this skill before proposing merge-map entries",
-        "persist decisions only in the merge map",
-        "stop before apply when validation fails",
+        "## Canonical model",
+        "Source-bound observations do not own classification identity",
+        "Rejected observations have no memberships",
+        "Hard cut only",
+        "Question-driven projections",
       ],
     },
   ];
@@ -187,13 +179,6 @@ export function validateHarnessInstructionContract() {
   }
 
   return failures;
-}
-
-function validateFeatureRegistryShape() {
-  const repoRoot = getRepoRoot();
-  const featureRegistryPath = join(repoRoot, "wiki/features-so-far.md");
-  const content = readFileSync(featureRegistryPath, "utf8");
-  assertFeatureRegistryContent(content);
 }
 
 function observationLedgerPaths() {
@@ -232,10 +217,18 @@ function validateClaimLedgers() {
   const repoRoot = getRepoRoot();
   const failures: string[] = [];
   const paths = claimLedgerPaths();
+  const observationReviewStatuses = readObservationReviewStatuses();
+  const observationSupportedClaims = new Map<string, string[]>();
+  for (const observationPath of listObservationLedgerPaths({ absolute: true })) {
+    for (const block of observationYamlBlocks(readFileSync(observationPath, "utf8"))) {
+      const observationId = fieldValue(block, "observation_id");
+      if (observationId) observationSupportedClaims.set(observationId, listFieldValue(block, "supports_claim_ids"));
+    }
+  }
 
   for (const relativePath of paths) {
     const content = readFileSync(join(repoRoot, relativePath), "utf8");
-    const issues = validateClaimLedger(relativePath, content);
+    const issues = validateClaimLedger(relativePath, content, { observationReviewStatuses, observationSupportedClaims });
     if (issues.length > 0) {
       failures.push(`${relativePath}\n${formatClaimLedgerValidationError(issues)}`);
     }
@@ -411,93 +404,43 @@ export function validateEnglishSpines() {
   return failures;
 }
 
-function parseRegistryFeatureFamilies(content: string) {
-  const counts = new Map<string, number>();
-  const matches = [...content.matchAll(/^###\s+\S+\s*$/gmu)];
+export function collectOntologySummary(): OntologySummary {
+  const ontology = readOntologyVNextRepository();
+  const conceptById = new Map(ontology.concepts.map((concept) => [concept.concept_id, concept]));
+  const conceptsByAxis = new Map<string, number>();
+  const membershipsByAxis = new Map<string, number>();
+  const membershipCountByConcept = new Map<string, number>();
+  const dialoguesByConcept = new Map<string, Set<string>>();
 
-  for (const [index, match] of matches.entries()) {
-    const bodyStart = (match.index ?? 0) + match[0].length;
-    const bodyEnd = matches[index + 1]?.index ?? content.length;
-    const body = content.slice(bodyStart, bodyEnd);
-    const family = /^-\s+\*\*family:\*\*\s*(\S+)\s*$/mu.exec(body)?.[1];
-    if (!family) continue;
-    counts.set(family, (counts.get(family) ?? 0) + 1);
+  for (const concept of ontology.concepts) {
+    conceptsByAxis.set(concept.axis_id, (conceptsByAxis.get(concept.axis_id) ?? 0) + 1);
   }
-
-  return counts;
-}
-
-function collectFamilyDriftReport(): FeatureFamilyDriftEntry[] {
-  const repoRoot = getRepoRoot();
-  const observationsByFamily = new Map<string, Set<string>>();
-
-  for (const relativePath of observationLedgerPaths()) {
-    const content = readFileSync(join(repoRoot, relativePath), "utf8");
-    for (const link of extractObservationFeatureLinks(content)) {
-      const observations = observationsByFamily.get(link.featureFamily) ?? new Set<string>();
-      observations.add(link.observationId);
-      observationsByFamily.set(link.featureFamily, observations);
-    }
+  for (const membership of ontology.memberships) {
+    const concept = conceptById.get(membership.concept_id)!;
+    membershipsByAxis.set(concept.axis_id, (membershipsByAxis.get(concept.axis_id) ?? 0) + 1);
+    membershipCountByConcept.set(concept.concept_id, (membershipCountByConcept.get(concept.concept_id) ?? 0) + 1);
+    const dialogues = dialoguesByConcept.get(concept.concept_id) ?? new Set<string>();
+    dialogues.add(dialogueFromObservationId(membership.observation_id));
+    dialoguesByConcept.set(concept.concept_id, dialogues);
   }
-
-  const featureRegistryContent = readFileSync(join(repoRoot, "wiki/features-so-far.md"), "utf8");
-  const featureCountsByFamily = parseRegistryFeatureFamilies(featureRegistryContent);
-  const seedFamilies = new Set<string>(SEED_FEATURE_FAMILIES);
-  const families = new Set([...observationsByFamily.keys(), ...featureCountsByFamily.keys()]);
-
-  return [...families]
-    .sort((a, b) => a.localeCompare(b))
-    .map((family) => {
-      const observationIds = [...(observationsByFamily.get(family) ?? new Set<string>())].sort();
-      return {
-        family,
-        kind: seedFamilies.has(family) ? "seed" : "passthrough",
-        observationCount: observationIds.length,
-        featureCandidateCount: featureCountsByFamily.get(family) ?? 0,
-        sampleObservationIds: observationIds.slice(0, 5),
-      };
-    });
-}
-
-export function collectLabelDriftReport(): LabelDriftSummary {
-  const repoRoot = getRepoRoot();
-  const observationsByLabel = new Map<string, { family: string; label: string; observationIds: Set<string> }>();
-
-  for (const relativePath of observationLedgerPaths()) {
-    const content = readFileSync(join(repoRoot, relativePath), "utf8");
-    for (const link of extractObservationFeatureLinks(content)) {
-      const key = `${link.featureFamily}::${link.featureLabel}`;
-      const entry =
-        observationsByLabel.get(key) ??
-        {
-          family: link.featureFamily,
-          label: link.featureLabel,
-          observationIds: new Set<string>(),
-        };
-      entry.observationIds.add(link.observationId);
-      observationsByLabel.set(key, entry);
-    }
-  }
-
-  const entries: FeatureLabelDriftEntry[] = [...observationsByLabel.values()]
-    .map((entry) => {
-      const observationIds = [...entry.observationIds].sort();
-      const dialogues = [...new Set(observationIds.map((id) => dialogueFromObservationId(id)))].sort();
-      return {
-        family: entry.family,
-        label: entry.label,
-        observationCount: observationIds.length,
-        observationIds,
-        dialogues,
-      };
-    })
-    .sort((a, b) => a.family.localeCompare(b.family) || a.label.localeCompare(b.label));
 
   return {
-    totalLabels: entries.length,
-    singletonLabels: entries.filter((entry) => entry.observationCount === 1).length,
-    crossDialogueLabels: entries.filter((entry) => entry.dialogues.length >= 2).length,
-    singletonExamples: entries.filter((entry) => entry.observationCount === 1).slice(0, 15),
+    axisCount: ontology.axes.length,
+    conceptCount: ontology.concepts.length,
+    membershipCount: ontology.memberships.length,
+    singletonConceptCount: ontology.concepts.filter(
+      (concept) => (membershipCountByConcept.get(concept.concept_id) ?? 0) === 1,
+    ).length,
+    crossDialogueConceptCount: ontology.concepts.filter(
+      (concept) => (dialoguesByConcept.get(concept.concept_id)?.size ?? 0) >= 2,
+    ).length,
+    axes: ontology.axes.map((axis) => ({
+      axisId: axis.axis_id,
+      axisKey: axis.axis_key,
+      dimension: axis.dimension,
+      conceptCount: conceptsByAxis.get(axis.axis_id) ?? 0,
+      membershipCount: membershipsByAxis.get(axis.axis_id) ?? 0,
+    })),
   };
 }
 
@@ -620,9 +563,12 @@ export function validateRepo(): ValidationReport {
     "raw/plato/greek/euthyphro.txt",
     "raw/plato/greek/apology.txt",
     "raw/plato/greek/republic.txt",
-    "wiki/features-so-far.md",
+    "wiki/ontology/axes.jsonl",
+    "wiki/ontology/concepts.jsonl",
+    "wiki/ontology/memberships.jsonl",
     "wiki/ingest-log.md",
-    "docs/label-normalization-standards.md",
+    "docs/ontology-vnext.md",
+    "docs/ontology-audit-protocol.md",
     "docs/plato-wiki-extraction-protocol.md",
     "docs/commentary-protocol.md",
     "docs/audio-edition-protocol.md",
@@ -630,12 +576,10 @@ export function validateRepo(): ValidationReport {
     "audio/coverage.md",
     "wiki/completeness.md",
     ".pi/skills/plato-observation-extraction/SKILL.md",
-    ".pi/skills/plato-label-normalization/SKILL.md",
     ".pi/prompts/ingest-plato-dialogue.md",
     ".pi/prompts/ingest-plato-segment.md",
     ".pi/prompts/extract-plato-claims-segment.md",
     ".pi/prompts/adjudicate-plato-relations.md",
-    ".pi/prompts/review-plato-features.md",
     ".pi/prompts/review-plato-segment.md",
     ".pi/prompts/review-plato-claims-segment.md",
     ".pi/prompts/review-plato-relations.md",
@@ -668,7 +612,14 @@ export function validateRepo(): ValidationReport {
     throw new Error(`Harness-facing instruction contract failed scan:\n${instructionContractFailures.join("\n")}`);
   }
 
-  validateFeatureRegistryShape();
+  const ontologyIssues = validateOntologyVNextRepository();
+  if (ontologyIssues.length > 0) {
+    throw new Error(
+      `Ontology vNext validation failed:\n${ontologyIssues
+        .map((issue) => `${issue.path}: [${issue.code}] ${issue.message}`)
+        .join("\n")}`,
+    );
+  }
 
   // The reported-turn scope manifest is reviewed editorial input, so a stale or
   // malformed one must fail here rather than wait for someone to run the
@@ -763,6 +714,11 @@ export function validateRepo(): ValidationReport {
     throw new Error(`Dossier artifact validation failed:\n${dossierFailures.join("\n")}`);
   }
 
+  const ontologyAuditFailures = collectOntologyAuditFailures();
+  if (ontologyAuditFailures.length > 0) {
+    throw new Error(`Ontology audit package validation failed:\n${ontologyAuditFailures.join("\n")}`);
+  }
+
   return {
     observationLedgerCount,
     claimLedgerCount,
@@ -771,8 +727,7 @@ export function validateRepo(): ValidationReport {
     apparatusLedgerCount,
     voicesLedgerCount,
     commentaryQualityAuditManifestCount,
-    featureFamilies: collectFamilyDriftReport(),
-    labelDrift: collectLabelDriftReport(),
+    ontology: collectOntologySummary(),
     reviewCoverage: collectReviewCoverage(),
   };
 }

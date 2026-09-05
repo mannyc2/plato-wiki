@@ -173,6 +173,17 @@ describe("recording manifests", () => {
     expect(issueCodes(JSON.stringify(recording({ chapters })))).toContain("missing_section_target");
   });
 
+  it("allows a withdrawn recording to preserve a rejected historical chapter target", () => {
+    writeFileSync(
+      join(root, "wiki/commentary/fixture.md"),
+      "```yaml\ncommentary_id: comm_fixture_0001\nblock_kind: section\nreview_status: rejected\n```\n",
+      "utf8",
+    );
+
+    expect(issueCodes(JSON.stringify(recording({ status: "withdrawn" })))).not.toContain("missing_section_target");
+    expect(issueCodes(JSON.stringify(recording({ status: "draft" })))).toContain("missing_section_target");
+  });
+
   it("treats the recordings directory as optional and detects duplicate recording ids", () => {
     expect(listRecordingManifestPaths()).toEqual([]);
     expect(validateRecordingManifests()).toEqual([]);

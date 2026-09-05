@@ -26,6 +26,8 @@ describe("structural remediation CLI", () => {
     expect(result.status).toBe(1);
     expect(result.stderr).toContain("structural-remediation-preview <candidate-path>");
     expect(result.stderr).toContain("structural-remediation-apply <candidate-path>");
+    expect(result.stderr).toContain("structural-remediation-batch-preview <candidate-path>");
+    expect(result.stderr).toContain("structural-remediation-batch-apply <candidate-path>");
   });
 
   it("loads a candidate path and reports malformed JSON without invoking the provider", () => {
@@ -37,6 +39,20 @@ describe("structural remediation CLI", () => {
       const result = runCli("commentary", "structural-remediation-preview", relativePath);
       expect(result.status).toBe(1);
       expect(result.stderr).toContain("Structural remediation candidate is malformed JSON");
+    } finally {
+      rmSync(absolutePath, { force: true });
+    }
+  });
+
+  it("loads a batch candidate path and reports malformed JSON without mutating a ledger", () => {
+    const relativePath = "scratch/commentary/structural-cli-batch-test.json";
+    const absolutePath = join(REPO_ROOT, relativePath);
+    mkdirSync(join(absolutePath, ".."), { recursive: true });
+    writeFileSync(absolutePath, "not json\n", "utf8");
+    try {
+      const result = runCli("commentary", "structural-remediation-batch-preview", relativePath);
+      expect(result.status).toBe(1);
+      expect(result.stderr).toContain("Structural remediation batch candidate is malformed JSON");
     } finally {
       rmSync(absolutePath, { force: true });
     }

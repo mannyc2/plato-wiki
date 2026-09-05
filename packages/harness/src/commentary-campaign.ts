@@ -74,6 +74,7 @@ import {
   type CommentaryCitationIndex,
 } from "./wiki/commentary-validator.js";
 import { fieldValue, observationYamlBlocks } from "./wiki/observation-ledger.js";
+import { ontologyDossierPathsByObservation } from "./wiki/ontology-vnext-repository.js";
 
 const CAMPAIGN_SCHEMA_VERSION = COMMENTARY_CAMPAIGN_SCHEMA_VERSION;
 const OUTLINE_SCHEMA_VERSION = 1 as const;
@@ -446,6 +447,8 @@ export type CommentaryCampaignBuildOptions = {
   stage?: CommentaryCampaignStage | "all";
   codexExecutable?: string;
   reviseOutline?: boolean;
+  /** Operation-scoped immutable evidence snapshot; callers must not reuse it across asynchronous boundaries. */
+  auditEvidence?: CommentaryAuditEvidenceSnapshot;
 };
 
 export type CommentaryCampaignJobSelectionOptions = {
@@ -1128,17 +1131,13 @@ function relevantDossierPaths(dialogue: string) {
   const path = join(getRepoRoot(), `wiki/observations/${dialogue}.md`);
   if (!existsSync(path)) return [];
   const repoRoot = getRepoRoot();
+  const dossierPathsByObservation = ontologyDossierPathsByObservation(repoRoot);
   return [
     ...new Set(
       observationYamlBlocks(readFileSync(path, "utf8"))
         .filter((block) => fieldValue(block, "review_status") === "accepted")
-        .map((block) => {
-          const family = fieldValue(block, "feature_family");
-          const label = fieldValue(block, "feature_label");
-          if (!family || !label) return undefined;
-          const dossierPath = `wiki/dossiers/${family}/${label}.md`;
-          return existsSync(join(repoRoot, dossierPath)) ? dossierPath : undefined;
-        })
+        .flatMap((block) => dossierPathsByObservation.get(fieldValue(block, "observation_id") ?? "") ?? [])
+        .map((dossierPath) => existsSync(join(repoRoot, dossierPath)) ? dossierPath : undefined)
         .filter((value): value is string => value !== undefined),
     ),
   ].sort();
@@ -1260,7 +1259,7 @@ function outlinePrompt(dialogue: string, sourceWork: string, inputPaths: string[
     "- Never copy a long Greek passage; the reading spine supplies the source text.",
     "- Every checkable statement must cite only an ID or dossier path that is present in the listed files and accepted there.",
     "- Never invent, repair, infer, or autocomplete a citation ID. If support is absent, omit the assertion and leave that cite list empty.",
-    "- Dossier citations use family/label only and must correspond to a listed wiki/dossiers/<family>/<label>.md file.",
+    "- Dossier citations use axis_key/concept_key only and must correspond to a listed wiki/dossiers/<axis_key>/<concept_key>.json vNext projection.",
     "- Do not assign review_status, author, source_ref, commentary_id, crossrefs, or non-section blocks.",
   ].join("\n");
 }
@@ -1988,7 +1987,7 @@ export function buildCommentaryCampaignPlan(
     generatedInputContentByPath: new Map(),
   };
   const jobs: CommentaryCampaignJob[] = [];
-  let auditEvidence: CommentaryAuditEvidenceSnapshot | undefined;
+  let auditEvidence = options.auditEvidence;
 
   for (const dialogue of dialogues) {
     if (!DIALOGUE.test(dialogue) || !listGreekDialogues().includes(dialogue)) {
@@ -2919,8 +2918,9 @@ function readReusableCanonicalAuditDialogueSnapshot(
   const manifestPath = `wiki/commentary-audits/${dialogue}.json`;
   const manifestAbsolutePath = join(repoRoot, manifestPath);
   if (!existsSync(manifestAbsolutePath)) return undefined;
+  const rawManifest = JSON.parse(readFileSync(manifestAbsolutePath, "utf8")) as Record<string, unknown>;
   const manifest = parseReusableCanonicalAuditManifest(
-    JSON.parse(readFileSync(manifestAbsolutePath, "utf8")) as unknown,
+    rawManifest,
     manifestPath,
     dialogue,
   );
@@ -2956,6 +2956,17 @@ function readReusableCanonicalAuditDialogueSnapshot(
     sampledCommentaryIds: manifest.acceptance.sampledCommentaryIds,
     reviewNote: manifest.acceptance.reviewNote,
     activeCommentaryIds,
+    pendingManifestContent: prettyJson({
+      ...rawManifest,
+      acceptance: {
+        decision: "pending",
+        reviewer: null,
+        reviewed_on: null,
+        rationale: null,
+        sampled_commentary_ids: [],
+        review_note: null,
+      },
+    }),
   }).length > 0) return undefined;
 
   const briefs = buildCommentaryAuditBriefsFromSnapshot(dialogue, {
@@ -3164,13 +3175,19 @@ export type CurrentCommentaryAuditArtifact = {
  * active output/state/telemetry trio; a JSON output plus a matching hash is not
  * sufficient provenance for an applied structural change.
  */
-export function validateCurrentCommentaryAuditArtifact(options: {
+type CurrentCommentaryAuditArtifactBinding = {
   dialogue: string;
   unitKey: string;
   outputPath: string;
   outputSha256: string;
-}): CurrentCommentaryAuditArtifact {
-  const plan = buildCommentaryCampaignPlan({ dialogue: options.dialogue, stage: "audit" });
+};
+
+function validateCurrentCommentaryAuditArtifactAgainstPlan(
+  options: CurrentCommentaryAuditArtifactBinding,
+  plan: CommentaryCampaignPlan,
+  auditBriefs: readonly CommentaryAuditBrief[],
+  requireSemanticFailure: boolean,
+): CurrentCommentaryAuditArtifact {
   const job = plan.manifest.jobs.find((candidate) => candidate.unit_key === options.unitKey);
   if (!job || job.stage !== "audit" || !job.section_id || !job.audit_brief_path || !job.audit_brief_sha256) {
     throw new Error(`No current audit job for ${options.dialogue}/${options.unitKey}`);
@@ -3196,14 +3213,14 @@ export function validateCurrentCommentaryAuditArtifact(options: {
   if (outputContent !== prettyJson(output)) {
     throw new Error(`Current audit output ${job.output_path} is not the exact normalized runner artifact`);
   }
-  if (output.unit_verdict !== "fail" || output.blocks.every((block) => block.disposition === "pass")) {
+  if (
+    requireSemanticFailure
+    && (output.unit_verdict !== "fail" || output.blocks.every((block) => block.disposition === "pass"))
+  ) {
     throw new Error(`Current audit output ${job.output_path} is not a semantic-fail audit`);
   }
 
-  const auditBrief = buildCommentaryAuditBriefs(
-    options.dialogue,
-    plan.auditEvidence ?? buildCommentaryAuditEvidenceSnapshot(),
-  ).find((brief) => brief.unitKey === options.unitKey);
+  const auditBrief = auditBriefs.find((brief) => brief.unitKey === options.unitKey);
   if (!auditBrief || auditBrief.path !== job.audit_brief_path || auditBrief.sha256 !== job.audit_brief_sha256) {
     throw new Error(`Current audit brief is stale for ${job.job_id}`);
   }
@@ -3233,6 +3250,44 @@ export function validateCurrentCommentaryAuditArtifact(options: {
     throw new Error(`Current audit telemetry is stale for ${job.job_id}`);
   }
   return { job, auditBriefSha256: auditBrief.sha256, outputSha256 };
+}
+
+/**
+ * Validate several audit artifacts against one immutable campaign plan. This is
+ * the batch-safe boundary used before a dialogue ledger changes: every output,
+ * state, telemetry record, source binding, and deterministic brief is checked
+ * against the same before-ledger snapshot.
+ */
+export function validateCurrentCommentaryAuditArtifacts(options: {
+  dialogue: string;
+  artifacts: readonly Omit<CurrentCommentaryAuditArtifactBinding, "dialogue">[];
+  requireSemanticFailure?: boolean;
+}): CurrentCommentaryAuditArtifact[] {
+  if (options.artifacts.length === 0) throw new Error("At least one current commentary audit artifact is required");
+  const plan = buildCommentaryCampaignPlan({ dialogue: options.dialogue, stage: "audit" });
+  const auditBriefs = buildCommentaryAuditBriefs(
+    options.dialogue,
+    plan.auditEvidence ?? buildCommentaryAuditEvidenceSnapshot(),
+  );
+  return options.artifacts.map((artifact) => validateCurrentCommentaryAuditArtifactAgainstPlan(
+    { dialogue: options.dialogue, ...artifact },
+    plan,
+    auditBriefs,
+    options.requireSemanticFailure ?? true,
+  ));
+}
+
+export function validateCurrentCommentaryAuditArtifact(
+  options: CurrentCommentaryAuditArtifactBinding,
+): CurrentCommentaryAuditArtifact {
+  return validateCurrentCommentaryAuditArtifacts({
+    dialogue: options.dialogue,
+    artifacts: [{
+      unitKey: options.unitKey,
+      outputPath: options.outputPath,
+      outputSha256: options.outputSha256,
+    }],
+  })[0]!;
 }
 
 function inspectResume(

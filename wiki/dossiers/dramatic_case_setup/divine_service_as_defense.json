@@ -1,0 +1,190 @@
+{
+  "accepted_observations": 4,
+  "axis_id": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+  "axis_key": "dramatic_case_setup",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record divine service as defense within the dramatic case setup axis?",
+  "concept_id": "concept_sha256_2c92e9e8db3ee69bd7eaa26b5a66b58f5f702bdd4290c7dc2b354090ab09a7c0",
+  "concept_key": "divine_service_as_defense",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+      "axisKey": "elenchus",
+      "conceptId": "concept_sha256_8c27fb88925f42167154681b2d5fa1f4202c815d857b25af08dc0f0adf5d7680",
+      "conceptKey": "expert_or_example_examined",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_966d862e98a90555405411eb38bbb0c2c1d6e56bb95b126d81ac8fbff89915f9",
+      "axisKey": "rhetorical_stance_marker",
+      "conceptId": "concept_sha256_879b6eff3def6220b0410c593a7684d4d48c96e4eeaa97b01865c1d8e9e6e74b",
+      "conceptKey": "socratic_knowledge_disavowal",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_9791a05a3c77492d9f59ed68b54e30b71e3535fe91a87fd7c425fcb39272f666",
+      "axisKey": "prosopography",
+      "conceptId": "concept_sha256_884076890d69fbee29244509a82e9e1768bd5ddd0dee572716b9973043042aac",
+      "conceptKey": "imitator_chain",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 1,
+  "dimension": "dramatic_context",
+  "instance_ids": [
+    "obs_apology_0275",
+    "obs_apology_0276",
+    "obs_apology_0277",
+    "obs_apology_0278"
+  ],
+  "instances": [
+    {
+      "dialogue": "apology",
+      "observationId": "obs_apology_0275",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "23b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "apology",
+      "observationId": "obs_apology_0276",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "23b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "apology",
+      "observationId": "obs_apology_0277",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "23b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "apology",
+      "observationId": "obs_apology_0278",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "23c",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 4,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_2c92e9e8db3ee69bd7eaa26b5a66b58f5f702bdd4290c7dc2b354090ab09a7c0",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

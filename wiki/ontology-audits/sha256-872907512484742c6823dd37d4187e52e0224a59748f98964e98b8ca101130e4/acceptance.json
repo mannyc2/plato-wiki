@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4",
+  "state": "accepted",
+  "manifest": {
+    "path": "manifest.json",
+    "sha256": "f6b5d1c4e5c5ff3674111419e850485bc997cd682456c41be27aa5e4ea21ba5d"
+  },
+  "partitions": {
+    "source-units.jsonl": {
+      "sha256": "49847c8b586163fe21c007df835fdfd5091d49c3c6ac07cf8cf8ae59614d4ce9",
+      "rows": 7772,
+      "key_set_sha256": "bab949f05d1cce35bbfaad6dac49214aacd889d8594b7936634cb4f79fa6afa2"
+    },
+    "record-units.jsonl": {
+      "sha256": "86a0be73fec6ff620a4df7eb7a67a3f6fef4737ffb122f6e90298c187c795963",
+      "rows": 24285,
+      "key_set_sha256": "1765b60214e4a2088fb88ef20f8aa778161eb169f1459ab9bd1f16734cdb7121"
+    },
+    "concept-membership-units.jsonl": {
+      "sha256": "e6e5dac9c63cc4b87f31651593ebb714a0ae52ea22a209c0a14acb5c257f6455",
+      "rows": 23259,
+      "key_set_sha256": "969f28596cdc9250dc06249ca5b42bec2bbf543b337e4a6eb50ddc40bc81c9d2"
+    },
+    "graph-units.jsonl": {
+      "sha256": "faf7da8d86619a04ace95dfafa786ee1860cc7828b7eb159af597bf50074a070",
+      "rows": 26098,
+      "key_set_sha256": "b3578ddca16553b64fe1bc19a609d05db4617fcda304b02f37083796a0022e1c"
+    },
+    "findings.jsonl": {
+      "sha256": "895abed58cfc90adb9cb1583b3582c734872fa8c7e334e1a8cee8855405c764c",
+      "rows": 14113,
+      "key_set_sha256": "c8d8316a43c05c656821bf31a07f447573a38d6988577b9ca4175088d55c37c8"
+    },
+    "adjudications.jsonl": {
+      "sha256": "d685593a905e5cd1e4a6034e722ecc19df16089295584f575ee5297da5c42c2e",
+      "rows": 73689,
+      "key_set_sha256": "fe0b76b0afdc885e9b0a6d405cfb7c7acec27a5fd6273ff49f6954f73fe3fd6e"
+    }
+  },
+  "final_corpus_digest": "459309fe96fb252ad62c804fb7e38b2f496e1029297fbea4b243efaa57d35859",
+  "receipt": {
+    "path": "wiki/review/2026-08-30-ontology-vnext-closure.md",
+    "sha256": "9ffe44cadbfee6db79989195e6ed7fdda03f52c70bbb0226dc1c5a5aadc082f1"
+  },
+  "closure": {
+    "baseline_set_equal": true,
+    "final_set_equal": true,
+    "source_passes_complete": true,
+    "reconciliations_complete": true,
+    "adjudications_complete": true,
+    "unresolved_adjudications": 0,
+    "stale_aliases": 0,
+    "rejected_reader_leaks": 0,
+    "regeneration_one_sha256": "5eb2cee041ac952ae59c63d602eece9dd03a1ce21518aca7f38e52774b12902d",
+    "regeneration_two_sha256": "5eb2cee041ac952ae59c63d602eece9dd03a1ce21518aca7f38e52774b12902d"
+  },
+  "final_adjustments": {
+    "required": true,
+    "decision_artifact": {
+      "path": "review-inputs/final-adjustments/sha256-93dc2b6adc4dbafe479ee7a50d403a8ac986c9271a821d052384340a8df832fa-decisions.jsonl",
+      "sha256": "93dc2b6adc4dbafe479ee7a50d403a8ac986c9271a821d052384340a8df832fa"
+    },
+    "prior_state_artifact": {
+      "path": "review-inputs/final-adjustments/sha256-f554bc08464fbfae6c5da57a6c3ac971f509dce1d14a6d486c3b5c545a60b63d-prior-state.json",
+      "sha256": "f554bc08464fbfae6c5da57a6c3ac971f509dce1d14a6d486c3b5c545a60b63d"
+    },
+    "receipt": {
+      "path": "wiki/review/2026-09-01-ontology-vnext-final-adjustments.md",
+      "sha256": "d3582b0d7d55a9321350faa9cafd00874dc65990451fb7103bdc3da635e2b04d"
+    }
+  }
+}

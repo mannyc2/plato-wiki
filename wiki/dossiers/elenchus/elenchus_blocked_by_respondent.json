@@ -1,0 +1,158 @@
+{
+  "accepted_observations": 2,
+  "axis_id": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+  "axis_key": "elenchus",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record elenchus blocked by respondent within the elenchus axis?",
+  "concept_id": "concept_sha256_3af3877fff77b4408dc3ac3d9270486b8d1c64b4f69c4c031978a44606eb4a10",
+  "concept_key": "elenchus_blocked_by_respondent",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_5c81cf395b56e4a5deabc1c459f7e8074e66334a4948d830b4be747f4537eb34",
+      "axisKey": "forms_trajectory",
+      "conceptId": "concept_sha256_418d54180d05f9e263ba411b795c2817caf1a1082bda32bca8e36ac875d43f0c",
+      "conceptKey": "one_over_many_form_reasoning",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 2,
+  "dimension": "discourse_structure",
+  "instance_ids": [
+    "obs_philebus_0064",
+    "obs_sophist_0201"
+  ],
+  "instances": [
+    {
+      "dialogue": "philebus",
+      "observationId": "obs_philebus_0064",
+      "speakers": [
+        "ΠΡΩ.",
+        "ΣΩ."
+      ],
+      "stephanusSpan": "19e-20a",
+      "turnCount": 3
+    },
+    {
+      "dialogue": "sophist",
+      "observationId": "obs_sophist_0201",
+      "speakers": [
+        "ΞΕ.",
+        "ΘΕΑΙ."
+      ],
+      "stephanusSpan": "251b-251c",
+      "turnCount": 5
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_3af3877fff77b4408dc3ac3d9270486b8d1c64b4f69c4c031978a44606eb4a10",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

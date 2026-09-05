@@ -1,0 +1,177 @@
+{
+  "accepted_observations": 2,
+  "axis_id": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+  "axis_key": "turn_geometry",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record wave metaphor for argument within the turn geometry axis?",
+  "concept_id": "concept_sha256_9b2079f2c0877a165f293e114180a3973cba9bf0e22bc3eb7b11f8d5f0ece761",
+  "concept_key": "wave_metaphor_for_argument",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_68bf29f620f71d7f25103cff2cc5fb7c434e411677402be60af56ed8d226e27c",
+      "conceptKey": "argument_transition_marker",
+      "overlappingObservations": 4
+    },
+    {
+      "axisId": "axis_sha256_344e394ea1b45ae5ce3a2751a410bacb90e8d8ffb0f3d752e60fe72d20b26d88",
+      "axisKey": "craft_analogy",
+      "conceptId": "concept_sha256_e9257a1665b4c8b60214802db6d0d3f55c1173723ee5419a1644041e11179edd",
+      "conceptKey": "painter_paradigm_analogy",
+      "overlappingObservations": 4
+    },
+    {
+      "axisId": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+      "axisKey": "dramatic_case_setup",
+      "conceptId": "concept_sha256_78bccaff61daf7295981d437536b6fc95ab554ea51ce94f2616a4ded010f673a",
+      "conceptKey": "second_wave_legislation_announced",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_5c81cf395b56e4a5deabc1c459f7e8074e66334a4948d830b4be747f4537eb34",
+      "axisKey": "forms_trajectory",
+      "conceptId": "concept_sha256_f1ddd4c5de392b17dbafa0c6734c556d83e2b9df265146f3834fe02571df777b",
+      "conceptKey": "form_paradigm_standard",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 1,
+  "dimension": "discourse_structure",
+  "instance_ids": [
+    "obs_republic_0152",
+    "obs_republic_0167"
+  ],
+  "instances": [
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0152",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "456e-458c",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0167",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "471b-472e",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_9b2079f2c0877a165f293e114180a3973cba9bf0e22bc3eb7b11f8d5f0ece761",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

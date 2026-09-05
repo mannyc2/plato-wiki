@@ -1,0 +1,212 @@
+{
+  "accepted_observations": 4,
+  "axis_id": "axis_sha256_9791a05a3c77492d9f59ed68b54e30b71e3535fe91a87fd7c425fcb39272f666",
+  "axis_key": "prosopography",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record named kinship anchor within the prosopography axis?",
+  "concept_id": "concept_sha256_c8eb0547b43d8cb43343a0bc864dfb69e915061de82676da64430c5c6d9dcb55",
+  "concept_key": "named_kinship_anchor",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+      "axisKey": "elenchus",
+      "conceptId": "concept_sha256_ca19f2ff49aa88032e414cbe0234e4c52d0ae2e3d8ae66a62beaca1049e4485b",
+      "conceptKey": "assent_chain",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_73be147bc9b536edc5ec6f3ddd77d1584a4253a892a9164b8600dd7463aed95e",
+      "conceptKey": "explicit_procedure_control",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+      "axisKey": "dramatic_case_setup",
+      "conceptId": "concept_sha256_3b21a4222e630672011f1c0b5a492f654f76991f0ae3e3cc6e26ce1fbeb702ff",
+      "conceptKey": "interlocutor_emotional_reaction",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+      "axisKey": "dramatic_case_setup",
+      "conceptId": "concept_sha256_a588bb03198600f78bfdb5c104928353e70174bf66b2f3af9cc73eb030bea97d",
+      "conceptKey": "dialogue_opening_topic_set",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+      "axisKey": "dramatic_case_setup",
+      "conceptId": "concept_sha256_ec7c78119c98d0dfc9925f7941db65496876498a393bfba2af315d6df15077bd",
+      "conceptKey": "entrance_heralded_by_admirers",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_a621c9ee78202ffb4f5261045688f196ca7a93efcfb28446a6dbe406eb6832e3",
+      "axisKey": "frame_depth",
+      "conceptId": "concept_sha256_5ebab1b42ec2e2605b476d69fd04bbb00c7241bb70e6582e8fc06966b1caec57",
+      "conceptKey": "reported_dialogue_frame",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 3,
+  "dimension": "dramatic_context",
+  "instance_ids": [
+    "obs_charmides_0007",
+    "obs_charmides_0014",
+    "obs_lysis_0033",
+    "obs_protagoras_0009"
+  ],
+  "instances": [
+    {
+      "dialogue": "charmides",
+      "observationId": "obs_charmides_0007",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "154b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "charmides",
+      "observationId": "obs_charmides_0014",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "154e-155a",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "lysis",
+      "observationId": "obs_lysis_0033",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "208c-208d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "protagoras",
+      "observationId": "obs_protagoras_0009",
+      "speakers": [
+        "ΣΩ.",
+        "ΕΤ."
+      ],
+      "stephanusSpan": "310a-310b",
+      "turnCount": 5
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_c8eb0547b43d8cb43343a0bc864dfb69e915061de82676da64430c5c6d9dcb55",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

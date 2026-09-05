@@ -1,0 +1,30 @@
+# Commentary quality-audit acceptance
+
+dialogue: meno
+decision: accepted
+reviewer: commentary-audit-delegated-luna-reviewer-meno-72568bc66bfa
+reviewed_on: 2026-09-01
+rationale: All eight sampled blocks are source-supported, correctly anchored, placed at complete playback edges without hazards, and concise enough to add clear argumentative value without harming dramatic flow.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sample_evidence_path: wiki/submissions/commentary-audit-sample/meno/b4b44a1ee846eadeb8dff8b2b4b9b6d61475fd5a6490a7929d030fc81e299e17.json
+sample_evidence_sha256: b4b44a1ee846eadeb8dff8b2b4b9b6d61475fd5a6490a7929d030fc81e299e17
+sample_input_sha256: 770eddc404d2744c51274349b66a6fe54869effb16e0c67a9c4cf43ec9c11936
+pending_manifest_sha256: 72568bc66bfa68cc912313b208f51a9070b4bd23e8985791397426cf4924ba14
+commentary_ledger_sha256: e0a9e6ae6f539054e5d17f9827ccd9091cf60ffd657b6a54859005827693fe04
+sample_packet_sha256: 9800d4016962baab09e0cfd8cb371e7893265c3f11d7d25c22c337280265f1b0
+sample_output_sha256: 4162dd3d73287b11e8db90f38c6379945ebdb8bed7d5a26367bdbf761e4c65d4
+sample_state_sha256: 5cca2810df0a07aa60aaf9aee1e56b8456911318f9a6e8fc954c505cfcb61900
+codex_execution_sha256: e69e2bb911152d6a3ce04b9655474f7ba24a1b9f7a9bd3eb1fb2493ea44d86b7
+output_schema_sha256: 9f23c4ac018bd4165f7c2ba468bb2cfc8a1711a9d2afaed039609e36c29d7d94
+model_catalog_sha256: a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724
+sample_prompt_sha256: 1689578241957d12ac6f691c21a0781b34ce69ae8f3335be4db21216e0dbbfd5
+sampled_commentary_ids:
+- comm_meno_0001
+- comm_meno_0004
+- comm_meno_0006
+- comm_meno_0007
+- comm_meno_0009
+- comm_meno_0010
+- comm_meno_0012
+- comm_meno_0013

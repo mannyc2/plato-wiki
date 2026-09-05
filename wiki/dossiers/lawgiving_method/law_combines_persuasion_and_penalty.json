@@ -1,0 +1,170 @@
+{
+  "accepted_observations": 2,
+  "axis_id": "axis_sha256_1101d730faeb59192da13310bf538f2853c3590514580f6396eefefa3483340d",
+  "axis_key": "lawgiving_method",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record law combines persuasion and penalty within the lawgiving method axis?",
+  "concept_id": "concept_sha256_5f6b79253022a84ff594085c3f8447e493a75be2ea59214093b21d6bbf55a0e8",
+  "concept_key": "law_combines_persuasion_and_penalty",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_1101d730faeb59192da13310bf538f2853c3590514580f6396eefefa3483340d",
+      "axisKey": "lawgiving_method",
+      "conceptId": "concept_sha256_dc4636751a1e081fd295a7aec65804899513c8f1804b8e2f2af2d216c80dc8f0",
+      "conceptKey": "prelegal_sample_for_nonstatutory_speech",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_8a0024fdb30381f23a7551cd930066e708d073d8955c549816f7db9da96aa5ab",
+      "axisKey": "legislative_method",
+      "conceptId": "concept_sha256_7af3443600bf69853316f84a49935db541d5a6e05310a846514af0e3704ac3b1",
+      "conceptKey": "law_form_choice_between_persuasion_and_threat",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_d5e9d58b2f7db6088b83220173a983d290f3e582a7ff815c2defb52f3cd457aa",
+      "axisKey": "filial_obligation",
+      "conceptId": "concept_sha256_0d6e61fbe1a634d3bf4254b1c174150857882f4cc3709a0d1a80615e1adf5992",
+      "conceptKey": "posthumous_parental_care_by_custom_and_measure",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 1,
+  "dimension": "discourse_structure",
+  "instance_ids": [
+    "obs_laws_0517",
+    "obs_laws_0532"
+  ],
+  "instances": [
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0517",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "718a-718b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0532",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "721d",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_5f6b79253022a84ff594085c3f8447e493a75be2ea59214093b21d6bbf55a0e8",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

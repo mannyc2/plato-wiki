@@ -1,0 +1,173 @@
+{
+  "accepted_observations": 3,
+  "axis_id": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+  "axis_key": "dramatic_case_setup",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record philosophical nature nurture dependence within the dramatic case setup axis?",
+  "concept_id": "concept_sha256_e6e5bb4b5dcc595993de16d0171c70c9a391bc2bf445021721ccf07d89ddb5a9",
+  "concept_key": "philosophical_nature_nurture_dependence",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+      "axisKey": "dramatic_case_setup",
+      "conceptId": "concept_sha256_19f219752d0db324e8d295cc834f3695716eee23d35ed1b6f4ba179c06e4017b",
+      "conceptKey": "philosophical_nature_corruption_mechanism",
+      "overlappingObservations": 2
+    },
+    {
+      "axisId": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+      "axisKey": "dramatic_case_setup",
+      "conceptId": "concept_sha256_02a9b0f4df56bda56c0e02f41cbf388aa33d9190d8bff0f9da108559fd9741b8",
+      "conceptKey": "philosopher_nature_corruption_frame",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 1,
+  "dimension": "dramatic_context",
+  "instance_ids": [
+    "obs_republic_0187",
+    "obs_republic_0190",
+    "obs_republic_0192"
+  ],
+  "instances": [
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0187",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "491e",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0190",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "494c-495a",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "republic",
+      "observationId": "obs_republic_0192",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "495b-495c",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 3,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_e6e5bb4b5dcc595993de16d0171c70c9a391bc2bf445021721ccf07d89ddb5a9",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

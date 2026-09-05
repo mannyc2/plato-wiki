@@ -1,0 +1,197 @@
+{
+  "accepted_observations": 6,
+  "axis_id": "axis_sha256_3dd2a99c12825376d614cf37e2561f74cd7e996a1a387c32c55b9d9a24e82b61",
+  "axis_key": "homicide_self_defense",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record defensive homicide clean status varies by status relation within the homicide self defense axis?",
+  "concept_id": "concept_sha256_8eca472087a8c0a6461e155a0b88da64521354c22cb35c9ea6709ee0194a1d63",
+  "concept_key": "defensive_homicide_clean_status_varies_by_status_relation",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_4a3805d5b990eee032975c46cc2149927fa8a38a40666d0cc16e9fb7665c77ae",
+      "axisKey": "kinship_homicide_penalty",
+      "conceptId": "concept_sha256_4729a651a7903bffd1a1aeca306c8f7434177e22ca15fdbc74d26964a2124cf0",
+      "conceptKey": "parent_killing_in_anger_depends_on_dying_parent_release",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 1,
+  "dimension": "subject_matter",
+  "instance_ids": [
+    "obs_laws_1278",
+    "obs_laws_1279",
+    "obs_laws_1280",
+    "obs_laws_1281",
+    "obs_laws_1282",
+    "obs_laws_1283"
+  ],
+  "instances": [
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_1278",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "869c-869d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_1279",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "869c-869d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_1280",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "869d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_1281",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "869d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_1282",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "869d",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_1283",
+      "speakers": [
+        "ΑΘ.",
+        "ΚΛ."
+      ],
+      "stephanusSpan": "869d-869e",
+      "turnCount": 3
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 6,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_8eca472087a8c0a6461e155a0b88da64521354c22cb35c9ea6709ee0194a1d63",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

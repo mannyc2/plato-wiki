@@ -6,8 +6,6 @@ import { fieldValueOrEmpty, observationYamlBlocks } from "./wiki/observation-led
 export type ReviewObservationTarget = {
   observationId: string;
   stephanusSpan: string;
-  featureFamily: string;
-  featureLabel: string;
   reviewStatus: string;
 };
 
@@ -31,8 +29,6 @@ export function reviewObservationTargets(dialogue: string): ReviewObservationTar
     targets.push({
       observationId,
       stephanusSpan: fieldValueOrEmpty(block, "stephanus_span"),
-      featureFamily: fieldValueOrEmpty(block, "feature_family"),
-      featureLabel: fieldValueOrEmpty(block, "feature_label"),
       reviewStatus: fieldValueOrEmpty(block, "review_status") || "unreviewed",
     });
   }
@@ -63,10 +59,7 @@ export function planSegmentedReview(dialogue: string, targetObservations = 8): S
       index: batches.length + 1,
       observationIds: targets.map((target) => target.observationId),
       summary: targets
-        .map(
-          (target) =>
-            `${target.observationId}: span=${target.stephanusSpan}; family=${target.featureFamily}; label=${target.featureLabel}`,
-        )
+        .map((target) => `${target.observationId}: span=${target.stephanusSpan}; status=${target.reviewStatus}`)
         .join("\n"),
     });
   }

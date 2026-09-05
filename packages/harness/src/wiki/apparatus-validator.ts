@@ -374,12 +374,12 @@ export function validateApparatusLedger(
     }
     for (const entry of parsedCites.dossiers) {
       const match = /^([a-z0-9_-]+)\/([a-z0-9_-]+)$/u.exec(entry);
-      const dossierPath = match ? join(repoRoot, "wiki/dossiers", match[1]!, `${match[2]}.md`) : undefined;
+      const dossierPath = match ? join(repoRoot, "wiki/dossiers", match[1]!, `${match[2]}.json`) : undefined;
       if (!dossierPath || !existsSync(dossierPath)) {
         push({
           code: "cite_dossier_missing",
-          message: `cites.dossiers entry \`${entry}\` does not resolve to a wiki/dossiers/<family>/<label>.md file.`,
-          fix: "Use the <family>/<label> path of an existing dossier file.",
+          message: `cites.dossiers entry \`${entry}\` does not resolve to a wiki/dossiers/<axis_key>/<concept_key>.json file.`,
+          fix: "Use the <axis_key>/<concept_key> path of an existing vNext dossier projection.",
         });
       }
     }

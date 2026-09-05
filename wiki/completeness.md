@@ -72,7 +72,7 @@ Completeness is conjunctive. There is deliberately no aggregate percentage.
 
 Nested reported turns are counted as standalone structural data. Claim joins, `derived/plato/voices/cutovers.toml` membership, and audio attribution are deliberately irrelevant to this family; accepted genuine ambiguity passes and is counted, never treated as missing data.
 
-- required=23; none=4; cohorts=261; accepted=3732; explicit=1353; reviewed_discourse=767; unresolved=1612; blocked: none
+- required=23; none=4; cohorts=260; accepted=3730; explicit=1351; reviewed_discourse=809; unresolved=1570; blocked: none
 
 ## Apparatus
 
@@ -272,12 +272,12 @@ Capability implemented; content scope `contract_pending`; required by current ta
 
 ## Quality warnings
 
-- apology: 27 accepted reported-turn record(s) record genuine ambiguity
+- apology: 3 accepted reported-turn record(s) record genuine ambiguity
 - apology: current turn index contains explicit unattributed `(none)` turns
 - charmides: 264 accepted reported-turn record(s) record genuine ambiguity
 - charmides: current turn index contains explicit unattributed `(none)` turns
 - cratylus: 1 accepted reported-turn record(s) record genuine ambiguity
-- crito: 15 accepted reported-turn record(s) record genuine ambiguity
+- crito: 1 accepted reported-turn record(s) record genuine ambiguity
 - euthydemus: 194 accepted reported-turn record(s) record genuine ambiguity
 - gorgias: 13 accepted reported-turn record(s) record genuine ambiguity
 - greater-hippias: 81 accepted reported-turn record(s) record genuine ambiguity
@@ -285,8 +285,7 @@ Capability implemented; content scope `contract_pending`; required by current ta
 - laws: 23 accepted reported-turn record(s) record genuine ambiguity
 - lysis: 332 accepted reported-turn record(s) record genuine ambiguity
 - lysis: current turn index contains explicit unattributed `(none)` turns
-- menexenus: 3 accepted reported-turn record(s) record genuine ambiguity
-- meno: 9 accepted reported-turn record(s) record genuine ambiguity
+- meno: 8 accepted reported-turn record(s) record genuine ambiguity
 - parmenides: 146 accepted reported-turn record(s) record genuine ambiguity
 - parmenides: current turn index contains explicit unattributed `(none)` turns
 - phaedo: 3 accepted reported-turn record(s) record genuine ambiguity

@@ -1,0 +1,43 @@
+{
+  "plan": "071",
+  "dialogue": "meno",
+  "generated_from": {
+    "voice_index_path": "derived/plato/voices/meno.toon",
+    "voice_index_sha256": "d66ae65bc18062c619df9c9016f6dbc4a2225a473a5ec7c8515ed3d17e948de9",
+    "claim_ledger_path": "wiki/claims/meno.md",
+    "claim_ledger_sha256_before": "efdd5821f863bcbec42b1adb69b8c4652b0d7ffbb60f05076d3bc08684e4036b",
+    "claim_ledger_sha256_after": "2e31a06bffe0e8c8e91d3cc15544a1c726a883d7d4a0f2f26c5e42ee02fd9b57"
+  },
+  "counts": {
+    "claims_total": 54,
+    "migrated": 2,
+    "already_correct": 51,
+    "blocking_accepted": 0,
+    "unresolved_but_not_accepted": 1
+  },
+  "changes": [
+    {
+      "claimId": "claim_meno_0003",
+      "from": "ΜΕΝ.",
+      "to": "ΣΩ.",
+      "evidence": "voice_meno_0001"
+    },
+    {
+      "claimId": "claim_meno_0029",
+      "from": "ΜΕΝ.",
+      "to": "ΣΩ.",
+      "evidence": "turn_meno_0120"
+    }
+  ],
+  "blocking_accepted": [],
+  "unresolved_but_not_accepted": [
+    {
+      "claimId": "claim_meno_0005",
+      "reviewStatus": "rejected",
+      "speaker": "ΣΩ.",
+      "status": "needs_anchor",
+      "evidence": "1 of 2 term(s) absent from a cross-voice window: \"οὐδ' ἄλλῳ πω ἐνέτυχον εἰδότι\" missing"
+    }
+  ],
+  "stance_actors_differing_from_owner": []
+}

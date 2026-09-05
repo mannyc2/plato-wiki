@@ -5,6 +5,12 @@ import { join } from "node:path";
 import { buildDossiers, validateDossierArtifacts, writeDossierArtifacts } from "./dossiers.js";
 import { writeObservationTurnJoin } from "./derived/joins.js";
 import { setRepoRootForTesting } from "./paths.js";
+import {
+  deriveOntologyVNextAxisId,
+  deriveOntologyVNextConceptId,
+  deriveOntologyVNextMembershipId,
+  renderOntologyVNextDocuments,
+} from "./wiki/ontology-vnext.js";
 
 let root = "";
 let restoreRepoRoot: (() => void) | undefined;
@@ -14,16 +20,12 @@ const HASH = "b".repeat(64);
 function record({
   id,
   dialogue,
-  family,
-  label,
   startChar,
   endChar,
   reviewStatus = "accepted",
 }: {
   id: string;
   dialogue: string;
-  family: string;
-  label: string;
   startChar: number;
   endChar: number;
   reviewStatus?: string;
@@ -39,8 +41,6 @@ source_ref:
   start_char: ${startChar}
   end_char: ${endChar}
   text_sha256: ${HASH}
-feature_family: ${family}
-feature_label: ${label}
 review_status: ${reviewStatus}
 \`\`\``;
 }
@@ -76,53 +76,70 @@ function writeTurnIndex(dialogue: string, speaker: string) {
   );
 }
 
+function writeOntology() {
+  mkdirSync(join(root, "wiki/ontology"), { recursive: true });
+  const axisId = deriveOntologyVNextAxisId("textual_function", "argument_move");
+  const sharedId = deriveOntologyVNextConceptId(axisId, "shared_move");
+  const singletonId = deriveOntologyVNextConceptId(axisId, "singleton_move");
+  const overlapId = deriveOntologyVNextConceptId(axisId, "overlap_marker");
+  const concepts = [
+    [sharedId, "shared_move"],
+    [singletonId, "singleton_move"],
+    [overlapId, "overlap_marker"],
+  ].map(([conceptId, conceptKey]) => ({
+    schema_version: 1 as const,
+    concept_id: conceptId!,
+    axis_id: axisId,
+    concept_key: conceptKey!,
+    definition: `The cited span performs the ${conceptKey} textual function.`,
+    comparison_question: "What argumentative move does the cited span perform?",
+  }));
+  const assignments: Array<[string, string]> = [
+    ["obs_meno_0001", sharedId],
+    ["obs_crito_0001", sharedId],
+    ["obs_meno_0002", singletonId],
+    ["obs_meno_0003", overlapId],
+  ];
+  const documents = renderOntologyVNextDocuments({
+    axes: [
+      {
+        schema_version: 1,
+        axis_id: axisId,
+        axis_key: "argument_move",
+        dimension: "textual_function",
+        comparison_question: "What argumentative move does the cited span perform?",
+      },
+    ],
+    concepts,
+    memberships: assignments.map(([observationId, conceptId]) => ({
+      schema_version: 1,
+      membership_id: deriveOntologyVNextMembershipId(observationId, conceptId),
+      observation_id: observationId,
+      concept_id: conceptId,
+      assignment_basis: "The cited Greek span instantiates this comparison category.",
+    })),
+  });
+  writeFileSync(join(root, "wiki/ontology/axes.jsonl"), documents.axes);
+  writeFileSync(join(root, "wiki/ontology/concepts.jsonl"), documents.concepts);
+  writeFileSync(join(root, "wiki/ontology/memberships.jsonl"), documents.memberships);
+}
+
 function writeFixtureCorpus() {
   writeGreek(["crito", "laws", "meno"]);
   writeLedger("meno", [
-    record({
-      id: "obs_meno_0001",
-      dialogue: "meno",
-      family: "elenchus",
-      label: "shared_move",
-      startChar: 0,
-      endChar: 10,
-    }),
-    record({
-      id: "obs_meno_0002",
-      dialogue: "meno",
-      family: "craft_analogy",
-      label: "singleton_move",
-      startChar: 20,
-      endChar: 30,
-    }),
-    record({
-      id: "obs_meno_0003",
-      dialogue: "meno",
-      family: "irony_marker",
-      label: "overlap_marker",
-      startChar: 5,
-      endChar: 15,
-    }),
+    record({ id: "obs_meno_0001", dialogue: "meno", startChar: 0, endChar: 10 }),
+    record({ id: "obs_meno_0002", dialogue: "meno", startChar: 20, endChar: 30 }),
+    record({ id: "obs_meno_0003", dialogue: "meno", startChar: 5, endChar: 15 }),
     record({
       id: "obs_meno_0004",
       dialogue: "meno",
-      family: "elenchus",
-      label: "shared_move",
       startChar: 40,
       endChar: 50,
       reviewStatus: "rejected",
     }),
   ]);
-  writeLedger("crito", [
-    record({
-      id: "obs_crito_0001",
-      dialogue: "crito",
-      family: "elenchus",
-      label: "shared_move",
-      startChar: 0,
-      endChar: 10,
-    }),
-  ]);
+  writeLedger("crito", [record({ id: "obs_crito_0001", dialogue: "crito", startChar: 0, endChar: 10 })]);
+  writeOntology();
   writeTurnIndex("meno", "A.");
   writeTurnIndex("crito", "B.");
   writeObservationTurnJoin("meno");
@@ -139,58 +156,48 @@ afterEach(() => {
   rmSync(root, { recursive: true, force: true });
 });
 
-describe("pattern dossiers", () => {
-  it("builds recurring-label dossiers with zero cells, co-occurrence, and counterevidence", () => {
+describe("concept dossier projections", () => {
+  it("builds recurring-concept dossiers without treating rejected reviews as counterevidence", () => {
     writeFixtureCorpus();
 
     const dossiers = buildDossiers();
-
     expect(dossiers).toHaveLength(1);
     const dossier = dossiers[0]!;
-    expect(dossier.family).toBe("elenchus");
-    expect(dossier.label).toBe("shared_move");
+    expect(dossier.axisKey).toBe("argument_move");
+    expect(dossier.conceptKey).toBe("shared_move");
     expect(dossier.instances.map((entry) => entry.observationId)).toEqual(["obs_crito_0001", "obs_meno_0001"]);
     expect(dossier.presence.find((entry) => entry.dialogue === "laws")?.acceptedObservations).toBe(0);
-    expect(dossier.cooccurrence).toEqual([
-      { family: "irony_marker", label: "overlap_marker", overlappingObservations: 1 },
+    expect(dossier.cooccurrence).toMatchObject([
+      { axisKey: "argument_move", conceptKey: "overlap_marker", overlappingObservations: 1 },
     ]);
-    expect(dossier.counterevidence).toEqual([
-      {
-        observationId: "obs_meno_0004",
-        dialogue: "meno",
-        stephanusSpan: "1a",
-        reviewStatus: "rejected",
-      },
-    ]);
+    expect("counterevidence" in dossier).toBe(false);
   });
 
-  it("writes byte-stable dossiers and validates generated artifacts", () => {
+  it("writes byte-stable strict JSON and validates exact projection equality", () => {
     writeFixtureCorpus();
-
     writeDossierArtifacts();
-    const first = readFileSync(join(root, "wiki/dossiers/elenchus/shared_move.md"), "utf8");
+    const path = join(root, "wiki/dossiers/argument_move/shared_move.json");
+    const first = readFileSync(path, "utf8");
     writeDossierArtifacts();
-    const second = readFileSync(join(root, "wiki/dossiers/elenchus/shared_move.md"), "utf8");
+    const second = readFileSync(path, "utf8");
 
     expect(first).toBe(second);
+    expect(first).not.toMatch(/counter_(?:records|ids)|Counterevidence/u);
+    expect(() => JSON.parse(first)).not.toThrow();
     expect(validateDossierArtifacts()).toEqual([]);
   });
 
-  it("reports stale files and invalid instance ids", () => {
+  it("detects stale files and any byte that is not the canonical projection", () => {
     writeFixtureCorpus();
     writeDossierArtifacts();
-    writeFileSync(join(root, "wiki/dossiers/stale.md"), "stale", "utf8");
+    writeFileSync(join(root, "wiki/dossiers/stale.json"), "{}", "utf8");
+    expect(validateDossierArtifacts()).toContain("wiki/dossiers/stale.json: stale dossier artifact");
 
-    expect(validateDossierArtifacts()).toContain("wiki/dossiers/stale.md: stale dossier artifact");
-
-    rmSync(join(root, "wiki/dossiers/stale.md"));
-    const path = join(root, "wiki/dossiers/elenchus/shared_move.md");
-    writeFileSync(
-      path,
-      readFileSync(path, "utf8").replace("instance_ids: [obs_crito_0001, obs_meno_0001]", "instance_ids: [obs_meno_0004]"),
-      "utf8",
-    );
-
-    expect(validateDossierArtifacts().join("\n")).toContain("instance references missing or non-accepted observation obs_meno_0004");
+    rmSync(join(root, "wiki/dossiers/stale.json"));
+    const path = join(root, "wiki/dossiers/argument_move/shared_move.json");
+    writeFileSync(path, readFileSync(path, "utf8").replace("obs_crito_0001", "obs_crito_9999"), "utf8");
+    expect(validateDossierArtifacts()).toEqual([
+      "wiki/dossiers/argument_move/shared_move.json: dossier artifact does not equal its canonical ontology projection",
+    ]);
   });
 });

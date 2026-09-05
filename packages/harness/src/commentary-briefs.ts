@@ -8,6 +8,10 @@ import { claimYamlBlocks } from "./wiki/claim-ledger.js";
 import { commentaryYamlBlocks } from "./wiki/commentary-ledger.js";
 import { relationYamlBlocks, listRelationLedgerPaths } from "./wiki/relation-ledger.js";
 import { fieldValue, fieldValueOrEmpty, nestedFieldValueInParent, observationYamlBlocks } from "./wiki/observation-ledger.js";
+import {
+  ontologyConceptRefsByObservation,
+  ontologyDossierPathsByObservation,
+} from "./wiki/ontology-vnext-repository.js";
 
 export type CommentaryBriefResult = {
   path: string;
@@ -93,6 +97,8 @@ function spineLines(dialogue: string, unit: SectionUnit, markers: string[], engl
 
 export function writeCommentaryBriefs(dialogue: string): CommentaryBriefResult[] {
   const repoRoot = getRepoRoot();
+  const conceptRefsByObservation = ontologyConceptRefsByObservation(repoRoot);
+  const dossierPathsByObservation = ontologyDossierPathsByObservation(repoRoot);
   const ledgerPath = join(repoRoot, `wiki/commentary/${dialogue}.md`);
   if (!existsSync(ledgerPath)) {
     throw new Error(`No commentary ledger for ${dialogue}: wiki/commentary/${dialogue}.md does not exist.`);
@@ -157,13 +163,10 @@ export function writeCommentaryBriefs(dialogue: string): CommentaryBriefResult[]
     const dossierPaths = [
       ...new Set(
         unitObservations
-          .map((record) => {
-            const family = fieldValueOrEmpty(record.block, "feature_family");
-            const label = fieldValueOrEmpty(record.block, "feature_label");
-            if (!family || !label) return undefined;
-            const relativePath = `wiki/dossiers/${family}/${label}.md`;
-            return existsSync(join(repoRoot, relativePath)) ? relativePath : undefined;
-          })
+          .flatMap((record) =>
+            dossierPathsByObservation.get(fieldValueOrEmpty(record.block, "observation_id")) ?? []
+          )
+          .map((relativePath) => existsSync(join(repoRoot, relativePath)) ? relativePath : undefined)
           .filter((path): path is string => path !== undefined),
       ),
     ].sort();
@@ -186,13 +189,19 @@ export function writeCommentaryBriefs(dialogue: string): CommentaryBriefResult[]
       "## Accepted observations overlapping the span",
       "",
       ...(unitObservations.length === 0 ? ["(none)", ""] : []),
-      ...unitObservations.flatMap((record) => [
-        `### ${fieldValueOrEmpty(record.block, "observation_id")} (${fieldValueOrEmpty(record.block, "feature_family")}/${fieldValueOrEmpty(record.block, "feature_label")})`,
-        "",
-        `- observation: ${fieldValueOrEmpty(record.block, "observation")}`,
-        `- limits: ${fieldValueOrEmpty(record.block, "limits")}`,
-        "",
-      ]),
+      ...unitObservations.flatMap((record) => {
+        const observationId = fieldValueOrEmpty(record.block, "observation_id");
+        const concepts = (conceptRefsByObservation.get(observationId) ?? [])
+          .map(({ axisKey, conceptKey }) => `${axisKey}/${conceptKey}`)
+          .join(", ");
+        return [
+          `### ${observationId}${concepts ? ` (${concepts})` : ""}`,
+          "",
+          `- observation: ${fieldValueOrEmpty(record.block, "observation")}`,
+          `- limits: ${fieldValueOrEmpty(record.block, "limits")}`,
+          "",
+        ];
+      }),
       "## Accepted claims overlapping the span",
       "",
       ...(unitClaims.length === 0 ? ["(none)", ""] : []),

@@ -10,13 +10,17 @@ import { writeCommentaryAuditBriefs } from "../commentary-audit.js";
 import { COMMENTARY_PROTOCOL_FIXTURE } from "../../test-support/commentary-protocol-fixture.js";
 import {
   applyCommentaryStructuralRemediation,
+  applyCommentaryStructuralRemediationBatch,
   previewCommentaryStructuralRemediation,
+  previewCommentaryStructuralRemediationBatch,
+  type CommentaryStructuralRemediationBatchInput,
   type CommentaryStructuralRemediationInput,
 } from "./commentary-structural-remediation.js";
 
 const DIALOGUE = "fixture";
 const ID = "comm_fixture_0001";
 const ID2 = "comm_fixture_0002";
+const ID3 = "comm_fixture_0003";
 const UNIT = "01-2a-2b";
 const SECTION = ID;
 const AUDIT_PATH = `scratch/commentary/audits/${DIALOGUE}/${UNIT}.json`;
@@ -193,6 +197,130 @@ function prepare(options: { twoBlocks?: boolean; auditOnlyFirst?: boolean; first
       ...overrides,
     }),
   };
+}
+
+type BatchDisposition = "pass" | "remove" | "rewrite" | "split";
+
+function prepareBatch(dispositions: Record<string, BatchDisposition> = {
+  [ID]: "remove",
+  [ID2]: "rewrite",
+  [ID3]: "pass",
+}) {
+  const english = "{2a} Alpha asks. {2b} Beta answers.\n{3a} Gamma replies.\n{4a} Delta concludes.";
+  const attribution = `${JSON.stringify({
+    schema_version: 2,
+    dialogue: DIALOGUE,
+    english_sha256: sha256(english),
+    status: "accepted",
+    segments: [{ id: "turn_fixture_audio_0001", start_char: 0, end_char: english.length, character_id: "socrates" }],
+  }, null, 2)}\n`;
+  write("raw/plato/greek/fixture.txt", "{2a} alpha {2b} beta {3a} gamma {4a} delta");
+  write("raw/plato/english/fixture.txt", english);
+  write("audio/speaker-attributions/fixture.json", attribution);
+  write("docs/commentary-protocol.md", COMMENTARY_PROTOCOL_FIXTURE);
+  write("packages/harness/src/commentary-luna-model-catalog.json", readFileSync(join(import.meta.dir, "../commentary-luna-model-catalog.json"), "utf8"));
+  const before = [
+    "# Fixture commentary\n\n",
+    block(ID, "2a-2b", "Opening"),
+    block(ID2, "3a", "Middle"),
+    block(ID3, "4a", "Close"),
+  ].join("");
+  write(`wiki/commentary/${DIALOGUE}.md`, before);
+  const briefs = writeCommentaryAuditBriefs(DIALOGUE);
+  const plan = buildCommentaryCampaignPlan({ dialogue: DIALOGUE, stage: "audit" });
+  const jobsByUnit = new Map(plan.manifest.jobs.map((job) => [job.unit_key ?? "", job]));
+  const auditUnits = briefs.map((brief) => {
+    const job = jobsByUnit.get(brief.unitKey);
+    if (!job) throw new Error(`fixture audit job missing for ${brief.unitKey}`);
+    const id = brief.commentaryIds[0]!;
+    const disposition = dispositions[id] ?? "pass";
+    const output = {
+      schema_version: 3,
+      dialogue: DIALOGUE,
+      unit_key: brief.unitKey,
+      section_id: brief.sectionId,
+      authoring: { model: "gpt-5.6-luna", effort: "medium" },
+      unit_verdict: disposition === "pass" ? "pass" : "fail",
+      blocks: [{
+        commentary_id: id,
+        disposition,
+        issue_codes: disposition === "pass"
+          ? []
+          : disposition === "remove"
+            ? ["interrupts_dramatic_flow"]
+            : disposition === "rewrite"
+              ? ["source_misreading"]
+              : ["multiple_jobs"],
+        checks: {
+          evidence: { verdict: disposition === "rewrite" ? "fail" : "pass" },
+          placement: {
+            verdict: disposition === "remove" ? "fail" : "pass",
+            hazard_codes: disposition === "remove" ? ["sentence_or_clause_split"] : [],
+          },
+          listening: { verdict: disposition === "split" ? "fail" : "pass" },
+        },
+        rationale: disposition === "pass"
+          ? "This block earns its place in the listening sequence."
+          : "The current independent audit requires structural adjudication.",
+      }],
+    };
+    const content = `${JSON.stringify(output, null, 2)}\n`;
+    write(job.output_path, content);
+    write(job.state_path, `${JSON.stringify({
+      schema_version: 3,
+      job_id: job.job_id,
+      stage: job.stage,
+      input_sha256: job.input_sha256,
+      output_schema_sha256: job.output_schema_sha256,
+      model_argument: job.model_argument,
+      codex_cli_version: job.codex_cli_version,
+      model_catalog_path: job.model_catalog_path,
+      model_catalog_sha256: job.model_catalog_sha256,
+      authoring_model: job.authoring_model,
+      effort: job.effort,
+      permission_mode: job.permission_mode,
+      output_path: job.output_path,
+      output_sha256: sha256(content),
+    }, null, 2)}\n`);
+    write(job.state_path.replace(/\.json$/u, ".usage.json"), `${JSON.stringify({
+      schema_version: 1,
+      campaign: "plato-commentary-quality",
+      attempt_id: `fixture-${brief.unitKey}`,
+      job_id: job.job_id,
+      dialogue: DIALOGUE,
+      stage: "audit",
+      unit_key: brief.unitKey,
+      input_sha256: job.input_sha256,
+      outcome: "generated",
+      exit_code: 0,
+    })}\n`);
+    return {
+      unitKey: brief.unitKey,
+      sectionId: brief.sectionId,
+      auditOutputPath: job.output_path,
+      auditOutputSha256: sha256(content),
+      operations: disposition === "remove"
+        ? [{ operation: "remove" as const, commentaryId: id }]
+        : disposition === "rewrite"
+          ? [{ operation: "remove" as const, commentaryId: id, rewriteResolution: "reject-original" as const }]
+          : [],
+    };
+  });
+  const candidatePath = `scratch/commentary/structural-remediation/${DIALOGUE}/audit-failures-batch.json`;
+  const input: CommentaryStructuralRemediationBatchInput = {
+    schemaVersion: 1,
+    dialogue: DIALOGUE,
+    candidatePath,
+    expectedLedgerSha256: sha256(before),
+    expectedAttributionSha256: sha256(attribution),
+    expectedEnglishSha256: sha256(english),
+    auditUnits,
+    reviewer: "ontology-vnext-release-delegated-luna-20260901",
+    reviewedOn: "2026-09-01",
+    rationale: "Bound to current independent Luna placement-removal and rewrite findings; reject the defective originals conservatively.",
+  };
+  write(candidatePath, `${JSON.stringify(input, null, 2)}\n`);
+  return { before, input, candidatePath };
 }
 
 beforeEach(() => {
@@ -389,5 +517,76 @@ describe("commentary structural remediation", () => {
     fixture = prepare();
     write("docs/commentary-protocol.md", COMMENTARY_PROTOCOL_FIXTURE.replace("Use accepted citations", "Protocol drift replaces accepted citations"));
     expect(() => previewCommentaryStructuralRemediation(fixture.input())).toThrow(/current audit (state|brief)|stale/u);
+  });
+
+  it("previews every current audit unit against one before-ledger and rejects remove/rewrite originals atomically", () => {
+    const fixture = prepareBatch();
+    const preview = previewCommentaryStructuralRemediationBatch(fixture.input);
+    expect(preview.auditUnits).toHaveLength(3);
+    expect(preview.operations).toEqual([
+      { operation: "remove", commentaryId: ID },
+      { operation: "remove", commentaryId: ID2, rewriteResolution: "reject-original" },
+    ]);
+    expect(preview.auditFindings).toEqual([
+      { commentaryId: ID, disposition: "remove" },
+      { commentaryId: ID2, disposition: "rewrite", rewriteResolution: "reject-original" },
+    ]);
+    expect(preview.prospectiveLedger.match(/review_status: rejected/gu)).toHaveLength(2);
+    expect(preview.prospectiveLedger.match(/review_status: accepted/gu)).toHaveLength(1);
+    expect(readFileSync(join(root, "wiki/commentary/fixture.md"), "utf8")).toBe(fixture.before);
+  });
+
+  it("applies one tracked batch submission and receipt without deleting rejected provenance", () => {
+    const fixture = prepareBatch();
+    const result = applyCommentaryStructuralRemediationBatch(fixture.input);
+    expect(result.applied).toBe(true);
+    expect(result.submissionRecordPath).toMatch(/^wiki\/submissions\/commentary\/fixture\/\d{4}-structural-remediation-batch\.json$/u);
+    expect(readFileSync(join(root, "wiki/commentary/fixture.md"), "utf8")).toBe(result.prospectiveLedger);
+    expect(result.prospectiveLedger).toContain(`commentary_id: ${ID}`);
+    expect(result.prospectiveLedger).toContain(`commentary_id: ${ID2}`);
+    expect(result.receipt).toContain("human_listening_or_review: none claimed");
+    expect(result.receipt).toContain("rewrite_resolution: reject-original");
+    const record = JSON.parse(readFileSync(join(root, result.submissionRecordPath), "utf8")) as {
+      applied_ids: string[];
+      submission: { audit_findings: unknown[] };
+    };
+    expect(record.applied_ids).toEqual([ID, ID2]);
+    expect(record.submission.audit_findings).toHaveLength(2);
+  });
+
+  it("fails closed when the candidate omits a current audit unit or one current finding", () => {
+    const fixture = prepareBatch();
+    expect(() => previewCommentaryStructuralRemediationBatch({
+      ...fixture.input,
+      auditUnits: fixture.input.auditUnits.slice(0, 2),
+    })).toThrow("bind every current audit unit");
+    expect(() => previewCommentaryStructuralRemediationBatch({
+      ...fixture.input,
+      auditUnits: fixture.input.auditUnits.map((unit) => unit.operations.some((operation) => operation.commentaryId === ID)
+        ? { ...unit, operations: [] }
+        : unit),
+    })).toThrow("exactly match current remove/rewrite findings");
+  });
+
+  it("fails closed on split evidence, stale audit hashes, candidate drift, and a zero-accepted result", () => {
+    let fixture = prepareBatch({ [ID]: "remove", [ID2]: "split", [ID3]: "pass" });
+    expect(() => previewCommentaryStructuralRemediationBatch(fixture.input)).toThrow("refuses split finding");
+
+    fixture = prepareBatch();
+    expect(() => previewCommentaryStructuralRemediationBatch({
+      ...fixture.input,
+      auditUnits: fixture.input.auditUnits.map((unit, index) => index === 0
+        ? { ...unit, auditOutputSha256: "0".repeat(64) }
+        : unit),
+    })).toThrow("audit output hash");
+
+    fixture = prepareBatch();
+    write(fixture.candidatePath, `${JSON.stringify({ ...fixture.input, rationale: "drift" }, null, 2)}\n`);
+    expect(() => applyCommentaryStructuralRemediationBatch(fixture.input)).toThrow("does not match its candidate file");
+    expect(readFileSync(join(root, "wiki/commentary/fixture.md"), "utf8")).toBe(fixture.before);
+
+    fixture = prepareBatch({ [ID]: "remove", [ID2]: "remove", [ID3]: "remove" });
+    expect(() => previewCommentaryStructuralRemediationBatch(fixture.input)).toThrow("retain at least one accepted");
+    expect(readFileSync(join(root, "wiki/commentary/fixture.md"), "utf8")).toBe(fixture.before);
   });
 });

@@ -1,0 +1,119 @@
+{
+  "plan": "071",
+  "dialogue": "crito",
+  "generated_from": {
+    "voice_index_path": "derived/plato/voices/crito.toon",
+    "voice_index_sha256": "99abc7acf0413746794194554a9fc1bff2fff530c1678774f9d209ffd8262eb9",
+    "claim_ledger_path": "wiki/claims/crito.md",
+    "claim_ledger_sha256_before": "36018ea787cd0d9fbb4e9c253b70002d011d28813cb18e7bfe002078c176cb15",
+    "claim_ledger_sha256_after": "065a87b465839194637c3b91fb6270ed8d26015c05859f61f0973485ecb8bc8d"
+  },
+  "counts": {
+    "claims_total": 52,
+    "migrated": 16,
+    "already_correct": 36,
+    "blocking_accepted": 0,
+    "unresolved_but_not_accepted": 0
+  },
+  "changes": [
+    {
+      "claimId": "claim_crito_0023",
+      "from": "ΚΡ.",
+      "to": "ΣΩ.",
+      "evidence": "\"βιωτὸν\" x2; \"διεφθαρμένου\" x3; \"σώματος\" x2; all 12 occurrence choice(s) yield turn_level:ΣΩ. (turn_crito_0056,turn_crito_0054,turn_crito_0056,turn_crito_0054,turn_crito_0058,turn_crito_0056,turn_crito_0056,turn_crito_0058,turn_crito_0056,turn_crito_0058,turn_crito_0054)"
+    },
+    {
+      "claimId": "claim_crito_0034",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "voice_crito_0013"
+    },
+    {
+      "claimId": "claim_crito_0035",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "voice_crito_0008"
+    },
+    {
+      "claimId": "claim_crito_0036",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "\"πατρίδα\" x2; \"πείθειν\" x2; \"δίκαιον\" x2; all 8 occurrence choice(s) yield resolved:ΝΟΜ. (voice_crito_0013)"
+    },
+    {
+      "claimId": "claim_crito_0037",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "\"πατέρα\" x2; \"πατρίδα\" x2; all 4 occurrence choice(s) yield resolved:ΝΟΜ. (voice_crito_0013)"
+    },
+    {
+      "claimId": "claim_crito_0039",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "voice_crito_0016"
+    },
+    {
+      "claimId": "claim_crito_0040",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "voice_crito_0016 (single-voiced context window)"
+    },
+    {
+      "claimId": "claim_crito_0042",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "speaker_source_ref 20058-20082: voice_crito_0019"
+    },
+    {
+      "claimId": "claim_crito_0043",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "speaker_source_ref 20811-20849: voice_crito_0019"
+    },
+    {
+      "claimId": "claim_crito_0044",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "voice_crito_0016"
+    },
+    {
+      "claimId": "claim_crito_0045",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "voice_crito_0024"
+    },
+    {
+      "claimId": "claim_crito_0046",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "\"πόλις\" x2; all 2 occurrence choice(s) yield resolved:ΝΟΜ. (voice_crito_0024)"
+    },
+    {
+      "claimId": "claim_crito_0047",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "voice_crito_0024 (single-voiced context window)"
+    },
+    {
+      "claimId": "claim_crito_0048",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "speaker_source_ref 22936-23136: voice_crito_0024"
+    },
+    {
+      "claimId": "claim_crito_0049",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "voice_crito_0026 (single-voiced context window)"
+    },
+    {
+      "claimId": "claim_crito_0050",
+      "from": "ΣΩ.",
+      "to": "ΝΟΜ.",
+      "evidence": "voice_crito_0026"
+    }
+  ],
+  "blocking_accepted": [],
+  "unresolved_but_not_accepted": [],
+  "stance_actors_differing_from_owner": []
+}

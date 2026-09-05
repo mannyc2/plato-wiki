@@ -17,6 +17,7 @@ import { COMMENTARY_AUTHORING_MODEL, COMMENTARY_STAGE_EFFORT } from "./commentar
 import { setRepoRootForTesting } from "./paths.js";
 import { resolveSourceSpan } from "./source.js";
 import { COMMENTARY_PROTOCOL_FIXTURE } from "../test-support/commentary-protocol-fixture.js";
+import { writeOntologyVNextFixture } from "../test-support/ontology-vnext-fixture.js";
 
 let root = "";
 let restoreRepoRoot: (() => void) | undefined;
@@ -62,13 +63,12 @@ function setup() {
     "observation_id: obs_fixture_0001",
     "source_work: Fixture",
     sourceRef("fixture", "2a-2b"),
-    "feature_family: frame_depth",
-    "feature_label: reported_dialogue_frame",
     'observation: "Accepted evidence for this exact unit."',
     "review_status: accepted",
     "```",
     "",
   ].join("\n"));
+  writeOntologyVNextFixture(root);
   write("wiki/commentary/fixture.md", [
     "# fixture",
     "",
@@ -219,13 +219,12 @@ describe("commentary rewrite evidence supplements", () => {
       "observation_id: obs_other_0001",
       "source_work: Other",
       sourceRef("other", "1a-1b"),
-      "feature_family: frame_depth",
-      "feature_label: reported_dialogue_frame",
       'observation: "Accepted evidence from another passage."',
       "review_status: accepted",
       "```",
       "",
     ].join("\n"));
+    writeOntologyVNextFixture(root);
     const ledgerPath = join(root, "wiki/commentary/fixture.md");
     writeFileSync(
       ledgerPath,

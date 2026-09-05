@@ -201,7 +201,7 @@ function insertCommentaryBlock({
     "```yaml",
     `commentary_id: ${id}`,
     "source_work: Fixture",
-    "block_kind: argument",
+    "block_kind: context",
     `placement: ${placement}`,
     `stephanus_span: ${span}`,
     "source_ref:",
@@ -365,18 +365,20 @@ function rewriteChapterFixture({
   greek,
   sections,
   segments,
+  acceptAudit = true,
 }: {
   english: string;
   greek: string;
   sections: Array<{ id?: string; span: string; title: string; body: string }>;
   segments: Array<{ id: string; start_char: number; end_char: number; character_id: string }>;
+  acceptAudit?: boolean;
 }) {
   write(`raw/plato/greek/${DIALOGUE}.txt`, greek);
   write(`raw/plato/english/${DIALOGUE}.txt`, english);
   writeEnglishStephanusIndex(DIALOGUE);
   write(`wiki/commentary/${DIALOGUE}.md`, commentarySections(sections));
   writeAttribution({ english_sha256: sha256(english), segments });
-  writeAcceptedCommentaryQualityAuditFixture({ root, dialogue: DIALOGUE });
+  if (acceptAudit) writeAcceptedCommentaryQualityAuditFixture({ root, dialogue: DIALOGUE });
 }
 
 function appendCharacter(character: Record<string, unknown>, sourceParticipantDelta = 0) {
@@ -824,6 +826,7 @@ describe("deterministic audio screenplay generator", () => {
         { id: "turn-000028", start_char: turn27End, end_char: turn28End, character_id: "speaker" },
         { id: "turn-000029", start_char: turn28End, end_char: english.length, character_id: "speaker" },
       ],
+      acceptAudit: false,
     });
     const sectionLedger = commentarySections(sections);
     const secondSectionStart = sectionLedger.indexOf(

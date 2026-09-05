@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "submission_id": "0012-structural-remediation-batch",
+  "lane": "commentary",
+  "kind": "structural-remediation-batch",
+  "scope": "menexenus",
+  "source_path": "scratch/commentary/structural-remediation/menexenus/audit-failures-batch.json",
+  "source_sha256": "b63c90df1fb790429ef90c3976289b1500fb4b2bb19d296dfe9c6fa077b4f273",
+  "target_path": "wiki/commentary/menexenus.md",
+  "target_sha256_before": "854fb68811a83ecdeab70e76de80450e0bd7e8a3155f9d8f0487ea493e84e73a",
+  "target_sha256_after": "ec4f780bb40a83e8eb953d342df2c07325c440eb7303fcc0fa9fff3b2a184603",
+  "applied_at": "2026-09-01T12:04:01.144Z",
+  "applied_ids": [
+    "comm_menexenus_0009",
+    "comm_menexenus_0013"
+  ],
+  "submission": {
+    "candidate": {
+      "schemaVersion": 1,
+      "dialogue": "menexenus",
+      "candidatePath": "scratch/commentary/structural-remediation/menexenus/audit-failures-batch.json",
+      "expectedLedgerSha256": "854fb68811a83ecdeab70e76de80450e0bd7e8a3155f9d8f0487ea493e84e73a",
+      "expectedAttributionSha256": "e183acebb895bf91d7fa1807be74275d2ef8733285d9dc4422ee01a9926d0b41",
+      "expectedEnglishSha256": "a1a24aa22e0f7c27c5917ad1f82abc4f1be9312870dba4897d97d25fff772492",
+      "auditUnits": [
+        {
+          "unitKey": "01-234a-235c",
+          "sectionId": "comm_menexenus_0001",
+          "auditOutputPath": "scratch/commentary/audits/menexenus/01-234a-235c.json",
+          "auditOutputSha256": "2105e92161586bcb7a626d30e1b23363510da0c63ad23e929a01b7a2a1381ef3",
+          "operations": []
+        },
+        {
+          "unitKey": "02-235d-236c",
+          "sectionId": "comm_menexenus_0002",
+          "auditOutputPath": "scratch/commentary/audits/menexenus/02-235d-236c.json",
+          "auditOutputSha256": "8c1641d0702ceb0456e00b030a062c6d3f2cf5139a050119e167df7de167b988",
+          "operations": []
+        },
+        {
+          "unitKey": "03-236d-237c",
+          "sectionId": "comm_menexenus_0003",
+          "auditOutputPath": "scratch/commentary/audits/menexenus/03-236d-237c.json",
+          "auditOutputSha256": "9ebeaed952f7a1e67e6ee493d4ea70d00d6b13b23d3941be852a58983cb3ca2b",
+          "operations": []
+        },
+        {
+          "unitKey": "04-237d-238b",
+          "sectionId": "comm_menexenus_0004",
+          "auditOutputPath": "scratch/commentary/audits/menexenus/04-237d-238b.json",
+          "auditOutputSha256": "670143d2e3f4361a55769392998ffb75520384a46771d83bf95636f53d8cf1c0",
+          "operations": []
+        },
+        {
+          "unitKey": "05-238c-239a",
+          "sectionId": "comm_menexenus_0005",
+          "auditOutputPath": "scratch/commentary/audits/menexenus/05-238c-239a.json",
+          "auditOutputSha256": "818ba794176c1099b3b8a0f003841d87717ff818cb91e478d74a1bc6b33e6a98",
+          "operations": []
+        },
+        {
+          "unitKey": "06-239b-240b",
+          "sectionId": "comm_menexenus_0006",
+          "auditOutputPath": "scratch/commentary/audits/menexenus/06-239b-240b.json",
+          "auditOutputSha256": "f100072f904e58269e67e4ab4d7af5dd51767c495a0a8ef2186966714194c0f8",
+          "operations": []
+        },
+        {
+          "unitKey": "07-240c-241c",
+          "sectionId": "comm_menexenus_0007",
+          "auditOutputPath": "scratch/commentary/audits/menexenus/07-240c-241c.json",
+          "auditOutputSha256": "f456b0c910fc5abb62272328ccbf7efeaa812bc2e1583071a82e83f3622edef4",
+          "operations": []
+        },
+        {
+          "unitKey": "08-241d-242d",
+          "sectionId": "comm_menexenus_0008",
+          "auditOutputPath": "scratch/commentary/audits/menexenus/08-241d-242d.json",
+          "auditOutputSha256": "2175190e5d2a131ed0e0359a3047577e86f889543e86ea2ecb4805d69e17e9ff",
+          "operations": []
+        },
+        {
+          "unitKey": "09-242e-243e",
+          "sectionId": "comm_menexenus_0009",
+          "auditOutputPath": "scratch/commentary/audits/menexenus/09-242e-243e.json",
+          "auditOutputSha256": "970c4fa5bb7cf673c74bc8576d6d685d69976ed68db6f13408d50825e1ae1527",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_menexenus_0009"
+            }
+          ]
+        },
+        {
+          "unitKey": "10-244a-245b",
+          "sectionId": "comm_menexenus_0010",
+          "auditOutputPath": "scratch/commentary/audits/menexenus/10-244a-245b.json",
+          "auditOutputSha256": "4dd6545ee493b605158239dc044bee9ec02aaa98471cf041bf22975fc33d4924",
+          "operations": []
+        },
+        {
+          "unitKey": "11-245c-246b",
+          "sectionId": "comm_menexenus_0011",
+          "auditOutputPath": "scratch/commentary/audits/menexenus/11-245c-246b.json",
+          "auditOutputSha256": "0008dd2249330dac85905e19e2407ab9b4f2a794b120b068f2b8d76d4c0a9779",
+          "operations": []
+        },
+        {
+          "unitKey": "12-246c-247c",
+          "sectionId": "comm_menexenus_0012",
+          "auditOutputPath": "scratch/commentary/audits/menexenus/12-246c-247c.json",
+          "auditOutputSha256": "ed1db0abd04ea96cd6fb2382930a5a384e8d5396b0ee7ea2f90c61797db0a85e",
+          "operations": []
+        },
+        {
+          "unitKey": "13-247d-248d",
+          "sectionId": "comm_menexenus_0013",
+          "auditOutputPath": "scratch/commentary/audits/menexenus/13-247d-248d.json",
+          "auditOutputSha256": "fb9fcbd63327bddcd1a842d467d83d481540b6a8b6b1989c79e155a5d86a5ddb",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_menexenus_0013"
+            }
+          ]
+        },
+        {
+          "unitKey": "14-248e-249e",
+          "sectionId": "comm_menexenus_0014",
+          "auditOutputPath": "scratch/commentary/audits/menexenus/14-248e-249e.json",
+          "auditOutputSha256": "7a44d717519035b76cac9a4fb25bf5cbd9bc0bdeaaf323ce573b6142f76c035f",
+          "operations": []
+        }
+      ],
+      "reviewer": "ontology-vnext-release-delegated-luna-20260901",
+      "reviewedOn": "2026-09-01",
+      "rationale": "Bound to current independent Luna placement-removal and rewrite findings; reject the defective originals conservatively."
+    },
+    "audit_findings": [
+      {
+        "commentaryId": "comm_menexenus_0009",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_menexenus_0013",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

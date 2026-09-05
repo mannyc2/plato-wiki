@@ -1,0 +1,156 @@
+{
+  "accepted_observations": 2,
+  "axis_id": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+  "axis_key": "dramatic_case_setup",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record death composure enacted within the dramatic case setup axis?",
+  "concept_id": "concept_sha256_0fa0bded8b8c5f184e749699e2b0bade3b675889a612e0dc51cb245aa52689b5",
+  "concept_key": "death_composure_enacted",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+      "axisKey": "dramatic_case_setup",
+      "conceptId": "concept_sha256_1ad62c3ab9d183558e7d26f2d4f9e3f0a2650d27fa4267f2aacf34c9f6aaeafd",
+      "conceptKey": "prison_execution_frame",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 1,
+  "dimension": "dramatic_context",
+  "instance_ids": [
+    "obs_phaedo_0254",
+    "obs_phaedo_0256"
+  ],
+  "instances": [
+    {
+      "dialogue": "phaedo",
+      "observationId": "obs_phaedo_0254",
+      "speakers": [
+        "ΦΑΙΔ."
+      ],
+      "stephanusSpan": "117a-117b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "phaedo",
+      "observationId": "obs_phaedo_0256",
+      "speakers": [
+        "ΦΑΙΔ."
+      ],
+      "stephanusSpan": "117c-117d",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_0fa0bded8b8c5f184e749699e2b0bade3b675889a612e0dc51cb245aa52689b5",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

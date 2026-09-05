@@ -1,0 +1,29 @@
+# Commentary quality-audit acceptance
+
+dialogue: charmides
+decision: accepted
+reviewer: commentary-audit-delegated-luna-reviewer-charmides-7b24eac62747
+reviewed_on: 2026-09-01
+rationale: All seven blocks are anchored, evidence-supported, accurately voiced, and valuable aloud; every playback edge is safe, with no demonstrated placement, clarity, or flow defect.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sample_evidence_path: wiki/submissions/commentary-audit-sample/charmides/eb408df90ed5620f9ac3878f7e5b5a262c131a1fa11244b3f857b1250e978c57.json
+sample_evidence_sha256: eb408df90ed5620f9ac3878f7e5b5a262c131a1fa11244b3f857b1250e978c57
+sample_input_sha256: dc233ae80226033f66b32d58da238d832153578ca9f7bd0faf36d4721b033fbf
+pending_manifest_sha256: 7b24eac627478be092fb5fc93619823d90779353cbe2850444aea566f243d82d
+commentary_ledger_sha256: a480bf1ef9c34a7eb1b73d11dfee9f7c6670192092cb03f2f4d613698540417c
+sample_packet_sha256: bc8baa874d4edaa308fe3de3afd19970c3c477ce356ab3d3ebeddef0d8ab6e1c
+sample_output_sha256: db1c0ac9bcc1f03b5a116f5ce6082d56b3a8b740b554f932e693be847e9fcf8d
+sample_state_sha256: c416ccbee8364465b84aa6087760b140c352f70764205ebbcc95ccf3e47b1de2
+codex_execution_sha256: bc6989b5907bcf2ef4d77be8302ef49b76a0bd09bc7ea41b4b7179ec26751af0
+output_schema_sha256: fab35307446776e2fd39e1faa836638db171302c289b62537c7b171dc125c787
+model_catalog_sha256: a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724
+sample_prompt_sha256: 169417cf2fcd6fcf843c8008bec12f1d8e2ab342c9947ae5d197064aab7f6477
+sampled_commentary_ids:
+- comm_charmides_0001
+- comm_charmides_0003
+- comm_charmides_0005
+- comm_charmides_0016
+- comm_charmides_0031
+- comm_charmides_0034
+- comm_charmides_0045

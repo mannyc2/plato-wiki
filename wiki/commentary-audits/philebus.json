@@ -3,11 +3,11 @@
   "dialogue": "philebus",
   "ledger": {
     "path": "wiki/commentary/philebus.md",
-    "sha256": "89bbe031d2ad421d640f86eccc9a2c6e2019b09922df371b0887efb4efeae734"
+    "sha256": "94841b71fd489617777407864bd1c081a0362805885057d30fb02e6b55998930"
   },
   "protocol": {
     "path": "docs/commentary-protocol.md",
-    "sha256": "5f5e6f47f2d39cb42dd8941762ca1b82b4c1371801576f9ec7875e76286e1a13"
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
   },
   "authoring": {
     "model": "gpt-5.6-luna",
@@ -17,9 +17,9 @@
     {
       "unit_key": "01-11a-16e",
       "section_id": "comm_philebus_0001",
-      "audit_brief_sha256": "116baa9f44deeb9925ce0a2429b37dc3bc73af2e890f24d9a48f3be330af06de",
+      "audit_brief_sha256": "7e8f945f607ea4b8153d27cb91b612dad0c2c4706572e94000913ba518150763",
       "output_path": "scratch/commentary/audits/philebus/01-11a-16e.json",
-      "output_sha256": "1590928b356184c2d015a0768477526ddad0e2b3426208081152f0d85d277b01",
+      "output_sha256": "77c12576f8d3894dcd6dd6992f7eb94030c6276e50168b467054409c506d5448",
       "output": {
         "schema_version": 3,
         "dialogue": "philebus",
@@ -47,7 +47,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately tracks the opposed sources of pleasure, Socrates’ color-and-shape analogy, and Protarchus’ deflection. It sits cleanly after “Quite right” and before Socrates’ examination."
+            "rationale": "Accurately tracks the shared-name/shared-value challenge, opposed sources, analogy, and Protarchus's deflection. It is clear, focused, and placed between the goddess exchange and pleasure's varied aspects."
           },
           {
             "commentary_id": "comm_philebus_0014",
@@ -65,7 +65,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Faithfully states the one-to-many method and its language and music applications, supported by accepted claims. It follows “Yes, we must” and prepares Socrates’ next principle question."
+            "rationale": "Faithfully distills the method's two shortcuts and connects its cited language and music examples. Before “Then let us establish this principle” cleanly previews the ensuing investigation."
           }
         ]
       }
@@ -73,9 +73,9 @@
     {
       "unit_key": "02-17a-20c",
       "section_id": "comm_philebus_0002",
-      "audit_brief_sha256": "59539e17a1a012f1bf6d89e31e9a197e8ba13f770e8188588328016dc5107eff",
+      "audit_brief_sha256": "b105cfe477cf941e81cd5067bf2f78cdfc4038585a5b87ecc546c2580c9dd2ae",
       "output_path": "scratch/commentary/audits/philebus/02-17a-20c.json",
-      "output_sha256": "4be98717af032a73830b3d95e44836990583e21f170ae8ae8312570f0dc07c53",
+      "output_sha256": "86069065f2b9cee49f658bd3524063b6f6522005c44532fac1c4e116aa7715a9",
       "output": {
         "schema_version": 3,
         "dialogue": "philebus",
@@ -86,32 +86,13 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_philebus_0002",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately orients the method's illustrations and its application to pleasure and intelligence; citations support the method. The edge ends a complete thought before Protarchus's clarification request."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "03-20d-27d",
       "section_id": "comm_philebus_0003",
-      "audit_brief_sha256": "869a0e1556cfbc6a5e62c149ec052249e157a16acc0dc2daf9d4ceaaa8d439ef",
+      "audit_brief_sha256": "c6dfc0a1a6986a2e78d7ff6a73684c546c2f36c9fc0822813fb2c0c5d1c90d20",
       "output_path": "scratch/commentary/audits/philebus/03-20d-27d.json",
       "output_sha256": "7e9d75faa3b5b0b08de2ea07e6d1bd6c634c9c0d92f294b64953ca8af5674fa6",
       "output": {
@@ -130,9 +111,9 @@
     {
       "unit_key": "04-27e-34a",
       "section_id": "comm_philebus_0004",
-      "audit_brief_sha256": "6151139c02f7715f3f1ea917f39324075699825b215836f59d66818f8711342a",
+      "audit_brief_sha256": "85780562d9c72cd0bbb5c1addf2027d45ede472561f3ebfd28416431bd16e406",
       "output_path": "scratch/commentary/audits/philebus/04-27e-34a.json",
-      "output_sha256": "b78f3f167b680358862c525a97910c3b55e8e3ab86dc786a04181c4bc9e0dba2",
+      "output_sha256": "4a6c3ae1b3573e295c4dffe1bb9540e4c1c3c8a96d5d8193838b53cd243f5c86",
       "output": {
         "schema_version": 3,
         "dialogue": "philebus",
@@ -160,7 +141,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The commentary accurately frames the 27e classification and 28a pivot, adds a useful argumentative interpretation, and sits between a complete prior sentence and the section’s opening question."
+            "rationale": "Accurately tracks the 27e–28a classification pivot and clearly marks its interpretive claim; the edge follows the prior exchange and precedes 27e without disrupting flow."
           }
         ]
       }
@@ -168,9 +149,9 @@
     {
       "unit_key": "05-34b-39a",
       "section_id": "comm_philebus_0005",
-      "audit_brief_sha256": "31c8de19197d7636f7ae2f3ff0ba1c85b9e532a7cb5e02220253275660ae9fda",
+      "audit_brief_sha256": "a349ec326839d585c22ffde57ec548d28dd19d42fc56f7163828283bffab3bfd",
       "output_path": "scratch/commentary/audits/philebus/05-34b-39a.json",
-      "output_sha256": "865e6999a848e6c387ebabf7a50381f09613f7fe061c5984c4a0c435df3d9198",
+      "output_sha256": "740b86335f754239d81e76aa1f80fe70532e25d56668fde3724ac0cf66ab2f26",
       "output": {
         "schema_version": 3,
         "dialogue": "philebus",
@@ -198,7 +179,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames the memory/recollection distinction, cites accepted support, and previews the move to desire. The edge follows a complete sentence and precedes the new unit cleanly."
+            "rationale": "Accurately distinguishes the cited definitions and frames their use in the coming inquiry. The edge follows the prior completed sentence and precedes the 34b recollection exchange."
           }
         ]
       }
@@ -206,9 +187,9 @@
     {
       "unit_key": "06-39b-44e",
       "section_id": "comm_philebus_0006",
-      "audit_brief_sha256": "759504d7d49fc3678afb372992f07aad7a4524547bdf6e316f2ee4bbf55ccda6",
+      "audit_brief_sha256": "8e568eb9bf1d2f48361647a402519fd405b31e75ac0f00f56a1bc4871adba121",
       "output_path": "scratch/commentary/audits/philebus/06-39b-44e.json",
-      "output_sha256": "e930a144dfc10072e121d7a17916fceaa06a225be14d4832e1adbce97ff6f19c",
+      "output_sha256": "c14bdd84feac1f4fb44d41432218d72cb5bf6738b5c6a4ce4652eddc8bf418c8",
       "output": {
         "schema_version": 3,
         "dialogue": "philebus",
@@ -236,7 +217,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The section accurately frames future hopes, comparative distortion of pleasure and pain, and the anti-hedonist challenge; it adds orientation without disrupting the opening edge."
+            "rationale": "Accurately synthesizes the section’s movement from hopes and perceptual distortion to the debate over pleasure as escape from pain. The edge falls between complete sentences."
           }
         ]
       }
@@ -244,7 +225,7 @@
     {
       "unit_key": "07-45a-49e",
       "section_id": "comm_philebus_0007",
-      "audit_brief_sha256": "5df9c1c2afb550856dbbaaa11cbbf1875a2e542b5cc770052cca91feb05e2327",
+      "audit_brief_sha256": "06160caef364de1ab9ac54bfa5090fc5d85c3746d82ac96530d81b0a8747abdb",
       "output_path": "scratch/commentary/audits/philebus/07-45a-49e.json",
       "output_sha256": "718e57b59e7ed4a0931804f58f8224773782ae9c7d19a871f20925c54c58f522",
       "output": {
@@ -263,9 +244,9 @@
     {
       "unit_key": "08-50a-54d",
       "section_id": "comm_philebus_0008",
-      "audit_brief_sha256": "75769ffade39f5423e7dc487a41f5163e2ef33a6f1926bd4a2af54d9616bc961",
+      "audit_brief_sha256": "6c9a23b2bc75d61fd9f547a56d9576e03d0ec5c27d76844c10a1a624edc550c2",
       "output_path": "scratch/commentary/audits/philebus/08-50a-54d.json",
-      "output_sha256": "66a024687e04780037cee27db9fb1d0d885f25901bbd130f6535faceb0f8ce0a",
+      "output_sha256": "f142192176e2e76eba65f61d3e06594b1010d066d7cbb0cf7809b4ea62aedf6b",
       "output": {
         "schema_version": 3,
         "dialogue": "philebus",
@@ -293,21 +274,17 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The analogy’s shift from intensity to purity is accurately supported by the cited claim and relation; the before-52a edge prepares the next pleasure-of-knowledge exchange."
+            "rationale": "Accurately frames the whiteness analogy and its stated consequence for pleasure. It follows a complete sentence and precedes the new discussion of knowledge."
           }
         ]
-      },
-      "provenance": {
-        "path": "wiki/submissions/commentary-audit/philebus/0001-delegated-audit-08-50a-54d.json",
-        "sha256": "985a633915b98c53ee636ec066326da29ea947050331b2a50bdd221aa6d31aba"
       }
     },
     {
       "unit_key": "09-54e-59e",
       "section_id": "comm_philebus_0009",
-      "audit_brief_sha256": "6d5c8867151fc16a89065c85dde3837dea1da0d189a8e3ff145ad721667fe5fb",
+      "audit_brief_sha256": "2b53ed86b257116933a23d4a75d3802eef215c384b15eee7d2f4ed7178dc2f26",
       "output_path": "scratch/commentary/audits/philebus/09-54e-59e.json",
-      "output_sha256": "9e0dd9d9665d67344bb0cd354428e8aa672e64242447b1130caacd286cbbe5f0",
+      "output_sha256": "b9d4c7eadc86cddf2ebc0bbfaee5908ffd41cb114cd2535278b22dec1800ecd3",
       "output": {
         "schema_version": 3,
         "dialogue": "philebus",
@@ -335,7 +312,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The block accurately bridges the shift from pleasure to stable knowledge, with accepted support for nous and phronesis; it sits cleanly between the completed 59b exchange and the 59c declaration."
+            "rationale": "The block accurately marks the transition from pleasure to stable knowledge, supported by 59c–59d; the edge follows the 59b exchange and precedes the 59c declaration cleanly."
           }
         ]
       }
@@ -343,7 +320,7 @@
     {
       "unit_key": "10-60a-63c",
       "section_id": "comm_philebus_0010",
-      "audit_brief_sha256": "df0d0fa77c11aaa9f08f5c14c6d73298a610dadefb1cbf9834dd64a0b096c8b0",
+      "audit_brief_sha256": "637085bc312c8e89375d2cc8b293efc29787ea5bcfc1585b167c45000e0a7640",
       "output_path": "scratch/commentary/audits/philebus/10-60a-63c.json",
       "output_sha256": "6d91725390c00f82949fbbc490a6ee1f4acada73c7fae78484879e4889684119",
       "output": {
@@ -362,9 +339,9 @@
     {
       "unit_key": "11-63d-67b",
       "section_id": "comm_philebus_0011",
-      "audit_brief_sha256": "6f1a59f83352805165be8e78a4889ecd02de43720e3ede9f88dd7806d51231d7",
+      "audit_brief_sha256": "cddede4201c94553820d725b6084213bb11efe290212b20136fc74bb677174ff",
       "output_path": "scratch/commentary/audits/philebus/11-63d-67b.json",
-      "output_sha256": "84f97f2e8e1c46f7e38da9040ef3397887aa982a99b10125d5d696837aa31f88",
+      "output_sha256": "277b0b07c62b1d7716dbe88b2bf10ab6160d4dd39a9f29cecd2f51f40b819569",
       "output": {
         "schema_version": 3,
         "dialogue": "philebus",
@@ -392,7 +369,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames Protarchus’s cited comparisons and adds a focused interpretive shift; the edge follows a complete exchange and precedes 63d cleanly."
+            "rationale": "Accurately attributes Protarchus’s comparisons and adds a clear interpretive frame. The edge follows the prior exchange and precedes the section opening without splitting the flow."
           },
           {
             "commentary_id": "comm_philebus_0020",
@@ -410,7 +387,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Grounded in the cited contrast and poses a genuinely open question; the edge follows the setup and precedes Socrates’ 66e recap without splitting the exchange."
+            "rationale": "Poses a genuine, unanswered question grounded in the cited contrasts. The edge follows Protarchus’s clarification and precedes Socrates’s continuation without disrupting the exchange."
           }
         ]
       }
@@ -418,11 +395,10 @@
   ],
   "acceptance": {
     "decision": "accepted",
-    "reviewer": "manifest-batch-3-delegated-luna-reviewer-20260823",
-    "reviewed_on": "2026-08-23",
-    "rationale": "Fresh independent philebus quality sample of all active accepted commentary IDs in ledger order; inspected prose, title, placement, Greek source slice, cited accepted evidence, and current schema-v3 audit outputs; no defects found.",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-philebus-bddffcd97ae0",
+    "reviewed_on": "2026-09-01",
+    "rationale": "All nine sampled blocks are independently supported by the supplied source and accepted evidence, use valid playback edges, and meet the contract’s focus, attribution, and spoken-cadence requirements.",
     "sampled_commentary_ids": [
-      "comm_philebus_0002",
       "comm_philebus_0004",
       "comm_philebus_0005",
       "comm_philebus_0006",
@@ -434,8 +410,8 @@
       "comm_philebus_0020"
     ],
     "review_note": {
-      "path": "wiki/review/2026-08-23-commentary-quality-philebus-luna-sample.md",
-      "sha256": "90ef79b21034d37579bd23747969599a07274334674e45077cfb47c4822c0c34"
+      "path": "wiki/review/2026-09-01-commentary-quality-philebus-luna-sample.md",
+      "sha256": "27865fd15123212bf2582c27dd1ca8e5aab87e859774af2b021af95ea80f9f05"
     }
   }
 }

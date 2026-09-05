@@ -3,11 +3,11 @@
   "dialogue": "meno",
   "ledger": {
     "path": "wiki/commentary/meno.md",
-    "sha256": "222bab08caf3d58da77862d05080a58763f1ecac202335b97bb2b5280aa79e75"
+    "sha256": "e0a9e6ae6f539054e5d17f9827ccd9091cf60ffd657b6a54859005827693fe04"
   },
   "protocol": {
     "path": "docs/commentary-protocol.md",
-    "sha256": "5f5e6f47f2d39cb42dd8941762ca1b82b4c1371801576f9ec7875e76286e1a13"
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
   },
   "authoring": {
     "model": "gpt-5.6-luna",
@@ -17,9 +17,9 @@
     {
       "unit_key": "01-70a-71d",
       "section_id": "comm_meno_0001",
-      "audit_brief_sha256": "dbb4d5586131fea851afa87e17e60c1a16e3a70986b29b6039a67f3fe8e8b553",
+      "audit_brief_sha256": "49b7aed46afb536a62f9907ec217f3075f0a13f1ca7ad30e6f3ef70e2ae2efdd",
       "output_path": "scratch/commentary/audits/meno/01-70a-71d.json",
-      "output_sha256": "8a3423812f3c4d80ab06885ce45c49476d7681da312074780b7ce78b107a2eba",
+      "output_sha256": "3315bfb9083de03302ddf3f9f4712a2d7320da68ebd1e46ba44ff4536ed46c79",
       "output": {
         "schema_version": 3,
         "dialogue": "meno",
@@ -47,7 +47,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately orients the unit’s question, contrast, priority argument, memory disavowal, and return to Meno; the edge is cleanly before the opening question."
+            "rationale": "Accurately maps the passage's question, contrast, definitional priority, and return to Meno; it is clear aloud and placed before the opening question without disrupting an exchange."
           }
         ]
       }
@@ -55,9 +55,9 @@
     {
       "unit_key": "02-71e-73c",
       "section_id": "comm_meno_0002",
-      "audit_brief_sha256": "00db9b9a6f23557a6c27153228ec3954038020efc74ebd56761e46b180680a94",
+      "audit_brief_sha256": "2da709c411e0723e64bcffdcba020c3ffe849dc96425fb78bafe41681d9d161d",
       "output_path": "scratch/commentary/audits/meno/02-71e-73c.json",
-      "output_sha256": "5bbc1dc85c234b5fd7bc61352e6f6dbed213a8512f6d5ad6e649136f06ff6d03",
+      "output_sha256": "e4d13a67a835d72c5e7ad599e95c1b75062a4801fad536b929913d70caa544a0",
       "output": {
         "schema_version": 3,
         "dialogue": "meno",
@@ -68,34 +68,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_meno_0002",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately previews Meno’s list, Socrates’ bee and property analogies, and the eventual concession. It opens at a complete exchange boundary before the section and prepares the next passage."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "03-73d-74b",
       "section_id": "comm_meno_0003",
-      "audit_brief_sha256": "0116a24694c36e6bba68d36dedb040c8f4e6c9ea36222c9bb3988f31a0bf7141",
+      "audit_brief_sha256": "a08ce91d5a68cbd2409a8c7816bf9a68511ac975a0c6d7537e7460f71e7c8418",
       "output_path": "scratch/commentary/audits/meno/03-73d-74b.json",
-      "output_sha256": "3b927d761a77edc057a4fd557640e301fe89d609fd2c00cce69e2ecb1a1cf18b",
+      "output_sha256": "17b98656a12ae908f6d22f3c96e0940b053b691db26a46e8842694c679b280f8",
       "output": {
         "schema_version": 3,
         "dialogue": "meno",
@@ -106,34 +87,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_meno_0003",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately frames the passage's move from varied examples toward a shared account; it follows a completed Gorgias claim and precedes Socrates' next examination without disrupting flow."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "04-74c-76a",
       "section_id": "comm_meno_0004",
-      "audit_brief_sha256": "bc1235c5ea249d470f5efc412c8054898462f0753cfa11827beba7ddb709da2d",
+      "audit_brief_sha256": "2d6f384aa6c2bbbaeb70e09897e22a44c9d013aa3f2d626cebeef28f8a0709ce",
       "output_path": "scratch/commentary/audits/meno/04-74c-76a.json",
-      "output_sha256": "a1d900fb1e6f7d94339343d3590d3c7e68344f73de8d3cfae45f45fabc722b2a",
+      "output_sha256": "d29271bb68f9630dba8b58fe72e0dc066d1834b78c8527ff3fa53d2524025729",
       "output": {
         "schema_version": 3,
         "dialogue": "meno",
@@ -161,7 +123,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames the definition exercise, Meno’s objection, and Socrates’ assent-based shift; the edge falls between the prior exchange and 74c’s next example, preserving flow."
+            "rationale": "The commentary accurately frames the rehearsal, Meno’s objection, and the shift to shared terms. Before is a complete prior exchange; after begins a new sentence at 74c, preserving flow."
           }
         ]
       }
@@ -169,7 +131,7 @@
     {
       "unit_key": "05-76b-77a",
       "section_id": "comm_meno_0005",
-      "audit_brief_sha256": "a84690164de54355ec6558277e456686aaa2b6599a9eef7f7c209babe9865418",
+      "audit_brief_sha256": "db56fe86332084c1a58255175dc8698428f8eff42c3b77c986364baaf1ed86ba",
       "output_path": "scratch/commentary/audits/meno/05-76b-77a.json",
       "output_sha256": "8994c88551770579f440610abf96e47e4dfb6711a5fa56311321ab51814e7a0e",
       "output": {
@@ -188,9 +150,9 @@
     {
       "unit_key": "06-77b-78c",
       "section_id": "comm_meno_0006",
-      "audit_brief_sha256": "87151f6889bd6677441d8a8ebcebf308d30f3abc8813bea6d8f9e97ab577e1d1",
+      "audit_brief_sha256": "1804e7264b5c561e92647dae443c4ebceb3c1b60fadcf93cc09d1e0219221387",
       "output_path": "scratch/commentary/audits/meno/06-77b-78c.json",
-      "output_sha256": "43555129720713e38aa03f6f147e3b5178406b66358698b9ea8f397a3ed2aa92",
+      "output_sha256": "0385f44cb8ab80587d7d50628e25deaf76bb2bcc44eeaae9691c561d0b047932",
       "output": {
         "schema_version": 3,
         "dialogue": "meno",
@@ -218,7 +180,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames Meno’s definition and Socrates’ reduction of wanting to the universal ability distinction; the edge falls after a complete setup and before Meno’s reply."
+            "rationale": "Accurately frames Meno’s definition and Socrates’ reduction from universal desire to the ability to procure goods. The edge falls after the prior sentence and before Meno’s reply, preserving flow."
           }
         ]
       }
@@ -226,9 +188,9 @@
     {
       "unit_key": "07-78d-79d",
       "section_id": "comm_meno_0007",
-      "audit_brief_sha256": "c53589d380ba1bd5a4825797dbdbd0bc6429fd0c1e76d1bf4f5714017f56a359",
+      "audit_brief_sha256": "e598e0c3d3c1bbefc45cbc9b71dc20c6f9e500a79923766f29797064f7a4124b",
       "output_path": "scratch/commentary/audits/meno/07-78d-79d.json",
-      "output_sha256": "9701373dc0b3ee4dd8f045d7c3f667541e9bdbaa555ed473882869e6c3e766b0",
+      "output_sha256": "8d5513d5f990d8e46e5fa5a115efb500d045fdb237aead71fb4f31fc83ffba09",
       "output": {
         "schema_version": 3,
         "dialogue": "meno",
@@ -256,7 +218,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames the justice qualification, circular definition, shape comparison, and return to the whole; the edge follows a complete exchange and prepares 78d without disrupting flow."
+            "rationale": "Accurately identifies the justice qualification, part-whole circularity, prior rejected method, and renewed question. The edge follows a complete exchange and precedes the new procurement question."
           }
         ]
       }
@@ -264,7 +226,7 @@
     {
       "unit_key": "08-79e-80e",
       "section_id": "comm_meno_0008",
-      "audit_brief_sha256": "c8772aee41cf09624872a0ee46c8ee0de0c998653bf4d63aa3072527e89d9e26",
+      "audit_brief_sha256": "de7961060e23d6fd728629ec834ea6d956907f25e87efa429d514244126656e0",
       "output_path": "scratch/commentary/audits/meno/08-79e-80e.json",
       "output_sha256": "4b30ff67afc1d43856aa98fd1ffd3024b02a61e22775c6de199132c3c3e3f635",
       "output": {
@@ -283,9 +245,9 @@
     {
       "unit_key": "09-81a-82a",
       "section_id": "comm_meno_0009",
-      "audit_brief_sha256": "a18e944d541332f78bc007f00af6924c5b9d164104fecd6ae7c033a30ce1c734",
+      "audit_brief_sha256": "4982487681e4ca8c91c320ba49e020e9b0e85d20495edeaed4eb32c4fd26f4c8",
       "output_path": "scratch/commentary/audits/meno/09-81a-82a.json",
-      "output_sha256": "8f337605dca631f343745a14937a26774cc51724668ac1cfd57e4db26a5561fe",
+      "output_sha256": "6e96d08193bc670011a3935d9c40a8dbfee3096f823b0844387a69ce07905efd",
       "output": {
         "schema_version": 3,
         "dialogue": "meno",
@@ -313,7 +275,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames the recollection account and Socrates’ teaching-versus-demonstration tension; the edge follows the paradox and precedes his response without disrupting the exchange."
+            "rationale": "Accurately frames the recollection account, its tension with teaching, and the coming demonstration. The edge follows a complete sentence and precedes Meno’s response."
           }
         ]
       }
@@ -321,9 +283,9 @@
     {
       "unit_key": "10-82b-85a",
       "section_id": "comm_meno_0010",
-      "audit_brief_sha256": "0702a438e16b8d0fd823fc793d10ebb06c7765cff82b398a839870d797794e18",
+      "audit_brief_sha256": "b5d6a32db19c23e3d5c4b3ab5414c726af5085a3e632611322ee76876056d8b5",
       "output_path": "scratch/commentary/audits/meno/10-82b-85a.json",
-      "output_sha256": "baebf3bc52d7203a478facbb672b405a0b2b6ee2d7a564c7e992fe1696ff61fb",
+      "output_sha256": "d16e0195e52646d24d26d861ef5b9a7262214d4d976c2f5599ff527fd3ef02bf",
       "output": {
         "schema_version": 3,
         "dialogue": "meno",
@@ -351,21 +313,17 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The cited observation and dossier support the progression from confident error to aporia and the later diagonal turn."
+            "rationale": "Accurately frames the boy’s doubled-side and three-foot errors as a question-led movement into recognized perplexity; the edge follows “demonstration” and precedes Meno’s reply."
           }
         ]
-      },
-      "provenance": {
-        "path": "wiki/submissions/commentary-audit/meno/0001-delegated-audit-10-82b-85a.json",
-        "sha256": "01ff79dcf8daf1a534730e286110333d3ba57098008f1c3313cf1d0e740cb13c"
       }
     },
     {
       "unit_key": "11-85b-86d",
       "section_id": "comm_meno_0011",
-      "audit_brief_sha256": "f1b1f2e4e200a56788aec7c2291f7b3e0632e5a10dc7b87b5d750dec6a46632a",
+      "audit_brief_sha256": "f52fe97c78b3578e8f31636125f866f82762c0af0018c315a0c6ee4322cef928",
       "output_path": "scratch/commentary/audits/meno/11-85b-86d.json",
-      "output_sha256": "4ce6d0e5b8a9163a486005dcaadffd3bba9823fce1a840e5942eb0289181468c",
+      "output_sha256": "023b3ea0d47b8ff012b1338d8a0d601c0afa15844ec720f2a5a13d5d5aa9ac98",
       "output": {
         "schema_version": 3,
         "dialogue": "meno",
@@ -376,34 +334,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_meno_0011",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately traces the argument from the boy’s un taught true opinions to recollection, inquiry, and Meno’s procedural redirection; the edge follows a complete exchange and precedes 85b."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "12-86e-87d",
       "section_id": "comm_meno_0012",
-      "audit_brief_sha256": "95f6806c019947bd86712d50183e32bb37a077c79cdce0213fe23e6c674b7fb1",
+      "audit_brief_sha256": "e08b68d8169a11da59d65c6b4956817d159520e53281969e83c60dcb765506d9",
       "output_path": "scratch/commentary/audits/meno/12-86e-87d.json",
-      "output_sha256": "d2db0342f2d38dfb74d3e112536360d3ed87bdbca60d6ba79a609f95ad115224",
+      "output_sha256": "dc0f6ac036fa9b64bd9643d4cfa4d6686e7db561fbea1395ca73318a89f6cc9f",
       "output": {
         "schema_version": 3,
         "dialogue": "meno",
@@ -431,7 +370,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately explains the hypothesis method and conditional teachability argument, with accepted support. The edge falls after Meno’s request and before Socrates explains the method; the interruption helps."
+            "rationale": "Accurately frames the hypothesis method and its conditional knowledge test. It follows a complete sentence and precedes Socrates’ geometric explanation without disrupting the exchange."
           }
         ]
       }
@@ -439,9 +378,9 @@
     {
       "unit_key": "13-87e-89b",
       "section_id": "comm_meno_0013",
-      "audit_brief_sha256": "6465ab9569a19a556464d8c19f6accf5ce54ef4a62320513d9b474607f43ef6e",
+      "audit_brief_sha256": "98d0f7b7da1515158acd6be4fb2d8ac2bf1da23ecfd1eea2cc8db67e850d073e",
       "output_path": "scratch/commentary/audits/meno/13-87e-89b.json",
-      "output_sha256": "0cd6b2e90dacc919160de029820078629cfc57fb6313cc724cb6547686f3603b",
+      "output_sha256": "2755f8c75d1a563853dbaa3a5065633f5a02b70d0280adf37c9ce1bb0b8fb8c7",
       "output": {
         "schema_version": 3,
         "dialogue": "meno",
@@ -469,7 +408,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames the passage’s conditional inference and preserves its dependence on accepted premises. The edge follows Menon's assent and precedes Socrates’ 87e argument cleanly."
+            "rationale": "Accurately frames Socrates’ conditional inference and preserves its provisional status. The edge follows Meno’s assent that virtue is good and precedes the profitable-things argument."
           }
         ]
       }
@@ -477,9 +416,9 @@
     {
       "unit_key": "14-89c-91c",
       "section_id": "comm_meno_0014",
-      "audit_brief_sha256": "8ad06151a4b05645cd3f73aff6cbac89e69afe5a10ed60e7dcb3745e3d344e76",
+      "audit_brief_sha256": "df895fad1dea4d8e1c7222c20d8f03c816e873ae6cfbb374628e203a5c006136",
       "output_path": "scratch/commentary/audits/meno/14-89c-91c.json",
-      "output_sha256": "c2c8026f1b637025525ebe5517fd84fe248bead81b179885011ad880059585c5",
+      "output_sha256": "5042bdaa59ea2f982adf0880d7b8f69ce04f59cdb805308a0289e267e43683d1",
       "output": {
         "schema_version": 3,
         "dialogue": "meno",
@@ -490,32 +429,13 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_meno_0014",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately orients the doubt, Anytus's entry, craft analogy, and reaction to sophists, with accepted support. The edge follows a complete question and precedes Meno's answer."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "15-91d-94d",
       "section_id": "comm_meno_0015",
-      "audit_brief_sha256": "e172c63fca40ad60562850022492447b8bcbfc85910601128e0836e700b4b5b2",
+      "audit_brief_sha256": "4c550b3323269d6d83e55ec1559a423a1346c0fa9899dc1e13f939e7da19e0c2",
       "output_path": "scratch/commentary/audits/meno/15-91d-94d.json",
       "output_sha256": "925b1e7c2308e5831cd982deaa86ac06069b8d25b588debc0213f23daf7454cb",
       "output": {
@@ -534,9 +454,9 @@
     {
       "unit_key": "16-94e-96d",
       "section_id": "comm_meno_0016",
-      "audit_brief_sha256": "5467ba79ec8c9f7551720f8d7cc00cbbcf5cef439e417bf2c0ddce3b5faff9ab",
+      "audit_brief_sha256": "36d1b152bd59e441de2c32c9a6887b06a169d838862b74c4d5ed246dba6ea82a",
       "output_path": "scratch/commentary/audits/meno/16-94e-96d.json",
-      "output_sha256": "35b12e9b43d6b7242fdbe6e73636266435964dca451985fbfd781ed331a1f9d1",
+      "output_sha256": "7c9e225319770130b9cb2cfab419b04e7b9f504cc2b1076bb4f5c0bda5b45500",
       "output": {
         "schema_version": 3,
         "dialogue": "meno",
@@ -547,32 +467,13 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_meno_0016",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately tracks the no-teachers inference and Meno’s ensuing puzzle. The edge follows the opening conclusion and precedes Anytus’s reply, cleanly framing the section."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "17-96e-98a",
       "section_id": "comm_meno_0017",
-      "audit_brief_sha256": "1c0f2b566c4e20bcb434fe2fe6f68dfeed5988ddd31fea3452f6122f92fa85d5",
+      "audit_brief_sha256": "cd038f4942c1dbd30858c0ee857dfd72742b730d95726cd5f925dca94d267a85",
       "output_path": "scratch/commentary/audits/meno/17-96e-98a.json",
       "output_sha256": "cbc7a153386366b9f84000feb7dd8ca2deaddb58283f69ed85c257ddea56e947",
       "output": {
@@ -591,9 +492,9 @@
     {
       "unit_key": "18-98b-100c",
       "section_id": "comm_meno_0018",
-      "audit_brief_sha256": "79cfece47e29f68706be1695657ec1ea0cf20ada362609ed475785dd4a93254e",
+      "audit_brief_sha256": "a8596e51cd682260b1f9c327155973bd470f69f54431dcd52870bfc990b0c1a8",
       "output_path": "scratch/commentary/audits/meno/18-98b-100c.json",
-      "output_sha256": "c2c697db29987d601ca8a0ef3e6d73421ad437cef7549727e6fe6406bd78c4f0",
+      "output_sha256": "d86544e0cd30c406eaa3035eb83392ccfc7d914bfd00c371c18fd8694246fd79",
       "output": {
         "schema_version": 3,
         "dialogue": "meno",
@@ -604,53 +505,28 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_meno_0018",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately frames the passage’s inference, statesmen comparison, divine-dispensation condition, and return to defining virtue. It follows a clear arc and sits cleanly before 98b."
-          }
-        ]
+        "blocks": []
       }
     }
   ],
   "acceptance": {
     "decision": "accepted",
-    "reviewer": "manifest-batch-2-delegated-luna-reviewer-20260823",
-    "reviewed_on": "2026-08-23",
-    "rationale": "All 14 active accepted IDs sampled in ledger order; prose, Greek source, cited evidence, placement, and audit checks pass with no defects.",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-meno-72568bc66bfa",
+    "reviewed_on": "2026-09-01",
+    "rationale": "All eight sampled blocks are source-supported, correctly anchored, placed at complete playback edges without hazards, and concise enough to add clear argumentative value without harming dramatic flow.",
     "sampled_commentary_ids": [
       "comm_meno_0001",
-      "comm_meno_0002",
-      "comm_meno_0003",
       "comm_meno_0004",
       "comm_meno_0006",
       "comm_meno_0007",
       "comm_meno_0009",
       "comm_meno_0010",
-      "comm_meno_0011",
       "comm_meno_0012",
-      "comm_meno_0013",
-      "comm_meno_0014",
-      "comm_meno_0016",
-      "comm_meno_0018"
+      "comm_meno_0013"
     ],
     "review_note": {
-      "path": "wiki/review/2026-08-23-commentary-quality-meno-luna-sample.md",
-      "sha256": "2739b09d7c5d30b71dab8e1dc51ac2273a0759f78806ff82510986fea0d8ec38"
+      "path": "wiki/review/2026-09-01-commentary-quality-meno-luna-sample.md",
+      "sha256": "f6b856a5d451d3a37ffabc1689701e6320c64e50143d1d01b0d3eebd9350712d"
     }
   }
 }

@@ -1,0 +1,223 @@
+{
+  "accepted_observations": 5,
+  "axis_id": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+  "axis_key": "elenchus",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record arithmetic premise in dialectic within the elenchus axis?",
+  "concept_id": "concept_sha256_58d7ed2b7eb157f0b2747643e777c8bf6aed27902daeb09efe50f946f208ac93",
+  "concept_key": "arithmetic_premise_in_dialectic",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+      "axisKey": "elenchus",
+      "conceptId": "concept_sha256_619b4ea01f75aacb977ffcf6256bd4cfba5c808f4fdb0f9aa22a5e4519f6b8be",
+      "conceptKey": "argument_from_prior_agreement",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+      "axisKey": "elenchus",
+      "conceptId": "concept_sha256_7de0636020edda91bb870d2ea6bd8dacf7c4a61024ff45a5ba0723cb96265de7",
+      "conceptKey": "scope_delimitation",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+      "axisKey": "elenchus",
+      "conceptId": "concept_sha256_ef8f2016be3e7cebe866b23fa257f4493b3efeebfb96ffb4135e41d11d165a07",
+      "conceptKey": "paradoxical_conclusion",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+      "axisKey": "turn_geometry",
+      "conceptId": "concept_sha256_65414ee3bc8c7ba3837cbb50ad4edbb411233199e2997dde8d76b9a6ce26edd6",
+      "conceptKey": "assent_density_maximal",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_5c81cf395b56e4a5deabc1c459f7e8074e66334a4948d830b4be747f4537eb34",
+      "axisKey": "forms_trajectory",
+      "conceptId": "concept_sha256_8ec6a53b7af9fd97d87521e3c3d957cbb735f3b3ad2bf770e78e7f0d223d2c04",
+      "conceptKey": "being_becoming_orientation",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_a10225c5b064e7653f8c3987071509f03ceb373745e8ec7d81e580a9353b6f89",
+      "axisKey": "temporal_argument",
+      "conceptId": "concept_sha256_3f1e4b063e9a3f65ef78939a6ce50901b2dfade7e7c6131838d9a82dc1325fa2",
+      "conceptKey": "becoming_without_arrival_at_contrary",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 2,
+  "dimension": "discourse_structure",
+  "instance_ids": [
+    "obs_parmenides_0171",
+    "obs_parmenides_0175",
+    "obs_parmenides_0182",
+    "obs_theaetetus_0313",
+    "obs_theaetetus_0344"
+  ],
+  "instances": [
+    {
+      "dialogue": "parmenides",
+      "observationId": "obs_parmenides_0171",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "154d-154e",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "parmenides",
+      "observationId": "obs_parmenides_0175",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "155b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "parmenides",
+      "observationId": "obs_parmenides_0182",
+      "speakers": [
+        "(unattributed)"
+      ],
+      "stephanusSpan": "154b-154c",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "theaetetus",
+      "observationId": "obs_theaetetus_0313",
+      "speakers": [
+        "ΣΩ.",
+        "ΘΕΑΙ."
+      ],
+      "stephanusSpan": "195e-196a",
+      "turnCount": 3
+    },
+    {
+      "dialogue": "theaetetus",
+      "observationId": "obs_theaetetus_0344",
+      "speakers": [
+        "ΣΩ.",
+        "ΘΕΑΙ."
+      ],
+      "stephanusSpan": "198c",
+      "turnCount": 6
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 3,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_58d7ed2b7eb157f0b2747643e777c8bf6aed27902daeb09efe50f946f208ac93",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

@@ -1,0 +1,177 @@
+{
+  "accepted_observations": 2,
+  "axis_id": "axis_sha256_4ec693a93acd6766b1314d34ed6eb1f9530c851b1705d76540dd7042eb8b6cea",
+  "axis_key": "poetry_civic_filter",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record poetry civic filter within the poetry civic filter axis?",
+  "concept_id": "concept_sha256_0d4fe0ba943502fd1399178fec3ce90894c1835527d89fe13581d8ea9c3b0e1b",
+  "concept_key": "poetry_civic_filter",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+      "axisKey": "definition_ladder",
+      "conceptId": "concept_sha256_78f1647afd3a79eabcd266358ec71a3d83daa9c0b0f5b1ab031cec2d89389ac7",
+      "conceptKey": "goods_catalogue_compiled",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_10c03aba9e8553454c696c24d9c44cae57a709ba7cf014e5c257e5ca235a63d1",
+      "axisKey": "elenchus",
+      "conceptId": "concept_sha256_d0493db7e370224cb6f5c55e7300140ec9de786ad06c7c313e5d709cc215e0ad",
+      "conceptKey": "ethical_inversion_maxim",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_5491605e0cc3523ad954e5e26ef1e39141d8072738289f7d2796b0c5effa5fcd",
+      "axisKey": "ethical_inversion_maxim",
+      "conceptId": "concept_sha256_857583a6ac91615baf1b728d8220217175e655eb3487dbbf70cf81b30d199e82",
+      "conceptKey": "ethical_inversion_maxim",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_d71ed9ce928d7a42cdb80bb20ae189c228206db295dd00840ac0e06349fa6325",
+      "axisKey": "criterion_for_evaluative_classification",
+      "conceptId": "concept_sha256_4cdd4f49bbf6534dbeaabcae5a0c4516ff7af01f2ae44a609e15c1222cb6b01a",
+      "conceptKey": "criterion_for_evaluative_classification",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 1,
+  "dimension": "presentation_form",
+  "instance_ids": [
+    "obs_laws_0189",
+    "obs_laws_0209"
+  ],
+  "instances": [
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0189",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "661b-661c",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0209",
+      "speakers": [
+        "ΑΘ."
+      ],
+      "stephanusSpan": "660e-661a",
+      "turnCount": 2
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_0d4fe0ba943502fd1399178fec3ce90894c1835527d89fe13581d8ea9c3b0e1b",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

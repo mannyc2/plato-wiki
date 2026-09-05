@@ -5,23 +5,21 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { writeAcceptedAudioProductionFixture } from "../test-support/audio-production-fixture.js";
 import { writeMasteringEvidenceFixture } from "../test-support/mastering-evidence-fixture.js";
+import { buildClusters, formatClusterAxisJsonl } from "./clusters.js";
 import { buildCoverageReport } from "./coverage.js";
-import { collectLabelQuality } from "./labels-report.js";
+import { writeDossierArtifacts } from "./dossiers.js";
 import { setRepoRootForTesting } from "./paths.js";
 import {
   buildClaimShards,
-  buildRegistryShards,
   buildRelationShards,
   buildTurnShards,
   parseToonTable,
   readSiteData,
-  validateDashboardTargets,
   type DialogueDerived,
   type SiteClaim,
   type SiteRelation,
 } from "./site/data.js";
-import { buildStaticSite, parseObservationLedger } from "./site/index.js";
-import { PATTERN_ONELINERS } from "./site/curation.js";
+import { buildConceptDirectoryShards, buildStaticSite, parseObservationLedger } from "./site/index.js";
 import { contrastRatio, filterStatusText, idJumpStatusText, siteCss, siteJs, titleCase } from "./site/layout.js";
 import {
   parseExactIdManifest,
@@ -31,7 +29,13 @@ import {
 } from "./site/search.js";
 import { validateGeneratedSite } from "./site/validate.js";
 import { resolveSourceSpan } from "./source.js";
-import type { FeatureRegistryEntry } from "./wiki/observation-feature-index.js";
+import {
+  deriveOntologyVNextAxisId,
+  deriveOntologyVNextConceptId,
+  deriveOntologyVNextMembershipId,
+  renderOntologyVNextDocuments,
+  type OntologyVNextMembership,
+} from "./wiki/ontology-vnext.js";
 
 let root = "";
 let restoreRepoRoot: (() => void) | undefined;
@@ -73,17 +77,18 @@ function mp3Fixture(frameCount = 40) {
 
 const DEFAULT_MP3_FIXTURE = mp3Fixture();
 
+const TEST_AXIS_KEY = "elenchus";
+const TEST_CONCEPT_KEY = "bounded_test";
+const TEST_AXIS_ID = deriveOntologyVNextAxisId("textual_function", TEST_AXIS_KEY);
+const TEST_CONCEPT_ID = deriveOntologyVNextConceptId(TEST_AXIS_ID, TEST_CONCEPT_KEY);
+
 function ledgerRecord({
   observationId,
   span,
-  family,
-  label,
   text = "A bounded observation is recorded.",
 }: {
   observationId: string;
   span: string;
-  family: string;
-  label: string;
   text?: string;
 }) {
   const dialogue = /^obs_([a-z0-9-]+)_/u.exec(observationId)?.[1] ?? "testdialogue";
@@ -101,14 +106,64 @@ source_ref:
   text_sha256: abcdef1234567890
 greek_terms: ["λόγος"]
 english_gloss: Test gloss.
-feature_family: ${family}
-feature_id: feature_candidate_001
-feature_label: ${label}
 observation: ${text}
 textual_basis: The cited span contains local support.
 limits: The record does not add synthesis.
 review_status: accepted
 \`\`\``;
+}
+
+function writeOntologyFixture(
+  extraMemberships: readonly OntologyVNextMembership[] = [],
+  observationIds: readonly string[] = ["obs_crito_0001", "obs_meno_0001"],
+) {
+  const documents = renderOntologyVNextDocuments({
+    axes: [{
+      schema_version: 1,
+      axis_id: TEST_AXIS_ID,
+      axis_key: TEST_AXIS_KEY,
+      dimension: "textual_function",
+      comparison_question: "How does question-and-answer testing proceed in this span?",
+    }],
+    concepts: [{
+      schema_version: 1,
+      concept_id: TEST_CONCEPT_ID,
+      axis_id: TEST_AXIS_ID,
+      concept_key: TEST_CONCEPT_KEY,
+      definition: "A bounded question-and-answer test recorded in the cited span.",
+      comparison_question: "How does question-and-answer testing proceed in this span?",
+    }],
+    memberships: observationIds.map((observationId) => ({
+      schema_version: 1 as const,
+      membership_id: deriveOntologyVNextMembershipId(observationId, TEST_CONCEPT_ID),
+      observation_id: observationId,
+      concept_id: TEST_CONCEPT_ID,
+      assignment_basis: "The accepted observation records the comparison concept directly.",
+    })).concat(extraMemberships),
+  });
+  mkdirSync(join(root, "wiki/ontology"), { recursive: true });
+  writeFileSync(join(root, "wiki/ontology/axes.jsonl"), documents.axes, "utf8");
+  writeFileSync(join(root, "wiki/ontology/concepts.jsonl"), documents.concepts, "utf8");
+  writeFileSync(join(root, "wiki/ontology/memberships.jsonl"), documents.memberships, "utf8");
+}
+
+function syncProjectionFixtures() {
+  const byAxis = new Map<string, ReturnType<typeof buildClusters>>();
+  for (const cluster of buildClusters()) {
+    const clusters = byAxis.get(cluster.axisId) ?? [];
+    clusters.push(cluster);
+    byAxis.set(cluster.axisId, clusters);
+  }
+  rmSync(join(root, "wiki/clusters"), { recursive: true, force: true });
+  mkdirSync(join(root, "wiki/clusters"), { recursive: true });
+  for (const clusters of byAxis.values()) {
+    writeFileSync(
+      join(root, `wiki/clusters/${clusters[0]!.axisKey}.jsonl`),
+      formatClusterAxisJsonl(clusters),
+      "utf8",
+    );
+  }
+  writeDossierArtifacts();
 }
 
 function writeMenoDerivedFixtures(root: string) {
@@ -228,6 +283,25 @@ function writeMenoJoin(
   );
 }
 
+function writeCritoJoin(root: string) {
+  mkdirSync(join(root, "derived/plato/joins"), { recursive: true });
+  writeFileSync(
+    join(root, "derived/plato/joins/crito.toon"),
+    [
+      "dialogue: crito",
+      "ledger_path: wiki/observations/crito.md",
+      `ledger_sha256: ${"c".repeat(64)}`,
+      "turn_index_path: derived/plato/turns/crito.toon",
+      `turn_index_sha256: ${"d".repeat(64)}`,
+      "joins[1]:",
+      "  observation_id | review_status | turn_ids | speakers | attributed",
+      "  obs_crito_0001 | accepted | turn_crito_0001 | ΚΡ. | true",
+      "",
+    ].join("\n"),
+    "utf8",
+  );
+}
+
 function writeMenoTurnTables(root: string, count: number) {
   const canonicalRows = Array.from({ length: count }, (_, index) => {
     const number = String(index + 1).padStart(4, "0");
@@ -271,14 +345,8 @@ function writeMenoTurnTables(root: string, count: number) {
 beforeEach(() => {
   root = mkdtempSync(join(tmpdir(), "site-test-"));
   restoreRepoRoot = setRepoRootForTesting(root);
-  // The shared fixture's dossier (elenchus/bounded_test) is selected into the
-  // patterns hub; register a one-liner so patternsPage does not throw. No real
-  // corpus dossier carries this label, so production copy stays untouched.
-  PATTERN_ONELINERS["elenchus/bounded_test"] = "A fixture pattern for the test corpus.";
   mkdirSync(join(root, "raw/plato/greek"), { recursive: true });
   mkdirSync(join(root, "wiki/observations"), { recursive: true });
-  mkdirSync(join(root, "wiki/clusters"), { recursive: true });
-  mkdirSync(join(root, "wiki/dossiers/elenchus"), { recursive: true });
   writeFileSync(join(root, "raw/plato/greek/meno.txt"), "{70a} Μένων λέγει. {70b} Σωκράτης ἀποκρίνεται.", "utf8");
   writeFileSync(join(root, "raw/plato/greek/crito.txt"), "{44a} Κρίτων λέγει. {44b} Σωκράτης ἀποκρίνεται.", "utf8");
   writeFileSync(join(root, "raw/plato/greek/apology.txt"), "{17a} Σωκράτης λέγει. {17b} Καὶ τάδε.", "utf8");
@@ -287,8 +355,6 @@ beforeEach(() => {
     `# Meno Observations\n\n${ledgerRecord({
       observationId: "obs_meno_0001",
       span: "70a",
-      family: "elenchus",
-      label: "bounded_test",
       text: "Meno asks a <bounded> question.",
     })}\n`,
     "utf8",
@@ -298,89 +364,23 @@ beforeEach(() => {
     `# Crito Observations\n\n${ledgerRecord({
       observationId: "obs_crito_0001",
       span: "44a",
-      family: "elenchus",
-      label: "bounded_test",
     })}\n`,
     "utf8",
   );
-  writeFileSync(
-    join(root, "wiki/features-so-far.md"),
-    `# Features So Far
-
-## Feature Candidates
-
-### feature_candidate_001
-- **family:** elenchus
-- **proposed_name:** bounded_test
-- **status:** candidate
-- **observations:** obs_crito_0001, obs_meno_0001
-- **notes:** Test note.
-`,
-    "utf8",
-  );
-  writeFileSync(
-    join(root, "wiki/clusters/elenchus.md"),
-    `# Cluster Family: elenchus
-
-\`\`\`yaml
-cluster_id: cluster_elenchus_bounded_test
-feature_family: elenchus
-feature_label: bounded_test
-observation_ids: [obs_crito_0001, obs_meno_0001]
-dialogues: [crito, meno]
-spans:
-  obs_crito_0001: 44a
-  obs_meno_0001: 70a
-\`\`\`
-`,
-    "utf8",
-  );
-  writeFileSync(
-    join(root, "wiki/dossiers/elenchus/bounded_test.md"),
-    `Generated by \`bun run harness dossiers --write\`.
-
-# Dossier: elenchus/bounded_test
-
-\`\`\`yaml
-dossier_id: dossier_elenchus_bounded_test
-feature_family: elenchus
-feature_label: bounded_test
-accepted_observations: 2
-dialogues: 2
-counter_records: 0
-instance_ids: [obs_crito_0001, obs_meno_0001]
-counter_ids: []
-\`\`\`
-
-## Instances
-
-\`\`\`yaml
-- id: obs_crito_0001; dialogue: crito; span: 44a; speakers: [ΚΡ.]; turn_count: 1
-- id: obs_meno_0001; dialogue: meno; span: 70a; speakers: [ΜΕΝ.]; turn_count: 1
-\`\`\`
-
-## Presence
-
-\`\`\`yaml
-- dialogue: crito; accepted_observations: 1
-- dialogue: meno; accepted_observations: 1
-\`\`\`
-
-## Co-occurrence
-
-\`\`\`yaml
-[]
-\`\`\`
-
-## Counterevidence
-
-\`\`\`yaml
-[]
-\`\`\`
-`,
-    "utf8",
-  );
   writeMenoDerivedFixtures(root);
+  writeFileSync(
+    join(root, "derived/plato/turns/crito.toon"),
+    `dialogue: crito
+turns[1]:
+  turn_id        | speaker | start_marker | end_marker | start_char | end_char | text_sha256                                                      | greek_char_count
+  turn_crito_0001 | ΚΡ.    | 44a          | 44b        | 0          | 48       | ${"d".repeat(64)} | 24
+`,
+    "utf8",
+  );
+  writeOntologyFixture();
+  writeMenoJoin(root, [{ observationId: "obs_meno_0001", turnIds: ["turn_meno_0001", "turn_meno_0002"], speakers: ["ΜΕΝ.", "ΣΩ."] }]);
+  writeCritoJoin(root);
+  syncProjectionFixtures();
 });
 
 afterEach(() => {
@@ -457,13 +457,14 @@ function writeMenoCommentary(root: string) {
       kind: "context",
       span: "70a",
       placement: "before",
-      cites: "cites:\n  observations: [obs_meno_0001]\n  claims: []\n  relations: []\n  dossiers: [elenchus/bounded_test]",
+      cites: `cites:\n  observations: [obs_meno_0001]\n  claims: []\n  relations: []\n  dossiers: [${TEST_CONCEPT_ID}]`,
     })}\n\n${commentaryBlock({
       id: "comm_meno_0003",
       kind: "question",
       span: "70b",
       placement: "after",
       body: "What does Meno assume?",
+      cites: "cites:\n  observations: [obs_meno_0001]\n  claims: []\n  relations: []\n  dossiers: []",
     })}\n\n${commentaryBlock({
       id: "comm_meno_0004",
       kind: "notice",
@@ -507,6 +508,7 @@ function writeMenoRejectedSectionCommentary(root: string) {
       placement: "after",
       review: "accepted",
       body: "A second visible note whose section was rejected.",
+      cites: "cites:\n  observations: [obs_meno_0001]\n  claims: []\n  relations: []\n  dossiers: []",
     })}\n`,
     "utf8",
   );
@@ -540,7 +542,9 @@ function writeMenoRecording({
     const commentaryPath = join(root, "wiki/commentary/meno.md");
     writeFileSync(
       commentaryPath,
-      readFileSync(commentaryPath, "utf8").replaceAll("review_status: rejected", "review_status: accepted"),
+      readFileSync(commentaryPath, "utf8")
+        .replaceAll("review_status: rejected", "review_status: accepted")
+        .replace(new RegExp(`dossiers: \\[${TEST_CONCEPT_ID}\\]`, "u"), "dossiers: []"),
       "utf8",
     );
     // Production evidence requires every audited commentary span to resolve in
@@ -609,7 +613,7 @@ function writeMenoRecording({
 }
 
 describe("relation shards", () => {
-  function relation(relationId: string): SiteRelation {
+  function relation(relationId: string, reviewStatus = "accepted"): SiteRelation {
     return {
       relationId,
       dialogue: /^rel_([a-z0-9-]+)_\d+$/u.exec(relationId)?.[1] ?? "unknown",
@@ -619,7 +623,7 @@ describe("relation shards", () => {
       resolution: "standing",
       basis: "Shared basis.",
       limits: "Limits.",
-      reviewStatus: "accepted",
+      reviewStatus,
     };
   }
 
@@ -629,6 +633,7 @@ describe("relation shards", () => {
       relation("rel_cross-dialogue_0002"),
       relation("rel_cross-dialogue_0003"),
       relation("rel_meno_0001"),
+      relation("rel_meno_0002", "rejected"),
     ];
 
     const { shards, pageById } = buildRelationShards(relations, 2);
@@ -642,9 +647,11 @@ describe("relation shards", () => {
       "dialogues/cross-dialogue/relations-2.html#rel_cross-dialogue_0003",
     );
     expect(pageById.get("rel_meno_0001")).toBe("dialogues/meno/relations.html#rel_meno_0001");
+    expect(pageById.has("rel_meno_0002")).toBe(false);
+    expect(shards.flatMap((shard) => shard.relations).every((entry) => entry.reviewStatus === "accepted")).toBe(true);
   });
 
-  it("renders relations pages for dialogues without observations", () => {
+  it("renders only accepted relations in pages, navigation, and search", () => {
     mkdirSync(join(root, "wiki/relations"), { recursive: true });
     writeFileSync(
       join(root, "wiki/relations/cross-dialogue.md"),
@@ -661,20 +668,80 @@ describe("relation shards", () => {
         'limits: "Limits."',
         "review_status: accepted",
         "```",
+        "",
+        "```yaml",
+        "relation_id: rel_cross-dialogue_0002",
+        "claim_a: claim_meno_0001",
+        "claim_b: claim_crito_0001",
+        "relation_kind: restatement",
+        "resolution: standing",
+        'basis: "Rejected candidate."',
+        'limits: "Limits."',
+        "review_status: rejected",
+        "```",
       ].join("\n"),
       "utf8",
     );
+
+    const data = readSiteData();
+    expect(data.relations.map((entry) => entry.relationId)).toEqual(["rel_cross-dialogue_0001"]);
+    expect(data.relationPageById.has("rel_cross-dialogue_0002")).toBe(false);
+    expect(
+      [...data.relationsByClaimId.values()].flat().some((entry) => entry.relationId === "rel_cross-dialogue_0002"),
+    ).toBe(false);
 
     const outDir = join(root, "site");
     buildStaticSite({ outDir });
 
     const page = readFileSync(join(outDir, "dialogues/cross-dialogue/relations.html"), "utf8");
     expect(page).toContain('id="rel_cross-dialogue_0001"');
+    expect(page).not.toContain("rel_cross-dialogue_0002");
     expect(page).toContain('href="../../index.html">Index</a>');
 
-    expect(readExactTargets(outDir).get("rel_cross-dialogue_0001")).toBe(
+    const exactTargets = readExactTargets(outDir);
+    expect(exactTargets.get("rel_cross-dialogue_0001")).toBe(
       "dialogues/cross-dialogue/relations.html#rel_cross-dialogue_0001",
     );
+    expect(exactTargets.has("rel_cross-dialogue_0002")).toBe(false);
+    const publicOutput = listFiles(outDir)
+      .filter((path) => path.endsWith(".html") || path.endsWith(".json"))
+      .map((path) => readFileSync(join(outDir, path), "utf8"))
+      .join("\n");
+    expect(publicOutput).not.toContain("rel_cross-dialogue_0002");
+  });
+
+  it("does not publish rejected claims", () => {
+    mkdirSync(join(root, "wiki/claims"), { recursive: true });
+    writeFileSync(
+      join(root, "wiki/claims/meno.md"),
+      [
+        "```yaml",
+        "claim_id: claim_meno_0009",
+        "source_work: Meno",
+        "stephanus_span: 70a",
+        commentaryRefLines("meno", "70a"),
+        "speaker: ΜΕΝ.",
+        "claim_kind: thesis",
+        'content: "Rejected fixture content."',
+        "greek_terms: []",
+        "final_status: left_standing",
+        'limits: "Fixture."',
+        "review_status: rejected",
+        "stance_events: []",
+        "```",
+      ].join("\n"),
+      "utf8",
+    );
+
+    const outDir = join(root, "site");
+    buildStaticSite({ outDir });
+    const publicOutput = listFiles(outDir)
+      .filter((path) => path.endsWith(".html") || path.endsWith(".json"))
+      .map((path) => readFileSync(join(outDir, path), "utf8"))
+      .join("\n");
+    expect(publicOutput).not.toContain("claim_meno_0009");
+    expect(publicOutput).not.toContain("Rejected fixture content.");
+    expect(readExactTargets(outDir).has("claim_meno_0009")).toBe(false);
   });
 });
 
@@ -718,25 +785,22 @@ describe("bounded collection shards", () => {
     expect(pageById.get("claim_laws_0251")).toBe("dialogues/laws/claims-2.html#claim_laws_0251");
   });
 
-  it("shards 501 registry entries into bounded, stable entry destinations", () => {
-    const entries: FeatureRegistryEntry[] = Array.from({ length: 501 }, (_, index) => ({
-      id: `feature_candidate_${String(index + 1).padStart(4, "0")}`,
-      family: "test",
-      proposedName: `label_${String(index + 1).padStart(4, "0")}`,
-      status: "candidate",
-      observations: [],
-      notes: "Fixture.",
+  it("shards the concept directory with exact set equality and stable paths", () => {
+    const concepts = Array.from({ length: 501 }, (_, index) => ({
+      concept_id: `concept_${String(index + 1).padStart(4, "0")}`,
     })).reverse();
-    const { shards, pageById } = buildRegistryShards(entries);
+    const shards = buildConceptDirectoryShards(concepts);
 
-    expect(shards).toHaveLength(2);
-    expect(shards.map((shard) => [shard.path, shard.entries.length])).toEqual([
-      ["registry/part-1.html", 500],
-      ["registry/part-2.html", 1],
+    expect(shards.map((shard) => [shard.path, shard.concepts.length])).toEqual([
+      ["concepts/index.html", 500],
+      ["concepts/index-2.html", 1],
     ]);
-    expect(pageById.get("feature_candidate_0001")).toBe("registry/part-1.html#feature_candidate_0001");
-    expect(pageById.get("feature_candidate_0501")).toBe("registry/part-2.html#feature_candidate_0501");
+    const ids = shards.flatMap((shard) => shard.concepts.map((concept) => concept.concept_id));
+    expect(ids).toEqual([...ids].sort());
+    expect(ids).toEqual(concepts.map((concept) => concept.concept_id).sort());
+    expect(new Set(ids).size).toBe(concepts.length);
   });
+
 });
 
 describe("turn evidence model", () => {
@@ -790,8 +854,6 @@ describe("turn evidence model", () => {
       `${readFileSync(observationPath, "utf8")}\n${ledgerRecord({
         observationId: "obs_meno_0002",
         span: "70b",
-        family: "elenchus",
-        label: "multi_turn_test",
       })}\n`,
       "utf8",
     );
@@ -803,6 +865,7 @@ describe("turn evidence model", () => {
       },
       { observationId: "obs_meno_0001", turnIds: ["turn_meno_0002"], speakers: ["ΣΩ."] },
     ]);
+    syncProjectionFixtures();
 
     const data = readSiteData();
     expect(data.observationTurnJoinsByDialogue.get("meno")?.rows).toHaveLength(2);
@@ -820,12 +883,14 @@ describe("turn evidence model", () => {
     expect(data.turnPageById.get("turn_meno_0001")).toBe(
       "dialogues/meno/turns.html#turn_meno_0001",
     );
-    expect(data.dossierPageByFamilyLabel.get("elenchus/bounded_test")).toBe(
-      "dossiers/elenchus/bounded_test.html#dossier_elenchus_bounded_test",
+    expect(data.dossierPageByConceptId.get(TEST_CONCEPT_ID)).toBe(
+      `dossiers/elenchus/bounded_test.html#dossier:${TEST_CONCEPT_ID}`,
     );
   });
 
   it("rejects join rows with unknown observation or turn endpoints", () => {
+    writeOntologyFixture([], ["obs_crito_0001"]);
+    syncProjectionFixtures();
     writeMenoJoin(root, [{ observationId: "obs_meno_9999", turnIds: ["turn_meno_0001"] }]);
     expect(() => readSiteData()).toThrow(
       /Observation-turn join meno references unknown observation obs_meno_9999/u,
@@ -930,7 +995,7 @@ describe("turn and dossier evidence rendering", () => {
       .flatMap((descriptor) =>
         parseSearchShard(readFileSync(join(outDir, descriptor.path), "utf8"), descriptor.path).records,
       );
-    expect(turnSearchRecords).toHaveLength(3);
+    expect(turnSearchRecords).toHaveLength(4);
     expect(turnSearchRecords.find((record) => record.id === "turn_meno_0001")).toEqual({
       id: "turn_meno_0001",
       target: "dialogues/meno/turns.html#turn_meno_0001",
@@ -955,6 +1020,7 @@ describe("turn and dossier evidence rendering", () => {
         turnIds: Array.from({ length: 6 }, (_, index) => `turn_meno_${String(index + 1).padStart(4, "0")}`),
       },
     ]);
+    syncProjectionFixtures();
     const outDir = join(root, "site");
     buildStaticSite({ outDir });
 
@@ -968,40 +1034,14 @@ describe("turn and dossier evidence rendering", () => {
     expect(article).toContain('../../dialogues/meno/turns.html">1 more in Turns</a>');
   });
 
-  it("links dossier targets and counters, preserves missing co-occurrences, and rejects unknown counters", () => {
-    const dossierPath = join(root, "wiki/dossiers/elenchus/bounded_test.md");
-    const original = readFileSync(dossierPath, "utf8");
+  it("links canonical dossier targets without manufacturing counterevidence", () => {
     const outDir = join(root, "site");
     buildStaticSite({ outDir });
-    expect(readFileSync(join(outDir, "dossiers/elenchus/bounded_test.html"), "utf8")).toContain(
-      "No counterevidence recorded.",
-    );
-
-    const withEvidence = original
-      .replace("counter_records: 0", "counter_records: 1")
-      .replace("counter_ids: []", "counter_ids: [obs_crito_0001]")
-      .replace(
-        "## Co-occurrence\n\n```yaml\n[]\n```",
-        "## Co-occurrence\n\n```yaml\n- family: elenchus; label: bounded_test; overlapping_observations: 2\n- family: elenchus; label: unindexed_test; overlapping_observations: 1\n```",
-      );
-    writeFileSync(dossierPath, withEvidence, "utf8");
-    buildStaticSite({ outDir });
     const page = readFileSync(join(outDir, "dossiers/elenchus/bounded_test.html"), "utf8");
-    expect(page).toContain(
-      '../../dossiers/elenchus/bounded_test.html#dossier_elenchus_bounded_test',
-    );
-    expect(page).toContain('../../dialogues/crito/records-part-1.html#obs_crito_0001');
-    expect(page).toContain("unindexed_test");
-    expect(page).not.toContain('unindexed_test.html');
-
-    writeFileSync(
-      dossierPath,
-      withEvidence.replace("counter_ids: [obs_crito_0001]", "counter_ids: [obs_crito_9999]"),
-      "utf8",
-    );
-    expect(() => buildStaticSite({ outDir })).toThrow(
-      /Unknown dossier counter-record target: obs_crito_9999/u,
-    );
+    expect(page).toContain(`id="dossier:${TEST_CONCEPT_ID}"`);
+    expect(page).toContain(`../../concepts/elenchus/bounded_test.html`);
+    expect(page).not.toContain("Counterevidence");
+    expect(page).not.toMatch(/family|feature_label|feature_id/iu);
   });
 });
 
@@ -1069,6 +1109,38 @@ describe("reading view", () => {
     expect(page).not.toMatch(/https?:\/\//u);
     buildStaticSite({ outDir });
     expect(readFileSync(join(outDir, "dialogues/meno/reading.html"), "utf8")).toBe(page);
+  });
+
+  it("treats a rejected-only commentary lane as absent from every reader surface", () => {
+    writeMenoCommentary(root);
+    const commentaryPath = join(root, "wiki/commentary/meno.md");
+    writeFileSync(
+      commentaryPath,
+      readFileSync(commentaryPath, "utf8").replaceAll(
+        /review_status: (?:accepted|unreviewed)/gu,
+        "review_status: rejected",
+      ),
+      "utf8",
+    );
+
+    const outDir = join(root, "site");
+    buildStaticSite({ outDir });
+
+    expect(existsSync(join(outDir, "dialogues/meno/reading.html"))).toBe(false);
+    expect(readFileSync(join(outDir, "dialogues/meno/index.html"), "utf8")).not.toContain("reading.html");
+    expect(readFileSync(join(outDir, "dialogues/meno/records.html"), "utf8")).not.toContain("reading.html");
+    expect(readFileSync(join(outDir, "dialogues/index.html"), "utf8")).not.toContain("dialogues/meno/reading.html");
+    expect(readFileSync(join(outDir, "readings/index.html"), "utf8")).not.toContain("dialogues/meno/reading.html");
+    expect(readFileSync(join(outDir, "audio/index.html"), "utf8")).not.toContain("dialogues/meno/reading.html");
+
+    const publicOutput = listFiles(outDir)
+      .filter((path) => path.endsWith(".html") || path.endsWith(".json"))
+      .map((path) => readFileSync(join(outDir, path), "utf8"))
+      .join("\n");
+    for (const commentaryId of ["comm_meno_0001", "comm_meno_0002", "comm_meno_0003", "comm_meno_0004"]) {
+      expect(publicOutput).not.toContain(commentaryId);
+      expect(readExactTargets(outDir).has(commentaryId)).toBe(false);
+    }
   });
 
   it("places visible notes under the next visible section when their section is rejected", () => {
@@ -1347,244 +1419,29 @@ describe("static recording publication", () => {
   });
 });
 
-describe("structure-quality dashboards", () => {
-  function writeSingletonSample(adjudication = "merge_candidate") {
-    const sampleDir = join(root, "wiki/review/2026-07-singleton-adjudication");
-    mkdirSync(sampleDir, { recursive: true });
-    writeFileSync(
-      join(sampleDir, "sample.json"),
-      JSON.stringify(
-        {
-          version: 1,
-          standard: "docs/label-normalization-standards.md",
-          seed: "fixture",
-          universeSize: 10,
-          strata: { fixture: { population: 10, drawn: 2 } },
-          entries: [
-            {
-              family: "elenchus",
-              label: "bounded_test",
-              observation_id: "obs_meno_0001",
-              dialogue: "meno",
-              stephanus_span: "70a",
-              review_status: "accepted",
-              stratum: "fixture",
-              adjudication: "keep_distinct_function",
-              target: null,
-              reason: "Fixture decision.",
-            },
-            {
-              family: "elenchus",
-              label: "second_test",
-              observation_id: "obs_crito_0001",
-              dialogue: "crito",
-              stephanus_span: "44a",
-              review_status: "accepted",
-              stratum: "fixture",
-              adjudication,
-              target: adjudication === "merge_candidate" ? { family: "elenchus", label: "bounded_test" } : null,
-              reason: "Fixture decision.",
-            },
-          ],
-        },
-        null,
-        2,
-      ),
-      "utf8",
-    );
-  }
-
-  it("uses canonical typed reports and renders explicit zero and unavailable states", () => {
+describe("ontology quality dashboard", () => {
+  it("reads and renders only canonical axes, concepts, and memberships", () => {
     const data = readSiteData();
-    const directQuality = collectLabelQuality();
-    const directCoverage = buildCoverageReport();
-
-    expect(data.labelQuality).toEqual(directQuality);
-    expect(data.coverage).toEqual(directCoverage);
-    expect(data.reviewStatusCounts).toEqual({
-      observations: { total: 2, statuses: { accepted: 2 } },
-      claims: { total: 0, statuses: {} },
-      relations: { total: 0, statuses: {} },
+    expect(data.ontologyQuality).toMatchObject({
+      axes: 1,
+      concepts: 1,
+      memberships: 2,
+      acceptedObservations: 2,
+      acceptedObservationsWithMemberships: 2,
+      crossDialogueConcepts: 1,
+      singletonConcepts: 0,
     });
-    expect(data.unattributedDialogues).toEqual(["apology"]);
-    expect(data.singletonAdjudication).toBeUndefined();
+    expect(data.coverage).toEqual(buildCoverageReport());
 
     const outDir = join(root, "site");
     buildStaticSite({ outDir });
     const quality = readFileSync(join(outDir, "quality.html"), "utf8");
-    const weakSpots = readFileSync(join(outDir, "weak-spots.html"), "utf8");
-    const accepted = directQuality.acceptedOnly;
-    const dispositions = directQuality.dispositionCoverage;
-    const pct = (value: number) => `${(value * 100).toFixed(1)}%`;
-
-    expect(quality).toContain(`<span>accepted labels</span><strong>${accepted.totalLabels}</strong>`);
-    expect(quality).toContain(`<span>singleton labels</span><strong>${accepted.singletonLabels}</strong>`);
-    expect(quality).toContain(`<span>singleton share</span><strong>${pct(accepted.singletonLabels / accepted.totalLabels)}</strong>`);
-    expect(quality).toContain(`<span>cross-dialogue labels</span><strong>${accepted.crossDialogueLabels}</strong>`);
-    expect(quality).toContain(`<span>non-singleton observation share</span><strong>${pct(accepted.reuseMass.nonSingletonShare)}</strong>`);
-    expect(quality).toContain(`<span>cross-dialogue observation share</span><strong>${pct(accepted.reuseMass.crossDialogueShare)}</strong>`);
-    expect(quality).toContain(`<span>covered labels</span><strong>${dispositions.coveredLabels}</strong>`);
-    expect(quality).toContain(`<span>uncovered labels</span><strong>${dispositions.uncoveredLabels}</strong>`);
-    for (const participation of directQuality.perDialogueParticipation) {
-      expect(quality).toContain(`<td>${pct(participation.crossDialogueObservationShare)}</td>`);
-    }
-    expect(quality).toContain('data-filter-min="observations"');
-    expect(quality).toContain("Validated singleton adjudication sample unavailable.");
-    expect(quality).toContain("Signed memo unavailable.");
-    expect(quality).toContain("Raw generated report unavailable.");
-    expect(quality).not.toContain("label-quality bytes");
-    expect(quality).not.toContain("singleton memo bytes");
-
-    expect(weakSpots).toContain("No coverage gaps at the 800-character threshold.");
-    expect(weakSpots).toContain("No review-status issues in observations, claims, or relations.");
-    expect(weakSpots).toContain("Raw generated report unavailable.");
-    expect(weakSpots).toContain(
-      `<span>minimum coverage</span><strong>${pct(Math.min(...directCoverage.map((entry) => entry.coverageRatio)))}</strong>`,
-    );
-    expect(weakSpots.indexOf('href="dialogues/apology/index.html"')).toBeLessThan(
-      weakSpots.indexOf('href="dialogues/meno/index.html"'),
-    );
-  });
-
-  it("validates and renders singleton composition while keeping raw artifacts collapsed", () => {
-    writeSingletonSample();
-    mkdirSync(join(root, "docs"), { recursive: true });
-    writeFileSync(join(root, "wiki/label-quality.md"), "# Raw quality fixture", "utf8");
-    writeFileSync(join(root, "wiki/coverage-gaps.md"), "# Raw coverage fixture", "utf8");
-    writeFileSync(join(root, "docs/singleton-adjudication-memo-2026-07.md"), "# Signed fixture memo", "utf8");
-
-    const data = readSiteData();
-    expect(data.singletonAdjudication).toEqual({
-      path: "wiki/review/2026-07-singleton-adjudication/sample.json",
-      universeSize: 10,
-      sampleSize: 2,
-      composition: [
-        { adjudication: "keep_distinct_function", count: 1, sampleShare: 0.5, weightedShare: 0.5 },
-        { adjudication: "merge_candidate", count: 1, sampleShare: 0.5, weightedShare: 0.5 },
-        { adjudication: "passage_summary_relabel", count: 0, sampleShare: 0, weightedShare: 0 },
-        { adjudication: "topic_registry", count: 0, sampleShare: 0, weightedShare: 0 },
-      ],
-    });
-
-    const outDir = join(root, "site");
-    buildStaticSite({ outDir });
-    const quality = readFileSync(join(outDir, "quality.html"), "utf8");
-    const weakSpots = readFileSync(join(outDir, "weak-spots.html"), "utf8");
-    expect(quality).toContain("Singleton Adjudication Composition");
-    expect(quality).toContain("keep_distinct_function");
-    expect(quality).toContain("50.0%");
-    expect(quality).toContain('<details class="provenance"><summary>Raw generated report</summary>');
-    expect(quality).toContain('<details class="provenance"><summary>Signed memo</summary>');
-    expect(quality).not.toContain("<details class=\"provenance\" open");
-    expect(weakSpots).toContain('<details class="provenance"><summary>Raw generated report</summary>');
-  });
-
-  it("fails malformed present samples and invalid report shares or targets with path context", () => {
-    writeSingletonSample("unsupported_disposition");
-    expect(() => readSiteData()).toThrow(
-      /Malformed singleton adjudication sample wiki\/review\/2026-07-singleton-adjudication\/sample\.json: entries\[1\]\.adjudication has unsupported value unsupported_disposition/u,
-    );
-
-    rmSync(join(root, "wiki/review/2026-07-singleton-adjudication"), { recursive: true, force: true });
-    const labelQuality = collectLabelQuality();
-    const coverage = buildCoverageReport();
-    const knownDialogues = new Set(["apology", "crito", "meno"]);
-    const knownFamilies = new Set(["elenchus"]);
-    const badShare = structuredClone(labelQuality);
-    badShare.acceptedOnly.reuseMass.nonSingletonShare = Number.NaN;
-    expect(() => validateDashboardTargets({ labelQuality: badShare, coverage, knownDialogues, knownFamilies })).toThrow(
-      /acceptedOnly\.reuseMass\.nonSingletonShare.*found NaN/u,
-    );
-
-    const badTarget = structuredClone(labelQuality);
-    badTarget.familyProfiles[0]!.family = "missing_family";
-    expect(() => validateDashboardTargets({ labelQuality: badTarget, coverage, knownDialogues, knownFamilies })).toThrow(
-      /familyProfiles\[0\] references missing family target missing_family/u,
-    );
-  });
-
-  it("renders classified gaps and linked rejected or needs-split records from every issue layer", () => {
-    writeFileSync(
-      join(root, "raw/plato/greek/meno.txt"),
-      `{70a} Μένων λέγει. {70b} Σωκράτης ἀποκρίνεται. ${"x".repeat(1000)}`,
-      "utf8",
-    );
-    for (const [dialogue, status] of [["meno", "rejected"], ["crito", "needs_split"]] as const) {
-      const path = join(root, `wiki/observations/${dialogue}.md`);
-      writeFileSync(path, readFileSync(path, "utf8").replace("review_status: accepted", `review_status: ${status}`), "utf8");
-    }
-    mkdirSync(join(root, "wiki/claims"), { recursive: true });
-    mkdirSync(join(root, "wiki/relations"), { recursive: true });
-    writeFileSync(
-      join(root, "wiki/claims/meno.md"),
-      ["rejected", "needs_split"]
-        .map(
-          (status, index) => `\`\`\`yaml
-claim_id: claim_meno_000${index + 1}
-source_work: Meno
-stephanus_span: 70a
-${commentaryRefLines("meno", "70a")}
-speaker: ΜΕΝ.
-claim_kind: thesis
-content: "Fixture claim ${index + 1}."
-greek_terms: []
-final_status: left_standing
-limits: "Fixture."
-review_status: ${status}
-stance_events: []
-\`\`\``,
-        )
-        .join("\n\n"),
-      "utf8",
-    );
-    writeFileSync(
-      join(root, "wiki/relations/meno.md"),
-      ["rejected", "needs_split"]
-        .map(
-          (status, index) => `\`\`\`yaml
-relation_id: rel_${index === 0 ? "meno" : "cross-dialogue"}_000${index + 1}
-claim_a: claim_meno_0001
-claim_b: claim_meno_0002
-relation_kind: restatement
-resolution: standing
-basis: "Fixture relation ${index + 1}."
-limits: "Fixture."
-review_status: ${status}
-\`\`\``,
-        )
-        .join("\n\n"),
-      "utf8",
-    );
-
-    const data = readSiteData();
-    expect(data.reviewStatusCounts).toEqual({
-      observations: { total: 2, statuses: { needs_split: 1, rejected: 1 } },
-      claims: { total: 2, statuses: { needs_split: 1, rejected: 1 } },
-      relations: { total: 2, statuses: { needs_split: 1, rejected: 1 } },
-    });
-    expect(data.coverage.find((entry) => entry.dialogue === "meno")?.gaps.map((gap) => gap.classification)).toEqual([
-      "rejected_uncovered",
-      "never_covered",
-    ]);
-
-    const outDir = join(root, "site");
-    buildStaticSite({ outDir });
-    const weakSpots = readFileSync(join(outDir, "weak-spots.html"), "utf8");
-    expect(weakSpots).toContain("rejected_uncovered");
-    expect(weakSpots).toContain("never_covered");
-    expect(weakSpots).toContain('data-filter="layer"');
-    expect(weakSpots).toContain('data-filter="status"');
-    expect(weakSpots).toContain('data-filter="dialogue"');
-    expect(weakSpots).toContain('href="dialogues/meno/records-part-1.html#obs_meno_0001"');
-    expect(weakSpots).toContain('href="dialogues/meno/claims.html#claim_meno_0001"');
-    expect(weakSpots).toContain('href="dialogues/meno/relations.html#rel_meno_0001"');
-    expect(weakSpots).toContain('href="dialogues/cross-dialogue/relations.html">Cross Dialogue</a>');
-    expect(weakSpots).toContain(
-      'href="dialogues/cross-dialogue/relations.html#rel_cross-dialogue_0002">rel_cross-dialogue_0002</a>',
-    );
-    expect(weakSpots).toContain("<span>observation issues</span><strong>2</strong>");
-    expect(weakSpots).toContain("<span>claim issues</span><strong>2</strong>");
-    expect(weakSpots).toContain("<span>relation issues</span><strong>2</strong>");
+    expect(quality).toContain("Every row is computed from the validated axes, concepts, and many-to-many membership files.");
+    expect(quality).toContain("<span>axes</span><strong>1</strong>");
+    expect(quality).toContain("<span>concepts</span><strong>1</strong>");
+    expect(quality).toContain("<span>memberships</span><strong>2</strong>");
+    expect(quality).toContain("<span>accepted observation membership coverage</span><strong>100.0%</strong>");
+    expect(quality).not.toMatch(/feature|registry|family|label quality/iu);
   });
 });
 
@@ -1912,7 +1769,7 @@ second[1]:
     expect(derived?.anchors[0]?.group).toBe("definition_prompt");
     expect(derived?.procedure[1]?.candidate_id).toBe("proc_meno_0002");
     expect(derived?.assent[0]?.stretch_id).toBe("assent_meno_0001");
-    expect(readSiteData().derivedByDialogue.get("crito")?.turns).toEqual([]);
+    expect(readSiteData().derivedByDialogue.get("crito")?.turns).toHaveLength(1);
     expect(readSiteData().derivedByDialogue.get("apology")?.speakers).toEqual([
       {
         speaker: "(unattributed)",
@@ -1940,25 +1797,25 @@ second[1]:
     expect(weakSpots).toContain("apology");
   });
 
-  it("omits a cluster link when a family has no generated cluster page", () => {
+  it("renders an unassigned observation without inventing ontology links", () => {
     const path = join(root, "wiki/observations/meno.md");
     writeFileSync(
       path,
       `${readFileSync(path, "utf8")}\n${ledgerRecord({
         observationId: "obs_meno_0002",
         span: "70b",
-        family: "unclustered",
-        label: "standalone_test",
       })}\n`,
       "utf8",
     );
 
     const outDir = join(root, "site");
     buildStaticSite({ outDir });
-    const clustered = readFileSync(join(outDir, "families/elenchus.html"), "utf8");
-    const unclustered = readFileSync(join(outDir, "families/unclustered.html"), "utf8");
-    expect(clustered).toContain("../clusters/elenchus.html");
-    expect(unclustered).not.toContain("../clusters/unclustered.html");
+    const records = readFileSync(join(outDir, "dialogues/meno/records-part-1.html"), "utf8");
+    const unassigned = /<article class="record" id="obs_meno_0002"[\s\S]*?<\/article>/u.exec(records)?.[0] ?? "";
+    expect(unassigned).toContain('data-axis=""');
+    expect(unassigned).toContain('data-concept=""');
+    expect(unassigned).not.toContain("../../axes/");
+    expect(unassigned).not.toContain("../../concepts/");
   });
 
   it("renders stable record permalinks as navigable card headings", () => {
@@ -2044,8 +1901,7 @@ second[1]:
     expect(observations[0]).toMatchObject({
       observationId: "obs_meno_0001",
       dialogue: "meno",
-      featureFamily: "elenchus",
-      featureLabel: "bounded_test",
+      concepts: [],
       reviewStatus: "accepted",
     });
     expect(observations[0]?.sourceRef.sourcePath).toBe("raw/plato/greek/meno.txt");
@@ -2058,7 +1914,6 @@ second[1]:
       "```yaml",
       "observation_id: obs_meno_0009",
       "stephanus_span: 70a",
-      "feature_label: bounded_test",
       "observation: |",
       "  A first indented line",
       "  and a second line.",
@@ -2079,12 +1934,12 @@ second[1]:
     expect(() => parseObservationLedger(leaked)).toThrow(/block-scalar indicator/u);
   });
 
-  it("writes filterable pages, registry pages, and cluster back-links", () => {
+  it("writes filterable ontology pages and canonical projection back-links", () => {
     const outDir = join(root, "site");
     const result = buildStaticSite({ outDir });
 
     expect(result.observationCount).toBe(2);
-    expect(result.registryEntryCount).toBe(1);
+    expect(result.ontologyConceptCount).toBe(1);
     expect(result.clusterCount).toBe(1);
     expect(result.validation).toMatchObject({
       duplicateIds: 0,
@@ -2095,11 +1950,13 @@ second[1]:
     expect(existsSync(join(outDir, "index.html"))).toBe(true);
     expect(existsSync(join(outDir, "dialogues/meno/index.html"))).toBe(true);
     expect(existsSync(join(outDir, "dialogues/meno/records-part-1.html"))).toBe(true);
-    expect(existsSync(join(outDir, "families/elenchus.html"))).toBe(true);
-    expect(existsSync(join(outDir, "registry.html"))).toBe(true);
-    expect(existsSync(join(outDir, "registry/part-1.html"))).toBe(true);
+    expect(existsSync(join(outDir, "axes/elenchus.html"))).toBe(true);
+    expect(existsSync(join(outDir, "concepts/elenchus/bounded_test.html"))).toBe(true);
+    expect(existsSync(join(outDir, "families/elenchus.html"))).toBe(false);
+    expect(existsSync(join(outDir, "registry.html"))).toBe(false);
     expect(existsSync(join(outDir, "dialogues/index.html"))).toBe(true);
-    expect(existsSync(join(outDir, "families/index.html"))).toBe(true);
+    expect(existsSync(join(outDir, "axes/index.html"))).toBe(true);
+    expect(existsSync(join(outDir, "concepts/index.html"))).toBe(true);
     expect(existsSync(join(outDir, "claims/index.html"))).toBe(true);
     expect(existsSync(join(outDir, "relations/index.html"))).toBe(true);
     expect(existsSync(join(outDir, "readings/index.html"))).toBe(true);
@@ -2128,9 +1985,13 @@ second[1]:
     expect(dialogueHub).toContain("Apology");
     expect(dialogueHub).toContain('href="../dialogues/index.html" aria-current="page"');
 
+    const conceptsHub = readFileSync(join(outDir, "concepts/index.html"), "utf8");
+    expect(conceptsHub).toContain('href="../concepts/elenchus/bounded_test.html"');
+    expect(conceptsHub).not.toContain("A bounded question-and-answer test recorded in the cited span.");
+
     const recordShard = readFileSync(join(outDir, "dialogues/meno/records-part-1.html"), "utf8");
-    expect(recordShard).toContain('data-filter="family"');
-    expect(recordShard).toContain('data-filter="label"');
+    expect(recordShard).toContain('data-filter="axis"');
+    expect(recordShard).toContain('data-filter="concept"');
     expect(recordShard).toContain('data-filter="status"');
     expect(recordShard).toContain("Meno asks a &lt;bounded&gt; question.");
 
@@ -2149,8 +2010,8 @@ second[1]:
     expect(searchPage).toContain('data-corpus-search data-manifest-src="assets/search/manifest.json"');
     expect(searchPage).toContain('data-search-filter="kind"');
     expect(searchPage).toContain('data-search-filter="dialogue"');
-    expect(searchPage).toContain('data-search-filter="family"');
-    expect(searchPage).toContain('data-search-filter="label"');
+    expect(searchPage).toContain('data-search-filter="axis"');
+    expect(searchPage).toContain('data-search-filter="concept"');
     expect(searchPage).toContain('data-search-filter="status"');
     expect(searchPage).toContain('role="status" aria-live="polite" data-search-status');
     expect(searchPage).toContain('href="search.html" aria-current="page"');
@@ -2159,11 +2020,10 @@ second[1]:
     expect(exactTargets.get("obs_meno_0001")).toBe(
       "dialogues/meno/records-part-1.html#obs_meno_0001",
     );
-    expect(exactTargets.get("feature_candidate_001")).toBe(
-      "registry/part-1.html#feature_candidate_001",
-    );
-    expect(exactTargets.get("dossier_elenchus_bounded_test")).toBe(
-      "dossiers/elenchus/bounded_test.html#dossier_elenchus_bounded_test",
+    expect(exactTargets.get(TEST_AXIS_ID)).toBe(`axes/elenchus.html#${TEST_AXIS_ID}`);
+    expect(exactTargets.get(TEST_CONCEPT_ID)).toBe(`concepts/elenchus/bounded_test.html#${TEST_CONCEPT_ID}`);
+    expect(exactTargets.get(`dossier:${TEST_CONCEPT_ID}`)).toBe(
+      `dossiers/elenchus/bounded_test.html#dossier:${TEST_CONCEPT_ID}`,
     );
 
     const searchManifest = parseSearchManifest(
@@ -2180,8 +2040,8 @@ second[1]:
       target: "dialogues/meno/records-part-1.html#obs_meno_0001",
       kind: "observation",
       dialogue: "meno",
-      family: "elenchus",
-      label: "bounded_test",
+      axis: "elenchus",
+      concept: "bounded_test",
       status: "accepted",
     });
     const searchJson = searchManifest.shards
@@ -2262,16 +2122,16 @@ stance_events: []
       expect(aboutAt).toBeGreaterThan(nav.indexOf(">Search</a>"));
       expect((nav.match(/<details class="nav-item"/gu) ?? []).length).toBe(2);
       // Panel rows carry description spans and mono counts.
-      expect(nav).toContain("<span>Evidence files per recurring label</span>");
-      expect(nav).toMatch(/Evidence files per recurring label<\/span><b class="n">1<\/b>/u);
+      expect(nav).toContain("<span>Evidence files per recurring concept</span>");
+      expect(nav).toMatch(/Evidence files per recurring concept<\/span><b class="n">1<\/b>/u);
       // Zero-count layers (no claims/relations in the base fixture) are omitted.
       expect(nav).not.toContain("Asserted-content records");
       expect(nav).not.toContain("Support and tension links");
       expect(page).toContain('class="site-footer"');
     }
 
-    const families = readFileSync(join(outDir, "families/index.html"), "utf8");
-    expect(families).toContain('<details class="nav-item" data-current>');
+    const axes = readFileSync(join(outDir, "axes/index.html"), "utf8");
+    expect(axes).toContain('<details class="nav-item" data-current>');
   });
 
   it("homepage is a curated introduction", () => {
@@ -2434,33 +2294,35 @@ describe("content-first record cards (the content-first record-card rollout)", (
     expect(article).toContain('class="record-eyebrow"');
     expect(article).toContain('<span class="ref">meno 70a</span>');
     // Raw snake_case survives in the filter attributes; the chips are humanized.
-    expect(article).toContain('data-label="bounded_test"');
-    expect(article).toContain('data-family="elenchus"');
-    expect(article).toContain(">Bounded Test</span>");
-    expect(article).toContain('class="badge badge-family" href="../../families/elenchus.html">Elenchus</a>');
+    expect(article).toContain('data-concept="bounded_test"');
+    expect(article).toContain('data-axis="elenchus"');
+    expect(article).toContain(">Bounded Test</a>");
+    expect(article).toContain('class="badge badge-axis" href="../../axes/elenchus.html">Elenchus</a>');
   });
 
-  it("accepted status renders no chip; non-accepted does", () => {
+  it("never emits rejected observations into reader pages or indexes", () => {
     writeFileSync(
       join(root, "wiki/observations/meno.md"),
       `# Meno Observations\n\n${ledgerRecord({
         observationId: "obs_meno_0001",
         span: "70a",
-        family: "elenchus",
-        label: "bounded_test",
       })}\n\n${ledgerRecord({
         observationId: "obs_meno_0002",
         span: "70a",
-        family: "elenchus",
-        label: "bounded_test",
       }).replace("review_status: accepted", "review_status: rejected")}\n`,
       "utf8",
     );
     const outDir = join(root, "site");
     buildStaticSite({ outDir });
+    const publicOutput = listFiles(outDir)
+      .filter((path) => path.endsWith(".html") || path.endsWith(".json"))
+      .map((path) => readFileSync(join(outDir, path), "utf8"))
+      .join("\n");
     const page = readFileSync(join(outDir, "dialogues/meno/records-part-1.html"), "utf8");
     expect(page).not.toContain("status-accepted");
-    expect((page.match(/status-rejected/gu) ?? []).length).toBe(1);
+    expect(publicOutput).not.toContain("obs_meno_0002");
+    expect(publicOutput).not.toContain("status-rejected");
+    expect(readExactTargets(outDir).has("obs_meno_0002")).toBe(false);
   });
 
   it("claim cards show final status but silence accepted review status", () => {
@@ -2489,6 +2351,7 @@ describe("content-first record cards (the content-first record-card rollout)", (
     writeMenoCommentary(root);
     writeMenoTurnTables(root, 2);
     writeMenoJoin(root, [{ observationId: "obs_meno_0001", turnIds: ["turn_meno_0001"] }]);
+    syncProjectionFixtures();
     const outDir = join(root, "site");
     buildStaticSite({ outDir });
     const page = readFileSync(join(outDir, "dialogues/meno/records-part-1.html"), "utf8");
@@ -2556,6 +2419,7 @@ turns[1]:
 `,
       "utf8",
     );
+    syncProjectionFixtures();
     expect(() => buildStaticSite({ outDir: join(root, "site") })).toThrow(/No curated epigraph/u);
   });
 
@@ -2593,8 +2457,6 @@ describe("reading margin layer (the reading-margin rollout)", () => {
           const block = ledgerRecord({
             observationId: record.id,
             span: record.span,
-            family: "elenchus",
-            label: "bounded_test",
           });
           return record.status ? block.replace("review_status: accepted", `review_status: ${record.status}`) : block;
         })
@@ -2757,54 +2619,6 @@ describe("reading margin layer (the reading-margin rollout)", () => {
 });
 
 describe("patterns hub (the patterns-hub rollout)", () => {
-  function writeDossier(family: string, label: string, presence: Array<[string, number]>) {
-    mkdirSync(join(root, `wiki/dossiers/${family}`), { recursive: true });
-    const accepted = presence.reduce((sum, [, count]) => sum + count, 0);
-    writeFileSync(
-      join(root, `wiki/dossiers/${family}/${label}.md`),
-      `Generated.
-
-# Dossier: ${family}/${label}
-
-\`\`\`yaml
-dossier_id: dossier_${family}_${label}
-feature_family: ${family}
-feature_label: ${label}
-accepted_observations: ${accepted}
-dialogues: ${presence.length}
-counter_records: 0
-instance_ids: []
-counter_ids: []
-\`\`\`
-
-## Instances
-
-\`\`\`yaml
-[]
-\`\`\`
-
-## Presence
-
-\`\`\`yaml
-${presence.map(([dialogue, count]) => `- dialogue: ${dialogue}; accepted_observations: ${count}`).join("\n")}
-\`\`\`
-
-## Co-occurrence
-
-\`\`\`yaml
-[]
-\`\`\`
-
-## Counterevidence
-
-\`\`\`yaml
-[]
-\`\`\`
-`,
-      "utf8",
-    );
-  }
-
   function writeStandingContradiction() {
     mkdirSync(join(root, "wiki/claims"), { recursive: true });
     writeFileSync(
@@ -2853,6 +2667,7 @@ ${presence.map(([dialogue, count]) => `- dialogue: ${dialogue}; accepted_observa
     const page = readFileSync(join(outDir, "patterns/index.html"), "utf8");
     expect(page).toContain("What recurs, and where");
     expect(page).toContain('class="pat-row"');
+    expect(page).toContain("How does question-and-answer testing proceed in this span?");
     // Dialogue names carry evidence links, so match the sentence with tags stripped.
     expect(page.replace(/<[^>]+>/gu, "")).toContain(
       "Strongest in Crito and Meno; attested in 2 of the 3 dialogues.",
@@ -2863,43 +2678,13 @@ ${presence.map(([dialogue, count]) => `- dialogue: ${dialogue}; accepted_observa
     // The fixture relation is not a curated specimen, so no cards render.
     expect(page).not.toContain('class="tp-grid"');
     expect(page).toContain("Browse the layers");
-    expect(page).toContain("One evidence file per recurring label");
+    expect(page).toContain("One evidence file per recurring concept");
     // The strip glyphs and the old sections are gone.
     expect(page).not.toContain("Pattern fingerprints");
     expect(page).not.toContain("Recurring functions");
     expect(page).not.toContain("Reference tables");
     expect(page).not.toContain('class="fingerprint"');
     expect(page).not.toContain("<svg");
-  });
-
-  it("selects and orders recurrence rows deterministically", () => {
-    PATTERN_ONELINERS["elenchus/alpha"] = "Alpha fixture pattern.";
-    PATTERN_ONELINERS["elenchus/beta"] = "Beta fixture pattern.";
-    writeDossier("elenchus", "alpha", [
-      ["meno", 2],
-      ["apology", 1],
-    ]);
-    writeDossier("elenchus", "beta", [
-      ["meno", 9],
-      ["apology", 1],
-    ]);
-    const outDir = join(root, "site");
-    buildStaticSite({ outDir });
-    const page = readFileSync(join(outDir, "patterns/index.html"), "utf8");
-    // Equal dialogue counts (2) → higher acceptedObservations (beta, 10) first.
-    expect(page.indexOf("Beta fixture pattern.")).toBeLessThan(page.indexOf("Alpha fixture pattern."));
-    const betaStart = page.indexOf("Beta fixture pattern.");
-    const rowStart = page.lastIndexOf('<div class="pat-row">', betaStart);
-    const rowEnd = page.indexOf("\n</div>", page.indexOf('<b class="n">', betaStart)) + "\n</div>".length;
-    const betaRow = page.slice(rowStart, rowEnd);
-    expect(betaRow.replace(/<[^>]+>/gu, "")).toContain(
-      "Strongest in Meno and Apology; attested in 2 of the 3 dialogues.",
-    );
-    expect(betaRow).toContain('title="Meno: 9 accepted observations"');
-    expect(betaRow).toContain('<b class="n">10</b>');
-    const rebuilt = join(root, "site-rebuild-061");
-    buildStaticSite({ outDir: rebuilt });
-    expect(readFileSync(join(rebuilt, "patterns/index.html"), "utf8")).toBe(page);
   });
 
   it("names strongest dialogues with counts on hover", () => {
@@ -2909,11 +2694,6 @@ ${presence.map(([dialogue, count]) => `- dialogue: ${dialogue}; accepted_observa
     // bounded_test has one accepted observation in each of crito and meno.
     expect(page).toContain('title="Crito: 1 accepted observation"');
     expect(page).toContain('title="Meno: 1 accepted observation"');
-  });
-
-  it("fails the build when a selected pattern has no one-liner", () => {
-    writeDossier("elenchus", "unregistered_label", [["meno", 3]]);
-    expect(() => buildStaticSite({ outDir: join(root, "site") })).toThrow(/No curated one-liner/u);
   });
 
   it("omits the contradictions section when nothing stands", () => {
@@ -2953,38 +2733,6 @@ ${presence.map(([dialogue, count]) => `- dialogue: ${dialogue}; accepted_observa
     );
   });
 
-  it("renders curated ledger tags with evidence links and an honest tail", () => {
-    PATTERN_ONELINERS["irony_marker/knowledge_disavowal"] = "Fixture disavowal one-liner.";
-    writeDossier("irony_marker", "knowledge_disavowal", [["meno", 2]]);
-    // An observation in the family so its family page exists for link checks.
-    writeFileSync(
-      join(root, "wiki/observations/meno.md"),
-      `# Meno Observations\n\n${ledgerRecord({
-        observationId: "obs_meno_0001",
-        span: "70a",
-        family: "elenchus",
-        label: "bounded_test",
-      })}\n\n${ledgerRecord({
-        observationId: "obs_meno_0002",
-        span: "70a",
-        family: "irony_marker",
-        label: "knowledge_disavowal",
-      })}\n`,
-      "utf8",
-    );
-    const outDir = join(root, "site");
-    buildStaticSite({ outDir });
-    const hub = readFileSync(join(outDir, "dialogues/index.html"), "utf8");
-    const menoRow = hub.match(/<div class="dlg-row filter-item"[^>]*data-title="meno"[\s\S]*?\n<\/div>/u)?.[0] ?? "";
-    expect(menoRow).toContain(">Knowledge Disavowal</a>");
-    expect(menoRow).toContain("dossiers/irony_marker/knowledge_disavowal.html");
-    expect(menoRow).toContain('title="2 of the label&#39;s 2 accepted instances are here"');
-    // bounded_test is attested in meno but uncurated, so the tail counts it.
-    expect(menoRow).toContain(">+ 1 more</a>");
-    // A curated tag that loses its support fails the build.
-    writeDossier("irony_marker", "knowledge_disavowal", [["meno", 1]]);
-    expect(() => buildStaticSite({ outDir: join(root, "site-decayed") })).toThrow(/accepted instances there/u);
-  });
 });
 
 describe("apparatus lane (the apparatus-lane contract)", () => {
@@ -2993,7 +2741,7 @@ describe("apparatus lane (the apparatus-lane contract)", () => {
       join(root, "wiki/observations/meno.md"),
       `# Meno Observations\n\n${records
         .map((record) => {
-          const yaml = ledgerRecord({ observationId: record.id, span: record.span, family: "elenchus", label: "bounded_test" });
+          const yaml = ledgerRecord({ observationId: record.id, span: record.span });
           return record.status ? yaml.replace("review_status: accepted", `review_status: ${record.status}`) : yaml;
         })
         .join("\n\n")}\n`,
@@ -3127,6 +2875,21 @@ describe("apparatus lane (the apparatus-lane contract)", () => {
     writeApparatus("crito", [{ id: "apx_crito_0001", span: "44a" }]);
     expect(() => buildStaticSite({ outDir: join(root, "site") })).toThrow(/no reading page target/u);
   });
+
+  it("throws when apparatus records have only rejected commentary targets", () => {
+    writeMenoCommentary(root);
+    const commentaryPath = join(root, "wiki/commentary/meno.md");
+    writeFileSync(
+      commentaryPath,
+      readFileSync(commentaryPath, "utf8").replaceAll(
+        /review_status: (?:accepted|unreviewed)/gu,
+        "review_status: rejected",
+      ),
+      "utf8",
+    );
+    writeApparatus("meno", [{ id: "apx_meno_0001", span: "70a" }]);
+    expect(() => buildStaticSite({ outDir: join(root, "site") })).toThrow(/no reading page target/u);
+  });
 });
 
 describe("dialogue pages v3.3 (the dialogue-pages v3.3 rollout)", () => {
@@ -3160,7 +2923,7 @@ describe("dialogue pages v3.3 (the dialogue-pages v3.3 rollout)", () => {
     expect(visible).not.toContain("part-1");
   });
 
-  it("holds family label chips within the summed display budget", () => {
+  it("holds axis and concept chips within the summed display budget", () => {
     const outDir = join(root, "site");
     buildStaticSite({ outDir });
     const overview = readFileSync(join(outDir, "dialogues/meno/index.html"), "utf8");

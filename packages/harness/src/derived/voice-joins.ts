@@ -34,7 +34,7 @@ export type VoiceAttributionStatus =
 export type VoiceJoinRow = {
   recordId: string;
   recordKind: "observation" | "claim";
-  reviewStatus: string;
+  reviewStatus: "accepted";
   outerTurnSpeaker: string;
   owner: string;
   ownerChain: string[];
@@ -314,9 +314,15 @@ export function buildVoiceJoinFromIndex(
   function turnLevel(ranges: CitedRange[]): Resolution | undefined {
     const overlapping = turnsOver(turnIndex.turns, ranges);
     if (overlapping.some((turn) => turnsWithVoices.has(turn.turnId))) return undefined;
-    if (overlapping.length === 1) {
-      const speaker = overlapping[0]!.speaker;
-      return { owner: speaker, chain: [speaker], status: "turn_level", evidence: overlapping[0]!.turnId };
+    const speakers = uniqueInOrder(overlapping.map((turn) => turn.speaker));
+    if (speakers.length === 1) {
+      const speaker = speakers[0]!;
+      return {
+        owner: speaker,
+        chain: [speaker],
+        status: "turn_level",
+        evidence: overlapping.map((turn) => turn.turnId).join(","),
+      };
     }
     return {
       owner: "(unattributed)",
@@ -332,6 +338,8 @@ export function buildVoiceJoinFromIndex(
   // the observation, not a defect to anchor away.
   for (const block of observationYamlBlocks(observationContent)) {
     const recordId = fieldValue(block, "observation_id");
+    const reviewStatus = fieldValue(block, "review_status") ?? "unreviewed";
+    if (reviewStatus !== "accepted") continue;
     if (!recordId) continue;
     const startChar = Number(nestedFieldValueInParent(block, "source_ref", "start_char"));
     const endChar = Number(nestedFieldValueInParent(block, "source_ref", "end_char"));
@@ -343,7 +351,7 @@ export function buildVoiceJoinFromIndex(
     rows.push({
       recordId,
       recordKind: "observation",
-      reviewStatus: fieldValue(block, "review_status") ?? "unreviewed",
+      reviewStatus,
       outerTurnSpeaker,
       owner: resolution.owner,
       ownerChain: resolution.chain,
@@ -361,6 +369,7 @@ export function buildVoiceJoinFromIndex(
   // --- Claims: owner from exact support ranges; actors joined separately. ----
   const supports = claimContent.length > 0 ? buildClaimSupport(dialogue) : [];
   for (const support of supports) {
+    if (support.reviewStatus !== "accepted") continue;
     const contextRange = [{ startChar: support.contextStartChar, endChar: support.contextEndChar }];
     const outerTurnSpeaker =
       uniqueInOrder(turnsOver(turnIndex.turns, contextRange).map((turn) => turn.speaker)).join(",") || "(none)";
@@ -440,15 +449,35 @@ function resolveClaimOwner(
   turnLevel: (ranges: CitedRange[]) => Resolution | undefined,
 ): Resolution {
   const contextRange = [{ startChar: support.contextStartChar, endChar: support.contextEndChar }];
-  const atTurnLevel = turnLevel(contextRange);
-  if (atTurnLevel) return atTurnLevel;
+  const resolveSupportedRanges = (ranges: CitedRange[]) => turnLevel(ranges) ?? resolveRanges(segments, ranges);
 
   // A context window that already sits inside a single voice needs no anchoring:
   // every word of it, quoted or not, belongs to that owner. Anchoring exists to
   // rescue windows that cross voices, not to add a hurdle where none exists.
-  const windowResolution = resolveRanges(segments, contextRange);
-  if (windowResolution.status === "resolved") {
+  //
+  // A broad window over ordinary printed turns may itself be cross-voice. That
+  // is not a terminal result for a claim: exact support still decides its
+  // owner. The old early return here made `greek_terms` unreachable for every
+  // such Crito/Meno claim and flattened "context crosses speakers" into
+  // "claim has no owner".
+  const windowResolution = resolveSupportedRanges(contextRange);
+  if (windowResolution.status === "resolved" || windowResolution.status === "turn_level") {
     return { ...windowResolution, evidence: `${windowResolution.evidence} (single-voiced context window)` };
+  }
+
+  // `speaker_source_ref` is a reviewed, hash-checked owner anchor, not another
+  // copy of the claim's semantic evidence. It exists for the irreducible case
+  // where a context window and its support terms span several actors (or a
+  // legacy term is absent/ambiguous) but the Greek still identifies one
+  // semantic asserter. The claim validator requires this range to remain inside
+  // the claim source_ref; resolution still comes exclusively from the accepted
+  // voice/turn authority below.
+  if (support.speakerRange) {
+    const anchored = resolveSupportedRanges([support.speakerRange]);
+    return {
+      ...anchored,
+      evidence: `speaker_source_ref ${support.speakerRange.startChar}-${support.speakerRange.endChar}: ${anchored.evidence}`,
+    };
   }
 
   const gapDetail = () => support.anchorGaps.map((gap) => `${JSON.stringify(gap.term)} missing`).join("; ");
@@ -475,7 +504,7 @@ function resolveClaimOwner(
     };
   }
 
-  if (support.candidates.length === 0) return resolveRanges(segments, support.ranges);
+  if (support.candidates.length === 0) return resolveSupportedRanges(support.ranges);
 
   // An ambiguous term contributes ONE occurrence to an interpretation of the
   // claim's evidence. Evaluate the Cartesian product: one occurrence from each
@@ -493,7 +522,7 @@ function resolveClaimOwner(
     );
   }
 
-  const outcomes = selections.map((selection) => resolveRanges(segments, [...support.ranges, ...selection]));
+  const outcomes = selections.map((selection) => resolveSupportedRanges([...support.ranges, ...selection]));
   const grouped = new Map<string, { resolution: Resolution; count: number; evidence: Set<string> }>();
   for (const outcome of outcomes) {
     const key = JSON.stringify([outcome.status, outcome.owner, outcome.chain]);
@@ -676,7 +705,7 @@ export function parseVoiceJoinToon(content: string): VoiceJoinIndex {
     if (
       !recordId ||
       (recordKind !== "observation" && recordKind !== "claim") ||
-      !reviewStatus ||
+      reviewStatus !== "accepted" ||
       !owner ||
       attributed === undefined ||
       !status ||
@@ -739,6 +768,13 @@ export function parseVoiceJoinToon(content: string): VoiceJoinIndex {
   }
   if (stanceRows.length !== Number(stanceCountRaw)) {
     throw new Error(`Stance-voice count mismatch: expected ${stanceCountRaw}, found ${stanceRows.length}`);
+  }
+  const acceptedClaimIds = new Set(
+    rows.filter((row) => row.recordKind === "claim").map((row) => row.recordId),
+  );
+  const orphanedStance = stanceRows.find((row) => !acceptedClaimIds.has(row.claimId));
+  if (orphanedStance) {
+    throw new Error(`Stance-voice row references absent accepted claim ${orphanedStance.claimId}.`);
   }
 
   return {

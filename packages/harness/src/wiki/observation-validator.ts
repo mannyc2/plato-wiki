@@ -15,7 +15,7 @@ export type ObservationLedgerValidationIssue = {
     | "source_ref_mismatch"
     | "source_ref_hash_mismatch"
     | "greek_outside_terms"
-    | "invalid_feature_family"
+    | "stale_ontology_alias"
     | "invalid_review_status"
     | "nul_byte"
     | "observation_count_mismatch"
@@ -47,16 +47,13 @@ const GREEK_RE = /[\u0370-\u03FF\u1F00-\u1FFF]/u;
 const TOP_LEVEL_FIELD_RE = /^([a-z_]+):\s*(.*)$/u;
 const CRITICAL_TOP_LEVEL_FIELDS = [
   "observation_id",
-  "feature_id",
-  "feature_family",
-  "feature_label",
   "observation",
   "textual_basis",
   "limits",
   "review_status",
 ] as const;
-const ORPHAN_LEDGER_FIELD_RE = /^(observation_id|feature_id|feature_family|feature_label|review_status):\s*/u;
-const FEATURE_FAMILY_RE = /^[a-z][a-z0-9_]*$/u;
+const ORPHAN_LEDGER_FIELD_RE = /^(observation_id|review_status):\s*/u;
+const STALE_ONTOLOGY_FIELDS = ["feature_id", "feature_family", "feature_label"] as const;
 const REVIEW_STATUSES = new Set(["unreviewed", "accepted", "rejected", "needs_split"]);
 const STEPHANUS_REF_RE = /\b(\d+)([a-e])(?:\s*[-–—]\s*(?:(\d+)([a-e])|([a-e])))?(\s*ff\.?)?/gu;
 const LETTER_ORDERS = new Map([
@@ -283,9 +280,6 @@ function validateRequiredFields(block: ObservationBlock, issues: ObservationLedg
     "observation_id",
     "source_work",
     "stephanus_span",
-    "feature_id",
-    "feature_family",
-    "feature_label",
     "observation",
     "textual_basis",
     "limits",
@@ -299,10 +293,7 @@ function validateRequiredFields(block: ObservationBlock, issues: ObservationLedg
         code: "missing_field",
         observationId: block.observationId,
         message: `Missing required observation field \`${field}\`.`,
-        fix:
-          field === "feature_id"
-            ? "Let the wiki observation tool assign feature_id from feature_label; do not remove the assigned field after tool feedback."
-            : `Add a non-empty \`${field}\` field to the observation record.`,
+        fix: `Add a non-empty \`${field}\` field to the observation record.`,
       });
     }
   }
@@ -337,16 +328,16 @@ function validateDuplicateCriticalFields(block: ObservationBlock, issues: Observ
   }
 }
 
-function validateFeatureFamily(block: ObservationBlock, issues: ObservationLedgerValidationIssue[]) {
-  const featureFamily = fieldValue(block.content, "feature_family");
-  if (!featureFamily || FEATURE_FAMILY_RE.test(featureFamily)) return;
-
-  issues.push({
-    code: "invalid_feature_family",
-    observationId: block.observationId,
-    message: `feature_family \`${featureFamily}\` must be a lowercase snake_case slug.`,
-    fix: "Use a seed family such as definition_ladder, or a normalized passthrough family such as legal_oath_formula.",
-  });
+function validateNoStaleOntologyAliases(block: ObservationBlock, issues: ObservationLedgerValidationIssue[]) {
+  for (const field of STALE_ONTOLOGY_FIELDS) {
+    if (fieldValue(block.content, field) === undefined) continue;
+    issues.push({
+      code: "stale_ontology_alias",
+      observationId: block.observationId,
+      message: `Legacy ontology field \`${field}\` is forbidden after the vNext hard cut.`,
+      fix: "Remove the alias and store classification only in wiki/ontology/memberships.jsonl.",
+    });
+  }
 }
 
 function validateReviewStatus(block: ObservationBlock, issues: ObservationLedgerValidationIssue[]) {
@@ -469,7 +460,7 @@ export function validateObservationLedger(path: string, content: string) {
   for (const block of blocks) {
     validateRequiredFields(block, issues);
     validateDuplicateCriticalFields(block, issues);
-    validateFeatureFamily(block, issues);
+    validateNoStaleOntologyAliases(block, issues);
     validateReviewStatus(block, issues);
     validateSourceRef(path, block, issues, sourceTextCache);
     validateGreekPlacement(block, issues);

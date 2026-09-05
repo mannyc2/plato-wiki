@@ -67,6 +67,8 @@ export type ClaimSupport = {
   speaker: string;
   contextStartChar: number;
   contextEndChar: number;
+  /** Exact source bytes reviewed only to determine the claim's semantic owner. */
+  speakerRange?: { startChar: number; endChar: number };
   terms: string[];
   /** Terms located exactly once: one byte-verified range each. */
   ranges: ClaimSupportRange[];
@@ -77,29 +79,28 @@ export type ClaimSupport = {
   stanceEvents: ClaimStanceEvent[];
 };
 
-function parseGreekTerms(block: string): string[] {
-  const lines = block.split(/\r?\n/u);
-  const start = lines.findIndex((line) => /^greek_terms:\s*(?:.*)?$/u.test(line));
-  if (start === -1) return [];
+type YamlRecord = Record<string, unknown>;
 
-  // Parse only this field, not the full claim. Besides keeping this mechanical
-  // extractor independent of the rest of the claim schema, this delegates flow
-  // punctuation to the YAML grammar itself. In particular, apostrophes in
-  // valid unquoted scalars (`πρόσωπα δύ'`, `τὰ δ' Ἀθηναίων πράττω`) are ordinary
-  // content, while commas inside quoted scalars stay inside that scalar.
-  let end = start + 1;
-  if (/^greek_terms:\s*$/u.test(lines[start]!)) {
-    while (end < lines.length && (lines[end]!.trim() === "" || /^[ \t]/u.test(lines[end]!))) end += 1;
-  }
+function asRecord(value: unknown): YamlRecord | undefined {
+  return typeof value === "object" && value !== null && !Array.isArray(value)
+    ? (value as YamlRecord)
+    : undefined;
+}
+
+function parseClaimRecord(block: string): YamlRecord {
   const bun = (
     globalThis as typeof globalThis & {
       Bun?: { YAML: { parse(source: string): unknown } };
     }
   ).Bun;
-  if (!bun) throw new Error("Bun.YAML.parse is required to read greek_terms");
-  const parsed = bun.YAML.parse(lines.slice(start, end).join("\n"));
-  if (typeof parsed !== "object" || parsed === null || !("greek_terms" in parsed)) return [];
-  const value = (parsed as { greek_terms?: unknown }).greek_terms;
+  if (!bun) throw new Error("Bun.YAML.parse is required to read claim support");
+  const parsed = asRecord(bun.YAML.parse(block));
+  if (!parsed) throw new Error("claim yaml block must be a mapping");
+  return parsed;
+}
+
+function parseGreekTerms(record: YamlRecord): string[] {
+  const value = record.greek_terms;
   if (value === null || value === undefined) return [];
   if (!Array.isArray(value) || value.some((term) => typeof term !== "string")) {
     throw new Error("greek_terms must be a YAML sequence of strings");
@@ -107,17 +108,24 @@ function parseGreekTerms(block: string): string[] {
   return value;
 }
 
-/** Every `start_char`/`end_char` pair in order of appearance; the first is the claim's own. */
-function parseCharPairs(block: string): Array<[number, number]> {
-  const pairs: Array<[number, number]> = [];
-  for (const match of block.matchAll(/^\s+start_char:\s*(\d+)\s*$\n\s+end_char:\s*(\d+)\s*$/gmu)) {
-    pairs.push([Number(match[1]), Number(match[2])]);
-  }
-  return pairs;
+function charPair(value: unknown): [number, number] | undefined {
+  const record = asRecord(value);
+  if (!record) return undefined;
+  const start = record.start_char;
+  const end = record.end_char;
+  return typeof start === "number" && Number.isInteger(start) && typeof end === "number" && Number.isInteger(end)
+    ? [start, end]
+    : undefined;
 }
 
-function parseStanceEventKinds(block: string): string[] {
-  return [...block.matchAll(/^\s+- kind:\s*(\S+)\s*$/gmu)].map((match) => match[1] ?? "");
+function parseStanceEvents(record: YamlRecord): ClaimStanceEvent[] {
+  if (!Array.isArray(record.stance_events)) return [];
+  return record.stance_events.flatMap((value, index) => {
+    const event = asRecord(value);
+    const pair = charPair(event?.source_ref);
+    if (!event || !pair) return [];
+    return [{ index, kind: typeof event.kind === "string" ? event.kind : "(unknown)", startChar: pair[0], endChar: pair[1] }];
+  });
 }
 
 export function buildClaimSupport(dialogue: string): ClaimSupport[] {
@@ -129,15 +137,15 @@ export function buildClaimSupport(dialogue: string): ClaimSupport[] {
 
   return claimYamlBlocks(readFileSync(claimPath, "utf8"))
     .map((block): ClaimSupport | undefined => {
+      const record = parseClaimRecord(block);
       const claimId = fieldValue(block, "claim_id");
       if (!claimId) return undefined;
-      const pairs = parseCharPairs(block);
-      const own = pairs[0];
+      const own = charPair(record.source_ref);
       if (!own) return undefined;
       const [contextStartChar, contextEndChar] = own;
       const window = source.slice(contextStartChar, contextEndChar);
 
-      const terms = parseGreekTerms(block);
+      const terms = parseGreekTerms(record);
       const ranges: ClaimSupportRange[] = [];
       const candidates: ClaimCandidateTerm[] = [];
       const anchorGaps: ClaimAnchorGap[] = [];
@@ -160,13 +168,8 @@ export function buildClaimSupport(dialogue: string): ClaimSupport[] {
         }
       }
 
-      const kinds = parseStanceEventKinds(block);
-      const stanceEvents = pairs.slice(1).map((pair, index) => ({
-        index,
-        kind: kinds[index] ?? "(unknown)",
-        startChar: pair[0],
-        endChar: pair[1],
-      }));
+      const stanceEvents = parseStanceEvents(record);
+      const speakerRangePair = charPair(record.speaker_source_ref);
 
       return {
         claimId,
@@ -174,6 +177,9 @@ export function buildClaimSupport(dialogue: string): ClaimSupport[] {
         speaker: fieldValue(block, "speaker") ?? "",
         contextStartChar,
         contextEndChar,
+        ...(speakerRangePair
+          ? { speakerRange: { startChar: speakerRangePair[0], endChar: speakerRangePair[1] } }
+          : {}),
         terms,
         ranges: ranges.sort((a, b) => a.startChar - b.startChar),
         candidates,

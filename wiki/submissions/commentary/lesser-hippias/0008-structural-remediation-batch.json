@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "submission_id": "0008-structural-remediation-batch",
+  "lane": "commentary",
+  "kind": "structural-remediation-batch",
+  "scope": "lesser-hippias",
+  "source_path": "scratch/commentary/structural-remediation/lesser-hippias/audit-failures-batch.json",
+  "source_sha256": "093340f1b701a95190341e8ec6aed4be61e645947e1a8b1527a1c1ac53843bd4",
+  "target_path": "wiki/commentary/lesser-hippias.md",
+  "target_sha256_before": "e5c976fe596b0378a9ef7fad5ce03db92080a1a5d6e19af92c126b734542e8b5",
+  "target_sha256_after": "94612d32fcd72b75db318c3fdf7dc6b9128da0f23a3accae9d85ed07f7bf89cb",
+  "applied_at": "2026-09-01T12:03:45.073Z",
+  "applied_ids": [
+    "comm_lesser-hippias_0006"
+  ],
+  "submission": {
+    "candidate": {
+      "schemaVersion": 1,
+      "dialogue": "lesser-hippias",
+      "candidatePath": "scratch/commentary/structural-remediation/lesser-hippias/audit-failures-batch.json",
+      "expectedLedgerSha256": "e5c976fe596b0378a9ef7fad5ce03db92080a1a5d6e19af92c126b734542e8b5",
+      "expectedAttributionSha256": "82f83da08298ac755e8b29edee273225a5c64d4147a36dc00e8379711b36cb5e",
+      "expectedEnglishSha256": "cc79a01cb6282b8ac3dc089eef1c7f6306c6b330d9579a19eb9914d27c259b44",
+      "auditUnits": [
+        {
+          "unitKey": "01-363a-363d",
+          "sectionId": "comm_lesser-hippias_0001",
+          "auditOutputPath": "scratch/commentary/audits/lesser-hippias/01-363a-363d.json",
+          "auditOutputSha256": "18ad7a1b394cb41d39f77a61ee1fbb39835ff931c8c6c085a67aa25cdc02f81d",
+          "operations": []
+        },
+        {
+          "unitKey": "02-364a-365d",
+          "sectionId": "comm_lesser-hippias_0002",
+          "auditOutputPath": "scratch/commentary/audits/lesser-hippias/02-364a-365d.json",
+          "auditOutputSha256": "e6551cc66f41d426b8fe88a0824099af07f9f7ed68b32f9957a79d7adbc4403c",
+          "operations": []
+        },
+        {
+          "unitKey": "03-365e-367b",
+          "sectionId": "comm_lesser-hippias_0003",
+          "auditOutputPath": "scratch/commentary/audits/lesser-hippias/03-365e-367b.json",
+          "auditOutputSha256": "86592826b945300cf55f3cdf705bb90fb579d9d1d5755b5f03791cd745cd9263",
+          "operations": []
+        },
+        {
+          "unitKey": "04-367c-369c",
+          "sectionId": "comm_lesser-hippias_0004",
+          "auditOutputPath": "scratch/commentary/audits/lesser-hippias/04-367c-369c.json",
+          "auditOutputSha256": "fb56891e1f90b65869991de65730f021f594aa6f44dc971362389ad59b3f8eba",
+          "operations": []
+        },
+        {
+          "unitKey": "05-369d-370e",
+          "sectionId": "comm_lesser-hippias_0005",
+          "auditOutputPath": "scratch/commentary/audits/lesser-hippias/05-369d-370e.json",
+          "auditOutputSha256": "ef921cd5e3c8f11bed796f384899a493c3bdb92849d9d687bd2769a3df812c22",
+          "operations": []
+        },
+        {
+          "unitKey": "06-371a-373b",
+          "sectionId": "comm_lesser-hippias_0006",
+          "auditOutputPath": "scratch/commentary/audits/lesser-hippias/06-371a-373b.json",
+          "auditOutputSha256": "0e3986bcf751801266fe1a96fed77d8ec91de0ebe033d5d30dc774c649268b10",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_lesser-hippias_0006"
+            }
+          ]
+        },
+        {
+          "unitKey": "07-373c-376a",
+          "sectionId": "comm_lesser-hippias_0007",
+          "auditOutputPath": "scratch/commentary/audits/lesser-hippias/07-373c-376a.json",
+          "auditOutputSha256": "2473c3dd1f1b1dde9070ef3f386f56a1fe63a4d614df0c186125816e5961f88f",
+          "operations": []
+        },
+        {
+          "unitKey": "08-376b-376c",
+          "sectionId": "comm_lesser-hippias_0008",
+          "auditOutputPath": "scratch/commentary/audits/lesser-hippias/08-376b-376c.json",
+          "auditOutputSha256": "caa230ed11aecb80e96cb8b8fedf61f129dcafbc09bc15cfa5f028881403b99d",
+          "operations": []
+        }
+      ],
+      "reviewer": "ontology-vnext-release-delegated-luna-20260901",
+      "reviewedOn": "2026-09-01",
+      "rationale": "Bound to current independent Luna placement-removal and rewrite findings; reject the defective originals conservatively."
+    },
+    "audit_findings": [
+      {
+        "commentaryId": "comm_lesser-hippias_0006",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

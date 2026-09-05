@@ -98,6 +98,50 @@ describe("relation candidates", () => {
     });
   });
 
+  it("reads every canonical block-list Greek term instead of treating the first dash as data", () => {
+    mkdirSync(join(root, "wiki/claims"), { recursive: true });
+    writeFileSync(
+      join(root, "wiki/claims/testdialogue.md"),
+      [
+        `\`\`\`yaml
+claim_id: claim_testdialogue_0001
+source_work: Testdialogue
+stephanus_span: 1a
+speaker: A
+claim_kind: thesis
+content: The first claim.
+greek_terms:
+  - πρώτη
+  - ἀρετή
+final_status: left_standing
+review_status: accepted
+\`\`\``,
+        `\`\`\`yaml
+claim_id: claim_testdialogue_0002
+source_work: Testdialogue
+stephanus_span: 1b
+speaker: B
+claim_kind: definition
+content: The second claim.
+greek_terms:
+  - δεύτερα
+  - ἀρετή
+final_status: left_standing
+review_status: accepted
+\`\`\``,
+      ].join("\n\n"),
+      "utf8",
+    );
+
+    const report = buildRelationCandidates();
+    expect(report.entries).toEqual([
+      expect.objectContaining({
+        candidate_key: "testdialogue::claim_testdialogue_0001::claim_testdialogue_0002",
+        shared_terms: ["αρετη"],
+      }),
+    ]);
+  });
+
   it("keeps a candidate key stable when positional labels reorder", () => {
     const targetKey = relationCandidateKey("testdialogue", "claim_testdialogue_0002", "claim_testdialogue_0003");
     const baseline = buildRelationCandidates([

@@ -62,7 +62,7 @@ function writeRepoFixture() {
     "utf8",
   );
   mkdirSync(join(root, "wiki/dossiers/frame_depth"), { recursive: true });
-  writeFileSync(join(root, "wiki/dossiers/frame_depth/reported_dialogue_frame.md"), "# dossier\n", "utf8");
+  writeFileSync(join(root, "wiki/dossiers/frame_depth/reported_dialogue_frame.json"), "{}\n", "utf8");
 }
 
 function refLines(slug: string, span: string) {
@@ -424,6 +424,45 @@ describe("commentary validator", () => {
     expect(codes(ledger(...sections(), block({ id: "comm_fixture_0003", span: "2a", cites })))).toContain(
       "cite_dossier_missing",
     );
+  });
+
+  it("requires accepted commentary to cite a resolving canonical target", () => {
+    const citationless = block({
+      id: "comm_fixture_0003",
+      kind: "argument",
+      span: "2a",
+      review: "accepted",
+    });
+    expect(codes(ledger(...sections(), citationless))).toContain("accepted_citation_required");
+
+    const cited = block({
+      id: "comm_fixture_0003",
+      kind: "argument",
+      span: "2a",
+      review: "accepted",
+      cites: [
+        "cites:",
+        "  observations: [obs_fixture_0001]",
+        "  claims: []",
+        "  relations: []",
+        "  dossiers: []",
+      ].join("\n"),
+    });
+    expect(codes(ledger(...sections(), cited))).not.toContain("accepted_citation_required");
+  });
+
+  it("treats the exact source_ref as sufficient evidence for source-bound section and context blocks", () => {
+    const sourceBound = block({ id: "comm_fixture_0003", kind: "section", title: "Source section", span: "2a", review: "accepted" });
+    expect(codes(ledger(...sections(), sourceBound))).not.toContain("accepted_citation_required");
+  });
+
+  it("allows rejected commentary to preserve a citationless review decision", () => {
+    const rejected = block({
+      id: "comm_fixture_0003",
+      span: "2a",
+      review: "rejected",
+    });
+    expect(codes(ledger(...sections(), rejected))).not.toContain("accepted_citation_required");
   });
 
   it("flags body_empty", () => {

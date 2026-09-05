@@ -5,6 +5,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { setRepoRootForTesting } from "../paths.js";
 import { resolveSourceSpan } from "../source.js";
+import { applyCommentaryBlockReview } from "./commentary-block-review.js";
 import {
   applyCommentaryRewriteAcceptance,
   previewCommentaryRewriteAcceptance,
@@ -225,32 +226,15 @@ describe("commentary rewrite acceptance", () => {
     const submissionContent = `${JSON.stringify(submissionRecord, null, 2)}\n`;
     write(snapshot.submissionPath, submissionContent);
 
-    const beforeBlockReview = snapshot.after;
-    const afterBlockReview = ledger("unreviewed", "A repaired orientation.", [ID, ID2]).replace(
-      new RegExp(`(commentary_id: ${ID2}[\\s\\S]*?^review_status: )unreviewed`, "mu"),
-      "$1rejected",
-    );
-    write(`wiki/commentary/${DIALOGUE}.md`, afterBlockReview);
-    write(
-      `wiki/review/2026-08-21-commentary-block-review-fixture-rejected-${sha256(`rejected\n${ID2}`).slice(0, 12)}.md`,
-      [
-        "# Commentary block review",
-        "",
-        `dialogue: ${DIALOGUE}`,
-        "decision: rejected",
-        `ledger_path: wiki/commentary/${DIALOGUE}.md`,
-        `ledger_sha256_before: ${sha256(beforeBlockReview)}`,
-        `ledger_sha256_after: ${sha256(afterBlockReview)}`,
-        "reviewer: cjpher-delegated-luna-reviewer-fixture",
-        "reviewed_on: 2026-08-21",
-        "rationale: The independent Luna reconsideration supports this bounded decision.",
-        "review_basis: operator-delegated independent Luna block review",
-        "human_listening_or_review: none claimed",
-        "reviewed_commentary_ids:",
-        `- ${ID2}`,
-        "",
-      ].join("\n"),
-    );
+    const blockReview = applyCommentaryBlockReview({
+      dialogue: DIALOGUE,
+      decision: "rejected",
+      reviewer: "cjpher-delegated-luna-reviewer-fixture",
+      reviewedOn: "2026-08-21",
+      rationale: "The independent Luna reconsideration supports this bounded decision.",
+      reviewedIds: [ID2],
+    });
+    const afterBlockReview = blockReview.prospectiveLedger;
 
     const input = {
       dialogue: DIALOGUE,

@@ -1,4 +1,11 @@
-# Research Request: Pi Agent Core Best Practices For A Validated LLM Wiki Harness
+# Historical Research Request: Pi Agent Core Best Practices For A Validated LLM Wiki Harness
+
+> Archived pre-vNext research input. The paths, code excerpts, feature-registry
+> workflow, and open design questions below describe the repository at the time
+> this request was written. They are preserved as provenance and must not be
+> used as current implementation instructions. The active contracts are
+> `SPEC.md`, `docs/ontology-vnext.md`, and
+> `docs/plato-wiki-extraction-protocol.md`.
 
 You are a Pi-focused LLM agent with strong knowledge of `pi-agent-core`,
 `pi-ai`, and the Pi coding-agent ecosystem. Review the harness design below and

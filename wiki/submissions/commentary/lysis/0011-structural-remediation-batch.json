@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "submission_id": "0011-structural-remediation-batch",
+  "lane": "commentary",
+  "kind": "structural-remediation-batch",
+  "scope": "lysis",
+  "source_path": "scratch/commentary/structural-remediation/lysis/audit-failures-batch.json",
+  "source_sha256": "6120f6feab708b165f9f80c39041611e9a22b563ea53d7411cf271882ac965d8",
+  "target_path": "wiki/commentary/lysis.md",
+  "target_sha256_before": "c3cc9f85229af4175bee858e5303eb33643963c783b46afa44ca3bf87c37089f",
+  "target_sha256_after": "62114efc925ae227ab82d3ceee5afbbb5e5ce17bf2d5456aeaa4a449fcca41e1",
+  "applied_at": "2026-09-01T12:03:53.401Z",
+  "applied_ids": [
+    "comm_lysis_0005",
+    "comm_lysis_0007"
+  ],
+  "submission": {
+    "candidate": {
+      "schemaVersion": 1,
+      "dialogue": "lysis",
+      "candidatePath": "scratch/commentary/structural-remediation/lysis/audit-failures-batch.json",
+      "expectedLedgerSha256": "c3cc9f85229af4175bee858e5303eb33643963c783b46afa44ca3bf87c37089f",
+      "expectedAttributionSha256": "2491f0881b8fa69dd1022732ca790948c7bb7af370716ab0a44648736b4cdf4b",
+      "expectedEnglishSha256": "9016b2b083a2c0e4d2c6ff3e36313e83f316e956bc91cd56eb22a15daf07fe93",
+      "auditUnits": [
+        {
+          "unitKey": "01-203a-204b",
+          "sectionId": "comm_lysis_0001",
+          "auditOutputPath": "scratch/commentary/audits/lysis/01-203a-204b.json",
+          "auditOutputSha256": "8ed96b976589d4b2cd17f415776697aed24aaf90e8ebb28a1691ff303e04feea",
+          "operations": []
+        },
+        {
+          "unitKey": "02-204c-205e",
+          "sectionId": "comm_lysis_0002",
+          "auditOutputPath": "scratch/commentary/audits/lysis/02-204c-205e.json",
+          "auditOutputSha256": "0bc19c19cbda78ea9845f94b4480794856e97aeafe0078778f18b8d8789e7c38",
+          "operations": []
+        },
+        {
+          "unitKey": "03-206a-206d",
+          "sectionId": "comm_lysis_0003",
+          "auditOutputPath": "scratch/commentary/audits/lysis/03-206a-206d.json",
+          "auditOutputSha256": "cd5915c632e4bcef66a5a5a1eb914246b0cfbaeca246f027c4c0050ab6a7ed47",
+          "operations": []
+        },
+        {
+          "unitKey": "04-206e-207c",
+          "sectionId": "comm_lysis_0004",
+          "auditOutputPath": "scratch/commentary/audits/lysis/04-206e-207c.json",
+          "auditOutputSha256": "f4687bcfcc1d6ddae046097379cfffcd89ed2598556f5bab5f90ad34055e97f1",
+          "operations": []
+        },
+        {
+          "unitKey": "05-207d-209a",
+          "sectionId": "comm_lysis_0005",
+          "auditOutputPath": "scratch/commentary/audits/lysis/05-207d-209a.json",
+          "auditOutputSha256": "26235bf38b898c1f054b113959f15bdc32b3c24adf63bc8f8bcd3d600237a278",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_lysis_0005"
+            }
+          ]
+        },
+        {
+          "unitKey": "06-209b-210e",
+          "sectionId": "comm_lysis_0006",
+          "auditOutputPath": "scratch/commentary/audits/lysis/06-209b-210e.json",
+          "auditOutputSha256": "cb8473d5d5709e04f09310e5fb54a15acba8f92d7e66c9162a8db4aa16080808",
+          "operations": []
+        },
+        {
+          "unitKey": "07-211a-211e",
+          "sectionId": "comm_lysis_0007",
+          "auditOutputPath": "scratch/commentary/audits/lysis/07-211a-211e.json",
+          "auditOutputSha256": "75075ca873c79633b1027e0f73c010239d22c089beda6b0a4d854a4eb5cae652",
+          "operations": [
+            {
+              "operation": "remove",
+              "commentaryId": "comm_lysis_0007"
+            }
+          ]
+        },
+        {
+          "unitKey": "08-212a-213d",
+          "sectionId": "comm_lysis_0008",
+          "auditOutputPath": "scratch/commentary/audits/lysis/08-212a-213d.json",
+          "auditOutputSha256": "ab55a00275abede37fbca3f76897675deaf7aa4bc38e7f3cb35eae364467d161",
+          "operations": []
+        },
+        {
+          "unitKey": "09-213e-215c",
+          "sectionId": "comm_lysis_0009",
+          "auditOutputPath": "scratch/commentary/audits/lysis/09-213e-215c.json",
+          "auditOutputSha256": "eb07a3c7a94c786ecf8cda22b6ab42ef0b29275e64c195dcfed6ffe1f267d86e",
+          "operations": []
+        },
+        {
+          "unitKey": "10-215d-216b",
+          "sectionId": "comm_lysis_0010",
+          "auditOutputPath": "scratch/commentary/audits/lysis/10-215d-216b.json",
+          "auditOutputSha256": "dae5900f457296c51c2e76d1cd8b7e430e6b712245d6429ee0428a57b2dfed22",
+          "operations": []
+        },
+        {
+          "unitKey": "11-216c-218c",
+          "sectionId": "comm_lysis_0011",
+          "auditOutputPath": "scratch/commentary/audits/lysis/11-216c-218c.json",
+          "auditOutputSha256": "ca49ca299ffc08e2b9d5b70bfb29264a114eb8e750ee794be904773180c73296",
+          "operations": []
+        },
+        {
+          "unitKey": "12-218d-220e",
+          "sectionId": "comm_lysis_0012",
+          "auditOutputPath": "scratch/commentary/audits/lysis/12-218d-220e.json",
+          "auditOutputSha256": "a276b84afe65708459cecf83c132c07cee43d3a3a2790fe4289366b5757fe9cd",
+          "operations": []
+        },
+        {
+          "unitKey": "13-221a-222a",
+          "sectionId": "comm_lysis_0013",
+          "auditOutputPath": "scratch/commentary/audits/lysis/13-221a-222a.json",
+          "auditOutputSha256": "80308f352574137504e4287383d8e052cdd840f628c299a0392b74f92808e997",
+          "operations": []
+        },
+        {
+          "unitKey": "14-222b-223b",
+          "sectionId": "comm_lysis_0014",
+          "auditOutputPath": "scratch/commentary/audits/lysis/14-222b-223b.json",
+          "auditOutputSha256": "6b357f5999524de350f265af7b70dd52b50f6dbcf237dc9e5239e42ec2a5c6cc",
+          "operations": []
+        }
+      ],
+      "reviewer": "ontology-vnext-release-delegated-luna-20260901",
+      "reviewedOn": "2026-09-01",
+      "rationale": "Bound to current independent Luna placement-removal and rewrite findings; reject the defective originals conservatively."
+    },
+    "audit_findings": [
+      {
+        "commentaryId": "comm_lysis_0005",
+        "disposition": "remove"
+      },
+      {
+        "commentaryId": "comm_lysis_0007",
+        "disposition": "remove"
+      }
+    ]
+  }
+}

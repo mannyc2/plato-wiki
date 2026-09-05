@@ -1,50 +1,77 @@
 # Wiki Browser Design
 
-## Goals / Non-Goals
+## Purpose And Authority Boundary
 
-The browser is a read-only static rendering of observation records, feature candidates, and validation summaries. It must honor the project constraints: "Extract records, not readings"; "Do not create synthesis essays during ingest"; and "Do not make the CLI the owner of domain logic." Pages may display resolved Greek excerpts from `raw/plato/greek` as build artifacts, but ledgers remain source-ref based and no page adds interpretive synthesis.
+The browser is a read-only static projection of validated source-bound records
+and ontology vNext. It may organize and render canonical data, but it never
+creates semantic classifications, resolves review questions, or becomes a peer
+ontology. Domain parsing and validation live in `packages/harness`; the CLI only
+dispatches `bun run harness site --out-dir <path>`.
 
-## Data Inventory
+## Canonical Inputs
 
-- Observation id, dialogue, span, source ref, Greek terms, gloss, observation, textual basis, limits, family, label, feature id, review status: `wiki/observations/*.md`; build-phase parser should export a full observation-record parser modeled on the YAML block regex in `observation-validator.ts`.
-- Feature id, family, proposed name, status, observations, notes: `wiki/features-so-far.md`; build phase should export `parseFeatureEntries` from `observation-feature-index.ts`.
-- Family, label, and drift counts: `validateRepo()` already returns `featureFamilies`, `labelDrift`, and `reviewCoverage`.
-- Greek excerpt display: `resolveSourceSpan()` and `derived/plato/stephanus/*.toon`.
+- `wiki/observations/*.md`: source-bound textual facts and exact Greek anchors.
+- `wiki/ontology/{axes,concepts,memberships}.jsonl`: comparison questions,
+  answer concepts, and many-to-many assignments.
+- `wiki/claims/`, `wiki/relations/`, `wiki/commentary/`, and `wiki/voices/`:
+  dependent reviewed semantic lanes.
+- `wiki/clusters/*.jsonl` and `wiki/dossiers/**/*.json`: validated disposable
+  projections of canonical ontology rows.
+- `derived/plato/`: deterministic source, turn, voice, anchor, and metric views.
 
-## Page Inventory
+The site uses the strict canonical readers and validates cluster and dossier
+identity before rendering. It has no compatibility reader or fallback
+classification path.
 
-- Index page: corpus stats, family drift, label drift, review coverage, links to dialogues/families/registry.
-- Dialogue page: one page per ledger, stable anchors like `#obs_meno_0042`, record cards with status, span, family/label, source hash, and optional resolved Greek excerpt.
-- Family page: all observations for a feature family across dialogues, grouped by label.
-- Registry page: feature candidates with status badges, observation links, notes, and review actions as plain text.
-- Cluster extension: when the cluster artifact rollout later emits `wiki/clusters/*.md`, add cluster pages without changing observation pages.
+## Reader Visibility
 
-## Architecture Decision
+Rejected semantic records never receive public pages, search entries, or exact
+ID entries. Closure requires terminal live statuses, so a closed site build
+contains only accepted reader-visible semantic records. Missing membership,
+rejection, and an empty projection cell do not mean absence or counterevidence.
 
-Option A is a Bun script or `packages/site` command that emits plain HTML and one CSS file into gitignored `site/`. Option B is a third-party static site generator. Pick Option A. It matches the repo's zero-dependency posture, keeps generation deterministic, and leaves domain parsing in the harness. The trade-off is less templating ergonomics, but the page set is small enough for simple string templates.
+Greek excerpts are display-only slices resolved from `source_ref` and checked
+against `text_sha256`; ledgers continue to store references rather than copied
+passages. Every record page retains stable canonical-ID anchors.
 
-## Where The Code Lives
+## Page And Index Inventory
 
-Build implementation should live outside the CLI's argument parsing, either in `packages/harness/src/site/` with a thin CLI command or in `packages/site` if the output grows. Harness exports needed first: a full observation parser, `parseFeatureEntries`, and a site generator function such as `buildStaticSite({ outDir })`. The CLI should only dispatch.
+- corpus index, about, license, quality, and weak-spots pages;
+- dialogue records, reading pages, source structure, turns, claims, and
+  relations;
+- axis pages keyed by `axis_key` and concept pages nested under their axis;
+- generated cluster and dossier pages;
+- anchor, pattern, reading, and optional accepted-audio views; and
+- sharded exact-ID and full-text search indexes over reader-visible records.
 
-## Greek Text Handling
+The quality page reports axes, concepts, memberships, cross-dialogue concepts,
+singletons, and accepted-observation membership coverage from the validated
+ontology model.
 
-Inline resolved Greek excerpts on dialogue pages, but mark them display-only and hash-stamped from `source_ref.text_sha256`. This keeps ledgers free of copied passages while making source inspection ergonomic. If excerpt size becomes an issue, collapse excerpts behind `<details>` rather than moving to a separate span page.
+## Deterministic Build
 
-## Open Questions
+`packages/harness/src/site/` owns data loading, rendering, search/index
+construction, and generated-site validation. A build validates selected inputs,
+replaces the output directory, writes static HTML/CSS/JavaScript and bounded
+index shards, then checks duplicate IDs, links, fragments, file-size limits,
+external URLs, and any selected recording hashes.
 
-1. Host on GitHub Pages? Recommendation: defer until the repo has a remote and review statuses are meaningful.
-2. Commit generated `site/` output? Recommendation: no; regenerate locally and keep `site/` ignored.
-3. Show unreviewed records? Recommendation: yes, but make status badges prominent and default filters prefer accepted records after review coverage improves.
-4. Include transcript links? Recommendation: no; `wiki/transcripts/` is local ignored data and should not be a browser dependency.
-5. Add search? Recommendation: start with static family/dialogue pages; add client-side search only after page volume justifies it.
+Generated site files are not a canonical data source. Rebuild them from the
+tracked semantic lanes and require two clean consecutive builds to be
+byte-identical for ontology closure.
 
-## Build-Plan Sketch
+## Verification
 
-1. Export observation and registry parsers from the harness.
-2. Add deterministic HTML escaping and template helpers.
-3. Build index, dialogue, family, and registry pages into `site/`.
-4. Add `.gitignore` entry for `site/`.
-5. Add smoke tests over generated HTML for stable anchors and escaped content.
-6. Add a thin `bun run harness site` command.
-7. Re-run `bun run test`, `bun run typecheck`, and `bun run validate`.
+Run:
+
+```bash
+bun run harness clusters --write
+bun run harness dossiers --write
+bun run harness site --out-dir <path>
+bun run test
+bun run typecheck
+bun run validate
+```
+
+Publication and deployment remain separate authorization gates after a local
+site build validates.

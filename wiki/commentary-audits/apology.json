@@ -3,11 +3,11 @@
   "dialogue": "apology",
   "ledger": {
     "path": "wiki/commentary/apology.md",
-    "sha256": "0e773aa57a6af5b03c2c95173bba494122f146654467cd1cfdc3eb1d025ace96"
+    "sha256": "d970f0bc79e759fba0e4ce69f79a7f82844f8eb6a6a0ae49c82772f41647d4f2"
   },
   "protocol": {
     "path": "docs/commentary-protocol.md",
-    "sha256": "5f5e6f47f2d39cb42dd8941762ca1b82b4c1371801576f9ec7875e76286e1a13"
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
   },
   "authoring": {
     "model": "gpt-5.6-luna",
@@ -17,7 +17,7 @@
     {
       "unit_key": "01-17a-18e",
       "section_id": "comm_apology_0001",
-      "audit_brief_sha256": "7e042b5b118154ed474bd770dc20357297be45080139f2d64cd421901a7d1886",
+      "audit_brief_sha256": "748d06099778e0116ccae9b68e8469730bcc44d743cf361d7281a8a297b0e0b5",
       "output_path": "scratch/commentary/audits/apology/01-17a-18e.json",
       "output_sha256": "89fc92c1868f5756fe546eb28ea93e4c6971750521c03b232f79d9032447f05e",
       "output": {
@@ -36,9 +36,9 @@
     {
       "unit_key": "02-19a-20c",
       "section_id": "comm_apology_0002",
-      "audit_brief_sha256": "c0bd3de07a1a60f2f25e9591f2550a384079b8a2e2891952f73c9d2d1a5645aa",
+      "audit_brief_sha256": "802642bc65043ef764aa46a46163b3d8e55294e72fd7a99d1e71132ed24e0320",
       "output_path": "scratch/commentary/audits/apology/02-19a-20c.json",
-      "output_sha256": "5bdd8e4364a9ad7057f2ef99953b8bd8340ee38f9db46eb85f932cd9d36ddb67",
+      "output_sha256": "ceb01493f1dd9c69a2aed5212f4149a017ed8adb58df3a4110d3eb3b61a6a31e",
       "output": {
         "schema_version": 3,
         "dialogue": "apology",
@@ -49,34 +49,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_apology_0022",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately frames Socrates’ reconstructed charge and Aristophanes reference, with a useful evidential limit. The edge falls before 19a’s defense framing and the following accusation discussion."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "03-20d-23c",
       "section_id": "comm_apology_0003",
-      "audit_brief_sha256": "be4c6aacb2568c1d0813c71dc6cb8b2293837bfa7bc7dc001b44b51b73797270",
+      "audit_brief_sha256": "eeb62b3bd4bf8ef6b8ec4f7c0500bbba366559ca3dccc2d8d34ba7316effa770",
       "output_path": "scratch/commentary/audits/apology/03-20d-23c.json",
-      "output_sha256": "74ed7b42d6c224ce36acb3ce775303aea81b008497677fc1f96805d98709d162",
+      "output_sha256": "426f4d2d7bd40e842e4b54c0774133d63f7f63b6771acf754fc83d60bb00f33b",
       "output": {
         "schema_version": 3,
         "dialogue": "apology",
@@ -104,39 +85,17 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The section accurately frames the oracle, Socrates' tests, and qualified human-wisdom conclusion; its playback edge follows a complete sentence and the overview is concise."
-          },
-          {
-            "commentary_id": "comm_apology_0025",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The argument accurately isolates Socrates' inquiry into a reputed public man's claimed wisdom; cited support matches and the complete-sentence edge preserves the exchange."
+            "rationale": "Accurately previews the oracle, examinations, repeated outcome, and human-wisdom conclusion. The edge follows the Delphi-witness sentence and precedes Chaerephon's introduction."
           }
         ]
-      },
-      "provenance": {
-        "path": "wiki/submissions/commentary-audit/apology/0001-delegated-audit-03-20d-23c.json",
-        "sha256": "a6f20278125b666400f6795c908cf82022005dc9ab7d09d38f6998956828c45b"
       }
     },
     {
       "unit_key": "04-23d-24a",
       "section_id": "comm_apology_0004",
-      "audit_brief_sha256": "f3da7e173305d2f2f7e3791eb6b13cd7290c1d01e9ea7373426e3c08d982ef60",
+      "audit_brief_sha256": "55325625ee43783c5d8e52fd1cc4fd0141a8f145b3de3640116a903919991a5c",
       "output_path": "scratch/commentary/audits/apology/04-23d-24a.json",
-      "output_sha256": "61f9b97eec1ab8ed728f06a7a586141baac3592ee8121bcebfffce497b23975a",
+      "output_sha256": "08ccac094ff3e75d504d2a33ea3aef81823bc23eddd7c727552bdb97cef3ff12",
       "output": {
         "schema_version": 3,
         "dialogue": "apology",
@@ -147,36 +106,13 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_apology_0004",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The section accurately identifies the stock charges and roles of the three named accusers; citations support the claims and the playback edge follows a complete sentence."
-          }
-        ]
-      },
-      "provenance": {
-        "path": "wiki/submissions/commentary-audit/apology/0002-delegated-audit-04-23d-24a.json",
-        "sha256": "2f1b4f12140df8f14b9a0661b88d5bcbd56f5be32c6d5477c220c57924c982c9"
+        "blocks": []
       }
     },
     {
       "unit_key": "05-24b-26a",
       "section_id": "comm_apology_0005",
-      "audit_brief_sha256": "e8ae99bf5d6064e8134dee41a648c5e0d42641fe1c47ac3a44a1a949f410c90e",
+      "audit_brief_sha256": "a756db6c59b3be060adc4be28d9df2b8e7d5cbfb96181d3dc044adc4662c8230",
       "output_path": "scratch/commentary/audits/apology/05-24b-26a.json",
       "output_sha256": "4e0f1b0d15ae0e460b8f15df178f5aa1ac5d710c05bde78b8edcbb05cdb6e54a",
       "output": {
@@ -195,7 +131,7 @@
     {
       "unit_key": "06-26b-28a",
       "section_id": "comm_apology_0006",
-      "audit_brief_sha256": "b1af8bdb255c63570a0cf3737d1e84b80e21f0e2b9693182559a43fd2b7daed1",
+      "audit_brief_sha256": "7b86556c5208da510e146316027c7acc79cedff0ff32b9c0abc0b20a67d3cb61",
       "output_path": "scratch/commentary/audits/apology/06-26b-28a.json",
       "output_sha256": "f90a9db3e6d00e9feb21d2e7936e47e69f303f6ee74ba108e1af02c2bf7a6169",
       "output": {
@@ -214,9 +150,9 @@
     {
       "unit_key": "07-28b-29b",
       "section_id": "comm_apology_0007",
-      "audit_brief_sha256": "ef131b09af4c051c838ceca97ca4124a5821941c7ee930842bfe5aa964cfbfdd",
+      "audit_brief_sha256": "16da475e8ecc3e051e970625b063fe674c2fec57356b107c87f8d71e642c063e",
       "output_path": "scratch/commentary/audits/apology/07-28b-29b.json",
-      "output_sha256": "adab2fff0c18a7deb7adf007cba4b0d725a499a48ce3a3b5308a82cc7ae14c87",
+      "output_sha256": "fb4cde0df39713bc1472888281511eccb99e303a29690ebd969142ad3eb84ac1",
       "output": {
         "schema_version": 3,
         "dialogue": "apology",
@@ -227,32 +163,13 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_apology_0007",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately synthesizes the Achilles example, military-post analogy, and limits of knowledge about death; the complete-sentence edge preserves the argument’s flow."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "08-29c-31b",
       "section_id": "comm_apology_0008",
-      "audit_brief_sha256": "04dbcb9c7078a062c131615fa6325676899c1bc08e9f6c8af8ddf91b7246ea6a",
+      "audit_brief_sha256": "05a1488c593fc4b4b88a7140469475fe7fc46cfbe9c867a51b61b0e7a4cd7ce6",
       "output_path": "scratch/commentary/audits/apology/08-29c-31b.json",
       "output_sha256": "e89db2fe5f3769ee4e6466f9c5d9e1125e1e42175210440ad2ffb7dee7364054",
       "output": {
@@ -271,9 +188,9 @@
     {
       "unit_key": "09-31c-32e",
       "section_id": "comm_apology_0009",
-      "audit_brief_sha256": "9351728d5c119353c99ac1e457b4efbc84d7a6de8526bebb7456332ec60b0ba2",
+      "audit_brief_sha256": "1f269a2b6e5dad4ce611ce3709dd418102ee8d072b96a37742f67d60005dbcc4",
       "output_path": "scratch/commentary/audits/apology/09-31c-32e.json",
-      "output_sha256": "7d3eab8d7b532c5f0cf54d7683244b0616f8c7b2b825ce7fbf53150b7a2a45c5",
+      "output_sha256": "b7cb67a820270cf6d423c33da7bc8a3d938d6be9eaee9b3eeaea79ac6994b286",
       "output": {
         "schema_version": 3,
         "dialogue": "apology",
@@ -285,24 +202,6 @@
         },
         "unit_verdict": "pass",
         "blocks": [
-          {
-            "commentary_id": "comm_apology_0009",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately orients the daimonion, survival claim, and promised examples; the edge follows the private-life claim and precedes the deeds, preserving the transition."
-          },
           {
             "commentary_id": "comm_apology_0041",
             "disposition": "pass",
@@ -319,7 +218,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Supported close reading distinguishes the two episodes and their regimes; the edge follows Socrates’ completed answer and precedes his lifelong-consistency claim without splitting a reply."
+            "rationale": "The comparison accurately frames the two cited episodes as evidence of consistency across regimes, adds interpretive value, and falls at a complete edge after the question and before its continuation."
           }
         ]
       }
@@ -327,9 +226,9 @@
     {
       "unit_key": "10-33a-34a",
       "section_id": "comm_apology_0010",
-      "audit_brief_sha256": "7d22631ab51283cf689859d83e349b155b2ca530b70d24261a76d5d5dfe84b49",
+      "audit_brief_sha256": "f4166be8d0c4154a7c1784d713f84f693163454fe75f4242321682bef77dd810",
       "output_path": "scratch/commentary/audits/apology/10-33a-34a.json",
-      "output_sha256": "b652f9225bf70e3cd20c65a02b3258875059863d29472e9c4b5852a3d764ce5e",
+      "output_sha256": "603b49e7a0f21871c82afdab5e44c255bc69d18b06d959d2021af4bd88affdc4",
       "output": {
         "schema_version": 3,
         "dialogue": "apology",
@@ -357,7 +256,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The summary accurately tracks Socrates’ denial, equal access, challenge to alleged victims, and named supporters. The edge follows “any other man.” and precedes “But you will find,” preserving flow."
+            "rationale": "Accurately synthesizes Socrates’ teacher denial and his appeal to present associates as witnesses. Before ends with “any other man”; after begins a complete “But” sentence, preserving flow."
           }
         ]
       }
@@ -365,9 +264,9 @@
     {
       "unit_key": "11-34b-35d",
       "section_id": "comm_apology_0011",
-      "audit_brief_sha256": "86545268e89fba0b41edf466d43c16383484a43c57f912c71ee868c10f64c1c2",
+      "audit_brief_sha256": "89b75b0e7abdae6bb59a5fb6580dd34d2ad0b29627a3c3ed535ced84280cc795",
       "output_path": "scratch/commentary/audits/apology/11-34b-35d.json",
-      "output_sha256": "e5b94d09a50933c67a1634040beefefc9f2fa4b5987b8c121b002ec1475a874f",
+      "output_sha256": "3450028f06dda60ba848969780f9e507c1aa7154634cf0cf69d983a269798041",
       "output": {
         "schema_version": 3,
         "dialogue": "apology",
@@ -378,34 +277,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_apology_0011",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The block accurately frames Socrates’ refusal of emotional appeals and appeal to lawful judgment. It is concise, clear aloud, and placed between complete sentences within the same argument."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "12-35e-36b",
       "section_id": "comm_apology_0012",
-      "audit_brief_sha256": "e7c09860221efee223a1c70c9e839f93800d7145bfc422ce094a8082d090cbfa",
+      "audit_brief_sha256": "a25fcd2ad9a9a2e124c815f4a592a2de87b0f65de368c5b2645c40d63f06f977",
       "output_path": "scratch/commentary/audits/apology/12-35e-36b.json",
-      "output_sha256": "a4252c5dcc415c31cd0e0cc31a007125ed69d788dacd85d6c9bc49b4b739a2bf",
+      "output_sha256": "22010a29a949470b84fd7116af42f645bcfc38c11c930cbd6659fe91c59db2d4",
       "output": {
         "schema_version": 3,
         "dialogue": "apology",
@@ -433,7 +313,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately identifies the close vote, Meletus's failed threshold, and the shift to penalties; the edge follows the prior complete paragraph and precedes 35e."
+            "rationale": "The commentary accurately frames the vote arithmetic and penalty transition, with accepted support; it follows the prior divine-defense passage and precedes the 35e opening cleanly."
           }
         ]
       }
@@ -441,9 +321,9 @@
     {
       "unit_key": "13-36c-37a",
       "section_id": "comm_apology_0013",
-      "audit_brief_sha256": "53dc07c258703cab0f4def61817e9edb42bae6dd210bfc87d24e9d1b0e838905",
+      "audit_brief_sha256": "a0fbd1cd1517c7f690ebe22fb032f41beab9b10b84024952973425ca6a99791e",
       "output_path": "scratch/commentary/audits/apology/13-36c-37a.json",
-      "output_sha256": "2936b00b3b1b32f40cefbb690b182508859e79558b82dff3684389a09c687028",
+      "output_sha256": "a1c24501f7e84ee10f60022bd8902ea42b95a037a9eb3b97c08cc69189d14da6",
       "output": {
         "schema_version": 3,
         "dialogue": "apology",
@@ -471,7 +351,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately synthesizes Socrates’ stated benefaction and counter-penalty, with accepted support; the edge follows his neediness and precedes the Prytaneum proposal, creating a clear setup."
+            "rationale": "Accurately frames Socrates’ benefaction, Prytaneum proposal, and Olympic comparison; the edge follows the comparison and precedes the penalty proposal, making the setup clear."
           }
         ]
       }
@@ -479,9 +359,9 @@
     {
       "unit_key": "14-37b-38b",
       "section_id": "comm_apology_0014",
-      "audit_brief_sha256": "f67203f49dde1a220fdb3f7f68215f14aec20bb8c219ba5a840eb060806ca855",
+      "audit_brief_sha256": "3cc1671930c2b323760ef2225ad18630bf74d27aa75eb8eb77dcd16168d14a67",
       "output_path": "scratch/commentary/audits/apology/14-37b-38b.json",
-      "output_sha256": "a77759ed59782bdecead444a1640773f8aa9c459f5423d0ecb04b3daf528ef05",
+      "output_sha256": "de882def9092e7068812a5218ff51bc6d5c752012c44b4569ef74b884abd05da",
       "output": {
         "schema_version": 3,
         "dialogue": "apology",
@@ -492,50 +372,13 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_apology_0014",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately frames the penalty sequence and Socrates’ refusal to abandon examination; the edge follows the quiet-life challenge and precedes his answer."
-          },
-          {
-            "commentary_id": "comm_apology_0050",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Faithfully explains Socrates’ reasoning about exile without overstating it; the edge follows his prytaneum proposal and precedes the penalty discussion."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "15-38c-39b",
       "section_id": "comm_apology_0015",
-      "audit_brief_sha256": "6c0f5f912ad87b67fe6867e1d9be9b02e9864592c701878d31d26fd248d05d39",
+      "audit_brief_sha256": "56f74abad824a9d2ba806684e66cdedcb7a25796a543ece0976a454c178c3f37",
       "output_path": "scratch/commentary/audits/apology/15-38c-39b.json",
       "output_sha256": "4cbdbc473444f442a1d729dea0c9b201afec8a4b315f77f24d9ff2540519c3ff",
       "output": {
@@ -554,7 +397,7 @@
     {
       "unit_key": "16-39c-39e",
       "section_id": "comm_apology_0016",
-      "audit_brief_sha256": "117bb6866f735ea068d35134ee0a042e8e533154b76e013b62e52ebea30f8b9b",
+      "audit_brief_sha256": "2875313ba047c56874f4aa119a2273873e774c576561841887cd55d3060b8a6a",
       "output_path": "scratch/commentary/audits/apology/16-39c-39e.json",
       "output_sha256": "dae59b150512e9cdbc75f32439d842af8dbff626aaa8cf29191b279267c7e9e0",
       "output": {
@@ -573,9 +416,9 @@
     {
       "unit_key": "17-40a-41c",
       "section_id": "comm_apology_0017",
-      "audit_brief_sha256": "9ac852d425c34ca42e80d41391e20aa8f02b02cc5248b5edbd8f8b705f754e2d",
+      "audit_brief_sha256": "9a201b1673c004dc717d54929420c48fe29f2f62110ea85dca65c7710b2f17ad",
       "output_path": "scratch/commentary/audits/apology/17-40a-41c.json",
-      "output_sha256": "a6b4a6a32ee6a6dfde212e329e6a903003710450335c00c02c323d27913e2268",
+      "output_sha256": "70a8b7965a6bd796ad060a0b5db909062ec86e3a444c8a75d9c6d4864053ae2f",
       "output": {
         "schema_version": 3,
         "dialogue": "apology",
@@ -603,7 +446,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames the sign's silence and the passage's two conditional accounts of death. The edge follows “while there is time” and precedes Socrates' opening address."
+            "rationale": "The summary accurately frames Socrates’ sign-based inference and the two conditional accounts of death. The edge follows “while there is time” and precedes “I feel that you are my friends.”"
           }
         ]
       }
@@ -611,9 +454,9 @@
     {
       "unit_key": "18-41d-42a",
       "section_id": "comm_apology_0018",
-      "audit_brief_sha256": "d7485ba8a4d9f9fa8911d3bf400ab34f19427d5ee1b67465ae8424944f5b7ff1",
+      "audit_brief_sha256": "b2309b56cbefbc72286a88b557332be01b7531178c8befa82dfc29542eef0d0b",
       "output_path": "scratch/commentary/audits/apology/18-41d-42a.json",
-      "output_sha256": "6f6a9352e962367f4250b906a084e04c34ece14717c7c45aa7536a857435eb61",
+      "output_sha256": "faee2d9f31c8fb23ba67731d651b52f1a90ba83962fa8c7c6ef2e315bd8ed1fd",
       "output": {
         "schema_version": 3,
         "dialogue": "apology",
@@ -624,77 +467,26 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_apology_0018",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The section faithfully tracks Socrates' claim, request about his sons, and unresolved final comparison; cited records support it and the edge is a complete sentence."
-          },
-          {
-            "commentary_id": "comm_apology_0060",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "The question preserves the speech's genuine uncertainty while contrasting the preceding confidence; its ending placement keeps the closing exchange intact and the prose is clear."
-          }
-        ]
-      },
-      "provenance": {
-        "path": "wiki/submissions/commentary-audit/apology/0003-delegated-audit-18-41d-42a.json",
-        "sha256": "2c0a032017aa552409514d4f72cf68d6d5433d168250d328597f7c03ffa3e128"
+        "blocks": []
       }
     }
   ],
   "acceptance": {
     "decision": "accepted",
-    "reviewer": "manifest-batch-1-delegated-luna-reviewer-20260823",
-    "reviewed_on": "2026-08-23",
-    "rationale": "Independent Luna source, accepted-evidence, and placement sample passed for the current Apology ledger.",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-apology-19aba2688f64",
+    "reviewed_on": "2026-09-01",
+    "rationale": "All six sampled blocks are independently supported by their cited evidence, remain anchored to the relevant source movement, and use complete playback edges without detected prose, placement, or spoken-audio defects.",
     "sampled_commentary_ids": [
       "comm_apology_0003",
-      "comm_apology_0004",
-      "comm_apology_0007",
-      "comm_apology_0009",
       "comm_apology_0010",
-      "comm_apology_0011",
       "comm_apology_0012",
       "comm_apology_0013",
-      "comm_apology_0014",
       "comm_apology_0017",
-      "comm_apology_0018",
-      "comm_apology_0022",
-      "comm_apology_0025",
-      "comm_apology_0041",
-      "comm_apology_0050",
-      "comm_apology_0060"
+      "comm_apology_0041"
     ],
     "review_note": {
-      "path": "wiki/review/2026-08-23-commentary-quality-apology-luna-sample.md",
-      "sha256": "bf1d885b4cb5536ef96b45f7c6ed51d1733ab155574b11bc1746a8bfa6743597"
+      "path": "wiki/review/2026-09-01-commentary-quality-apology-luna-sample.md",
+      "sha256": "9904baea92f38c29298fd1203a536ae0360cce8001d0d12b5335f4c63692276d"
     }
   }
 }

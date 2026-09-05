@@ -1,0 +1,164 @@
+{
+  "accepted_observations": 2,
+  "axis_id": "axis_sha256_1e3ce8602ff67fb676e6094d44bee5d25d8eb65e6748561e03c14a9d71e6f8a2",
+  "axis_key": "turn_geometry",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record speaker self conscious preface within the turn geometry axis?",
+  "concept_id": "concept_sha256_bf572fad47c08fd79bf05d14c8b70161663229e4f690cead69c7723b6cb18f91",
+  "concept_key": "speaker_self_conscious_preface",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_3f5808fef4da767c0d59178d7683acadec995061501870b43c42bc078a24b12b",
+      "axisKey": "dramatic_case_setup",
+      "conceptId": "concept_sha256_0460b8054c84ba35181f72f43ffff35092419c91855d771d5fc92cee1368f36a",
+      "conceptKey": "paternal_education_project",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_9791a05a3c77492d9f59ed68b54e30b71e3535fe91a87fd7c425fcb39272f666",
+      "axisKey": "prosopography",
+      "conceptId": "concept_sha256_bd6e88d09a114996cce491056ad30aa0cdd97cac55f6d963acc8a03f99e9e54f",
+      "conceptKey": "named_historical_cast",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 2,
+  "dimension": "discourse_structure",
+  "instance_ids": [
+    "obs_laches_0006",
+    "obs_laws_0473"
+  ],
+  "instances": [
+    {
+      "dialogue": "laches",
+      "observationId": "obs_laches_0006",
+      "speakers": [
+        "ΛΥ."
+      ],
+      "stephanusSpan": "179a-179b",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0473",
+      "speakers": [
+        "ΑΘ.",
+        "ΚΛ."
+      ],
+      "stephanusSpan": "708e",
+      "turnCount": 2
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_bf572fad47c08fd79bf05d14c8b70161663229e4f690cead69c7723b6cb18f91",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

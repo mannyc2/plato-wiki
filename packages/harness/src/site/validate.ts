@@ -433,10 +433,10 @@ export function validateGeneratedSite(
         continue;
       }
       if (!parsed.fragment) continue;
-      // `#fam=<family>` is a JS-consumed preselect for the record map's family
+      // `#axis=<axis-key>` is a JS-consumed preselect for the record map's ontology-axis
       // filter (the dialogue-pages v3.3 rollout), not an element id — the static render is unaffected
       // without scripts, so it needs no matching target id.
-      if (parsed.fragment.startsWith("fam=")) continue;
+      if (parsed.fragment.startsWith("axis=")) continue;
 
       let fragment: string;
       try {

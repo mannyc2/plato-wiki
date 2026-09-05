@@ -166,10 +166,17 @@ function citation(start: number, end: number, indent = "  ") {
   ].join("\n");
 }
 
-function writeObservations(entries: Array<{ id: string; start: number; end: number }>) {
+function writeObservations(entries: Array<{ id: string; start: number; end: number; review?: string }>) {
   mkdirSync(join(root, "wiki/observations"), { recursive: true });
   const blocks = entries.map((entry) =>
-    ["```yaml", `observation_id: ${entry.id}`, "source_ref:", citation(entry.start, entry.end), "review_status: accepted", "```"].join("\n"),
+    [
+      "```yaml",
+      `observation_id: ${entry.id}`,
+      "source_ref:",
+      citation(entry.start, entry.end),
+      `review_status: ${entry.review ?? "accepted"}`,
+      "```",
+    ].join("\n"),
   );
   writeFileSync(join(root, "wiki/observations/fixture.md"), `${blocks.join("\n\n")}\n`, "utf8");
 }
@@ -182,6 +189,7 @@ type ClaimSpec = {
   stance?: Array<[number, number]>;
   speaker?: string;
   review?: string;
+  speakerRange?: { start: number; end: number };
 };
 
 function writeClaims(entries: ClaimSpec[]) {
@@ -191,6 +199,15 @@ function writeClaims(entries: ClaimSpec[]) {
     if (entry.terms) {
       lines.push("greek_terms:");
       for (const term of entry.terms) lines.push(`  - ${term}`);
+    }
+    if (entry.speakerRange) {
+      lines.push(
+        "speaker_source_ref:",
+        "  source_path: raw/plato/greek/fixture.txt",
+        `  start_char: ${entry.speakerRange.start}`,
+        `  end_char: ${entry.speakerRange.end}`,
+        `  text_sha256: "${sha256(SOURCE.slice(entry.speakerRange.start, entry.speakerRange.end))}"`,
+      );
     }
     if (entry.stance) {
       lines.push("stance_events:");
@@ -308,6 +325,72 @@ describe("voice joins", () => {
   });
 
   describe("exact claim-support ranges", () => {
+    it("uses exact support after an ordinary multi-turn context crosses speakers", () => {
+      writeExchangeLedger();
+      writeClaims([
+        {
+          id: "claim_fixture_0001",
+          start: 0,
+          end: SOURCE.length,
+          terms: ["later"],
+          speaker: "ΓΑΜΜΑ.",
+        },
+      ]);
+      const row = rowFor("claim_fixture_0001")!;
+      expect(row.status).toBe("turn_level");
+      expect(row.owner).toBe("ΓΑΜΜΑ.");
+    });
+
+    it("resolves an explicit Greek-byte speaker anchor before ambiguous semantic terms", () => {
+      writeExchangeLedger();
+      writeClaims([
+        {
+          id: "claim_fixture_0001",
+          start: BETA_ONE.start,
+          end: BETA_TWO.end,
+          terms: ["τ"],
+          speakerRange: BETA_ONE,
+          speaker: "ΒΗΤΑ.",
+        },
+      ]);
+      const row = rowFor("claim_fixture_0001")!;
+      expect(row.status).toBe("resolved");
+      expect(row.owner).toBe("ΒΗΤΑ.");
+      expect(row.evidence).toContain("speaker_source_ref");
+    });
+
+    it("groups noncontiguous ordinary support turns by speaker rather than turn id", () => {
+      const turnsPath = join(root, "derived/plato/turns/fixture.toon");
+      writeFileSync(
+        turnsPath,
+        [
+          "dialogue: fixture",
+          "source_path: raw/plato/greek/fixture.txt",
+          `source_sha256: ${sha256(SOURCE)}`,
+          "sigla_path: derived/plato/turns/sigla.toml",
+          `sigla_sha256: ${sha256("sigla")}`,
+          "turns[3]:",
+          "  turn_id           | speaker | start_marker | end_marker | start_char | end_char | text_sha256 | greek_char_count",
+          `  turn_fixture_0001 | ΝΑΡΡ.   | 2a           | 2b         | 0          | ${VOICED_TURN_END}       | ${sha256(SOURCE.slice(0, VOICED_TURN_END))} | 5`,
+          `  turn_fixture_0002 | ΓΑΜΜΑ.  | 2c           | 2c         | ${VOICED_TURN_END}         | 89       | ${sha256(SOURCE.slice(VOICED_TURN_END, 89))} | 3`,
+          `  turn_fixture_0003 | ΓΑΜΜΑ.  | 2c           | 2c         | 89         | ${SOURCE.length}       | ${sha256(SOURCE.slice(89))} | 2`,
+          "",
+        ].join("\n"),
+        "utf8",
+      );
+      writeExchangeLedger();
+      writeClaims([
+        {
+          id: "claim_fixture_0001",
+          start: VOICED_TURN_END,
+          end: SOURCE.length,
+        },
+      ]);
+      const row = rowFor("claim_fixture_0001")!;
+      expect(row.status).toBe("turn_level");
+      expect(row.owner).toBe("ΓΑΜΜΑ.");
+    });
+
     it("resolves a claim whose two noncontiguous terms sit in two turns of the same voice", () => {
       writeExchangeLedger();
       writeClaims([
@@ -494,6 +577,42 @@ describe("voice joins", () => {
     expect(() => writeVoiceIndex("fixture")).toThrow(/none accepted/u);
     writeObservations([{ id: "obs_fixture_0001", start: BETA_ONE.start, end: BETA_ONE.end }]);
     expect(() => buildVoiceJoin("fixture")).toThrow(/Missing authoritative voice index/u);
+  });
+
+  it("excludes rejected observations, claims, and stance rows from the generated join", () => {
+    writeExchangeLedger();
+    writeObservations([
+      { id: "obs_fixture_0001", start: BETA_ONE.start, end: BETA_ONE.end },
+      { id: "obs_fixture_0002", start: BETA_ONE.start, end: BETA_ONE.end, review: "rejected" },
+    ]);
+    writeClaims([
+      { id: "claim_fixture_0001", start: BETA_ONE.start, end: BETA_ONE.end },
+      {
+        id: "claim_fixture_0002",
+        start: BETA_ONE.start,
+        end: BETA_ONE.end,
+        review: "rejected",
+        stance: [[BETA_ONE.start, BETA_ONE.end]],
+      },
+    ]);
+
+    const index = buildVoiceJoin("fixture");
+    expect(index.rows.map((row) => row.recordId)).toEqual([
+      "claim_fixture_0001",
+      "obs_fixture_0001",
+    ]);
+    expect(index.stanceRows).toEqual([]);
+  });
+
+  it("rejects a non-accepted row in a stored voice join", () => {
+    writeExchangeLedger();
+    writeClaims([{ id: "claim_fixture_0001", start: BETA_ONE.start, end: BETA_ONE.end }]);
+    const forged = formatVoiceJoinToon(buildVoiceJoin("fixture")).replace(
+      /(^\s*claim_fixture_0001\s*\|\s*claim\s*\|\s*)accepted/mu,
+      "$1rejected",
+    );
+
+    expect(() => parseVoiceJoinToon(forged)).toThrow(/Malformed voice join row values/u);
   });
 
   it("round-trips through the TOON formatter", () => {

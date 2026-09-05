@@ -12,9 +12,6 @@ function record(id: string, status = "unreviewed") {
   return `\`\`\`yaml
 observation_id: ${id}
 stephanus_span: 70a
-feature_id: feature_candidate_001
-feature_family: definition_ladder
-feature_label: definition_by_example
 review_status: ${status}
 \`\`\``;
 }

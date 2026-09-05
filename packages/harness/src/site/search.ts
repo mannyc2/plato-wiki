@@ -54,8 +54,8 @@ export type SearchRecord = {
   kind: RecordKind;
   dialogue?: string;
   stephanusSpan?: string;
-  family?: string;
-  label?: string;
+  axis?: string;
+  concept?: string;
   status?: string;
   speaker?: string;
   relationKind?: string;
@@ -96,8 +96,8 @@ export type ShardSelector = {
 export type SearchFilters = {
   kind?: string;
   dialogue?: string;
-  family?: string;
-  label?: string;
+  axis?: string;
+  concept?: string;
   status?: string;
   speaker?: string;
   relationKind?: string;
@@ -235,6 +235,19 @@ function assetPath(basePath: string, prefix: "ids" | "search", kind: string, sco
   return `${base}/${prefix}-${filenameSegment(kind)}-${filenameSegment(scope)}.json`;
 }
 
+function partitionedAssetPath(
+  basePath: string,
+  prefix: "ids" | "search",
+  kind: string,
+  scope: string,
+  index: number,
+  count: number,
+) {
+  const path = assetPath(basePath, prefix, kind, scope);
+  if (count === 1) return path;
+  return path.replace(/\.json$/u, `-part-${String(index + 1).padStart(4, "0")}.json`);
+}
+
 function groupKey(kind: string, scope: string) {
   return `${kind}\u0000${scope}`;
 }
@@ -252,11 +265,15 @@ function stableJson(value: unknown) {
   return `${JSON.stringify(value)}\n`;
 }
 
+function byteLength(value: string) {
+  return new TextEncoder().encode(value).byteLength;
+}
+
 function assertShardByteBudget(json: string, path: string, maxBytes: number) {
   if (!Number.isSafeInteger(maxBytes) || maxBytes <= 0) {
     throw new RangeError("maxShardBytes must be a positive safe integer");
   }
-  const bytes = new TextEncoder().encode(json).byteLength;
+  const bytes = byteLength(json);
   if (bytes >= maxBytes) {
     throw malformedIndexResource(path, `shard is ${bytes} bytes; refine its scope below ${maxBytes} bytes`);
   }
@@ -297,8 +314,8 @@ export function projectSearchRecord(
   const fields: Array<keyof Omit<SearchRecord, "id" | "target" | "kind" | "snippet">> = [
     "dialogue",
     "stephanusSpan",
-    "family",
-    "label",
+    "axis",
+    "concept",
     "status",
     "speaker",
     "relationKind",
@@ -349,6 +366,43 @@ export function serializeSearchShard(shard: SearchShard) {
     .sort((a, b) => compareText(a.id, b.id))
     .map((record) => projectSearchRecord(record));
   return stableJson({ version: INDEX_VERSION, kind: shard.kind, scope: shard.scope, records });
+}
+
+function partitionSearchRecords(
+  kind: string,
+  scope: string,
+  records: readonly SearchRecord[],
+  maxShardBytes: number,
+  basePath: string,
+) {
+  if (!Number.isSafeInteger(maxShardBytes) || maxShardBytes <= 0) {
+    throw new RangeError("maxShardBytes must be a positive safe integer");
+  }
+  const envelopeBytes = byteLength(stableJson({ version: INDEX_VERSION, kind, scope, records: [] }));
+  const partitions: SearchRecord[][] = [];
+  let current: SearchRecord[] = [];
+  let currentBytes = envelopeBytes;
+
+  for (const record of records) {
+    const recordBytes = byteLength(JSON.stringify(record));
+    const candidateBytes = currentBytes + (current.length === 0 ? 0 : 1) + recordBytes;
+    if (candidateBytes >= maxShardBytes && current.length > 0) {
+      partitions.push(current);
+      current = [];
+      currentBytes = envelopeBytes;
+    }
+
+    const singleCandidateBytes = currentBytes + (current.length === 0 ? 0 : 1) + recordBytes;
+    if (singleCandidateBytes >= maxShardBytes) {
+      const path = assetPath(basePath, "search", kind, scope);
+      const json = stableJson({ version: INDEX_VERSION, kind, scope, records: [record] });
+      assertShardByteBudget(json, path, maxShardBytes);
+    }
+    current.push(record);
+    currentBytes = singleCandidateBytes;
+  }
+  if (current.length > 0) partitions.push(current);
+  return partitions;
 }
 
 export function buildExactIdIndex(
@@ -415,30 +469,46 @@ export function buildSearchIndex(
   for (const input of inputs) {
     requiredText(input.kind, "kind", "search source records");
     requiredText(input.target, "target", "search source records");
-    const scope = compactText(input.scope) || compactText(input.dialogue) || compactText(input.family) || "global";
+    const scope = compactText(input.scope) || compactText(input.dialogue) || compactText(input.axis) || "global";
     const record = projectSearchRecord(input, maxSnippetCodePoints, maxTitleCodePoints);
     const key = groupKey(input.kind, scope);
     groups.set(key, [...(groups.get(key) ?? []), { scope, record }]);
   }
 
-  const shards = [...groups.values()].map((group) => {
+  const shards = [...groups.values()].flatMap((group) => {
     const first = group[0]!;
     const records = group.map(({ record }) => record).sort((a, b) => compareText(a.id, b.id));
-    const path = assetPath(basePath, "search", first.record.kind, first.scope);
-    const descriptor: ShardDescriptor = {
-      kind: first.record.kind,
-      scope: first.scope,
-      path,
-      count: records.length,
-    };
-    const json = stableJson({
-      version: INDEX_VERSION,
-      kind: first.record.kind,
-      scope: first.scope,
+    const partitions = partitionSearchRecords(
+      first.record.kind,
+      first.scope,
       records,
+      maxShardBytes,
+      basePath,
+    );
+    return partitions.map((partition, index) => {
+      const path = partitionedAssetPath(
+        basePath,
+        "search",
+        first.record.kind,
+        first.scope,
+        index,
+        partitions.length,
+      );
+      const descriptor: ShardDescriptor = {
+        kind: first.record.kind,
+        scope: first.scope,
+        path,
+        count: partition.length,
+      };
+      const json = stableJson({
+        version: INDEX_VERSION,
+        kind: first.record.kind,
+        scope: first.scope,
+        records: partition,
+      });
+      assertShardByteBudget(json, path, maxShardBytes);
+      return { ...descriptor, records: partition, json };
     });
-    assertShardByteBudget(json, path, maxShardBytes);
-    return { ...descriptor, records, json };
   });
   shards.sort(compareDescriptors);
   const manifest: SearchManifest = {
@@ -492,8 +562,8 @@ export function planSearchShardLoads(manifest: SearchManifest, intent: SearchInt
 const FILTER_FIELDS = [
   "kind",
   "dialogue",
-  "family",
-  "label",
+  "axis",
+  "concept",
   "status",
   "speaker",
   "relationKind",
@@ -503,7 +573,12 @@ const FILTER_FIELDS = [
 export function matchesStructuralFilters(record: SearchRecord, filters: SearchFilters = {}) {
   return FILTER_FIELDS.every((field) => {
     const selected = filters[field];
-    return selected === undefined || normalizeSearchText(record[field] ?? "") === normalizeSearchText(selected);
+    return (
+      selected === undefined ||
+      String(record[field] ?? "")
+        .split(/\s+/u)
+        .some((candidate) => normalizeSearchText(candidate) === normalizeSearchText(selected))
+    );
   });
 }
 
@@ -513,8 +588,8 @@ function searchableFields(record: SearchRecord) {
     record.kind,
     record.dialogue,
     record.stephanusSpan,
-    record.family,
-    record.label,
+    record.axis,
+    record.concept,
     record.status,
     record.speaker,
     record.relationKind,
@@ -732,8 +807,8 @@ function parseSearchRecord(value: unknown, resource: string) {
     "kind",
     "dialogue",
     "stephanusSpan",
-    "family",
-    "label",
+    "axis",
+    "concept",
     "status",
     "speaker",
     "relationKind",
@@ -750,8 +825,8 @@ function parseSearchRecord(value: unknown, resource: string) {
   const fields = [
     "dialogue",
     "stephanusSpan",
-    "family",
-    "label",
+    "axis",
+    "concept",
     "status",
     "speaker",
     "relationKind",

@@ -13,7 +13,7 @@ function dialogue(dialogue: string): DialogueCompletenessFacts {
     greekSource: true, greekProvenance: true, englishSource: true, englishProvenance: true,
     observations: { ledger: true, valid: true, scopeClosed: true, review: { ...review } },
     claims: { ledger: true, valid: true, scopeClosed: true, review: { ...review } },
-    relations: { ledger: false, valid: false, candidates: 0, dispositioned: 0, review: { accepted: 0, rejected: 0, unreviewed: 0, needsSplit: 0 }, candidateKeysMatch: true },
+    relations: { ledger: false, valid: false, records: 0, auditedRecords: 0, acceptedEdges: 0, auditedAcceptedEdges: 0, review: { accepted: 0, rejected: 0, unreviewed: 0, needsSplit: 0 } },
     derived: { stephanus: true, turns: true, tokens: true, anchors: true, turnLengths: true, assent: true, procedure: true, joins: true },
     englishIndexCurrent: true,
     commentary: { ledger: true, accepted: true, auditAccepted: true, readingPage: true },
@@ -28,7 +28,27 @@ function dialogue(dialogue: string): DialogueCompletenessFacts {
 }
 
 function facts(): CompletenessFacts {
-  return { schemaVersion: 1, canonicalDialogues: CANONICAL_DIALOGUES, discoveredGreek: [...CANONICAL_DIALOGUES], discoveredEnglish: [...CANONICAL_DIALOGUES], sourceManifestValid: true, comparisonValid: true, siteValid: true, siteEvidence: "valid", relationCandidatesValid: true, dialogues: CANONICAL_DIALOGUES.map(dialogue), crossDialogueRelations: { ledger: false, valid: false, candidates: 0, dispositioned: 0, review: { accepted: 0, rejected: 0, unreviewed: 0, needsSplit: 0 }, candidateKeysMatch: true }, reportedTurnScopeIssues: [], apparatus: { infrastructureImplemented: true, state: "contract_pending", required: false, evidence: [] } };
+  return {
+    schemaVersion: 1,
+    canonicalDialogues: CANONICAL_DIALOGUES,
+    discoveredGreek: [...CANONICAL_DIALOGUES],
+    discoveredEnglish: [...CANONICAL_DIALOGUES],
+    sourceManifestValid: true,
+    comparisonValid: true,
+    siteValid: true,
+    siteEvidence: "valid",
+    relationAudit: {
+      packagePath: "wiki/ontology-audits/fixture",
+      semanticProofVerified: true,
+      closureEvidenceValid: true,
+      rejectedReaderLeaks: 0,
+      acceptedRelationFictionIssues: 0,
+    },
+    dialogues: CANONICAL_DIALOGUES.map(dialogue),
+    crossDialogueRelations: { ledger: false, valid: false, records: 0, auditedRecords: 0, acceptedEdges: 0, auditedAcceptedEdges: 0, review: { accepted: 0, rejected: 0, unreviewed: 0, needsSplit: 0 } },
+    reportedTurnScopeIssues: [],
+    apparatus: { infrastructureImplemented: true, state: "contract_pending", required: false, evidence: [] },
+  };
 }
 
 const greenOverlay: PublicReleaseFacts = {

@@ -7,7 +7,7 @@ import { claimYamlBlocks, listClaimLedgerPaths } from "./claim-ledger.js";
 import {
   fieldValue,
   fieldValueOrEmpty,
-  nestedFieldValueInParent,
+  nestedFieldValueInPath,
 } from "./observation-ledger.js";
 import { relationMarkdownBlocks, type RelationMarkdownBlock } from "./relation-ledger.js";
 
@@ -46,6 +46,7 @@ export type RelationLedgerValidationIssue = {
     | "missing_resolution_ref"
     | "invalid_source_ref"
     | "missing_limits"
+    | "accepted_relation_denial"
     | "duplicate_field";
   relationId?: string | undefined;
   line?: number | undefined;
@@ -86,12 +87,13 @@ function numberField(value: string) {
 }
 
 function resolutionSourceRef(block: string): SourceRef {
+  const sourceRefPath = ["resolution_ref", "source_ref"] as const;
   return {
-    sourcePath: nestedFieldValueInParent(block, "resolution_ref", "source_path"),
-    stephanusSpan: nestedFieldValueInParent(block, "resolution_ref", "stephanus_span"),
-    startChar: numberField(nestedFieldValueInParent(block, "resolution_ref", "start_char")),
-    endChar: numberField(nestedFieldValueInParent(block, "resolution_ref", "end_char")),
-    textSha256: nestedFieldValueInParent(block, "resolution_ref", "text_sha256"),
+    sourcePath: nestedFieldValueInPath(block, sourceRefPath, "source_path"),
+    stephanusSpan: nestedFieldValueInPath(block, sourceRefPath, "stephanus_span"),
+    startChar: numberField(nestedFieldValueInPath(block, sourceRefPath, "start_char")),
+    endChar: numberField(nestedFieldValueInPath(block, sourceRefPath, "end_char")),
+    textSha256: nestedFieldValueInPath(block, sourceRefPath, "text_sha256"),
   };
 }
 
@@ -137,6 +139,138 @@ function readClaimSummaries() {
 
 function addIssue(issues: RelationLedgerValidationIssue[], issue: RelationLedgerValidationIssue) {
   issues.push(issue);
+}
+
+const SUBSTANTIVE_RELATION_DENIAL_RULES = [
+  {
+    rule: "schema_compliance",
+    pattern: /\b(?:filed|classified|recorded|retained)\b[^.!?;\n]{0,80}\b(?:for|to satisfy) (?:the )?schema(?: compliance)?\b/u,
+  },
+  { rule: "non_relation", pattern: /\bnon[- ]relation\b/u },
+  {
+    rule: "no_substantive_relation",
+    pattern: /\bno (?:[a-z-]+ ){0,5}substantive (?:doctrinal )?(?:relation|connection|restatement)\b/u,
+  },
+  {
+    rule: "not_substantive_relation",
+    pattern: /\bnot (?:a )?substantive (?:doctrinal )?(?:relation|connection|restatement)\b/u,
+  },
+  {
+    rule: "denies_substantive_relation",
+    pattern: /\bdoes not (?:constitute|establish|produce) (?:a )?substantive (?:doctrinal )?(?:relation|connection|restatement)\b/u,
+  },
+] as const;
+
+export type AcceptedRelationSemanticFields = {
+  reviewStatus: string;
+  relationKind: string;
+  resolution: string;
+  basis: string;
+  limits: string;
+};
+
+export type AcceptedRelationDenialRule =
+  | (typeof SUBSTANTIVE_RELATION_DENIAL_RULES)[number]["rule"]
+  | "declared_kind_denial"
+  | "shared_term_no_shared_thesis"
+  | "lexical_only_standing_tension";
+
+export type AcceptedRelationDenial = {
+  field: "basis" | "limits" | "basis+limits";
+  rule: AcceptedRelationDenialRule;
+};
+
+function normalizedRelationProse(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/[–—]/gu, "-")
+    .replace(/\s+/gu, " ");
+}
+
+function declaredKindDenialPattern(relationKind: string) {
+  if (!RELATION_KINDS.has(relationKind)) return undefined;
+  const escapedKind = relationKind.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
+  return new RegExp(
+    [
+      `\\b(?:does|do) not (?:create|constitute|establish|produce|amount to|show|indicate|supply|form)\\b[^.;]{0,48}\\b(?:substantive )?${escapedKind}\\b`,
+      `\\bno (?:substantive )?${escapedKind}\\b`,
+      `\\bnot (?:a )?(?:substantive )?${escapedKind}\\b`,
+    ].join("|"),
+    "u",
+  );
+}
+
+function lexicalOnlyStandingTension(fields: AcceptedRelationSemanticFields) {
+  if (fields.relationKind !== "tension" || fields.resolution !== "standing") return false;
+  const combined = `${normalizedRelationProse(fields.basis)} ${normalizedRelationProse(fields.limits)}`;
+  const lexicalLink = /(?:\bthematically linked by\b|\bshared (?:[a-z-]+ )?(?:term|lexical item|word|vocabulary)\b)/u.test(combined);
+  const lexicalScopeOnly = /(?:\brelation is limited to (?:the )?shared\b[^.]{0,80}\b(?:term|lexical item|word|vocabulary)\b|\bshared (?:term|lexical item|word|vocabulary) alone\b)/u.test(combined);
+  const deniesPull = /(?:\bclaims? do(?:es)? not conflict\b|\bneither contradict nor restate\b|\bdoes not create (?:a )?(?:substantive )?(?:tension|contradiction|relation)\b)/u.test(combined);
+  const separatesContexts = /(?:\b(?:address|concern|describe) different (?:bodily )?(?:processes|questions|topics|contexts|domains)\b|\b(?:operate|occur) in different (?:argumentative )?(?:contexts|domains)\b|\bargumentative (?:purposes|contexts) differ\b)/u.test(combined);
+  return lexicalLink && lexicalScopeOnly && deniesPull && separatesContexts;
+}
+
+/**
+ * Detect accepted records whose own typed relation assertion denies the edge it
+ * purports to add. A statement that two claims are not formally contradictory
+ * is not enough: a tension can be non-contradictory. The cross-field rule only
+ * fires when a standing tension is explicitly limited to lexical overlap, also
+ * denies any pull, and separates the claims into different contexts.
+ */
+export function acceptedRelationDenialFromFields(
+  fields: AcceptedRelationSemanticFields,
+): AcceptedRelationDenial | undefined {
+  if (fields.reviewStatus !== "accepted") return undefined;
+  const normalized = {
+    basis: normalizedRelationProse(fields.basis),
+    limits: normalizedRelationProse(fields.limits),
+  };
+  for (const field of ["basis", "limits"] as const) {
+    const value = normalized[field];
+    for (const { rule, pattern } of SUBSTANTIVE_RELATION_DENIAL_RULES) {
+      if (pattern.test(value)) return { field, rule };
+    }
+  }
+
+  const kindDenial = declaredKindDenialPattern(fields.relationKind);
+  if (kindDenial) {
+    for (const field of ["basis", "limits"] as const) {
+      if (kindDenial.test(normalized[field])) return { field, rule: "declared_kind_denial" };
+    }
+  }
+
+  for (const field of ["basis", "limits"] as const) {
+    if (/\bshared (?:term|lexical item|word|vocabulary)\b[^.;]{0,100}\bdoes not (?:indicate|establish|show) (?:a )?shared thesis\b/u.test(normalized[field])) {
+      return { field, rule: "shared_term_no_shared_thesis" };
+    }
+  }
+
+  if (lexicalOnlyStandingTension(fields)) {
+    return { field: "basis+limits", rule: "lexical_only_standing_tension" };
+  }
+  return undefined;
+}
+
+export function acceptedRelationDenial(block: string): AcceptedRelationDenial | undefined {
+  return acceptedRelationDenialFromFields({
+    reviewStatus: fieldValueOrEmpty(block, "review_status"),
+    relationKind: fieldValueOrEmpty(block, "relation_kind"),
+    resolution: fieldValueOrEmpty(block, "resolution"),
+    basis: fieldValueOrEmpty(block, "basis"),
+    limits: fieldValueOrEmpty(block, "limits"),
+  });
+}
+
+function validateAcceptedRelationAssertion(block: RelationMarkdownBlock, issues: RelationLedgerValidationIssue[]) {
+  const denial = acceptedRelationDenial(block.content);
+  if (!denial) return;
+  addIssue(issues, {
+    code: "accepted_relation_denial",
+    relationId: block.relationId,
+    line: block.startLine,
+    message: `Accepted relation ${denial.field} explicitly denies a substantive relation (${denial.rule}).`,
+    fix: "Reject the review candidate or replace it with an explicitly modeled evidence state; do not retain a schema-only semantic edge.",
+  });
 }
 
 function requireField(block: RelationMarkdownBlock, field: string, issues: RelationLedgerValidationIssue[]) {
@@ -361,7 +495,13 @@ function validateClaimLinks(
 
   const resolution = fieldValueOrEmpty(block.content, "resolution");
   const relationKind = fieldValueOrEmpty(block.content, "relation_kind");
-  if (resolution === "standing" && claimA && claimB && (claimA.finalStatus !== "left_standing" || claimB.finalStatus !== "left_standing")) {
+  if (
+    relationReviewStatus !== "rejected"
+    && resolution === "standing"
+    && claimA
+    && claimB
+    && (claimA.finalStatus !== "left_standing" || claimB.finalStatus !== "left_standing")
+  ) {
     addIssue(issues, {
       code: "invalid_resolution",
       relationId: block.relationId,
@@ -371,6 +511,7 @@ function validateClaimLinks(
     });
   }
   if (
+    relationReviewStatus !== "rejected" &&
     resolution === "refuted_resolved" &&
     claimA &&
     claimB &&
@@ -385,7 +526,7 @@ function validateClaimLinks(
       fix: "Use refuted_resolved only when a linked claim's final_status supports it.",
     });
   }
-  if (relationKind === "restatement" && resolution === "refuted_resolved") {
+  if (relationReviewStatus !== "rejected" && relationKind === "restatement" && resolution === "refuted_resolved") {
     addIssue(issues, {
       code: "invalid_resolution",
       relationId: block.relationId,
@@ -461,7 +602,17 @@ function validateResolutionFields(block: RelationMarkdownBlock, issues: Relation
 
 export function validateRelationLedger(path: string, content: string) {
   const issues: RelationLedgerValidationIssue[] = [];
-  const blocks = relationMarkdownBlocks(content);
+  let blocks: RelationMarkdownBlock[];
+  try {
+    blocks = relationMarkdownBlocks(content);
+  } catch (error) {
+    addIssue(issues, {
+      code: "duplicate_field",
+      message: `Relation fence is not one strict YAML record: ${error instanceof Error ? error.message : String(error)}`,
+      fix: "Keep exactly one strict YAML mapping in each fenced record; run the canonical fenced-record migration for legacy syntax.",
+    });
+    return issues;
+  }
   const claims = readClaimSummaries();
   const seen = new Set<string>();
   const seenPairs = new Set<string>();
@@ -488,6 +639,7 @@ export function validateRelationLedger(path: string, content: string) {
     validateEnums(block, issues);
     validateClaimLinks(path, block, claims, issues);
     validateResolutionFields(block, issues, sourceCache);
+    validateAcceptedRelationAssertion(block, issues);
 
     const claimAId = fieldValueOrEmpty(block.content, "claim_a");
     const claimBId = fieldValueOrEmpty(block.content, "claim_b");

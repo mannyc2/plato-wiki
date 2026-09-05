@@ -3,11 +3,11 @@
   "dialogue": "symposium",
   "ledger": {
     "path": "wiki/commentary/symposium.md",
-    "sha256": "023824c1bae819bf22d1a4ef678cc03feb09a802b1523650a1659df5cd9d7f00"
+    "sha256": "39b693bf21558498b57d4245a4c3c67cf342cfbeebafb4c383362d345a742e77"
   },
   "protocol": {
     "path": "docs/commentary-protocol.md",
-    "sha256": "5f5e6f47f2d39cb42dd8941762ca1b82b4c1371801576f9ec7875e76286e1a13"
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
   },
   "authoring": {
     "model": "gpt-5.6-luna",
@@ -17,9 +17,9 @@
     {
       "unit_key": "01-172a-177e",
       "section_id": "comm_symposium_0001",
-      "audit_brief_sha256": "564047814577010a9b692d6db38a69ad2abeb8e6d0e91181e1296089f9a6beec",
+      "audit_brief_sha256": "85ca23498cf61da7d07924689f8eeae740622b51627192d3b7249312fb5c3bb4",
       "output_path": "scratch/commentary/audits/symposium/01-172a-177e.json",
-      "output_sha256": "91f985fc048a928b2f3fe7af8b305d64e2a81ef8f49322de940ea9807f2b4518",
+      "output_sha256": "1bb707630f0f4c923a62b75ad6d38f14412a81adf6caf509441cbd0abed262cd",
       "output": {
         "schema_version": 3,
         "dialogue": "symposium",
@@ -47,7 +47,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately interprets Agathon’s alarm and Aristodemus’s normalization of Socrates’s absence; it adds dramatic value, stays focused, and lands cleanly before the retelling begins."
+            "rationale": "The cited observation supports the scene’s comic contrast; interpretation is clearly marked. Before: the request to narrate; after: Apollodorus begins the ordered account. The setup earns its edge."
           },
           {
             "commentary_id": "comm_symposium_0016",
@@ -65,7 +65,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Grounded in Socrates’s knowledge claim, the question preserves genuine ambiguity and prepares the ensuing speeches without overclaiming or disrupting the transition."
+            "rationale": "The cited observation supports the line’s double structure, while irony remains open. Before: assent to the plan; after: Phaedrus’s speech begins. The question creates a live interpretive problem."
           }
         ]
       }
@@ -73,9 +73,9 @@
     {
       "unit_key": "02-178a-180b",
       "section_id": "comm_symposium_0002",
-      "audit_brief_sha256": "2e6464f01139bcee3242aa088bfc5a172a33bbaa3080bc46ea038f1d6245e79f",
+      "audit_brief_sha256": "acbf783605ffd4a8fda92f628b3b185c3172805603c2fd3a5fcfa1f60c09d8c8",
       "output_path": "scratch/commentary/audits/symposium/02-178a-180b.json",
-      "output_sha256": "a554306929fc00d167ee2140696ed6a1805599d9298ac68da5d2125be2ba6e40",
+      "output_sha256": "418a3e26a23eaad4193779938ce6c6fa15f525460b5fe3dabe3e2337eaee4c24",
       "output": {
         "schema_version": 3,
         "dialogue": "symposium",
@@ -87,24 +87,6 @@
         },
         "unit_verdict": "pass",
         "blocks": [
-          {
-            "commentary_id": "comm_symposium_0002",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately orients the upcoming Phaedrus speech and its examples; before the opening narration and speech, it provides useful framing without duplicating a later block."
-          },
           {
             "commentary_id": "comm_symposium_0020",
             "disposition": "pass",
@@ -121,25 +103,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Faithfully identifies shame and honor as the speech’s motivational mechanism; after the prior narration and before the speech opening, the preview remains clear and useful."
-          },
-          {
-            "commentary_id": "comm_symposium_0021",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately presents the Alcestis–Orpheus–Achilles progression; after the civic valor claim and before its continuation, it prepares the myths without breaking a sentence or repeating another block."
+            "rationale": "Evidence matches Phaedrus’s shame mechanism and counterfactual civic extension. Before is the setup; after begins Phaedrus’s speech, a clean preparatory edge."
           }
         ]
       }
@@ -147,9 +111,9 @@
     {
       "unit_key": "03-180c-185c",
       "section_id": "comm_symposium_0003",
-      "audit_brief_sha256": "0f14b3fed70449628eeab3ea09ca7bebe96b8832267a53faeca4947647892ca8",
+      "audit_brief_sha256": "ae222f2911c3378c4e15df86bdfad191ba475bc560d4cd3ee5acdb7837998bef",
       "output_path": "scratch/commentary/audits/symposium/03-180c-185c.json",
-      "output_sha256": "540e96d265f94808237f28a46d83bd112560bf888b4b65df8aacf41a2467a11c",
+      "output_sha256": "4427585adc2b16f25fc99488643cba2e63bda6f9748e363c42cdfb83b6438ea0",
       "output": {
         "schema_version": 3,
         "dialogue": "symposium",
@@ -177,21 +141,17 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "The section frames Pausanias’s action-versus-praise criterion with supported evidence and a useful interpretive distinction; the edge cleanly precedes the drinking example."
+            "rationale": "Accurately frames Pausanias’s evaluative criterion and its application to love; the edge follows a complete sentence and prepares the immediately following example."
           }
         ]
-      },
-      "provenance": {
-        "path": "wiki/submissions/commentary-audit/symposium/0001-delegated-audit-03-180c-185c.json",
-        "sha256": "bb33fd9b9ac78d9f51ce03ab399bb6b8471411740b49ae708534094f9fc1f1ae"
       }
     },
     {
       "unit_key": "04-185d-188e",
       "section_id": "comm_symposium_0004",
-      "audit_brief_sha256": "cbb7176be62ffa5612db2edcefa6a50d2225d7e9eb261b575615e277be9737b9",
+      "audit_brief_sha256": "20a058187cc3f4ab3d1489485ae75d3737d3240234769dde6ae01331be5841e2",
       "output_path": "scratch/commentary/audits/symposium/04-185d-188e.json",
-      "output_sha256": "316bce7e9051b1289e64641da017fa957c02334a6196a6039c551148f617fc63",
+      "output_sha256": "56edf35b2f70cd733d739dfaa2d8ceab4b1305f663fac5d4f7ccd6ee82b5584c",
       "output": {
         "schema_version": 3,
         "dialogue": "symposium",
@@ -219,7 +179,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately frames Eryximachus's extension of the twofold Eros across bodies, music, and seasons. The edge follows the hiccough exchange and precedes his speech cleanly."
+            "rationale": "Accurately orients the speech's expansion of twofold Eros and its governing principle. The edge follows the hiccough exchange and precedes the speech, preserving the transition."
           },
           {
             "commentary_id": "comm_symposium_0032",
@@ -237,7 +197,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Faithfully highlights Eryximachus's correction of Heraclitus and its temporal logic. The edge follows Asclepius and precedes medicine's expansion to music without splitting the exchange."
+            "rationale": "Accurately isolates Eryximachus's correction of Heraclitus and preserves its qualified framing. The edge follows the Asclepius sentence and precedes the extension to music, without splitting the flow."
           }
         ]
       }
@@ -245,9 +205,9 @@
     {
       "unit_key": "05-189a-193e",
       "section_id": "comm_symposium_0005",
-      "audit_brief_sha256": "f87c669ae5a380ebcac872d81c54ebc183b4fa91386d9505205b2a76148c7c20",
+      "audit_brief_sha256": "9a2077d1a01f704c222e0de7ba7ba96ed3a15fb3d21373765b0f5c19b4268af7",
       "output_path": "scratch/commentary/audits/symposium/05-189a-193e.json",
-      "output_sha256": "94854e045ebd9b1bd0c6ef92096181a74b3f5ae5f1a9f7afa88dc9daab572b79",
+      "output_sha256": "3394f385092b1584386f782e15fae06d55dc6cc1e19cf080ee9e90bde0f73db4",
       "output": {
         "schema_version": 3,
         "dialogue": "symposium",
@@ -259,24 +219,6 @@
         },
         "unit_verdict": "pass",
         "blocks": [
-          {
-            "commentary_id": "comm_symposium_0005",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately orients the full myth and its stated stakes in 55 words. It follows a complete sentence before Aristophanes begins and does not split the ensuing speech."
-          },
           {
             "commentary_id": "comm_symposium_0036",
             "disposition": "pass",
@@ -293,7 +235,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately isolates the banter’s comic-versus-ridiculous distinction and accountability frame. It follows a complete sentence before Aristophanes begins and does not split his opening exchange."
+            "rationale": "The block accurately identifies the banter's laughable-versus-ridiculous distinction and accountability frame; the edge follows a complete handoff and precedes Aristophanes' reply."
           }
         ]
       }
@@ -301,9 +243,9 @@
     {
       "unit_key": "06-194a-197e",
       "section_id": "comm_symposium_0006",
-      "audit_brief_sha256": "d86fbcfb341a04ca42d2429c8b73e78393c9c512d1d6c4fee001f237be83d366",
+      "audit_brief_sha256": "a72436dd5e3038e45c23d17b2c4dcf9fda582d1d66442f588e8a578ec74ba775",
       "output_path": "scratch/commentary/audits/symposium/06-194a-197e.json",
-      "output_sha256": "85d687bf344e31f48b727b4592425de2b74864964a4ae2d0b4e30623186aef72",
+      "output_sha256": "085b65a30d609427e04caf99f7b208f8afcce8c0ec3c3d8968733357245fe6a8",
       "output": {
         "schema_version": 3,
         "dialogue": "symposium",
@@ -331,7 +273,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately maps Agathon’s method, portrait, analogical reasoning, and closing self-description. It cleanly precedes the speech title and opening method statement."
+            "rationale": "Cited evidence supports Agathon’s method, Eros’s portrait, and the speech’s mixed register; the edge follows Agathon’s reply and precedes the speech."
           },
           {
             "commentary_id": "comm_symposium_0042",
@@ -349,7 +291,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately presents the unfinished assent chain and Phaedrus’s procedural interruption. It cleanly precedes Socrates’ 194a reply, with the prior Eryximachus speech immediately before."
+            "rationale": "Cited observations support the assent chain and Phaedrus’s interruption; the edge follows Eryximachus’s confidence and precedes Socrates’s reply."
           }
         ]
       }
@@ -357,9 +299,9 @@
     {
       "unit_key": "07-198a-201c",
       "section_id": "comm_symposium_0007",
-      "audit_brief_sha256": "23dd84622cd6a048c359f107c15f9b4798beecc05a304e89a828a4d513d4168a",
+      "audit_brief_sha256": "3cf87dc4bc147aa7bb41707ac2e2fbc9ea55b720d159d67e31233b6f026886e3",
       "output_path": "scratch/commentary/audits/symposium/07-198a-201c.json",
-      "output_sha256": "6ea130643cb168c688617ad1b42291aa6f35e471c58398de363f7d80e5e89373",
+      "output_sha256": "7d0bef36d7c1dae5a6fac668106880edccef60f48b26975931f6293f5e04ea2e",
       "output": {
         "schema_version": 3,
         "dialogue": "symposium",
@@ -371,24 +313,6 @@
         },
         "unit_verdict": "pass",
         "blocks": [
-          {
-            "commentary_id": "comm_symposium_0007",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately condenses the passage’s rhetorical reversal and questioning sequence. Before is the prior speech’s close; after is applause and Socrates’ entrance, a clean section edge."
-          },
           {
             "commentary_id": "comm_symposium_0048",
             "disposition": "pass",
@@ -405,7 +329,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accepted observations support the procedural shift and permission; the final question remains open. Before is Agathon’s speech conclusion; after is applause and Socrates’ response, a clean edge."
+            "rationale": "Accurately frames Socrates’ withdrawal and permission-seeking, with the trap left as a genuine question. Before the 198a applause report; after the prior encomium."
           }
         ]
       }
@@ -413,7 +337,7 @@
     {
       "unit_key": "08-201d-212c",
       "section_id": "comm_symposium_0008",
-      "audit_brief_sha256": "5138c6b5c4696627ebad9edb039adbfdc4ff06c815d4d1119664bcff108047ab",
+      "audit_brief_sha256": "74a6663c7fdcd7cfeb0f3c37ccf91039c7e6feac7d4ff5e9d353acebb1a8fb1d",
       "output_path": "scratch/commentary/audits/symposium/08-201d-212c.json",
       "output_sha256": "7819a09f24e81bde80b0bcd7a4c1cb6f34db0bf4dc8cc1c2d6977b9ebf090f21",
       "output": {
@@ -432,9 +356,9 @@
     {
       "unit_key": "09-212d-222b",
       "section_id": "comm_symposium_0009",
-      "audit_brief_sha256": "bf5690403bcac724d95b926c77a3525375a0fa13971fcec425830803da49b90f",
+      "audit_brief_sha256": "a204af7ef8610ce6f4f839cbb9fcae44482580fa1b015a09ef07b203547e095a",
       "output_path": "scratch/commentary/audits/symposium/09-212d-222b.json",
-      "output_sha256": "64be14b6df644d934dba9756c6d893ecdee50931c86999e6fc7b8cc851acee1e",
+      "output_sha256": "04f6007089456008717a9a79b0d8d6627763482e3be3e596fc8c63a75f31ecb3",
       "output": {
         "schema_version": 3,
         "dialogue": "symposium",
@@ -446,24 +370,6 @@
         },
         "unit_verdict": "pass",
         "blocks": [
-          {
-            "commentary_id": "comm_symposium_0009",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately orients the whole episode and its shift from Eros to Socrates; the edge follows Alcibiades’ complete sentence and precedes his next sentence."
-          },
           {
             "commentary_id": "comm_symposium_0064",
             "disposition": "pass",
@@ -480,7 +386,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately explains the image method, Silenus hinge, and limits of Alcibiades’ testimony; the edge follows his setup and precedes the announced qualification."
+            "rationale": "Accurately distinguishes Alcibiades’ announced image-based method, the Silenus hinge, and personal testimony from proof; it sits cleanly before the method’s qualification and praise."
           },
           {
             "commentary_id": "comm_symposium_0065",
@@ -498,7 +404,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Faithfully traces the role reversal, escalating failed seduction, and interpretive inversion; the edge follows the exterior portrait and precedes the inner-image testimony."
+            "rationale": "Faithfully tracks the role reversal, escalating attempts, resistance, and familial comparison; the edge falls after Socrates’ indifference and before Alcibiades reports seeing the inner images."
           }
         ]
       }
@@ -506,9 +412,9 @@
     {
       "unit_key": "10-222c-223d",
       "section_id": "comm_symposium_0010",
-      "audit_brief_sha256": "5aaf805829fea1014749b628794d31843c3966e5c85907e2cd96f4914a80fa9a",
+      "audit_brief_sha256": "1c19e4e2193fee8c489e8675941ae9704b0dbc03457b8fb23da15a19c0604a49",
       "output_path": "scratch/commentary/audits/symposium/10-222c-223d.json",
-      "output_sha256": "dd14db20b83188f8920e2d0fae8bb15cfc62b69b0a106f1d662a6972c6a5b88f",
+      "output_sha256": "cab5368fd1d3441b30da74e02df990e4aee9962bb932ebd96f143e1ffe8f079c",
       "output": {
         "schema_version": 3,
         "dialogue": "symposium",
@@ -536,7 +442,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately reports the fragmentary argument and its limits, then poses an open interpretive question. It follows the complete closing passage without disrupting the ending."
+            "rationale": "Accurately reports the fragmentary argument and Aristodemus’s limits, then poses an open interpretive question. It follows the complete ending without disrupting a sentence or exchange."
           }
         ]
       }
@@ -544,21 +450,16 @@
   ],
   "acceptance": {
     "decision": "accepted",
-    "reviewer": "manifest-batch-3-delegated-luna-reviewer-20260823",
-    "reviewed_on": "2026-08-23",
-    "rationale": "Fresh independent symposium quality sample of all active accepted commentary IDs in ledger order; inspected prose, title, placement, Greek source slice, cited accepted evidence, and current schema-v3 audit outputs; no defects found.",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-symposium-9eb8771d9b7b",
+    "reviewed_on": "2026-09-01",
+    "rationale": "All sampled blocks are independently supported by their exact source, accepted evidence, resolved playback edges, and spoken-quality checks; no concrete evidence, placement, or listening defect appears.",
     "sampled_commentary_ids": [
-      "comm_symposium_0002",
       "comm_symposium_0003",
       "comm_symposium_0004",
-      "comm_symposium_0005",
       "comm_symposium_0006",
-      "comm_symposium_0007",
-      "comm_symposium_0009",
       "comm_symposium_0013",
       "comm_symposium_0016",
       "comm_symposium_0020",
-      "comm_symposium_0021",
       "comm_symposium_0032",
       "comm_symposium_0036",
       "comm_symposium_0042",
@@ -568,8 +469,8 @@
       "comm_symposium_0071"
     ],
     "review_note": {
-      "path": "wiki/review/2026-08-23-commentary-quality-symposium-luna-sample.md",
-      "sha256": "c029ba51eeb88f40a328155a06492c753121823a7a9405853f13de1f311b3fd1"
+      "path": "wiki/review/2026-09-01-commentary-quality-symposium-luna-sample.md",
+      "sha256": "e4a06dadae2b7896e45f55a5f8db7e7b0ba569c3763f0ae682313ae789f74e25"
     }
   }
 }

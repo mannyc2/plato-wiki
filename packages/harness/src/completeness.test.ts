@@ -7,15 +7,11 @@ import { buildStephanusIndex, formatStephanusIndexToon } from "./derived/stephan
 import { buildTurnIndex, formatTurnIndexToon } from "./derived/turns.js";
 import { buildVoiceIndex, formatVoiceIndexToon } from "./derived/voices.js";
 import { setRepoRootForTesting } from "./paths.js";
-import { relationCandidateKey } from "./relations.js";
 import { collectVoiceClaimConsistencyFailures, validateVoicesLedger } from "./wiki/voices-validator.js";
 import {
   CANONICAL_DIALOGUES,
   buildCompletenessFacts,
   buildCompletenessReport,
-  collectRelationCandidatesSafely,
-  exactRelationCandidateKeyCountsMatch,
-  exactRelationPairIdSetsMatch,
   renderCompletenessReport,
   validateCanonicalDialogueSet,
   voiceReviewCounts,
@@ -53,7 +49,15 @@ function dialogueFacts(dialogue: string): DialogueCompletenessFacts {
     englishProvenance: true,
     observations: { ledger: true, valid: true, scopeClosed: true, review: { ...review } },
     claims: { ledger: true, valid: true, scopeClosed: true, review: { ...review } },
-    relations: { ledger: true, valid: true, candidates: 1, dispositioned: 1, review: { ...review }, candidateKeysMatch: true },
+    relations: {
+      ledger: true,
+      valid: true,
+      records: 1,
+      auditedRecords: 1,
+      acceptedEdges: 1,
+      auditedAcceptedEdges: 1,
+      review: { ...review },
+    },
     derived: { stephanus: true, turns: true, tokens: true, anchors: true, turnLengths: true, assent: true, procedure: true, joins: true },
     englishIndexCurrent: true,
     commentary: { ledger: true, accepted: true, auditAccepted: true, readingPage: true },
@@ -106,9 +110,23 @@ function completeFacts(): CompletenessFacts {
     comparisonValid: true,
     siteValid: true,
     siteEvidence: "fixture site valid",
-    relationCandidatesValid: true,
+    relationAudit: {
+      packagePath: "wiki/ontology-audits/fixture",
+      semanticProofVerified: true,
+      closureEvidenceValid: true,
+      rejectedReaderLeaks: 0,
+      acceptedRelationFictionIssues: 0,
+    },
     dialogues: CANONICAL_DIALOGUES.map(dialogueFacts),
-    crossDialogueRelations: { ledger: false, valid: false, candidates: 0, dispositioned: 0, review: { accepted: 0, rejected: 0, unreviewed: 0, needsSplit: 0 }, candidateKeysMatch: true },
+    crossDialogueRelations: {
+      ledger: false,
+      valid: false,
+      records: 0,
+      auditedRecords: 0,
+      acceptedEdges: 0,
+      auditedAcceptedEdges: 0,
+      review: { accepted: 0, rejected: 0, unreviewed: 0, needsSplit: 0 },
+    },
     reportedTurnScopeIssues: [],
     apparatus: { infrastructureImplemented: true, state: "contract_pending", required: false, evidence: ["docs/apparatus-protocol.md"] },
   };
@@ -141,63 +159,44 @@ describe("targets", () => {
     expect(renderCompletenessReport(report)).not.toContain("%");
   });
 
-  it("accepts an evidenced zero-candidate relation leaf", () => {
+  it("accepts an audited zero-record relation leaf", () => {
     const facts = completeFacts();
-    facts.dialogues[0]!.relations = { ledger: false, valid: false, candidates: 0, dispositioned: 0, review: { accepted: 0, rejected: 0, unreviewed: 0, needsSplit: 0 }, candidateKeysMatch: true };
+    facts.dialogues[0]!.relations = {
+      ledger: false,
+      valid: false,
+      records: 0,
+      auditedRecords: 0,
+      acceptedEdges: 0,
+      auditedAcceptedEdges: 0,
+      review: { accepted: 0, rejected: 0, unreviewed: 0, needsSplit: 0 },
+    };
     const report = buildCompletenessReport(facts);
     const relation = report.families.find((family) => family.id === "CMP-RELATIONS")!;
     expect(relation.leaves.find((leaf) => leaf.scope === "apology")!.state).toBe("not_applicable");
     expect(relation.state).toBe("pass");
   });
 
-  it("rejects an equal-count relation ledger that disposes a different claim pair", () => {
-    // pair_id is positional, so equal counts make the id ranges match while the
-    // rows are about other pairs entirely. Identity is the claim pair.
-    expect(
-      exactRelationCandidateKeyCountsMatch(
-        new Map([[relationCandidateKey("cross-dialogue", "claim_meno_0013", "claim_symposium_0128"), 1]]),
-        new Map([[relationCandidateKey("cross-dialogue", "claim_meno_0013", "claim_symposium_0129"), 1]]),
-      ),
-    ).toBe(false);
-    expect(
-      exactRelationCandidateKeyCountsMatch(
-        new Map([[relationCandidateKey("cross-dialogue", "claim_meno_0013", "claim_symposium_0128"), 1]]),
-        new Map([[relationCandidateKey("cross-dialogue", "claim_meno_0013", "claim_symposium_0128"), 1]]),
-      ),
-    ).toBe(true);
-    expect(
-      exactRelationCandidateKeyCountsMatch(
-        new Map([[relationCandidateKey("cross-dialogue", "claim_meno_0013", "claim_symposium_0128"), 2]]),
-        new Map([[relationCandidateKey("cross-dialogue", "claim_meno_0013", "claim_symposium_0128"), 1]]),
-      ),
-    ).toBe(false);
-    expect(
-      exactRelationPairIdSetsMatch(new Set(["pair_stale_00001"]), new Set(["pair_current_00001"])),
-    ).toBe(false);
+  it("accepts an audited substantive relation outside the discovery candidate set", () => {
     const facts = completeFacts();
     facts.dialogues[0]!.relations = {
       ledger: true,
       valid: true,
-      candidates: 1,
-      dispositioned: 1,
+      records: 1,
+      auditedRecords: 1,
+      acceptedEdges: 1,
+      auditedAcceptedEdges: 1,
       review: { accepted: 1, rejected: 0, unreviewed: 0, needsSplit: 0 },
-      candidateKeysMatch: false,
     };
     const relation = buildCompletenessReport(facts).families.find(
       (family) => family.id === "CMP-RELATIONS",
     )!;
-    expect(relation.leaves.find((leaf) => leaf.scope === "apology")!.state).toBe("fail");
+    expect(relation.leaves.find((leaf) => leaf.scope === "apology")!.state).toBe("pass");
   });
 
-  it("fails relations globally when candidate generation throws", () => {
-    const candidateResult = collectRelationCandidatesSafely(() => {
-      throw new Error("fixture generator failure");
-    });
-    expect(candidateResult.valid).toBe(false);
-    expect(candidateResult.report.entries).toEqual([]);
-
+  it("fails relations when the vNext semantic proof is missing or unverified", () => {
     const facts = completeFacts();
-    facts.relationCandidatesValid = false;
+    facts.relationAudit.packagePath = null;
+    facts.relationAudit.semanticProofVerified = false;
     const relation = buildCompletenessReport(facts).families.find(
       (family) => family.id === "CMP-RELATIONS",
     )!;
@@ -205,20 +204,72 @@ describe("targets", () => {
     expect(relation.state).toBe("fail");
   });
 
-  it("does not hide a stale or invalid zero-candidate ledger as N/A", () => {
+  it("does not hide an invalid empty relation ledger as an audited zero", () => {
     const facts = completeFacts();
     facts.dialogues[0]!.relations = {
       ledger: true,
       valid: false,
-      candidates: 0,
-      dispositioned: 0,
+      records: 0,
+      auditedRecords: 0,
+      acceptedEdges: 0,
+      auditedAcceptedEdges: 0,
       review: { accepted: 0, rejected: 0, unreviewed: 0, needsSplit: 0 },
-      candidateKeysMatch: true,
     };
     const relation = buildCompletenessReport(facts).families.find(
       (family) => family.id === "CMP-RELATIONS",
     )!;
     expect(relation.leaves.find((leaf) => leaf.scope === "apology")!.state).toBe("fail");
+  });
+
+  it("fails relations on missing record or accepted-edge adjudication", () => {
+    const facts = completeFacts();
+    facts.dialogues[0]!.relations.auditedRecords = 0;
+    expect(
+      buildCompletenessReport(facts).families
+        .find((family) => family.id === "CMP-RELATIONS")!
+        .leaves.find((leaf) => leaf.scope === "apology")!.state,
+    ).toBe("fail");
+
+    facts.dialogues[0]!.relations.auditedRecords = 1;
+    facts.dialogues[0]!.relations.auditedAcceptedEdges = 0;
+    expect(
+      buildCompletenessReport(facts).families
+        .find((family) => family.id === "CMP-RELATIONS")!
+        .leaves.find((leaf) => leaf.scope === "apology")!.state,
+    ).toBe("fail");
+  });
+
+  it("retains audited rejected relation provenance without making a semantic edge", () => {
+    const facts = completeFacts();
+    facts.dialogues[0]!.relations = {
+      ledger: true,
+      valid: true,
+      records: 1,
+      auditedRecords: 1,
+      acceptedEdges: 0,
+      auditedAcceptedEdges: 0,
+      review: { accepted: 0, rejected: 1, unreviewed: 0, needsSplit: 0 },
+    };
+    const relation = buildCompletenessReport(facts).families.find(
+      (family) => family.id === "CMP-RELATIONS",
+    )!;
+    expect(relation.leaves.find((leaf) => leaf.scope === "apology")!.state).toBe("pass");
+  });
+
+  it("fails relations when closure evidence reports fiction or rejected-reader leakage", () => {
+    const facts = completeFacts();
+    facts.relationAudit.rejectedReaderLeaks = 1;
+    let relation = buildCompletenessReport(facts).families.find(
+      (family) => family.id === "CMP-RELATIONS",
+    )!;
+    expect(relation.leaves[0]).toEqual(expect.objectContaining({ scope: "global", state: "fail" }));
+
+    facts.relationAudit.rejectedReaderLeaks = 0;
+    facts.relationAudit.acceptedRelationFictionIssues = 1;
+    relation = buildCompletenessReport(facts).families.find(
+      (family) => family.id === "CMP-RELATIONS",
+    )!;
+    expect(relation.leaves[0]).toEqual(expect.objectContaining({ scope: "global", state: "fail" }));
   });
 
   it("keeps apparatus contract-pending outside implemented targets", () => {
@@ -895,7 +946,7 @@ function invalidCoverage(dialogue: string) {
 }
 
 describe("collector isolation", () => {
-  it("counts duplicate relation candidate keys as excess dispositions", () => {
+  it("rejects duplicate canonical relation targets independently of discovery candidates", () => {
     const repoRoot = mkdtempSync(join(tmpdir(), "completeness-relation-counts-"));
     try {
       mkdirSync(join(repoRoot, "wiki/claims"), { recursive: true });
@@ -924,9 +975,9 @@ describe("collector isolation", () => {
       });
       const meno = facts.dialogues.find((entry) => entry.dialogue === "meno")!;
       expect(meno.relations).toEqual(expect.objectContaining({
-        candidates: 1,
-        dispositioned: 2,
-        candidateKeysMatch: false,
+        valid: false,
+        records: 2,
+        auditedRecords: 0,
       }));
       expect(
         buildCompletenessReport(facts).families
@@ -978,7 +1029,7 @@ describe("collector isolation", () => {
         greekSource: false,
         observations: expect.objectContaining({ ledger: true, valid: false, scopeClosed: false }),
         claims: expect.objectContaining({ ledger: true, valid: false, scopeClosed: false }),
-        relations: expect.objectContaining({ ledger: true, valid: false, candidates: 0 }),
+        relations: expect.objectContaining({ ledger: true, valid: false, records: 0 }),
         commentary: {
           ledger: true,
           accepted: false,

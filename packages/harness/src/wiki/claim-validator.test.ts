@@ -26,6 +26,17 @@ function sourceRefYaml(span: string, indent = "") {
   ].join("\n");
 }
 
+function speakerSourceRefYaml(span: string) {
+  const { source_ref } = resolveSourceSpan("euthyphro", span);
+  return [
+    "speaker_source_ref:",
+    `  source_path: ${source_ref.source_path}`,
+    `  start_char: ${source_ref.start_char}`,
+    `  end_char: ${source_ref.end_char}`,
+    `  text_sha256: "${source_ref.text_sha256}"`,
+  ].join("\n");
+}
+
 function claimRecord({
   claimId = "claim_euthyphro_0001",
   speaker = '"ΣΩ."',
@@ -38,6 +49,7 @@ function claimRecord({
   limits = "No later span in this ledger coverage retracts this claim.",
   sourceRef = sourceRefYaml(claimSpan),
   eventSourceRef = sourceRefYaml(eventSpan, "    "),
+  speakerSourceRef,
 }: {
   claimId?: string;
   speaker?: string;
@@ -50,13 +62,14 @@ function claimRecord({
   limits?: string;
   sourceRef?: string;
   eventSourceRef?: string;
+  speakerSourceRef?: string;
 } = {}) {
   return `claim_id: ${claimId}
 source_work: Euthyphro
 stephanus_span: ${claimSpan}
 ${sourceRef}
 speaker: ${speaker}
-claim_kind: ${claimKind}
+${speakerSourceRef ? `${speakerSourceRef}\n` : ""}claim_kind: ${claimKind}
 content: "${content}"
 greek_terms: [εἶδος]
 stance_events:
@@ -172,6 +185,29 @@ review_status: unreviewed`;
     expect(formatClaimLedgerValidationError(issues)).toContain("Do not edit source_ref fields manually");
   });
 
+  it("accepts an exact hash-checked speaker_source_ref inside the claim source_ref", () => {
+    const issues = validateClaimLedger(
+      "wiki/claims/euthyphro.md",
+      ledger(claimRecord({ speakerSourceRef: speakerSourceRefYaml("5d") })),
+    );
+    expect(issues).toEqual([]);
+  });
+
+  it("rejects speaker_source_ref ranges outside the claim and edited hashes", () => {
+    const outside = validateClaimLedger(
+      "wiki/claims/euthyphro.md",
+      ledger(claimRecord({ speakerSourceRef: speakerSourceRefYaml("7a") })),
+    );
+    expect(issueCodes(outside)).toContain("speaker_source_ref_mismatch");
+
+    const broken = speakerSourceRefYaml("5d").replace(/[a-f0-9]{64}/u, "0".repeat(64));
+    const badHash = validateClaimLedger(
+      "wiki/claims/euthyphro.md",
+      ledger(claimRecord({ speakerSourceRef: broken })),
+    );
+    expect(issueCodes(badHash)).toContain("speaker_source_ref_hash_mismatch");
+  });
+
   it("rejects Greek in content and empty limits for left-standing claims", () => {
     const issues = validateClaimLedger(
       "wiki/claims/euthyphro.md",
@@ -180,6 +216,50 @@ review_status: unreviewed`;
 
     expect(issueCodes(issues)).toContain("greek_outside_terms");
     expect(issueCodes(issues)).toContain("missing_limits");
+  });
+
+  it("requires every accepted claim to link at least one accepted observation", () => {
+    const accepted = ledger(claimRecord()).replace("review_status: unreviewed", "review_status: accepted");
+    expect(
+      issueCodes(
+        validateClaimLedger("wiki/claims/euthyphro.md", accepted, {
+          observationReviewStatuses: new Map(),
+        }),
+      ),
+    ).toContain("missing_observation_link");
+
+    const linked = accepted.replace("observation_ids: []", "observation_ids: [obs_euthyphro_0001]");
+    expect(
+      issueCodes(
+        validateClaimLedger("wiki/claims/euthyphro.md", linked, {
+          observationReviewStatuses: new Map([["obs_euthyphro_0001", "rejected"]]),
+        }),
+      ),
+    ).toContain("invalid_observation_link");
+    expect(
+      issueCodes(
+        validateClaimLedger("wiki/claims/euthyphro.md", linked, {
+          observationReviewStatuses: new Map([["obs_euthyphro_0001", "accepted"]]),
+        }),
+      ),
+    ).not.toContain("invalid_observation_link");
+
+    expect(
+      issueCodes(
+        validateClaimLedger("wiki/claims/euthyphro.md", linked, {
+          observationReviewStatuses: new Map([["obs_euthyphro_0001", "accepted"]]),
+          observationSupportedClaims: new Map([["obs_euthyphro_0001", []]]),
+        }),
+      ),
+    ).toContain("invalid_observation_link");
+    expect(
+      issueCodes(
+        validateClaimLedger("wiki/claims/euthyphro.md", linked, {
+          observationReviewStatuses: new Map([["obs_euthyphro_0001", "accepted"]]),
+          observationSupportedClaims: new Map([["obs_euthyphro_0001", ["claim_euthyphro_0001"]]]),
+        }),
+      ),
+    ).not.toContain("invalid_observation_link");
   });
 });
 

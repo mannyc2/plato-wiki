@@ -15,14 +15,6 @@ import {
   replaceClaimYamlBlocks,
 } from "./claim-ledger.js";
 import { formatClaimLedgerValidationError, validateClaimLedger } from "./claim-validator.js";
-import { formatFeatureRegistryValidationError, validateFeatureRegistry } from "./feature-registry-validator.js";
-import {
-  formatObservationFeatureIndex,
-  normalizeObservationFeatureIds,
-  observationFeatureLinksFromDisk,
-  type ObservationFeatureLink,
-  syncFeatureRegistryContent,
-} from "./observation-feature-index.js";
 import {
   fieldValue,
   nestedFieldValue,
@@ -37,10 +29,6 @@ import {
   replaceRelationYamlBlocks,
 } from "./relation-ledger.js";
 import { formatRelationLedgerValidationError, validateRelationLedger } from "./relation-validator.js";
-
-function isIngestCommand(command: HarnessRunCommand) {
-  return command === "ingest" || command === "ingest-segmented";
-}
 
 function isReviewCommand(command: HarnessRunCommand) {
   return command === "review" || command === "review-segmented";
@@ -87,50 +75,6 @@ function reviewLedgerPreservationError(existingContent: string, nextContent: str
   return undefined;
 }
 
-type SyncedRegistryOptions = {
-  transcript?: TranscriptWriter;
-  sourcePath?: string;
-  knownLinks?: ObservationFeatureLink[];
-};
-
-function validationIndexFromLinks(links: ObservationFeatureLink[]) {
-  return {
-    knownObservationIds: new Set(links.map((link) => link.observationId)),
-    observationFeatureIds: new Map(links.map((link) => [link.observationId, link.featureId])),
-  };
-}
-
-export function syncedRegistryOrThrow(
-  previousContent: string,
-  links: ObservationFeatureLink[],
-  options: SyncedRegistryOptions = {},
-) {
-  const nextContent = syncFeatureRegistryContent(previousContent, links);
-  const validationLinks = options.knownLinks ?? [...observationFeatureLinksFromDisk(), ...links];
-  const validationIssues = validateFeatureRegistry(nextContent, {
-      mode: "ingest",
-    previousContent,
-    ...validationIndexFromLinks(validationLinks),
-  });
-
-  if (validationIssues.length > 0) {
-    options.transcript?.write("wiki_tool_sync_feature_registry_rejected", {
-      path: "wiki/features-so-far.md",
-      sourcePath: options.sourcePath,
-      issueCount: validationIssues.length,
-      issues: validationIssues.slice(0, 12),
-    });
-    throw new Error(
-      [
-        "Internal error: ingest registry sync produced an invalid registry; nothing was written.",
-        formatFeatureRegistryValidationError(validationIssues),
-      ].join("\n"),
-    );
-  }
-
-  return nextContent;
-}
-
 export type WikiToolOptions = {
   claimSegmentBounds?: {
     dialogue: string;
@@ -143,13 +87,12 @@ export type WikiToolOptions = {
 
 export function createWikiTools(transcript: TranscriptWriter, command: HarnessRunCommand, options: WikiToolOptions = {}): AgentTool[] {
   let sourceSpanCallCount = 0;
-  const featureRegistryRejectionCounts = new Map<string, number>();
   const stagedObservations = new Map<
     string,
     {
       content: string;
-      links: ReturnType<typeof normalizeObservationFeatureIds>["links"];
       bytes: number;
+      observationCount: number;
     }
   >();
   const stagedClaims = new Map<
@@ -248,16 +191,8 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     ),
   });
 
-  const writeFeatureRegistryParameters = Type.Object({
-    content: Type.String({ description: "Full markdown content for wiki/features-so-far.md." }),
-  });
-
-  function validateAndNormalizeObservation(relativePath: string, content: string) {
-    const repoRoot = getRepoRoot();
-    const featuresPath = join(repoRoot, "wiki/features-so-far.md");
-    const previousFeatureRegistry = existsSync(featuresPath) ? readFileSync(featuresPath, "utf8") : "";
-    const normalizedObservation = normalizeObservationFeatureIds(content, previousFeatureRegistry);
-    const validationIssues = validateObservationLedger(relativePath, normalizedObservation.content);
+  function validateObservation(relativePath: string, content: string) {
+    const validationIssues = validateObservationLedger(relativePath, content);
 
     if (validationIssues.length > 0) {
       return { ok: false as const, validationIssues };
@@ -265,10 +200,9 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
 
     return {
       ok: true as const,
-      previousFeatureRegistry,
-      normalizedObservation,
-      featureIndex: formatObservationFeatureIndex(normalizedObservation.links),
-      bytes: Buffer.byteLength(normalizedObservation.content),
+      content,
+      bytes: Buffer.byteLength(content),
+      observationCount: observationYamlBlocks(content).length,
     };
   }
 
@@ -709,24 +643,24 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     };
   }
 
-  function sourceFeatureAnchorKeys(content: string) {
+  function sourceObservationAnchorKeys(content: string) {
     return observationYamlBlocks(content)
       .map((block) => {
         const sourcePath = nestedFieldValue(block, "source_path");
         const sourceSpan = nestedFieldValue(block, "stephanus_span");
-        const featureLabel = fieldValue(block, "feature_label");
-        if (!sourcePath || !sourceSpan || !featureLabel) return undefined;
-        return `${sourcePath}::${sourceSpan}::${featureLabel}`;
+        const observation = fieldValue(block, "observation")?.replace(/\s+/gu, " ").trim();
+        if (!sourcePath || !sourceSpan || !observation) return undefined;
+        return `${sourcePath}::${sourceSpan}::${observation}`;
       })
       .filter((key): key is string => key !== undefined);
   }
 
-  function duplicateAppendedSourceFeatureAnchor(existingContent: string, appendedBlocks: string[]) {
-    const existingKeys = new Set(sourceFeatureAnchorKeys(existingContent));
+  function duplicateAppendedSourceObservationAnchor(existingContent: string, appendedBlocks: string[]) {
+    const existingKeys = new Set(sourceObservationAnchorKeys(existingContent));
     const appendedKeys = new Set<string>();
 
     for (const block of appendedBlocks) {
-      const [key] = sourceFeatureAnchorKeys(block);
+      const [key] = sourceObservationAnchorKeys(block);
       if (!key) continue;
       if (existingKeys.has(key) || appendedKeys.has(key)) return key;
       appendedKeys.add(key);
@@ -828,8 +762,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
   const readFileTool: AgentTool<typeof readFileParameters> = {
     name: "wiki_read_file",
     label: "Read Wiki File",
-    description:
-      "Read an allowed repository file. The extraction protocol is in the system prompt; the feature registry is supplied by harness context. Allowed paths: wiki observations, wiki/features-so-far.md, and raw Plato Greek.",
+    description: "Read an allowed repository file: wiki observations or raw Plato Greek.",
     parameters: readFileParameters,
     executionMode: "parallel",
     execute: async (_toolCallId, params) => {
@@ -852,13 +785,13 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     name: "wiki_write_observation",
     label: "Write Observation",
     description:
-      "Validate and write a complete observation page. The path must be wiki/observations/<dialogue>.md. Provide feature_family and feature_label; the harness normalizes them and assigns feature_id. During ingest this tool also syncs wiki/features-so-far.md.",
+      "Validate and write a complete source-bound observation page. The path must be wiki/observations/<dialogue>.md.",
     parameters: writeObservationParameters,
     executionMode: "sequential",
     execute: async (_toolCallId, params) => {
       const { absolutePath, relativePath } = normalizeRepoPath(params.path);
       assertObservationWritePath(relativePath);
-      const validation = validateAndNormalizeObservation(relativePath, params.content);
+      const validation = validateObservation(relativePath, params.content);
 
       if (!validation.ok) {
         transcript.write(rejectionEventName("write"), {
@@ -872,7 +805,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
       if (isReviewCommand(command) && existsSync(absolutePath)) {
         const preservationError = reviewLedgerPreservationError(
           readFileSync(absolutePath, "utf8"),
-          validation.normalizedObservation.content,
+          validation.content,
         );
         if (preservationError) {
           transcript.write(rejectionEventName("write"), {
@@ -889,61 +822,14 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
         }
       }
 
-      let syncedFeatureBytes: number | undefined;
-      let nextFeatureRegistry: string | undefined;
-      if (command === "ingest") {
-        nextFeatureRegistry = syncedRegistryOrThrow(
-          validation.previousFeatureRegistry,
-          validation.normalizedObservation.links,
-          { transcript, sourcePath: relativePath },
-        );
-        syncedFeatureBytes = Buffer.byteLength(nextFeatureRegistry);
-      }
-
       mkdirSync(dirname(absolutePath), { recursive: true });
-      writeFileSync(absolutePath, validation.normalizedObservation.content, "utf8");
+      writeFileSync(absolutePath, validation.content, "utf8");
       transcript.write("wiki_tool_write_observation", {
         path: relativePath,
         bytes: validation.bytes,
-        assignedFeatureCount: new Set(validation.normalizedObservation.links.map((link) => link.featureId)).size,
-        observationCount: validation.normalizedObservation.links.length,
+        observationCount: validation.observationCount,
       });
-
-      if (nextFeatureRegistry !== undefined) {
-        const featuresPath = join(getRepoRoot(), "wiki/features-so-far.md");
-        writeFileSync(featuresPath, nextFeatureRegistry, "utf8");
-        transcript.write("wiki_tool_sync_feature_registry", {
-          path: "wiki/features-so-far.md",
-          sourcePath: relativePath,
-          bytes: syncedFeatureBytes,
-        });
-      }
-
-      return {
-        content: [
-          {
-            type: "text",
-            text: [
-              `Wrote ${relativePath}.`,
-              isIngestCommand(command)
-                ? "Synchronized wiki/features-so-far.md from accepted observation feature labels."
-                : "Feature registry was not changed by this observation write.",
-              "Harness-assigned observation feature index:",
-              validation.featureIndex,
-              isIngestCommand(command)
-                ? "Do not call wiki_write_feature_registry during ingest; it is reserved for review edits."
-                : "Use this index when reviewing feature registry changes.",
-            ].join("\n"),
-          },
-        ],
-        details: {
-          path: relativePath,
-          bytes: validation.bytes,
-          featureLinks: validation.normalizedObservation.links,
-          syncedFeatureRegistryPath: isIngestCommand(command) ? "wiki/features-so-far.md" : undefined,
-          syncedFeatureBytes,
-        },
-      };
+      return wikiResult(`Wrote ${relativePath}.`, relativePath, validation.bytes);
     },
   };
 
@@ -951,7 +837,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     name: "wiki_update_review_statuses",
     label: "Update Review Statuses",
     description:
-      "Review tool. Update review_status for existing observation ids in wiki/observations/<dialogue>.md without rewriting, deleting, reordering, or changing feature labels. Use this for segmented review batches.",
+      "Review tool. Update review_status for existing observation ids in wiki/observations/<dialogue>.md without rewriting, deleting, or reordering records. Use this for segmented review batches.",
     parameters: updateReviewStatusesParameters,
     executionMode: "sequential",
     execute: async (_toolCallId, params) => {
@@ -1021,7 +907,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
 
       return {
         ...wikiResult(
-          `Updated ${updates.size} review status(es) in ${relativePath}; observation ids and feature labels were preserved.`,
+          `Updated ${updates.size} review status(es) in ${relativePath}; observation ids and non-status fields were preserved.`,
           relativePath,
           bytes,
         ),
@@ -1086,7 +972,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     name: "wiki_commit_claims",
     label: "Commit Claims",
     description:
-      "Commit the latest staged claim ledger to wiki/claims/<dialogue>.md. Claims do not synchronize wiki/features-so-far.md.",
+      "Commit the latest staged claim ledger to wiki/claims/<dialogue>.md.",
     parameters: commitClaimParameters,
     executionMode: "sequential",
     execute: async (_toolCallId, params) => {
@@ -1456,13 +1342,13 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     name: "wiki_stage_observation",
     label: "Stage Observation",
     description:
-      "Validate and stage a complete or growing observation page without writing wiki/observations or syncing wiki/features-so-far.md. Use this during ingest for drafts and retries. Provide feature_family and feature_label; the harness normalizes them and assigns feature_id in the staged content.",
+      "Validate and stage a complete or growing source-bound observation page without writing wiki/observations. Use this during ingest for drafts and retries.",
     parameters: writeObservationParameters,
     executionMode: "sequential",
     execute: async (_toolCallId, params) => {
       const { relativePath } = normalizeRepoPath(params.path);
       assertObservationWritePath(relativePath);
-      const validation = validateAndNormalizeObservation(relativePath, params.content);
+      const validation = validateObservation(relativePath, params.content);
 
       if (!validation.ok) {
         transcript.write(rejectionEventName("stage"), {
@@ -1474,35 +1360,21 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
       }
 
       stagedObservations.set(relativePath, {
-        content: validation.normalizedObservation.content,
-        links: validation.normalizedObservation.links,
+        content: validation.content,
         bytes: validation.bytes,
+        observationCount: validation.observationCount,
       });
       transcript.write("wiki_tool_stage_observation", {
         path: relativePath,
         bytes: validation.bytes,
-        assignedFeatureCount: new Set(validation.normalizedObservation.links.map((link) => link.featureId)).size,
-        observationCount: validation.normalizedObservation.links.length,
+        observationCount: validation.observationCount,
       });
 
-      return {
-        content: [
-          {
-            type: "text",
-            text: [
-              `Staged ${relativePath}; no files were written and the feature registry was not synced.`,
-              "Harness-assigned staged observation feature index:",
-              validation.featureIndex,
-              "When the full dialogue ledger is complete, call wiki_commit_observation with the same path.",
-            ].join("\n"),
-          },
-        ],
-        details: {
-          path: relativePath,
-          bytes: validation.bytes,
-          featureLinks: validation.normalizedObservation.links,
-        },
-      };
+      return wikiResult(
+        `Staged ${relativePath}; no files were written. When the full dialogue ledger is complete, call wiki_commit_observation with the same path.`,
+        relativePath,
+        validation.bytes,
+      );
     },
   };
 
@@ -1510,7 +1382,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     name: "wiki_commit_observation",
     label: "Commit Observation",
     description:
-      "Commit the latest staged observation page to wiki/observations/<dialogue>.md and synchronize wiki/features-so-far.md. Use this once at the end of ingest, after wiki_stage_observation has accepted the complete ledger.",
+      "Commit the latest staged observation page to wiki/observations/<dialogue>.md. Use this once at the end of ingest, after wiki_stage_observation has accepted the complete ledger.",
     parameters: commitObservationParameters,
     executionMode: "sequential",
     execute: async (_toolCallId, params) => {
@@ -1521,51 +1393,15 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
         throw new Error(`No staged observation content found for ${relativePath}. Call wiki_stage_observation first.`);
       }
 
-      const featuresPath = join(getRepoRoot(), "wiki/features-so-far.md");
-      const previousFeatureRegistry = existsSync(featuresPath) ? readFileSync(featuresPath, "utf8") : "";
-      const nextFeatureRegistry = syncedRegistryOrThrow(previousFeatureRegistry, staged.links, {
-        transcript,
-        sourcePath: relativePath,
-      });
-      const syncedFeatureBytes = Buffer.byteLength(nextFeatureRegistry);
-
       mkdirSync(dirname(absolutePath), { recursive: true });
       writeFileSync(absolutePath, staged.content, "utf8");
       transcript.write("wiki_tool_commit_observation", {
         path: relativePath,
         bytes: staged.bytes,
-        assignedFeatureCount: new Set(staged.links.map((link) => link.featureId)).size,
-        observationCount: staged.links.length,
+        observationCount: staged.observationCount,
       });
 
-      writeFileSync(featuresPath, nextFeatureRegistry, "utf8");
-      transcript.write("wiki_tool_sync_feature_registry", {
-        path: "wiki/features-so-far.md",
-        sourcePath: relativePath,
-        bytes: syncedFeatureBytes,
-      });
-
-      return {
-        content: [
-          {
-            type: "text",
-            text: [
-              `Committed ${relativePath}.`,
-              "Synchronized wiki/features-so-far.md from the committed staged observation ledger.",
-              "Harness-assigned observation feature index:",
-              formatObservationFeatureIndex(staged.links),
-              "Do not call wiki_write_feature_registry during ingest; it is reserved for review edits.",
-            ].join("\n"),
-          },
-        ],
-        details: {
-          path: relativePath,
-          bytes: staged.bytes,
-          featureLinks: staged.links,
-          syncedFeatureRegistryPath: "wiki/features-so-far.md",
-          syncedFeatureBytes,
-        },
-      };
+      return wikiResult(`Committed ${relativePath}.`, relativePath, staged.bytes);
     },
   };
 
@@ -1573,7 +1409,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     name: "wiki_append_observations",
     label: "Append Observations",
     description:
-      "Segmented-ingest tool. Append new fenced yaml observation records to wiki/observations/<dialogue>.md, treat incoming observation_id values as temporary, assign persisted observation_id values to new records, reject duplicate source-span/feature-label anchors, validate the full ledger, assign feature ids, and sync wiki/features-so-far.md.",
+      "Segmented-ingest tool. Append new fenced yaml source-bound observation records to wiki/observations/<dialogue>.md, treat incoming observation_id values as temporary, assign persisted observation_id values to new records, reject exact duplicate source-bound records, and validate the full ledger.",
     parameters: appendObservationParameters,
     executionMode: "sequential",
     execute: async (_toolCallId, params) => {
@@ -1602,22 +1438,25 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
           };
         }
 
-        const duplicateSourceFeatureAnchor = duplicateAppendedSourceFeatureAnchor(existingContent, appended.appendedBlocks);
-        if (duplicateSourceFeatureAnchor) {
+        const duplicateSourceObservationAnchor = duplicateAppendedSourceObservationAnchor(
+          existingContent,
+          appended.appendedBlocks,
+        );
+        if (duplicateSourceObservationAnchor) {
           transcript.write("wiki_tool_append_observations_rejected", {
             path: relativePath,
             issueCount: 1,
             issues: [
               {
-                code: "duplicate_source_feature_anchor",
-                message: `Duplicate source span/feature label in segmented append: ${duplicateSourceFeatureAnchor}`,
+                code: "duplicate_source_observation_anchor",
+                message: `Duplicate source-bound observation in segmented append: ${duplicateSourceObservationAnchor}`,
               },
             ],
           });
-          throw new Error(`Duplicate source span/feature label in segmented append: ${duplicateSourceFeatureAnchor}`);
+          throw new Error(`Duplicate source-bound observation in segmented append: ${duplicateSourceObservationAnchor}`);
         }
 
-        const validation = validateAndNormalizeObservation(relativePath, appended.content);
+        const validation = validateObservation(relativePath, appended.content);
         if (!validation.ok) {
           transcript.write("wiki_tool_append_observations_rejected", {
             path: relativePath,
@@ -1627,109 +1466,25 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
           throw new Error(formatObservationLedgerValidationError(validation.validationIssues, "wiki_append_observations"));
         }
 
-        const nextFeatureRegistry = syncedRegistryOrThrow(
-          validation.previousFeatureRegistry,
-          validation.normalizedObservation.links,
-          { transcript, sourcePath: relativePath },
-        );
-        const bytes = Buffer.byteLength(validation.normalizedObservation.content);
-
         mkdirSync(dirname(absolutePath), { recursive: true });
-        writeFileSync(absolutePath, validation.normalizedObservation.content, "utf8");
+        writeFileSync(absolutePath, validation.content, "utf8");
         transcript.write("wiki_tool_append_observations", {
           path: relativePath,
-          bytes,
+          bytes: validation.bytes,
           appendedCount: appended.appendedCount,
-          observationCount: validation.normalizedObservation.links.length,
-        });
-
-        const featuresPath = join(getRepoRoot(), "wiki/features-so-far.md");
-        writeFileSync(featuresPath, nextFeatureRegistry, "utf8");
-        transcript.write("wiki_tool_sync_feature_registry", {
-          path: "wiki/features-so-far.md",
-          sourcePath: relativePath,
-          bytes: Buffer.byteLength(nextFeatureRegistry),
+          observationCount: validation.observationCount,
         });
 
         return {
-          content: [
-            {
-              type: "text",
-              text: [
-                `Appended ${appended.appendedCount} observation(s) to ${relativePath}.`,
-                "Synchronized wiki/features-so-far.md from the appended observation records.",
-                "Harness-assigned observation feature index:",
-                validation.featureIndex,
-              ].join("\n"),
-            },
-          ],
+          content: [{ type: "text", text: `Appended ${appended.appendedCount} observation(s) to ${relativePath}.` }],
           details: {
             path: relativePath,
-            bytes,
+            bytes: validation.bytes,
             appendedCount: appended.appendedCount,
-            featureLinks: validation.normalizedObservation.links,
           },
           ...(command === "ingest-segmented" ? { terminate: true } : {}),
         };
       });
-    },
-  };
-
-  const writeFeatureRegistryTool: AgentTool<typeof writeFeatureRegistryParameters> = {
-    name: "wiki_write_feature_registry",
-    label: "Write Feature Registry",
-    description:
-      `Validate and atomically rewrite wiki/features-so-far.md in ${command} mode. Ingest may add candidates and add observation ids to existing candidates. Review may update statuses, notes, merges, splits, or names. If validation fails, fix the concise feedback and call this tool again.`,
-    parameters: writeFeatureRegistryParameters,
-    executionMode: "sequential",
-    execute: async (_toolCallId, params) => {
-      const absolutePath = join(getRepoRoot(), "wiki/features-so-far.md");
-      const previousContent = existsSync(absolutePath) ? readFileSync(absolutePath, "utf8") : "";
-      const validationIssues = validateFeatureRegistry(params.content, {
-        mode: isReviewCommand(command) ? "review" : "ingest",
-        previousContent,
-      });
-
-      if (validationIssues.length > 0) {
-        const rejectionSignature = JSON.stringify(
-          validationIssues.map((issue) => [issue.code, issue.featureId ?? ""]).sort(),
-        );
-        const repeatedCount = (featureRegistryRejectionCounts.get(rejectionSignature) ?? 0) + 1;
-        featureRegistryRejectionCounts.set(rejectionSignature, repeatedCount);
-        const requiredFeatureIndex = formatObservationFeatureIndex(observationFeatureLinksFromDisk());
-        const repeatedWarning =
-          repeatedCount >= 3
-            ? [
-                "",
-                "Repeated feature registry rejection threshold reached.",
-                "Stop retrying the same registry shape. Use the required observation feature index exactly, or revise the accepted observation ledger first.",
-              ].join("\n")
-            : "";
-
-        transcript.write("wiki_tool_write_feature_registry_rejected", {
-          path: "wiki/features-so-far.md",
-          mode: command,
-          issueCount: validationIssues.length,
-          repeatedCount,
-          terminal: repeatedCount >= 3,
-          issues: validationIssues.slice(0, 12),
-        });
-        throw new Error(
-          [
-            formatFeatureRegistryValidationError(validationIssues),
-            "",
-            "Required observation feature index:",
-            requiredFeatureIndex,
-            repeatedWarning,
-          ].join("\n"),
-        );
-      }
-
-      writeFileSync(absolutePath, params.content, "utf8");
-      const bytes = Buffer.byteLength(params.content);
-      transcript.write("wiki_tool_write_feature_registry", { path: "wiki/features-so-far.md", mode: command, bytes });
-
-      return wikiResult("Wrote wiki/features-so-far.md", "wiki/features-so-far.md", bytes);
     },
   };
 
@@ -1747,9 +1502,5 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
               : command === "relations-review-segmented"
                 ? [sourceSpanTool, updateRelationReviewStatusesTool]
             : [sourceSpanTool, readFileTool, updateReviewStatusesTool, writeObservationTool];
-  if (isReviewCommand(command)) {
-    tools.push(writeFeatureRegistryTool);
-  }
-
   return tools;
 }

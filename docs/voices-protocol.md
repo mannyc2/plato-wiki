@@ -860,7 +860,7 @@ always reported and always separate from the `owner`.
 | `status` | `attributed` | Meaning |
 |---|---|---|
 | `resolved` | true | Every cited range lands on one resolved voice, which owns the record |
-| `turn_level` | true | The outer turn carries no voice records; the printed siglum owns the span |
+| `turn_level` | true | Exact cited ranges land only on ordinary printed turns with one siglum owner (possibly across several such turns) |
 | `cross_voice` | false | Cited ranges land on more than one terminal voice. `owner_chain` reports the longest chain prefix they share |
 | `unresolved_span` | false | The covering span exists but licenses no owner |
 | `needs_anchor` | false | Exact support is absent, missing, or its possible locations yield different attribution outcomes. A request for better anchoring, NOT a judgment that the claim is cross-voice |
@@ -906,19 +906,38 @@ Ownership is decided from exact support ranges instead:
 1. If the whole context window sits inside one voice, that voice owns the claim.
    Anchoring exists to rescue windows that cross voices, not to add a hurdle
    where none exists.
-2. Otherwise, locate the claim's reviewed `greek_terms` **inside its own window**.
+2. If review supplies `speaker_source_ref`, resolve that exact range through the
+   accepted voice/turn authority. It is an owner anchor, not a second copy of
+   the claim's semantic evidence:
+
+   ```yaml
+   speaker_source_ref:
+     source_path: raw/plato/greek/meno.txt
+     start_char: 6159
+     end_char: 6253
+     text_sha256: 5fed8a0a170217ab13a4d48ca321717da03b723667fc71d9b0ccbe80e10b0b00
+   ```
+
+   The field is optional, but when present all four values are required. The
+   path must equal the claim's canonical Greek source, the non-empty range must
+   be wholly contained by the claim `source_ref`, and the hash must match those
+   exact bytes. Runtime never uses the stored `speaker` to choose this range or
+   to recover from an invalid one.
+3. Otherwise, locate the claim's reviewed `greek_terms` **inside its own window**.
    Multiple noncontiguous ranges are normal and expected.
 
-   The isolated `greek_terms` field is parsed with Bun's YAML parser; it is not
-   tokenized with a comma splitter. Commas inside a quoted scalar and apostrophes
-   inside a valid unquoted scalar therefore remain part of that one term. A
-   claim citing `["εὖ ἂν ἔχοι, ὦ Ἀγάθων, εἰ τοιοῦτον εἴη ἡ σοφία …"]` cites one
-   term, not three fragments.
-3. A term occurring exactly once yields an exact byte-verified range.
-4. A term **absent** from its own window is unverifiable evidence and fails
+   The complete canonical claim block is parsed with Bun's YAML parser; terms
+   are not tokenized with a comma splitter or recovered by field-order regexes.
+   Commas inside a quoted scalar and apostrophes inside a valid unquoted scalar
+   therefore remain part of that one term. A claim citing
+   `["εὖ ἂν ἔχοι, ὦ Ἀγάθων, εἰ τοιοῦτον εἴη ἡ σοφία …"]` cites one term, not
+   three fragments. Named parsing also prevents `speaker_source_ref` from being
+   mistaken for a stance-event citation.
+4. A term occurring exactly once yields an exact byte-verified range.
+5. A term **absent** from its own window is unverifiable evidence and fails
    closed, whatever the located terms say. Its silence must not be read as
    assent: the missing term could sit in the other voice.
-5. A term occurring **more than once** is not an anchor gap but a set of
+6. A term occurring **more than once** is not an anchor gap but a set of
    candidates. Attribution enumerates the possible selections, choosing one
    occurrence per ambiguous term alongside every unique term, and resolves each
    selection normally. `needs_anchor` is used only when those possible selections
@@ -929,7 +948,7 @@ Ownership is decided from exact support ranges instead:
 
    The rejected wider rule was "resolve when the uniquely located terms agree",
    which ignores the ambiguous terms entirely.
-6. The owner resolves when every support range maps to the same innermost voice.
+7. The owner resolves when every support range maps to the same innermost voice.
    Ranges landing on different voices are genuinely `cross_voice`.
 
 The join reports `support_unique_ranges`, `support_candidate_ranges`, and

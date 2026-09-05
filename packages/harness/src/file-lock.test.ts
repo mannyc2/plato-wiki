@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from "bun:test";
-import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, symlinkSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { lockPathForTarget, resolveLockTargets, withRepoWriteLock } from "./file-lock.js";
@@ -54,6 +54,28 @@ describe("withRepoWriteLock", () => {
 
   it("rejects targets outside the repository", () => {
     expect(() => resolveLockTargets(["../escape.md"])).toThrow("outside the repository");
+  });
+
+  it("rejects a symlinked lock root instead of writing through it", () => {
+    const outside = join(root, "outside-lock-root");
+    mkdirSync(join(root, "scratch"), { recursive: true });
+    mkdirSync(outside, { recursive: true });
+    symlinkSync(outside, join(root, "scratch/wiki-write-locks"), "dir");
+    expect(() => withRepoWriteLock({ paths: ["wiki/a.md"], label: "unsafe" }, () => undefined)).toThrow(
+      "traverses a symlink or realpath alias",
+    );
+  });
+
+  it("rejects a repository root that is itself a symlink", () => {
+    const actualRoot = join(root, "actual-repo");
+    const rootAlias = join(root, "repo-alias");
+    mkdirSync(actualRoot, { recursive: true });
+    symlinkSync(actualRoot, rootAlias, "dir");
+    restoreRepoRoot?.();
+    restoreRepoRoot = setRepoRootForTesting(rootAlias);
+    expect(() => withRepoWriteLock({ paths: ["wiki/a.md"], label: "unsafe-root" }, () => undefined)).toThrow(
+      "Repository root traverses a symlink or realpath alias",
+    );
   });
 
   it("does not serialize writes to different paths", () => {

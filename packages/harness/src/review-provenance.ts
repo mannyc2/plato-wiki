@@ -1,6 +1,7 @@
 import { execFileSync } from "node:child_process";
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import { createHash } from "node:crypto";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { basename, join } from "node:path";
 import { getRepoRoot } from "./paths.js";
 import { apparatusYamlBlocks, listApparatusLedgerPaths } from "./wiki/apparatus-ledger.js";
 import { claimYamlBlocks, listClaimLedgerPaths } from "./wiki/claim-ledger.js";
@@ -10,6 +11,15 @@ import { relationYamlBlocks, listRelationLedgerPaths } from "./wiki/relation-led
 import { listVoicesLedgerPaths, voiceYamlBlocks } from "./wiki/voices-ledger.js";
 
 type StatusMap = Map<string, string>;
+
+const REVIEW_PROVENANCE_LANES = new Set([
+  "observation",
+  "claim",
+  "relation",
+  "commentary",
+  "apparatus",
+  "voice",
+]);
 
 export type ReviewProvenanceGitRunner = (
   args: string[],
@@ -100,9 +110,83 @@ function statusMapFromContent(relativePath: string, content: string): StatusMap 
   return statusMapFromBlocks(observationYamlBlocks(content), "observation_id");
 }
 
+function sha256(content: string) {
+  return createHash("sha256").update(content).digest("hex");
+}
+
+function snapshotAuditBaselineStatuses(repoRoot: string, headCommit: string): StatusMap | undefined {
+  const auditRoot = join(repoRoot, "wiki/ontology-audits");
+  if (!existsSync(auditRoot)) return undefined;
+
+  const packageNames = readdirSync(auditRoot, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() && /^sha256-[a-f0-9]{64}$/u.test(entry.name))
+    .map((entry) => entry.name)
+    .sort();
+  if (packageNames.length === 0) return undefined;
+  if (packageNames.length !== 1) {
+    throw new Error(`Expected exactly one snapshot-bound ontology audit package; found ${packageNames.length}.`);
+  }
+
+  const packagePath = join(auditRoot, packageNames[0]!);
+  const manifest = JSON.parse(readFileSync(join(packagePath, "manifest.json"), "utf8")) as {
+    snapshot_id?: unknown;
+    baseline?: { git_commit?: unknown };
+  };
+  if (manifest.baseline?.git_commit !== headCommit) return undefined;
+  if (manifest.snapshot_id !== basename(packagePath)) {
+    throw new Error("Ontology audit manifest snapshot_id does not match its content-addressed package path.");
+  }
+
+  const acceptance = JSON.parse(readFileSync(join(packagePath, "acceptance.json"), "utf8")) as {
+    snapshot_id?: unknown;
+    partitions?: Record<string, { sha256?: unknown; rows?: unknown }>;
+  };
+  if (acceptance.snapshot_id !== manifest.snapshot_id) {
+    throw new Error("Ontology audit acceptance snapshot_id does not match the manifest.");
+  }
+
+  const recordUnitsContent = readFileSync(join(packagePath, "record-units.jsonl"), "utf8");
+  const binding = acceptance.partitions?.["record-units.jsonl"];
+  if (binding?.sha256 !== sha256(recordUnitsContent)) {
+    throw new Error("Ontology audit record-units partition does not match its acceptance hash binding.");
+  }
+
+  const statuses: StatusMap = new Map();
+  let rowCount = 0;
+  for (const [index, line] of recordUnitsContent.split(/\r?\n/u).entries()) {
+    if (line.length === 0) continue;
+    rowCount += 1;
+    const row = JSON.parse(line) as {
+      lane?: unknown;
+      stable_id?: unknown;
+      baseline?: { review_status?: unknown } | null;
+    };
+    if (typeof row.lane !== "string" || !REVIEW_PROVENANCE_LANES.has(row.lane)) continue;
+    if (typeof row.stable_id !== "string" || row.stable_id.length === 0) {
+      throw new Error(`Ontology audit record-units line ${index + 1} has no stable_id.`);
+    }
+    if (row.baseline === null || row.baseline === undefined) continue;
+    const reviewStatus = row.baseline.review_status;
+    if (reviewStatus !== null && typeof reviewStatus !== "string") {
+      throw new Error(`Ontology audit record-units line ${index + 1} has an invalid baseline review_status.`);
+    }
+    if (statuses.has(row.stable_id)) {
+      throw new Error(`Ontology audit record-units contains duplicate stable_id ${row.stable_id}.`);
+    }
+    statuses.set(row.stable_id, reviewStatus ?? "unreviewed");
+  }
+  if (binding.rows !== rowCount) {
+    throw new Error(`Ontology audit record-units row count is ${rowCount}; acceptance binds ${String(binding.rows)}.`);
+  }
+  return statuses;
+}
+
 function changedReviewStatusIds(runGit: ReviewProvenanceGitRunner) {
   const repoRoot = getRepoRoot();
   const changed: string[] = [];
+  const headCommit = requiredGitOutput(runGit, ["rev-parse", "HEAD"]);
+  const auditedBaselineStatuses = snapshotAuditBaselineStatuses(repoRoot, headCommit);
+  const workingTreeStatuses: StatusMap = new Map();
 
   for (const relativePath of [
     ...listObservationLedgerPaths(),
@@ -113,10 +197,16 @@ function changedReviewStatusIds(runGit: ReviewProvenanceGitRunner) {
     ...listVoicesLedgerPaths(),
   ].sort()) {
     const workingTreeContent = readFileSync(join(repoRoot, relativePath), "utf8");
-    const workingTreeStatuses = statusMapFromContent(relativePath, workingTreeContent);
+    const pathWorkingTreeStatuses = statusMapFromContent(relativePath, workingTreeContent);
+    for (const [recordId, status] of pathWorkingTreeStatuses) {
+      if (workingTreeStatuses.has(recordId)) throw new Error(`Duplicate semantic record ID ${recordId}.`);
+      workingTreeStatuses.set(recordId, status);
+    }
+
+    if (auditedBaselineStatuses !== undefined) continue;
     const headStatuses = statusMapFromContent(relativePath, readHeadFile(relativePath, runGit));
 
-    for (const [recordId, status] of workingTreeStatuses) {
+    for (const [recordId, status] of pathWorkingTreeStatuses) {
       const headStatus = headStatuses.get(recordId);
       if (headStatus !== undefined && headStatus !== status) {
         changed.push(recordId);
@@ -131,12 +221,27 @@ function changedReviewStatusIds(runGit: ReviewProvenanceGitRunner) {
     // rule mirrors the addition rule above: a record that was never reviewed
     // carries no decision, so regenerating an all-unreviewed ledger stays quiet.
     for (const [recordId, headStatus] of headStatuses) {
-      if (workingTreeStatuses.has(recordId)) continue;
+      if (pathWorkingTreeStatuses.has(recordId)) continue;
       if (headStatus !== "unreviewed") changed.push(recordId);
     }
   }
 
-  return changed.sort();
+  if (auditedBaselineStatuses !== undefined) {
+    for (const [recordId, status] of workingTreeStatuses) {
+      const baselineStatus = auditedBaselineStatuses.get(recordId);
+      if (baselineStatus !== undefined && baselineStatus !== status) {
+        changed.push(recordId);
+      } else if (baselineStatus === undefined && status !== "unreviewed") {
+        changed.push(recordId);
+      }
+    }
+    for (const [recordId, baselineStatus] of auditedBaselineStatuses) {
+      if (workingTreeStatuses.has(recordId)) continue;
+      if (baselineStatus !== "unreviewed") changed.push(recordId);
+    }
+  }
+
+  return [...new Set(changed)].sort();
 }
 
 function reviewReceiptWasAddedOrModified(runGit: ReviewProvenanceGitRunner) {

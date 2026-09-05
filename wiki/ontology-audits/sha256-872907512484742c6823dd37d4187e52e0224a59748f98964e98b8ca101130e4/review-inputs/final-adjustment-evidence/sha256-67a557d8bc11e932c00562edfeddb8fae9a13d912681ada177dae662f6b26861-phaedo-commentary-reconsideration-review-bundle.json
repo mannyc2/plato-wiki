@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "mode": "one-block-independent-reviews",
+  "dialogue": "phaedo",
+  "aggregate": {
+    "schema_version": 1,
+    "dialogue": "phaedo",
+    "reviewer": "phaedo-reconsideration-ensemble-delegated-luna-reviewer-01",
+    "human_listening_or_review": "none claimed",
+    "verdict": "pass",
+    "reviewed_ids": [
+      "comm_phaedo_0003",
+      "comm_phaedo_0005",
+      "comm_phaedo_0010",
+      "comm_phaedo_0013",
+      "comm_phaedo_0014"
+    ],
+    "findings": [
+      {
+        "commentary_id": "comm_phaedo_0003",
+        "verdict": "pass",
+        "rationale": "The accepted claims cover soul–body separation and purification, practice of dying, philosophical versus body-directed motives, and the contrast between philosophical and conventional courage and temperance. The commentary remains interpretive, source-compatible, and coherent."
+      },
+      {
+        "commentary_id": "comm_phaedo_0005",
+        "verdict": "pass",
+        "rationale": "All title and body assertions have exact accepted support: obs_phaedo_0073 covers Simmias’ request; claims 0087 and 0091 cover sensible equals’ apparent inequality and deficiency; claim 0089 covers conception from perception; claim 0097 covers prior knowledge. The section is coherent and remains enc"
+      },
+      {
+        "commentary_id": "comm_phaedo_0010",
+        "verdict": "pass",
+        "rationale": "Claims 0170 and 0176 exactly support the harmony’s following of bodily elements and the soul’s opposition to bodily affections. The framing coherently synthesizes these points within 92d–96c; “voice” is interpretive rather than an additional factual claim."
+      },
+      {
+        "commentary_id": "comm_phaedo_0013",
+        "verdict": "pass",
+        "rationale": "Claims 0237–0241 directly support Cebes’s acceptance, Socrates’ methodological re-examination, the conditional need for care, and the explicitly reported traditional postmortem account. The hinge framing synthesizes these without asserting an unproved doctrine or importing 114d cosmology."
+      },
+      {
+        "commentary_id": "comm_phaedo_0014",
+        "verdict": "pass",
+        "rationale": "The myth framing and limited-perspective claims are supported by obs_phaedo_0228–0230; the qualification against treating the account as exactly true is supported by obs_phaedo_0246. The interpretive framing remains compatible with the Greek anchor."
+      }
+    ],
+    "rationale": "Five isolated Luna reviews passed the exact current phaedo blocks, accepted citations, and bound Greek spans; no translation was supplied."
+  },
+  "reviews": [
+    {
+      "commentary_id": "comm_phaedo_0003",
+      "outcome": "superseded_failed_attempt",
+      "attempt": 1,
+      "source_path": "scratch/commentary/reconsideration/phaedo-comm_phaedo_0003-attempt-01-result.json",
+      "sha256": "fe825970cfd4850d3e256ed4cc592c3169038a5c19baaa65a44e2bd3f9d6165c",
+      "content": "{\"schema_version\":1,\"dialogue\":\"phaedo\",\"reviewer\":\"phaedo-reconsideration-0003-delegated-luna-reviewer-01\",\"human_listening_or_review\":\"none claimed\",\"verdict\":\"fail\",\"reviewed_ids\":[\"comm_phaedo_0003\"],\"findings\":[{\"commentary_id\":\"comm_phaedo_0003\",\"verdict\":\"fail\",\"rationale\":\"Most framing is supported by claims 0033, 0034, and 0037–0039. However, the body’s exchange-of-pleasures formulation relies on claim 0042 at 69a, outside the exact 65b–68e anchor; 68e supports rule by fear/desire but not that coin analogy.\"}],\"rationale\":\"Fails because a checkable formulation imports claim 0042 from 69a beyond the block’s exact 65b–68e anchor. The remaining claims coherently support purification, philosophical courage, and desire/fear as the basis of apparent composure.\"}"
+    },
+    {
+      "commentary_id": "comm_phaedo_0003",
+      "outcome": "terminal_pass",
+      "attempt": null,
+      "source_path": "scratch/commentary/reconsideration/phaedo-comm_phaedo_0003-result.json",
+      "sha256": "49ecb49a2420fd331236487c3a3d6c720faebb249c8cf88cc3c1afefb05b4b0d",
+      "content": "{\"schema_version\":1,\"dialogue\":\"phaedo\",\"reviewer\":\"phaedo-reconsideration-0003-delegated-luna-reviewer-01\",\"human_listening_or_review\":\"none claimed\",\"verdict\":\"pass\",\"reviewed_ids\":[\"comm_phaedo_0003\"],\"findings\":[{\"commentary_id\":\"comm_phaedo_0003\",\"verdict\":\"pass\",\"rationale\":\"The accepted claims cover soul–body separation and purification, practice of dying, philosophical versus body-directed motives, and the contrast between philosophical and conventional courage and temperance. The commentary remains interpretive, source-compatible, and coherent.\"}],\"rationale\":\"Citation defect cured: all checkable claims are tied to accepted records spanning the anchor, with no unsupported cosmological import or claim of absence. The section performs one coherent interpretive job.\"}"
+    },
+    {
+      "commentary_id": "comm_phaedo_0005",
+      "outcome": "terminal_pass",
+      "attempt": null,
+      "source_path": "scratch/commentary/reconsideration/phaedo-comm_phaedo_0005-result.json",
+      "sha256": "64c71805a24ae2afa1cfd9cecbed8510d67e93e36e37f48d9605bf1590440510",
+      "content": "{\"schema_version\":1,\"dialogue\":\"phaedo\",\"reviewer\":\"phaedo-reconsideration-0005-delegated-luna-reviewer-01\",\"human_listening_or_review\":\"none claimed\",\"verdict\":\"pass\",\"reviewed_ids\":[\"comm_phaedo_0005\"],\"findings\":[{\"commentary_id\":\"comm_phaedo_0005\",\"verdict\":\"pass\",\"rationale\":\"All title and body assertions have exact accepted support: obs_phaedo_0073 covers Simmias’ request; claims 0087 and 0091 cover sensible equals’ apparent inequality and deficiency; claim 0089 covers conception from perception; claim 0097 covers prior knowledge. The section is coherent and remains enc\"}\n],\"rationale\":\"The added citations cure the prior defect. Every checkable assertion is supported by accepted records within 73a–76e, with no unsupported import or incoherent job.\"}"
+    },
+    {
+      "commentary_id": "comm_phaedo_0010",
+      "outcome": "terminal_pass",
+      "attempt": null,
+      "source_path": "scratch/commentary/reconsideration/phaedo-comm_phaedo_0010-result.json",
+      "sha256": "e421853de69656224f179fada1c35133bf71dd8585c9a2a119eaecb1242f8056",
+      "content": "{\"schema_version\":1,\"dialogue\":\"phaedo\",\"reviewer\":\"phaedo-reconsideration-0010-delegated-luna-reviewer-01\",\"human_listening_or_review\":\"none claimed\",\"verdict\":\"pass\",\"reviewed_ids\":[\"comm_phaedo_0010\"],\"findings\":[{\"commentary_id\":\"comm_phaedo_0010\",\"verdict\":\"pass\",\"rationale\":\"Claims 0170 and 0176 exactly support the harmony’s following of bodily elements and the soul’s opposition to bodily affections. The framing coherently synthesizes these points within 92d–96c; “voice” is interpretive rather than an additional factual claim.\"}],\"rationale\":\"The previously citationless block now has exact accepted citations supporting its central contrast: harmony follows its parts, while soul rules and resists bodily impulses. Its interpretive framing remains coherent and source-compatible.\"}"
+    },
+    {
+      "commentary_id": "comm_phaedo_0013",
+      "outcome": "terminal_pass",
+      "attempt": null,
+      "source_path": "scratch/commentary/reconsideration/phaedo-comm_phaedo_0013-result.json",
+      "sha256": "40ac671fd949862fb185753455f03f22cc39ce9b28f171bfa7ebb221ae1f6e72",
+      "content": "{\"schema_version\":1,\"dialogue\":\"phaedo\",\"reviewer\":\"phaedo-reconsideration-0013-delegated-luna-reviewer-01\",\"human_listening_or_review\":\"none claimed\",\"verdict\":\"pass\",\"reviewed_ids\":[\"comm_phaedo_0013\"],\"findings\":[{\"commentary_id\":\"comm_phaedo_0013\",\"verdict\":\"pass\",\"rationale\":\"Claims 0237–0241 directly support Cebes’s acceptance, Socrates’ methodological re-examination, the conditional need for care, and the explicitly reported traditional postmortem account. The hinge framing synthesizes these without asserting an unproved doctrine or importing 114d cosmology.\"}],\"rationale\":\"The block’s source-bound assertions are fully covered by exact accepted citations and remain compatible with the Greek anchor. Its interpretive hinge framing is restrained, and the section performs one coherent transition from proof to practical and traditional consequences.\"}"
+    },
+    {
+      "commentary_id": "comm_phaedo_0014",
+      "outcome": "terminal_pass",
+      "attempt": null,
+      "source_path": "scratch/commentary/reconsideration/phaedo-comm_phaedo_0014-result.json",
+      "sha256": "6677bd801a083756a20f420f60acfefd98ab2f0794a7bc3b5e8d18cdede21227",
+      "content": "{\"schema_version\":1,\"dialogue\":\"phaedo\",\"reviewer\":\"phaedo-reconsideration-0014-delegated-luna-reviewer-01\",\"human_listening_or_review\":\"none claimed\",\"verdict\":\"pass\",\"reviewed_ids\":[\"comm_phaedo_0014\"],\"findings\":[{\"commentary_id\":\"comm_phaedo_0014\",\"verdict\":\"pass\",\"rationale\":\"The myth framing and limited-perspective claims are supported by obs_phaedo_0228–0230; the qualification against treating the account as exactly true is supported by obs_phaedo_0246. The interpretive framing remains compatible with the Greek anchor.\"}],\"rationale\":\"Pass: every source-bound assertion has an exact accepted observation citation, including the epistemic qualification supplied by 114d, and the section performs one coherent interpretive job.\"}"
+    }
+  ]
+}

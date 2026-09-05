@@ -1,5 +1,8 @@
 # Known Limits
 
+> Historical v1 audit snapshot. Current ontology limits and invariants are
+> recorded in `docs/ontology-vnext.md` and the content-addressed audit package.
+
 Generated for the v1.0 completion audit. Numeric claims below name the
 artifact or command that reproduced them.
 
@@ -164,6 +167,11 @@ artifact or command that reproduced them.
   Greek term. Cross-dialogue pairs require accepted `definition` or `thesis`
   claims with `left_standing` or `revised` final status and at least one shared
   normalized Greek term. Source: `packages/harness/src/relations.ts`.
+- This generator is discovery-only under ontology vNext. Exact surface-term
+  overlap is neither necessary nor sufficient for a substantive semantic
+  relation, and generated pairs do not define the canonical relation set.
+  Candidate absence is not textual absence or counterevidence; candidate
+  presence does not authorize an automatic accepted or rejected decision.
 
 ## Anchors And Tokens
 

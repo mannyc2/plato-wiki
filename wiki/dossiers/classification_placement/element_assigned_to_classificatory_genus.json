@@ -1,0 +1,165 @@
+{
+  "accepted_observations": 2,
+  "axis_id": "axis_sha256_0d909a58a671ca0ea593c21deadf732316e6f8484c99313d8f03eb08e2b1da04",
+  "axis_key": "classification_placement",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record element assigned to classificatory genus within the classification placement axis?",
+  "concept_id": "concept_sha256_85e5076cee83f8fba4aee86bba1b82aab91226bfd07beffa273fd26a53aa0eaf",
+  "concept_key": "element_assigned_to_classificatory_genus",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_43e5caaa1adeaf8ac1695f81eef52608827955eb93f6112f94f231ac93134fd1",
+      "axisKey": "authority_invocation",
+      "conceptId": "concept_sha256_87e0eeec4055fc2f86e306413a2123cffd1c0e949dd2f93d33a07153f2d8a4b9",
+      "conceptKey": "argument_as_ally_to_ancients",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_c314ed4133ba70862813ab2624e247445f69071d2b0089df296af4eff42db737",
+      "axisKey": "dialogue_mode_reflection",
+      "conceptId": "concept_sha256_112192baa5392b5a0713aa446f9c5f50bdaf06eddafa99c412bb614afaa001a0",
+      "conceptKey": "play_as_respite_from_seriousness",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 1,
+  "dimension": "discourse_structure",
+  "instance_ids": [
+    "obs_philebus_0127",
+    "obs_philebus_0349"
+  ],
+  "instances": [
+    {
+      "dialogue": "philebus",
+      "observationId": "obs_philebus_0127",
+      "speakers": [
+        "ΣΩ.",
+        "ΠΡΩ."
+      ],
+      "stephanusSpan": "30d-30e",
+      "turnCount": 8
+    },
+    {
+      "dialogue": "philebus",
+      "observationId": "obs_philebus_0349",
+      "speakers": [
+        "ΣΩ.",
+        "ΦΙ."
+      ],
+      "stephanusSpan": "27e",
+      "turnCount": 4
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 2,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_85e5076cee83f8fba4aee86bba1b82aab91226bfd07beffa273fd26a53aa0eaf",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

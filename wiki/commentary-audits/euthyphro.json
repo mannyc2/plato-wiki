@@ -3,11 +3,11 @@
   "dialogue": "euthyphro",
   "ledger": {
     "path": "wiki/commentary/euthyphro.md",
-    "sha256": "2042b7f221400999988651d6ed4af2dbce732b9d6e10948e100bb6e5a96567fc"
+    "sha256": "c977dfa47c340b8d1ae841ef362ebdc15ec20ac66162be05c924220e5b9f1e66"
   },
   "protocol": {
     "path": "docs/commentary-protocol.md",
-    "sha256": "5f5e6f47f2d39cb42dd8941762ca1b82b4c1371801576f9ec7875e76286e1a13"
+    "sha256": "eab032f2a8f39f3e3dba37f4f63adfacc9c9b34d564e45557ed6c20a14e39e0f"
   },
   "authoring": {
     "model": "gpt-5.6-luna",
@@ -17,9 +17,9 @@
     {
       "unit_key": "01-2a-3e",
       "section_id": "comm_euthyphro_0001",
-      "audit_brief_sha256": "66b713425e1d493ca4f3104d03fead6cc663758e21362b657e6cb7821e52edf4",
+      "audit_brief_sha256": "79de367be383d404b0982725c27ea54030f21dce228154682c4d0a9b8bb6523f",
       "output_path": "scratch/commentary/audits/euthyphro/01-2a-3e.json",
-      "output_sha256": "0ff83ca26fedbd126b9cd626055ff81ad659879cc791cc5452deae6ea4dbab3c",
+      "output_sha256": "ba207c8d70a748f6947a4ac8d899f95797ff53b756f592b27c4a9951ccb98b33",
       "output": {
         "schema_version": 3,
         "dialogue": "euthyphro",
@@ -47,7 +47,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately previews the court setting, Socrates’ indictment, Meletus’ reported charge, and the contrasting legal postures clarified by the span’s end."
+            "rationale": "Accurately orients the full unit, including the charge and the final contrast between Socrates' indictment and Euthyphro's prosecution; the opening edge is clean."
           },
           {
             "commentary_id": "comm_euthyphro_0011",
@@ -65,25 +65,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately isolates the dike/graphe correction, preserves the passage’s stated limits, and gives the opening exchange a clear dramatic point."
-          },
-          {
-            "commentary_id": "comm_euthyphro_0013",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Faithfully distinguishes Euthyphro’s reported mockery from Socrates’ conjectured contrast about teaching, with a concise and audible interpretive focus."
+            "rationale": "Accurately highlights the opening terminology mismatch without inventing the legal distinction; before the source at its start, it creates no sentence or exchange split."
           }
         ]
       }
@@ -91,9 +73,9 @@
     {
       "unit_key": "02-4a-5c",
       "section_id": "comm_euthyphro_0002",
-      "audit_brief_sha256": "4c76accb175024191cd2e79601edd6d49e4b20d39d0d03cf07d567bd89fc21e1",
+      "audit_brief_sha256": "1e1d8e8c235479190e1159931611bc2200d85c21d6d5b4d60ee087003a983b7e",
       "output_path": "scratch/commentary/audits/euthyphro/02-4a-5c.json",
-      "output_sha256": "ec415f5a81e087456c1f4daf72a6c49b138f45c9564d99a6aa23ca8fb1425a90",
+      "output_sha256": "db01fc91c1f0de7ee90de6aa2205f32ffb90e44e5893c194d72091cefe9963ea",
       "output": {
         "schema_version": 3,
         "dialogue": "euthyphro",
@@ -104,34 +86,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_euthyphro_0002",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately traces the case, Euthyphro’s expertise claim, Socrates’ strategic pupil offer, and the move to define piety; the opening edge cleanly precedes Euthyphro’s answer."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "03-5d-6e",
       "section_id": "comm_euthyphro_0003",
-      "audit_brief_sha256": "f476c2b8bd52e9f86697c313b512a00f65620eff3c69b41d2c6b869f0195f964",
+      "audit_brief_sha256": "c0c2361a0806062770be11cb9aea941c58ac1b6ca79c70b10f7ebc1b236807ec",
       "output_path": "scratch/commentary/audits/euthyphro/03-5d-6e.json",
-      "output_sha256": "9dc7fce540a45cca32ca36029d8756bc9d8d2e3661de2fa0cfe228602e4ce7a1",
+      "output_sha256": "cf74e628bb29ce09922f652e6a6fbebccbeeaa722e2279a2b2969814a3a6dbae",
       "output": {
         "schema_version": 3,
         "dialogue": "euthyphro",
@@ -159,7 +122,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately distinguishes Socrates’ form request from Euthyphro’s untested definition. The edge follows Euthyphro’s definition and precedes Socrates’ evaluation, preserving the exchange."
+            "rationale": "Evidence matches the cited method rule and definition. The edge follows Euthyphro’s definition and precedes Socrates’ evaluation, framing the demand without breaking flow."
           }
         ]
       }
@@ -167,9 +130,9 @@
     {
       "unit_key": "04-7a-8a",
       "section_id": "comm_euthyphro_0004",
-      "audit_brief_sha256": "5149363d549d178bf48352e2f4f4bc49835b9ad4c344e5ebcb9111b67f961f9a",
+      "audit_brief_sha256": "97ff4745585cc57ffdab529f345be7c5545b3c6f040276b983f6a5dbe745252d",
       "output_path": "scratch/commentary/audits/euthyphro/04-7a-8a.json",
-      "output_sha256": "b6d84fbf7e19e313bc9553e14a1be0fd9a2a89c684fb94a55e3689020c5ad4c2",
+      "output_sha256": "21eb7fe9fdef0f6d637a4b33e058ec7548f3c365b787a906429c9849fd3fe845",
       "output": {
         "schema_version": 3,
         "dialogue": "euthyphro",
@@ -197,25 +160,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately orients the definition and its conditional refutation; it is concise, supported, and inserted after Euthyphro's definition and before Socrates' examination."
-          },
-          {
-            "commentary_id": "comm_euthyphro_0020",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately distinguishes calculable disputes from value-laden disagreement and preserves the argument's conditional scope; it falls between Euthyphro's assent and Socrates' next question."
+            "rationale": "Accurately frames the proposed definition and conditional assent-chain refutation. It sits after Euthyphro's definition and before Socrates' examination, preserving the dramatic turn."
           }
         ]
       }
@@ -223,9 +168,9 @@
     {
       "unit_key": "05-8b-9e",
       "section_id": "comm_euthyphro_0005",
-      "audit_brief_sha256": "4546a3e5db1390868808b31bb266db37e5b46e255b72d67e14fb801d759dfa04",
+      "audit_brief_sha256": "710789488fd50114e4f9a777b77391b2914fa6c8171a609d6077feac43425a47",
       "output_path": "scratch/commentary/audits/euthyphro/05-8b-9e.json",
-      "output_sha256": "a0ee8a3d6f4b9ca2ce405d69d4a3fb9eef6c7743ee6692b964d1195a0ce52f87",
+      "output_sha256": "26de33daf424ba34b35aa7c2b066b1c10d7784528a14a4ddd684549281d556d1",
       "output": {
         "schema_version": 3,
         "dialogue": "euthyphro",
@@ -236,34 +181,15 @@
           "effort": "medium"
         },
         "unit_verdict": "pass",
-        "blocks": [
-          {
-            "commentary_id": "comm_euthyphro_0005",
-            "disposition": "pass",
-            "issue_codes": [],
-            "checks": {
-              "evidence": {
-                "verdict": "pass"
-              },
-              "placement": {
-                "verdict": "pass",
-                "hazard_codes": []
-              },
-              "listening": {
-                "verdict": "pass"
-              }
-            },
-            "rationale": "Accurately summarizes the passage's narrowing, proof request, procedural release, and unanimity revision; the 8b turn edge cleanly prepares Euthyphro's reply."
-          }
-        ]
+        "blocks": []
       }
     },
     {
       "unit_key": "06-10a-11a",
       "section_id": "comm_euthyphro_0006",
-      "audit_brief_sha256": "0428dfd9614eb1f47222a0b4e396f14d3ddc94e31eaa7d0d6178cc4dfad95f1a",
+      "audit_brief_sha256": "581ec5ca14f37e84b51f63abaa61f625a54146bf75c9d06d55eb41a8333a963e",
       "output_path": "scratch/commentary/audits/euthyphro/06-10a-11a.json",
-      "output_sha256": "c0e6be32220022eb9a5e45a5d659adef6fbcc0e655b549f43afc74379caee102",
+      "output_sha256": "b07c13d2424610033ea323d748f657fda1f741733d87098c179950eead63ca89",
       "output": {
         "schema_version": 3,
         "dialogue": "euthyphro",
@@ -291,7 +217,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately tracks the dilemma, clarification, and active/passive distinction; the caution about Euthyphro is appropriately modest. It falls between the prior setup and Socrates’ question."
+            "rationale": "Accurately frames the dilemma and grammatical clarification, with interpretation marked as reading. The edge follows Euthyphro’s reply and precedes Socrates’ transition into the dilemma."
           }
         ]
       }
@@ -299,9 +225,9 @@
     {
       "unit_key": "07-11b-12e",
       "section_id": "comm_euthyphro_0007",
-      "audit_brief_sha256": "fdbb12f7c7c647a10e075921c77445976f986a6a60a4a769cac364f2645729ea",
+      "audit_brief_sha256": "be954da4bcf4edc148c79ed8d7ed6e1cbde08d23ae9b3b40e74ba56a9cbbe8ec",
       "output_path": "scratch/commentary/audits/euthyphro/07-11b-12e.json",
-      "output_sha256": "829c19574f2e9c9b6fdeae2858e37907b6f487ba38eddd6a2cc9b29a2035cd57",
+      "output_sha256": "859196795f6ebb366125401fcb688a90eed6ed90c3e32c859a96b52457d85566",
       "output": {
         "schema_version": 3,
         "dialogue": "euthyphro",
@@ -329,7 +255,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately explains the fear/reverence analogy and its application to piety and justice. The edge follows Euthyphro’s agreement and precedes Socrates’ request to identify the part; clear aloud."
+            "rationale": "Accurately explains the passage’s part-whole reasoning and its consequence. The edge follows Euthyphro’s “I agree” and precedes Socrates’ request to identify piety’s part."
           }
         ]
       }
@@ -337,7 +263,7 @@
     {
       "unit_key": "08-13a-14a",
       "section_id": "comm_euthyphro_0008",
-      "audit_brief_sha256": "df76c351569afecbf5a1fe8bc60f1525610b41f00b02a3c39683134f95320a02",
+      "audit_brief_sha256": "31b9cdd0a8080afa405f8792a968204e4d7eb0d8a00de71dba1165d1100035ac",
       "output_path": "scratch/commentary/audits/euthyphro/08-13a-14a.json",
       "output_sha256": "b3e07f70a8a6e87466fd0f4639718ae86ad0fb3b0c307d47c7a1fa9769361978",
       "output": {
@@ -356,9 +282,9 @@
     {
       "unit_key": "09-14b-15c",
       "section_id": "comm_euthyphro_0009",
-      "audit_brief_sha256": "82eb0e9b00bc0c186787f62dd348615fe7e2ff8e7cff129a4a1e99e259e601e9",
+      "audit_brief_sha256": "b888fa6727373e6d00e72e930a33c0163eaebb0352619baeb93fb22b94241bbb",
       "output_path": "scratch/commentary/audits/euthyphro/09-14b-15c.json",
-      "output_sha256": "2744731297cc8f6a03fee5d8bac222561b48ff08895eeb7718aa3ccdd068a089",
+      "output_sha256": "3a8fc1b736df3c00c74125aff84d94ca6cb847911f31e53cbb0747a0828e1196",
       "output": {
         "schema_version": 3,
         "dialogue": "euthyphro",
@@ -386,7 +312,7 @@
                 "verdict": "pass"
               }
             },
-            "rationale": "Accurately traces the exchange analogy, honor-and-gratitude answer, and circular return to god-loved; the 72-word overview is clear and placed at a complete turn edge."
+            "rationale": "Accurately traces the exchange, its circular return, and unresolved inconsistency. The edge follows Euthyphro’s opening turn and precedes Socrates’ reply without disrupting a clause or direct answer."
           }
         ]
       }
@@ -394,7 +320,7 @@
     {
       "unit_key": "10-15d-16a",
       "section_id": "comm_euthyphro_0010",
-      "audit_brief_sha256": "0d71886d394705dab0cd48e2be12c61d5cc116d8892faf6528264dcdfdfb4adc",
+      "audit_brief_sha256": "122618c8db305beadb063b3e82f7cf7f7ffe3710b02cec0d03e6f3a8d7f424a7",
       "output_path": "scratch/commentary/audits/euthyphro/10-15d-16a.json",
       "output_sha256": "b80fff92578c675b485ecb081471d149baa07773315fe3163da5515daed190eb",
       "output": {
@@ -413,25 +339,21 @@
   ],
   "acceptance": {
     "decision": "accepted",
-    "reviewer": "manifest-batch-1-delegated-luna-reviewer-20260823",
-    "reviewed_on": "2026-08-23",
-    "rationale": "Independent Luna source, accepted-evidence, and placement sample passed for the current Euthyphro ledger.",
+    "reviewer": "commentary-audit-delegated-luna-reviewer-euthyphro-6abbbb8aea6f",
+    "reviewed_on": "2026-09-01",
+    "rationale": "All seven sampled blocks are independently supported by their exact anchors and accepted evidence, have safe resolved playback edges, and provide distinct, concise explanatory value without substantive audit defects.",
     "sampled_commentary_ids": [
       "comm_euthyphro_0001",
-      "comm_euthyphro_0002",
       "comm_euthyphro_0004",
-      "comm_euthyphro_0005",
       "comm_euthyphro_0009",
       "comm_euthyphro_0011",
-      "comm_euthyphro_0013",
       "comm_euthyphro_0019",
-      "comm_euthyphro_0020",
       "comm_euthyphro_0025",
       "comm_euthyphro_0029"
     ],
     "review_note": {
-      "path": "wiki/review/2026-08-23-commentary-quality-euthyphro-luna-sample.md",
-      "sha256": "67adf42ca49cebe3e9f437b069d4e875336846e171176ad51dbc053fa3735d26"
+      "path": "wiki/review/2026-09-01-commentary-quality-euthyphro-luna-sample.md",
+      "sha256": "8697bad1838f7e50a2d76241d2f4afc5ac432689b1d39310e83772efb322e7ed"
     }
   }
 }

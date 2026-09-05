@@ -1,0 +1,163 @@
+{
+  "accepted_observations": 2,
+  "axis_id": "axis_sha256_7dc770bb74baf5ff062220951175468a0fa1c2fb936c14a2e71eb983f23c35d8",
+  "axis_key": "closure_type",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record explicit departure command within the closure type axis?",
+  "concept_id": "concept_sha256_97d4ce47656f7fabb570f99fa646aa97878d620270fac4bb1f4cc7b2e85f43d7",
+  "concept_key": "explicit_departure_command",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_672e90ec42f222feb868815da9e7f0b3bb307fd1effcd7d07af71496387db23b",
+      "axisKey": "city_as_kinship_substitute",
+      "conceptId": "concept_sha256_da18948362ac4a92a838925fc6784b45c995e72f482ef971350de0553c983dba",
+      "conceptKey": "polis_in_familial_roles",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_9094c9928fcba4c37ffb184fa5d0b845d6bf58f7ad94df8c3948d84a2ced9f72",
+      "axisKey": "funerary_institution",
+      "conceptId": "concept_sha256_482cfbe7b4e3a7473b9d583ea9056ce896e744dd2e4548bfd99975ddfbb0dc40",
+      "conceptKey": "annual_public_rites_for_war_dead",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 2,
+  "dimension": "discourse_structure",
+  "instance_ids": [
+    "obs_menexenus_0092",
+    "obs_protagoras_0300"
+  ],
+  "instances": [
+    {
+      "dialogue": "menexenus",
+      "observationId": "obs_menexenus_0092",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "249b-249c",
+      "turnCount": 1
+    },
+    {
+      "dialogue": "protagoras",
+      "observationId": "obs_protagoras_0300",
+      "speakers": [
+        "ΣΩ."
+      ],
+      "stephanusSpan": "362a",
+      "turnCount": 1
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 1,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_97d4ce47656f7fabb570f99fa646aa97878d620270fac4bb1f4cc7b2e85f43d7",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

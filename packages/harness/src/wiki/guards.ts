@@ -2,7 +2,6 @@ export function assertReadableWikiPath(relativePath: string) {
   const allowed =
     relativePath.startsWith("wiki/observations/") ||
     relativePath.startsWith("wiki/claims/") ||
-    relativePath === "wiki/features-so-far.md" ||
     relativePath.startsWith("raw/plato/greek/");
 
   if (!allowed) {

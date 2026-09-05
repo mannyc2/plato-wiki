@@ -1,0 +1,37 @@
+# Commentary quality-audit acceptance
+
+dialogue: cratylus
+decision: accepted
+reviewer: commentary-audit-delegated-luna-reviewer-cratylus-d9c2d9bc6c81
+reviewed_on: 2026-09-01
+rationale: All 15 sampled blocks are independently supported by their cited evidence, exact source passages, and clean complete-sentence playback edges; each adds a focused, qualified teaching point without a substantive listening or flow defect.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sample_evidence_path: wiki/submissions/commentary-audit-sample/cratylus/9919e8c4ee3e633bd220a074c1841367352ff8e02749e9fbe82f69622ee52fa3.json
+sample_evidence_sha256: 9919e8c4ee3e633bd220a074c1841367352ff8e02749e9fbe82f69622ee52fa3
+sample_input_sha256: cd7a7f298615953c6d12d080169ea38c5899b5197d9f9f1627fe12e045c952cf
+pending_manifest_sha256: d9c2d9bc6c811e8184affb0f8ab347676476fa6a6fd2a1cf90e5f9e4623bbae3
+commentary_ledger_sha256: 4f10bc3400327e6af658658e608d3f1ecc0f88a116b08fb44780ce598774d428
+sample_packet_sha256: 5d1dd1b4410aee52589c72362349e73fccaa1bf62a05a6a7b062114620ab1377
+sample_output_sha256: 73a1de6331c034141fd993591bf05c20d905515b6a226bc6d8b9a64429b553bf
+sample_state_sha256: 903bbea3e434e33e2b51ad338107a16fd2a7c76d9e42f30f23cebbc21a2e2f2e
+codex_execution_sha256: b27cb97ae197aad76a58bb6cb143e75c5dd52244b075e01e9a04c6da62700817
+output_schema_sha256: da72b58e3970902aa23ff1c12bbd9b66a74080bd06cccfa3d07a70a1d43ed890
+model_catalog_sha256: a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724
+sample_prompt_sha256: c2a458d641138ebb65a59849fae781db797f87cb66cdc9a49a5a36775e438760
+sampled_commentary_ids:
+- comm_cratylus_0004
+- comm_cratylus_0006
+- comm_cratylus_0007
+- comm_cratylus_0018
+- comm_cratylus_0022
+- comm_cratylus_0026
+- comm_cratylus_0030
+- comm_cratylus_0031
+- comm_cratylus_0032
+- comm_cratylus_0037
+- comm_cratylus_0038
+- comm_cratylus_0041
+- comm_cratylus_0042
+- comm_cratylus_0044
+- comm_cratylus_0048

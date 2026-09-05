@@ -120,7 +120,7 @@ export type WrittenCommentaryQualityAuditManifestPreview = {
   manifest: CommentaryQualityAuditManifest;
 };
 
-type InspectedManifest = {
+export type CommentaryQualityAuditManifestInspection = {
   manifest?: CommentaryQualityAuditManifest;
   issues: CommentaryQualityAuditManifestIssue[];
 };
@@ -226,7 +226,10 @@ function resourceValue(
   return { path: value.path, sha256: value.sha256 };
 }
 
-function inspectCommentaryQualityAuditManifest(path: string, content: string): InspectedManifest {
+function inspectCommentaryQualityAuditManifestShape(
+  path: string,
+  content: string,
+): CommentaryQualityAuditManifestInspection {
   const issues: CommentaryQualityAuditManifestIssue[] = [];
   let value: unknown;
   try {
@@ -361,14 +364,14 @@ function inspectCommentaryQualityAuditManifest(path: string, content: string): I
   };
 }
 
-function validateCommentaryQualityAuditManifestWithEvidence(
+function inspectValidatedCommentaryQualityAuditManifestWithEvidence(
   path: string,
   content: string,
   evidence?: CommentaryAuditEvidenceSnapshot,
-) {
-  const inspected = inspectCommentaryQualityAuditManifest(path, content);
+): CommentaryQualityAuditManifestInspection {
+  const inspected = inspectCommentaryQualityAuditManifestShape(path, content);
   const { issues, manifest } = inspected;
-  if (!manifest) return issues;
+  if (!manifest) return inspected;
 
   const fileDialogue = /^wiki\/commentary-audits\/([a-z0-9-]+)\.json$/u.exec(path)?.[1];
   if (!fileDialogue) {
@@ -491,7 +494,11 @@ function validateCommentaryQualityAuditManifestWithEvidence(
 
   const currentAuditJobs = new Map<string, CommentaryCampaignJob>();
   try {
-    const currentPlan = buildCommentaryCampaignPlan({ dialogue: manifest.dialogue, stage: "audit" });
+    const currentPlan = buildCommentaryCampaignPlan({
+      dialogue: manifest.dialogue,
+      stage: "audit",
+      ...(evidence ? { auditEvidence: evidence } : {}),
+    });
     for (const job of currentPlan.manifest.jobs) {
       if (job.stage === "audit" && job.unit_key) currentAuditJobs.set(job.unit_key, job);
     }
@@ -640,29 +647,65 @@ function validateCommentaryQualityAuditManifestWithEvidence(
       sampledCommentaryIds: manifest.acceptance.sampled_commentary_ids,
       reviewNote: manifest.acceptance.review_note,
       activeCommentaryIds: ledgerIds,
+      pendingManifestContent: prettyJson({
+        ...manifest,
+        acceptance: {
+          decision: "pending",
+          reviewer: null,
+          reviewed_on: null,
+          rationale: null,
+          sampled_commentary_ids: [],
+          review_note: null,
+        },
+      }),
     })) {
       addIssue(issues, path, issue.code, issue.message);
     }
   }
-  return issues;
+  return inspected;
 }
 
-export function validateCommentaryQualityAuditManifest(path: string, content: string) {
-  return validateCommentaryQualityAuditManifestWithEvidence(path, content);
+function validateCommentaryQualityAuditManifestWithEvidence(
+  path: string,
+  content: string,
+  evidence?: CommentaryAuditEvidenceSnapshot,
+) {
+  return inspectValidatedCommentaryQualityAuditManifestWithEvidence(path, content, evidence).issues;
+}
+
+export function inspectValidatedCommentaryQualityAuditManifest(
+  path: string,
+  content: string,
+  evidence?: CommentaryAuditEvidenceSnapshot,
+) {
+  return inspectValidatedCommentaryQualityAuditManifestWithEvidence(path, content, evidence);
+}
+
+export function validateCommentaryQualityAuditManifest(
+  path: string,
+  content: string,
+  evidence?: CommentaryAuditEvidenceSnapshot,
+) {
+  return validateCommentaryQualityAuditManifestWithEvidence(path, content, evidence);
 }
 
 export function formatCommentaryQualityAuditManifestIssues(issues: CommentaryQualityAuditManifestIssue[]) {
   return issues.map((issue) => `- [${issue.code}] ${issue.message}`).join("\n");
 }
 
-export function parseCommentaryQualityAuditManifest(path: string, content: string): CommentaryQualityAuditManifest {
-  const issues = validateCommentaryQualityAuditManifest(path, content);
+export function parseCommentaryQualityAuditManifest(
+  path: string,
+  content: string,
+  evidence?: CommentaryAuditEvidenceSnapshot,
+): CommentaryQualityAuditManifest {
+  const inspected = inspectValidatedCommentaryQualityAuditManifestWithEvidence(path, content, evidence);
+  const { issues } = inspected;
   if (issues.length > 0) {
     throw new Error(
       `Commentary quality-audit manifest validation failed for ${path}:\n${formatCommentaryQualityAuditManifestIssues(issues)}`,
     );
   }
-  return inspectCommentaryQualityAuditManifest(path, content).manifest!;
+  return inspected.manifest!;
 }
 
 export function listCommentaryQualityAuditManifestPaths() {
@@ -759,12 +802,20 @@ function completedScratchOutput(
   }
 }
 
-export function buildCommentaryQualityAuditManifestPreview(dialogue: string): CommentaryQualityAuditManifest {
-  const plan = buildCommentaryCampaignPlan({ dialogue, stage: "audit" });
+export function buildCommentaryQualityAuditManifestPreview(
+  dialogue: string,
+  options: { auditEvidence?: CommentaryAuditEvidenceSnapshot } = {},
+): CommentaryQualityAuditManifest {
+  const plan = buildCommentaryCampaignPlan({
+    dialogue,
+    stage: "audit",
+    ...(options.auditEvidence ? { auditEvidence: options.auditEvidence } : {}),
+  });
   const jobs = plan.manifest.jobs;
   if (jobs.length === 0) throw new Error(`No quality-audit units are required or ready for ${dialogue}.`);
+  const operationEvidence = options.auditEvidence ?? plan.auditEvidence;
   const canonicalAuditReuse = createReusableCanonicalAuditOutputResolver({
-    ...(plan.auditEvidence ? { auditEvidence: plan.auditEvidence } : {}),
+    ...(operationEvidence ? { auditEvidence: operationEvidence } : {}),
   });
   const ledgerPath = `wiki/commentary/${dialogue}.md`;
   const protocolPath = "docs/commentary-protocol.md" as const;
@@ -801,7 +852,11 @@ export function buildCommentaryQualityAuditManifestPreview(dialogue: string): Co
     },
   };
   const canonicalPath = `wiki/commentary-audits/${dialogue}.json`;
-  const issues = validateCommentaryQualityAuditManifest(canonicalPath, prettyJson(manifest));
+  const issues = validateCommentaryQualityAuditManifestWithEvidence(
+    canonicalPath,
+    prettyJson(manifest),
+    operationEvidence,
+  );
   if (issues.length > 0) {
     throw new Error(`Refusing invalid quality-audit preview:\n${formatCommentaryQualityAuditManifestIssues(issues)}`);
   }
@@ -840,7 +895,7 @@ function buildCommentaryQualityAuditManifestRefresh(
     throw new Error(`Cannot refresh missing accepted commentary quality-audit manifest ${manifestPath}`);
   }
   const existingContent = readFileSync(manifestAbsolutePath, "utf8");
-  const existing = inspectCommentaryQualityAuditManifest(manifestPath, existingContent).manifest;
+  const existing = inspectCommentaryQualityAuditManifestShape(manifestPath, existingContent).manifest;
   if (!existing || existing.acceptance.decision !== "accepted") {
     throw new Error(`Cannot refresh ${manifestPath} without an existing accepted Luna sample`);
   }

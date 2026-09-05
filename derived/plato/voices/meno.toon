@@ -1,28 +1,26 @@
 dialogue: meno
 ledger_path: wiki/voices/meno.md
-ledger_sha256: 23215b5bed0df89068db2a68488dfc8953e7bef8ea8745d90418cf0bbfa2ffa6
+ledger_sha256: dee198afcb6eabce0e2429affe106403e403fbb8f716ff23f80caede2efac5f0
 source_path: raw/plato/greek/meno.txt
 source_sha256: 91e9583fb58eaaee47228c2ad2c917b40c6a9cdd864727cfc1ef6e561ef79f99
 turn_index_path: derived/plato/turns/meno.toon
 turn_index_sha256: c9c5aafaa857b23b3fa214279a3d9a1ecb78170a8368f5469c97716236dc65ea
-voices[19]:
-  voice_id        | outer_turn_id  | start_char | end_char | depth | voice_chain | resolution | evidence_kinds                  | evidence_count
-  voice_meno_0001 | turn_meno_0003 | 814        | 1703     | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1
-  voice_meno_0003 | turn_meno_0056 | 7492       | 7829     | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1
-  voice_meno_0006 | turn_meno_0062 | 7968       | 8189     | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1
-  voice_meno_0008 | turn_meno_0066 | 8327       | 8739     | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1
-  voice_meno_0010 | turn_meno_0072 | 9018       | 9566     | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1
-  voice_meno_0014 | turn_meno_0361 | 33564      | 34713    | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1
-  voice_meno_0016 | turn_meno_0478 | 51170      | 51405    | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1
-  voice_meno_0018 | turn_meno_0566 | 59362      | 59533    | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1
-  voice_meno_0002 | turn_meno_0003 | 1056       | 1299     | 2     | ΣΩ.         | unresolved | (none)                          | 0
-  voice_meno_0004 | turn_meno_0056 | 7655       | 7688     | 2     | ΣΩ.         | unresolved | (none)                          | 0
-  voice_meno_0005 | turn_meno_0056 | 7744       | 7799     | 2     | ΣΩ.         | unresolved | (none)                          | 0
-  voice_meno_0007 | turn_meno_0062 | 8085       | 8135     | 2     | ΣΩ.         | unresolved | (none)                          | 0
-  voice_meno_0009 | turn_meno_0066 | 8381       | 8719     | 2     | ΣΩ.         | unresolved | (none)                          | 0
-  voice_meno_0011 | turn_meno_0072 | 9154       | 9231     | 2     | ΣΩ.>ΜΕΝ.    | resolved   | person_marked_reporting_formula | 1
-  voice_meno_0012 | turn_meno_0072 | 9260       | 9319     | 2     | ΣΩ.         | unresolved | (none)                          | 0
-  voice_meno_0013 | turn_meno_0072 | 9384       | 9488     | 2     | ΣΩ.         | unresolved | (none)                          | 0
-  voice_meno_0015 | turn_meno_0361 | 33771      | 34222    | 2     | ΣΩ.         | unresolved | (none)                          | 0
-  voice_meno_0017 | turn_meno_0478 | 51204      | 51404    | 2     | ΣΩ.>ΘΕΟΓ.   | resolved   | anaphoric_reporting_formula     | 1
-  voice_meno_0019 | turn_meno_0566 | 59489      | 59532    | 2     | ΣΩ.         | unresolved | (none)                          | 0
+voices[17]:
+  voice_id        | outer_turn_id  | start_char | end_char | depth | voice_chain | resolution | evidence_kinds                  | evidence_count | resolution_basis
+  voice_meno_0001 | turn_meno_0003 | 814        | 1703     | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1              | (none)
+  voice_meno_0003 | turn_meno_0056 | 7492       | 7829     | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1              | (none)
+  voice_meno_0006 | turn_meno_0062 | 7968       | 8189     | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1              | (none)
+  voice_meno_0008 | turn_meno_0066 | 8327       | 8739     | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1              | (none)
+  voice_meno_0010 | turn_meno_0072 | 9018       | 9566     | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1              | (none)
+  voice_meno_0014 | turn_meno_0361 | 33564      | 34713    | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1              | (none)
+  voice_meno_0018 | turn_meno_0566 | 59362      | 59533    | 1     | ΣΩ.         | resolved   | printed_siglum                  | 1              | (none)
+  voice_meno_0002 | turn_meno_0003 | 1056       | 1299     | 2     | ΣΩ.         | unresolved | (none)                          | 0              | (none)
+  voice_meno_0004 | turn_meno_0056 | 7655       | 7688     | 2     | ΣΩ.         | unresolved | (none)                          | 0              | (none)
+  voice_meno_0005 | turn_meno_0056 | 7744       | 7799     | 2     | ΣΩ.         | unresolved | (none)                          | 0              | (none)
+  voice_meno_0007 | turn_meno_0062 | 8085       | 8135     | 2     | ΣΩ.         | unresolved | (none)                          | 0              | (none)
+  voice_meno_0009 | turn_meno_0066 | 8381       | 8719     | 2     | ΣΩ.         | unresolved | (none)                          | 0              | (none)
+  voice_meno_0011 | turn_meno_0072 | 9154       | 9231     | 2     | ΣΩ.>ΜΕΝ.    | resolved   | person_marked_reporting_formula | 1              | (none)
+  voice_meno_0012 | turn_meno_0072 | 9260       | 9319     | 2     | ΣΩ.         | unresolved | (none)                          | 0              | (none)
+  voice_meno_0013 | turn_meno_0072 | 9384       | 9488     | 2     | ΣΩ.         | unresolved | (none)                          | 0              | (none)
+  voice_meno_0015 | turn_meno_0361 | 33771      | 34222    | 2     | ΣΩ.         | unresolved | (none)                          | 0              | (none)
+  voice_meno_0019 | turn_meno_0566 | 59489      | 59532    | 2     | ΣΩ.>ΛΑΚ.    | resolved   | (none)                          | 0              | reviewed_discourse

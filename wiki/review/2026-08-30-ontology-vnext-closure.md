@@ -1,0 +1,102 @@
+# Ontology vNext full-corpus closure receipt
+
+- frozen baseline: `8a131909e83180bd7d5b47bc83f063e7b1d8d140`
+- audit snapshot: `sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4`
+- final corpus digest: bound after this receipt in the snapshot acceptance record, avoiding a self-referential receipt hash
+- final record units: 24285
+- final concept/membership union units: 23259
+- final graph union units: 26098
+- terminal adjudications: 73689
+- source-first coverage: primary and independent dispositions complete for every frozen Greek source unit; all disagreements reconciled
+- record-first coverage: every frozen and final record, edge, concept, and membership occurs exactly once in its required partition with a terminal item-level adjudication
+- alias policy: zero legacy feature identity fields, feature_candidate ids, family::label aliases, compatibility aliases, dual readers, or fallback identities in canonical records and public projections
+- reader policy: zero rejected observation, claim, relation, commentary, or voice ids in generated joins, public ontology projections, or site output
+- semantic gates: zero pending review status, empty accepted-claim observation linkage, citationless accepted commentary, or accepted non-relation fiction
+- regeneration one sha256: `5eb2cee041ac952ae59c63d602eece9dd03a1ce21518aca7f38e52774b12902d`
+- regeneration two sha256: `5eb2cee041ac952ae59c63d602eece9dd03a1ce21518aca7f38e52774b12902d`
+- regeneration artifacts: 8267
+- machine evidence: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/closure-evidence.json`
+- baseline evidence: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/baseline-evidence.json`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/baseline-evidence.json`; sha256: `03ea62a8bd097cf9ebc09636d267999702409fc6e224ee26609dd836739e944c`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/closure-evidence.json`; sha256: `9b1e8cc5277be87ddcdb97388849bf467bb9ef0a968ba221e8c33bf32faaebbb`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/regeneration.json`; sha256: `f0c42a48c6e7502d238d2794ffd6fae617736668ae58d7613dd98d82bf5f183a`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-2d36d7dbc8e108f8f59e6d046c76ef2e2d229f3e04bcb5968f1b9e4d2ce950d0-commentary-structural-review-evidence.jsonl`; sha256: `2d36d7dbc8e108f8f59e6d046c76ef2e2d229f3e04bcb5968f1b9e4d2ce950d0`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-67a557d8bc11e932c00562edfeddb8fae9a13d912681ada177dae662f6b26861-phaedo-commentary-reconsideration-review-bundle.json`; sha256: `67a557d8bc11e932c00562edfeddb8fae9a13d912681ada177dae662f6b26861`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-8a0ce752ff34e43807c6233cc560512d82e398f152b6b7cc8e9976dda3712fd8-sophist-commentary-reconsideration-review-bundle.json`; sha256: `8a0ce752ff34e43807c6233cc560512d82e398f152b6b7cc8e9976dda3712fd8`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-a0611b12d1035f19ef80812147e9bc8a91b1bbe569860718a335ee910bf1c642-phaedo-commentary-reconsideration-schema-bundle.json`; sha256: `a0611b12d1035f19ef80812147e9bc8a91b1bbe569860718a335ee910bf1c642`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-ac81311c7fddee007c8aed16d98c9611be8823ad0dc92b708267439819db2e7a-phaedo-commentary-reconsideration-packet-bundle.json`; sha256: `ac81311c7fddee007c8aed16d98c9611be8823ad0dc92b708267439819db2e7a`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-b0e2b04c30e679e3ecf6cf345e1e26928954bfa0db4094728bc60e80676cf57b-commentary-reconsideration-evidence.json`; sha256: `b0e2b04c30e679e3ecf6cf345e1e26928954bfa0db4094728bc60e80676cf57b`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-c678187b776ab73764ef513d0d70fd01a064dff937f73d00d000a8f41185c723-sophist-commentary-reconsideration-packet-bundle.json`; sha256: `c678187b776ab73764ef513d0d70fd01a064dff937f73d00d000a8f41185c723`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-d861b13bfb92cf622cc1b137670901348db63b96903460e6c4e26eeab6a5bfdd-commentary-reconsideration-evidence.json`; sha256: `d861b13bfb92cf622cc1b137670901348db63b96903460e6c4e26eeab6a5bfdd`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-e0425976418ceb3547fc6ad966e0d0703548c802c1ec73243a282f94439ab92b-sophist-commentary-reconsideration-schema-bundle.json`; sha256: `e0425976418ceb3547fc6ad966e0d0703548c802c1ec73243a282f94439ab92b`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-ebd50b6095ceeceea1f8830e7d1444019cda1e50d608543c6160e6e2b0db6734-relation-semantic-fiction-review-evidence.json`; sha256: `ebd50b6095ceeceea1f8830e7d1444019cda1e50d608543c6160e6e2b0db6734`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustments/sha256-3cb149622465cd20e5e32acce8424513644951927e80bdb51606415bc082a6a9-prior-adjudications.jsonl.gz`; sha256: `3cb149622465cd20e5e32acce8424513644951927e80bdb51606415bc082a6a9`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustments/sha256-93dc2b6adc4dbafe479ee7a50d403a8ac986c9271a821d052384340a8df832fa-decisions.jsonl`; sha256: `93dc2b6adc4dbafe479ee7a50d403a8ac986c9271a821d052384340a8df832fa`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustments/sha256-99f68a68b84a7b42b2f9804390dcc13ef54078400fa76bb0b17134923d342806-prior-record-units.jsonl.gz`; sha256: `99f68a68b84a7b42b2f9804390dcc13ef54078400fa76bb0b17134923d342806`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustments/sha256-c3084998b61ac442fe2ce44d5334c3dbc4fe14c9cc051af8c01566a88de3f8ff-prior-graph-units.jsonl.gz`; sha256: `c3084998b61ac442fe2ce44d5334c3dbc4fe14c9cc051af8c01566a88de3f8ff`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustments/sha256-f554bc08464fbfae6c5da57a6c3ac971f509dce1d14a6d486c3b5c545a60b63d-prior-state.json`; sha256: `f554bc08464fbfae6c5da57a6c3ac971f509dce1d14a6d486c3b5c545a60b63d`
+- artifact: `wiki/review/2026-08-30-ontology-vnext-concept-audit.md`; sha256: `9e966005453b2ff747ece93ebb6aa84bb1dbb5c4927a8723d11f89cf5b34d144`
+- artifact: `wiki/review/2026-08-30-ontology-vnext-semantic-remediation.md`; sha256: `f1e34a6156b8ed60fcf275acaa0f217967e2521cb24c86186c7ab9c6737b6d4b`
+- artifact: `wiki/review/2026-09-01-commentary-block-reconsideration-phaedo-accepted-7bdc89211fcb.md`; sha256: `3798a37d2e9b92ba4a7f2696a897ffe22f70992961b160bd4f97ea95e6d395e0`
+- artifact: `wiki/review/2026-09-01-commentary-block-reconsideration-sophist-accepted-60baf158c314.md`; sha256: `54deaaa6b603081314075f3df182426cd1571e740cd20613e73801414f1fb31b`
+- artifact: `wiki/review/2026-09-01-commentary-sample-failure-rejection-charmides-65e4c2611089.md`; sha256: `df1c1c4a594f7ce232d95b9528b7e61322e9672d02d62bed9ea2f75c9b5ec0e0`
+- artifact: `wiki/review/2026-09-01-commentary-sample-failure-rejection-euthyphro-e79bde378eda.md`; sha256: `f48d6c1fe677465217a89ea8f83e0df88e54a217f60049ab057ada2a377fc016`
+- artifact: `wiki/review/2026-09-01-commentary-sample-failure-rejection-greater-hippias-3c73d6ba0d11.md`; sha256: `f7a3c21f0d75dbe1731316963475fac9a6ea104776b3306df6f59b7b055c23ff`
+- artifact: `wiki/review/2026-09-01-commentary-sample-failure-rejection-greater-hippias-43dd20921c86.md`; sha256: `17caf08f5d11bfdfaffc3c5de551a7a373b30b586bf6d02799c84445c8822128`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-apology-42993c5b9fe9.md`; sha256: `95d6d39803814850ba13782d4fc94eaab4c9f54b573aa00578cecdfa66b54a14`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-apology-8a05dcebe299.md`; sha256: `7fcd9fdb45a1a5b6589b10fb2df5ccd6b73f730128c1457ce998aa7a9de58d68`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-charmides-0b34d9f12764.md`; sha256: `c4d725229f3694404ea3641c69888a3e8e1472ecb881b6878627e09c34daf319`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-crito-7a32568295ea.md`; sha256: `769a5a3b81da8aff78ad6f9fff935c3c18942efdc193fbb8601f21a7eacd36b9`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-euthydemus-d5870306b26c.md`; sha256: `75f9958c71471163fe3d126acb39ec91d5b578b344426809eb3f9d8e4d4474fe`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-euthyphro-7dbb53eb12dd.md`; sha256: `b6875856953e7b79e88a7594416f1f5993a1788da495ddae0861de50d199ae1c`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-gorgias-00c097ad67bd.md`; sha256: `e46b76fbba11caddc191eb79f2f918926dadfbee074a104b70d3d50365f8ff48`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-greater-hippias-1d65753cb771.md`; sha256: `91bd13ebb92f313b35abbb9050d6dfdfa391485310225c6610a90ab2173ccfbd`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-laches-77edf81a87fd.md`; sha256: `ded8c566e89af5616c821dd17adf2d6da91e22cb2b1695360bde2d9e843c37b7`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-laws-935a51ff7c22.md`; sha256: `3ae990387813c7476ca0527f82cf7fc6c9bf7e564f6481a7cf5d1e4ddd1241e1`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-lesser-hippias-9b75ad7a84a2.md`; sha256: `acf10b80323b914f1cc6b046f372c87cb2aa751db9e70f9ba15ff35cf55c95ae`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-lysis-09e0d55a2215.md`; sha256: `15e953c1b3bc45d4bd098688a5fe760317f706856417436d7e05c6d927c8d112`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-menexenus-ecce4c74d31e.md`; sha256: `8a41b0406385759a634bc650821de4ecd8080bb4d25b87002b93716868b1f925`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-meno-4a4a771440d9.md`; sha256: `ae94ea32d51459d3bba53100ff536f1fc9502e73c29eab0bfc557e42ec7a0cf8`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-parmenides-b114b8b7a5db.md`; sha256: `e481d66b6ee4f441edcadd456d7d9b798b29b7940cd09f40adf77119f5fc7677`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-phaedo-04f99a4d79d4.md`; sha256: `4b1c27735f44bd33a63cd016fbafa534e08cd19185d5095ab05365a6912faf34`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-phaedrus-cfa6d0c9fac4.md`; sha256: `27b9e00c550284018e181f8a30461aaa8ee795fd7debd7301eeff112d0cb5b8d`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-philebus-04aa5548eba3.md`; sha256: `249f35fa8de3b06c21b1c2e0280e68b2de155d166d04c423a4af517a35052d92`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-protagoras-b9c1f588be56.md`; sha256: `93951073e91366ace506fe141f9736ebab6dfd0aa012aad8c55e44694e8c9fee`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-sophist-93770b9203e0.md`; sha256: `ff9a20ab69d855ecf425eded126bb6b096936f272ef944c000b158f44a19e156`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-statesman-ee7476fbda38.md`; sha256: `ccb472550adca5c61b166b72aea31a8069fe77e62ef475a321fd60efc5236f96`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-symposium-5a7bba0c67db.md`; sha256: `b65f39f46594b09955d9c410a8fd4fa04db45cb33906a6347a11496ccf24783e`
+- artifact: `wiki/review/2026-09-01-commentary-structural-remediation-batch-timaeus-e8af2e75edd2.md`; sha256: `9306dd20c7bd438ca464bc53524c0494c2270d9c1ddfc32df0501354adbc748a`
+- artifact: `wiki/review/2026-09-01-ontology-relation-semantic-fiction-rejections.md`; sha256: `098bfc5a196bab7e181534eeb943819423ff812d26f5e615947cd02e43ab48fb`
+- artifact: `wiki/review/2026-09-01-ontology-vnext-final-adjustments.md`; sha256: `d3582b0d7d55a9321350faa9cafd00874dc65990451fb7103bdc3da635e2b04d`
+- artifact: `wiki/submissions/commentary-audit-sample/charmides/45a09f64e9b40dfd8c3d0a484c119a76dfc05610726059f248e33dd6ec5dd930.json`; sha256: `45a09f64e9b40dfd8c3d0a484c119a76dfc05610726059f248e33dd6ec5dd930`
+- artifact: `wiki/submissions/commentary-audit-sample/euthyphro/38f1f9338e5352e6c07840def3a544463208b1e1c4d7626a416a4d93e8a7a3c5.json`; sha256: `38f1f9338e5352e6c07840def3a544463208b1e1c4d7626a416a4d93e8a7a3c5`
+- artifact: `wiki/submissions/commentary-audit-sample/greater-hippias/c4cf0b8154f4c261873d37203614c4d0b50c24d119e7d3d1c9cbb68fa29aae89.json`; sha256: `c4cf0b8154f4c261873d37203614c4d0b50c24d119e7d3d1c9cbb68fa29aae89`
+- artifact: `wiki/submissions/commentary-audit-sample/greater-hippias/c5b9b7fdfd6af83ce5812e882644071d9fd428041899607a60e4d9f09b70f16a.json`; sha256: `c5b9b7fdfd6af83ce5812e882644071d9fd428041899607a60e4d9f09b70f16a`
+- artifact: `wiki/submissions/commentary-sample-failure-rejection/charmides/01dea3484186e0415284edaf4e550588f6975353f9bf821d05c66947032bc4a2.json`; sha256: `01dea3484186e0415284edaf4e550588f6975353f9bf821d05c66947032bc4a2`
+- artifact: `wiki/submissions/commentary-sample-failure-rejection/euthyphro/fa86f511cb4e4f4501c8f4fc0ac5e825efd14114da50ff8ec0eb79a6858f9cfa.json`; sha256: `fa86f511cb4e4f4501c8f4fc0ac5e825efd14114da50ff8ec0eb79a6858f9cfa`
+- artifact: `wiki/submissions/commentary-sample-failure-rejection/greater-hippias/4130a7e0ba238463cf41f20b218ad6ead0e3ea1c1780bb04b860ee07f296b825.json`; sha256: `4130a7e0ba238463cf41f20b218ad6ead0e3ea1c1780bb04b860ee07f296b825`
+- artifact: `wiki/submissions/commentary-sample-failure-rejection/greater-hippias/c3261d6a35fcf634055ec8cd9dc48fe675fd949b8b9d6b2af52bc9f808a481db.json`; sha256: `c3261d6a35fcf634055ec8cd9dc48fe675fd949b8b9d6b2af52bc9f808a481db`
+- artifact: `wiki/submissions/commentary/apology/0032-structural-remediation-batch.json`; sha256: `042f484b7ca052d18d5a42ba0f2e530c04c546bf0e6476b1fc97f73847c3b475`
+- artifact: `wiki/submissions/commentary/apology/0033-structural-remediation-batch.json`; sha256: `f917f4133ec643a2af0ac267eca4d7f7c37bf6956b80a01863b03e4da1fef0f6`
+- artifact: `wiki/submissions/commentary/charmides/0020-structural-remediation-batch.json`; sha256: `06238952a150af7152baea1f8b12dd2ffd6324bb9b095be5de83d84ffae8e0dc`
+- artifact: `wiki/submissions/commentary/crito/0004-structural-remediation-batch.json`; sha256: `7e29ec99d236e8ef4cec09d01b286a315540cde558dfe016909324917c8953ef`
+- artifact: `wiki/submissions/commentary/euthydemus/0015-structural-remediation-batch.json`; sha256: `5dc88f25d13a70dee33c8e51d50b4ed00a85933f040190f0030a2e9cfa68f3aa`
+- artifact: `wiki/submissions/commentary/euthyphro/0016-structural-remediation-batch.json`; sha256: `c08c1f2808c6805ce0b54977a3a73bfc60f2efd19c3dc22a5a2d49719c98592b`
+- artifact: `wiki/submissions/commentary/gorgias/0022-structural-remediation-batch.json`; sha256: `67f35e4d09c37dcb78c13e6e6ef4bb1553224f53df8d35489b6891e3a0973205`
+- artifact: `wiki/submissions/commentary/greater-hippias/0009-structural-remediation-batch.json`; sha256: `eab503fa272e2cfb7767bf15db21e7f5845979de1e4179a512e83f2d7ffa466d`
+- artifact: `wiki/submissions/commentary/laches/0008-structural-remediation-batch.json`; sha256: `563845cdfb12144acd00bcafbad071fea6ba3d877c4a630274cb3b13d7f43c45`
+- artifact: `wiki/submissions/commentary/laws/0038-structural-remediation-batch.json`; sha256: `51987f06f7b1b2f8d277939db24d439adbc58fd845a69aa586ef7e98d2123bea`
+- artifact: `wiki/submissions/commentary/lesser-hippias/0008-structural-remediation-batch.json`; sha256: `a23453635ff7ae7901f593ba804ef5b7a037d46fdf0eec13d74c40d566a26e4d`
+- artifact: `wiki/submissions/commentary/lysis/0011-structural-remediation-batch.json`; sha256: `c4ae126dacd15eb81d808b4acbde8186000f4026edea4ff6fcf972ef91d66961`
+- artifact: `wiki/submissions/commentary/menexenus/0012-structural-remediation-batch.json`; sha256: `ccf96eb0d141b59dd358f5ac2f7e78cc7d01dc61c9417e71b9fc809d8fe22b1d`
+- artifact: `wiki/submissions/commentary/meno/0008-structural-remediation-batch.json`; sha256: `9f60dba4bdb364ac006c3f1998e9faaadba3e8b3608579d97f12bf08d1ce75b6`
+- artifact: `wiki/submissions/commentary/parmenides/0015-structural-remediation-batch.json`; sha256: `f31ff981af796e0848e0243ad3f835983945c412b5d926de21b3b9a1a918bcee`
+- artifact: `wiki/submissions/commentary/phaedo/0014-structural-remediation-batch.json`; sha256: `979bce6b955e7f4845fae078bc431ea3a1f67be6c078df0396aae568ba36691e`
+- artifact: `wiki/submissions/commentary/phaedrus/0014-structural-remediation-batch.json`; sha256: `e4a2810d328726d72b4faac307ad49569b92bd446a6a5202f129fef815285f93`
+- artifact: `wiki/submissions/commentary/philebus/0015-structural-remediation-batch.json`; sha256: `94e26af32e4d38c833c569114c8ba1f85a619f850366183b76e62ec01182cb99`
+- artifact: `wiki/submissions/commentary/protagoras/0010-structural-remediation-batch.json`; sha256: `981da0a289f7416d1bb241dbba409efd4cd668a500030f578b19a5f761294eeb`
+- artifact: `wiki/submissions/commentary/sophist/0011-structural-remediation-batch.json`; sha256: `6ce3da7a426442eee64445e77c1416d17d24894e1a141c12f7cc236d39529ea4`
+- artifact: `wiki/submissions/commentary/statesman/0014-structural-remediation-batch.json`; sha256: `ccdc314e92d5653e34dcee6b07ffde998aeeee578d4b1582a71b9834139be84f`
+- artifact: `wiki/submissions/commentary/symposium/0020-structural-remediation-batch.json`; sha256: `5d906cc601364a522b72e2040fbe2457d0fc958f468739afc16a698f9a330f13`
+- artifact: `wiki/submissions/commentary/timaeus/0012-structural-remediation-batch.json`; sha256: `71e3776395a734b2993ac86fd63bbd321f01d8fd86f2a364b2d91778cde550b0`
+- required validation commands: `bun run test`, `bun run typecheck`, `bun run validate`, `git diff --check`, and `bun run harness ontology-audit verify`

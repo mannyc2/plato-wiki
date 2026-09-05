@@ -1,0 +1,243 @@
+{
+  "accepted_observations": 9,
+  "axis_id": "axis_sha256_0fa31195a68df964bc4edea4f8970eda99509124342ce955ee970ae3302d4a2e",
+  "axis_key": "definition_ladder",
+  "comparison_question": "Across dialogues, which accepted source-bound observations explicitly record constitutional form named within the definition ladder axis?",
+  "concept_id": "concept_sha256_c60146786948ac9e7a8b56bb78f4f2f6b95352c71ffbc91a8d1b2efe7c875110",
+  "concept_key": "constitutional_form_named",
+  "cooccurrence": [
+    {
+      "axisId": "axis_sha256_951cfe9665df775a93740d449e16911ddde57214fa3a3502f2eff740963d7ec5",
+      "axisKey": "law_emergence",
+      "conceptId": "concept_sha256_14bf18cd4248be8d346466f9f098885402700cfe499904056402d5595c863887",
+      "conceptKey": "custom_before_written_law",
+      "overlappingObservations": 1
+    },
+    {
+      "axisId": "axis_sha256_b1977b0b6a213778cae77c4b4d390795f58b6bfa028f188496292233a47cf4a8",
+      "axisKey": "myth_demarcation",
+      "conceptId": "concept_sha256_c41a494de0b7fdea3c47569ea297c6a638e290621c2cd0abf402d0a20a5b615f",
+      "conceptKey": "poet_cited_as_authority",
+      "overlappingObservations": 1
+    }
+  ],
+  "dialogues": 2,
+  "dimension": "discourse_structure",
+  "instance_ids": [
+    "obs_laws_0326",
+    "obs_laws_0405",
+    "obs_laws_0491",
+    "obs_statesman_0206",
+    "obs_statesman_0207",
+    "obs_statesman_0253",
+    "obs_statesman_0254",
+    "obs_statesman_0255",
+    "obs_statesman_0260"
+  ],
+  "instances": [
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0326",
+      "speakers": [
+        "ΑΘ.",
+        "ΚΛ."
+      ],
+      "stephanusSpan": "680a-680b",
+      "turnCount": 7
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0405",
+      "speakers": [
+        "ΚΛ.",
+        "ΑΘ."
+      ],
+      "stephanusSpan": "693d",
+      "turnCount": 2
+    },
+    {
+      "dialogue": "laws",
+      "observationId": "obs_laws_0491",
+      "speakers": [
+        "ΑΘ.",
+        "ΚΛ.",
+        "ΜΕ."
+      ],
+      "stephanusSpan": "712c",
+      "turnCount": 4
+    },
+    {
+      "dialogue": "statesman",
+      "observationId": "obs_statesman_0206",
+      "speakers": [
+        "ΞΕ.",
+        "ΝΕ. ΣΩ."
+      ],
+      "stephanusSpan": "291d",
+      "turnCount": 8
+    },
+    {
+      "dialogue": "statesman",
+      "observationId": "obs_statesman_0207",
+      "speakers": [
+        "ΞΕ.",
+        "ΝΕ. ΣΩ."
+      ],
+      "stephanusSpan": "291e",
+      "turnCount": 5
+    },
+    {
+      "dialogue": "statesman",
+      "observationId": "obs_statesman_0253",
+      "speakers": [
+        "ΞΕ.",
+        "ΝΕ. ΣΩ."
+      ],
+      "stephanusSpan": "301a",
+      "turnCount": 5
+    },
+    {
+      "dialogue": "statesman",
+      "observationId": "obs_statesman_0254",
+      "speakers": [
+        "ΞΕ.",
+        "ΝΕ. ΣΩ."
+      ],
+      "stephanusSpan": "301b",
+      "turnCount": 5
+    },
+    {
+      "dialogue": "statesman",
+      "observationId": "obs_statesman_0255",
+      "speakers": [
+        "ΞΕ.",
+        "ΝΕ. ΣΩ."
+      ],
+      "stephanusSpan": "301c",
+      "turnCount": 3
+    },
+    {
+      "dialogue": "statesman",
+      "observationId": "obs_statesman_0260",
+      "speakers": [
+        "ΞΕ.",
+        "ΝΕ. ΣΩ."
+      ],
+      "stephanusSpan": "302c",
+      "turnCount": 6
+    }
+  ],
+  "presence": [
+    {
+      "acceptedObservations": 0,
+      "dialogue": "apology"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "charmides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "cratylus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "critias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "crito"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthydemus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "euthyphro"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "gorgias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "greater-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "ion"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "laches"
+    },
+    {
+      "acceptedObservations": 3,
+      "dialogue": "laws"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lesser-hippias"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "lysis"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "menexenus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "meno"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "parmenides"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedo"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "phaedrus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "philebus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "protagoras"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "republic"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "sophist"
+    },
+    {
+      "acceptedObservations": 6,
+      "dialogue": "statesman"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "symposium"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "theaetetus"
+    },
+    {
+      "acceptedObservations": 0,
+      "dialogue": "timaeus"
+    }
+  ],
+  "projection_id": "dossier:concept_sha256_c60146786948ac9e7a8b56bb78f4f2f6b95352c71ffbc91a8d1b2efe7c875110",
+  "projection_kind": "concept_dossier",
+  "schema_version": 1
+}

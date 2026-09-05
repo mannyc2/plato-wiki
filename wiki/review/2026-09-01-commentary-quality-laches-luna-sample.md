@@ -1,0 +1,29 @@
+# Commentary quality-audit acceptance
+
+dialogue: laches
+decision: accepted
+reviewer: commentary-audit-delegated-luna-reviewer-laches-b995fb13209b
+reviewed_on: 2026-09-01
+rationale: All seven blocks are source-supported, correctly anchored, and placed at clean playback edges; their concise prose adds distinct explanatory value without evident contradiction or flow damage.
+review_basis: operator-delegated independent Luna sample review
+human_listening_or_review: none claimed
+sample_evidence_path: wiki/submissions/commentary-audit-sample/laches/f2160a0a441ea44d248553b9a5e964bc3a913e689a02f7e2f043e986adda98c0.json
+sample_evidence_sha256: f2160a0a441ea44d248553b9a5e964bc3a913e689a02f7e2f043e986adda98c0
+sample_input_sha256: 16e6a55fe27392cc0ffc44657c7f5b6f085afa534633ffb7dad8b911e05c3da6
+pending_manifest_sha256: b995fb13209b65b2d42c901f2cde7b1055c997d9a3f698329510222c11573fff
+commentary_ledger_sha256: 83f6866cf3ef90637ff76a198fbdf3c0b980e8a1ee52d8b2b5ee6aeb3844324c
+sample_packet_sha256: 3356eadfadb8e1774708539f259cbd0ef6eaa6cc362d5ff88e2d492dc266e7bf
+sample_output_sha256: 6e84a8a0664c7385ddc1b435bfbc69ac5999d5af060029ae303f14c4d3721000
+sample_state_sha256: d8e9d7d6f8dd83474f3ed436a7b9fed4755a76c5d6d46e9f67f4078bb2fc5f32
+codex_execution_sha256: 15d4ee4a8c978241eeab38987fbf57fd4d20ea27f3b076710f4e497a26193dbf
+output_schema_sha256: ec4f744f6e2567efdcf834ada0573a925260324c0920db018bfba18269df38f9
+model_catalog_sha256: a8435b2f9ba7f050e97094bd98644c0ec6a00d82acdc416b6ef84040cb124724
+sample_prompt_sha256: 19c1bd6270bdd477d390844e9894220361596f49269df851a50526510a118b9a
+sampled_commentary_ids:
+- comm_laches_0001
+- comm_laches_0003
+- comm_laches_0007
+- comm_laches_0008
+- comm_laches_0010
+- comm_laches_0012
+- comm_laches_0014

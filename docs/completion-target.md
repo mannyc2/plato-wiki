@@ -1,5 +1,9 @@
 # v1.0 Completion Target
 
+> Historical v1 target. Its neutral, source-grounded vocabulary rule remains
+> applicable, while its label-keyed ontology and completion claims are
+> superseded by `docs/ontology-vnext.md` and the snapshot-bound audit package.
+
 Ratified per the v1 completion target. This document defines the single "done" version of
 the Plato observation wiki. When every gate below is checked and the
 decision line is signed, the project is defensibly complete: further work is

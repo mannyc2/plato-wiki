@@ -1,17 +1,22 @@
 import { createHash } from "node:crypto";
 import {
+  closeSync,
   existsSync,
+  lstatSync,
   mkdtempSync,
   mkdirSync,
+  openSync,
   readFileSync,
+  readSync,
   readdirSync,
   renameSync,
   rmSync,
+  statSync,
   writeFileSync,
 } from "node:fs";
-import { dirname, join, relative } from "node:path";
-import { tmpdir } from "node:os";
+import { dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
 import { buildAudioCoverageReport, type AudioCoverageReport, type DialogueAudioCoverage } from "./audio-coverage.js";
+import { ensureCanonicalOntologyWorkRoot } from "./wiki/ontology-audit-package-path.js";
 import { validateClusterArtifacts } from "./clusters.js";
 import { validateDossierArtifacts } from "./dossiers.js";
 import {
@@ -48,16 +53,29 @@ import { buildTokenIndex, formatTokenIndexToon, tokenIndexPath } from "./derived
 import { buildTurnIndex, formatTurnIndexToon, parseTurnIndexToon, turnIndexPath } from "./derived/turns.js";
 import { buildVoiceIndex, collectAcceptedProjectionFailures, formatVoiceIndexToon, voiceIndexPath } from "./derived/voices.js";
 import { getRepoRoot, setRepoRootForTesting } from "./paths.js";
-import { buildRelationCandidates, relationCandidateKey } from "./relations.js";
 import { planSegmentedClaims } from "./claims-segments.js";
 import { planSegmentedIngest } from "./segments.js";
 import { buildStaticSite } from "./site/index.js";
+import {
+  discoverSiteRecordings,
+  validateSiteRecordingEvidence,
+} from "./site/recordings.js";
+import { validateGeneratedSite } from "./site/validate.js";
 import { claimYamlBlocks } from "./wiki/claim-ledger.js";
 import { validateClaimLedger } from "./wiki/claim-validator.js";
 import { fieldValue, observationYamlBlocks } from "./wiki/observation-ledger.js";
 import { validateObservationLedger } from "./wiki/observation-validator.js";
 import { relationYamlBlocks } from "./wiki/relation-ledger.js";
 import { validateRelationLedger } from "./wiki/relation-validator.js";
+import {
+  listOntologyAuditPackagePaths,
+  verifyOntologyAuditSemanticPreacceptance,
+} from "./wiki/ontology-audit.js";
+import {
+  assertOntologyClosureEvidenceProof,
+  verifyOntologyClosureEvidenceFile,
+  type VerifiedOntologyClosureEvidenceProof,
+} from "./wiki/ontology-closure-evidence.js";
 import { parseVoiceLedger, voiceYamlBlocks, type VoiceRecord } from "./wiki/voices-ledger.js";
 import { validateVoicesLedger } from "./wiki/voices-validator.js";
 import {
@@ -178,6 +196,24 @@ export type ReviewCounts = {
   needsSplit: number;
 };
 
+export type RelationScopeCompletenessFacts = {
+  ledger: boolean;
+  valid: boolean;
+  records: number;
+  auditedRecords: number;
+  acceptedEdges: number;
+  auditedAcceptedEdges: number;
+  review: ReviewCounts;
+};
+
+export type RelationAuditCompletenessFacts = {
+  packagePath: string | null;
+  semanticProofVerified: boolean;
+  closureEvidenceValid: boolean;
+  rejectedReaderLeaks: number;
+  acceptedRelationFictionIssues: number;
+};
+
 /**
  * What `CMP-REPORTED-TURNS` needs to know about one dialogue's nested reported
  * turns (the reported-turn scope census).
@@ -215,7 +251,7 @@ export type DialogueCompletenessFacts = {
   englishProvenance: boolean;
   observations: { ledger: boolean; valid: boolean; scopeClosed: boolean; review: ReviewCounts };
   claims: { ledger: boolean; valid: boolean; scopeClosed: boolean; review: ReviewCounts };
-  relations: { ledger: boolean; valid: boolean; candidates: number; dispositioned: number; review: ReviewCounts; candidateKeysMatch: boolean };
+  relations: RelationScopeCompletenessFacts;
   derived: Record<"stephanus" | "turns" | "tokens" | "anchors" | "turnLengths" | "assent" | "procedure" | "joins", boolean>;
   englishIndexCurrent: boolean;
   commentary: { ledger: boolean; accepted: boolean; auditAccepted: boolean; readingPage: boolean };
@@ -244,9 +280,9 @@ export type CompletenessFacts = {
   comparisonValid: boolean;
   siteValid: boolean;
   siteEvidence: string;
-  relationCandidatesValid: boolean;
+  relationAudit: RelationAuditCompletenessFacts;
   dialogues: DialogueCompletenessFacts[];
-  crossDialogueRelations: { ledger: boolean; valid: boolean; candidates: number; dispositioned: number; review: ReviewCounts; candidateKeysMatch: boolean };
+  crossDialogueRelations: RelationScopeCompletenessFacts;
   /** Manifest-level scope problems that belong to no single dialogue. */
   reportedTurnScopeIssues: string[];
   apparatus: {
@@ -290,6 +326,116 @@ export type CompletenessReport = {
 };
 
 export type SiteCompletenessSummary = { valid: boolean; pages: string[]; evidence: string };
+
+const SITE_CONTENT_LICENSE_URL = "https://creativecommons.org/licenses/by-sa/4.0/";
+
+function generatedSiteFiles(root: string, directory = root): string[] {
+  return readdirSync(directory, { withFileTypes: true })
+    .flatMap((entry) => {
+      const path = join(directory, entry.name);
+      if (entry.isSymbolicLink()) {
+        throw new Error(`Generated site must not contain symlinks: ${relative(root, path)}`);
+      }
+      if (entry.isDirectory()) return generatedSiteFiles(root, path);
+      if (!entry.isFile()) throw new Error(`Generated site contains a non-regular entry: ${relative(root, path)}`);
+      return [relative(root, path).split(sep).join("/")];
+    })
+    .sort((left, right) => left.localeCompare(right));
+}
+
+function generatedSiteManifestPages(siteDirectory: string) {
+  const root = resolve(siteDirectory);
+  if (!existsSync(root) || lstatSync(root).isSymbolicLink() || !statSync(root).isDirectory()) {
+    throw new Error(`Generated site output must be a real directory: ${siteDirectory}`);
+  }
+  const manifestPath = join(root, "manifest.txt");
+  if (!existsSync(manifestPath) || lstatSync(manifestPath).isSymbolicLink() || !statSync(manifestPath).isFile()) {
+    throw new Error(`Generated site output is missing a regular manifest.txt: ${siteDirectory}`);
+  }
+  const manifest = readFileSync(manifestPath, "utf8");
+  if (manifest.length === 0 || !manifest.endsWith("\n")) {
+    throw new Error("Generated site manifest.txt must be nonempty and newline-terminated");
+  }
+
+  const pages: string[] = [];
+  const seen = new Set<string>();
+  for (const [index, line] of manifest.slice(0, -1).split("\n").entries()) {
+    const match = /^([^\t\r\n]+)\tsite\/([^\t\r\n]+)$/u.exec(line);
+    if (!match || match[1] !== match[2]) {
+      throw new Error(`Generated site manifest.txt line ${index + 1} must bind one path to the identical site/ path`);
+    }
+    const page = match[1]!;
+    const absolute = resolve(root, page);
+    const canonical = relative(root, absolute).split(sep).join("/");
+    if (
+      isAbsolute(page)
+      || page.includes("\\")
+      || canonical !== page
+      || canonical === "manifest.txt"
+      || canonical === ".."
+      || canonical.startsWith("../")
+      || seen.has(canonical)
+    ) {
+      throw new Error(`Generated site manifest.txt line ${index + 1} has an unsafe or duplicate path: ${page}`);
+    }
+    seen.add(canonical);
+    pages.push(canonical);
+  }
+
+  const completePages = [...pages, "manifest.txt"];
+  const actualFiles = generatedSiteFiles(root);
+  const expectedFiles = [...completePages].sort((left, right) => left.localeCompare(right));
+  if (JSON.stringify(actualFiles) !== JSON.stringify(expectedFiles)) {
+    const actual = new Set(actualFiles);
+    const expected = new Set(expectedFiles);
+    const missing = expectedFiles.filter((path) => !actual.has(path));
+    const extra = actualFiles.filter((path) => !expected.has(path));
+    throw new Error(
+      `Generated site manifest.txt does not exactly inventory the output tree; missing=${missing.join(",") || "none"}; extra=${extra.join(",") || "none"}`,
+    );
+  }
+  return completePages;
+}
+
+/**
+ * Re-observe a static site built by an earlier isolated phase. This performs
+ * the same generated-site and recording checks as `buildStaticSite`, while
+ * requiring `manifest.txt` to be an exact, duplicate-free inventory. It never
+ * trusts a caller-supplied boolean or page count.
+ */
+export function auditPrebuiltStaticSite(siteDirectory: string): SiteCompletenessSummary {
+  const recordings = discoverSiteRecordings();
+  validateSiteRecordingEvidence({
+    recordings,
+    artifactRoot: process.env.PLATO_RECORDING_ARTIFACT_ROOT,
+    outDir: siteDirectory,
+  });
+  const validation = validateGeneratedSite(siteDirectory, {
+    allowedExternalUrls: new Set([SITE_CONTENT_LICENSE_URL]),
+    recordings: [...recordings.values()].map((recording) => ({
+      dialogue: recording.dialogue,
+      recordingId: recording.recordingId,
+      audioSha256: recording.audioSha256,
+      durationSeconds: recording.durationSeconds,
+      status: recording.status,
+      assetPath: recording.siteAssetPath,
+      chapterTargets: recording.chapters.map((chapter) => chapter.commentary_id),
+      chapterIds: recording.chapters.map((chapter) => chapter.chapter_id),
+      chapterStartFrames: recording.chapters.map((chapter) => chapter.start_frame),
+      chapterStartSeconds: recording.chapters.map((chapter) => chapter.start_frame / 48_000),
+    })),
+  });
+  const pages = generatedSiteManifestPages(siteDirectory);
+  return {
+    valid:
+      validation.brokenPaths === 0
+      && validation.brokenFragments === 0
+      && validation.duplicateIds === 0
+      && validation.recordingHashMismatches === 0,
+    pages,
+    evidence: `${pages.length} pages; broken_paths=${validation.brokenPaths}; broken_fragments=${validation.brokenFragments}; duplicate_ids=${validation.duplicateIds}`,
+  };
+}
 
 export function validateCanonicalDialogueSet(actual: readonly string[]) {
   const duplicates = actual.filter((value, index) => actual.indexOf(value) !== index);
@@ -357,7 +503,12 @@ function terminal(counts: ReviewCounts) {
 
 function blocksAt(root: string, path: string, parser: (content: string) => string[]) {
   const absolute = join(root, path);
-  return file(absolute) ? parser(readFileSync(absolute, "utf8")) : [];
+  if (!file(absolute)) return [];
+  try {
+    return parser(readFileSync(absolute, "utf8"));
+  } catch {
+    return [];
+  }
 }
 
 function ledgerValid(
@@ -554,68 +705,156 @@ function listSlugs(root: string, dir: string) {
     .sort();
 }
 
-export function exactRelationPairIdSetsMatch(actual: ReadonlySet<string>, expected: ReadonlySet<string>) {
-  return actual.size === expected.size && [...actual].every((value) => expected.has(value));
+type RelationAuditEvidence = RelationAuditCompletenessFacts & {
+  auditedRecordIds: ReadonlySet<string>;
+  auditedAcceptedEdgeIds: ReadonlySet<string>;
+};
+
+/**
+ * Visit a JSONL file without retaining its complete text and split-line array.
+ * The accepted ontology audit's adjudication partition is currently tens of
+ * megabytes; `readFileSync(..., "utf8").split(...)` kept two complete copies
+ * live immediately before the full package verifier parsed it again.
+ */
+function visitJsonlObjects(path: string, visit: (row: Record<string, unknown>) => void) {
+  const descriptor = openSync(path, "r");
+  const scratch = Buffer.allocUnsafe(1024 * 1024);
+  let pending = Buffer.alloc(0);
+  try {
+    while (true) {
+      const bytesRead = readSync(descriptor, scratch, 0, scratch.byteLength, null);
+      if (bytesRead === 0) break;
+      const chunk = pending.byteLength === 0
+        ? scratch.subarray(0, bytesRead)
+        : Buffer.concat([pending, scratch.subarray(0, bytesRead)]);
+      let lineStart = 0;
+      while (true) {
+        const lineEnd = chunk.indexOf(0x0a, lineStart);
+        if (lineEnd === -1) break;
+        const end = lineEnd > lineStart && chunk[lineEnd - 1] === 0x0d ? lineEnd - 1 : lineEnd;
+        if (end > lineStart) visit(JSON.parse(chunk.subarray(lineStart, end).toString("utf8")) as Record<string, unknown>);
+        lineStart = lineEnd + 1;
+      }
+      pending = Buffer.from(chunk.subarray(lineStart));
+    }
+    if (pending.byteLength > 0) {
+      const end = pending[pending.byteLength - 1] === 0x0d ? pending.byteLength - 1 : pending.byteLength;
+      if (end > 0) visit(JSON.parse(pending.subarray(0, end).toString("utf8")) as Record<string, unknown>);
+    }
+  } finally {
+    closeSync(descriptor);
+  }
 }
 
 /**
- * The identity of a dispositioned relation candidate is its scope plus ordered
- * claim pair, never its `pair_id`.
- *
- * `pair_id` is positional — `relations.ts` assigns it from the candidate's index
- * in enumeration order — so it is a label, not an identity. Comparing pair_id
- * sets therefore compares two integer ranges, and any change to the accepted
- * claim set silently renumbers every candidate after the first difference.
- *
- * That is not hypothetical. The Symposium claim work rejected one claim and
- * rewrote the `greek_terms` of others, which reshuffled the enumeration: at
- * `739061b` the symposium relation ledger had 8 rows against 8 candidates, so the
- * ranges matched and `exact_pair_ids` reported **true** — while 3 of those rows
- * dispositioned pairs that are no longer candidates and 3 real candidates were
- * dispositioned nowhere. A required completeness family was passing on a check
- * that could not see the drift.
- *
- * Comparing immutable keys with occurrence counts states the intended contract
- * directly: every current candidate has exactly one disposition, and no stale
- * or duplicate decision remains. Stale pair_id labels remain diagnostics, but
- * they no longer decide the gate.
+ * Relation completeness is bound to the terminal semantic proof that precedes
+ * deterministic regeneration and global release acceptance, not to the
+ * shared-term candidate generator. Candidate generation remains a useful
+ * discovery command, but its output is neither the canonical relation set nor
+ * evidence that a relation is absent.
  */
-export function exactRelationCandidateKeyCountsMatch(
-  actual: ReadonlyMap<string, number>,
-  expected: ReadonlyMap<string, number>,
-) {
-  return (
-    actual.size === expected.size &&
-    [...expected].every(([candidateKey, expectedCount]) =>
-      expectedCount === 1 && actual.get(candidateKey) === 1,
-    )
-  );
-}
+function relationAuditEvidence(
+  repoRoot: string,
+  siteDirectory?: string,
+  suppliedProof?: VerifiedOntologyClosureEvidenceProof,
+): RelationAuditEvidence {
+  const packages = listOntologyAuditPackagePaths(repoRoot);
+  const packagePath = packages.length === 1 ? packages[0]! : null;
+  const empty = {
+    packagePath,
+    semanticProofVerified: false,
+    closureEvidenceValid: false,
+    rejectedReaderLeaks: -1,
+    acceptedRelationFictionIssues: -1,
+    auditedRecordIds: new Set<string>(),
+    auditedAcceptedEdgeIds: new Set<string>(),
+  } satisfies RelationAuditEvidence;
+  if (!packagePath) return empty;
 
-function relationCandidateKeyCounts(values: Iterable<string>) {
-  const counts = new Map<string, number>();
-  for (const value of values) {
-    counts.set(value, (counts.get(value) ?? 0) + 1);
+  const absolutePackagePath = join(repoRoot, packagePath);
+  if (!siteDirectory) return empty;
+  let proof: VerifiedOntologyClosureEvidenceProof;
+  try {
+    proof = suppliedProof
+      ? assertOntologyClosureEvidenceProof(suppliedProof, {
+          repoRoot,
+          packagePath: absolutePackagePath,
+          siteDirectory,
+        })
+      : verifyOntologyClosureEvidenceFile({
+          repoRoot,
+          packagePath: absolutePackagePath,
+          siteDirectory,
+        });
+  } catch {
+    return empty;
   }
-  return counts;
+  const closureEvidenceValid = true;
+
+  const auditedRecordIds = new Set<string>();
+  const auditedAcceptedEdgeIds = new Set<string>();
+  try {
+    visitJsonlObjects(join(absolutePackagePath, "adjudications.jsonl"), (row) => {
+      if (row.state !== "complete" || typeof row.target_key !== "string") return;
+      if (row.target_key.startsWith("record:relation:")) {
+        auditedRecordIds.add(row.target_key.slice("record:relation:".length));
+      }
+      if (
+        row.target_key.startsWith("edge:relation:")
+        && row.action !== "reject"
+        && row.action !== "retire"
+      ) {
+        auditedAcceptedEdgeIds.add(row.target_key.slice("edge:relation:".length));
+      }
+    });
+  } catch {
+    return { ...empty, closureEvidenceValid };
+  }
+
+  const semanticProofVerified = verifyOntologyAuditSemanticPreacceptance({
+    repoRoot,
+    packagePath,
+    siteDirectory,
+    closureEvidenceProof: proof,
+  }).length === 0;
+  return {
+    packagePath,
+    semanticProofVerified,
+    closureEvidenceValid,
+    rejectedReaderLeaks: proof.evidence.rejectedReaderLeaks.length,
+    acceptedRelationFictionIssues: proof.evidence.acceptedRelationFictionIssues.length,
+    auditedRecordIds,
+    auditedAcceptedEdgeIds,
+  };
 }
 
-function relationCandidateKeyCountsFromBlocks(scope: string, blocks: readonly string[]) {
-  return relationCandidateKeyCounts(
-    blocks
-      .map((block) => {
-        const claimA = fieldValue(block, "claim_a");
-        const claimB = fieldValue(block, "claim_b");
-        return claimA !== undefined && claimB !== undefined
-          ? relationCandidateKey(scope, claimA, claimB)
-          : undefined;
-      })
-      .filter((value): value is string => value !== undefined),
-  );
-}
-
-function countRelationCandidateKeyOccurrences(counts: ReadonlyMap<string, number>) {
-  return [...counts.values()].reduce((total, count) => total + count, 0);
+function relationScopeFacts({
+  repoRoot,
+  path,
+  blocks,
+  audit,
+}: {
+  repoRoot: string;
+  path: string;
+  blocks: readonly string[];
+  audit: RelationAuditEvidence;
+}): RelationScopeCompletenessFacts {
+  const relationIds = blocks
+    .map((block) => fieldValue(block, "relation_id"))
+    .filter((value): value is string => value !== undefined);
+  const acceptedIds = blocks
+    .filter((block) => fieldValue(block, "review_status") === "accepted")
+    .map((block) => fieldValue(block, "relation_id"))
+    .filter((value): value is string => value !== undefined);
+  return {
+    ledger: file(join(repoRoot, path)),
+    valid: ledgerValid(repoRoot, path, validateRelationLedger),
+    records: relationIds.length,
+    auditedRecords: relationIds.filter((id) => audit.auditedRecordIds.has(id)).length,
+    acceptedEdges: acceptedIds.length,
+    auditedAcceptedEdges: acceptedIds.filter((id) => audit.auditedAcceptedEdgeIds.has(id)).length,
+    review: statuses([...blocks]),
+  };
 }
 
 function safeSegmentScopeClosed(planner: () => Array<{ completed: boolean }>) {
@@ -624,23 +863,6 @@ function safeSegmentScopeClosed(planner: () => Array<{ completed: boolean }>) {
     return segments.length > 0 && segments.every((entry) => entry.completed);
   } catch {
     return false;
-  }
-}
-
-export function collectRelationCandidatesSafely(
-  builder: () => ReturnType<typeof buildRelationCandidates> = buildRelationCandidates,
-) {
-  try {
-    return { valid: true, report: builder() } as const;
-  } catch {
-    return {
-      valid: false,
-      report: {
-        params: { intra_kinds: [], cross_kinds: [], cross_final_statuses: [] },
-        counts: { total: 0, by_scope: {} },
-        entries: [],
-      } satisfies ReturnType<typeof buildRelationCandidates>,
-    } as const;
   }
 }
 
@@ -694,7 +916,11 @@ function reportedTurnFacts(
   let atomicCohort = false;
   if (file(turnIndexAbsolute)) {
     try {
-      atomicCohort = collectAcceptedProjectionFailures(records, parseTurnIndexToon(readFileSync(turnIndexAbsolute, "utf8"))).length === 0;
+      atomicCohort = collectAcceptedProjectionFailures(
+        records,
+        parseTurnIndexToon(readFileSync(turnIndexAbsolute, "utf8")),
+        readFileSync(join(root, `raw/plato/greek/${dialogue}.txt`), "utf8"),
+      ).length === 0;
     } catch {
       atomicCohort = false;
     }
@@ -741,10 +967,14 @@ function comparisonArtifactsValid(root: string) {
 export function buildCompletenessFacts({
   repoRoot = getRepoRoot(),
   site,
+  siteDirectory,
+  closureEvidenceProof,
   audioCoverage,
 }: {
   repoRoot?: string;
   site?: SiteCompletenessSummary;
+  siteDirectory?: string;
+  closureEvidenceProof?: VerifiedOntologyClosureEvidenceProof;
   audioCoverage?: AudioCoverageReport;
 } = {}): CompletenessFacts {
   return withRepoRoot(repoRoot, () => {
@@ -752,17 +982,7 @@ export function buildCompletenessFacts({
     const discoveredEnglish = listEnglishDialogues();
     const sourceNotesPath = join(repoRoot, "raw/plato/SOURCES.md");
     const sourceNotes = file(sourceNotesPath) ? readFileSync(sourceNotesPath, "utf8") : "";
-    const relationCandidateResult = collectRelationCandidatesSafely();
-    const relationCandidates = relationCandidateResult.report;
-    const candidatesByScope = new Map(Object.entries(relationCandidates.counts.by_scope));
-    // Keyed by immutable candidate key and occurrence count, never pair_id.
-    // Every generated candidate and every ledger decision must occur once.
-    const candidateKeyCountsByScope = new Map<string, Map<string, number>>();
-    for (const candidate of relationCandidates.entries) {
-      const counts = candidateKeyCountsByScope.get(candidate.scope) ?? new Map<string, number>();
-      counts.set(candidate.candidate_key, (counts.get(candidate.candidate_key) ?? 0) + 1);
-      candidateKeyCountsByScope.set(candidate.scope, counts);
-    }
+    const relationAudit = relationAuditEvidence(repoRoot, siteDirectory, closureEvidenceProof);
     const scopes = readReportedTurnScopes({ repoRoot });
     const scopeEntries = new Map(scopes.entries.map((entry) => [entry.dialogue, entry]));
     const scopeIssuesByDialogue = new Map<string, string[]>();
@@ -786,10 +1006,6 @@ export function buildCompletenessFacts({
       const relationBlocks = blocksAt(repoRoot, relationPath, relationYamlBlocks);
       const observationReview = statuses(observationBlocks);
       const claimReview = statuses(claimBlocks);
-      const relationReview = statuses(relationBlocks);
-      const dispositionedCandidateKeyCounts = relationCandidateKeyCountsFromBlocks(dialogue, relationBlocks);
-      const candidateCount = candidatesByScope.get(dialogue) ?? 0;
-      const candidateKeyCounts = candidateKeyCountsByScope.get(dialogue) ?? new Map<string, number>();
       const audio = audioByDialogue.get(dialogue);
       const turns = currentArtifact(repoRoot, turnIndexPath(dialogue), () => formatTurnIndexToon(buildTurnIndex(dialogue)));
       const warnings: string[] = [];
@@ -816,17 +1032,7 @@ export function buildCompletenessFacts({
           scopeClosed: safeSegmentScopeClosed(() => planSegmentedClaims(dialogue, 30_000)),
           review: claimReview,
         },
-        relations: {
-          ledger: file(join(repoRoot, relationPath)),
-          valid: ledgerValid(repoRoot, relationPath, validateRelationLedger),
-          candidates: candidateCount,
-          dispositioned: countRelationCandidateKeyOccurrences(dispositionedCandidateKeyCounts),
-          review: relationReview,
-          candidateKeysMatch: exactRelationCandidateKeyCountsMatch(
-            dispositionedCandidateKeyCounts,
-            candidateKeyCounts,
-          ),
-        },
+        relations: relationScopeFacts({ repoRoot, path: relationPath, blocks: relationBlocks, audit: relationAudit }),
         derived: {
           stephanus: currentArtifact(repoRoot, stephanusIndexPath(dialogue), () => formatStephanusIndexToon(buildStephanusIndex(dialogue))),
           turns,
@@ -863,9 +1069,8 @@ export function buildCompletenessFacts({
       };
     });
 
-    const crossRelationBlocks = blocksAt(repoRoot, "wiki/relations/cross-dialogue.md", relationYamlBlocks);
-    const crossCandidateKeyCounts = relationCandidateKeyCountsFromBlocks("cross-dialogue", crossRelationBlocks);
-    const crossCandidateCount = candidatesByScope.get("cross-dialogue") ?? 0;
+    const crossRelationPath = "wiki/relations/cross-dialogue.md";
+    const crossRelationBlocks = blocksAt(repoRoot, crossRelationPath, relationYamlBlocks);
     return {
       schemaVersion: 1,
       canonicalDialogues: CANONICAL_DIALOGUES,
@@ -875,19 +1080,20 @@ export function buildCompletenessFacts({
       comparisonValid: comparisonArtifactsValid(repoRoot),
       siteValid: site?.valid ?? false,
       siteEvidence: site?.evidence ?? "site validation summary was not supplied",
-      relationCandidatesValid: relationCandidateResult.valid,
-      dialogues,
-      crossDialogueRelations: {
-        ledger: file(join(repoRoot, "wiki/relations/cross-dialogue.md")),
-        valid: ledgerValid(repoRoot, "wiki/relations/cross-dialogue.md", validateRelationLedger),
-        candidates: crossCandidateCount,
-        dispositioned: countRelationCandidateKeyOccurrences(crossCandidateKeyCounts),
-        review: statuses(crossRelationBlocks),
-        candidateKeysMatch: exactRelationCandidateKeyCountsMatch(
-          crossCandidateKeyCounts,
-          candidateKeyCountsByScope.get("cross-dialogue") ?? new Map<string, number>(),
-        ),
+      relationAudit: {
+        packagePath: relationAudit.packagePath,
+        semanticProofVerified: relationAudit.semanticProofVerified,
+        closureEvidenceValid: relationAudit.closureEvidenceValid,
+        rejectedReaderLeaks: relationAudit.rejectedReaderLeaks,
+        acceptedRelationFictionIssues: relationAudit.acceptedRelationFictionIssues,
       },
+      dialogues,
+      crossDialogueRelations: relationScopeFacts({
+        repoRoot,
+        path: crossRelationPath,
+        blocks: crossRelationBlocks,
+        audit: relationAudit,
+      }),
       reportedTurnScopeIssues: globalScopeIssues,
       apparatus: {
         infrastructureImplemented:
@@ -911,32 +1117,54 @@ function leaf(dialogue: string, passed: boolean, expected: string, observed: str
   return { scope: dialogue, state: passed ? "pass" : "fail", expected, observed, evidence, ...(passed ? {} : { remediation }) };
 }
 
-function exhaustedRelationLeaf(
+function canonicalRelationLeaf(
   scope: string,
-  relation: Pick<DialogueCompletenessFacts["relations"], "ledger" | "valid" | "review" | "candidateKeysMatch">,
+  relation: RelationScopeCompletenessFacts,
   path: string,
+  auditVerified: boolean,
 ): CompletenessLeaf {
-  const consistent =
-    relation.candidateKeysMatch &&
-    terminal(relation.review) &&
-    (!relation.ledger || relation.valid);
-  if (!consistent) {
+  if (relation.records === 0) {
+    const evidencedZero = auditVerified && !relation.ledger && relation.auditedRecords === 0;
+    if (evidencedZero) {
+      return {
+        scope,
+        state: "not_applicable",
+        expected: "the verified vNext audit contains no canonical relation record for this scope",
+        observed: "0 canonical records; no relation ledger",
+        evidence: [path, "verified snapshot-bound ontology audit"],
+      };
+    }
     return leaf(
       scope,
       false,
-      "zero current candidates with no stale or invalid relation ledger",
-      `ledger=${relation.ledger}; valid=${relation.valid}; exact_candidate_keys=${relation.candidateKeysMatch}; unreviewed=${relation.review.unreviewed}; needs_split=${relation.review.needsSplit}`,
-      [path, "deterministic current relation candidate set"],
-      "remove stale dispositions or repair the zero-candidate ledger",
+      "a verified audited zero or a nonempty strict canonical relation ledger",
+      `audit_verified=${auditVerified}; ledger=${relation.ledger}; valid=${relation.valid}; records=0`,
+      [path, "verified snapshot-bound ontology audit"],
+      "repair the canonical ledger or its snapshot-bound relation adjudication evidence",
     );
   }
-  return {
+
+  return leaf(
     scope,
-    state: "not_applicable",
-    expected: "exhausted candidate scope with no stale or invalid ledger",
-    observed: `0 current candidates; ledger=${relation.ledger}; valid=${relation.valid}`,
-    evidence: [path, "deterministic current relation candidate set"],
-  };
+    auditVerified
+      && relation.ledger
+      && relation.valid
+      && terminal(relation.review)
+      && relation.auditedRecords === relation.records
+      && relation.auditedAcceptedEdges === relation.acceptedEdges,
+    "a valid terminal relation ledger whose records and accepted semantic edges are bound by the verified vNext audit",
+    [
+      `audit_verified=${auditVerified}`,
+      `ledger=${relation.ledger}`,
+      `valid=${relation.valid}`,
+      `records=${relation.auditedRecords}/${relation.records} audited`,
+      `accepted_edges=${relation.auditedAcceptedEdges}/${relation.acceptedEdges} audited`,
+      `unreviewed=${relation.review.unreviewed}`,
+      `needs_split=${relation.review.needsSplit}`,
+    ].join("; "),
+    [path, "verified snapshot-bound ontology audit"],
+    "repair the canonical relation ledger and its item-level audit adjudications without inferring from discovery candidates",
+  );
 }
 
 function sameTurnSet(actual: readonly string[], expected: readonly string[]) {
@@ -1041,13 +1269,35 @@ export function buildCompletenessReport(facts: CompletenessFacts): CompletenessR
     family("CMP-OBSERVATIONS", perDialogue.map((entry) => leaf(entry.dialogue, entry.observations.ledger && entry.observations.valid && entry.observations.scopeClosed && terminal(entry.observations.review), "valid ledger, exhausted 30k segments, terminal review", `ledger=${entry.observations.ledger}; valid=${entry.observations.valid}; scope=${entry.observations.scopeClosed}; unreviewed=${entry.observations.review.unreviewed}; needs_split=${entry.observations.review.needsSplit}`, [`wiki/observations/${entry.dialogue}.md`, "wiki/observations/segment-coverage.jsonl"], "repair the ledger, close scope, and terminally review every record"))),
     family("CMP-CLAIMS", perDialogue.map((entry) => leaf(entry.dialogue, entry.claims.ledger && entry.claims.valid && entry.claims.scopeClosed && terminal(entry.claims.review), "valid ledger, exhausted 30k segments, terminal review", `ledger=${entry.claims.ledger}; valid=${entry.claims.valid}; scope=${entry.claims.scopeClosed}; unreviewed=${entry.claims.review.unreviewed}; needs_split=${entry.claims.review.needsSplit}`, [`wiki/claims/${entry.dialogue}.md`, "wiki/claims/segment-coverage.jsonl"], "repair the ledger, close scope, and terminally review every claim"))),
     family("CMP-RELATIONS", [
-      leaf("global", facts.relationCandidatesValid, "deterministic relation candidate generation succeeds", `valid=${facts.relationCandidatesValid}`, ["wiki/claims", "deterministic current relation candidate set"], "repair candidate generation before evaluating relation closure"),
-      ...perDialogue.map((entry) => entry.relations.candidates === 0
-      ? exhaustedRelationLeaf(entry.dialogue, entry.relations, `wiki/relations/${entry.dialogue}.md`)
-      : leaf(entry.dialogue, entry.relations.ledger && entry.relations.valid && entry.relations.candidateKeysMatch && terminal(entry.relations.review), "valid ledger with exact current candidate keys dispositioned and terminally reviewed", `ledger=${entry.relations.ledger}; valid=${entry.relations.valid}; ${entry.relations.dispositioned}/${entry.relations.candidates}; exact_candidate_keys=${entry.relations.candidateKeysMatch}; unreviewed=${entry.relations.review.unreviewed}; needs_split=${entry.relations.review.needsSplit}`, [`wiki/relations/${entry.dialogue}.md`], "repair the ledger, adjudicate exactly the current candidate set, and close review")),
-      facts.crossDialogueRelations.candidates === 0
-        ? exhaustedRelationLeaf("cross-dialogue", facts.crossDialogueRelations, "wiki/relations/cross-dialogue.md")
-        : leaf("cross-dialogue", facts.crossDialogueRelations.ledger && facts.crossDialogueRelations.valid && facts.crossDialogueRelations.candidateKeysMatch && terminal(facts.crossDialogueRelations.review), "valid ledger with exact current candidate keys dispositioned and terminally reviewed", `ledger=${facts.crossDialogueRelations.ledger}; valid=${facts.crossDialogueRelations.valid}; ${facts.crossDialogueRelations.dispositioned}/${facts.crossDialogueRelations.candidates}; exact_candidate_keys=${facts.crossDialogueRelations.candidateKeysMatch}; unreviewed=${facts.crossDialogueRelations.review.unreviewed}; needs_split=${facts.crossDialogueRelations.review.needsSplit}`, ["wiki/relations/cross-dialogue.md"], "repair the ledger, adjudicate exactly the current cross-dialogue candidate set, and close review"),
+      leaf(
+        "global",
+        facts.relationAudit.semanticProofVerified
+          && facts.relationAudit.closureEvidenceValid
+          && facts.relationAudit.rejectedReaderLeaks === 0
+          && facts.relationAudit.acceptedRelationFictionIssues === 0,
+        "one verified preacceptance semantic proof with zero rejected-reader leaks and zero accepted relation fictions",
+        [
+          `package=${facts.relationAudit.packagePath ?? "missing"}`,
+          `semantic_proof_verified=${facts.relationAudit.semanticProofVerified}`,
+          `closure_evidence=${facts.relationAudit.closureEvidenceValid}`,
+          `rejected_reader_leaks=${facts.relationAudit.rejectedReaderLeaks}`,
+          `accepted_relation_fictions=${facts.relationAudit.acceptedRelationFictionIssues}`,
+        ].join("; "),
+        [facts.relationAudit.packagePath ?? "wiki/ontology-audits", "docs/ontology-vnext.md"],
+        "repair and re-close the snapshot-bound vNext audit; do not manufacture relation decisions from discovery candidates",
+      ),
+      ...perDialogue.map((entry) => canonicalRelationLeaf(
+        entry.dialogue,
+        entry.relations,
+        `wiki/relations/${entry.dialogue}.md`,
+        facts.relationAudit.semanticProofVerified,
+      )),
+      canonicalRelationLeaf(
+        "cross-dialogue",
+        facts.crossDialogueRelations,
+        "wiki/relations/cross-dialogue.md",
+        facts.relationAudit.semanticProofVerified,
+      ),
     ]),
     family("CMP-DERIVED", perDialogue.map((entry) => {
       const stale = Object.entries(entry.derived).filter(([, current]) => !current).map(([name]) => name);
@@ -1204,14 +1454,39 @@ export function writeCompletenessReport(report: CompletenessReport, path = "wiki
   return { path: relative(getRepoRoot(), absolute), report };
 }
 
-export function auditCompletenessFacts({ audioCoverage }: { audioCoverage?: AudioCoverageReport } = {}): CompletenessFacts {
+export type CompletenessAuditOptions = {
+  audioCoverage?: AudioCoverageReport;
+  /** Existing output from a separately isolated `buildStaticSite` phase. */
+  siteDirectory?: string;
+  /** Exact durable closure evidence already verified against `siteDirectory`. */
+  closureEvidenceProof?: VerifiedOntologyClosureEvidenceProof;
+};
+
+export function auditCompletenessFacts({
+  audioCoverage,
+  siteDirectory,
+  closureEvidenceProof,
+}: CompletenessAuditOptions = {}): CompletenessFacts {
   const root = getRepoRoot();
-  const outDir = mkdtempSync(join(tmpdir(), "plato-completeness-site-"));
+  if (closureEvidenceProof && siteDirectory === undefined) {
+    throw new Error("A verified closure-evidence proof requires its exact prebuilt site directory.");
+  }
+  if (siteDirectory !== undefined) {
+    return buildCompletenessFacts({
+      repoRoot: root,
+      ...(audioCoverage ? { audioCoverage } : {}),
+      siteDirectory,
+      ...(closureEvidenceProof ? { closureEvidenceProof } : {}),
+      site: auditPrebuiltStaticSite(siteDirectory),
+    });
+  }
+  const outDir = mkdtempSync(join(ensureCanonicalOntologyWorkRoot(root), "plato-completeness-site-"));
   try {
     const built = buildStaticSite({ outDir });
     return buildCompletenessFacts({
       repoRoot: root,
       ...(audioCoverage ? { audioCoverage } : {}),
+      siteDirectory: outDir,
       site: {
         valid: built.validation.brokenPaths === 0 && built.validation.brokenFragments === 0 && built.validation.duplicateIds === 0 && built.validation.recordingHashMismatches === 0,
         pages: built.pages,
@@ -1223,10 +1498,14 @@ export function auditCompletenessFacts({ audioCoverage }: { audioCoverage?: Audi
   }
 }
 
-export function validateCompletenessReport(path = "wiki/completeness.md", report?: CompletenessReport) {
+export function validateCompletenessReport(
+  path = "wiki/completeness.md",
+  report?: CompletenessReport,
+  auditOptions: CompletenessAuditOptions = {},
+) {
   const absolute = join(getRepoRoot(), path);
   if (!file(absolute)) return [{ path, message: "Completeness report is missing or empty." }];
-  const expected = renderCompletenessReport(report ?? buildCompletenessReport(auditCompletenessFacts()));
+  const expected = renderCompletenessReport(report ?? buildCompletenessReport(auditCompletenessFacts(auditOptions)));
   return readFileSync(absolute, "utf8") === expected
     ? []
     : [{ path, message: "Completeness report is stale; regenerate it with `bun run completeness -- --target knowledge-base --write`." }];
