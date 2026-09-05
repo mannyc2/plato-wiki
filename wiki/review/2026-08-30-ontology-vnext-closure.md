@@ -12,14 +12,14 @@
 - alias policy: zero legacy feature identity fields, feature_candidate ids, family::label aliases, compatibility aliases, dual readers, or fallback identities in canonical records and public projections
 - reader policy: zero rejected observation, claim, relation, commentary, or voice ids in generated joins, public ontology projections, or site output
 - semantic gates: zero pending review status, empty accepted-claim observation linkage, citationless accepted commentary, or accepted non-relation fiction
-- regeneration one sha256: `5eb2cee041ac952ae59c63d602eece9dd03a1ce21518aca7f38e52774b12902d`
-- regeneration two sha256: `5eb2cee041ac952ae59c63d602eece9dd03a1ce21518aca7f38e52774b12902d`
+- regeneration one sha256: `6e5bc020bd88d04016c1d0f83a2ca330e57f638cc222039db253f321ff0a0348`
+- regeneration two sha256: `6e5bc020bd88d04016c1d0f83a2ca330e57f638cc222039db253f321ff0a0348`
 - regeneration artifacts: 8267
 - machine evidence: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/closure-evidence.json`
 - baseline evidence: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/baseline-evidence.json`
 - artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/baseline-evidence.json`; sha256: `03ea62a8bd097cf9ebc09636d267999702409fc6e224ee26609dd836739e944c`
 - artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/closure-evidence.json`; sha256: `9b1e8cc5277be87ddcdb97388849bf467bb9ef0a968ba221e8c33bf32faaebbb`
-- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/regeneration.json`; sha256: `f0c42a48c6e7502d238d2794ffd6fae617736668ae58d7613dd98d82bf5f183a`
+- artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/regeneration.json`; sha256: `c25d2271c2f4bd96c21c9657d353daf1a8707263caafc7c1f4cc3736da53ca3e`
 - artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-2d36d7dbc8e108f8f59e6d046c76ef2e2d229f3e04bcb5968f1b9e4d2ce950d0-commentary-structural-review-evidence.jsonl`; sha256: `2d36d7dbc8e108f8f59e6d046c76ef2e2d229f3e04bcb5968f1b9e4d2ce950d0`
 - artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-67a557d8bc11e932c00562edfeddb8fae9a13d912681ada177dae662f6b26861-phaedo-commentary-reconsideration-review-bundle.json`; sha256: `67a557d8bc11e932c00562edfeddb8fae9a13d912681ada177dae662f6b26861`
 - artifact: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/review-inputs/final-adjustment-evidence/sha256-8a0ce752ff34e43807c6233cc560512d82e398f152b6b7cc8e9976dda3712fd8-sophist-commentary-reconsideration-review-bundle.json`; sha256: `8a0ce752ff34e43807c6233cc560512d82e398f152b6b7cc8e9976dda3712fd8`

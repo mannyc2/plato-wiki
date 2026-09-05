@@ -49,7 +49,7 @@ item-level evidence and receipts before the manifests were reaccepted.
 ## Closure proof
 
 - Acceptance state: `accepted`
-- Final corpus digest: `459309fe96fb252ad62c804fb7e38b2f496e1029297fbea4b243efaa57d35859`
+- Final corpus digest: `58c083f6491961fbe30e9c774ecbb0498977a3b3cae77e52155b48aa575c3a03`
 - Unresolved adjudications: 0
 - Stale aliases: 0
 - Rejected-reader leaks: 0
@@ -57,10 +57,10 @@ item-level evidence and receipts before the manifests were reaccepted.
 - Citationless accepted commentary: 0
 - Accepted non-relation fictions: 0
 - Clean regeneration artifacts per pass: 8,267
-- Regeneration run 1: `5eb2cee041ac952ae59c63d602eece9dd03a1ce21518aca7f38e52774b12902d`
-- Regeneration run 2: `5eb2cee041ac952ae59c63d602eece9dd03a1ce21518aca7f38e52774b12902d`
+- Regeneration run 1: `6e5bc020bd88d04016c1d0f83a2ca330e57f638cc222039db253f321ff0a0348`
+- Regeneration run 2: `6e5bc020bd88d04016c1d0f83a2ca330e57f638cc222039db253f321ff0a0348`
 - Closure evidence: `9b1e8cc5277be87ddcdb97388849bf467bb9ef0a968ba221e8c33bf32faaebbb`
-- Bound site tree: `18d8555f4d71e557264c2c5519752750185319ded518a437c323f2dc72289409`
+- Bound site tree: `9a08b6c8255f251994088be114a1b352cd48b12bda0dd8d99a5181c5d63f4cd6`
 - Closure receipt: `wiki/review/2026-08-30-ontology-vnext-closure.md`
 - Machine acceptance: `wiki/ontology-audits/sha256-872907512484742c6823dd37d4187e52e0224a59748f98964e98b8ca101130e4/acceptance.json`
 
@@ -73,7 +73,7 @@ weakening the verified commit bytes.
 
 ## Validation
 
-- `bun run test`: passed, 1,224 tests and 0 failures
+- `bun run test`: passed, 1,226 tests and 0 failures
 - `bun run typecheck`: passed
 - `bun run validate`: passed
 - `git diff --check`: passed
@@ -82,18 +82,30 @@ weakening the verified commit bytes.
 - Independent final hashes, row counts, current commentary manifests, and
   source-preservation check: passed
 
-## Delivery state at branch completion
+## Original delivery and renderer correction
 
-| State | Result |
-| --- | --- |
-| Implemented | Complete |
-| Audited | Complete |
-| Validated | Complete |
-| Committed | Pending final branch commit |
-| Branch pushed | Pending exact branch push |
-| Merged to `main` | Authorized; gated on exact-head required CI |
-| Deployed/published | Authorized; gated on merged-`main` CI and GitHub Pages provenance checks |
+The original rebuild was committed and pushed through
+`c63f32a4030ce0608b50d6703242258d30e1c75e`. Its required hosted verification
+passed in run 33551934143. PR #7 merged to `main` as
+`3611b74214d45eb8a55d0a57ba1cc21e2070b23c` on September 5, 2026. The resulting
+main run 33985542471 was canceled before deployment after interactive closeout
+found a corpus-search defect.
 
-The final task report records the resulting commit, branch push, merge commit,
-workflow runs, and live `release.json` provenance because those external states
-necessarily occur after this branch-bound report is committed.
+The generated browser script split structural-filter values on the letter `s`
+because its template omitted a required backslash escape. Filtering to
+Observation therefore returned no results. Correcting the template restores
+whitespace tokenization; the browser now returns 127 Meno observations for
+`virtue`. Two executable regressions failed before the fix and passed after it,
+covering rendered results, kind/dialogue filtering, complete axis membership,
+and partial-axis rejection. The full suite passes 1,226 tests.
+
+The canonical closure command regenerated twice and refreshed the accepted
+proof reported above. Both passes contain the same 8,267 paths. Compared with
+the previous accepted proof, only `site/assets/site.js` changes: 25,032 to
+25,033 bytes. All six audit partitions, source files, semantic ledgers, ontology
+rows, derived data, clusters, dossiers, and zero-issue closure evidence remain
+byte-identical. No semantic decision was reopened or replaced.
+
+The final task closeout records the correction commit, branch push, follow-up
+PR, exact main workflow, and live release provenance. Merge and deployment
+remain authorized and gated on protected CI plus artifact and live-site checks.
