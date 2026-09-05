@@ -128,7 +128,7 @@ jobs:
           bun-version: 1.3.9
 
       # actions/configure-pages v5
-      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d
 
       # actions/deploy-pages v4
       - name: Deploy exact artifact
