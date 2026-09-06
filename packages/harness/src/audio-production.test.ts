@@ -809,6 +809,23 @@ describe("audio screenplay and QA hard-cutover contracts", () => {
     expect(parseAudioQa(`audio/qa/${DIALOGUE}.json`, content).status).toBe("accepted");
   });
 
+  it("accepts ratified internal pauses while rejecting a raised ceiling or excess silence", () => {
+    const report = qa(JSON.stringify(script()));
+    report.audio.silence.max_allowed_ms = 1800;
+    const validate = () => validateAudioQa(`audio/qa/${DIALOGUE}.json`, JSON.stringify(report));
+    for (const duration of [1720, 1800]) {
+      report.audio.silence.max_observed_ms = duration;
+      report.chapters[0]!.max_silence_ms = duration;
+      expect(validate()).toEqual([]);
+    }
+
+    report.audio.silence.max_observed_ms = 1801;
+    report.chapters[0]!.max_silence_ms = 1801;
+    expect(codes(validate())).toContain("acceptance_gate_failure");
+    report.audio.silence.max_allowed_ms = 1801;
+    expect(codes(validate())).toContain("invalid_metric");
+  });
+
   it("binds reviewed ASR edits to complete chapter indexes and preserves empty insertion/deletion sides", () => {
     const report = qa(JSON.stringify(script()));
     Object.assign(report.asr, {

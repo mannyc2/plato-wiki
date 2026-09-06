@@ -1383,7 +1383,7 @@ tool binaries. Results live atomically under:
 
 `mechanical-qa.json` is scratch evidence only. It records working/publication
 hashes, formats and durations; loudness and true peak; exact PCM clipping count;
-all detected silences of at least 250 ms; internal silence over 1200 ms or a
+all detected silences of at least 250 ms; internal silence over 1800 ms or a
 silence crossing a declared pause over 800 ms;
 the silence floor within each declared pause (with a pinned 5 ms filter-edge
 guard); chapter hashes; and gate results. It always records `accepted: false`,

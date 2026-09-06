@@ -2245,7 +2245,7 @@ function validateQaIntegrity(qa: AudioQaReport, path: string) {
     audio.true_peak_dbtp <= -1;
   const clippingPass = audio.clipped_samples === 0;
   const silencePass =
-    audio.silence.max_allowed_ms <= 800 &&
+    audio.silence.max_allowed_ms <= 1800 &&
     audio.silence.max_observed_ms <= audio.silence.max_allowed_ms &&
     audio.silence.unexpected_segments.length === 0;
   if (
@@ -2262,11 +2262,11 @@ function validateQaIntegrity(qa: AudioQaReport, path: string) {
       message: "QA master and chapters must be WAV paths describing production mono 48 kHz PCM_24 lossless audio.",
     });
   }
-  if (audio.silence.max_allowed_ms > 1200) {
+  if (audio.silence.max_allowed_ms > 1800) {
     issues.push({
       code: "invalid_metric",
       path,
-      message: "qa.audio.silence.max_allowed_ms cannot exceed the 1200 ms internal-prosody ceiling.",
+      message: "qa.audio.silence.max_allowed_ms cannot exceed the 1800 ms internal-prosody ceiling.",
     });
   }
 

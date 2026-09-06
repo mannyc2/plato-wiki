@@ -326,7 +326,6 @@ class MasterAudioPureTest(unittest.TestCase):
                 },
             ],
         )
-        self.assertGreater(round(1.3 * 1000), MAX_UNEXPECTED_SILENCE_MS)
         with self.assertRaisesRegex(MasteringContractError, "without a start"):
             parse_silence_log("silence_end: 1.0 | silence_duration: 1.0", 2.0)
 
@@ -343,8 +342,8 @@ class MasterAudioPureTest(unittest.TestCase):
         }
         internal = {
             "start_seconds": 2.0,
-            "end_seconds": 3.1,
-            "duration_seconds": 1.1,
+            "end_seconds": 3.8,
+            "duration_seconds": 1.8,
         }
         crossing = {
             "start_seconds": 0.9,
@@ -353,8 +352,8 @@ class MasterAudioPureTest(unittest.TestCase):
         }
         dropout = {
             "start_seconds": 3.5,
-            "end_seconds": 4.8,
-            "duration_seconds": 1.3,
+            "end_seconds": 5.301,
+            "duration_seconds": 1.801,
         }
         self.assertEqual(
             unexpected_silence_segments(
@@ -663,7 +662,7 @@ class MasterAudioFfmpegTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as raw_root:
             root = Path(raw_root)
             source = root / "source-with-silence.wav"
-            write_pcm24(source, seconds=5.0, silence=(2.0, 3.4))
+            write_pcm24(source, seconds=5.0, silence=(2.0, 4.0))
             plan, assembly = self.build_actual_plan(source)
             outdir = (root / "output").resolve()
             manifest, created = execute_mastering(plan, assembly, outdir)

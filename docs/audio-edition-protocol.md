@@ -543,6 +543,12 @@ permits at most 2% word-error rate and zero reviewed ordinary-word errors in eve
 chapter and the complete master. Ratify the production thresholds from review
 of the first two Dots masters.
 No clipping is allowed.
+On 2026-09-06, Chris reviewed the longest flagged Charmides excerpt
+(`charmides-task-104-maximum-pause.wav`, 1.72 seconds of internal silence),
+found the pause acceptable, and authorized continued generation. The production
+internal-silence ceiling is therefore 1800 ms. Silence crossing a declared
+speaker or chapter pause retains its 800 ms ceiling. This threshold decision
+does not accept either master or resolve ASR, pronunciation, or cast findings.
 Silence that exceeds its declared chapter/commentary intent fails. A recurrent
 bad voice, cadence, pronunciation, or speaker boundary fails the dialogue even
 when mechanical metrics pass.

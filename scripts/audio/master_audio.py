@@ -87,7 +87,9 @@ RF64_EVIDENCE_FIELDS = {
 
 SILENCE_NOISE_DB = -50.0
 SILENCE_MIN_SECONDS = 0.25
-MAX_UNEXPECTED_SILENCE_MS = 1200
+# The operator ratified the first masters' internal prosody after hearing the
+# 1.72-second Charmides sample; speaker/chapter boundary gaps stay stricter.
+MAX_UNEXPECTED_SILENCE_MS = 1800
 MAX_BOUNDARY_CROSSING_SILENCE_MS = 800
 BOUNDARY_EDGE_GUARD_MS = 5
 PUBLICATION_DURATION_TOLERANCE_SECONDS = 0.15
