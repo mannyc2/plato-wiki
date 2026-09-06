@@ -8,7 +8,7 @@ import {
   writeDraftScreenplay,
   writeProductionScreenplay,
 } from "./audio-screenplay-generator.js";
-import { validateAudioScriptArtifact } from "./audio-production.js";
+import { validateAudioProductionArtifacts, validateAudioScriptArtifact } from "./audio-production.js";
 import { CAST_ACCEPTANCE_GATES } from "./audio-catalog.js";
 import { writeEnglishStephanusIndex } from "./derived/stephanus.js";
 import { setRepoRootForTesting } from "./paths.js";
@@ -1190,6 +1190,17 @@ describe("deterministic audio screenplay generator", () => {
       "invalid_commentary_quality_audit",
     );
     expect(report.prospective_screenplay).toBeUndefined();
+  });
+
+  it("refreshes corpus evidence between production validation runs", () => {
+    writeProductionScreenplay(buildScreenplayGenerationReport(DIALOGUE));
+    expect(validateAudioProductionArtifacts()).toEqual([]);
+
+    write("docs/commentary-protocol.md", driftedCommentaryProtocolFixture("Changed between validation runs."));
+    expect(validateAudioProductionArtifacts()).toContainEqual(expect.objectContaining({
+      code: "invalid_reference",
+      message: expect.stringContaining("commentary quality audit is invalid"),
+    }));
   });
 
   it("reports missing span evidence and never inherits or guesses unlabeled/quoted speech", () => {

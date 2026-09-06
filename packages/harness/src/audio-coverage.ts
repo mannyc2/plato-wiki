@@ -410,12 +410,13 @@ function screenplayCoverage(
   canonicalIds: Set<string>,
   voiceOwnerIds: Set<string>,
   selectedCastIds: Set<string>,
+  auditEvidence: () => CommentaryAuditEvidenceSnapshot,
 ) {
   const path = `audio/scripts/${dialogue}.json`;
   const absolutePath = join(getRepoRoot(), path);
   const present = existsSync(absolutePath) && statSync(absolutePath).isFile() && statSync(absolutePath).size > 0;
   const content = present ? readFileSync(absolutePath, "utf8") : undefined;
-  const validationIssueCount = content ? validateAudioScriptArtifact(path, content).length : 0;
+  const validationIssueCount = content ? validateAudioScriptArtifact(path, content, auditEvidence()).length : 0;
   const script = readJsonObject(path);
   const entries = objectArray(script?.entries);
   const characterIds = sortedUnique(
@@ -598,6 +599,7 @@ function coverageForDialogue(
     new Set(canonicalIds),
     new Set(voiceOwnerIds),
     castCatalog.selected,
+    auditEvidence,
   );
   const unresolvedCharacterIds = sortedUnique([
     ...rosterUnresolvedCharacterIds,

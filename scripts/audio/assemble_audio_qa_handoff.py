@@ -1019,10 +1019,27 @@ def validate_handoff(handoff: dict[str, Any]) -> None:
     if (
         handoff["schema_version"] != SCHEMA_VERSION
         or handoff["status"] != STATUS
-        or handoff["implementation"] != implementation_identity()
         or handoff["measurement_policy"] != MEASUREMENT_POLICY
     ):
         raise AudioQaHandoffError("QA handoff identity or policy is stale")
+    implementation = _exact_record(
+        handoff["implementation"],
+        {"name", "version", "code_path", "code_sha256"},
+        "QA handoff producer",
+    )
+    if (
+        implementation["name"] != IMPLEMENTATION_NAME
+        or implementation["version"] != IMPLEMENTATION_VERSION
+    ):
+        raise AudioQaHandoffError("QA handoff producer name or version is unsupported")
+    # A frozen producer may live outside the current validator checkout. Its
+    # original bytes remain bound evidence; all measurements and projections
+    # below are still independently recomputed by this validator.
+    _absolute_regular_file(
+        implementation["code_path"],
+        _sha256(implementation["code_sha256"], "QA handoff producer SHA-256"),
+        "QA handoff producer source",
+    )
     digest = _sha256(handoff["evidence_sha256"], "QA handoff evidence SHA-256")
     core = {key: value for key, value in handoff.items() if key != "evidence_sha256"}
     if sha256_bytes(canonical_json(core)) != digest:

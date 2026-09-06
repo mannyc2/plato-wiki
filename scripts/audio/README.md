@@ -1537,13 +1537,15 @@ The only output is
 `<outdir>/artifacts/<qa-handoff-sha256>/qa-handoff.json`. It is an unaccepted
 scratch handoff with human listening explicitly `not-performed`; the command
 refuses `audio/qa/` and `wiki/recordings/` destinations. It deliberately does
-not manufacture an accepted QA-v2 object. Promotion requires a separate
-schema-v2 production-acceptance review, distinct chapter WAV paths and hashes,
+not manufacture an accepted QA object. Current promotion requires a separate
+schema-v3 production-acceptance review, distinct chapter WAV paths and hashes,
 and the remaining canonical artifact bindings. The review records either
 completed whole-master listening or an explicit operator-authorized mechanical
 and ASR waiver; a waiver never bypasses a failed source, commentary, ASR,
 audio, or cast gate. The handoff lists those exact inputs, plus reviewed ASR
-exception enumeration when word errors exist, as explicit blockers.
+exception enumeration when word errors exist, as explicit blockers. Frozen
+handoff promotion hints describe the original producer contract; current
+accepted QA and acceptance reviews use schema v3.
 
 Resume validation rereads the bound screenplay, cast, render plan, mastering
 plan/result/mechanical QA, working master, publication derivative, full-master
@@ -1558,8 +1560,8 @@ descendant path is rejected before directories are created.
 
 `promote_audio_qa.py` is the only command that converts an unaccepted QA
 handoff into canonical accepted production records. It requires a separate
-schema-v2 acceptance review that binds the exact handoff evidence SHA, working
-master SHA, complete ordered chapter inventory, named authorizer, date,
+schema-v3 acceptance review that binds the exact handoff evidence SHA, working
+master SHA, deterministic ASR audit SHA, complete ordered chapter inventory, named authorizer, date,
 rationale, findings, and a complete reviewed enumeration of any ASR word
 errors. The review must choose either complete-master human listening or the
 explicit operator-authorized mechanical-and-ASR waiver. An accepted review
@@ -1571,10 +1573,11 @@ An operator-waiver review uses this exact shape under
 
 ```json
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "dialogue": "crito",
   "handoff_evidence_sha256": "<qa-handoff-evidence-sha256>",
   "working_master_sha256": "<working-master-sha256>",
+  "audit_sha256": "<audit-full-master-asr-audit-sha256>",
   "acceptance_basis": "operator-authorized-mechanical-and-asr-waiver",
   "authorized_by": "<operator-identity>",
   "authorized_at": "<YYYY-MM-DD>",
@@ -1587,8 +1590,15 @@ An operator-waiver review uses this exact shape under
 }
 ```
 
-When ASR reports any word errors, `asr_exceptions` must enumerate all of them;
-zero ordinary-word errors remains mandatory.
+When ASR reports word errors, `asr_exceptions` must contain one
+`{"chapter_id":"<chapter>","edit_index":0,"classification":"proper-name","reviewed":true}`
+for each exact edit from `audit_full_master_asr.py`. Classifications may be
+`proper-name`, `punctuation`, or `ordinary`; zero ordinary-word errors remains
+mandatory. Every preview and execution rebuilds the audit from the hash-bound
+raw ASR and current screenplay. Review input cannot contain tokens or occurrence
+totals. The promoter derives those tokens and all ordinary-error counts,
+preserving empty expected/recognized sides for insertions/deletions. It leaves
+the raw ASR and unaccepted handoff bytes unchanged.
 
 The promoter revalidates the handoff and current screenplay/cast, rereads every
 mastering-v6 artifact beneath the explicit artifact root, and derives distinct

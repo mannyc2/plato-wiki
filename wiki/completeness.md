@@ -8,7 +8,7 @@ Completeness is conjunctive. There is deliberately no aggregate percentage.
 
 - **corpus**: READY
 - **knowledge-base**: READY
-- **audio-edition**: INCOMPLETE — CMP-AUDIO-SCREENPLAY, CMP-AUDIO-RENDER, CMP-AUDIO-MASTERING, CMP-AUDIO-MECHANICAL-QA, CMP-AUDIO-ACCEPTANCE, CMP-AUDIO-RECORDING, CMP-AUDIO-WEBSITE
+- **audio-edition**: INCOMPLETE — CMP-AUDIO-RENDER, CMP-AUDIO-MASTERING, CMP-AUDIO-MECHANICAL-QA, CMP-AUDIO-ACCEPTANCE, CMP-AUDIO-RECORDING, CMP-AUDIO-WEBSITE
 
 ## Family summary
 
@@ -27,7 +27,7 @@ Completeness is conjunctive. There is deliberately no aggregate percentage.
 | CMP-WRITING-AUDIT | pass | knowledge-base, audio-edition | 27/27 |
 | CMP-AUDIO-TRUTH | pass | knowledge-base, audio-edition | 27/27 |
 | CMP-AUDIO-ATTRIBUTION | pass | audio-edition | 27/27 |
-| CMP-AUDIO-SCREENPLAY | FAIL | audio-edition | 0/27 |
+| CMP-AUDIO-SCREENPLAY | pass | audio-edition | 27/27 |
 | CMP-AUDIO-RENDER | FAIL | audio-edition | 0/27 |
 | CMP-AUDIO-MASTERING | FAIL | audio-edition | 0/27 |
 | CMP-AUDIO-MECHANICAL-QA | FAIL | audio-edition | 0/27 |
@@ -80,33 +80,6 @@ Capability implemented; content scope `contract_pending`; required by current ta
 
 ## Blockers
 
-- **CMP-AUDIO-SCREENPLAY / apology**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / charmides**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / cratylus**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / critias**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / crito**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / euthydemus**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / euthyphro**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / gorgias**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / greater-hippias**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / ion**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / laches**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / laws**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / lesser-hippias**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / lysis**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / menexenus**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / meno**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / parmenides**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / phaedo**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / phaedrus**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / philebus**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / protagoras**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / republic**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / sophist**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / statesman**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / symposium**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / theaetetus**: complete=false. produce a valid screenplay
-- **CMP-AUDIO-SCREENPLAY / timaeus**: complete=false. produce a valid screenplay
 - **CMP-AUDIO-RENDER / apology**: complete=false. complete the render
 - **CMP-AUDIO-RENDER / charmides**: complete=false. complete the render
 - **CMP-AUDIO-RENDER / cratylus**: complete=false. complete the render

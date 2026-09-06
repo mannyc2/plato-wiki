@@ -525,7 +525,7 @@ export function writeAcceptedAudioProductionFixture({
   const screenplaySha256 = sha256(readFileSync(join(root, screenplayPath), "utf8"));
   const qaPath = `audio/qa/${dialogue}.json`;
   writeJson(root, qaPath, {
-    schema_version: 2,
+    schema_version: 3,
     dialogue,
     status: "accepted",
     generated_at: "2026-07-13T04:00:00Z",
@@ -558,6 +558,7 @@ export function writeAcceptedAudioProductionFixture({
       ordinary_word_errors: 0,
       word_error_rate: 0,
       transcript_sha256: HASH,
+      audit_sha256: HASH,
       exceptions: [],
     },
     audio: {

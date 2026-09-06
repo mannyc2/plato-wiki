@@ -527,7 +527,7 @@ mechanical stage is only the input to the acceptance QA below.
 
 ## QA and acceptance
 
-`audio/qa/<dialogue>.json` records per-chapter and complete-master results:
+`audio/qa/<dialogue>.json` schema v3 records per-chapter and complete-master results:
 
 - exact source/commentary coverage;
 - audio format, duration, checksum, loudness, peak, clipping, and silence scan;
@@ -538,16 +538,19 @@ mechanical stage is only the input to the acceptance QA below.
 - production-acceptance basis, authorizer, date, rationale, disposition, and
   rerender links.
 
-Auditions require zero ordinary-word ASR errors. The production ASR threshold
-is ratified from the first two Dots masters; until then any ordinary-word error
-is inspected and a recurring error fails the chapter. No clipping is allowed.
+Auditions require zero ordinary-word ASR errors. The provisional production gate
+permits at most 2% word-error rate and zero reviewed ordinary-word errors in every
+chapter and the complete master. Ratify the production thresholds from review
+of the first two Dots masters.
+No clipping is allowed.
 Silence that exceeds its declared chapter/commentary intent fails. A recurrent
 bad voice, cadence, pronunciation, or speaker boundary fails the dialogue even
 when mechanical metrics pass.
 
 Promotion is an explicit two-step, content-addressed operation. A separate
-schema-v2 production-acceptance review binds the exact unaccepted handoff,
-working master, and complete ordered chapter inventory. It records an
+schema-v3 production-acceptance review binds the exact unaccepted handoff,
+working master, complete ordered chapter inventory, and `audit_sha256` from
+the deterministic full-master ASR edit audit. It records an
 authorizer, date, rationale, findings, every reviewed ASR exception, and either
 completed whole-master listening or an explicit operator-authorized mechanical
 and ASR waiver. The waiver cannot bypass any source, commentary, ASR, audio, or
@@ -557,6 +560,25 @@ hashes without writing. Execution requires that reviewed plan SHA, slices
 distinct RF64 PCM24 chapter artifacts at the authoritative mastering frames,
 writes the canonical QA and recording records atomically, and rolls all new
 files back if full repository validation fails. No implicit acceptance exists.
+
+Every preview and execution reconstructs the audit from the handoff-bound raw
+ASR file and current screenplay. The review's `asr_exceptions` contains exactly
+one `{chapter_id, edit_index, classification, reviewed: true}` for every audit
+edit, including insertions and deletions. Reviewers cannot supply tokens or
+occurrence totals. Promotion copies each edit's exact `expected` and
+`recognized` tokens into QA, preserving an empty side for insertion or deletion,
+and derives chapter and master ordinary-error counts from the classifications.
+Raw ASR and mechanical handoff evidence remains unchanged, including its
+conservative classification of every edit as ordinary. The original handoff's
+promotion hints describe its producer version; the current promoter requires
+review and accepted-QA schema v3. No schema-v2 acceptance fallback exists.
+
+Python promotion owns the exact token projection. Repository QA validation
+checks the audit digest shape, unique complete chapter/edit coverage, token
+shape, derived counts, and the unchanged thresholds. It does not duplicate the
+alignment algorithm or retain a second audit artifact store. Handoff validation
+checks its recorded producer path and code hash against the original regular
+file, rather than requiring that path to equal the current validator checkout.
 
 ## Recording manifest and storage
 

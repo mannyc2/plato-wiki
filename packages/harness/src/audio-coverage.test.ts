@@ -418,7 +418,7 @@ function writeCompleteAudioEdition() {
   };
   writeJson(`audio/scripts/${DIALOGUE}.json`, screenplay);
   writeJson(`audio/qa/${DIALOGUE}.json`, {
-    schema_version: 2,
+    schema_version: 3,
     dialogue: DIALOGUE,
     status: "accepted",
     generated_at: "2026-07-13T04:00:00Z",
@@ -451,6 +451,7 @@ function writeCompleteAudioEdition() {
       ordinary_word_errors: 0,
       word_error_rate: 0,
       transcript_sha256: HASH,
+      audit_sha256: HASH,
       exceptions: [],
     },
     audio: {

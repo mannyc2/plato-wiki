@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts/audio"))
 
 import promote_audio_qa as promotion  # noqa: E402
+import qa_full_master_asr as full_asr  # noqa: E402
 from master_audio import inspect_rf64_pcm24  # noqa: E402
 
 
@@ -185,7 +186,10 @@ class PromotionFixture:
                     "title": "Second",
                 },
             ],
-            "entries": [],
+            "entries": [
+                {"id": "first-source", "chapter_id": "first", "text": "Alpha beta"},
+                {"id": "second-source", "chapter_id": "second", "text": "Gamma delta"},
+            ],
         }
         screenplay_path = self.repo / "audio/scripts/crito.json"
         screenplay_path.parent.mkdir(parents=True)
@@ -322,7 +326,7 @@ class PromotionFixture:
             "acceptance": {"accepted": False},
         }
         self.review = {
-            "schema_version": 2,
+            "schema_version": 3,
             "dialogue": self.dialogue,
             "handoff_evidence_sha256": self.handoff["evidence_sha256"],
             "working_master_sha256": master_sha,
@@ -336,6 +340,60 @@ class PromotionFixture:
             "findings": [],
             "asr_exceptions": [],
         }
+        self.refresh_asr()
+
+    def refresh_asr(self, transcripts: dict[str, str] | None = None) -> None:
+        screenplay_path = self.repo / "audio/scripts/crito.json"
+        screenplay_path.write_bytes(promotion.pretty_json(self.screenplay))
+        self.screenplay_sha = promotion.sha256_file(screenplay_path)
+        self.handoff["production"]["screenplay"]["sha256"] = self.screenplay_sha
+        raw_chapters = []
+        for chapter in self.handoff["chapters"]:
+            chapter_id = chapter["chapter_id"]
+            expected = " ".join(
+                item["text"] for item in self.screenplay["entries"]
+                if item["chapter_id"] == chapter_id
+            )
+            transcript = (transcripts or {}).get(chapter_id, expected)
+            expected_words = full_asr.normalized_words(expected)
+            recognized_words = full_asr.normalized_words(transcript)
+            errors = full_asr.word_edit_distance(expected_words, recognized_words)
+            metrics = {
+                "expected_words": len(expected_words),
+                "recognized_words": len(recognized_words),
+                "word_errors": errors,
+                "ordinary_word_errors": errors,
+                "word_error_rate": errors / len(expected_words),
+            }
+            chapter["asr"].update({**metrics, "passed": errors == 0})
+            raw_chapters.append({
+                "chapter_id": chapter_id, "expected_text": expected,
+                "transcript": transcript, **metrics,
+            })
+        corpus = {
+            field: sum(chapter[field] for chapter in raw_chapters)
+            for field in ("expected_words", "recognized_words", "word_errors", "ordinary_word_errors")
+        }
+        corpus["word_error_rate"] = corpus["word_errors"] / corpus["expected_words"]
+        self.handoff["asr"].update({**corpus, "passed": corpus["word_errors"] == 0})
+        core = {
+            "schema_version": full_asr.SCHEMA_VERSION, "status": full_asr.EVIDENCE_STATUS,
+            "dialogue": self.dialogue, "chapters": raw_chapters, "corpus": corpus,
+            "acceptance": {"accepted": False}, "human_listening": {"status": "not-performed"},
+        }
+        self.evidence = {**core, "evidence_sha256": promotion.sha256_bytes(promotion.canonical_json(core))}
+        binding = self.handoff["production"]["full_master_asr"]
+        asr_path = Path(binding["path"])
+        asr_path.write_bytes(promotion.pretty_json(self.evidence))
+        binding["file_sha256"] = promotion.sha256_file(asr_path)
+        binding["evidence_sha256"] = self.evidence["evidence_sha256"]
+        self.audit = promotion._rebuild_asr_audit(binding, self.screenplay, self.screenplay_sha)
+        self.review["audit_sha256"] = self.audit["audit_sha256"]
+        self.review["asr_exceptions"] = [
+            {"chapter_id": chapter["chapter_id"], "edit_index": edit["edit_index"],
+             "classification": "proper-name", "reviewed": True}
+            for chapter in self.audit["chapters"] for edit in chapter["edits"]
+        ]
 
     def write_draft_recording(self) -> tuple[Path, bytes, dict]:
         manifest = {
@@ -393,8 +451,100 @@ class PromotionFixture:
         path.write_bytes(content)
         return path, content, manifest
 
+    def build(self) -> dict:
+        return promotion.build_promotion_plan(
+            repo_root=self.repo, artifact_root=self.artifact_root,
+            handoff=self.handoff, review=self.review,
+            generated_at="2026-07-16T16:00:00Z", handoff_validator=lambda _value: None,
+        )
+
+    def add_name_edits(self) -> None:
+        words = " ".join(f"word{index}" for index in range(200))
+        self.screenplay["entries"][0]["text"] = f"Socrates speaks Crito {words}"
+        self.refresh_asr({"first": f"Sokrat speaks {words} Plato"})
+
 
 class PromoteAudioQaTests(unittest.TestCase):
+    def test_projects_reviewed_edits_without_changing_raw_evidence(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = PromotionFixture(Path(directory))
+            fixture.add_name_edits()
+            handoff_bytes = promotion.canonical_json(fixture.handoff)
+            evidence_path = Path(fixture.handoff["production"]["full_master_asr"]["path"])
+            evidence_bytes = evidence_path.read_bytes()
+            self.assertFalse(fixture.handoff["asr"]["passed"])
+            plan = fixture.build()
+            asr = plan["qa"]["asr"]
+            self.assertEqual(asr["audit_sha256"], fixture.audit["audit_sha256"])
+            self.assertEqual(asr["word_errors"], 3)
+            self.assertEqual(asr["ordinary_word_errors"], 0)
+            self.assertEqual(plan["qa"]["chapters"][0]["asr_ordinary_word_errors"], 0)
+            self.assertEqual(
+                [(item["expected"], item["recognized"]) for item in asr["exceptions"]],
+                [("socrates", "sokrat"), ("crito", ""), ("", "plato")],
+            )
+            self.assertTrue(asr["passed"])
+            self.assertEqual(promotion.canonical_json(fixture.handoff), handoff_bytes)
+            self.assertEqual(evidence_path.read_bytes(), evidence_bytes)
+            result = subprocess.run(
+                ["bun", "-e", 'import { validateAudioQa } from "./packages/harness/src/audio-production.ts"; console.log(JSON.stringify(validateAudioQa("audio/qa/crito.json", await Bun.stdin.text())));'],
+                cwd=ROOT, input=json.dumps(plan["qa"]), text=True, capture_output=True, check=False,
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(json.loads(result.stdout), [])
+
+    def test_review_rejects_invented_tokens_and_inexact_edit_coverage(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = PromotionFixture(Path(directory))
+            fixture.add_name_edits()
+            variants = []
+            missing = copy.deepcopy(fixture.review)
+            missing["asr_exceptions"].pop()
+            variants.append(missing)
+            duplicate = copy.deepcopy(fixture.review)
+            duplicate["asr_exceptions"][1] = copy.deepcopy(duplicate["asr_exceptions"][0])
+            variants.append(duplicate)
+            for field, value in (("chapter_id", "unknown"), ("edit_index", 99), ("expected", "invented"), ("recognized", "invented"), ("occurrences", 1), ("reviewed", False)):
+                changed = copy.deepcopy(fixture.review)
+                changed["asr_exceptions"][0][field] = value
+                variants.append(changed)
+            stale = copy.deepcopy(fixture.review)
+            stale["audit_sha256"] = "0" * 64
+            variants.append(stale)
+            for review in variants:
+                with self.subTest(review=review), self.assertRaises(promotion.PromotionError):
+                    promotion.validate_acceptance_review(review, fixture.handoff, fixture.audit)
+
+    def test_ordinary_errors_and_per_chapter_wer_still_block_promotion(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = PromotionFixture(Path(directory))
+            fixture.add_name_edits()
+            fixture.review["asr_exceptions"][0]["classification"] = "ordinary"
+            with self.assertRaisesRegex(promotion.PromotionError, "zero ordinary"):
+                fixture.build()
+            fixture.screenplay["entries"][0]["text"] = "Socrates alpha"
+            fixture.screenplay["entries"][1]["text"] = " ".join(f"word{i}" for i in range(200))
+            fixture.refresh_asr({"first": "Sokrat alpha"})
+            self.assertLess(fixture.handoff["asr"]["word_error_rate"], 0.02)
+            with self.assertRaisesRegex(promotion.PromotionError, "chapter first"):
+                fixture.build()
+
+    def test_preview_and_apply_reverify_raw_asr_before_writes(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = PromotionFixture(Path(directory))
+            plan = fixture.build()
+            asr_path = Path(fixture.handoff["production"]["full_master_asr"]["path"])
+            asr_path.write_text(asr_path.read_text() + "\n", encoding="utf-8")
+            with self.assertRaisesRegex(promotion.PromotionError, "ASR hash mismatch"):
+                fixture.build()
+            with self.assertRaisesRegex(promotion.PromotionError, "ASR hash mismatch"):
+                promotion.execute_promotion_plan(
+                    plan, repo_root=fixture.repo, artifact_root=fixture.artifact_root,
+                    reviewed_plan_sha256=plan["plan_sha256"], validator=lambda: (0, ""),
+                )
+            self.assertFalse((fixture.artifact_dir / "chapters").exists())
+            self.assertFalse((fixture.repo / "audio/qa/crito.json").exists())
+
     def test_materialized_chapter_is_exact_rf64_frame_slice(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             fixture = PromotionFixture(Path(directory))
@@ -420,11 +570,11 @@ class PromoteAudioQaTests(unittest.TestCase):
     def test_acceptance_review_must_bind_exact_master_and_all_chapters(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             fixture = PromotionFixture(Path(directory))
-            promotion.validate_acceptance_review(fixture.review, fixture.handoff)
+            promotion.validate_acceptance_review(fixture.review, fixture.handoff, fixture.audit)
             bad = copy.deepcopy(fixture.review)
             bad["accepted_chapter_ids"].pop()
             with self.assertRaisesRegex(promotion.PromotionError, "chapter"):
-                promotion.validate_acceptance_review(bad, fixture.handoff)
+                promotion.validate_acceptance_review(bad, fixture.handoff, fixture.audit)
             bad = copy.deepcopy(fixture.review)
             bad["findings"] = [
                 {
@@ -434,7 +584,7 @@ class PromoteAudioQaTests(unittest.TestCase):
                 }
             ]
             with self.assertRaisesRegex(promotion.PromotionError, "failure"):
-                promotion.validate_acceptance_review(bad, fixture.handoff)
+                promotion.validate_acceptance_review(bad, fixture.handoff, fixture.audit)
 
     def test_builds_accepted_qa_and_recording_manifest_without_writing(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -501,6 +651,8 @@ class PromoteAudioQaTests(unittest.TestCase):
             opening["commentary_coverage"]["expected_ids"] = []
             opening["commentary_coverage"]["covered_ids"] = []
             fixture.review["accepted_chapter_ids"][0] = opening_id
+            fixture.screenplay["entries"][0]["chapter_id"] = opening_id
+            fixture.refresh_asr()
 
             plan = promotion.build_promotion_plan(
                 repo_root=fixture.repo,
@@ -575,12 +727,12 @@ class PromoteAudioQaTests(unittest.TestCase):
             contradictory = copy.deepcopy(waiver)
             contradictory["listening_status"] = "performed"
             with self.assertRaisesRegex(promotion.PromotionError, "not-performed"):
-                promotion.validate_acceptance_review(contradictory, fixture.handoff)
+                promotion.validate_acceptance_review(contradictory, fixture.handoff, fixture.audit)
 
             legacy = copy.deepcopy(waiver)
             legacy["schema_version"] = 1
             with self.assertRaisesRegex(promotion.PromotionError, "bind the exact"):
-                promotion.validate_acceptance_review(legacy, fixture.handoff)
+                promotion.validate_acceptance_review(legacy, fixture.handoff, fixture.audit)
 
             fixture.handoff["source_coverage"]["passed"] = False
             with self.assertRaisesRegex(promotion.PromotionError, "gates"):
