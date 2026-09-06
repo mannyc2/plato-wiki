@@ -32,6 +32,8 @@ import {
   generateOntologyAuditPackage,
   ontologyBaselineEvidenceContract,
   refreshOntologyAuditBindings,
+  verifyOntologyAuditAcceptanceCandidate,
+  verifyOntologyAuditFinalBinding,
   verifyOntologyAuditPackage,
   verifyOntologyAuditSemanticPreacceptance,
   type FinalPointer,
@@ -1660,6 +1662,68 @@ review_status: accepted
         regeneration_two_sha256: null,
       },
     });
+  });
+
+  test("keeps published producer provenance immutable while current code and protocol evolve", () => {
+    prepareFinalAdjustmentLifecycleFixture();
+    bindOntologyAuditFinalState({ repoRoot: root, packagePath });
+    const regeneration = writeFixtureGlobalAcceptanceEvidence();
+    acceptOntologyAuditClosure({
+      repoRoot: root,
+      packagePath,
+      regenerationOneSha256: regeneration.regenerationDigest,
+      regenerationTwoSha256: regeneration.regenerationDigest,
+      staleAliases: 0,
+      rejectedReaderLeaks: 0,
+      siteDirectory: regeneration.siteDirectory,
+      closureEvidenceProof: regeneration.proof,
+    });
+    const options = {
+      repoRoot: root,
+      packagePath,
+      siteDirectory: regeneration.siteDirectory,
+      closureEvidenceProof: regeneration.proof,
+    };
+    const manifestPath = join(packagePath, "manifest.json");
+    const manifestContent = readFileSync(manifestPath, "utf8");
+    const acceptanceContent = readFileSync(join(packagePath, "acceptance.json"), "utf8");
+    expect(verifyOntologyAuditPackage(options)).toEqual([]);
+
+    write("docs/ontology-audit-protocol.md", "# Later protocol clarification\n");
+    write("packages/harness/src/wiki/ontology-audit.ts", "// Later validator implementation.\n");
+    expect(verifyOntologyAuditPackage(options)).toEqual([]);
+    expect(readFileSync(manifestPath, "utf8")).toBe(manifestContent);
+    expect(readFileSync(join(packagePath, "acceptance.json"), "utf8")).toBe(acceptanceContent);
+
+    const candidateIssues = verifyOntologyAuditAcceptanceCandidate({ ...options, acceptanceContent });
+    expect(candidateIssues.some((entry) => entry.message === "protocol hash does not match repository protocol")).toBe(true);
+    expect(candidateIssues.some((entry) => entry.message === "schema implementation hash does not match repository implementation")).toBe(true);
+
+    const tamperedManifest = JSON.parse(manifestContent) as OntologyAuditManifest;
+    tamperedManifest.protocol.sha256 = "b".repeat(64);
+    writeFileSync(manifestPath, `${JSON.stringify(tamperedManifest, null, 2)}\n`);
+    expect(verifyOntologyAuditPackage(options).some((entry) => entry.message === "acceptance manifest hash mismatch")).toBe(true);
+  });
+
+  test("requires current producer bindings throughout pending and preacceptance verification", () => {
+    const closureEvidence = prepareSemanticPreacceptanceFixture();
+    const options = {
+      repoRoot: root,
+      packagePath,
+      siteDirectory: closureEvidence.siteDirectory,
+      closureEvidenceProof: closureEvidence.proof,
+    };
+    expect(verifyOntologyAuditFinalBinding(options)).toEqual([]);
+    write("docs/ontology-audit-protocol.md", "# Changed pending protocol\n");
+    write("packages/harness/src/wiki/ontology-audit.ts", "// Changed pending validator.\n");
+    for (const issues of [
+      verifyOntologyAuditPackage(options),
+      verifyOntologyAuditSemanticPreacceptance(options),
+      verifyOntologyAuditFinalBinding(options),
+    ]) {
+      expect(issues.some((entry) => entry.message === "protocol hash does not match repository protocol")).toBe(true);
+      expect(issues.some((entry) => entry.message === "schema implementation hash does not match repository implementation")).toBe(true);
+    }
   });
 
   test("fails closed when a previously bound final-adjustment directory is deleted", () => {

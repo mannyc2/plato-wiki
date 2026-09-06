@@ -4082,8 +4082,16 @@ function verifyOntologyAuditPackageInternal({
       baselineLockSha256: descriptor(baselineReader, "bun.lock").sha256,
     }));
   }
-  if (manifest.protocol.sha256 !== sha256(readFileSync(join(repoRoot, manifest.protocol.path)))) issue(issues, "baseline_binding", manifestPath, "protocol hash does not match repository protocol");
-  if (manifest.schema.implementation_sha256 !== sha256(readFileSync(join(repoRoot, manifest.schema.implementation_path)))) issue(issues, "baseline_binding", manifestPath, "schema implementation hash does not match repository implementation");
+  const historicalAcceptance = verificationScope === "full_acceptance"
+    && acceptanceContent === undefined
+    && acceptance.state === "accepted";
+  // Published acceptance binds these historical producer descriptors through
+  // the manifest hash. Work still approaching publication must use the current
+  // producer, including an accepted candidate whose marker is not published.
+  if (!historicalAcceptance) {
+    if (manifest.protocol.sha256 !== sha256(readFileSync(join(repoRoot, manifest.protocol.path)))) issue(issues, "baseline_binding", manifestPath, "protocol hash does not match repository protocol");
+    if (manifest.schema.implementation_sha256 !== sha256(readFileSync(join(repoRoot, manifest.schema.implementation_path)))) issue(issues, "baseline_binding", manifestPath, "schema implementation hash does not match repository implementation");
+  }
   for (const projection of manifest.projections) {
     if (!baselineReader?.has(projection.path)) {
       issue(issues, "projection_binding", manifestPath, `${projection.path} is absent from the frozen Git tree`);
