@@ -69,8 +69,9 @@ content only when requested:
 git clone --filter=blob:none https://github.com/mannyc2/plato-wiki.git
 ```
 
-Full history is needed for the existing snapshot-bound ontology checks, so CI
-uses a blob filter while retaining commits. The Pages deployment job checks out
+Full history is needed for the existing snapshot-bound ontology checks. CI
+fetches its blobs up front because the audit's individual historical file reads
+otherwise cause many separate lazy fetches. The Pages deployment job checks out
 only the smoke checker and its library. No history rewrite is part of this
 cleanup. Historical ontology audit packages remain in Git because current
 validation and accepted provenance still reference them. See the

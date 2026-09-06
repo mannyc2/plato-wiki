@@ -29,8 +29,9 @@ jobs:
           # Snapshot-bound ontology verification reopens the frozen baseline
           # commit. A depth-one PR checkout contains only the synthetic merge
           # tip and makes that canonical commit unverifiable.
+          # Keep its blobs too: per-file audit reads otherwise trigger many
+          # separate lazy fetches, making verification slower than a full clone.
           fetch-depth: 0
-          filter: blob:none
 
       # oven-sh/setup-bun v2
       - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6

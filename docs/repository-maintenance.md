@@ -67,8 +67,9 @@ The 27 token indexes account for 70,935,802 bytes (67.65 MiB). Rebuilding every
 index from canonical Greek and tracked turns reproduces its previous SHA-256.
 They now live in ignored build output and an optional release-candidate archive.
 The original packed Git history is 71.56 MiB; removing current files does not
-remove their historical blobs. CI uses filtered history because ontology
-verification still needs the frozen baseline commit.
+remove their historical blobs. CI retains full history because ontology
+verification needs the frozen baseline commit and reads its files individually;
+a filtered checkout made those reads trigger repeated lazy fetches.
 
 The next substantial storage cut is the immutable ontology audit package. It
 must be moved as a complete checksummed archive with verified restoration and
