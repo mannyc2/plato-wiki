@@ -109,14 +109,6 @@ function parseStephanusReference(raw: string): ParsedSpan | undefined {
   return parseSpan(`${start}-${endPage}${endLetter}`);
 }
 
-function parseNumberField(block: string, field: string) {
-  const rawValue = fieldValue(block, field);
-  if (rawValue === undefined) return undefined;
-
-  const parsed = Number(rawValue);
-  return Number.isInteger(parsed) ? parsed : undefined;
-}
-
 export function readSourceCached(cache: Map<string, string | undefined>, absolutePath: string) {
   if (!cache.has(absolutePath)) {
     cache.set(absolutePath, existsSync(absolutePath) ? readFileSync(absolutePath, "utf8") : undefined);

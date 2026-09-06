@@ -204,7 +204,7 @@
     let state = emptyState();
     try {
       state = sanitizeState(JSON.parse(localStorage.getItem(storageKey) || "null"));
-    } catch (_error) {
+    } catch {
       state = emptyState();
     }
 

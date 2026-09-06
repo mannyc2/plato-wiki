@@ -73,10 +73,6 @@ function relationDialogueFromPath(path: string) {
   return basename(path, ".md");
 }
 
-function claimDialogue(claimId: string) {
-  return /^claim_([a-z0-9-]+)_\d{4}$/u.exec(claimId)?.[1];
-}
-
 function sha256(content: string) {
   return createHash("sha256").update(content).digest("hex");
 }

@@ -121,7 +121,6 @@ export {
   renderAnchorsReportText,
   writeAnchorsReport,
 } from "./anchors-report.js";
-export { planClaimQueue, planClaimReviewQueue, runClaimQueue, runClaimReviewQueue } from "./claims-queue.js";
 export {
   appendClaimSegmentCoverage,
   claimReviewTargetIdsComplete,
@@ -259,8 +258,6 @@ export {
   CodexExecOperationalError,
   parseCodexExecResult,
 } from "./commentary-campaign-telemetry.js";
-export { readConfig } from "./config.js";
-export { planSegmentedIngestQueue, runSegmentedIngestQueue } from "./ingest-queue.js";
 export {
   buildJobManifest,
   findJob,
@@ -282,7 +279,6 @@ export {
   SUBMISSIONS_ROOT,
 } from "./submissions.js";
 export type { SubmissionRecord } from "./submissions.js";
-export { listModels, listProfiles, listProviders } from "./models.js";
 export { buildAnchorIndex, writeAnchorIndex, writeAnchorIndexes } from "./derived/anchors.js";
 export { buildObservationTurnJoin, writeObservationTurnJoin, writeObservationTurnJoins } from "./derived/joins.js";
 export { buildVoiceIndex, readVoiceIndex, writeVoiceIndex, writeVoiceIndexes } from "./derived/voices.js";
@@ -297,9 +293,7 @@ export {
 } from "./derived/stephanus.js";
 export { buildTokenIndex, writeTokenIndex, writeTokenIndexes } from "./derived/tokens.js";
 export { buildTurnIndex, writeTurnIndex, writeTurnIndexes } from "./derived/turns.js";
-export { planSegmentedReviewQueue, runSegmentedReviewQueue } from "./review-queue.js";
 export { planSegmentedReview } from "./review-segments.js";
-export { planRelationQueue, planRelationReviewQueue, runRelationQueue, runRelationReviewQueue } from "./relations-queue.js";
 export {
   buildRelationCandidates,
   loadAcceptedRelationClaims,
@@ -310,7 +304,7 @@ export {
   relationReviewTargetIdsComplete,
   writeRelationCandidates,
 } from "./relations.js";
-export { planGapIngest, planSegmentedIngest } from "./segments.js";
+export { appendSegmentCoverage, planGapIngest, planSegmentedIngest } from "./segments.js";
 export { buildStaticSite, parseObservationLedger } from "./site/index.js";
 export { validateGeneratedSite } from "./site/validate.js";
 export { resolveEnglishSpan, resolveSourceSpan } from "./source.js";
@@ -465,7 +459,6 @@ export type {
   CommentaryRewriteRepairFinding,
   CommentaryRewriteRepairPreview,
 } from "./wiki/commentary-rewrite-repair.js";
-export { runHarnessCommand } from "./run.js";
 
 export type {
   AudioCoverageReport,
@@ -511,16 +504,8 @@ export type {
 } from "./audio-screenplay-generator.js";
 
 export type {
-  HarnessConfig,
-  HarnessRunCommand,
-  HarnessRunOptions,
-  HarnessRunResult,
   OntologyAxisSummary,
   OntologySummary,
-  ModelInfo,
-  ProfileInfo,
-  ProviderInfo,
-  ProviderProfile,
   ReviewCoverageEntry,
   SourceRef,
   SourceSpanResolution,
@@ -582,35 +567,6 @@ export type {
 } from "./commentary-campaign.js";
 
 export type {
-  SegmentedIngestQueueEvent,
-  SegmentedIngestQueueOptions,
-  SegmentedIngestQueueResult,
-  SegmentedIngestQueueSegmentResult,
-} from "./ingest-queue.js";
-
-export type {
-  ClaimQueueEvent,
-  ClaimQueueOptions,
-  ClaimQueueResult,
-  ClaimQueueSegmentResult,
-  ClaimReviewQueueBatchResult,
-  ClaimReviewQueueEvent,
-  ClaimReviewQueueOptions,
-  ClaimReviewQueueResult,
-} from "./claims-queue.js";
-
-export type {
-  RelationQueueBatchResult,
-  RelationQueueEvent,
-  RelationQueueOptions,
-  RelationQueueResult,
-  RelationReviewQueueBatchResult,
-  RelationReviewQueueEvent,
-  RelationReviewQueueOptions,
-  RelationReviewQueueResult,
-} from "./relations-queue.js";
-
-export type {
   SegmentedClaimReviewBatch,
   SegmentedClaimSegment,
 } from "./claims-segments.js";
@@ -620,9 +576,4 @@ export type {
   SegmentedRelationReviewBatch,
 } from "./relations.js";
 
-export type {
-  SegmentedReviewQueueBatchResult,
-  SegmentedReviewQueueEvent,
-  SegmentedReviewQueueOptions,
-  SegmentedReviewQueueResult,
-} from "./review-queue.js";
+export { createWikiTools, executeWikiToolCalls, parseWikiToolMode, type WikiTool, type WikiToolEvents, type WikiToolMode, type WikiToolOptions } from "./wiki/tools.js";

@@ -21,7 +21,7 @@ import { getRepoRoot } from "./paths.js";
  * already proved, generalized off the completeness leaf rather than bound to
  * one lane.
  */
-export const JOB_SCHEMA_VERSION = 1;
+export const JOB_SCHEMA_VERSION = 2;
 
 export const JOB_MANIFEST_PATH = ".cache/jobs/manifest.json";
 
@@ -125,29 +125,36 @@ const LANES: Partial<Record<CompletenessFamilyId, LaneDefinition>> = {
   },
   "CMP-OBSERVATIONS": {
     lane: "observations",
-    automation: "harness",
+    automation: "manual",
     instructions: (scope) => [
-      `Exhaust and terminally review the observation scope for ${scope}.`,
-      "Extraction reads raw/plato/greek/ only. Extract records, not readings (AGENTS.md).",
-      "Segment planning is the canonical 30,000-byte planner; explicit no_observations receipts close an empty segment.",
+      `Curate and terminally review the observation scope for ${scope} directly from raw/plato/greek/${scope}.txt.`,
+      "Read docs/plato-wiki-extraction-protocol.md. Extract records, not readings; keep source-bound extraction unclassified.",
+      "Use a bounded independent agent review where needed, then land the accepted canonical ledger and one decision receipt.",
+      "Inspect wiki tool schemas with bun run harness wiki ingest. Submit a JSON array of {name, arguments} calls; stage drafts, then stage and commit the accepted ledger in the same invocation.",
+      "The deterministic 30,000-byte segment planner and appendSegmentCoverage library function retain exact coverage and explicit no_observations receipts for empty segments.",
       REVIEW_RECEIPT_RULE,
     ],
     submit: (scope) => [
-      `bun run harness ingest-queue ${scope} --validate-each`,
-      `bun run harness review-queue ${scope} --validate-each`,
+      `bun run harness derive segments ${scope}`,
+      "bun run harness wiki ingest <calls.json>",
+      "bun run harness wiki review <calls.json>",
+      "bun run validate",
     ],
   },
   "CMP-CLAIMS": {
     lane: "claims",
-    automation: "harness",
+    automation: "manual",
     instructions: (scope) => [
-      `Repair the claim ledger for ${scope}, close segment scope, and terminally review every claim.`,
-      "needs_split records are the common residual: split them into atomic claims rather than re-reviewing in place.",
+      `Curate the claim ledger for ${scope} directly from its Greek source, close segment scope, and terminally review every claim.`,
+      "Split needs_split records into atomic claims and record the accepted decision under wiki/review/.",
+      "Use the deterministic planSegmentedClaims and planSegmentedClaimReview library functions for bounded scope; appendClaimSegmentCoverage records explicit coverage.",
+      "Inspect tool schemas with bun run harness wiki claims-segmented. Submit a JSON array of {name, arguments} calls for validated appends or review updates.",
       REVIEW_RECEIPT_RULE,
     ],
-    submit: (scope) => [
-      `bun run harness claims-queue ${scope} --validate-each`,
-      `bun run harness claims-review-queue ${scope} --validate-each`,
+    submit: () => [
+      "bun run harness wiki claims-segmented <calls.json>",
+      "bun run harness wiki claims-review-segmented <calls.json>",
+      "bun run validate",
     ],
   },
   "CMP-RELATIONS": {

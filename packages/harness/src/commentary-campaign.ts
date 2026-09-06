@@ -3354,7 +3354,6 @@ function commentaryCampaignRetries(
       ...(options.codexExecutable ? { codexExecutable: options.codexExecutable } : {}),
     });
     const repoRoot = getRepoRoot();
-    const canonicalAuditReuse = createReusableCanonicalAuditOutputResolver();
     const jobs = options.stage === "outline"
       ? manifest.jobs.filter((candidate) => candidate.stage === "outline")
       : options.unitKeys.map((unitKey) => {

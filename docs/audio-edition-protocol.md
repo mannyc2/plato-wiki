@@ -351,6 +351,13 @@ punctuation-aware transitions; same-speaker continuations are shorter still.
 Commentary and chapter boundaries may breathe longer. Fixed one-second pauses
 between ordinary turns are forbidden.
 
+Chapter order comes from resolved playback boundaries, never append-only ledger
+order. A section's Greek evidence span describes its commentary topic; it does
+not delimit the chapter's source coverage. Consecutive resolved boundaries
+partition the complete English spine, beginning at zero and ending at EOF.
+Gaps between commentary evidence spans remain spoken in the preceding chapter;
+duplicate boundaries and empty chapters fail validation.
+
 ## Rendering and reproducibility
 
 The production rendering contract reads only the canonical schema-v2 screenplay

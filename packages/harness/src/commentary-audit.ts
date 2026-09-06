@@ -433,7 +433,7 @@ function playbackBoundaryLines(dialogue: string, englishContent: string, block: 
   const spokenRight = right.replace(/^\s*(?:\{[^{}]*\}\s*)*/u, "").trimStart();
   const terminal = /([.!?])["'’”»)}\]]*$/u.exec(spokenLeft)?.[1];
   const leftTerminal = terminal === "?" ? "question" : terminal === "!" ? "exclamation" : terminal === "." ? "period" : "none";
-  const rightStartsSentence = /^["'“‘(\[]*[\p{Lu}\p{Lt}]/u.test(spokenRight);
+  const rightStartsSentence = /^["'“‘([]*[\p{Lu}\p{Lt}]/u.test(spokenRight);
   const mechanicalSentenceBoundary = terminal !== undefined && rightStartsSentence;
   const requestedAnchorBoundary = placement === "before" ? english.start_char : english.end_char;
   const anchorToPlaybackShift = resolved.boundaryChar - requestedAnchorBoundary;
@@ -521,16 +521,6 @@ function anchoredEvidenceRecords(records: ReadonlyMap<string, EvidenceRecord>, d
     .filter((record): record is AnchoredEvidenceRecord => record !== undefined);
 }
 
-function overlappingEvidenceIds(
-  records: ReadonlyMap<string, EvidenceRecord>,
-  dialogue: string,
-  range: { startChar: number; endChar: number },
-) {
-  return anchoredEvidenceRecords(records, dialogue)
-    .filter((record) => rangesOverlap(record, range))
-    .map((record) => record.id);
-}
-
 function rangesOverlap(a: { startChar: number; endChar: number }, b: { startChar: number; endChar: number }) {
   return a.startChar < b.endChar && a.endChar > b.startChar;
 }
@@ -611,7 +601,7 @@ export function buildCommentaryRewriteEvidenceContext(
     observations,
     claims,
     dialogueRelations: new Map(
-      [...evidence.relations].filter(([_, record]) => record.path === `wiki/relations/${dialogue}.md`),
+      [...evidence.relations].filter(([, record]) => record.path === `wiki/relations/${dialogue}.md`),
     ),
     anchoredObservations: anchoredEvidenceRecords(observations, dialogue),
     anchoredClaims: anchoredEvidenceRecords(claims, dialogue),

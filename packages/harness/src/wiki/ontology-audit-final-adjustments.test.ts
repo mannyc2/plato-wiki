@@ -43,7 +43,6 @@ import {
   type OntologyAuditRows,
 } from "./ontology-audit.js";
 import {
-  collectOntologyCanonicalRegenerationArtifacts,
   collectOntologyRegenerationArtifacts,
   ontologyRegenerationDigest,
 } from "./ontology-regeneration-tree.js";
@@ -375,13 +374,13 @@ function writeReconsiderationEvidence(
   const greek = `{1a}\n${dialogue} Greek-only fixture alpha\n{1b}\n${dialogue} Greek-only fixture beta\n{1c}\nend\n`;
   const greekSpan = greek.slice(0, greek.indexOf("{1c}")).trimEnd();
   write(`raw/plato/greek/${dialogue}.txt`, greek);
-  const defaultCitations = (id: string): ReconsiderationCitations => ({
+  const defaultCitations = (): ReconsiderationCitations => ({
     observations: [],
     claims: [],
     relations: [],
     dossiers: [],
   });
-  const citations = new Map(reviewedIds.map((id) => [id, citationsById[id] ?? defaultCitations(id)]));
+  const citations = new Map(reviewedIds.map((id) => [id, citationsById[id] ?? defaultCitations()]));
   const rejectedBlocks = new Map(reviewedIds.map((id) => [
     id,
     reconsiderationCommentaryBlock(dialogue, id, citations.get(id)!, "rejected", sha256(greekSpan)),
@@ -693,20 +692,6 @@ function writeFixtureBaselineEvidence() {
   };
   writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
   refreshOntologyAuditBindings({ repoRoot: root, packagePath });
-}
-
-function writeFixtureClosureEvidence(overrides: Record<string, unknown> = {}) {
-  writeFileSync(join(packagePath, "closure-evidence.json"), `${JSON.stringify({
-    schema_version: 1,
-    state: "complete",
-    staleAliasIssues: [],
-    rejectedReaderLeaks: [],
-    terminalStateIssues: [],
-    acceptedClaimLinkIssues: [],
-    acceptedCommentaryCitationIssues: [],
-    acceptedRelationFictionIssues: [],
-    ...overrides,
-  }, null, 2)}\n`, "utf8");
 }
 
 function writeRecomputedFixtureClosureEvidence(siteDirectory = join(root, "prebuilt-site")) {

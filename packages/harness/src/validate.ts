@@ -117,18 +117,9 @@ function scanForBannedInstructionText() {
     "jtauber",
   ];
   const files = [
-    ".pi/skills/plato-observation-extraction/SKILL.md",
-    ".pi/prompts/ingest-plato-dialogue.md",
-    ".pi/prompts/ingest-plato-segment.md",
-    ".pi/prompts/extract-plato-claims-segment.md",
-    ".pi/prompts/adjudicate-plato-relations.md",
-    ".pi/prompts/review-plato-segment.md",
-    ".pi/prompts/review-plato-claims-segment.md",
-    ".pi/prompts/review-plato-relations.md",
     "docs/ontology-vnext.md",
     "docs/ontology-audit-protocol.md",
     "docs/plato-wiki-extraction-protocol.md",
-    "docs/pi-agent-core-wiki-runner.md",
   ];
 
   const failures: string[] = [];
@@ -558,7 +549,6 @@ export function validateRepo(): ValidationReport {
   const repoRoot = getRepoRoot();
   const requiredPaths = [
     ".env.example",
-    "harness.config.json",
     "raw/plato/MANIFEST.sha256",
     "raw/plato/greek/euthyphro.txt",
     "raw/plato/greek/apology.txt",
@@ -575,14 +565,6 @@ export function validateRepo(): ValidationReport {
     "docs/completeness-target.md",
     "audio/coverage.md",
     "wiki/completeness.md",
-    ".pi/skills/plato-observation-extraction/SKILL.md",
-    ".pi/prompts/ingest-plato-dialogue.md",
-    ".pi/prompts/ingest-plato-segment.md",
-    ".pi/prompts/extract-plato-claims-segment.md",
-    ".pi/prompts/adjudicate-plato-relations.md",
-    ".pi/prompts/review-plato-segment.md",
-    ".pi/prompts/review-plato-claims-segment.md",
-    ".pi/prompts/review-plato-relations.md",
   ];
 
   for (const relativePath of requiredPaths) {

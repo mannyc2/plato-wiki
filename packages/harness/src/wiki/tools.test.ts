@@ -1,20 +1,7 @@
 import { describe, expect, it } from "bun:test";
-import type { TranscriptWriter } from "../transcript.js";
-import { createWikiTools } from "./tools.js";
+import { type WikiToolEvents, createWikiTools } from "./tools.js";
 
-const transcript: TranscriptWriter = {
-  runId: "test",
-  runDir: "test",
-  eventsPath: "test/events.jsonl",
-  summaryPath: "test/summary.md",
-  responsePath: "test/response.md",
-  usagePath: "test/usage.json",
-  usageMarkdownPath: "test/usage.md",
-  write: () => {},
-  writeSummary: () => {},
-  writeResponse: () => {},
-  recordAssistantUsage: () => {},
-};
+const transcript: WikiToolEvents = { write: () => {} };
 
 describe("createWikiTools", () => {
   it("uses staged source-bound observation commits during ingest", () => {

@@ -1,3 +1,5 @@
+import type { AudioQaReport } from "../audio-production.js";
+import type { RecordingManifest } from "../wiki/recording-manifest.js";
 import { afterEach, beforeEach, describe, expect, it } from "bun:test";
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
@@ -14,6 +16,13 @@ import {
   materializeSiteRecordings,
   streamFileSha256,
 } from "./recordings.js";
+
+type MasteringFixture = {
+  outputs: {
+    working_master: { sha256: string; probe: { duration_seconds: number; size_bytes: number } };
+  };
+  mechanical_qa_sha256: string;
+};
 
 let root = "";
 let artifactRoot = "";
@@ -195,6 +204,7 @@ describe("published recording materialization", () => {
         : [
             "uv",
             "run",
+            "--offline",
             "--with",
             "numpy==2.2.6",
             "python",
@@ -220,9 +230,9 @@ describe("published recording materialization", () => {
     const mechanicalQaPath = `${receipt.result_dir}/mechanical-qa.json`;
     const workingMasterPath = `${receipt.result_dir}/master.wav`;
     const publicationPath = `${receipt.result_dir}/publication.mp3`;
-    const result = JSON.parse(readFileSync(join(artifactRoot, resultPath), "utf8")) as any;
+    const result = JSON.parse(readFileSync(join(artifactRoot, resultPath), "utf8")) as MasteringFixture;
     const qaPath = join(root, "audio/qa/fixture.json");
-    const acceptedQa = JSON.parse(readFileSync(qaPath, "utf8")) as any;
+    const acceptedQa = JSON.parse(readFileSync(qaPath, "utf8")) as AudioQaReport;
     acceptedQa.audio.master_path = workingMasterPath;
     acceptedQa.audio.master_sha256 = result.outputs.working_master.sha256;
     acceptedQa.production_acceptance.working_master_sha256 = result.outputs.working_master.sha256;
@@ -366,21 +376,21 @@ describe("published recording materialization", () => {
     writeFileSync(join(artifactRoot, evidence.paths.workingMasterPath), fakeMaster);
 
     const acceptedQaPath = join(root, "audio/qa/fixture.json");
-    const acceptedQa = JSON.parse(readFileSync(acceptedQaPath, "utf8")) as any;
+    const acceptedQa = JSON.parse(readFileSync(acceptedQaPath, "utf8")) as AudioQaReport;
     acceptedQa.audio.master_sha256 = fakeMasterSha256;
     acceptedQa.production_acceptance.working_master_sha256 = fakeMasterSha256;
     const acceptedQaContent = `${JSON.stringify(acceptedQa, null, 2)}\n`;
     writeFileSync(acceptedQaPath, acceptedQaContent);
 
     const mechanicalQaPath = join(artifactRoot, evidence.paths.mechanicalQaPath);
-    const mechanicalQa = JSON.parse(readFileSync(mechanicalQaPath, "utf8")) as any;
+    const mechanicalQa = JSON.parse(readFileSync(mechanicalQaPath, "utf8")) as MasteringFixture;
     mechanicalQa.outputs.working_master.sha256 = fakeMasterSha256;
     mechanicalQa.outputs.working_master.probe.size_bytes = fakeMaster.length;
     const mechanicalQaContent = `${JSON.stringify(mechanicalQa, null, 2)}\n`;
     writeFileSync(mechanicalQaPath, mechanicalQaContent);
 
     const resultPath = join(artifactRoot, evidence.paths.resultPath);
-    const result = JSON.parse(readFileSync(resultPath, "utf8")) as any;
+    const result = JSON.parse(readFileSync(resultPath, "utf8")) as MasteringFixture;
     result.outputs.working_master.sha256 = fakeMasterSha256;
     result.outputs.working_master.probe.size_bytes = fakeMaster.length;
     result.mechanical_qa_sha256 = hash(mechanicalQaContent);
@@ -388,7 +398,7 @@ describe("published recording materialization", () => {
     writeFileSync(resultPath, resultContent);
 
     const manifestPath = join(root, "wiki/recordings/fixture.json");
-    const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as any;
+    const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as RecordingManifest;
     manifest.production.qa_sha256 = hash(acceptedQaContent);
     manifest.production.working_master_sha256 = fakeMasterSha256;
     manifest.production.mechanical_qa_sha256 = hash(mechanicalQaContent);
@@ -408,17 +418,17 @@ describe("published recording materialization", () => {
     const outDir = join(root, "site");
 
     const garbage = Buffer.from("hash-correct bytes that are not MPEG Layer III");
-    let evidence = writeManifest({ audioBytes: garbage, durationSeconds: 1 });
+    writeManifest({ audioBytes: garbage, durationSeconds: 1 });
     expect(() => materializeSiteRecordings({ recordings: discoverSiteRecordings(), artifactRoot, outDir }))
       .toThrow(/Invalid MP3 recording artifact/u);
 
     const fixture = mp3Fixture();
     const truncated = fixture.bytes.subarray(0, fixture.bytes.length - 3);
-    evidence = writeManifest({ audioBytes: truncated, durationSeconds: fixture.durationSeconds });
+    writeManifest({ audioBytes: truncated, durationSeconds: fixture.durationSeconds });
     expect(() => materializeSiteRecordings({ recordings: discoverSiteRecordings(), artifactRoot, outDir }))
       .toThrow(/truncated final MPEG Layer III frame/u);
 
-    evidence = writeManifest({ audioBytes: fixture.bytes, durationSeconds: fixture.durationSeconds + 1 });
+    writeManifest({ audioBytes: fixture.bytes, durationSeconds: fixture.durationSeconds + 1 });
     expect(() => materializeSiteRecordings({ recordings: discoverSiteRecordings(), artifactRoot, outDir }))
       .toThrow(/MP3 duration mismatch/u);
   });

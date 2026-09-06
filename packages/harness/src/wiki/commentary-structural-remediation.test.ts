@@ -48,7 +48,7 @@ function sourceRef(span: string) {
     `  end_marker: ${ref.end_marker}`,
     `  start_char: ${ref.start_char}`,
     `  end_char: ${ref.end_char}`,
-    `  text_sha256: \"${ref.text_sha256}\"`,
+    `  text_sha256: "${ref.text_sha256}"`,
   ].join("\n");
 }
 
@@ -59,7 +59,7 @@ function block(id: string, span: string, title: string, status = "accepted") {
     "source_work: Fixture",
     "block_kind: section",
     "placement: before",
-    `title: \"${title}\"`,
+    `title: "${title}"`,
     `stephanus_span: ${span}`,
     sourceRef(span),
     'body: "A concise orientation for the listener."',

@@ -2,30 +2,41 @@
   "name": "plato-observation-wiki",
   "private": true,
   "type": "module",
-  "packageManager": "bun@1.3.9",
-  "workspaces": [
-    "packages/*"
-  ],
+  "packageManager": "bun@1.4.0",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "catalog": {
+      "@types/node": "^24.10.1",
+      "typescript": "^5.9.3"
+    }
+  },
   "scripts": {
     "cli": "bun packages/cli/src/cli.ts",
     "harness": "bun packages/cli/src/cli.ts",
     "commentary:structural-remediation": "bun scripts/commentary/structural-remediation-batch.ts",
     "migrate:ledger-yaml": "bun scripts/wiki/migrate-fenced-records.ts",
-    "profiles": "bun packages/cli/src/cli.ts profiles",
-    "providers": "bun packages/cli/src/cli.ts providers",
     "transcripts": "bun packages/cli/src/cli.ts transcripts",
     "usage": "bun packages/cli/src/cli.ts usage",
-    "completeness": "bun packages/cli/src/cli.ts completeness",
+    "completeness": "bun run derive && bun packages/cli/src/cli.ts completeness",
     "release:audit": "bun packages/cli/src/cli.ts release:audit",
     "release:provenance": "bun scripts/release/generate-provenance.ts",
     "public:export": "bun scripts/release/export-public-tree.ts",
-    "test": "bun run --cwd packages/harness test && bun run --cwd packages/cli test",
-    "typecheck": "bun run --cwd packages/harness typecheck && bun run --cwd packages/cli typecheck",
-    "validate": "bun packages/cli/src/cli.ts validate",
-    "ci": "bun scripts/ci.ts"
+    "test": "bun run derive && bun run --sequential --workspaces test",
+    "typecheck": "bun run --workspaces typecheck",
+    "validate": "bun run derive && bun packages/cli/src/cli.ts validate",
+    "ci": "bun scripts/ci.ts",
+    "lint": "oxlint --deny-warnings packages scripts",
+    "build": "bun run derive && bun packages/cli/src/cli.ts site",
+    "derive": "bun packages/cli/src/cli.ts derive tokens"
   },
   "devDependencies": {
-    "@types/node": "^24.10.1",
-    "typescript": "^5.9.3"
+    "@types/node": "catalog:",
+    "oxlint": "1.81.0",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "bun": ">=1.4.0"
   }
 }

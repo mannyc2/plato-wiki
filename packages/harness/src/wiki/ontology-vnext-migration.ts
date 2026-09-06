@@ -145,10 +145,6 @@ function compareStrings(left: string, right: string) {
   return left < right ? -1 : left > right ? 1 : 0;
 }
 
-function humanize(slug: string) {
-  return slug.replace(/_/gu, " ");
-}
-
 export function ontologyVNextDimensionForAxis(axisKey: string): OntologyVNextDimension {
   if (LEXICAL_PATTERNS.some((pattern) => pattern.test(axisKey))) return "lexical_form";
   if (DRAMATIC_PATTERNS.some((pattern) => pattern.test(axisKey))) return "dramatic_context";
@@ -156,60 +152,6 @@ export function ontologyVNextDimensionForAxis(axisKey: string): OntologyVNextDim
   if (DISCOURSE_PATTERNS.some((pattern) => pattern.test(axisKey))) return "discourse_structure";
   if (TEXTUAL_FUNCTION_PATTERNS.some((pattern) => pattern.test(axisKey))) return "textual_function";
   return "subject_matter";
-}
-
-function axisQuestion(axisKey: string, dimension: OntologyVNextDimension) {
-  const phrase = humanize(axisKey);
-  switch (dimension) {
-    case "textual_function":
-      return `How does ${phrase} function in the cited Greek passages across dialogues?`;
-    case "presentation_form":
-      return `How is ${phrase} used to present material in the cited Greek passages across dialogues?`;
-    case "dramatic_context":
-      return `How does ${phrase} shape the explicitly reported dramatic situation across dialogues?`;
-    case "discourse_structure":
-      return `How does ${phrase} organize an exchange or argument in the cited Greek passages across dialogues?`;
-    case "lexical_form":
-      return `How does the Greek text explicitly use or analyze ${phrase} across dialogues?`;
-    case "subject_matter":
-      return `What does each dialogue explicitly state about ${phrase} in the cited Greek passages?`;
-  }
-}
-
-function conceptQuestion(conceptKey: string, dimension: OntologyVNextDimension) {
-  const phrase = humanize(conceptKey);
-  switch (dimension) {
-    case "textual_function":
-      return `Where does an accepted observation record ${phrase} as a textual operation, and what does it do there?`;
-    case "presentation_form":
-      return `Where is material explicitly presented as ${phrase}, and what material does that form carry?`;
-    case "dramatic_context":
-      return `Where does ${phrase} occur in the dramatic situation, and which explicitly named participants or setting are involved?`;
-    case "discourse_structure":
-      return `Where does ${phrase} organize an exchange or argument, and what transition or constraint does it mark?`;
-    case "lexical_form":
-      return `Where does the Greek text explicitly use or analyze ${phrase}, and what cited wording supports the observation?`;
-    case "subject_matter":
-      return `Where does an accepted source-bound observation explicitly state ${phrase}, and what exactly is stated?`;
-  }
-}
-
-function conceptDefinition(conceptKey: string, dimension: OntologyVNextDimension) {
-  const phrase = humanize(conceptKey);
-  switch (dimension) {
-    case "textual_function":
-      return `A cited passage in which the text explicitly performs or attributes ${phrase}.`;
-    case "presentation_form":
-      return `A cited passage that explicitly presents material through ${phrase}.`;
-    case "dramatic_context":
-      return `A cited passage that explicitly reports ${phrase} as part of the dramatic situation.`;
-    case "discourse_structure":
-      return `A cited passage in which ${phrase} explicitly structures an exchange or stated argument.`;
-    case "lexical_form":
-      return `A cited passage whose Greek wording explicitly instantiates or analyzes ${phrase}.`;
-    case "subject_matter":
-      return `A cited passage containing an explicit source-bound statement of ${phrase}.`;
-  }
 }
 
 function valuesByKey<T>(rows: readonly T[], left: (row: T) => string, right: (row: T) => string) {
@@ -348,11 +290,6 @@ export function planOntologyVNextMigration({
   }
 
   const accepted = identities.filter((identity) => identity.reviewStatus === "accepted");
-  const assignedAccepted = accepted.filter((identity): identity is LegacyObservationIdentity & {
-    legacyFeatureId: string;
-    legacyFamily: string;
-    legacyLabel: string;
-  } => Boolean(identity.legacyFeatureId && identity.legacyFamily && identity.legacyLabel));
   const observationStatuses = new Map(
     identities.map((identity) => {
       const status = identity.reviewStatus;

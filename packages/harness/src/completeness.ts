@@ -696,15 +696,6 @@ function audioFacts(coverage: DialogueAudioCoverage, attribution: boolean) {
   };
 }
 
-function listSlugs(root: string, dir: string) {
-  const path = join(root, dir);
-  if (!existsSync(path)) return [];
-  return readdirSync(path)
-    .filter((name) => name.endsWith(".txt"))
-    .map((name) => name.slice(0, -4))
-    .sort();
-}
-
 type RelationAuditEvidence = RelationAuditCompletenessFacts & {
   auditedRecordIds: ReadonlySet<string>;
   auditedAcceptedEdgeIds: ReadonlySet<string>;

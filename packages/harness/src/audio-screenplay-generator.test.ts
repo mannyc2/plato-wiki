@@ -885,7 +885,7 @@ describe("deterministic audio screenplay generator", () => {
     );
   });
 
-  it("fails closed when section spans do not cover every English marker", () => {
+  it("preserves source between section evidence spans in the preceding chapter", () => {
     const english = "{1a} Speaker. First.\n{1b} Speaker. Middle.\n{1c} Speaker. Last.\n";
     rewriteChapterFixture({
       english,
@@ -899,14 +899,55 @@ describe("deterministic audio screenplay generator", () => {
 
     const report = buildScreenplayGenerationReport(DIALOGUE);
 
-    expect(report.screenplay_status).toBe("blocked");
-    expect(report.blockers).toContainEqual(
-      expect.objectContaining({
-        code: "chapter_mapping_failure",
-        message: expect.stringContaining("1 English marker(s) have non-unique coverage"),
-      }),
+    expect(report.screenplay_status).toBe("production-contract-valid");
+    expect(report.blockers).toEqual([]);
+    expect(report.prospective_screenplay?.entries.filter((entry) => entry.kind === "source")).toEqual([
+      expect.objectContaining({ chapter_id: "chapter-fixture_0001", text: "First. Middle." }),
+      expect.objectContaining({ chapter_id: "chapter-fixture_0002", text: "Last." }),
+    ]);
+  });
+
+  it("orders appended section IDs by playback boundary and rejects a reordered screenplay", () => {
+    const english = "{1a} Speaker. First.\n{1b} Speaker. Last.\n";
+    rewriteChapterFixture({
+      english,
+      greek: "{1a} alpha {1b} beta",
+      sections: [
+        { span: "1b", title: "Last", body: "Commentary for the last chapter." },
+        { span: "1a", title: "First", body: "Commentary for the first chapter." },
+      ],
+      segments: [{ id: "turn-0001", start_char: 0, end_char: english.length, character_id: "speaker" }],
+    });
+    const report = buildScreenplayGenerationReport(DIALOGUE);
+    expect(report.blockers).toEqual([]);
+    const script = structuredClone(report.prospective_screenplay!);
+    expect(script.chapters.map((chapter) => chapter.commentary_id)).toEqual([
+      "comm_fixture_0002", "comm_fixture_0001",
+    ]);
+    expect(script.entries.filter((entry) => entry.kind === "source").map((entry) => entry.text)).toEqual([
+      "First.", "Last.",
+    ]);
+    script.chapters.reverse();
+    expect(validateAudioScriptArtifact(`audio/scripts/${DIALOGUE}.json`, JSON.stringify(script))).toContainEqual(
+      expect.objectContaining({ message: "Screenplay chapters must preserve resolved commentary playback order." }),
     );
-    expect(report.prospective_screenplay).toBeUndefined();
+  });
+
+  it("rejects distinct section evidence spans that resolve to the same source-turn boundary", () => {
+    const english = "{1a} Speaker. First {1b} and second.\n{1c} Speaker. Last.\n";
+    rewriteChapterFixture({
+      english,
+      greek: "{1a} alpha {1b} beta {1c} gamma",
+      sections: [
+        { span: "1a", title: "First", body: "First chapter commentary." },
+        { span: "1b", title: "Second", body: "Second chapter commentary." },
+        { span: "1c", title: "Last", body: "Last chapter commentary." },
+      ],
+      segments: [{ id: "turn-0001", start_char: 0, end_char: english.length, character_id: "speaker" }],
+    });
+    const report = buildScreenplayGenerationReport(DIALOGUE);
+    expect(report.screenplay_status).toBe("blocked");
+    expect(report.blockers).toContainEqual(expect.objectContaining({ code: "chapter_mapping_failure" }));
   });
 
   it("uses full-source label boundaries when an attribution starts after a Stephanus token", () => {

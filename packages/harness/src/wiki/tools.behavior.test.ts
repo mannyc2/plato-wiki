@@ -2,34 +2,19 @@ import { afterEach, beforeEach, describe, expect, it } from "bun:test";
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import type { AgentTool } from "@earendil-works/pi-agent-core";
 import { setRepoRootForTesting } from "../paths.js";
 import { relationCandidateKey } from "../relations.js";
 import { resolveSourceSpan } from "../source.js";
-import type { TranscriptWriter } from "../transcript.js";
-import type { HarnessRunCommand } from "../types.js";
-import { createWikiTools, type WikiToolOptions } from "./tools.js";
+import { type WikiTool, type WikiToolEvents, type WikiToolMode, createWikiTools, executeWikiToolCalls, parseWikiToolMode, type WikiToolOptions } from "./tools.js";
 
-const transcript: TranscriptWriter = {
-  runId: "test",
-  runDir: "test",
-  eventsPath: "test/events.jsonl",
-  summaryPath: "test/summary.md",
-  responsePath: "test/response.md",
-  usagePath: "test/usage.json",
-  usageMarkdownPath: "test/usage.md",
-  write: () => {},
-  writeSummary: () => {},
-  writeResponse: () => {},
-  recordAssistantUsage: () => {},
-};
+const transcript: WikiToolEvents = { write: () => {} };
 
-type ToolMap = Record<string, AgentTool>;
+type ToolMap = Record<string, WikiTool>;
 
 let root = "";
 let restoreRepoRoot: (() => void) | undefined;
 
-function toolMap(command: HarnessRunCommand = "ingest", options: WikiToolOptions = {}): ToolMap {
+function toolMap(command: WikiToolMode = "ingest", options: WikiToolOptions = {}): ToolMap {
   return Object.fromEntries(createWikiTools(transcript, command, options).map((tool) => [tool.name, tool]));
 }
 
@@ -186,6 +171,87 @@ describe("wiki tool behavior", () => {
     await expect(tools.wiki_commit_observation!.execute("call-commit", {
       path: "wiki/observations/testdialogue.md",
     })).rejects.toThrow(/No staged observation content/);
+  });
+
+  it("keeps the first accepted write when concurrent sessions stage the same absent ledger", async () => {
+    const path = "wiki/observations/testdialogue.md";
+    const first = toolMap();
+    const second = toolMap();
+    await first.wiki_stage_observation!.execute("stage-first", { path, content: fixtureLedger() });
+    await second.wiki_stage_observation!.execute("stage-second", {
+      path,
+      content: fixtureLedger({ observation: "The speaker asks for a procedural clarification." }),
+    });
+    await first.wiki_commit_observation!.execute("commit-first", { path });
+    const accepted = readFixture(path);
+
+    await expect(second.wiki_commit_observation!.execute("commit-second", { path }))
+      .rejects.toThrow("changed after staging");
+    expect(readFixture(path)).toBe(accepted);
+  });
+
+  it("rejects a stale existing ledger even after a draft retry", async () => {
+    const path = "wiki/observations/testdialogue.md";
+    writeFileSync(join(root, path), fixtureLedger());
+    const tools = toolMap();
+    await tools.wiki_stage_observation!.execute("stage", { path, content: fixtureLedger() });
+    const accepted = fixtureLedger({ reviewStatus: "accepted" });
+    writeFileSync(join(root, path), accepted);
+    await tools.wiki_stage_observation!.execute("retry", {
+      path,
+      content: fixtureLedger({ observation: "The speaker asks for a procedural clarification." }),
+    });
+
+    await expect(tools.wiki_commit_observation!.execute("commit", { path })).rejects.toThrow("changed after staging");
+    expect(readFixture(path)).toBe(accepted);
+  });
+
+  it("consumes the staged ledger and allows only one final commit per session", async () => {
+    const path = "wiki/observations/testdialogue.md";
+    const tools = toolMap();
+    await tools.wiki_stage_observation!.execute("stage", { path, content: fixtureLedger() });
+    await tools.wiki_commit_observation!.execute("commit", { path });
+
+    await expect(tools.wiki_commit_observation!.execute("repeat", { path })).rejects.toThrow("already committed");
+    await expect(tools.wiki_stage_observation!.execute("restage", { path, content: fixtureLedger() }))
+      .rejects.toThrow("already committed");
+  });
+
+  it("revalidates the Greek source when committing a staged ledger", async () => {
+    const path = "wiki/observations/testdialogue.md";
+    const tools = toolMap();
+    await tools.wiki_stage_observation!.execute("stage", { path, content: fixtureLedger() });
+    writeFileSync(join(root, "raw/plato/greek/testdialogue.txt"), "{2a} ἄλλο κείμενον. {2b} μέρος. {3a} τέλος.");
+
+    await expect(tools.wiki_commit_observation!.execute("commit", { path })).rejects.toThrow("source_ref");
+    expect(existsSync(join(root, path))).toBe(false);
+  });
+
+  it("executes staged observation commits through the provider-free call interface", async () => {
+    const path = "wiki/observations/testdialogue.md";
+    const results = await executeWikiToolCalls("ingest", [
+      { name: "wiki_stage_observation", arguments: { path, content: fixtureLedger() } },
+      { name: "wiki_commit_observation", arguments: { path } },
+    ]);
+
+    expect(results.map(({ name }) => name)).toEqual(["wiki_stage_observation", "wiki_commit_observation"]);
+    expect(results[1]!.events.map(({ type }) => type)).toEqual(["wiki_tool_commit_observation"]);
+    expect(readFixture(path)).toContain("obs_testdialogue_0001");
+  });
+
+  it("checks every call shape before executing a write", async () => {
+    const path = "wiki/observations/testdialogue.md";
+    await expect(executeWikiToolCalls("ingest", [
+      { name: "wiki_stage_observation", arguments: { path, content: fixtureLedger() } },
+      { name: "wiki_commit_observation", arguments: { path } },
+      { name: "wiki_source_span", arguments: { dialogue: "testdialogue" } },
+    ])).rejects.toThrow("Invalid arguments for wiki_source_span");
+
+    expect(existsSync(join(root, path))).toBe(false);
+    await expect(executeWikiToolCalls("ingest", [
+      { name: "wiki_write_observation", arguments: { path, content: fixtureLedger() } },
+    ])).rejects.toThrow("Unknown wiki tool for ingest");
+    expect(() => parseWikiToolMode("provider")).toThrow("Wiki mode must be one of");
   });
 
   it("rejects invalid staged ledgers without writing files", async () => {

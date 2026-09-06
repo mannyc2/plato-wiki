@@ -1093,7 +1093,7 @@ function readCatalogs(): { characters?: CharacterCatalog; cast?: CastCatalog } {
   }
 }
 
-function commentaryAudioBoundaryChars(
+export function commentaryAudioBoundaryChars(
   dialogue: string,
   englishContent: string,
   stephanusContent: string,
@@ -1400,14 +1400,6 @@ function validateScriptAgainstRepo(script: AudioScript, path: string) {
       });
     }
   }
-  const sectionRecords = acceptedRecords.filter((record) => record.kind === "section");
-  if (!sameArray(script.chapters.map((chapter) => chapter.commentary_id), sectionRecords.map((record) => record.id))) {
-    issues.push({
-      code: "invalid_reference",
-      path,
-      message: "Screenplay chapters must preserve canonical commentary section order.",
-    });
-  }
   if (characters) {
     try {
       const boundaryChars = commentaryAudioBoundaryChars(
@@ -1416,6 +1408,16 @@ function validateScriptAgainstRepo(script: AudioScript, path: string) {
         stephanusContent,
         acceptedRecords,
       );
+      const sectionRecords = acceptedRecords
+        .filter((record) => record.kind === "section")
+        .sort((left, right) => boundaryChars.get(left.id)! - boundaryChars.get(right.id)!);
+      if (!sameArray(script.chapters.map((chapter) => chapter.commentary_id), sectionRecords.map((record) => record.id))) {
+        issues.push({
+          code: "invalid_reference",
+          path,
+          message: "Screenplay chapters must preserve resolved commentary playback order.",
+        });
+      }
       const sectionBoundaries = sectionRecords.map((record) => boundaryChars.get(record.id)!);
       if (
         sectionBoundaries[0] !== 0 ||
