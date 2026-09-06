@@ -482,6 +482,46 @@ class PromoteAudioQaTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(json.loads(result.stdout), [])
 
+    def test_promotion_preserves_opening_without_inventing_commentary(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = PromotionFixture(Path(directory))
+            opening_id = "chapter-crito-opening"
+            fixture.screenplay["chapters"][0].update(
+                {"id": opening_id, "commentary_id": None, "title": "Opening"}
+            )
+            screenplay_path = fixture.repo / "audio/scripts/crito.json"
+            screenplay_path.write_text(json.dumps(fixture.screenplay) + "\n", encoding="utf-8")
+            fixture.handoff["production"]["screenplay"]["sha256"] = promotion.sha256_file(
+                screenplay_path
+            )
+            opening = fixture.handoff["chapters"][0]
+            opening["chapter_id"] = opening_id
+            opening["audio_slice"]["renderer_chapter"]["chapter_id"] = opening_id
+            opening["audio_slice"]["measurements"]["chapter_id"] = opening_id
+            opening["commentary_coverage"]["expected_ids"] = []
+            opening["commentary_coverage"]["covered_ids"] = []
+            fixture.review["accepted_chapter_ids"][0] = opening_id
+
+            plan = promotion.build_promotion_plan(
+                repo_root=fixture.repo,
+                artifact_root=fixture.artifact_root,
+                handoff=fixture.handoff,
+                review=fixture.review,
+                generated_at="2026-07-16T16:00:00Z",
+                handoff_validator=lambda _value: None,
+            )
+            self.assertEqual(
+                plan["recording"]["chapters"][0],
+                {
+                    "chapter_id": opening_id,
+                    "commentary_id": None,
+                    "start_frame": 0,
+                    "title": "Opening",
+                },
+            )
+            self.assertEqual(plan["qa"]["chapters"][0]["commentary_ids_expected"], [])
+            self.assertEqual(plan["qa"]["chapters"][0]["commentary_ids_covered"], [])
+
     def test_operator_waiver_is_truthful_and_cannot_bypass_production_gates(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             fixture = PromotionFixture(Path(directory))

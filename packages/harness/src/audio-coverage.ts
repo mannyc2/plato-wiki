@@ -21,7 +21,7 @@ import {
 import { commentaryMarkdownBlocks } from "./wiki/commentary-ledger.js";
 import { validateCommentaryLedger } from "./wiki/commentary-validator.js";
 import { fieldValue } from "./wiki/observation-ledger.js";
-import { validateGeneratedSite, type GeneratedSiteRecordingExpectation } from "./site/validate.js";
+import { recordingChapterTarget, validateGeneratedSite, type GeneratedSiteRecordingExpectation } from "./site/validate.js";
 import { resolveRecordingArtifactRoot, validateRecordingMasteringEvidence } from "./site/mastering-evidence.js";
 import { inspectMp3File } from "./site/recordings.js";
 import {
@@ -522,7 +522,7 @@ function strictWebsiteRecordingDialogues(dialogues: readonly string[]) {
       audioSha256: manifest.audio.sha256,
       durationSeconds: manifest.audio.duration_seconds,
       assetPath: `assets/recordings/${dialogue}/complete.mp3`,
-      chapterTargets: manifest.chapters.map((chapter) => chapter.commentary_id),
+      chapterTargets: manifest.chapters.map((chapter) => recordingChapterTarget(chapter.commentary_id)),
       chapterIds: manifest.chapters.map((chapter) => chapter.chapter_id),
       chapterStartFrames: manifest.chapters.map((chapter) => chapter.start_frame),
       chapterStartSeconds: manifest.chapters.map((chapter) => chapter.start_frame / 48_000),

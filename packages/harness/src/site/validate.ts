@@ -1,11 +1,18 @@
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, isAbsolute, relative, resolve, sep } from "node:path";
 import { inspectMp3File, streamFileSha256 } from "./recordings.js";
+import { normalizeReadingSourceText, readingSourceMatches, readingSourceParagraphs } from "./reading-source.js";
 
 const DEFAULT_MAX_HTML_BYTES = 2 * 1024 * 1024;
-const DEFAULT_MAX_TOTAL_BYTES = 150 * 1024 * 1024;
+// Full Greek/English source and its restored margins currently occupy
+// 156.13 MiB. Keep the aggregate content budget separate from page limits.
+const DEFAULT_MAX_TOTAL_BYTES = 175 * 1024 * 1024;
 const DEFAULT_MAX_HOMEPAGE_BYTES = 150_000;
 const DEFAULT_MAX_INDEX_SHARD_BYTES = 1_000_000;
+
+export function recordingChapterTarget(commentaryId: string | null): string {
+  return commentaryId ?? "source-opening";
+}
 
 export type GeneratedSiteValidationOptions = {
   maxHtmlBytes?: number;
@@ -85,6 +92,52 @@ function openingTags(content: string, tag = "[a-z][a-z0-9-]*") {
   return [...content.matchAll(pattern)].map((match) => match[0] ?? "");
 }
 
+function validateReadingSources(htmlByPath: ReadonlyMap<string, string>, diagnostics: string[]) {
+  const dialogues = new Map<string, Array<{ part: number; content: string }>>();
+  for (const [path, content] of htmlByPath) {
+    const match = /\/dialogues\/([a-z][a-z0-9-]*)\/reading(?:-(\d+))?\.html$/u.exec(path);
+    if (!match) continue;
+    const pages = dialogues.get(match[1]!) ?? [];
+    pages.push({ part: Number(match[2] ?? 1), content });
+    dialogues.set(match[1]!, pages);
+  }
+  for (const [dialogue, pages] of dialogues) {
+    pages.sort((left, right) => left.part - right.part);
+    const paragraphs = pages.flatMap((page) => elementBlocks(page.content, "p"))
+      .filter((paragraph) => hasAttribute(openingTags(paragraph, "p")[0] ?? "", "data-source-start"));
+    for (const language of ["grc", "en"] as const) {
+      const actual = paragraphs.flatMap((paragraph) => {
+        const tag = openingTags(paragraph, "p")[0] ?? "";
+        if (attributeValue(tag, "lang") !== language) return [];
+        const speaker = attributeValue(tag, "data-source-speaker") ?? "";
+        // Visible speaker names may be expanded, while inline milestones are
+        // edition furniture. Restore the printed label before comparing the
+        // remaining rendered words to the canonical source line.
+        const body = paragraph
+          .replace(/<(?:a|span)\b[^>]*class="milestone"[^>]*>[\s\S]*?<\/(?:a|span)>/gu, "")
+          .replace(/<span class="speaker">[\s\S]*?<\/span>/gu, "")
+          .replace(/<[^>]*>/gu, "");
+        return [{
+          startChar: Number(attributeValue(tag, "data-source-start")),
+          text: normalizeReadingSourceText(speaker + decodeGeneratedAttribute(body)),
+        }];
+      });
+      const expected = readingSourceParagraphs(dialogue, language);
+      if (!readingSourceMatches(actual, expected)) {
+        const mismatch = expected.findIndex((paragraph, index) =>
+          paragraph.startChar !== actual[index]?.startChar || paragraph.text !== actual[index]?.text,
+        );
+        diagnostics.push(
+          `Reading ${dialogue} ${language} source coverage differs: expected ${expected.length} ordered paragraphs, found ${actual.length}; first mismatch ${mismatch < 0 ? expected.length : mismatch}.`,
+        );
+      }
+    }
+    if (paragraphs.some((paragraph) => !["grc", "en"].includes(attributeValue(openingTags(paragraph, "p")[0] ?? "", "lang") ?? ""))) {
+      diagnostics.push(`Reading ${dialogue} has a source paragraph with an invalid language.`);
+    }
+  }
+}
+
 function hasAttribute(tag: string, attribute: string) {
   const pattern = new RegExp(`\\s${attribute}(?:\\s*=|\\s|/?>)`, "iu");
   return pattern.test(tag);
@@ -131,6 +184,7 @@ export function validateGeneratedSite(
   const htmlByPath = new Map(htmlFiles.map((path) => [path, readFileSync(path, "utf8")]));
   const idsByPath = new Map<string, Set<string>>();
   const diagnostics: string[] = [];
+  validateReadingSources(htmlByPath, diagnostics);
   let links = 0;
   let maxHtmlBytes = 0;
   let totalBytes = 0;

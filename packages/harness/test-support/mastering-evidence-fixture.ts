@@ -68,7 +68,7 @@ export function writeMasteringEvidenceFixture({
   const qaPath = `audio/qa/${dialogue}.json`;
   const screenplayContent = readFileSync(join(repoRoot, screenplayPath), "utf8");
   const screenplay = JSON.parse(screenplayContent) as {
-    chapters: Array<{ id: string; commentary_id: string; title?: string }>;
+    chapters: Array<{ id: string; commentary_id: string | null; title?: string }>;
   };
   if (!Array.isArray(screenplay.chapters) || screenplay.chapters.length === 0) {
     throw new Error("Mastering evidence fixture requires screenplay chapters.");

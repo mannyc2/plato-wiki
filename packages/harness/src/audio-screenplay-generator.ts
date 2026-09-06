@@ -22,6 +22,7 @@ import {
   canonicalSpokenEnglishSegments,
   commentaryAudioBoundaryChars,
   characterNamesForDialogue,
+  resolveAudioChapterLayout,
   validateAudioScript,
   validateAudioScriptArtifact,
   type AudioProductionValidationIssue,
@@ -358,10 +359,6 @@ function readAttributionPlan(
   return { plan: raw as SpeakerAttributionPlan, errors: [] };
 }
 
-function chapterId(commentaryId: string) {
-  return `chapter-${commentaryId.replace(/^comm_/u, "")}`;
-}
-
 function entryId(prefix: string, id: string) {
   return `${prefix}-${id}`.replace(/_/gu, "-");
 }
@@ -386,12 +383,15 @@ function buildScreenplay(
   blockers: ScreenplayGenerationBlocker[],
 ) {
   const index = parseStephanusIndexToon(stephanusContent);
+  const characterNames = characterNamesForDialogue(characters, dialogue);
   let boundaryChars: Map<string, number>;
+  let layout: ReturnType<typeof resolveAudioChapterLayout>;
   try {
     boundaryChars = commentaryAudioBoundaryChars(dialogue, englishContent, stephanusContent, records);
+    layout = resolveAudioChapterLayout(dialogue, englishContent, records, boundaryChars, characterNames);
   } catch (error) {
     blockers.push({
-      code: "invalid_commentary",
+      code: "chapter_mapping_failure",
       message: `Cannot resolve commentary audio boundaries: ${error instanceof Error ? error.message : String(error)}`,
     });
     return undefined;
@@ -399,30 +399,17 @@ function buildScreenplay(
   // Evidence spans describe what a section discusses, not the source it owns.
   // Playback boundaries partition the complete spine; append-only ledger order
   // and gaps left by rejected commentary must not drop or reorder source speech.
-  const sectionRanges = records
-    .filter((record) => record.kind === "section")
-    .sort((left, right) => boundaryChars.get(left.id)! - boundaryChars.get(right.id)!)
-    .map((record) => ({ id: chapterId(record.id), record }));
-  const sectionBoundaryChars = sectionRanges.map((section) => boundaryChars.get(section.record.id)!);
-  if (
-    sectionBoundaryChars[0] !== 0 ||
-    sectionBoundaryChars.some((start, sectionIndex) =>
-      start >= englishContent.length ||
-      (sectionIndex > 0 && start <= sectionBoundaryChars[sectionIndex - 1]!),
-    )
-  ) {
-    blockers.push({
-      code: "chapter_mapping_failure",
-      message: "Resolved chapter audio boundaries must begin at source char 0 and be strictly increasing without overlap.",
-    });
-    return undefined;
-  }
+  const recordById = new Map(records.map((record) => [record.id, record]));
+  const sectionRanges = layout.chapters.map(({ chapter }) => ({
+    ...chapter,
+    record: chapter.commentary_id === null ? null : recordById.get(chapter.commentary_id)!,
+  }));
+  const sectionBoundaryChars = layout.chapters.map((chapter) => chapter.startChar);
   const commentaryBoundaryCharById = new Map(
     records.filter((record) => record.kind !== "section")
       .map((record) => [record.id, boundaryChars.get(record.id)!]),
   );
 
-  const characterNames = characterNamesForDialogue(characters, dialogue);
   let cursor = 0;
   for (const segment of plan.segments) {
     if (segment.start_char !== cursor || segment.end_char > englishContent.length) {
@@ -614,7 +601,7 @@ function buildScreenplay(
   const entries: AudioScriptEntry[] = [];
   for (const section of sectionRanges) {
     const recordsForChapter = commentaryByChapter.get(section.id) ?? [];
-    entries.push({
+    if (section.record) entries.push({
       id: entryId(`${dialogue}-heading`, section.record.id),
       chapter_id: section.id,
       kind: "heading",
@@ -623,7 +610,7 @@ function buildScreenplay(
       anchor: { commentary_id: section.record.id },
       cadence_intent: "chapter",
     });
-    entries.push({
+    if (section.record) entries.push({
       id: entryId(`${dialogue}-commentary`, section.record.id),
       chapter_id: section.id,
       kind: "commentary",
@@ -686,11 +673,7 @@ function buildScreenplay(
     commentary_quality_audit_sha256: commentaryQualityAuditSha256,
     cast_sha256: sha256(castContent),
     generator_version: `${GENERATOR_VERSION}+attribution.${attributionSha256}`,
-    chapters: sectionRanges.map((section) => ({
-      id: section.id,
-      commentary_id: section.record.id,
-      title: section.record.title,
-    })),
+    chapters: layout.chapters.map(({ chapter }) => chapter),
     entries,
     repairs: [],
     coverage: {

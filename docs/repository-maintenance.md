@@ -5,8 +5,8 @@
 Baseline: commit `973ee1a`. Counts are physical lines in `.ts`, `.tsx`, `.js`,
 `.py`, and `.sh` files. Tests and test-support fixtures are counted separately;
 JSON/data, generated indexes, documentation, dependencies, and Git history are
-excluded from source counts. The baseline uses committed files and the result
-uses the cleanup candidate's source tree.
+excluded from source counts. The result is the cleanup at commit `0f92d99`,
+before the subsequent audio-opening and complete-reading fixes.
 
 | Subsystem | Production lines before | After |
 | --- | ---: | ---: |
@@ -89,11 +89,18 @@ assumptions contradicted the accepted audio insertion boundaries. Generator and
 validator now share boundary resolution and use resolved playback order while
 preserving exact source coverage.
 
-Sixteen dialogues pass production preflight. Eleven still lack an accepted
-opening chapter at source character zero; those require a reviewed opening
-boundary decision. No accepted commentary, cast decision, or recording status
-was changed to make preflight pass. Runtime screenplays and render outputs stay
-outside the canonical checkout until their acceptance workflow is complete.
+All 27 dialogues pass production preflight, covering 710,718 source words and
+180 chapters. Ten have a derived initial source chapter before the first
+accepted section. A metadata-only prefix stays with the first section chapter.
+Chapter structure no longer requires an invented opening commentary decision.
+The canonical screenplays are tracked under `audio/scripts/`; audio binaries
+and unaccepted production evidence stay outside the checkout. No accepted
+commentary, cast decision, or recording status changed to make preflight pass.
+
+Reading pages likewise partition the entire source before, between, and after
+accepted sections. Commentary evidence spans identify supporting passages; they
+do not define how much Greek or English a reader is allowed to see. The site
+validator checks exact source text and offsets across all reading-page shards.
 
 GPU synthesis and mastering run as a serial resumable queue with fail-fast
 stage handling. Finished chunks are reused by exact plan identity. Synthesis

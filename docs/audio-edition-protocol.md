@@ -303,7 +303,8 @@ One schema-v2 `audio/scripts/<dialogue>.json` contains:
 
 - schema version, dialogue, source hashes, commentary hash, the exact canonical
   commentary-quality-audit SHA-256, cast hash, and generator version;
-- ordered chapters tied to accepted commentary section IDs;
+- ordered chapters tied to accepted commentary section IDs, with an optional
+  initial source chapter whose required `commentary_id` is `null`;
 - ordered entries with stable IDs, kind (`source`, `commentary`, `heading`, or
   `meta`), active voice-owner character ID, exact spoken text,
   source/commentary anchor, chapter, and cadence intent;
@@ -357,6 +358,17 @@ not delimit the chapter's source coverage. Consecutive resolved boundaries
 partition the complete English spine, beginning at zero and ending at EOF.
 Gaps between commentary evidence spans remain spoken in the preceding chapter;
 duplicate boundaries and empty chapters fail validation.
+
+When source speech precedes the first accepted section, the generator adds
+`chapter-<dialogue>-opening`, titled `Opening`, with `commentary_id: null`.
+Its range is derived from the source start and first accepted section boundary;
+no introductory prose or spoken heading is invented. Accepted non-section
+commentary within that range still plays at its reviewed insertion point.
+A metadata-only prefix belongs to the first section chapter and creates no
+empty opening chapter. These rules preserve all spoken text and never move
+accepted commentary to make a chapter begin at zero. Section titles and bodies
+must remain in their own chapters, and source speech cannot move across the
+derived chapter boundaries.
 
 ## Rendering and reproducibility
 
@@ -551,7 +563,8 @@ files back if full repository validation fails. No implicit acceptance exists.
 One `wiki/recordings/<dialogue>.json` is the website/publication record. It has
 an immutable `recording_id`, dialogue and acceptance status, publication audio
 path, MIME type, duration and SHA-256, ordered chapter IDs and authoritative
-48 kHz `start_frame` values tied to accepted section commentary IDs, and
+48 kHz `start_frame` values tied to accepted section commentary IDs (or the
+validated initial source chapter's null target), and
 cast/provenance display fields. Website seek seconds are always derived as
 `start_frame / 48000`; they are not a second independently editable manifest
 value.

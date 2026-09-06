@@ -173,6 +173,31 @@ describe("recording manifests", () => {
     expect(issueCodes(JSON.stringify(recording({ chapters })))).toContain("missing_section_target");
   });
 
+  it("distinguishes an explicit opening target from a missing target", () => {
+    const missingTarget = [{ chapter_id: "chapter-fixture-opening", start_frame: 0 }];
+    expect(issueCodes(JSON.stringify(recording({ chapters: missingTarget })))).toContain("invalid_chapter");
+
+    const opening = [{ chapter_id: "chapter-fixture-opening", commentary_id: null, start_frame: 0 }];
+    const issues = issueCodes(JSON.stringify(recording({ chapters: opening })));
+    expect(issues).not.toContain("invalid_chapter");
+    expect(issues).toContain("missing_production_dependency");
+  });
+
+  it("rejects a null commentary target after the first chapter", () => {
+    const chapters = [
+      { chapter_id: "chapter-1", commentary_id: "comm_fixture_0001", start_frame: 0 },
+      { chapter_id: "chapter-fixture-opening", commentary_id: null, start_frame: 48_000 },
+    ];
+    expect(issueCodes(JSON.stringify(recording({ chapters })))).toContain("invalid_chapter");
+  });
+
+  it("rejects an opening whose screenplay is not canonically valid", () => {
+    const chapters = [{ chapter_id: "chapter-fixture-opening", commentary_id: null, start_frame: 0 }];
+    mkdirSync(join(root, "audio/scripts"), { recursive: true });
+    writeFileSync(join(root, "audio/scripts/fixture.json"), JSON.stringify({ chapters }), "utf8");
+    expect(issueCodes(JSON.stringify(recording({ chapters })))).toContain("invalid_production_dependency");
+  });
+
   it("allows a withdrawn recording to preserve a rejected historical chapter target", () => {
     writeFileSync(
       join(root, "wiki/commentary/fixture.md"),

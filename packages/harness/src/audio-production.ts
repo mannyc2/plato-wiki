@@ -38,7 +38,7 @@ export type AudioCadenceIntent =
 
 export type AudioScriptChapter = {
   id: string;
-  commentary_id: string;
+  commentary_id: string | null;
   title?: string;
 };
 
@@ -754,7 +754,7 @@ function inspectScript(path: string, content: string): Inspected<AudioScript> {
       if (
         !nonEmptyString(chapter.id) ||
         !SAFE_ID.test(chapter.id) ||
-        !nonEmptyString(chapter.commentary_id) ||
+        (chapter.commentary_id !== null && !nonEmptyString(chapter.commentary_id)) ||
         (chapter.title !== undefined && !nonEmptyString(chapter.title))
       ) {
         issues.push({ code: "invalid_shape", path, message: `screenplay.chapters[${index}] has invalid fields.` });
@@ -936,11 +936,19 @@ function validateScriptIntegrity(script: AudioScript, path: string) {
   const issues = canonicalDialogueIssues(path, script.dialogue, "scripts");
   const chapterIds = new Set<string>();
   const commentaryChapterIds = new Set<string>();
-  for (const chapter of script.chapters) {
+  for (const [index, chapter] of script.chapters.entries()) {
     if (chapterIds.has(chapter.id)) {
       issues.push({ code: "duplicate_id", path, message: `Duplicate chapter id \`${chapter.id}\`.` });
     }
-    if (commentaryChapterIds.has(chapter.commentary_id)) {
+    if (chapter.commentary_id === null) {
+      if (index !== 0 || chapter.id !== `chapter-${script.dialogue}-opening` || chapter.title !== "Opening") {
+        issues.push({
+          code: "invalid_reference",
+          path,
+          message: "A chapter without section commentary must be the canonical initial Opening chapter.",
+        });
+      }
+    } else if (commentaryChapterIds.has(chapter.commentary_id)) {
       issues.push({
         code: "duplicate_id",
         path,
@@ -948,7 +956,7 @@ function validateScriptIntegrity(script: AudioScript, path: string) {
       });
     }
     chapterIds.add(chapter.id);
-    commentaryChapterIds.add(chapter.commentary_id);
+    if (chapter.commentary_id !== null) commentaryChapterIds.add(chapter.commentary_id);
   }
 
   const entryIds = new Set<string>();
@@ -985,6 +993,9 @@ function validateScriptIntegrity(script: AudioScript, path: string) {
   for (const [chapterId, count] of chapterCounts) {
     if (count === 0) {
       issues.push({ code: "invalid_reference", path, message: `Chapter \`${chapterId}\` has no screenplay entries.` });
+    }
+    if (!script.entries.some((entry) => entry.chapter_id === chapterId && entry.kind === "source")) {
+      issues.push({ code: "invalid_reference", path, message: `Chapter \`${chapterId}\` has no source speech.` });
     }
   }
 
@@ -1150,6 +1161,62 @@ function spokenPrefixesAtBoundaries(
     prefixes.set(cuts[index + 1]!, cumulative);
   }
   return prefixes;
+}
+
+export function resolveAudioChapterLayout(
+  dialogue: string,
+  englishContent: string,
+  records: CommentaryRecord[],
+  boundaryChars: ReadonlyMap<string, number>,
+  characterNames: string[],
+) {
+  const sections = records
+    .filter((record) => record.kind === "section")
+    .sort((left, right) => boundaryChars.get(left.id)! - boundaryChars.get(right.id)!);
+  const starts = sections.map((record) => boundaryChars.get(record.id)!);
+  if (
+    starts.length === 0 ||
+    starts.some((start, index) =>
+      !Number.isSafeInteger(start) || start < 0 || start >= englishContent.length ||
+      (index > 0 && start <= starts[index - 1]!),
+    )
+  ) {
+    throw new Error("Resolved section audio boundaries must be strictly increasing within the English source.");
+  }
+  const issues: AudioProductionValidationIssue[] = [];
+  const prefixes = spokenPrefixesAtBoundaries(
+    englishContent,
+    [...boundaryChars.values()],
+    characterNames,
+    `raw/plato/english/${dialogue}.txt`,
+    issues,
+  );
+  if (!prefixes || issues.length > 0) {
+    throw new Error(`Cannot reconstruct chapter source coverage: ${issues.map((issue) => issue.message).join("; ")}`);
+  }
+  const chapters: Array<{ chapter: AudioScriptChapter; startChar: number; endChar: number }> = sections.map((record, index) => ({
+    chapter: { id: `chapter-${record.id.replace(/^comm_/u, "")}`, commentary_id: record.id, title: record.title },
+    startChar: starts[index]!,
+    endChar: starts[index + 1] ?? englishContent.length,
+  }));
+  // Rejected opening commentary must not remove source speech. A silent import
+  // prefix belongs to the first section; an audible prefix needs its own chapter.
+  // Neither case changes the reviewed commentary insertion boundary.
+  if (prefixes.get(starts[0]!) !== "") {
+    chapters.unshift({
+      chapter: { id: `chapter-${dialogue}-opening`, commentary_id: null, title: "Opening" },
+      startChar: 0,
+      endChar: starts[0]!,
+    });
+  } else {
+    chapters[0]!.startChar = 0;
+  }
+  for (const { chapter, startChar, endChar } of chapters) {
+    if (prefixes.get(startChar) === prefixes.get(endChar)) {
+      throw new Error(`Resolved audio boundaries leave chapter ${chapter.id} without source speech.`);
+    }
+  }
+  return { chapters, prefixes };
 }
 
 function validateScriptAgainstRepo(script: AudioScript, path: string) {
@@ -1359,7 +1426,9 @@ function validateScriptAgainstRepo(script: AudioScript, path: string) {
   }
   const accepted = new Map(acceptedRecords.map((record) => [record.id, record]));
   const sectionIds = sortedUnique([...accepted.values()].filter((record) => record.kind === "section").map((record) => record.id));
-  const chapterCommentaryIds = sortedUnique(script.chapters.map((chapter) => chapter.commentary_id));
+  const chapterCommentaryIds = sortedUnique(script.chapters.flatMap((chapter) =>
+    chapter.commentary_id === null ? [] : [chapter.commentary_id],
+  ));
   if (!sameArray(chapterCommentaryIds, sectionIds)) {
     issues.push({
       code: "commentary_coverage_failure",
@@ -1388,6 +1457,9 @@ function validateScriptAgainstRepo(script: AudioScript, path: string) {
         message: `Commentary entry \`${entry.id}\` text must exactly match accepted block \`${id}\` body.`,
       });
     }
+    if (record?.kind === "section" && script.chapters.find((chapter) => chapter.id === entry.chapter_id)?.commentary_id !== id) {
+      issues.push({ code: "invalid_reference", path, message: `Section commentary \`${id}\` must occur in its own chapter.` });
+    }
   }
   for (const entry of script.entries.filter((candidate) => candidate.kind === "heading")) {
     const id = (entry.anchor as { commentary_id: string }).commentary_id;
@@ -1399,6 +1471,9 @@ function validateScriptAgainstRepo(script: AudioScript, path: string) {
         message: `Heading entry \`${entry.id}\` must exactly match an accepted section title.`,
       });
     }
+    if (script.chapters.find((chapter) => chapter.id === entry.chapter_id)?.commentary_id !== id) {
+      issues.push({ code: "invalid_reference", path, message: `Section heading \`${id}\` must occur in its own chapter.` });
+    }
   }
   if (characters) {
     try {
@@ -1408,58 +1483,55 @@ function validateScriptAgainstRepo(script: AudioScript, path: string) {
         stephanusContent,
         acceptedRecords,
       );
-      const sectionRecords = acceptedRecords
-        .filter((record) => record.kind === "section")
-        .sort((left, right) => boundaryChars.get(left.id)! - boundaryChars.get(right.id)!);
-      if (!sameArray(script.chapters.map((chapter) => chapter.commentary_id), sectionRecords.map((record) => record.id))) {
+      const layout = resolveAudioChapterLayout(
+        script.dialogue,
+        englishContent,
+        acceptedRecords,
+        boundaryChars,
+        characterNamesForDialogue(characters, script.dialogue),
+      );
+      if (
+        script.chapters.length !== layout.chapters.length ||
+        script.chapters.some((chapter, index) => chapter.commentary_id !== layout.chapters[index]?.chapter.commentary_id)
+      ) {
         issues.push({
           code: "invalid_reference",
           path,
           message: "Screenplay chapters must preserve resolved commentary playback order.",
         });
-      }
-      const sectionBoundaries = sectionRecords.map((record) => boundaryChars.get(record.id)!);
-      if (
-        sectionBoundaries[0] !== 0 ||
-        sectionBoundaries.some(
-          (boundary, index) =>
-            boundary >= englishContent.length ||
-            (index > 0 && boundary <= sectionBoundaries[index - 1]!),
-        )
-      ) {
-        issues.push({
-          code: "invalid_reference",
-          path,
-          message: "Resolved chapter audio boundaries must begin at source char 0 and be strictly increasing without overlap.",
-        });
       } else {
-        const prefixes = spokenPrefixesAtBoundaries(
-          englishContent,
-          [...boundaryChars.values()],
-          characterNamesForDialogue(characters, script.dialogue),
-          path,
-          issues,
-        );
-        if (prefixes) {
-          let actualPrefix = "";
-          for (const entry of script.entries) {
-            if (entry.kind === "source") {
-              actualPrefix = normalizeSpokenEnglish([actualPrefix, entry.text].filter(Boolean).join(" "));
-              continue;
-            }
-            if (entry.kind !== "heading" && entry.kind !== "commentary") continue;
-            const commentaryId = (entry.anchor as { commentary_id: string }).commentary_id;
-            const boundaryChar = boundaryChars.get(commentaryId);
-            const expectedPrefix = boundaryChar === undefined ? undefined : prefixes.get(boundaryChar);
-            if (expectedPrefix !== undefined && actualPrefix !== expectedPrefix) {
+        const { prefixes } = layout;
+        const chapterStarts = new Map(script.chapters.map((chapter, index) => [chapter.id, layout.chapters[index]!.startChar]));
+        let currentChapterId: string | undefined;
+        let actualPrefix = "";
+        for (const entry of script.entries) {
+          if (entry.chapter_id !== currentChapterId) {
+            const start = chapterStarts.get(entry.chapter_id);
+            if (start === undefined || actualPrefix !== prefixes.get(start)) {
               issues.push({
-                code: "invalid_reference",
+                code: "source_coverage_failure",
                 path,
-                message:
-                  `Commentary entry \`${entry.id}\` must occur at its resolved source-turn boundary ` +
-                  `(English char ${boundaryChar}); the current chapter/editorial boundary splits or reorders source text.`,
+                message: `Chapter \`${entry.chapter_id}\` must start at its derived source boundary; source speech cannot move between chapters.`,
               });
             }
+            currentChapterId = entry.chapter_id;
+          }
+          if (entry.kind === "source") {
+            actualPrefix = normalizeSpokenEnglish([actualPrefix, entry.text].filter(Boolean).join(" "));
+            continue;
+          }
+          if (entry.kind !== "heading" && entry.kind !== "commentary") continue;
+          const commentaryId = (entry.anchor as { commentary_id: string }).commentary_id;
+          const boundaryChar = boundaryChars.get(commentaryId);
+          const expectedPrefix = boundaryChar === undefined ? undefined : prefixes.get(boundaryChar);
+          if (expectedPrefix !== undefined && actualPrefix !== expectedPrefix) {
+            issues.push({
+              code: "invalid_reference",
+              path,
+              message:
+                `Commentary entry \`${entry.id}\` must occur at its resolved source-turn boundary ` +
+                `(English char ${boundaryChar}); the current chapter/editorial boundary splits or reorders source text.`,
+            });
           }
         }
       }

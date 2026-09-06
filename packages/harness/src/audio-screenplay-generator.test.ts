@@ -14,6 +14,7 @@ import { writeEnglishStephanusIndex } from "./derived/stephanus.js";
 import { setRepoRootForTesting } from "./paths.js";
 import { projectStephanusSpansToMarkers, resolveSourceSpan } from "./source.js";
 import { writeAcceptedCommentaryQualityAuditFixture } from "../test-support/audio-production-fixture.js";
+import { validateRecordingManifest } from "./wiki/recording-manifest.js";
 import { driftedCommentaryProtocolFixture } from "../test-support/commentary-protocol-fixture.js";
 
 const DIALOGUE = "fixture";
@@ -905,6 +906,83 @@ describe("deterministic audio screenplay generator", () => {
       expect.objectContaining({ chapter_id: "chapter-fixture_0001", text: "First. Middle." }),
       expect.objectContaining({ chapter_id: "chapter-fixture_0002", text: "Last." }),
     ]);
+  });
+
+  it("keeps the spoken opening before accepted commentary and validates its recording target", () => {
+    const english = "{1a} Speaker. First.\n{1b} Speaker. Middle.\n{1c} Speaker. Last.\n";
+    rewriteChapterFixture({
+      english,
+      greek: "{1a} alpha {1b} beta {1c} gamma",
+      sections: [
+        { span: "1b", title: "Middle", body: "Commentary for the middle chapter." },
+        { span: "1c", title: "Last", body: "Commentary for the last chapter." },
+      ],
+      segments: [{ id: "turn-0001", start_char: 0, end_char: english.length, character_id: "speaker" }],
+    });
+    const report = buildScreenplayGenerationReport(DIALOGUE);
+    expect(report.blockers).toEqual([]);
+    expect(report.screenplay_status).toBe("production-contract-valid");
+    const script = report.prospective_screenplay!;
+    expect(script.chapters[0]).toEqual({ id: "chapter-fixture-opening", commentary_id: null, title: "Opening" });
+    expect(script.entries.map((entry) => entry.text)).toEqual([
+      "First.", "Middle", "Commentary for the middle chapter.", "Middle.",
+      "Last", "Commentary for the last chapter.", "Last.",
+    ]);
+    expect(script.entries[0]?.chapter_id).toBe("chapter-fixture-opening");
+    writeJson(`audio/scripts/${DIALOGUE}.json`, script);
+    expect(validateRecordingManifest(`wiki/recordings/${DIALOGUE}.json`, JSON.stringify({
+      schema_version: 2,
+      recording_id: "fixture-opening",
+      dialogue: DIALOGUE,
+      status: "draft",
+      audio: { path: "fixture/publication.mp3", mime_type: "audio/mpeg", duration_seconds: 120, sha256: HASH },
+      chapters: script.chapters.map((chapter, index) => ({
+        chapter_id: chapter.id,
+        commentary_id: chapter.commentary_id,
+        start_frame: index * 48_000,
+        title: chapter.title,
+      })),
+    }))).toEqual([]);
+
+    const misplacedSource = structuredClone(script);
+    misplacedSource.entries[0]!.chapter_id = script.chapters[1]!.id;
+    expect(validateAudioScriptArtifact(`audio/scripts/${DIALOGUE}.json`, JSON.stringify(misplacedSource))).toContainEqual(
+      expect.objectContaining({ code: "source_coverage_failure", message: expect.stringContaining("source speech cannot move between chapters") }),
+    );
+    const misplacedHeading = structuredClone(script);
+    misplacedHeading.entries.find((entry) => entry.kind === "heading")!.chapter_id = script.chapters[0]!.id;
+    expect(validateAudioScriptArtifact(`audio/scripts/${DIALOGUE}.json`, JSON.stringify(misplacedHeading))).toContainEqual(
+      expect.objectContaining({ message: "Section heading `comm_fixture_0001` must occur in its own chapter." }),
+    );
+    const missingTarget: unknown = { ...script, chapters: script.chapters.map(({ commentary_id: target, ...chapter }) => target === null ? chapter : { ...chapter, commentary_id: target }) };
+    expect(validateAudioScriptArtifact(`audio/scripts/${DIALOGUE}.json`, JSON.stringify(missingTarget))).toContainEqual(
+      expect.objectContaining({ code: "invalid_shape" }),
+    );
+  });
+
+  it("absorbs silent import prefixes without moving commentary or creating empty chapters", () => {
+    const english = "{b1}\n{1a} Speaker. First.\n{1b} Speaker. Last.\n";
+    rewriteChapterFixture({
+      english,
+      greek: "{b1}\n{1a} alpha {1b} beta",
+      sections: [
+        { span: "1a", title: "First", body: "First chapter commentary." },
+        { span: "1b", title: "Last", body: "Last chapter commentary." },
+      ],
+      segments: [{ id: "turn-0001", start_char: 0, end_char: english.length, character_id: "speaker" }],
+    });
+    const report = buildScreenplayGenerationReport(DIALOGUE);
+    expect(report.blockers).toEqual([]);
+    const script = report.prospective_screenplay!;
+    expect(script.chapters.map((chapter) => chapter.commentary_id)).toEqual(["comm_fixture_0001", "comm_fixture_0002"]);
+    expect(script.entries.map((entry) => entry.text)).toEqual([
+      "First", "First chapter commentary.", "First.", "Last", "Last chapter commentary.", "Last.",
+    ]);
+    const emptyOpening = structuredClone(script);
+    emptyOpening.chapters.unshift({ id: "chapter-fixture-opening", commentary_id: null, title: "Opening" });
+    expect(validateAudioScriptArtifact(`audio/scripts/${DIALOGUE}.json`, JSON.stringify(emptyOpening))).toContainEqual(
+      expect.objectContaining({ message: "Screenplay chapters must preserve resolved commentary playback order." }),
+    );
   });
 
   it("orders appended section IDs by playback boundary and rejects a reordered screenplay", () => {

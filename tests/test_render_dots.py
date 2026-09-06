@@ -930,6 +930,36 @@ class DotsRendererPureTest(unittest.TestCase):
         with self.assertRaisesRegex(RenderContractError, "screenplay-generator-v3"):
             validate_screenplay(legacy_generator)
 
+    def test_screenplay_opening_uses_explicit_null_only_at_the_start(self) -> None:
+        valid = screenplay("d" * 64)
+        opening_id = "chapter-crito-opening"
+        valid["chapters"].insert(
+            0, {"id": opening_id, "commentary_id": None, "title": "Opening"}
+        )
+        opening_entry = deepcopy(valid["entries"][0])
+        opening_entry.update(
+            {"id": "crito-opening", "chapter_id": opening_id, "text": "A preface."}
+        )
+        valid["entries"].insert(0, opening_entry)
+        valid["coverage"]["source_words"] += 2
+        valid["coverage"]["source_words_covered"] += 2
+        validate_screenplay(valid)
+
+        missing = deepcopy(valid)
+        del missing["chapters"][0]["commentary_id"]
+        with self.assertRaisesRegex(RenderContractError, "missing fields: commentary_id"):
+            validate_screenplay(missing)
+
+        later_null = deepcopy(valid)
+        later_null["chapters"][1]["commentary_id"] = None
+        with self.assertRaisesRegex(RenderContractError, "null is reserved for the first"):
+            validate_screenplay(later_null)
+
+        arbitrary_null = deepcopy(valid)
+        arbitrary_null["chapters"][0]["id"] = "unrelated-chapter"
+        with self.assertRaisesRegex(RenderContractError, "chapter-crito-opening"):
+            validate_screenplay(arbitrary_null)
+
     def test_plan_verifies_cast_reference_and_hashes_every_voice_input(self) -> None:
         with tempfile.TemporaryDirectory() as raw_root:
             root = Path(raw_root)

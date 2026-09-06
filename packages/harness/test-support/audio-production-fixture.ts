@@ -225,12 +225,14 @@ export function writeAcceptedAudioProductionFixture({
   marker,
   sourceText,
   durationSeconds,
+  sourceOpening,
 }: {
   root: string;
   dialogue: string;
   marker: string;
   sourceText: string;
   durationSeconds: number;
+  sourceOpening?: { text: string; marker: string };
 }) {
   writeEnglishStephanusIndex(dialogue);
   const commentaryPath = `wiki/commentary/${dialogue}.md`;
@@ -263,9 +265,14 @@ export function writeAcceptedAudioProductionFixture({
     throw new Error(`Fixture production helper currently requires exactly one section for ${dialogue}.`);
   }
   const chapterId = "chapter-1";
+  const openingChapterId = `chapter-${dialogue}-opening`;
   const commentaryIds = commentaryForPlayback.map((block) => block.id).sort((a, b) => a.localeCompare(b));
-  const sourceWords = wordCount(sourceText);
+  const sourceWords = wordCount(sourceText) + wordCount(sourceOpening?.text ?? "");
   const commentaryWords = commentaryForPlayback.reduce((sum, block) => sum + wordCount(block.body), 0);
+  const chapterSpecs = [
+    ...(sourceOpening ? [{ chapterId: openingChapterId, sourceWords: wordCount(sourceOpening.text), commentaryWords: 0, commentaryIds: [] }] : []),
+    { chapterId, sourceWords: wordCount(sourceText), commentaryWords, commentaryIds },
+  ];
   const commentaryQualityAudit = writeAcceptedCommentaryQualityAuditFixture({ root, dialogue });
 
   writeJson(root, "audio/characters.json", {
@@ -469,6 +476,7 @@ export function writeAcceptedAudioProductionFixture({
     cast_sha256: sha256(readFileSync(join(root, "audio/cast.json"), "utf8")),
     generator_version: `screenplay-generator-v3+attribution.${attributionSha256}`,
     chapters: [
+      ...(sourceOpening ? [{ id: openingChapterId, commentary_id: null, title: "Opening" }] : []),
       {
         id: chapterId,
         commentary_id: sections[0]!.id,
@@ -476,6 +484,15 @@ export function writeAcceptedAudioProductionFixture({
       },
     ],
     entries: [
+      ...(sourceOpening ? [{
+        id: `${dialogue}_source_opening`,
+        chapter_id: openingChapterId,
+        kind: "source",
+        character_id: "speaker",
+        text: sourceOpening.text,
+        anchor: { stephanus: sourceOpening.marker },
+        cadence_intent: "exchange",
+      }] : []),
       ...commentaryEntries
         .filter(({ placement }) => placement !== "after")
         .map(({ entry }) => entry),
@@ -572,7 +589,7 @@ export function writeAcceptedAudioProductionFixture({
       reviewer: "fixture-reviewer",
       reviewed_at: "2026-07-13",
       scope: "complete-master",
-      chapter_ids: [chapterId],
+      chapter_ids: chapterSpecs.map((chapter) => chapter.chapterId),
       disposition: "accepted",
       findings: [],
     },
@@ -584,23 +601,22 @@ export function writeAcceptedAudioProductionFixture({
       rationale: "The fixture reviewer completed the exact master review.",
       handoff_evidence_sha256: HASH,
       working_master_sha256: HASH,
-      chapter_ids: [chapterId],
+      chapter_ids: chapterSpecs.map((chapter) => chapter.chapterId),
       disposition: "accepted",
       findings: [],
     },
-    chapters: [
-      {
-        chapter_id: chapterId,
-        audio_path: `artifacts/recordings/${dialogue}/chapter-1.wav`,
+    chapters: chapterSpecs.map((chapter) => ({
+        chapter_id: chapter.chapterId,
+        audio_path: `artifacts/recordings/${dialogue}/${chapter.chapterId}.wav`,
         audio_sha256: HASH,
-        duration_seconds: durationSeconds,
-        source_words_expected: sourceWords,
-        source_words_covered: sourceWords,
+        duration_seconds: durationSeconds / chapterSpecs.length,
+        source_words_expected: chapter.sourceWords,
+        source_words_covered: chapter.sourceWords,
         source_words_uncovered: 0,
         source_words_duplicated: 0,
-        commentary_ids_expected: commentaryIds,
-        commentary_ids_covered: commentaryIds,
-        asr_expected_words: sourceWords + commentaryWords,
+        commentary_ids_expected: chapter.commentaryIds,
+        commentary_ids_covered: chapter.commentaryIds,
+        asr_expected_words: chapter.sourceWords + chapter.commentaryWords,
         asr_word_errors: 0,
         asr_ordinary_word_errors: 0,
         asr_word_error_rate: 0,
@@ -620,8 +636,7 @@ export function writeAcceptedAudioProductionFixture({
         loudness_passed: true,
         cast_consistency_passed: true,
         listening_passed: true,
-      },
-    ],
+      })),
   });
   return {
     screenplaySha256,

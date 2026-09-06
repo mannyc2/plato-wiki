@@ -39,7 +39,7 @@ export type RecordingProduction = {
 
 export type RecordingChapter = {
   chapter_id: string;
-  commentary_id: string;
+  commentary_id: string | null;
   start_frame: number;
   title?: string;
 };
@@ -336,14 +336,14 @@ function inspectRecordingManifest(path: string, content: string): ParsedManifest
       unknownFields(chapterValue, CHAPTER_FIELDS, `chapters[${index}]`, path, issues);
       if (
         !nonEmptyString(chapterValue.chapter_id) ||
-        !nonEmptyString(chapterValue.commentary_id) ||
+        (chapterValue.commentary_id !== null && !nonEmptyString(chapterValue.commentary_id)) ||
         typeof chapterValue.start_frame !== "number" ||
         (chapterValue.title !== undefined && !nonEmptyString(chapterValue.title))
       ) {
         issues.push({
           code: "invalid_chapter",
           path,
-          message: `Chapter ${index + 1} requires a chapter_id, commentary_id, numeric start_frame, and optional non-empty title.`,
+          message: `Chapter ${index + 1} requires a chapter_id, explicit commentary_id string or null, numeric start_frame, and optional non-empty title.`,
         });
         continue;
       }
@@ -543,6 +543,47 @@ function commentarySectionIds(dialogue: string, acceptedOnly: boolean) {
   return sectionIds;
 }
 
+function validateOpeningScreenplay(manifest: RecordingManifest, path: string) {
+  const issues: RecordingManifestValidationIssue[] = [];
+  // Accepted production already validates this complete mapping together with QA.
+  if (manifest.status === "accepted" || manifest.chapters[0]?.commentary_id !== null) return issues;
+  const screenplayPath = `audio/scripts/${manifest.dialogue}.json`;
+  const absolutePath = join(getRepoRoot(), screenplayPath);
+  if (!existsSync(absolutePath)) {
+    issues.push({
+      code: "missing_production_dependency",
+      path,
+      message: `An opening chapter requires its canonical screenplay at ${screenplayPath}.`,
+    });
+    return issues;
+  }
+  const content = readFileSync(absolutePath, "utf8");
+  const screenplayIssues = validateAudioScriptArtifact(screenplayPath, content);
+  if (screenplayIssues.length > 0) {
+    issues.push({
+      code: "invalid_production_dependency",
+      path,
+      message: `An opening chapter requires a valid canonical screenplay.\n${formatAudioProductionIssues(screenplayIssues)}`,
+    });
+    return issues;
+  }
+  const screenplay = parseAudioScript(screenplayPath, content);
+  if (
+    manifest.chapters.length !== screenplay.chapters.length ||
+    manifest.chapters.some((chapter, index) =>
+      chapter.chapter_id !== screenplay.chapters[index]?.id ||
+      chapter.commentary_id !== screenplay.chapters[index]?.commentary_id
+    )
+  ) {
+    issues.push({
+      code: "production_chapter_mismatch",
+      path,
+      message: "A recording with an opening chapter must match every canonical screenplay chapter exactly once and in order.",
+    });
+  }
+  return issues;
+}
+
 export function validateRecordingManifest(path: string, content: string) {
   const inspected = inspectRecordingManifest(path, content);
   const issues = inspected.issues;
@@ -659,6 +700,16 @@ export function validateRecordingManifest(path: string, content: string) {
     }
     seenChapterIds.add(chapter.chapter_id);
 
+    if (chapter.commentary_id === null) {
+      if (index !== 0) {
+        issues.push({
+          code: "invalid_chapter",
+          path,
+          message: "Only the first chapter may have a null commentary_id for source before the first accepted section.",
+        });
+      }
+      continue;
+    }
     if (seenTargets.has(chapter.commentary_id)) {
       issues.push({
         code: "duplicate_chapter_target",
@@ -678,7 +729,7 @@ export function validateRecordingManifest(path: string, content: string) {
     }
   }
 
-  issues.push(...validateAcceptedProduction(manifest, path));
+  issues.push(...validateOpeningScreenplay(manifest, path), ...validateAcceptedProduction(manifest, path));
 
   return issues;
 }

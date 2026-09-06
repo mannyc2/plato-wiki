@@ -62,7 +62,8 @@ import {
   type ExactIdRecord,
   type SearchRecordInput,
 } from "./search.js";
-import { validateGeneratedSite, type GeneratedSiteValidationSummary } from "./validate.js";
+import { recordingChapterTarget, validateGeneratedSite, type GeneratedSiteValidationSummary } from "./validate.js";
+import { normalizeReadingSourceText, readReadingSource, readingSourceLines, readingSourceMatches, readingSourceParagraphs } from "./reading-source.js";
 
 export { parseObservationLedger };
 
@@ -87,8 +88,14 @@ export type BuildStaticSiteOptions = {
 const CONTENT_LICENSE_URL = "https://creativecommons.org/licenses/by-sa/4.0/";
 const DEFAULT_READING_PAGE_TARGET_BYTES = 1_250_000;
 
+type ReadingSourceSlice = {
+  section: SiteCommentaryBlock | null;
+  verses: readonly ReadingVerse[];
+  placements: ReadingPlacement[];
+};
+
 type ReadingUnit = {
-  section: SiteCommentaryBlock;
+  source: ReadingSourceSlice;
   commentaryIds: string[];
   markers: string[];
   html: string;
@@ -105,7 +112,7 @@ type ReadingPagePlan = {
   partCount: number;
   path: string;
   commentary: SiteCommentaryDialogue;
-  sections: SiteCommentaryBlock[];
+  sources: ReadingSourceSlice[];
   commentaryIds: string[];
   markers: string[];
 };
@@ -477,8 +484,8 @@ function commentaryAttribution(block: SiteCommentaryBlock) {
 // the parent entry the moment a reader opened its citations.
 // ---------------------------------------------------------------------------
 
-function marginGroupName(section: SiteCommentaryBlock) {
-  return `margin-${section.commentaryId}`;
+function marginGroupName(unitId: string) {
+  return `margin-${unitId}`;
 }
 
 function slotGroupHtml(marker: string, entries: readonly string[], cls = "") {
@@ -509,7 +516,7 @@ function sectionEntryHtml(
     : `<span>${escapeHtml(section.stephanusSpan)}</span>`;
   return `<div class="sec-head ${variant}">
   <p class="slot-loc">${locator}</p>
-  <details class="entry commentary" name="${escapeHtml(marginGroupName(section))}">
+  <details class="entry commentary" name="${escapeHtml(marginGroupName(section.commentaryId))}">
     <summary><span class="mark mark-commentary"></span><span class="entry-label section-label">${escapeHtml(
       label,
     )}</span></summary>
@@ -525,9 +532,9 @@ function sectionEntryHtml(
 
 // Non-section blocks (notice, argument, crossref …) are slot-grouped entries
 // at their anchor marker, labeled by title when authored, kind otherwise.
-function noteEntryHtml(pagePath: string, data: SiteData, section: SiteCommentaryBlock, block: SiteCommentaryBlock) {
+function noteEntryHtml(pagePath: string, data: SiteData, unitId: string, block: SiteCommentaryBlock) {
   const label = block.title ? block.title : titleCase(block.blockKind);
-  return `<details class="entry commentary" name="${escapeHtml(marginGroupName(section))}" id="${escapeHtml(
+  return `<details class="entry commentary" name="${escapeHtml(marginGroupName(unitId))}" id="${escapeHtml(
     block.commentaryId,
   )}">
     <summary><span class="mark mark-commentary"></span><span class="entry-label">${escapeHtml(label)}</span></summary>
@@ -671,6 +678,7 @@ type ReadingVerse = {
   english: ReadingLine[];
   startChar: number;
   markers: string[];
+  sourcePrefix?: true;
 };
 
 type DialogueReadingLayout = {
@@ -681,8 +689,7 @@ type DialogueReadingLayout = {
 
 function splitReadingLines(stream: string, baseChar: number, canonical: ReadonlySet<string>): ReadingLine[] {
   const lines: ReadingLine[] = [];
-  let offset = 0;
-  for (const raw of stream.split("\n")) {
+  for (const { text: raw, startChar: offset } of readingSourceLines(stream)) {
     const tokens: ReadingToken[] = [];
     for (const match of raw.matchAll(BRACE_TOKEN_PATTERN)) {
       const markerMatch = /^\{(\d+[a-e])\}$/u.exec(match[0]!);
@@ -698,7 +705,6 @@ function splitReadingLines(stream: string, baseChar: number, canonical: Readonly
     if (raw.replace(BRACE_TOKEN_PATTERN, "").trim().length > 0 || tokens.some((token) => token.marker !== null)) {
       lines.push({ text: raw, startChar: baseChar + offset, tokens });
     }
-    offset += raw.length + 1;
   }
   return lines;
 }
@@ -772,14 +778,11 @@ function dialogueReadingLayout(data: SiteData, commentary: SiteCommentaryDialogu
 
   const rows = commentary.spine;
   const canonical = new Set(rows.map((row) => row.marker));
-  const baseChar = rows[0]?.startChar ?? 0;
-  const greekStream = rows.map((row) => row.greek).join("");
-  const hasEnglish = rows.some((row) => row.english !== undefined);
-  // Defined English slices are contiguous (a missing marker's text joins the
-  // preceding slice), so their concatenation reconstructs the English stream.
-  const englishStream = hasEnglish
-    ? rows.flatMap((row) => (row.english === undefined ? [] : [row.english])).join("")
-    : "";
+  const greekStream = readReadingSource(commentary.dialogue, "grc")!;
+  const englishSource = readReadingSource(commentary.dialogue, "en");
+  const baseChar = 0;
+  const hasEnglish = englishSource !== undefined;
+  const englishStream = englishSource ?? "";
 
   const greekLines = splitReadingLines(greekStream, baseChar, canonical);
   const englishLines = hasEnglish ? splitReadingLines(englishStream, 0, canonical) : [];
@@ -799,9 +802,28 @@ function dialogueReadingLayout(data: SiteData, commentary: SiteCommentaryDialogu
       .map((match) => match[1]!)
       .filter((marker) => canonical.has(marker)),
   );
-  const blocks = alignReadingBlocks(greekLines, englishLines, shared);
+  const firstMarkedLine = (lines: readonly ReadingLine[]) => {
+    const index = lines.findIndex((line) => line.tokens.some((token) => token.marker !== null));
+    return index < 0 ? lines.length : index;
+  };
+  const greekBodyStart = firstMarkedLine(greekLines);
+  const englishBodyStart = firstMarkedLine(englishLines);
+  const firstGreekBodyLine = greekLines[greekBodyStart];
+  const verseStart = (line: ReadingLine) => line === firstGreekBodyLine
+    ? line.startChar + (line.tokens.find((token) => token.marker !== null)?.offset ?? 0)
+    : line.startChar;
+  const blocks = alignReadingBlocks(greekLines.slice(greekBodyStart), englishLines.slice(englishBodyStart), shared);
 
   const verses: ReadingVerse[] = [];
+  if (greekBodyStart > 0 || englishBodyStart > 0) {
+    verses.push({
+      greek: greekLines.slice(0, greekBodyStart),
+      english: englishLines.slice(0, englishBodyStart),
+      startChar: 0,
+      markers: [],
+      sourcePrefix: true,
+    });
+  }
   let cursor = baseChar;
   for (const block of blocks) {
     const paired = block.greek.length > 0 && block.greek.length === block.english.length;
@@ -810,7 +832,7 @@ function dialogueReadingLayout(data: SiteData, commentary: SiteCommentaryDialogu
         verses.push({
           greek: [greekLine],
           english: [block.english[index]!],
-          startChar: greekLine.startChar,
+          startChar: verseStart(greekLine),
           markers: greekLine.tokens.flatMap((token) => (token.marker === null ? [] : [token.marker])),
         });
       }
@@ -818,7 +840,7 @@ function dialogueReadingLayout(data: SiteData, commentary: SiteCommentaryDialogu
       verses.push({
         greek: block.greek,
         english: block.english,
-        startChar: block.greek[0]?.startChar ?? cursor,
+        startChar: block.greek[0] ? verseStart(block.greek[0]) : cursor,
         markers: block.greek.flatMap((line) =>
           line.tokens.flatMap((token) => (token.marker === null ? [] : [token.marker])),
         ),
@@ -843,53 +865,47 @@ function dialogueReadingLayout(data: SiteData, commentary: SiteCommentaryDialogu
   return layout;
 }
 
-// A rejected section must not make accepted commentary disappear with it. The
-// source/placement order is the only fallback authority here: a before note
-// moves to the next visible section, while an after note moves to the previous
-// visible section. Exact marker containment wins when a visible section still
-// covers the note's source marker. The note's source_ref is left untouched.
-function readingPlacements(
-  layout: DialogueReadingLayout,
-  sections: readonly SiteCommentaryBlock[],
-  others: readonly SiteCommentaryBlock[],
-): ReadonlyMap<string, ReadingPlacement[]> {
-  const placements = new Map<string, ReadingPlacement[]>(sections.map((section) => [section.commentaryId, []]));
-  const markersFor = (section: SiteCommentaryBlock) =>
-    layout.verses
-      .filter((verse) => verse.startChar >= section.sourceRef.startChar && verse.startChar < section.sourceRef.endChar)
-      .flatMap((verse) => verse.markers);
-  const sectionMarkers = new Map(sections.map((section) => [section.commentaryId, markersFor(section)]));
-  const exactSection = (block: SiteCommentaryBlock, marker: string) =>
-    sections.find((section) => sectionMarkers.get(section.commentaryId)?.includes(marker));
+const readingSourceSliceCache = new WeakMap<SiteData, Map<string, ReadingSourceSlice[]>>();
 
-  for (const block of others) {
-    const sourceMarker = block.placement === "after" ? block.sourceRef.endMarker : block.sourceRef.startMarker;
-    let section = exactSection(block, sourceMarker);
-    if (!section) {
-      section = sections.find(
-        (candidate) =>
-          candidate.sourceRef.startChar <= block.sourceRef.startChar &&
-          candidate.sourceRef.endChar >= block.sourceRef.endChar,
-      );
-    }
-    if (!section) {
-      const sourceChar = block.sourceRef.startChar;
-      if (block.placement === "after") {
-        section = [...sections].reverse().find((candidate) => candidate.sourceRef.endChar <= sourceChar) ?? sections[0];
-      } else {
-        section = sections.find((candidate) => candidate.sourceRef.startChar >= sourceChar) ?? sections.at(-1);
-      }
-    }
-    if (!section) continue;
-    const sectionMarkersForBlock = sectionMarkers.get(section.commentaryId) ?? [];
-    const anchorMarker = sectionMarkersForBlock.includes(sourceMarker)
-      ? sourceMarker
-      : block.placement === "after"
-        ? sectionMarkersForBlock.at(-1)
-        : sectionMarkersForBlock[0];
-    placements.get(section.commentaryId)!.push({ block, anchorMarker });
+function readingSourceSlices(data: SiteData, commentary: SiteCommentaryDialogue): ReadingSourceSlice[] {
+  let byDialogue = readingSourceSliceCache.get(data);
+  if (!byDialogue) {
+    byDialogue = new Map();
+    readingSourceSliceCache.set(data, byDialogue);
   }
-  return placements;
+  const cached = byDialogue.get(commentary.dialogue);
+  if (cached) return cached;
+  const visible = visibleCommentaryBlocks(commentary);
+  const sections = visible.filter((block) => block.blockKind === "section");
+  if (sections.length === 0) {
+    throw new Error(`Guided reading ${commentary.dialogue} has visible commentary but no section units.`);
+  }
+  const layout = dialogueReadingLayout(data, commentary);
+  // Section evidence spans describe commentary topics. Source slices instead
+  // partition the entire dialogue at section starts, preserving intact aligned
+  // turns before the first section, between sections, and through the ending.
+  const boundaries = sections.map((section) => {
+    const index = layout.verses.findIndex((verse) => !verse.sourcePrefix && verse.startChar >= section.sourceRef.startChar);
+    return index < 0 ? layout.verses.length : index;
+  });
+  const slices: ReadingSourceSlice[] = [];
+  if (boundaries[0]! > 0) {
+    slices.push({ section: null, verses: layout.verses.slice(0, boundaries[0]), placements: [] });
+  }
+  for (const [index, section] of sections.entries()) {
+    slices.push({ section, verses: layout.verses.slice(boundaries[index], boundaries[index + 1]), placements: [] });
+  }
+  const byMarker = new Map(slices.flatMap((slice) =>
+    slice.verses.flatMap((verse) => verse.markers.map((marker) => [marker, slice] as const)),
+  ));
+  for (const block of visible.filter((entry) => entry.blockKind !== "section")) {
+    const anchorMarker = block.placement === "after" ? block.sourceRef.endMarker : block.sourceRef.startMarker;
+    const slice = byMarker.get(anchorMarker);
+    if (!slice) throw new Error(`Guided reading ${commentary.dialogue} cannot place ${block.commentaryId} at ${anchorMarker}.`);
+    slice.placements.push({ block, anchorMarker });
+  }
+  byDialogue.set(commentary.dialogue, slices);
+  return slices;
 }
 
 // Render one raw line: escape text, drop line-initial marker tokens (the rail
@@ -947,7 +963,10 @@ function readingLineHtml(
   }
   emitText(cursor, line.text.length);
   if (html.trim() === "") return "";
-  return lang === "grc" ? `<p lang="grc">${html}</p>` : `<p>${html}</p>`;
+  const speaker = line.speaker
+    ? ` data-source-speaker="${escapeHtml(line.text.slice(line.speaker.start, line.speaker.start + line.speaker.length))}"`
+    : "";
+  return `<p lang="${lang}" data-source-start="${line.startChar}"${speaker}>${html}</p>`;
 }
 
 function apparatusRecordsForRow(
@@ -968,7 +987,7 @@ function apparatusRecordsForRow(
 function apparatusEntryHtml(
   pagePath: string,
   data: SiteData,
-  section: SiteCommentaryBlock,
+  unitId: string,
   record: SiteApparatusRecord,
 ) {
   const sign = apparatusSign(record.kind);
@@ -985,7 +1004,7 @@ function apparatusEntryHtml(
     }),
   ];
   const cites = citeLinks.length ? `<p class="cites"><strong>Cites.</strong> ${citeLinks.join(", ")}</p>` : "";
-  return `<details class="entry apparatus" name="${escapeHtml(marginGroupName(section))}" id="${escapeHtml(
+  return `<details class="entry apparatus" name="${escapeHtml(marginGroupName(unitId))}" id="${escapeHtml(
     record.apparatusId,
   )}" lang="en">
     <summary><span class="mark mark-sign">${sign.glyph}</span><span class="entry-label">${escapeHtml(
@@ -1015,23 +1034,28 @@ function recordingPlayer(data: SiteData, commentary: SiteCommentaryDialogue, pag
   );
   const chapterButtons = recording.chapters
     .map((chapter, index) => {
-      const section = sectionsById.get(chapter.commentary_id);
-      if (!section) {
+      const commentaryId = chapter.commentary_id;
+      const opening = commentaryId === null;
+      const section = opening ? undefined : sectionsById.get(commentaryId);
+      if (!opening && !section) {
         throw new Error(
           `${recordingKind} ${recording.recordingId} chapter target is not rendered: ${chapter.commentary_id}.`,
         );
       }
-      const title = chapter.title ?? section.title ?? `Chapter ${index + 1}`;
+      const title = opening ? "Opening" : chapter.title ?? section?.title ?? `Chapter ${index + 1}`;
       const startSeconds = chapter.start_frame / 48_000;
       const time = formatRecordingTime(startSeconds);
-      const target = data.commentaryPageById.get(chapter.commentary_id);
+      const targetId = recordingChapterTarget(commentaryId);
+      const target = opening
+        ? `${readingPath(commentary.dialogue, 1)}#${targetId}`
+        : data.commentaryPageById.get(commentaryId);
       if (!target) {
         throw new Error(
           `${recordingKind} ${recording.recordingId} chapter target has no generated reading page: ${chapter.commentary_id}.`,
         );
       }
       const targetHref = `${pathToRoot(pagePath)}${target}`;
-      return `<button type="button" class="chapter-button" data-recording-chapter data-chapter-id="${escapeHtml(chapter.chapter_id)}" data-chapter-frame="${chapter.start_frame}" data-chapter-seconds="${startSeconds}" data-chapter-target="${escapeHtml(chapter.commentary_id)}" data-chapter-href="${escapeHtml(targetHref)}" aria-controls="${audioId}" aria-label="Seek to ${escapeHtml(title)} at ${time}">
+      return `<button type="button" class="chapter-button" data-recording-chapter data-chapter-id="${escapeHtml(chapter.chapter_id)}" data-chapter-frame="${chapter.start_frame}" data-chapter-seconds="${startSeconds}" data-chapter-target="${escapeHtml(targetId)}" data-chapter-href="${escapeHtml(targetHref)}" aria-controls="${audioId}" aria-label="Seek to ${escapeHtml(title)} at ${time}">
   <span>${escapeHtml(title)}</span><time>${time}</time>
 </button>`;
     })
@@ -1069,8 +1093,8 @@ function recordingPlayer(data: SiteData, commentary: SiteCommentaryDialogue, pag
 
 // A record's margin entry: collapsed to kind mark + label + span; the lead
 // and Full record link open in a floating card, so the dialogue never moves.
-function recordEntryHtml(pagePath: string, section: SiteCommentaryBlock, record: MarginRecord) {
-  return `<details class="entry rec" name="${escapeHtml(marginGroupName(section))}">
+function recordEntryHtml(pagePath: string, unitId: string, record: MarginRecord) {
+  return `<details class="entry rec" name="${escapeHtml(marginGroupName(unitId))}">
     <summary><span class="mark mark-${record.kind}"></span><span class="entry-label">${escapeHtml(
       record.label,
     )}</span><span class="entry-ref">${escapeHtml(record.span)}</span></summary>
@@ -1085,14 +1109,20 @@ function readingUnit(
   data: SiteData,
   commentary: SiteCommentaryDialogue,
   layout: DialogueReadingLayout,
-  section: SiteCommentaryBlock,
-  placements: readonly ReadingPlacement[],
+  source: ReadingSourceSlice,
   pagePath: string,
 ): ReadingUnit {
-  const commentaryIds = [section.commentaryId];
+  const { section, verses, placements } = source;
+  const unitId = section?.commentaryId ?? recordingChapterTarget(null);
+  const commentaryIds = section ? [section.commentaryId] : [];
   const markers: string[] = [];
-  const verses = layout.verses.filter(
-    (verse) => verse.startChar >= section.sourceRef.startChar && verse.startChar < section.sourceRef.endChar,
+  // An opening recording chapter points into the source itself. Marker-only
+  // rows and speaker labels have no spoken text to seek to.
+  const openingVerse = layout.verses.find((verse) =>
+    [...verse.greek, ...verse.english].some((line) => {
+      const textStart = line.speaker ? line.speaker.start + line.speaker.length : 0;
+      return line.text.slice(textStart).replace(BRACE_TOKEN_PATTERN, "").trim().length > 0;
+    }),
   );
   // During the planning pass no marker paths are registered yet and every
   // milestone renders as a local fragment; the final render pass resolves
@@ -1105,10 +1135,10 @@ function readingUnit(
     return target === pagePath ? local : `${pathToRoot(pagePath)}${escapeHtml(target)}${local}`;
   };
 
-  const firstMarker = verses.find((verse) => verse.markers.length > 0)?.markers[0] ?? section.sourceRef.startMarker;
-  const sectionLocatorHref = resolveMilestoneHref(firstMarker);
+  const firstMarker = verses.find((verse) => verse.markers.length > 0)?.markers[0] ?? section?.sourceRef.startMarker;
+  const sectionLocatorHref = firstMarker ? resolveMilestoneHref(firstMarker) : undefined;
   const noteGroup = (block: SiteCommentaryBlock, marker: string) =>
-    slotGroupHtml(marker, [noteEntryHtml(pagePath, data, section, block)], " for-comm");
+    slotGroupHtml(marker, [noteEntryHtml(pagePath, data, unitId, block)], " for-comm");
 
   const rows: string[] = [];
   let sectionHeadPlaced = false;
@@ -1160,14 +1190,14 @@ function readingUnit(
     if (slots.length === 0 && greekParagraphs === "" && englishParagraphs === "") continue;
 
     const marginParts: string[] = [];
-    if (!sectionHeadPlaced) {
+    if (!sectionHeadPlaced && section) {
       marginParts.push(sectionEntryHtml(pagePath, data, section, sectionLocatorHref, "sec-desktop"));
       sectionHeadPlaced = true;
     }
     marginParts.push(...before.map(({ block, anchorMarker }) => noteGroup(block, anchorMarker!)));
     for (const { marker, records, rendered } of slots) {
       if (records.length === 0) continue;
-      const entries = rendered.map((record) => recordEntryHtml(pagePath, section, record));
+      const entries = rendered.map((record) => recordEntryHtml(pagePath, unitId, record));
       if (records.length > rendered.length) {
         const overflow = records.slice(rendered.length);
         const recordsPage = splitTarget(overflow[0]!.target).path;
@@ -1180,7 +1210,7 @@ function readingUnit(
     for (const { marker, apparatus } of slots) {
       if (apparatus.length === 0) continue;
       marginParts.push(
-        slotGroupHtml(marker, apparatus.map((record) => apparatusEntryHtml(pagePath, data, section, record)), " for-app"),
+        slotGroupHtml(marker, apparatus.map((record) => apparatusEntryHtml(pagePath, data, unitId, record)), " for-app"),
       );
     }
     marginParts.push(...after.map(({ block, anchorMarker }) => noteGroup(block, anchorMarker!)));
@@ -1188,7 +1218,7 @@ function readingUnit(
     const englishCell = layout.hasEnglish ? `\n    <div class="v-english">${englishParagraphs}</div>` : "";
     rows.push(`<div class="verse">
   <div class="v-margin">${railHtml}</div>
-  <div class="v-text">
+  <div class="v-text"${verse === openingVerse ? ` id="${recordingChapterTarget(null)}"` : ""}>
     <div class="v-greek">${greekParagraphs}</div>${englishCell}
   </div>
   <div class="v-notes">${marginParts.join("\n")}</div>
@@ -1197,8 +1227,8 @@ function readingUnit(
   const unrendered = placements.filter(({ block }) => !renderedPlacementIds.has(block.commentaryId));
   commentaryIds.push(...unrendered.map(({ block }) => block.commentaryId));
   // A section whose span renders no verse rows still shows its commentary.
-  if (!sectionHeadPlaced || unrendered.length > 0) {
-    const fallbackNotes = unrendered.map(({ block }) => noteEntryHtml(pagePath, data, section, block));
+  if (section && (!sectionHeadPlaced || unrendered.length > 0)) {
+    const fallbackNotes = unrendered.map(({ block }) => noteEntryHtml(pagePath, data, unitId, block));
     rows.push(`<div class="verse">
   <div class="v-margin"></div>
   <div class="v-text"></div>
@@ -1207,11 +1237,11 @@ function readingUnit(
   }
 
   return {
-    section,
+    source,
     commentaryIds,
     markers,
-    html: `<section class="unit" id="${escapeHtml(section.commentaryId)}">
-${sectionEntryHtml(pagePath, data, section, sectionLocatorHref, "sec-mobile")}
+    html: `<section class="unit"${section ? ` id="${escapeHtml(section.commentaryId)}"` : ' aria-label="Opening"'}>
+${section ? sectionEntryHtml(pagePath, data, section, sectionLocatorHref, "sec-mobile") : ""}
 ${rows.join("\n")}
 </section>`,
   };
@@ -1231,16 +1261,10 @@ function planReadingPages(data: SiteData, targetBytes: number) {
   )) {
     const visible = visibleCommentaryBlocks(commentary);
     if (visible.length === 0) continue;
-    const sections = visible.filter((block) => block.blockKind === "section");
-    const others = visible.filter((block) => block.blockKind !== "section");
-    if (sections.length === 0) {
-      throw new Error(`Guided reading ${commentary.dialogue} has visible commentary but no section units.`);
-    }
     const provisionalPath = readingPath(commentary.dialogue, 1);
     const readingLayout = dialogueReadingLayout(data, commentary);
-    const placements = readingPlacements(readingLayout, sections, others);
-    const units = sections.map((section) =>
-      readingUnit(data, commentary, readingLayout, section, placements.get(section.commentaryId) ?? [], provisionalPath),
+    const units = readingSourceSlices(data, commentary).map((source) =>
+      readingUnit(data, commentary, readingLayout, source, provisionalPath),
     );
     const seenIds = new Set<string>();
     for (const unit of units) {
@@ -1282,7 +1306,7 @@ function planReadingPages(data: SiteData, targetBytes: number) {
         partCount: pageUnits.length,
         path: readingPath(commentary.dialogue, index + 1),
         commentary,
-        sections: page.map((unit) => unit.section),
+        sources: page.map((unit) => unit.source),
         commentaryIds: page.flatMap((unit) => unit.commentaryIds),
         markers: page.flatMap((unit) => unit.markers),
       });
@@ -1313,13 +1337,9 @@ const MARKS_KEY = `<details class="marks-key">
 
 function readingPage(data: SiteData, plan: ReadingPagePlan, dialoguePlans: readonly ReadingPagePlan[]) {
   const { commentary, dialogue, path: pagePath } = plan;
-  const visible = visibleCommentaryBlocks(commentary);
-  const others = visible.filter((block) => block.blockKind !== "section");
   const readingLayout = dialogueReadingLayout(data, commentary);
-  const sections = visible.filter((block) => block.blockKind === "section");
-  const placements = readingPlacements(readingLayout, sections, others);
-  const unitsHtml = plan.sections
-    .map((section) => readingUnit(data, commentary, readingLayout, section, placements.get(section.commentaryId) ?? [], pagePath).html)
+  const unitsHtml = plan.sources
+    .map((source) => readingUnit(data, commentary, readingLayout, source, pagePath).html)
     .join("\n");
   const languageControl = readingLayout.hasEnglish
     ? `<label class="tool-select">Text<select data-language-picker>
@@ -1421,7 +1441,7 @@ const SEARCH_GLYPH = `<svg viewBox="0 0 180 104" aria-hidden="true" focusable="f
   <line x1="138" x2="157" y1="72" y2="91" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
 </svg>`;
 
-function isCompleteReading(commentary: SiteCommentaryDialogue, recording: SiteRecording) {
+function isCompleteReading(data: SiteData, commentary: SiteCommentaryDialogue, recording: SiteRecording) {
   const activeBlocks = visibleCommentaryBlocks(commentary);
   const acceptedSections = activeBlocks.filter(
     (block) => block.blockKind === "section" && block.reviewStatus === "accepted",
@@ -1430,20 +1450,23 @@ function isCompleteReading(commentary: SiteCommentaryDialogue, recording: SiteRe
     activeBlocks.length === 0 ||
     activeBlocks.some((block) => block.reviewStatus !== "accepted") ||
     acceptedSections.length === 0 ||
-    commentary.spine.length === 0 ||
-    commentary.spine.some((row) => row.greek.trim().length === 0 || !row.english?.trim())
+    commentary.spine.length === 0
   ) {
     return false;
   }
 
-  const wholeSpineCovered = commentary.spine.every((row) =>
-    acceptedSections.some(
-      (section) => row.startChar >= section.sourceRef.startChar && row.startChar < section.sourceRef.endChar,
-    ),
-  );
-  if (!wholeSpineCovered) return false;
+  const verses = readingSourceSlices(data, commentary).flatMap((source) => source.verses);
+  for (const language of ["grc", "en"] as const) {
+    const expected = readingSourceParagraphs(commentary.dialogue, language);
+    const rendered = verses.flatMap((verse) => language === "grc" ? verse.greek : verse.english)
+      .map((line) => ({ startChar: line.startChar, text: normalizeReadingSourceText(line.text) }))
+      .filter((line) => line.text !== "");
+    if (expected.length === 0 || !readingSourceMatches(rendered, expected)) return false;
+  }
 
-  const chapterTargets = new Set(recording.chapters.map((chapter) => chapter.commentary_id));
+  const chapterTargets = new Set(recording.chapters.flatMap((chapter) =>
+    chapter.commentary_id === null ? [] : [chapter.commentary_id],
+  ));
   return (
     chapterTargets.size === acceptedSections.length &&
     acceptedSections.every((section) => chapterTargets.has(section.commentaryId))
@@ -1454,7 +1477,7 @@ function homeFeaturedReading(data: SiteData, pagePath: string): string {
   const candidates = [...data.commentaryByDialogue.values()]
     .filter((commentary) => {
       const recording = data.recordingsByDialogue.get(commentary.dialogue);
-      return recording !== undefined && isCompleteReading(commentary, recording);
+      return recording !== undefined && isCompleteReading(data, commentary, recording);
     })
     .sort((a, b) => {
       const aAccepted = data.recordingsByDialogue.get(a.dialogue)?.status === "accepted" ? 0 : 1;
@@ -4041,7 +4064,7 @@ export function buildStaticSite(options: BuildStaticSiteOptions = {}): BuiltStat
       durationSeconds: recording.durationSeconds,
       status: recording.status,
       assetPath: recording.siteAssetPath,
-      chapterTargets: recording.chapters.map((chapter) => chapter.commentary_id),
+      chapterTargets: recording.chapters.map((chapter) => recordingChapterTarget(chapter.commentary_id)),
       chapterIds: recording.chapters.map((chapter) => chapter.chapter_id),
       chapterStartFrames: recording.chapters.map((chapter) => chapter.start_frame),
       chapterStartSeconds: recording.chapters.map((chapter) => chapter.start_frame / 48_000),
