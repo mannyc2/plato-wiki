@@ -4,6 +4,7 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, realpath
 import { tmpdir } from "node:os";
 import { join, relative } from "node:path";
 import { gzipSync } from "node:zlib";
+import { buildCompletenessFacts } from "../completeness.js";
 import {
   assertOntologyAuditFinalAdjustmentRematerializationPending,
   expectedOntologyAuditFinalAdjustmentAction,
@@ -1688,10 +1689,14 @@ review_status: accepted
     const manifestContent = readFileSync(manifestPath, "utf8");
     const acceptanceContent = readFileSync(join(packagePath, "acceptance.json"), "utf8");
     expect(verifyOntologyAuditPackage(options)).toEqual([]);
+    const beforeRelationAudit = buildCompletenessFacts(options).relationAudit;
+    expect(beforeRelationAudit.semanticProofVerified).toBe(true);
 
     write("docs/ontology-audit-protocol.md", "# Later protocol clarification\n");
     write("packages/harness/src/wiki/ontology-audit.ts", "// Later validator implementation.\n");
     expect(verifyOntologyAuditPackage(options)).toEqual([]);
+    expect(verifyOntologyAuditSemanticPreacceptance(options)).toEqual([]);
+    expect(buildCompletenessFacts(options).relationAudit).toEqual(beforeRelationAudit);
     expect(readFileSync(manifestPath, "utf8")).toBe(manifestContent);
     expect(readFileSync(join(packagePath, "acceptance.json"), "utf8")).toBe(acceptanceContent);
 

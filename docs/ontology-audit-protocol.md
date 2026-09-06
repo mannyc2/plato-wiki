@@ -284,8 +284,8 @@ closure verification, with every machine-evidence issue set required to be
 empty. Generic schema, integrity, projection, and site validators own the current
 generated output. Accepted historical evidence remains immutable; the verifier
 fails closed on any false acceptance claim.
-Tool and protocol descriptors must match current files during pending work,
-preacceptance, and candidate publication; after acceptance they remain historical
+Tool and protocol descriptors must match current files during pending work and
+candidate publication; all reads of accepted evidence retain historical producer
 provenance protected by the acceptance record's manifest hash.
 
 ## Commands
