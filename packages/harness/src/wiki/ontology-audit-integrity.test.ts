@@ -5,6 +5,11 @@ import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { terminalOntologyAuditManifest } from "./ontology-audit-finalization.js";
 import {
+  assertOntologyClosureEvidenceProof,
+  recomputeOntologyClosureEvidence,
+  verifyOntologyClosureEvidenceFile,
+} from "./ontology-closure-evidence.js";
+import {
   validateOntologyAcceptedMachineEvidence,
   validateOntologyAuditReviewEvidence,
   ontologyAuditChangeKind,
@@ -246,10 +251,12 @@ test("audit change classification is fully determined by baseline and final poin
   expect(ontologyAuditChangeKind(baseline, modified)).toBe("modified");
 });
 
-test("accepted machine evidence is content-bound and internally recomputable", () => {
+function machineEvidenceFixture() {
   const root = realpathSync(mkdtempSync(join(realpathSync(tmpdir()), "ontology-audit-machine-evidence-")));
   roots.push(root);
-  const packagePath = join(root, "wiki/ontology-audits/snapshot");
+  const packageRelativePath = `wiki/ontology-audits/sha256-${HASH}`;
+  const packagePath = join(root, packageRelativePath);
+  const siteDirectory = join(root, "current-site");
   const canonicalGeneratedPath = join(root, "derived/plato/joins/fixture.toon");
   for (const directory of [
     "derived/plato/voices",
@@ -259,25 +266,18 @@ test("accepted machine evidence is content-bound and internally recomputable", (
   write(canonicalGeneratedPath, "x");
   write(join(root, "audio/coverage.md"), "audio");
   write(join(root, "wiki/completeness.md"), "complete");
+  write(join(siteDirectory, "index.html"), "<!doctype html><title>Original edition</title>\n");
+  const historical = recomputeOntologyClosureEvidence({ repoRoot: root, siteDirectory });
   const artifacts = [
     { path: "derived/plato/joins/fixture.toon", bytes: 1, sha256: sha256("x") },
     { path: "audio/coverage.md", bytes: 5, sha256: sha256("audio") },
     { path: "wiki/completeness.md", bytes: 8, sha256: sha256("complete") },
-    { path: "site/index.html", bytes: 1, sha256: HASH },
+    ...historical.site_artifacts.map((entry) => ({ ...entry, path: `site/${entry.path}` })),
   ];
   const digest = sha256(canonicalJson([...artifacts].sort((left, right) => left.path.localeCompare(right.path))));
   const regenerationPath = join(packagePath, "regeneration.json");
   const evidencePath = join(packagePath, "closure-evidence.json");
-  const evidenceContent = `${JSON.stringify({
-    schema_version: 1,
-    state: "complete",
-    staleAliasIssues: [],
-    rejectedReaderLeaks: [],
-    terminalStateIssues: [],
-    acceptedClaimLinkIssues: [],
-    acceptedCommentaryCitationIssues: [],
-    acceptedRelationFictionIssues: [],
-  }, null, 2)}\n`;
+  const evidenceContent = historical.content;
   write(evidencePath, evidenceContent);
   write(regenerationPath, `${JSON.stringify({
     schema_version: 1,
@@ -287,16 +287,14 @@ test("accepted machine evidence is content-bound and internally recomputable", (
     closure_evidence_one_sha256: sha256(evidenceContent),
     closure_evidence_two_sha256: sha256(evidenceContent),
     closure_evidence_sha256: sha256(evidenceContent),
-    closure_evidence_site_tree_sha256: sha256(canonicalJson([
-      { path: "index.html", bytes: 1, sha256: HASH },
-    ])),
+    closure_evidence_site_tree_sha256: historical.site_tree_sha256,
     closure_evidence_bytes: Buffer.byteLength(evidenceContent),
     artifact_count: artifacts.length,
     artifacts,
   }, null, 2)}\n`);
   const bindings = new Map([
-    ["wiki/ontology-audits/snapshot/regeneration.json", sha256(readFileSync(regenerationPath))],
-    ["wiki/ontology-audits/snapshot/closure-evidence.json", sha256(readFileSync(evidencePath))],
+    [`${packageRelativePath}/regeneration.json`, sha256(readFileSync(regenerationPath))],
+    [`${packageRelativePath}/closure-evidence.json`, sha256(readFileSync(evidencePath))],
   ]);
   const acceptance = {
     closure: {
@@ -304,58 +302,86 @@ test("accepted machine evidence is content-bound and internally recomputable", (
       regeneration_two_sha256: digest,
     },
   } as OntologyAuditAcceptance;
-  expect(validateOntologyAcceptedMachineEvidence({
-    repoRoot: root,
-    packagePath,
-    acceptance,
-    receiptArtifacts: bindings,
-  })).toEqual([]);
-
-  const originalRegeneration = readFileSync(regenerationPath, "utf8");
-  const tamperedRegeneration = JSON.parse(originalRegeneration);
-  tamperedRegeneration.closure_evidence_two_sha256 = "b".repeat(64);
-  write(regenerationPath, `${JSON.stringify(tamperedRegeneration, null, 2)}\n`);
-  bindings.set("wiki/ontology-audits/snapshot/regeneration.json", sha256(readFileSync(regenerationPath)));
-  const descriptorIssues = validateOntologyAcceptedMachineEvidence({
+  const validateHistorical = () => validateOntologyAcceptedMachineEvidence({
     repoRoot: root,
     packagePath,
     acceptance,
     receiptArtifacts: bindings,
   });
-  expect(descriptorIssues.some((entry) =>
-    entry.message.includes("byte-identical pass-one/pass-two closure evidence")
-  )).toBe(true);
-  write(regenerationPath, originalRegeneration);
-  bindings.set("wiki/ontology-audits/snapshot/regeneration.json", sha256(readFileSync(regenerationPath)));
+  const currentPaths = { repoRoot: root, packagePath, siteDirectory };
+  return {
+    root,
+    packageRelativePath,
+    regenerationPath,
+    evidencePath,
+    evidenceContent,
+    bindings,
+    currentPaths,
+    historical,
+    validateHistorical,
+  };
+}
 
-  const failedEvidence = JSON.parse(readFileSync(evidencePath, "utf8"));
-  failedEvidence.rejectedReaderLeaks = ["record:observation:rejected"];
-  write(evidencePath, `${JSON.stringify(failedEvidence, null, 2)}\n`);
-  bindings.set("wiki/ontology-audits/snapshot/closure-evidence.json", sha256(readFileSync(evidencePath)));
-  const issues = validateOntologyAcceptedMachineEvidence({
-    repoRoot: root,
-    packagePath,
-    acceptance,
-    receiptArtifacts: bindings,
-  });
-  expect(issues.some((entry) => entry.message === "rejectedReaderLeaks is not empty")).toBe(true);
+describe("historical ontology machine evidence", () => {
+  test("preserves acceptance when current reports and site presentation change without changing semantic closure", () => {
+    const fixture = machineEvidenceFixture();
+    const originalRegeneration = readFileSync(fixture.regenerationPath, "utf8");
+    expect(fixture.validateHistorical()).toEqual([]);
+    const originalProof = verifyOntologyClosureEvidenceFile(fixture.currentPaths);
 
-  write(canonicalGeneratedPath, "y");
-  const mutationIssues = validateOntologyAcceptedMachineEvidence({
-    repoRoot: root,
-    packagePath,
-    acceptance,
-    receiptArtifacts: bindings,
-  });
-  expect(mutationIssues.some((entry) => entry.message.includes("canonical non-site artifact path/hash set"))).toBe(true);
+    write(join(fixture.root, "audio/coverage.md"), "updated audio coverage\n");
+    write(join(fixture.root, "wiki/completeness.md"), "updated edition completeness\n");
+    write(join(fixture.currentPaths.siteDirectory, "index.html"), "<!doctype html><title>Current edition</title>\n");
+    write(join(fixture.currentPaths.siteDirectory, "style.css"), "body { color: #222; }\n");
 
-  write(canonicalGeneratedPath, "x");
-  write(join(root, "derived/plato/joins/unlisted.toon"), "extra");
-  const extraIssues = validateOntologyAcceptedMachineEvidence({
-    repoRoot: root,
-    packagePath,
-    acceptance,
-    receiptArtifacts: bindings,
+    expect(() => assertOntologyClosureEvidenceProof(originalProof, fixture.currentPaths)).toThrow("proof is stale");
+    const currentProof = verifyOntologyClosureEvidenceFile(fixture.currentPaths);
+    expect(currentProof.site_tree_sha256).not.toBe(fixture.historical.site_tree_sha256);
+    expect(currentProof.evidence).toEqual(fixture.historical.evidence);
+    expect(fixture.validateHistorical()).toEqual([]);
+    expect(readFileSync(fixture.regenerationPath, "utf8")).toBe(originalRegeneration);
+    expect(readFileSync(fixture.evidencePath, "utf8")).toBe(fixture.evidenceContent);
   });
-  expect(extraIssues.some((entry) => entry.message.includes("canonical non-site artifact path/hash set"))).toBe(true);
+
+  test("rejects altered historical files and missing receipt bindings", () => {
+    const fixture = machineEvidenceFixture();
+    write(fixture.regenerationPath, `${readFileSync(fixture.regenerationPath, "utf8")}\n`);
+    expect(fixture.validateHistorical().some((entry) => entry.message.includes("is not hash-bound by the acceptance receipt"))).toBe(true);
+    fixture.bindings.delete(`${fixture.packageRelativePath}/closure-evidence.json`);
+    expect(fixture.validateHistorical().filter((entry) => entry.message.includes("is not hash-bound by the acceptance receipt"))).toHaveLength(2);
+  });
+
+  test("rejects internally inconsistent regeneration even when its changed bytes are rebound", () => {
+    const fixture = machineEvidenceFixture();
+    const originalRegeneration = readFileSync(fixture.regenerationPath, "utf8");
+    const mutations: Array<{ field: string; value: unknown; message: string }> = [
+      { field: "closure_evidence_two_sha256", value: "b".repeat(64), message: "byte-identical pass-one/pass-two closure evidence" },
+      { field: "regeneration_two_sha256", value: "b".repeat(64), message: "regeneration hashes do not bind" },
+      { field: "closure_evidence_site_tree_sha256", value: "b".repeat(64), message: "site-tree hash does not bind" },
+      { field: "artifacts", value: [], message: "regeneration receipt has an invalid shape" },
+    ];
+    for (const mutation of mutations) {
+      const changed = JSON.parse(originalRegeneration) as Record<string, unknown>;
+      changed[mutation.field] = mutation.value;
+      write(fixture.regenerationPath, `${JSON.stringify(changed, null, 2)}\n`);
+      fixture.bindings.set(`${fixture.packageRelativePath}/regeneration.json`, sha256(readFileSync(fixture.regenerationPath)));
+      expect(fixture.validateHistorical().some((entry) => entry.message.includes(mutation.message))).toBe(true);
+    }
+  });
+
+  test("rejects nonzero archived semantic evidence even when its file hash is rebound", () => {
+    const fixture = machineEvidenceFixture();
+    const failedEvidence = JSON.parse(fixture.evidenceContent) as Record<string, unknown>;
+    failedEvidence.rejectedReaderLeaks = ["record:observation:rejected"];
+    write(fixture.evidencePath, `${JSON.stringify(failedEvidence, null, 2)}\n`);
+    fixture.bindings.set(`${fixture.packageRelativePath}/closure-evidence.json`, sha256(readFileSync(fixture.evidencePath)));
+    expect(fixture.validateHistorical().some((entry) => entry.message === "rejectedReaderLeaks is not empty")).toBe(true);
+  });
+
+  test("historical acceptance cannot satisfy a failing current semantic closure proof", () => {
+    const fixture = machineEvidenceFixture();
+    write(join(fixture.root, "wiki/claims/fixture.md"), `\`\`\`yaml\nclaim_id: claim_fixture_0001\nobservation_ids: []\nreview_status: accepted\n\`\`\`\n`);
+    expect(fixture.validateHistorical()).toEqual([]);
+    expect(() => verifyOntologyClosureEvidenceFile(fixture.currentPaths)).toThrow("differs from deterministic recomputation");
+  });
 });

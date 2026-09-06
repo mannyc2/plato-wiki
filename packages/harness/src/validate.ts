@@ -15,6 +15,7 @@ import {
 import { formatAudioProductionIssues, validateAudioProductionArtifacts } from "./audio-production.js";
 import { validateClusterArtifacts } from "./clusters.js";
 import { validateDossierArtifacts } from "./dossiers.js";
+import { collectOrphanObservationTurnJoinFailures } from "./derived/joins.js";
 import { englishStephanusIndexPath, parseStephanusIndexToon, stephanusIndexPath } from "./derived/stephanus.js";
 import { getRepoRoot } from "./paths.js";
 import { validatePublicReleaseReport } from "./public-release.js";
@@ -57,6 +58,7 @@ import {
 } from "./wiki/observation-ledger.js";
 import { formatObservationLedgerValidationError, validateObservationLedger } from "./wiki/observation-validator.js";
 import { collectOntologyAuditFailures } from "./wiki/ontology-audit.js";
+import { collectOntologyCanonicalRegenerationArtifacts } from "./wiki/ontology-regeneration-tree.js";
 import {
   readOntologyVNextRepository,
   readObservationReviewStatuses,
@@ -186,7 +188,7 @@ function relationLedgerPaths() {
 
 function validateObservationLedgers() {
   const repoRoot = getRepoRoot();
-  const failures: string[] = [];
+  const failures = collectOrphanObservationTurnJoinFailures();
   const paths = observationLedgerPaths();
 
   for (const relativePath of paths) {
@@ -573,6 +575,10 @@ export function validateRepo(): ValidationReport {
       throw new Error(`Missing required file: ${relativePath}`);
     }
   }
+
+  // Current tree structure is a repository invariant, independent of the bytes
+  // recorded by a historical ontology regeneration.
+  collectOntologyCanonicalRegenerationArtifacts(repoRoot);
 
   const workflowPolicyFailures = collectChangedCorpusWorkflowFailures();
   if (workflowPolicyFailures.length > 0) {

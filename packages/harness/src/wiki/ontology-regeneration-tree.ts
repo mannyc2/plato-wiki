@@ -21,14 +21,14 @@ export type OntologyRegenerationArtifact = {
 export const ONTOLOGY_ARTIFACT_HASH_CHUNK_BYTES = 64 * 1024;
 
 const GENERATED_PROJECTION_ROOTS = [
-  { path: "derived/plato/joins", suffix: ".toon", preserve: new Set<string>() },
+  { path: "derived/plato/joins", pattern: /^(?:voices\/)?[a-z0-9-]+\.toon$/u, preserve: new Set<string>() },
   {
     path: "derived/plato/voices",
-    suffix: ".toon",
+    pattern: /^[a-z0-9-]+\.toon$/u,
     preserve: new Set(["cutovers.toml", "sigla.toml"]),
   },
-  { path: "wiki/clusters", suffix: ".jsonl", preserve: new Set<string>() },
-  { path: "wiki/dossiers", suffix: ".json", preserve: new Set<string>() },
+  { path: "wiki/clusters", pattern: /^[^/]+\.jsonl$/u, preserve: new Set<string>() },
+  { path: "wiki/dossiers", pattern: /\.json$/u, preserve: new Set<string>() },
 ] as const;
 
 const FIXED_REGENERATION_WRITE_TARGETS = [
@@ -252,7 +252,7 @@ export function collectOntologyCanonicalRegenerationArtifacts(
     return regularFilesRecursively(root, false).flatMap((path) => {
       const projectionPath = relative(root, path).split("\\").join("/");
       if (spec.preserve.has(projectionPath)) return [];
-      if (!projectionPath.endsWith(spec.suffix)) {
+      if (!spec.pattern.test(projectionPath)) {
         throw new Error(`Unexpected file in generated ontology projection ${spec.path}: ${projectionPath}`);
       }
       return [artifact(path, relative(repoRoot, path).split("\\").join("/"), scratch)];

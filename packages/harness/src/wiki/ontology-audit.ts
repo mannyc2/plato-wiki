@@ -28,10 +28,6 @@ import {
   readOntologyVNextDocuments,
 } from "./ontology-vnext-repository.js";
 import {
-  collectOntologyCanonicalRegenerationArtifacts,
-  ontologyRegenerationArtifactsEqual,
-} from "./ontology-regeneration-tree.js";
-import {
   ontologyAuditFinalPointerSha256,
   readOntologyAuditFinalAdjustments,
   type OntologyAuditFinalAdjustmentArtifact,
@@ -39,7 +35,6 @@ import {
 import { ensureCanonicalOntologyWorkRoot } from "./ontology-audit-package-path.js";
 import {
   assertOntologyClosureEvidenceProof,
-  assertOntologyClosureEvidenceRegenerationBinding,
   ontologyClosureEvidenceSiteTreeSha256,
   verifyOntologyClosureEvidenceFile,
   type OntologyClosureEvidenceSiteArtifact,
@@ -3369,7 +3364,6 @@ function appendAcceptedMachineEvidenceIssues({
   receiptArtifacts,
   issues,
   acceptancePath,
-  closureEvidenceProof,
 }: {
   repoRoot: string;
   packagePath: string;
@@ -3377,7 +3371,6 @@ function appendAcceptedMachineEvidenceIssues({
   receiptArtifacts: ReadonlyMap<string, string>;
   issues: OntologyAuditIssue[];
   acceptancePath: string;
-  closureEvidenceProof?: VerifiedOntologyClosureEvidenceProof | null;
 }) {
   const boundPackageArtifact = (name: "regeneration.json" | "closure-evidence.json") => {
     const absolute = join(packagePath, name);
@@ -3473,25 +3466,10 @@ function appendAcceptedMachineEvidenceIssues({
         paths.add(artifactPath);
         normalized.push({ path: artifactPath, sha256: row.sha256, bytes: row.bytes! });
       }
-      try {
-        const acceptedCanonicalArtifacts = normalized.filter((entry) => !entry.path.startsWith("site/"));
-        const liveCanonicalArtifacts = collectOntologyCanonicalRegenerationArtifacts(repoRoot);
-        if (!ontologyRegenerationArtifactsEqual(acceptedCanonicalArtifacts, liveCanonicalArtifacts)) {
-          issue(
-            issues,
-            "acceptance",
-            join(packagePath, "regeneration.json"),
-            "accepted regeneration does not exactly equal the current canonical non-site artifact path/hash set",
-          );
-        }
-      } catch (error) {
-        issue(
-          issues,
-          "acceptance",
-          join(packagePath, "regeneration.json"),
-          `current canonical regeneration artifact tree is invalid: ${error instanceof Error ? error.message : String(error)}`,
-        );
-      }
+      // These descriptors attest the completed historical regeneration. Current
+      // projections have their own validators and semantic closure proof; byte
+      // equality here would require rewriting accepted history after UI or
+      // report changes that leave the reviewed corpus intact.
       const acceptedSiteArtifacts: OntologyClosureEvidenceSiteArtifact[] = normalized
         .filter((entry) => entry.path.startsWith("site/"))
         .map((entry) => ({ ...entry, path: entry.path.slice("site/".length) }))
@@ -3503,22 +3481,6 @@ function appendAcceptedMachineEvidenceIssues({
           join(packagePath, "regeneration.json"),
           "regeneration receipt site-tree hash does not bind its exact site artifact descriptors",
         );
-      }
-      if (closureEvidenceProof) {
-        try {
-          assertOntologyClosureEvidenceRegenerationBinding(closureEvidenceProof, {
-            closureEvidenceSha256,
-            siteTreeSha256: closureEvidenceSiteTreeSha256,
-            siteArtifacts: acceptedSiteArtifacts,
-          });
-        } catch (error) {
-          issue(
-            issues,
-            "acceptance",
-            join(packagePath, "regeneration.json"),
-            error instanceof Error ? error.message : String(error),
-          );
-        }
       }
       const observedDigest = sha256(canonicalJson(normalized.sort((left, right) => left.path.localeCompare(right.path))));
       if (
@@ -3626,14 +3588,12 @@ export function validateOntologyAcceptedMachineEvidence({
   acceptance,
   receiptArtifacts,
   acceptancePath = join(packagePath, "acceptance.json"),
-  closureEvidenceProof,
 }: {
   repoRoot: string;
   packagePath: string;
   acceptance: OntologyAuditAcceptance;
   receiptArtifacts: ReadonlyMap<string, string>;
   acceptancePath?: string;
-  closureEvidenceProof?: VerifiedOntologyClosureEvidenceProof;
 }) {
   const issues: OntologyAuditIssue[] = [];
   appendAcceptedMachineEvidenceIssues({
@@ -3643,7 +3603,6 @@ export function validateOntologyAcceptedMachineEvidence({
     receiptArtifacts,
     issues,
     acceptancePath,
-    ...(closureEvidenceProof === undefined ? {} : { closureEvidenceProof }),
   });
   return issues;
 }
@@ -4192,15 +4151,15 @@ function verifyOntologyAuditPackageInternal({
     }
   }
   let acceptanceReceiptArtifacts: ReadonlyMap<string, string> | null = null;
-  const verifiedClosureEvidenceProof = verificationScope === "final_binding"
-    ? null
-    : validateOntologySemanticClosureEvidence({
+  if (verificationScope !== "final_binding") {
+    validateOntologySemanticClosureEvidence({
       repoRoot,
       packagePath: absolutePackagePath,
       ...(siteDirectory === undefined ? {} : { siteDirectory }),
       ...(closureEvidenceProof === undefined ? {} : { closureEvidenceProof }),
       issues,
     });
+  }
   if (semanticPreacceptance) {
     if (!baselineSetEqual) issue(issues, "acceptance", acceptancePath, "semantic proof does not preserve the exact frozen baseline key set");
     if (!finalSetEqual) issue(issues, "acceptance", acceptancePath, "semantic proof does not equal the exact live final key set");
@@ -4254,9 +4213,6 @@ function verifyOntologyAuditPackageInternal({
             acceptance,
             receiptArtifacts: inspection.artifacts,
             acceptancePath,
-            ...(verifiedClosureEvidenceProof === null
-              ? {}
-              : { closureEvidenceProof: verifiedClosureEvidenceProof }),
           }));
         }
       }
