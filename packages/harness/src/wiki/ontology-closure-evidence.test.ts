@@ -4,7 +4,6 @@ import { tmpdir } from "node:os";
 import { basename, dirname, join } from "node:path";
 import {
   assertOntologyClosureEvidenceProof,
-  assertOntologyClosureEvidenceRegenerationBinding,
   recomputeOntologyClosureEvidence,
   renderOntologyClosureEvidence,
   verifyOntologyClosureEvidenceFile,
@@ -149,33 +148,4 @@ review_status: accepted
     }
   });
 
-  test("rejects regeneration descriptors from site A with a closure proof for site B", () => {
-    const paths = fixture();
-    try {
-      const siteA = recomputeOntologyClosureEvidence(paths);
-      writeFileSync(join(paths.packagePath, "closure-evidence.json"), siteA.content, "utf8");
-
-      const siteBDirectory = join(paths.repoRoot, "different-site");
-      mkdirSync(siteBDirectory);
-      writeFileSync(join(siteBDirectory, "index.html"), "different site bytes\n", "utf8");
-      const siteBProof = verifyOntologyClosureEvidenceFile({
-        repoRoot: paths.repoRoot,
-        packagePath: paths.packagePath,
-        siteDirectory: siteBDirectory,
-      });
-
-      expect(() => assertOntologyClosureEvidenceRegenerationBinding(siteBProof, {
-        closureEvidenceSha256: siteBProof.sha256,
-        siteTreeSha256: siteBProof.site_tree_sha256,
-        siteArtifacts: siteA.site_artifacts,
-      })).toThrow("do not exactly match the site tree");
-      expect(assertOntologyClosureEvidenceRegenerationBinding(siteBProof, {
-        closureEvidenceSha256: siteBProof.sha256,
-        siteTreeSha256: siteBProof.site_tree_sha256,
-        siteArtifacts: siteBProof.site_artifacts,
-      })).toBe(siteBProof);
-    } finally {
-      rmSync(paths.repoRoot, { recursive: true, force: true });
-    }
-  });
 });

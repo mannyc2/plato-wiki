@@ -4,6 +4,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import {
   buildObservationTurnJoin,
+  collectOrphanObservationTurnJoinFailures,
   formatObservationTurnJoinToon,
   parseObservationTurnJoinToon,
   writeObservationTurnJoin,
@@ -138,4 +139,29 @@ describe("observation-turn joins", () => {
     expect(firstContent).toBe(secondContent);
     expect(firstContent).toBe(formatObservationTurnJoinToon(buildObservationTurnJoin("meno")));
   });
+
+  it("rejects extra observation joins and joins whose current ledger was removed", () => {
+    mkdirSync(join(root, "raw/plato/greek"), { recursive: true });
+    writeFileSync(join(root, "raw/plato/greek/meno.txt"), "{1a} λόγος\n");
+    writeLedger("meno", [record("obs_meno_0001", 0, 10)]);
+    writeTurnIndex("meno", [{ id: "turn_meno_0001", speaker: "A.", start: 0, end: 10 }]);
+    writeObservationTurnJoin("meno");
+    mkdirSync(join(root, "derived/plato/joins/voices"));
+    writeFileSync(join(root, "derived/plato/joins/voices/meno.toon"), "separately validated voice join\n");
+    expect(collectOrphanObservationTurnJoinFailures()).toEqual([]);
+
+    writeFileSync(join(root, "derived/plato/joins/extra.toon"), "orphan join\n");
+    expect(collectOrphanObservationTurnJoinFailures()).toEqual([
+      "derived/plato/joins/extra.toon has no current Greek source and observation ledger.",
+    ]);
+    rmSync(join(root, "wiki/observations/meno.md"));
+    expect(collectOrphanObservationTurnJoinFailures()).toEqual([
+      "derived/plato/joins/extra.toon has no current Greek source and observation ledger.",
+      "derived/plato/joins/meno.toon has no current Greek source and observation ledger.",
+    ]);
+    writeLedger("meno", []);
+    rmSync(join(root, "raw/plato/greek/meno.txt"));
+    expect(collectOrphanObservationTurnJoinFailures()).toHaveLength(2);
+  });
+
 });

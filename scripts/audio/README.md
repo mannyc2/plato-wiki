@@ -12,69 +12,32 @@ It does not master publication audio or waive QA. Its output is the pinned,
 lossless render input to the mastering and QA stages in
 `docs/audio-edition-protocol.md`.
 
-## Serial corpus production orchestrator
+## Production execution
 
-`produce_corpus_audio.py` is the hard-cutover driver for the complete canonical
-27-dialogue edition. Its default is local and read-only: it runs every
-`generate_screenplay.ts` preflight, validates the exact ordered dialogue
-catalog, checks the selected cast reference bytes at the paths recorded in
-`audio/cast.json`, and reports any existing content-addressed mechanical
-receipts. It does not contact `gpu`, write screenplays, create remote plans, or
-render audio.
+Advance each ready dialogue through the existing screenplay, render, mastering,
+ASR, handoff, and promotion commands below. Readiness is local and read-only:
 
 ```bash
-uv run python scripts/audio/produce_corpus_audio.py \
-  | jq '{ready_count, blocked_count, global_blockers,
-      dialogues: [.dialogues[] | {dialogue, screenplay_status, blockers}]}'
+bun scripts/audio/generate_screenplay.ts ion
 ```
 
-The explicit production command is:
+`--write-production` requires the complete screenplay contract for that dialogue.
+Resolve and hash every selected reference at its exact `audio/cast.json` path,
+then transfer a complete repository snapshot and those references. Keep a
+running snapshot fixed: its validator and canonical input bytes bind every
+render plan. Check free space on the artifact filesystem before starting; the
+model cache and output artifacts may live on different disks.
 
-```bash
-uv run python scripts/audio/produce_corpus_audio.py --execute \
-  > scratch/audio-corpus-production/latest-run.json
-```
+Preview each stage and execute only its returned plan path and SHA. The renderer
+resumes verified utterance chunks; mastering and QA likewise validate their
+content-addressed inputs. Successful synthesis and mastering remain unaccepted
+until the separate QA and explicit production-acceptance stages finish.
 
-Execution is refused before the first write unless all 27 dry screenplay
-reports are `production-contract-valid`, every exact selected reference exists
-with its recorded hash, and `audio/cast.json` is complete. Once those corpus
-gates pass, the driver writes the canonical `audio/scripts/<dialogue>.json`
-files, copies a repository snapshot to
-`/mnt/models/dev/plato-audio`, and uses `rsync -aR` to copy each reference to
-that same exact repository-relative path. It never flattens or renames a
-reference and never uses `rsync --delete`.
-
-Remote commands run only through `ssh gpu`, with
-`/mnt/models/dev/plato-dots/.venv/bin/python`. The driver processes one
-dialogue at a time. For each dialogue it:
-
-1. asks `render_dots.py --write-plan` for JSON and uses only the returned
-   `plan_sha256` and `plan_path`;
-2. probes `master_audio.py` read-only to prove whether the exact complete
-   renderer assembly already exists;
-3. when needed, executes that parsed render plan with `--render` (the renderer
-   resumes its verified content-addressed task cache);
-4. asks `master_audio.py --write-plan` for a new JSON SHA/path pair and executes
-   only that pair; and
-5. writes an idempotent receipt at
-   `scratch/audio-corpus-production/receipts/<dialogue>/<receipt-sha256>.json`.
-
-The mastering artifact remains under
-`/mnt/models/artifacts/plato-audio/mastering/artifacts/<mastering-plan-sha256>/`.
-Receipts say `mechanical-master-complete-unaccepted`, bind the screenplay,
-cast, exact reference paths/hashes, render plan, mastering plan, and artifact,
-and always record `accepted: false`. This command never writes beneath
-`audio/qa/` or `wiki/recordings/`; ASR/listening acceptance and recording
-publication remain separate downstream work.
-
-Re-running the same corpus command is the recovery path. Completed dialogues
-are proven against their current render/master plans and content-addressed
-receipts before their cached mechanical artifacts are reused; an interrupted
-dialogue resumes the renderer's verified task cache. There is no partial-corpus
-execution flag that bypasses the 27-dialogue prerequisite gate. A malformed
-receipt, unexpected non-JSON output, stale SHA/path pair, changed canonical
-dependency, partial artifact, or path outside the pinned remote roots stops the
-run rather than selecting a nearby or "latest" file.
+For a bounded set of dialogues, agents can run these same commands serially
+from an ignored scratch job. Stop the queue on the first failed stage, preserve
+completed chunks, and resume only after resolving the failure. Corpus-wide
+packetizers, receipt indexes, and all-dialogue acceptance wrappers are not
+required production artifacts.
 
 ## Direct YouTube reference materialization
 
@@ -1420,7 +1383,7 @@ tool binaries. Results live atomically under:
 
 `mechanical-qa.json` is scratch evidence only. It records working/publication
 hashes, formats and durations; loudness and true peak; exact PCM clipping count;
-all detected silences of at least 250 ms; internal silence over 1200 ms or a
+all detected silences of at least 250 ms; internal silence over 1800 ms or a
 silence crossing a declared pause over 800 ms;
 the silence floor within each declared pause (with a pinned 5 ms filter-edge
 guard); chapter hashes; and gate results. It always records `accepted: false`,
@@ -1574,13 +1537,15 @@ The only output is
 `<outdir>/artifacts/<qa-handoff-sha256>/qa-handoff.json`. It is an unaccepted
 scratch handoff with human listening explicitly `not-performed`; the command
 refuses `audio/qa/` and `wiki/recordings/` destinations. It deliberately does
-not manufacture an accepted QA-v2 object. Promotion requires a separate
-schema-v2 production-acceptance review, distinct chapter WAV paths and hashes,
+not manufacture an accepted QA object. Current promotion requires a separate
+schema-v3 production-acceptance review, distinct chapter WAV paths and hashes,
 and the remaining canonical artifact bindings. The review records either
 completed whole-master listening or an explicit operator-authorized mechanical
 and ASR waiver; a waiver never bypasses a failed source, commentary, ASR,
 audio, or cast gate. The handoff lists those exact inputs, plus reviewed ASR
-exception enumeration when word errors exist, as explicit blockers.
+exception enumeration when word errors exist, as explicit blockers. Frozen
+handoff promotion hints describe the original producer contract; current
+accepted QA and acceptance reviews use schema v3.
 
 Resume validation rereads the bound screenplay, cast, render plan, mastering
 plan/result/mechanical QA, working master, publication derivative, full-master
@@ -1591,57 +1556,12 @@ root must also be disjoint from the mastering artifact directory and the
 content-addressed full-master ASR evidence directory; equality or any
 descendant path is rejected before directories are created.
 
-### Corpus post-render preparation
-
-`prepare_corpus_audio_qa.py` applies the ASR and handoff sequence above to the
-current mastering receipt for every canonical dialogue. Its default mode is a
-local, read-only audit and does not contact the GPU:
-
-```bash
-uv run python scripts/audio/prepare_corpus_audio_qa.py
-```
-
-Execution is serial and resumable. For each dialogue it runs the ASR preview,
-executes only the returned ASR plan SHA, hashes that exact evidence file, runs
-the QA-handoff preview, and executes only the returned handoff SHA:
-
-```bash
-uv run python scripts/audio/prepare_corpus_audio_qa.py --execute
-```
-
-The wrapper uses the dedicated pinned ASR cache at
-`/mnt/models/cache/huggingface`; the renderer's separate `/mnt/models/hf/hub`
-cache is never substituted.
-
-The wrapper fails rather than guessing if no receipt, multiple receipts, or a
-receipt with stale screenplay, cast, or reference bytes matches a dialogue.
-After all selected dialogues finish, it writes one content-addressed index at
-`scratch/audio-corpus-postrender/handoff-indexes/<index-sha256>.json`. Each row
-binds the receipt, ASR evidence, QA handoff, promotion blockers, and the
-expected `scratch/audio-acceptance-reviews/<dialogue>.json` path. The index and
-all upstream artifacts remain explicitly unaccepted; this command never
-creates an acceptance review, `audio/qa`, or `wiki/recordings` record. A repeated
-`--dialogue <slug>` option may be used for a bounded recovery run without
-changing the all-dialogue default.
-
-Production-acceptance reviews are normally written after the mechanical index.
-Bind those later files into a new immutable index without replaying ASR or
-handoff measurements:
-
-```bash
-uv run python scripts/audio/prepare_corpus_audio_qa.py \
-  --refresh-index scratch/audio-corpus-postrender/handoff-indexes/<index-sha256>.json
-```
-
-Refresh only hashes and reports the supplied review files as
-`present-unvalidated`; validation and acceptance remain the promoter's job.
-
 ## Production acceptance and promotion
 
 `promote_audio_qa.py` is the only command that converts an unaccepted QA
 handoff into canonical accepted production records. It requires a separate
-schema-v2 acceptance review that binds the exact handoff evidence SHA, working
-master SHA, complete ordered chapter inventory, named authorizer, date,
+schema-v3 acceptance review that binds the exact handoff evidence SHA, working
+master SHA, deterministic ASR audit SHA, complete ordered chapter inventory, named authorizer, date,
 rationale, findings, and a complete reviewed enumeration of any ASR word
 errors. The review must choose either complete-master human listening or the
 explicit operator-authorized mechanical-and-ASR waiver. An accepted review
@@ -1653,10 +1573,11 @@ An operator-waiver review uses this exact shape under
 
 ```json
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "dialogue": "crito",
   "handoff_evidence_sha256": "<qa-handoff-evidence-sha256>",
   "working_master_sha256": "<working-master-sha256>",
+  "audit_sha256": "<audit-full-master-asr-audit-sha256>",
   "acceptance_basis": "operator-authorized-mechanical-and-asr-waiver",
   "authorized_by": "<operator-identity>",
   "authorized_at": "<YYYY-MM-DD>",
@@ -1669,8 +1590,15 @@ An operator-waiver review uses this exact shape under
 }
 ```
 
-When ASR reports any word errors, `asr_exceptions` must enumerate all of them;
-zero ordinary-word errors remains mandatory.
+When ASR reports word errors, `asr_exceptions` must contain one
+`{"chapter_id":"<chapter>","edit_index":0,"classification":"proper-name","reviewed":true}`
+for each exact edit from `audit_full_master_asr.py`. Classifications may be
+`proper-name`, `punctuation`, or `ordinary`; zero ordinary-word errors remains
+mandatory. Every preview and execution rebuilds the audit from the hash-bound
+raw ASR and current screenplay. Review input cannot contain tokens or occurrence
+totals. The promoter derives those tokens and all ordinary-error counts,
+preserving empty expected/recognized sides for insertions/deletions. It leaves
+the raw ASR and unaccepted handoff bytes unchanged.
 
 The promoter revalidates the handoff and current screenplay/cast, rereads every
 mastering-v6 artifact beneath the explicit artifact root, and derives distinct
@@ -1709,42 +1637,9 @@ runs the full repository validator with the explicit recording artifact root,
 and rolls back every newly created file if validation fails. Repeating the same
 reviewed plan is idempotent.
 
-For the complete corpus, use the refreshed post-render index rather than
-running 27 unrelated promotion commands. `promote_corpus_audio_qa.py` requires
-the exact canonical 27-dialogue inventory, 27 mechanically passing handoffs,
-27 passing ASR rows, and 27 present hash-bound acceptance reviews. It revalidates
-every review and artifact through the single-dialogue promoter before returning
-one corpus plan SHA. The default remains read-only:
-
-```bash
-ssh gpu '/mnt/models/dev/plato-dots/.venv/bin/python \
-  /mnt/models/dev/plato-audio/scripts/audio/promote_corpus_audio_qa.py \
-  --input-index /mnt/models/dev/plato-audio/scratch/audio-corpus-postrender/handoff-indexes/<refreshed-index-sha256>.json \
-  --qa-handoff-root /mnt/models/artifacts/plato-audio/qa-handoffs \
-  --recording-artifact-root /mnt/models/artifacts/plato-audio/mastering \
-  --repo-root /mnt/models/dev/plato-audio \
-  --generated-at 2026-07-16T20:00:00Z'
-```
-
-Execute only the reviewed corpus hash:
-
-```bash
-ssh gpu '/mnt/models/dev/plato-dots/.venv/bin/python \
-  /mnt/models/dev/plato-audio/scripts/audio/promote_corpus_audio_qa.py \
-  --input-index /mnt/models/dev/plato-audio/scratch/audio-corpus-postrender/handoff-indexes/<refreshed-index-sha256>.json \
-  --qa-handoff-root /mnt/models/artifacts/plato-audio/qa-handoffs \
-  --recording-artifact-root /mnt/models/artifacts/plato-audio/mastering \
-  --repo-root /mnt/models/dev/plato-audio \
-  --generated-at 2026-07-16T20:00:00Z \
-  --execute --reviewed-plan-sha256 <corpus-promotion-plan-sha256>'
-```
-
-All dialogue targets are preflighted before the first write. Execution creates
-only the chapter files and canonical QA/recording targets enumerated by the 27
-validated single-dialogue plans, defers repository validation until the entire
-set is present, and removes every batch-created output if any promotion or the
-final validator fails. After success, materialize all accepted MP3s and site
-links with an explicit artifact root:
+Promote each accepted dialogue with its reviewed single-dialogue plan. After
+promotion, materialize accepted MP3s and site links with an explicit artifact
+root:
 
 ```bash
 bun run harness site \
@@ -1823,6 +1718,5 @@ uv run --with numpy==2.2.6 python -m unittest \
   tests.test_qa_full_master_asr \
   tests.test_assemble_audio_qa_handoff \
   tests.test_promote_audio_qa \
-  tests.test_promote_corpus_audio_qa \
   tests.test_prune_renderer_intermediates -v
 ```

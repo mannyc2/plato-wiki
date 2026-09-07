@@ -25,15 +25,30 @@ function fixture(prefix: string) {
 }
 
 describe("ontology mutation path confinement", () => {
-  test("rejects a symlinked sibling work root without changing outside bytes", () => {
+  test("rejects a symlinked scratch parent without changing outside bytes", () => {
     const paths = fixture("ontology-work-root-");
     const outside = realpathSync(mkdtempSync(join(realpathSync(tmpdir()), "ontology-work-outside-")));
     const sentinel = join(outside, "must-remain.txt");
     writeFileSync(sentinel, "outside must remain\n", "utf8");
-    symlinkSync(outside, join(paths.parent, "work"), "dir");
+    symlinkSync(outside, join(paths.repoRoot, "scratch"), "dir");
     try {
       expect(() => ensureCanonicalOntologyWorkRoot(paths.repoRoot)).toThrow("Ontology work root");
       expect(readFileSync(sentinel, "utf8")).toBe("outside must remain\n");
+    } finally {
+      rmSync(paths.parent, { recursive: true, force: true });
+      rmSync(outside, { recursive: true, force: true });
+    }
+  });
+
+  test("keeps verification work inside the checkout and rejects a linked work root", () => {
+    const paths = fixture("ontology-contained-work-");
+    const outside = realpathSync(mkdtempSync(join(realpathSync(tmpdir()), "ontology-work-target-")));
+    try {
+      const workRoot = ensureCanonicalOntologyWorkRoot(paths.repoRoot);
+      expect(workRoot).toBe(join(paths.repoRoot, "scratch/ontology"));
+      rmSync(workRoot, { recursive: true });
+      symlinkSync(outside, workRoot, "dir");
+      expect(() => ensureCanonicalOntologyWorkRoot(paths.repoRoot)).toThrow("Ontology work root");
     } finally {
       rmSync(paths.parent, { recursive: true, force: true });
       rmSync(outside, { recursive: true, force: true });

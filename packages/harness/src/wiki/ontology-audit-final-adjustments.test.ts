@@ -4,6 +4,7 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, realpath
 import { tmpdir } from "node:os";
 import { join, relative } from "node:path";
 import { gzipSync } from "node:zlib";
+import { buildCompletenessFacts } from "../completeness.js";
 import {
   assertOntologyAuditFinalAdjustmentRematerializationPending,
   expectedOntologyAuditFinalAdjustmentAction,
@@ -32,6 +33,8 @@ import {
   generateOntologyAuditPackage,
   ontologyBaselineEvidenceContract,
   refreshOntologyAuditBindings,
+  verifyOntologyAuditAcceptanceCandidate,
+  verifyOntologyAuditFinalBinding,
   verifyOntologyAuditPackage,
   verifyOntologyAuditSemanticPreacceptance,
   type FinalPointer,
@@ -43,7 +46,6 @@ import {
   type OntologyAuditRows,
 } from "./ontology-audit.js";
 import {
-  collectOntologyCanonicalRegenerationArtifacts,
   collectOntologyRegenerationArtifacts,
   ontologyRegenerationDigest,
 } from "./ontology-regeneration-tree.js";
@@ -375,13 +377,13 @@ function writeReconsiderationEvidence(
   const greek = `{1a}\n${dialogue} Greek-only fixture alpha\n{1b}\n${dialogue} Greek-only fixture beta\n{1c}\nend\n`;
   const greekSpan = greek.slice(0, greek.indexOf("{1c}")).trimEnd();
   write(`raw/plato/greek/${dialogue}.txt`, greek);
-  const defaultCitations = (id: string): ReconsiderationCitations => ({
+  const defaultCitations = (): ReconsiderationCitations => ({
     observations: [],
     claims: [],
     relations: [],
     dossiers: [],
   });
-  const citations = new Map(reviewedIds.map((id) => [id, citationsById[id] ?? defaultCitations(id)]));
+  const citations = new Map(reviewedIds.map((id) => [id, citationsById[id] ?? defaultCitations()]));
   const rejectedBlocks = new Map(reviewedIds.map((id) => [
     id,
     reconsiderationCommentaryBlock(dialogue, id, citations.get(id)!, "rejected", sha256(greekSpan)),
@@ -693,20 +695,6 @@ function writeFixtureBaselineEvidence() {
   };
   writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
   refreshOntologyAuditBindings({ repoRoot: root, packagePath });
-}
-
-function writeFixtureClosureEvidence(overrides: Record<string, unknown> = {}) {
-  writeFileSync(join(packagePath, "closure-evidence.json"), `${JSON.stringify({
-    schema_version: 1,
-    state: "complete",
-    staleAliasIssues: [],
-    rejectedReaderLeaks: [],
-    terminalStateIssues: [],
-    acceptedClaimLinkIssues: [],
-    acceptedCommentaryCitationIssues: [],
-    acceptedRelationFictionIssues: [],
-    ...overrides,
-  }, null, 2)}\n`, "utf8");
 }
 
 function writeRecomputedFixtureClosureEvidence(siteDirectory = join(root, "prebuilt-site")) {
@@ -1675,6 +1663,72 @@ review_status: accepted
         regeneration_two_sha256: null,
       },
     });
+  });
+
+  test("keeps published producer provenance immutable while current code and protocol evolve", () => {
+    prepareFinalAdjustmentLifecycleFixture();
+    bindOntologyAuditFinalState({ repoRoot: root, packagePath });
+    const regeneration = writeFixtureGlobalAcceptanceEvidence();
+    acceptOntologyAuditClosure({
+      repoRoot: root,
+      packagePath,
+      regenerationOneSha256: regeneration.regenerationDigest,
+      regenerationTwoSha256: regeneration.regenerationDigest,
+      staleAliases: 0,
+      rejectedReaderLeaks: 0,
+      siteDirectory: regeneration.siteDirectory,
+      closureEvidenceProof: regeneration.proof,
+    });
+    const options = {
+      repoRoot: root,
+      packagePath,
+      siteDirectory: regeneration.siteDirectory,
+      closureEvidenceProof: regeneration.proof,
+    };
+    const manifestPath = join(packagePath, "manifest.json");
+    const manifestContent = readFileSync(manifestPath, "utf8");
+    const acceptanceContent = readFileSync(join(packagePath, "acceptance.json"), "utf8");
+    expect(verifyOntologyAuditPackage(options)).toEqual([]);
+    const beforeRelationAudit = buildCompletenessFacts(options).relationAudit;
+    expect(beforeRelationAudit.semanticProofVerified).toBe(true);
+
+    write("docs/ontology-audit-protocol.md", "# Later protocol clarification\n");
+    write("packages/harness/src/wiki/ontology-audit.ts", "// Later validator implementation.\n");
+    expect(verifyOntologyAuditPackage(options)).toEqual([]);
+    expect(verifyOntologyAuditSemanticPreacceptance(options)).toEqual([]);
+    expect(buildCompletenessFacts(options).relationAudit).toEqual(beforeRelationAudit);
+    expect(readFileSync(manifestPath, "utf8")).toBe(manifestContent);
+    expect(readFileSync(join(packagePath, "acceptance.json"), "utf8")).toBe(acceptanceContent);
+
+    const candidateIssues = verifyOntologyAuditAcceptanceCandidate({ ...options, acceptanceContent });
+    expect(candidateIssues.some((entry) => entry.message === "protocol hash does not match repository protocol")).toBe(true);
+    expect(candidateIssues.some((entry) => entry.message === "schema implementation hash does not match repository implementation")).toBe(true);
+
+    const tamperedManifest = JSON.parse(manifestContent) as OntologyAuditManifest;
+    tamperedManifest.protocol.sha256 = "b".repeat(64);
+    writeFileSync(manifestPath, `${JSON.stringify(tamperedManifest, null, 2)}\n`);
+    expect(verifyOntologyAuditPackage(options).some((entry) => entry.message === "acceptance manifest hash mismatch")).toBe(true);
+  });
+
+  test("requires current producer bindings throughout pending and preacceptance verification", () => {
+    const closureEvidence = prepareSemanticPreacceptanceFixture();
+    const options = {
+      repoRoot: root,
+      packagePath,
+      siteDirectory: closureEvidence.siteDirectory,
+      closureEvidenceProof: closureEvidence.proof,
+    };
+    expect(verifyOntologyAuditFinalBinding(options)).toEqual([]);
+    write("docs/ontology-audit-protocol.md", "# Changed pending protocol\n");
+    write("packages/harness/src/wiki/ontology-audit.ts", "// Changed pending validator.\n");
+    for (const issues of [
+      verifyOntologyAuditPackage(options),
+      verifyOntologyAuditSemanticPreacceptance(options),
+      verifyOntologyAuditFinalBinding(options),
+    ]) {
+      expect(issues.some((entry) => entry.message === "protocol hash does not match repository protocol")).toBe(true);
+      expect(issues.some((entry) => entry.message === "schema implementation hash does not match repository implementation")).toBe(true);
+    }
   });
 
   test("fails closed when a previously bound final-adjustment directory is deleted", () => {

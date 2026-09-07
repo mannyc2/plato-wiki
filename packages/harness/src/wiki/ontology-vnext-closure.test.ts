@@ -12,7 +12,7 @@ import {
   writeFileSync,
 } from "node:fs";
 import { tmpdir } from "node:os";
-import { join, relative } from "node:path";
+import { dirname, join, relative } from "node:path";
 import {
   finalMembershipReplacementKeys,
   mergeOntologyAuditPartition,
@@ -474,6 +474,35 @@ describe("ontology regeneration exact generated trees", () => {
         "Unexpected file in generated ontology projection wiki/clusters: stale-extra.txt",
       );
       expect(existsSync(join(root, "wiki/clusters/stale-extra.txt"))).toBe(true);
+    } finally {
+      rmSync(root, { recursive: true, force: true });
+    }
+  });
+
+  test("rejects files outside the current generated layouts without a historical inventory", () => {
+    const root = realpathSync(mkdtempSync(join(realpathSync(tmpdir()), "ontology-current-projection-layout-")));
+    try {
+      createProjectionRoots(root);
+      mkdirSync(join(root, "audio"));
+      mkdirSync(join(root, "derived/plato/joins/voices"));
+      writeFileSync(join(root, "audio/coverage.md"), "coverage\n");
+      writeFileSync(join(root, "wiki/completeness.md"), "complete\n");
+      writeFileSync(join(root, "derived/plato/joins/voices/meno.toon"), "voice join\n");
+      expect(() => collectOntologyCanonicalRegenerationArtifacts(root)).not.toThrow();
+      for (const path of [
+        "derived/plato/joins/other/hidden.toon",
+        "derived/plato/joins/voices/other/hidden.toon",
+        "derived/plato/voices/other/hidden.toon",
+        "derived/plato/voices/invalid_name.toon",
+        "wiki/clusters/other/hidden.jsonl",
+      ]) {
+        mkdirSync(dirname(join(root, path)), { recursive: true });
+        writeFileSync(join(root, path), "unexpected\n");
+        expect(() => collectOntologyCanonicalRegenerationArtifacts(root)).toThrow("Unexpected file in generated ontology projection");
+        rmSync(join(root, path));
+      }
+      rmSync(join(root, "wiki/clusters"), { recursive: true });
+      expect(() => collectOntologyCanonicalRegenerationArtifacts(root)).toThrow();
     } finally {
       rmSync(root, { recursive: true, force: true });
     }

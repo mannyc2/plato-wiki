@@ -14,42 +14,42 @@ unresolved_characters: 0
 complete_casts: 27
 unknown_cast_requirements: 0
 unselected_cast_roles: 0
-screenplays: 0
+screenplays: 27
 audio_qa_passed: 0
 production_recordings: 0
 website_audio_links: 0
-missing: 108
+missing: 81
 ```
 
 | dialogue | English | accepted ledger | writing audit | characters | cast | screenplay | QA | recording | website | missing |
 | --- | --- | ---: | --- | --- | --- | --- | --- | --- | --- | ---: |
-| apology | yes | 6/6 active; 54 rejected | accepted | 3 resolved | 3/3 | no | - | - | no | 4 |
-| charmides | yes | 7/7 active; 39 rejected | accepted | 6 resolved | 2/2 | no | - | - | no | 4 |
-| cratylus | yes | 16/16 active; 41 rejected | accepted | 4 resolved | 4/4 | no | - | - | no | 4 |
-| critias | yes | 11/11 active; 23 rejected | accepted | 5 resolved | 5/5 | no | - | - | no | 4 |
-| crito | yes | 9/9 active; 11 rejected | accepted | 5 resolved | 3/3 | no | - | - | no | 4 |
-| euthydemus | yes | 6/6 active; 11 rejected | accepted | 8 resolved | 3/3 | no | - | - | no | 4 |
-| euthyphro | yes | 7/7 active; 22 rejected | accepted | 3 resolved | 3/3 | no | - | - | no | 4 |
-| gorgias | yes | 14/14 active; 22 rejected | accepted | 7 resolved | 6/6 | no | - | - | no | 4 |
-| greater-hippias | yes | 3/3 active; 12 rejected | accepted | 3 resolved | 3/3 | no | - | - | no | 4 |
-| ion | yes | 2/2 active; 7 rejected | accepted | 5 resolved | 3/3 | no | - | - | no | 4 |
-| laches | yes | 7/7 active; 7 rejected | accepted | 7 resolved | 7/7 | no | - | - | no | 4 |
-| laws | yes | 32/32 active; 36 rejected | accepted | 6 resolved | 4/4 | no | - | - | no | 4 |
-| lesser-hippias | yes | 6/6 active; 7 rejected | accepted | 5 resolved | 4/4 | no | - | withdrawn | no | 4 |
-| lysis | yes | 6/6 active; 8 rejected | accepted | 7 resolved | 2/2 | no | - | - | no | 4 |
-| menexenus | yes | 4/4 active; 10 rejected | accepted | 5 resolved | 3/3 | no | - | - | no | 4 |
-| meno | yes | 8/8 active; 10 rejected | accepted | 6 resolved | 5/5 | no | - | - | no | 4 |
-| parmenides | yes | 4/4 active; 9 rejected | accepted | 7 resolved | 2/2 | no | - | - | no | 4 |
-| phaedo | yes | 4/4 active; 11 rejected | accepted | 13 resolved | 3/3 | no | - | - | no | 4 |
-| phaedrus | yes | 8/8 active; 10 rejected | accepted | 7 resolved | 3/3 | no | - | - | no | 4 |
-| philebus | yes | 9/9 active; 11 rejected | accepted | 6 resolved | 4/4 | no | - | - | no | 4 |
-| protagoras | yes | 8/8 active; 10 rejected | accepted | 14 resolved | 3/3 | no | - | - | no | 4 |
-| republic | yes | 4/4 active; 15 rejected | accepted | 15 resolved | 2/2 | no | - | - | no | 4 |
-| sophist | yes | 3/3 active; 10 rejected | accepted | 8 resolved | 5/5 | no | - | - | no | 4 |
-| statesman | yes | 6/6 active; 17 rejected | accepted | 6 resolved | 5/5 | no | - | - | no | 4 |
-| symposium | yes | 13/13 active; 58 rejected | accepted | 14 resolved | 10/10 | no | - | - | no | 4 |
-| theaetetus | yes | 1/1 active; 14 rejected | accepted | 7 resolved | 6/6 | no | - | - | no | 4 |
-| timaeus | yes | 13/13 active; 8 rejected | accepted | 10 resolved | 5/5 | no | - | - | no | 4 |
+| apology | yes | 6/6 active; 54 rejected | accepted | 3 resolved | 3/3 | yes | - | - | no | 3 |
+| charmides | yes | 7/7 active; 39 rejected | accepted | 6 resolved | 2/2 | yes | - | - | no | 3 |
+| cratylus | yes | 16/16 active; 41 rejected | accepted | 4 resolved | 4/4 | yes | - | - | no | 3 |
+| critias | yes | 11/11 active; 23 rejected | accepted | 5 resolved | 5/5 | yes | - | - | no | 3 |
+| crito | yes | 9/9 active; 11 rejected | accepted | 5 resolved | 3/3 | yes | - | - | no | 3 |
+| euthydemus | yes | 6/6 active; 11 rejected | accepted | 8 resolved | 3/3 | yes | - | - | no | 3 |
+| euthyphro | yes | 7/7 active; 22 rejected | accepted | 3 resolved | 3/3 | yes | - | - | no | 3 |
+| gorgias | yes | 14/14 active; 22 rejected | accepted | 7 resolved | 6/6 | yes | - | - | no | 3 |
+| greater-hippias | yes | 3/3 active; 12 rejected | accepted | 3 resolved | 3/3 | yes | - | - | no | 3 |
+| ion | yes | 2/2 active; 7 rejected | accepted | 5 resolved | 3/3 | yes | - | - | no | 3 |
+| laches | yes | 7/7 active; 7 rejected | accepted | 7 resolved | 7/7 | yes | - | - | no | 3 |
+| laws | yes | 32/32 active; 36 rejected | accepted | 6 resolved | 4/4 | yes | - | - | no | 3 |
+| lesser-hippias | yes | 6/6 active; 7 rejected | accepted | 5 resolved | 4/4 | yes | - | withdrawn | no | 3 |
+| lysis | yes | 6/6 active; 8 rejected | accepted | 7 resolved | 2/2 | yes | - | - | no | 3 |
+| menexenus | yes | 4/4 active; 10 rejected | accepted | 5 resolved | 3/3 | yes | - | - | no | 3 |
+| meno | yes | 8/8 active; 10 rejected | accepted | 6 resolved | 5/5 | yes | - | - | no | 3 |
+| parmenides | yes | 4/4 active; 9 rejected | accepted | 7 resolved | 2/2 | yes | - | - | no | 3 |
+| phaedo | yes | 4/4 active; 11 rejected | accepted | 13 resolved | 3/3 | yes | - | - | no | 3 |
+| phaedrus | yes | 8/8 active; 10 rejected | accepted | 7 resolved | 3/3 | yes | - | - | no | 3 |
+| philebus | yes | 9/9 active; 11 rejected | accepted | 6 resolved | 4/4 | yes | - | - | no | 3 |
+| protagoras | yes | 8/8 active; 10 rejected | accepted | 14 resolved | 3/3 | yes | - | - | no | 3 |
+| republic | yes | 4/4 active; 15 rejected | accepted | 15 resolved | 2/2 | yes | - | - | no | 3 |
+| sophist | yes | 3/3 active; 10 rejected | accepted | 8 resolved | 5/5 | yes | - | - | no | 3 |
+| statesman | yes | 6/6 active; 17 rejected | accepted | 6 resolved | 5/5 | yes | - | - | no | 3 |
+| symposium | yes | 13/13 active; 58 rejected | accepted | 14 resolved | 10/10 | yes | - | - | no | 3 |
+| theaetetus | yes | 1/1 active; 14 rejected | accepted | 7 resolved | 6/6 | yes | - | - | no | 3 |
+| timaeus | yes | 13/13 active; 8 rejected | accepted | 10 resolved | 5/5 | yes | - | - | no | 3 |
 
 ## Evidence notes
 

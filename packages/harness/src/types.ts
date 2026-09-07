@@ -1,51 +1,10 @@
-import type { Usage } from "@earendil-works/pi-ai";
-
-export type HarnessRunCommand =
-  | "ingest"
-  | "ingest-segmented"
-  | "review"
-  | "review-segmented"
-  | "claims-segmented"
-  | "claims-review-segmented"
-  | "relations-segmented"
-  | "relations-review-segmented";
-
-export type ProviderProfile = {
-  provider: string;
-  model: string;
-  apiKeyEnv?: string;
-  baseUrl?: string;
-  apiKeyHeader?: string;
-  remoteModelId?: string;
-  disableReasoning?: boolean;
-  maxTokens?: number;
-};
-
-export type HarnessConfig = {
-  defaultProfile: string;
-  transcriptsDir: string;
-  profiles: Record<string, ProviderProfile>;
-};
-
-export type HarnessRunOptions = {
-  dryRun: boolean;
-  profileName?: string | undefined;
-  provider?: string | undefined;
-  model?: string | undefined;
-  targetBytes?: number | undefined;
-  targetObservations?: number | undefined;
-  targetClaims?: number | undefined;
-  claimIds?: string[] | undefined;
-  targetPairs?: number | undefined;
-  candidateKeys?: string[] | undefined;
-  targetRelations?: number | undefined;
-  relationIds?: string[] | undefined;
-  limit?: number | undefined;
-  fromMarker?: string | undefined;
-  toMarker?: string | undefined;
-  gaps?: boolean | undefined;
-  gapStartChar?: number | undefined;
-  gapEndChar?: number | undefined;
+export type Usage = {
+  input: number;
+  output: number;
+  cacheRead: number;
+  cacheWrite: number;
+  totalTokens: number;
+  cost: { input: number; output: number; cacheRead: number; cacheWrite: number; total: number };
 };
 
 export type UsageRecord = {
@@ -79,23 +38,6 @@ export type SourceRef = {
 export type SourceSpanResolution = {
   source_ref: SourceRef;
   text: string;
-};
-
-export type HarnessRunResult = {
-  command: HarnessRunCommand;
-  dialogue: string;
-  dryRun: boolean;
-  profileName: string;
-  provider: string;
-  model: string;
-  skillCount: number;
-  promptCount: number;
-  templateName: string;
-  transcriptDir: string;
-  sessionPath: string;
-  responseText?: string;
-  segmentCount?: number;
-  pendingSegmentCount?: number;
 };
 
 export type OntologyAxisSummary = {
@@ -133,27 +75,6 @@ export type ValidationReport = {
   commentaryQualityAuditManifestCount: number;
   ontology: OntologySummary;
   reviewCoverage: ReviewCoverageEntry[];
-};
-
-export type ProfileInfo = {
-  name: string;
-  provider: string;
-  model: string;
-  apiKeyEnv: string | undefined;
-  isDefault: boolean;
-  hasKey: boolean;
-};
-
-export type ProviderInfo = {
-  provider: string;
-  isProfileProvider: boolean;
-};
-
-export type ModelInfo = {
-  id: string;
-  name: string;
-  contextWindow: number;
-  maxTokens: number;
 };
 
 export type TranscriptInfo = {

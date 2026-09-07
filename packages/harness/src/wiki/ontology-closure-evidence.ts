@@ -130,48 +130,6 @@ export function ontologyClosureEvidenceSiteTreeSha256(
   return sha256(canonicalJson(artifacts));
 }
 
-/**
- * Bind the exact site tree used to recompute semantic closure evidence to the
- * site descriptors recorded by deterministic regeneration.  Callers must
- * first assert the proof against its repository/package/site identity; this
- * helper deliberately accepts only proofs minted by this module so a plain
- * caller-supplied object cannot stand in for a verified site observation.
- */
-export function assertOntologyClosureEvidenceRegenerationBinding(
-  proof: VerifiedOntologyClosureEvidenceProof,
-  {
-    closureEvidenceSha256,
-    siteTreeSha256,
-    siteArtifacts: observedSiteArtifacts,
-  }: {
-    closureEvidenceSha256: string;
-    siteTreeSha256: string;
-    siteArtifacts: readonly OntologyClosureEvidenceSiteArtifact[];
-  },
-) {
-  if (!verifiedProofs.has(proof)) {
-    throw new Error("Ontology closure evidence regeneration binding requires an exact verified proof.");
-  }
-  const normalized = [...observedSiteArtifacts]
-    .map((entry) => ({ ...entry }))
-    .sort((left, right) => left.path.localeCompare(right.path));
-  const expected = [...proof.site_artifacts]
-    .map((entry) => ({ ...entry }))
-    .sort((left, right) => left.path.localeCompare(right.path));
-  const observedTreeSha256 = ontologyClosureEvidenceSiteTreeSha256(normalized);
-  if (
-    closureEvidenceSha256 !== proof.sha256
-    || siteTreeSha256 !== proof.site_tree_sha256
-    || observedTreeSha256 !== siteTreeSha256
-    || canonicalJson(normalized) !== canonicalJson(expected)
-  ) {
-    throw new Error(
-      "Regeneration receipt site descriptors do not exactly match the site tree used for closure-evidence proof.",
-    );
-  }
-  return proof;
-}
-
 function isRecord(value: CanonicalYamlValue | undefined): value is CanonicalYamlRecord {
   return value !== null && typeof value === "object" && !Array.isArray(value);
 }

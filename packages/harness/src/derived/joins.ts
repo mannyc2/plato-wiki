@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { getRepoRoot } from "../paths.js";
 import {
@@ -63,6 +63,18 @@ function observationLedgerPath(dialogue: string) {
 export function observationTurnJoinPath(dialogue: string) {
   assertDialogueSlug(dialogue);
   return `derived/plato/joins/${dialogue}.toon`;
+}
+
+export function collectOrphanObservationTurnJoinFailures(): string[] {
+  const directory = join(getRepoRoot(), "derived/plato/joins");
+  if (!existsSync(directory)) return [];
+  // Checking only current ledgers misses the artifact left behind when a ledger
+  // is removed. Derive ownership from current inputs, independently of history.
+  const expected = new Set(observationLedgerDialogues().map((dialogue) => basename(observationTurnJoinPath(dialogue))));
+  return readdirSync(directory, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".toon") && !expected.has(entry.name))
+    .map((entry) => `derived/plato/joins/${entry.name} has no current Greek source and observation ledger.`)
+    .sort();
 }
 
 function parseObservationSpans(content: string): ObservationSpan[] {

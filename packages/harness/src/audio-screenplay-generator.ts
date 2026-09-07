@@ -20,7 +20,9 @@ import {
   audioWordCount,
   canonicalSpokenEnglish,
   canonicalSpokenEnglishSegments,
+  commentaryAudioBoundaryChars,
   characterNamesForDialogue,
+  resolveAudioChapterLayout,
   validateAudioScript,
   validateAudioScriptArtifact,
   type AudioProductionValidationIssue,
@@ -29,9 +31,6 @@ import {
 } from "./audio-production.js";
 import {
   inspectAudioInsertionBlock,
-  resolveAudioInsertionBoundary,
-  sourceTurnBoundaryAtOrAfter,
-  sourceTurnBoundaryAtOrBefore,
   type AudioInsertionBoundary,
 } from "./audio-insertion.js";
 import {
@@ -40,7 +39,6 @@ import {
   parseStephanusIndexToon,
 } from "./derived/stephanus.js";
 import { getRepoRoot, normalizeRepoPath } from "./paths.js";
-import { projectStephanusSpansToMarkers, stephanusMarkerOrdinal } from "./source.js";
 import { commentaryMarkdownBlocks } from "./wiki/commentary-ledger.js";
 import { fieldValue } from "./wiki/observation-ledger.js";
 import { parseCommentaryQualityAuditManifest } from "./wiki/commentary-quality-audit.js";
@@ -361,10 +359,6 @@ function readAttributionPlan(
   return { plan: raw as SpeakerAttributionPlan, errors: [] };
 }
 
-function chapterId(commentaryId: string) {
-  return `chapter-${commentaryId.replace(/^comm_/u, "")}`;
-}
-
 function entryId(prefix: string, id: string) {
   return `${prefix}-${id}`.replace(/_/gu, "-");
 }
@@ -389,82 +383,33 @@ function buildScreenplay(
   blockers: ScreenplayGenerationBlocker[],
 ) {
   const index = parseStephanusIndexToon(stephanusContent);
-  const sections = records.filter((record) => record.kind === "section");
-  const projection = projectStephanusSpansToMarkers(
-    index.markers,
-    sections.map((section) => ({ id: chapterId(section.id), span: section.span })),
-  );
-  const sectionRanges = projection.map((chapter, sectionIndex) => ({
-    ...chapter,
-    englishMarkers: chapter.markers,
-    record: sections[sectionIndex]!,
-  }));
-  const commentaryRanges = projectStephanusSpansToMarkers(
-    index.markers,
-    records.map((record) => ({ id: record.id, span: record.span })),
-  );
-  const commentaryRangeById = new Map(commentaryRanges.map((range) => [range.id, range]));
-  const invalidEnglishMarkers = index.markers.filter((marker) => {
-    const ordinal = stephanusMarkerOrdinal(marker.marker);
-    return sectionRanges.filter((section) => section.start <= ordinal && ordinal <= section.end).length !== 1;
-  });
-  const sectionBoundaryChars: number[] = [];
-  for (const section of sectionRanges) {
-    try {
-      sectionBoundaryChars.push(
-        section.record.audioInsertion
-          ? resolveAudioInsertionBoundary(dialogue, section.record.audioInsertion).boundaryChar
-          : sourceTurnBoundaryAtOrAfter(englishContent, section.englishMarkers[0]!.startChar),
-      );
-    } catch (error) {
-      blockers.push({
-        code: "invalid_commentary",
-        message: `Commentary ${section.record.id} has invalid audio_insertion: ${error instanceof Error ? error.message : String(error)}`,
-      });
-    }
-  }
-  const sectionStartsAreOrdered =
-    sectionBoundaryChars.length === sectionRanges.length &&
-    sectionBoundaryChars[0] === 0 &&
-    sectionBoundaryChars.every(
-      (start, sectionIndex) =>
-        start < englishContent.length &&
-        (sectionIndex === 0 || start > sectionBoundaryChars[sectionIndex - 1]!),
-    );
-  if (invalidEnglishMarkers.length > 0 || !sectionStartsAreOrdered || blockers.some((blocker) => blocker.code === "invalid_commentary")) {
+  const characterNames = characterNamesForDialogue(characters, dialogue);
+  let boundaryChars: Map<string, number>;
+  let layout: ReturnType<typeof resolveAudioChapterLayout>;
+  try {
+    boundaryChars = commentaryAudioBoundaryChars(dialogue, englishContent, stephanusContent, records);
+    layout = resolveAudioChapterLayout(dialogue, englishContent, records, boundaryChars, characterNames);
+  } catch (error) {
     blockers.push({
       code: "chapter_mapping_failure",
-      message:
-        "Accepted Greek section spans must project to an ordered, exact marker partition and strictly increasing source-turn or explicit audio boundaries beginning at source char 0; " +
-        `${invalidEnglishMarkers.length} English marker(s) have non-unique coverage and section order is ${sectionStartsAreOrdered ? "valid" : "invalid"}.`,
+      message: `Cannot resolve commentary audio boundaries: ${error instanceof Error ? error.message : String(error)}`,
     });
     return undefined;
   }
+  // Evidence spans describe what a section discusses, not the source it owns.
+  // Playback boundaries partition the complete spine; append-only ledger order
+  // and gaps left by rejected commentary must not drop or reorder source speech.
+  const recordById = new Map(records.map((record) => [record.id, record]));
+  const sectionRanges = layout.chapters.map(({ chapter }) => ({
+    ...chapter,
+    record: chapter.commentary_id === null ? null : recordById.get(chapter.commentary_id)!,
+  }));
+  const sectionBoundaryChars = layout.chapters.map((chapter) => chapter.startChar);
+  const commentaryBoundaryCharById = new Map(
+    records.filter((record) => record.kind !== "section")
+      .map((record) => [record.id, boundaryChars.get(record.id)!]),
+  );
 
-  const commentaryBoundaryCharById = new Map<string, number>();
-  for (const record of records.filter((candidate) => candidate.kind !== "section")) {
-    const range = commentaryRangeById.get(record.id)!;
-    try {
-      const boundaryChar = record.audioInsertion
-        ? resolveAudioInsertionBoundary(
-            dialogue,
-            record.audioInsertion,
-            record.placement === "before" ? "before" : "after",
-          ).boundaryChar
-        : record.placement === "before"
-          ? sourceTurnBoundaryAtOrBefore(englishContent, range.markers[0]!.startChar)
-          : sourceTurnBoundaryAtOrAfter(englishContent, range.markers.at(-1)!.endChar);
-      commentaryBoundaryCharById.set(record.id, boundaryChar);
-    } catch (error) {
-      blockers.push({
-        code: "invalid_commentary",
-        message: `Commentary ${record.id} has invalid audio_insertion: ${error instanceof Error ? error.message : String(error)}`,
-      });
-    }
-  }
-  if (blockers.some((blocker) => blocker.code === "invalid_commentary")) return undefined;
-
-  const characterNames = characterNamesForDialogue(characters, dialogue);
   let cursor = 0;
   for (const segment of plan.segments) {
     if (segment.start_char !== cursor || segment.end_char > englishContent.length) {
@@ -656,7 +601,7 @@ function buildScreenplay(
   const entries: AudioScriptEntry[] = [];
   for (const section of sectionRanges) {
     const recordsForChapter = commentaryByChapter.get(section.id) ?? [];
-    entries.push({
+    if (section.record) entries.push({
       id: entryId(`${dialogue}-heading`, section.record.id),
       chapter_id: section.id,
       kind: "heading",
@@ -665,7 +610,7 @@ function buildScreenplay(
       anchor: { commentary_id: section.record.id },
       cadence_intent: "chapter",
     });
-    entries.push({
+    if (section.record) entries.push({
       id: entryId(`${dialogue}-commentary`, section.record.id),
       chapter_id: section.id,
       kind: "commentary",
@@ -728,11 +673,7 @@ function buildScreenplay(
     commentary_quality_audit_sha256: commentaryQualityAuditSha256,
     cast_sha256: sha256(castContent),
     generator_version: `${GENERATOR_VERSION}+attribution.${attributionSha256}`,
-    chapters: sectionRanges.map((section) => ({
-      id: section.id,
-      commentary_id: section.record.id,
-      title: section.record.title,
-    })),
+    chapters: layout.chapters.map(({ chapter }) => chapter),
     entries,
     repairs: [],
     coverage: {

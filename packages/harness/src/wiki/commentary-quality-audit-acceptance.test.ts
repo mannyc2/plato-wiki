@@ -84,7 +84,7 @@ function writeFixtureLedger() {
       `  end_marker: ${ref.end_marker}`,
       `  start_char: ${ref.start_char}`,
       `  end_char: ${ref.end_char}`,
-      `  text_sha256: \"${ref.text_sha256}\"`,
+      `  text_sha256: "${ref.text_sha256}"`,
       'body: "A concise orientation."',
       "cites:",
       "  observations: []",

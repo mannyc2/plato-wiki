@@ -1,3 +1,4 @@
+import type { CommentaryQualityAuditManifest } from "./wiki/commentary-quality-audit.js";
 import { afterEach, beforeEach, describe, expect, it } from "bun:test";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
@@ -511,13 +512,6 @@ function validRewrite(dialogue: string, auditOutputPath: string, auditOutputSha2
         crossrefs: [],
       },
     ],
-  };
-}
-
-function historicalFableLowDraft(dialogue: string) {
-  return {
-    ...validDraft(dialogue),
-    authoring: { model: "historical-fable-low", effort: "low" },
   };
 }
 
@@ -2457,7 +2451,7 @@ describe("Codex gpt-5.6-luna commentary campaign", () => {
     const reviewNotePath = "wiki/review/2026-07-13-commentary-quality-accepted-luna-sample.md";
     const ledgerPath = "wiki/commentary/accepted.md";
     const protocolPath = "docs/commentary-protocol.md";
-    let canonicalManifest: Record<string, any> = {
+    let canonicalManifest = {
       schema_version: 1,
       dialogue: "accepted",
       ledger: { path: ledgerPath, sha256: digest(readFileSync(join(root, ledgerPath), "utf8")) },
@@ -2499,7 +2493,7 @@ describe("Codex gpt-5.6-luna commentary campaign", () => {
     });
     canonicalManifest = JSON.parse(
       readFileSync(join(root, "wiki/commentary-audits/accepted.json"), "utf8"),
-    ) as Record<string, any>;
+    ) as typeof canonicalManifest;
     for (const candidate of [job, sibling]) {
       rmSync(join(root, candidate.output_path), { force: true });
       rmSync(join(root, candidate.state_path), { force: true });
@@ -2681,7 +2675,7 @@ describe("Codex gpt-5.6-luna commentary campaign", () => {
         ]),
       ]),
     });
-    const accepted = JSON.parse(readFileSync(join(root, manifestPath), "utf8")) as Record<string, any>;
+    const accepted = JSON.parse(readFileSync(join(root, manifestPath), "utf8")) as CommentaryQualityAuditManifest;
     expect(reusableCanonicalAuditOutput(job)?.output).toEqual(canonicalOutput);
 
     const omittedPointer = structuredClone(accepted);

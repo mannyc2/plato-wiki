@@ -29,7 +29,7 @@ describe("ci contract", () => {
   });
 
   it("runs every required stage and cannot pass while one is skipped", () => {
-    for (const stage of ["test", "typecheck", "validate", "site"]) {
+    for (const stage of ["lint", "test", "typecheck", "validate", "build"]) {
       expect(driver).toContain(`name: "${stage}"`);
     }
     // A failed stage must abort the run rather than be reported and ignored.

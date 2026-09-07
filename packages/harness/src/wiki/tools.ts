@@ -1,12 +1,10 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
-import type { AgentTool } from "@earendil-works/pi-agent-core";
-import { Type } from "typebox";
-import { getRepoRoot, normalizeRepoPath } from "../paths.js";
+import { dirname } from "node:path";
+import { Type, type Static, type TSchema } from "typebox";
+import { Check } from "typebox/value";
+import { normalizeRepoPath } from "../paths.js";
 import { relationCandidateKey, type RelationCandidateTarget } from "../relations.js";
 import { resolveSourceSpan } from "../source.js";
-import type { TranscriptWriter } from "../transcript.js";
-import type { HarnessRunCommand } from "../types.js";
 import { withRepoWriteLock } from "../file-lock.js";
 import { assertClaimWritePath, assertObservationWritePath, assertReadableWikiPath, assertRelationWritePath } from "./guards.js";
 import {
@@ -30,15 +28,70 @@ import {
 } from "./relation-ledger.js";
 import { formatRelationLedgerValidationError, validateRelationLedger } from "./relation-validator.js";
 
-function isReviewCommand(command: HarnessRunCommand) {
+export const WIKI_TOOL_MODES = [
+  "ingest", "ingest-segmented", "review", "review-segmented", "claims-segmented",
+  "claims-review-segmented", "relations-segmented", "relations-review-segmented",
+] as const;
+
+export type WikiToolMode = (typeof WIKI_TOOL_MODES)[number];
+
+export type WikiToolEvents = {
+  write(type: string, data?: Record<string, unknown>): void;
+};
+
+type WikiToolResult = {
+  content: { type: "text"; text: string }[];
+  details: Record<string, unknown>;
+  terminate?: boolean;
+};
+
+export type WikiTool<Parameters extends TSchema = TSchema> = {
+  name: string;
+  label: string;
+  description: string;
+  parameters: Parameters;
+  executionMode: "parallel" | "sequential";
+  execute(callId: string, parameters: Static<Parameters>): Promise<WikiToolResult>;
+};
+
+export function parseWikiToolMode(value: string | undefined): WikiToolMode {
+  const mode = WIKI_TOOL_MODES.find((mode) => mode === value);
+  if (!mode) throw new Error(`Wiki mode must be one of: ${WIKI_TOOL_MODES.join(", ")}`);
+  return mode;
+}
+
+// A single process keeps validated drafts in memory until their explicit commit.
+// All call shapes are checked first so malformed later input cannot follow a write.
+export async function executeWikiToolCalls(mode: WikiToolMode, input: unknown) {
+  if (!Array.isArray(input)) throw new Error("Wiki tool input must be an array of {name, arguments} calls.");
+  const events: { type: string; data: Record<string, unknown> }[] = [];
+  const tools = createWikiTools({ write: (type, data = {}) => events.push({ type, data }) }, mode);
+  const calls = input.map((entry: unknown) => {
+    if (!entry || typeof entry !== "object" || !("name" in entry) || !("arguments" in entry)) {
+      throw new Error("Each wiki call requires name and arguments.");
+    }
+    const tool = tools.find((tool) => tool.name === entry.name);
+    if (!tool) throw new Error(`Unknown wiki tool for ${mode}: ${String(entry.name)}`);
+    if (!Check(tool.parameters, entry.arguments)) throw new Error(`Invalid arguments for ${tool.name}. Run the wiki command without a calls file to inspect its schema.`);
+    return { tool, arguments: entry.arguments };
+  });
+  const results: { name: string; result: WikiToolResult; events: typeof events }[] = [];
+  for (const [index, call] of calls.entries()) {
+    const result = await call.tool.execute(String(index + 1), call.arguments);
+    results.push({ name: call.tool.name, result, events: events.splice(0) });
+  }
+  return results;
+}
+
+function isReviewCommand(command: WikiToolMode) {
   return command === "review" || command === "review-segmented";
 }
 
-function isClaimCommand(command: HarnessRunCommand) {
+function isClaimCommand(command: WikiToolMode) {
   return command === "claims-segmented" || command === "claims-review-segmented";
 }
 
-function isRelationCommand(command: HarnessRunCommand) {
+function isRelationCommand(command: WikiToolMode) {
   return command === "relations-segmented" || command === "relations-review-segmented";
 }
 
@@ -85,25 +138,18 @@ export type WikiToolOptions = {
   relationTargets?: readonly RelationCandidateTarget[] | undefined;
 };
 
-export function createWikiTools(transcript: TranscriptWriter, command: HarnessRunCommand, options: WikiToolOptions = {}): AgentTool[] {
+export function createWikiTools(transcript: WikiToolEvents, command: WikiToolMode, options: WikiToolOptions = {}): WikiTool[] {
   let sourceSpanCallCount = 0;
+  const committedObservations = new Set<string>();
   const stagedObservations = new Map<
     string,
     {
       content: string;
       bytes: number;
       observationCount: number;
+      baseContent: string | undefined;
     }
   >();
-  const stagedClaims = new Map<
-    string,
-    {
-      content: string;
-      bytes: number;
-      claimCount: number;
-    }
-  >();
-
   const readFileParameters = Type.Object({
     path: Type.String({
       description: "Repository-relative path.",
@@ -119,11 +165,6 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
   const writeObservationParameters = Type.Object({
     path: Type.String({ description: "Repository-relative wiki/observations/*.md path." }),
     content: Type.String({ description: "Full markdown content to write." }),
-  });
-
-  const writeClaimParameters = Type.Object({
-    path: Type.String({ description: "Repository-relative wiki/claims/*.md path." }),
-    content: Type.String({ description: "Full markdown claim ledger content to write." }),
   });
 
   const updateReviewStatusesParameters = Type.Object({
@@ -156,10 +197,6 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
 
   const commitObservationParameters = Type.Object({
     path: Type.String({ description: "Repository-relative wiki/observations/*.md path previously staged." }),
-  });
-
-  const commitClaimParameters = Type.Object({
-    path: Type.String({ description: "Repository-relative wiki/claims/*.md path previously staged." }),
   });
 
   const appendObservationParameters = Type.Object({
@@ -677,7 +714,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     return `${block.trimEnd()}\nreview_status: ${status}`;
   }
 
-  const sourceSpanTool: AgentTool<typeof sourceSpanParameters> = {
+  const sourceSpanTool: WikiTool<typeof sourceSpanParameters> = {
     name: "wiki_source_span",
     label: "Source Span",
     description:
@@ -759,7 +796,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     },
   };
 
-  const readFileTool: AgentTool<typeof readFileParameters> = {
+  const readFileTool: WikiTool<typeof readFileParameters> = {
     name: "wiki_read_file",
     label: "Read Wiki File",
     description: "Read an allowed repository file: wiki observations or raw Plato Greek.",
@@ -781,7 +818,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     },
   };
 
-  const writeObservationTool: AgentTool<typeof writeObservationParameters> = {
+  const writeObservationTool: WikiTool<typeof writeObservationParameters> = {
     name: "wiki_write_observation",
     label: "Write Observation",
     description:
@@ -833,7 +870,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     },
   };
 
-  const updateReviewStatusesTool: AgentTool<typeof updateReviewStatusesParameters> = {
+  const updateReviewStatusesTool: WikiTool<typeof updateReviewStatusesParameters> = {
     name: "wiki_update_review_statuses",
     label: "Update Review Statuses",
     description:
@@ -916,92 +953,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     },
   };
 
-  const stageClaimTool: AgentTool<typeof writeClaimParameters> = {
-    name: "wiki_stage_claims",
-    label: "Stage Claims",
-    description:
-      "Validate and stage a complete claim ledger without writing wiki/claims. Use this for drafts and retries when preparing a whole claim ledger.",
-    parameters: writeClaimParameters,
-    executionMode: "sequential",
-    execute: async (_toolCallId, params) => {
-      const { relativePath } = normalizeRepoPath(params.path);
-      assertClaimWritePath(relativePath);
-      const validation = validateClaim(relativePath, params.content);
-
-      if (!validation.ok) {
-        transcript.write("wiki_tool_stage_claims_rejected", {
-          path: relativePath,
-          issueCount: validation.validationIssues.length,
-          issues: validation.validationIssues.slice(0, 12),
-        });
-        throw new Error(formatClaimLedgerValidationError(validation.validationIssues, "wiki_stage_claims"));
-      }
-
-      stagedClaims.set(relativePath, {
-        content: validation.content,
-        bytes: validation.bytes,
-        claimCount: validation.claimCount,
-      });
-      transcript.write("wiki_tool_stage_claims", {
-        path: relativePath,
-        bytes: validation.bytes,
-        claimCount: validation.claimCount,
-      });
-
-      return {
-        content: [
-          {
-            type: "text",
-            text: [
-              `Staged ${relativePath}; no files were written.`,
-              `Validated ${validation.claimCount} claim record(s).`,
-              "When the full dialogue ledger is complete, call wiki_commit_claims with the same path.",
-            ].join("\n"),
-          },
-        ],
-        details: {
-          path: relativePath,
-          bytes: validation.bytes,
-          claimCount: validation.claimCount,
-        },
-      };
-    },
-  };
-
-  const commitClaimTool: AgentTool<typeof commitClaimParameters> = {
-    name: "wiki_commit_claims",
-    label: "Commit Claims",
-    description:
-      "Commit the latest staged claim ledger to wiki/claims/<dialogue>.md.",
-    parameters: commitClaimParameters,
-    executionMode: "sequential",
-    execute: async (_toolCallId, params) => {
-      const { absolutePath, relativePath } = normalizeRepoPath(params.path);
-      assertClaimWritePath(relativePath);
-      const staged = stagedClaims.get(relativePath);
-      if (!staged) {
-        throw new Error(`No staged claim content found for ${relativePath}. Call wiki_stage_claims first.`);
-      }
-
-      return withRepoWriteLock({ paths: [relativePath], label: `wiki_commit_claims:${relativePath}` }, () => {
-        mkdirSync(dirname(absolutePath), { recursive: true });
-        writeFileSync(absolutePath, staged.content, "utf8");
-        transcript.write("wiki_tool_commit_claims", {
-          path: relativePath,
-          bytes: staged.bytes,
-          claimCount: staged.claimCount,
-        });
-
-        return wikiResult(
-          `Committed ${staged.claimCount} claim record(s) to ${relativePath}.`,
-          relativePath,
-          staged.bytes,
-        );
-      });
-    },
-  };
-
-  const appendClaimTool: AgentTool<typeof appendClaimParameters> = {
+  const appendClaimTool: WikiTool<typeof appendClaimParameters> = {
     name: "wiki_append_claims",
     label: "Append Claims",
     description:
@@ -1089,7 +1041,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     },
   };
 
-  const updateClaimReviewStatusesTool: AgentTool<typeof updateClaimReviewStatusesParameters> = {
+  const updateClaimReviewStatusesTool: WikiTool<typeof updateClaimReviewStatusesParameters> = {
     name: "wiki_update_claim_review_statuses",
     label: "Update Claim Review Statuses",
     description:
@@ -1175,7 +1127,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     },
   };
 
-  const appendRelationTool: AgentTool<typeof appendRelationParameters> = {
+  const appendRelationTool: WikiTool<typeof appendRelationParameters> = {
     name: "wiki_append_relations",
     label: "Append Relations",
     description:
@@ -1252,7 +1204,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     },
   };
 
-  const updateRelationReviewStatusesTool: AgentTool<typeof updateRelationReviewStatusesParameters> = {
+  const updateRelationReviewStatusesTool: WikiTool<typeof updateRelationReviewStatusesParameters> = {
     name: "wiki_update_relation_review_statuses",
     label: "Update Relation Review Statuses",
     description:
@@ -1338,7 +1290,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     },
   };
 
-  const stageObservationTool: AgentTool<typeof writeObservationParameters> = {
+  const stageObservationTool: WikiTool<typeof writeObservationParameters> = {
     name: "wiki_stage_observation",
     label: "Stage Observation",
     description:
@@ -1346,8 +1298,9 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     parameters: writeObservationParameters,
     executionMode: "sequential",
     execute: async (_toolCallId, params) => {
-      const { relativePath } = normalizeRepoPath(params.path);
+      const { absolutePath, relativePath } = normalizeRepoPath(params.path);
       assertObservationWritePath(relativePath);
+      if (committedObservations.has(relativePath)) throw new Error(`Observation ledger already committed in this session: ${relativePath}`);
       const validation = validateObservation(relativePath, params.content);
 
       if (!validation.ok) {
@@ -1359,10 +1312,14 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
         throw new Error(formatObservationLedgerValidationError(validation.validationIssues, "wiki_stage_observation"));
       }
 
+      const previous = stagedObservations.get(relativePath);
       stagedObservations.set(relativePath, {
         content: validation.content,
         bytes: validation.bytes,
         observationCount: validation.observationCount,
+        // Draft retries retain the first ledger snapshot so a concurrent accepted
+        // edit cannot be silently adopted as the base for an older draft.
+        baseContent: previous ? previous.baseContent : existsSync(absolutePath) ? readFileSync(absolutePath, "utf8") : undefined,
       });
       transcript.write("wiki_tool_stage_observation", {
         path: relativePath,
@@ -1378,7 +1335,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     },
   };
 
-  const commitObservationTool: AgentTool<typeof commitObservationParameters> = {
+  const commitObservationTool: WikiTool<typeof commitObservationParameters> = {
     name: "wiki_commit_observation",
     label: "Commit Observation",
     description:
@@ -1388,24 +1345,32 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     execute: async (_toolCallId, params) => {
       const { absolutePath, relativePath } = normalizeRepoPath(params.path);
       assertObservationWritePath(relativePath);
+      if (committedObservations.has(relativePath)) throw new Error(`Observation ledger already committed in this session: ${relativePath}`);
       const staged = stagedObservations.get(relativePath);
       if (!staged) {
         throw new Error(`No staged observation content found for ${relativePath}. Call wiki_stage_observation first.`);
       }
 
-      mkdirSync(dirname(absolutePath), { recursive: true });
-      writeFileSync(absolutePath, staged.content, "utf8");
-      transcript.write("wiki_tool_commit_observation", {
-        path: relativePath,
-        bytes: staged.bytes,
-        observationCount: staged.observationCount,
+      return withRepoWriteLock({ paths: [relativePath], label: `wiki_commit_observation:${relativePath}` }, () => {
+        const current = existsSync(absolutePath) ? readFileSync(absolutePath, "utf8") : undefined;
+        if (current !== staged.baseContent) throw new Error(`Observation ledger changed after staging: ${relativePath}`);
+        const validation = validateObservation(relativePath, staged.content);
+        if (!validation.ok) throw new Error(formatObservationLedgerValidationError(validation.validationIssues, "wiki_commit_observation"));
+        mkdirSync(dirname(absolutePath), { recursive: true });
+        writeFileSync(absolutePath, staged.content, "utf8");
+        stagedObservations.delete(relativePath);
+        committedObservations.add(relativePath);
+        transcript.write("wiki_tool_commit_observation", {
+          path: relativePath,
+          bytes: staged.bytes,
+          observationCount: staged.observationCount,
+        });
+        return wikiResult(`Committed ${relativePath}.`, relativePath, staged.bytes);
       });
-
-      return wikiResult(`Committed ${relativePath}.`, relativePath, staged.bytes);
     },
   };
 
-  const appendObservationTool: AgentTool<typeof appendObservationParameters> = {
+  const appendObservationTool: WikiTool<typeof appendObservationParameters> = {
     name: "wiki_append_observations",
     label: "Append Observations",
     description:
@@ -1488,7 +1453,7 @@ export function createWikiTools(transcript: TranscriptWriter, command: HarnessRu
     },
   };
 
-  const tools: AgentTool[] =
+  const tools: WikiTool[] =
     command === "ingest"
       ? [sourceSpanTool, readFileTool, stageObservationTool, commitObservationTool]
         : command === "ingest-segmented"

@@ -315,7 +315,7 @@ function script(): AudioScript {
 
 function qa(scriptContent: string): AudioQaReport {
   return {
-    schema_version: 2,
+    schema_version: 3,
     dialogue: DIALOGUE,
     status: "accepted",
     generated_at: "2026-07-13T04:00:00Z",
@@ -348,6 +348,7 @@ function qa(scriptContent: string): AudioQaReport {
       ordinary_word_errors: 0,
       word_error_rate: 0,
       transcript_sha256: HASH,
+      audit_sha256: HASH,
       exceptions: [],
     },
     audio: {
@@ -808,6 +809,67 @@ describe("audio screenplay and QA hard-cutover contracts", () => {
     expect(parseAudioQa(`audio/qa/${DIALOGUE}.json`, content).status).toBe("accepted");
   });
 
+  it("accepts ratified internal pauses while rejecting a raised ceiling or excess silence", () => {
+    const report = qa(JSON.stringify(script()));
+    report.audio.silence.max_allowed_ms = 1800;
+    const validate = () => validateAudioQa(`audio/qa/${DIALOGUE}.json`, JSON.stringify(report));
+    for (const duration of [1720, 1800]) {
+      report.audio.silence.max_observed_ms = duration;
+      report.chapters[0]!.max_silence_ms = duration;
+      expect(validate()).toEqual([]);
+    }
+
+    report.audio.silence.max_observed_ms = 1801;
+    report.chapters[0]!.max_silence_ms = 1801;
+    expect(codes(validate())).toContain("acceptance_gate_failure");
+    report.audio.silence.max_allowed_ms = 1801;
+    expect(codes(validate())).toContain("invalid_metric");
+  });
+
+  it("binds reviewed ASR edits to complete chapter indexes and preserves empty insertion/deletion sides", () => {
+    const report = qa(JSON.stringify(script()));
+    Object.assign(report.asr, {
+      expected_words: 200, recognized_words: 200, word_errors: 2, word_error_rate: 0.01,
+      exceptions: [
+        { chapter_id: CHAPTER_ID, edit_index: 0, expected: "crito", recognized: "", classification: "proper-name", reviewed: true },
+        { chapter_id: CHAPTER_ID, edit_index: 1, expected: "", recognized: "plato", classification: "proper-name", reviewed: true },
+      ],
+    });
+    Object.assign(report.chapters[0]!, { asr_expected_words: 200, asr_word_errors: 2, asr_word_error_rate: 0.01 });
+    const validate = (value: unknown) => validateAudioQa(`audio/qa/${DIALOGUE}.json`, JSON.stringify(value));
+    expect(validate(report)).toEqual([]);
+
+    const variants: AudioQaReport[] = [];
+    const missing = structuredClone(report);
+    missing.asr.exceptions.pop();
+    variants.push(missing);
+    const duplicate = structuredClone(report);
+    duplicate.asr.exceptions[1]!.edit_index = 0;
+    variants.push(duplicate);
+    const outOfRange = structuredClone(report);
+    outOfRange.asr.exceptions[1]!.edit_index = 2;
+    variants.push(outOfRange);
+    const unknownChapter = structuredClone(report);
+    unknownChapter.asr.exceptions[1]!.chapter_id = "unknown";
+    variants.push(unknownChapter);
+    const empty = structuredClone(report);
+    empty.asr.exceptions[0]!.expected = "";
+    variants.push(empty);
+    const multipleWords = structuredClone(report);
+    multipleWords.asr.exceptions[0]!.expected = "two names";
+    variants.push(multipleWords);
+    const ordinary = structuredClone(report);
+    ordinary.asr.exceptions[0]!.classification = "ordinary";
+    variants.push(ordinary);
+    const unreviewed = structuredClone(report);
+    unreviewed.asr.exceptions[0]!.reviewed = false;
+    variants.push(unreviewed);
+    for (const invalid of variants) expect(validate(invalid).length).toBeGreaterThan(0);
+    expect(codes(validate({ ...report, schema_version: 2 }))).toContain("invalid_schema_version");
+    const { audit_sha256: _audit, ...unboundAsr } = report.asr;
+    expect(codes(validate({ ...report, asr: unboundAsr }))).toContain("invalid_shape");
+  });
+
   it("accepts an explicit operator waiver without claiming listening occurred", () => {
     const scriptContent = `${JSON.stringify(script(), null, 2)}\n`;
     write(`audio/scripts/${DIALOGUE}.json`, scriptContent);
@@ -877,7 +939,7 @@ describe("audio screenplay and QA hard-cutover contracts", () => {
     asr.asr.word_errors = 1;
     asr.asr.word_error_rate = 0.2;
     asr.asr.exceptions = [
-      { expected: "Socrates", recognized: "Socrates'", occurrences: 1, classification: "proper-name", reviewed: true },
+      { chapter_id: CHAPTER_ID, edit_index: 0, expected: "socrates", recognized: "socrate", classification: "proper-name", reviewed: true },
     ];
     asr.chapters[0]!.asr_word_errors = 1;
     asr.chapters[0]!.asr_word_error_rate = 0.2;

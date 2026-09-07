@@ -21,7 +21,7 @@ import {
 import { commentaryMarkdownBlocks } from "./wiki/commentary-ledger.js";
 import { validateCommentaryLedger } from "./wiki/commentary-validator.js";
 import { fieldValue } from "./wiki/observation-ledger.js";
-import { validateGeneratedSite, type GeneratedSiteRecordingExpectation } from "./site/validate.js";
+import { recordingChapterTarget, validateGeneratedSite, type GeneratedSiteRecordingExpectation } from "./site/validate.js";
 import { resolveRecordingArtifactRoot, validateRecordingMasteringEvidence } from "./site/mastering-evidence.js";
 import { inspectMp3File } from "./site/recordings.js";
 import {
@@ -410,12 +410,13 @@ function screenplayCoverage(
   canonicalIds: Set<string>,
   voiceOwnerIds: Set<string>,
   selectedCastIds: Set<string>,
+  auditEvidence: () => CommentaryAuditEvidenceSnapshot,
 ) {
   const path = `audio/scripts/${dialogue}.json`;
   const absolutePath = join(getRepoRoot(), path);
   const present = existsSync(absolutePath) && statSync(absolutePath).isFile() && statSync(absolutePath).size > 0;
   const content = present ? readFileSync(absolutePath, "utf8") : undefined;
-  const validationIssueCount = content ? validateAudioScriptArtifact(path, content).length : 0;
+  const validationIssueCount = content ? validateAudioScriptArtifact(path, content, auditEvidence()).length : 0;
   const script = readJsonObject(path);
   const entries = objectArray(script?.entries);
   const characterIds = sortedUnique(
@@ -522,7 +523,7 @@ function strictWebsiteRecordingDialogues(dialogues: readonly string[]) {
       audioSha256: manifest.audio.sha256,
       durationSeconds: manifest.audio.duration_seconds,
       assetPath: `assets/recordings/${dialogue}/complete.mp3`,
-      chapterTargets: manifest.chapters.map((chapter) => chapter.commentary_id),
+      chapterTargets: manifest.chapters.map((chapter) => recordingChapterTarget(chapter.commentary_id)),
       chapterIds: manifest.chapters.map((chapter) => chapter.chapter_id),
       chapterStartFrames: manifest.chapters.map((chapter) => chapter.start_frame),
       chapterStartSeconds: manifest.chapters.map((chapter) => chapter.start_frame / 48_000),
@@ -598,6 +599,7 @@ function coverageForDialogue(
     new Set(canonicalIds),
     new Set(voiceOwnerIds),
     castCatalog.selected,
+    auditEvidence,
   );
   const unresolvedCharacterIds = sortedUnique([
     ...rosterUnresolvedCharacterIds,

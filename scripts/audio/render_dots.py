@@ -417,7 +417,14 @@ def validate_screenplay(screenplay: dict[str, Any]) -> None:
         if chapter_id in chapter_ids:
             raise RenderContractError(f"{location}.id: duplicate id {chapter_id!r}")
         chapter_ids.add(chapter_id)
-        _nonempty_string(chapter["commentary_id"], f"{location}.commentary_id")
+        if chapter["commentary_id"] is None:
+            if index != 0 or chapter_id != f"chapter-{dialogue}-opening":
+                raise RenderContractError(
+                    f"{location}.commentary_id: null is reserved for the first "
+                    f"chapter-{dialogue}-opening chapter"
+                )
+        else:
+            _nonempty_string(chapter["commentary_id"], f"{location}.commentary_id")
         if "title" in chapter:
             _nonempty_string(chapter["title"], f"{location}.title")
 

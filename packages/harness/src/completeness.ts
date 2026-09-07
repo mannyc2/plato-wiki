@@ -60,7 +60,7 @@ import {
   discoverSiteRecordings,
   validateSiteRecordingEvidence,
 } from "./site/recordings.js";
-import { validateGeneratedSite } from "./site/validate.js";
+import { recordingChapterTarget, validateGeneratedSite } from "./site/validate.js";
 import { claimYamlBlocks } from "./wiki/claim-ledger.js";
 import { validateClaimLedger } from "./wiki/claim-validator.js";
 import { fieldValue, observationYamlBlocks } from "./wiki/observation-ledger.js";
@@ -419,7 +419,7 @@ export function auditPrebuiltStaticSite(siteDirectory: string): SiteCompleteness
       durationSeconds: recording.durationSeconds,
       status: recording.status,
       assetPath: recording.siteAssetPath,
-      chapterTargets: recording.chapters.map((chapter) => chapter.commentary_id),
+      chapterTargets: recording.chapters.map((chapter) => recordingChapterTarget(chapter.commentary_id)),
       chapterIds: recording.chapters.map((chapter) => chapter.chapter_id),
       chapterStartFrames: recording.chapters.map((chapter) => chapter.start_frame),
       chapterStartSeconds: recording.chapters.map((chapter) => chapter.start_frame / 48_000),
@@ -694,15 +694,6 @@ function audioFacts(coverage: DialogueAudioCoverage, attribution: boolean) {
     recording,
     website: coverage.website.linked,
   };
-}
-
-function listSlugs(root: string, dir: string) {
-  const path = join(root, dir);
-  if (!existsSync(path)) return [];
-  return readdirSync(path)
-    .filter((name) => name.endsWith(".txt"))
-    .map((name) => name.slice(0, -4))
-    .sort();
 }
 
 type RelationAuditEvidence = RelationAuditCompletenessFacts & {

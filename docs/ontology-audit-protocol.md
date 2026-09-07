@@ -276,11 +276,17 @@ nonempty lane to `complete`, and retains `zero_result` only for empty lanes; an
 accepted package containing any contradictory pending manifest, lane, or item
 state is invalid. The hashed closure receipt binds `regeneration.json`,
 `closure-evidence.json`, and every terminal decision receipt. The verifier
-recomputes the regeneration digest from its artifact list, compares every
-canonical generated artifact descriptor with the current derived, cluster, and
-dossier bytes (temporary site artifacts remain hash-bound by the receipt), and
-requires every machine-evidence issue set to be empty. The verifier fails
-closed on any false acceptance claim.
+recomputes the historical regeneration digest from its artifact list and checks
+its pass equality, recorded site-tree digest, closure-evidence bytes, and receipt
+bindings without requiring current reports or presentation bytes to equal the
+historical output. Current ledgers and site independently undergo semantic
+closure verification, with every machine-evidence issue set required to be
+empty. Generic schema, integrity, projection, and site validators own the current
+generated output. Accepted historical evidence remains immutable; the verifier
+fails closed on any false acceptance claim.
+Tool and protocol descriptors must match current files during pending work and
+candidate publication; all reads of accepted evidence retain historical producer
+provenance protected by the acceptance record's manifest hash.
 
 ## Commands
 

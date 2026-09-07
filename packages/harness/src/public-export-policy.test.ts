@@ -5,6 +5,11 @@ import { join } from "node:path";
 import { isPublicHistoricalCommentaryAuditSample } from "../../../scripts/release/public-export-policy.js";
 import { getRepoRoot } from "./paths.js";
 
+type SampleFixture = Record<string, unknown> & {
+  dialogue: string;
+  sample_packet: { content: string; sha256: string };
+};
+
 const sha256 = (content: Uint8Array) => createHash("sha256").update(content).digest("hex");
 const samplePath = (dialogue: string, bytes: Uint8Array) =>
   `wiki/submissions/commentary-audit-sample/${dialogue}/${sha256(bytes)}.json`;
@@ -27,12 +32,12 @@ describe("public export historical-plan policy", () => {
 
     const firstPath = samplePaths[0]!;
     const firstBytes = readFileSync(join(root, firstPath));
-    const first = JSON.parse(firstBytes.toString("utf8")) as Record<string, any>;
+    const first = JSON.parse(firstBytes.toString("utf8")) as SampleFixture;
     expect(isPublicHistoricalCommentaryAuditSample(firstPath, firstBytes, `${protocolContent}\n`)).toBe(false);
     expect(isPublicHistoricalCommentaryAuditSample(firstPath, Buffer.concat([firstBytes, Buffer.from(" ")]), protocolContent)).toBe(false);
 
-    const rejects = (mutate: (value: Record<string, any>) => void, pathDialogue = first.dialogue as string) => {
-      const value = structuredClone(first) as Record<string, any>;
+    const rejects = (mutate: (value: SampleFixture) => void, pathDialogue = first.dialogue as string) => {
+      const value = structuredClone(first) as SampleFixture;
       mutate(value);
       const bytes = Buffer.from(`${JSON.stringify(value, null, 2)}\n`);
       expect(isPublicHistoricalCommentaryAuditSample(samplePath(pathDialogue, bytes), bytes, protocolContent)).toBe(false);

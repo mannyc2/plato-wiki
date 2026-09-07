@@ -87,6 +87,19 @@ describe("buildJobManifest", () => {
     expect(job!.remediation).toBe("remediate crito");
   });
 
+  it("dispatches semantic observation and claim work to agents with deterministic write tools", () => {
+    const manifest = build([
+      { id: "CMP-OBSERVATIONS", leaves: [leaf("crito", "fail")] },
+      { id: "CMP-CLAIMS", leaves: [leaf("crito", "fail")] },
+    ]);
+    for (const job of manifest.jobs) {
+      expect(job.automation).toBe("manual");
+      expect(job.submit).toContain("bun run validate");
+      expect(job.submit.some((command) => command.includes("harness wiki"))).toBe(true);
+      expect(job.submit.some((command) => command.includes("-queue"))).toBe(false);
+    }
+  });
+
   it("skips families the selected target does not require", () => {
     const audioOnly = [{ id: "CMP-AUDIO-RENDER" as const, leaves: [leaf("crito", "fail")] }];
 
@@ -212,7 +225,7 @@ describe("job manifest persistence", () => {
     const absolute = join(root, JOB_MANIFEST_PATH);
     writeFileSync(absolute, JSON.stringify({ ...manifest, schema_version: 99 }), "utf8");
 
-    expect(() => readJobManifest()).toThrow("is schema 99, expected 1");
+    expect(() => readJobManifest()).toThrow("is schema 99, expected 2");
   });
 
   it("suggests near matches for an unknown job id", () => {

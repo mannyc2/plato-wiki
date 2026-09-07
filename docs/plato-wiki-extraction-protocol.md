@@ -105,5 +105,7 @@ wiki/ingest-log.md
 ```
 
 Clusters, dossiers, registries, and reader pages are deterministic projections,
-not peer ontologies. The harness appends run history to `wiki/ingest-log.md`;
-agents do not write it directly.
+not peer ontologies. `wiki/ingest-log.md` preserves historical run evidence;
+current agent curation records the accepted decision in one canonical receipt
+under `wiki/review/` with the corpus diff. See `docs/harness-operations.md` for
+the generic source, stage, commit, and review tools.

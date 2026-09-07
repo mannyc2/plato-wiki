@@ -544,6 +544,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fo
 .reading.lang-both .v-greek { margin-bottom: 8px; }
 .reading.commentary-off.marks-off.lang-both .v-greek { margin-bottom: 0; }
 .v-text { padding: 10px 0; min-width: 0; }
+#source-opening { scroll-margin-top: 112px; }
 .v-greek p, .v-english p { margin: 0 0 9px; font-size: 17px; line-height: 1.66; }
 .v-greek p:last-child, .v-english p:last-child { margin-bottom: 0; }
 .v-english .speaker { font: 600 11.5px var(--sans); text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-right: 7px; }

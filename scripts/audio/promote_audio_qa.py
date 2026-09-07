@@ -2,7 +2,7 @@
 """Promote an exact mastered recording after explicit production acceptance.
 
 The command is dry by default. It validates the content-addressed mechanical
-QA handoff, a separate schema-v2 acceptance review, every mastering artifact,
+QA handoff, a separate schema-v3 acceptance review, every mastering artifact,
 and the current screenplay/cast bytes. The acceptance review either records
 completed human listening or an explicit operator-authorized listening waiver;
 the waiver never changes or bypasses any mechanical, ASR, source, commentary,
@@ -10,7 +10,7 @@ or cast gate. It then derives:
 
 * distinct RF64 PCM24 chapter artifacts sliced at the authoritative 48 kHz
   mastering timeline;
-* ``audio/qa/<dialogue>.json`` schema v2; and
+* ``audio/qa/<dialogue>.json`` schema v3; and
 * ``wiki/recordings/<dialogue>.json`` schema v2.
 
 Execution requires the exact dry-run plan SHA-256. Canonical repository files
@@ -30,10 +30,13 @@ import struct
 import subprocess
 import sys
 import uuid
+from collections.abc import Mapping
 from pathlib import Path
 from typing import Any, Callable
+from typing import Literal, TypedDict, cast
 
 from assemble_audio_qa_handoff import validate_handoff
+from audit_full_master_asr import AsrAuditError, build_audit
 from master_audio import (
     PRODUCTION_SAMPLE_WIDTH_BYTES,
     RF64_SIZE_SENTINEL,
@@ -42,16 +45,58 @@ from master_audio import (
 )
 
 
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 STATUS = "accepted-audio-production-promotion-plan"
 IMPLEMENTATION_NAME = "plato-audio-qa-promoter"
-IMPLEMENTATION_VERSION = 2
+IMPLEMENTATION_VERSION = 3
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 DIALOGUE_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SAFE_ID_RE = re.compile(r"^[a-z0-9][a-z0-9_-]*$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 TIMESTAMP_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?Z$")
 COPY_BYTES = 4 * 1024 * 1024
+
+
+AsrClassification = Literal["proper-name", "punctuation", "ordinary"]
+AsrMetricField = Literal[
+    "expected_words", "recognized_words", "word_errors", "word_error_rate"
+]
+ASR_METRIC_FIELDS: tuple[AsrMetricField, ...] = (
+    "expected_words", "recognized_words", "word_errors", "word_error_rate"
+)
+
+
+class AsrAuditMetrics(TypedDict):
+    expected_words: int
+    recognized_words: int
+    word_errors: int
+    word_error_rate: float
+
+
+class AsrAuditEdit(TypedDict):
+    edit_index: int
+    expected: str
+    recognized: str
+
+
+class AsrAuditChapter(AsrAuditMetrics):
+    chapter_id: str
+    edits: list[AsrAuditEdit]
+
+
+class AsrEditAudit(TypedDict):
+    audit_sha256: str
+    chapters: list[AsrAuditChapter]
+    corpus: AsrAuditMetrics
+
+
+class AsrExceptionProjection(TypedDict):
+    chapter_id: str
+    edit_index: int
+    expected: str
+    recognized: str
+    classification: AsrClassification
+    reviewed: Literal[True]
 
 
 class PromotionError(ValueError):
@@ -470,6 +515,7 @@ OPERATOR_WAIVER_BASIS = "operator-authorized-mechanical-and-asr-waiver"
 def validate_acceptance_review(
     review: dict[str, Any],
     handoff: dict[str, Any],
+    audit: AsrEditAudit,
 ) -> None:
     fields = {
         "schema_version",
@@ -485,6 +531,7 @@ def validate_acceptance_review(
         "disposition",
         "findings",
         "asr_exceptions",
+        "audit_sha256",
     }
     _exact_object(review, fields, "acceptance review")
     dialogue = _nonempty(handoff.get("dialogue"), "handoff dialogue")
@@ -497,7 +544,7 @@ def validate_acceptance_review(
     listening_status = review.get("listening_status")
     disposition = review.get("disposition")
     if (
-        review["schema_version"] != 2
+        review["schema_version"] != 3
         or review["dialogue"] != dialogue
         or review["handoff_evidence_sha256"] != handoff.get("evidence_sha256")
         or review["working_master_sha256"]
@@ -569,38 +616,85 @@ def validate_acceptance_review(
 
     if not isinstance(review["asr_exceptions"], list):
         raise PromotionError("ASR exceptions must be an array")
-    exception_fields = {
-        "expected",
-        "recognized",
-        "occurrences",
-        "classification",
-        "reviewed",
+    _project_asr_exceptions(review, audit)
+
+
+def _project_asr_exceptions(
+    review: Mapping[str, object], audit: AsrEditAudit
+) -> list[AsrExceptionProjection]:
+    if review["audit_sha256"] != audit["audit_sha256"]:
+        raise PromotionError("acceptance review must bind the reconstructed ASR audit")
+    edits: dict[tuple[str, int], AsrAuditEdit] = {
+        (chapter["chapter_id"], edit["edit_index"]): edit
+        for chapter in audit["chapters"]
+        for edit in chapter["edits"]
     }
-    word_errors = handoff.get("asr", {}).get("word_errors")
-    ordinary_errors = handoff.get("asr", {}).get("ordinary_word_errors")
-    exception_count = 0
-    ordinary_count = 0
-    for index, exception in enumerate(review["asr_exceptions"]):
+    classifications: dict[tuple[str, int], AsrClassification] = {}
+    raw_exceptions = review["asr_exceptions"]
+    if not isinstance(raw_exceptions, list):
+        raise PromotionError("ASR exceptions must be an array")
+    for index, raw_exception in enumerate(cast(list[object], raw_exceptions)):
+        exception: Mapping[str, object] = _exact_object(
+            raw_exception,
+            {"chapter_id", "edit_index", "classification", "reviewed"},
+            f"ASR exception {index}",
+        )
+        chapter_id = exception["chapter_id"]
+        edit_index = exception["edit_index"]
+        classification = exception["classification"]
         if (
-            not isinstance(exception, dict)
-            or set(exception) != exception_fields
-            or not isinstance(exception.get("occurrences"), int)
-            or isinstance(exception.get("occurrences"), bool)
-            or exception["occurrences"] <= 0
-            or exception.get("classification")
-            not in {"proper-name", "punctuation", "ordinary"}
-            or exception.get("reviewed") is not True
+            not isinstance(chapter_id, str)
+            or not isinstance(edit_index, int)
+            or isinstance(edit_index, bool)
+            or edit_index < 0
+            or not isinstance(classification, str)
+            or classification not in {"proper-name", "punctuation", "ordinary"}
+            or exception["reviewed"] is not True
         ):
             raise PromotionError(f"ASR exception {index} is invalid")
-        _nonempty(exception["expected"], f"ASR exception {index} expected")
-        _nonempty(exception["recognized"], f"ASR exception {index} recognized")
-        exception_count += exception["occurrences"]
-        if exception["classification"] == "ordinary":
-            ordinary_count += exception["occurrences"]
-    if exception_count != word_errors or ordinary_count != ordinary_errors:
-        raise PromotionError(
-            "ASR exceptions must enumerate every word and ordinary-word error"
+        key = (chapter_id, edit_index)
+        if key not in edits or key in classifications:
+            raise PromotionError("ASR exception IDs must identify unique audited edits")
+        classifications[key] = cast(AsrClassification, classification)
+    if classifications.keys() != edits.keys():
+        raise PromotionError("ASR exceptions must classify every audited edit exactly once")
+    # Tokens and counts belong to the reproducible alignment, never reviewer input.
+    return [
+        {
+            "chapter_id": chapter_id,
+            "edit_index": edit_index,
+            "expected": edit["expected"],
+            "recognized": edit["recognized"],
+            "classification": classifications[(chapter_id, edit_index)],
+            "reviewed": True,
+        }
+        for (chapter_id, edit_index), edit in edits.items()
+    ]
+
+
+def _rebuild_asr_audit(
+    binding: Mapping[str, object],
+    screenplay: Mapping[str, object],
+    screenplay_sha256: str,
+) -> AsrEditAudit:
+    path = Path(_nonempty(binding["path"], "full-master ASR path"))
+    file_sha = _sha256(binding["file_sha256"], "full-master ASR file SHA-256")
+    _verify_file(path, file_sha, "full-master ASR")
+    evidence = _load_json(path, "full-master ASR")
+    if evidence.get("evidence_sha256") != binding["evidence_sha256"]:
+        raise PromotionError("full-master ASR evidence hash differs from the handoff")
+    try:
+        audit = build_audit(
+            evidence,
+            dict(screenplay),
+            evidence_file_sha256=file_sha,
+            screenplay_file_sha256=screenplay_sha256,
         )
+        # The audit builder validates the full evidence. Promotion names only
+        # the fields it consumes, avoiding a second copy of the audit schema.
+        return cast(AsrEditAudit, audit)
+    except AsrAuditError as error:
+        raise PromotionError(str(error)) from error
 
 
 def _artifact_binding(
@@ -667,24 +761,58 @@ def _accepted_qa(
     generated_at: str,
     chapter_artifacts: list[dict[str, Any]],
     artifact_binding: dict[str, Any],
+    audit: AsrEditAudit,
 ) -> dict[str, Any]:
     asr = handoff["asr"]
+    if any(
+        asr[field] != audit["corpus"][field]
+        for field in ASR_METRIC_FIELDS
+    ):
+        raise PromotionError("reconstructed ASR corpus metrics differ from handoff")
+    exceptions = _project_asr_exceptions(review, audit)
+    ordinary_errors = sum(item["classification"] == "ordinary" for item in exceptions)
+    if (
+        asr["maximum_word_error_rate"] > 0.02
+        or asr["maximum_ordinary_word_errors"] != 0
+        or asr["word_error_rate"] > asr["maximum_word_error_rate"]
+        or ordinary_errors > asr["maximum_ordinary_word_errors"]
+    ):
+        raise PromotionError(
+            "reviewed ASR production gates require at most 2% WER and zero ordinary errors"
+        )
+    audited_chapters = audit["chapters"]
+    if [item["chapter_id"] for item in audited_chapters] != [
+        item["chapter_id"] for item in handoff["chapters"]
+    ]:
+        raise PromotionError("reconstructed ASR audit chapter inventory differs from handoff")
     production = handoff["production"]
     listening_performed = review["acceptance_basis"] == ACTUAL_LISTENING_BASIS
     listening_disposition = "accepted" if listening_performed else "not-performed"
     chapters: list[dict[str, Any]] = []
-    for chapter, artifact in zip(handoff["chapters"], chapter_artifacts, strict=True):
+    for chapter, artifact, audited in zip(
+        handoff["chapters"], chapter_artifacts, audited_chapters, strict=True
+    ):
         coverage = chapter["source_coverage"]
         commentary = chapter["commentary_coverage"]
         cast = chapter["cast"]
         chapter_asr = chapter["asr"]
+        chapter_ordinary = sum(
+            item["chapter_id"] == chapter["chapter_id"] and item["classification"] == "ordinary"
+            for item in exceptions
+        )
+        if any(
+            chapter_asr[field] != audited[field]
+            for field in ASR_METRIC_FIELDS
+        ):
+            raise PromotionError("reconstructed ASR audit metrics differ from handoff")
         measurements = chapter["audio_slice"]["measurements"]
         gates = measurements["gates"]
         if (
             coverage["passed"] is not True
             or commentary["passed"] is not True
             or cast["passed"] is not True
-            or chapter_asr["passed"] is not True
+            or chapter_asr["word_error_rate"] > asr["maximum_word_error_rate"]
+            or chapter_ordinary > asr["maximum_ordinary_word_errors"]
             or any(value is not True for value in gates.values())
             or measurements["unexpected_silence_segments"]
         ):
@@ -705,7 +833,7 @@ def _accepted_qa(
                 "commentary_ids_covered": commentary["covered_ids"],
                 "asr_expected_words": chapter_asr["expected_words"],
                 "asr_word_errors": chapter_asr["word_errors"],
-                "asr_ordinary_word_errors": chapter_asr["ordinary_word_errors"],
+                "asr_ordinary_word_errors": chapter_ordinary,
                 "asr_word_error_rate": chapter_asr["word_error_rate"],
                 "max_silence_ms": measurements["max_silence_ms"],
                 "integrated_lufs": measurements["loudness"]["input_i"],
@@ -728,7 +856,6 @@ def _accepted_qa(
     if (
         handoff["source_coverage"]["passed"] is not True
         or handoff["commentary_coverage"]["passed"] is not True
-        or asr["passed"] is not True
         or handoff["cast_consistency"]["passed"] is not True
         or any(
             value is not True for value in handoff["audio"]["mechanical_gates"].values()
@@ -738,7 +865,7 @@ def _accepted_qa(
         raise PromotionError("complete-master production gates have not all passed")
     audio = handoff["audio"]
     return {
-        "schema_version": 2,
+        "schema_version": 3,
         "dialogue": handoff["dialogue"],
         "status": "accepted",
         "generated_at": generated_at,
@@ -755,10 +882,11 @@ def _accepted_qa(
             "expected_words": asr["expected_words"],
             "recognized_words": asr["recognized_words"],
             "word_errors": asr["word_errors"],
-            "ordinary_word_errors": asr["ordinary_word_errors"],
+            "ordinary_word_errors": ordinary_errors,
             "word_error_rate": asr["word_error_rate"],
             "transcript_sha256": asr["transcript_sha256"],
-            "exceptions": copy.deepcopy(review["asr_exceptions"]),
+            "audit_sha256": audit["audit_sha256"],
+            "exceptions": exceptions,
         },
         "audio": {
             "master_path": _relative_to_root(
@@ -911,7 +1039,6 @@ def build_promotion_plan(
     repo_root = _absolute_directory(repo_root, "repository root")
     artifact_root = _absolute_directory(artifact_root, "recording artifact root")
     handoff_validator(handoff)
-    validate_acceptance_review(review, handoff)
     dialogue = _nonempty(handoff["dialogue"], "dialogue")
     if DIALOGUE_RE.fullmatch(dialogue) is None:
         raise PromotionError("dialogue slug is invalid")
@@ -930,6 +1057,10 @@ def build_promotion_plan(
         or sha256_file(cast_path) != handoff["production"]["cast"]["sha256"]
     ):
         raise PromotionError("current screenplay/cast bytes differ from the handoff")
+
+    asr_binding = handoff["production"]["full_master_asr"]
+    audit = _rebuild_asr_audit(asr_binding, screenplay, sha256_file(screenplay_path))
+    validate_acceptance_review(review, handoff, audit)
 
     binding = _artifact_binding(handoff, artifact_root)
     binding["artifact_root"] = artifact_root
@@ -975,6 +1106,7 @@ def build_promotion_plan(
         generated_at=generated_at,
         chapter_artifacts=chapter_artifacts,
         artifact_binding=binding,
+        audit=audit,
     )
     qa_bytes = pretty_json(qa)
     qa_relative = f"audio/qa/{dialogue}.json"
@@ -1034,6 +1166,10 @@ def build_promotion_plan(
             "handoff_evidence_sha256": handoff["evidence_sha256"],
             "handoff_content_sha256": sha256_bytes(canonical_json(handoff)),
             "acceptance_review_sha256": sha256_bytes(canonical_json(review)),
+            "full_master_asr": {
+                key: asr_binding[key] for key in ("path", "file_sha256", "evidence_sha256")
+            },
+            "audit_sha256": audit["audit_sha256"],
             "screenplay_path": screenplay_relative,
             "screenplay_sha256": sha256_file(screenplay_path),
             "cast_path": cast_relative,
@@ -1245,6 +1381,28 @@ def execute_promotion_plan(
         != sha256_file(Path(plan["inputs"]["working_master_path"]))
     ):
         raise PromotionError("promotion inputs changed after planning")
+
+    screenplay = _load_json(
+        _safe_child(repo_root, plan["inputs"]["screenplay_path"], "screenplay"),
+        "screenplay",
+    )
+    audit = _rebuild_asr_audit(
+        plan["inputs"]["full_master_asr"], screenplay, plan["inputs"]["screenplay_sha256"]
+    )
+    if audit["audit_sha256"] != plan["inputs"]["audit_sha256"]:
+        raise PromotionError("reconstructed ASR audit changed after planning")
+    projected = _project_asr_exceptions(
+        {
+            "audit_sha256": plan["qa"]["asr"]["audit_sha256"],
+            "asr_exceptions": [
+                {key: item[key] for key in ("chapter_id", "edit_index", "classification", "reviewed")}
+                for item in plan["qa"]["asr"]["exceptions"]
+            ],
+        },
+        audit,
+    )
+    if projected != plan["qa"]["asr"]["exceptions"]:
+        raise PromotionError("accepted ASR exceptions differ from reconstructed audit tokens")
 
     qa_path = _safe_child(repo_root, plan["qa_target"]["path"], "QA target")
     recording_path = _safe_child(

@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it } from "bun:test";
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { COMMENTARY_AUTHORING_MODEL, COMMENTARY_STAGE_EFFORT } from "../commentary-authoring.js";
@@ -44,7 +44,7 @@ function ledger(statuses: string[], bodyPrefix: string) {
         "source_work: Fixture",
         "block_kind: section",
         "placement: before",
-        `title: \"Fixture ${index + 1}\"`,
+        `title: "Fixture ${index + 1}"`,
         `stephanus_span: ${span}`,
         "source_ref:",
         `  source_path: ${ref.source_path}`,
@@ -53,8 +53,8 @@ function ledger(statuses: string[], bodyPrefix: string) {
         `  end_marker: ${ref.end_marker}`,
         `  start_char: ${ref.start_char}`,
         `  end_char: ${ref.end_char}`,
-        `  text_sha256: \"${ref.text_sha256}\"`,
-        `body: \"${bodyPrefix} ${index + 1}.\"`,
+        `  text_sha256: "${ref.text_sha256}"`,
+        `body: "${bodyPrefix} ${index + 1}."`,
         "cites:",
         "  observations: []",
         "  claims: []",

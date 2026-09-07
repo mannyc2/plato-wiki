@@ -23,7 +23,6 @@ import {
 import { commentaryCites, commentaryCrossrefs } from "../wiki/commentary-validator.js";
 import {
   dialogueFromObservationId,
-  fieldValue,
   fieldValueOrEmpty,
   listFieldValue,
   listObservationLedgerPaths,

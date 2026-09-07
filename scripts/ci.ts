@@ -49,10 +49,11 @@ if (releaseArtifactMode && existsSync(siteOutDir)) {
 }
 
 const STAGES: Stage[] = [
+  { name: "lint", command: "bun run lint" },
   { name: "test", command: "bun run test" },
   { name: "typecheck", command: "bun run typecheck" },
   { name: "validate", command: "bun run validate" },
-  { name: "site", command: "bun run harness site", extraArgs: ["--out-dir", siteOutDir] },
+  { name: "build", command: "bun run build", extraArgs: ["--out-dir", siteOutDir] },
 ];
 
 const results: Array<{ stage: string; ok: boolean; ms: number }> = [];

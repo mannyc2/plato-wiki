@@ -27,9 +27,9 @@ Each segment writes only new fenced strict-YAML records through
   hashes, bounded evidence prose, and allowed review states; and
 - writes the ledger only after validation succeeds.
 
-An empty segment still calls `wiki_append_observations` with empty content. The
-harness then records an explicit `no_observations` coverage row instead of
-inferring completion from silence.
+An empty segment needs an explicit `no_observations` coverage row through the
+deterministic coverage writer. An empty append by itself does not establish
+coverage. Never infer completion from silence.
 
 ## Resume Semantics
 
@@ -47,14 +47,14 @@ absence.
 
 ## Orchestration And Context Budget
 
-Use one model conversation per segment. The harness supplies the extraction
-protocol and the bounded Greek slice, requires a write-tool call, validates the
-delta, records coverage, and only then advances. It does not inject a growing
-classification catalog into extraction context.
+An orchestrating Codex or Claude agent assigns a bounded Greek slice and the
+extraction protocol to a worker. The worker submits validated records through
+the generic tools; the integrating agent verifies records and explicit coverage
+before advancing. The repository supplies planners and writers, not model
+conversations, retries, or dispatch state.
 
-The default 30 KB grid keeps source and output bounded. The model should append
-after no more than four source-span calls; six is the hard limit, leaving room
-for one validation repair. Whole-dialogue ingest remains a separate workflow:
+The default 30 KB grid keeps source and output bounded. Segmented tools retain
+their six-call source-span limit per invocation. Whole-dialogue ingest:
 it stages validated drafts with `wiki_stage_observation` and persists the final
 ledger once through `wiki_commit_observation`.
 

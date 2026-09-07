@@ -874,6 +874,24 @@ class AudioQaHandoffTests(unittest.TestCase):
         with self.assertRaisesRegex(AudioQaHandoffError, "identity or policy"):
             validate_handoff(handoff)
 
+    def test_validates_a_frozen_producer_at_its_original_path(self) -> None:
+        handoff = self.build()
+        original = Path(qa_handoff.__file__).resolve()
+        frozen = self.repo / "frozen-handoff-producer.py"
+        frozen.write_bytes(original.read_bytes())
+        handoff["implementation"]["code_path"] = str(frozen)
+        self.rehash_handoff(handoff)
+        validate_handoff(handoff)
+
+        frozen.write_bytes(frozen.read_bytes() + b"\n# changed after production\n")
+        with self.assertRaisesRegex(AudioQaHandoffError, "SHA-256|checksum"):
+            validate_handoff(handoff)
+        frozen.write_bytes(original.read_bytes())
+        handoff["implementation"]["version"] += 1
+        self.rehash_handoff(handoff)
+        with self.assertRaisesRegex(AudioQaHandoffError, "producer name or version"):
+            validate_handoff(handoff)
+
     def test_rejects_measurements_detached_from_mastering_timeline(self) -> None:
         self.measurements[1]["start_frame"] += 1
         with self.assertRaisesRegex(AudioQaHandoffError, "detached"):

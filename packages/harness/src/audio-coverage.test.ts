@@ -418,7 +418,7 @@ function writeCompleteAudioEdition() {
   };
   writeJson(`audio/scripts/${DIALOGUE}.json`, screenplay);
   writeJson(`audio/qa/${DIALOGUE}.json`, {
-    schema_version: 2,
+    schema_version: 3,
     dialogue: DIALOGUE,
     status: "accepted",
     generated_at: "2026-07-13T04:00:00Z",
@@ -451,6 +451,7 @@ function writeCompleteAudioEdition() {
       ordinary_word_errors: 0,
       word_error_rate: 0,
       transcript_sha256: HASH,
+      audit_sha256: HASH,
       exceptions: [],
     },
     audio: {
@@ -560,7 +561,7 @@ function writeCompleteAudioEdition() {
   <audio id="recording-audio" controls preload="metadata" data-recording-audio aria-describedby="recording-status"><source src="../../assets/recordings/fixture/complete.mp3" type="audio/mpeg"></audio>
   <div role="group" aria-label="Recording chapters"><button type="button" data-recording-chapter data-chapter-id="chapter-1" data-chapter-frame="0" data-chapter-seconds="0" data-chapter-target="comm_fixture_0001" aria-controls="recording-audio">Chapter</button></div>
 </section>
-<section id="comm_fixture_0001">Reading unit</section>`,
+<section id="comm_fixture_0001"><p lang="grc" data-source-start="0">A short source.</p><p lang="en" data-source-start="0">An English source.</p></section>`,
   );
 }
 

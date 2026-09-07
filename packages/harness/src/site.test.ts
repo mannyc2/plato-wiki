@@ -529,11 +529,13 @@ function writeMenoRecording({
   artifactBytes = DEFAULT_MP3_FIXTURE.bytes,
   manifestSha256,
   durationSeconds = DEFAULT_MP3_FIXTURE.durationSeconds,
+  sourceOpening = false,
 }: {
   status?: "accepted" | "draft" | "withdrawn";
   artifactBytes?: Buffer;
   manifestSha256?: string;
   durationSeconds?: number;
+  sourceOpening?: boolean;
 } = {}) {
   let repoProduction:
     | { screenplaySha256: string; qaSha256: string; qaMasterSha256: string }
@@ -552,15 +554,16 @@ function writeMenoRecording({
     // exercises a missing-marker join, but an accepted recording cannot.
     writeFileSync(
       join(root, "raw/plato/english/meno.txt"),
-      "{70a} Meno speaks. {70b} Socrates replies.",
+      sourceOpening ? "{70a} Meno speaks.\n{70b} Socrates replies." : "{70a} Meno speaks. {70b} Socrates replies.",
       "utf8",
     );
     repoProduction = writeAcceptedAudioProductionFixture({
       root,
       dialogue: "meno",
-      marker: "70a",
-      sourceText: "Meno speaks. Socrates replies.",
+      marker: sourceOpening ? "70b" : "70a",
+      sourceText: sourceOpening ? "Socrates replies." : "Meno speaks. Socrates replies.",
       durationSeconds,
+      ...(sourceOpening ? { sourceOpening: { text: "Meno speaks.", marker: "70a" } } : {}),
     });
   }
   const artifactRoot = join(root, "recording-artifact-store");
@@ -600,7 +603,7 @@ function writeMenoRecording({
           duration_seconds: durationSeconds,
           sha256,
         },
-        chapters: evidence?.chapters.map((chapter) => ({ ...chapter, title: "The opening question" })) ?? [
+        chapters: evidence?.chapters.map((chapter) => ({ ...chapter, title: chapter.commentary_id === null ? "Opening" : "The opening question" })) ?? [
           { chapter_id: "chapter-1", commentary_id: "comm_meno_0001", start_frame: 0, title: "The opening question" },
         ],
       },
@@ -1143,17 +1146,17 @@ describe("reading view", () => {
     }
   });
 
-  it("places visible notes under the next visible section when their section is rejected", () => {
+  it("keeps visible notes at their source anchor when their section is rejected", () => {
     writeMenoRejectedSectionCommentary(root);
     const outDir = join(root, "site");
     buildStaticSite({ outDir });
 
     const page = readFileSync(join(outDir, "dialogues/meno/reading.html"), "utf8");
-    const visibleUnit = page.match(/<section class="unit" id="comm_meno_0002">[\s\S]*?<\/section>/u)?.[0] ?? "";
+    const sourceOpening = page.match(/<section class="unit" aria-label="Opening">[\s\S]*?<\/section>/u)?.[0] ?? "";
     expect(page).not.toContain('class="unit" id="comm_meno_0001"');
     for (const id of ["comm_meno_0005", "comm_meno_0006"]) {
       expect(page.match(new RegExp(`id="${id}"`, "gu"))).toHaveLength(1);
-      expect(visibleUnit).toContain(`id="${id}"`);
+      expect(sourceOpening).toContain(`id="${id}"`);
     }
     expect(readExactTargets(outDir).get("comm_meno_0005")).toBe("dialogues/meno/reading.html#comm_meno_0005");
     expect(readExactTargets(outDir).get("comm_meno_0006")).toBe("dialogues/meno/reading.html#comm_meno_0006");
@@ -1193,9 +1196,11 @@ describe("reading view", () => {
     expect(first).toContain('href="../../dialogues/meno/reading-2.html">2</a>');
     expect(second).toContain('href="../../dialogues/meno/reading.html">1</a>');
     expect(first).toContain('id="comm_meno_0001"');
+    expect(first).toContain('id="source-opening"');
     expect(first).not.toContain('id="comm_meno_0002"');
     expect(second).toContain('id="comm_meno_0002"');
     expect(second).not.toContain('id="comm_meno_0001"');
+    expect(second).not.toContain('id="source-opening"');
     expect(Buffer.byteLength(first)).toBeLessThan(2 * 1024 * 1024);
     expect(Buffer.byteLength(second)).toBeLessThan(2 * 1024 * 1024);
 
@@ -1203,9 +1208,99 @@ describe("reading view", () => {
     expect(exactTargets.get("comm_meno_0001")).toBe("dialogues/meno/reading.html#comm_meno_0001");
     expect(exactTargets.get("comm_meno_0002")).toBe("dialogues/meno/reading-2.html#comm_meno_0002");
   });
+
+  it("renders the full bilingual source once across evidence gaps and rejects altered source paragraphs", () => {
+    mkdirSync(join(root, "raw/plato/english"), { recursive: true });
+    mkdirSync(join(root, "wiki/commentary"), { recursive: true });
+    const greek = ["Μένων {70a} ἀρχή.", "{70b} πρῶτον.", "{70c} μέσον.", "{70d} δεύτερον.", "{70e} τέλος."].join("\n");
+    const english = ["Meno", "{b1}", "{70a} Opening.", "{70b} First topic.", "{70c} Intervening source.", "{70d} Second topic.", "{70e} Closing source."].join("\n");
+    writeFileSync(join(root, "raw/plato/greek/meno.txt"), greek, "utf8");
+    writeFileSync(join(root, "raw/plato/english/meno.txt"), english, "utf8");
+    // Stable IDs are append-only. Their file order does not determine reading
+    // order, and narrow evidence spans do not select which source survives.
+    const commentary = [
+      commentaryBlock({ id: "comm_meno_0001", kind: "section", span: "70d", title: "Second topic", review: "accepted" }),
+      commentaryBlock({ id: "comm_meno_0002", kind: "section", span: "70b", title: "First topic", review: "accepted" }),
+      commentaryBlock({ id: "comm_meno_0003", kind: "notice", span: "70b", placement: "after", review: "accepted" }),
+      commentaryBlock({ id: "comm_meno_0004", kind: "context", span: "70d", placement: "before", review: "accepted" }),
+    ].join("\n\n");
+    const commentaryPath = join(root, "wiki/commentary/meno.md");
+    writeFileSync(commentaryPath, commentary, "utf8");
+    const outDir = join(root, "site");
+    buildStaticSite({ outDir, readingPageTargetBytes: 1 });
+    const pages = ["reading.html", "reading-2.html", "reading-3.html"].map((name) =>
+      readFileSync(join(outDir, "dialogues/meno", name), "utf8"),
+    );
+    const combined = pages.join("\n");
+    expect(readFileSync(commentaryPath, "utf8")).toBe(commentary);
+    expect([...combined.matchAll(/id="loc-(70[a-e])"/gu)].map((match) => match[1])).toEqual(["70a", "70b", "70c", "70d", "70e"]);
+    expect(combined.match(/<p lang="grc" data-source-start=/gu)).toHaveLength(6);
+    expect(combined.match(/<p lang="en" data-source-start=/gu)).toHaveLength(6);
+    expect(pages[0]).toContain('<p lang="grc" data-source-start="0">Μένων </p>');
+    expect(pages[0]).toContain('<p lang="en" data-source-start="0">Meno</p>');
+    expect(pages[0]).toContain("Opening.");
+    expect(pages[1]).toContain("Intervening source.");
+    expect(pages[2]).toContain("Closing source.");
+    expect(pages[1]).toContain('id="comm_meno_0002"');
+    expect(pages[2]).toContain('id="comm_meno_0001"');
+    expect(pages[1]!.indexOf('id="comm_meno_0003"')).toBeLessThan(pages[1]!.indexOf('id="loc-70c"'));
+    expect(pages[2]!.indexOf('id="comm_meno_0004"')).toBeLessThan(pages[2]!.indexOf('id="loc-70e"'));
+    expect(readExactTargets(outDir).get("comm_meno_0002")).toBe("dialogues/meno/reading-2.html#comm_meno_0002");
+
+    const path = join(outDir, "dialogues/meno/reading-2.html");
+    const paragraph = /<p lang="en" data-source-start="\d+">Intervening source\.<\/p>/u.exec(pages[1]!)?.[0];
+    expect(paragraph).toBeDefined();
+    for (const replacement of [
+      "",
+      `${paragraph}${paragraph}`,
+      paragraph!.replace("Intervening", "Altered"),
+      paragraph!.replace("Intervening source", "Interveningsource"),
+    ]) {
+      writeFileSync(path, pages[1]!.replace(paragraph!, replacement), "utf8");
+      expect(() => validateGeneratedSite(outDir)).toThrow(/meno en source coverage differs/u);
+    }
+  });
 });
 
 describe("static recording publication", () => {
+  it("seeks an opening chapter to source text while preserving complete commentary coverage", () => {
+    writeFileSync(join(root, "raw/plato/greek/meno.txt"), "{70a} Μένων λέγει.\n{70b} Σωκράτης ἀποκρίνεται.", "utf8");
+    acceptMenoCommentary(root);
+    writeFileSync(
+      join(root, "wiki/commentary/meno.md"),
+      commentaryBlock({
+        id: "comm_meno_0001",
+        kind: "section",
+        span: "70b",
+        title: "The opening question",
+        review: "accepted",
+      }),
+      "utf8",
+    );
+    const { artifactRoot } = writeMenoRecording({ sourceOpening: true });
+    const outDir = join(root, "site");
+    const result = buildStaticSite({ outDir, recordingArtifactRoot: artifactRoot });
+    const readingPath = join(outDir, "dialogues/meno/reading.html");
+    const reading = readFileSync(readingPath, "utf8");
+    expect(result.validation.brokenFragments).toBe(0);
+    expect(reading).toContain('data-chapter-id="chapter-meno-opening" data-chapter-frame="0" data-chapter-seconds="0" data-chapter-target="source-opening"');
+    expect(reading).toContain('data-chapter-href="../../dialogues/meno/reading.html#source-opening"');
+    expect(reading).toContain('aria-label="Seek to Opening at 0:00"');
+    expect(reading).toContain('data-chapter-target="comm_meno_0001"');
+    expect(reading).toContain('<div class="v-text" id="source-opening">');
+    expect((reading.match(/id="source-opening"/gu) ?? [])).toHaveLength(1);
+    const openingUnit = /<section class="unit" aria-label="Opening">([\s\S]*?)<\/section>/u.exec(reading)?.[1];
+    expect(openingUnit).toContain("Meno speaks.");
+    expect(openingUnit).not.toContain("Socrates replies.");
+    expect(openingUnit).not.toContain('id="comm_meno_0001"');
+    expect(reading.indexOf('id="source-opening"')).toBeLessThan(reading.indexOf('id="comm_meno_0001"'));
+    expect(readExactTargets(outDir).has("source-opening")).toBe(false);
+    expect(readFileSync(join(outDir, "index.html"), "utf8")).toContain('class="featured-reading"');
+
+    writeFileSync(readingPath, reading.replace(' id="source-opening"', ""), "utf8");
+    expect(() => validateGeneratedSite(outDir)).toThrow(/missing chapter target #source-opening/u);
+  });
+
   it("materializes a verified master and renders an accessible deterministic player", () => {
     acceptMenoCommentary(root);
     const { artifactRoot, artifactBytes, sha256 } = writeMenoRecording();
@@ -1517,6 +1612,7 @@ describe("static site", () => {
   });
 
   it("verifies recording asset hashes and chapter targets as generated-site invariants", () => {
+    writeFileSync(join(root, "raw/plato/greek/fixture.txt"), "{1a} A source.", "utf8");
     const outDir = join(root, "validator-recording");
     const readingDir = join(outDir, "dialogues/fixture");
     const assetPath = join(outDir, "assets/recordings/fixture/complete.mp3");
@@ -1533,7 +1629,7 @@ describe("static site", () => {
   <audio id="recording-audio" controls preload="metadata" data-recording-audio aria-describedby="recording-status"><source src="../../assets/recordings/fixture/complete.mp3" type="audio/mpeg"></audio>
   <div role="group" aria-label="Recording chapters"><button type="button" data-recording-chapter data-chapter-id="chapter-1" data-chapter-frame="0" data-chapter-seconds="0" data-chapter-target="comm_fixture_0001" aria-controls="recording-audio">Chapter</button></div>
 </section>
-<section id="comm_fixture_0001">Reading unit</section>`,
+<section id="comm_fixture_0001"><p lang="grc" data-source-start="0">A source.</p></section>`,
       "utf8",
     );
     const validReading = readFileSync(join(readingDir, "reading.html"), "utf8");
@@ -1603,6 +1699,7 @@ describe("static site", () => {
   });
 
   it("validates chapter targets that cross guided-reading page boundaries", () => {
+    writeFileSync(join(root, "raw/plato/greek/fixture.txt"), "{1a} A source.", "utf8");
     const outDir = join(root, "validator-reading-chapter");
     const readingDir = join(outDir, "dialogues/fixture");
     mkdirSync(readingDir, { recursive: true });
@@ -1613,7 +1710,7 @@ describe("static site", () => {
     );
     writeFileSync(
       join(readingDir, "reading-2.html"),
-      '<section id="comm_fixture_0002">Second reading unit</section>',
+      '<section id="comm_fixture_0002"><p lang="grc" data-source-start="0">A source.</p></section>',
       "utf8",
     );
     expect(validateGeneratedSite(outDir)).toMatchObject({ brokenPaths: 0, brokenFragments: 0 });
@@ -2163,8 +2260,9 @@ stance_events: []
     const { artifactRoot } = writeMenoRecording({ status: "draft" });
     buildStaticSite({ outDir, includeDraftRecordings: true, recordingArtifactRoot: artifactRoot });
     index = readFileSync(join(outDir, "index.html"), "utf8");
-    // The English fixture is missing 70b, so it cannot yet be called complete.
-    expect(index).not.toContain('class="featured-reading"');
+    // A missing translation marker joins the preceding slice; its complete
+    // source text still qualifies when every paragraph is rendered.
+    expect(index).toContain('class="featured-reading"');
 
     writeFileSync(
       join(root, "raw/plato/english/meno.txt"),
@@ -2195,19 +2293,19 @@ stance_events: []
     writeMenoRecording({ status: "draft" });
     writeFileSync(
       join(root, "wiki/commentary/meno.md"),
-      `# Partial Meno commentary\n\n${commentaryBlock({
+      `# Meno commentary with a bounded evidence span\n\n${commentaryBlock({
         id: "comm_meno_0001",
         kind: "section",
         span: "70a",
         title: "The opening question",
-        body: "Only the first marker is covered.",
+        body: "This note discusses only the first marker.",
         review: "accepted",
       })}\n`,
       "utf8",
     );
     buildStaticSite({ outDir, includeDraftRecordings: true, recordingArtifactRoot: artifactRoot });
     index = readFileSync(join(outDir, "index.html"), "utf8");
-    expect(index).not.toContain('class="featured-reading"');
+    expect(index).toContain('class="featured-reading"');
 
     acceptMenoCommentary(root);
     writeFileSync(
@@ -2529,9 +2627,9 @@ describe("reading margin layer (the reading-margin rollout)", () => {
     // Two turn-paired verses, one per exchanged line.
     expect((page.match(/<div class="verse">/gu) ?? []).length).toBe(2);
     // Greek keeps the printed siglum; English expands the curated abbreviation.
-    expect(page).toContain('<p lang="grc"><span class="speaker">ΜΕΝ.</span> ἔχεις μοι εἰπεῖν;</p>');
+    expect(page).toContain('<p lang="grc" data-source-start="0" data-source-speaker="ΜΕΝ."><span class="speaker">ΜΕΝ.</span> ἔχεις μοι εἰπεῖν;</p>');
     expect(page).toContain('<span class="speaker">ΣΩ.</span>');
-    expect(page).toContain('<p><span class="speaker">Meno</span> Can you tell me?</p>');
+    expect(page).toContain('<p lang="en" data-source-start="0" data-source-speaker="Men."><span class="speaker">Meno</span> Can you tell me?</p>');
     expect(page).toContain('<span class="speaker">Socrates</span>');
     // The mid-turn marker becomes an inline milestone in both languages; the
     // turn is never split at the Stephanus boundary.

@@ -1,14 +1,6 @@
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
-import type { AssistantMessage, Usage } from "@earendil-works/pi-ai";
-import type { TranscriptUsageSummary, UsageRecord } from "./types.js";
-
-export function assistantText(message: AssistantMessage): string {
-  return message.content
-    .filter((part) => part.type === "text")
-    .map((part) => part.text)
-    .join("");
-}
+import type { TranscriptUsageSummary, UsageRecord, Usage } from "./types.js";
 
 export function emptyUsage(): Usage {
   return {
@@ -40,7 +32,7 @@ function addUsage(total: Usage, usage: Usage) {
   total.cost.total += usage.cost.total;
 }
 
-export function usageRecordFromMessage(message: AssistantMessage): UsageRecord {
+export function usageRecordFromMessage(message: UsageRecord): UsageRecord {
   return {
     timestamp: message.timestamp,
     api: String(message.api),

@@ -6,6 +6,7 @@ import { join } from "node:path";
 import { setRepoRootForTesting } from "../paths.js";
 import { COMMENTARY_AUTHORING_MODEL, COMMENTARY_STAGE_EFFORT } from "../commentary-authoring.js";
 import { applyCommentaryDelegatedAudit, parseCommentaryDelegatedAuditCandidate, previewCommentaryDelegatedAudit, readCurrentCommentaryDelegatedAudit, validateCommentaryDelegatedAuditSubmission } from "./commentary-delegated-audit.js";
+import type { SubmissionRecord } from "../submissions.js";
 import type { CommentaryCampaignJob } from "../commentary-campaign.js";
 
 const sha256 = (value: string) => createHash("sha256").update(value).digest("hex");
@@ -76,13 +77,13 @@ describe("delegated commentary audit import", () => {
     const value = candidate() as Record<string, unknown>;
     value.extra = true;
     expect(() => parseCommentaryDelegatedAuditCandidate(value, job())).toThrow("exactly");
-    const stale = candidate() as Record<string, any>;
+    const stale = candidate();
     stale.job.input_sha256 = "f".repeat(64);
     expect(() => parseCommentaryDelegatedAuditCandidate(stale, job())).toThrow("stale");
-    const human = candidate() as Record<string, any>;
+    const human = candidate();
     human.provenance.human_listening_or_review = "human listened";
     expect(() => parseCommentaryDelegatedAuditCandidate(human, job())).toThrow("none claimed");
-    const unidentified = candidate() as Record<string, any>;
+    const unidentified = candidate();
     unidentified.provenance.auditor = "anonymous";
     expect(() => parseCommentaryDelegatedAuditCandidate(unidentified, job())).toThrow("Luna auditor");
   });
@@ -114,13 +115,13 @@ describe("delegated commentary audit import", () => {
     const recordPath = join(root, result.submissionRecordPath);
     const original = readFileSync(recordPath, "utf8");
     const mutations = [
-      (value: Record<string, any>) => { value.target_sha256_after = "0".repeat(64); },
-      (value: Record<string, any>) => { value.source_sha256 = "0".repeat(64); },
-      (value: Record<string, any>) => { value.submission.unit_key = "other"; },
-      (value: Record<string, any>) => { value.source_path = "scratch/commentary/delegated-audits/fixture/../other.json"; },
+      (value: SubmissionRecord & { submission: { unit_key: string } }) => { value.target_sha256_after = "0".repeat(64); },
+      (value: SubmissionRecord & { submission: { unit_key: string } }) => { value.source_sha256 = "0".repeat(64); },
+      (value: SubmissionRecord & { submission: { unit_key: string } }) => { value.submission.unit_key = "other"; },
+      (value: SubmissionRecord & { submission: { unit_key: string } }) => { value.source_path = "scratch/commentary/delegated-audits/fixture/../other.json"; },
     ];
     for (const mutate of mutations) {
-      const value = JSON.parse(original) as Record<string, any>;
+      const value = JSON.parse(original) as SubmissionRecord & { submission: { unit_key: string } };
       mutate(value);
       writeFileSync(recordPath, JSON.stringify(value, null, 2) + "\n");
       expect(readCurrentCommentaryDelegatedAudit(job())).toBeUndefined();

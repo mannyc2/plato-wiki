@@ -2,7 +2,6 @@ schema_version = 1
 
 include = [
   ".github/",
-  ".pi/",
   "audio/",
   "derived/",
   "docs/",
@@ -18,6 +17,7 @@ include = [
 root_files = [
   ".env.example",
   ".gitignore",
+  ".oxlintrc.json",
   "AGENTS.md",
   "BACKLOG.md",
   "CONTRIBUTING.md",
@@ -28,7 +28,6 @@ root_files = [
   "SECURITY.md",
   "SPEC.md",
   "bun.lock",
-  "harness.config.json",
   "package.json",
   "raw/plato/MANIFEST.sha256",
   "raw/plato/SOURCES.md",

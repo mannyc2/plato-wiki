@@ -15,23 +15,15 @@ import {
   buildDossiers,
   buildRelationCandidates,
   clusterGateReport,
-  listModels,
   listGreekDialogues,
   planSegmentedIngest,
   planSegmentedReview,
-  planStephanusSegments,
   buildStaticSite,
-  listProfiles,
-  listProviders,
   listTranscripts,
   getRepoRoot,
-  runClaimQueue,
-  runClaimReviewQueue,
-  runRelationQueue,
-  runRelationReviewQueue,
-  runSegmentedIngestQueue,
-  runSegmentedReviewQueue,
-  runHarnessCommand,
+  createWikiTools,
+  executeWikiToolCalls,
+  parseWikiToolMode,
   summarizeTranscriptTrace,
   validateRepo,
   acceptOntologyAuditClosure,
@@ -106,13 +98,6 @@ import {
   writeStephanusIndex,
   writeTranscriptUsageArtifacts,
   listEnglishDialogues,
-  type ClaimQueueEvent,
-  type ClaimReviewQueueEvent,
-  type HarnessRunCommand,
-  type RelationQueueEvent,
-  type RelationReviewQueueEvent,
-  type SegmentedIngestQueueEvent,
-  type SegmentedReviewQueueEvent,
   type TranscriptTraceSummary,
   findJob,
   readJobManifest,
@@ -131,13 +116,7 @@ import {
 import { parseReportArgs, reportExitCode } from "./report-args.js";
 
 type Command =
-  | HarnessRunCommand
-  | "ingest-queue"
-  | "review-queue"
-  | "claims-queue"
-  | "claims-review-queue"
-  | "relations-queue"
-  | "relations-review-queue"
+  | "wiki"
   | "completeness"
   | "job"
   | "release:audit"
@@ -152,9 +131,6 @@ type Command =
   | "relations"
   | "dossiers"
   | "site"
-  | "profiles"
-  | "providers"
-  | "models"
   | "transcripts"
   | "trace"
   | "usage"
@@ -163,52 +139,21 @@ type Command =
 type ParsedArgs = {
   command: Command;
   subject: string | undefined;
-  dryRun: boolean;
-  profileName: string | undefined;
-  provider: string | undefined;
-  model: string | undefined;
   targetBytes: number | undefined;
   targetObservations: number | undefined;
-  targetClaims: number | undefined;
-  claimIds: string[] | undefined;
-  targetPairs: number | undefined;
-  candidateKeys: string[] | undefined;
-  targetRelations: number | undefined;
-  relationIds: string[] | undefined;
-  limit: number | undefined;
-  retries: number | undefined;
-  timeoutSeconds: number | undefined;
   fromMarker: string | undefined;
   toMarker: string | undefined;
-  gaps: boolean;
-  gapStartChar: number | undefined;
-  gapEndChar: number | undefined;
   outDir: string | undefined;
   recordingArtifactRoot: string | undefined;
   includeDraftRecordings: boolean;
   family: string | undefined;
-  validateEach: boolean;
-  validateFinal: boolean;
 };
 
 function printHelp() {
   console.log(`Plato wiki harness CLI
 
 Usage:
-  bun run harness ingest <dialogue> [--dry-run] [--profile <name>]
-  bun run harness ingest-segmented <dialogue> [--gaps] [--dry-run] [--target-bytes <n>] [--from-marker <ref>] [--to-marker <ref>] [--profile <name>]
-  bun run harness ingest-queue <dialogue> [--gaps] [--dry-run] [--target-bytes <n>] [--limit <n>] [--retries <n>] [--timeout-seconds <n>] [--from-marker <ref>] [--to-marker <ref>] [--profile <name>] [--validate-each] [--no-final-validate]
-  bun run harness review <dialogue> [--dry-run] [--profile <name>]
-  bun run harness review-segmented <dialogue> [--dry-run] [--target-observations <n>] [--limit <n>] [--profile <name>]
-  bun run harness review-queue <dialogue> [--dry-run] [--target-observations <n>] [--limit <n>] [--retries <n>] [--timeout-seconds <n>] [--profile <name>] [--validate-each]
-  bun run harness claims-segmented <dialogue> [--dry-run] [--target-bytes <n>] [--from-marker <ref>] [--to-marker <ref>] [--profile <name>]
-  bun run harness claims-queue <dialogue> [--dry-run] [--target-bytes <n>] [--limit <n>] [--retries <n>] [--timeout-seconds <n>] [--from-marker <ref>] [--to-marker <ref>] [--profile <name>] [--validate-each] [--no-final-validate]
-  bun run harness claims-review-segmented <dialogue> [--dry-run] [--target-claims <n>] [--claim-ids <id,id,...>] [--limit <n>] [--profile <name>]
-  bun run harness claims-review-queue <dialogue> [--dry-run] [--target-claims <n>] [--limit <n>] [--retries <n>] [--timeout-seconds <n>] [--profile <name>] [--validate-each]
-  bun run harness relations-segmented <scope> [--dry-run] [--target-pairs <n>] [--candidate-keys <key,key,...>] [--limit <n>] [--profile <name>]
-  bun run harness relations-queue <scope> [--dry-run] [--target-pairs <n>] [--candidate-keys <key,key,...>] [--limit <n>] [--retries <n>] [--timeout-seconds <n>] [--profile <name>] [--validate-each] [--no-final-validate]
-  bun run harness relations-review-segmented <scope> [--dry-run] [--target-relations <n>] [--relation-ids <id,id,...>] [--limit <n>] [--profile <name>]
-  bun run harness relations-review-queue <scope> [--dry-run] [--target-relations <n>] [--relation-ids <id,id,...>] [--limit <n>] [--retries <n>] [--timeout-seconds <n>] [--profile <name>] [--validate-each]
+  bun run harness wiki <mode> [calls.json|-]
   bun run harness derive stephanus [dialogue]
   bun run harness derive stephanus-english [dialogue]
   bun run harness derive anchors [dialogue]
@@ -280,30 +225,18 @@ Usage:
   bun run harness job show <job-id> [--target <t>] [--refresh] [--json]
   bun run completeness -- --target corpus|knowledge-base|audio-edition [--write] [--json] [--allow-incomplete]
   bun run release:audit -- --target knowledge-base|audio-edition [--write] [--json] [--allow-incomplete] [--public-tree <dir>] [--export-manifest <file>]
-  bun run harness profiles
-  bun run harness providers
-  bun run harness models [provider]
   bun run harness transcripts
   bun run harness trace [run-name]
   bun run harness usage [run-name]
   bun run validate
 
-Provider selection:
-  --profile <name>     Use a named profile from harness.config.json
-  --provider <id>      Override selected profile provider
-  --model <id>         Override selected profile model
-  PI_PROFILE           Default profile override
-  PI_PROVIDER          Provider override
-  PI_MODEL             Model override
-  PI_API_KEY           API key override for any provider
-
 Examples:
-  bun run harness profiles
-  bun run harness models deepseek
+  bun run harness job list
+  bun run harness job show observations/euthyphro
+  bun run harness wiki ingest
+  bun run harness wiki ingest scratch/observation-calls.json
   bun run harness trace
-  bun run harness usage
-  bun run harness ingest euthyphro --dry-run --profile deepseek-flash
-  bun run harness review euthyphro --dry-run --provider anthropic --model claude-sonnet-4-5`);
+  bun run harness usage`);
 }
 
 function optionValue(argv: string[], name: string): string | undefined {
@@ -423,101 +356,36 @@ function commentaryRewriteAcceptanceInput(
   };
 }
 
-function optionNonnegativeNumber(argv: string[], name: string): number | undefined {
-  const value = optionValue(argv, name);
-  if (value === undefined) return undefined;
-
-  const parsed = Number(value);
-  if (!Number.isInteger(parsed) || parsed < 0) {
-    throw new Error(`${name} must be a nonnegative integer`);
-  }
-
-  return parsed;
-}
-
 function parseCommand(argv: string[]): ParsedArgs {
-  if (argv.some((argument) => argument === "--pair-ids" || argument.startsWith("--pair-ids="))) {
-    throw new Error("--pair-ids was removed; use --candidate-keys.");
-  }
-
   const rawCommand = argv[2];
   const subject = argv[3]?.startsWith("--") ? undefined : argv[3];
-  const dryRun = argv.includes("--dry-run");
-  const profileName = optionValue(argv, "--profile") ?? process.env.PI_PROFILE;
-  const provider = optionValue(argv, "--provider") ?? process.env.PI_PROVIDER;
-  const model = optionValue(argv, "--model") ?? process.env.PI_MODEL;
   const targetBytes = optionNumber(argv, "--target-bytes");
   const targetObservations = optionNumber(argv, "--target-observations");
-  const targetClaims = optionNumber(argv, "--target-claims");
-  const claimIds = optionList(argv, "--claim-ids");
-  const targetPairs = optionNumber(argv, "--target-pairs");
-  const candidateKeys = optionList(argv, "--candidate-keys");
-  const targetRelations = optionNumber(argv, "--target-relations");
-  const relationIds = optionList(argv, "--relation-ids");
-  const limit = optionNumber(argv, "--limit");
-  const retries = optionNumber(argv, "--retries");
-  const timeoutSeconds = optionNumber(argv, "--timeout-seconds");
   const fromMarker = optionValue(argv, "--from-marker");
   const toMarker = optionValue(argv, "--to-marker");
-  const gaps = argv.includes("--gaps");
-  const gapStartChar = optionNonnegativeNumber(argv, "--gap-start-char");
-  const gapEndChar = optionNonnegativeNumber(argv, "--gap-end-char");
   const outDir = optionValue(argv, "--out-dir");
   const recordingArtifactRoot = optionValue(argv, "--recording-artifact-root");
   const includeDraftRecordings = argv.includes("--include-draft-recordings");
   const family = optionValue(argv, "--family");
-  const validateEach = argv.includes("--validate-each");
-  const validateFinal = !argv.includes("--no-final-validate");
 
   if (!rawCommand || rawCommand === "help" || rawCommand === "--help" || rawCommand === "-h") {
     return {
       command: "help",
       subject: undefined,
-      dryRun,
-      profileName,
-      provider,
-      model,
       targetBytes,
       targetObservations,
-      targetClaims,
-      claimIds,
-      targetPairs,
-      candidateKeys,
-      targetRelations,
-      relationIds,
-      limit,
-      retries,
-      timeoutSeconds,
       fromMarker,
       toMarker,
-      gaps,
-      gapStartChar,
-      gapEndChar,
       outDir,
       recordingArtifactRoot,
       includeDraftRecordings,
       family,
-      validateEach,
-      validateFinal,
     };
   }
 
   const command = rawCommand as Command;
   if (
-    command !== "ingest" &&
-    command !== "ingest-segmented" &&
-    command !== "ingest-queue" &&
-    command !== "review" &&
-    command !== "review-segmented" &&
-    command !== "review-queue" &&
-    command !== "claims-segmented" &&
-    command !== "claims-queue" &&
-    command !== "claims-review-segmented" &&
-    command !== "claims-review-queue" &&
-    command !== "relations-segmented" &&
-    command !== "relations-queue" &&
-    command !== "relations-review-segmented" &&
-    command !== "relations-review-queue" &&
+    command !== "wiki" &&
     command !== "completeness" &&
     command !== "job" &&
     command !== "release:audit" &&
@@ -532,9 +400,6 @@ function parseCommand(argv: string[]): ParsedArgs {
     command !== "coverage" &&
     command !== "relations" &&
     command !== "site" &&
-    command !== "profiles" &&
-    command !== "providers" &&
-    command !== "models" &&
     command !== "transcripts" &&
     command !== "trace" &&
     command !== "usage"
@@ -545,32 +410,14 @@ function parseCommand(argv: string[]): ParsedArgs {
   return {
     command,
     subject,
-    dryRun,
-    profileName,
-    provider,
-    model,
     targetBytes,
     targetObservations,
-    targetClaims,
-    claimIds,
-    targetPairs,
-    candidateKeys,
-    targetRelations,
-    relationIds,
-    limit,
-    retries,
-    timeoutSeconds,
     fromMarker,
     toMarker,
-    gaps,
-    gapStartChar,
-    gapEndChar,
     outDir,
     recordingArtifactRoot,
     includeDraftRecordings,
     family,
-    validateEach,
-    validateFinal,
   };
 }
 
@@ -584,27 +431,6 @@ function requireDialogue(command: Command, dialogue: string | undefined): string
   }
 
   return dialogue;
-}
-
-function printProfiles() {
-  for (const profile of listProfiles()) {
-    const keyStatus = profile.hasKey ? "key:present" : "key:missing";
-    const marker = profile.isDefault ? "*" : " ";
-    console.log(`${marker} ${profile.name} ${profile.provider}/${profile.model} ${profile.apiKeyEnv ?? "no-key-env"} ${keyStatus}`);
-  }
-}
-
-function printProviders() {
-  for (const provider of listProviders()) {
-    const marker = provider.isProfileProvider ? "*" : " ";
-    console.log(`${marker} ${provider.provider}`);
-  }
-}
-
-function printModels(provider: string | undefined) {
-  for (const model of listModels(provider)) {
-    console.log(`${model.id}\t${model.name}\tcontext=${model.contextWindow}\tmax=${model.maxTokens}`);
-  }
 }
 
 function printTranscripts() {
@@ -740,224 +566,6 @@ function printTrace(summary: TranscriptTraceSummary) {
     for (const line of summary.responseText.split(/\r?\n/u)) {
       console.log(`  ${line}`);
     }
-  }
-}
-
-function printQueueEvent(event: SegmentedIngestQueueEvent) {
-  if (event.type === "queue_start") {
-    console.log(
-      `queue: dialogue=${event.dialogue} pending=${event.plannedSegmentCount} target_bytes=${event.targetBytes} limit=${event.limit} retries=${event.retries} timeout=${event.timeoutSeconds}s gaps=${event.gaps}`,
-    );
-    return;
-  }
-
-  if (event.type === "segment_attempt") {
-    console.log(`attempt: ${event.segment.span} ${event.attempt}/${event.maxAttempts}`);
-    return;
-  }
-
-  if (event.type === "segment_success") {
-    console.log(`completed: ${event.segment.span} attempt=${event.attempt} transcript=${relative(getRepoRoot(), event.transcriptDir)}`);
-    if (event.validation) {
-      const republic = event.validation.reviewCoverage.find((entry) => entry.path.endsWith("/republic.md"));
-      console.log(
-        `validated: ledgers=${event.validation.observationLedgerCount}${republic ? ` republic_unreviewed=${republic.unreviewed}` : ""}`,
-      );
-    }
-    return;
-  }
-
-  if (event.type === "segment_failure") {
-    console.log(`failed: ${event.segment.span} attempt=${event.attempt} error=${event.error}`);
-    return;
-  }
-
-  const republic = event.validation.reviewCoverage.find((entry) => entry.path.endsWith("/republic.md"));
-  console.log(
-    `final validation: ledgers=${event.validation.observationLedgerCount}${republic ? ` republic_unreviewed=${republic.unreviewed}` : ""}`,
-  );
-}
-
-function printClaimQueueEvent(event: ClaimQueueEvent) {
-  if (event.type === "queue_start") {
-    console.log(
-      `claims queue: dialogue=${event.dialogue} pending=${event.plannedSegmentCount} target_bytes=${event.targetBytes} limit=${event.limit} retries=${event.retries} timeout=${event.timeoutSeconds}s`,
-    );
-    return;
-  }
-
-  if (event.type === "segment_attempt") {
-    console.log(`claims attempt: ${event.segment.span} ${event.attempt}/${event.maxAttempts}`);
-    return;
-  }
-
-  if (event.type === "segment_success") {
-    console.log(`claims completed: ${event.segment.span} attempt=${event.attempt} transcript=${relative(getRepoRoot(), event.transcriptDir)}`);
-    if (event.validation) {
-      console.log(`validated: observation_ledgers=${event.validation.observationLedgerCount} claim_ledgers=${event.validation.claimLedgerCount}`);
-    }
-    return;
-  }
-
-  if (event.type === "segment_failure") {
-    console.log(`claims failed: ${event.segment.span} attempt=${event.attempt} error=${event.error}`);
-    return;
-  }
-
-  console.log(`final validation: observation_ledgers=${event.validation.observationLedgerCount} claim_ledgers=${event.validation.claimLedgerCount}`);
-}
-
-function printReviewQueueEvent(event: SegmentedReviewQueueEvent) {
-  if (event.type === "queue_start") {
-    console.log(
-      `review queue: dialogue=${event.dialogue} pending=${event.plannedBatchCount} target_observations=${event.targetObservations} limit=${event.limit} retries=${event.retries} timeout=${event.timeoutSeconds}s`,
-    );
-    return;
-  }
-
-  if (event.type === "batch_attempt") {
-    console.log(
-      `review attempt: batch=${event.batch.index} observations=${event.batch.observationIds[0]}..${event.batch.observationIds.at(-1)} ${event.attempt}/${event.maxAttempts}`,
-    );
-    return;
-  }
-
-  if (event.type === "batch_success") {
-    console.log(
-      `reviewed: batch=${event.batch.index} count=${event.batch.observationIds.length} attempt=${event.attempt} transcript=${relative(getRepoRoot(), event.transcriptDir)}`,
-    );
-    if (event.validation) {
-      const coverage = event.validation.reviewCoverage.find((entry) => entry.path.endsWith(`/${event.batch.dialogue}.md`));
-      console.log(
-        `validated: ledgers=${event.validation.observationLedgerCount}${coverage ? ` ${event.batch.dialogue}_unreviewed=${coverage.unreviewed}` : ""}`,
-      );
-    }
-    return;
-  }
-
-  if (event.type === "batch_failure") {
-    console.log(`review failed: batch=${event.batch.index} attempt=${event.attempt} error=${event.error}`);
-    return;
-  }
-
-  console.log(`final validation: ledgers=${event.validation.observationLedgerCount}`);
-  for (const entry of event.validation.reviewCoverage.filter((coverage) => coverage.unreviewed > 0)) {
-    console.log(`- ${entry.path}: unreviewed=${entry.unreviewed}`);
-  }
-}
-
-function printClaimReviewQueueEvent(event: ClaimReviewQueueEvent) {
-  if (event.type === "queue_start") {
-    console.log(
-      `claims review queue: dialogue=${event.dialogue} pending=${event.plannedBatchCount} target_claims=${event.targetClaims} limit=${event.limit} retries=${event.retries} timeout=${event.timeoutSeconds}s`,
-    );
-    return;
-  }
-
-  if (event.type === "batch_attempt") {
-    console.log(
-      `claims review attempt: batch=${event.batch.index} claims=${event.batch.claimIds[0]}..${event.batch.claimIds.at(-1)} ${event.attempt}/${event.maxAttempts}`,
-    );
-    return;
-  }
-
-  if (event.type === "batch_success") {
-    console.log(
-      `claims reviewed: batch=${event.batch.index} count=${event.batch.claimIds.length} attempt=${event.attempt} transcript=${relative(getRepoRoot(), event.transcriptDir)}`,
-    );
-    if (event.validation) {
-      const coverage = event.validation.reviewCoverage.find(
-        (entry) => entry.path.includes("/claims/") && entry.path.endsWith(`/${event.batch.dialogue}.md`),
-      );
-      console.log(
-        `validated: claim_ledgers=${event.validation.claimLedgerCount}${coverage ? ` ${event.batch.dialogue}_unreviewed=${coverage.unreviewed}` : ""}`,
-      );
-    }
-    return;
-  }
-
-  if (event.type === "batch_failure") {
-    console.log(`claims review failed: batch=${event.batch.index} attempt=${event.attempt} error=${event.error}`);
-    return;
-  }
-
-  console.log(`claims review final validation: claim_ledgers=${event.validation.claimLedgerCount}`);
-  for (const entry of event.validation.reviewCoverage.filter((coverage) => coverage.path.includes("/claims/") && coverage.unreviewed > 0)) {
-    console.log(`- ${entry.path}: unreviewed=${entry.unreviewed}`);
-  }
-}
-
-function printRelationQueueEvent(event: RelationQueueEvent) {
-  if (event.type === "queue_start") {
-    console.log(
-      `relations queue: scope=${event.scope} pending=${event.plannedBatchCount} target_pairs=${event.targetPairs} limit=${event.limit} retries=${event.retries} timeout=${event.timeoutSeconds}s`,
-    );
-    return;
-  }
-
-  if (event.type === "batch_attempt") {
-    console.log(
-      `relations attempt: batch=${event.batch.index} candidates=${event.batch.candidateKeys[0]}..${event.batch.candidateKeys.at(-1)} ${event.attempt}/${event.maxAttempts}`,
-    );
-    return;
-  }
-
-  if (event.type === "batch_success") {
-    console.log(
-      `relations completed: batch=${event.batch.index} count=${event.batch.candidateKeys.length} attempt=${event.attempt} transcript=${relative(getRepoRoot(), event.transcriptDir)}`,
-    );
-    if (event.validation) {
-      console.log(`validated: relation_ledgers=${event.validation.relationLedgerCount}`);
-    }
-    return;
-  }
-
-  if (event.type === "batch_failure") {
-    console.log(`relations failed: batch=${event.batch.index} attempt=${event.attempt} error=${event.error}`);
-    return;
-  }
-
-  console.log(`relations final validation: relation_ledgers=${event.validation.relationLedgerCount}`);
-}
-
-function printRelationReviewQueueEvent(event: RelationReviewQueueEvent) {
-  if (event.type === "queue_start") {
-    console.log(
-      `relations review queue: scope=${event.scope} pending=${event.plannedBatchCount} target_relations=${event.targetRelations} limit=${event.limit} retries=${event.retries} timeout=${event.timeoutSeconds}s`,
-    );
-    return;
-  }
-
-  if (event.type === "batch_attempt") {
-    console.log(
-      `relations review attempt: batch=${event.batch.index} relations=${event.batch.relationIds[0]}..${event.batch.relationIds.at(-1)} ${event.attempt}/${event.maxAttempts}`,
-    );
-    return;
-  }
-
-  if (event.type === "batch_success") {
-    console.log(
-      `relations reviewed: batch=${event.batch.index} count=${event.batch.relationIds.length} attempt=${event.attempt} transcript=${relative(getRepoRoot(), event.transcriptDir)}`,
-    );
-    if (event.validation) {
-      const coverage = event.validation.reviewCoverage.find(
-        (entry) => entry.path.includes("/relations/") && entry.path.endsWith(`/${event.batch.scope}.md`),
-      );
-      console.log(
-        `validated: relation_ledgers=${event.validation.relationLedgerCount}${coverage ? ` ${event.batch.scope}_unreviewed=${coverage.unreviewed}` : ""}`,
-      );
-    }
-    return;
-  }
-
-  if (event.type === "batch_failure") {
-    console.log(`relations review failed: batch=${event.batch.index} attempt=${event.attempt} error=${event.error}`);
-    return;
-  }
-
-  console.log(`relations review final validation: relation_ledgers=${event.validation.relationLedgerCount}`);
-  for (const entry of event.validation.reviewCoverage.filter((coverage) => coverage.path.includes("/relations/") && coverage.unreviewed > 0)) {
-    console.log(`- ${entry.path}: unreviewed=${entry.unreviewed}`);
   }
 }
 
@@ -1309,211 +917,16 @@ async function main() {
     );
   }
 
-  if (args.command === "claims-queue") {
-    const result = await runClaimQueue(requireDialogue(args.command, args.subject), {
-      dryRun: args.dryRun,
-      ...(args.profileName ? { profileName: args.profileName } : {}),
-      ...(args.provider ? { provider: args.provider } : {}),
-      ...(args.model ? { model: args.model } : {}),
-      ...(args.targetBytes ? { targetBytes: args.targetBytes } : {}),
-      ...(args.limit ? { limit: args.limit } : {}),
-      ...(args.retries ? { retries: args.retries } : {}),
-      ...(args.timeoutSeconds ? { timeoutSeconds: args.timeoutSeconds } : {}),
-      ...(args.fromMarker ? { fromMarker: args.fromMarker } : {}),
-      ...(args.toMarker ? { toMarker: args.toMarker } : {}),
-      validateEach: args.validateEach,
-      validateFinal: args.validateFinal,
-      onEvent: printClaimQueueEvent,
-    });
-
-    if (result.dryRun) {
-      console.log(`dry-run claim segments=${result.plannedSegments.length}`);
-      for (const segment of result.plannedSegments) {
-        console.log(`- ${segment.span} markers=${segment.markerCount} bytes=${segment.sourceBytes}`);
-      }
-      return;
+  if (args.command === "wiki") {
+    if (process.argv.length > 5 || process.argv[4]?.startsWith("--")) {
+      throw new Error("Usage: bun run harness wiki <mode> [calls.json|-]; flags and extra arguments are not supported.");
     }
-
-    console.log(`claims queue complete: completed=${result.completedSegments.length}/${result.plannedSegments.length}`);
-    if (result.failedSegment) {
-      console.log(`claims queue stopped: ${result.failedSegment.span} error=${result.failedSegment.error ?? "unknown"}`);
-      process.exitCode = 1;
-    }
-    return;
-  }
-
-  if (args.command === "claims-review-queue") {
-    const result = await runClaimReviewQueue(requireDialogue(args.command, args.subject), {
-      dryRun: args.dryRun,
-      ...(args.profileName ? { profileName: args.profileName } : {}),
-      ...(args.provider ? { provider: args.provider } : {}),
-      ...(args.model ? { model: args.model } : {}),
-      ...(args.targetClaims ? { targetClaims: args.targetClaims } : {}),
-      ...(args.limit ? { limit: args.limit } : {}),
-      ...(args.retries ? { retries: args.retries } : {}),
-      ...(args.timeoutSeconds ? { timeoutSeconds: args.timeoutSeconds } : {}),
-      validateEach: args.validateEach,
-      validateFinal: args.validateFinal,
-      onEvent: printClaimReviewQueueEvent,
-    });
-
-    if (result.dryRun) {
-      console.log(`dry-run claim review batches=${result.plannedBatches.length}`);
-      for (const batch of result.plannedBatches) {
-        console.log(
-          `- batch=${batch.index} claims=${batch.claimIds[0]}..${batch.claimIds.at(-1)} count=${batch.claimIds.length}`,
-        );
-      }
-      return;
-    }
-
-    console.log(`claims review queue complete: completed=${result.completedBatches.length}/${result.plannedBatches.length}`);
-    if (result.failedBatch) {
-      const first = result.failedBatch.claimIds[0] ?? "(none)";
-      const last = result.failedBatch.claimIds.at(-1) ?? first;
-      console.log(`claims review queue stopped: claims=${first}..${last} error=${result.failedBatch.error ?? "unknown"}`);
-      process.exitCode = 1;
-    }
-    return;
-  }
-
-  if (args.command === "relations-queue") {
-    const result = await runRelationQueue(requireDialogue(args.command, args.subject), {
-      dryRun: args.dryRun,
-      ...(args.profileName ? { profileName: args.profileName } : {}),
-      ...(args.provider ? { provider: args.provider } : {}),
-      ...(args.model ? { model: args.model } : {}),
-      ...(args.targetPairs ? { targetPairs: args.targetPairs } : {}),
-      ...(args.candidateKeys ? { candidateKeys: args.candidateKeys } : {}),
-      ...(args.limit ? { limit: args.limit } : {}),
-      ...(args.retries ? { retries: args.retries } : {}),
-      ...(args.timeoutSeconds ? { timeoutSeconds: args.timeoutSeconds } : {}),
-      validateEach: args.validateEach,
-      validateFinal: args.validateFinal,
-      onEvent: printRelationQueueEvent,
-    });
-
-    if (result.dryRun) {
-      console.log(`dry-run relation batches=${result.plannedBatches.length}`);
-      for (const batch of result.plannedBatches) {
-        console.log(
-          `- batch=${batch.index} candidates=${batch.candidateKeys[0]}..${batch.candidateKeys.at(-1)} count=${batch.candidateKeys.length}`,
-        );
-      }
-      return;
-    }
-
-    console.log(`relations queue complete: completed=${result.completedBatches.length}/${result.plannedBatches.length}`);
-    if (result.failedBatch) {
-      const first = result.failedBatch.candidateKeys[0] ?? "(none)";
-      const last = result.failedBatch.candidateKeys.at(-1) ?? first;
-      console.log(`relations queue stopped: candidates=${first}..${last} error=${result.failedBatch.error ?? "unknown"}`);
-      process.exitCode = 1;
-    }
-    return;
-  }
-
-  if (args.command === "relations-review-queue") {
-    const result = await runRelationReviewQueue(requireDialogue(args.command, args.subject), {
-      dryRun: args.dryRun,
-      ...(args.profileName ? { profileName: args.profileName } : {}),
-      ...(args.provider ? { provider: args.provider } : {}),
-      ...(args.model ? { model: args.model } : {}),
-      ...(args.targetRelations ? { targetRelations: args.targetRelations } : {}),
-      ...(args.relationIds ? { relationIds: args.relationIds } : {}),
-      ...(args.limit ? { limit: args.limit } : {}),
-      ...(args.retries ? { retries: args.retries } : {}),
-      ...(args.timeoutSeconds ? { timeoutSeconds: args.timeoutSeconds } : {}),
-      validateEach: args.validateEach,
-      validateFinal: args.validateFinal,
-      onEvent: printRelationReviewQueueEvent,
-    });
-
-    if (result.dryRun) {
-      console.log(`dry-run relation review batches=${result.plannedBatches.length}`);
-      for (const batch of result.plannedBatches) {
-        console.log(
-          `- batch=${batch.index} relations=${batch.relationIds[0]}..${batch.relationIds.at(-1)} count=${batch.relationIds.length}`,
-        );
-      }
-      return;
-    }
-
-    console.log(`relations review queue complete: completed=${result.completedBatches.length}/${result.plannedBatches.length}`);
-    if (result.failedBatch) {
-      const first = result.failedBatch.relationIds[0] ?? "(none)";
-      const last = result.failedBatch.relationIds.at(-1) ?? first;
-      console.log(`relations review queue stopped: relations=${first}..${last} error=${result.failedBatch.error ?? "unknown"}`);
-      process.exitCode = 1;
-    }
-    return;
-  }
-
-  if (args.command === "ingest-queue") {
-    const result = await runSegmentedIngestQueue(requireDialogue(args.command, args.subject), {
-      dryRun: args.dryRun,
-      ...(args.profileName ? { profileName: args.profileName } : {}),
-      ...(args.provider ? { provider: args.provider } : {}),
-      ...(args.model ? { model: args.model } : {}),
-      ...(args.targetBytes ? { targetBytes: args.targetBytes } : {}),
-      ...(args.limit ? { limit: args.limit } : {}),
-      ...(args.retries ? { retries: args.retries } : {}),
-      ...(args.timeoutSeconds ? { timeoutSeconds: args.timeoutSeconds } : {}),
-      ...(args.fromMarker ? { fromMarker: args.fromMarker } : {}),
-      ...(args.toMarker ? { toMarker: args.toMarker } : {}),
-      gaps: args.gaps,
-      validateEach: args.validateEach,
-      validateFinal: args.validateFinal,
-      onEvent: printQueueEvent,
-    });
-
-    if (result.dryRun) {
-      console.log(`dry-run segments=${result.plannedSegments.length}`);
-      for (const segment of result.plannedSegments) {
-        console.log(`- ${segment.span} markers=${segment.markerCount} bytes=${segment.sourceBytes}`);
-      }
-      return;
-    }
-
-    console.log(`queue complete: completed=${result.completedSegments.length}/${result.plannedSegments.length}`);
-    if (result.failedSegment) {
-      console.log(`queue stopped: ${result.failedSegment.span} error=${result.failedSegment.error ?? "unknown"}`);
-      process.exitCode = 1;
-    }
-    return;
-  }
-
-  if (args.command === "review-queue") {
-    const result = await runSegmentedReviewQueue(requireDialogue(args.command, args.subject), {
-      dryRun: args.dryRun,
-      ...(args.profileName ? { profileName: args.profileName } : {}),
-      ...(args.provider ? { provider: args.provider } : {}),
-      ...(args.model ? { model: args.model } : {}),
-      ...(args.targetObservations ? { targetObservations: args.targetObservations } : {}),
-      ...(args.limit ? { limit: args.limit } : {}),
-      ...(args.retries ? { retries: args.retries } : {}),
-      ...(args.timeoutSeconds ? { timeoutSeconds: args.timeoutSeconds } : {}),
-      validateEach: args.validateEach,
-      onEvent: printReviewQueueEvent,
-    });
-
-    if (result.dryRun) {
-      console.log(`dry-run review batches=${result.plannedBatches.length}`);
-      for (const batch of result.plannedBatches) {
-        console.log(
-          `- batch=${batch.index} observations=${batch.observationIds[0]}..${batch.observationIds.at(-1)} count=${batch.observationIds.length}`,
-        );
-      }
-      return;
-    }
-
-    console.log(`review queue complete: completed=${result.completedBatches.length}/${result.plannedBatches.length}`);
-    if (result.failedBatch) {
-      const first = result.failedBatch.observationIds[0] ?? "(none)";
-      const last = result.failedBatch.observationIds.at(-1) ?? first;
-      console.log(`review queue stopped: observations=${first}..${last} error=${result.failedBatch.error ?? "unknown"}`);
-      process.exitCode = 1;
-    }
+    const mode = parseWikiToolMode(args.subject);
+    const callsPath = process.argv[4];
+    const result = callsPath
+      ? await executeWikiToolCalls(mode, JSON.parse(readFileSync(callsPath === "-" ? 0 : callsPath, "utf8")) as unknown)
+      : createWikiTools({ write: () => {} }, mode).map(({ name, description, parameters }) => ({ name, description, parameters }));
+    console.log(JSON.stringify(result, null, 2));
     return;
   }
 
@@ -2071,21 +1484,6 @@ async function main() {
     return;
   }
 
-  if (args.command === "profiles") {
-    printProfiles();
-    return;
-  }
-
-  if (args.command === "providers") {
-    printProviders();
-    return;
-  }
-
-  if (args.command === "models") {
-    printModels(args.subject ?? args.provider);
-    return;
-  }
-
   if (args.command === "transcripts") {
     printTranscripts();
     return;
@@ -2101,42 +1499,7 @@ async function main() {
     return;
   }
 
-  const result = await runHarnessCommand(args.command, requireDialogue(args.command, args.subject), {
-    dryRun: args.dryRun,
-    profileName: args.profileName,
-    provider: args.provider,
-    model: args.model,
-    targetBytes: args.targetBytes,
-    targetObservations: args.targetObservations,
-    targetClaims: args.targetClaims,
-    claimIds: args.claimIds,
-    targetPairs: args.targetPairs,
-    candidateKeys: args.candidateKeys,
-    targetRelations: args.targetRelations,
-    relationIds: args.relationIds,
-    limit: args.limit,
-    fromMarker: args.fromMarker,
-    toMarker: args.toMarker,
-    gaps: args.gaps,
-    gapStartChar: args.gapStartChar,
-    gapEndChar: args.gapEndChar,
-  });
-
-  if (result.responseText) {
-    const repoRoot = getRepoRoot();
-    console.log(result.responseText);
-    console.log(`\nTranscript: ${relative(repoRoot, result.transcriptDir)}`);
-    return;
-  }
-
-  const repoRoot = getRepoRoot();
-  console.log(`Prepared ${result.command} for ${result.dialogue}.`);
-  console.log(`Profile: ${result.profileName}`);
-  console.log(`Model: ${result.provider}/${result.model}`);
-  console.log(`Loaded resources: ${result.skillCount} skill(s), ${result.promptCount} prompt(s).`);
-  console.log(`Prompt template: ${result.templateName}`);
-  console.log(`Transcript: ${relative(repoRoot, result.transcriptDir)}`);
-  console.log(`Session: ${relative(repoRoot, result.sessionPath)}`);
+  throw new Error(`Unhandled command: ${args.command}`);
 }
 
 main().catch((error: unknown) => {

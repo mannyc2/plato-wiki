@@ -68,17 +68,20 @@ export function resolveCanonicalOntologyAuditPackage({
   return Object.freeze({ repoRoot: root, absolute, logical });
 }
 
-/** Create or re-open the one canonical sibling scratch root used by closure. */
+/** Keep disposable verification output inside the checkout's writable scratch. */
 export function ensureCanonicalOntologyWorkRoot(repoRoot: string) {
   const root = canonicalDirectory(repoRoot, "Repository root");
-  const parent = canonicalDirectory(dirname(root), "Repository parent");
-  const workRoot = join(parent, "work");
-  try {
-    mkdirSync(workRoot);
-  } catch (error) {
-    if (!error || typeof error !== "object" || !("code" in error) || error.code !== "EEXIST") throw error;
+  let workRoot = root;
+  for (const component of ["scratch", "ontology"]) {
+    workRoot = join(workRoot, component);
+    try {
+      mkdirSync(workRoot);
+    } catch (error) {
+      if (!error || typeof error !== "object" || !("code" in error) || error.code !== "EEXIST") throw error;
+    }
+    canonicalDirectory(workRoot, "Ontology work root");
   }
-  return canonicalDirectory(workRoot, "Ontology work root");
+  return workRoot;
 }
 
 export function createCanonicalOntologyRegenerationWorkspace(repoRoot: string) {
@@ -100,7 +103,7 @@ export function createCanonicalOntologyRegenerationWorkspace(repoRoot: string) {
 /**
  * Reject direct or miswired worker argv before a site builder can remove or
  * write any path. Site and manifest paths are exact paired children of one
- * real `work/ontology-regeneration-*` workspace.
+ * real `scratch/ontology/ontology-regeneration-*` workspace.
  */
 export function assertCanonicalOntologyRegenerationWorkerPaths({
   repoRoot,

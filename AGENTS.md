@@ -4,6 +4,16 @@ Do not be sycophantic. When writing tests validating seemingly bad logic or
 ideas, question the user. Assume hard cutovers with no legacy fallbacks unless
 the user explicitly asks for compatibility.
 
+## Development
+
+- Use Bun; the tested version is pinned in `package.json`.
+- Do not use explicit or implicit `any` types.
+- Comments explain reasons and trade-offs. Keep code with its feature; use
+  relative imports within a feature and workspace exports across packages.
+- Do not add AI attribution to commits.
+- Run `bun run ci` after code changes. It includes tests, typecheck, lint,
+  corpus validation, and a static-site build.
+
 ## Goal-Driven Execution
 
 Define success criteria and loop until verified.
@@ -56,6 +66,13 @@ Greek source slice -> accepted semantic decision -> canonical corpus diff
   canonical ledgers. A second agent may independently review the same bounded
   slice; the accepted result is written to the canonical ledger and one
   decision receipt.
+- Use Codex or Claude's existing subagents for independent bounded curation or
+  review when useful. One integrating agent owns each final ledger and receipt;
+  reviewers of the same ledger return findings without competing writes.
+- Generic tools are available through `bun run harness wiki <mode>` (schemas)
+  and `bun run harness wiki <mode> <calls.json>` (execution). Keep whole-ledger
+  stage and commit calls in the same invocation. Do not add model-session,
+  provider-selection, or ingest/review retry queues to the repository.
 - A decision receipt records the corpus scope, affected stable IDs, source
   references, accepted disposition and reason, independent-review outcome, and
   final validation. It does not preserve prompt bytes, response hashes,

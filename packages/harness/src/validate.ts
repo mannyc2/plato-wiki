@@ -15,6 +15,7 @@ import {
 import { formatAudioProductionIssues, validateAudioProductionArtifacts } from "./audio-production.js";
 import { validateClusterArtifacts } from "./clusters.js";
 import { validateDossierArtifacts } from "./dossiers.js";
+import { collectOrphanObservationTurnJoinFailures } from "./derived/joins.js";
 import { englishStephanusIndexPath, parseStephanusIndexToon, stephanusIndexPath } from "./derived/stephanus.js";
 import { getRepoRoot } from "./paths.js";
 import { validatePublicReleaseReport } from "./public-release.js";
@@ -57,6 +58,7 @@ import {
 } from "./wiki/observation-ledger.js";
 import { formatObservationLedgerValidationError, validateObservationLedger } from "./wiki/observation-validator.js";
 import { collectOntologyAuditFailures } from "./wiki/ontology-audit.js";
+import { collectOntologyCanonicalRegenerationArtifacts } from "./wiki/ontology-regeneration-tree.js";
 import {
   readOntologyVNextRepository,
   readObservationReviewStatuses,
@@ -117,18 +119,9 @@ function scanForBannedInstructionText() {
     "jtauber",
   ];
   const files = [
-    ".pi/skills/plato-observation-extraction/SKILL.md",
-    ".pi/prompts/ingest-plato-dialogue.md",
-    ".pi/prompts/ingest-plato-segment.md",
-    ".pi/prompts/extract-plato-claims-segment.md",
-    ".pi/prompts/adjudicate-plato-relations.md",
-    ".pi/prompts/review-plato-segment.md",
-    ".pi/prompts/review-plato-claims-segment.md",
-    ".pi/prompts/review-plato-relations.md",
     "docs/ontology-vnext.md",
     "docs/ontology-audit-protocol.md",
     "docs/plato-wiki-extraction-protocol.md",
-    "docs/pi-agent-core-wiki-runner.md",
   ];
 
   const failures: string[] = [];
@@ -195,7 +188,7 @@ function relationLedgerPaths() {
 
 function validateObservationLedgers() {
   const repoRoot = getRepoRoot();
-  const failures: string[] = [];
+  const failures = collectOrphanObservationTurnJoinFailures();
   const paths = observationLedgerPaths();
 
   for (const relativePath of paths) {
@@ -558,7 +551,6 @@ export function validateRepo(): ValidationReport {
   const repoRoot = getRepoRoot();
   const requiredPaths = [
     ".env.example",
-    "harness.config.json",
     "raw/plato/MANIFEST.sha256",
     "raw/plato/greek/euthyphro.txt",
     "raw/plato/greek/apology.txt",
@@ -575,14 +567,6 @@ export function validateRepo(): ValidationReport {
     "docs/completeness-target.md",
     "audio/coverage.md",
     "wiki/completeness.md",
-    ".pi/skills/plato-observation-extraction/SKILL.md",
-    ".pi/prompts/ingest-plato-dialogue.md",
-    ".pi/prompts/ingest-plato-segment.md",
-    ".pi/prompts/extract-plato-claims-segment.md",
-    ".pi/prompts/adjudicate-plato-relations.md",
-    ".pi/prompts/review-plato-segment.md",
-    ".pi/prompts/review-plato-claims-segment.md",
-    ".pi/prompts/review-plato-relations.md",
   ];
 
   for (const relativePath of requiredPaths) {
@@ -591,6 +575,10 @@ export function validateRepo(): ValidationReport {
       throw new Error(`Missing required file: ${relativePath}`);
     }
   }
+
+  // Current tree structure is a repository invariant, independent of the bytes
+  // recorded by a historical ontology regeneration.
+  collectOntologyCanonicalRegenerationArtifacts(repoRoot);
 
   const workflowPolicyFailures = collectChangedCorpusWorkflowFailures();
   if (workflowPolicyFailures.length > 0) {

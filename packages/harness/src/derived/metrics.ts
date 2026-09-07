@@ -11,7 +11,7 @@ import {
   type TokenIndex,
   type TokenRecord,
 } from "./tokens.js";
-import { parseTurnIndexToon, turnIndexPath, type TurnIndex, type TurnRecord } from "./turns.js";
+import { parseTurnIndexToon, turnIndexPath, type TurnIndex } from "./turns.js";
 
 declare const Bun: { TOML: { parse(content: string): unknown } };
 
