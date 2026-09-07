@@ -132,6 +132,11 @@ export { buildClusters, clusterGateReport, validateClusterArtifacts, writeCluste
 export { buildDossiers, validateDossierArtifacts, writeDossierArtifacts } from "./dossiers.js";
 export { buildCoverageReport, renderCoverageReport, writeCoverageReport } from "./coverage.js";
 export {
+  evaluateOntologyQuality,
+  renderOntologyQualityReport,
+  writeOntologyQualityReport,
+} from "./wiki/ontology-quality.js";
+export {
   auditCompletenessFacts,
   auditPrebuiltStaticSite,
   buildCompletenessFacts,

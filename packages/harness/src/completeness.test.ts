@@ -108,6 +108,14 @@ function completeFacts(): CompletenessFacts {
     discoveredEnglish: [...CANONICAL_DIALOGUES],
     sourceManifestValid: true,
     comparisonValid: true,
+    ontologyQuality: {
+      gates: {
+        axes: { scope: "global", state: "pass", expected: "authored axes", observed: "verified", evidence: [], remediation: "" },
+        concepts: { scope: "global", state: "pass", expected: "answer classes", observed: "verified", evidence: [], remediation: "" },
+        independence: { scope: "global", state: "pass", expected: "independent review", observed: "verified", evidence: [], remediation: "" },
+      },
+      dialogues: CANONICAL_DIALOGUES.map((scope) => ({ scope, state: "pass", expected: "multi-membership", observed: "verified", evidence: [], remediation: "" })),
+    },
     siteValid: true,
     siteEvidence: "fixture site valid",
     relationAudit: {
@@ -150,6 +158,34 @@ describe("canonical target", () => {
 });
 
 describe("targets", () => {
+  it("requires all ontology quality families even when comparison projections validate", () => {
+    const cases = [
+      ["axes", "CMP-ONTOLOGY-AXES"],
+      ["concepts", "CMP-ONTOLOGY-CONCEPTS"],
+      ["independence", "CMP-ONTOLOGY-INDEPENDENCE"],
+    ] as const;
+    for (const [gate, family] of cases) {
+      const facts = completeFacts();
+      facts.ontologyQuality.gates[gate].state = "fail";
+      const report = buildCompletenessReport(facts);
+      expect(report.targets.corpus.ready).toBe(true);
+      expect(report.targets["knowledge-base"].ready).toBe(false);
+      expect(report.targets["knowledge-base"].blockers).toContain(family);
+      expect(report.targets["audio-edition"].blockers).toContain(family);
+      expect(report.families.find((entry) => entry.id === "CMP-COMPARISON")!.state).toBe("pass");
+    }
+  });
+
+  it("requires membership evidence for every canonical dialogue without shrinking the denominator", () => {
+    const facts = completeFacts();
+    facts.ontologyQuality.dialogues = facts.ontologyQuality.dialogues.filter((entry) => entry.scope !== "laws");
+    const report = buildCompletenessReport(facts);
+    const family = report.families.find((entry) => entry.id === "CMP-ONTOLOGY-MEMBERSHIP")!;
+    expect(family.leaves).toHaveLength(27);
+    expect(family.leaves.find((entry) => entry.scope === "laws")!.state).toBe("fail");
+    expect(report.targets["knowledge-base"].blockers).toContain("CMP-ONTOLOGY-MEMBERSHIP");
+  });
+
   it("is conjunctive rather than score-based", () => {
     const facts = completeFacts();
     facts.dialogues[0]!.derived.tokens = false;

@@ -35,6 +35,14 @@ function facts(): CompletenessFacts {
     discoveredEnglish: [...CANONICAL_DIALOGUES],
     sourceManifestValid: true,
     comparisonValid: true,
+    ontologyQuality: {
+      gates: {
+        axes: { scope: "global", state: "pass", expected: "authored axes", observed: "verified", evidence: [], remediation: "" },
+        concepts: { scope: "global", state: "pass", expected: "answer classes", observed: "verified", evidence: [], remediation: "" },
+        independence: { scope: "global", state: "pass", expected: "independent review", observed: "verified", evidence: [], remediation: "" },
+      },
+      dialogues: CANONICAL_DIALOGUES.map((scope) => ({ scope, state: "pass", expected: "multi-membership", observed: "verified", evidence: [], remediation: "" })),
+    },
     siteValid: true,
     siteEvidence: "valid",
     relationAudit: {

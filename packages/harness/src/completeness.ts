@@ -17,6 +17,7 @@ import {
 import { dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
 import { buildAudioCoverageReport, type AudioCoverageReport, type DialogueAudioCoverage } from "./audio-coverage.js";
 import { ensureCanonicalOntologyWorkRoot } from "./wiki/ontology-audit-package-path.js";
+import { evaluateOntologyQuality, type OntologyQualityLeaf, type OntologyQualityReport } from "./wiki/ontology-quality.js";
 import { validateClusterArtifacts } from "./clusters.js";
 import { validateDossierArtifacts } from "./dossiers.js";
 import {
@@ -125,6 +126,10 @@ export type CompletenessFamilyId =
   | "CMP-DERIVED"
   | "CMP-REPORTED-TURNS"
   | "CMP-COMPARISON"
+  | "CMP-ONTOLOGY-AXES"
+  | "CMP-ONTOLOGY-CONCEPTS"
+  | "CMP-ONTOLOGY-MEMBERSHIP"
+  | "CMP-ONTOLOGY-INDEPENDENCE"
   | "CMP-SITE"
   | "CMP-ENGLISH"
   | "CMP-READINGS"
@@ -152,6 +157,10 @@ export const COMPLETENESS_TARGETS: Record<CompletenessTarget, readonly Completen
     "CMP-SITE",
   ],
   "knowledge-base": [
+    "CMP-ONTOLOGY-AXES",
+    "CMP-ONTOLOGY-CONCEPTS",
+    "CMP-ONTOLOGY-MEMBERSHIP",
+    "CMP-ONTOLOGY-INDEPENDENCE",
     "CMP-SOURCE",
     "CMP-OBSERVATIONS",
     "CMP-CLAIMS",
@@ -166,6 +175,10 @@ export const COMPLETENESS_TARGETS: Record<CompletenessTarget, readonly Completen
     "CMP-AUDIO-TRUTH",
   ],
   "audio-edition": [
+    "CMP-ONTOLOGY-AXES",
+    "CMP-ONTOLOGY-CONCEPTS",
+    "CMP-ONTOLOGY-MEMBERSHIP",
+    "CMP-ONTOLOGY-INDEPENDENCE",
     "CMP-SOURCE",
     "CMP-OBSERVATIONS",
     "CMP-CLAIMS",
@@ -278,6 +291,7 @@ export type CompletenessFacts = {
   discoveredEnglish: string[];
   sourceManifestValid: boolean;
   comparisonValid: boolean;
+  ontologyQuality: { gates: OntologyQualityReport["gates"]; dialogues: OntologyQualityLeaf[] };
   siteValid: boolean;
   siteEvidence: string;
   relationAudit: RelationAuditCompletenessFacts;
@@ -1069,6 +1083,7 @@ export function buildCompletenessFacts({
       discoveredEnglish,
       sourceManifestValid: manifestValid(repoRoot),
       comparisonValid: comparisonArtifactsValid(repoRoot),
+      ontologyQuality: evaluateOntologyQuality({ repoRoot, canonicalDialogues: CANONICAL_DIALOGUES }),
       siteValid: site?.valid ?? false,
       siteEvidence: site?.evidence ?? "site validation summary was not supplied",
       relationAudit: {
@@ -1328,6 +1343,12 @@ export function buildCompletenessReport(facts: CompletenessFacts): CompletenessR
       ];
     })()),
     family("CMP-COMPARISON", [leaf("global", facts.comparisonValid, "clusters and dossiers validate", `valid=${facts.comparisonValid}`, ["wiki/clusters", "wiki/dossiers"], "regenerate comparison artifacts")]),
+    family("CMP-ONTOLOGY-AXES", [facts.ontologyQuality.gates.axes]),
+    family("CMP-ONTOLOGY-CONCEPTS", [facts.ontologyQuality.gates.concepts]),
+    family("CMP-ONTOLOGY-MEMBERSHIP", CANONICAL_DIALOGUES.map((dialogue) =>
+      facts.ontologyQuality.dialogues.find((entry) => entry.scope === dialogue)
+        ?? leaf(dialogue, false, "validated membership coverage for this canonical dialogue", "quality evidence missing", [`wiki/observations/${dialogue}.md`, "wiki/ontology/memberships.jsonl"], "regenerate ontology quality evidence"))),
+    family("CMP-ONTOLOGY-INDEPENDENCE", [facts.ontologyQuality.gates.independence]),
     family("CMP-SITE", [leaf("global", facts.siteValid, "generated site passes validators", facts.siteEvidence, ["temporary generated site"], "fix site validation failures")]),
     family("CMP-ENGLISH", [
       leaf("global", exactEnglish.valid, "exact 27 English sources", `${facts.discoveredEnglish.length} sources`, ["raw/plato/english"], "restore the fixed English source set"),

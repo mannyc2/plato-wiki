@@ -5,6 +5,10 @@ import {
   auditCompletenessFacts,
   buildAudioCoverageReport,
   buildCompletenessReport,
+  CANONICAL_DIALOGUES,
+  evaluateOntologyQuality,
+  renderOntologyQualityReport,
+  writeOntologyQualityReport,
   buildJobManifest,
   buildPublicReleaseFacts,
   buildPublicReleaseReport,
@@ -122,6 +126,7 @@ type Command =
   | "release:audit"
   | "validate"
   | "ontology-audit"
+  | "ontology"
   | "derive"
   | "commentary"
   | "audio"
@@ -207,6 +212,7 @@ Usage:
   bun run harness dossiers [--write]
   bun run harness coverage [--write] [dialogue]
   bun run harness relations candidates [--write]
+  bun run harness ontology quality [--write] [--json]
   bun run harness ontology-audit generate
   bun run harness ontology-audit baseline-evidence
   bun run harness ontology-audit import-source-review --pass <primary|independent> --inputs <path,...> --receipt <wiki/review/path.md>
@@ -391,6 +397,7 @@ function parseCommand(argv: string[]): ParsedArgs {
     command !== "release:audit" &&
     command !== "validate" &&
     command !== "ontology-audit" &&
+    command !== "ontology" &&
     command !== "derive" &&
     command !== "commentary" &&
     command !== "audio" &&
@@ -699,6 +706,18 @@ async function main() {
 
   if (args.command === "validate") {
     printValidationReport(validateRepo());
+    return;
+  }
+
+  if (args.command === "ontology") {
+    const options = process.argv.slice(4);
+    if (args.subject !== "quality" || options.some((option) => option !== "--write" && option !== "--json")) {
+      throw new Error("Usage: bun run harness ontology quality [--write] [--json]");
+    }
+    const report = evaluateOntologyQuality({ canonicalDialogues: CANONICAL_DIALOGUES });
+    if (options.includes("--write")) writeOntologyQualityReport(report);
+    console.log(options.includes("--json") ? JSON.stringify(report, null, 2) : renderOntologyQualityReport(report));
+    process.exitCode = report.inputErrors.length > 0 ? 1 : 0;
     return;
   }
 
