@@ -1,11 +1,16 @@
 import { describe, expect, it } from "bun:test";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { getRepoRoot } from "./paths.js";
 
 const root = getRepoRoot();
 const workflowPath = join(root, ".github/workflows/ci.yml");
 const workflow = existsSync(workflowPath) ? readFileSync(workflowPath, "utf8") : "";
+type WorkflowStep = { name?: string; id?: string; if?: string; run?: string; uses?: string };
+const workflowJobs = (Bun.YAML.parse(workflow) as {
+  jobs: { verify: { steps: WorkflowStep[] }; deploy: { if: string } };
+}).jobs;
 const driver = readFileSync(join(root, "scripts/ci.ts"), "utf8");
 const publicFiles = readFileSync(join(root, "release/public-files.toml"), "utf8");
 const manifest = JSON.parse(readFileSync(join(root, "package.json"), "utf8")) as {
@@ -93,13 +98,70 @@ describe("ci contract", () => {
   it("runs strict public gates without writing canonical corpus state", () => {
     expect(workflow).not.toContain("--write");
     expect(workflow).not.toContain("--allow-incomplete");
-    expect(workflow).toContain("bun run completeness -- --target knowledge-base");
+    expect(workflow).toContain("bun run harness completeness --target knowledge-base --json");
     expect(workflow).toContain("bun run public:export");
     expect(workflow).toContain("bun run release:audit");
     expect(workflow).toContain("--public-tree");
     expect(workflow).toContain("--export-manifest");
     expect(workflow).toContain("actions/upload-pages-artifact@");
     expect(workflow).toContain("scripts/release/smoke-site.ts");
+  });
+
+  it("verifies incomplete editions and requires readiness for every release artifact", () => {
+    const verify = workflowJobs.verify.steps.find((step) => step.name === "Verify integrity and build")!;
+    expect(verify.if).toBeUndefined();
+    expect(verify.run).toContain('if [ "${{ steps.edition.outputs.ready }}" = \'true\' ]; then');
+    expect(verify.run).toContain('--export-manifest "${RUNNER_TEMP}/public-manifest.json"');
+    expect(verify.run).toMatch(/else\s+bun run ci\s+fi/u);
+    const gated = workflowJobs.verify.steps.filter((step) =>
+      step.id === "public_manifest" || step.name === "Package downloadable edition" ||
+      (step.uses?.startsWith("actions/upload-") && step.if !== "always()"));
+    expect(gated).toHaveLength(4);
+    for (const step of gated) expect(step.if).toBe("steps.edition.outputs.ready == 'true'");
+    expect(workflowJobs.deploy.if).toContain("needs.verify.outputs.edition_ready == 'true'");
+    expect(workflow).not.toContain("continue-on-error");
+  });
+
+  it("distinguishes valid incomplete reports from command errors before allowing verification", () => {
+    const readiness = workflowJobs.verify.steps.find((step) => step.id === "edition")!.run!;
+    const script = readiness.match(/bun -e '([\s\S]+?)'/u)?.[1];
+    expect(script).toBeDefined();
+    const directory = mkdtempSync(join(tmpdir(), "plato-ci-readiness-"));
+    const path = join(directory, "report.json");
+    const report = (ready: boolean) => JSON.stringify({
+      selectedTarget: "knowledge-base", selected: { target: "knowledge-base", ready },
+      report: {
+        schemaVersion: 1, artifactKind: "plato-edition-completeness",
+        targets: { "knowledge-base": { ready } },
+      },
+    });
+    try {
+      for (const [content, status, expected] of [
+        [report(true), 0, "ready=true\n"],
+        [report(false), 2, "ready=false\n"],
+        [report(false), 1, undefined],
+        [report(false), 0, undefined],
+        [report(true), 2, undefined],
+        [report(true).replace('"schemaVersion":1', '"schemaVersion":2'), 0, undefined],
+        [report(false).replace('"ready":false', '"ready":true'), 0, undefined],
+        ['{"selectedTarget":"corpus"}', 2, undefined],
+        ["not JSON", 2, undefined],
+      ] as const) {
+        writeFileSync(path, content);
+        const result = Bun.spawnSync([process.execPath, "-e", script!, path, String(status)], {
+          stdout: "pipe", stderr: "pipe",
+        });
+        if (expected !== undefined) {
+          expect(result.exitCode).toBe(0);
+          expect(result.stdout.toString()).toBe(expected);
+        } else {
+          expect(result.exitCode).not.toBe(0);
+          expect(result.stdout.toString()).toBe("");
+        }
+      }
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
   });
 
   it("installs with a frozen lockfile at the pinned bun version", () => {

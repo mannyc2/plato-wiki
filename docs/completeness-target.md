@@ -165,3 +165,9 @@ first requires the selected edition target, then independently requires:
 
 The local report does not claim knowledge of hosted CI or deployment state.
 It excludes private commit identifiers and ephemeral absolute export paths.
+
+Hosted `verify` runs integrity checks and a static-site build even when the
+edition is incomplete. A valid incomplete report prevents release artifacts
+and deployment; it does not prevent merging valid corpus work. Command errors
+still fail verification. Only a ready edition proceeds through the strict
+public-release overlay and produces an artifact eligible for deployment.
