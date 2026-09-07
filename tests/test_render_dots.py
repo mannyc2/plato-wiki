@@ -41,6 +41,7 @@ from render_dots import (  # noqa: E402
     _assembly_wav_metadata,
     _python_import_provenance_for_module,
     _trim_generated_audio,
+    _validate_render_task,
     boundary_decision,
     boundary_frames,
     build_chapter_assembly_input,
@@ -999,6 +1000,15 @@ class DotsRendererPureTest(unittest.TestCase):
                 sha256_file(reference),
             )
             self.assertEqual(task["input"]["runtime_provenance"], runtime_provenance())
+
+            # A valid content hash must not let a caller relabel eager audio
+            # or request the unsupported 800-patch compiled execution path.
+            for field, value in [("optimize", False), ("optimize", 1), ("max_generate_length", 800)]:
+                altered = deepcopy(task)
+                altered["input"]["renderer"][field] = value
+                altered["input_sha256"] = content_sha256(altered["input"])
+                with self.assertRaisesRegex(RenderContractError, "renderer evidence is stale"):
+                    _validate_render_task(altered, 0)
 
             changed_runtime = runtime_provenance()
             changed_runtime["model"]["files"][1]["sha256"] = "f" * 64
