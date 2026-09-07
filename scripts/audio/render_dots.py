@@ -41,7 +41,7 @@ from cast_acceptance import (
 
 
 RENDERER_NAME = "plato-dots"
-RENDERER_VERSION = 5
+RENDERER_VERSION = 6
 RENDER_PLAN_SCHEMA_VERSION = 3
 RENDER_TASK_SCHEMA_VERSION = 3
 RENDER_CACHE_SCHEMA_VERSION = 3
@@ -85,7 +85,9 @@ SYNTHESIS_TEXT_OVERRIDES = {
         "0": "In order that I may profit by learning something."
     }
 }
-MAX_GENERATE_LENGTH = 800
+# The pinned Dots compiler has no bucket above 512 patches. Our 320-character
+# chunks stay well below that ceiling; requesting 800 fails before synthesis.
+MAX_GENERATE_LENGTH = 512
 TRIM_THRESHOLD_DB = -50.0
 TRIM_SAFETY_MS = 30
 INTERCHUNK_PAUSE_MS = 80
@@ -1873,6 +1875,7 @@ def build_render_plan(
                 "dots_package_commit": DOTS_PACKAGE_COMMIT,
                 "packages": PACKAGE_PINS,
                 "max_generate_length": MAX_GENERATE_LENGTH,
+                "optimize": True,
                 "max_render_unit_characters": MAX_CHUNK_CHARACTERS,
                 "entry_chunk_overrides": copy.deepcopy(ENTRY_CHUNK_OVERRIDES),
                 "synthesis_text_overrides": copy.deepcopy(
@@ -2226,6 +2229,7 @@ def _validate_render_task(task: dict[str, Any], expected_order: int) -> None:
         "dots_package_commit",
         "packages",
         "max_generate_length",
+        "optimize",
         "max_render_unit_characters",
         "entry_chunk_overrides",
         "synthesis_text_overrides",
@@ -2237,6 +2241,7 @@ def _validate_render_task(task: dict[str, Any], expected_order: int) -> None:
         or renderer["dots_package_commit"] != DOTS_PACKAGE_COMMIT
         or renderer["packages"] != PACKAGE_PINS
         or renderer["max_generate_length"] != MAX_GENERATE_LENGTH
+        or renderer["optimize"] is not True
         or renderer["max_render_unit_characters"] != MAX_CHUNK_CHARACTERS
         or renderer["entry_chunk_overrides"] != ENTRY_CHUNK_OVERRIDES
         or renderer["synthesis_text_overrides"] != SYNTHESIS_TEXT_OVERRIDES
@@ -4872,6 +4877,10 @@ def _load_dots_runtime(
         str(model_path),
         precision=precisions.pop(),
         max_generate_length=MAX_GENERATE_LENGTH,
+        optimize=True,
+        # Compile only the length buckets actual chunks need. Full warmup
+        # visits unused long-audio buckets and retains unnecessary GPU memory.
+        warmup_on_optimize=False,
     )
 
 

@@ -14,6 +14,14 @@ lossless render input to the mastering and QA stages in
 
 ## Production execution
 
+The renderer enables the pinned Dots runtime's compiled inference path while
+preserving each cast voice's sampling settings. Its 512-patch ceiling matches
+the runtime's largest supported compile bucket. Compilation runs lazily for
+the length buckets actually used; the first utterance at a new length may be
+slower. Keep `TORCHINDUCTOR_CACHE_DIR` and `TRITON_CACHE_DIR` on an output disk
+with free space so later processes can reuse compiler artifacts. These caches
+are separate from the immutable model and Python package snapshots.
+
 Advance each ready dialogue through the existing screenplay, render, mastering,
 ASR, handoff, and promotion commands below. Readiness is local and read-only:
 
