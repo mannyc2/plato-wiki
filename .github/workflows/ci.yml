@@ -1,8 +1,8 @@
 name: ci
 
-# Pull requests and non-final repositories build the exact deployable artifact
-# but cannot deploy it. Only public main in the final repository name reaches
-# the protected GitHub Pages environment.
+# Integrity checks run even when the edition is incomplete. Only a ready
+# edition produces release artifacts; only main in the final repository can
+# send those verified artifacts to the protected GitHub Pages environment.
 on:
   push:
     branches: [main]
@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       manifest_sha256: ${{ steps.public_manifest.outputs.sha256 }}
+      edition_ready: ${{ steps.edition.outputs.ready }}
     steps:
       # actions/checkout v5
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
@@ -66,10 +67,32 @@ jobs:
             'import numpy; print("numpy", numpy.__version__)'
 
       - name: Edition completeness
-        run: bun run completeness -- --target knowledge-base
+        id: edition
+        run: |
+          status=0
+          bun run harness completeness --target knowledge-base --json \
+            > "${RUNNER_TEMP}/completeness.json" || status=$?
+          # Exit 2 means incomplete only when a matching report was produced.
+          # Execution errors and malformed reports must still fail verification.
+          bun -e '
+            const report = await Bun.file(process.argv[1]).json();
+            const status = Number(process.argv[2]);
+            const selected = report.selected;
+            if (report.selectedTarget !== "knowledge-base" ||
+                report.report?.schemaVersion !== 1 ||
+                report.report.artifactKind !== "plato-edition-completeness" ||
+                selected?.target !== "knowledge-base" ||
+                typeof selected.ready !== "boolean" ||
+                report.report.targets?.["knowledge-base"]?.ready !== selected.ready ||
+                status !== (selected.ready ? 0 : 2)) {
+              throw new Error("Invalid completeness result");
+            }
+            console.log(`ready=${selected.ready}`);
+          ' "${RUNNER_TEMP}/completeness.json" "${status}" >> "${GITHUB_OUTPUT}"
 
       - name: Materialize and audit the public tree
         id: public_manifest
+        if: steps.edition.outputs.ready == 'true'
         run: |
           bun run public:export -- \
             --out-dir "${RUNNER_TEMP}/public-tree" \
@@ -80,14 +103,18 @@ jobs:
             --export-manifest "${RUNNER_TEMP}/public-manifest.json"
           echo "sha256=$(sha256sum "${RUNNER_TEMP}/public-manifest.json" | cut -d ' ' -f 1)" >> "${GITHUB_OUTPUT}"
 
-      - name: Verify and build the exact Pages artifact
+      - name: Verify integrity and build
         env:
           UV_CACHE_DIR: ${{ runner.temp }}/uv-cache
         run: |
-          bun run ci -- \
-            --site-out-dir "${RUNNER_TEMP}/site" \
-            --source-revision "${GITHUB_SHA}" \
-            --export-manifest "${RUNNER_TEMP}/public-manifest.json"
+          if [ "${{ steps.edition.outputs.ready }}" = 'true' ]; then
+            bun run ci -- \
+              --site-out-dir "${RUNNER_TEMP}/site" \
+              --source-revision "${GITHUB_SHA}" \
+              --export-manifest "${RUNNER_TEMP}/public-manifest.json"
+          else
+            bun run ci
+          fi
 
       - name: Diff hygiene
         run: |
@@ -101,6 +128,7 @@ jobs:
       # Archive the verified products so readers can download the edition
       # without cloning development history or rebuilding the token cache.
       - name: Package downloadable edition
+        if: steps.edition.outputs.ready == 'true'
         run: |
           mkdir "${RUNNER_TEMP}/downloads"
           for product in public-tree site; do
@@ -117,6 +145,7 @@ jobs:
 
       # actions/upload-artifact v4; these are candidate downloads, not a release.
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.edition.outputs.ready == 'true'
         with:
           name: plato-edition-${{ github.sha }}
           path: ${{ runner.temp }}/downloads
@@ -125,6 +154,7 @@ jobs:
 
       # actions/upload-pages-artifact v4
       - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
+        if: steps.edition.outputs.ready == 'true'
         with:
           path: ${{ runner.temp }}/site
 
@@ -134,12 +164,13 @@ jobs:
         with:
           name: release-evidence
           path: |
+            ${{ runner.temp }}/completeness.json
             wiki/completeness.md
             release/public/
 
   deploy:
     needs: verify
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && github.repository == 'mannyc2/plato-wiki'
+    if: needs.verify.outputs.edition_ready == 'true' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && github.repository == 'mannyc2/plato-wiki'
     runs-on: ubuntu-latest
     permissions:
       contents: read

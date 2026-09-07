@@ -21,7 +21,7 @@ import { getRepoRoot } from "./paths.js";
  * already proved, generalized off the completeness leaf rather than bound to
  * one lane.
  */
-export const JOB_SCHEMA_VERSION = 2;
+export const JOB_SCHEMA_VERSION = 3;
 
 export const JOB_MANIFEST_PATH = ".cache/jobs/manifest.json";
 
@@ -34,6 +34,7 @@ export type JobLane =
   | "derived"
   | "reported-turns"
   | "comparison"
+  | "ontology"
   | "site"
   | "commentary"
   | "commentary-audit"
@@ -211,6 +212,53 @@ const LANES: Partial<Record<CompletenessFamilyId, LaneDefinition>> = {
     automation: "harness",
     instructions: () => ["Rebuild the cross-dialogue comparison artifacts."],
     submit: () => ["bun run harness clusters --write", "bun run harness dossiers --write"],
+  },
+  "CMP-ONTOLOGY-AXES": {
+    lane: "ontology",
+    automation: "manual",
+    instructions: () => [
+      "Read docs/ontology-v2-target.md and follow its fixed phase order. Author no catalog until phase 0 is merged.",
+      "Write each comparison question before its closed answer set; name at least three classes and candidate observation IDs from at least three dialogues.",
+      "Record admitted and rejected candidates, rationale, independent overlap review, and resulting catalog count in one canonical phase-1 receipt under wiki/review/; obtain operator ratification of the count before classification.",
+      "The ratified count is a regression ceiling, not a target. Every live axis needs its authorship receipt reference, at least three classes, at least three represented dialogues, and a unique normalized question.",
+      "Keep the candidate catalog outside the live ontology until the single hard cutover. Do not change observation fields or review statuses.",
+    ],
+    submit: () => ["bun run harness ontology quality --write", "bun run validate", "bun run ci"],
+  },
+  "CMP-ONTOLOGY-CONCEPTS": {
+    lane: "ontology",
+    automation: "manual",
+    instructions: () => [
+      "Read docs/ontology-v2-target.md. Enumerate answer classes during catalog authoring, then prune after classification and independent review in the prescribed order.",
+      "Admit only answer classes with keys of at most four tokens and distinct normalized definitions within their axis. At cutover every concept must have at least two memberships.",
+      "A new concept after catalog freeze must remain inside an admitted axis, name two candidate observations, and be accepted by the integrating agent.",
+      "Remove undersupported classes at cutover; reassign their observations on textual evidence or record explicit no_axis_applies dispositions. Record the decision in the canonical cutover receipt.",
+    ],
+    submit: () => ["bun run harness ontology quality --write", "bun run validate", "bun run ci"],
+  },
+  "CMP-ONTOLOGY-MEMBERSHIP": {
+    lane: "ontology",
+    automation: "manual",
+    instructions: (scope) => [
+      `Classify every accepted observation in ${scope} against the entire ratified catalog, following docs/ontology-v2-target.md phase 3.`,
+      "Begin only after catalog count ratification and installation of the ontology stage/commit writer and bounded brief command in phase 2.",
+      "Read observation, greek_terms, stephanus_span, and limits as the classification input. Never edit observation fields or review statuses; do not read raw/plato/english/.",
+      "Record every applicable answer class. Each assignment basis names the actual textual term, speaker act, or stated provision that warrants it; no registry templates or legacy references.",
+      "Each accepted observation requires membership or a no_axis_applies disposition with a basis. Memberships divided by all accepted observations must exceed 1.0; this threshold does not replace exhaustive classification.",
+      "Stage candidate results outside the live ontology; the integrating agent owns the single whole-ontology commit and cutover receipt. Propose no axes.",
+    ],
+    submit: () => ["bun run harness ontology quality --write", "bun run validate", "bun run ci"],
+  },
+  "CMP-ONTOLOGY-INDEPENDENCE": {
+    lane: "ontology",
+    automation: "manual",
+    instructions: () => [
+      "Read docs/ontology-v2-target.md. After the initial membership pass, independently classify a stratified sample covering at least 5% of accepted observations and at least 600 records.",
+      "Use an independent reader and preserve item-level disagreements with terminal accepted decisions in the canonical cutover receipt; the integrating agent owns canonical writes.",
+      "Publish measured first-pass recall, missed memberships, and agreement in the deterministic quality report. Present the measurements to the operator for the recall-floor decision; do not invent a threshold or silently rerun unchanged inputs.",
+      "Keep temporary packets outside the repository; the receipt records source references, stable IDs, accepted dispositions, independent-review outcome, and final validation.",
+    ],
+    submit: () => ["bun run harness ontology quality --write", "bun run validate", "bun run ci"],
   },
   "CMP-SITE": {
     lane: "site",

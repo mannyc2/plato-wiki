@@ -176,6 +176,7 @@ function validateSourceRef(
   block: ObservationBlock,
   issues: ObservationLedgerValidationIssue[],
   sourceTextCache: Map<string, string | undefined>,
+  repoRoot: string,
 ) {
   const pathMatch = /^wiki\/observations\/(.+)\.md$/u.exec(path);
   const dialogue = pathMatch?.[1];
@@ -244,7 +245,7 @@ function validateSourceRef(
     });
   }
 
-  const absoluteSourcePath = join(getRepoRoot(), sourcePath);
+  const absoluteSourcePath = join(repoRoot, sourcePath);
   const sourceText = readSourceCached(sourceTextCache, absoluteSourcePath);
   if (sourceText === undefined || parsedStartChar < 0 || parsedEndChar <= parsedStartChar) {
     issues.push({
@@ -398,7 +399,7 @@ function validateStephanusLocality(block: ObservationBlock, issues: ObservationL
   }
 }
 
-export function validateObservationLedger(path: string, content: string) {
+export function validateObservationLedger(path: string, content: string, repoRoot = getRepoRoot()) {
   const issues: ObservationLedgerValidationIssue[] = [];
   const blocks = extractObservationBlocks(content);
   const sourceTextCache = new Map<string, string | undefined>();
@@ -454,7 +455,7 @@ export function validateObservationLedger(path: string, content: string) {
     validateDuplicateCriticalFields(block, issues);
     validateNoStaleOntologyAliases(block, issues);
     validateReviewStatus(block, issues);
-    validateSourceRef(path, block, issues, sourceTextCache);
+    validateSourceRef(path, block, issues, sourceTextCache, repoRoot);
     validateGreekPlacement(block, issues);
     validateStephanusLocality(block, issues);
   }

@@ -2,11 +2,12 @@ import { afterEach, beforeEach, describe, expect, it } from "bun:test";
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import type { CompletenessFamily, CompletenessLeaf, CompletenessReport } from "./completeness.js";
+import { CANONICAL_DIALOGUES, type CompletenessFamily, type CompletenessLeaf, type CompletenessReport } from "./completeness.js";
 import {
   buildJobManifest,
   findJob,
   JOB_MANIFEST_PATH,
+  JOB_SCHEMA_VERSION,
   jobIdFor,
   jobInputsChanged,
   readJobManifest,
@@ -105,6 +106,26 @@ describe("buildJobManifest", () => {
 
     expect(build(audioOnly).jobs).toEqual([]);
     expect(build(audioOnly, { target: "audio-edition" }).jobs).toHaveLength(1);
+  });
+
+  it("exposes the four ontology gates as thirty actionable jobs", () => {
+    const families = [
+      { id: "CMP-ONTOLOGY-AXES" as const, leaves: [leaf("global", "fail")] },
+      { id: "CMP-ONTOLOGY-CONCEPTS" as const, leaves: [leaf("global", "fail")] },
+      { id: "CMP-ONTOLOGY-MEMBERSHIP" as const, leaves: CANONICAL_DIALOGUES.map((scope) => leaf(scope, "fail")) },
+      { id: "CMP-ONTOLOGY-INDEPENDENCE" as const, leaves: [leaf("global", "fail")] },
+    ];
+    const manifest = build(families);
+    expect(manifest.jobs).toHaveLength(30);
+    expect(manifest.counts.by_lane).toEqual({ ontology: 30 });
+    const membership = findJob(manifest, "ontology-membership/laws");
+    expect(membership.automation).toBe("manual");
+    expect(membership.instructions.join(" ")).toContain("entire ratified catalog");
+    expect(membership.instructions.join(" ")).toContain("observation fields or review statuses");
+    expect(membership.submit).toContain("bun run harness ontology quality --write");
+    expect(findJob(manifest, "ontology-axes/global").instructions.join(" ")).toContain("operator ratification");
+    expect(build(families, { target: "corpus" }).jobs).toEqual([]);
+    expect(build(families, { target: "audio-edition" }).jobs).toHaveLength(30);
   });
 
   it("derives a stable job id from the family and scope", () => {
@@ -225,7 +246,7 @@ describe("job manifest persistence", () => {
     const absolute = join(root, JOB_MANIFEST_PATH);
     writeFileSync(absolute, JSON.stringify({ ...manifest, schema_version: 99 }), "utf8");
 
-    expect(() => readJobManifest()).toThrow("is schema 99, expected 2");
+    expect(() => readJobManifest()).toThrow(`is schema 99, expected ${JOB_SCHEMA_VERSION}`);
   });
 
   it("suggests near matches for an unknown job id", () => {

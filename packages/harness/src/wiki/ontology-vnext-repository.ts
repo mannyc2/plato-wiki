@@ -24,6 +24,10 @@ export function readObservationReviewStatuses(repoRoot = getRepoRoot()) {
       const observationId = scalar(block.record.observation_id);
       const reviewStatus = scalar(block.record.review_status);
       if (!observationId) throw new Error(`${path}: observation block ${block.index + 1} has no observation_id.`);
+      const dialogue = /^obs_([a-z0-9-]+)_[0-9]{4}$/u.exec(observationId)?.[1];
+      if (dialogue !== entry.name.slice(0, -3)) {
+        throw new Error(`${path}: Invalid observation identity ${observationId}; its dialogue must match the ledger filename.`);
+      }
       if (statuses.has(observationId)) throw new Error(`Duplicate observation id ${observationId}.`);
       if (reviewStatus !== "accepted" && reviewStatus !== "rejected" && reviewStatus !== "unreviewed" && reviewStatus !== "needs_split") {
         throw new Error(`${path}: ${observationId} has invalid review_status ${reviewStatus}.`);

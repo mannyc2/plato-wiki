@@ -79,6 +79,18 @@ manifests. Zero recordings is allowed. Any audio exposed by the site must have
 the accepted manifest, bytes, production evidence, player, hashes, and chapter
 inventory required by the existing validators; exposed drafts fail.
 
+Amended 2026-09-07 by `docs/ontology-v2-target.md`: additionally requires
+`CMP-ONTOLOGY-AXES`, `CMP-ONTOLOGY-CONCEPTS`,
+`CMP-ONTOLOGY-MEMBERSHIP`, and `CMP-ONTOLOGY-INDEPENDENCE`. The first,
+second, and fourth families have one global leaf; membership has one leaf
+per canonical dialogue. These check authored comparison questions, reusable
+answer classes, exhaustive multi-membership, and independent review. Valid
+cluster and dossier projections alone do not establish comparison quality.
+`wiki/ontology-quality.md` reports the same computed facts used by these
+families; editing the report cannot change a gate. Missing catalog ratification
+or independent-review evidence fails closed. The target document controls
+admission rules and the remaining operator decisions.
+
 ### `audio-edition`
 
 Inherits `knowledge-base` and requires 27/27 completion of each audio stage:
@@ -153,3 +165,9 @@ first requires the selected edition target, then independently requires:
 
 The local report does not claim knowledge of hosted CI or deployment state.
 It excludes private commit identifiers and ephemeral absolute export paths.
+
+Hosted `verify` runs integrity checks and a static-site build even when the
+edition is incomplete. A valid incomplete report prevents release artifacts
+and deployment; it does not prevent merging valid corpus work. Command errors
+still fail verification. Only a ready edition proceeds through the strict
+public-release overlay and produces an artifact eligible for deployment.
