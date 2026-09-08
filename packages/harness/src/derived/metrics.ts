@@ -3,15 +3,13 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { getRepoRoot } from "../paths.js";
 import { readAnchorLexicon } from "./anchors.js";
+import { readMetricInputs } from "./metric-inputs.js";
+import { writeParticleMetrics, writeParticleReport } from "./particles.js";
 import { listGreekDialogues } from "./stephanus.js";
 import {
-  parseTokenIndexToon,
   tokenizeGreekText,
-  tokenIndexPath,
-  type TokenIndex,
   type TokenRecord,
 } from "./tokens.js";
-import { parseTurnIndexToon, turnIndexPath, type TurnIndex } from "./turns.js";
 
 declare const Bun: { TOML: { parse(content: string): unknown } };
 
@@ -108,15 +106,6 @@ export type ProcedureMetrics = {
   candidates: ProcedureCandidate[];
 };
 
-type GeneratedInputs = {
-  turnPath: string;
-  turnSha256: string;
-  turnIndex: TurnIndex;
-  tokenPath: string;
-  tokenSha256: string;
-  tokenIndex: TokenIndex;
-};
-
 type ParsedProcedureRegistry = {
   groups?: Array<{ name?: unknown; forms?: unknown }>;
 };
@@ -172,36 +161,6 @@ function longThreshold(values: number[]) {
   return q3 + 1.5 * (q3 - q1);
 }
 
-function fileContent(path: string) {
-  const absolutePath = join(getRepoRoot(), path);
-  if (!existsSync(absolutePath)) {
-    throw new Error(`Missing generated artifact: ${path}`);
-  }
-  return readFileSync(absolutePath, "utf8");
-}
-
-function readGeneratedInputs(dialogue: string): GeneratedInputs {
-  assertDialogueSlug(dialogue);
-  const turnPath = turnIndexPath(dialogue);
-  const turnContent = fileContent(turnPath);
-  const turnSha256 = sha256(turnContent);
-  const turnIndex = parseTurnIndexToon(turnContent);
-
-  const tokenPath = tokenIndexPath(dialogue);
-  const tokenContent = fileContent(tokenPath);
-  const tokenSha256 = sha256(tokenContent);
-  const tokenIndex = parseTokenIndexToon(tokenContent);
-
-  if (tokenIndex.turnIndexPath !== turnPath || tokenIndex.turnIndexSha256 !== turnSha256) {
-    throw new Error(`Stale token index for ${dialogue}: turn index hash does not match ${turnPath}`);
-  }
-  if (tokenIndex.sourceSha256 !== turnIndex.sourceSha256) {
-    throw new Error(`Stale token index for ${dialogue}: source hash does not match ${turnPath}`);
-  }
-
-  return { turnPath, turnSha256, turnIndex, tokenPath, tokenSha256, tokenIndex };
-}
-
 function tokensByTurn(tokens: TokenRecord[]) {
   const byTurn = new Map<string, TokenRecord[]>();
   for (const token of tokens) {
@@ -230,7 +189,7 @@ export function procedureAnchorRegistryPath() {
 }
 
 export function buildTurnLengthMetrics(dialogue: string): TurnLengthMetrics {
-  const input = readGeneratedInputs(dialogue);
+  const input = readMetricInputs(dialogue);
   const byTurn = tokensByTurn(input.tokenIndex.tokens);
   const tokenCounts = input.turnIndex.turns.map((turn) => byTurn.get(turn.turnId)?.length ?? 0);
   const dialogueThreshold = longThreshold(tokenCounts);
@@ -309,7 +268,7 @@ function matchTokenSequences(tokens: TokenRecord[], forms: Array<{ group: string
 }
 
 export function buildAssentMetrics(dialogue: string): AssentMetrics {
-  const input = readGeneratedInputs(dialogue);
+  const input = readMetricInputs(dialogue);
   const lexicon = readAnchorLexicon();
   const group = lexicon.groups.find((entry) => entry.name === "assent_concession");
   if (!group) {
@@ -428,7 +387,7 @@ function readProcedureRegistry() {
 }
 
 export function buildProcedureMetrics(dialogue: string): ProcedureMetrics {
-  const input = readGeneratedInputs(dialogue);
+  const input = readMetricInputs(dialogue);
   const registry = readProcedureRegistry();
   const forms = registry.groups.flatMap((group) =>
     group.forms.map((form) => ({ group: group.name, form, normalizedTokens: normalizedFormTokens(form) })),
@@ -600,10 +559,13 @@ export function writeProcedureMetrics(dialogue: string) {
 
 export function writeDerivedMetrics(dialogue?: string | undefined) {
   const dialogues = dialogue ? [dialogue] : listGreekDialogues();
-  return dialogues.map((entry) => ({
+  const results = dialogues.map((entry) => ({
     dialogue: entry,
     turnLengths: writeTurnLengthMetrics(entry),
     assent: writeAssentMetrics(entry),
     procedure: writeProcedureMetrics(entry),
+    particles: writeParticleMetrics(entry),
   }));
+  if (!dialogue) writeParticleReport();
+  return results;
 }

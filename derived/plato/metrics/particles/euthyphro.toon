@@ -1,0 +1,488 @@
+schema_version: 1
+dialogue: euthyphro
+source_path: raw/plato/greek/euthyphro.txt
+source_sha256: 9fac1bf69b5a6e95c8436b25e82244bc60de058f63290c6be205b753ee94b806
+token_index_path: derived/plato/tokens/euthyphro.toon
+token_index_sha256: 4472758f418e98a0429c6d8f57373665b8ea1b147dd197a42bef444e8288c632
+turn_index_path: derived/plato/turns/euthyphro.toon
+turn_index_sha256: d488716c61feffb7c2734f9878d7b0b8edd25c783c3589339441c31fb1c39b18
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 5403
+excluded_siglum_token_count: 233
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  euthyphro | 5170 | 2 | 6 | 1 | 81 | 30 | 39
+speakers[2]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  ΕΥΘ. | 1277 | 0 | 4 | 1 | 22 | 12 | 6
+  ΣΩ. | 3893 | 2 | 2 | 0 | 59 | 18 | 33
+turns[233]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_euthyphro_0001 | 35 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0002 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0003 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0004 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_euthyphro_0005 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0006 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0007 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0008 | 41 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0009 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0010 | 88 | 0 | 0 | 0 | 3 | 0 | 0
+  turn_euthyphro_0011 | 42 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0012 | 33 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0013 | 29 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0014 | 82 | 0 | 0 | 1 | 1 | 1 | 2
+  turn_euthyphro_0015 | 49 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_euthyphro_0016 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthyphro_0017 | 79 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_euthyphro_0018 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0019 | 13 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0020 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0021 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0022 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0023 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0024 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0025 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0026 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0027 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0028 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthyphro_0029 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0030 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0031 | 28 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0032 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0033 | 25 | 0 | 0 | 0 | 1 | 0 | 2
+  turn_euthyphro_0034 | 222 | 0 | 0 | 0 | 3 | 4 | 1
+  turn_euthyphro_0035 | 42 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0036 | 23 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0037 | 128 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_euthyphro_0038 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0039 | 103 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthyphro_0040 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0041 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0042 | 135 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_euthyphro_0043 | 76 | 0 | 0 | 0 | 1 | 1 | 2
+  turn_euthyphro_0044 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0045 | 62 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0046 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0047 | 52 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0048 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0049 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0050 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0051 | 44 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_euthyphro_0052 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0053 | 41 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_euthyphro_0054 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0055 | 4 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0056 | 13 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_euthyphro_0057 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0058 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthyphro_0059 | 33 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0060 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthyphro_0061 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0062 | 5 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0063 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0064 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0065 | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0066 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0067 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0068 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0069 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0070 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0071 | 74 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0072 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0073 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0074 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0075 | 36 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_euthyphro_0076 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0077 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0078 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0079 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0080 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0081 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0082 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0083 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0084 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0085 | 82 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0086 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0087 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0088 | 22 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_euthyphro_0089 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0090 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0091 | 29 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_euthyphro_0092 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0093 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0094 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0095 | 49 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0096 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0097 | 34 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0098 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0099 | 94 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0100 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0101 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0102 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0103 | 140 | 0 | 0 | 0 | 3 | 0 | 0
+  turn_euthyphro_0104 | 5 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0105 | 20 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0106 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0107 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0108 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0109 | 23 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0110 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0111 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0112 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0113 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0114 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0115 | 14 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0116 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0117 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0118 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0119 | 79 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0120 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0121 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0122 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0123 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0124 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0125 | 19 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_euthyphro_0126 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0127 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0128 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0129 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0130 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0131 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0132 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0133 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0134 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0135 | 19 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0136 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0137 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0138 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0139 | 157 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_euthyphro_0140 | 27 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0141 | 69 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_euthyphro_0142 | 43 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0143 | 99 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_euthyphro_0144 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0145 | 29 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthyphro_0146 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0147 | 70 | 1 | 0 | 0 | 3 | 1 | 1
+  turn_euthyphro_0148 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0149 | 34 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0150 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0151 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0152 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthyphro_0153 | 56 | 0 | 0 | 0 | 4 | 0 | 0
+  turn_euthyphro_0154 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0155 | 38 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_euthyphro_0156 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0157 | 64 | 0 | 0 | 0 | 1 | 1 | 2
+  turn_euthyphro_0158 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0159 | 38 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0160 | 33 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_euthyphro_0161 | 53 | 0 | 0 | 0 | 4 | 0 | 0
+  turn_euthyphro_0162 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0163 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0164 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0165 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0166 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0167 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0168 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0169 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0170 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0171 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0172 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0173 | 34 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0174 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0175 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0176 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0177 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0178 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0179 | 32 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthyphro_0180 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0181 | 30 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_euthyphro_0182 | 9 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0183 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0184 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0185 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0186 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthyphro_0187 | 18 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthyphro_0188 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0189 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0190 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0191 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0192 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0193 | 28 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_euthyphro_0194 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0195 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0196 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0197 | 22 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0198 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0199 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0200 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0201 | 17 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0202 | 68 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthyphro_0203 | 74 | 0 | 0 | 0 | 3 | 0 | 1
+  turn_euthyphro_0204 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0205 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0206 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0207 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0208 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0209 | 37 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0210 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0211 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthyphro_0212 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0213 | 29 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthyphro_0214 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0215 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0216 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0217 | 68 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_euthyphro_0218 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0219 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0220 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0221 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0222 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0223 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0224 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0225 | 67 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_euthyphro_0226 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0227 | 21 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthyphro_0228 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0229 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0230 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthyphro_0231 | 116 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_euthyphro_0232 | 13 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_euthyphro_0233 | 56 | 0 | 0 | 0 | 0 | 0 | 1
+markers[70]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  2a | 46 | 0 | 0 | 0 | 1 | 0 | 1
+  2b | 75 | 0 | 0 | 0 | 3 | 1 | 1
+  2c | 61 | 0 | 0 | 0 | 2 | 0 | 0
+  2d | 35 | 0 | 0 | 0 | 1 | 0 | 1
+  3a | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  3b | 72 | 0 | 0 | 0 | 2 | 1 | 2
+  3c | 75 | 0 | 0 | 1 | 1 | 0 | 0
+  3d | 78 | 0 | 0 | 0 | 1 | 3 | 0
+  3e | 62 | 0 | 0 | 0 | 0 | 0 | 1
+  4a | 64 | 0 | 0 | 0 | 1 | 1 | 0
+  4b | 81 | 0 | 0 | 0 | 1 | 0 | 2
+  4c | 75 | 0 | 0 | 0 | 1 | 2 | 0
+  4d | 84 | 0 | 0 | 0 | 1 | 2 | 1
+  4e | 73 | 0 | 0 | 0 | 2 | 0 | 1
+  5a | 76 | 0 | 0 | 0 | 0 | 1 | 1
+  5b | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  5c | 81 | 0 | 0 | 0 | 0 | 1 | 0
+  5d | 89 | 0 | 1 | 0 | 0 | 0 | 1
+  5e | 60 | 0 | 0 | 0 | 1 | 0 | 0
+  6a | 85 | 0 | 0 | 0 | 0 | 1 | 1
+  6b | 81 | 0 | 0 | 0 | 1 | 0 | 1
+  6c | 76 | 0 | 0 | 0 | 0 | 0 | 1
+  6d | 85 | 0 | 0 | 0 | 4 | 1 | 0
+  6e | 77 | 1 | 2 | 0 | 0 | 0 | 0
+  7a | 76 | 0 | 0 | 0 | 0 | 2 | 1
+  7b | 75 | 0 | 0 | 0 | 2 | 0 | 0
+  7c | 69 | 0 | 0 | 0 | 1 | 0 | 1
+  7d | 74 | 0 | 0 | 0 | 0 | 0 | 0
+  7e | 67 | 0 | 0 | 0 | 2 | 0 | 0
+  8a | 81 | 0 | 0 | 0 | 1 | 0 | 0
+  8b | 84 | 0 | 0 | 0 | 0 | 0 | 0
+  8c | 72 | 0 | 0 | 0 | 2 | 1 | 0
+  8d | 80 | 0 | 0 | 0 | 1 | 0 | 0
+  8e | 56 | 0 | 0 | 0 | 0 | 0 | 0
+  9a | 71 | 0 | 0 | 0 | 0 | 0 | 1
+  9b | 74 | 0 | 0 | 0 | 0 | 0 | 0
+  9c | 86 | 0 | 0 | 0 | 3 | 0 | 0
+  9d | 79 | 0 | 0 | 0 | 1 | 0 | 1
+  9e | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  10a | 76 | 0 | 0 | 0 | 2 | 0 | 0
+  10b | 74 | 0 | 0 | 0 | 0 | 0 | 2
+  10c | 73 | 0 | 0 | 0 | 0 | 0 | 0
+  10d | 82 | 0 | 0 | 0 | 1 | 1 | 2
+  10e | 68 | 0 | 0 | 0 | 1 | 0 | 1
+  11a | 90 | 0 | 0 | 0 | 1 | 0 | 0
+  11b | 80 | 0 | 0 | 0 | 2 | 1 | 0
+  11c | 91 | 0 | 0 | 0 | 3 | 0 | 1
+  11d | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  11e | 54 | 0 | 0 | 0 | 1 | 1 | 0
+  12a | 76 | 1 | 0 | 0 | 2 | 0 | 1
+  12b | 74 | 0 | 0 | 0 | 2 | 1 | 0
+  12c | 76 | 0 | 1 | 0 | 4 | 1 | 0
+  12d | 102 | 0 | 0 | 0 | 3 | 1 | 2
+  12e | 80 | 0 | 1 | 0 | 0 | 0 | 1
+  13a | 69 | 0 | 0 | 0 | 6 | 0 | 0
+  13b | 66 | 0 | 0 | 0 | 0 | 0 | 2
+  13c | 81 | 0 | 0 | 0 | 1 | 1 | 1
+  13d | 69 | 0 | 0 | 0 | 1 | 2 | 1
+  13e | 82 | 0 | 0 | 0 | 1 | 0 | 2
+  14a | 74 | 0 | 0 | 0 | 1 | 0 | 1
+  14b | 78 | 0 | 0 | 0 | 1 | 0 | 1
+  14c | 74 | 0 | 0 | 0 | 2 | 0 | 1
+  14d | 76 | 0 | 0 | 0 | 1 | 1 | 0
+  14e | 84 | 0 | 0 | 0 | 2 | 0 | 0
+  15a | 80 | 0 | 0 | 0 | 1 | 0 | 0
+  15b | 77 | 0 | 0 | 0 | 0 | 1 | 0
+  15c | 82 | 0 | 0 | 0 | 1 | 1 | 0
+  15d | 78 | 0 | 0 | 0 | 2 | 0 | 0
+  15e | 60 | 0 | 1 | 0 | 1 | 1 | 0
+  16a | 28 | 0 | 0 | 0 | 0 | 0 | 1
+occurrences[159]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_euthyphro_000023 | γάρ | γάρ | turn_euthyphro_0001 | 2a | 139 | 142
+  tok_euthyphro_000039 | δή | δὴ | turn_euthyphro_0002 | 2a | 220 | 222
+  tok_euthyphro_000059 | γάρ | γὰρ | turn_euthyphro_0003 | 2b | 339 | 342
+  tok_euthyphro_000068 | γάρ | γὰρ | turn_euthyphro_0004 | 2b | 388 | 391
+  tok_euthyphro_000069 | οὖν | οὖν | turn_euthyphro_0004 | 2b | 392 | 395
+  tok_euthyphro_000091 | γάρ | γάρ | turn_euthyphro_0008 | 2b | 507 | 510
+  tok_euthyphro_000128 | δή | δὴ | turn_euthyphro_0009 | 2b | 730 | 732
+  tok_euthyphro_000140 | γάρ | γὰρ | turn_euthyphro_0010 | 2c | 805 | 808
+  tok_euthyphro_000150 | γάρ | γάρ | turn_euthyphro_0010 | 2c | 870 | 873
+  tok_euthyphro_000197 | γάρ | γάρ | turn_euthyphro_0010 | 2d | 1181 | 1184
+  tok_euthyphro_000224 | δή | δὴ | turn_euthyphro_0011 | 2d | 1345 | 1347
+  tok_euthyphro_000276 | γάρ | γάρ | turn_euthyphro_0012 | 3a | 1686 | 1689
+  tok_euthyphro_000308 | γάρ | γάρ | turn_euthyphro_0013 | 3b | 1879 | 1882
+  tok_euthyphro_000334 | δή | δὴ | turn_euthyphro_0014 | 3b | 2035 | 2037
+  tok_euthyphro_000343 | οὖν | οὖν | turn_euthyphro_0014 | 3b | 2087 | 2090
+  tok_euthyphro_000356 | δή | δὴ | turn_euthyphro_0014 | 3b | 2168 | 2170
+  tok_euthyphro_000371 | γάρ | γάρ | turn_euthyphro_0014 | 3b | 2258 | 2261
+  tok_euthyphro_000389 | καίτοι | καίτοι | turn_euthyphro_0014 | 3c | 2372 | 2378
+  tok_euthyphro_000424 | γάρ | γάρ | turn_euthyphro_0015 | 3c | 2594 | 2597
+  tok_euthyphro_000453 | οὖν | οὖν | turn_euthyphro_0015 | 3d | 2772 | 2775
+  tok_euthyphro_000464 | οὖν | οὖν | turn_euthyphro_0016 | 3d | 2826 | 2829
+  tok_euthyphro_000477 | γάρ | γὰρ | turn_euthyphro_0017 | 3d | 2900 | 2903
+  tok_euthyphro_000521 | οὖν | οὖν | turn_euthyphro_0017 | 3d | 3165 | 3168
+  tok_euthyphro_000580 | δή | δὴ | turn_euthyphro_0019 | 3e | 3509 | 3511
+  tok_euthyphro_000634 | οὖν | οὖν | turn_euthyphro_0028 | 4a | 3799 | 3802
+  tok_euthyphro_000664 | γάρ | γὰρ | turn_euthyphro_0031 | 4a | 3955 | 3958
+  tok_euthyphro_000688 | δή | δὴ | turn_euthyphro_0033 | 4b | 4109 | 4111
+  tok_euthyphro_000700 | δή | δή | turn_euthyphro_0033 | 4b | 4165 | 4167
+  tok_euthyphro_000702 | γάρ | γὰρ | turn_euthyphro_0033 | 4b | 4172 | 4175
+  tok_euthyphro_000758 | γάρ | γὰρ | turn_euthyphro_0034 | 4c | 4492 | 4495
+  tok_euthyphro_000796 | οὖν | οὖν | turn_euthyphro_0034 | 4c | 4708 | 4711
+  tok_euthyphro_000807 | οὖν | οὖν | turn_euthyphro_0034 | 4c | 4776 | 4779
+  tok_euthyphro_000850 | οὖν | οὖν | turn_euthyphro_0034 | 4d | 5035 | 5038
+  tok_euthyphro_000854 | γάρ | γὰρ | turn_euthyphro_0034 | 4d | 5055 | 5058
+  tok_euthyphro_000870 | δή | δὴ | turn_euthyphro_0034 | 4d | 5154 | 5156
+  tok_euthyphro_000871 | οὖν | οὖν | turn_euthyphro_0034 | 4d | 5157 | 5160
+  tok_euthyphro_000912 | γάρ | γὰρ | turn_euthyphro_0034 | 4e | 5421 | 5424
+  tok_euthyphro_000937 | δή | δὴ | turn_euthyphro_0035 | 4e | 5551 | 5553
+  tok_euthyphro_000979 | γάρ | γὰρ | turn_euthyphro_0036 | 4e | 5792 | 5795
+  tok_euthyphro_001003 | οὖν | οὖν | turn_euthyphro_0037 | 5a | 5930 | 5933
+  tok_euthyphro_001052 | δή | δὴ | turn_euthyphro_0037 | 5a | 6247 | 6249
+  tok_euthyphro_001203 | οὖν | οὖν | turn_euthyphro_0039 | 5c | 7161 | 7164
+  tok_euthyphro_001274 | δή | δή | turn_euthyphro_0041 | 5d | 7545 | 7547
+  tok_euthyphro_001286 | τοίνυν | τοίνυν | turn_euthyphro_0042 | 5d | 7600 | 7606
+  tok_euthyphro_001362 | γάρ | γὰρ | turn_euthyphro_0042 | 5e | 8038 | 8041
+  tok_euthyphro_001445 | δή | δή | turn_euthyphro_0043 | 6a | 8550 | 8552
+  tok_euthyphro_001453 | οὖν | οὖν | turn_euthyphro_0043 | 6a | 8595 | 8598
+  tok_euthyphro_001466 | δή | δή | turn_euthyphro_0043 | 6b | 8669 | 8671
+  tok_euthyphro_001473 | γάρ | γὰρ | turn_euthyphro_0043 | 6b | 8706 | 8709
+  tok_euthyphro_001552 | δή | δὴ | turn_euthyphro_0045 | 6c | 9148 | 9150
+  tok_euthyphro_001624 | γάρ | γάρ | turn_euthyphro_0047 | 6d | 9573 | 9576
+  tok_euthyphro_001664 | γάρ | γάρ | turn_euthyphro_0049 | 6d | 9790 | 9793
+  tok_euthyphro_001675 | γάρ | γὰρ | turn_euthyphro_0050 | 6d | 9847 | 9850
+  tok_euthyphro_001679 | οὖν | οὖν | turn_euthyphro_0051 | 6d | 9871 | 9874
+  tok_euthyphro_001706 | γάρ | γάρ | turn_euthyphro_0051 | 6d | 10008 | 10011
+  tok_euthyphro_001726 | τοίνυν | τοίνυν | turn_euthyphro_0053 | 6e | 10115 | 10121
+  tok_euthyphro_001779 | μήν | μὴν | turn_euthyphro_0055 | 6e | 10384 | 10387
+  tok_euthyphro_001784 | τοίνυν | τοίνυν | turn_euthyphro_0056 | 6e | 10411 | 10417
+  tok_euthyphro_001828 | οὖν | οὖν | turn_euthyphro_0058 | 7a | 10672 | 10675
+  tok_euthyphro_001831 | δή | δή | turn_euthyphro_0059 | 7a | 10686 | 10688
+  tok_euthyphro_001866 | οὖν | οὖν | turn_euthyphro_0060 | 7a | 10889 | 10892
+  tok_euthyphro_001878 | γάρ | γάρ | turn_euthyphro_0062 | 7b | 10969 | 10972
+  tok_euthyphro_001903 | γάρ | γάρ | turn_euthyphro_0064 | 7b | 11132 | 11135
+  tok_euthyphro_001997 | γάρ | γὰρ | turn_euthyphro_0070 | 7c | 11685 | 11688
+  tok_euthyphro_002003 | δή | δὴ | turn_euthyphro_0071 | 7c | 11711 | 11713
+  tok_euthyphro_002129 | γάρ | γὰρ | turn_euthyphro_0075 | 7e | 12441 | 12444
+  tok_euthyphro_002140 | γάρ | γάρ | turn_euthyphro_0075 | 7e | 12504 | 12507
+  tok_euthyphro_002241 | γάρ | γὰρ | turn_euthyphro_0085 | 8a | 13067 | 13070
+  tok_euthyphro_002366 | οὖν | οὖν | turn_euthyphro_0088 | 8c | 13778 | 13781
+  tok_euthyphro_002377 | γάρ | γὰρ | turn_euthyphro_0088 | 8c | 13860 | 13863
+  tok_euthyphro_002415 | γάρ | γὰρ | turn_euthyphro_0091 | 8c | 14089 | 14092
+  tok_euthyphro_002435 | γάρ | γάρ | turn_euthyphro_0091 | 8d | 14211 | 14214
+  tok_euthyphro_002623 | δή | δὴ | turn_euthyphro_0099 | 9a | 15352 | 15354
+  tok_euthyphro_002767 | γάρ | γὰρ | turn_euthyphro_0103 | 9c | 16226 | 16229
+  tok_euthyphro_002776 | γάρ | γὰρ | turn_euthyphro_0103 | 9c | 16270 | 16273
+  tok_euthyphro_002787 | γάρ | γὰρ | turn_euthyphro_0103 | 9c | 16323 | 16326
+  tok_euthyphro_002860 | γάρ | γὰρ | turn_euthyphro_0104 | 9d | 16729 | 16732
+  tok_euthyphro_002872 | δή | δὴ | turn_euthyphro_0105 | 9d | 16791 | 16793
+  tok_euthyphro_002960 | γάρ | γὰρ | turn_euthyphro_0109 | 10a | 17307 | 17310
+  tok_euthyphro_003034 | γάρ | γὰρ | turn_euthyphro_0114 | 10a | 17730 | 17733
+  tok_euthyphro_003038 | δή | δή | turn_euthyphro_0115 | 10b | 17753 | 17755
+  tok_euthyphro_003060 | δή | δὴ | turn_euthyphro_0117 | 10b | 17874 | 17876
+  tok_euthyphro_003195 | δή | δὴ | turn_euthyphro_0125 | 10d | 18689 | 18691
+  tok_euthyphro_003196 | οὖν | οὖν | turn_euthyphro_0125 | 10d | 18692 | 18695
+  tok_euthyphro_003250 | δή | δὴ | turn_euthyphro_0131 | 10d | 18977 | 18979
+  tok_euthyphro_003262 | γάρ | γὰρ | turn_euthyphro_0132 | 10d | 19046 | 19049
+  tok_euthyphro_003286 | δή | δή | turn_euthyphro_0134 | 10e | 19182 | 19184
+  tok_euthyphro_003308 | γάρ | γάρ | turn_euthyphro_0135 | 10e | 19307 | 19310
+  tok_euthyphro_003401 | γάρ | γάρ | turn_euthyphro_0139 | 11a | 19815 | 19818
+  tok_euthyphro_003455 | οὖν | οὖν | turn_euthyphro_0139 | 11b | 20138 | 20141
+  tok_euthyphro_003479 | γάρ | γὰρ | turn_euthyphro_0139 | 11b | 20259 | 20262
+  tok_euthyphro_003507 | γάρ | γάρ | turn_euthyphro_0140 | 11b | 20414 | 20417
+  tok_euthyphro_003573 | γάρ | γὰρ | turn_euthyphro_0141 | 11c | 20778 | 20781
+  tok_euthyphro_003578 | δή | δή | turn_euthyphro_0141 | 11c | 20808 | 20810
+  tok_euthyphro_003583 | γάρ | γὰρ | turn_euthyphro_0141 | 11c | 20835 | 20838
+  tok_euthyphro_003607 | γάρ | γὰρ | turn_euthyphro_0142 | 11c | 20969 | 20972
+  tok_euthyphro_003681 | γάρ | γὰρ | turn_euthyphro_0143 | 11d | 21388 | 21391
+  tok_euthyphro_003725 | γάρ | γὰρ | turn_euthyphro_0143 | 11e | 21666 | 21669
+  tok_euthyphro_003740 | οὖν | οὖν | turn_euthyphro_0145 | 11e | 21746 | 21749
+  tok_euthyphro_003777 | μήν | μὴν | turn_euthyphro_0147 | 12a | 21936 | 21939
+  tok_euthyphro_003801 | γάρ | γὰρ | turn_euthyphro_0147 | 12a | 22071 | 22074
+  tok_euthyphro_003808 | γάρ | γὰρ | turn_euthyphro_0147 | 12a | 22112 | 22115
+  tok_euthyphro_003809 | δή | δὴ | turn_euthyphro_0147 | 12a | 22116 | 22118
+  tok_euthyphro_003832 | γάρ | γὰρ | turn_euthyphro_0147 | 12b | 22283 | 22286
+  tok_euthyphro_003838 | οὖν | οὖν | turn_euthyphro_0147 | 12b | 22321 | 22324
+  tok_euthyphro_003860 | γάρ | γάρ | turn_euthyphro_0149 | 12b | 22444 | 22447
+  tok_euthyphro_003915 | οὖν | οὖν | turn_euthyphro_0152 | 12c | 22767 | 22770
+  tok_euthyphro_003923 | γάρ | γὰρ | turn_euthyphro_0153 | 12c | 22811 | 22814
+  tok_euthyphro_003944 | γάρ | γὰρ | turn_euthyphro_0153 | 12c | 22923 | 22926
+  tok_euthyphro_003949 | γάρ | γὰρ | turn_euthyphro_0153 | 12c | 22953 | 22956
+  tok_euthyphro_003969 | γάρ | γάρ | turn_euthyphro_0153 | 12c | 23074 | 23077
+  tok_euthyphro_003979 | τοίνυν | τοίνυν | turn_euthyphro_0155 | 12c | 23120 | 23126
+  tok_euthyphro_004004 | γάρ | γὰρ | turn_euthyphro_0155 | 12d | 23263 | 23266
+  tok_euthyphro_004020 | γάρ | γάρ | turn_euthyphro_0156 | 12d | 23346 | 23349
+  tok_euthyphro_004026 | δή | δὴ | turn_euthyphro_0157 | 12d | 23376 | 23378
+  tok_euthyphro_004031 | γάρ | γὰρ | turn_euthyphro_0157 | 12d | 23397 | 23400
+  tok_euthyphro_004038 | δή | δὴ | turn_euthyphro_0157 | 12d | 23433 | 23435
+  tok_euthyphro_004054 | οὖν | οὖν | turn_euthyphro_0157 | 12d | 23513 | 23516
+  tok_euthyphro_004093 | δή | δὴ | turn_euthyphro_0159 | 12e | 23716 | 23718
+  tok_euthyphro_004132 | τοίνυν | τοίνυν | turn_euthyphro_0160 | 12e | 23930 | 23936
+  tok_euthyphro_004180 | γάρ | γὰρ | turn_euthyphro_0161 | 13a | 24201 | 24204
+  tok_euthyphro_004187 | γάρ | γάρ | turn_euthyphro_0161 | 13a | 24249 | 24252
+  tok_euthyphro_004204 | γάρ | γάρ | turn_euthyphro_0161 | 13a | 24347 | 24350
+  tok_euthyphro_004217 | γάρ | γάρ | turn_euthyphro_0161 | 13a | 24421 | 24424
+  tok_euthyphro_004223 | γάρ | γάρ | turn_euthyphro_0163 | 13a | 24446 | 24449
+  tok_euthyphro_004244 | γάρ | γάρ | turn_euthyphro_0167 | 13a | 24567 | 24570
+  tok_euthyphro_004263 | δή | δὴ | turn_euthyphro_0171 | 13b | 24669 | 24671
+  tok_euthyphro_004294 | δή | δὴ | turn_euthyphro_0173 | 13b | 24863 | 24865
+  tok_euthyphro_004355 | οὖν | οὖν | turn_euthyphro_0179 | 13c | 25205 | 25208
+  tok_euthyphro_004393 | γάρ | γὰρ | turn_euthyphro_0181 | 13c | 25412 | 25415
+  tok_euthyphro_004406 | δή | δὴ | turn_euthyphro_0181 | 13c | 25486 | 25488
+  tok_euthyphro_004429 | γάρ | γὰρ | turn_euthyphro_0182 | 13d | 25623 | 25626
+  tok_euthyphro_004436 | δή | δὴ | turn_euthyphro_0183 | 13d | 25661 | 25663
+  tok_euthyphro_004464 | οὖν | οὖν | turn_euthyphro_0186 | 13d | 25825 | 25828
+  tok_euthyphro_004468 | οὖν | οὖν | turn_euthyphro_0187 | 13d | 25843 | 25846
+  tok_euthyphro_004517 | δή | δή | turn_euthyphro_0193 | 13e | 26142 | 26144
+  tok_euthyphro_004532 | γάρ | γὰρ | turn_euthyphro_0193 | 13e | 26228 | 26231
+  tok_euthyphro_004553 | δή | δὴ | turn_euthyphro_0195 | 13e | 26343 | 26345
+  tok_euthyphro_004578 | γάρ | γὰρ | turn_euthyphro_0197 | 14a | 26490 | 26493
+  tok_euthyphro_004632 | δή | δὴ | turn_euthyphro_0201 | 14a | 26765 | 26767
+  tok_euthyphro_004710 | δή | δὴ | turn_euthyphro_0202 | 14b | 27214 | 27216
+  tok_euthyphro_004733 | γάρ | γὰρ | turn_euthyphro_0203 | 14b | 27346 | 27349
+  tok_euthyphro_004742 | γάρ | γὰρ | turn_euthyphro_0203 | 14c | 27398 | 27401
+  tok_euthyphro_004763 | γάρ | γὰρ | turn_euthyphro_0203 | 14c | 27514 | 27517
+  tok_euthyphro_004774 | δή | δὴ | turn_euthyphro_0203 | 14c | 27576 | 27578
+  tok_euthyphro_004836 | γάρ | γάρ | turn_euthyphro_0209 | 14d | 27935 | 27938
+  tok_euthyphro_004876 | οὖν | οὖν | turn_euthyphro_0211 | 14d | 28147 | 28150
+  tok_euthyphro_004911 | γάρ | γάρ | turn_euthyphro_0213 | 14e | 28354 | 28357
+  tok_euthyphro_004981 | γάρ | γὰρ | turn_euthyphro_0217 | 14e | 28747 | 28750
+  tok_euthyphro_004986 | γάρ | γὰρ | turn_euthyphro_0217 | 15a | 28784 | 28787
+  tok_euthyphro_005106 | οὖν | οὖν | turn_euthyphro_0225 | 15b | 29464 | 29467
+  tok_euthyphro_005150 | γάρ | γάρ | turn_euthyphro_0225 | 15c | 29740 | 29743
+  tok_euthyphro_005176 | οὖν | οὖν | turn_euthyphro_0227 | 15c | 29870 | 29873
+  tok_euthyphro_005253 | γάρ | γὰρ | turn_euthyphro_0231 | 15d | 30284 | 30287
+  tok_euthyphro_005269 | γάρ | γὰρ | turn_euthyphro_0231 | 15d | 30367 | 30370
+  tok_euthyphro_005323 | οὖν | οὖν | turn_euthyphro_0231 | 15e | 30681 | 30684
+  tok_euthyphro_005336 | τοίνυν | τοίνυν | turn_euthyphro_0232 | 15e | 30752 | 30758
+  tok_euthyphro_005340 | γάρ | γὰρ | turn_euthyphro_0232 | 15e | 30776 | 30779
+  tok_euthyphro_005396 | δή | δὴ | turn_euthyphro_0233 | 16a | 31107 | 31109

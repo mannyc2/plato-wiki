@@ -1,0 +1,757 @@
+schema_version: 1
+dialogue: greater-hippias
+source_path: raw/plato/greek/greater-hippias.txt
+source_sha256: ccda6820c403e75c99d26a990c1c993a5f25d2ff5a2da6cef872ce204e9666b4
+token_index_path: derived/plato/tokens/greater-hippias.toon
+token_index_sha256: 09cfbc8877e92c022c6f3ad4fe5225ba30729b60d6697f8e57b1afa56477cc32
+turn_index_path: derived/plato/turns/greater-hippias.toon
+turn_index_sha256: 6809ef43af975ec38dec56b5468c179848f232f5255d68dcbceda001ead5fd5d
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 8811
+excluded_siglum_token_count: 357
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  greater-hippias | 8454 | 11 | 9 | 3 | 127 | 55 | 50
+speakers[2]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  ΙΠ. | 2067 | 3 | 3 | 0 | 47 | 15 | 9
+  ΣΩ. | 6387 | 8 | 6 | 3 | 80 | 40 | 41
+turns[357]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_greater-hippias_0001 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0002 | 69 | 0 | 0 | 0 | 2 | 1 | 1
+  turn_greater-hippias_0003 | 95 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0004 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0005 | 39 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0006 | 5 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0007 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0008 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0009 | 170 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0010 | 95 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_greater-hippias_0011 | 128 | 0 | 0 | 0 | 3 | 1 | 0
+  turn_greater-hippias_0012 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0013 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0014 | 6 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0015 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0016 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0017 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0018 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0019 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0020 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0021 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0022 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0023 | 40 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0024 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0025 | 52 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_greater-hippias_0026 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0027 | 6 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0028 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0029 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0030 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0031 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0032 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0033 | 24 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0034 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0035 | 48 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_greater-hippias_0036 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0037 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0038 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0039 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0040 | 37 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0041 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0042 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0043 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0044 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0045 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0046 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0047 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0048 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0049 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0050 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0051 | 19 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0052 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0053 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0054 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0055 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0056 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0057 | 12 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0058 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0059 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0060 | 5 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0061 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0062 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0063 | 47 | 0 | 0 | 0 | 0 | 0 | 3
+  turn_greater-hippias_0064 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0065 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0066 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0067 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0068 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0069 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0070 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0071 | 17 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0072 | 39 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0073 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0074 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0075 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0076 | 124 | 0 | 0 | 0 | 2 | 0 | 2
+  turn_greater-hippias_0077 | 165 | 0 | 0 | 0 | 3 | 2 | 0
+  turn_greater-hippias_0078 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0079 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0080 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0081 | 48 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_greater-hippias_0082 | 28 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0083 | 72 | 0 | 0 | 0 | 2 | 0 | 2
+  turn_greater-hippias_0084 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0085 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0086 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0087 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0088 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0089 | 10 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0090 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0091 | 11 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0092 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0093 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0094 | 5 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0095 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_greater-hippias_0096 | 13 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0097 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0098 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0099 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0100 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0101 | 23 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0102 | 29 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0103 | 29 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0104 | 19 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0105 | 56 | 0 | 0 | 0 | 0 | 1 | 2
+  turn_greater-hippias_0106 | 19 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0107 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0108 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_greater-hippias_0109 | 47 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0110 | 18 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0111 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_greater-hippias_0112 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0113 | 23 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0114 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0115 | 64 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0116 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0117 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0118 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0119 | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0120 | 7 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0121 | 75 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_greater-hippias_0122 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0123 | 49 | 0 | 1 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0124 | 16 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_greater-hippias_0125 | 51 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0126 | 77 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_greater-hippias_0127 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0128 | 17 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_greater-hippias_0129 | 35 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_greater-hippias_0130 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0131 | 82 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_greater-hippias_0132 | 14 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_greater-hippias_0133 | 35 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0134 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0135 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0136 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0137 | 31 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_greater-hippias_0138 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0139 | 22 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0140 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0141 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0142 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0143 | 82 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0144 | 14 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0145 | 84 | 0 | 0 | 0 | 2 | 1 | 1
+  turn_greater-hippias_0146 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0147 | 23 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0148 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0149 | 39 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_greater-hippias_0150 | 18 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0151 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0152 | 16 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_greater-hippias_0153 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_greater-hippias_0154 | 33 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0155 | 44 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_greater-hippias_0156 | 25 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0157 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0158 | 3 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0159 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0160 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0161 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0162 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0163 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0164 | 11 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0165 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0166 | 12 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0167 | 159 | 0 | 0 | 1 | 2 | 2 | 1
+  turn_greater-hippias_0168 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0169 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0170 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0171 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0172 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0173 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0174 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0175 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0176 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0177 | 35 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0178 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0179 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0180 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0181 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0182 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0183 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0184 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0185 | 133 | 0 | 1 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0186 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0187 | 96 | 0 | 0 | 0 | 2 | 2 | 1
+  turn_greater-hippias_0188 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0189 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0190 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0191 | 24 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0192 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0193 | 129 | 0 | 0 | 0 | 5 | 1 | 1
+  turn_greater-hippias_0194 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0195 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0196 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0197 | 42 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0198 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0199 | 104 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_greater-hippias_0200 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0201 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0202 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0203 | 19 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0204 | 32 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_greater-hippias_0205 | 150 | 0 | 0 | 1 | 4 | 0 | 2
+  turn_greater-hippias_0206 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0207 | 120 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0208 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0209 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0210 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0211 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0212 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0213 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0214 | 39 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_greater-hippias_0215 | 19 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0216 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0217 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_greater-hippias_0218 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0219 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0220 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0221 | 22 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0222 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_greater-hippias_0223 | 12 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0224 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0225 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0226 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0227 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0228 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0229 | 26 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0230 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0231 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0232 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0233 | 41 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0234 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0235 | 8 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0236 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0237 | 22 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_greater-hippias_0238 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0239 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0240 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0241 | 9 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0242 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0243 | 13 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0244 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0245 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0246 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0247 | 34 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0248 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0249 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0250 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0251 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0252 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0253 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0254 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0255 | 53 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0256 | 8 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_greater-hippias_0257 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0258 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0259 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0260 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0261 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0262 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0263 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0264 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0265 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0266 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0267 | 53 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0268 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0269 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0270 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0271 | 125 | 0 | 0 | 0 | 2 | 1 | 1
+  turn_greater-hippias_0272 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0273 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0274 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0275 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0276 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0277 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0278 | 17 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0279 | 24 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0280 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0281 | 134 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_greater-hippias_0282 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0283 | 147 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_greater-hippias_0284 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0285 | 28 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_greater-hippias_0286 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0287 | 61 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_greater-hippias_0288 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0289 | 48 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_greater-hippias_0290 | 4 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_greater-hippias_0291 | 80 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_greater-hippias_0292 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0293 | 41 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0294 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0295 | 10 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0296 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0297 | 37 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0298 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0299 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0300 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0301 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0302 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0303 | 23 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0304 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0305 | 49 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0306 | 35 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_greater-hippias_0307 | 51 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0308 | 100 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0309 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0310 | 86 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_greater-hippias_0311 | 47 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0312 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0313 | 126 | 1 | 0 | 0 | 3 | 0 | 1
+  turn_greater-hippias_0314 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0315 | 31 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0316 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0317 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0318 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0319 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0320 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0321 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0322 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0323 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0324 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0325 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0326 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0327 | 137 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_greater-hippias_0328 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0329 | 36 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_greater-hippias_0330 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0331 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0332 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0333 | 26 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0334 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0335 | 35 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0336 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0337 | 37 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0338 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0339 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_greater-hippias_0340 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0341 | 31 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0342 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0343 | 19 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_greater-hippias_0344 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0345 | 133 | 0 | 0 | 0 | 1 | 1 | 3
+  turn_greater-hippias_0346 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0347 | 55 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_greater-hippias_0348 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0349 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0350 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0351 | 59 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_greater-hippias_0352 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_greater-hippias_0353 | 15 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_greater-hippias_0354 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_greater-hippias_0355 | 57 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_greater-hippias_0356 | 95 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_greater-hippias_0357 | 242 | 0 | 0 | 1 | 5 | 2 | 1
+markers[119]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  281a | 49 | 0 | 0 | 0 | 2 | 0 | 0
+  281b | 62 | 0 | 0 | 0 | 1 | 1 | 1
+  281c | 77 | 0 | 0 | 0 | 0 | 0 | 0
+  281d | 67 | 0 | 0 | 0 | 0 | 2 | 0
+  282a | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  282b | 74 | 0 | 0 | 0 | 1 | 0 | 0
+  282c | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  282d | 65 | 0 | 0 | 0 | 2 | 0 | 0
+  282e | 74 | 0 | 0 | 0 | 0 | 0 | 0
+  283a | 65 | 0 | 0 | 0 | 3 | 1 | 0
+  283b | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  283c | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  283d | 63 | 0 | 0 | 0 | 0 | 1 | 0
+  283e | 66 | 1 | 0 | 0 | 2 | 1 | 0
+  284a | 63 | 0 | 0 | 0 | 0 | 1 | 1
+  284b | 58 | 0 | 0 | 0 | 2 | 0 | 0
+  284c | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  284d | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  284e | 82 | 1 | 0 | 0 | 0 | 0 | 0
+  285a | 57 | 1 | 0 | 0 | 2 | 0 | 0
+  285b | 67 | 0 | 0 | 0 | 1 | 0 | 3
+  285c | 53 | 0 | 0 | 0 | 0 | 0 | 0
+  285d | 60 | 1 | 0 | 0 | 0 | 0 | 0
+  285e | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  286a | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  286b | 59 | 0 | 0 | 0 | 1 | 0 | 2
+  286c | 69 | 0 | 0 | 0 | 2 | 0 | 0
+  286d | 75 | 0 | 0 | 0 | 0 | 2 | 0
+  286e | 61 | 0 | 0 | 0 | 2 | 0 | 0
+  287a | 58 | 0 | 0 | 0 | 2 | 1 | 0
+  287b | 68 | 0 | 0 | 0 | 1 | 0 | 1
+  287c | 72 | 0 | 0 | 0 | 2 | 1 | 1
+  287d | 78 | 0 | 0 | 0 | 3 | 1 | 1
+  287e | 50 | 0 | 0 | 0 | 1 | 1 | 0
+  288a | 86 | 0 | 0 | 0 | 1 | 1 | 2
+  288b | 61 | 0 | 0 | 0 | 0 | 1 | 1
+  288c | 81 | 0 | 1 | 0 | 2 | 0 | 1
+  288d | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  288e | 59 | 0 | 0 | 0 | 1 | 0 | 0
+  289a | 76 | 0 | 0 | 0 | 1 | 1 | 1
+  289b | 62 | 0 | 0 | 0 | 1 | 0 | 0
+  289c | 74 | 0 | 1 | 0 | 1 | 1 | 1
+  289d | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  289e | 72 | 0 | 0 | 0 | 3 | 2 | 0
+  290a | 62 | 0 | 0 | 0 | 0 | 0 | 1
+  290b | 69 | 0 | 0 | 0 | 0 | 1 | 1
+  290c | 68 | 0 | 0 | 0 | 2 | 1 | 0
+  290d | 72 | 0 | 0 | 0 | 0 | 1 | 1
+  290e | 88 | 0 | 0 | 0 | 2 | 0 | 0
+  291a | 63 | 0 | 0 | 0 | 2 | 0 | 0
+  291b | 66 | 0 | 0 | 0 | 1 | 1 | 1
+  291c | 73 | 0 | 0 | 0 | 1 | 1 | 1
+  291d | 73 | 0 | 1 | 0 | 2 | 1 | 2
+  291e | 72 | 0 | 0 | 0 | 2 | 0 | 1
+  292a | 61 | 1 | 0 | 0 | 0 | 0 | 0
+  292b | 68 | 0 | 1 | 0 | 0 | 0 | 0
+  292c | 77 | 0 | 0 | 0 | 2 | 0 | 1
+  292d | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  292e | 86 | 0 | 0 | 1 | 1 | 2 | 0
+  293a | 76 | 0 | 1 | 0 | 0 | 0 | 0
+  293b | 71 | 0 | 1 | 0 | 0 | 0 | 0
+  293c | 77 | 0 | 0 | 0 | 0 | 1 | 0
+  293d | 67 | 0 | 0 | 0 | 1 | 0 | 0
+  293e | 93 | 0 | 1 | 0 | 1 | 2 | 1
+  294a | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  294b | 82 | 0 | 0 | 0 | 3 | 1 | 1
+  294c | 60 | 0 | 0 | 0 | 1 | 1 | 0
+  294d | 84 | 0 | 0 | 0 | 0 | 0 | 0
+  294e | 88 | 0 | 0 | 0 | 1 | 0 | 1
+  295a | 69 | 0 | 0 | 0 | 2 | 1 | 0
+  295b | 72 | 0 | 0 | 1 | 1 | 0 | 0
+  295c | 81 | 0 | 0 | 0 | 3 | 0 | 2
+  295d | 80 | 0 | 0 | 0 | 0 | 0 | 0
+  295e | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  296a | 69 | 0 | 0 | 0 | 1 | 2 | 1
+  296b | 67 | 0 | 0 | 0 | 1 | 1 | 1
+  296c | 61 | 0 | 0 | 0 | 1 | 1 | 0
+  296d | 76 | 0 | 1 | 0 | 0 | 0 | 0
+  296e | 79 | 2 | 0 | 0 | 2 | 0 | 1
+  297a | 75 | 1 | 0 | 0 | 2 | 0 | 0
+  297b | 80 | 0 | 0 | 0 | 1 | 1 | 0
+  297c | 84 | 0 | 0 | 0 | 0 | 1 | 0
+  297d | 80 | 0 | 0 | 0 | 1 | 0 | 0
+  297e | 68 | 0 | 0 | 0 | 2 | 1 | 1
+  298a | 80 | 0 | 0 | 0 | 0 | 0 | 0
+  298b | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  298c | 67 | 1 | 0 | 0 | 1 | 0 | 0
+  298d | 81 | 0 | 0 | 0 | 1 | 0 | 1
+  298e | 72 | 0 | 0 | 0 | 0 | 1 | 0
+  299a | 78 | 0 | 0 | 0 | 0 | 0 | 0
+  299b | 73 | 0 | 0 | 0 | 0 | 0 | 2
+  299c | 83 | 0 | 0 | 0 | 1 | 1 | 0
+  299d | 73 | 0 | 0 | 0 | 3 | 3 | 0
+  299e | 64 | 0 | 0 | 0 | 3 | 0 | 0
+  300a | 72 | 0 | 0 | 0 | 2 | 0 | 0
+  300b | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  300c | 68 | 1 | 0 | 0 | 2 | 0 | 0
+  300d | 66 | 0 | 0 | 0 | 2 | 0 | 0
+  300e | 86 | 0 | 0 | 0 | 2 | 0 | 0
+  301a | 65 | 0 | 1 | 0 | 0 | 0 | 0
+  301b | 67 | 0 | 0 | 0 | 1 | 0 | 1
+  301c | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  301d | 76 | 1 | 0 | 0 | 3 | 0 | 0
+  301e | 88 | 0 | 0 | 0 | 2 | 0 | 1
+  302a | 71 | 0 | 0 | 0 | 1 | 2 | 0
+  302b | 73 | 0 | 0 | 0 | 2 | 0 | 0
+  302c | 77 | 0 | 0 | 0 | 0 | 0 | 1
+  302d | 67 | 0 | 0 | 0 | 1 | 1 | 0
+  302e | 104 | 0 | 0 | 0 | 3 | 0 | 0
+  303a | 72 | 0 | 0 | 0 | 2 | 1 | 1
+  303b | 76 | 0 | 0 | 0 | 0 | 1 | 1
+  303c | 70 | 0 | 0 | 0 | 1 | 0 | 2
+  303d | 75 | 0 | 0 | 0 | 3 | 0 | 2
+  303e | 104 | 0 | 0 | 0 | 2 | 0 | 2
+  304a | 74 | 0 | 0 | 0 | 1 | 0 | 1
+  304b | 67 | 0 | 0 | 0 | 0 | 1 | 0
+  304c | 74 | 0 | 0 | 0 | 1 | 0 | 0
+  304d | 73 | 0 | 0 | 1 | 1 | 1 | 0
+  304e | 77 | 0 | 0 | 0 | 3 | 1 | 1
+occurrences[255]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_greater-hippias_000018 | γάρ | γὰρ | turn_greater-hippias_0002 | 281a | 90 | 93
+  tok_greater-hippias_000023 | γάρ | γὰρ | turn_greater-hippias_0002 | 281a | 115 | 118
+  tok_greater-hippias_000059 | οὖν | οὖν | turn_greater-hippias_0002 | 281b | 352 | 355
+  tok_greater-hippias_000076 | δή | δή | turn_greater-hippias_0002 | 281b | 456 | 458
+  tok_greater-hippias_000102 | γάρ | γὰρ | turn_greater-hippias_0003 | 281b | 593 | 596
+  tok_greater-hippias_000208 | οὖν | οὖν | turn_greater-hippias_0005 | 281d | 1224 | 1227
+  tok_greater-hippias_000249 | οὖν | οὖν | turn_greater-hippias_0006 | 281d | 1467 | 1470
+  tok_greater-hippias_000364 | γάρ | γὰρ | turn_greater-hippias_0009 | 282b | 2158 | 2161
+  tok_greater-hippias_000498 | γάρ | γάρ | turn_greater-hippias_0010 | 282d | 3048 | 3051
+  tok_greater-hippias_000507 | γάρ | γὰρ | turn_greater-hippias_0010 | 282d | 3096 | 3099
+  tok_greater-hippias_000615 | γάρ | γὰρ | turn_greater-hippias_0011 | 283a | 3775 | 3778
+  tok_greater-hippias_000627 | γάρ | γὰρ | turn_greater-hippias_0011 | 283a | 3869 | 3872
+  tok_greater-hippias_000634 | γάρ | γὰρ | turn_greater-hippias_0011 | 283a | 3920 | 3923
+  tok_greater-hippias_000657 | οὖν | οὖν | turn_greater-hippias_0011 | 283a | 4069 | 4072
+  tok_greater-hippias_000736 | οὖν | οὖν | turn_greater-hippias_0014 | 283c | 4542 | 4545
+  tok_greater-hippias_000812 | οὖν | οὖν | turn_greater-hippias_0021 | 283d | 5000 | 5003
+  tok_greater-hippias_000872 | οὖν | οὖν | turn_greater-hippias_0025 | 283e | 5374 | 5377
+  tok_greater-hippias_000913 | γάρ | γάρ | turn_greater-hippias_0025 | 283e | 5617 | 5620
+  tok_greater-hippias_000930 | μήν | μὴν | turn_greater-hippias_0027 | 283e | 5718 | 5721
+  tok_greater-hippias_000937 | γάρ | γὰρ | turn_greater-hippias_0028 | 283e | 5755 | 5758
+  tok_greater-hippias_000969 | οὖν | οὖν | turn_greater-hippias_0033 | 284a | 5936 | 5939
+  tok_greater-hippias_000997 | δή | δὴ | turn_greater-hippias_0035 | 284a | 6116 | 6118
+  tok_greater-hippias_001040 | γάρ | γὰρ | turn_greater-hippias_0035 | 284b | 6398 | 6401
+  tok_greater-hippias_001046 | γάρ | γὰρ | turn_greater-hippias_0036 | 284b | 6431 | 6434
+  tok_greater-hippias_001237 | μήν | μήν | turn_greater-hippias_0051 | 284e | 7610 | 7613
+  tok_greater-hippias_001303 | γάρ | γὰρ | turn_greater-hippias_0057 | 285a | 8007 | 8010
+  tok_greater-hippias_001316 | γάρ | γάρ | turn_greater-hippias_0058 | 285a | 8084 | 8087
+  tok_greater-hippias_001345 | μήν | μὴν | turn_greater-hippias_0060 | 285a | 8266 | 8269
+  tok_greater-hippias_001366 | γάρ | γάρ | turn_greater-hippias_0062 | 285b | 8423 | 8426
+  tok_greater-hippias_001382 | δή | δή | turn_greater-hippias_0063 | 285b | 8514 | 8516
+  tok_greater-hippias_001399 | δή | δή | turn_greater-hippias_0063 | 285b | 8627 | 8629
+  tok_greater-hippias_001411 | δή | δὴ | turn_greater-hippias_0063 | 285b | 8691 | 8693
+  tok_greater-hippias_001497 | μήν | μήν | turn_greater-hippias_0071 | 285d | 9240 | 9243
+  tok_greater-hippias_001645 | γάρ | γάρ | turn_greater-hippias_0076 | 286a | 10189 | 10192
+  tok_greater-hippias_001694 | δή | δὴ | turn_greater-hippias_0076 | 286b | 10495 | 10497
+  tok_greater-hippias_001707 | δή | δὴ | turn_greater-hippias_0076 | 286b | 10577 | 10579
+  tok_greater-hippias_001729 | γάρ | γάρ | turn_greater-hippias_0076 | 286b | 10720 | 10723
+  tok_greater-hippias_001766 | γάρ | γάρ | turn_greater-hippias_0077 | 286c | 10943 | 10946
+  tok_greater-hippias_001772 | γάρ | γάρ | turn_greater-hippias_0077 | 286c | 10979 | 10982
+  tok_greater-hippias_001836 | οὖν | οὖν | turn_greater-hippias_0077 | 286d | 11357 | 11360
+  tok_greater-hippias_001868 | οὖν | οὖν | turn_greater-hippias_0077 | 286d | 11564 | 11567
+  tok_greater-hippias_001899 | γάρ | γὰρ | turn_greater-hippias_0077 | 286e | 11755 | 11758
+  tok_greater-hippias_001940 | γάρ | γὰρ | turn_greater-hippias_0080 | 286e | 11990 | 11993
+  tok_greater-hippias_001980 | γάρ | γάρ | turn_greater-hippias_0081 | 287a | 12231 | 12234
+  tok_greater-hippias_001987 | οὖν | οὖν | turn_greater-hippias_0081 | 287a | 12271 | 12274
+  tok_greater-hippias_002001 | γάρ | γάρ | turn_greater-hippias_0082 | 287a | 12373 | 12376
+  tok_greater-hippias_002046 | γάρ | γὰρ | turn_greater-hippias_0083 | 287b | 12650 | 12653
+  tok_greater-hippias_002047 | δή | δὴ | turn_greater-hippias_0083 | 287b | 12654 | 12656
+  tok_greater-hippias_002075 | γάρ | γάρ | turn_greater-hippias_0083 | 287c | 12825 | 12828
+  tok_greater-hippias_002093 | δή | δή | turn_greater-hippias_0083 | 287c | 12934 | 12936
+  tok_greater-hippias_002137 | γάρ | γὰρ | turn_greater-hippias_0089 | 287c | 13195 | 13198
+  tok_greater-hippias_002147 | οὖν | οὖν | turn_greater-hippias_0091 | 287c | 13251 | 13254
+  tok_greater-hippias_002170 | γάρ | γὰρ | turn_greater-hippias_0094 | 287d | 13376 | 13379
+  tok_greater-hippias_002174 | δή | δή | turn_greater-hippias_0095 | 287d | 13401 | 13403
+  tok_greater-hippias_002186 | οὖν | οὖν | turn_greater-hippias_0096 | 287d | 13470 | 13473
+  tok_greater-hippias_002220 | γάρ | γὰρ | turn_greater-hippias_0100 | 287d | 13650 | 13653
+  tok_greater-hippias_002235 | γάρ | γάρ | turn_greater-hippias_0101 | 287d | 13737 | 13740
+  tok_greater-hippias_002263 | γάρ | γάρ | turn_greater-hippias_0102 | 287e | 13886 | 13889
+  tok_greater-hippias_002289 | οὖν | οὖν | turn_greater-hippias_0103 | 287e | 14023 | 14026
+  tok_greater-hippias_002308 | γάρ | γὰρ | turn_greater-hippias_0104 | 288a | 14142 | 14145
+  tok_greater-hippias_002330 | οὖν | οὖν | turn_greater-hippias_0105 | 288a | 14270 | 14273
+  tok_greater-hippias_002332 | δή | δή | turn_greater-hippias_0105 | 288a | 14280 | 14282
+  tok_greater-hippias_002369 | δή | δὴ | turn_greater-hippias_0105 | 288a | 14478 | 14480
+  tok_greater-hippias_002385 | οὖν | οὖν | turn_greater-hippias_0106 | 288b | 14559 | 14562
+  tok_greater-hippias_002426 | δή | δή | turn_greater-hippias_0108 | 288b | 14808 | 14810
+  tok_greater-hippias_002465 | γάρ | γὰρ | turn_greater-hippias_0109 | 288c | 15024 | 15027
+  tok_greater-hippias_002489 | γάρ | γὰρ | turn_greater-hippias_0110 | 288c | 15156 | 15159
+  tok_greater-hippias_002497 | δή | δή | turn_greater-hippias_0111 | 288c | 15212 | 15214
+  tok_greater-hippias_002511 | τοίνυν | τοίνυν | turn_greater-hippias_0113 | 288c | 15286 | 15292
+  tok_greater-hippias_002610 | γάρ | γὰρ | turn_greater-hippias_0115 | 288e | 15909 | 15912
+  tok_greater-hippias_002719 | οὖν | οὖν | turn_greater-hippias_0120 | 289a | 16567 | 16570
+  tok_greater-hippias_002726 | δή | δή | turn_greater-hippias_0121 | 289a | 16610 | 16612
+  tok_greater-hippias_002729 | γάρ | γὰρ | turn_greater-hippias_0121 | 289a | 16625 | 16628
+  tok_greater-hippias_002802 | γάρ | γὰρ | turn_greater-hippias_0122 | 289b | 17082 | 17085
+  tok_greater-hippias_002811 | τοίνυν | τοίνυν | turn_greater-hippias_0123 | 289c | 17134 | 17140
+  tok_greater-hippias_002821 | οὖν | οὖν | turn_greater-hippias_0123 | 289c | 17209 | 17212
+  tok_greater-hippias_002863 | γάρ | γὰρ | turn_greater-hippias_0124 | 289c | 17471 | 17474
+  tok_greater-hippias_002864 | δή | δὴ | turn_greater-hippias_0124 | 289c | 17475 | 17477
+  tok_greater-hippias_002957 | οὖν | οὖν | turn_greater-hippias_0126 | 289e | 18027 | 18030
+  tok_greater-hippias_002968 | γάρ | γὰρ | turn_greater-hippias_0126 | 289e | 18090 | 18093
+  tok_greater-hippias_002989 | γάρ | γάρ | turn_greater-hippias_0126 | 289e | 18210 | 18213
+  tok_greater-hippias_003022 | οὖν | οὖν | turn_greater-hippias_0128 | 289e | 18412 | 18415
+  tok_greater-hippias_003027 | γάρ | γὰρ | turn_greater-hippias_0128 | 289e | 18438 | 18441
+  tok_greater-hippias_003041 | δή | δὴ | turn_greater-hippias_0129 | 290a | 18538 | 18540
+  tok_greater-hippias_003132 | δή | δὴ | turn_greater-hippias_0131 | 290b | 19126 | 19128
+  tok_greater-hippias_003158 | οὖν | οὖν | turn_greater-hippias_0131 | 290b | 19297 | 19300
+  tok_greater-hippias_003168 | γάρ | γὰρ | turn_greater-hippias_0132 | 290c | 19369 | 19372
+  tok_greater-hippias_003173 | γάρ | γὰρ | turn_greater-hippias_0132 | 290c | 19396 | 19399
+  tok_greater-hippias_003181 | οὖν | οὖν | turn_greater-hippias_0133 | 290c | 19446 | 19449
+  tok_greater-hippias_003240 | δή | δή | turn_greater-hippias_0137 | 290d | 19793 | 19795
+  tok_greater-hippias_003284 | οὖν | οὖν | turn_greater-hippias_0139 | 290d | 20063 | 20066
+  tok_greater-hippias_003320 | γάρ | γὰρ | turn_greater-hippias_0141 | 290e | 20292 | 20295
+  tok_greater-hippias_003362 | γάρ | γάρ | turn_greater-hippias_0143 | 290e | 20532 | 20535
+  tok_greater-hippias_003423 | γάρ | γάρ | turn_greater-hippias_0144 | 291a | 20877 | 20880
+  tok_greater-hippias_003442 | γάρ | γὰρ | turn_greater-hippias_0145 | 291a | 20989 | 20992
+  tok_greater-hippias_003473 | οὖν | οὖν | turn_greater-hippias_0145 | 291b | 21201 | 21204
+  tok_greater-hippias_003480 | γάρ | γὰρ | turn_greater-hippias_0145 | 291b | 21249 | 21252
+  tok_greater-hippias_003481 | δή | δὴ | turn_greater-hippias_0145 | 291b | 21253 | 21255
+  tok_greater-hippias_003539 | οὖν | οὖν | turn_greater-hippias_0147 | 291c | 21608 | 21611
+  tok_greater-hippias_003574 | δή | δὴ | turn_greater-hippias_0149 | 291c | 21810 | 21812
+  tok_greater-hippias_003582 | γάρ | γὰρ | turn_greater-hippias_0149 | 291c | 21851 | 21854
+  tok_greater-hippias_003617 | γάρ | γάρ | turn_greater-hippias_0150 | 291d | 22050 | 22053
+  tok_greater-hippias_003634 | οὖν | οὖν | turn_greater-hippias_0151 | 291d | 22157 | 22160
+  tok_greater-hippias_003644 | δή | δή | turn_greater-hippias_0152 | 291d | 22212 | 22214
+  tok_greater-hippias_003646 | γάρ | γὰρ | turn_greater-hippias_0152 | 291d | 22221 | 22224
+  tok_greater-hippias_003661 | δή | δὴ | turn_greater-hippias_0153 | 291d | 22302 | 22304
+  tok_greater-hippias_003668 | τοίνυν | τοίνυν | turn_greater-hippias_0154 | 291d | 22336 | 22342
+  tok_greater-hippias_003731 | γάρ | γὰρ | turn_greater-hippias_0155 | 291e | 22743 | 22746
+  tok_greater-hippias_003738 | δή | δὴ | turn_greater-hippias_0155 | 291e | 22783 | 22785
+  tok_greater-hippias_003752 | γάρ | γὰρ | turn_greater-hippias_0156 | 291e | 22868 | 22871
+  tok_greater-hippias_003793 | μήν | μήν | turn_greater-hippias_0158 | 292a | 23117 | 23120
+  tok_greater-hippias_003871 | τοίνυν | τοίνυν | turn_greater-hippias_0164 | 292b | 23571 | 23577
+  tok_greater-hippias_003904 | γάρ | γὰρ | turn_greater-hippias_0166 | 292c | 23772 | 23775
+  tok_greater-hippias_003942 | γάρ | γὰρ | turn_greater-hippias_0167 | 292c | 23977 | 23980
+  tok_greater-hippias_003966 | δή | δή | turn_greater-hippias_0167 | 292c | 24146 | 24148
+  tok_greater-hippias_004005 | γάρ | γὰρ | turn_greater-hippias_0167 | 292d | 24376 | 24379
+  tok_greater-hippias_004032 | οὖν | οὖν | turn_greater-hippias_0167 | 292d | 24541 | 24544
+  tok_greater-hippias_004053 | καίτοι | καίτοι | turn_greater-hippias_0167 | 292e | 24663 | 24669
+  tok_greater-hippias_004068 | οὖν | οὖν | turn_greater-hippias_0167 | 292e | 24738 | 24741
+  tok_greater-hippias_004078 | οὖν | οὖν | turn_greater-hippias_0168 | 292e | 24784 | 24787
+  tok_greater-hippias_004098 | γάρ | γάρ | turn_greater-hippias_0169 | 292e | 24899 | 24902
+  tok_greater-hippias_004181 | τοίνυν | τοίνυν | turn_greater-hippias_0177 | 293a | 25384 | 25390
+  tok_greater-hippias_004283 | τοίνυν | τοίνυν | turn_greater-hippias_0185 | 293b | 25967 | 25973
+  tok_greater-hippias_004372 | οὖν | οὖν | turn_greater-hippias_0185 | 293c | 26521 | 26524
+  tok_greater-hippias_004437 | γάρ | γὰρ | turn_greater-hippias_0187 | 293d | 26912 | 26915
+  tok_greater-hippias_004480 | δή | δὴ | turn_greater-hippias_0187 | 293e | 27153 | 27155
+  tok_greater-hippias_004499 | οὖν | οὖν | turn_greater-hippias_0187 | 293e | 27257 | 27260
+  tok_greater-hippias_004506 | γάρ | γὰρ | turn_greater-hippias_0187 | 293e | 27299 | 27302
+  tok_greater-hippias_004512 | οὖν | οὖν | turn_greater-hippias_0187 | 293e | 27323 | 27326
+  tok_greater-hippias_004535 | τοίνυν | τοίνυν | turn_greater-hippias_0191 | 293e | 27454 | 27460
+  tok_greater-hippias_004611 | γάρ | γάρ | turn_greater-hippias_0193 | 294a | 27907 | 27910
+  tok_greater-hippias_004632 | γάρ | γὰρ | turn_greater-hippias_0193 | 294b | 28035 | 28038
+  tok_greater-hippias_004647 | δή | δή | turn_greater-hippias_0193 | 294b | 28125 | 28127
+  tok_greater-hippias_004657 | οὖν | οὖν | turn_greater-hippias_0193 | 294b | 28175 | 28178
+  tok_greater-hippias_004666 | γάρ | γὰρ | turn_greater-hippias_0193 | 294b | 28215 | 28218
+  tok_greater-hippias_004672 | γάρ | γὰρ | turn_greater-hippias_0193 | 294b | 28245 | 28248
+  tok_greater-hippias_004704 | γάρ | γὰρ | turn_greater-hippias_0193 | 294c | 28428 | 28431
+  tok_greater-hippias_004743 | οὖν | οὖν | turn_greater-hippias_0197 | 294c | 28669 | 28672
+  tok_greater-hippias_004859 | γάρ | γὰρ | turn_greater-hippias_0199 | 294e | 29323 | 29326
+  tok_greater-hippias_004882 | δή | δὴ | turn_greater-hippias_0199 | 294e | 29461 | 29463
+  tok_greater-hippias_004946 | γάρ | γάρ | turn_greater-hippias_0203 | 295a | 29814 | 29817
+  tok_greater-hippias_004962 | γάρ | γὰρ | turn_greater-hippias_0204 | 295a | 29906 | 29909
+  tok_greater-hippias_004968 | οὖν | οὖν | turn_greater-hippias_0204 | 295a | 29940 | 29943
+  tok_greater-hippias_005009 | καίτοι | καίτοι | turn_greater-hippias_0205 | 295b | 30186 | 30192
+  tok_greater-hippias_005014 | γάρ | γὰρ | turn_greater-hippias_0205 | 295b | 30212 | 30215
+  tok_greater-hippias_005085 | δή | δὴ | turn_greater-hippias_0205 | 295c | 30615 | 30617
+  tok_greater-hippias_005089 | γάρ | γὰρ | turn_greater-hippias_0205 | 295c | 30634 | 30637
+  tok_greater-hippias_005099 | γάρ | γὰρ | turn_greater-hippias_0205 | 295c | 30695 | 30698
+  tok_greater-hippias_005100 | δή | δὴ | turn_greater-hippias_0205 | 295c | 30699 | 30701
+  tok_greater-hippias_005139 | γάρ | γάρ | turn_greater-hippias_0205 | 295c | 30906 | 30909
+  tok_greater-hippias_005327 | οὖν | οὖν | turn_greater-hippias_0214 | 296a | 31964 | 31967
+  tok_greater-hippias_005332 | γάρ | γὰρ | turn_greater-hippias_0214 | 296a | 31988 | 31991
+  tok_greater-hippias_005355 | οὖν | οὖν | turn_greater-hippias_0215 | 296a | 32122 | 32125
+  tok_greater-hippias_005379 | δή | δὴ | turn_greater-hippias_0217 | 296a | 32252 | 32254
+  tok_greater-hippias_005427 | γάρ | γὰρ | turn_greater-hippias_0220 | 296b | 32520 | 32523
+  tok_greater-hippias_005435 | οὖν | οὖν | turn_greater-hippias_0221 | 296b | 32551 | 32554
+  tok_greater-hippias_005458 | δή | δή | turn_greater-hippias_0222 | 296b | 32692 | 32694
+  tok_greater-hippias_005468 | γάρ | γάρ | turn_greater-hippias_0223 | 296c | 32756 | 32759
+  tok_greater-hippias_005509 | οὖν | οὖν | turn_greater-hippias_0229 | 296c | 32989 | 32992
+  tok_greater-hippias_005572 | τοίνυν | τοίνυν | turn_greater-hippias_0233 | 296d | 33332 | 33338
+  tok_greater-hippias_005616 | μήν | μὴν | turn_greater-hippias_0235 | 296e | 33575 | 33578
+  tok_greater-hippias_005628 | δή | δὴ | turn_greater-hippias_0237 | 296e | 33632 | 33634
+  tok_greater-hippias_005670 | μήν | μὴν | turn_greater-hippias_0241 | 296e | 33848 | 33851
+  tok_greater-hippias_005680 | γάρ | γάρ | turn_greater-hippias_0242 | 296e | 33900 | 33903
+  tok_greater-hippias_005694 | γάρ | γάρ | turn_greater-hippias_0243 | 296e | 33958 | 33961
+  tok_greater-hippias_005707 | γάρ | γάρ | turn_greater-hippias_0246 | 297a | 34032 | 34035
+  tok_greater-hippias_005710 | μήν | μὴν | turn_greater-hippias_0247 | 297a | 34046 | 34049
+  tok_greater-hippias_005726 | γάρ | γάρ | turn_greater-hippias_0247 | 297a | 34118 | 34121
+  tok_greater-hippias_005851 | οὖν | οὖν | turn_greater-hippias_0256 | 297b | 34790 | 34793
+  tok_greater-hippias_005853 | γάρ | γὰρ | turn_greater-hippias_0256 | 297b | 34801 | 34804
+  tok_greater-hippias_005925 | οὖν | οὖν | turn_greater-hippias_0263 | 297c | 35187 | 35190
+  tok_greater-hippias_005967 | γάρ | γὰρ | turn_greater-hippias_0266 | 297d | 35404 | 35407
+  tok_greater-hippias_006076 | γάρ | γὰρ | turn_greater-hippias_0271 | 297e | 36016 | 36019
+  tok_greater-hippias_006077 | οὖν | οὖν | turn_greater-hippias_0271 | 297e | 36020 | 36023
+  tok_greater-hippias_006078 | δή | δή | turn_greater-hippias_0271 | 297e | 36024 | 36026
+  tok_greater-hippias_006085 | γάρ | γάρ | turn_greater-hippias_0271 | 297e | 36062 | 36065
+  tok_greater-hippias_006282 | μήν | μὴν | turn_greater-hippias_0278 | 298c | 37137 | 37140
+  tok_greater-hippias_006304 | γάρ | γάρ | turn_greater-hippias_0279 | 298c | 37259 | 37262
+  tok_greater-hippias_006343 | γάρ | γὰρ | turn_greater-hippias_0281 | 298d | 37474 | 37477
+  tok_greater-hippias_006400 | δή | δή | turn_greater-hippias_0281 | 298d | 37789 | 37791
+  tok_greater-hippias_006480 | οὖν | οὖν | turn_greater-hippias_0283 | 298e | 38228 | 38231
+  tok_greater-hippias_006589 | δή | δὴ | turn_greater-hippias_0283 | 299b | 38898 | 38900
+  tok_greater-hippias_006642 | δή | δὴ | turn_greater-hippias_0285 | 299b | 39183 | 39185
+  tok_greater-hippias_006673 | οὖν | οὖν | turn_greater-hippias_0287 | 299c | 39370 | 39373
+  tok_greater-hippias_006710 | γάρ | γὰρ | turn_greater-hippias_0287 | 299c | 39570 | 39573
+  tok_greater-hippias_006736 | οὖν | οὖν | turn_greater-hippias_0288 | 299d | 39732 | 39735
+  tok_greater-hippias_006739 | οὖν | οὖν | turn_greater-hippias_0289 | 299d | 39749 | 39752
+  tok_greater-hippias_006751 | γάρ | γὰρ | turn_greater-hippias_0289 | 299d | 39828 | 39831
+  tok_greater-hippias_006785 | γάρ | γάρ | turn_greater-hippias_0289 | 299d | 39995 | 39998
+  tok_greater-hippias_006788 | γάρ | γὰρ | turn_greater-hippias_0290 | 299d | 40007 | 40010
+  tok_greater-hippias_006789 | οὖν | οὖν | turn_greater-hippias_0290 | 299d | 40011 | 40014
+  tok_greater-hippias_006828 | γάρ | γάρ | turn_greater-hippias_0291 | 299e | 40253 | 40256
+  tok_greater-hippias_006844 | γάρ | γὰρ | turn_greater-hippias_0291 | 299e | 40329 | 40332
+  tok_greater-hippias_006874 | γάρ | γάρ | turn_greater-hippias_0292 | 299e | 40488 | 40491
+  tok_greater-hippias_006892 | γάρ | γὰρ | turn_greater-hippias_0293 | 300a | 40586 | 40589
+  tok_greater-hippias_006929 | γάρ | γάρ | turn_greater-hippias_0295 | 300a | 40795 | 40798
+  tok_greater-hippias_006956 | γάρ | γὰρ | turn_greater-hippias_0297 | 300b | 40951 | 40954
+  tok_greater-hippias_007027 | γάρ | γὰρ | turn_greater-hippias_0302 | 300c | 41373 | 41376
+  tok_greater-hippias_007048 | γάρ | γὰρ | turn_greater-hippias_0303 | 300c | 41481 | 41484
+  tok_greater-hippias_007077 | μήν | μὴν | turn_greater-hippias_0305 | 300c | 41641 | 41644
+  tok_greater-hippias_007144 | γάρ | γὰρ | turn_greater-hippias_0306 | 300d | 42058 | 42061
+  tok_greater-hippias_007148 | γάρ | γὰρ | turn_greater-hippias_0306 | 300d | 42078 | 42081
+  tok_greater-hippias_007182 | γάρ | γὰρ | turn_greater-hippias_0307 | 300e | 42281 | 42284
+  tok_greater-hippias_007227 | γάρ | γάρ | turn_greater-hippias_0308 | 300e | 42556 | 42559
+  tok_greater-hippias_007275 | τοίνυν | τοίνυν | turn_greater-hippias_0308 | 301a | 42840 | 42846
+  tok_greater-hippias_007320 | γάρ | γὰρ | turn_greater-hippias_0310 | 301b | 43093 | 43096
+  tok_greater-hippias_007321 | δή | δὴ | turn_greater-hippias_0310 | 301b | 43097 | 43099
+  tok_greater-hippias_007460 | γάρ | γὰρ | turn_greater-hippias_0312 | 301d | 43939 | 43942
+  tok_greater-hippias_007477 | μήν | μὴν | turn_greater-hippias_0313 | 301d | 44028 | 44031
+  tok_greater-hippias_007481 | γάρ | γάρ | turn_greater-hippias_0313 | 301d | 44048 | 44051
+  tok_greater-hippias_007515 | γάρ | γὰρ | turn_greater-hippias_0313 | 301d | 44232 | 44235
+  tok_greater-hippias_007550 | γάρ | γὰρ | turn_greater-hippias_0313 | 301e | 44439 | 44442
+  tok_greater-hippias_007575 | δή | δὴ | turn_greater-hippias_0313 | 301e | 44587 | 44589
+  tok_greater-hippias_007612 | γάρ | γάρ | turn_greater-hippias_0315 | 301e | 44777 | 44780
+  tok_greater-hippias_007664 | οὖν | οὖν | turn_greater-hippias_0319 | 302a | 45062 | 45065
+  tok_greater-hippias_007681 | γάρ | γάρ | turn_greater-hippias_0321 | 302a | 45152 | 45155
+  tok_greater-hippias_007687 | οὖν | οὖν | turn_greater-hippias_0323 | 302a | 45178 | 45181
+  tok_greater-hippias_007736 | γάρ | γὰρ | turn_greater-hippias_0327 | 302b | 45463 | 45466
+  tok_greater-hippias_007750 | γάρ | γὰρ | turn_greater-hippias_0327 | 302b | 45535 | 45538
+  tok_greater-hippias_007805 | δή | δὴ | turn_greater-hippias_0327 | 302c | 45862 | 45864
+  tok_greater-hippias_007874 | οὖν | οὖν | turn_greater-hippias_0329 | 302d | 46236 | 46239
+  tok_greater-hippias_007902 | γάρ | γὰρ | turn_greater-hippias_0329 | 302d | 46381 | 46384
+  tok_greater-hippias_007938 | γάρ | γάρ | turn_greater-hippias_0333 | 302e | 46592 | 46595
+  tok_greater-hippias_007973 | γάρ | γάρ | turn_greater-hippias_0335 | 302e | 46764 | 46767
+  tok_greater-hippias_008012 | γάρ | γὰρ | turn_greater-hippias_0337 | 302e | 46983 | 46986
+  tok_greater-hippias_008040 | οὖν | οὖν | turn_greater-hippias_0339 | 303a | 47161 | 47164
+  tok_greater-hippias_008051 | γάρ | γὰρ | turn_greater-hippias_0340 | 303a | 47219 | 47222
+  tok_greater-hippias_008084 | γάρ | γάρ | turn_greater-hippias_0341 | 303a | 47426 | 47429
+  tok_greater-hippias_008096 | δή | δὴ | turn_greater-hippias_0343 | 303a | 47475 | 47477
+  tok_greater-hippias_008111 | οὖν | οὖν | turn_greater-hippias_0345 | 303b | 47563 | 47566
+  tok_greater-hippias_008144 | δή | δὴ | turn_greater-hippias_0345 | 303b | 47751 | 47753
+  tok_greater-hippias_008193 | δή | δὴ | turn_greater-hippias_0345 | 303c | 48045 | 48047
+  tok_greater-hippias_008200 | δή | δὴ | turn_greater-hippias_0345 | 303c | 48088 | 48090
+  tok_greater-hippias_008213 | γάρ | γὰρ | turn_greater-hippias_0345 | 303c | 48161 | 48164
+  tok_greater-hippias_008261 | γάρ | γὰρ | turn_greater-hippias_0347 | 303d | 48444 | 48447
+  tok_greater-hippias_008280 | γάρ | γὰρ | turn_greater-hippias_0347 | 303d | 48535 | 48538
+  tok_greater-hippias_008300 | δή | δὴ | turn_greater-hippias_0347 | 303d | 48629 | 48631
+  tok_greater-hippias_008306 | γάρ | γάρ | turn_greater-hippias_0348 | 303d | 48670 | 48673
+  tok_greater-hippias_008331 | δή | δὴ | turn_greater-hippias_0351 | 303d | 48817 | 48819
+  tok_greater-hippias_008360 | δή | δή | turn_greater-hippias_0351 | 303e | 49016 | 49018
+  tok_greater-hippias_008393 | γάρ | γὰρ | turn_greater-hippias_0352 | 303e | 49203 | 49206
+  tok_greater-hippias_008401 | δή | δὴ | turn_greater-hippias_0353 | 303e | 49266 | 49268
+  tok_greater-hippias_008441 | γάρ | γὰρ | turn_greater-hippias_0355 | 303e | 49511 | 49514
+  tok_greater-hippias_008465 | γάρ | γάρ | turn_greater-hippias_0355 | 304a | 49658 | 49661
+  tok_greater-hippias_008475 | δή | δή | turn_greater-hippias_0356 | 304a | 49712 | 49714
+  tok_greater-hippias_008549 | οὖν | οὖν | turn_greater-hippias_0356 | 304b | 50146 | 50149
+  tok_greater-hippias_008619 | γάρ | γάρ | turn_greater-hippias_0357 | 304c | 50594 | 50597
+  tok_greater-hippias_008683 | γάρ | γάρ | turn_greater-hippias_0357 | 304d | 50963 | 50966
+  tok_greater-hippias_008695 | οὖν | οὖν | turn_greater-hippias_0357 | 304d | 51029 | 51032
+  tok_greater-hippias_008728 | καίτοι | καίτοι | turn_greater-hippias_0357 | 304d | 51247 | 51253
+  tok_greater-hippias_008760 | δή | δή | turn_greater-hippias_0357 | 304e | 51458 | 51460
+  tok_greater-hippias_008776 | γάρ | γὰρ | turn_greater-hippias_0357 | 304e | 51549 | 51552
+  tok_greater-hippias_008783 | γάρ | γὰρ | turn_greater-hippias_0357 | 304e | 51597 | 51600
+  tok_greater-hippias_008788 | οὖν | οὖν | turn_greater-hippias_0357 | 304e | 51626 | 51629
+  tok_greater-hippias_008800 | γάρ | γὰρ | turn_greater-hippias_0357 | 304e | 51695 | 51698

@@ -1,0 +1,1154 @@
+schema_version: 1
+dialogue: phaedrus
+source_path: raw/plato/greek/phaedrus.txt
+source_sha256: 89a2de0f0f71b79700d2bfa84ab29ffad10576c333949cc8ec08fc152667261c
+token_index_path: derived/plato/tokens/phaedrus.toon
+token_index_sha256: 4eb51cd160475ab1258510c446011ce9a0e6a2c54dd5d19372ab6c1e1c96fb47
+turn_index_path: derived/plato/turns/phaedrus.toon
+turn_index_sha256: 99106f1748e8506a919c4ea341527c9d2e608ebced3c1ee87089fb37093942ee
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 17020
+excluded_siglum_token_count: 400
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  phaedrus | 16620 | 24 | 17 | 5 | 145 | 110 | 164
+speakers[3]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  (none) | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  ΣΩ. | 13460 | 12 | 14 | 1 | 104 | 87 | 125
+  ΦΑΙ. | 3159 | 12 | 3 | 4 | 41 | 23 | 39
+turns[401]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_phaedrus_0001 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0002 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0003 | 42 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_phaedrus_0004 | 12 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0005 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0006 | 14 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_phaedrus_0007 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0008 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0009 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0010 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0011 | 50 | 1 | 0 | 0 | 3 | 0 | 2
+  turn_phaedrus_0012 | 57 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_phaedrus_0013 | 39 | 0 | 0 | 1 | 0 | 0 | 0
+  turn_phaedrus_0014 | 137 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_phaedrus_0015 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0016 | 5 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0017 | 39 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_phaedrus_0018 | 49 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0019 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0020 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0021 | 37 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_phaedrus_0022 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0023 | 6 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0024 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0025 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0026 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0027 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0028 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0029 | 18 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0030 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0031 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0032 | 127 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_phaedrus_0033 | 91 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_phaedrus_0034 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0035 | 115 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0036 | 35 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0037 | 88 | 0 | 0 | 0 | 2 | 2 | 0
+  turn_phaedrus_0038 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0039 | 296 | 0 | 0 | 1 | 2 | 0 | 1
+  turn_phaedrus_0040 | 277 | 0 | 1 | 0 | 1 | 1 | 1
+  turn_phaedrus_0041 | 322 | 0 | 0 | 0 | 5 | 0 | 3
+  turn_phaedrus_0042 | 208 | 0 | 0 | 0 | 1 | 3 | 0
+  turn_phaedrus_0043 | 48 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_phaedrus_0044 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0045 | 7 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0046 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0047 | 119 | 0 | 0 | 0 | 2 | 1 | 1
+  turn_phaedrus_0048 | 37 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_phaedrus_0049 | 27 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0050 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0051 | 85 | 0 | 0 | 0 | 0 | 1 | 2
+  turn_phaedrus_0052 | 57 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0053 | 104 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0054 | 44 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_phaedrus_0055 | 25 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0056 | 100 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0057 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0058 | 15 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0059 | 3 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_phaedrus_0060 | 44 | 1 | 0 | 0 | 1 | 0 | 1
+  turn_phaedrus_0061 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0062 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0063 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0064 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0065 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0066 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0067 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0068 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0069 | 276 | 0 | 0 | 0 | 1 | 3 | 4
+  turn_phaedrus_0070 | 179 | 0 | 0 | 0 | 3 | 1 | 2
+  turn_phaedrus_0071 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0072 | 30 | 0 | 1 | 0 | 2 | 0 | 0
+  turn_phaedrus_0073 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0074 | 93 | 0 | 0 | 0 | 1 | 1 | 3
+  turn_phaedrus_0075 | 270 | 0 | 0 | 0 | 1 | 2 | 2
+  turn_phaedrus_0076 | 345 | 2 | 1 | 0 | 4 | 0 | 7
+  turn_phaedrus_0077 | 262 | 0 | 0 | 0 | 0 | 1 | 2
+  turn_phaedrus_0078 | 30 | 0 | 0 | 1 | 0 | 0 | 1
+  turn_phaedrus_0079 | 63 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_phaedrus_0080 | 23 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0081 | 33 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0082 | 56 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0083 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0084 | 111 | 0 | 0 | 0 | 1 | 2 | 3
+  turn_phaedrus_0085 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0086 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0087 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0088 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0089 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0090 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0091 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0092 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0093 | 159 | 0 | 0 | 0 | 2 | 4 | 1
+  turn_phaedrus_0094 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0095 | 82 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_phaedrus_0096 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0097 | 35 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_phaedrus_0098 | 26 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0099 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0100 | 3 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_phaedrus_0101 | 21 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0102 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0103 | 320 | 2 | 1 | 0 | 3 | 1 | 8
+  turn_phaedrus_0104 | 322 | 0 | 0 | 0 | 4 | 1 | 4
+  turn_phaedrus_0105 | 336 | 0 | 0 | 0 | 1 | 5 | 5
+  turn_phaedrus_0106 | 359 | 0 | 0 | 0 | 6 | 3 | 4
+  turn_phaedrus_0107 | 291 | 0 | 0 | 0 | 0 | 1 | 3
+  turn_phaedrus_0108 | 328 | 0 | 0 | 0 | 5 | 1 | 4
+  turn_phaedrus_0109 | 282 | 0 | 0 | 0 | 3 | 2 | 2
+  turn_phaedrus_0110 | 366 | 0 | 0 | 0 | 2 | 3 | 2
+  turn_phaedrus_0111 | 302 | 0 | 0 | 0 | 1 | 4 | 4
+  turn_phaedrus_0112 | 321 | 0 | 1 | 0 | 0 | 2 | 3
+  turn_phaedrus_0113 | 319 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0114 | 342 | 0 | 0 | 0 | 1 | 2 | 1
+  turn_phaedrus_0115 | 339 | 0 | 0 | 0 | 1 | 3 | 3
+  turn_phaedrus_0116 | 117 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0117 | 69 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_phaedrus_0118 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0119 | 35 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0120 | 53 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0121 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0122 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0123 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0124 | 51 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_phaedrus_0125 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0126 | 31 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0127 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0128 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0129 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0130 | 44 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0131 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0132 | 15 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0133 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0134 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0135 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0136 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0137 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0138 | 41 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0139 | 44 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_phaedrus_0140 | 86 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_phaedrus_0141 | 11 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_phaedrus_0142 | 165 | 0 | 0 | 0 | 0 | 2 | 3
+  turn_phaedrus_0143 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_phaedrus_0144 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0145 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0146 | 23 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0147 | 46 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0148 | 24 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0149 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0150 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0151 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0152 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0153 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0154 | 42 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0155 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0156 | 15 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0157 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0158 | 49 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0159 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0160 | 58 | 0 | 0 | 0 | 1 | 2 | 0
+  turn_phaedrus_0161 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0162 | 47 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0163 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0164 | 24 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_phaedrus_0165 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0166 | 52 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0167 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0168 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0169 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0170 | 20 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0171 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0172 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0173 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0174 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0175 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0176 | 16 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0177 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0178 | 26 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0179 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0180 | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0181 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0182 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0183 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0184 | 15 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0185 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0186 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0187 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0188 | 20 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0189 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0190 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0191 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0192 | 30 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0193 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0194 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0195 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0196 | 22 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0197 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0198 | 61 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0199 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0200 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0201 | 33 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0202 | 12 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_phaedrus_0203 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0204 | 20 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0205 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0206 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0207 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0208 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0209 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0210 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0211 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0212 | 11 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0213 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0214 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0215 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0216 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0217 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0218 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0219 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0220 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0221 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0222 | 55 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0223 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0224 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0225 | 41 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0226 | 42 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0227 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0228 | 54 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0229 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0230 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0231 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0232 | 25 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_phaedrus_0233 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0234 | 47 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0235 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0236 | 47 | 0 | 1 | 1 | 1 | 0 | 0
+  turn_phaedrus_0237 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0238 | 17 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0239 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0240 | 21 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_phaedrus_0241 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0242 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0243 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0244 | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0245 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0246 | 15 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_phaedrus_0247 | 5 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_phaedrus_0248 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0249 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0250 | 47 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0251 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0252 | 114 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0253 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0254 | 103 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_phaedrus_0255 | 29 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0256 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0257 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0258 | 23 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0259 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0260 | 25 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0261 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0262 | 114 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0263 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0264 | 14 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0265 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0266 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0267 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0268 | 70 | 1 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0269 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0270 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0271 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0272 | 19 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0273 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0274 | 19 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0275 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0276 | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0277 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0278 | 19 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0279 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0280 | 44 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0281 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0282 | 75 | 1 | 0 | 0 | 1 | 0 | 1
+  turn_phaedrus_0283 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0284 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0285 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0286 | 137 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0287 | 45 | 1 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0288 | 56 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0289 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0290 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0291 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0292 | 64 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_phaedrus_0293 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0294 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0295 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0296 | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0297 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0298 | 14 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0299 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0300 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0301 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0302 | 88 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_phaedrus_0303 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0304 | 48 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0305 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0306 | 16 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_phaedrus_0307 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0308 | 39 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0309 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0310 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0311 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0312 | 38 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0313 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0314 | 51 | 0 | 0 | 0 | 0 | 2 | 0
+  turn_phaedrus_0315 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0316 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0317 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0318 | 101 | 0 | 0 | 0 | 0 | 2 | 2
+  turn_phaedrus_0319 | 128 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_phaedrus_0320 | 11 | 0 | 0 | 1 | 0 | 0 | 0
+  turn_phaedrus_0321 | 50 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0322 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0323 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0324 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0325 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0326 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0327 | 117 | 0 | 1 | 0 | 4 | 0 | 1
+  turn_phaedrus_0328 | 32 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0329 | 26 | 1 | 1 | 0 | 0 | 0 | 0
+  turn_phaedrus_0330 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0331 | 97 | 0 | 0 | 0 | 1 | 0 | 4
+  turn_phaedrus_0332 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0333 | 29 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0334 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0335 | 128 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0336 | 57 | 1 | 0 | 0 | 2 | 0 | 1
+  turn_phaedrus_0337 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0338 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0339 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0340 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0341 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0342 | 19 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_phaedrus_0343 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0344 | 11 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0345 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0346 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0347 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0348 | 159 | 0 | 1 | 0 | 1 | 0 | 4
+  turn_phaedrus_0349 | 98 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_phaedrus_0350 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0351 | 60 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_phaedrus_0352 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0353 | 46 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0354 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0355 | 105 | 0 | 0 | 0 | 3 | 0 | 0
+  turn_phaedrus_0356 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0357 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0358 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0359 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0360 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0361 | 69 | 0 | 0 | 0 | 0 | 1 | 2
+  turn_phaedrus_0362 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0363 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0364 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0365 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0366 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0367 | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0368 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0369 | 64 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0370 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0371 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0372 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0373 | 39 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_phaedrus_0374 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0375 | 89 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0376 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0377 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0378 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0379 | 67 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0380 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_phaedrus_0381 | 144 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0382 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0383 | 102 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0384 | 6 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_phaedrus_0385 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0386 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0387 | 31 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0388 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0389 | 5 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_phaedrus_0390 | 13 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0391 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0392 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0393 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0394 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_phaedrus_0395 | 89 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_phaedrus_0396 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0397 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0398 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_phaedrus_0399 | 55 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0400 | 9 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_phaedrus_0401 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+markers[261]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  227a | 49 | 0 | 0 | 0 | 2 | 0 | 1
+  227b | 65 | 0 | 0 | 0 | 1 | 1 | 1
+  227c | 71 | 1 | 0 | 0 | 3 | 0 | 3
+  227d | 48 | 0 | 0 | 0 | 1 | 1 | 0
+  228a | 65 | 0 | 0 | 1 | 1 | 0 | 0
+  228b | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  228c | 68 | 0 | 0 | 0 | 1 | 1 | 1
+  228d | 69 | 0 | 1 | 0 | 2 | 0 | 0
+  228e | 37 | 0 | 0 | 0 | 0 | 0 | 1
+  229a | 65 | 1 | 0 | 0 | 1 | 2 | 2
+  229b | 53 | 0 | 0 | 0 | 1 | 1 | 0
+  229c | 70 | 0 | 0 | 0 | 0 | 0 | 1
+  229d | 67 | 0 | 0 | 0 | 1 | 0 | 0
+  229e | 54 | 0 | 0 | 0 | 0 | 0 | 1
+  230a | 64 | 0 | 0 | 0 | 0 | 0 | 1
+  230b | 73 | 0 | 0 | 0 | 1 | 1 | 0
+  230c | 63 | 0 | 0 | 0 | 1 | 0 | 0
+  230d | 73 | 0 | 0 | 0 | 2 | 1 | 0
+  230e | 53 | 0 | 0 | 0 | 0 | 1 | 1
+  231a | 76 | 0 | 0 | 0 | 1 | 0 | 0
+  231b | 55 | 0 | 0 | 0 | 0 | 0 | 0
+  231c | 62 | 0 | 0 | 1 | 0 | 0 | 0
+  231d | 73 | 0 | 0 | 0 | 1 | 0 | 1
+  231e | 28 | 0 | 1 | 0 | 0 | 0 | 0
+  232a | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  232b | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  232c | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  232d | 60 | 0 | 0 | 0 | 0 | 1 | 0
+  232e | 44 | 0 | 0 | 0 | 0 | 0 | 1
+  233a | 64 | 0 | 0 | 0 | 1 | 0 | 1
+  233b | 60 | 0 | 0 | 0 | 1 | 0 | 0
+  233c | 60 | 0 | 0 | 0 | 1 | 0 | 0
+  233d | 66 | 0 | 0 | 0 | 1 | 0 | 1
+  233e | 55 | 0 | 0 | 0 | 1 | 0 | 0
+  234a | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  234b | 70 | 0 | 0 | 0 | 0 | 2 | 0
+  234c | 60 | 0 | 0 | 0 | 1 | 1 | 0
+  234d | 60 | 0 | 0 | 0 | 2 | 1 | 1
+  234e | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  235a | 73 | 0 | 0 | 0 | 1 | 1 | 1
+  235b | 64 | 0 | 0 | 0 | 3 | 0 | 0
+  235c | 72 | 0 | 0 | 0 | 0 | 1 | 2
+  235d | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  235e | 62 | 0 | 0 | 0 | 0 | 0 | 1
+  236a | 64 | 0 | 0 | 0 | 1 | 1 | 0
+  236b | 61 | 0 | 0 | 0 | 0 | 0 | 1
+  236c | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  236d | 74 | 0 | 1 | 0 | 2 | 0 | 1
+  236e | 58 | 1 | 0 | 0 | 1 | 0 | 0
+  237a | 68 | 0 | 0 | 0 | 0 | 1 | 2
+  237b | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  237c | 77 | 0 | 0 | 0 | 1 | 2 | 0
+  237d | 83 | 0 | 0 | 0 | 0 | 1 | 2
+  237e | 28 | 0 | 0 | 0 | 0 | 1 | 0
+  238a | 59 | 0 | 0 | 0 | 2 | 0 | 1
+  238b | 68 | 0 | 0 | 0 | 1 | 0 | 1
+  238c | 59 | 0 | 1 | 0 | 1 | 1 | 0
+  238d | 71 | 0 | 0 | 0 | 2 | 1 | 2
+  238e | 45 | 0 | 0 | 0 | 0 | 0 | 1
+  239a | 53 | 0 | 0 | 0 | 0 | 0 | 1
+  239b | 71 | 0 | 0 | 0 | 0 | 1 | 0
+  239c | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  239d | 63 | 0 | 0 | 0 | 1 | 1 | 0
+  239e | 56 | 0 | 0 | 0 | 1 | 0 | 1
+  240a | 71 | 1 | 1 | 0 | 0 | 0 | 1
+  240b | 55 | 0 | 0 | 0 | 0 | 0 | 0
+  240c | 66 | 1 | 0 | 0 | 3 | 0 | 2
+  240d | 64 | 0 | 0 | 0 | 0 | 0 | 1
+  240e | 78 | 0 | 0 | 0 | 0 | 0 | 2
+  241a | 74 | 0 | 0 | 0 | 0 | 0 | 1
+  241b | 61 | 0 | 0 | 0 | 0 | 0 | 1
+  241c | 73 | 0 | 0 | 0 | 0 | 1 | 0
+  241d | 56 | 0 | 0 | 1 | 0 | 0 | 1
+  241e | 73 | 0 | 0 | 0 | 1 | 1 | 1
+  242a | 66 | 0 | 0 | 0 | 1 | 0 | 1
+  242b | 62 | 0 | 0 | 0 | 0 | 0 | 1
+  242c | 85 | 0 | 0 | 0 | 1 | 2 | 3
+  242d | 68 | 0 | 0 | 0 | 0 | 1 | 3
+  242e | 53 | 0 | 0 | 0 | 0 | 2 | 0
+  243a | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  243b | 56 | 0 | 0 | 0 | 1 | 1 | 1
+  243c | 76 | 0 | 0 | 0 | 2 | 0 | 0
+  243d | 65 | 0 | 1 | 0 | 1 | 0 | 0
+  243e | 58 | 0 | 2 | 0 | 0 | 0 | 1
+  244a | 79 | 0 | 0 | 0 | 2 | 0 | 2
+  244b | 63 | 1 | 0 | 0 | 0 | 0 | 3
+  244c | 65 | 0 | 0 | 0 | 1 | 0 | 0
+  244d | 64 | 1 | 0 | 0 | 0 | 1 | 2
+  244e | 36 | 0 | 0 | 0 | 0 | 0 | 1
+  245a | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  245b | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  245c | 82 | 0 | 0 | 0 | 1 | 1 | 2
+  245d | 77 | 0 | 0 | 0 | 3 | 0 | 2
+  245e | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  246a | 68 | 0 | 0 | 0 | 0 | 3 | 1
+  246b | 70 | 0 | 0 | 0 | 0 | 1 | 2
+  246c | 60 | 0 | 0 | 0 | 0 | 1 | 0
+  246d | 74 | 0 | 0 | 0 | 0 | 0 | 1
+  246e | 55 | 0 | 0 | 0 | 0 | 0 | 2
+  247a | 76 | 0 | 0 | 0 | 2 | 1 | 1
+  247b | 67 | 0 | 0 | 0 | 2 | 0 | 2
+  247c | 71 | 0 | 0 | 0 | 2 | 1 | 0
+  247d | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  247e | 55 | 0 | 0 | 0 | 0 | 0 | 0
+  248a | 75 | 0 | 0 | 0 | 0 | 0 | 1
+  248b | 64 | 0 | 0 | 0 | 0 | 1 | 2
+  248c | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  248d | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  248e | 54 | 0 | 0 | 0 | 1 | 0 | 1
+  249a | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  249b | 64 | 0 | 0 | 0 | 2 | 0 | 0
+  249c | 71 | 0 | 0 | 0 | 1 | 0 | 2
+  249d | 63 | 0 | 0 | 0 | 0 | 1 | 1
+  249e | 45 | 0 | 0 | 0 | 1 | 0 | 0
+  250a | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  250b | 74 | 0 | 0 | 0 | 0 | 1 | 0
+  250c | 64 | 0 | 0 | 0 | 0 | 1 | 1
+  250d | 61 | 0 | 0 | 0 | 2 | 0 | 0
+  250e | 41 | 0 | 0 | 0 | 0 | 1 | 0
+  251a | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  251b | 65 | 0 | 0 | 0 | 2 | 0 | 0
+  251c | 75 | 0 | 0 | 0 | 0 | 2 | 2
+  251d | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  251e | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  252a | 60 | 0 | 0 | 0 | 1 | 0 | 1
+  252b | 60 | 0 | 0 | 0 | 0 | 0 | 1
+  252c | 79 | 0 | 0 | 0 | 0 | 1 | 1
+  252d | 67 | 0 | 0 | 0 | 0 | 1 | 0
+  252e | 61 | 0 | 0 | 0 | 0 | 3 | 1
+  253a | 60 | 0 | 0 | 0 | 0 | 0 | 1
+  253b | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  253c | 72 | 0 | 0 | 0 | 0 | 1 | 1
+  253d | 66 | 0 | 1 | 0 | 0 | 0 | 1
+  253e | 46 | 0 | 0 | 0 | 0 | 1 | 0
+  254a | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  254b | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  254c | 76 | 0 | 0 | 0 | 0 | 0 | 0
+  254d | 51 | 0 | 0 | 0 | 0 | 0 | 0
+  254e | 82 | 0 | 0 | 0 | 0 | 0 | 0
+  255a | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  255b | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  255c | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  255d | 73 | 0 | 0 | 0 | 0 | 1 | 0
+  255e | 55 | 0 | 0 | 0 | 0 | 1 | 1
+  256a | 72 | 0 | 0 | 0 | 0 | 1 | 1
+  256b | 56 | 0 | 0 | 0 | 0 | 0 | 2
+  256c | 60 | 0 | 0 | 0 | 0 | 1 | 0
+  256d | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  256e | 44 | 0 | 0 | 0 | 0 | 0 | 0
+  257a | 80 | 0 | 0 | 0 | 0 | 0 | 0
+  257b | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  257c | 71 | 0 | 0 | 0 | 1 | 1 | 0
+  257d | 64 | 0 | 0 | 0 | 1 | 0 | 0
+  257e | 50 | 0 | 0 | 0 | 1 | 0 | 0
+  258a | 64 | 0 | 0 | 0 | 0 | 0 | 2
+  258b | 58 | 0 | 0 | 0 | 0 | 1 | 0
+  258c | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  258d | 75 | 0 | 0 | 0 | 1 | 1 | 1
+  258e | 64 | 0 | 0 | 0 | 1 | 1 | 2
+  259a | 54 | 0 | 0 | 0 | 0 | 1 | 0
+  259b | 59 | 0 | 0 | 0 | 1 | 0 | 2
+  259c | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  259d | 71 | 0 | 0 | 0 | 1 | 2 | 2
+  259e | 50 | 0 | 0 | 0 | 0 | 1 | 0
+  260a | 69 | 0 | 0 | 0 | 1 | 0 | 2
+  260b | 72 | 0 | 0 | 0 | 0 | 0 | 1
+  260c | 71 | 0 | 0 | 0 | 0 | 2 | 0
+  260d | 66 | 0 | 0 | 0 | 1 | 2 | 0
+  260e | 52 | 0 | 0 | 0 | 1 | 0 | 0
+  261a | 71 | 0 | 0 | 0 | 0 | 1 | 2
+  261b | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  261c | 57 | 0 | 0 | 0 | 1 | 0 | 0
+  261d | 66 | 1 | 0 | 0 | 0 | 1 | 1
+  261e | 57 | 0 | 0 | 0 | 0 | 0 | 1
+  262a | 63 | 0 | 0 | 0 | 0 | 2 | 1
+  262b | 54 | 0 | 0 | 0 | 0 | 1 | 0
+  262c | 66 | 1 | 0 | 0 | 0 | 1 | 0
+  262d | 68 | 0 | 0 | 0 | 1 | 0 | 1
+  262e | 45 | 0 | 0 | 0 | 1 | 1 | 1
+  263a | 65 | 0 | 0 | 0 | 0 | 2 | 0
+  263b | 56 | 0 | 0 | 0 | 0 | 1 | 0
+  263c | 76 | 1 | 0 | 0 | 0 | 1 | 0
+  263d | 64 | 0 | 0 | 0 | 1 | 0 | 0
+  263e | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  264a | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  264b | 75 | 0 | 0 | 0 | 1 | 0 | 1
+  264c | 67 | 0 | 1 | 0 | 1 | 0 | 0
+  264d | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  264e | 67 | 0 | 1 | 1 | 1 | 0 | 0
+  265a | 65 | 0 | 0 | 0 | 3 | 0 | 1
+  265b | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  265c | 64 | 0 | 1 | 0 | 0 | 1 | 1
+  265d | 68 | 0 | 0 | 0 | 0 | 0 | 2
+  265e | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  266a | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  266b | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  266c | 75 | 0 | 0 | 0 | 0 | 1 | 1
+  266d | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  266e | 30 | 0 | 0 | 0 | 0 | 0 | 1
+  267a | 74 | 1 | 0 | 0 | 1 | 0 | 0
+  267b | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  267c | 58 | 1 | 0 | 0 | 0 | 0 | 0
+  267d | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  268a | 75 | 0 | 0 | 0 | 1 | 0 | 3
+  268b | 69 | 0 | 0 | 0 | 0 | 1 | 0
+  268c | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  268d | 60 | 0 | 0 | 0 | 0 | 0 | 1
+  268e | 51 | 1 | 0 | 0 | 1 | 0 | 0
+  269a | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  269b | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  269c | 73 | 1 | 0 | 0 | 0 | 0 | 2
+  269d | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  269e | 20 | 0 | 0 | 0 | 0 | 0 | 1
+  270a | 61 | 0 | 0 | 0 | 2 | 0 | 1
+  270b | 65 | 0 | 0 | 0 | 0 | 0 | 1
+  270c | 67 | 0 | 1 | 0 | 1 | 1 | 0
+  270d | 80 | 0 | 0 | 0 | 0 | 0 | 0
+  270e | 42 | 2 | 0 | 0 | 0 | 0 | 0
+  271a | 72 | 1 | 0 | 0 | 3 | 1 | 0
+  271b | 61 | 0 | 0 | 0 | 0 | 1 | 1
+  271c | 65 | 0 | 0 | 0 | 0 | 1 | 1
+  271d | 79 | 0 | 0 | 0 | 0 | 2 | 2
+  271e | 34 | 0 | 0 | 0 | 0 | 0 | 0
+  272a | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  272b | 63 | 0 | 0 | 1 | 0 | 1 | 1
+  272c | 69 | 1 | 0 | 0 | 0 | 1 | 0
+  272d | 65 | 0 | 1 | 0 | 2 | 0 | 0
+  272e | 49 | 0 | 0 | 0 | 2 | 0 | 1
+  273a | 59 | 1 | 1 | 0 | 1 | 0 | 0
+  273b | 65 | 0 | 0 | 0 | 1 | 0 | 2
+  273c | 73 | 1 | 0 | 0 | 1 | 0 | 3
+  273d | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  273e | 78 | 0 | 0 | 0 | 1 | 0 | 1
+  274a | 63 | 1 | 0 | 0 | 1 | 0 | 0
+  274b | 55 | 1 | 0 | 0 | 1 | 1 | 1
+  274c | 70 | 0 | 1 | 0 | 0 | 0 | 2
+  274d | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  274e | 83 | 0 | 0 | 0 | 1 | 0 | 1
+  275a | 56 | 0 | 0 | 0 | 2 | 0 | 0
+  275b | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  275c | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  275d | 71 | 0 | 0 | 0 | 2 | 0 | 0
+  275e | 51 | 0 | 0 | 0 | 1 | 0 | 0
+  276a | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  276b | 69 | 0 | 0 | 0 | 0 | 1 | 2
+  276c | 65 | 0 | 0 | 0 | 0 | 0 | 1
+  276d | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  276e | 55 | 0 | 0 | 0 | 1 | 0 | 0
+  277a | 64 | 0 | 0 | 0 | 1 | 0 | 2
+  277b | 68 | 0 | 0 | 0 | 0 | 1 | 1
+  277c | 59 | 0 | 0 | 0 | 0 | 1 | 0
+  277d | 79 | 0 | 0 | 0 | 1 | 0 | 0
+  277e | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  278a | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  278b | 75 | 0 | 0 | 0 | 0 | 1 | 0
+  278c | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  278d | 66 | 0 | 0 | 0 | 0 | 1 | 0
+  278e | 56 | 1 | 1 | 0 | 1 | 0 | 0
+  279a | 72 | 0 | 0 | 0 | 1 | 0 | 1
+  279b | 61 | 1 | 0 | 0 | 0 | 1 | 1
+  279c | 45 | 0 | 0 | 0 | 2 | 0 | 0
+occurrences[465]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_phaedrus_000007 | δή | δὴ | turn_phaedrus_0002 | 227a | 38 | 40
+  tok_phaedrus_000024 | γάρ | γὰρ | turn_phaedrus_0003 | 227a | 143 | 146
+  tok_phaedrus_000046 | γάρ | γὰρ | turn_phaedrus_0003 | 227a | 280 | 283
+  tok_phaedrus_000055 | γάρ | γάρ | turn_phaedrus_0004 | 227b | 340 | 343
+  tok_phaedrus_000081 | οὖν | οὖν | turn_phaedrus_0006 | 227b | 483 | 486
+  tok_phaedrus_000082 | δή | δὴ | turn_phaedrus_0006 | 227b | 487 | 489
+  tok_phaedrus_000124 | δή | δή | turn_phaedrus_0009 | 227c | 748 | 750
+  tok_phaedrus_000130 | μήν | μήν | turn_phaedrus_0011 | 227c | 776 | 779
+  tok_phaedrus_000139 | γάρ | γάρ | turn_phaedrus_0011 | 227c | 821 | 824
+  tok_phaedrus_000152 | γάρ | γὰρ | turn_phaedrus_0011 | 227c | 901 | 904
+  tok_phaedrus_000153 | δή | δὴ | turn_phaedrus_0011 | 227c | 905 | 907
+  tok_phaedrus_000166 | δή | δὴ | turn_phaedrus_0011 | 227c | 974 | 976
+  tok_phaedrus_000171 | γάρ | γὰρ | turn_phaedrus_0011 | 227c | 1006 | 1009
+  tok_phaedrus_000205 | γάρ | γὰρ | turn_phaedrus_0012 | 227d | 1200 | 1203
+  tok_phaedrus_000214 | οὖν | οὖν | turn_phaedrus_0012 | 227d | 1251 | 1254
+  tok_phaedrus_000267 | καίτοι | καίτοι | turn_phaedrus_0013 | 228a | 1593 | 1599
+  tok_phaedrus_000288 | γάρ | γὰρ | turn_phaedrus_0014 | 228a | 1718 | 1721
+  tok_phaedrus_000387 | δή | δὴ | turn_phaedrus_0014 | 228c | 2341 | 2343
+  tok_phaedrus_000403 | οὖν | οὖν | turn_phaedrus_0014 | 228c | 2424 | 2427
+  tok_phaedrus_000441 | γάρ | γάρ | turn_phaedrus_0016 | 228c | 2633 | 2636
+  tok_phaedrus_000447 | τοίνυν | τοίνυν | turn_phaedrus_0017 | 228d | 2672 | 2678
+  tok_phaedrus_000451 | γάρ | γάρ | turn_phaedrus_0017 | 228d | 2695 | 2698
+  tok_phaedrus_000501 | γάρ | γάρ | turn_phaedrus_0018 | 228d | 2981 | 2984
+  tok_phaedrus_000550 | δή | δὴ | turn_phaedrus_0019 | 228e | 3271 | 3273
+  tok_phaedrus_000578 | γάρ | γὰρ | turn_phaedrus_0021 | 229a | 3456 | 3459
+  tok_phaedrus_000579 | δή | δὴ | turn_phaedrus_0021 | 229a | 3460 | 3462
+  tok_phaedrus_000582 | οὖν | οὖν | turn_phaedrus_0021 | 229a | 3475 | 3478
+  tok_phaedrus_000608 | δή | δή | turn_phaedrus_0022 | 229a | 3610 | 3612
+  tok_phaedrus_000616 | οὖν | οὖν | turn_phaedrus_0023 | 229a | 3658 | 3661
+  tok_phaedrus_000623 | μήν | μήν | turn_phaedrus_0024 | 229a | 3702 | 3705
+  tok_phaedrus_000662 | γάρ | γάρ | turn_phaedrus_0028 | 229b | 3942 | 3945
+  tok_phaedrus_000665 | οὖν | οὖν | turn_phaedrus_0029 | 229b | 3956 | 3959
+  tok_phaedrus_000748 | δή | δὴ | turn_phaedrus_0032 | 229c | 4452 | 4454
+  tok_phaedrus_000761 | γάρ | γὰρ | turn_phaedrus_0032 | 229d | 4547 | 4550
+  tok_phaedrus_000874 | δή | δή | turn_phaedrus_0033 | 229e | 5218 | 5220
+  tok_phaedrus_000884 | δή | δὴ | turn_phaedrus_0033 | 230a | 5287 | 5289
+  tok_phaedrus_000944 | οὖν | οὖν | turn_phaedrus_0034 | 230b | 5659 | 5662
+  tok_phaedrus_000956 | γάρ | γὰρ | turn_phaedrus_0035 | 230b | 5711 | 5714
+  tok_phaedrus_001072 | γάρ | γάρ | turn_phaedrus_0036 | 230c | 6379 | 6382
+  tok_phaedrus_001104 | γάρ | γάρ | turn_phaedrus_0037 | 230d | 6589 | 6592
+  tok_phaedrus_001108 | οὖν | οὖν | turn_phaedrus_0037 | 230d | 6606 | 6609
+  tok_phaedrus_001134 | γάρ | γὰρ | turn_phaedrus_0037 | 230d | 6751 | 6754
+  tok_phaedrus_001165 | οὖν | οὖν | turn_phaedrus_0037 | 230e | 6941 | 6944
+  tok_phaedrus_001189 | δή | δή | turn_phaedrus_0038 | 230e | 7095 | 7097
+  tok_phaedrus_001242 | γάρ | γὰρ | turn_phaedrus_0039 | 231a | 7419 | 7422
+  tok_phaedrus_001395 | καίτοι | καίτοι | turn_phaedrus_0039 | 231c | 8416 | 8422
+  tok_phaedrus_001414 | γάρ | γὰρ | turn_phaedrus_0039 | 231d | 8556 | 8559
+  tok_phaedrus_001447 | δή | δὴ | turn_phaedrus_0039 | 231d | 8770 | 8772
+  tok_phaedrus_001489 | τοίνυν | τοίνυν | turn_phaedrus_0040 | 231e | 9001 | 9007
+  tok_phaedrus_001608 | δή | δὴ | turn_phaedrus_0040 | 232b | 9797 | 9799
+  tok_phaedrus_001651 | γάρ | γὰρ | turn_phaedrus_0040 | 232c | 10089 | 10092
+  tok_phaedrus_001702 | οὖν | οὖν | turn_phaedrus_0040 | 232d | 10450 | 10453
+  tok_phaedrus_001768 | δή | δὴ | turn_phaedrus_0041 | 232e | 10875 | 10877
+  tok_phaedrus_001834 | δή | δὴ | turn_phaedrus_0041 | 233a | 11295 | 11297
+  tok_phaedrus_001845 | γάρ | γὰρ | turn_phaedrus_0041 | 233a | 11366 | 11369
+  tok_phaedrus_001872 | γάρ | γὰρ | turn_phaedrus_0041 | 233b | 11538 | 11541
+  tok_phaedrus_001959 | γάρ | γάρ | turn_phaedrus_0041 | 233c | 12119 | 12122
+  tok_phaedrus_002037 | γάρ | γὰρ | turn_phaedrus_0041 | 233d | 12612 | 12615
+  tok_phaedrus_002046 | δή | δὴ | turn_phaedrus_0041 | 233d | 12675 | 12677
+  tok_phaedrus_002065 | γάρ | γὰρ | turn_phaedrus_0041 | 233e | 12808 | 12811
+  tok_phaedrus_002172 | οὖν | οὖν | turn_phaedrus_0042 | 234b | 13579 | 13582
+  tok_phaedrus_002210 | οὖν | οὖν | turn_phaedrus_0042 | 234b | 13815 | 13818
+  tok_phaedrus_002239 | γάρ | γὰρ | turn_phaedrus_0042 | 234c | 13986 | 13989
+  tok_phaedrus_002266 | οὖν | οὖν | turn_phaedrus_0042 | 234c | 14156 | 14159
+  tok_phaedrus_002300 | οὖν | οὖν | turn_phaedrus_0043 | 234d | 14378 | 14381
+  tok_phaedrus_002327 | γάρ | γὰρ | turn_phaedrus_0043 | 234d | 14542 | 14545
+  tok_phaedrus_002349 | δή | δὴ | turn_phaedrus_0044 | 234d | 14671 | 14673
+  tok_phaedrus_002354 | γάρ | γάρ | turn_phaedrus_0045 | 234d | 14698 | 14701
+  tok_phaedrus_002423 | γάρ | γὰρ | turn_phaedrus_0047 | 234e | 15109 | 15112
+  tok_phaedrus_002437 | γάρ | γὰρ | turn_phaedrus_0047 | 235a | 15193 | 15196
+  tok_phaedrus_002455 | οὖν | οὖν | turn_phaedrus_0047 | 235a | 15311 | 15314
+  tok_phaedrus_002491 | δή | δή | turn_phaedrus_0047 | 235a | 15497 | 15499
+  tok_phaedrus_002514 | γάρ | γὰρ | turn_phaedrus_0048 | 235b | 15647 | 15650
+  tok_phaedrus_002522 | γάρ | γὰρ | turn_phaedrus_0048 | 235b | 15687 | 15690
+  tok_phaedrus_002556 | γάρ | γὰρ | turn_phaedrus_0049 | 235b | 15909 | 15912
+  tok_phaedrus_002609 | δή | δὴ | turn_phaedrus_0051 | 235c | 16225 | 16227
+  tok_phaedrus_002630 | οὖν | οὖν | turn_phaedrus_0051 | 235c | 16349 | 16352
+  tok_phaedrus_002643 | δή | δὴ | turn_phaedrus_0051 | 235c | 16435 | 16437
+  tok_phaedrus_002676 | γάρ | γὰρ | turn_phaedrus_0052 | 235d | 16643 | 16646
+  tok_phaedrus_002748 | δή | δὴ | turn_phaedrus_0053 | 235e | 17066 | 17068
+  tok_phaedrus_002837 | γάρ | γάρ | turn_phaedrus_0054 | 236a | 17592 | 17595
+  tok_phaedrus_002842 | οὖν | οὖν | turn_phaedrus_0054 | 236a | 17625 | 17628
+  tok_phaedrus_002890 | δή | δή | turn_phaedrus_0055 | 236b | 17934 | 17936
+  tok_phaedrus_002916 | γάρ | γάρ | turn_phaedrus_0056 | 236c | 18097 | 18100
+  tok_phaedrus_003028 | γάρ | γὰρ | turn_phaedrus_0058 | 236d | 18827 | 18830
+  tok_phaedrus_003037 | τοίνυν | τοίνυν | turn_phaedrus_0059 | 236d | 18875 | 18881
+  tok_phaedrus_003043 | δή | δὴ | turn_phaedrus_0060 | 236d | 18908 | 18910
+  tok_phaedrus_003052 | γάρ | γάρ | turn_phaedrus_0060 | 236d | 18952 | 18955
+  tok_phaedrus_003064 | μήν | μήν | turn_phaedrus_0060 | 236e | 19025 | 19028
+  tok_phaedrus_003113 | γάρ | γὰρ | turn_phaedrus_0063 | 236e | 19310 | 19313
+  tok_phaedrus_003123 | δή | δή | turn_phaedrus_0064 | 237a | 19374 | 19376
+  tok_phaedrus_003126 | οὖν | οὖν | turn_phaedrus_0065 | 237a | 19388 | 19391
+  tok_phaedrus_003160 | δή | δή | turn_phaedrus_0069 | 237a | 19580 | 19582
+  tok_phaedrus_003205 | δή | δὴ | turn_phaedrus_0069 | 237b | 19860 | 19862
+  tok_phaedrus_003285 | οὖν | οὖν | turn_phaedrus_0069 | 237c | 20322 | 20325
+  tok_phaedrus_003299 | γάρ | γὰρ | turn_phaedrus_0069 | 237c | 20415 | 20418
+  tok_phaedrus_003305 | οὖν | οὖν | turn_phaedrus_0069 | 237c | 20458 | 20461
+  tok_phaedrus_003356 | οὖν | οὖν | turn_phaedrus_0069 | 237d | 20765 | 20768
+  tok_phaedrus_003357 | δή | δὴ | turn_phaedrus_0069 | 237d | 20769 | 20771
+  tok_phaedrus_003375 | δή | δὴ | turn_phaedrus_0069 | 237d | 20864 | 20866
+  tok_phaedrus_003438 | οὖν | οὖν | turn_phaedrus_0070 | 237e | 21211 | 21214
+  tok_phaedrus_003466 | δή | δὴ | turn_phaedrus_0070 | 238a | 21386 | 21388
+  tok_phaedrus_003469 | γάρ | γὰρ | turn_phaedrus_0070 | 238a | 21411 | 21414
+  tok_phaedrus_003496 | γάρ | γὰρ | turn_phaedrus_0070 | 238a | 21583 | 21586
+  tok_phaedrus_003533 | δή | δὴ | turn_phaedrus_0070 | 238b | 21835 | 21837
+  tok_phaedrus_003567 | γάρ | γὰρ | turn_phaedrus_0070 | 238b | 22043 | 22046
+  tok_phaedrus_003618 | οὖν | οὖν | turn_phaedrus_0071 | 238c | 22377 | 22380
+  tok_phaedrus_003630 | τοίνυν | τοίνυν | turn_phaedrus_0072 | 238c | 22441 | 22447
+  tok_phaedrus_003635 | γάρ | γὰρ | turn_phaedrus_0072 | 238c | 22467 | 22470
+  tok_phaedrus_003654 | γάρ | γὰρ | turn_phaedrus_0072 | 238d | 22589 | 22592
+  tok_phaedrus_003672 | γάρ | γὰρ | turn_phaedrus_0074 | 238d | 22707 | 22710
+  tok_phaedrus_003679 | οὖν | οὖν | turn_phaedrus_0074 | 238d | 22747 | 22750
+  tok_phaedrus_003696 | δή | δὴ | turn_phaedrus_0074 | 238d | 22835 | 22837
+  tok_phaedrus_003708 | δή | δὴ | turn_phaedrus_0074 | 238d | 22907 | 22909
+  tok_phaedrus_003729 | δή | δὴ | turn_phaedrus_0074 | 238e | 23025 | 23027
+  tok_phaedrus_003758 | δή | δὴ | turn_phaedrus_0075 | 239a | 23210 | 23212
+  tok_phaedrus_003879 | οὖν | οὖν | turn_phaedrus_0075 | 239b | 24013 | 24016
+  tok_phaedrus_003919 | δή | δὴ | turn_phaedrus_0075 | 239c | 24261 | 24263
+  tok_phaedrus_003977 | γάρ | γὰρ | turn_phaedrus_0075 | 239d | 24648 | 24651
+  tok_phaedrus_004002 | οὖν | οὖν | turn_phaedrus_0075 | 239d | 24794 | 24797
+  tok_phaedrus_004029 | δή | δὴ | turn_phaedrus_0076 | 239e | 24951 | 24953
+  tok_phaedrus_004056 | γάρ | γὰρ | turn_phaedrus_0076 | 239e | 25112 | 25115
+  tok_phaedrus_004077 | μήν | μὴν | turn_phaedrus_0076 | 240a | 25258 | 25261
+  tok_phaedrus_004107 | τοίνυν | τοίνυν | turn_phaedrus_0076 | 240a | 25463 | 25469
+  tok_phaedrus_004129 | δή | δὴ | turn_phaedrus_0076 | 240a | 25618 | 25620
+  tok_phaedrus_004195 | γάρ | γὰρ | turn_phaedrus_0076 | 240c | 26042 | 26045
+  tok_phaedrus_004196 | δή | δὴ | turn_phaedrus_0076 | 240c | 26046 | 26048
+  tok_phaedrus_004205 | γάρ | γὰρ | turn_phaedrus_0076 | 240c | 26089 | 26092
+  tok_phaedrus_004227 | μήν | μὴν | turn_phaedrus_0076 | 240c | 26218 | 26221
+  tok_phaedrus_004238 | δή | δὴ | turn_phaedrus_0076 | 240c | 26272 | 26274
+  tok_phaedrus_004248 | γάρ | γὰρ | turn_phaedrus_0076 | 240c | 26338 | 26341
+  tok_phaedrus_004288 | δή | δὴ | turn_phaedrus_0076 | 240d | 26611 | 26613
+  tok_phaedrus_004329 | δή | δὴ | turn_phaedrus_0076 | 240e | 26854 | 26856
+  tok_phaedrus_004337 | δή | δὴ | turn_phaedrus_0076 | 240e | 26915 | 26917
+  tok_phaedrus_004416 | δή | δὴ | turn_phaedrus_0077 | 241a | 27416 | 27418
+  tok_phaedrus_004498 | δή | δὴ | turn_phaedrus_0077 | 241b | 27926 | 27928
+  tok_phaedrus_004590 | οὖν | οὖν | turn_phaedrus_0077 | 241c | 28503 | 28506
+  tok_phaedrus_004637 | καίτοι | καίτοι | turn_phaedrus_0078 | 241d | 28795 | 28801
+  tok_phaedrus_004662 | δή | δή | turn_phaedrus_0078 | 241d | 28927 | 28929
+  tok_phaedrus_004707 | οὖν | οὖν | turn_phaedrus_0079 | 241e | 29195 | 29198
+  tok_phaedrus_004727 | γάρ | γὰρ | turn_phaedrus_0079 | 241e | 29315 | 29318
+  tok_phaedrus_004734 | δή | δὴ | turn_phaedrus_0080 | 241e | 29355 | 29357
+  tok_phaedrus_004774 | δή | δὴ | turn_phaedrus_0081 | 242a | 29591 | 29593
+  tok_phaedrus_004802 | γάρ | γὰρ | turn_phaedrus_0082 | 242a | 29773 | 29776
+  tok_phaedrus_004853 | δή | δὴ | turn_phaedrus_0083 | 242b | 30086 | 30088
+  tok_phaedrus_004897 | δή | δή | turn_phaedrus_0084 | 242c | 30343 | 30345
+  tok_phaedrus_004904 | δή | δὴ | turn_phaedrus_0084 | 242c | 30379 | 30381
+  tok_phaedrus_004905 | οὖν | οὖν | turn_phaedrus_0084 | 242c | 30382 | 30385
+  tok_phaedrus_004924 | οὖν | οὖν | turn_phaedrus_0084 | 242c | 30490 | 30493
+  tok_phaedrus_004930 | δή | δή | turn_phaedrus_0084 | 242c | 30522 | 30524
+  tok_phaedrus_004941 | γάρ | γὰρ | turn_phaedrus_0084 | 242c | 30571 | 30574
+  tok_phaedrus_004972 | δή | δὴ | turn_phaedrus_0085 | 242d | 30772 | 30774
+  tok_phaedrus_004989 | δή | δή | turn_phaedrus_0087 | 242d | 30866 | 30868
+  tok_phaedrus_005010 | οὖν | οὖν | turn_phaedrus_0090 | 242d | 30967 | 30970
+  tok_phaedrus_005022 | δή | δή | turn_phaedrus_0091 | 242d | 31031 | 31033
+  tok_phaedrus_005048 | οὖν | οὖν | turn_phaedrus_0093 | 242e | 31174 | 31177
+  tok_phaedrus_005073 | οὖν | οὖν | turn_phaedrus_0093 | 242e | 31295 | 31298
+  tok_phaedrus_005105 | οὖν | οὖν | turn_phaedrus_0093 | 243a | 31503 | 31506
+  tok_phaedrus_005126 | γάρ | γὰρ | turn_phaedrus_0093 | 243a | 31640 | 31643
+  tok_phaedrus_005163 | δή | δὴ | turn_phaedrus_0093 | 243b | 31892 | 31894
+  tok_phaedrus_005171 | οὖν | οὖν | turn_phaedrus_0093 | 243b | 31952 | 31955
+  tok_phaedrus_005180 | γάρ | γάρ | turn_phaedrus_0093 | 243b | 32009 | 32012
+  tok_phaedrus_005216 | γάρ | γάρ | turn_phaedrus_0095 | 243c | 32235 | 32238
+  tok_phaedrus_005234 | γάρ | γὰρ | turn_phaedrus_0095 | 243c | 32332 | 32335
+  tok_phaedrus_005306 | τοίνυν | τοίνυν | turn_phaedrus_0097 | 243d | 32763 | 32769
+  tok_phaedrus_005348 | γάρ | γὰρ | turn_phaedrus_0098 | 243d | 33016 | 33019
+  tok_phaedrus_005377 | τοίνυν | τοίνυν | turn_phaedrus_0100 | 243e | 33187 | 33193
+  tok_phaedrus_005381 | δή | δή | turn_phaedrus_0101 | 243e | 33210 | 33212
+  tok_phaedrus_005414 | τοίνυν | τοίνυν | turn_phaedrus_0103 | 243e | 33385 | 33391
+  tok_phaedrus_005458 | δή | δὴ | turn_phaedrus_0103 | 244a | 33659 | 33661
+  tok_phaedrus_005467 | γάρ | γὰρ | turn_phaedrus_0103 | 244a | 33700 | 33703
+  tok_phaedrus_005493 | γάρ | γὰρ | turn_phaedrus_0103 | 244a | 33844 | 33847
+  tok_phaedrus_005494 | δή | δὴ | turn_phaedrus_0103 | 244a | 33848 | 33850
+  tok_phaedrus_005506 | δή | δὴ | turn_phaedrus_0103 | 244b | 33921 | 33923
+  tok_phaedrus_005523 | δή | δὴ | turn_phaedrus_0103 | 244b | 34014 | 34016
+  tok_phaedrus_005534 | δή | δὴ | turn_phaedrus_0103 | 244b | 34083 | 34085
+  tok_phaedrus_005547 | μήν | μὴν | turn_phaedrus_0103 | 244b | 34169 | 34172
+  tok_phaedrus_005565 | γάρ | γὰρ | turn_phaedrus_0103 | 244c | 34290 | 34293
+  tok_phaedrus_005639 | δή | δὴ | turn_phaedrus_0103 | 244d | 34778 | 34780
+  tok_phaedrus_005640 | οὖν | οὖν | turn_phaedrus_0103 | 244d | 34781 | 34784
+  tok_phaedrus_005669 | μήν | μὴν | turn_phaedrus_0103 | 244d | 34975 | 34978
+  tok_phaedrus_005677 | δή | δὴ | turn_phaedrus_0103 | 244d | 35014 | 35016
+  tok_phaedrus_005703 | δή | δὴ | turn_phaedrus_0103 | 244e | 35183 | 35185
+  tok_phaedrus_005873 | δή | δὴ | turn_phaedrus_0104 | 245c | 36240 | 36242
+  tok_phaedrus_005883 | οὖν | οὖν | turn_phaedrus_0104 | 245c | 36301 | 36304
+  tok_phaedrus_005907 | γάρ | γὰρ | turn_phaedrus_0104 | 245c | 36445 | 36448
+  tok_phaedrus_005925 | δή | δὴ | turn_phaedrus_0104 | 245c | 36560 | 36562
+  tok_phaedrus_005952 | γάρ | γὰρ | turn_phaedrus_0104 | 245d | 36727 | 36730
+  tok_phaedrus_005964 | γάρ | γὰρ | turn_phaedrus_0104 | 245d | 36793 | 36796
+  tok_phaedrus_005984 | γάρ | γὰρ | turn_phaedrus_0104 | 245d | 36911 | 36914
+  tok_phaedrus_005985 | δή | δὴ | turn_phaedrus_0104 | 245d | 36915 | 36917
+  tok_phaedrus_006005 | δή | δὴ | turn_phaedrus_0104 | 245d | 37027 | 37029
+  tok_phaedrus_006058 | γάρ | γὰρ | turn_phaedrus_0105 | 245e | 37356 | 37359
+  tok_phaedrus_006105 | οὖν | οὖν | turn_phaedrus_0105 | 246a | 37614 | 37617
+  tok_phaedrus_006134 | οὖν | οὖν | turn_phaedrus_0105 | 246a | 37789 | 37792
+  tok_phaedrus_006137 | δή | δὴ | turn_phaedrus_0105 | 246a | 37810 | 37812
+  tok_phaedrus_006147 | οὖν | οὖν | turn_phaedrus_0105 | 246a | 37872 | 37875
+  tok_phaedrus_006193 | δή | δὴ | turn_phaedrus_0105 | 246b | 38120 | 38122
+  tok_phaedrus_006203 | δή | δὴ | turn_phaedrus_0105 | 246b | 38173 | 38175
+  tok_phaedrus_006204 | οὖν | οὖν | turn_phaedrus_0105 | 246b | 38176 | 38179
+  tok_phaedrus_006230 | οὖν | οὖν | turn_phaedrus_0105 | 246c | 38354 | 38357
+  tok_phaedrus_006308 | δή | δή | turn_phaedrus_0105 | 246d | 38852 | 38854
+  tok_phaedrus_006371 | δή | δὴ | turn_phaedrus_0105 | 246e | 39227 | 39229
+  tok_phaedrus_006396 | δή | δὴ | turn_phaedrus_0106 | 246e | 39360 | 39362
+  tok_phaedrus_006424 | γάρ | γὰρ | turn_phaedrus_0106 | 247a | 39552 | 39555
+  tok_phaedrus_006450 | οὖν | οὖν | turn_phaedrus_0106 | 247a | 39698 | 39701
+  tok_phaedrus_006478 | γάρ | γὰρ | turn_phaedrus_0106 | 247a | 39869 | 39872
+  tok_phaedrus_006485 | δή | δὴ | turn_phaedrus_0106 | 247a | 39906 | 39908
+  tok_phaedrus_006501 | δή | δὴ | turn_phaedrus_0106 | 247b | 40007 | 40009
+  tok_phaedrus_006516 | γάρ | γὰρ | turn_phaedrus_0106 | 247b | 40095 | 40098
+  tok_phaedrus_006537 | δή | δὴ | turn_phaedrus_0106 | 247b | 40203 | 40205
+  tok_phaedrus_006547 | γάρ | γὰρ | turn_phaedrus_0106 | 247b | 40255 | 40258
+  tok_phaedrus_006596 | γάρ | γὰρ | turn_phaedrus_0106 | 247c | 40555 | 40558
+  tok_phaedrus_006597 | οὖν | οὖν | turn_phaedrus_0106 | 247c | 40559 | 40562
+  tok_phaedrus_006609 | γάρ | γὰρ | turn_phaedrus_0106 | 247c | 40621 | 40624
+  tok_phaedrus_006636 | οὖν | οὖν | turn_phaedrus_0106 | 247d | 40789 | 40792
+  tok_phaedrus_006812 | δή | δὴ | turn_phaedrus_0107 | 248a | 41802 | 41804
+  tok_phaedrus_006835 | οὖν | οὖν | turn_phaedrus_0107 | 248b | 41985 | 41988
+  tok_phaedrus_006843 | δή | δὴ | turn_phaedrus_0107 | 248b | 42031 | 42033
+  tok_phaedrus_006884 | δή | δὴ | turn_phaedrus_0107 | 248b | 42277 | 42279
+  tok_phaedrus_007047 | δή | δὴ | turn_phaedrus_0108 | 248e | 43348 | 43350
+  tok_phaedrus_007065 | γάρ | γὰρ | turn_phaedrus_0108 | 248e | 43458 | 43461
+  tok_phaedrus_007078 | γάρ | γὰρ | turn_phaedrus_0108 | 249a | 43532 | 43535
+  tok_phaedrus_007187 | γάρ | γὰρ | turn_phaedrus_0108 | 249b | 44234 | 44237
+  tok_phaedrus_007200 | γάρ | γὰρ | turn_phaedrus_0108 | 249b | 44298 | 44301
+  tok_phaedrus_007240 | δή | δὴ | turn_phaedrus_0108 | 249c | 44548 | 44550
+  tok_phaedrus_007249 | γάρ | γὰρ | turn_phaedrus_0108 | 249c | 44604 | 44607
+  tok_phaedrus_007264 | δή | δὴ | turn_phaedrus_0108 | 249c | 44688 | 44690
+  tok_phaedrus_007301 | δή | δὴ | turn_phaedrus_0108 | 249d | 44965 | 44967
+  tok_phaedrus_007302 | οὖν | οὖν | turn_phaedrus_0108 | 249d | 44968 | 44971
+  tok_phaedrus_007376 | γάρ | γὰρ | turn_phaedrus_0109 | 249e | 45430 | 45433
+  tok_phaedrus_007428 | δή | δὴ | turn_phaedrus_0109 | 250a | 45742 | 45744
+  tok_phaedrus_007463 | οὖν | οὖν | turn_phaedrus_0109 | 250b | 45973 | 45976
+  tok_phaedrus_007569 | δή | δὴ | turn_phaedrus_0109 | 250c | 46617 | 46619
+  tok_phaedrus_007578 | οὖν | οὖν | turn_phaedrus_0109 | 250c | 46694 | 46697
+  tok_phaedrus_007613 | γάρ | γὰρ | turn_phaedrus_0109 | 250d | 46932 | 46935
+  tok_phaedrus_007627 | γάρ | γὰρ | turn_phaedrus_0109 | 250d | 47018 | 47021
+  tok_phaedrus_007660 | οὖν | οὖν | turn_phaedrus_0110 | 250e | 47224 | 47227
+  tok_phaedrus_007769 | γάρ | γὰρ | turn_phaedrus_0110 | 251b | 47918 | 47921
+  tok_phaedrus_007822 | γάρ | γὰρ | turn_phaedrus_0110 | 251b | 48224 | 48227
+  tok_phaedrus_007828 | οὖν | οὖν | turn_phaedrus_0110 | 251c | 48260 | 48263
+  tok_phaedrus_007855 | δή | δὴ | turn_phaedrus_0110 | 251c | 48421 | 48423
+  tok_phaedrus_007873 | οὖν | οὖν | turn_phaedrus_0110 | 251c | 48530 | 48533
+  tok_phaedrus_007886 | δή | δὴ | turn_phaedrus_0110 | 251c | 48604 | 48606
+  tok_phaedrus_008026 | δή | δὴ | turn_phaedrus_0111 | 252a | 49485 | 49487
+  tok_phaedrus_008077 | γάρ | γὰρ | turn_phaedrus_0111 | 252a | 49820 | 49823
+  tok_phaedrus_008099 | δή | δή | turn_phaedrus_0111 | 252b | 49943 | 49945
+  tok_phaedrus_008158 | δή | δὴ | turn_phaedrus_0111 | 252c | 50318 | 50320
+  tok_phaedrus_008181 | οὖν | οὖν | turn_phaedrus_0111 | 252c | 50440 | 50443
+  tok_phaedrus_008267 | οὖν | οὖν | turn_phaedrus_0111 | 252d | 50962 | 50965
+  tok_phaedrus_008295 | δή | δὴ | turn_phaedrus_0111 | 252e | 51135 | 51137
+  tok_phaedrus_008296 | οὖν | οὖν | turn_phaedrus_0111 | 252e | 51138 | 51141
+  tok_phaedrus_008309 | οὖν | οὖν | turn_phaedrus_0111 | 252e | 51215 | 51218
+  tok_phaedrus_008329 | οὖν | οὖν | turn_phaedrus_0112 | 252e | 51337 | 51340
+  tok_phaedrus_008387 | δή | δὴ | turn_phaedrus_0112 | 253a | 51736 | 51738
+  tok_phaedrus_008500 | οὖν | οὖν | turn_phaedrus_0112 | 253c | 52451 | 52454
+  tok_phaedrus_008532 | δή | δὴ | turn_phaedrus_0112 | 253c | 52642 | 52644
+  tok_phaedrus_008564 | δή | δὴ | turn_phaedrus_0112 | 253d | 52838 | 52840
+  tok_phaedrus_008588 | τοίνυν | τοίνυν | turn_phaedrus_0112 | 253d | 52953 | 52959
+  tok_phaedrus_008652 | οὖν | οὖν | turn_phaedrus_0113 | 253e | 53428 | 53431
+  tok_phaedrus_009010 | οὖν | οὖν | turn_phaedrus_0114 | 255a | 55719 | 55722
+  tok_phaedrus_009075 | γάρ | γὰρ | turn_phaedrus_0114 | 255b | 56120 | 56123
+  tok_phaedrus_009225 | οὖν | οὖν | turn_phaedrus_0114 | 255d | 57029 | 57032
+  tok_phaedrus_009303 | δή | δή | turn_phaedrus_0114 | 255e | 57518 | 57520
+  tok_phaedrus_009314 | οὖν | οὖν | turn_phaedrus_0115 | 255e | 57573 | 57576
+  tok_phaedrus_009390 | δή | δὴ | turn_phaedrus_0115 | 256a | 58031 | 58033
+  tok_phaedrus_009391 | οὖν | οὖν | turn_phaedrus_0115 | 256a | 58034 | 58037
+  tok_phaedrus_009429 | δή | δὴ | turn_phaedrus_0115 | 256b | 58304 | 58306
+  tok_phaedrus_009457 | δή | δὴ | turn_phaedrus_0115 | 256b | 58491 | 58493
+  tok_phaedrus_009515 | οὖν | οὖν | turn_phaedrus_0115 | 256c | 58866 | 58869
+  tok_phaedrus_009569 | γάρ | γὰρ | turn_phaedrus_0115 | 256d | 59213 | 59216
+  tok_phaedrus_009811 | γάρ | γάρ | turn_phaedrus_0117 | 257c | 60751 | 60754
+  tok_phaedrus_009831 | οὖν | οὖν | turn_phaedrus_0117 | 257c | 60882 | 60885
+  tok_phaedrus_009872 | γάρ | γάρ | turn_phaedrus_0119 | 257d | 61136 | 61139
+  tok_phaedrus_009965 | γάρ | γὰρ | turn_phaedrus_0121 | 257e | 61750 | 61753
+  tok_phaedrus_010000 | δή | δὴ | turn_phaedrus_0124 | 258a | 62014 | 62016
+  tok_phaedrus_010010 | δή | δὴ | turn_phaedrus_0124 | 258a | 62076 | 62078
+  tok_phaedrus_010087 | οὖν | οὖν | turn_phaedrus_0129 | 258b | 62568 | 62571
+  tok_phaedrus_010139 | οὖν | οὖν | turn_phaedrus_0132 | 258c | 62888 | 62891
+  tok_phaedrus_010161 | γάρ | γὰρ | turn_phaedrus_0133 | 258c | 63020 | 63023
+  tok_phaedrus_010185 | γάρ | γάρ | turn_phaedrus_0135 | 258d | 63158 | 63161
+  tok_phaedrus_010206 | δή | δή | turn_phaedrus_0137 | 258d | 63270 | 63272
+  tok_phaedrus_010209 | οὖν | οὖν | turn_phaedrus_0138 | 258d | 63282 | 63285
+  tok_phaedrus_010255 | οὖν | οὖν | turn_phaedrus_0139 | 258e | 63550 | 63553
+  tok_phaedrus_010269 | γάρ | γάρ | turn_phaedrus_0139 | 258e | 63620 | 63623
+  tok_phaedrus_010280 | δή | δὴ | turn_phaedrus_0139 | 258e | 63677 | 63679
+  tok_phaedrus_010297 | δή | δή | turn_phaedrus_0140 | 258e | 63779 | 63781
+  tok_phaedrus_010321 | οὖν | οὖν | turn_phaedrus_0140 | 259a | 63922 | 63925
+  tok_phaedrus_010384 | δή | δὴ | turn_phaedrus_0141 | 259b | 64362 | 64364
+  tok_phaedrus_010388 | γάρ | γάρ | turn_phaedrus_0141 | 259b | 64383 | 64386
+  tok_phaedrus_010396 | δή | δὴ | turn_phaedrus_0142 | 259b | 64421 | 64423
+  tok_phaedrus_010483 | οὖν | οὖν | turn_phaedrus_0142 | 259c | 64969 | 64972
+  tok_phaedrus_010530 | δή | δὴ | turn_phaedrus_0142 | 259d | 65279 | 65281
+  tok_phaedrus_010548 | δή | δὴ | turn_phaedrus_0142 | 259d | 65390 | 65392
+  tok_phaedrus_010549 | οὖν | οὖν | turn_phaedrus_0142 | 259d | 65393 | 65396
+  tok_phaedrus_010561 | γάρ | γὰρ | turn_phaedrus_0143 | 259d | 65463 | 65466
+  tok_phaedrus_010562 | οὖν | οὖν | turn_phaedrus_0143 | 259d | 65467 | 65470
+  tok_phaedrus_010586 | οὖν | οὖν | turn_phaedrus_0146 | 259e | 65611 | 65614
+  tok_phaedrus_010645 | γάρ | γὰρ | turn_phaedrus_0147 | 260a | 65953 | 65956
+  tok_phaedrus_010673 | δή | δὴ | turn_phaedrus_0148 | 260a | 66112 | 66114
+  tok_phaedrus_010685 | δή | δὴ | turn_phaedrus_0150 | 260a | 66173 | 66175
+  tok_phaedrus_010732 | δή | δὴ | turn_phaedrus_0154 | 260b | 66456 | 66458
+  tok_phaedrus_010778 | οὖν | οὖν | turn_phaedrus_0156 | 260c | 66738 | 66741
+  tok_phaedrus_010796 | οὖν | οὖν | turn_phaedrus_0158 | 260c | 66848 | 66851
+  tok_phaedrus_010851 | οὖν | οὖν | turn_phaedrus_0160 | 260d | 67191 | 67194
+  tok_phaedrus_010873 | γάρ | γὰρ | turn_phaedrus_0160 | 260d | 67326 | 67329
+  tok_phaedrus_010892 | οὖν | οὖν | turn_phaedrus_0160 | 260d | 67455 | 67458
+  tok_phaedrus_010926 | γάρ | γὰρ | turn_phaedrus_0162 | 260e | 67660 | 67663
+  tok_phaedrus_010980 | δή | δή | turn_phaedrus_0164 | 261a | 67993 | 67995
+  tok_phaedrus_011000 | δή | δὴ | turn_phaedrus_0164 | 261a | 68130 | 68132
+  tok_phaedrus_011007 | οὖν | οὖν | turn_phaedrus_0166 | 261a | 68166 | 68169
+  tok_phaedrus_011134 | γάρ | γὰρ | turn_phaedrus_0170 | 261c | 68906 | 68909
+  tok_phaedrus_011185 | μήν | μήν | turn_phaedrus_0175 | 261d | 69204 | 69207
+  tok_phaedrus_011190 | δή | δὴ | turn_phaedrus_0176 | 261d | 69230 | 69232
+  tok_phaedrus_011207 | οὖν | οὖν | turn_phaedrus_0178 | 261d | 69314 | 69317
+  tok_phaedrus_011286 | δή | δὴ | turn_phaedrus_0181 | 261e | 69774 | 69776
+  tok_phaedrus_011311 | δή | δὴ | turn_phaedrus_0184 | 262a | 69930 | 69932
+  tok_phaedrus_011351 | οὖν | οὖν | turn_phaedrus_0187 | 262a | 70168 | 70171
+  tok_phaedrus_011354 | οὖν | οὖν | turn_phaedrus_0188 | 262a | 70179 | 70182
+  tok_phaedrus_011399 | οὖν | οὖν | turn_phaedrus_0192 | 262b | 70474 | 70477
+  tok_phaedrus_011457 | οὖν | οὖν | turn_phaedrus_0196 | 262c | 70834 | 70837
+  tok_phaedrus_011495 | μήν | μὴν | turn_phaedrus_0198 | 262c | 71038 | 71041
+  tok_phaedrus_011547 | γάρ | γάρ | turn_phaedrus_0198 | 262d | 71344 | 71347
+  tok_phaedrus_011565 | δή | δή | turn_phaedrus_0200 | 262d | 71441 | 71443
+  tok_phaedrus_011610 | δή | δὴ | turn_phaedrus_0202 | 262e | 71722 | 71724
+  tok_phaedrus_011611 | οὖν | οὖν | turn_phaedrus_0202 | 262e | 71725 | 71728
+  tok_phaedrus_011619 | γάρ | γάρ | turn_phaedrus_0202 | 262e | 71774 | 71777
+  tok_phaedrus_011624 | οὖν | οὖν | turn_phaedrus_0204 | 263a | 71804 | 71807
+  tok_phaedrus_011691 | οὖν | οὖν | turn_phaedrus_0209 | 263a | 72183 | 72186
+  tok_phaedrus_011706 | οὖν | οὖν | turn_phaedrus_0212 | 263b | 72267 | 72270
+  tok_phaedrus_011789 | μήν | μήν | turn_phaedrus_0217 | 263c | 72772 | 72775
+  tok_phaedrus_011792 | οὖν | οὖν | turn_phaedrus_0218 | 263c | 72784 | 72787
+  tok_phaedrus_011842 | γάρ | γάρ | turn_phaedrus_0220 | 263d | 73084 | 73087
+  tok_phaedrus_012025 | δή | δή | turn_phaedrus_0227 | 264b | 74185 | 74187
+  tok_phaedrus_012063 | γάρ | γὰρ | turn_phaedrus_0228 | 264b | 74400 | 74403
+  tok_phaedrus_012141 | γάρ | γὰρ | turn_phaedrus_0231 | 264c | 74860 | 74863
+  tok_phaedrus_012145 | τοίνυν | τοίνυν | turn_phaedrus_0232 | 264c | 74879 | 74885
+  tok_phaedrus_012233 | τοίνυν | τοίνυν | turn_phaedrus_0236 | 264e | 75439 | 75445
+  tok_phaedrus_012239 | καίτοι | καίτοι | turn_phaedrus_0236 | 264e | 75472 | 75478
+  tok_phaedrus_012265 | γάρ | γάρ | turn_phaedrus_0236 | 264e | 75622 | 75625
+  tok_phaedrus_012281 | δή | δὴ | turn_phaedrus_0237 | 265a | 75722 | 75724
+  tok_phaedrus_012289 | γάρ | γὰρ | turn_phaedrus_0238 | 265a | 75762 | 75765
+  tok_phaedrus_012319 | γάρ | γάρ | turn_phaedrus_0240 | 265a | 75927 | 75930
+  tok_phaedrus_012326 | γάρ | γάρ | turn_phaedrus_0240 | 265a | 75964 | 75967
+  tok_phaedrus_012437 | τοίνυν | τοίνυν | turn_phaedrus_0246 | 265c | 76685 | 76691
+  tok_phaedrus_012453 | δή | δὴ | turn_phaedrus_0247 | 265c | 76778 | 76780
+  tok_phaedrus_012454 | οὖν | οὖν | turn_phaedrus_0247 | 265c | 76781 | 76784
+  tok_phaedrus_012488 | δή | δή | turn_phaedrus_0249 | 265d | 76983 | 76985
+  tok_phaedrus_012541 | δή | δὴ | turn_phaedrus_0251 | 265d | 77280 | 77282
+  tok_phaedrus_012667 | δή | δὴ | turn_phaedrus_0254 | 266b | 78058 | 78060
+  tok_phaedrus_012723 | οὖν | οὖν | turn_phaedrus_0254 | 266c | 78387 | 78390
+  tok_phaedrus_012775 | δή | δὴ | turn_phaedrus_0255 | 266c | 78689 | 78691
+  tok_phaedrus_012868 | γάρ | γάρ | turn_phaedrus_0258 | 266d | 79242 | 79245
+  tok_phaedrus_012878 | δή | δὴ | turn_phaedrus_0260 | 266e | 79302 | 79304
+  tok_phaedrus_012908 | μήν | μήν | turn_phaedrus_0262 | 267a | 79513 | 79516
+  tok_phaedrus_012949 | γάρ | γὰρ | turn_phaedrus_0262 | 267a | 79757 | 79760
+  tok_phaedrus_013032 | γάρ | γὰρ | turn_phaedrus_0264 | 267b | 80243 | 80246
+  tok_phaedrus_013092 | μήν | μὴν | turn_phaedrus_0268 | 267c | 80600 | 80603
+  tok_phaedrus_013132 | δή | δὴ | turn_phaedrus_0268 | 267d | 80873 | 80875
+  tok_phaedrus_013186 | δή | δὴ | turn_phaedrus_0272 | 268a | 81194 | 81196
+  tok_phaedrus_013212 | δή | δὴ | turn_phaedrus_0273 | 268a | 81331 | 81333
+  tok_phaedrus_013217 | γάρ | γάρ | turn_phaedrus_0274 | 268a | 81361 | 81364
+  tok_phaedrus_013240 | δή | δή | turn_phaedrus_0276 | 268a | 81486 | 81488
+  tok_phaedrus_013327 | οὖν | οὖν | turn_phaedrus_0278 | 268b | 82009 | 82012
+  tok_phaedrus_013456 | δή | δὴ | turn_phaedrus_0282 | 268d | 82851 | 82853
+  tok_phaedrus_013492 | μήν | μὴν | turn_phaedrus_0282 | 268e | 83103 | 83106
+  tok_phaedrus_013504 | γάρ | γὰρ | turn_phaedrus_0282 | 268e | 83172 | 83175
+  tok_phaedrus_013547 | οὖν | οὖν | turn_phaedrus_0285 | 269a | 83436 | 83439
+  tok_phaedrus_013653 | δή | δὴ | turn_phaedrus_0286 | 269c | 84132 | 84134
+  tok_phaedrus_013688 | μήν | μήν | turn_phaedrus_0287 | 269c | 84377 | 84380
+  tok_phaedrus_013715 | δή | δὴ | turn_phaedrus_0287 | 269c | 84542 | 84544
+  tok_phaedrus_013792 | δή | δή | turn_phaedrus_0289 | 269d | 85001 | 85003
+  tok_phaedrus_013808 | δή | δή | turn_phaedrus_0291 | 269e | 85111 | 85113
+  tok_phaedrus_013822 | γάρ | γὰρ | turn_phaedrus_0292 | 270a | 85213 | 85216
+  tok_phaedrus_013841 | γάρ | γὰρ | turn_phaedrus_0292 | 270a | 85344 | 85347
+  tok_phaedrus_013857 | δή | δὴ | turn_phaedrus_0292 | 270a | 85452 | 85454
+  tok_phaedrus_013890 | δή | δή | turn_phaedrus_0295 | 270b | 85658 | 85660
+  tok_phaedrus_013949 | οὖν | οὖν | turn_phaedrus_0298 | 270c | 86005 | 86008
+  tok_phaedrus_013982 | γάρ | γάρ | turn_phaedrus_0300 | 270c | 86198 | 86201
+  tok_phaedrus_014001 | τοίνυν | τοίνυν | turn_phaedrus_0302 | 270c | 86310 | 86316
+  tok_phaedrus_014105 | μήν | μὴν | turn_phaedrus_0304 | 270e | 86907 | 86910
+  tok_phaedrus_014143 | μήν | μήν | turn_phaedrus_0305 | 270e | 87120 | 87123
+  tok_phaedrus_014154 | γάρ | γὰρ | turn_phaedrus_0306 | 271a | 87188 | 87191
+  tok_phaedrus_014160 | γάρ | γάρ | turn_phaedrus_0306 | 271a | 87221 | 87224
+  tok_phaedrus_014198 | γάρ | γάρ | turn_phaedrus_0308 | 271a | 87441 | 87444
+  tok_phaedrus_014206 | οὖν | οὖν | turn_phaedrus_0309 | 271a | 87493 | 87496
+  tok_phaedrus_014221 | μήν | μήν | turn_phaedrus_0311 | 271a | 87566 | 87569
+  tok_phaedrus_014225 | δή | δὴ | turn_phaedrus_0312 | 271b | 87592 | 87594
+  tok_phaedrus_014272 | οὖν | οὖν | turn_phaedrus_0314 | 271b | 87858 | 87861
+  tok_phaedrus_014308 | οὖν | οὖν | turn_phaedrus_0314 | 271c | 88093 | 88096
+  tok_phaedrus_014347 | δή | δή | turn_phaedrus_0317 | 271c | 88323 | 88325
+  tok_phaedrus_014366 | οὖν | οὖν | turn_phaedrus_0318 | 271d | 88456 | 88459
+  tok_phaedrus_014384 | δή | δὴ | turn_phaedrus_0318 | 271d | 88550 | 88552
+  tok_phaedrus_014398 | οὖν | οὖν | turn_phaedrus_0318 | 271d | 88629 | 88632
+  tok_phaedrus_014419 | δή | δὴ | turn_phaedrus_0318 | 271d | 88747 | 88749
+  tok_phaedrus_014559 | δή | δὴ | turn_phaedrus_0319 | 272b | 89599 | 89601
+  tok_phaedrus_014560 | οὖν | οὖν | turn_phaedrus_0319 | 272b | 89602 | 89605
+  tok_phaedrus_014585 | καίτοι | καίτοι | turn_phaedrus_0320 | 272b | 89762 | 89768
+  tok_phaedrus_014656 | οὖν | οὖν | turn_phaedrus_0323 | 272c | 90187 | 90190
+  tok_phaedrus_014669 | μήν | μήν | turn_phaedrus_0324 | 272c | 90251 | 90254
+  tok_phaedrus_014690 | τοίνυν | τοίνυν | turn_phaedrus_0327 | 272d | 90366 | 90372
+  tok_phaedrus_014702 | γάρ | γάρ | turn_phaedrus_0327 | 272d | 90456 | 90459
+  tok_phaedrus_014737 | γάρ | γὰρ | turn_phaedrus_0327 | 272d | 90667 | 90670
+  tok_phaedrus_014762 | γάρ | γὰρ | turn_phaedrus_0327 | 272e | 90827 | 90830
+  tok_phaedrus_014786 | δή | δὴ | turn_phaedrus_0327 | 272e | 90979 | 90981
+  tok_phaedrus_014796 | γάρ | γὰρ | turn_phaedrus_0327 | 272e | 91043 | 91046
+  tok_phaedrus_014822 | γάρ | γὰρ | turn_phaedrus_0328 | 273a | 91224 | 91227
+  tok_phaedrus_014841 | μήν | μὴν | turn_phaedrus_0329 | 273a | 91333 | 91336
+  tok_phaedrus_014849 | τοίνυν | τοίνυν | turn_phaedrus_0329 | 273a | 91384 | 91390
+  tok_phaedrus_014868 | γάρ | γὰρ | turn_phaedrus_0330 | 273b | 91480 | 91483
+  tok_phaedrus_014872 | δή | δή | turn_phaedrus_0331 | 273b | 91500 | 91502
+  tok_phaedrus_014900 | δή | δὴ | turn_phaedrus_0331 | 273b | 91670 | 91672
+  tok_phaedrus_014938 | δή | δὴ | turn_phaedrus_0331 | 273c | 91911 | 91913
+  tok_phaedrus_014957 | δή | δὴ | turn_phaedrus_0331 | 273c | 92021 | 92023
+  tok_phaedrus_014965 | γάρ | γάρ | turn_phaedrus_0331 | 273c | 92064 | 92067
+  tok_phaedrus_014970 | μήν | μήν | turn_phaedrus_0332 | 273c | 92087 | 92090
+  tok_phaedrus_014984 | δή | δή | turn_phaedrus_0333 | 273c | 92173 | 92175
+  tok_phaedrus_015135 | γάρ | γὰρ | turn_phaedrus_0336 | 273e | 93108 | 93111
+  tok_phaedrus_015136 | δή | δὴ | turn_phaedrus_0336 | 273e | 93112 | 93114
+  tok_phaedrus_015169 | γάρ | γὰρ | turn_phaedrus_0336 | 274a | 93318 | 93321
+  tok_phaedrus_015177 | μήν | μήν | turn_phaedrus_0336 | 274a | 93363 | 93366
+  tok_phaedrus_015235 | μήν | μήν | turn_phaedrus_0341 | 274b | 93694 | 93697
+  tok_phaedrus_015240 | δή | δὴ | turn_phaedrus_0342 | 274b | 93720 | 93722
+  tok_phaedrus_015255 | γάρ | γάρ | turn_phaedrus_0342 | 274b | 93805 | 93808
+  tok_phaedrus_015260 | οὖν | οὖν | turn_phaedrus_0344 | 274b | 93830 | 93833
+  tok_phaedrus_015311 | τοίνυν | τοίνυν | turn_phaedrus_0348 | 274c | 94117 | 94123
+  tok_phaedrus_015328 | δή | δὴ | turn_phaedrus_0348 | 274c | 94214 | 94216
+  tok_phaedrus_015339 | δή | δὴ | turn_phaedrus_0348 | 274c | 94276 | 94278
+  tok_phaedrus_015357 | δή | δὴ | turn_phaedrus_0348 | 274d | 94392 | 94394
+  tok_phaedrus_015424 | δή | δὴ | turn_phaedrus_0348 | 274e | 94782 | 94784
+  tok_phaedrus_015464 | γάρ | γὰρ | turn_phaedrus_0348 | 274e | 95040 | 95043
+  tok_phaedrus_015508 | γάρ | γὰρ | turn_phaedrus_0349 | 275a | 95316 | 95319
+  tok_phaedrus_015547 | γάρ | γάρ | turn_phaedrus_0349 | 275a | 95588 | 95591
+  tok_phaedrus_015601 | οὖν | οὖν | turn_phaedrus_0351 | 275b | 95938 | 95941
+  tok_phaedrus_015632 | γάρ | γὰρ | turn_phaedrus_0351 | 275c | 96115 | 96118
+  tok_phaedrus_015705 | γάρ | γάρ | turn_phaedrus_0355 | 275d | 96567 | 96570
+  tok_phaedrus_015718 | γάρ | γὰρ | turn_phaedrus_0355 | 275d | 96639 | 96642
+  tok_phaedrus_015802 | γάρ | γὰρ | turn_phaedrus_0355 | 275e | 97120 | 97123
+  tok_phaedrus_015885 | οὖν | οὖν | turn_phaedrus_0361 | 276b | 97636 | 97639
+  tok_phaedrus_015887 | δή | δή | turn_phaedrus_0361 | 276b | 97646 | 97648
+  tok_phaedrus_015919 | δή | δὴ | turn_phaedrus_0361 | 276b | 97845 | 97847
+  tok_phaedrus_016018 | δή | δὴ | turn_phaedrus_0366 | 276c | 98409 | 98411
+  tok_phaedrus_016024 | γάρ | γάρ | turn_phaedrus_0367 | 276d | 98439 | 98442
+  tok_phaedrus_016112 | γάρ | γάρ | turn_phaedrus_0369 | 276e | 99031 | 99034
+  tok_phaedrus_016177 | γάρ | γὰρ | turn_phaedrus_0370 | 277a | 99455 | 99458
+  tok_phaedrus_016184 | δή | δὴ | turn_phaedrus_0371 | 277a | 99493 | 99495
+  tok_phaedrus_016198 | δή | δὴ | turn_phaedrus_0373 | 277a | 99578 | 99580
+  tok_phaedrus_016228 | οὖν | οὖν | turn_phaedrus_0373 | 277b | 99762 | 99765
+  tok_phaedrus_016239 | δή | δή | turn_phaedrus_0374 | 277b | 99826 | 99828
+  tok_phaedrus_016338 | οὖν | οὖν | turn_phaedrus_0376 | 277c | 100427 | 100430
+  tok_phaedrus_016419 | γάρ | γὰρ | turn_phaedrus_0379 | 277d | 100883 | 100886
+  tok_phaedrus_016450 | γάρ | γὰρ | turn_phaedrus_0380 | 277e | 101058 | 101061
+  tok_phaedrus_016451 | οὖν | οὖν | turn_phaedrus_0380 | 277e | 101062 | 101065
+  tok_phaedrus_016600 | οὖν | οὖν | turn_phaedrus_0382 | 278b | 101980 | 101983
+  tok_phaedrus_016713 | οὖν | οὖν | turn_phaedrus_0384 | 278d | 102651 | 102654
+  tok_phaedrus_016789 | μήν | μήν | turn_phaedrus_0388 | 278e | 103079 | 103082
+  tok_phaedrus_016792 | τοίνυν | τοίνυν | turn_phaedrus_0389 | 278e | 103094 | 103100
+  tok_phaedrus_016803 | γάρ | γὰρ | turn_phaedrus_0390 | 278e | 103152 | 103155
+  tok_phaedrus_016842 | δή | δή | turn_phaedrus_0394 | 279a | 103391 | 103393
+  tok_phaedrus_016903 | γάρ | γάρ | turn_phaedrus_0395 | 279a | 103744 | 103747
+  tok_phaedrus_016914 | δή | δὴ | turn_phaedrus_0395 | 279b | 103814 | 103816
+  tok_phaedrus_016915 | οὖν | οὖν | turn_phaedrus_0395 | 279b | 103817 | 103820
+  tok_phaedrus_016952 | μήν | μήν | turn_phaedrus_0398 | 279b | 104041 | 104044
+  tok_phaedrus_017006 | γάρ | γὰρ | turn_phaedrus_0399 | 279c | 104340 | 104343
+  tok_phaedrus_017015 | γάρ | γὰρ | turn_phaedrus_0400 | 279c | 104396 | 104399

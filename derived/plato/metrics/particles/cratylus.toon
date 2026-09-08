@@ -1,0 +1,1605 @@
+schema_version: 1
+dialogue: cratylus
+source_path: raw/plato/greek/cratylus.txt
+source_sha256: 8efd1736ad24fd8524fae3d0281f278bbfec921174ab8105d7c2bdf3333b5aca
+token_index_path: derived/plato/tokens/cratylus.toon
+token_index_sha256: a43ebd50274bf60d26389ab020b990361118895c2896645b5e3891e0b87ea4e3
+turn_index_path: derived/plato/turns/cratylus.toon
+turn_index_sha256: 8e51fac9d83c86996c4eb87f8c05e7f071c61524693b35167fd37b82dbcf571c
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 19030
+excluded_siglum_token_count: 774
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  cratylus | 18256 | 18 | 32 | 5 | 185 | 159 | 119
+speakers[3]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  ΕΡΜ. | 1855 | 5 | 1 | 0 | 12 | 27 | 36
+  ΚΡ. | 726 | 0 | 0 | 0 | 4 | 2 | 4
+  ΣΩ. | 15675 | 13 | 31 | 5 | 169 | 130 | 79
+turns[774]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_cratylus_0001 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0002 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0003 | 95 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0004 | 70 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0005 | 131 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_cratylus_0006 | 108 | 1 | 0 | 0 | 2 | 0 | 1
+  turn_cratylus_0007 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0008 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0009 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0010 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0011 | 43 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0012 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0013 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0014 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0015 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0016 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0017 | 18 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0018 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0019 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0020 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0021 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0022 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0023 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0024 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0025 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0026 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0027 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0028 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0029 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0030 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0031 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0032 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0033 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0034 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0035 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0036 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0037 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0038 | 51 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0039 | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0040 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0041 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0042 | 20 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0043 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0044 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0045 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0046 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0047 | 18 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0048 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0049 | 29 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0050 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0051 | 39 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0052 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0053 | 37 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0054 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0055 | 52 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0056 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0057 | 29 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0058 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0059 | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0060 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0061 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0062 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0063 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0064 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0065 | 11 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0066 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0067 | 43 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0068 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0069 | 12 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0070 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0071 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0072 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0073 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0074 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0075 | 39 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0076 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0077 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0078 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0079 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0080 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0081 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0082 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0083 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0084 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0085 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0086 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0087 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0088 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0089 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0090 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0091 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0092 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0093 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0094 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0095 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0096 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0097 | 14 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0098 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0099 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0100 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0101 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0102 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0103 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0104 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0105 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0106 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0107 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0108 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0109 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0110 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0111 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0112 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0113 | 9 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0114 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0115 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0116 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0117 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0118 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0119 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0120 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0121 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0122 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0123 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0124 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0125 | 27 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0126 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0127 | 30 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0128 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0129 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0130 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0131 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0132 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0133 | 37 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0134 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0135 | 47 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_cratylus_0136 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0137 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0138 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0139 | 13 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0140 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0141 | 102 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_cratylus_0142 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0143 | 37 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0144 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0145 | 22 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0146 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0147 | 25 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0148 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0149 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0150 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0151 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0152 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0153 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0154 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0155 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0156 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0157 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0158 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0159 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0160 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0161 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0162 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0163 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0164 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0165 | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0166 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0167 | 56 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0168 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0169 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0170 | 5 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0171 | 2 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_cratylus_0172 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0173 | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0174 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0175 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0176 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0177 | 53 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_cratylus_0178 | 14 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0179 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0180 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0181 | 117 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_cratylus_0182 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0183 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0184 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0185 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0186 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0187 | 19 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0188 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0189 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0190 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0191 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0192 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0193 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0194 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0195 | 44 | 0 | 0 | 0 | 2 | 0 | 2
+  turn_cratylus_0196 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0197 | 15 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_cratylus_0198 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0199 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0200 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0201 | 73 | 0 | 0 | 0 | 3 | 0 | 0
+  turn_cratylus_0202 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0203 | 82 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0204 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0205 | 57 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_cratylus_0206 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0207 | 101 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0208 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0209 | 207 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_cratylus_0210 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0211 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0212 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0213 | 44 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0214 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0215 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0216 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0217 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0218 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0219 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0220 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0221 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0222 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0223 | 146 | 0 | 0 | 0 | 4 | 2 | 0
+  turn_cratylus_0224 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0225 | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0226 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0227 | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0228 | 241 | 0 | 0 | 0 | 4 | 1 | 2
+  turn_cratylus_0229 | 14 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0230 | 83 | 0 | 0 | 0 | 1 | 2 | 0
+  turn_cratylus_0231 | 14 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0232 | 121 | 0 | 0 | 0 | 2 | 3 | 0
+  turn_cratylus_0233 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0234 | 19 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0235 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0236 | 72 | 0 | 1 | 0 | 0 | 1 | 0
+  turn_cratylus_0237 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0238 | 6 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0239 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0240 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0241 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0242 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0243 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0244 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0245 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0246 | 22 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_cratylus_0247 | 3 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_cratylus_0248 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0249 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0250 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0251 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0252 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0253 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0254 | 83 | 0 | 1 | 0 | 0 | 2 | 0
+  turn_cratylus_0255 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0256 | 18 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0257 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0258 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0259 | 2 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0260 | 110 | 0 | 0 | 0 | 2 | 2 | 0
+  turn_cratylus_0261 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0262 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0263 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0264 | 85 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_cratylus_0265 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0266 | 27 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_cratylus_0267 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0268 | 50 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0269 | 11 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0270 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0271 | 17 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_cratylus_0272 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0273 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0274 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0275 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0276 | 87 | 0 | 1 | 0 | 2 | 0 | 1
+  turn_cratylus_0277 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0278 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0279 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0280 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0281 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0282 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0283 | 11 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0284 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0285 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0286 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0287 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0288 | 93 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_cratylus_0289 | 37 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0290 | 73 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_cratylus_0291 | 38 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_cratylus_0292 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0293 | 9 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0294 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0295 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0296 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0297 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0298 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0299 | 181 | 0 | 0 | 1 | 2 | 2 | 2
+  turn_cratylus_0300 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0301 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0302 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0303 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0304 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0305 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0306 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0307 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0308 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0309 | 74 | 0 | 0 | 0 | 0 | 2 | 0
+  turn_cratylus_0310 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0311 | 32 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0312 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0313 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0314 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0315 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0316 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0317 | 49 | 0 | 1 | 0 | 0 | 1 | 0
+  turn_cratylus_0318 | 76 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0319 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0320 | 59 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0321 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0322 | 22 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0323 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0324 | 17 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0325 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0326 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0327 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0328 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0329 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0330 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0331 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0332 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0333 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0334 | 77 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0335 | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0336 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0337 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0338 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0339 | 169 | 0 | 0 | 0 | 2 | 2 | 0
+  turn_cratylus_0340 | 6 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0341 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0342 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0343 | 37 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0344 | 10 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_cratylus_0345 | 65 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_cratylus_0346 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0347 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0348 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0349 | 166 | 0 | 1 | 0 | 2 | 2 | 2
+  turn_cratylus_0350 | 156 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_cratylus_0351 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0352 | 87 | 0 | 0 | 0 | 3 | 1 | 0
+  turn_cratylus_0353 | 15 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0354 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0355 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0356 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0357 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0358 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0359 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0360 | 42 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_cratylus_0361 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0362 | 4 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_cratylus_0363 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0364 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0365 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0366 | 120 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_cratylus_0367 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0368 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0369 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0370 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0371 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0372 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0373 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0374 | 37 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0375 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0376 | 27 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0377 | 35 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0378 | 123 | 1 | 0 | 0 | 0 | 2 | 1
+  turn_cratylus_0379 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0380 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0381 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0382 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0383 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0384 | 41 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0385 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0386 | 54 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0387 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0388 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0389 | 3 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0390 | 11 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_cratylus_0391 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0392 | 60 | 0 | 1 | 0 | 1 | 1 | 0
+  turn_cratylus_0393 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0394 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0395 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0396 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0397 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0398 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0399 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0400 | 34 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0401 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0402 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0403 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0404 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0405 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0406 | 34 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0407 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0408 | 29 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0409 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0410 | 14 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0411 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0412 | 26 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_cratylus_0413 | 3 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_cratylus_0414 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0415 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0416 | 40 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_cratylus_0417 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0418 | 125 | 0 | 1 | 0 | 3 | 3 | 2
+  turn_cratylus_0419 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0420 | 122 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_cratylus_0421 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0422 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0423 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0424 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0425 | 33 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0426 | 37 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0427 | 7 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0428 | 99 | 1 | 0 | 0 | 0 | 0 | 2
+  turn_cratylus_0429 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0430 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0431 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0432 | 13 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0433 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0434 | 87 | 0 | 0 | 0 | 3 | 2 | 0
+  turn_cratylus_0435 | 297 | 3 | 0 | 0 | 6 | 3 | 3
+  turn_cratylus_0436 | 252 | 0 | 0 | 0 | 5 | 5 | 1
+  turn_cratylus_0437 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0438 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0439 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0440 | 76 | 0 | 0 | 0 | 3 | 1 | 1
+  turn_cratylus_0441 | 66 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_cratylus_0442 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0443 | 53 | 1 | 0 | 0 | 1 | 1 | 0
+  turn_cratylus_0444 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0445 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0446 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0447 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0448 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0449 | 88 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0450 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0451 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0452 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0453 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0454 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0455 | 317 | 0 | 0 | 0 | 7 | 5 | 1
+  turn_cratylus_0456 | 14 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0457 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0458 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0459 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0460 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0461 | 53 | 0 | 1 | 0 | 2 | 0 | 1
+  turn_cratylus_0462 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0463 | 14 | 0 | 0 | 1 | 0 | 0 | 0
+  turn_cratylus_0464 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0465 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0466 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0467 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0468 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0469 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0470 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0471 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0472 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0473 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0474 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0475 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0476 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0477 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0478 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0479 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0480 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0481 | 19 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0482 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0483 | 7 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0484 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0485 | 95 | 0 | 0 | 0 | 4 | 0 | 0
+  turn_cratylus_0486 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0487 | 92 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0488 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0489 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0490 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0491 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0492 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0493 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0494 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0495 | 45 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0496 | 26 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0497 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0498 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0499 | 80 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0500 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0501 | 48 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0502 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0503 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0504 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0505 | 29 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_cratylus_0506 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0507 | 25 | 0 | 0 | 1 | 0 | 0 | 1
+  turn_cratylus_0508 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0509 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0510 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0511 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0512 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0513 | 34 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_cratylus_0514 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0515 | 112 | 0 | 0 | 0 | 1 | 0 | 2
+  turn_cratylus_0516 | 13 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0517 | 191 | 0 | 0 | 0 | 3 | 0 | 0
+  turn_cratylus_0518 | 134 | 2 | 0 | 0 | 2 | 1 | 1
+  turn_cratylus_0519 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0520 | 99 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_cratylus_0521 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0522 | 103 | 0 | 0 | 0 | 1 | 3 | 0
+  turn_cratylus_0523 | 32 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0524 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0525 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0526 | 120 | 0 | 1 | 0 | 4 | 0 | 0
+  turn_cratylus_0527 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0528 | 7 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0529 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0530 | 11 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_cratylus_0531 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0532 | 51 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_cratylus_0533 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0534 | 53 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_cratylus_0535 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0536 | 93 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_cratylus_0537 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0538 | 24 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0539 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0540 | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0541 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0542 | 26 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_cratylus_0543 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0544 | 22 | 1 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0545 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0546 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0547 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0548 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0549 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0550 | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0551 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0552 | 58 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0553 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0554 | 17 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0555 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0556 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0557 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0558 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0559 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0560 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0561 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0562 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0563 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0564 | 5 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0565 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0566 | 50 | 0 | 0 | 1 | 0 | 0 | 0
+  turn_cratylus_0567 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0568 | 29 | 0 | 1 | 0 | 2 | 0 | 0
+  turn_cratylus_0569 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0570 | 42 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0571 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0572 | 24 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0573 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0574 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0575 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0576 | 39 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0577 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0578 | 15 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0579 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0580 | 59 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0581 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0582 | 220 | 0 | 0 | 0 | 1 | 1 | 2
+  turn_cratylus_0583 | 54 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0584 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0585 | 16 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_cratylus_0586 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0587 | 78 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0588 | 6 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0589 | 84 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0590 | 92 | 0 | 0 | 1 | 1 | 0 | 0
+  turn_cratylus_0591 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0592 | 34 | 0 | 1 | 0 | 0 | 1 | 0
+  turn_cratylus_0593 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0594 | 215 | 0 | 1 | 0 | 3 | 2 | 1
+  turn_cratylus_0595 | 241 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0596 | 76 | 1 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0597 | 27 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0598 | 44 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0599 | 70 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_cratylus_0600 | 82 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0601 | 84 | 0 | 0 | 0 | 2 | 1 | 2
+  turn_cratylus_0602 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0603 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0604 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0605 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0606 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0607 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0608 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0609 | 31 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0610 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0611 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0612 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0613 | 14 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0614 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0615 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0616 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0617 | 14 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0618 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0619 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0620 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0621 | 28 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0622 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0623 | 23 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0624 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0625 | 26 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0626 | 27 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0627 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0628 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0629 | 46 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0630 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0631 | 29 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_cratylus_0632 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0633 | 23 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0634 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0635 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0636 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0637 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0638 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0639 | 39 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_cratylus_0640 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0641 | 25 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0642 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0643 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0644 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0645 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0646 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0647 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0648 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0649 | 64 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_cratylus_0650 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0651 | 40 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0652 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0653 | 77 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0654 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0655 | 92 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_cratylus_0656 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0657 | 40 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0658 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0659 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0660 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0661 | 58 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0662 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0663 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0664 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0665 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0666 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0667 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0668 | 56 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0669 | 9 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0670 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0671 | 148 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0672 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0673 | 40 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0674 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0675 | 42 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0676 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0677 | 91 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_cratylus_0678 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0679 | 82 | 0 | 1 | 0 | 2 | 1 | 0
+  turn_cratylus_0680 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0681 | 22 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_cratylus_0682 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0683 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0684 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0685 | 49 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0686 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0687 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0688 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0689 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0690 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0691 | 90 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0692 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0693 | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0694 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0695 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0696 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0697 | 28 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_cratylus_0698 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0699 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0700 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0701 | 13 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0702 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0703 | 31 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0704 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0705 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0706 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0707 | 5 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0708 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0709 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0710 | 35 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0711 | 21 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0712 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0713 | 31 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0714 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0715 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0716 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0717 | 228 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_cratylus_0718 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0719 | 58 | 0 | 0 | 0 | 1 | 0 | 2
+  turn_cratylus_0720 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0721 | 35 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0722 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0723 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0724 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0725 | 26 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0726 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0727 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0728 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0729 | 21 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0730 | 63 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0731 | 117 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_cratylus_0732 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0733 | 206 | 0 | 1 | 0 | 1 | 0 | 1
+  turn_cratylus_0734 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0735 | 27 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_cratylus_0736 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0737 | 42 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_cratylus_0738 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0739 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0740 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0741 | 37 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0742 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0743 | 30 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0744 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0745 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0746 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0747 | 22 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0748 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0749 | 59 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_cratylus_0750 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0751 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0752 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0753 | 46 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_cratylus_0754 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0755 | 25 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_cratylus_0756 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0757 | 54 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0758 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0759 | 42 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_cratylus_0760 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0761 | 84 | 0 | 1 | 0 | 2 | 0 | 0
+  turn_cratylus_0762 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0763 | 30 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_cratylus_0764 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0765 | 33 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_cratylus_0766 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0767 | 45 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_cratylus_0768 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0769 | 39 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_cratylus_0770 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0771 | 239 | 0 | 0 | 0 | 2 | 3 | 1
+  turn_cratylus_0772 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_cratylus_0773 | 22 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_cratylus_0774 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+markers[286]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  383a | 44 | 0 | 0 | 0 | 0 | 1 | 0
+  383b | 70 | 0 | 0 | 0 | 0 | 1 | 0
+  384a | 69 | 0 | 0 | 0 | 0 | 1 | 0
+  384b | 55 | 0 | 0 | 0 | 0 | 1 | 1
+  384c | 85 | 1 | 0 | 0 | 1 | 0 | 1
+  384d | 76 | 0 | 0 | 0 | 2 | 0 | 0
+  384e | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  385a | 70 | 0 | 0 | 0 | 0 | 1 | 0
+  385b | 55 | 0 | 0 | 0 | 0 | 1 | 1
+  385c | 84 | 0 | 0 | 0 | 0 | 1 | 0
+  385d | 61 | 0 | 0 | 0 | 2 | 0 | 0
+  385e | 46 | 0 | 0 | 0 | 0 | 0 | 1
+  386a | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  386b | 59 | 0 | 0 | 0 | 0 | 2 | 1
+  386c | 69 | 0 | 0 | 0 | 1 | 1 | 0
+  386d | 64 | 1 | 0 | 0 | 1 | 0 | 1
+  386e | 71 | 0 | 0 | 0 | 0 | 1 | 0
+  387a | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  387b | 61 | 0 | 0 | 0 | 0 | 2 | 0
+  387c | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  387d | 68 | 0 | 0 | 0 | 0 | 0 | 1
+  387e | 24 | 0 | 0 | 0 | 0 | 0 | 1
+  388a | 44 | 0 | 0 | 0 | 0 | 1 | 0
+  388b | 63 | 0 | 0 | 0 | 0 | 0 | 1
+  388c | 59 | 0 | 0 | 0 | 0 | 1 | 0
+  388d | 67 | 0 | 0 | 0 | 0 | 1 | 0
+  388e | 34 | 0 | 0 | 0 | 0 | 0 | 0
+  389a | 52 | 0 | 0 | 0 | 0 | 0 | 2
+  389b | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  389c | 68 | 0 | 0 | 0 | 1 | 0 | 1
+  389d | 69 | 0 | 0 | 0 | 1 | 1 | 0
+  389e | 30 | 0 | 0 | 0 | 1 | 0 | 0
+  390a | 58 | 0 | 0 | 0 | 1 | 0 | 0
+  390b | 65 | 0 | 0 | 0 | 0 | 2 | 0
+  390c | 56 | 0 | 0 | 0 | 0 | 1 | 0
+  390d | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  390e | 45 | 0 | 0 | 0 | 0 | 0 | 0
+  391a | 73 | 0 | 0 | 0 | 0 | 0 | 0
+  391b | 63 | 1 | 1 | 0 | 0 | 1 | 0
+  391c | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  391d | 65 | 0 | 0 | 0 | 1 | 0 | 1
+  391e | 41 | 0 | 0 | 0 | 0 | 1 | 0
+  392a | 56 | 0 | 0 | 0 | 0 | 1 | 1
+  392b | 79 | 0 | 0 | 0 | 1 | 1 | 0
+  392c | 58 | 0 | 0 | 0 | 0 | 1 | 2
+  392d | 61 | 0 | 0 | 0 | 1 | 0 | 1
+  392e | 51 | 0 | 0 | 0 | 2 | 0 | 2
+  393a | 59 | 0 | 0 | 0 | 3 | 0 | 1
+  393b | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  393c | 72 | 0 | 0 | 0 | 2 | 0 | 0
+  393d | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  393e | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  394a | 74 | 0 | 0 | 0 | 1 | 0 | 1
+  394b | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  394c | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  394d | 61 | 0 | 0 | 0 | 0 | 1 | 1
+  394e | 76 | 0 | 0 | 0 | 0 | 0 | 0
+  395a | 53 | 0 | 0 | 0 | 1 | 1 | 0
+  395b | 73 | 0 | 0 | 0 | 2 | 1 | 0
+  395c | 68 | 0 | 0 | 0 | 1 | 0 | 1
+  395d | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  395e | 44 | 0 | 0 | 0 | 0 | 0 | 0
+  396a | 83 | 0 | 0 | 0 | 3 | 1 | 1
+  396b | 81 | 0 | 0 | 0 | 1 | 0 | 0
+  396c | 63 | 0 | 0 | 0 | 0 | 0 | 1
+  396d | 61 | 0 | 0 | 0 | 1 | 2 | 1
+  396e | 33 | 0 | 0 | 0 | 0 | 0 | 0
+  397a | 55 | 0 | 0 | 0 | 1 | 1 | 0
+  397b | 69 | 0 | 0 | 0 | 2 | 2 | 0
+  397c | 62 | 0 | 1 | 0 | 0 | 1 | 0
+  397d | 76 | 0 | 0 | 0 | 0 | 3 | 1
+  397e | 55 | 0 | 1 | 0 | 0 | 1 | 0
+  398a | 54 | 0 | 0 | 0 | 0 | 1 | 1
+  398b | 71 | 0 | 1 | 0 | 0 | 1 | 0
+  398c | 75 | 0 | 0 | 0 | 1 | 2 | 1
+  398d | 74 | 0 | 0 | 0 | 2 | 2 | 0
+  398e | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  399a | 65 | 0 | 0 | 0 | 1 | 0 | 2
+  399b | 60 | 0 | 1 | 0 | 1 | 0 | 0
+  399c | 63 | 0 | 0 | 0 | 0 | 1 | 1
+  399d | 71 | 0 | 2 | 0 | 2 | 0 | 1
+  399e | 35 | 0 | 0 | 0 | 1 | 0 | 1
+  400a | 67 | 0 | 0 | 0 | 1 | 0 | 0
+  400b | 66 | 0 | 0 | 0 | 1 | 1 | 1
+  400c | 84 | 0 | 0 | 0 | 1 | 1 | 1
+  400d | 76 | 0 | 0 | 0 | 1 | 0 | 0
+  400e | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  401a | 55 | 0 | 0 | 0 | 3 | 1 | 1
+  401b | 56 | 0 | 0 | 0 | 0 | 2 | 1
+  401c | 83 | 0 | 0 | 0 | 1 | 1 | 0
+  401d | 63 | 0 | 0 | 0 | 1 | 1 | 1
+  401e | 40 | 0 | 0 | 1 | 0 | 0 | 3
+  402a | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  402b | 54 | 0 | 0 | 0 | 0 | 1 | 0
+  402c | 51 | 1 | 0 | 0 | 1 | 1 | 0
+  402d | 63 | 0 | 1 | 0 | 0 | 0 | 1
+  402e | 51 | 0 | 0 | 0 | 0 | 1 | 0
+  403a | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  403b | 67 | 0 | 0 | 0 | 1 | 0 | 1
+  403c | 69 | 0 | 0 | 0 | 1 | 1 | 1
+  403d | 53 | 0 | 0 | 0 | 0 | 1 | 0
+  403e | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  404a | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  404b | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  404c | 66 | 0 | 0 | 0 | 1 | 1 | 0
+  404d | 70 | 0 | 0 | 0 | 1 | 1 | 0
+  404e | 48 | 0 | 0 | 0 | 1 | 1 | 1
+  405a | 66 | 0 | 0 | 0 | 2 | 1 | 1
+  405b | 67 | 0 | 1 | 0 | 0 | 2 | 0
+  405c | 86 | 0 | 0 | 0 | 2 | 1 | 1
+  405d | 60 | 0 | 0 | 0 | 0 | 1 | 1
+  405e | 33 | 0 | 0 | 0 | 0 | 0 | 0
+  406a | 79 | 0 | 0 | 0 | 1 | 1 | 0
+  406b | 80 | 0 | 0 | 0 | 1 | 0 | 0
+  406c | 61 | 0 | 0 | 0 | 2 | 1 | 0
+  406d | 60 | 1 | 1 | 0 | 2 | 0 | 0
+  406e | 23 | 0 | 0 | 0 | 1 | 0 | 0
+  407a | 47 | 0 | 1 | 0 | 0 | 1 | 2
+  407b | 87 | 0 | 0 | 0 | 1 | 0 | 0
+  407c | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  407d | 67 | 0 | 0 | 0 | 0 | 2 | 1
+  407e | 55 | 1 | 0 | 0 | 0 | 1 | 0
+  408a | 66 | 0 | 0 | 0 | 0 | 2 | 1
+  408b | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  408c | 75 | 0 | 0 | 0 | 1 | 0 | 1
+  408d | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  408e | 40 | 1 | 1 | 0 | 0 | 1 | 1
+  409a | 74 | 0 | 0 | 0 | 1 | 1 | 1
+  409b | 73 | 0 | 0 | 0 | 1 | 0 | 1
+  409c | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  409d | 58 | 0 | 0 | 0 | 2 | 1 | 2
+  409e | 47 | 0 | 0 | 0 | 0 | 1 | 1
+  410a | 63 | 0 | 2 | 0 | 1 | 1 | 0
+  410b | 79 | 0 | 0 | 0 | 1 | 1 | 2
+  410c | 71 | 0 | 0 | 0 | 3 | 1 | 1
+  410d | 79 | 0 | 0 | 0 | 1 | 0 | 0
+  410e | 22 | 0 | 0 | 0 | 0 | 1 | 0
+  411a | 68 | 0 | 0 | 0 | 0 | 0 | 1
+  411b | 61 | 1 | 0 | 0 | 0 | 1 | 0
+  411c | 75 | 0 | 0 | 0 | 0 | 0 | 3
+  411d | 72 | 1 | 0 | 0 | 2 | 1 | 0
+  411e | 36 | 0 | 0 | 0 | 1 | 1 | 0
+  412a | 54 | 1 | 0 | 0 | 1 | 0 | 1
+  412b | 67 | 1 | 0 | 0 | 1 | 1 | 0
+  412c | 77 | 1 | 0 | 0 | 2 | 1 | 2
+  412d | 77 | 0 | 0 | 0 | 2 | 1 | 0
+  412e | 26 | 0 | 0 | 0 | 0 | 1 | 0
+  413a | 76 | 0 | 0 | 0 | 1 | 1 | 0
+  413b | 63 | 0 | 0 | 0 | 3 | 1 | 0
+  413c | 83 | 0 | 0 | 0 | 1 | 1 | 1
+  413d | 63 | 0 | 0 | 0 | 3 | 1 | 1
+  413e | 63 | 0 | 0 | 0 | 0 | 2 | 0
+  414a | 75 | 1 | 0 | 0 | 1 | 0 | 0
+  414b | 59 | 0 | 0 | 0 | 1 | 2 | 0
+  414c | 73 | 0 | 0 | 0 | 0 | 0 | 0
+  414d | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  414e | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  415a | 70 | 0 | 0 | 0 | 4 | 1 | 0
+  415b | 69 | 0 | 0 | 0 | 2 | 1 | 0
+  415c | 98 | 0 | 0 | 0 | 1 | 3 | 1
+  415d | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  415e | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  416a | 70 | 0 | 1 | 0 | 0 | 1 | 2
+  416b | 76 | 0 | 0 | 1 | 2 | 0 | 1
+  416c | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  416d | 51 | 0 | 0 | 0 | 0 | 1 | 1
+  416e | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  417a | 63 | 0 | 0 | 0 | 2 | 0 | 0
+  417b | 62 | 0 | 0 | 0 | 2 | 0 | 1
+  417c | 76 | 0 | 0 | 0 | 1 | 0 | 0
+  417d | 43 | 0 | 0 | 0 | 0 | 0 | 1
+  417e | 64 | 0 | 0 | 0 | 1 | 1 | 0
+  418a | 52 | 0 | 0 | 0 | 0 | 0 | 1
+  418b | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  418c | 64 | 0 | 0 | 0 | 1 | 1 | 2
+  418d | 62 | 0 | 0 | 1 | 0 | 0 | 1
+  418e | 68 | 0 | 1 | 0 | 1 | 0 | 0
+  419a | 70 | 0 | 0 | 0 | 1 | 0 | 1
+  419b | 74 | 0 | 0 | 0 | 1 | 0 | 2
+  419c | 73 | 0 | 0 | 0 | 0 | 0 | 0
+  419d | 69 | 0 | 0 | 0 | 2 | 0 | 0
+  419e | 31 | 1 | 0 | 0 | 0 | 0 | 0
+  420a | 80 | 1 | 0 | 0 | 1 | 1 | 1
+  420b | 79 | 0 | 0 | 0 | 1 | 0 | 1
+  420c | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  420d | 73 | 0 | 0 | 0 | 1 | 2 | 0
+  420e | 38 | 0 | 0 | 0 | 0 | 1 | 0
+  421a | 77 | 0 | 1 | 0 | 1 | 1 | 1
+  421b | 70 | 0 | 0 | 0 | 3 | 0 | 0
+  421c | 74 | 0 | 1 | 0 | 1 | 1 | 0
+  421d | 74 | 0 | 0 | 0 | 2 | 2 | 0
+  421e | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  422a | 64 | 0 | 0 | 0 | 1 | 1 | 0
+  422b | 67 | 0 | 0 | 0 | 0 | 1 | 0
+  422c | 68 | 0 | 1 | 0 | 0 | 0 | 0
+  422d | 76 | 1 | 0 | 0 | 1 | 0 | 2
+  422e | 47 | 0 | 0 | 0 | 1 | 0 | 0
+  423a | 72 | 0 | 0 | 0 | 1 | 0 | 0
+  423b | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  423c | 59 | 0 | 0 | 0 | 0 | 1 | 1
+  423d | 73 | 0 | 1 | 1 | 2 | 0 | 0
+  423e | 68 | 0 | 0 | 0 | 0 | 1 | 1
+  424a | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  424b | 68 | 0 | 0 | 0 | 1 | 1 | 1
+  424c | 74 | 0 | 0 | 0 | 1 | 1 | 0
+  424d | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  424e | 57 | 0 | 0 | 0 | 0 | 0 | 2
+  425a | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  425b | 73 | 0 | 0 | 0 | 1 | 2 | 0
+  425c | 66 | 0 | 0 | 0 | 0 | 1 | 0
+  425d | 65 | 0 | 0 | 0 | 1 | 0 | 0
+  425e | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  426a | 65 | 0 | 0 | 1 | 1 | 0 | 0
+  426b | 65 | 0 | 1 | 0 | 0 | 1 | 0
+  426c | 88 | 0 | 1 | 0 | 2 | 1 | 0
+  426d | 66 | 0 | 0 | 0 | 0 | 1 | 0
+  426e | 64 | 0 | 0 | 0 | 1 | 0 | 1
+  427a | 77 | 0 | 0 | 0 | 0 | 0 | 0
+  427b | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  427c | 84 | 0 | 0 | 0 | 0 | 0 | 0
+  427d | 60 | 1 | 0 | 0 | 0 | 1 | 0
+  427e | 60 | 0 | 0 | 0 | 0 | 0 | 1
+  428a | 72 | 0 | 0 | 0 | 0 | 1 | 1
+  428b | 60 | 0 | 0 | 0 | 1 | 1 | 1
+  428c | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  428d | 69 | 0 | 0 | 0 | 2 | 1 | 2
+  428e | 42 | 0 | 0 | 0 | 0 | 0 | 0
+  429a | 67 | 0 | 0 | 0 | 0 | 1 | 0
+  429b | 68 | 0 | 0 | 0 | 0 | 2 | 1
+  429c | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  429d | 72 | 0 | 0 | 0 | 2 | 0 | 0
+  429e | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  430a | 79 | 0 | 0 | 0 | 2 | 0 | 1
+  430b | 55 | 0 | 0 | 0 | 1 | 0 | 1
+  430c | 72 | 0 | 0 | 0 | 0 | 2 | 1
+  430d | 73 | 0 | 1 | 0 | 1 | 0 | 0
+  430e | 88 | 0 | 0 | 0 | 0 | 0 | 1
+  431a | 76 | 0 | 0 | 0 | 1 | 1 | 0
+  431b | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  431c | 89 | 0 | 0 | 0 | 2 | 0 | 0
+  431d | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  431e | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  432a | 71 | 0 | 0 | 0 | 1 | 0 | 1
+  432b | 76 | 0 | 0 | 0 | 0 | 0 | 0
+  432c | 67 | 0 | 0 | 0 | 0 | 1 | 0
+  432d | 76 | 0 | 1 | 0 | 1 | 0 | 0
+  432e | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  433a | 60 | 0 | 1 | 0 | 1 | 1 | 0
+  433b | 69 | 0 | 1 | 0 | 1 | 0 | 0
+  433c | 78 | 0 | 0 | 0 | 0 | 0 | 0
+  433d | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  433e | 74 | 0 | 0 | 0 | 0 | 0 | 0
+  434a | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  434b | 61 | 0 | 1 | 0 | 0 | 0 | 0
+  434c | 79 | 0 | 0 | 0 | 0 | 2 | 0
+  434d | 75 | 0 | 0 | 0 | 1 | 2 | 0
+  434e | 59 | 0 | 0 | 0 | 0 | 1 | 0
+  435a | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  435b | 71 | 0 | 0 | 0 | 2 | 0 | 0
+  435c | 75 | 0 | 0 | 0 | 0 | 1 | 0
+  435d | 61 | 0 | 0 | 0 | 1 | 0 | 0
+  435e | 75 | 0 | 0 | 0 | 0 | 0 | 3
+  436a | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  436b | 70 | 0 | 0 | 0 | 1 | 1 | 0
+  436c | 71 | 0 | 0 | 0 | 2 | 0 | 0
+  436d | 62 | 0 | 0 | 0 | 0 | 0 | 1
+  436e | 38 | 0 | 0 | 0 | 1 | 0 | 0
+  437a | 76 | 0 | 0 | 0 | 0 | 0 | 1
+  437b | 74 | 0 | 1 | 0 | 0 | 0 | 0
+  437c | 62 | 0 | 0 | 0 | 1 | 0 | 0
+  437d | 48 | 0 | 0 | 0 | 0 | 1 | 1
+  438a | 53 | 0 | 0 | 0 | 1 | 2 | 0
+  438b | 64 | 0 | 0 | 0 | 0 | 1 | 0
+  438c | 80 | 0 | 0 | 0 | 1 | 0 | 0
+  438d | 65 | 0 | 0 | 0 | 2 | 1 | 1
+  438e | 70 | 0 | 0 | 0 | 1 | 1 | 0
+  439a | 66 | 0 | 0 | 0 | 0 | 1 | 1
+  439b | 74 | 0 | 2 | 0 | 0 | 0 | 0
+  439c | 72 | 0 | 0 | 0 | 2 | 0 | 0
+  439d | 74 | 0 | 1 | 0 | 0 | 1 | 0
+  439e | 55 | 1 | 0 | 0 | 1 | 1 | 0
+  440a | 75 | 0 | 0 | 0 | 2 | 0 | 0
+  440b | 74 | 0 | 0 | 0 | 0 | 0 | 0
+  440c | 70 | 0 | 0 | 0 | 0 | 1 | 0
+  440d | 70 | 0 | 0 | 0 | 1 | 2 | 1
+  440e | 44 | 0 | 1 | 0 | 0 | 0 | 0
+occurrences[518]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_cratylus_000003 | οὖν | οὖν | turn_cratylus_0001 | 383a | 19 | 22
+  tok_cratylus_000058 | οὖν | οὖν | turn_cratylus_0003 | 383b | 379 | 382
+  tok_cratylus_000153 | οὖν | οὖν | turn_cratylus_0004 | 384a | 1003 | 1006
+  tok_cratylus_000197 | δή | δὴ | turn_cratylus_0005 | 384b | 1302 | 1304
+  tok_cratylus_000210 | οὖν | οὖν | turn_cratylus_0005 | 384b | 1368 | 1371
+  tok_cratylus_000281 | γάρ | γὰρ | turn_cratylus_0005 | 384c | 1823 | 1826
+  tok_cratylus_000315 | μήν | μὴν | turn_cratylus_0006 | 384c | 2029 | 2032
+  tok_cratylus_000320 | δή | δὴ | turn_cratylus_0006 | 384c | 2061 | 2063
+  tok_cratylus_000340 | γάρ | γὰρ | turn_cratylus_0006 | 384d | 2191 | 2194
+  tok_cratylus_000386 | γάρ | γὰρ | turn_cratylus_0006 | 384d | 2478 | 2481
+  tok_cratylus_000455 | οὖν | οὖν | turn_cratylus_0011 | 385a | 2881 | 2884
+  tok_cratylus_000502 | δή | δή | turn_cratylus_0013 | 385b | 3155 | 3157
+  tok_cratylus_000528 | οὖν | οὖν | turn_cratylus_0017 | 385b | 3286 | 3289
+  tok_cratylus_000604 | οὖν | οὖν | turn_cratylus_0025 | 385c | 3663 | 3666
+  tok_cratylus_000660 | γάρ | γὰρ | turn_cratylus_0034 | 385d | 3991 | 3994
+  tok_cratylus_000695 | γάρ | γὰρ | turn_cratylus_0038 | 385d | 4165 | 4168
+  tok_cratylus_000747 | δή | δὴ | turn_cratylus_0039 | 385e | 4483 | 4485
+  tok_cratylus_000850 | δή | δὴ | turn_cratylus_0042 | 386b | 5104 | 5106
+  tok_cratylus_000881 | οὖν | οὖν | turn_cratylus_0045 | 386b | 5298 | 5301
+  tok_cratylus_000886 | οὖν | οὖν | turn_cratylus_0047 | 386b | 5324 | 5327
+  tok_cratylus_000910 | οὖν | οὖν | turn_cratylus_0049 | 386c | 5471 | 5474
+  tok_cratylus_000961 | γάρ | γὰρ | turn_cratylus_0051 | 386c | 5780 | 5783
+  tok_cratylus_000985 | μήν | μὴν | turn_cratylus_0053 | 386d | 5916 | 5919
+  tok_cratylus_001001 | γάρ | γὰρ | turn_cratylus_0053 | 386d | 6001 | 6004
+  tok_cratylus_001043 | δή | δὴ | turn_cratylus_0055 | 386d | 6235 | 6237
+  tok_cratylus_001085 | οὖν | οὖν | turn_cratylus_0057 | 386e | 6481 | 6484
+  tok_cratylus_001238 | οὖν | οὖν | turn_cratylus_0065 | 387b | 7351 | 7354
+  tok_cratylus_001252 | οὖν | οὖν | turn_cratylus_0067 | 387b | 7421 | 7424
+  tok_cratylus_001308 | γάρ | γάρ | turn_cratylus_0069 | 387c | 7732 | 7735
+  tok_cratylus_001400 | δή | δή | turn_cratylus_0077 | 387d | 8287 | 8289
+  tok_cratylus_001432 | δή | δὴ | turn_cratylus_0081 | 387e | 8458 | 8460
+  tok_cratylus_001479 | οὖν | οὖν | turn_cratylus_0091 | 388a | 8706 | 8709
+  tok_cratylus_001524 | δή | δὴ | turn_cratylus_0097 | 388b | 8981 | 8983
+  tok_cratylus_001605 | οὖν | οὖν | turn_cratylus_0107 | 388c | 9475 | 9478
+  tok_cratylus_001651 | οὖν | οὖν | turn_cratylus_0113 | 388d | 9720 | 9723
+  tok_cratylus_001760 | δή | δὴ | turn_cratylus_0125 | 389a | 10365 | 10367
+  tok_cratylus_001771 | δή | δή | turn_cratylus_0127 | 389a | 10439 | 10441
+  tok_cratylus_001894 | δή | δὴ | turn_cratylus_0135 | 389c | 11162 | 11164
+  tok_cratylus_001925 | γάρ | γὰρ | turn_cratylus_0135 | 389c | 11350 | 11353
+  tok_cratylus_001954 | γάρ | γὰρ | turn_cratylus_0139 | 389d | 11531 | 11534
+  tok_cratylus_001970 | οὖν | οὖν | turn_cratylus_0141 | 389d | 11623 | 11626
+  tok_cratylus_002030 | γάρ | γὰρ | turn_cratylus_0141 | 389e | 11996 | 11999
+  tok_cratylus_002070 | γάρ | γάρ | turn_cratylus_0141 | 390a | 12227 | 12230
+  tok_cratylus_002117 | οὖν | οὖν | turn_cratylus_0145 | 390b | 12502 | 12505
+  tok_cratylus_002148 | οὖν | οὖν | turn_cratylus_0147 | 390b | 12693 | 12696
+  tok_cratylus_002217 | οὖν | οὖν | turn_cratylus_0155 | 390c | 13100 | 13103
+  tok_cratylus_002468 | μήν | μὴν | turn_cratylus_0170 | 391b | 14649 | 14652
+  tok_cratylus_002474 | τοίνυν | τοίνυν | turn_cratylus_0171 | 391b | 14684 | 14690
+  tok_cratylus_002477 | οὖν | οὖν | turn_cratylus_0172 | 391b | 14701 | 14704
+  tok_cratylus_002630 | γάρ | γὰρ | turn_cratylus_0177 | 391d | 15615 | 15618
+  tok_cratylus_002631 | δή | δὴ | turn_cratylus_0177 | 391d | 15619 | 15621
+  tok_cratylus_002652 | οὖν | οὖν | turn_cratylus_0178 | 391e | 15729 | 15732
+  tok_cratylus_002690 | οὖν | οὖν | turn_cratylus_0181 | 392a | 15976 | 15979
+  tok_cratylus_002691 | δή | δή | turn_cratylus_0181 | 392a | 15980 | 15982
+  tok_cratylus_002795 | γάρ | γὰρ | turn_cratylus_0181 | 392b | 16609 | 16612
+  tok_cratylus_002811 | οὖν | οὖν | turn_cratylus_0183 | 392b | 16685 | 16688
+  tok_cratylus_002832 | δή | δὴ | turn_cratylus_0185 | 392c | 16840 | 16842
+  tok_cratylus_002851 | δή | δὴ | turn_cratylus_0186 | 392c | 16961 | 16963
+  tok_cratylus_002859 | οὖν | οὖν | turn_cratylus_0187 | 392c | 17010 | 17013
+  tok_cratylus_002944 | δή | δὴ | turn_cratylus_0195 | 392d | 17547 | 17549
+  tok_cratylus_002956 | γάρ | γάρ | turn_cratylus_0195 | 392d | 17611 | 17614
+  tok_cratylus_002958 | γάρ | γάρ | turn_cratylus_0195 | 392e | 17636 | 17639
+  tok_cratylus_002967 | δή | δή | turn_cratylus_0195 | 392e | 17694 | 17696
+  tok_cratylus_002992 | δή | δή | turn_cratylus_0197 | 392e | 17832 | 17834
+  tok_cratylus_002995 | γάρ | γάρ | turn_cratylus_0197 | 392e | 17844 | 17847
+  tok_cratylus_003025 | δή | δή | turn_cratylus_0200 | 393a | 18009 | 18011
+  tok_cratylus_003044 | γάρ | γὰρ | turn_cratylus_0201 | 393a | 18133 | 18136
+  tok_cratylus_003059 | γάρ | γὰρ | turn_cratylus_0201 | 393a | 18238 | 18241
+  tok_cratylus_003070 | γάρ | γὰρ | turn_cratylus_0201 | 393a | 18311 | 18314
+  tok_cratylus_003202 | γάρ | γάρ | turn_cratylus_0205 | 393c | 19080 | 19083
+  tok_cratylus_003209 | γάρ | γὰρ | turn_cratylus_0205 | 393c | 19116 | 19119
+  tok_cratylus_003376 | γάρ | γάρ | turn_cratylus_0209 | 394a | 20113 | 20116
+  tok_cratylus_003404 | δή | δὴ | turn_cratylus_0209 | 394a | 20283 | 20285
+  tok_cratylus_003578 | οὖν | οὖν | turn_cratylus_0210 | 394d | 21429 | 21432
+  tok_cratylus_003582 | δή | δὴ | turn_cratylus_0211 | 394d | 21447 | 21449
+  tok_cratylus_003744 | γάρ | γὰρ | turn_cratylus_0223 | 395a | 22426 | 22429
+  tok_cratylus_003776 | οὖν | οὖν | turn_cratylus_0223 | 395a | 22624 | 22627
+  tok_cratylus_003798 | γάρ | γὰρ | turn_cratylus_0223 | 395b | 22763 | 22766
+  tok_cratylus_003819 | οὖν | οὖν | turn_cratylus_0223 | 395b | 22880 | 22883
+  tok_cratylus_003847 | γάρ | γὰρ | turn_cratylus_0223 | 395b | 23064 | 23067
+  tok_cratylus_003876 | γάρ | γὰρ | turn_cratylus_0223 | 395c | 23230 | 23233
+  tok_cratylus_003891 | δή | δή | turn_cratylus_0224 | 395c | 23326 | 23328
+  tok_cratylus_004051 | γάρ | γάρ | turn_cratylus_0228 | 396a | 24309 | 24312
+  tok_cratylus_004075 | γάρ | γὰρ | turn_cratylus_0228 | 396a | 24426 | 24429
+  tok_cratylus_004091 | δή | δὴ | turn_cratylus_0228 | 396a | 24523 | 24525
+  tok_cratylus_004100 | γάρ | γὰρ | turn_cratylus_0228 | 396a | 24580 | 24583
+  tok_cratylus_004122 | οὖν | οὖν | turn_cratylus_0228 | 396a | 24699 | 24702
+  tok_cratylus_004173 | γάρ | γὰρ | turn_cratylus_0228 | 396b | 25014 | 25017
+  tok_cratylus_004210 | δή | δὴ | turn_cratylus_0228 | 396c | 25222 | 25224
+  tok_cratylus_004276 | δή | δή | turn_cratylus_0229 | 396d | 25631 | 25633
+  tok_cratylus_004303 | γάρ | γὰρ | turn_cratylus_0230 | 396d | 25817 | 25820
+  tok_cratylus_004312 | οὖν | οὖν | turn_cratylus_0230 | 396d | 25869 | 25872
+  tok_cratylus_004329 | οὖν | οὖν | turn_cratylus_0230 | 396d | 25971 | 25974
+  tok_cratylus_004378 | γάρ | γὰρ | turn_cratylus_0231 | 397a | 26294 | 26297
+  tok_cratylus_004393 | οὖν | οὖν | turn_cratylus_0232 | 397a | 26380 | 26383
+  tok_cratylus_004425 | οὖν | οὖν | turn_cratylus_0232 | 397b | 26595 | 26598
+  tok_cratylus_004438 | γάρ | γὰρ | turn_cratylus_0232 | 397b | 26676 | 26679
+  tok_cratylus_004467 | οὖν | οὖν | turn_cratylus_0232 | 397b | 26892 | 26895
+  tok_cratylus_004488 | γάρ | γὰρ | turn_cratylus_0232 | 397b | 27015 | 27018
+  tok_cratylus_004518 | οὖν | οὖν | turn_cratylus_0234 | 397c | 27195 | 27198
+  tok_cratylus_004541 | τοίνυν | τοίνυν | turn_cratylus_0236 | 397c | 27335 | 27341
+  tok_cratylus_004574 | οὖν | οὖν | turn_cratylus_0236 | 397d | 27555 | 27558
+  tok_cratylus_004615 | οὖν | οὖν | turn_cratylus_0237 | 397d | 27807 | 27810
+  tok_cratylus_004619 | οὖν | οὖν | turn_cratylus_0238 | 397d | 27826 | 27829
+  tok_cratylus_004626 | δή | δὴ | turn_cratylus_0239 | 397d | 27866 | 27868
+  tok_cratylus_004660 | οὖν | οὖν | turn_cratylus_0242 | 397e | 28076 | 28079
+  tok_cratylus_004687 | τοίνυν | τοίνυν | turn_cratylus_0246 | 397e | 28233 | 28239
+  tok_cratylus_004710 | οὖν | οὖν | turn_cratylus_0247 | 398a | 28435 | 28438
+  tok_cratylus_004711 | δή | δή | turn_cratylus_0247 | 398a | 28439 | 28441
+  tok_cratylus_004777 | τοίνυν | τοίνυν | turn_cratylus_0254 | 398b | 28802 | 28808
+  tok_cratylus_004807 | οὖν | οὖν | turn_cratylus_0254 | 398b | 28994 | 28997
+  tok_cratylus_004837 | οὖν | οὖν | turn_cratylus_0254 | 398c | 29187 | 29190
+  tok_cratylus_004873 | δή | δὴ | turn_cratylus_0255 | 398c | 29414 | 29416
+  tok_cratylus_004886 | γάρ | γὰρ | turn_cratylus_0256 | 398c | 29489 | 29492
+  tok_cratylus_004909 | οὖν | οὖν | turn_cratylus_0259 | 398c | 29613 | 29616
+  tok_cratylus_004922 | οὖν | οὖν | turn_cratylus_0260 | 398d | 29696 | 29699
+  tok_cratylus_004935 | γάρ | γάρ | turn_cratylus_0260 | 398d | 29774 | 29777
+  tok_cratylus_004972 | γάρ | γὰρ | turn_cratylus_0260 | 398d | 30018 | 30021
+  tok_cratylus_004977 | οὖν | οὖν | turn_cratylus_0260 | 398d | 30057 | 30060
+  tok_cratylus_005053 | δή | δή | turn_cratylus_0263 | 399a | 30548 | 30550
+  tok_cratylus_005079 | δή | δὴ | turn_cratylus_0264 | 399a | 30711 | 30713
+  tok_cratylus_005084 | γάρ | γὰρ | turn_cratylus_0264 | 399a | 30733 | 30736
+  tok_cratylus_005145 | τοίνυν | τοίνυν | turn_cratylus_0266 | 399b | 31177 | 31183
+  tok_cratylus_005157 | γάρ | γὰρ | turn_cratylus_0266 | 399b | 31241 | 31244
+  tok_cratylus_005213 | δή | δὴ | turn_cratylus_0268 | 399c | 31620 | 31622
+  tok_cratylus_005227 | οὖν | οὖν | turn_cratylus_0269 | 399c | 31710 | 31713
+  tok_cratylus_005242 | τοίνυν | τοίνυν | turn_cratylus_0271 | 399d | 31791 | 31797
+  tok_cratylus_005251 | γάρ | γάρ | turn_cratylus_0271 | 399d | 31852 | 31855
+  tok_cratylus_005260 | γάρ | γὰρ | turn_cratylus_0272 | 399d | 31909 | 31912
+  tok_cratylus_005264 | δή | δὴ | turn_cratylus_0273 | 399d | 31932 | 31934
+  tok_cratylus_005290 | τοίνυν | τοίνυν | turn_cratylus_0276 | 399d | 32084 | 32090
+  tok_cratylus_005334 | δή | δή | turn_cratylus_0276 | 399e | 32357 | 32359
+  tok_cratylus_005346 | γάρ | γάρ | turn_cratylus_0276 | 399e | 32432 | 32435
+  tok_cratylus_005357 | γάρ | γάρ | turn_cratylus_0276 | 400a | 32509 | 32512
+  tok_cratylus_005451 | οὖν | οὖν | turn_cratylus_0283 | 400b | 33062 | 33065
+  tok_cratylus_005462 | γάρ | γὰρ | turn_cratylus_0284 | 400b | 33126 | 33129
+  tok_cratylus_005474 | δή | δὴ | turn_cratylus_0285 | 400b | 33204 | 33206
+  tok_cratylus_005502 | γάρ | γὰρ | turn_cratylus_0288 | 400c | 33355 | 33358
+  tok_cratylus_005548 | δή | δὴ | turn_cratylus_0288 | 400c | 33616 | 33618
+  tok_cratylus_005560 | οὖν | οὖν | turn_cratylus_0288 | 400c | 33700 | 33703
+  tok_cratylus_005653 | γάρ | γὰρ | turn_cratylus_0290 | 400d | 34275 | 34278
+  tok_cratylus_005688 | γάρ | γὰρ | turn_cratylus_0290 | 401a | 34510 | 34513
+  tok_cratylus_005689 | δή | δὴ | turn_cratylus_0290 | 401a | 34514 | 34516
+  tok_cratylus_005695 | οὖν | οὖν | turn_cratylus_0291 | 401a | 34549 | 34552
+  tok_cratylus_005709 | γάρ | γὰρ | turn_cratylus_0291 | 401a | 34639 | 34642
+  tok_cratylus_005730 | γάρ | γὰρ | turn_cratylus_0291 | 401a | 34762 | 34765
+  tok_cratylus_005746 | οὖν | οὖν | turn_cratylus_0293 | 401b | 34865 | 34868
+  tok_cratylus_005758 | οὖν | οὖν | turn_cratylus_0295 | 401b | 34931 | 34934
+  tok_cratylus_005797 | δή | δή | turn_cratylus_0298 | 401b | 35176 | 35178
+  tok_cratylus_005839 | οὖν | οὖν | turn_cratylus_0299 | 401c | 35460 | 35463
+  tok_cratylus_005872 | γάρ | γὰρ | turn_cratylus_0299 | 401c | 35673 | 35676
+  tok_cratylus_005897 | γάρ | γὰρ | turn_cratylus_0299 | 401d | 35829 | 35832
+  tok_cratylus_005934 | οὖν | οὖν | turn_cratylus_0299 | 401d | 36059 | 36062
+  tok_cratylus_005944 | δή | δὴ | turn_cratylus_0299 | 401d | 36112 | 36114
+  tok_cratylus_005953 | δή | δὴ | turn_cratylus_0299 | 401e | 36179 | 36181
+  tok_cratylus_005968 | καίτοι | καίτοι | turn_cratylus_0299 | 401e | 36272 | 36278
+  tok_cratylus_005982 | δή | δή | turn_cratylus_0300 | 401e | 36349 | 36351
+  tok_cratylus_005993 | δή | δὴ | turn_cratylus_0302 | 401e | 36415 | 36417
+  tok_cratylus_006063 | οὖν | οὖν | turn_cratylus_0309 | 402b | 36843 | 36846
+  tok_cratylus_006123 | οὖν | οὖν | turn_cratylus_0309 | 402c | 37296 | 37299
+  tok_cratylus_006154 | μήν | μὴν | turn_cratylus_0311 | 402c | 37471 | 37474
+  tok_cratylus_006166 | γάρ | γὰρ | turn_cratylus_0311 | 402c | 37543 | 37546
+  tok_cratylus_006210 | δή | δὴ | turn_cratylus_0315 | 402d | 37808 | 37810
+  tok_cratylus_006232 | τοίνυν | τοίνυν | turn_cratylus_0317 | 402d | 37924 | 37930
+  tok_cratylus_006261 | οὖν | οὖν | turn_cratylus_0317 | 402e | 38138 | 38141
+  tok_cratylus_006383 | γάρ | γάρ | turn_cratylus_0320 | 403b | 38927 | 38930
+  tok_cratylus_006425 | δή | δή | turn_cratylus_0321 | 403b | 39160 | 39162
+  tok_cratylus_006435 | γάρ | γάρ | turn_cratylus_0322 | 403c | 39211 | 39214
+  tok_cratylus_006458 | οὖν | οὖν | turn_cratylus_0324 | 403c | 39358 | 39361
+  tok_cratylus_006476 | δή | δή | turn_cratylus_0325 | 403c | 39459 | 39461
+  tok_cratylus_006522 | οὖν | οὖν | turn_cratylus_0332 | 403d | 39736 | 39739
+  tok_cratylus_006771 | οὖν | οὖν | turn_cratylus_0339 | 404c | 41249 | 41252
+  tok_cratylus_006823 | γάρ | γὰρ | turn_cratylus_0339 | 404c | 41594 | 41597
+  tok_cratylus_006840 | γάρ | γὰρ | turn_cratylus_0339 | 404d | 41722 | 41725
+  tok_cratylus_006855 | οὖν | οὖν | turn_cratylus_0339 | 404d | 41835 | 41838
+  tok_cratylus_006925 | οὖν | οὖν | turn_cratylus_0340 | 404e | 42253 | 42256
+  tok_cratylus_006946 | δή | δή | turn_cratylus_0342 | 404e | 42365 | 42367
+  tok_cratylus_006956 | γάρ | γὰρ | turn_cratylus_0343 | 404e | 42417 | 42420
+  tok_cratylus_006987 | δή | δή | turn_cratylus_0344 | 405a | 42607 | 42609
+  tok_cratylus_006989 | γάρ | γάρ | turn_cratylus_0344 | 405a | 42618 | 42621
+  tok_cratylus_006999 | οὖν | οὖν | turn_cratylus_0345 | 405a | 42671 | 42674
+  tok_cratylus_007007 | γάρ | γὰρ | turn_cratylus_0345 | 405a | 42716 | 42719
+  tok_cratylus_007065 | οὖν | οὖν | turn_cratylus_0346 | 405b | 43041 | 43044
+  tok_cratylus_007086 | οὖν | οὖν | turn_cratylus_0348 | 405b | 43150 | 43153
+  tok_cratylus_007090 | τοίνυν | τοίνυν | turn_cratylus_0349 | 405b | 43168 | 43174
+  tok_cratylus_007117 | γάρ | γάρ | turn_cratylus_0349 | 405c | 43338 | 43341
+  tok_cratylus_007120 | οὖν | οὖν | turn_cratylus_0349 | 405c | 43354 | 43357
+  tok_cratylus_007129 | γάρ | γάρ | turn_cratylus_0349 | 405c | 43423 | 43426
+  tok_cratylus_007176 | δή | δὴ | turn_cratylus_0349 | 405c | 43714 | 43716
+  tok_cratylus_007188 | δή | δὴ | turn_cratylus_0349 | 405d | 43802 | 43804
+  tok_cratylus_007224 | οὖν | οὖν | turn_cratylus_0349 | 405d | 44019 | 44022
+  tok_cratylus_007338 | γάρ | γὰρ | turn_cratylus_0350 | 406a | 44820 | 44823
+  tok_cratylus_007342 | οὖν | οὖν | turn_cratylus_0350 | 406a | 44854 | 44857
+  tok_cratylus_007428 | γάρ | γὰρ | turn_cratylus_0352 | 406b | 45367 | 45370
+  tok_cratylus_007443 | οὖν | οὖν | turn_cratylus_0352 | 406c | 45465 | 45468
+  tok_cratylus_007455 | γάρ | γὰρ | turn_cratylus_0352 | 406c | 45552 | 45555
+  tok_cratylus_007461 | γάρ | γὰρ | turn_cratylus_0352 | 406c | 45574 | 45577
+  tok_cratylus_007510 | μήν | μὴν | turn_cratylus_0353 | 406d | 45927 | 45930
+  tok_cratylus_007530 | γάρ | γάρ | turn_cratylus_0355 | 406d | 46035 | 46038
+  tok_cratylus_007554 | γάρ | γὰρ | turn_cratylus_0359 | 406d | 46174 | 46177
+  tok_cratylus_007559 | τοίνυν | τοίνυν | turn_cratylus_0360 | 406d | 46196 | 46202
+  tok_cratylus_007574 | γάρ | γάρ | turn_cratylus_0360 | 406e | 46294 | 46297
+  tok_cratylus_007602 | οὖν | οὖν | turn_cratylus_0361 | 407a | 46462 | 46465
+  tok_cratylus_007606 | τοίνυν | τοίνυν | turn_cratylus_0362 | 407a | 46492 | 46498
+  tok_cratylus_007613 | δή | δὴ | turn_cratylus_0363 | 407a | 46530 | 46532
+  tok_cratylus_007630 | δή | δὴ | turn_cratylus_0366 | 407a | 46625 | 46627
+  tok_cratylus_007644 | γάρ | γὰρ | turn_cratylus_0366 | 407b | 46707 | 46710
+  tok_cratylus_007748 | δή | δὴ | turn_cratylus_0367 | 407c | 47344 | 47346
+  tok_cratylus_007821 | δή | δὴ | turn_cratylus_0374 | 407d | 47764 | 47766
+  tok_cratylus_007836 | οὖν | οὖν | turn_cratylus_0375 | 407d | 47873 | 47876
+  tok_cratylus_007840 | οὖν | οὖν | turn_cratylus_0376 | 407d | 47889 | 47892
+  tok_cratylus_007885 | οὖν | οὖν | turn_cratylus_0377 | 407e | 48196 | 48199
+  tok_cratylus_007903 | μήν | μὴν | turn_cratylus_0378 | 407e | 48293 | 48296
+  tok_cratylus_007941 | οὖν | οὖν | turn_cratylus_0378 | 408a | 48512 | 48515
+  tok_cratylus_007967 | οὖν | οὖν | turn_cratylus_0378 | 408a | 48688 | 48691
+  tok_cratylus_007980 | δή | δή | turn_cratylus_0378 | 408a | 48753 | 48755
+  tok_cratylus_008063 | δή | δή | turn_cratylus_0381 | 408c | 49257 | 49259
+  tok_cratylus_008116 | γάρ | γὰρ | turn_cratylus_0384 | 408c | 49535 | 49538
+  tok_cratylus_008238 | μήν | μὴν | turn_cratylus_0389 | 408e | 50245 | 50248
+  tok_cratylus_008242 | δή | δὴ | turn_cratylus_0390 | 408e | 50263 | 50265
+  tok_cratylus_008243 | οὖν | οὖν | turn_cratylus_0390 | 408e | 50266 | 50269
+  tok_cratylus_008257 | τοίνυν | τοίνυν | turn_cratylus_0392 | 408e | 50344 | 50350
+  tok_cratylus_008269 | γάρ | γὰρ | turn_cratylus_0392 | 409a | 50435 | 50438
+  tok_cratylus_008274 | οὖν | οὖν | turn_cratylus_0392 | 409a | 50474 | 50477
+  tok_cratylus_008332 | δή | δή | turn_cratylus_0395 | 409a | 50786 | 50788
+  tok_cratylus_008352 | δή | δή | turn_cratylus_0397 | 409b | 50902 | 50904
+  tok_cratylus_008384 | γάρ | γάρ | turn_cratylus_0400 | 409b | 51083 | 51086
+  tok_cratylus_008509 | οὖν | οὖν | turn_cratylus_0408 | 409d | 51929 | 51932
+  tok_cratylus_008522 | δή | δή | turn_cratylus_0409 | 409d | 51994 | 51996
+  tok_cratylus_008528 | γάρ | γάρ | turn_cratylus_0410 | 409d | 52025 | 52028
+  tok_cratylus_008545 | δή | δὴ | turn_cratylus_0412 | 409d | 52115 | 52117
+  tok_cratylus_008552 | γάρ | γὰρ | turn_cratylus_0412 | 409d | 52151 | 52154
+  tok_cratylus_008572 | οὖν | οὖν | turn_cratylus_0413 | 409e | 52273 | 52276
+  tok_cratylus_008573 | δή | δή | turn_cratylus_0413 | 409e | 52277 | 52279
+  tok_cratylus_008605 | τοίνυν | τοίνυν | turn_cratylus_0416 | 410a | 52450 | 52456
+  tok_cratylus_008617 | γάρ | γὰρ | turn_cratylus_0416 | 410a | 52518 | 52521
+  tok_cratylus_008649 | τοίνυν | τοίνυν | turn_cratylus_0418 | 410a | 52722 | 52728
+  tok_cratylus_008663 | οὖν | οὖν | turn_cratylus_0418 | 410a | 52800 | 52803
+  tok_cratylus_008672 | δή | δὴ | turn_cratylus_0418 | 410b | 52849 | 52851
+  tok_cratylus_008698 | γάρ | γὰρ | turn_cratylus_0418 | 410b | 52984 | 52987
+  tok_cratylus_008706 | οὖν | οὖν | turn_cratylus_0418 | 410b | 53042 | 53045
+  tok_cratylus_008715 | δή | δὴ | turn_cratylus_0418 | 410b | 53116 | 53118
+  tok_cratylus_008751 | γάρ | γὰρ | turn_cratylus_0418 | 410c | 53350 | 53353
+  tok_cratylus_008761 | γάρ | γὰρ | turn_cratylus_0418 | 410c | 53409 | 53412
+  tok_cratylus_008767 | οὖν | οὖν | turn_cratylus_0418 | 410c | 53459 | 53462
+  tok_cratylus_008784 | δή | δὴ | turn_cratylus_0420 | 410c | 53543 | 53545
+  tok_cratylus_008797 | γάρ | γάρ | turn_cratylus_0420 | 410c | 53620 | 53623
+  tok_cratylus_008830 | γάρ | γὰρ | turn_cratylus_0420 | 410d | 53815 | 53818
+  tok_cratylus_008921 | οὖν | οὖν | turn_cratylus_0423 | 410e | 54369 | 54372
+  tok_cratylus_008990 | δή | δὴ | turn_cratylus_0426 | 411a | 54824 | 54826
+  tok_cratylus_009001 | οὖν | οὖν | turn_cratylus_0427 | 411b | 54883 | 54886
+  tok_cratylus_009008 | μήν | μήν | turn_cratylus_0428 | 411b | 54921 | 54924
+  tok_cratylus_009061 | δή | δὴ | turn_cratylus_0428 | 411c | 55257 | 55259
+  tok_cratylus_009099 | δή | δὴ | turn_cratylus_0428 | 411c | 55476 | 55478
+  tok_cratylus_009108 | δή | δὴ | turn_cratylus_0429 | 411c | 55526 | 55528
+  tok_cratylus_009139 | μήν | μὴν | turn_cratylus_0432 | 411d | 55723 | 55726
+  tok_cratylus_009158 | γάρ | γάρ | turn_cratylus_0434 | 411d | 55842 | 55845
+  tok_cratylus_009171 | οὖν | οὖν | turn_cratylus_0434 | 411d | 55910 | 55913
+  tok_cratylus_009189 | γάρ | γὰρ | turn_cratylus_0434 | 411d | 56018 | 56021
+  tok_cratylus_009216 | οὖν | οὖν | turn_cratylus_0434 | 411e | 56195 | 56198
+  tok_cratylus_009228 | γάρ | γὰρ | turn_cratylus_0434 | 411e | 56269 | 56272
+  tok_cratylus_009251 | μήν | μὴν | turn_cratylus_0435 | 412a | 56442 | 56445
+  tok_cratylus_009272 | δή | δὴ | turn_cratylus_0435 | 412a | 56576 | 56578
+  tok_cratylus_009301 | γάρ | γὰρ | turn_cratylus_0435 | 412a | 56796 | 56799
+  tok_cratylus_009310 | μήν | μὴν | turn_cratylus_0435 | 412b | 56864 | 56867
+  tok_cratylus_009351 | γάρ | γὰρ | turn_cratylus_0435 | 412b | 57153 | 57156
+  tok_cratylus_009359 | οὖν | οὖν | turn_cratylus_0435 | 412b | 57211 | 57214
+  tok_cratylus_009371 | μήν | μὴν | turn_cratylus_0435 | 412c | 57285 | 57288
+  tok_cratylus_009386 | γάρ | γὰρ | turn_cratylus_0435 | 412c | 57382 | 57385
+  tok_cratylus_009399 | οὖν | οὖν | turn_cratylus_0435 | 412c | 57454 | 57457
+  tok_cratylus_009410 | δή | δὴ | turn_cratylus_0435 | 412c | 57505 | 57507
+  tok_cratylus_009439 | γάρ | γὰρ | turn_cratylus_0435 | 412c | 57704 | 57707
+  tok_cratylus_009440 | δή | δὴ | turn_cratylus_0435 | 412c | 57708 | 57710
+  tok_cratylus_009453 | γάρ | γὰρ | turn_cratylus_0435 | 412d | 57799 | 57802
+  tok_cratylus_009493 | γάρ | γὰρ | turn_cratylus_0435 | 412d | 58032 | 58035
+  tok_cratylus_009521 | οὖν | οὖν | turn_cratylus_0435 | 412d | 58190 | 58193
+  tok_cratylus_009543 | οὖν | οὖν | turn_cratylus_0436 | 412e | 58344 | 58347
+  tok_cratylus_009580 | γάρ | γὰρ | turn_cratylus_0436 | 413a | 58567 | 58570
+  tok_cratylus_009606 | οὖν | οὖν | turn_cratylus_0436 | 413a | 58731 | 58734
+  tok_cratylus_009629 | γάρ | γάρ | turn_cratylus_0436 | 413b | 58883 | 58886
+  tok_cratylus_009648 | γάρ | γὰρ | turn_cratylus_0436 | 413b | 59026 | 59029
+  tok_cratylus_009657 | γάρ | γὰρ | turn_cratylus_0436 | 413b | 59079 | 59082
+  tok_cratylus_009666 | οὖν | οὖν | turn_cratylus_0436 | 413b | 59139 | 59142
+  tok_cratylus_009694 | οὖν | οὖν | turn_cratylus_0436 | 413c | 59309 | 59312
+  tok_cratylus_009744 | γάρ | γὰρ | turn_cratylus_0436 | 413c | 59571 | 59574
+  tok_cratylus_009760 | δή | δὴ | turn_cratylus_0436 | 413c | 59673 | 59675
+  tok_cratylus_009780 | οὖν | οὖν | turn_cratylus_0436 | 413d | 59791 | 59794
+  tok_cratylus_009814 | δή | δή | turn_cratylus_0440 | 413d | 59987 | 59989
+  tok_cratylus_009816 | γάρ | γὰρ | turn_cratylus_0440 | 413d | 59996 | 59999
+  tok_cratylus_009828 | γάρ | γὰρ | turn_cratylus_0440 | 413d | 60061 | 60064
+  tok_cratylus_009839 | γάρ | γὰρ | turn_cratylus_0440 | 413d | 60137 | 60140
+  tok_cratylus_009872 | οὖν | οὖν | turn_cratylus_0440 | 413e | 60328 | 60331
+  tok_cratylus_009891 | οὖν | οὖν | turn_cratylus_0441 | 413e | 60437 | 60440
+  tok_cratylus_009908 | γάρ | γὰρ | turn_cratylus_0441 | 414a | 60528 | 60531
+  tok_cratylus_009963 | μήν | μὴν | turn_cratylus_0443 | 414a | 60867 | 60870
+  tok_cratylus_009982 | οὖν | οὖν | turn_cratylus_0443 | 414b | 60995 | 60998
+  tok_cratylus_009996 | γάρ | γὰρ | turn_cratylus_0443 | 414b | 61076 | 61079
+  tok_cratylus_010033 | οὖν | οὖν | turn_cratylus_0446 | 414b | 61310 | 61313
+  tok_cratylus_010231 | γάρ | γὰρ | turn_cratylus_0455 | 415a | 62598 | 62601
+  tok_cratylus_010243 | γάρ | γάρ | turn_cratylus_0455 | 415a | 62687 | 62690
+  tok_cratylus_010253 | γάρ | γὰρ | turn_cratylus_0455 | 415a | 62738 | 62741
+  tok_cratylus_010261 | οὖν | οὖν | turn_cratylus_0455 | 415a | 62789 | 62792
+  tok_cratylus_010285 | γάρ | γὰρ | turn_cratylus_0455 | 415a | 62964 | 62967
+  tok_cratylus_010295 | οὖν | οὖν | turn_cratylus_0455 | 415b | 63034 | 63037
+  tok_cratylus_010307 | γάρ | γὰρ | turn_cratylus_0455 | 415b | 63107 | 63110
+  tok_cratylus_010312 | γάρ | γὰρ | turn_cratylus_0455 | 415b | 63137 | 63140
+  tok_cratylus_010377 | οὖν | οὖν | turn_cratylus_0455 | 415c | 63517 | 63520
+  tok_cratylus_010386 | γάρ | γὰρ | turn_cratylus_0455 | 415c | 63572 | 63575
+  tok_cratylus_010392 | οὖν | οὖν | turn_cratylus_0455 | 415c | 63614 | 63617
+  tok_cratylus_010423 | οὖν | οὖν | turn_cratylus_0455 | 415c | 63764 | 63767
+  tok_cratylus_010436 | δή | δὴ | turn_cratylus_0455 | 415c | 63848 | 63850
+  tok_cratylus_010534 | δή | δὴ | turn_cratylus_0456 | 416a | 64516 | 64518
+  tok_cratylus_010557 | οὖν | οὖν | turn_cratylus_0457 | 416a | 64654 | 64657
+  tok_cratylus_010601 | τοίνυν | τοίνυν | turn_cratylus_0461 | 416a | 64925 | 64931
+  tok_cratylus_010604 | δή | δὴ | turn_cratylus_0461 | 416a | 64953 | 64955
+  tok_cratylus_010612 | γάρ | γὰρ | turn_cratylus_0461 | 416b | 65004 | 65007
+  tok_cratylus_010617 | γάρ | γὰρ | turn_cratylus_0461 | 416b | 65039 | 65042
+  tok_cratylus_010661 | καίτοι | καίτοι | turn_cratylus_0463 | 416b | 65340 | 65346
+  tok_cratylus_010674 | δή | δή | turn_cratylus_0464 | 416b | 65412 | 65414
+  tok_cratylus_010763 | οὖν | οὖν | turn_cratylus_0475 | 416d | 65910 | 65913
+  tok_cratylus_010813 | δή | δὴ | turn_cratylus_0481 | 416d | 66198 | 66200
+  tok_cratylus_010822 | οὖν | οὖν | turn_cratylus_0483 | 416e | 66263 | 66266
+  tok_cratylus_010863 | γάρ | γὰρ | turn_cratylus_0485 | 417a | 66513 | 66516
+  tok_cratylus_010869 | γάρ | γὰρ | turn_cratylus_0485 | 417a | 66554 | 66557
+  tok_cratylus_010917 | γάρ | γὰρ | turn_cratylus_0485 | 417b | 66868 | 66871
+  tok_cratylus_010924 | γάρ | γὰρ | turn_cratylus_0485 | 417b | 66911 | 66914
+  tok_cratylus_010948 | δή | δή | turn_cratylus_0486 | 417b | 67094 | 67096
+  tok_cratylus_011015 | γάρ | γὰρ | turn_cratylus_0487 | 417c | 67516 | 67519
+  tok_cratylus_011045 | δή | δὴ | turn_cratylus_0488 | 417d | 67743 | 67745
+  tok_cratylus_011118 | οὖν | οὖν | turn_cratylus_0495 | 417e | 68251 | 68254
+  tok_cratylus_011142 | γάρ | γὰρ | turn_cratylus_0496 | 417e | 68425 | 68428
+  tok_cratylus_011174 | δή | δὴ | turn_cratylus_0498 | 418a | 68636 | 68638
+  tok_cratylus_011221 | γάρ | γὰρ | turn_cratylus_0499 | 418b | 68965 | 68968
+  tok_cratylus_011310 | δή | δὴ | turn_cratylus_0501 | 418c | 69467 | 69469
+  tok_cratylus_011315 | δή | δή | turn_cratylus_0502 | 418c | 69502 | 69504
+  tok_cratylus_011337 | οὖν | οὖν | turn_cratylus_0505 | 418c | 69647 | 69650
+  tok_cratylus_011350 | γάρ | γὰρ | turn_cratylus_0505 | 418c | 69721 | 69724
+  tok_cratylus_011379 | καίτοι | καίτοι | turn_cratylus_0507 | 418d | 69930 | 69936
+  tok_cratylus_011383 | δή | δὴ | turn_cratylus_0507 | 418d | 69955 | 69957
+  tok_cratylus_011444 | τοίνυν | τοίνυν | turn_cratylus_0513 | 418e | 70338 | 70344
+  tok_cratylus_011460 | γάρ | γὰρ | turn_cratylus_0513 | 418e | 70450 | 70453
+  tok_cratylus_011517 | γάρ | γὰρ | turn_cratylus_0515 | 419a | 70778 | 70781
+  tok_cratylus_011525 | δή | δὴ | turn_cratylus_0515 | 419a | 70823 | 70825
+  tok_cratylus_011570 | δή | δὴ | turn_cratylus_0515 | 419b | 71180 | 71182
+  tok_cratylus_011599 | δή | δὴ | turn_cratylus_0516 | 419b | 71358 | 71360
+  tok_cratylus_011620 | γάρ | γὰρ | turn_cratylus_0517 | 419b | 71495 | 71498
+  tok_cratylus_011748 | γάρ | γὰρ | turn_cratylus_0517 | 419d | 72371 | 72374
+  tok_cratylus_011776 | γάρ | γὰρ | turn_cratylus_0517 | 419d | 72568 | 72571
+  tok_cratylus_011804 | μήν | μὴν | turn_cratylus_0518 | 419e | 72727 | 72730
+  tok_cratylus_011815 | γάρ | γὰρ | turn_cratylus_0518 | 420a | 72805 | 72808
+  tok_cratylus_011824 | δή | δὴ | turn_cratylus_0518 | 420a | 72859 | 72861
+  tok_cratylus_011836 | οὖν | οὖν | turn_cratylus_0518 | 420a | 72920 | 72923
+  tok_cratylus_011843 | μήν | μὴν | turn_cratylus_0518 | 420a | 72971 | 72974
+  tok_cratylus_011912 | γάρ | γὰρ | turn_cratylus_0518 | 420b | 73438 | 73441
+  tok_cratylus_011947 | δή | δὴ | turn_cratylus_0520 | 420b | 73638 | 73640
+  tok_cratylus_011979 | γάρ | γὰρ | turn_cratylus_0520 | 420c | 73840 | 73843
+  tok_cratylus_012056 | γάρ | γὰρ | turn_cratylus_0522 | 420d | 74350 | 74353
+  tok_cratylus_012061 | οὖν | οὖν | turn_cratylus_0522 | 420d | 74383 | 74386
+  tok_cratylus_012074 | οὖν | οὖν | turn_cratylus_0522 | 420d | 74468 | 74471
+  tok_cratylus_012133 | οὖν | οὖν | turn_cratylus_0522 | 420e | 74832 | 74835
+  tok_cratylus_012160 | δή | δὴ | turn_cratylus_0523 | 421a | 74999 | 75001
+  tok_cratylus_012193 | οὖν | οὖν | turn_cratylus_0524 | 421a | 75196 | 75199
+  tok_cratylus_012203 | τοίνυν | τοίνυν | turn_cratylus_0526 | 421a | 75247 | 75253
+  tok_cratylus_012230 | γάρ | γὰρ | turn_cratylus_0526 | 421a | 75455 | 75458
+  tok_cratylus_012249 | γάρ | γὰρ | turn_cratylus_0526 | 421b | 75592 | 75595
+  tok_cratylus_012272 | γάρ | γὰρ | turn_cratylus_0526 | 421b | 75752 | 75755
+  tok_cratylus_012308 | γάρ | γὰρ | turn_cratylus_0526 | 421b | 75997 | 76000
+  tok_cratylus_012359 | γάρ | γάρ | turn_cratylus_0528 | 421c | 76335 | 76338
+  tok_cratylus_012363 | οὖν | οὖν | turn_cratylus_0529 | 421c | 76354 | 76357
+  tok_cratylus_012367 | τοίνυν | τοίνυν | turn_cratylus_0530 | 421c | 76370 | 76376
+  tok_cratylus_012392 | οὖν | οὖν | turn_cratylus_0532 | 421d | 76530 | 76533
+  tok_cratylus_012413 | γάρ | γὰρ | turn_cratylus_0532 | 421d | 76645 | 76648
+  tok_cratylus_012441 | γάρ | γὰρ | turn_cratylus_0534 | 421d | 76819 | 76822
+  tok_cratylus_012442 | οὖν | οὖν | turn_cratylus_0534 | 421d | 76823 | 76826
+  tok_cratylus_012498 | οὖν | οὖν | turn_cratylus_0536 | 422a | 77184 | 77187
+  tok_cratylus_012524 | γάρ | γάρ | turn_cratylus_0536 | 422a | 77345 | 77348
+  tok_cratylus_012597 | οὖν | οὖν | turn_cratylus_0538 | 422b | 77783 | 77786
+  tok_cratylus_012676 | τοίνυν | τοίνυν | turn_cratylus_0542 | 422c | 78251 | 78257
+  tok_cratylus_012705 | μήν | μὴν | turn_cratylus_0544 | 422d | 78420 | 78423
+  tok_cratylus_012709 | δή | δὴ | turn_cratylus_0544 | 422d | 78440 | 78442
+  tok_cratylus_012728 | γάρ | γὰρ | turn_cratylus_0545 | 422d | 78563 | 78566
+  tok_cratylus_012771 | δή | δὴ | turn_cratylus_0550 | 422d | 78786 | 78788
+  tok_cratylus_012829 | γάρ | γὰρ | turn_cratylus_0551 | 422e | 79134 | 79137
+  tok_cratylus_012902 | γάρ | γὰρ | turn_cratylus_0554 | 423a | 79537 | 79540
+  tok_cratylus_012990 | δή | δή | turn_cratylus_0561 | 423c | 80066 | 80068
+  tok_cratylus_013016 | οὖν | οὖν | turn_cratylus_0564 | 423c | 80235 | 80238
+  tok_cratylus_013048 | καίτοι | καίτοι | turn_cratylus_0566 | 423d | 80422 | 80428
+  tok_cratylus_013088 | τοίνυν | τοίνυν | turn_cratylus_0568 | 423d | 80650 | 80656
+  tok_cratylus_013106 | γάρ | γάρ | turn_cratylus_0568 | 423d | 80752 | 80755
+  tok_cratylus_013115 | γάρ | γάρ | turn_cratylus_0568 | 423d | 80793 | 80796
+  tok_cratylus_013121 | δή | δὴ | turn_cratylus_0570 | 423e | 80825 | 80827
+  tok_cratylus_013166 | οὖν | οὖν | turn_cratylus_0572 | 423e | 81072 | 81075
+  tok_cratylus_013192 | οὖν | οὖν | turn_cratylus_0573 | 424a | 81222 | 81225
+  tok_cratylus_013272 | οὖν | οὖν | turn_cratylus_0577 | 424b | 81736 | 81739
+  tok_cratylus_013275 | δή | δὴ | turn_cratylus_0578 | 424b | 81750 | 81752
+  tok_cratylus_013296 | γάρ | γάρ | turn_cratylus_0580 | 424b | 81863 | 81866
+  tok_cratylus_013358 | οὖν | οὖν | turn_cratylus_0582 | 424c | 82264 | 82267
+  tok_cratylus_013379 | γάρ | γάρ | turn_cratylus_0582 | 424c | 82379 | 82382
+  tok_cratylus_013507 | δή | δὴ | turn_cratylus_0582 | 424e | 83197 | 83199
+  tok_cratylus_013528 | δή | δὴ | turn_cratylus_0582 | 424e | 83307 | 83309
+  tok_cratylus_013587 | γάρ | γὰρ | turn_cratylus_0583 | 425a | 83650 | 83653
+  tok_cratylus_013640 | οὖν | οὖν | turn_cratylus_0585 | 425b | 83961 | 83964
+  tok_cratylus_013653 | γάρ | γὰρ | turn_cratylus_0585 | 425b | 84032 | 84035
+  tok_cratylus_013662 | οὖν | οὖν | turn_cratylus_0587 | 425b | 84079 | 84082
+  tok_cratylus_013742 | οὖν | οὖν | turn_cratylus_0588 | 425c | 84593 | 84596
+  tok_cratylus_013765 | γάρ | γὰρ | turn_cratylus_0589 | 425d | 84755 | 84758
+  tok_cratylus_013844 | γάρ | γὰρ | turn_cratylus_0590 | 426a | 85284 | 85287
+  tok_cratylus_013864 | καίτοι | καίτοι | turn_cratylus_0590 | 426a | 85398 | 85404
+  tok_cratylus_013933 | τοίνυν | τοίνυν | turn_cratylus_0592 | 426b | 85801 | 85807
+  tok_cratylus_013948 | οὖν | οὖν | turn_cratylus_0592 | 426b | 85895 | 85898
+  tok_cratylus_013974 | τοίνυν | τοίνυν | turn_cratylus_0594 | 426c | 86053 | 86059
+  tok_cratylus_013994 | γάρ | γὰρ | turn_cratylus_0594 | 426c | 86171 | 86174
+  tok_cratylus_014001 | γάρ | γὰρ | turn_cratylus_0594 | 426c | 86209 | 86212
+  tok_cratylus_014022 | οὖν | οὖν | turn_cratylus_0594 | 426c | 86324 | 86327
+  tok_cratylus_014081 | οὖν | οὖν | turn_cratylus_0594 | 426d | 86714 | 86717
+  tok_cratylus_014154 | γάρ | γὰρ | turn_cratylus_0594 | 426e | 87247 | 87250
+  tok_cratylus_014181 | δή | δὴ | turn_cratylus_0594 | 426e | 87403 | 87405
+  tok_cratylus_014431 | μήν | μήν | turn_cratylus_0596 | 427d | 89036 | 89039
+  tok_cratylus_014472 | οὖν | οὖν | turn_cratylus_0596 | 427d | 89288 | 89291
+  tok_cratylus_014527 | δή | δὴ | turn_cratylus_0597 | 427e | 89613 | 89615
+  tok_cratylus_014558 | οὖν | οὖν | turn_cratylus_0598 | 428a | 89809 | 89812
+  tok_cratylus_014582 | δή | δὴ | turn_cratylus_0599 | 428a | 89934 | 89936
+  tok_cratylus_014625 | γάρ | γάρ | turn_cratylus_0599 | 428b | 90199 | 90202
+  tok_cratylus_014637 | οὖν | οὖν | turn_cratylus_0599 | 428b | 90268 | 90271
+  tok_cratylus_014653 | δή | δή | turn_cratylus_0600 | 428b | 90359 | 90361
+  tok_cratylus_014746 | οὖν | οὖν | turn_cratylus_0601 | 428d | 90948 | 90951
+  tok_cratylus_014754 | γάρ | γὰρ | turn_cratylus_0601 | 428d | 90994 | 90997
+  tok_cratylus_014762 | γάρ | γὰρ | turn_cratylus_0601 | 428d | 91051 | 91054
+  tok_cratylus_014775 | δή | δή | turn_cratylus_0601 | 428d | 91124 | 91126
+  tok_cratylus_014795 | δή | δὴ | turn_cratylus_0601 | 428d | 91261 | 91263
+  tok_cratylus_014861 | οὖν | οὖν | turn_cratylus_0609 | 429a | 91672 | 91675
+  tok_cratylus_014925 | οὖν | οὖν | turn_cratylus_0613 | 429b | 92041 | 92044
+  tok_cratylus_014962 | δή | δὴ | turn_cratylus_0617 | 429b | 92247 | 92249
+  tok_cratylus_014992 | οὖν | οὖν | turn_cratylus_0621 | 429b | 92400 | 92403
+  tok_cratylus_015053 | γάρ | γὰρ | turn_cratylus_0623 | 429c | 92771 | 92774
+  tok_cratylus_015085 | γάρ | γάρ | turn_cratylus_0625 | 429d | 92945 | 92948
+  tok_cratylus_015098 | γάρ | γὰρ | turn_cratylus_0626 | 429d | 93011 | 93014
+  tok_cratylus_015224 | γάρ | γὰρ | turn_cratylus_0631 | 430a | 93708 | 93711
+  tok_cratylus_015243 | γάρ | γὰρ | turn_cratylus_0631 | 430a | 93804 | 93807
+  tok_cratylus_015268 | δή | δή | turn_cratylus_0633 | 430a | 93950 | 93952
+  tok_cratylus_015323 | δή | δή | turn_cratylus_0639 | 430b | 94270 | 94272
+  tok_cratylus_015325 | γάρ | γὰρ | turn_cratylus_0639 | 430b | 94278 | 94281
+  tok_cratylus_015366 | δή | δὴ | turn_cratylus_0641 | 430c | 94521 | 94523
+  tok_cratylus_015392 | οὖν | οὖν | turn_cratylus_0642 | 430c | 94654 | 94657
+  tok_cratylus_015415 | οὖν | οὖν | turn_cratylus_0645 | 430c | 94774 | 94777
+  tok_cratylus_015444 | τοίνυν | τοίνυν | turn_cratylus_0649 | 430d | 94930 | 94936
+  tok_cratylus_015462 | γάρ | γάρ | turn_cratylus_0649 | 430d | 95025 | 95028
+  tok_cratylus_015601 | δή | δὴ | turn_cratylus_0653 | 430e | 95827 | 95829
+  tok_cratylus_015676 | γάρ | γὰρ | turn_cratylus_0655 | 431a | 96246 | 96249
+  tok_cratylus_015685 | οὖν | οὖν | turn_cratylus_0655 | 431a | 96293 | 96296
+  tok_cratylus_015744 | γάρ | γάρ | turn_cratylus_0655 | 431c | 96662 | 96665
+  tok_cratylus_015760 | γάρ | γάρ | turn_cratylus_0656 | 431c | 96748 | 96751
+  tok_cratylus_016006 | γάρ | γὰρ | turn_cratylus_0669 | 432a | 98180 | 98183
+  tok_cratylus_016016 | δή | δή | turn_cratylus_0670 | 432a | 98238 | 98240
+  tok_cratylus_016175 | οὖν | οὖν | turn_cratylus_0673 | 432c | 99161 | 99164
+  tok_cratylus_016238 | γάρ | γὰρ | turn_cratylus_0675 | 432d | 99532 | 99535
+  tok_cratylus_016264 | τοίνυν | τοίνυν | turn_cratylus_0677 | 432d | 99686 | 99692
+  tok_cratylus_016359 | τοίνυν | τοίνυν | turn_cratylus_0679 | 433a | 100221 | 100227
+  tok_cratylus_016361 | γάρ | γὰρ | turn_cratylus_0679 | 433a | 100234 | 100237
+  tok_cratylus_016383 | οὖν | οὖν | turn_cratylus_0679 | 433a | 100354 | 100357
+  tok_cratylus_016430 | γάρ | γὰρ | turn_cratylus_0679 | 433b | 100648 | 100651
+  tok_cratylus_016454 | τοίνυν | τοίνυν | turn_cratylus_0681 | 433b | 100788 | 100794
+  tok_cratylus_016806 | τοίνυν | τοίνυν | turn_cratylus_0697 | 434b | 102855 | 102861
+  tok_cratylus_016852 | οὖν | οὖν | turn_cratylus_0701 | 434c | 103113 | 103116
+  tok_cratylus_016869 | οὖν | οὖν | turn_cratylus_0703 | 434c | 103227 | 103230
+  tok_cratylus_016902 | οὖν | οὖν | turn_cratylus_0704 | 434d | 103398 | 103401
+  tok_cratylus_016923 | οὖν | οὖν | turn_cratylus_0707 | 434d | 103496 | 103499
+  tok_cratylus_016947 | γάρ | γὰρ | turn_cratylus_0710 | 434d | 103628 | 103631
+  tok_cratylus_016985 | οὖν | οὖν | turn_cratylus_0711 | 434e | 103842 | 103845
+  tok_cratylus_017134 | γάρ | γάρ | turn_cratylus_0717 | 435b | 104698 | 104701
+  tok_cratylus_017149 | γάρ | γὰρ | turn_cratylus_0717 | 435b | 104785 | 104788
+  tok_cratylus_017203 | οὖν | οὖν | turn_cratylus_0717 | 435c | 105126 | 105129
+  tok_cratylus_017309 | γάρ | γάρ | turn_cratylus_0719 | 435d | 105757 | 105760
+  tok_cratylus_017329 | δή | δὴ | turn_cratylus_0719 | 435e | 105874 | 105876
+  tok_cratylus_017352 | δή | δή | turn_cratylus_0719 | 435e | 106000 | 106002
+  tok_cratylus_017371 | δή | δή | turn_cratylus_0721 | 435e | 106102 | 106104
+  tok_cratylus_017467 | δή | δὴ | turn_cratylus_0725 | 436a | 106649 | 106651
+  tok_cratylus_017515 | γάρ | γάρ | turn_cratylus_0727 | 436b | 106949 | 106952
+  tok_cratylus_017520 | οὖν | οὖν | turn_cratylus_0729 | 436b | 106970 | 106973
+  tok_cratylus_017581 | γάρ | γὰρ | turn_cratylus_0730 | 436c | 107332 | 107335
+  tok_cratylus_017614 | γάρ | γὰρ | turn_cratylus_0731 | 436c | 107518 | 107521
+  tok_cratylus_017651 | δή | δὴ | turn_cratylus_0731 | 436d | 107771 | 107773
+  tok_cratylus_017694 | γάρ | γὰρ | turn_cratylus_0731 | 436e | 108041 | 108044
+  tok_cratylus_017731 | δή | δὴ | turn_cratylus_0733 | 437a | 108268 | 108270
+  tok_cratylus_017863 | τοίνυν | τοίνυν | turn_cratylus_0733 | 437b | 109132 | 109138
+  tok_cratylus_017874 | γάρ | γὰρ | turn_cratylus_0733 | 437c | 109223 | 109226
+  tok_cratylus_017948 | οὖν | οὖν | turn_cratylus_0735 | 437d | 109695 | 109698
+  tok_cratylus_017971 | δή | δὴ | turn_cratylus_0735 | 437d | 109842 | 109844
+  tok_cratylus_017996 | γάρ | γὰρ | turn_cratylus_0737 | 438a | 109995 | 109998
+  tok_cratylus_018014 | οὖν | οὖν | turn_cratylus_0737 | 438a | 110114 | 110117
+  tok_cratylus_018038 | οὖν | οὖν | turn_cratylus_0741 | 438a | 110232 | 110235
+  tok_cratylus_018082 | οὖν | οὖν | turn_cratylus_0743 | 438b | 110483 | 110486
+  tok_cratylus_018187 | γάρ | γάρ | turn_cratylus_0747 | 438c | 111076 | 111079
+  tok_cratylus_018197 | δή | δὴ | turn_cratylus_0748 | 438d | 111140 | 111142
+  tok_cratylus_018204 | οὖν | οὖν | turn_cratylus_0749 | 438d | 111180 | 111183
+  tok_cratylus_018227 | γάρ | γάρ | turn_cratylus_0749 | 438d | 111312 | 111315
+  tok_cratylus_018236 | γάρ | γὰρ | turn_cratylus_0749 | 438d | 111357 | 111360
+  tok_cratylus_018289 | οὖν | οὖν | turn_cratylus_0753 | 438e | 111677 | 111680
+  tok_cratylus_018317 | γάρ | γάρ | turn_cratylus_0753 | 438e | 111824 | 111827
+  tok_cratylus_018339 | δή | δὴ | turn_cratylus_0755 | 439a | 111953 | 111955
+  tok_cratylus_018367 | οὖν | οὖν | turn_cratylus_0757 | 439a | 112121 | 112124
+  tok_cratylus_018431 | τοίνυν | τοίνυν | turn_cratylus_0759 | 439b | 112485 | 112491
+  tok_cratylus_018477 | τοίνυν | τοίνυν | turn_cratylus_0761 | 439b | 112748 | 112754
+  tok_cratylus_018508 | γάρ | γὰρ | turn_cratylus_0761 | 439c | 112940 | 112943
+  tok_cratylus_018536 | γάρ | γάρ | turn_cratylus_0761 | 439c | 113117 | 113120
+  tok_cratylus_018568 | τοίνυν | τοίνυν | turn_cratylus_0763 | 439d | 113319 | 113325
+  tok_cratylus_018601 | οὖν | οὖν | turn_cratylus_0765 | 439d | 113502 | 113505
+  tok_cratylus_018637 | οὖν | οὖν | turn_cratylus_0767 | 439e | 113725 | 113728
+  tok_cratylus_018647 | γάρ | γάρ | turn_cratylus_0767 | 439e | 113774 | 113777
+  tok_cratylus_018685 | μήν | μὴν | turn_cratylus_0769 | 439e | 113984 | 113987
+  tok_cratylus_018693 | γάρ | γὰρ | turn_cratylus_0769 | 440a | 114032 | 114035
+  tok_cratylus_018745 | γάρ | γὰρ | turn_cratylus_0771 | 440a | 114330 | 114333
+  tok_cratylus_018848 | οὖν | οὖν | turn_cratylus_0771 | 440c | 114884 | 114887
+  tok_cratylus_018932 | οὖν | οὖν | turn_cratylus_0771 | 440d | 115439 | 115442
+  tok_cratylus_018933 | δή | δή | turn_cratylus_0771 | 440d | 115443 | 115445
+  tok_cratylus_018943 | οὖν | οὖν | turn_cratylus_0771 | 440d | 115497 | 115500
+  tok_cratylus_018954 | γάρ | γὰρ | turn_cratylus_0771 | 440d | 115555 | 115558
+  tok_cratylus_018998 | τοίνυν | τοίνυν | turn_cratylus_0773 | 440e | 115829 | 115835

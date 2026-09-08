@@ -16,6 +16,7 @@ import { formatAudioProductionIssues, validateAudioProductionArtifacts } from ".
 import { validateClusterArtifacts } from "./clusters.js";
 import { validateDossierArtifacts } from "./dossiers.js";
 import { collectOrphanObservationTurnJoinFailures } from "./derived/joins.js";
+import { validateParticleMetricsArtifacts } from "./derived/particles.js";
 import { englishStephanusIndexPath, parseStephanusIndexToon, stephanusIndexPath } from "./derived/stephanus.js";
 import { getRepoRoot } from "./paths.js";
 import { validatePublicReleaseReport } from "./public-release.js";
@@ -579,6 +580,11 @@ export function validateRepo(): ValidationReport {
   // Current tree structure is a repository invariant, independent of the bytes
   // recorded by a historical ontology regeneration.
   collectOntologyCanonicalRegenerationArtifacts(repoRoot);
+
+  const particleFailures = validateParticleMetricsArtifacts();
+  if (particleFailures.length > 0) {
+    throw new Error(`Particle metric validation failed:\n${particleFailures.join("\n")}`);
+  }
 
   const workflowPolicyFailures = collectChangedCorpusWorkflowFailures();
   if (workflowPolicyFailures.length > 0) {
