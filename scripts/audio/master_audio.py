@@ -1547,7 +1547,10 @@ def load_mastering_plan(
 
 
 def parse_silence_log(log: str, duration_seconds: float) -> list[dict[str, float]]:
+    if not math.isfinite(duration_seconds) or duration_seconds < 0:
+        raise MasteringContractError("silence scan media duration is invalid")
     active: float | None = None
+    active_precision = 0.0
     segments: list[dict[str, float]] = []
     for line in log.splitlines():
         start_match = SILENCE_START_RE.search(line)
@@ -1555,19 +1558,37 @@ def parse_silence_log(log: str, duration_seconds: float) -> list[dict[str, float
             if active is not None:
                 raise MasteringContractError("silence scan contains nested starts")
             active = max(0.0, float(start_match.group(1)))
+            if not math.isfinite(active):
+                raise MasteringContractError("silence scan start is invalid")
+            active_precision = _silence_timestamp_precision(active)
+            if active > duration_seconds + active_precision:
+                raise MasteringContractError("silence scan starts beyond media duration")
+            active = min(active, duration_seconds)
         end_match = SILENCE_END_RE.search(line)
         if end_match:
             if active is None:
                 raise MasteringContractError("silence scan ends without a start")
-            end = min(duration_seconds, float(end_match.group(1)))
+            raw_end = float(end_match.group(1))
             reported = float(end_match.group(2))
-            if end < active or abs((end - active) - reported) > 0.02:
+            if not math.isfinite(raw_end) or not math.isfinite(reported):
+                raise MasteringContractError("silence scan end or duration is invalid")
+            if raw_end > duration_seconds + _silence_timestamp_precision(raw_end):
+                raise MasteringContractError("silence scan ends beyond media duration")
+            end = min(duration_seconds, raw_end)
+            # FFmpeg logs timestamps with six significant digits: beyond
+            # 10,000 seconds each endpoint can be rounded by 50 ms. The
+            # separately logged duration retains sub-millisecond precision.
+            tolerance = max(
+                0.02, active_precision + _silence_timestamp_precision(end)
+                + _silence_timestamp_precision(reported)
+            )
+            if end < active or abs((end - active) - reported) > tolerance:
                 raise MasteringContractError("silence scan duration is inconsistent")
             segments.append(
                 {
                     "start_seconds": active,
                     "end_seconds": end,
-                    "duration_seconds": end - active,
+                    "duration_seconds": reported,
                 }
             )
             active = None
@@ -1582,6 +1603,10 @@ def parse_silence_log(log: str, duration_seconds: float) -> list[dict[str, float
     return segments
 
 
+def _silence_timestamp_precision(value: float) -> float:
+    return 0.0 if value == 0 else 0.5 * 10 ** (math.floor(math.log10(abs(value))) - 5)
+
+
 def silence_crosses_declared_boundary(
     segment: dict[str, float], boundaries: list[dict[str, Any]]
 ) -> bool:
@@ -1593,8 +1618,10 @@ def silence_crosses_declared_boundary(
         boundary_start = boundary["start_frame"] / SAMPLE_RATE
         boundary_end = boundary["end_frame"] / SAMPLE_RATE
         if (
-            segment["start_seconds"] < boundary_end
-            and segment["end_seconds"] > boundary_start
+            segment["start_seconds"]
+            - _silence_timestamp_precision(segment["start_seconds"]) < boundary_end
+            and segment["end_seconds"]
+            + _silence_timestamp_precision(segment["end_seconds"]) > boundary_start
         ):
             return True
     return False
