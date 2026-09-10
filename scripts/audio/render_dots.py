@@ -55,6 +55,9 @@ WAV_SUBTYPE = "PCM_24"
 CHAPTER_CONTAINER_PROFILE = "riff-pcm24"
 MASTER_CONTAINER_PROFILE = "rf64-pcm24"
 MAX_CHUNK_CHARACTERS = 320
+# Full-dialogue plans repeat the pinned runtime and voice evidence per task.
+# Long corpus works exceed 64 MiB; writers and readers must share the bound.
+MAX_RENDER_PLAN_BYTES = 512 * 1024 * 1024
 # Full-master ASR isolated two otherwise valid entries whose dense v4 calls
 # compressed an opening or dropped a final phrase. Preserve the corpus-wide
 # limit and bind exact, lossless repair fragments. The lowercase continuation
@@ -2677,6 +2680,8 @@ def write_render_plan(plan: dict[str, Any], outdir: Path) -> Path:
     payload = (
         json.dumps(plan, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
     ).encode("utf-8")
+    if len(payload) > MAX_RENDER_PLAN_BYTES:
+        raise RenderContractError("render plan file size is outside the safe bound")
     if path.exists():
         if path.is_symlink() or not path.is_file() or path.read_bytes() != payload:
             raise RenderContractError(
@@ -2725,7 +2730,7 @@ def load_render_plan_artifact(
     expected = _sha256(expected_sha256, "expected render plan SHA-256")
     if path.is_symlink() or not path.is_file():
         raise RenderContractError(f"render plan must be a regular file: {path}")
-    if not 0 < path.stat().st_size <= 64 * 1024 * 1024:
+    if not 0 < path.stat().st_size <= MAX_RENDER_PLAN_BYTES:
         raise RenderContractError("render plan file size is outside the safe bound")
     plan = load_json_object(path)
     validate_render_plan(plan)
