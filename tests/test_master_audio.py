@@ -329,6 +329,43 @@ class MasterAudioPureTest(unittest.TestCase):
         with self.assertRaisesRegex(MasteringContractError, "without a start"):
             parse_silence_log("silence_end: 1.0 | silence_duration: 1.0", 2.0)
 
+    def test_silence_parser_handles_ffmpeg_long_recording_precision(self) -> None:
+        # Captured from FFmpeg silencedetect with a 10,000-second PTS offset.
+        segments = parse_silence_log(
+            "silence_start: 10000.1\n"
+            "silence_end: 10001 | silence_duration: 0.864021", 10002.0
+        )
+        self.assertAlmostEqual(segments[0]["duration_seconds"], 0.864021)
+        with self.assertRaisesRegex(MasteringContractError, "inconsistent"):
+            parse_silence_log(
+                "silence_start: 10000.1\n"
+                "silence_end: 10001 | silence_duration: 0.6", 10002.0
+            )
+
+    def test_silence_duration_rounding_does_not_hide_a_failed_gate(self) -> None:
+        segments = parse_silence_log(
+            "silence_start: 10000.1\n"
+            "silence_end: 10001.9 | silence_duration: 1.849", 10003.0
+        )
+        self.assertEqual(unexpected_silence_segments(segments, []), segments)
+
+    def test_silence_rounding_cannot_hide_boundary_crossing_or_eof_duration(self) -> None:
+        segments = parse_silence_log(
+            "silence_start: 10000\n"
+            "silence_end: 10000.8 | silence_duration: 0.85", 10000.81
+        )
+        boundary = {"pause_ms": 40, "start_frame": 479997600, "end_frame": 479999520}
+        self.assertEqual(unexpected_silence_segments(segments, [boundary]), segments)
+        eof = parse_silence_log(
+            "silence_start: 10000\n"
+            "silence_end: 10001.8 | silence_duration: 1.81", 10001.77
+        )
+        self.assertEqual(eof[0]["end_seconds"], 10001.77)
+        self.assertEqual(eof[0]["duration_seconds"], 1.81)
+        self.assertEqual(unexpected_silence_segments(eof, []), eof)
+        with self.assertRaisesRegex(MasteringContractError, "beyond media duration"):
+            parse_silence_log("silence_start: 20", 10)
+
     def test_silence_policy_separates_internal_prosody_from_boundary_gaps(self) -> None:
         self.assertLess(
             MAX_BOUNDARY_CROSSING_SILENCE_MS, MAX_UNEXPECTED_SILENCE_MS

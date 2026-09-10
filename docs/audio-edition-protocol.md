@@ -511,6 +511,13 @@ and checksum are all current-byte evidence. A partial, coherently rehashed,
 tampered, stale, subset-derived, non-media, or extra-file result fails instead
 of being overwritten or reused.
 
+FFmpeg silence timestamps have six significant digits. The silence parser
+accounts for endpoint rounding error and uses the separately reported duration
+for silence limits, including at the end of a recording.
+Rounded endpoints are treated conservatively when checking whether a silence
+could cross a declared speaker or chapter pause. This preserves the 1800 ms
+internal and 800 ms boundary limits on multi-hour recordings.
+
 This makes resume verification linear in the recording duration rather than a
 constant-time sidecar lookup: it deliberately rereads the full working master
 and reruns the FFmpeg analysis passes. The exact PCM clipping/peak scan is one

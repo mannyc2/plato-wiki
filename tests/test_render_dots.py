@@ -1645,6 +1645,21 @@ class DotsRendererPureTest(unittest.TestCase):
                 first,
             )
 
+            # Long corpus plans exceed the former reader-only 64 MiB cap.
+            with path.open("ab") as stream:
+                stream.write(b" " * (65 * 1024 * 1024))
+            self.assertEqual(
+                load_render_plan_artifact(path, expected_sha256=first["plan_sha256"]),
+                first,
+            )
+            with patch("render_dots.MAX_RENDER_PLAN_BYTES", len(original) - 1):
+                with self.assertRaisesRegex(RenderContractError, "safe bound"):
+                    write_render_plan(first, root / "oversized")
+                with self.assertRaisesRegex(RenderContractError, "safe bound"):
+                    load_render_plan_artifact(path, expected_sha256=first["plan_sha256"])
+                self.assertFalse((root / "oversized").exists())
+            path.write_bytes(original)
+
             tampered = json.loads(path.read_text(encoding="utf-8"))
             tampered["tasks"][0]["input"]["voice"]["seed"] = 45
             path.write_text(json.dumps(tampered) + "\n", encoding="utf-8")
