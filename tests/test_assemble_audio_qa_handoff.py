@@ -160,6 +160,27 @@ def timeline_item(chapter: dict, index: int) -> dict:
 
 
 class AudioQaHandoffTests(unittest.TestCase):
+    def test_handoff_accepts_parser_reported_silence_duration(self) -> None:
+        segments = qa_handoff.parse_silence_log(
+            "silence_start: 10000.1\nsilence_end: 10001 | silence_duration: 0.864021",
+            11000,
+        )
+        validated = qa_handoff._silence_segments(
+            segments, include_master_offsets=False, duration_seconds=11000, label="master silence"
+        )
+        self.assertEqual(validated, segments)
+        shifted = [{**segments[0], "master_start_seconds": 20000.1, "master_end_seconds": 20001}]
+        self.assertEqual(qa_handoff._silence_segments(
+            shifted, include_master_offsets=True, duration_seconds=11000, label="chapter silence"
+        ), shifted)
+        for key, value in [("duration_seconds", 1.2), ("duration_seconds", -0.1), ("master_end_seconds", 20001.05)]:
+            with self.subTest(key=key, value=value):
+                broken = [{**shifted[0], key: value}]
+                with self.assertRaises(AudioQaHandoffError):
+                    qa_handoff._silence_segments(
+                        broken, include_master_offsets=True, duration_seconds=11000, label="chapter silence"
+                    )
+
     def setUp(self) -> None:
         self.temporary = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary.name).resolve()
