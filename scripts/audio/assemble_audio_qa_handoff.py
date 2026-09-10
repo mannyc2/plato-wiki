@@ -36,6 +36,7 @@ from master_audio import (
     TARGET_TOLERANCE_LU,
     TRUE_PEAK_LIMIT_DBTP,
     MasteringContractError,
+    _silence_timestamp_precision,
     inspect_rf64_pcm24,
     load_mastering_plan,
     parse_loudnorm_json,
@@ -1907,7 +1908,13 @@ def _silence_segments(
             start < prior_end
             or end <= start
             or end > duration_seconds + 1 / SAMPLE_RATE
-            or abs((end - start) - duration) > 1e-9
+            or duration <= 0
+            or abs((end - start) - duration) > max(
+                0.02,
+                _silence_timestamp_precision(start)
+                + _silence_timestamp_precision(end)
+                + _silence_timestamp_precision(duration),
+            )
         ):
             raise AudioQaHandoffError(f"{label} segment {index} values are invalid")
         copied = {
@@ -1920,7 +1927,9 @@ def _silence_segments(
                 segment["master_start_seconds"], f"{label} master start"
             )
             master_end = _finite(segment["master_end_seconds"], f"{label} master end")
-            if abs((master_end - master_start) - duration) > 1e-9:
+            # Offsets preserve the rounded endpoint span, not the separately
+            # reported duration from FFmpeg's silence scan.
+            if abs((master_end - master_start) - (end - start)) > 1e-9:
                 raise AudioQaHandoffError(
                     f"{label} segment {index} master offsets are invalid"
                 )
