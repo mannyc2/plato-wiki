@@ -777,10 +777,10 @@ def canonicalize_ffmpeg_rf64_header(path: Path, *, expected_frames: int) -> None
 
     ffmpeg 5.1 writes the RF64 padding byte into ``dataSize`` for odd-length
     mono PCM24 payloads and derives ``sampleCount`` from rounded stream timing.
-    The pinned renderer timeline supplies the exact frame count. This function
-    accepts only the exact three-chunk RF64 shape, verifies that its file
-    geometry matches that frame count byte-for-byte, and canonicalizes the two
-    ds64 counters before any downstream probe or publication encode.
+    It also omits the odd-payload padding byte once data exceeds the RIFF size
+    limit. The pinned renderer timeline supplies the exact frame count. Accept
+    only the three-chunk RF64 shape and verify every expected PCM byte is present
+    before restoring container padding or canonicalizing the ds64 counters.
     """
 
     if (
@@ -860,6 +860,18 @@ def canonicalize_ffmpeg_rf64_header(path: Path, *, expected_frames: int) -> None
         data_offset = handle.tell()
         if data_id != b"data" or raw_data_size != RF64_SIZE_SENTINEL:
             raise MasteringContractError("RF64 data chunk profile is invalid")
+        # FFmpeg 5.1 skips ff_end_tag for RF64 payloads beyond UINT32_MAX;
+        # that also skips its padding write. Padding is not an audio sample.
+        missing_large_payload_padding = (
+            expected_padding == 1
+            and expected_data_size >= RF64_SIZE_SENTINEL
+            and declared_data_size == expected_data_size
+            and data_offset + expected_data_size == file_size
+        )
+        if missing_large_payload_padding:
+            handle.seek(file_size)
+            handle.write(b"\x00")
+            file_size += 1
         if data_offset + expected_data_size + expected_padding != file_size:
             raise MasteringContractError(
                 "ffmpeg RF64 payload length differs from the renderer timeline"
