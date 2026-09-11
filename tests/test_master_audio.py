@@ -287,6 +287,42 @@ class MasterAudioPureTest(unittest.TestCase):
             self.assertEqual(evidence["sample_count"], 1)
             self.assertEqual(path.read_bytes()[-1], 0)
 
+    def test_canonicalizes_missing_large_rf64_padding_without_adding_audio(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "large-odd-frame.wav"
+            write_pcm24(path, seconds=1 / SAMPLE_RATE)
+            header = bytearray(path.read_bytes()[:80])
+            frames = ((1 << 32) - 1) // 3 + 2
+            data_size = frames * 3
+            self.assertEqual(data_size % 2, 1)
+            file_size = 80 + data_size
+            struct.pack_into("<QQQ", header, 20, file_size - 8, data_size, frames)
+            with path.open("wb") as handle:
+                handle.write(header)
+                handle.truncate(file_size)
+            canonicalize_ffmpeg_rf64_header(path, expected_frames=frames)
+            evidence = inspect_rf64_pcm24(path)
+            self.assertEqual(path.stat().st_size, file_size + 1)
+            self.assertEqual(evidence["data_size_bytes"], data_size)
+            self.assertEqual(evidence["sample_count"], frames)
+
+    def test_padding_repair_rejects_missing_pcm_and_small_file_truncation(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            for frames, missing_bytes in [(1, 1), (((1 << 32) - 1) // 3 + 2, 2)]:
+                with self.subTest(frames=frames, missing_bytes=missing_bytes):
+                    path = Path(temp_dir) / "truncated.wav"
+                    write_pcm24(path, seconds=1 / SAMPLE_RATE)
+                    header = bytearray(path.read_bytes()[:80])
+                    data_size = frames * 3
+                    file_size = 80 + data_size + (data_size & 1) - missing_bytes
+                    struct.pack_into("<QQQ", header, 20, file_size - 8, data_size, frames)
+                    with path.open("wb") as handle:
+                        handle.write(header)
+                        handle.truncate(file_size)
+                    with self.assertRaisesRegex(MasteringContractError, "payload length differs"):
+                        canonicalize_ffmpeg_rf64_header(path, expected_frames=frames)
+                    self.assertEqual(path.stat().st_size, file_size)
+
     def test_loudnorm_parser_requires_one_finite_measurement(self) -> None:
         log = """
         [Parsed_loudnorm] {
