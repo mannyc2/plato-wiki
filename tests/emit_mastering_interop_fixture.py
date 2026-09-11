@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Emit one tiny real mastering-v6 artifact for the TypeScript interop test."""
+"""Emit one tiny real mastering artifact for the TypeScript interop test."""
 
 from __future__ import annotations
 
@@ -16,9 +16,11 @@ sys.path.insert(0, str(REPO_ROOT / "scripts" / "audio"))
 from master_audio import (  # noqa: E402
     build_mastering_plan,
     execute_mastering,
+    measure_chapter_normalization,
     measure_loudness,
     probe_media,
     resolve_tools,
+    resolve_source_audio,
     write_mastering_plan,
 )
 from render_dots import SAMPLE_RATE, content_sha256, sha256_file  # noqa: E402
@@ -30,12 +32,14 @@ def pcm24(value: int) -> bytes:
     return value.to_bytes(3, "little", signed=False)
 
 
-def write_source(path: Path) -> int:
+def write_source(path: Path, *, edited: bool = False) -> int:
     frames = SAMPLE_RATE
     maximum = (1 << 23) - 1
     payload = bytearray()
     for index in range(frames):
         value = round(maximum * 0.08 * math.sin(2 * math.pi * 220 * index / SAMPLE_RATE))
+        if edited and SAMPLE_RATE * 0.4 <= index < SAMPLE_RATE * 0.6:
+            value = 0
         payload.extend(pcm24(value))
     data_size = len(payload)
     file_size = 104 + data_size + (data_size & 1)
@@ -154,8 +158,26 @@ def main() -> None:
     chapter_id = sys.argv[3]
     outdir.mkdir(parents=True, exist_ok=True)
     source = outdir / "interop-source.wav"
-    frames = write_source(source)
+    edited = "--edited" in sys.argv[4:]
+    frames = write_source(source, edited=edited)
     renderer = assembly(source, dialogue, chapter_id, frames)
+    source_audio = resolve_source_audio(renderer, "7" * 64)
+    if edited:
+        from source_audio_edits import Cut, EditPolicy, execute_source_edit, manifest_sha256, preview_source_edit
+        edit = preview_source_edit(
+            source, original_sha256=sha256_file(source), original_frames=frames,
+            chapter_timeline=source_audio["renderer_chapter_timeline"], boundaries=source_audio["renderer_boundaries"],
+            render_plan_artifact_sha256="7" * 64,
+            cuts=[Cut(22800, 25200, "Synthetic fixture's exact-zero quiet interior")],
+            policy=EditPolicy(0, 960, "Deterministic zero-sample fixture validation"),
+        )
+        edited_source = outdir / "interop-derived-source.wav"
+        execute_source_edit(edit, expected_manifest_sha256=manifest_sha256(edit), output=edited_source)
+        edit_path = outdir / "interop-source-edit.json"
+        edit_path.write_text(json.dumps(edit, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        source_audio = resolve_source_audio(renderer, "7" * 64, source_edit_path=edit_path,
+                                            expected_source_edit_sha256=sha256_file(edit_path), edited_source_path=edited_source)
+        source = edited_source
     tools = resolve_tools()
     plan = build_mastering_plan(
         assembly=renderer,
@@ -163,6 +185,12 @@ def main() -> None:
         tools=tools,
         source_probe=probe_media(source, tools),
         first_pass=measure_loudness(source, tools),
+        chapter_normalization=measure_chapter_normalization(
+            source,
+            (edit["derived"]["chapter_timeline"] if edited else source_audio["renderer_chapter_timeline"]),
+            tools,
+        ),
+        source_audio=source_audio,
     )
     plan_path = write_mastering_plan(plan, outdir)
     result, _created = execute_mastering(plan, renderer, outdir)

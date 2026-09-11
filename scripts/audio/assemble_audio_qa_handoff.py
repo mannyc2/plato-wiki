@@ -43,9 +43,12 @@ from master_audio import (
     parse_silence_log,
     unexpected_silence_segments,
     validate_analysis_runtime,
+    validate_source_audio_binding,
 )
 from qa_full_master_asr import (
     EVIDENCE_FILENAME as ASR_EVIDENCE_FILENAME,
+    SCHEMA_VERSION as ASR_SCHEMA_VERSION,
+    _validate_source_file_inventory,
     FullMasterAsrError,
     canonical_json,
     load_current_asr_plan,
@@ -65,10 +68,10 @@ from render_dots import (
 )
 
 
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 STATUS = "production-audio-qa-handoff-unaccepted"
 IMPLEMENTATION_NAME = "plato-audio-qa-handoff"
-IMPLEMENTATION_VERSION = 2
+IMPLEMENTATION_VERSION = 3
 HANDOFF_FILENAME = "qa-handoff.json"
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 
@@ -544,7 +547,11 @@ def _validate_upstream_alignment(
     if renderer["render_plan_sha256"] != render_plan["plan_sha256"]:
         raise AudioQaHandoffError("mastering renderer differs from the render graph")
     if (
-        mastering_manifest.get("renderer") != renderer
+        mastering_manifest.get("schema_version") != 6
+        or mechanical_qa.get("schema_version") != 6
+        or mastering_manifest.get("source_audio") != mastering_plan["source_audio"]
+        or mechanical_qa.get("source_audio") != mastering_plan["source_audio"]
+        or mastering_manifest.get("renderer") != renderer
         or mechanical_qa.get("renderer") != renderer
         or mastering_manifest.get("chapter_timeline") != timeline
         or mechanical_qa.get("chapter_timeline") != timeline
@@ -879,6 +886,7 @@ def build_handoff(
             "task_count": len(render_plan["tasks"]),
             "task_graph_sha256": content_sha256(render_plan["tasks"]),
         },
+        "source_audio": copy.deepcopy(mastering_plan["source_audio"]),
         "renderer_assembly": {
             **copy.deepcopy(asr_plan["production"]["renderer"]),
             "renderer_binding": copy.deepcopy(mastering_plan["renderer"]),
@@ -1053,6 +1061,7 @@ def validate_handoff(handoff: dict[str, Any]) -> None:
             "cast",
             "render_graph",
             "renderer_assembly",
+            "source_audio",
             "mastering",
             "full_master_asr",
             "bound_file_inventory",
@@ -1091,6 +1100,7 @@ def validate_handoff(handoff: dict[str, Any]) -> None:
             "screenplay",
             "render_plan",
             "renderer",
+            "source_audio",
             "mastering_plan",
             "mastering_result",
             "files",
@@ -1130,6 +1140,7 @@ def validate_handoff(handoff: dict[str, Any]) -> None:
             ),
             "model_revision": _nonempty_string(model["revision"], "ASR model revision"),
         }
+        or asr_report.get("schema_version") != ASR_SCHEMA_VERSION
         or asr_report.get("human_listening") != {"status": "not-performed"}
         or asr_report.get("acceptance") != ASR_ACCEPTANCE
     ):
@@ -1265,6 +1276,26 @@ def validate_handoff(handoff: dict[str, Any]) -> None:
     ):
         raise AudioQaHandoffError("QA mastering-plan binding is inconsistent")
 
+    source_audio = _exact_record(mastering_plan.get("source_audio"), {
+        "audio_path", "audio_sha256", "frames", "renderer_chapter_timeline",
+        "renderer_boundaries", "edit_manifest",
+    }, "mastering source-audio binding")
+    try:
+        source_timeline, source_boundaries = validate_source_audio_binding(source_audio, mastering_renderer)
+        _validate_source_file_inventory(source_audio, asr_production["files"])
+    except (MasteringContractError, FullMasterAsrError) as error:
+        raise AudioQaHandoffError(str(error)) from error
+    if (mastering_plan.get("schema_version") != 7
+            or source_timeline != mastering_timeline
+            or source_boundaries != mastering_plan.get("boundaries")
+            or asr_production["source_audio"] != source_audio):
+        raise AudioQaHandoffError("QA source-audio derivation contradicts production geometry")
+    edit = source_audio["edit_manifest"]
+    if edit is not None:
+        edit_path = _absolute_regular_file(edit["path"], edit["sha256"], "source-edit manifest")
+        if _read_json(edit_path, "source-edit manifest") != edit["document"]:
+            raise AudioQaHandoffError("embedded source-edit manifest differs from original file")
+
     mastering_result_binding = _exact_record(
         asr_production["mastering_result"],
         {
@@ -1312,7 +1343,11 @@ def validate_handoff(handoff: dict[str, Any]) -> None:
     mastering_manifest = _read_json(result_path, "mastering result")
     mechanical_qa = _read_json(mechanical_path, "mechanical QA")
     if (
-        mastering_result_binding["accepted"] is not False
+        mastering_manifest.get("schema_version") != 6
+        or mechanical_qa.get("schema_version") != 6
+        or mastering_manifest.get("source_audio") != source_audio
+        or mechanical_qa.get("source_audio") != source_audio
+        or mastering_result_binding["accepted"] is not False
         or mastering_manifest.get("accepted") is not False
         or mechanical_qa.get("acceptance", {}).get("accepted") is not False
         or mastering_manifest.get("mastering_plan_sha256")
@@ -1349,6 +1384,7 @@ def validate_handoff(handoff: dict[str, Any]) -> None:
             "task_count": len(render_tasks),
             "task_graph_sha256": content_sha256(render_tasks),
         },
+        "source_audio": copy.deepcopy(source_audio),
         "renderer_assembly": {
             **copy.deepcopy(
                 _exact_record(

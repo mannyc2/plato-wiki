@@ -6,8 +6,9 @@ import { getRepoRoot } from "../paths.js";
 import type { RecordingManifest, RecordingProduction } from "../wiki/recording-manifest.js";
 
 const SAMPLE_RATE = 48_000;
-const MASTERING_SCHEMA_VERSION = 5;
-const MASTERING_IMPLEMENTATION_VERSION = 6;
+const MASTERING_PLAN_SCHEMA_VERSION = 7;
+const MASTERING_SCHEMA_VERSION = 6;
+const MASTERING_IMPLEMENTATION_VERSION = 8;
 const SHA256 = /^[a-f0-9]{64}$/u;
 const RESULT_STATUS = "mastered-mechanical-evidence-only";
 const QA_STATUS = "mechanical-pass-unaccepted";
@@ -438,6 +439,116 @@ function validateRendererAndTimeline(value: JsonObject, timelineValue: unknown, 
   return { chapters, complete, timeline, timelineDigest };
 }
 
+function validateSourceAudio(renderer: JsonObject, value: unknown, timelineValue: unknown, timelineDigestValue: unknown, boundariesValue: unknown) {
+  const source = object(value, "mastering source_audio");
+  exactFields(source, ["audio_path", "audio_sha256", "frames", "renderer_chapter_timeline", "renderer_boundaries", "edit_manifest"], "mastering source_audio");
+  if (typeof source.audio_path !== "string" || !isAbsolute(source.audio_path)) throw new Error("mastering source audio path must be absolute");
+  sha256(source.audio_sha256, "mastering source audio hash");
+  const sourceFrames = positiveInteger(source.frames, "mastering source frames");
+  const binding = validateRendererAndTimeline(renderer, source.renderer_chapter_timeline, timelineDigestValue);
+  if (!Array.isArray(source.renderer_boundaries)) throw new Error("mastering renderer boundaries must be an array");
+  const originalFrames = binding.complete.frames as number;
+  let cuts: { start: number; end: number }[] = [];
+  let edit: JsonObject | undefined;
+  const originalBoundaries = source.renderer_boundaries.map((row) => object(row, "original source boundary"));
+  const interval = (row: JsonObject, empty = false) => {
+    const start = nonNegativeInteger(row.start_frame, "source interval start");
+    const end = nonNegativeInteger(row.end_frame, "source interval end");
+    if (end > originalFrames || start > end || (!empty && start === end)) throw new Error("source interval is outside original frames");
+    return { start, end };
+  };
+  const protectedIntervals = originalBoundaries.map((row) => {
+    const { start, end } = interval(row, true);
+    const crossfade = finiteNumber(row.crossfade_ms ?? 0, "source boundary crossfade");
+    if (crossfade < 0) throw new Error("source boundary crossfade is negative");
+    const expansion = Math.max(1, Math.ceil(crossfade * 48));
+    return { start: Math.max(0, start - expansion), end: Math.min(originalFrames, end + expansion) };
+  });
+  const chapterProtections = binding.timeline.flatMap((chapter) => [chapter.start_frame, chapter.end_frame].map((value) => {
+    const edge = nonNegativeInteger(value, "source chapter edge");
+    return { start: Math.max(0, edge - 1), end: Math.min(originalFrames, edge + 1) };
+  }));
+  if (source.edit_manifest === null) {
+    if (source.audio_sha256 !== binding.complete.audio_sha256 || sourceFrames !== originalFrames) {
+      throw new Error("unedited source audio differs from the original renderer");
+    }
+  } else {
+    const reference = object(source.edit_manifest, "source edit manifest reference");
+    exactFields(reference, ["path", "sha256", "document"], "source edit manifest reference");
+    if (typeof reference.path !== "string" || !isAbsolute(reference.path)) throw new Error("source edit manifest path must be absolute");
+    sha256(reference.sha256, "source edit manifest hash");
+    edit = object(reference.document, "source edit document");
+    exactFields(edit, ["schema_version", "kind", "implementation", "original", "cuts", "policy", "protected_spans", "protected_geometry", "derived"], "source edit document");
+    if (edit.schema_version !== 1 || edit.kind !== "mechanically-reviewed-derived-pcm") throw new Error("source edit schema is stale");
+    const implementation = object(edit.implementation, "source edit implementation");
+    exactFields(implementation, ["source_audio_edits_sha256", "pcm_edits_sha256"], "source edit implementation");
+    Object.values(implementation).forEach((hash) => sha256(hash, "source edit implementation hash"));
+    const original = object(edit.original, "source edit original");
+    exactFields(original, ["path", "audio_sha256", "frames", "render_plan_artifact_sha256", "chapter_timeline", "chapter_timeline_sha256", "boundaries", "boundaries_sha256"], "source edit original");
+    if (typeof original.path !== "string" || !isAbsolute(original.path) || original.path === source.audio_path ||
+        original.audio_sha256 !== binding.complete.audio_sha256 || original.frames !== originalFrames ||
+        original.render_plan_artifact_sha256 !== renderer.render_plan_artifact_sha256 ||
+        !sameJson(original.chapter_timeline, binding.timeline) || !sameJson(original.boundaries, originalBoundaries)) {
+      throw new Error("source edit original evidence differs from the renderer");
+    }
+    for (const key of ["chapter_timeline_sha256", "boundaries_sha256"]) sha256(original[key], `source edit original ${key}`);
+    const policy = object(edit.policy, "source edit policy");
+    exactFields(policy, ["max_abs_amplitude", "guard_frames", "mechanical_review_basis", "human_listening_performed"], "source edit policy");
+    if (nonNegativeInteger(policy.max_abs_amplitude, "source edit amplitude") > 4_717 ||
+        positiveInteger(policy.guard_frames, "source edit guards") < 960 || policy.human_listening_performed !== false ||
+        typeof policy.mechanical_review_basis !== "string" || policy.mechanical_review_basis.trim().length === 0) {
+      throw new Error("source edit mechanical policy is invalid");
+    }
+    if (!Array.isArray(edit.cuts) || !Array.isArray(edit.protected_spans)) throw new Error("source edit cut/protection rows are invalid");
+    cuts = edit.cuts.map((raw) => {
+      const row = object(raw, "source edit cut");
+      exactFields(row, ["start_frame", "end_frame", "reason"], "source edit cut");
+      if (typeof row.reason !== "string" || row.reason.trim().length === 0) throw new Error("source edit cut requires a reason");
+      return interval(row);
+    });
+    const protectedSpans = edit.protected_spans.map((raw) => {
+      const row = object(raw, "source edit protected span");
+      exactFields(row, ["start_frame", "end_frame"], "source edit protected span");
+      return interval(row);
+    });
+    const protections = [...protectedSpans, ...chapterProtections, ...protectedIntervals];
+    if (!sameJson(edit.protected_geometry, protections.map(({ start, end }) => ({ start_frame: start, end_frame: end })))) {
+      throw new Error("source edit protected geometry differs from declared source geometry");
+    }
+    let previousEnd = 0;
+    for (const cut of cuts) {
+      if (cut.start < previousEnd || protections.some((span) => cut.start < span.end && span.start < cut.end)) {
+        throw new Error("source edit cuts overlap or delete protected source geometry");
+      }
+      previousEnd = cut.end;
+    }
+  }
+  const mapFrame = (frame: number) => frame - cuts.reduce((sum, cut) => sum + Math.max(0, Math.min(frame, cut.end) - cut.start), 0);
+  if (sourceFrames !== mapFrame(originalFrames)) throw new Error("source frames differ from exact cut projection");
+  const timeline = binding.timeline.map((chapter) => {
+    const start = mapFrame(chapter.start_frame as number), end = mapFrame(chapter.end_frame as number);
+    if (end <= start) throw new Error("source edit deletes a chapter");
+    return { chapter_id: chapter.chapter_id, start_frame: start, end_frame: end, frames: end - start, start_seconds: start / SAMPLE_RATE, end_seconds: end / SAMPLE_RATE };
+  });
+  const boundaries = originalBoundaries.map((row) => {
+    const { start, end } = interval(row, true);
+    const mapped: JsonObject = { ...row, start_frame: mapFrame(start), end_frame: mapFrame(end) };
+    if (mapFrame(end) - mapFrame(start) !== end - start) throw new Error("source edit changes declared pause length");
+    if ("start_seconds" in row) mapped.start_seconds = mapFrame(start) / SAMPLE_RATE;
+    if ("end_seconds" in row) mapped.end_seconds = mapFrame(end) / SAMPLE_RATE;
+    return mapped;
+  });
+  if (!sameJson(timelineValue, timeline) || !sameJson(boundariesValue, boundaries)) throw new Error("mastering production timeline/boundaries differ from exact source projection");
+  if (edit) {
+    const derived = object(edit.derived, "source edit derived");
+    exactFields(derived, ["audio_sha256", "frames", "removed_frames", "chapter_timeline", "chapter_timeline_sha256", "boundaries", "boundaries_sha256"], "source edit derived");
+    if (derived.audio_sha256 !== source.audio_sha256 || derived.frames !== sourceFrames || derived.removed_frames !== originalFrames - sourceFrames ||
+        !sameJson(derived.chapter_timeline, timeline) || !sameJson(derived.boundaries, boundaries)) throw new Error("source edit derived evidence differs from exact projection");
+    for (const key of ["chapter_timeline_sha256", "boundaries_sha256"]) sha256(derived[key], `source edit derived ${key}`);
+  }
+  return { ...binding, timeline, sourceFrames };
+}
+
 function validateOutputBinding(
   outputsValue: unknown,
   production: RecordingProduction,
@@ -538,13 +649,13 @@ export function validateRecordingMasteringEvidence(
     exactFields(
       plan,
       [
-        "schema_version", "status", "plan_sha256", "implementation", "analysis_runtime", "dialogue", "renderer", "chapter_timeline",
-        "chapter_timeline_sha256", "tools", "policy", "source_probe", "first_pass", "boundaries", "boundaries_sha256", "commands",
+        "schema_version", "status", "plan_sha256", "implementation", "analysis_runtime", "dialogue", "renderer", "source_audio", "chapter_timeline",
+        "chapter_timeline_sha256", "tools", "policy", "source_probe", "first_pass", "chapter_normalization", "boundaries", "boundaries_sha256", "commands",
       ],
       "Mastering plan",
     );
     if (
-      plan.schema_version !== MASTERING_SCHEMA_VERSION ||
+      plan.schema_version !== MASTERING_PLAN_SCHEMA_VERSION ||
       plan.status !== "full-dialogue-mastering-plan" ||
       plan.dialogue !== manifest.dialogue ||
       plan.plan_sha256 !== production.mastering_plan_sha256
@@ -555,13 +666,34 @@ export function validateRecordingMasteringEvidence(
     const analysisRuntime = validateAnalysisRuntime(plan.analysis_runtime);
     const renderer = object(plan.renderer, "Mastering plan renderer");
     if (renderer.dialogue !== manifest.dialogue) throw new Error("Mastering renderer dialogue differs from the recording manifest");
-    const planBinding = validateRendererAndTimeline(renderer, plan.chapter_timeline, plan.chapter_timeline_sha256);
+    const planBinding = validateSourceAudio(renderer, plan.source_audio, plan.chapter_timeline, plan.chapter_timeline_sha256, plan.boundaries);
+    if (!Array.isArray(plan.chapter_normalization) || plan.chapter_normalization.length !== planBinding.timeline.length) {
+      throw new Error("Mastering chapter normalization does not cover the authoritative timeline");
+    }
+    for (const [index, value] of plan.chapter_normalization.entries()) {
+      const row = object(value, "Mastering chapter normalization");
+      exactFields(row, ["chapter_id", "start_frame", "end_frame", "first_pass", "commands"], "Mastering chapter normalization");
+      const chapter = planBinding.timeline[index]!;
+      if (row.chapter_id !== chapter.chapter_id || row.start_frame !== chapter.start_frame || row.end_frame !== chapter.end_frame) {
+        throw new Error("Mastering chapter normalization differs from the authoritative timeline");
+      }
+      const measurement = object(row.first_pass, "Mastering chapter first pass");
+      exactFields(measurement, ["input_i", "input_tp", "input_lra", "input_thresh", "target_offset"], "Mastering chapter first pass");
+      for (const value of Object.values(measurement)) finiteNumber(value, "Mastering chapter first-pass measurement");
+      const commands = object(row.commands, "Mastering chapter commands");
+      exactFields(commands, ["first_pass", "working_master"], "Mastering chapter commands");
+      for (const command of Object.values(commands)) {
+        if (!Array.isArray(command) || command.length === 0 || command.some((argument) => typeof argument !== "string")) {
+          throw new Error("Mastering chapter command must contain string arguments");
+        }
+      }
+    }
 
     const result = readJson(resultPath, "Mastering result");
     exactFields(
       result,
       [
-        "schema_version", "status", "implementation", "analysis_runtime", "dialogue", "mastering_plan_sha256", "renderer", "chapter_timeline",
+        "schema_version", "status", "implementation", "analysis_runtime", "dialogue", "mastering_plan_sha256", "renderer", "source_audio", "chapter_timeline",
         "chapter_timeline_sha256", "tools", "commands", "outputs", "mechanical_qa_sha256", "mechanical_passed", "accepted",
       ],
       "Mastering result",
@@ -576,6 +708,7 @@ export function validateRecordingMasteringEvidence(
       result.accepted !== false ||
       result.chapter_timeline_sha256 !== planBinding.timelineDigest ||
       !sameJson(result.renderer, plan.renderer) ||
+      !sameJson(result.source_audio, plan.source_audio) ||
       !sameJson(result.chapter_timeline, plan.chapter_timeline) ||
       !sameJson(result.implementation, plan.implementation) ||
       !sameJson(result.analysis_runtime, analysisRuntime) ||
@@ -596,7 +729,7 @@ export function validateRecordingMasteringEvidence(
       workingMedia.frames,
       workingMedia.rf64,
       statSync(publicationPath).size,
-      planBinding.complete.frames as number,
+      planBinding.sourceFrames,
     );
     const productionQaPath = `audio/qa/${manifest.dialogue}.json`;
     const productionQaContent = readFileSync(resolve(getRepoRoot(), productionQaPath), "utf8");
@@ -619,7 +752,7 @@ export function validateRecordingMasteringEvidence(
     exactFields(
       qa,
       [
-        "schema_version", "status", "evidence_sha256", "implementation", "analysis_runtime", "dialogue", "mastering_plan_sha256", "renderer",
+        "schema_version", "status", "evidence_sha256", "implementation", "analysis_runtime", "dialogue", "mastering_plan_sha256", "renderer", "source_audio",
         "chapter_timeline", "chapter_timeline_sha256", "chapters", "measurements", "gates", "acceptance", "asr", "listening", "outputs",
       ],
       "Mechanical QA",
@@ -644,6 +777,8 @@ export function validateRecordingMasteringEvidence(
       !sameJson(qa.asr, { status: "not-performed" }) ||
       !sameJson(qa.listening, { status: "not-performed" }) ||
       !sameJson(qa.renderer, plan.renderer) ||
+      !sameJson(qa.implementation, plan.implementation) ||
+      !sameJson(qa.source_audio, plan.source_audio) ||
       !sameJson(qa.analysis_runtime, analysisRuntime) ||
       !sameJson(qa.chapter_timeline, plan.chapter_timeline) ||
       !sameJson(qa.chapters, planBinding.chapters) ||

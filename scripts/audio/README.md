@@ -1324,7 +1324,8 @@ changed PCM bytes, extra/partial artifact directories, and any mismatch between
 the saved plan and current inputs. It does not parse a second screenplay shape
 or select audio opportunistically from an output directory.
 
-Planning is read-only except when `--write-plan` is requested. It verifies the
+Planning retains no audio artifacts; its bounded temporary chapter slices are
+removed after measurement. `--write-plan` saves the plan. It verifies the
 mono 48 kHz PCM24 source, records every chapter input/audio/timing hash, records
 the complete assembly hashes, authoritative hash-bound chapter starts, and
 semantic boundary inventory, resolves and hashes the actual `ffmpeg` and
@@ -1332,19 +1333,36 @@ semantic boundary inventory, resolves and hashes the actual `ffmpeg` and
 `master_audio.py` implementation name/version and exact source-file SHA-256,
 and binds NumPy 2.2.6 by module origin, RECORD hash, and a verified digest of
 every installed package/code/binary file used by the blockwise PCM scanner.
-It then runs loudnorm's measurement pass. Exact logical command arrays,
+It then runs loudnorm's measurement pass for the whole source and each chapter. Exact logical command arrays,
 runtime evidence, and measured values are part of the content address. Any
 implementation or analysis-runtime byte change invalidates prior plans and
 resumable results.
 
-Mastering schema v5 copies the renderer evidence into `chapter_timeline` and
-`chapter_timeline_sha256` in the plan, mechanical QA, and `mastering.json`.
-Each ordered row carries the chapter id, renderer input/audio/timing/sidecar
-hashes, frame count, and exact start/end frames and seconds. Validation requires
-exact agreement with the renderer's complete assembly, including the first
-frame, inter-chapter gaps, child lengths, order, and final full-master frame.
-Downstream publication metadata must consume these starts instead of summing
-QA-reported durations.
+Mastering plan v7 and result/QA v6 keep original renderer hashes and geometry
+under `renderer` and `source_audio`. The production `chapter_timeline` contains
+only chapter IDs and exact production frames/seconds. Each chapter is normalized
+once from a bounded exact source slice, and original interchapter gaps are
+copied verbatim. Whole-master and per-chapter gates remain independent.
+
+For an excessive quiet interval, `edit_source_audio.py` accepts the same
+`--render-plan`, `--expected-render-plan-sha256`, `--renderer-outdir`, and
+`--repo-root` arguments. Add `--recipe <json> --outdir <source-edits> --write-plan`
+to preview. The recipe contains `cuts` rows with `start_frame`, `end_frame`, and
+`reason`, plus `policy` with integer PCM24 `max_abs_amplitude` (at most 4717, approximately −65 dBFS), `guard_frames`
+(at least 960), and `mechanical_review_basis`. Choose cuts from verified PCM,
+not rounded silence timestamps alone. Declared pauses/crossfades and chapter
+edges remain protected. The preview computes the exact derived hash without
+retaining audio.
+
+Execute with the same original-input arguments, `--outdir`, `--execute-plan
+<saved-plan> --expected-edit-plan-sha256 <preview-digest> --execute`. This creates
+a distinct derived RF64. Pass `--source-edit <saved-plan>
+--expected-source-edit-sha256 <plan-file-sha256> --edited-source <derived-wav>`
+to both mastering preview and execution. The edit-plan content digest and its
+file SHA-256 are separate values, both printed by preview. Mastering projects
+chapter and boundary frames from the exact cuts. ASR and handoff reconstruct
+this same source binding automatically from the saved mastering plan; changed
+masters require fresh QA. Editing does not provide listening or acceptance.
 
 ```bash
 python scripts/audio/master_audio.py \

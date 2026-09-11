@@ -103,7 +103,7 @@ export function writeMasteringEvidenceFixture({
     return evidence;
   });
   cursor = 0;
-  const timeline = rendererChapters.map((chapter) => {
+  const rendererTimeline = rendererChapters.map((chapter) => {
     const startFrame = cursor;
     const endFrame = startFrame + chapter.frames;
     cursor = endFrame;
@@ -116,6 +116,7 @@ export function writeMasteringEvidenceFixture({
       end_seconds: endFrame / 48_000,
     };
   });
+  const timeline = rendererTimeline.map(({ chapter_id, start_frame, end_frame, frames, start_seconds, end_seconds }) => ({ chapter_id, start_frame, end_frame, frames, start_seconds, end_seconds }));
   const chapterTimelineSha256 = fixtureHash(`${dialogue}:chapter-timeline`);
   const renderer = {
     dialogue,
@@ -133,7 +134,8 @@ export function writeMasteringEvidenceFixture({
       container_profile: "rf64-pcm24",
     },
   };
-  const implementation = { name: "plato-master-audio", version: 6, code_sha256: fixtureHash("script") };
+  const sourceAudio = { audio_path: "/fixture/original-source.wav", audio_sha256: renderer.complete.audio_sha256, frames: totalFrames, renderer_chapter_timeline: rendererTimeline, renderer_boundaries: [], edit_manifest: null };
+  const implementation = { name: "plato-master-audio", version: 8, code_sha256: fixtureHash("script") };
   const analysisRuntime = {
     name: "numpy",
     version: "2.2.6",
@@ -152,19 +154,27 @@ export function writeMasteringEvidenceFixture({
   };
   const commands = { fixture: ["fixture"] };
   const plan = {
-    schema_version: 5,
+    schema_version: 7,
     status: "full-dialogue-mastering-plan",
     plan_sha256: planSha256,
     implementation,
     analysis_runtime: analysisRuntime,
     dialogue,
     renderer,
+    source_audio: sourceAudio,
     chapter_timeline: timeline,
     chapter_timeline_sha256: chapterTimelineSha256,
     tools,
     policy: { fixture: true },
     source_probe: { fixture: true },
     first_pass: { fixture: true },
+    chapter_normalization: timeline.map((chapter) => ({
+      chapter_id: chapter.chapter_id,
+      start_frame: chapter.start_frame,
+      end_frame: chapter.end_frame,
+      first_pass: { input_i: -27, input_tp: -8, input_lra: 1, input_thresh: -37, target_offset: 0 },
+      commands: { first_pass: ["fixture"], working_master: ["fixture"] },
+    })),
     boundaries: [],
     boundaries_sha256: fixtureHash(`${dialogue}:boundaries`),
     commands,
@@ -224,7 +234,7 @@ export function writeMasteringEvidenceFixture({
     },
   };
   const mechanicalQa = {
-    schema_version: 5,
+    schema_version: 6,
     status: "mechanical-pass-unaccepted",
     evidence_sha256: fixtureHash(`${dialogue}:mechanical-evidence`),
     implementation,
@@ -232,6 +242,7 @@ export function writeMasteringEvidenceFixture({
     dialogue,
     mastering_plan_sha256: planSha256,
     renderer,
+    source_audio: sourceAudio,
     chapter_timeline: timeline,
     chapter_timeline_sha256: chapterTimelineSha256,
     chapters: rendererChapters,
@@ -253,13 +264,14 @@ export function writeMasteringEvidenceFixture({
   };
   const mechanicalQaSha256 = writeJson(artifactRoot, mechanicalQaPath, mechanicalQa);
   const result = {
-    schema_version: 5,
+    schema_version: 6,
     status: "mastered-mechanical-evidence-only",
     implementation,
     analysis_runtime: analysisRuntime,
     dialogue,
     mastering_plan_sha256: planSha256,
     renderer,
+    source_audio: sourceAudio,
     chapter_timeline: timeline,
     chapter_timeline_sha256: chapterTimelineSha256,
     tools,

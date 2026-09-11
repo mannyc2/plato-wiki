@@ -470,12 +470,18 @@ render instead of silently reusing it.
 Production masters are mono and mastered to -19 LUFS integrated (±1 LU), with
 true peak at or below -1 dBTP. Lossless working masters and compressed
 publication files are distinguished in manifests. The repository mastering
-tool performs pinned FFmpeg loudnorm measurement and linear normalization as
-two separate passes. Its reviewed plan binds the full-dialogue render plan,
+tool performs pinned FFmpeg loudnorm measurement and normalization as two
+separate passes for each authoritative chapter. Each chapter is normalized
+once; its output must preserve the exact frame count, and interchapter gaps
+are copied byte-for-byte from the source. The assembled master is measured
+again against the whole-dialogue gates, and the QA handoff independently
+measures every chapter. A failed gate stops acceptance; no final gain adjustment
+silently changes already normalized chapters. Its reviewed plan binds the full-dialogue render plan,
 every chapter and complete-assembly audio/timing hash, the exact FFmpeg and
 FFprobe executable hashes and version lines, the authoritative
 `master_audio.py` implementation name/version and exact source-file SHA-256,
-the exact NumPy 2.2.6 analysis runtime, first-pass measurements, semantic
+the exact NumPy 2.2.6 analysis runtime, whole-source and per-chapter first-pass
+measurements and commands, semantic
 boundary inventory, policy, and logical command arrays. The runtime receipt
 binds its absolute distribution root and module origin, module and installed
 `RECORD` hashes, a hash of the complete installed-file inventory, and exact
@@ -486,15 +492,26 @@ reviewed content address before it can write. Any `master_audio.py` byte or
 NumPy installation change invalidates prior plans, QA records, and results
 instead of resuming them under changed code.
 
-Mastering schema v5 and implementation v4 carry that renderer evidence and
-forced-RF64 profile forward as an ordered, content-hashed `chapter_timeline`
-in the reviewed plan, mechanical QA, and `mastering.json`. Every row binds the
-chapter id, input/audio/timing/sidecar
-hashes, frame count, and exact start/end frame and second values. Validation
-requires the timeline to match the renderer's `chapter_starts` hash and child
-order, begin at frame zero, preserve all inter-chapter gaps and child lengths,
-and end at the full-master frame count. Publication manifests consume these
-production frames rather than reconstructing starts from editable QA durations.
+Mastering plan schema v7, result/QA schema v6, and implementation v8 keep
+original renderer evidence in `renderer` and in the original timeline and
+boundaries under `source_audio`. Production `chapter_timeline` rows contain
+chapter IDs, frame counts, and exact start/end frames and seconds. Without
+source edits this timeline equals the original frame geometry. With edits it
+is the deterministic projection of the original timeline through the recorded
+cuts; original audio and sidecar hashes never describe shortened audio.
+
+`edit_source_audio.py` previews exact PCM deletions against the current original
+render assembly. Its separate source-edit manifest binds the original audio,
+render-plan file hash, original timeline and boundaries, ordered cuts and
+reasons, a PCM24 amplitude ceiling no greater than 4717 (approximately −65 dBFS), retained guards, and exact derived PCM hash and
+frames. It protects declared pauses, crossfades, and chapter edges. Execution
+copies retained samples verbatim into a new RF64; it never replaces renderer
+cache files. These are mechanical edits, with human listening explicitly not
+performed. Mastering requires the manifest's file hash and derived audio path;
+ASR schema v2 and handoff schema v3 bind those files and the projected timeline.
+Changed audio requires fresh recognition and chapter measurements. Neither
+source editing nor mastering changes the acceptance thresholds or listening
+requirements.
 
 The working derivative is forced-RF64 mono 48 kHz PCM24, including for short
 dialogues, so corpus-scale works never cross a classic-RIFF size cliff. The

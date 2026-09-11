@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Deterministically master one verified full-dialogue renderer assembly.
 
-Planning performs the first loudness-analysis pass and writes no audio. Execution
+Planning measures bounded temporary chapter slices and retains no audio. Execution
 requires the reviewed content-addressed plan, repeats that analysis under the
 same pinned tools, writes a mono 48 kHz PCM24 working master and deterministic
 MP3 publication derivative, then emits mechanical-only scratch QA evidence.
@@ -23,9 +23,10 @@ import shutil
 import struct
 import subprocess
 import sys
+import tempfile
 import uuid
 from pathlib import Path
-from typing import Any
+from typing import Any, BinaryIO, TypedDict, cast
 
 from render_dots import (
     ASSEMBLY_SCHEMA_VERSION,
@@ -41,11 +42,11 @@ from render_dots import (
 )
 
 
-PLAN_SCHEMA_VERSION = 5
-RESULT_SCHEMA_VERSION = 5
-QA_SCHEMA_VERSION = 5
+PLAN_SCHEMA_VERSION = 7
+RESULT_SCHEMA_VERSION = 6
+QA_SCHEMA_VERSION = 6
 MASTERING_IMPLEMENTATION_NAME = "plato-master-audio"
-MASTERING_IMPLEMENTATION_VERSION = 6
+MASTERING_IMPLEMENTATION_VERSION = 8
 PLAN_STATUS = "full-dialogue-mastering-plan"
 RESULT_STATUS = "mastered-mechanical-evidence-only"
 QA_STATUS_PASS = "mechanical-pass-unaccepted"
@@ -141,7 +142,9 @@ MASTERING_POLICY = {
         "normalization_true_peak_dbtp": NORMALIZATION_TRUE_PEAK_DBTP,
         "true_peak_limit_dbtp": TRUE_PEAK_LIMIT_DBTP,
         "loudness_range_lu": TARGET_LRA_LU,
-        "normalization": "ffmpeg-loudnorm-two-pass-linear",
+        "normalization": "ffmpeg-per-chapter-two-pass-loudnorm-v1",
+        "interchapter_gaps": "source-pcm-byte-exact",
+        "chapter_input": "exact-source-frame-slice-rf64-v1",
     },
     "publication": {
         "container": "mp3",
@@ -637,6 +640,142 @@ def measure_loudness(
         first_pass_template(tools["ffmpeg"]["path"]), source=source
     )
     return parse_loudnorm_json(_run(command).stderr)
+
+
+class ChapterSlice(TypedDict):
+    chapter_id: str
+    start_frame: int
+    end_frame: int
+
+
+class ChapterNormalization(ChapterSlice):
+    first_pass: dict[str, float]
+    commands: dict[str, list[str]]
+
+
+def chapter_normalization_commands(
+    tools: dict[str, dict[str, str]],
+    chapter: ChapterSlice,
+    analysis: dict[str, float],
+) -> dict[str, list[str]]:
+    commands = command_templates(tools, analysis)
+    prefix = (
+        "atrim=start_sample=0:"
+        f"end_sample={chapter['end_frame'] - chapter['start_frame']},asetpts=N/SR/TB,"
+    )
+    result: dict[str, list[str]] = {}
+    for name in ("first_pass", "working_master"):
+        command = commands[name].copy()
+        filter_index = command.index("-af") + 1
+        command[filter_index] = prefix + command[filter_index]
+        result[name] = command
+    return result
+
+
+def measure_chapter_normalization(
+    source: Path,
+    timeline: list[ChapterSlice],
+    tools: dict[str, dict[str, str]],
+) -> list[ChapterNormalization]:
+    result: list[ChapterNormalization] = []
+    for chapter in timeline:
+        # The analysis command's filter is independent of second-pass measurements.
+        commands = chapter_normalization_commands(
+            tools, chapter, dict.fromkeys(LOUDNESS_KEYS, 0.0)
+        )
+        # Decode only this exact slice, not the complete dialogue once per chapter.
+        with tempfile.TemporaryDirectory(prefix="plato-master-analysis-") as temporary:
+            sliced = Path(temporary) / "source.wav"
+            write_source_chapter(source, sliced, chapter)
+            measured = parse_loudnorm_json(_run(substitute_command(
+                commands["first_pass"], source=sliced
+            )).stderr)
+        result.append({
+            "chapter_id": chapter["chapter_id"],
+            "start_frame": chapter["start_frame"],
+            "end_frame": chapter["end_frame"],
+            "first_pass": measured,
+            "commands": chapter_normalization_commands(tools, chapter, measured),
+        })
+    return result
+
+
+def _copy_pcm_bytes(source: BinaryIO, target: BinaryIO, count: int) -> None:
+    while count:
+        block = source.read(min(count, PCM_SCAN_FRAMES * PRODUCTION_SAMPLE_WIDTH_BYTES))
+        if not block:
+            raise MasteringContractError("chapter normalization PCM is truncated")
+        target.write(block)
+        count -= len(block)
+
+
+def _pcm24_rf64_header(frames: int) -> bytes:
+    data_size = frames * PRODUCTION_SAMPLE_WIDTH_BYTES
+    file_size = 80 + data_size + (data_size & 1)
+    return b"".join((
+        b"RF64", struct.pack("<I", RF64_SIZE_SENTINEL), b"WAVEds64",
+        struct.pack("<IQQQI", 28, file_size - 8, data_size, frames, 0),
+        b"fmt ", struct.pack("<IHHIIHH", 16, 1, 1, SAMPLE_RATE,
+                             WORKING_BITRATE_BPS // 8, 3, 24),
+        b"data", struct.pack("<I", RF64_SIZE_SENTINEL),
+    ))
+
+
+def write_source_chapter(source: Path, destination: Path, chapter: ChapterSlice) -> None:
+    evidence = inspect_rf64_pcm24(source)
+    start, end = chapter["start_frame"], chapter["end_frame"]
+    if (isinstance(start, bool) or not isinstance(start, int)
+            or isinstance(end, bool) or not isinstance(end, int)
+            or start < 0 or end <= start or end > evidence["sample_count"]):
+        raise MasteringContractError("source chapter frame range is invalid")
+    frames = end - start
+    with source.open("rb") as original, destination.open("xb") as sliced:
+        sliced.write(_pcm24_rf64_header(frames))
+        original.seek(evidence["data_offset_bytes"] + start * 3)
+        _copy_pcm_bytes(original, sliced, frames * 3)
+        if frames & 1:
+            sliced.write(b"\x00")
+    inspect_rf64_pcm24(destination)
+
+
+def normalize_chapters(
+    source: Path, working: Path, chapters: list[ChapterNormalization], frames: int
+) -> None:
+    source_evidence = inspect_rf64_pcm24(source)
+    if source_evidence["sample_count"] != frames:
+        raise MasteringContractError("chapter normalization source frames differ")
+    data_size = frames * PRODUCTION_SAMPLE_WIDTH_BYTES
+    cursor = 0
+    with source.open("rb") as original, working.open("xb") as target:
+        target.write(_pcm24_rf64_header(frames))
+        for index, chapter in enumerate(chapters):
+            start, end = chapter["start_frame"], chapter["end_frame"]
+            if start < cursor or end <= start or end > frames:
+                raise MasteringContractError("chapter normalization frame ranges are invalid")
+            original.seek(source_evidence["data_offset_bytes"] + cursor * 3)
+            _copy_pcm_bytes(original, target, (start - cursor) * 3)
+            temporary = working.parent / f"chapter-{index:04d}.wav"
+            sliced = working.parent / f"chapter-source-{index:04d}.wav"
+            try:
+                write_source_chapter(source, sliced, chapter)
+                _run(substitute_command(chapter["commands"]["working_master"],
+                                        source=sliced, working_master=temporary))
+                canonicalize_ffmpeg_rf64_header(temporary, expected_frames=end - start)
+                evidence = inspect_rf64_pcm24(temporary)
+                with temporary.open("rb") as normalized:
+                    normalized.seek(evidence["data_offset_bytes"])
+                    _copy_pcm_bytes(normalized, target, (end - start) * 3)
+            finally:
+                temporary.unlink(missing_ok=True)
+                sliced.unlink(missing_ok=True)
+            cursor = end
+        if cursor != frames:
+            raise MasteringContractError("chapter normalization does not cover full source")
+        if data_size & 1:
+            target.write(b"\x00")
+        target.flush()
+        os.fsync(target.fileno())
+    inspect_rf64_pcm24(working)
 
 
 def _read_exact(handle: Any, size: int, location: str) -> bytes:
@@ -1270,6 +1409,111 @@ def expected_boundaries(assembly: dict[str, Any]) -> list[dict[str, Any]]:
     return result
 
 
+
+class SourceAudioBinding(TypedDict):
+    audio_path: str
+    audio_sha256: str
+    frames: int
+    renderer_chapter_timeline: list[dict[str, object]]
+    renderer_boundaries: list[dict[str, object]]
+    edit_manifest: dict[str, object] | None
+
+
+def validate_source_audio_binding(
+    source_audio: SourceAudioBinding, renderer: dict[str, object]
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    if not isinstance(source_audio, dict) or set(source_audio) != {
+        "audio_path", "audio_sha256", "frames", "renderer_chapter_timeline",
+        "renderer_boundaries", "edit_manifest",
+    }:
+        raise MasteringContractError("mastering source audio binding fields are invalid")
+    if (not isinstance(source_audio["audio_path"], str)
+            or not Path(source_audio["audio_path"]).is_absolute()
+            or type(source_audio["frames"]) is not int or source_audio["frames"] <= 0):
+        raise MasteringContractError("mastering source audio path or frames are invalid")
+    _sha256(source_audio["audio_sha256"], "mastering source audio SHA-256")
+    timeline = source_audio["renderer_chapter_timeline"]
+    _validate_renderer_binding(renderer, cast(str, renderer["dialogue"]),
+                               timeline, content_sha256(timeline))
+    boundaries = source_audio["renderer_boundaries"]
+    if not isinstance(boundaries, list):
+        raise MasteringContractError("mastering original boundary inventory is invalid")
+    complete = cast(dict[str, object], renderer["complete"])
+    edit = source_audio["edit_manifest"]
+    if edit is None:
+        if source_audio["audio_sha256"] != complete["audio_sha256"] or source_audio["frames"] != complete["frames"]:
+            raise MasteringContractError("unedited source differs from original renderer")
+        projected = [{key: row[key] for key in (
+            "chapter_id", "start_frame", "end_frame", "frames", "start_seconds", "end_seconds"
+        )} for row in timeline]
+        return projected, copy.deepcopy(boundaries)
+    from source_audio_edits import SourceEditManifest, validate_source_edit_manifest
+    from pcm_edits import PcmEditError
+    if not isinstance(edit, dict) or set(edit) != {"path", "sha256", "document"}:
+        raise MasteringContractError("source edit reference fields are invalid")
+    if not isinstance(edit["path"], str) or not Path(edit["path"]).is_absolute():
+        raise MasteringContractError("source edit manifest path must be absolute")
+    _sha256(edit["sha256"], "source edit manifest file SHA-256")
+    document = cast(SourceEditManifest, edit["document"])
+    try:
+        validate_source_edit_manifest(document)
+    except (PcmEditError, ValueError) as error:
+        raise MasteringContractError(f"invalid source edit manifest: {error}") from error
+    original, derived = document["original"], document["derived"]
+    if (original["audio_sha256"] != complete["audio_sha256"]
+            or original["frames"] != complete["frames"]
+            or original["render_plan_artifact_sha256"] != renderer["render_plan_artifact_sha256"]
+            or original["chapter_timeline"] != timeline or original["boundaries"] != boundaries
+            or derived["audio_sha256"] != source_audio["audio_sha256"]
+            or derived["frames"] != source_audio["frames"]
+            or source_audio["audio_path"] == original["path"]):
+        raise MasteringContractError("source edit differs from original renderer or derived source")
+    return (copy.deepcopy(cast(list[dict[str, object]], derived["chapter_timeline"])),
+            copy.deepcopy(cast(list[dict[str, object]], derived["boundaries"])))
+
+
+def resolve_source_audio(
+    assembly: dict[str, object], render_plan_artifact_sha256: str, *,
+    source_edit_path: Path | None = None,
+    expected_source_edit_sha256: str | None = None,
+    edited_source_path: Path | None = None,
+) -> SourceAudioBinding:
+    renderer, timeline = _renderer_binding(assembly)
+    renderer["render_plan_artifact_sha256"] = render_plan_artifact_sha256
+    complete = cast(dict[str, object], assembly["complete"])
+    binding: SourceAudioBinding = {
+        "audio_path": str(Path(cast(str, complete["audio_path"])).resolve()),
+        "audio_sha256": cast(str, complete["audio_sha256"]),
+        "frames": cast(int, complete["frames"]),
+        "renderer_chapter_timeline": timeline,
+        "renderer_boundaries": expected_boundaries(assembly), "edit_manifest": None,
+    }
+    if source_edit_path is None:
+        if expected_source_edit_sha256 is not None or edited_source_path is not None:
+            raise MasteringContractError("edited source requires an exact manifest reference")
+    else:
+        if expected_source_edit_sha256 is None or edited_source_path is None:
+            raise MasteringContractError("source edit requires its file SHA-256 and derived audio path")
+        source_edit_path = source_edit_path.expanduser().resolve(strict=True)
+        edited_source_path = edited_source_path.expanduser().resolve(strict=True)
+        if sha256_file(source_edit_path) != expected_source_edit_sha256:
+            raise MasteringContractError("source edit manifest file hash mismatch")
+        document = _read_json(source_edit_path)
+        if document["original"]["path"] != binding["audio_path"]:
+            raise MasteringContractError("source edit original path differs from renderer assembly")
+        binding["audio_path"] = str(edited_source_path)
+        binding["audio_sha256"] = document["derived"]["audio_sha256"]
+        binding["frames"] = document["derived"]["frames"]
+        binding["edit_manifest"] = {"path": str(source_edit_path), "sha256": expected_source_edit_sha256,
+                                    "document": document}
+    validate_source_audio_binding(binding, renderer)
+    if source_edit_path is not None:
+        if (sha256_file(Path(binding["audio_path"])) != binding["audio_sha256"]
+                or inspect_rf64_pcm24(Path(binding["audio_path"]))["sample_count"] != binding["frames"]):
+            raise MasteringContractError("derived source audio bytes or frames changed")
+    return binding
+
+
 def build_mastering_plan(
     *,
     assembly: dict[str, Any],
@@ -1277,14 +1521,20 @@ def build_mastering_plan(
     tools: dict[str, dict[str, str]],
     source_probe: dict[str, Any],
     first_pass: dict[str, float],
+    chapter_normalization: list[ChapterNormalization],
+    source_audio: SourceAudioBinding | None = None,
 ) -> dict[str, Any]:
-    binding, chapter_timeline = _renderer_binding(assembly)
+    binding, _ = _renderer_binding(assembly)
+    binding["render_plan_artifact_sha256"] = render_plan_artifact_sha256
+    if source_audio is None:
+        source_audio = resolve_source_audio(assembly, render_plan_artifact_sha256)
+    chapter_timeline, boundaries = validate_source_audio_binding(source_audio, binding)
     _sha256(render_plan_artifact_sha256, "render plan artifact SHA-256")
     if not isinstance(source_probe, dict):
         raise MasteringContractError("renderer source probe is invalid")
     _validate_rf64_evidence(
         source_probe.get("rf64"),
-        frames=binding["complete"]["frames"],
+        frames=source_audio["frames"],
         size_bytes=source_probe.get("size_bytes", 0),
     )
     if (
@@ -1299,7 +1549,7 @@ def build_mastering_plan(
         or source_probe.get("size_bytes", 0) <= 0
         or abs(
             source_probe.get("duration_seconds", -1)
-            - binding["complete"]["duration_seconds"]
+            - source_audio["frames"] / SAMPLE_RATE
         )
         > 1 / SAMPLE_RATE
     ):
@@ -1312,7 +1562,6 @@ def build_mastering_plan(
         key: _finite(first_pass[key], f"first pass {key}")
         for key in sorted(LOUDNESS_KEYS)
     }
-    boundaries = expected_boundaries(assembly)
     analysis_runtime = resolve_analysis_runtime()
     plan = {
         "schema_version": PLAN_SCHEMA_VERSION,
@@ -1329,7 +1578,9 @@ def build_mastering_plan(
         "tools": copy.deepcopy(tools),
         "policy": copy.deepcopy(MASTERING_POLICY),
         "source_probe": copy.deepcopy(source_probe),
+        "source_audio": copy.deepcopy(source_audio),
         "first_pass": measured,
+        "chapter_normalization": copy.deepcopy(chapter_normalization),
         "boundaries": boundaries,
         "boundaries_sha256": content_sha256(boundaries),
         "commands": command_templates(tools, measured),
@@ -1353,7 +1604,9 @@ def validate_mastering_plan(plan: dict[str, Any]) -> None:
         "tools",
         "policy",
         "source_probe",
+        "source_audio",
         "first_pass",
+        "chapter_normalization",
         "boundaries",
         "boundaries_sha256",
         "commands",
@@ -1376,13 +1629,14 @@ def validate_mastering_plan(plan: dict[str, Any]) -> None:
     if content_sha256(without_digest) != digest:
         raise MasteringContractError("mastering plan content address is inconsistent")
     renderer = plan["renderer"]
-    chapter_ids = _validate_renderer_binding(
-        renderer,
-        plan["dialogue"],
-        plan["chapter_timeline"],
-        plan["chapter_timeline_sha256"],
-    )
-    complete = renderer["complete"]
+    projected, projected_boundaries = validate_source_audio_binding(plan["source_audio"], renderer)
+    if (plan["chapter_timeline"] != projected
+            or plan["chapter_timeline_sha256"] != content_sha256(projected)
+            or plan["boundaries"] != projected_boundaries):
+        raise MasteringContractError("mastering production timeline or boundaries differ from source projection")
+    chapter_ids = [row["chapter_id"] for row in projected]
+    complete = {"frames": plan["source_audio"]["frames"],
+                "duration_seconds": plan["source_audio"]["frames"] / SAMPLE_RATE}
     tools = plan["tools"]
     if not isinstance(tools, dict) or set(tools) != {"ffmpeg", "ffprobe"}:
         raise MasteringContractError("mastering tool evidence is invalid")
@@ -1405,6 +1659,24 @@ def validate_mastering_plan(plan: dict[str, Any]) -> None:
         key: _finite(first_pass[key], f"first pass {key}")
         for key in sorted(LOUDNESS_KEYS)
     }
+    normalizations = plan["chapter_normalization"]
+    if not isinstance(normalizations, list) or len(normalizations) != len(plan["chapter_timeline"]):
+        raise MasteringContractError("chapter normalization coverage is incomplete")
+    for chapter, row in zip(plan["chapter_timeline"], normalizations, strict=True):
+        if not isinstance(row, dict) or set(row) != {
+            "chapter_id", "start_frame", "end_frame", "first_pass", "commands"
+        } or any(row[key] != chapter[key] for key in ("chapter_id", "start_frame", "end_frame")):
+            raise MasteringContractError("chapter normalization timeline differs")
+        if any(isinstance(row[key], bool) or not isinstance(row[key], int)
+               for key in ("start_frame", "end_frame")):
+            raise MasteringContractError("chapter normalization frame types are invalid")
+        analysis = row["first_pass"]
+        if not isinstance(analysis, dict) or set(analysis) != LOUDNESS_KEYS:
+            raise MasteringContractError("chapter normalization analysis is invalid")
+        for key in LOUDNESS_KEYS:
+            _finite(analysis[key], f"chapter normalization {key}")
+        if row["commands"] != chapter_normalization_commands(tools, chapter, analysis):
+            raise MasteringContractError("chapter normalization commands differ")
     source_probe = plan["source_probe"]
     if not isinstance(source_probe, dict) or set(source_probe) != {
         "format_name",
@@ -1832,7 +2104,7 @@ def _mechanical_analysis(
         or working_probe["size_bytes"] != working.stat().st_size
         or abs(working_probe["duration_seconds"] - pcm["duration_seconds"])
         > 1 / SAMPLE_RATE
-        or pcm["frames"] != plan["renderer"]["complete"]["frames"]
+        or pcm["frames"] != plan["source_audio"]["frames"]
     ):
         raise MasteringContractError(
             "normalized working master format or duration drifted"
@@ -1956,6 +2228,7 @@ def _mechanical_qa(
         "dialogue": plan["dialogue"],
         "mastering_plan_sha256": plan["plan_sha256"],
         "renderer": copy.deepcopy(plan["renderer"]),
+        "source_audio": copy.deepcopy(plan["source_audio"]),
         "chapter_timeline": copy.deepcopy(plan["chapter_timeline"]),
         "chapter_timeline_sha256": plan["chapter_timeline_sha256"],
         "chapters": copy.deepcopy(plan["renderer"]["chapters"]),
@@ -1988,6 +2261,7 @@ def _mastering_manifest(
         "dialogue": plan["dialogue"],
         "mastering_plan_sha256": plan["plan_sha256"],
         "renderer": copy.deepcopy(plan["renderer"]),
+        "source_audio": copy.deepcopy(plan["source_audio"]),
         "chapter_timeline": copy.deepcopy(plan["chapter_timeline"]),
         "chapter_timeline_sha256": plan["chapter_timeline_sha256"],
         "tools": copy.deepcopy(plan["tools"]),
@@ -2070,8 +2344,8 @@ def execute_mastering(
     plan: dict[str, Any], assembly: dict[str, Any], outdir: Path
 ) -> tuple[dict[str, Any], bool]:
     validate_mastering_plan(plan)
-    source = Path(assembly["complete"]["audio_path"])
-    if sha256_file(source) != plan["renderer"]["complete"]["audio_sha256"]:
+    source = Path(plan["source_audio"]["audio_path"])
+    if sha256_file(source) != plan["source_audio"]["audio_sha256"]:
         raise MasteringContractError("full-dialogue source changed after planning")
     final = outdir / "artifacts" / plan["plan_sha256"]
     _safe_output_parent(outdir, final.parent)
@@ -2084,16 +2358,11 @@ def execute_mastering(
     try:
         working = temp / WORKING_FILENAME
         publication = temp / PUBLICATION_FILENAME
-        _run(
-            substitute_command(
-                plan["commands"]["working_master"],
-                source=source,
-                working_master=working,
-            )
-        )
+        normalize_chapters(source, working, plan["chapter_normalization"],
+                           plan["source_audio"]["frames"])
         canonicalize_ffmpeg_rf64_header(
             working,
-            expected_frames=plan["renderer"]["complete"]["frames"],
+            expected_frames=plan["source_audio"]["frames"],
         )
         _run(
             substitute_command(
@@ -2116,6 +2385,10 @@ def execute_mastering(
             _pretty_json(manifest),
             encoding="utf-8",
         )
+        # Chapters reopen the source independently; reject replacement during processing.
+        if (source.is_symlink() or not source.is_file()
+                or sha256_file(source) != plan["source_audio"]["audio_sha256"]):
+            raise MasteringContractError("full-dialogue source changed during mastering")
         _atomic_publish(temp, final)
     finally:
         shutil.rmtree(temp, ignore_errors=True)
@@ -2131,6 +2404,9 @@ def current_mastering_inputs(
     expected_render_plan_sha256: str,
     renderer_outdir: Path,
     repo_root: Path,
+    source_edit_path: Path | None = None,
+    expected_source_edit_sha256: str | None = None,
+    edited_source_path: Path | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     render_plan = load_render_plan_artifact(
         render_plan_path,
@@ -2147,17 +2423,29 @@ def current_mastering_inputs(
             "render plan is stale against current canonical screenplay dependencies"
         )
     assembly = resolve_full_dialogue_assembly(render_plan, renderer_outdir)
-    source = Path(assembly["complete"]["audio_path"])
+    source_audio = resolve_source_audio(assembly, sha256_file(render_plan_path),
+        source_edit_path=source_edit_path, expected_source_edit_sha256=expected_source_edit_sha256,
+        edited_source_path=edited_source_path)
+    source = Path(source_audio["audio_path"])
     tools = resolve_tools()
     first_pass = measure_loudness(source, tools)
     commands = command_templates(tools, first_pass)
     probe = probe_media(source, tools, commands["source_probe"])
+    renderer, _ = _renderer_binding(assembly)
+    renderer["render_plan_artifact_sha256"] = sha256_file(render_plan_path)
+    timeline, _ = validate_source_audio_binding(source_audio, renderer)
+    chapter_normalization = measure_chapter_normalization(source, timeline, tools)
+    if (source.is_symlink() or not source.is_file()
+            or sha256_file(source) != source_audio["audio_sha256"]):
+        raise MasteringContractError("full-dialogue source changed during measurement")
     plan = build_mastering_plan(
         assembly=assembly,
         render_plan_artifact_sha256=sha256_file(render_plan_path),
         tools=tools,
         source_probe=probe,
         first_pass=first_pass,
+        chapter_normalization=chapter_normalization,
+        source_audio=source_audio,
     )
     return plan, assembly
 
@@ -2171,6 +2459,9 @@ def main() -> int:
         "--repo-root", type=Path, default=Path(__file__).resolve().parents[2]
     )
     parser.add_argument("--outdir", type=Path, required=True)
+    parser.add_argument("--source-edit", type=Path)
+    parser.add_argument("--expected-source-edit-sha256")
+    parser.add_argument("--edited-source", type=Path)
     parser.add_argument("--write-plan", action="store_true")
     parser.add_argument("--execute-plan", type=Path)
     parser.add_argument("--expected-mastering-plan-sha256")
@@ -2194,6 +2485,9 @@ def main() -> int:
             expected_render_plan_sha256=args.expected_render_plan_sha256,
             renderer_outdir=args.renderer_outdir.expanduser().resolve(),
             repo_root=args.repo_root.expanduser().resolve(),
+            source_edit_path=args.source_edit,
+            expected_source_edit_sha256=args.expected_source_edit_sha256,
+            edited_source_path=args.edited_source,
         )
         if not args.execute:
             if args.execute_plan is not None or args.expected_mastering_plan_sha256:

@@ -4,6 +4,7 @@ import json
 import math
 import struct
 import sys
+import subprocess
 import tempfile
 import unittest
 from copy import deepcopy
@@ -20,7 +21,14 @@ from master_audio import (  # noqa: E402
     RENDERER_RF64_CONTAINER_PROFILE,
     RF64_CONTAINER_PROFILE,
     MasteringContractError,
+    ChapterNormalization,
     build_mastering_plan,
+    chapter_normalization_commands,
+    measure_chapter_normalization,
+    normalize_chapters,
+    write_source_chapter,
+    _run as run_ffmpeg,
+    _renderer_binding,
     canonicalize_ffmpeg_rf64_header,
     execute_mastering,
     expected_boundaries,
@@ -30,6 +38,8 @@ from master_audio import (  # noqa: E402
     parse_silence_log,
     probe_media,
     resolve_tools,
+    resolve_source_audio,
+    validate_source_audio_binding,
     resolve_analysis_runtime,
     scan_pcm24,
     unexpected_silence_segments,
@@ -237,6 +247,16 @@ def assembly_for(path: Path, *, with_boundary: bool = False) -> dict:
             "timing": master_timing,
         },
     }
+
+
+def fake_chapter_normalization(assembly: dict[str, object]) -> list[ChapterNormalization]:
+    return [{
+        "chapter_id": row["chapter_id"],
+        "start_frame": row["start_frame"],
+        "end_frame": row["end_frame"],
+        "first_pass": fake_first_pass(),
+        "commands": chapter_normalization_commands(fake_tools(), row, fake_first_pass()),
+    } for row in _renderer_binding(assembly)[1]]
 
 
 def source_probe(seconds: float) -> dict:
@@ -482,6 +502,7 @@ class MasterAudioPureTest(unittest.TestCase):
                 "tools": fake_tools(),
                 "source_probe": source_probe(assembly["complete"]["duration_seconds"]),
                 "first_pass": fake_first_pass(),
+                "chapter_normalization": fake_chapter_normalization(assembly),
             }
             first = build_mastering_plan(**arguments)
             second = build_mastering_plan(**arguments)
@@ -489,7 +510,7 @@ class MasterAudioPureTest(unittest.TestCase):
             self.assertEqual(first["plan_sha256"], second["plan_sha256"])
             self.assertEqual(first["commands"], second["commands"])
             self.assertEqual(first["implementation"]["name"], "plato-master-audio")
-            self.assertEqual(first["implementation"]["version"], 6)
+            self.assertEqual(first["implementation"]["version"], 8)
             self.assertEqual(
                 first["implementation"]["code_sha256"],
                 sha256_file(REPO_ROOT / "scripts" / "audio" / "master_audio.py"),
@@ -508,12 +529,12 @@ class MasterAudioPureTest(unittest.TestCase):
                 timeline[0]["end_frame"], first["renderer"]["complete"]["frames"]
             )
             self.assertEqual(
-                timeline[0]["timing_sha256"],
+                first["source_audio"]["renderer_chapter_timeline"][0]["timing_sha256"],
                 first["renderer"]["chapters"][0]["timing_sha256"],
             )
 
             forged_timeline = deepcopy(first)
-            forged_item = forged_timeline["chapter_timeline"][0]
+            forged_item = forged_timeline["source_audio"]["renderer_chapter_timeline"][0]
             forged_item["start_frame"] = 1
             forged_item["end_frame"] += 1
             forged_item["start_seconds"] = 1 / SAMPLE_RATE
@@ -592,6 +613,7 @@ class MasterAudioPureTest(unittest.TestCase):
                 tools=fake_tools(),
                 source_probe=source_probe(assembly["complete"]["duration_seconds"]),
                 first_pass=fake_first_pass(),
+                chapter_normalization=fake_chapter_normalization(assembly),
             )
             outdir = (root / "output").resolve()
             plan_directory = outdir / "plans"
@@ -634,8 +656,57 @@ class MasterAudioFfmpegTest(unittest.TestCase):
             tools=self.tools,
             source_probe=probe,
             first_pass=first_pass,
+            chapter_normalization=measure_chapter_normalization(
+                source, _renderer_binding(assembly)[1], self.tools
+            ),
         )
         return plan, assembly
+
+    def test_silence_edit_master_preserves_original_evidence_and_uses_derived_frames(self) -> None:
+        from source_audio_edits import Cut, EditPolicy, execute_source_edit, manifest_sha256, preview_source_edit
+
+        with tempfile.TemporaryDirectory() as raw_root:
+            root = Path(raw_root)
+            source, edited = root / "source.wav", root / "edited.wav"
+            write_pcm24(source, seconds=6, silence=(2, 4))
+            original_hash = sha256_file(source)
+            assembly = assembly_for(source)
+            renderer, timeline = _renderer_binding(assembly)
+            renderer["render_plan_artifact_sha256"] = "9" * 64
+            edit = preview_source_edit(
+                source, original_sha256=original_hash, original_frames=6 * SAMPLE_RATE,
+                chapter_timeline=timeline, boundaries=expected_boundaries(assembly),
+                render_plan_artifact_sha256="9" * 64,
+                cuts=[Cut(round(2.3 * SAMPLE_RATE), round(3.7 * SAMPLE_RATE), "remove excess quiet")],
+                policy=EditPolicy(0, 4800, "exact-zero PCM with 100 ms retained guards"),
+            )
+            execute_source_edit(edit, expected_manifest_sha256=manifest_sha256(edit), output=edited)
+            edit_path = root / "edit.json"
+            edit_path.write_text(json.dumps(edit))
+            binding = resolve_source_audio(
+                assembly, "9" * 64, source_edit_path=edit_path,
+                expected_source_edit_sha256=sha256_file(edit_path), edited_source_path=edited,
+            )
+            production_timeline, _ = validate_source_audio_binding(binding, renderer)
+            plan = build_mastering_plan(
+                assembly=assembly, render_plan_artifact_sha256="9" * 64, tools=self.tools,
+                source_probe=probe_media(edited, self.tools), first_pass=measure_loudness(edited, self.tools),
+                chapter_normalization=measure_chapter_normalization(edited, production_timeline, self.tools),
+                source_audio=binding,
+            )
+            result, _ = execute_mastering(plan, assembly, root / "mastered")
+            self.assertTrue(result["mechanical_passed"])
+            self.assertFalse(result["accepted"])
+            self.assertEqual(result["renderer"]["complete"]["audio_sha256"], original_hash)
+            self.assertEqual(result["renderer"]["complete"]["frames"], 6 * SAMPLE_RATE)
+            self.assertEqual(result["outputs"]["working_master"]["pcm"]["frames"], round(4.6 * SAMPLE_RATE))
+            self.assertEqual(result["chapter_timeline"][0]["end_frame"], round(4.6 * SAMPLE_RATE))
+            self.assertEqual(sha256_file(source), original_hash)
+            forged = deepcopy(plan)
+            forged["chapter_timeline"][0]["end_frame"] += 1
+            forged["plan_sha256"] = content_sha256({key: value for key, value in forged.items() if key != "plan_sha256"})
+            with self.assertRaisesRegex(MasteringContractError, "production timeline"):
+                validate_mastering_plan(forged)
 
     def test_two_pass_normalization_publication_resume_and_tamper_rejection(
         self,
@@ -654,8 +725,8 @@ class MasterAudioFfmpegTest(unittest.TestCase):
             qa = json.loads((final / "mechanical-qa.json").read_text())
             self.assertEqual(manifest["implementation"], plan["implementation"])
             self.assertEqual(qa["implementation"], plan["implementation"])
-            self.assertEqual(manifest["schema_version"], 5)
-            self.assertEqual(qa["schema_version"], 5)
+            self.assertEqual(manifest["schema_version"], 6)
+            self.assertEqual(qa["schema_version"], 6)
             self.assertEqual(manifest["analysis_runtime"], plan["analysis_runtime"])
             self.assertEqual(qa["analysis_runtime"], plan["analysis_runtime"])
             self.assertEqual(
@@ -777,6 +848,161 @@ class MasterAudioFfmpegTest(unittest.TestCase):
             ):
                 validate_result_directory(final, plan)
 
+    def test_distinct_chapter_levels_normalize_once_and_preserve_exact_gap(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "source.wav"
+            quiet = root / "quiet.wav"
+            loud = root / "loud.wav"
+            # Odd chapter lengths exercise PCM24 container padding separately from audio.
+            frames = 4 * SAMPLE_RATE + 1
+            gap = round(0.55 * SAMPLE_RATE)
+            total = frames * 2 + gap
+            write_pcm24(quiet, seconds=frames / SAMPLE_RATE, amplitude=0.008)
+            write_pcm24(loud, seconds=frames / SAMPLE_RATE, amplitude=0.2)
+            write_pcm24(source, seconds=total / SAMPLE_RATE, amplitude=0.0)
+            with source.open("r+b") as handle:
+                handle.seek(80)
+                handle.write(quiet.read_bytes()[80:80 + frames * 3])
+                handle.seek(80 + (frames + gap) * 3)
+                handle.write(loud.read_bytes()[80:80 + frames * 3])
+            assembly = assembly_for(source)
+            chapter = assembly["chapters"][0]
+            chapter["frames"] = frames
+            chapter["duration_seconds"] = frames / SAMPLE_RATE
+            chapter["timing"][0]["end_frame"] = frames
+            chapter["timing"][0]["end_seconds"] = frames / SAMPLE_RATE
+            chapter["timing_sha256"] = content_sha256(chapter["timing"])
+            second = deepcopy(chapter)
+            second["chapter_id"] = "after-dawn"
+            second["input_sha256"] = "c" * 64
+            assembly["chapters"].append(second)
+            timing = []
+            starts = []
+            for index, child in enumerate(assembly["chapters"]):
+                start = index * (frames + gap)
+                row = {key: child[key] for key in (
+                    "chapter_id", "input_sha256", "audio_sha256", "frames",
+                    "timing_sha256", "sidecar_sha256"
+                )}
+                row.update(start_frame=start, start_seconds=start / SAMPLE_RATE)
+                starts.append(deepcopy(row))
+                row.update(end_frame=start + frames,
+                           end_seconds=(start + frames) / SAMPLE_RATE,
+                           boundary_before={"kind": "chapter" if index else "start",
+                                            "pause_ms": 550 if index else 0,
+                                            "crossfade_ms": 0})
+                timing.append(row)
+            assembly["complete"].update(timing=timing, timing_sha256=content_sha256(timing),
+                                        chapter_starts=starts,
+                                        chapter_starts_sha256=content_sha256(starts))
+            timeline = _renderer_binding(assembly)[1]
+            measured_inputs = []
+            def bounded_analysis(command: list[str]) -> subprocess.CompletedProcess[str]:
+                input_path = Path(command[command.index("-i") + 1])
+                self.assertNotEqual(input_path, source)
+                self.assertEqual(inspect_rf64_pcm24(input_path)["sample_count"], frames)
+                measured_inputs.append(input_path)
+                return run_ffmpeg(command)
+            with patch("master_audio._run", side_effect=bounded_analysis):
+                normalizations = measure_chapter_normalization(source, timeline, self.tools)
+            self.assertEqual(len(measured_inputs), 2)
+            self.assertTrue(all(not path.exists() for path in measured_inputs))
+            self.assertGreater(abs(normalizations[0]["first_pass"]["input_i"] -
+                                   normalizations[1]["first_pass"]["input_i"]), 20)
+            plan = build_mastering_plan(
+                assembly=assembly, render_plan_artifact_sha256="9" * 64,
+                tools=self.tools, source_probe=probe_media(source, self.tools),
+                first_pass=measure_loudness(source, self.tools),
+                chapter_normalization=normalizations,
+            )
+            outdir = root / "mastered"
+            result, _ = execute_mastering(plan, assembly, outdir)
+            self.assertTrue(result["mechanical_passed"])
+            self.assertEqual(result["source_audio"]["renderer_chapter_timeline"], timeline)
+            self.assertEqual(result["chapter_timeline"], plan["chapter_timeline"])
+            master = outdir / "artifacts" / plan["plan_sha256"] / "master.wav"
+            self.assertEqual(inspect_rf64_pcm24(master)["sample_count"], total)
+            for measured in measure_chapter_normalization(master, timeline, self.tools):
+                self.assertLessEqual(abs(measured["first_pass"]["input_i"] + 19), 1)
+                self.assertLessEqual(measured["first_pass"]["input_tp"], -1)
+            with master.open("rb") as handle:
+                handle.seek(inspect_rf64_pcm24(master)["data_offset_bytes"] + frames * 3)
+                self.assertEqual(handle.read(gap * 3), bytes(gap * 3))
+            self.assertFalse(list(master.parent.glob("chapter-*.wav")))
+            self.assertEqual(sha256_file(source), assembly["complete"]["audio_sha256"])
+            for field, changed in (("start_frame", 1), ("chapter_id", "wrong")):
+                bad = deepcopy(plan)
+                bad["chapter_normalization"][0][field] = changed
+                bad["plan_sha256"] = content_sha256({k: v for k, v in bad.items() if k != "plan_sha256"})
+                with self.assertRaisesRegex(MasteringContractError, "normalization timeline"):
+                    validate_mastering_plan(bad)
+            bad = deepcopy(plan)
+            bad["chapter_normalization"][0]["commands"]["working_master"].append("tamper")
+            bad["plan_sha256"] = content_sha256({k: v for k, v in bad.items() if k != "plan_sha256"})
+            with self.assertRaisesRegex(MasteringContractError, "normalization commands"):
+                validate_mastering_plan(bad)
+
+    def test_source_mutation_during_normalization_prevents_publication(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "source.wav"
+            write_pcm24(source)
+            plan, assembly = self.build_actual_plan(source)
+            def mutate_after_normalization(
+                current_source: Path, working: Path,
+                chapters: list[ChapterNormalization], frames: int,
+            ) -> None:
+                normalize_chapters(current_source, working, chapters, frames)
+                with current_source.open("r+b") as handle:
+                    handle.seek(100)
+                    original = handle.read(1)
+                    handle.seek(100)
+                    handle.write(bytes([original[0] ^ 1]))
+            outdir = root / "output"
+            with (
+                patch("master_audio.normalize_chapters", side_effect=mutate_after_normalization),
+                patch("master_audio._atomic_publish") as publish,
+                self.assertRaisesRegex(MasteringContractError, "source changed during mastering"),
+            ):
+                execute_mastering(plan, assembly, outdir)
+            publish.assert_not_called()
+            self.assertFalse(list((outdir / "artifacts").iterdir()))
+
+    def test_source_chapter_slice_copies_exact_pcm_with_odd_padding(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source, destination = root / "source.wav", root / "slice.wav"
+            write_pcm24(source, seconds=10 / SAMPLE_RATE)
+            original = source.read_bytes()
+            write_source_chapter(source, destination, {
+                "chapter_id": "slice", "start_frame": 2, "end_frame": 9,
+            })
+            evidence = inspect_rf64_pcm24(destination)
+            self.assertEqual(evidence["sample_count"], 7)
+            self.assertEqual(destination.read_bytes()[80:-1], original[86:107])
+            self.assertEqual(destination.read_bytes()[-1:], b"\x00")
+            self.assertEqual(source.read_bytes(), original)
+            with self.assertRaisesRegex(MasteringContractError, "frame range"):
+                write_source_chapter(source, root / "invalid.wav", {
+                    "chapter_id": "slice", "start_frame": 2, "end_frame": 11,
+                })
+            self.assertFalse((root / "invalid.wav").exists())
+
+    def test_chapter_normalization_rejects_lost_audio_frames(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "source.wav"
+            write_pcm24(source)
+            assembly = assembly_for(source)
+            rows = measure_chapter_normalization(source, _renderer_binding(assembly)[1], self.tools)
+            def short_output(command: list[str]) -> None:
+                write_pcm24(Path(command[-1]), seconds=(4 * SAMPLE_RATE - 1) / SAMPLE_RATE)
+            with patch("master_audio._run", side_effect=short_output):
+                with self.assertRaises(MasteringContractError):
+                    normalize_chapters(source, root / "output.wav", rows, 4 * SAMPLE_RATE)
+            self.assertFalse(list(root.glob("chapter-*.wav")))
+
     def test_declared_boundary_silence_survives_normalization(self) -> None:
         with tempfile.TemporaryDirectory() as raw_root:
             root = Path(raw_root)
@@ -791,6 +1017,9 @@ class MasterAudioFfmpegTest(unittest.TestCase):
                 tools=self.tools,
                 source_probe=probe,
                 first_pass=first_pass,
+            chapter_normalization=measure_chapter_normalization(
+                source, _renderer_binding(assembly)[1], self.tools
+            ),
             )
             outdir = (root / "output").resolve()
             manifest, created = execute_mastering(plan, assembly, outdir)

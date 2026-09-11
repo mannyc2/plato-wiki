@@ -144,7 +144,7 @@ def renderer_chapter(chapter_id: str, marker: str) -> dict:
         "frames": SAMPLE_RATE,
         "duration_seconds": 1.0,
         "timing_sha256": chr(ord(marker) + 2) * 64,
-        "sidecar_sha256": chr(ord(marker) + 3) * 64,
+        "sidecar_sha256": sha256_bytes((marker + "sidecar").encode()),
     }
 
 
@@ -160,6 +160,73 @@ def timeline_item(chapter: dict, index: int) -> dict:
 
 
 class AudioQaHandoffTests(unittest.TestCase):
+    def test_edited_source_uses_production_frames_and_retains_original_chapter_evidence(self) -> None:
+        from source_audio_edits import Cut, EditPolicy, execute_source_edit, manifest_sha256, preview_source_edit
+        from tests.test_master_audio import write_pcm24
+
+        write_pcm24(self.source, seconds=2, silence=(0.2, 0.8))
+        renderer = self.mastering_plan["renderer"]
+        original_hash = sha256_file(self.source)
+        renderer["complete"]["audio_sha256"] = original_hash
+        self.production["renderer"]["complete_audio_sha256"] = original_hash
+        document = preview_source_edit(
+            self.source, original_sha256=original_hash, original_frames=2 * SAMPLE_RATE,
+            chapter_timeline=self.renderer_timeline, boundaries=[],
+            render_plan_artifact_sha256=sha256_file(self.render_plan_path),
+            cuts=[Cut(14400, 19200, "Exact zero-valued interior PCM")],
+            policy=EditPolicy(0, 960, "Verified all removed samples are digital zero"),
+        )
+        edited = self.root / "edited.wav"
+        execute_source_edit(document, expected_manifest_sha256=manifest_sha256(document), output=edited)
+        edit_path = self.root / "edit.json"
+        edit_path.write_text(json.dumps(document), encoding="utf-8")
+        self.source_audio.update(
+            audio_path=str(edited), audio_sha256=sha256_file(edited),
+            frames=document["derived"]["frames"],
+            edit_manifest={"path": str(edit_path), "sha256": sha256_file(edit_path), "document": document},
+        )
+        timeline = document["derived"]["chapter_timeline"]
+        for record in (self.mastering_plan, self.mastering_manifest, self.mechanical_qa):
+            record["chapter_timeline"] = timeline
+            record["chapter_timeline_sha256"] = content_sha256(timeline)
+        self.production["mastering_plan"]["chapter_timeline_sha256"] = content_sha256(timeline)
+        pcm = self.mechanical_qa["measurements"]["pcm"]
+        pcm.update(frames=91200, duration_seconds=1.9)
+        self.mastering_manifest["outputs"]["working_master"]["probe"]["duration_seconds"] = 1.9
+        for index, row in enumerate(timeline):
+            asr = self.asr_report["chapters"][index]
+            measurement = self.measurements[index]
+            for key in ("start_frame", "end_frame", "start_seconds", "end_seconds"):
+                asr[key] = row[key]
+                measurement[key] = row[key]
+            measurement["pcm"]["frames"] = row["frames"]
+            measurement["pcm"]["duration_seconds"] = row["frames"] / SAMPLE_RATE
+            for command in measurement["commands"].values():
+                position = command.index("-af") + 1
+                command[position] = command[position].replace(
+                    f"start_sample={index * SAMPLE_RATE}:end_sample={(index + 1) * SAMPLE_RATE}",
+                    f"start_sample={row['start_frame']}:end_sample={row['end_frame']}",
+                )
+        handoff = self.build()
+        validate_handoff(handoff)
+        first = handoff["chapters"][0]["audio_slice"]
+        self.assertEqual(first["end_frame"], 43200)
+        self.assertEqual(first["renderer_chapter"]["frames"], 48000)
+        self.assertEqual(handoff["production"]["source_audio"], self.source_audio)
+        self.assertFalse(handoff["acceptance"]["accepted"])
+        self.assertEqual(handoff["human_listening"]["status"], "not-performed")
+        # A coherent handoff rehash cannot replace derived geometry with old frame positions.
+        broken = copy.deepcopy(handoff)
+        broken["chapters"][0]["audio_slice"]["end_frame"] = 48000
+        broken["evidence_sha256"] = sha256_bytes(canonical_json({
+            key: value for key, value in broken.items() if key != "evidence_sha256"
+        }))
+        with self.assertRaises(AudioQaHandoffError):
+            validate_handoff(broken)
+        edit_path.write_text("{}", encoding="utf-8")
+        with self.assertRaises(AudioQaHandoffError):
+            validate_handoff(handoff)
+
     def test_handoff_accepts_parser_reported_silence_duration(self) -> None:
         segments = qa_handoff.parse_silence_log(
             "silence_start: 10000.1\nsilence_end: 10001 | silence_duration: 0.864021",
@@ -231,7 +298,17 @@ class AudioQaHandoffTests(unittest.TestCase):
         self.render_plan_path.write_text(json.dumps(self.render_plan), encoding="utf-8")
         first = renderer_chapter("first", "c")
         second = renderer_chapter("second", "d")
-        self.timeline = [timeline_item(first, 0), timeline_item(second, 1)]
+        self.renderer_timeline = [timeline_item(first, 0), timeline_item(second, 1)]
+        self.timeline = [{key: row[key] for key in (
+            "chapter_id", "start_frame", "end_frame", "frames", "start_seconds", "end_seconds"
+        )} for row in self.renderer_timeline]
+        self.source = self.root / "renderer-source.wav"
+        self.source.write_bytes(b"original-renderer-source")
+        self.source_audio = {
+            "audio_path": str(self.source), "audio_sha256": sha256_file(self.source),
+            "frames": SAMPLE_RATE * 2, "renderer_chapter_timeline": self.renderer_timeline,
+            "renderer_boundaries": [], "edit_manifest": None,
+        }
         renderer = {
             "dialogue": "crito",
             "render_plan_sha256": self.render_plan_sha,
@@ -239,17 +316,19 @@ class AudioQaHandoffTests(unittest.TestCase):
             "chapters": [first, second],
             "complete": {
                 "input_sha256": "e" * 64,
-                "audio_sha256": "f" * 64,
+                "audio_sha256": sha256_file(self.source),
                 "frames": SAMPLE_RATE * 2,
                 "duration_seconds": 2.0,
                 "container_profile": "rf64-pcm24",
                 "timing_sha256": "1" * 64,
                 "sidecar_sha256": "2" * 64,
-                "chapter_starts_sha256": "3" * 64,
+                "chapter_starts_sha256": content_sha256([{k: v for k, v in row.items() if k not in {"end_frame", "end_seconds"}} for row in self.renderer_timeline]),
             },
         }
         self.mastering_plan_path = self.root / "mastering-plan.json"
         self.mastering_plan = {
+            "schema_version": 7,
+            "source_audio": self.source_audio,
             "plan_sha256": "4" * 64,
             "renderer": renderer,
             "chapter_timeline": self.timeline,
@@ -302,6 +381,8 @@ class AudioQaHandoffTests(unittest.TestCase):
             "bit_rate": SAMPLE_RATE * 24,
         }
         self.mastering_manifest = {
+            "schema_version": 6,
+            "source_audio": self.source_audio,
             "mastering_plan_sha256": self.mastering_plan["plan_sha256"],
             "renderer": renderer,
             "chapter_timeline": self.timeline,
@@ -320,6 +401,8 @@ class AudioQaHandoffTests(unittest.TestCase):
             },
         }
         self.mechanical_qa = {
+            "schema_version": 6,
+            "source_audio": self.source_audio,
             "evidence_sha256": "7" * 64,
             "mastering_plan_sha256": self.mastering_plan["plan_sha256"],
             "renderer": renderer,
@@ -357,6 +440,7 @@ class AudioQaHandoffTests(unittest.TestCase):
             },
         }
         self.production = {
+            "source_audio": self.source_audio,
             "repo_root": str(self.repo),
             "screenplay": {
                 "path": "audio/scripts/crito.json",
@@ -371,8 +455,8 @@ class AudioQaHandoffTests(unittest.TestCase):
             "renderer": {
                 "outdir": str(self.renderer_outdir),
                 "complete_input_sha256": "e" * 64,
-                "complete_audio_sha256": "f" * 64,
-                "chapter_starts_sha256": "3" * 64,
+                "complete_audio_sha256": sha256_file(self.source),
+                "chapter_starts_sha256": renderer["complete"]["chapter_starts_sha256"],
             },
             "mastering_plan": {
                 "path": str(self.mastering_plan_path),
@@ -396,6 +480,7 @@ class AudioQaHandoffTests(unittest.TestCase):
             "production": self.production,
         }
         self.asr_report = {
+            "schema_version": 2,
             "production": self.production,
             "evidence_sha256": "0" * 64,
             "asr_plan_sha256": "9" * 64,
@@ -569,11 +654,14 @@ class AudioQaHandoffTests(unittest.TestCase):
             ("canonical-cast", self.cast_path),
             ("render-plan", self.render_plan_path),
             ("mastering-plan", self.mastering_plan_path),
+            ("mastering-source-audio", Path(self.source_audio["audio_path"])),
             ("working-master", self.master),
             ("publication-derivative", self.publication),
             ("mastering-result", result_path),
             ("mechanical-qa", mechanical_path),
         ]
+        if self.source_audio["edit_manifest"] is not None:
+            bound_paths.append(("source-edit-manifest", Path(self.source_audio["edit_manifest"]["path"])))
         self.production["files"] = [
             {
                 "label": label,
@@ -821,7 +909,7 @@ class AudioQaHandoffTests(unittest.TestCase):
             "language_probability": 1.0,
         }
         core = {
-            "schema_version": 1,
+            "schema_version": 2,
             "status": "full-master-asr-measured-unaccepted",
             "asr_plan_sha256": "1" * 64,
             "implementation": current_plan["implementation"],
@@ -856,7 +944,7 @@ class AudioQaHandoffTests(unittest.TestCase):
     def test_builds_unaccepted_handoff_with_real_per_chapter_metrics(self) -> None:
         handoff = self.build()
         validate_handoff(handoff)
-        self.assertEqual(handoff["schema_version"], 2)
+        self.assertEqual(handoff["schema_version"], 3)
         self.assertEqual(handoff["measurement_policy"]["schema_version"], 2)
         self.assertFalse(handoff["acceptance"]["accepted"])
         self.assertEqual(
