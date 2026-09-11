@@ -419,7 +419,11 @@ The renderer operates on content-addressed bounded-unit inputs. Each input hash
 covers exact screenplay entries and text spans, source/commentary/cast hashes,
 voice selection and listening evidence, model repository/revision, reference
 audio hash and prompt, seed, inference parameters, renderer code and Dots
-source hashes, package versions, trim settings, and output format. A cached
+source hashes, package versions, trim settings, and output format. Before cache
+publication, the renderer rejects low-level transients whose peak is below
+−40 dBFS and whose central 95% energy span and active duration are both under
+20 ms. This catches near-silent failed replies while preserving sustained quiet
+audio; it does not replace transcription or listening QA. A cached
 render is reused only when its sidecar, exact two-file inventory, PCM24 format,
 runtime pins, and audio checksum match the complete current input. Runtime
 evidence includes a deterministic byte-hashed inventory of every pinned model
