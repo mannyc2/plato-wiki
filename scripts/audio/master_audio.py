@@ -1448,15 +1448,21 @@ def validate_source_audio_binding(
         )} for row in timeline]
         return projected, copy.deepcopy(boundaries)
     from source_audio_edits import SourceEditManifest, validate_source_edit_manifest
+    from source_audio_repairs import KIND as REPAIR_KIND, RepairManifest, validate_source_repair_manifest
     from pcm_edits import PcmEditError
     if not isinstance(edit, dict) or set(edit) != {"path", "sha256", "document"}:
         raise MasteringContractError("source edit reference fields are invalid")
     if not isinstance(edit["path"], str) or not Path(edit["path"]).is_absolute():
         raise MasteringContractError("source edit manifest path must be absolute")
     _sha256(edit["sha256"], "source edit manifest file SHA-256")
-    document = cast(SourceEditManifest, edit["document"])
+    if not isinstance(edit["document"], dict):
+        raise MasteringContractError("source edit document must be an object")
+    document = cast(SourceEditManifest | RepairManifest, edit["document"])
     try:
-        validate_source_edit_manifest(document)
+        if document.get("kind") == REPAIR_KIND:
+            validate_source_repair_manifest(cast(RepairManifest, edit["document"]))
+        else:
+            validate_source_edit_manifest(cast(SourceEditManifest, document))
     except (PcmEditError, ValueError) as error:
         raise MasteringContractError(f"invalid source edit manifest: {error}") from error
     original, derived = document["original"], document["derived"]
@@ -1470,6 +1476,28 @@ def validate_source_audio_binding(
         raise MasteringContractError("source edit differs from original renderer or derived source")
     return (copy.deepcopy(cast(list[dict[str, object]], derived["chapter_timeline"])),
             copy.deepcopy(cast(list[dict[str, object]], derived["boundaries"])))
+
+
+
+def verify_source_audio_edit_inputs(source_audio: SourceAudioBinding) -> None:
+    edit = source_audio["edit_manifest"]
+    if edit is None:
+        return
+    path = Path(cast(str, edit["path"]))
+    if path.is_symlink() or not path.is_file() or sha256_file(path) != edit["sha256"]:
+        raise MasteringContractError("source edit receipt changed")
+    document = cast(dict[str, object], edit["document"])
+    if document.get("kind") == "utterance-repaired-derived-pcm":
+        from source_audio_repairs import RepairManifest, verify_source_repair_inputs
+        try:
+            verify_source_repair_inputs(cast(RepairManifest, document))
+        except ValueError as error:
+            raise MasteringContractError(f"source repair evidence changed: {error}") from error
+    else:
+        original = cast(dict[str, object], document["original"])
+        path = Path(cast(str, original["path"]))
+        if path.is_symlink() or not path.is_file() or sha256_file(path) != original["audio_sha256"]:
+            raise MasteringContractError("original source edit input changed")
 
 
 def resolve_source_audio(
@@ -1508,6 +1536,7 @@ def resolve_source_audio(
                                     "document": document}
     validate_source_audio_binding(binding, renderer)
     if source_edit_path is not None:
+        verify_source_audio_edit_inputs(binding)
         if (sha256_file(Path(binding["audio_path"])) != binding["audio_sha256"]
                 or inspect_rf64_pcm24(Path(binding["audio_path"]))["sample_count"] != binding["frames"]):
             raise MasteringContractError("derived source audio bytes or frames changed")
@@ -2344,6 +2373,7 @@ def execute_mastering(
     plan: dict[str, Any], assembly: dict[str, Any], outdir: Path
 ) -> tuple[dict[str, Any], bool]:
     validate_mastering_plan(plan)
+    verify_source_audio_edit_inputs(plan["source_audio"])
     source = Path(plan["source_audio"]["audio_path"])
     if sha256_file(source) != plan["source_audio"]["audio_sha256"]:
         raise MasteringContractError("full-dialogue source changed after planning")
@@ -2389,6 +2419,7 @@ def execute_mastering(
         if (source.is_symlink() or not source.is_file()
                 or sha256_file(source) != plan["source_audio"]["audio_sha256"]):
             raise MasteringContractError("full-dialogue source changed during mastering")
+        verify_source_audio_edit_inputs(plan["source_audio"])
         _atomic_publish(temp, final)
     finally:
         shutil.rmtree(temp, ignore_errors=True)
@@ -2426,6 +2457,14 @@ def current_mastering_inputs(
     source_audio = resolve_source_audio(assembly, sha256_file(render_plan_path),
         source_edit_path=source_edit_path, expected_source_edit_sha256=expected_source_edit_sha256,
         edited_source_path=edited_source_path)
+    edit = source_audio["edit_manifest"]
+    if edit is not None and cast(dict[str, object], edit["document"]).get("kind") == "utterance-repaired-derived-pcm":
+        from source_audio_repairs import RepairManifest, validate_canonical_repairs
+        document = cast(RepairManifest, edit["document"])
+        try:
+            validate_canonical_repairs(document["repairs"], document["base_edit"], render_plan, assembly)
+        except ValueError as error:
+            raise MasteringContractError(f"replacement differs from canonical source: {error}") from error
     source = Path(source_audio["audio_path"])
     tools = resolve_tools()
     first_pass = measure_loudness(source, tools)
@@ -2438,6 +2477,7 @@ def current_mastering_inputs(
     if (source.is_symlink() or not source.is_file()
             or sha256_file(source) != source_audio["audio_sha256"]):
         raise MasteringContractError("full-dialogue source changed during measurement")
+    verify_source_audio_edit_inputs(source_audio)
     plan = build_mastering_plan(
         assembly=assembly,
         render_plan_artifact_sha256=sha256_file(render_plan_path),

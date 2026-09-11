@@ -22,7 +22,7 @@ import sys
 import unicodedata
 import uuid
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any, Callable, cast
 
 import verify_reference_asr_adjudication as reference_asr
 from master_audio import (
@@ -548,6 +548,10 @@ def _validate_source_file_inventory(
         if not isinstance(edit, dict) or set(edit) != {"path", "sha256", "document"}:
             raise FullMasterAsrError("ASR source-edit binding is invalid")
         required.append(("source-edit-manifest", edit["path"], edit["sha256"]))
+        document = edit["document"]
+        if isinstance(document, dict) and document.get("kind") == "utterance-repaired-derived-pcm":
+            from source_audio_repairs import RepairManifest, source_repair_files
+            required.extend((label, str(path), digest) for label, path, digest in source_repair_files(cast(RepairManifest, document)))
     for label, path, digest in required:
         if not isinstance(path, str) or not Path(path).is_absolute():
             raise FullMasterAsrError("ASR source-audio path must be absolute")
@@ -662,6 +666,10 @@ def _production_file_inventory(
     edit = source_audio["edit_manifest"]
     if edit is not None:
         files.append(_bound_file(Path(edit["path"]), "source-edit-manifest", edit["sha256"]))
+        document = edit["document"]
+        if document.get("kind") == "utterance-repaired-derived-pcm":
+            from source_audio_repairs import RepairManifest, source_repair_files
+            files.extend(_bound_file(path, label, digest) for label, path, digest in source_repair_files(cast(RepairManifest, document)))
     return files
 
 

@@ -439,12 +439,88 @@ function validateRendererAndTimeline(value: JsonObject, timelineValue: unknown, 
   return { chapters, complete, timeline, timelineDigest };
 }
 
-function validateSourceAudio(renderer: JsonObject, value: unknown, timelineValue: unknown, timelineDigestValue: unknown, boundariesValue: unknown) {
+type SourceBinding = ReturnType<typeof validateRendererAndTimeline> & { sourceFrames: number };
+
+function validateRepairedSource(renderer: JsonObject, source: JsonObject, timelineValue: unknown, timelineDigest: unknown, boundariesValue: unknown, edit: JsonObject): SourceBinding {
+  exactFields(edit, ["schema_version", "kind", "implementation", "original", "base_edit", "repairs", "derived", "human_listening_performed"], "utterance repair document");
+  if (edit.schema_version !== 1 || edit.human_listening_performed !== false) throw new Error("utterance repair schema/listening claim is invalid");
+  const implementation = object(edit.implementation, "utterance repair implementation");
+  exactFields(implementation, ["source_audio_repairs_sha256"], "utterance repair implementation");
+  sha256(implementation.source_audio_repairs_sha256, "utterance repair implementation hash");
+  const baseEdit = object(edit.base_edit, "utterance repair base edit");
+  if (baseEdit.kind !== "mechanically-reviewed-derived-pcm" || !sameJson(baseEdit.original, edit.original)) throw new Error("utterance repair requires its original conservative edit evidence");
+  const baseDerived = object(baseEdit.derived, "utterance repair base result");
+  const reference = object(source.edit_manifest, "utterance repair reference");
+  exactFields(reference, ["path", "sha256", "document"], "utterance repair reference");
+  const base = validateSourceAudio(renderer, { ...source, audio_sha256: baseDerived.audio_sha256, frames: baseDerived.frames, edit_manifest: { ...reference, document: baseEdit } }, baseDerived.chapter_timeline, timelineDigest, baseDerived.boundaries);
+  const cuts = (baseEdit.cuts as unknown[]).map((row) => object(row, "repair base cut"));
+  const baseFrame = (frame: number) => frame - cuts.reduce((sum, row) => sum + Math.max(0, Math.min(frame, row.end_frame as number) - (row.start_frame as number)), 0);
+  const protections = (baseEdit.protected_geometry as unknown[]).map((value) => {
+    const row = object(value, "repair base protection");
+    return { start: baseFrame(row.start_frame as number), end: baseFrame(row.end_frame as number) };
+  });
+  if (!Array.isArray(edit.repairs) || edit.repairs.length === 0) throw new Error("utterance replacements are missing");
+  let previousEnd = 0;
+  const repairs = edit.repairs.map((value) => {
+    const row = object(value, "utterance replacement");
+    exactFields(row, ["start_frame", "end_frame", "audio_path", "audio_sha256", "frames", "source_pcm_sha256", "entry_id", "canonical_text", "reason", "evidence"], "utterance replacement");
+    const start = nonNegativeInteger(row.start_frame, "replacement start"), end = positiveInteger(row.end_frame, "replacement end");
+    const frames = positiveInteger(row.frames, "replacement frames");
+    if (start < previousEnd || start >= end || end > base.sourceFrames || protections.some((span) => start < span.end && span.start < end)) throw new Error("replacement overlaps protected or out-of-range source geometry");
+    previousEnd = end;
+    if (typeof row.audio_path !== "string" || !isAbsolute(row.audio_path)) throw new Error("replacement audio path must be absolute");
+    sha256(row.audio_sha256, "replacement audio hash");
+    sha256(row.source_pcm_sha256, "replacement source PCM hash");
+    for (const key of ["entry_id", "canonical_text", "reason"]) if (typeof row[key] !== "string" || (row[key] as string).trim().length === 0) throw new Error("replacement requires canonical text and a reason");
+    if (!Array.isArray(row.evidence)) throw new Error("replacement evidence is missing");
+    const roles = new Set<string>();
+    for (const raw of row.evidence) {
+      const item = object(raw, "replacement evidence");
+      exactFields(item, ["path", "sha256", "role"], "replacement evidence");
+      if (typeof item.path !== "string" || !isAbsolute(item.path) || typeof item.role !== "string" || item.role.trim().length === 0) throw new Error("replacement evidence path/role is invalid");
+      sha256(item.sha256, "replacement evidence hash");
+      roles.add(item.role);
+    }
+    if (!["synthesis", "transcription", "source-task"].every((role) => roles.has(role))) throw new Error("replacement lacks synthesis, transcription or source-task evidence");
+    return { start, end, frames };
+  });
+  const map = (frame: number) => {
+    if (repairs.some((row) => row.start < frame && frame < row.end)) throw new Error("replacement intersects a projected boundary");
+    return frame + repairs.reduce((sum, row) => sum + (row.end <= frame ? row.frames - (row.end - row.start) : 0), 0);
+  };
+  const timeline = base.timeline.map((row) => {
+    const start = map(row.start_frame as number), end = map(row.end_frame as number);
+    return { chapter_id: row.chapter_id, start_frame: start, end_frame: end, frames: end - start, start_seconds: start / SAMPLE_RATE, end_seconds: end / SAMPLE_RATE };
+  });
+  const boundaries = (baseDerived.boundaries as unknown[]).map((value) => {
+    const row = object(value, "repair base boundary");
+    const start = map(row.start_frame as number), end = map(row.end_frame as number);
+    if (end - start !== (row.end_frame as number) - (row.start_frame as number)) throw new Error("replacement changes a declared pause");
+    const result: JsonObject = { ...row, start_frame: start, end_frame: end };
+    if ("start_seconds" in row) result.start_seconds = start / SAMPLE_RATE;
+    if ("end_seconds" in row) result.end_seconds = end / SAMPLE_RATE;
+    return result;
+  });
+  const sourceFrames = map(base.sourceFrames);
+  const derived = object(edit.derived, "utterance repair derived result");
+  exactFields(derived, ["audio_sha256", "frames", "removed_frames", "chapter_timeline", "chapter_timeline_sha256", "boundaries", "boundaries_sha256"], "utterance repair derived result");
+  if (source.frames !== sourceFrames || derived.frames !== sourceFrames || derived.audio_sha256 !== source.audio_sha256 || derived.removed_frames !== (base.complete.frames as number) - sourceFrames || !sameJson(derived.chapter_timeline, timeline) || !sameJson(timelineValue, timeline) || !sameJson(derived.boundaries, boundaries) || !sameJson(boundariesValue, boundaries)) throw new Error("utterance repair output differs from its exact splice projection");
+  sha256(derived.chapter_timeline_sha256, "repaired timeline hash");
+  sha256(derived.boundaries_sha256, "repaired boundaries hash");
+  return { ...base, timeline, sourceFrames };
+}
+
+function validateSourceAudio(renderer: JsonObject, value: unknown, timelineValue: unknown, timelineDigestValue: unknown, boundariesValue: unknown): SourceBinding {
   const source = object(value, "mastering source_audio");
   exactFields(source, ["audio_path", "audio_sha256", "frames", "renderer_chapter_timeline", "renderer_boundaries", "edit_manifest"], "mastering source_audio");
   if (typeof source.audio_path !== "string" || !isAbsolute(source.audio_path)) throw new Error("mastering source audio path must be absolute");
   sha256(source.audio_sha256, "mastering source audio hash");
   const sourceFrames = positiveInteger(source.frames, "mastering source frames");
+  if (source.edit_manifest !== null) {
+    const reference = object(source.edit_manifest, "source edit reference");
+    const edit = object(reference.document, "source edit document");
+    if (edit.kind === "utterance-repaired-derived-pcm") return validateRepairedSource(renderer, source, timelineValue, timelineDigestValue, boundariesValue, edit);
+  }
   const binding = validateRendererAndTimeline(renderer, source.renderer_chapter_timeline, timelineDigestValue);
   if (!Array.isArray(source.renderer_boundaries)) throw new Error("mastering renderer boundaries must be an array");
   const originalFrames = binding.complete.frames as number;

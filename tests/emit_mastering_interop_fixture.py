@@ -158,7 +158,8 @@ def main() -> None:
     chapter_id = sys.argv[3]
     outdir.mkdir(parents=True, exist_ok=True)
     source = outdir / "interop-source.wav"
-    edited = "--edited" in sys.argv[4:]
+    repaired = "--repaired" in sys.argv[4:]
+    edited = "--edited" in sys.argv[4:] or repaired
     frames = write_source(source, edited=edited)
     renderer = assembly(source, dialogue, chapter_id, frames)
     source_audio = resolve_source_audio(renderer, "7" * 64)
@@ -172,7 +173,20 @@ def main() -> None:
             policy=EditPolicy(0, 960, "Deterministic zero-sample fixture validation"),
         )
         edited_source = outdir / "interop-derived-source.wav"
-        execute_source_edit(edit, expected_manifest_sha256=manifest_sha256(edit), output=edited_source)
+        if repaired:
+            from pcm_edits import _header
+            from source_audio_repairs import preview_source_repair, execute_source_repair
+            replacement = outdir / "interop-replacement.wav"
+            replacement.write_bytes(_header(960) + b"".join(pcm24(round(500000 * math.sin(2 * math.pi * 220 * index / SAMPLE_RATE))) for index in range(960)))
+            evidence = outdir / "interop-repair-evidence.json"
+            evidence.write_text('{"accepted":false,"purpose":"synthetic interchange fixture"}\n')
+            edit = preview_source_repair(edit, [{"start_frame":6000,"end_frame":6480,"audio_path":str(replacement),
+                "audio_sha256":sha256_file(replacement),"frames":960,"entry_id":"fixture-source-1","canonical_text":"A short source.",
+                "reason":"Synthetic sample-exact replacement fixture", "evidence":[{"path":str(evidence),"sha256":sha256_file(evidence),"role":role}
+                    for role in ("synthesis","transcription","source-task")]}])
+            execute_source_repair(edit, expected_manifest_sha256=manifest_sha256(edit), output=edited_source)
+        else:
+            execute_source_edit(edit, expected_manifest_sha256=manifest_sha256(edit), output=edited_source)
         edit_path = outdir / "interop-source-edit.json"
         edit_path.write_text(json.dumps(edit, indent=2, sort_keys=True) + "\n", encoding="utf-8")
         source_audio = resolve_source_audio(renderer, "7" * 64, source_edit_path=edit_path,

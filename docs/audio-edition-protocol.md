@@ -513,6 +513,17 @@ Changed audio requires fresh recognition and chapter measurements. Neither
 source editing nor mastering changes the acceptance thresholds or listening
 requirements.
 
+Failed utterances can be repaired with a separate, hash-bound replacement source.
+The repair manifest embeds its conservative base edit, identifies each canonical
+utterance and replaced PCM interval, records synthesis and transcription evidence,
+and projects the exact replacement duration through all later chapter and boundary
+positions. Replacement intervals cannot intersect declared pauses, crossfades,
+chapter edges, or protected spans. Unchanged PCM remains byte-identical. Changed
+generation parameters belong in the explicit replacement receipt; original
+renderer/cache evidence stays original. Replacement files and receipts join the
+ASR input inventory and are rechecked before publication. These are unaccepted
+repairs requiring fresh full-master QA and the existing final acceptance review.
+
 The working derivative is forced-RF64 mono 48 kHz PCM24, including for short
 dialogues, so corpus-scale works never cross a classic-RIFF size cliff. The
 publication derivative is a deterministic metadata-free 96 kbit/s mono MP3.
