@@ -153,6 +153,12 @@ class FullMasterAsrTests(unittest.TestCase):
                 "complete_audio_sha256": "5" * 64,
                 "chapter_starts_sha256": "6" * 64,
             },
+            "source_audio": {
+                "audio_path": str(self.master), "audio_sha256": sha256_file(self.master),
+                "frames": fixture_timeline()[-1]["end_frame"],
+                "renderer_chapter_timeline": fixture_timeline(),
+                "renderer_boundaries": [], "edit_manifest": None,
+            },
             "mastering_plan": {
                 "path": str(self.root / "mastering-plan.json"),
                 "plan_sha256": "7" * 64,
@@ -176,6 +182,10 @@ class FullMasterAsrTests(unittest.TestCase):
                 }
             ],
         }
+        self.production["files"].append({
+            "label": "mastering-source-audio", "path": str(self.master),
+            "sha256": sha256_file(self.master), "size_bytes": self.master.stat().st_size,
+        })
         self.plan = build_asr_plan(
             dialogue="crito",
             production=self.production,
@@ -264,6 +274,69 @@ class FullMasterAsrTests(unittest.TestCase):
         self.assertEqual(report["human_listening"], {"status": "not-performed"})
         core = {key: value for key, value in report.items() if key != "evidence_sha256"}
         self.assertEqual(report["evidence_sha256"], sha256_bytes(canonical_json(core)))
+
+    def test_edited_source_inventory_and_transcription_use_changed_timeline(self) -> None:
+        edit_path = self.root / "edit.json"
+        edit_path.write_text('{"fixture":"edit"}', encoding="utf-8")
+        self.production["source_audio"]["edit_manifest"] = {
+            "path": str(edit_path), "sha256": sha256_file(edit_path),
+            "document": {"fixture": "edit"},
+        }
+        self.production["source_audio"]["frames"] = 72000
+        timeline = [
+            {"chapter_id": "first", "start_frame": 0, "end_frame": 24000,
+             "start_seconds": 0.0, "end_seconds": 0.5},
+            {"chapter_id": "second", "start_frame": 24000, "end_frame": 72000,
+             "start_seconds": 0.5, "end_seconds": 1.5},
+        ]
+        expected = reconstruct_expected_chapters(fixture_screenplay(), timeline)
+        self.assertEqual([row["expected_text"] for row in expected], [row["expected_text"] for row in self.expected])
+        with self.assertRaisesRegex(FullMasterAsrError, "missing from file inventory"):
+            build_asr_plan(dialogue="crito", production=self.production,
+                           expected=expected, asr_runtime=self.runtime)
+        self.production["files"].append({
+            "label": "source-edit-manifest", "path": str(edit_path),
+            "sha256": sha256_file(edit_path), "size_bytes": edit_path.stat().st_size,
+        })
+        plan = build_asr_plan(dialogue="crito", production=self.production,
+                              expected=expected, asr_runtime=self.runtime)
+        transcriber = FakeTranscriber(["alpha beta", "gamma delta"])
+        report = run_asr_with_transcriber(plan, expected, transcriber)
+        self.assertEqual([(row[1], row[2]) for row in transcriber.calls], [(0.0, 0.5), (0.5, 1.5)])
+        self.assertFalse(report["acceptance"]["accepted"])
+        edit_path.write_text("changed", encoding="utf-8")
+        untouched = FakeTranscriber(["unused", "unused"])
+        with self.assertRaises(FullMasterAsrError):
+            run_asr_with_transcriber(plan, expected, untouched)
+        self.assertEqual(untouched.calls, [])
+
+    def test_current_inputs_reconstruct_bound_source_edit_before_asr(self) -> None:
+        renderer = self.root / "renderer"
+        renderer.mkdir()
+        mastering = self.root / "mastering"
+        mastering.mkdir()
+        render_plan = self.root / "render.json"
+        render_plan.write_text("{}")
+        master_plan = self.root / "master.json"
+        master_plan.write_text("{}")
+        edit_path, derived = self.root / "edit.json", self.root / "derived.wav"
+        bound = {"source_audio": {"audio_path": str(derived), "edit_manifest": {
+            "path": str(edit_path), "sha256": "a" * 64,
+        }}}
+        with (
+            mock.patch.object(full_master_asr, "load_mastering_plan", return_value=bound),
+            mock.patch.object(full_master_asr, "current_mastering_inputs", side_effect=RuntimeError("stop")) as current,
+            self.assertRaisesRegex(RuntimeError, "stop"),
+        ):
+            full_master_asr.load_current_asr_plan(
+                render_plan_path=render_plan, expected_render_plan_sha256="b" * 64,
+                renderer_outdir=renderer, mastering_plan_path=master_plan,
+                expected_mastering_plan_sha256="c" * 64, mastering_outdir=mastering,
+                repo_root=self.repo_root, cache_dir=self.root,
+            )
+        self.assertEqual(current.call_args.kwargs["source_edit_path"], edit_path)
+        self.assertEqual(current.call_args.kwargs["expected_source_edit_sha256"], "a" * 64)
+        self.assertEqual(current.call_args.kwargs["edited_source_path"], derived)
 
     def test_fails_closed_when_master_changes_before_transcription(self) -> None:
         self.master.write_bytes(b"changed-master")

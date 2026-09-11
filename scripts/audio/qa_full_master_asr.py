@@ -41,9 +41,9 @@ from render_dots import (
 )
 
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 IMPLEMENTATION_NAME = "plato-full-master-asr"
-IMPLEMENTATION_VERSION = 1
+IMPLEMENTATION_VERSION = 2
 PLAN_STATUS = "full-master-asr-plan"
 EVIDENCE_STATUS = "full-master-asr-measured-unaccepted"
 EVIDENCE_FILENAME = "asr-evidence.json"
@@ -478,11 +478,13 @@ def validate_asr_plan(plan: dict[str, Any]) -> None:
         "screenplay",
         "render_plan",
         "renderer",
+        "source_audio",
         "mastering_plan",
         "mastering_result",
         "files",
     }:
         raise FullMasterAsrError("production ASR binding fields are invalid")
+    _validate_source_file_inventory(production["source_audio"], production["files"])
     if production["mastering_result"].get("working_master_path") is None:
         raise FullMasterAsrError("production ASR binding has no working master")
     verify_runtime_provenance(plan["asr_runtime"])
@@ -511,6 +513,7 @@ def validate_asr_plan(plan: dict[str, Any]) -> None:
             or chapter_id in chapter_ids
             or not isinstance(chapter["entry_ids"], list)
             or not chapter["entry_ids"]
+            or (index == 0 and chapter["start_frame"] != 0)
             or chapter["start_frame"] < prior_end
             or chapter["end_frame"] <= chapter["start_frame"]
             or chapter["start_seconds"] != chapter["start_frame"] / SAMPLE_RATE
@@ -524,6 +527,34 @@ def validate_asr_plan(plan: dict[str, Any]) -> None:
         _sha256(chapter["expected_tokens_sha256"], "expected tokens SHA-256")
         chapter_ids.add(chapter_id)
         prior_end = chapter["end_frame"]
+    if prior_end != production["source_audio"]["frames"]:
+        raise FullMasterAsrError("ASR chapter timeline does not cover mastering source")
+
+
+def _validate_source_file_inventory(
+    source_audio: dict[str, object], files: list[dict[str, object]]
+) -> None:
+    if not isinstance(source_audio, dict) or set(source_audio) != {
+        "audio_path", "audio_sha256", "frames", "renderer_chapter_timeline",
+        "renderer_boundaries", "edit_manifest",
+    }:
+        raise FullMasterAsrError("ASR source-audio binding is invalid")
+    if (type(source_audio["frames"]) is not int or source_audio["frames"] <= 0
+            or not isinstance(files, list) or any(not isinstance(item, dict) for item in files)):
+        raise FullMasterAsrError("ASR source-audio frames or inventory are invalid")
+    required = [("mastering-source-audio", source_audio["audio_path"], source_audio["audio_sha256"])]
+    edit = source_audio["edit_manifest"]
+    if edit is not None:
+        if not isinstance(edit, dict) or set(edit) != {"path", "sha256", "document"}:
+            raise FullMasterAsrError("ASR source-edit binding is invalid")
+        required.append(("source-edit-manifest", edit["path"], edit["sha256"]))
+    for label, path, digest in required:
+        if not isinstance(path, str) or not Path(path).is_absolute():
+            raise FullMasterAsrError("ASR source-audio path must be absolute")
+        _sha256(digest, "ASR source-audio SHA-256")
+        matches = [item for item in files if item.get("label") == label]
+        if len(matches) != 1 or matches[0].get("path") != path or matches[0].get("sha256") != digest:
+            raise FullMasterAsrError("ASR source-audio evidence is missing from file inventory")
 
 
 def _production_file_inventory(
@@ -625,6 +656,12 @@ def _production_file_inventory(
             ),
         )
     )
+    source_audio = mastering_plan["source_audio"]
+    files.append(_bound_file(Path(source_audio["audio_path"]), "mastering-source-audio",
+                             source_audio["audio_sha256"]))
+    edit = source_audio["edit_manifest"]
+    if edit is not None:
+        files.append(_bound_file(Path(edit["path"]), "source-edit-manifest", edit["sha256"]))
     return files
 
 
@@ -645,11 +682,19 @@ def load_current_asr_plan(
     render_plan_path = render_plan_path.expanduser().resolve(strict=True)
     mastering_plan_path = mastering_plan_path.expanduser().resolve(strict=True)
 
+    saved_mastering_plan = load_mastering_plan(
+        mastering_plan_path, expected_sha256=expected_mastering_plan_sha256
+    )
+    source_audio = saved_mastering_plan["source_audio"]
+    edit = source_audio["edit_manifest"]
     current_mastering_plan, assembly = current_mastering_inputs(
         render_plan_path=render_plan_path,
         expected_render_plan_sha256=expected_render_plan_sha256,
         renderer_outdir=renderer_outdir,
         repo_root=repo_root,
+        source_edit_path=Path(edit["path"]) if edit is not None else None,
+        expected_source_edit_sha256=edit["sha256"] if edit is not None else None,
+        edited_source_path=Path(source_audio["audio_path"]) if edit is not None else None,
     )
     render_plan = load_render_plan_artifact(
         render_plan_path, expected_sha256=expected_render_plan_sha256
@@ -711,6 +756,7 @@ def load_current_asr_plan(
             "complete_audio_sha256": assembly["complete"]["audio_sha256"],
             "chapter_starts_sha256": assembly["complete"]["chapter_starts_sha256"],
         },
+        "source_audio": copy.deepcopy(mastering_plan["source_audio"]),
         "mastering_plan": {
             "path": str(mastering_plan_path),
             "plan_sha256": mastering_plan["plan_sha256"],

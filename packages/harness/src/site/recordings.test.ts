@@ -189,7 +189,7 @@ describe("MP3 inspection", () => {
 });
 
 describe("published recording materialization", () => {
-  it("accepts an actual master_audio.py v6 artifact without recomputing Python semantic digests", () => {
+  it.each([false, true])("accepts an actual master_audio.py v7 artifact (source edited=%s) without recomputing Python semantic digests", (edited) => {
     writeAcceptedAudioProductionFixture({
       root,
       dialogue: "fixture",
@@ -200,7 +200,7 @@ describe("published recording materialization", () => {
     const pinnedPython = process.env.MASTERING_INTEROP_PYTHON;
     const generated = Bun.spawnSync({
       cmd: pinnedPython
-        ? [pinnedPython, MASTERING_INTEROP_FIXTURE, artifactRoot, "fixture", "chapter-1"]
+        ? [pinnedPython, MASTERING_INTEROP_FIXTURE, artifactRoot, "fixture", "chapter-1", ...(edited ? ["--edited"] : [])]
         : [
             "uv",
             "run",
@@ -212,6 +212,7 @@ describe("published recording materialization", () => {
             artifactRoot,
             "fixture",
             "chapter-1",
+            ...(edited ? ["--edited"] : []),
           ],
       stdout: "pipe",
       stderr: "pipe",
@@ -288,6 +289,32 @@ describe("published recording materialization", () => {
         bytes: publication.length,
       },
     ]);
+    if (edited) {
+      const planPath = join(artifactRoot, receipt.plan_path);
+      const originalPlan = readFileSync(planPath, "utf8");
+      const manifestPath = join(root, "wiki/recordings/fixture.json");
+      for (const mutation of ["cut", "original", "derived"]) {
+        const plan = JSON.parse(originalPlan) as {
+          source_audio: { edit_manifest: { document: {
+            cuts: { start_frame: number }[];
+            original: { audio_sha256: string };
+            derived: { frames: number };
+          } } };
+        };
+        const document = plan.source_audio.edit_manifest.document;
+        if (mutation === "cut") document.cuts[0]!.start_frame = 0;
+        else if (mutation === "original") document.original.audio_sha256 = "0".repeat(64);
+        else document.derived.frames -= 1;
+        const content = JSON.stringify(plan);
+        writeFileSync(planPath, content);
+        const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as RecordingManifest;
+        manifest.production.mastering_plan_artifact_sha256 = hash(content);
+        writeFileSync(manifestPath, JSON.stringify(manifest));
+        expect(() => materializeSiteRecordings({
+          recordings: discoverSiteRecordings(), artifactRoot, outDir: join(root, "site-invalid-source-edit"),
+        })).toThrow(/source edit/u);
+      }
+    }
   });
 
   it("discovers only accepted manifests and chunk-copies a hash-verified artifact", () => {
@@ -412,6 +439,49 @@ describe("published recording materialization", () => {
         outDir: join(root, "site-fake-master"),
       }),
     ).toThrow(/not a complete RIFF or RF64 WAVE file/u);
+  });
+
+  it("rejects rehashed source frame and projected chapter tampering", () => {
+    for (const target of ["source-frames", "chapter-projection"]) {
+      const evidence = writeManifest({})!;
+      const planPath = join(artifactRoot, evidence.paths.planPath);
+      const plan = JSON.parse(readFileSync(planPath, "utf8")) as {
+        source_audio: { frames: number };
+        chapter_timeline: { end_frame: number }[];
+      };
+      if (target === "source-frames") plan.source_audio.frames -= 1;
+      else plan.chapter_timeline[0]!.end_frame -= 1;
+      const content = `${JSON.stringify(plan, null, 2)}\n`;
+      writeFileSync(planPath, content);
+      const manifestPath = join(root, "wiki/recordings/fixture.json");
+      const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as RecordingManifest;
+      manifest.production.mastering_plan_artifact_sha256 = hash(content);
+      writeFileSync(manifestPath, JSON.stringify(manifest));
+      expect(() => materializeSiteRecordings({
+        recordings: discoverSiteRecordings(), artifactRoot, outDir: join(root, "site-invalid-source-projection"),
+      })).toThrow(/unedited source audio|exact source projection/u);
+    }
+  });
+
+  it("rejects rehashed chapter normalization with missing or shifted chapter coverage", () => {
+    for (const missing of [true, false]) {
+      const evidence = writeManifest({})!;
+      const planPath = join(artifactRoot, evidence.paths.planPath);
+      const plan = JSON.parse(readFileSync(planPath, "utf8")) as {
+        chapter_normalization: { start_frame: number }[];
+      };
+      if (missing) plan.chapter_normalization.pop();
+      else plan.chapter_normalization[0]!.start_frame += 1;
+      const content = `${JSON.stringify(plan, null, 2)}\n`;
+      writeFileSync(planPath, content);
+      const manifestPath = join(root, "wiki/recordings/fixture.json");
+      const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as RecordingManifest;
+      manifest.production.mastering_plan_artifact_sha256 = hash(content);
+      writeFileSync(manifestPath, JSON.stringify(manifest));
+      expect(() => materializeSiteRecordings({
+        recordings: discoverSiteRecordings(), artifactRoot, outDir: join(root, "site-invalid-chapter-normalization"),
+      })).toThrow(/Mastering chapter normalization/u);
+    }
   });
 
   it("rejects a matching hash for non-MP3 bytes, truncated frames, or inconsistent duration", () => {
