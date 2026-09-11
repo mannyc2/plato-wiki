@@ -189,7 +189,9 @@ describe("MP3 inspection", () => {
 });
 
 describe("published recording materialization", () => {
-  it.each([false, true])("accepts an actual master_audio.py v7 artifact (source edited=%s) without recomputing Python semantic digests", (edited) => {
+  it.each(["original", "edited", "repaired"])("accepts an actual master_audio.py artifact (source=%s) without recomputing Python semantic digests", (mode) => {
+    const edited = mode !== "original";
+    const flags = mode === "repaired" ? ["--edited", "--repaired"] : edited ? ["--edited"] : [];
     writeAcceptedAudioProductionFixture({
       root,
       dialogue: "fixture",
@@ -200,7 +202,7 @@ describe("published recording materialization", () => {
     const pinnedPython = process.env.MASTERING_INTEROP_PYTHON;
     const generated = Bun.spawnSync({
       cmd: pinnedPython
-        ? [pinnedPython, MASTERING_INTEROP_FIXTURE, artifactRoot, "fixture", "chapter-1", ...(edited ? ["--edited"] : [])]
+        ? [pinnedPython, MASTERING_INTEROP_FIXTURE, artifactRoot, "fixture", "chapter-1", ...flags]
         : [
             "uv",
             "run",
@@ -212,7 +214,7 @@ describe("published recording materialization", () => {
             artifactRoot,
             "fixture",
             "chapter-1",
-            ...(edited ? ["--edited"] : []),
+            ...flags,
           ],
       stdout: "pipe",
       stderr: "pipe",
@@ -297,12 +299,13 @@ describe("published recording materialization", () => {
         const plan = JSON.parse(originalPlan) as {
           source_audio: { edit_manifest: { document: {
             cuts: { start_frame: number }[];
+            repairs: { start_frame: number }[];
             original: { audio_sha256: string };
             derived: { frames: number };
           } } };
         };
         const document = plan.source_audio.edit_manifest.document;
-        if (mutation === "cut") document.cuts[0]!.start_frame = 0;
+        if (mutation === "cut") (mode === "repaired" ? document.repairs : document.cuts)[0]!.start_frame = 0;
         else if (mutation === "original") document.original.audio_sha256 = "0".repeat(64);
         else document.derived.frames -= 1;
         const content = JSON.stringify(plan);
@@ -312,7 +315,7 @@ describe("published recording materialization", () => {
         writeFileSync(manifestPath, JSON.stringify(manifest));
         expect(() => materializeSiteRecordings({
           recordings: discoverSiteRecordings(), artifactRoot, outDir: join(root, "site-invalid-source-edit"),
-        })).toThrow(/source edit/u);
+        })).toThrow(/source edit|utterance repair|replacement/u);
       }
     }
   });

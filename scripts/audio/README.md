@@ -1746,3 +1746,21 @@ uv run --with numpy==2.2.6 python -m unittest \
   tests.test_promote_audio_qa \
   tests.test_prune_renderer_intermediates -v
 ```
+
+### Replacing a failed utterance
+
+A source-edit recipe can also include `repairs`. Each replacement names the
+canonical `entry_id` and complete `canonical_text`, an interval in the timeline
+**after** the quiet cuts, a separate mono 48 kHz RF64 PCM24 file (`audio_path`,
+`audio_sha256`, `frames`), and a reason. Its `evidence` lists absolute paths,
+SHA-256 hashes, and roles including `synthesis`, `transcription`, and
+`source-task`. Record any changed generation parameters explicitly in those
+receipts. Replacement audio may have a different duration; declared pauses,
+chapter edges, crossfades, and manually protected source intervals remain intact.
+
+The same preview/execute CLI writes an `utterance-repaired-derived-pcm` manifest
+that embeds the conservative base edit and binds every replaced source interval
+by its PCM hash. All retained PCM is copied unchanged. Mastering and full-master
+ASR verify the replacement audio and receipts again; fresh QA and the existing
+acceptance process still apply. These artifacts do not modify renderer caches or
+claim human listening or accepted cast/production decisions.
