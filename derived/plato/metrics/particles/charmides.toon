@@ -1,0 +1,410 @@
+schema_version: 1
+dialogue: charmides
+source_path: raw/plato/greek/charmides.txt
+source_sha256: cb446b66773c1ae410489ff61b95c0e16242dc0abc787dc466b9a74551cfe218
+token_index_path: derived/plato/tokens/charmides.toon
+token_index_sha256: ad847cce92cc41abb21724e21bb4e5abdf622069fc845ef9401d5029496d4132
+turn_index_path: derived/plato/turns/charmides.toon
+turn_index_sha256: 2342c951ccdff8e6f7a089eeeb274341cf417d71d06ac0a736eb372a8ff82c9b
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 8322
+excluded_siglum_token_count: 0
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  charmides | 8322 | 8 | 20 | 3 | 111 | 66 | 58
+speakers[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  (none) | 8322 | 8 | 20 | 3 | 111 | 66 | 58
+turns[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_charmides_0001 | 8322 | 8 | 20 | 3 | 111 | 66 | 58
+markers[118]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  153a | 51 | 0 | 0 | 0 | 0 | 0 | 1
+  153b | 73 | 1 | 0 | 0 | 0 | 0 | 0
+  153c | 62 | 0 | 0 | 0 | 1 | 1 | 1
+  153d | 45 | 0 | 0 | 0 | 0 | 0 | 0
+  154a | 75 | 0 | 0 | 0 | 1 | 0 | 1
+  154b | 85 | 0 | 0 | 0 | 3 | 2 | 1
+  154c | 73 | 0 | 0 | 0 | 0 | 0 | 2
+  154d | 63 | 0 | 0 | 0 | 0 | 1 | 1
+  154e | 63 | 0 | 0 | 0 | 1 | 1 | 0
+  155a | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  155b | 67 | 0 | 0 | 0 | 1 | 2 | 0
+  155c | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  155d | 60 | 0 | 0 | 0 | 0 | 0 | 1
+  155e | 70 | 0 | 0 | 0 | 1 | 1 | 0
+  156a | 73 | 0 | 1 | 0 | 2 | 1 | 0
+  156b | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  156c | 71 | 0 | 0 | 0 | 0 | 0 | 1
+  156d | 72 | 0 | 1 | 0 | 0 | 0 | 0
+  156e | 79 | 0 | 0 | 0 | 1 | 0 | 0
+  157a | 66 | 0 | 0 | 0 | 0 | 1 | 0
+  157b | 72 | 0 | 0 | 0 | 1 | 1 | 0
+  157c | 78 | 0 | 0 | 0 | 1 | 3 | 0
+  157d | 69 | 0 | 1 | 0 | 2 | 0 | 0
+  157e | 65 | 0 | 0 | 0 | 2 | 0 | 0
+  158a | 70 | 0 | 0 | 0 | 1 | 1 | 1
+  158b | 79 | 0 | 0 | 0 | 0 | 1 | 1
+  158c | 69 | 0 | 0 | 0 | 2 | 2 | 0
+  158d | 75 | 0 | 0 | 0 | 1 | 0 | 0
+  158e | 67 | 0 | 1 | 0 | 1 | 1 | 0
+  159a | 75 | 0 | 1 | 0 | 1 | 0 | 0
+  159b | 70 | 0 | 0 | 0 | 0 | 1 | 1
+  159c | 72 | 0 | 0 | 0 | 1 | 1 | 1
+  159d | 73 | 0 | 1 | 0 | 1 | 0 | 0
+  159e | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  160a | 63 | 1 | 0 | 0 | 0 | 0 | 0
+  160b | 79 | 0 | 0 | 0 | 1 | 0 | 1
+  160c | 72 | 0 | 0 | 0 | 0 | 1 | 0
+  160d | 66 | 0 | 1 | 0 | 0 | 0 | 0
+  160e | 73 | 0 | 1 | 0 | 0 | 2 | 0
+  161a | 66 | 1 | 0 | 0 | 0 | 1 | 0
+  161b | 66 | 0 | 0 | 0 | 1 | 1 | 0
+  161c | 74 | 0 | 0 | 0 | 3 | 0 | 2
+  161d | 77 | 0 | 0 | 0 | 0 | 3 | 0
+  161e | 87 | 2 | 0 | 0 | 1 | 1 | 0
+  162a | 72 | 0 | 0 | 0 | 1 | 0 | 0
+  162b | 84 | 0 | 1 | 0 | 0 | 1 | 0
+  162c | 66 | 0 | 0 | 0 | 1 | 1 | 0
+  162d | 61 | 0 | 0 | 0 | 0 | 0 | 1
+  162e | 70 | 0 | 1 | 0 | 0 | 1 | 0
+  163a | 77 | 0 | 0 | 0 | 2 | 2 | 0
+  163b | 78 | 0 | 0 | 0 | 1 | 1 | 0
+  163c | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  163d | 67 | 0 | 0 | 0 | 1 | 1 | 0
+  163e | 85 | 0 | 0 | 0 | 2 | 0 | 0
+  164a | 63 | 0 | 0 | 0 | 1 | 0 | 0
+  164b | 71 | 0 | 0 | 0 | 0 | 2 | 0
+  164c | 66 | 0 | 0 | 1 | 0 | 0 | 0
+  164d | 63 | 0 | 0 | 0 | 2 | 0 | 1
+  164e | 66 | 0 | 0 | 0 | 1 | 0 | 2
+  165a | 80 | 0 | 0 | 0 | 1 | 1 | 3
+  165b | 80 | 0 | 0 | 0 | 2 | 0 | 1
+  165c | 75 | 0 | 1 | 0 | 2 | 1 | 2
+  165d | 61 | 0 | 1 | 0 | 1 | 1 | 0
+  165e | 74 | 0 | 0 | 0 | 1 | 1 | 0
+  166a | 75 | 0 | 0 | 0 | 1 | 1 | 0
+  166b | 70 | 1 | 0 | 0 | 0 | 0 | 1
+  166c | 70 | 0 | 0 | 0 | 2 | 0 | 0
+  166d | 80 | 0 | 1 | 0 | 0 | 1 | 2
+  166e | 69 | 0 | 2 | 0 | 1 | 0 | 0
+  167a | 88 | 0 | 1 | 0 | 0 | 0 | 1
+  167b | 90 | 0 | 0 | 0 | 1 | 1 | 1
+  167c | 78 | 0 | 0 | 0 | 2 | 0 | 3
+  167d | 71 | 0 | 0 | 0 | 0 | 0 | 2
+  167e | 73 | 1 | 0 | 0 | 1 | 1 | 0
+  168a | 67 | 0 | 0 | 0 | 2 | 0 | 0
+  168b | 65 | 0 | 0 | 0 | 3 | 1 | 1
+  168c | 72 | 0 | 0 | 0 | 1 | 0 | 0
+  168d | 77 | 0 | 0 | 0 | 3 | 0 | 0
+  168e | 68 | 0 | 0 | 0 | 2 | 2 | 0
+  169a | 81 | 0 | 0 | 0 | 0 | 0 | 2
+  169b | 69 | 0 | 0 | 0 | 2 | 2 | 2
+  169c | 60 | 0 | 0 | 0 | 0 | 1 | 0
+  169d | 82 | 0 | 0 | 0 | 2 | 1 | 1
+  169e | 74 | 0 | 0 | 0 | 1 | 0 | 1
+  170a | 71 | 0 | 0 | 0 | 1 | 1 | 0
+  170b | 73 | 0 | 0 | 0 | 2 | 0 | 0
+  170c | 62 | 0 | 0 | 0 | 1 | 0 | 1
+  170d | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  170e | 96 | 0 | 0 | 0 | 1 | 0 | 1
+  171a | 70 | 0 | 0 | 0 | 0 | 1 | 2
+  171b | 69 | 0 | 0 | 0 | 1 | 1 | 0
+  171c | 68 | 0 | 0 | 0 | 1 | 0 | 1
+  171d | 82 | 0 | 0 | 0 | 2 | 1 | 0
+  171e | 59 | 0 | 0 | 0 | 2 | 0 | 1
+  172a | 66 | 0 | 0 | 0 | 0 | 1 | 0
+  172b | 70 | 0 | 0 | 0 | 0 | 1 | 1
+  172c | 78 | 0 | 0 | 0 | 1 | 0 | 0
+  172d | 78 | 0 | 0 | 0 | 1 | 0 | 1
+  172e | 55 | 0 | 0 | 0 | 1 | 1 | 0
+  173a | 76 | 0 | 0 | 0 | 2 | 0 | 2
+  173b | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  173c | 55 | 0 | 0 | 0 | 0 | 0 | 1
+  173d | 71 | 0 | 1 | 0 | 1 | 0 | 0
+  173e | 63 | 0 | 0 | 0 | 1 | 0 | 0
+  174a | 78 | 0 | 0 | 0 | 2 | 0 | 1
+  174b | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  174c | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  174d | 73 | 0 | 0 | 0 | 2 | 0 | 0
+  174e | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  175a | 68 | 0 | 0 | 0 | 4 | 2 | 0
+  175b | 71 | 0 | 0 | 1 | 2 | 0 | 0
+  175c | 72 | 0 | 0 | 1 | 1 | 0 | 2
+  175d | 62 | 0 | 0 | 0 | 0 | 1 | 0
+  175e | 64 | 0 | 0 | 0 | 0 | 2 | 0
+  176a | 76 | 0 | 0 | 0 | 2 | 0 | 0
+  176b | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  176c | 64 | 1 | 1 | 0 | 1 | 0 | 0
+  176d | 33 | 0 | 2 | 0 | 1 | 0 | 0
+occurrences[266]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_charmides_000022 | δή | δὴ | turn_charmides_0001 | 153a | 146 | 148
+  tok_charmides_000115 | μήν | μὴν | turn_charmides_0001 | 153b | 714 | 717
+  tok_charmides_000149 | δή | δή | turn_charmides_0001 | 153c | 935 | 937
+  tok_charmides_000155 | γάρ | γάρ | turn_charmides_0001 | 153c | 974 | 977
+  tok_charmides_000171 | οὖν | οὖν | turn_charmides_0001 | 153c | 1081 | 1084
+  tok_charmides_000259 | γάρ | γὰρ | turn_charmides_0001 | 154a | 1637 | 1640
+  tok_charmides_000274 | δή | δὴ | turn_charmides_0001 | 154a | 1733 | 1735
+  tok_charmides_000327 | γάρ | γάρ | turn_charmides_0001 | 154b | 2016 | 2019
+  tok_charmides_000364 | οὖν | οὖν | turn_charmides_0001 | 154b | 2219 | 2222
+  tok_charmides_000370 | γάρ | γὰρ | turn_charmides_0001 | 154b | 2259 | 2262
+  tok_charmides_000378 | γάρ | γάρ | turn_charmides_0001 | 154b | 2305 | 2308
+  tok_charmides_000389 | οὖν | οὖν | turn_charmides_0001 | 154b | 2360 | 2363
+  tok_charmides_000390 | δή | δὴ | turn_charmides_0001 | 154b | 2364 | 2366
+  tok_charmides_000405 | δή | δὴ | turn_charmides_0001 | 154c | 2447 | 2449
+  tok_charmides_000422 | δή | δὴ | turn_charmides_0001 | 154c | 2560 | 2562
+  tok_charmides_000498 | οὖν | οὖν | turn_charmides_0001 | 154d | 3039 | 3042
+  tok_charmides_000518 | δή | δὴ | turn_charmides_0001 | 154d | 3148 | 3150
+  tok_charmides_000560 | οὖν | οὖν | turn_charmides_0001 | 154e | 3401 | 3404
+  tok_charmides_000573 | γάρ | γάρ | turn_charmides_0001 | 154e | 3487 | 3490
+  tok_charmides_000628 | γάρ | γὰρ | turn_charmides_0001 | 155a | 3813 | 3816
+  tok_charmides_000684 | οὖν | οὖν | turn_charmides_0001 | 155b | 4153 | 4156
+  tok_charmides_000718 | οὖν | οὖν | turn_charmides_0001 | 155b | 4371 | 4374
+  tok_charmides_000722 | γάρ | γάρ | turn_charmides_0001 | 155b | 4392 | 4395
+  tok_charmides_000728 | γάρ | γὰρ | turn_charmides_0001 | 155c | 4438 | 4441
+  tok_charmides_000819 | δή | δή | turn_charmides_0001 | 155d | 4999 | 5001
+  tok_charmides_000861 | γάρ | γάρ | turn_charmides_0001 | 155e | 5271 | 5274
+  tok_charmides_000885 | οὖν | οὖν | turn_charmides_0001 | 155e | 5435 | 5438
+  tok_charmides_000932 | τοίνυν | τοίνυν | turn_charmides_0001 | 156a | 5690 | 5696
+  tok_charmides_000949 | οὖν | οὖν | turn_charmides_0001 | 156a | 5784 | 5787
+  tok_charmides_000971 | γάρ | γάρ | turn_charmides_0001 | 156a | 5898 | 5901
+  tok_charmides_000999 | γάρ | γάρ | turn_charmides_0001 | 156a | 6054 | 6057
+  tok_charmides_001019 | γάρ | γάρ | turn_charmides_0001 | 156b | 6185 | 6188
+  tok_charmides_001096 | δή | δὴ | turn_charmides_0001 | 156c | 6645 | 6647
+  tok_charmides_001160 | τοίνυν | τοίνυν | turn_charmides_0001 | 156d | 7065 | 7071
+  tok_charmides_001266 | γάρ | γὰρ | turn_charmides_0001 | 156e | 7715 | 7718
+  tok_charmides_001295 | οὖν | οὖν | turn_charmides_0001 | 157a | 7871 | 7874
+  tok_charmides_001361 | οὖν | οὖν | turn_charmides_0001 | 157b | 8273 | 8276
+  tok_charmides_001394 | γάρ | γὰρ | turn_charmides_0001 | 157b | 8468 | 8471
+  tok_charmides_001435 | οὖν | οὖν | turn_charmides_0001 | 157c | 8749 | 8752
+  tok_charmides_001437 | γάρ | γὰρ | turn_charmides_0001 | 157c | 8761 | 8764
+  tok_charmides_001444 | οὖν | οὖν | turn_charmides_0001 | 157c | 8805 | 8808
+  tok_charmides_001482 | οὖν | οὖν | turn_charmides_0001 | 157c | 9022 | 9025
+  tok_charmides_001538 | γάρ | γάρ | turn_charmides_0001 | 157d | 9356 | 9359
+  tok_charmides_001545 | τοίνυν | τοίνυν | turn_charmides_0001 | 157d | 9392 | 9398
+  tok_charmides_001567 | γάρ | γάρ | turn_charmides_0001 | 157d | 9527 | 9530
+  tok_charmides_001583 | γάρ | γὰρ | turn_charmides_0001 | 157e | 9622 | 9625
+  tok_charmides_001616 | γάρ | γὰρ | turn_charmides_0001 | 157e | 9807 | 9810
+  tok_charmides_001656 | γάρ | γὰρ | turn_charmides_0001 | 158a | 10068 | 10071
+  tok_charmides_001698 | δή | δὴ | turn_charmides_0001 | 158a | 10302 | 10304
+  tok_charmides_001709 | οὖν | οὖν | turn_charmides_0001 | 158a | 10363 | 10366
+  tok_charmides_001728 | δή | δὴ | turn_charmides_0001 | 158b | 10475 | 10477
+  tok_charmides_001754 | οὖν | οὖν | turn_charmides_0001 | 158b | 10615 | 10618
+  tok_charmides_001808 | οὖν | οὖν | turn_charmides_0001 | 158c | 10932 | 10935
+  tok_charmides_001824 | οὖν | οὖν | turn_charmides_0001 | 158c | 11040 | 11043
+  tok_charmides_001833 | γάρ | γὰρ | turn_charmides_0001 | 158c | 11088 | 11091
+  tok_charmides_001846 | γάρ | γὰρ | turn_charmides_0001 | 158c | 11173 | 11176
+  tok_charmides_001863 | γάρ | γάρ | turn_charmides_0001 | 158d | 11271 | 11274
+  tok_charmides_001956 | οὖν | οὖν | turn_charmides_0001 | 158e | 11787 | 11790
+  tok_charmides_001984 | τοίνυν | τοίνυν | turn_charmides_0001 | 158e | 11957 | 11963
+  tok_charmides_001996 | γάρ | γὰρ | turn_charmides_0001 | 158e | 12027 | 12030
+  tok_charmides_002008 | γάρ | γάρ | turn_charmides_0001 | 159a | 12106 | 12109
+  tok_charmides_002058 | τοίνυν | τοίνυν | turn_charmides_0001 | 159a | 12407 | 12413
+  tok_charmides_002127 | οὖν | οὖν | turn_charmides_0001 | 159b | 12816 | 12819
+  tok_charmides_002143 | δή | δὴ | turn_charmides_0001 | 159b | 12904 | 12906
+  tok_charmides_002148 | γάρ | γάρ | turn_charmides_0001 | 159c | 12935 | 12938
+  tok_charmides_002161 | οὖν | οὖν | turn_charmides_0001 | 159c | 13013 | 13016
+  tok_charmides_002182 | δή | δὴ | turn_charmides_0001 | 159c | 13160 | 13162
+  tok_charmides_002261 | γάρ | γάρ | turn_charmides_0001 | 159d | 13630 | 13633
+  tok_charmides_002273 | τοίνυν | τοίνυν | turn_charmides_0001 | 159d | 13699 | 13705
+  tok_charmides_002389 | μήν | μὴν | turn_charmides_0001 | 160a | 14459 | 14462
+  tok_charmides_002488 | γάρ | γὰρ | turn_charmides_0001 | 160b | 15029 | 15032
+  tok_charmides_002489 | δή | δὴ | turn_charmides_0001 | 160b | 15033 | 15035
+  tok_charmides_002515 | οὖν | οὖν | turn_charmides_0001 | 160c | 15170 | 15173
+  tok_charmides_002597 | τοίνυν | τοίνυν | turn_charmides_0001 | 160d | 15682 | 15688
+  tok_charmides_002647 | τοίνυν | τοίνυν | turn_charmides_0001 | 160e | 16004 | 16010
+  tok_charmides_002686 | οὖν | οὖν | turn_charmides_0001 | 160e | 16260 | 16263
+  tok_charmides_002698 | οὖν | οὖν | turn_charmides_0001 | 160e | 16330 | 16333
+  tok_charmides_002708 | οὖν | οὖν | turn_charmides_0001 | 161a | 16400 | 16403
+  tok_charmides_002752 | μήν | μὴν | turn_charmides_0001 | 161a | 16692 | 16695
+  tok_charmides_002802 | γάρ | γὰρ | turn_charmides_0001 | 161b | 16991 | 16994
+  tok_charmides_002818 | οὖν | οὖν | turn_charmides_0001 | 161b | 17084 | 17087
+  tok_charmides_002847 | γάρ | γὰρ | turn_charmides_0001 | 161c | 17251 | 17254
+  tok_charmides_002848 | δή | δὴ | turn_charmides_0001 | 161c | 17255 | 17257
+  tok_charmides_002868 | γάρ | γὰρ | turn_charmides_0001 | 161c | 17364 | 17367
+  tok_charmides_002903 | γάρ | γάρ | turn_charmides_0001 | 161c | 17558 | 17561
+  tok_charmides_002907 | δή | δὴ | turn_charmides_0001 | 161c | 17583 | 17585
+  tok_charmides_002945 | οὖν | οὖν | turn_charmides_0001 | 161d | 17808 | 17811
+  tok_charmides_002948 | οὖν | οὖν | turn_charmides_0001 | 161d | 17828 | 17831
+  tok_charmides_002982 | οὖν | οὖν | turn_charmides_0001 | 161d | 18027 | 18030
+  tok_charmides_002991 | μήν | μὴν | turn_charmides_0001 | 161e | 18111 | 18114
+  tok_charmides_003008 | μήν | μὴν | turn_charmides_0001 | 161e | 18215 | 18218
+  tok_charmides_003011 | γάρ | γὰρ | turn_charmides_0001 | 161e | 18234 | 18237
+  tok_charmides_003038 | οὖν | οὖν | turn_charmides_0001 | 161e | 18397 | 18400
+  tok_charmides_003144 | γάρ | γάρ | turn_charmides_0001 | 162a | 19026 | 19029
+  tok_charmides_003169 | τοίνυν | τοίνυν | turn_charmides_0001 | 162b | 19180 | 19186
+  tok_charmides_003191 | οὖν | οὖν | turn_charmides_0001 | 162b | 19314 | 19317
+  tok_charmides_003264 | γάρ | γάρ | turn_charmides_0001 | 162c | 19719 | 19722
+  tok_charmides_003286 | οὖν | οὖν | turn_charmides_0001 | 162c | 19854 | 19857
+  tok_charmides_003346 | δή | δὴ | turn_charmides_0001 | 162d | 20241 | 20243
+  tok_charmides_003373 | οὖν | οὖν | turn_charmides_0001 | 162e | 20421 | 20424
+  tok_charmides_003407 | τοίνυν | τοίνυν | turn_charmides_0001 | 162e | 20631 | 20637
+  tok_charmides_003429 | οὖν | οὖν | turn_charmides_0001 | 163a | 20766 | 20769
+  tok_charmides_003446 | οὖν | οὖν | turn_charmides_0001 | 163a | 20863 | 20866
+  tok_charmides_003453 | γάρ | γὰρ | turn_charmides_0001 | 163a | 20904 | 20907
+  tok_charmides_003487 | γάρ | γάρ | turn_charmides_0001 | 163a | 21109 | 21112
+  tok_charmides_003529 | γάρ | γὰρ | turn_charmides_0001 | 163b | 21356 | 21359
+  tok_charmides_003540 | οὖν | οὖν | turn_charmides_0001 | 163b | 21429 | 21432
+  tok_charmides_003601 | γάρ | γὰρ | turn_charmides_0001 | 163c | 21825 | 21828
+  tok_charmides_003678 | γάρ | γὰρ | turn_charmides_0001 | 163d | 22284 | 22287
+  tok_charmides_003710 | οὖν | οὖν | turn_charmides_0001 | 163d | 22468 | 22471
+  tok_charmides_003760 | γάρ | γάρ | turn_charmides_0001 | 163e | 22754 | 22757
+  tok_charmides_003792 | γάρ | γὰρ | turn_charmides_0001 | 163e | 22928 | 22931
+  tok_charmides_003849 | γάρ | γάρ | turn_charmides_0001 | 164a | 23301 | 23304
+  tok_charmides_003891 | οὖν | οὖν | turn_charmides_0001 | 164b | 23565 | 23568
+  tok_charmides_003893 | οὖν | οὖν | turn_charmides_0001 | 164b | 23576 | 23579
+  tok_charmides_003941 | καίτοι | καίτοι | turn_charmides_0001 | 164c | 23852 | 23858
+  tok_charmides_004023 | γάρ | γάρ | turn_charmides_0001 | 164d | 24386 | 24389
+  tok_charmides_004044 | γάρ | γὰρ | turn_charmides_0001 | 164d | 24517 | 24520
+  tok_charmides_004053 | δή | δὴ | turn_charmides_0001 | 164d | 24567 | 24569
+  tok_charmides_004082 | δή | δὴ | turn_charmides_0001 | 164e | 24756 | 24758
+  tok_charmides_004118 | δή | δή | turn_charmides_0001 | 164e | 24968 | 24970
+  tok_charmides_004123 | γάρ | γὰρ | turn_charmides_0001 | 164e | 24993 | 24996
+  tok_charmides_004146 | δή | δή | turn_charmides_0001 | 165a | 25118 | 25120
+  tok_charmides_004167 | γάρ | γὰρ | turn_charmides_0001 | 165a | 25226 | 25229
+  tok_charmides_004186 | δή | δὴ | turn_charmides_0001 | 165a | 25352 | 25354
+  tok_charmides_004198 | δή | δὴ | turn_charmides_0001 | 165a | 25436 | 25438
+  tok_charmides_004199 | οὖν | οὖν | turn_charmides_0001 | 165a | 25439 | 25442
+  tok_charmides_004216 | γάρ | γάρ | turn_charmides_0001 | 165b | 25542 | 25545
+  tok_charmides_004269 | δή | δὴ | turn_charmides_0001 | 165b | 25833 | 25835
+  tok_charmides_004280 | γάρ | γὰρ | turn_charmides_0001 | 165b | 25897 | 25900
+  tok_charmides_004292 | οὖν | οὖν | turn_charmides_0001 | 165c | 25973 | 25976
+  tok_charmides_004305 | δή | δή | turn_charmides_0001 | 165c | 26053 | 26055
+  tok_charmides_004310 | γάρ | γάρ | turn_charmides_0001 | 165c | 26074 | 26077
+  tok_charmides_004316 | γάρ | γὰρ | turn_charmides_0001 | 165c | 26100 | 26103
+  tok_charmides_004317 | δή | δὴ | turn_charmides_0001 | 165c | 26104 | 26106
+  tok_charmides_004349 | τοίνυν | τοίνυν | turn_charmides_0001 | 165c | 26296 | 26302
+  tok_charmides_004372 | γάρ | γὰρ | turn_charmides_0001 | 165d | 26451 | 26454
+  tok_charmides_004384 | τοίνυν | τοίνυν | turn_charmides_0001 | 165d | 26538 | 26544
+  tok_charmides_004408 | οὖν | οὖν | turn_charmides_0001 | 165d | 26693 | 26696
+  tok_charmides_004439 | οὖν | οὖν | turn_charmides_0001 | 165e | 26910 | 26913
+  tok_charmides_004449 | γάρ | γὰρ | turn_charmides_0001 | 165e | 26969 | 26972
+  tok_charmides_004502 | οὖν | οὖν | turn_charmides_0001 | 166a | 27286 | 27289
+  tok_charmides_004558 | γάρ | γάρ | turn_charmides_0001 | 166a | 27605 | 27608
+  tok_charmides_004576 | μήν | μὴν | turn_charmides_0001 | 166b | 27728 | 27731
+  tok_charmides_004602 | δή | δή | turn_charmides_0001 | 166b | 27889 | 27891
+  tok_charmides_004677 | γάρ | γὰρ | turn_charmides_0001 | 166c | 28327 | 28330
+  tok_charmides_004687 | γάρ | γὰρ | turn_charmides_0001 | 166c | 28381 | 28384
+  tok_charmides_004732 | δή | δὴ | turn_charmides_0001 | 166d | 28651 | 28653
+  tok_charmides_004733 | οὖν | οὖν | turn_charmides_0001 | 166d | 28654 | 28657
+  tok_charmides_004747 | δή | δὴ | turn_charmides_0001 | 166d | 28736 | 28738
+  tok_charmides_004778 | τοίνυν | τοίνυν | turn_charmides_0001 | 166d | 28923 | 28929
+  tok_charmides_004816 | γάρ | γάρ | turn_charmides_0001 | 166e | 29175 | 29178
+  tok_charmides_004821 | τοίνυν | τοίνυν | turn_charmides_0001 | 166e | 29207 | 29213
+  tok_charmides_004831 | τοίνυν | τοίνυν | turn_charmides_0001 | 166e | 29267 | 29273
+  tok_charmides_004913 | δή | δὴ | turn_charmides_0001 | 167a | 29741 | 29743
+  tok_charmides_004942 | τοίνυν | τοίνυν | turn_charmides_0001 | 167a | 29902 | 29908
+  tok_charmides_004994 | δή | δή | turn_charmides_0001 | 167b | 30200 | 30202
+  tok_charmides_005009 | γάρ | γὰρ | turn_charmides_0001 | 167b | 30282 | 30285
+  tok_charmides_005021 | οὖν | οὖν | turn_charmides_0001 | 167b | 30346 | 30349
+  tok_charmides_005052 | δή | δὴ | turn_charmides_0001 | 167c | 30512 | 30514
+  tok_charmides_005061 | δή | δὴ | turn_charmides_0001 | 167c | 30569 | 30571
+  tok_charmides_005070 | γάρ | γάρ | turn_charmides_0001 | 167c | 30624 | 30627
+  tok_charmides_005084 | δή | δὴ | turn_charmides_0001 | 167c | 30704 | 30706
+  tok_charmides_005090 | γάρ | γὰρ | turn_charmides_0001 | 167c | 30738 | 30741
+  tok_charmides_005164 | δή | δὴ | turn_charmides_0001 | 167d | 31142 | 31144
+  tok_charmides_005182 | δή | δὴ | turn_charmides_0001 | 167d | 31241 | 31243
+  tok_charmides_005212 | μήν | μὴν | turn_charmides_0001 | 167e | 31456 | 31459
+  tok_charmides_005229 | γάρ | γὰρ | turn_charmides_0001 | 167e | 31560 | 31563
+  tok_charmides_005230 | οὖν | οὖν | turn_charmides_0001 | 167e | 31564 | 31567
+  tok_charmides_005312 | γάρ | γάρ | turn_charmides_0001 | 168a | 32097 | 32100
+  tok_charmides_005320 | γάρ | γάρ | turn_charmides_0001 | 168a | 32145 | 32148
+  tok_charmides_005334 | δή | δή | turn_charmides_0001 | 168b | 32243 | 32245
+  tok_charmides_005351 | γάρ | γάρ | turn_charmides_0001 | 168b | 32339 | 32342
+  tok_charmides_005355 | γάρ | γὰρ | turn_charmides_0001 | 168b | 32365 | 32368
+  tok_charmides_005368 | γάρ | γάρ | turn_charmides_0001 | 168b | 32448 | 32451
+  tok_charmides_005377 | οὖν | οὖν | turn_charmides_0001 | 168b | 32520 | 32523
+  tok_charmides_005442 | γάρ | γάρ | turn_charmides_0001 | 168c | 32902 | 32905
+  tok_charmides_005506 | γάρ | γάρ | turn_charmides_0001 | 168d | 33268 | 33271
+  tok_charmides_005518 | γάρ | γὰρ | turn_charmides_0001 | 168d | 33356 | 33359
+  tok_charmides_005541 | γάρ | γὰρ | turn_charmides_0001 | 168d | 33492 | 33495
+  tok_charmides_005549 | γάρ | γὰρ | turn_charmides_0001 | 168e | 33550 | 33553
+  tok_charmides_005550 | οὖν | οὖν | turn_charmides_0001 | 168e | 33554 | 33557
+  tok_charmides_005552 | οὖν | οὖν | turn_charmides_0001 | 168e | 33568 | 33571
+  tok_charmides_005580 | γάρ | γὰρ | turn_charmides_0001 | 168e | 33734 | 33737
+  tok_charmides_005622 | δή | δή | turn_charmides_0001 | 169a | 33989 | 33991
+  tok_charmides_005672 | δή | δὴ | turn_charmides_0001 | 169a | 34278 | 34280
+  tok_charmides_005721 | γάρ | γὰρ | turn_charmides_0001 | 169b | 34594 | 34597
+  tok_charmides_005722 | οὖν | οὖν | turn_charmides_0001 | 169b | 34598 | 34601
+  tok_charmides_005723 | δή | δὴ | turn_charmides_0001 | 169b | 34602 | 34604
+  tok_charmides_005732 | οὖν | οὖν | turn_charmides_0001 | 169b | 34660 | 34663
+  tok_charmides_005737 | γάρ | γὰρ | turn_charmides_0001 | 169b | 34691 | 34694
+  tok_charmides_005744 | δή | δὴ | turn_charmides_0001 | 169b | 34743 | 34745
+  tok_charmides_005807 | οὖν | οὖν | turn_charmides_0001 | 169c | 35174 | 35177
+  tok_charmides_005861 | δή | δὴ | turn_charmides_0001 | 169d | 35540 | 35542
+  tok_charmides_005862 | οὖν | οὖν | turn_charmides_0001 | 169d | 35543 | 35546
+  tok_charmides_005882 | γάρ | γὰρ | turn_charmides_0001 | 169d | 35640 | 35643
+  tok_charmides_005892 | γάρ | γάρ | turn_charmides_0001 | 169d | 35700 | 35703
+  tok_charmides_005905 | γάρ | γάρ | turn_charmides_0001 | 169e | 35771 | 35774
+  tok_charmides_005937 | δή | δὴ | turn_charmides_0001 | 169e | 35955 | 35957
+  tok_charmides_005995 | γάρ | γὰρ | turn_charmides_0001 | 170a | 36297 | 36300
+  tok_charmides_006043 | οὖν | οὖν | turn_charmides_0001 | 170a | 36568 | 36571
+  tok_charmides_006072 | γάρ | γὰρ | turn_charmides_0001 | 170b | 36767 | 36770
+  tok_charmides_006113 | γάρ | γάρ | turn_charmides_0001 | 170b | 37010 | 37013
+  tok_charmides_006124 | γάρ | γὰρ | turn_charmides_0001 | 170c | 37094 | 37097
+  tok_charmides_006125 | δή | δὴ | turn_charmides_0001 | 170c | 37098 | 37100
+  tok_charmides_006308 | γάρ | γὰρ | turn_charmides_0001 | 170e | 38236 | 38239
+  tok_charmides_006333 | δή | δὴ | turn_charmides_0001 | 170e | 38373 | 38375
+  tok_charmides_006355 | δή | δὴ | turn_charmides_0001 | 171a | 38532 | 38534
+  tok_charmides_006392 | οὖν | οὖν | turn_charmides_0001 | 171a | 38749 | 38752
+  tok_charmides_006396 | δή | δὴ | turn_charmides_0001 | 171a | 38772 | 38774
+  tok_charmides_006425 | γάρ | γὰρ | turn_charmides_0001 | 171b | 38970 | 38973
+  tok_charmides_006476 | οὖν | οὖν | turn_charmides_0001 | 171b | 39299 | 39302
+  tok_charmides_006496 | δή | δὴ | turn_charmides_0001 | 171c | 39438 | 39440
+  tok_charmides_006500 | γάρ | γὰρ | turn_charmides_0001 | 171c | 39458 | 39461
+  tok_charmides_006556 | οὖν | οὖν | turn_charmides_0001 | 171d | 39839 | 39842
+  tok_charmides_006574 | γάρ | γάρ | turn_charmides_0001 | 171d | 39930 | 39933
+  tok_charmides_006616 | γάρ | γὰρ | turn_charmides_0001 | 171d | 40161 | 40164
+  tok_charmides_006637 | γάρ | γὰρ | turn_charmides_0001 | 171e | 40293 | 40296
+  tok_charmides_006676 | δή | δὴ | turn_charmides_0001 | 171e | 40549 | 40551
+  tok_charmides_006695 | γάρ | γὰρ | turn_charmides_0001 | 171e | 40676 | 40679
+  tok_charmides_006744 | οὖν | οὖν | turn_charmides_0001 | 172a | 40976 | 40979
+  tok_charmides_006763 | οὖν | οὖν | turn_charmides_0001 | 172b | 41102 | 41105
+  tok_charmides_006809 | δή | δὴ | turn_charmides_0001 | 172b | 41389 | 41391
+  tok_charmides_006882 | γάρ | γάρ | turn_charmides_0001 | 172c | 41845 | 41848
+  tok_charmides_006929 | γάρ | γὰρ | turn_charmides_0001 | 172d | 42144 | 42147
+  tok_charmides_006956 | δή | δή | turn_charmides_0001 | 172d | 42313 | 42315
+  tok_charmides_006989 | οὖν | οὖν | turn_charmides_0001 | 172e | 42523 | 42526
+  tok_charmides_007033 | γάρ | γάρ | turn_charmides_0001 | 172e | 42791 | 42794
+  tok_charmides_007051 | δή | δή | turn_charmides_0001 | 173a | 42911 | 42913
+  tok_charmides_007087 | γάρ | γάρ | turn_charmides_0001 | 173a | 43113 | 43116
+  tok_charmides_007091 | δή | δή | turn_charmides_0001 | 173a | 43141 | 43143
+  tok_charmides_007104 | γάρ | γὰρ | turn_charmides_0001 | 173a | 43214 | 43217
+  tok_charmides_007151 | δή | δὴ | turn_charmides_0001 | 173b | 43498 | 43500
+  tok_charmides_007236 | δή | δὴ | turn_charmides_0001 | 173c | 44048 | 44050
+  tok_charmides_007250 | γάρ | γὰρ | turn_charmides_0001 | 173d | 44132 | 44135
+  tok_charmides_007299 | τοίνυν | τοίνυν | turn_charmides_0001 | 173d | 44455 | 44461
+  tok_charmides_007347 | γάρ | γὰρ | turn_charmides_0001 | 173e | 44760 | 44763
+  tok_charmides_007419 | γάρ | γάρ | turn_charmides_0001 | 174a | 45200 | 45203
+  tok_charmides_007424 | γάρ | γὰρ | turn_charmides_0001 | 174a | 45225 | 45228
+  tok_charmides_007438 | δή | δὴ | turn_charmides_0001 | 174a | 45318 | 45320
+  tok_charmides_007626 | γάρ | γὰρ | turn_charmides_0001 | 174d | 46480 | 46483
+  tok_charmides_007663 | γάρ | γὰρ | turn_charmides_0001 | 174d | 46689 | 46692
+  tok_charmides_007744 | γάρ | γὰρ | turn_charmides_0001 | 175a | 47204 | 47207
+  tok_charmides_007757 | γάρ | γὰρ | turn_charmides_0001 | 175a | 47280 | 47283
+  tok_charmides_007766 | γάρ | γάρ | turn_charmides_0001 | 175a | 47326 | 47329
+  tok_charmides_007770 | οὖν | οὖν | turn_charmides_0001 | 175a | 47352 | 47355
+  tok_charmides_007785 | οὖν | οὖν | turn_charmides_0001 | 175a | 47463 | 47466
+  tok_charmides_007804 | γάρ | γὰρ | turn_charmides_0001 | 175a | 47580 | 47583
+  tok_charmides_007829 | γάρ | γὰρ | turn_charmides_0001 | 175b | 47724 | 47727
+  tok_charmides_007847 | καίτοι | καίτοι | turn_charmides_0001 | 175b | 47833 | 47839
+  tok_charmides_007858 | γάρ | γὰρ | turn_charmides_0001 | 175b | 47900 | 47903
+  tok_charmides_007889 | δή | δὴ | turn_charmides_0001 | 175c | 48111 | 48113
+  tok_charmides_007909 | δή | δὴ | turn_charmides_0001 | 175c | 48210 | 48212
+  tok_charmides_007930 | γάρ | γὰρ | turn_charmides_0001 | 175c | 48347 | 48350
+  tok_charmides_007939 | καίτοι | καίτοι | turn_charmides_0001 | 175c | 48401 | 48407
+  tok_charmides_007990 | οὖν | οὖν | turn_charmides_0001 | 175d | 48752 | 48755
+  tok_charmides_008054 | οὖν | οὖν | turn_charmides_0001 | 175e | 49125 | 49128
+  tok_charmides_008057 | οὖν | οὖν | turn_charmides_0001 | 175e | 49144 | 49147
+  tok_charmides_008094 | γάρ | γὰρ | turn_charmides_0001 | 176a | 49355 | 49358
+  tok_charmides_008142 | γάρ | γὰρ | turn_charmides_0001 | 176a | 49637 | 49640
+  tok_charmides_008226 | γάρ | γὰρ | turn_charmides_0001 | 176c | 50151 | 50154
+  tok_charmides_008241 | μήν | μήν | turn_charmides_0001 | 176c | 50235 | 50238
+  tok_charmides_008246 | τοίνυν | τοίνυν | turn_charmides_0001 | 176c | 50270 | 50276
+  tok_charmides_008297 | γάρ | γὰρ | turn_charmides_0001 | 176d | 50612 | 50615
+  tok_charmides_008310 | τοίνυν | τοίνυν | turn_charmides_0001 | 176d | 50710 | 50716
+  tok_charmides_008318 | τοίνυν | τοίνυν | turn_charmides_0001 | 176d | 50752 | 50758

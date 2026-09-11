@@ -1,0 +1,2139 @@
+schema_version: 1
+dialogue: theaetetus
+source_path: raw/plato/greek/theaetetus.txt
+source_sha256: 96b88e1f11fdcd0b3b5318857d95dfb7aa66825e786b3f27460f8043688df0ee
+token_index_path: derived/plato/tokens/theaetetus.toon
+token_index_sha256: be43f2c86ab6e616496d1f18b3cd405f5b377f6690e2cf12b79c5a3745f2ea0b
+turn_index_path: derived/plato/turns/theaetetus.toon
+turn_index_sha256: 7521a9787c1c43eefc9102d9dc606a9980eee129ce0a17d15634810c3263f12b
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 23550
+excluded_siglum_token_count: 1029
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  theaetetus | 22521 | 39 | 39 | 3 | 264 | 167 | 226
+speakers[5]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  ΕΥ. | 299 | 1 | 0 | 0 | 3 | 1 | 4
+  ΘΕΑΙ. | 2446 | 18 | 5 | 1 | 48 | 46 | 36
+  ΘΕΟ. | 1229 | 4 | 0 | 0 | 24 | 15 | 13
+  ΣΩ. | 18449 | 15 | 34 | 2 | 189 | 105 | 173
+  ΤΕΡ. | 98 | 1 | 0 | 0 | 0 | 0 | 0
+turns[1029]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_theaetetus_0001 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0002 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0003 | 5 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0004 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0005 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0006 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0007 | 22 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0008 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0009 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0010 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0011 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0012 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0013 | 78 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0014 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0015 | 45 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0016 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0017 | 23 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0018 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0019 | 81 | 0 | 0 | 0 | 0 | 1 | 2
+  turn_theaetetus_0020 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0021 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0022 | 94 | 0 | 0 | 0 | 2 | 1 | 3
+  turn_theaetetus_0023 | 185 | 1 | 0 | 0 | 2 | 0 | 2
+  turn_theaetetus_0024 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0025 | 42 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_0026 | 34 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0027 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0028 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0029 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0030 | 42 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0031 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0032 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0033 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0034 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0035 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0036 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0037 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0038 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0039 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0040 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0041 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0042 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0043 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0044 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0045 | 5 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0046 | 31 | 0 | 1 | 0 | 0 | 0 | 1
+  turn_theaetetus_0047 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0048 | 29 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0049 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0050 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0051 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0052 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0053 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0054 | 52 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0055 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0056 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0057 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0058 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0059 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0060 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0061 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0062 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0063 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0064 | 82 | 0 | 1 | 0 | 0 | 1 | 1
+  turn_theaetetus_0065 | 57 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_0066 | 35 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0067 | 14 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0068 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0069 | 40 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0070 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0071 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0072 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0073 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0074 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0075 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0076 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0077 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0078 | 31 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0079 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0080 | 40 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0081 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0082 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0083 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0084 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0085 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0086 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0087 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0088 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0089 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0090 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0091 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0092 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0093 | 56 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0094 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0095 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0096 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0097 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0098 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0099 | 42 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0100 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0101 | 33 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0102 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0103 | 36 | 1 | 0 | 1 | 0 | 0 | 0
+  turn_theaetetus_0104 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0105 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0106 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0107 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0108 | 25 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0109 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0110 | 28 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0111 | 43 | 0 | 0 | 0 | 1 | 0 | 2
+  turn_theaetetus_0112 | 12 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0113 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0114 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0115 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0116 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0117 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0118 | 43 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0119 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0120 | 5 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0121 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0122 | 33 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0123 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0124 | 43 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0125 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0126 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0127 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0128 | 33 | 1 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0129 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0130 | 27 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0131 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0132 | 41 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0133 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0134 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0135 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0136 | 46 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0137 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0138 | 51 | 0 | 1 | 0 | 2 | 0 | 0
+  turn_theaetetus_0139 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0140 | 248 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_theaetetus_0141 | 268 | 0 | 0 | 0 | 3 | 2 | 5
+  turn_theaetetus_0142 | 40 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0143 | 25 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0144 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0145 | 44 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_0146 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0147 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0148 | 4 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0149 | 30 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0150 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0151 | 26 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0152 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0153 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0154 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0155 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0156 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0157 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0158 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0159 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0160 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0161 | 25 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0162 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0163 | 126 | 0 | 0 | 0 | 1 | 0 | 2
+  turn_theaetetus_0164 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0165 | 17 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0166 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0167 | 55 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_theaetetus_0168 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0169 | 12 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0170 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0171 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0172 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0173 | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0174 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0175 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0176 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0177 | 81 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0178 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0179 | 48 | 0 | 1 | 0 | 1 | 0 | 1
+  turn_theaetetus_0180 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0181 | 69 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0182 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0183 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0184 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0185 | 76 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0186 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0187 | 38 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0188 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0189 | 23 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0190 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0191 | 31 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0192 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0193 | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0194 | 7 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0195 | 59 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0196 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0197 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0198 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0199 | 19 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0200 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0201 | 100 | 0 | 0 | 0 | 3 | 0 | 3
+  turn_theaetetus_0202 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0203 | 55 | 0 | 0 | 0 | 3 | 0 | 0
+  turn_theaetetus_0204 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0205 | 18 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0206 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0207 | 38 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0208 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0209 | 169 | 0 | 0 | 0 | 1 | 2 | 2
+  turn_theaetetus_0210 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0211 | 149 | 0 | 0 | 0 | 2 | 2 | 5
+  turn_theaetetus_0212 | 207 | 0 | 0 | 0 | 1 | 0 | 4
+  turn_theaetetus_0213 | 20 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0214 | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0215 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0216 | 21 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0217 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0218 | 67 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_theaetetus_0219 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0220 | 22 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_theaetetus_0221 | 52 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0222 | 17 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0223 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0224 | 34 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0225 | 43 | 1 | 0 | 0 | 2 | 0 | 1
+  turn_theaetetus_0226 | 56 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_theaetetus_0227 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0228 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0229 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0230 | 9 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0231 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0232 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0233 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0234 | 55 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0235 | 16 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0236 | 9 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0237 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0238 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0239 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0240 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0241 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0242 | 14 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0243 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0244 | 26 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0245 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0246 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0247 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0248 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0249 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0250 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0251 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0252 | 22 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0253 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0254 | 14 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0255 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0256 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0257 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0258 | 51 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0259 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0260 | 17 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0261 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0262 | 40 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0263 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0264 | 40 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_0265 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0266 | 10 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0267 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0268 | 36 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_0269 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0270 | 71 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_theaetetus_0271 | 5 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0272 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0273 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0274 | 31 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0275 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0276 | 21 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0277 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0278 | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0279 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0280 | 70 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_theaetetus_0281 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0282 | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0283 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0284 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0285 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0286 | 227 | 0 | 0 | 0 | 2 | 0 | 3
+  turn_theaetetus_0287 | 36 | 0 | 0 | 0 | 0 | 2 | 0
+  turn_theaetetus_0288 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0289 | 37 | 1 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0290 | 60 | 0 | 0 | 0 | 0 | 1 | 2
+  turn_theaetetus_0291 | 34 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0292 | 120 | 0 | 0 | 0 | 2 | 2 | 0
+  turn_theaetetus_0293 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0294 | 13 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0295 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0296 | 33 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_theaetetus_0297 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0298 | 51 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0299 | 55 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0300 | 26 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0301 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0302 | 41 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0303 | 10 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0304 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0305 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0306 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0307 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0308 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0309 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0310 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0311 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0312 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0313 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0314 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0315 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0316 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0317 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0318 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0319 | 14 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0320 | 18 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0321 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0322 | 19 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0323 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0324 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0325 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0326 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0327 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0328 | 14 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0329 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0330 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0331 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0332 | 19 | 0 | 0 | 1 | 0 | 1 | 0
+  turn_theaetetus_0333 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0334 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0335 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0336 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0337 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0338 | 60 | 0 | 0 | 0 | 1 | 0 | 3
+  turn_theaetetus_0339 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0340 | 47 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0341 | 33 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0342 | 36 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0343 | 13 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0344 | 22 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0345 | 6 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_theaetetus_0346 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0347 | 34 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0348 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0349 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0350 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0351 | 44 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0352 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0353 | 111 | 0 | 0 | 0 | 0 | 1 | 2
+  turn_theaetetus_0354 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0355 | 340 | 0 | 0 | 0 | 4 | 0 | 5
+  turn_theaetetus_0356 | 310 | 0 | 0 | 0 | 7 | 1 | 1
+  turn_theaetetus_0357 | 217 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0358 | 9 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0359 | 46 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0360 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0361 | 5 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0362 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0363 | 42 | 0 | 0 | 0 | 0 | 2 | 0
+  turn_theaetetus_0364 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0365 | 62 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_theaetetus_0366 | 64 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_0367 | 55 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0368 | 31 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0369 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0370 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0371 | 43 | 0 | 1 | 0 | 0 | 0 | 1
+  turn_theaetetus_0372 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0373 | 48 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_theaetetus_0374 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0375 | 15 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0376 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0377 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0378 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0379 | 108 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0380 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0381 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0382 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0383 | 59 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_theaetetus_0384 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0385 | 15 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0386 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0387 | 54 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_theaetetus_0388 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0389 | 15 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0390 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0391 | 58 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0392 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0393 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0394 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0395 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0396 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0397 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0398 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0399 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0400 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0401 | 44 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0402 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0403 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0404 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0405 | 80 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0406 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0407 | 72 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0408 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0409 | 151 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0410 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0411 | 30 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0412 | 4 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_theaetetus_0413 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0414 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0415 | 145 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0416 | 104 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0417 | 49 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_0418 | 175 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_theaetetus_0419 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0420 | 102 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_0421 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0422 | 178 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_theaetetus_0423 | 133 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_theaetetus_0424 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0425 | 213 | 0 | 0 | 0 | 1 | 0 | 2
+  turn_theaetetus_0426 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0427 | 262 | 0 | 0 | 0 | 7 | 2 | 1
+  turn_theaetetus_0428 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0429 | 92 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_theaetetus_0430 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0431 | 84 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0432 | 19 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0433 | 100 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0434 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0435 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0436 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0437 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0438 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0439 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0440 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0441 | 51 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_theaetetus_0442 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0443 | 48 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0444 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0445 | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0446 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0447 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0448 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0449 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0450 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0451 | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0452 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0453 | 37 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0454 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0455 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0456 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0457 | 47 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0458 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0459 | 102 | 0 | 0 | 0 | 1 | 2 | 0
+  turn_theaetetus_0460 | 24 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0461 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0462 | 146 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_theaetetus_0463 | 31 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0464 | 51 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0465 | 117 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0466 | 117 | 0 | 0 | 0 | 1 | 3 | 0
+  turn_theaetetus_0467 | 14 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0468 | 75 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0469 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0470 | 36 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0471 | 5 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0472 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0473 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0474 | 30 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0475 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0476 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0477 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0478 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0479 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0480 | 121 | 0 | 0 | 0 | 2 | 2 | 1
+  turn_theaetetus_0481 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0482 | 28 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_theaetetus_0483 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0484 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0485 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0486 | 20 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0487 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0488 | 41 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0489 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0490 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0491 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0492 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0493 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0494 | 11 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0495 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0496 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0497 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0498 | 55 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0499 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0500 | 67 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_0501 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0502 | 44 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0503 | 24 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0504 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0505 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0506 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0507 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0508 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0509 | 5 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_theaetetus_0510 | 127 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_theaetetus_0511 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0512 | 16 | 0 | 1 | 0 | 2 | 0 | 1
+  turn_theaetetus_0513 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0514 | 27 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0515 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0516 | 62 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0517 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0518 | 39 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0519 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0520 | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0521 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0522 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0523 | 4 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0524 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0525 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0526 | 17 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0527 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0528 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0529 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0530 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0531 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0532 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0533 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0534 | 57 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_theaetetus_0535 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0536 | 45 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0537 | 50 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0538 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0539 | 39 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0540 | 61 | 0 | 0 | 0 | 3 | 0 | 0
+  turn_theaetetus_0541 | 4 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0542 | 11 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0543 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0544 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0545 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0546 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0547 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0548 | 19 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0549 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0550 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0551 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0552 | 45 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0553 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0554 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0555 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0556 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0557 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0558 | 27 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0559 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0560 | 11 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0561 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0562 | 12 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_theaetetus_0563 | 5 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0564 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0565 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0566 | 10 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0567 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0568 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0569 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0570 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0571 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0572 | 51 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0573 | 10 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0574 | 30 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0575 | 35 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0576 | 62 | 0 | 0 | 1 | 1 | 0 | 1
+  turn_theaetetus_0577 | 7 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0578 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0579 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0580 | 34 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0581 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0582 | 20 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0583 | 27 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0584 | 21 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_0585 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0586 | 24 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_theaetetus_0587 | 3 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0588 | 35 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_0589 | 15 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0590 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0591 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0592 | 13 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0593 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0594 | 24 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0595 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0596 | 34 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0597 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0598 | 21 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0599 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0600 | 27 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0601 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0602 | 20 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0603 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0604 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0605 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0606 | 48 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_theaetetus_0607 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0608 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0609 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0610 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0611 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0612 | 22 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0613 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0614 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0615 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0616 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0617 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0618 | 13 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0619 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0620 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0621 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0622 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0623 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0624 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0625 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0626 | 10 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0627 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0628 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0629 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0630 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0631 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0632 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0633 | 4 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_theaetetus_0634 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0635 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0636 | 40 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0637 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0638 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0639 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0640 | 53 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0641 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0642 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0643 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0644 | 17 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0645 | 9 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0646 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0647 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0648 | 82 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0649 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0650 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0651 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0652 | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0653 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0654 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0655 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0656 | 52 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0657 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0658 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0659 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0660 | 17 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0661 | 10 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0662 | 34 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0663 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0664 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0665 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0666 | 67 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0667 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0668 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0669 | 37 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0670 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0671 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0672 | 38 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_theaetetus_0673 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0674 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0675 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0676 | 36 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0677 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0678 | 66 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0679 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0680 | 20 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0681 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0682 | 22 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0683 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0684 | 209 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0685 | 15 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0686 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0687 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0688 | 58 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0689 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0690 | 17 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0691 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0692 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0693 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0694 | 38 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0695 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0696 | 8 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0697 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0698 | 25 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0699 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0700 | 58 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0701 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0702 | 92 | 0 | 1 | 0 | 0 | 0 | 1
+  turn_theaetetus_0703 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0704 | 36 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0705 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0706 | 41 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0707 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0708 | 52 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_theaetetus_0709 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0710 | 90 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0711 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0712 | 18 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_theaetetus_0713 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0714 | 104 | 0 | 1 | 0 | 1 | 0 | 2
+  turn_theaetetus_0715 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0716 | 57 | 0 | 1 | 0 | 0 | 0 | 2
+  turn_theaetetus_0717 | 87 | 0 | 0 | 0 | 3 | 1 | 1
+  turn_theaetetus_0718 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0719 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0720 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0721 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0722 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0723 | 13 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0724 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0725 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0726 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0727 | 33 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0728 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0729 | 47 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0730 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0731 | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0732 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0733 | 32 | 0 | 0 | 0 | 0 | 2 | 1
+  turn_theaetetus_0734 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0735 | 80 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0736 | 27 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0737 | 20 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0738 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0739 | 42 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0740 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0741 | 45 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0742 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0743 | 18 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0744 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0745 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0746 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0747 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0748 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0749 | 67 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_0750 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0751 | 46 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0752 | 12 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0753 | 7 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0754 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0755 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0756 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0757 | 8 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0758 | 7 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_theaetetus_0759 | 9 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0760 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0761 | 28 | 1 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0762 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0763 | 41 | 0 | 0 | 0 | 2 | 0 | 2
+  turn_theaetetus_0764 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0765 | 40 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0766 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0767 | 47 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0768 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0769 | 42 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0770 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0771 | 40 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_theaetetus_0772 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0773 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0774 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0775 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0776 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0777 | 19 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0778 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0779 | 26 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_theaetetus_0780 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0781 | 21 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0782 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0783 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0784 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0785 | 19 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0786 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0787 | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0788 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0789 | 35 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0790 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0791 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0792 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0793 | 58 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0794 | 47 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0795 | 4 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0796 | 39 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_theaetetus_0797 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0798 | 29 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_0799 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0800 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0801 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0802 | 61 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0803 | 44 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0804 | 30 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_theaetetus_0805 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0806 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0807 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0808 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0809 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0810 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0811 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0812 | 119 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0813 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0814 | 35 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0815 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0816 | 14 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0817 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0818 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0819 | 13 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0820 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0821 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0822 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0823 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0824 | 14 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0825 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0826 | 57 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0827 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0828 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0829 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0830 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0831 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0832 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0833 | 43 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0834 | 21 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0835 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0836 | 27 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0837 | 207 | 0 | 0 | 0 | 7 | 1 | 1
+  turn_theaetetus_0838 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0839 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0840 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0841 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0842 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0843 | 28 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0844 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0845 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0846 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0847 | 15 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0848 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0849 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0850 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0851 | 26 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0852 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0853 | 23 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0854 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0855 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0856 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0857 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0858 | 59 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0859 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0860 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0861 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0862 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0863 | 24 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0864 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0865 | 23 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0866 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0867 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0868 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0869 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0870 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0871 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0872 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0873 | 30 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_0874 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0875 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0876 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0877 | 24 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0878 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0879 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0880 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0881 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0882 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0883 | 13 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0884 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0885 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0886 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0887 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0888 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0889 | 47 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0890 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0891 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0892 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0893 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0894 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0895 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0896 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0897 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0898 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0899 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0900 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0901 | 15 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0902 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0903 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0904 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0905 | 25 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0906 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0907 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0908 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0909 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0910 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0911 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0912 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0913 | 15 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0914 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0915 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0916 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0917 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0918 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0919 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0920 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0921 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0922 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0923 | 30 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0924 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0925 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0926 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0927 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0928 | 17 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0929 | 15 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0930 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0931 | 58 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_theaetetus_0932 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0933 | 21 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_0934 | 5 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_theaetetus_0935 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0936 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0937 | 33 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0938 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0939 | 24 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0940 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0941 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0942 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0943 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0944 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0945 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0946 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0947 | 27 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0948 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0949 | 56 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0950 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0951 | 35 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_theaetetus_0952 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0953 | 16 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0954 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0955 | 40 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0956 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0957 | 44 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0958 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0959 | 35 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_theaetetus_0960 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0961 | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0962 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0963 | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0964 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0965 | 45 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0966 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0967 | 31 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0968 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0969 | 31 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0970 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0971 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0972 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0973 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0974 | 13 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_theaetetus_0975 | 43 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0976 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0977 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0978 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0979 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0980 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0981 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0982 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0983 | 18 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_0984 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0985 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0986 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0987 | 14 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0988 | 28 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_0989 | 31 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_theaetetus_0990 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0991 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0992 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0993 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_0994 | 43 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_0995 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0996 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0997 | 4 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0998 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_0999 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1000 | 25 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_1001 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1002 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1003 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1004 | 15 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_1005 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1006 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1007 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1008 | 61 | 0 | 0 | 0 | 1 | 1 | 2
+  turn_theaetetus_1009 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_1010 | 29 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_1011 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1012 | 47 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1013 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1014 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1015 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1016 | 26 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_theaetetus_1017 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1018 | 58 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_theaetetus_1019 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_theaetetus_1020 | 32 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_theaetetus_1021 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1022 | 22 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_theaetetus_1023 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1024 | 34 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1025 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1026 | 14 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_1027 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_theaetetus_1028 | 18 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_theaetetus_1029 | 111 | 0 | 1 | 0 | 1 | 1 | 0
+markers[343]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  142a | 45 | 1 | 0 | 0 | 1 | 0 | 0
+  142b | 58 | 1 | 0 | 0 | 1 | 0 | 0
+  142c | 68 | 0 | 0 | 0 | 1 | 0 | 1
+  142d | 42 | 0 | 0 | 0 | 0 | 0 | 0
+  143a | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  143b | 62 | 0 | 0 | 0 | 0 | 1 | 3
+  143c | 58 | 0 | 0 | 0 | 0 | 0 | 0
+  143d | 74 | 0 | 0 | 0 | 1 | 0 | 2
+  143e | 81 | 1 | 0 | 0 | 1 | 1 | 1
+  144a | 73 | 0 | 0 | 0 | 2 | 0 | 2
+  144b | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  144c | 69 | 0 | 0 | 0 | 2 | 0 | 0
+  144d | 58 | 0 | 0 | 0 | 1 | 1 | 0
+  144e | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  145a | 63 | 0 | 0 | 0 | 0 | 1 | 0
+  145b | 72 | 0 | 1 | 0 | 0 | 1 | 1
+  145c | 47 | 0 | 0 | 0 | 1 | 0 | 1
+  145d | 75 | 0 | 0 | 0 | 2 | 0 | 1
+  145e | 43 | 1 | 1 | 0 | 0 | 0 | 0
+  146a | 64 | 0 | 0 | 0 | 0 | 1 | 1
+  146b | 65 | 0 | 0 | 0 | 2 | 0 | 1
+  146c | 68 | 0 | 1 | 0 | 1 | 1 | 0
+  146d | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  146e | 60 | 0 | 0 | 0 | 1 | 1 | 0
+  147a | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  147b | 60 | 0 | 0 | 0 | 2 | 0 | 0
+  147c | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  147d | 66 | 0 | 0 | 0 | 0 | 1 | 1
+  147e | 49 | 0 | 1 | 0 | 0 | 0 | 0
+  148a | 54 | 0 | 0 | 0 | 0 | 0 | 0
+  148b | 69 | 1 | 0 | 1 | 0 | 0 | 0
+  148c | 64 | 0 | 1 | 0 | 0 | 0 | 0
+  148d | 51 | 0 | 0 | 0 | 1 | 0 | 1
+  148e | 63 | 0 | 0 | 0 | 2 | 0 | 2
+  149a | 72 | 0 | 0 | 0 | 1 | 0 | 0
+  149b | 63 | 0 | 0 | 0 | 1 | 4 | 1
+  149c | 56 | 1 | 0 | 0 | 0 | 0 | 0
+  149d | 66 | 0 | 0 | 0 | 0 | 1 | 1
+  149e | 52 | 0 | 0 | 0 | 1 | 0 | 0
+  150a | 64 | 0 | 1 | 0 | 2 | 0 | 1
+  150b | 72 | 0 | 0 | 0 | 1 | 0 | 0
+  150c | 75 | 0 | 0 | 0 | 0 | 1 | 1
+  150d | 77 | 0 | 0 | 0 | 0 | 0 | 0
+  150e | 56 | 0 | 0 | 0 | 0 | 0 | 0
+  151a | 70 | 0 | 0 | 0 | 1 | 0 | 1
+  151b | 75 | 0 | 0 | 0 | 0 | 1 | 3
+  151c | 76 | 0 | 0 | 0 | 1 | 0 | 0
+  151d | 65 | 0 | 0 | 0 | 1 | 1 | 1
+  151e | 58 | 0 | 0 | 0 | 1 | 1 | 1
+  152a | 70 | 0 | 0 | 0 | 3 | 1 | 0
+  152b | 73 | 0 | 0 | 0 | 1 | 2 | 0
+  152c | 59 | 0 | 0 | 0 | 1 | 1 | 0
+  152d | 73 | 0 | 0 | 0 | 0 | 0 | 3
+  152e | 60 | 0 | 0 | 0 | 1 | 0 | 0
+  153a | 76 | 0 | 0 | 0 | 2 | 1 | 1
+  153b | 68 | 1 | 0 | 0 | 0 | 1 | 0
+  153c | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  153d | 80 | 0 | 1 | 0 | 0 | 0 | 1
+  153e | 59 | 0 | 0 | 0 | 1 | 0 | 1
+  154a | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  154b | 81 | 0 | 0 | 0 | 0 | 0 | 1
+  154c | 72 | 0 | 0 | 0 | 1 | 1 | 0
+  154d | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  154e | 62 | 1 | 0 | 0 | 0 | 1 | 0
+  155a | 63 | 0 | 0 | 0 | 0 | 1 | 0
+  155b | 67 | 0 | 0 | 0 | 0 | 1 | 2
+  155c | 77 | 0 | 0 | 0 | 3 | 0 | 2
+  155d | 74 | 0 | 0 | 0 | 3 | 1 | 0
+  155e | 57 | 0 | 0 | 0 | 1 | 0 | 2
+  156a | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  156b | 65 | 0 | 0 | 0 | 0 | 1 | 1
+  156c | 73 | 0 | 0 | 0 | 1 | 2 | 2
+  156d | 56 | 0 | 0 | 0 | 1 | 1 | 3
+  156e | 73 | 0 | 0 | 0 | 0 | 0 | 2
+  157a | 81 | 0 | 0 | 0 | 1 | 0 | 1
+  157b | 84 | 0 | 0 | 0 | 0 | 0 | 1
+  157c | 75 | 0 | 0 | 0 | 1 | 0 | 1
+  157d | 77 | 0 | 1 | 0 | 0 | 0 | 1
+  157e | 42 | 0 | 1 | 0 | 1 | 0 | 0
+  158a | 70 | 0 | 0 | 0 | 0 | 1 | 1
+  158b | 79 | 0 | 0 | 0 | 0 | 1 | 0
+  158c | 59 | 1 | 0 | 0 | 2 | 1 | 1
+  158d | 76 | 0 | 0 | 0 | 0 | 2 | 1
+  158e | 73 | 0 | 1 | 0 | 0 | 0 | 0
+  159a | 80 | 1 | 1 | 0 | 0 | 1 | 0
+  159b | 55 | 0 | 0 | 0 | 0 | 1 | 1
+  159c | 72 | 1 | 0 | 0 | 1 | 0 | 5
+  159d | 69 | 0 | 0 | 0 | 1 | 1 | 1
+  159e | 59 | 0 | 0 | 0 | 1 | 1 | 1
+  160a | 54 | 1 | 0 | 0 | 3 | 1 | 0
+  160b | 83 | 0 | 0 | 0 | 1 | 1 | 2
+  160c | 70 | 0 | 0 | 0 | 2 | 1 | 1
+  160d | 66 | 0 | 0 | 0 | 0 | 1 | 0
+  160e | 67 | 0 | 0 | 0 | 1 | 0 | 2
+  161a | 67 | 0 | 0 | 0 | 1 | 0 | 0
+  161b | 69 | 0 | 0 | 0 | 0 | 1 | 0
+  161c | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  161d | 76 | 0 | 0 | 0 | 1 | 0 | 2
+  161e | 71 | 0 | 0 | 0 | 1 | 0 | 1
+  162a | 54 | 0 | 0 | 0 | 0 | 2 | 0
+  162b | 69 | 1 | 0 | 0 | 0 | 0 | 1
+  162c | 69 | 0 | 0 | 0 | 1 | 1 | 2
+  162d | 53 | 0 | 0 | 0 | 2 | 1 | 0
+  162e | 79 | 0 | 0 | 0 | 0 | 1 | 0
+  163a | 68 | 0 | 0 | 0 | 2 | 2 | 2
+  163b | 79 | 0 | 0 | 0 | 1 | 1 | 0
+  163c | 56 | 0 | 0 | 0 | 0 | 0 | 2
+  163d | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  163e | 60 | 1 | 0 | 0 | 0 | 0 | 1
+  164a | 66 | 1 | 0 | 0 | 2 | 0 | 0
+  164b | 57 | 0 | 0 | 0 | 0 | 0 | 1
+  164c | 56 | 0 | 0 | 1 | 0 | 1 | 1
+  164d | 72 | 0 | 0 | 0 | 1 | 0 | 3
+  164e | 56 | 0 | 0 | 0 | 2 | 0 | 1
+  165a | 70 | 0 | 0 | 0 | 1 | 2 | 0
+  165b | 60 | 0 | 0 | 0 | 2 | 1 | 2
+  165c | 73 | 0 | 0 | 0 | 0 | 1 | 0
+  165d | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  165e | 58 | 0 | 0 | 0 | 0 | 2 | 3
+  166a | 74 | 0 | 0 | 0 | 0 | 0 | 2
+  166b | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  166c | 72 | 0 | 0 | 0 | 0 | 0 | 2
+  166d | 81 | 0 | 0 | 0 | 2 | 0 | 0
+  166e | 38 | 0 | 0 | 0 | 1 | 1 | 0
+  167a | 78 | 0 | 0 | 0 | 3 | 0 | 0
+  167b | 64 | 0 | 0 | 0 | 1 | 0 | 1
+  167c | 78 | 0 | 0 | 0 | 0 | 0 | 0
+  167d | 63 | 0 | 0 | 0 | 2 | 0 | 0
+  167e | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  168a | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  168b | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  168c | 65 | 0 | 0 | 0 | 1 | 0 | 0
+  168d | 63 | 0 | 0 | 0 | 1 | 3 | 0
+  168e | 55 | 0 | 0 | 0 | 0 | 1 | 0
+  169a | 74 | 0 | 0 | 0 | 0 | 0 | 1
+  169b | 66 | 0 | 0 | 0 | 3 | 0 | 0
+  169c | 71 | 0 | 0 | 0 | 0 | 1 | 0
+  169d | 68 | 0 | 2 | 0 | 0 | 0 | 2
+  169e | 51 | 0 | 1 | 0 | 1 | 0 | 0
+  170a | 73 | 0 | 0 | 0 | 1 | 1 | 0
+  170b | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  170c | 65 | 1 | 0 | 0 | 2 | 1 | 0
+  170d | 71 | 1 | 0 | 0 | 0 | 0 | 3
+  170e | 67 | 0 | 0 | 0 | 0 | 1 | 1
+  171a | 72 | 0 | 0 | 0 | 0 | 1 | 0
+  171b | 62 | 0 | 0 | 0 | 1 | 1 | 0
+  171c | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  171d | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  171e | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  172a | 73 | 0 | 0 | 0 | 0 | 0 | 0
+  172b | 77 | 0 | 0 | 0 | 0 | 0 | 0
+  172c | 56 | 0 | 0 | 0 | 0 | 1 | 2
+  172d | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  172e | 63 | 0 | 0 | 0 | 1 | 0 | 0
+  173a | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  173b | 65 | 0 | 0 | 0 | 0 | 0 | 1
+  173c | 73 | 0 | 0 | 0 | 3 | 0 | 1
+  173d | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  173e | 55 | 0 | 0 | 0 | 1 | 0 | 0
+  174a | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  174b | 72 | 0 | 0 | 0 | 2 | 0 | 0
+  174c | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  174d | 65 | 0 | 0 | 0 | 1 | 1 | 0
+  174e | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  175a | 55 | 0 | 0 | 0 | 0 | 0 | 0
+  175b | 71 | 0 | 0 | 0 | 0 | 0 | 1
+  175c | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  175d | 59 | 0 | 0 | 0 | 1 | 0 | 1
+  175e | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  176a | 65 | 0 | 0 | 0 | 1 | 0 | 0
+  176b | 78 | 0 | 0 | 0 | 2 | 0 | 1
+  176c | 67 | 0 | 0 | 0 | 1 | 0 | 0
+  176d | 74 | 0 | 0 | 0 | 3 | 2 | 0
+  176e | 35 | 0 | 0 | 0 | 0 | 0 | 1
+  177a | 71 | 0 | 0 | 0 | 0 | 0 | 3
+  177b | 67 | 0 | 0 | 0 | 0 | 1 | 0
+  177c | 74 | 0 | 0 | 0 | 1 | 0 | 0
+  177d | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  177e | 42 | 0 | 0 | 0 | 2 | 0 | 0
+  178a | 66 | 0 | 1 | 0 | 1 | 1 | 0
+  178b | 59 | 0 | 0 | 0 | 1 | 0 | 1
+  178c | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  178d | 62 | 1 | 0 | 0 | 1 | 0 | 0
+  178e | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  179a | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  179b | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  179c | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  179d | 69 | 0 | 0 | 0 | 1 | 2 | 0
+  179e | 55 | 0 | 0 | 0 | 2 | 1 | 0
+  180a | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  180b | 63 | 0 | 0 | 0 | 1 | 0 | 0
+  180c | 61 | 0 | 0 | 0 | 0 | 1 | 1
+  180d | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  180e | 54 | 0 | 0 | 0 | 1 | 1 | 0
+  181a | 58 | 0 | 0 | 0 | 0 | 1 | 0
+  181b | 61 | 0 | 0 | 0 | 0 | 2 | 0
+  181c | 79 | 0 | 1 | 0 | 0 | 1 | 0
+  181d | 58 | 0 | 1 | 0 | 0 | 1 | 1
+  181e | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  182a | 72 | 0 | 0 | 0 | 0 | 1 | 2
+  182b | 63 | 0 | 0 | 0 | 2 | 1 | 0
+  182c | 67 | 0 | 2 | 0 | 1 | 0 | 1
+  182d | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  182e | 66 | 1 | 0 | 0 | 1 | 1 | 0
+  183a | 77 | 0 | 0 | 0 | 0 | 0 | 1
+  183b | 68 | 0 | 0 | 0 | 2 | 0 | 0
+  183c | 63 | 0 | 0 | 0 | 1 | 0 | 0
+  183d | 58 | 0 | 0 | 0 | 0 | 1 | 0
+  183e | 53 | 0 | 0 | 0 | 1 | 1 | 2
+  184a | 73 | 0 | 0 | 0 | 0 | 1 | 0
+  184b | 61 | 0 | 1 | 0 | 2 | 1 | 1
+  184c | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  184d | 64 | 0 | 0 | 0 | 1 | 0 | 0
+  184e | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  185a | 76 | 0 | 0 | 0 | 2 | 1 | 1
+  185b | 63 | 1 | 0 | 0 | 2 | 0 | 1
+  185c | 90 | 0 | 0 | 0 | 0 | 0 | 1
+  185d | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  185e | 73 | 0 | 0 | 0 | 3 | 0 | 0
+  186a | 62 | 1 | 0 | 0 | 1 | 1 | 0
+  186b | 66 | 0 | 0 | 0 | 0 | 1 | 1
+  186c | 59 | 0 | 0 | 0 | 0 | 2 | 0
+  186d | 60 | 0 | 0 | 0 | 1 | 2 | 2
+  186e | 55 | 0 | 0 | 0 | 4 | 1 | 0
+  187a | 72 | 1 | 0 | 0 | 1 | 0 | 2
+  187b | 70 | 0 | 0 | 0 | 2 | 0 | 0
+  187c | 65 | 0 | 0 | 1 | 1 | 1 | 2
+  187d | 84 | 1 | 0 | 0 | 1 | 0 | 3
+  187e | 50 | 1 | 0 | 0 | 3 | 1 | 2
+  188a | 75 | 2 | 0 | 0 | 2 | 0 | 0
+  188b | 67 | 0 | 0 | 0 | 0 | 1 | 0
+  188c | 64 | 1 | 0 | 0 | 2 | 2 | 0
+  188d | 82 | 0 | 0 | 0 | 0 | 1 | 1
+  188e | 63 | 1 | 0 | 0 | 0 | 1 | 0
+  189a | 69 | 1 | 0 | 0 | 0 | 0 | 2
+  189b | 63 | 0 | 0 | 0 | 1 | 1 | 1
+  189c | 74 | 0 | 0 | 0 | 2 | 0 | 0
+  189d | 64 | 0 | 0 | 0 | 0 | 1 | 0
+  189e | 65 | 0 | 0 | 0 | 1 | 2 | 0
+  190a | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  190b | 63 | 1 | 0 | 0 | 0 | 0 | 1
+  190c | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  190d | 70 | 1 | 0 | 0 | 2 | 0 | 0
+  190e | 62 | 0 | 0 | 0 | 2 | 0 | 1
+  191a | 69 | 0 | 0 | 0 | 0 | 1 | 0
+  191b | 65 | 0 | 0 | 0 | 2 | 1 | 1
+  191c | 68 | 0 | 0 | 0 | 1 | 1 | 1
+  191d | 69 | 0 | 1 | 0 | 0 | 0 | 0
+  191e | 57 | 0 | 1 | 0 | 1 | 0 | 1
+  192a | 82 | 0 | 0 | 0 | 0 | 0 | 0
+  192b | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  192c | 90 | 0 | 0 | 0 | 1 | 0 | 2
+  192d | 72 | 0 | 0 | 0 | 0 | 0 | 1
+  192e | 46 | 0 | 1 | 0 | 0 | 1 | 1
+  193a | 69 | 0 | 2 | 0 | 1 | 0 | 0
+  193b | 77 | 0 | 1 | 0 | 0 | 0 | 0
+  193c | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  193d | 72 | 1 | 1 | 0 | 2 | 1 | 1
+  193e | 52 | 0 | 0 | 0 | 1 | 0 | 1
+  194a | 75 | 0 | 1 | 0 | 0 | 0 | 1
+  194b | 56 | 0 | 0 | 0 | 0 | 0 | 0
+  194c | 68 | 0 | 2 | 0 | 1 | 0 | 0
+  194d | 60 | 0 | 0 | 0 | 1 | 1 | 2
+  194e | 68 | 0 | 1 | 0 | 1 | 0 | 2
+  195a | 76 | 0 | 0 | 0 | 2 | 1 | 1
+  195b | 53 | 0 | 0 | 0 | 0 | 2 | 1
+  195c | 65 | 0 | 0 | 0 | 1 | 0 | 2
+  195d | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  195e | 70 | 0 | 0 | 0 | 0 | 3 | 1
+  196a | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  196b | 78 | 0 | 0 | 0 | 3 | 0 | 1
+  196c | 64 | 0 | 0 | 0 | 1 | 0 | 0
+  196d | 68 | 0 | 0 | 0 | 2 | 1 | 0
+  196e | 60 | 0 | 0 | 0 | 1 | 0 | 0
+  197a | 73 | 0 | 1 | 0 | 1 | 2 | 0
+  197b | 66 | 1 | 2 | 0 | 0 | 2 | 1
+  197c | 65 | 0 | 0 | 0 | 2 | 0 | 2
+  197d | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  197e | 48 | 0 | 0 | 0 | 0 | 0 | 1
+  198a | 61 | 0 | 1 | 0 | 1 | 0 | 2
+  198b | 60 | 1 | 0 | 0 | 2 | 1 | 2
+  198c | 60 | 0 | 0 | 0 | 2 | 1 | 0
+  198d | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  198e | 46 | 0 | 0 | 0 | 0 | 0 | 1
+  199a | 73 | 0 | 0 | 0 | 0 | 1 | 0
+  199b | 72 | 0 | 0 | 0 | 2 | 1 | 1
+  199c | 61 | 0 | 0 | 0 | 2 | 1 | 1
+  199d | 61 | 0 | 0 | 0 | 1 | 0 | 0
+  199e | 66 | 0 | 0 | 0 | 2 | 0 | 1
+  200a | 54 | 1 | 0 | 0 | 3 | 0 | 0
+  200b | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  200c | 63 | 0 | 0 | 0 | 0 | 1 | 1
+  200d | 58 | 0 | 0 | 0 | 1 | 1 | 1
+  200e | 54 | 0 | 0 | 0 | 1 | 0 | 0
+  201a | 71 | 0 | 0 | 0 | 2 | 0 | 2
+  201b | 54 | 1 | 0 | 0 | 0 | 0 | 0
+  201c | 64 | 0 | 0 | 0 | 0 | 1 | 0
+  201d | 67 | 0 | 0 | 0 | 1 | 0 | 2
+  201e | 40 | 0 | 0 | 0 | 2 | 0 | 0
+  202a | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  202b | 73 | 0 | 0 | 0 | 3 | 1 | 1
+  202c | 62 | 0 | 0 | 0 | 1 | 3 | 0
+  202d | 68 | 0 | 0 | 0 | 1 | 0 | 1
+  202e | 49 | 0 | 0 | 0 | 1 | 0 | 2
+  203a | 61 | 0 | 0 | 0 | 0 | 1 | 1
+  203b | 77 | 0 | 0 | 0 | 1 | 0 | 2
+  203c | 67 | 0 | 0 | 0 | 0 | 0 | 2
+  203d | 55 | 1 | 0 | 0 | 0 | 0 | 0
+  203e | 60 | 0 | 0 | 0 | 3 | 2 | 0
+  204a | 75 | 0 | 0 | 0 | 0 | 1 | 3
+  204b | 63 | 0 | 0 | 0 | 0 | 0 | 2
+  204c | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  204d | 66 | 1 | 0 | 0 | 2 | 0 | 2
+  204e | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  205a | 78 | 0 | 0 | 0 | 0 | 0 | 1
+  205b | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  205c | 75 | 0 | 0 | 0 | 0 | 1 | 2
+  205d | 79 | 0 | 0 | 0 | 2 | 3 | 1
+  205e | 52 | 0 | 0 | 0 | 2 | 0 | 0
+  206a | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  206b | 80 | 0 | 0 | 0 | 0 | 1 | 1
+  206c | 56 | 0 | 0 | 0 | 1 | 0 | 4
+  206d | 76 | 0 | 0 | 0 | 0 | 0 | 0
+  206e | 48 | 0 | 1 | 0 | 1 | 0 | 0
+  207a | 66 | 0 | 0 | 0 | 0 | 1 | 0
+  207b | 70 | 0 | 1 | 0 | 1 | 0 | 0
+  207c | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  207d | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  207e | 53 | 0 | 1 | 0 | 0 | 1 | 0
+  208a | 68 | 0 | 0 | 0 | 0 | 2 | 1
+  208b | 57 | 0 | 0 | 0 | 1 | 0 | 2
+  208c | 82 | 0 | 0 | 0 | 3 | 0 | 1
+  208d | 67 | 0 | 0 | 0 | 0 | 1 | 1
+  208e | 64 | 1 | 0 | 0 | 0 | 0 | 0
+  209a | 66 | 0 | 0 | 0 | 0 | 1 | 1
+  209b | 74 | 0 | 0 | 0 | 2 | 1 | 3
+  209c | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  209d | 69 | 0 | 0 | 0 | 1 | 1 | 1
+  209e | 63 | 0 | 0 | 0 | 2 | 0 | 1
+  210a | 53 | 0 | 0 | 0 | 2 | 0 | 0
+  210b | 66 | 0 | 1 | 0 | 0 | 2 | 0
+  210c | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  210d | 34 | 0 | 0 | 0 | 0 | 1 | 0
+occurrences[738]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_theaetetus_000028 | γάρ | γὰρ | turn_theaetetus_0003 | 142a | 144 | 147
+  tok_theaetetus_000034 | μήν | μήν | turn_theaetetus_0004 | 142a | 171 | 174
+  tok_theaetetus_000059 | γάρ | γὰρ | turn_theaetetus_0007 | 142b | 343 | 346
+  tok_theaetetus_000066 | μήν | μὴν | turn_theaetetus_0007 | 142b | 384 | 387
+  tok_theaetetus_000150 | δή | δὴ | turn_theaetetus_0013 | 142c | 897 | 899
+  tok_theaetetus_000156 | γάρ | γάρ | turn_theaetetus_0013 | 142c | 928 | 931
+  tok_theaetetus_000297 | δή | δὴ | turn_theaetetus_0017 | 143b | 1823 | 1825
+  tok_theaetetus_000324 | δή | δὴ | turn_theaetetus_0019 | 143b | 1990 | 1992
+  tok_theaetetus_000331 | δή | δὴ | turn_theaetetus_0019 | 143b | 2033 | 2035
+  tok_theaetetus_000356 | οὖν | οὖν | turn_theaetetus_0019 | 143b | 2186 | 2189
+  tok_theaetetus_000454 | γάρ | γὰρ | turn_theaetetus_0022 | 143d | 2784 | 2787
+  tok_theaetetus_000471 | δή | δὴ | turn_theaetetus_0022 | 143d | 2894 | 2896
+  tok_theaetetus_000490 | δή | δὴ | turn_theaetetus_0022 | 143d | 3003 | 3005
+  tok_theaetetus_000497 | γάρ | γὰρ | turn_theaetetus_0022 | 143e | 3059 | 3062
+  tok_theaetetus_000505 | δή | δὴ | turn_theaetetus_0022 | 143e | 3099 | 3101
+  tok_theaetetus_000506 | οὖν | οὖν | turn_theaetetus_0022 | 143e | 3102 | 3105
+  tok_theaetetus_000516 | μήν | μήν | turn_theaetetus_0023 | 143e | 3160 | 3163
+  tok_theaetetus_000577 | δή | δὴ | turn_theaetetus_0023 | 144a | 3486 | 3488
+  tok_theaetetus_000580 | γάρ | γὰρ | turn_theaetetus_0023 | 144a | 3498 | 3501
+  tok_theaetetus_000584 | δή | δὴ | turn_theaetetus_0023 | 144a | 3514 | 3516
+  tok_theaetetus_000599 | γάρ | γὰρ | turn_theaetetus_0023 | 144a | 3611 | 3614
+  tok_theaetetus_000717 | γάρ | γάρ | turn_theaetetus_0025 | 144c | 4350 | 4353
+  tok_theaetetus_000727 | γάρ | γὰρ | turn_theaetetus_0025 | 144c | 4399 | 4402
+  tok_theaetetus_000834 | οὖν | οὖν | turn_theaetetus_0030 | 144d | 5065 | 5068
+  tok_theaetetus_000847 | γάρ | γὰρ | turn_theaetetus_0030 | 144d | 5143 | 5146
+  tok_theaetetus_000914 | οὖν | οὖν | turn_theaetetus_0036 | 145a | 5558 | 5561
+  tok_theaetetus_001004 | οὖν | οὖν | turn_theaetetus_0045 | 145b | 6098 | 6101
+  tok_theaetetus_001009 | τοίνυν | τοίνυν | turn_theaetetus_0046 | 145b | 6123 | 6129
+  tok_theaetetus_001025 | δή | δὴ | turn_theaetetus_0046 | 145b | 6222 | 6224
+  tok_theaetetus_001071 | γάρ | γὰρ | turn_theaetetus_0048 | 145c | 6497 | 6500
+  tok_theaetetus_001090 | δή | δή | turn_theaetetus_0050 | 145c | 6608 | 6610
+  tok_theaetetus_001113 | δή | δή | turn_theaetetus_0053 | 145d | 6762 | 6764
+  tok_theaetetus_001116 | γάρ | γὰρ | turn_theaetetus_0054 | 145d | 6774 | 6777
+  tok_theaetetus_001169 | γάρ | γὰρ | turn_theaetetus_0055 | 145d | 7045 | 7048
+  tok_theaetetus_001203 | μήν | μήν | turn_theaetetus_0061 | 145e | 7227 | 7230
+  tok_theaetetus_001215 | τοίνυν | τοίνυν | turn_theaetetus_0064 | 145e | 7293 | 7299
+  tok_theaetetus_001232 | οὖν | οὖν | turn_theaetetus_0064 | 146a | 7398 | 7401
+  tok_theaetetus_001233 | δή | δὴ | turn_theaetetus_0064 | 146a | 7402 | 7404
+  tok_theaetetus_001314 | γάρ | γὰρ | turn_theaetetus_0065 | 146b | 7923 | 7926
+  tok_theaetetus_001336 | γάρ | γὰρ | turn_theaetetus_0065 | 146b | 8054 | 8057
+  tok_theaetetus_001355 | δή | δή | turn_theaetetus_0066 | 146b | 8161 | 8163
+  tok_theaetetus_001398 | γάρ | γάρ | turn_theaetetus_0067 | 146c | 8433 | 8436
+  tok_theaetetus_001407 | οὖν | οὖν | turn_theaetetus_0068 | 146c | 8483 | 8486
+  tok_theaetetus_001415 | τοίνυν | τοίνυν | turn_theaetetus_0069 | 146c | 8523 | 8529
+  tok_theaetetus_001543 | γάρ | γὰρ | turn_theaetetus_0078 | 146e | 9265 | 9268
+  tok_theaetetus_001561 | οὖν | οὖν | turn_theaetetus_0079 | 146e | 9376 | 9379
+  tok_theaetetus_001565 | δή | δὴ | turn_theaetetus_0080 | 147a | 9405 | 9407
+  tok_theaetetus_001657 | γάρ | γάρ | turn_theaetetus_0085 | 147b | 9951 | 9954
+  tok_theaetetus_001690 | γάρ | γὰρ | turn_theaetetus_0088 | 147b | 10154 | 10157
+  tok_theaetetus_001763 | δή | δή | turn_theaetetus_0092 | 147d | 10613 | 10615
+  tok_theaetetus_001802 | οὖν | οὖν | turn_theaetetus_0093 | 147d | 10872 | 10875
+  tok_theaetetus_001866 | τοίνυν | τοίνυν | turn_theaetetus_0099 | 147e | 11292 | 11298
+  tok_theaetetus_001966 | μήν | μήν | turn_theaetetus_0103 | 148b | 11945 | 11948
+  tok_theaetetus_001986 | καίτοι | καίτοι | turn_theaetetus_0103 | 148b | 12061 | 12067
+  tok_theaetetus_002063 | τοίνυν | τοίνυν | turn_theaetetus_0108 | 148c | 12510 | 12516
+  tok_theaetetus_002096 | δή | δή | turn_theaetetus_0110 | 148d | 12714 | 12716
+  tok_theaetetus_002098 | γάρ | γὰρ | turn_theaetetus_0110 | 148d | 12723 | 12726
+  tok_theaetetus_002130 | δή | δὴ | turn_theaetetus_0111 | 148e | 12937 | 12939
+  tok_theaetetus_002141 | γάρ | γὰρ | turn_theaetetus_0111 | 148e | 13016 | 13019
+  tok_theaetetus_002161 | δή | δὴ | turn_theaetetus_0111 | 148e | 13130 | 13132
+  tok_theaetetus_002169 | γάρ | γάρ | turn_theaetetus_0112 | 148e | 13177 | 13180
+  tok_theaetetus_002235 | γάρ | γάρ | turn_theaetetus_0118 | 149a | 13559 | 13562
+  tok_theaetetus_002270 | οὖν | οὖν | turn_theaetetus_0120 | 149b | 13760 | 13763
+  tok_theaetetus_002277 | οὖν | οὖν | turn_theaetetus_0121 | 149b | 13794 | 13797
+  tok_theaetetus_002280 | δή | δὴ | turn_theaetetus_0122 | 149b | 13812 | 13814
+  tok_theaetetus_002294 | γάρ | γάρ | turn_theaetetus_0122 | 149b | 13881 | 13884
+  tok_theaetetus_002315 | οὖν | οὖν | turn_theaetetus_0123 | 149b | 14004 | 14007
+  tok_theaetetus_002333 | οὖν | οὖν | turn_theaetetus_0124 | 149b | 14108 | 14111
+  tok_theaetetus_002387 | μήν | μὴν | turn_theaetetus_0128 | 149c | 14424 | 14427
+  tok_theaetetus_002409 | δή | δὴ | turn_theaetetus_0128 | 149d | 14568 | 14570
+  tok_theaetetus_002424 | οὖν | οὖν | turn_theaetetus_0130 | 149d | 14674 | 14677
+  tok_theaetetus_002468 | γάρ | γάρ | turn_theaetetus_0132 | 149e | 14943 | 14946
+  tok_theaetetus_002522 | γάρ | γάρ | turn_theaetetus_0136 | 150a | 15246 | 15249
+  tok_theaetetus_002535 | δή | δὴ | turn_theaetetus_0136 | 150a | 15319 | 15321
+  tok_theaetetus_002572 | τοίνυν | τοίνυν | turn_theaetetus_0138 | 150a | 15552 | 15558
+  tok_theaetetus_002582 | γάρ | γὰρ | turn_theaetetus_0138 | 150a | 15612 | 15615
+  tok_theaetetus_002600 | γάρ | γὰρ | turn_theaetetus_0138 | 150b | 15728 | 15731
+  tok_theaetetus_002733 | δή | δὴ | turn_theaetetus_0140 | 150c | 16500 | 16502
+  tok_theaetetus_002734 | οὖν | οὖν | turn_theaetetus_0140 | 150c | 16503 | 16506
+  tok_theaetetus_002911 | δή | δὴ | turn_theaetetus_0141 | 151a | 17628 | 17630
+  tok_theaetetus_002921 | γάρ | γὰρ | turn_theaetetus_0141 | 151a | 17696 | 17699
+  tok_theaetetus_002948 | δή | δὴ | turn_theaetetus_0141 | 151b | 17857 | 17859
+  tok_theaetetus_002984 | δή | δὴ | turn_theaetetus_0141 | 151b | 18068 | 18070
+  tok_theaetetus_002996 | δή | δή | turn_theaetetus_0141 | 151b | 18146 | 18148
+  tok_theaetetus_003014 | οὖν | οὖν | turn_theaetetus_0141 | 151b | 18256 | 18259
+  tok_theaetetus_003061 | γάρ | γὰρ | turn_theaetetus_0141 | 151c | 18532 | 18535
+  tok_theaetetus_003112 | δή | δὴ | turn_theaetetus_0141 | 151d | 18864 | 18866
+  tok_theaetetus_003113 | οὖν | οὖν | turn_theaetetus_0141 | 151d | 18867 | 18870
+  tok_theaetetus_003133 | γάρ | γὰρ | turn_theaetetus_0141 | 151d | 18974 | 18977
+  tok_theaetetus_003161 | οὖν | οὖν | turn_theaetetus_0142 | 151e | 19147 | 19150
+  tok_theaetetus_003190 | γάρ | γὰρ | turn_theaetetus_0143 | 151e | 19302 | 19305
+  tok_theaetetus_003196 | δή | δὴ | turn_theaetetus_0143 | 151e | 19344 | 19346
+  tok_theaetetus_003233 | γάρ | γάρ | turn_theaetetus_0145 | 152a | 19588 | 19591
+  tok_theaetetus_003253 | γάρ | γάρ | turn_theaetetus_0145 | 152a | 19716 | 19719
+  tok_theaetetus_003288 | γάρ | γὰρ | turn_theaetetus_0148 | 152a | 19904 | 19907
+  tok_theaetetus_003289 | οὖν | οὖν | turn_theaetetus_0148 | 152a | 19908 | 19911
+  tok_theaetetus_003299 | οὖν | οὖν | turn_theaetetus_0149 | 152b | 19981 | 19984
+  tok_theaetetus_003327 | οὖν | οὖν | turn_theaetetus_0151 | 152b | 20116 | 20119
+  tok_theaetetus_003371 | γάρ | γάρ | turn_theaetetus_0156 | 152b | 20369 | 20372
+  tok_theaetetus_003386 | γάρ | γὰρ | turn_theaetetus_0157 | 152c | 20461 | 20464
+  tok_theaetetus_003412 | οὖν | οὖν | turn_theaetetus_0161 | 152c | 20627 | 20630
+  tok_theaetetus_003438 | δή | δή | turn_theaetetus_0162 | 152d | 20786 | 20788
+  tok_theaetetus_003493 | δή | δὴ | turn_theaetetus_0163 | 152d | 21092 | 21094
+  tok_theaetetus_003505 | δή | δή | turn_theaetetus_0163 | 152d | 21158 | 21160
+  tok_theaetetus_003513 | γάρ | γὰρ | turn_theaetetus_0163 | 152e | 21217 | 21220
+  tok_theaetetus_003574 | οὖν | οὖν | turn_theaetetus_0165 | 153a | 21636 | 21639
+  tok_theaetetus_003597 | γάρ | γάρ | turn_theaetetus_0167 | 153a | 21783 | 21786
+  tok_theaetetus_003625 | γάρ | γὰρ | turn_theaetetus_0167 | 153a | 21935 | 21938
+  tok_theaetetus_003631 | δή | δὴ | turn_theaetetus_0167 | 153a | 21960 | 21962
+  tok_theaetetus_003654 | οὖν | οὖν | turn_theaetetus_0168 | 153b | 22102 | 22105
+  tok_theaetetus_003657 | μήν | μὴν | turn_theaetetus_0169 | 153b | 22115 | 22118
+  tok_theaetetus_003757 | οὖν | οὖν | turn_theaetetus_0177 | 153c | 22661 | 22664
+  tok_theaetetus_003849 | τοίνυν | τοίνυν | turn_theaetetus_0179 | 153d | 23196 | 23202
+  tok_theaetetus_003858 | δή | δὴ | turn_theaetetus_0179 | 153d | 23247 | 23249
+  tok_theaetetus_003881 | γάρ | γὰρ | turn_theaetetus_0179 | 153e | 23377 | 23380
+  tok_theaetetus_003935 | δή | δὴ | turn_theaetetus_0181 | 153e | 23667 | 23669
+  tok_theaetetus_004089 | δή | δὴ | turn_theaetetus_0186 | 154b | 24555 | 24557
+  tok_theaetetus_004103 | γάρ | γάρ | turn_theaetetus_0187 | 154c | 24650 | 24653
+  tok_theaetetus_004137 | οὖν | οὖν | turn_theaetetus_0189 | 154c | 24850 | 24853
+  tok_theaetetus_004207 | γάρ | γὰρ | turn_theaetetus_0191 | 154d | 25253 | 25256
+  tok_theaetetus_004280 | οὖν | οὖν | turn_theaetetus_0194 | 154e | 25716 | 25719
+  tok_theaetetus_004287 | μήν | μὴν | turn_theaetetus_0195 | 154e | 25754 | 25757
+  tok_theaetetus_004369 | οὖν | οὖν | turn_theaetetus_0198 | 155a | 26252 | 26255
+  tok_theaetetus_004372 | οὖν | οὖν | turn_theaetetus_0199 | 155b | 26272 | 26275
+  tok_theaetetus_004393 | δή | δή | turn_theaetetus_0200 | 155b | 26391 | 26393
+  tok_theaetetus_004396 | δή | δή | turn_theaetetus_0201 | 155b | 26405 | 26407
+  tok_theaetetus_004445 | γάρ | γὰρ | turn_theaetetus_0201 | 155c | 26715 | 26718
+  tok_theaetetus_004446 | δή | δὴ | turn_theaetetus_0201 | 155c | 26719 | 26721
+  tok_theaetetus_004455 | γάρ | γὰρ | turn_theaetetus_0201 | 155c | 26767 | 26770
+  tok_theaetetus_004472 | δή | δὴ | turn_theaetetus_0201 | 155c | 26871 | 26873
+  tok_theaetetus_004483 | γάρ | γάρ | turn_theaetetus_0201 | 155c | 26938 | 26941
+  tok_theaetetus_004520 | γάρ | γάρ | turn_theaetetus_0203 | 155d | 27156 | 27159
+  tok_theaetetus_004532 | γάρ | γὰρ | turn_theaetetus_0203 | 155d | 27222 | 27225
+  tok_theaetetus_004540 | γάρ | γὰρ | turn_theaetetus_0203 | 155d | 27269 | 27272
+  tok_theaetetus_004580 | οὖν | οὖν | turn_theaetetus_0205 | 155d | 27497 | 27500
+  tok_theaetetus_004599 | γάρ | γὰρ | turn_theaetetus_0206 | 155e | 27635 | 27638
+  tok_theaetetus_004608 | δή | δὴ | turn_theaetetus_0207 | 155e | 27682 | 27684
+  tok_theaetetus_004648 | δή | δή | turn_theaetetus_0208 | 155e | 27907 | 27909
+  tok_theaetetus_004659 | γάρ | γάρ | turn_theaetetus_0209 | 156a | 27985 | 27988
+  tok_theaetetus_004747 | οὖν | οὖν | turn_theaetetus_0209 | 156b | 28480 | 28483
+  tok_theaetetus_004768 | δή | δὴ | turn_theaetetus_0209 | 156b | 28599 | 28601
+  tok_theaetetus_004813 | δή | δὴ | turn_theaetetus_0209 | 156c | 28902 | 28904
+  tok_theaetetus_004814 | οὖν | οὖν | turn_theaetetus_0209 | 156c | 28905 | 28908
+  tok_theaetetus_004839 | γάρ | γὰρ | turn_theaetetus_0211 | 156c | 29051 | 29054
+  tok_theaetetus_004840 | δή | δὴ | turn_theaetetus_0211 | 156c | 29055 | 29057
+  tok_theaetetus_004859 | οὖν | οὖν | turn_theaetetus_0211 | 156c | 29161 | 29164
+  tok_theaetetus_004873 | δή | δὴ | turn_theaetetus_0211 | 156d | 29241 | 29243
+  tok_theaetetus_004879 | δή | δὴ | turn_theaetetus_0211 | 156d | 29272 | 29274
+  tok_theaetetus_004883 | γάρ | γὰρ | turn_theaetetus_0211 | 156d | 29296 | 29299
+  tok_theaetetus_004892 | οὖν | οὖν | turn_theaetetus_0211 | 156d | 29345 | 29348
+  tok_theaetetus_004920 | δή | δὴ | turn_theaetetus_0211 | 156d | 29513 | 29515
+  tok_theaetetus_004946 | δή | δὴ | turn_theaetetus_0211 | 156e | 29675 | 29677
+  tok_theaetetus_004985 | δή | δὴ | turn_theaetetus_0212 | 156e | 29907 | 29909
+  tok_theaetetus_005003 | δή | δὴ | turn_theaetetus_0212 | 157a | 30016 | 30018
+  tok_theaetetus_005039 | γάρ | γὰρ | turn_theaetetus_0212 | 157a | 30210 | 30213
+  tok_theaetetus_005162 | δή | δὴ | turn_theaetetus_0212 | 157b | 30925 | 30927
+  tok_theaetetus_005176 | δή | δή | turn_theaetetus_0212 | 157c | 31014 | 31016
+  tok_theaetetus_005197 | γάρ | γὰρ | turn_theaetetus_0213 | 157c | 31129 | 31132
+  tok_theaetetus_005281 | δή | δή | turn_theaetetus_0215 | 157d | 31637 | 31639
+  tok_theaetetus_005284 | τοίνυν | τοίνυν | turn_theaetetus_0216 | 157d | 31650 | 31656
+  tok_theaetetus_005323 | τοίνυν | τοίνυν | turn_theaetetus_0218 | 157e | 31887 | 31893
+  tok_theaetetus_005351 | γάρ | γάρ | turn_theaetetus_0218 | 157e | 32058 | 32061
+  tok_theaetetus_005396 | δή | δὴ | turn_theaetetus_0220 | 158a | 32350 | 32352
+  tok_theaetetus_005397 | οὖν | οὖν | turn_theaetetus_0220 | 158a | 32353 | 32356
+  tok_theaetetus_005472 | οὖν | οὖν | turn_theaetetus_0222 | 158b | 32799 | 32802
+  tok_theaetetus_005528 | μήν | μήν | turn_theaetetus_0225 | 158c | 33146 | 33149
+  tok_theaetetus_005538 | γάρ | γὰρ | turn_theaetetus_0225 | 158c | 33207 | 33210
+  tok_theaetetus_005546 | γάρ | γὰρ | turn_theaetetus_0225 | 158c | 33255 | 33258
+  tok_theaetetus_005560 | δή | δὴ | turn_theaetetus_0225 | 158c | 33342 | 33344
+  tok_theaetetus_005572 | οὖν | οὖν | turn_theaetetus_0226 | 158c | 33423 | 33426
+  tok_theaetetus_005588 | δή | δὴ | turn_theaetetus_0226 | 158d | 33522 | 33524
+  tok_theaetetus_005630 | οὖν | οὖν | turn_theaetetus_0227 | 158d | 33781 | 33784
+  tok_theaetetus_005652 | οὖν | οὖν | turn_theaetetus_0230 | 158d | 33892 | 33895
+  tok_theaetetus_005683 | τοίνυν | τοίνυν | turn_theaetetus_0234 | 158e | 34093 | 34099
+  tok_theaetetus_005739 | τοίνυν | τοίνυν | turn_theaetetus_0235 | 159a | 34424 | 34430
+  tok_theaetetus_005756 | οὖν | οὖν | turn_theaetetus_0236 | 159a | 34508 | 34511
+  tok_theaetetus_005812 | μήν | μὴν | turn_theaetetus_0242 | 159a | 34855 | 34858
+  tok_theaetetus_005828 | οὖν | οὖν | turn_theaetetus_0243 | 159b | 34952 | 34955
+  tok_theaetetus_005831 | δή | δὴ | turn_theaetetus_0244 | 159b | 34969 | 34971
+  tok_theaetetus_005890 | δή | δὴ | turn_theaetetus_0250 | 159c | 35347 | 35349
+  tok_theaetetus_005902 | δή | δὴ | turn_theaetetus_0252 | 159c | 35420 | 35422
+  tok_theaetetus_005931 | δή | δὴ | turn_theaetetus_0254 | 159c | 35581 | 35583
+  tok_theaetetus_005945 | μήν | μήν | turn_theaetetus_0255 | 159c | 35655 | 35658
+  tok_theaetetus_005948 | δή | δὴ | turn_theaetetus_0256 | 159c | 35669 | 35671
+  tok_theaetetus_005961 | γάρ | γὰρ | turn_theaetetus_0258 | 159c | 35747 | 35750
+  tok_theaetetus_005962 | δή | δὴ | turn_theaetetus_0258 | 159c | 35751 | 35753
+  tok_theaetetus_006014 | οὖν | οὖν | turn_theaetetus_0259 | 159d | 36077 | 36080
+  tok_theaetetus_006035 | γάρ | γὰρ | turn_theaetetus_0260 | 159d | 36197 | 36200
+  tok_theaetetus_006036 | δή | δὴ | turn_theaetetus_0260 | 159d | 36201 | 36203
+  tok_theaetetus_006042 | δή | δὴ | turn_theaetetus_0262 | 159e | 36243 | 36245
+  tok_theaetetus_006084 | οὖν | οὖν | turn_theaetetus_0263 | 159e | 36497 | 36500
+  tok_theaetetus_006096 | γάρ | γὰρ | turn_theaetetus_0264 | 159e | 36570 | 36573
+  tok_theaetetus_006120 | γάρ | γὰρ | turn_theaetetus_0264 | 160a | 36733 | 36736
+  tok_theaetetus_006131 | μήν | μὴν | turn_theaetetus_0266 | 160a | 36803 | 36806
+  tok_theaetetus_006142 | γάρ | γὰρ | turn_theaetetus_0267 | 160a | 36875 | 36878
+  tok_theaetetus_006143 | οὖν | οὖν | turn_theaetetus_0267 | 160a | 36879 | 36882
+  tok_theaetetus_006156 | γάρ | γάρ | turn_theaetetus_0268 | 160a | 36966 | 36969
+  tok_theaetetus_006175 | γάρ | γάρ | turn_theaetetus_0268 | 160b | 37099 | 37102
+  tok_theaetetus_006184 | οὖν | οὖν | turn_theaetetus_0269 | 160b | 37159 | 37162
+  tok_theaetetus_006187 | δή | δὴ | turn_theaetetus_0270 | 160b | 37177 | 37179
+  tok_theaetetus_006215 | δή | δὴ | turn_theaetetus_0270 | 160b | 37349 | 37351
+  tok_theaetetus_006260 | οὖν | οὖν | turn_theaetetus_0271 | 160c | 37618 | 37621
+  tok_theaetetus_006266 | δή | δὴ | turn_theaetetus_0272 | 160c | 37650 | 37652
+  tok_theaetetus_006284 | γάρ | γὰρ | turn_theaetetus_0273 | 160c | 37741 | 37744
+  tok_theaetetus_006294 | γάρ | γὰρ | turn_theaetetus_0274 | 160c | 37788 | 37791
+  tok_theaetetus_006323 | οὖν | οὖν | turn_theaetetus_0276 | 160d | 37939 | 37942
+  tok_theaetetus_006398 | γάρ | γάρ | turn_theaetetus_0278 | 160e | 38405 | 38408
+  tok_theaetetus_006423 | δή | δή | turn_theaetetus_0280 | 160e | 38548 | 38550
+  tok_theaetetus_006430 | δή | δή | turn_theaetetus_0280 | 160e | 38591 | 38593
+  tok_theaetetus_006497 | γάρ | γὰρ | turn_theaetetus_0281 | 161a | 38988 | 38991
+  tok_theaetetus_006589 | οὖν | οὖν | turn_theaetetus_0284 | 161b | 39529 | 39532
+  tok_theaetetus_006683 | γάρ | γὰρ | turn_theaetetus_0286 | 161d | 40124 | 40127
+  tok_theaetetus_006684 | δή | δὴ | turn_theaetetus_0286 | 161d | 40128 | 40130
+  tok_theaetetus_006730 | δή | δή | turn_theaetetus_0286 | 161d | 40402 | 40404
+  tok_theaetetus_006773 | δή | δὴ | turn_theaetetus_0286 | 161e | 40675 | 40677
+  tok_theaetetus_006795 | γάρ | γὰρ | turn_theaetetus_0286 | 161e | 40806 | 40809
+  tok_theaetetus_006840 | οὖν | οὖν | turn_theaetetus_0287 | 162a | 41087 | 41090
+  tok_theaetetus_006854 | οὖν | οὖν | turn_theaetetus_0287 | 162a | 41185 | 41188
+  tok_theaetetus_006893 | μήν | μὴν | turn_theaetetus_0289 | 162b | 41452 | 41455
+  tok_theaetetus_006921 | δή | δὴ | turn_theaetetus_0289 | 162b | 41614 | 41616
+  tok_theaetetus_006943 | δή | δὴ | turn_theaetetus_0290 | 162c | 41758 | 41760
+  tok_theaetetus_006944 | οὖν | οὖν | turn_theaetetus_0290 | 162c | 41761 | 41764
+  tok_theaetetus_006951 | δή | δή | turn_theaetetus_0290 | 162c | 41801 | 41803
+  tok_theaetetus_007001 | γάρ | γὰρ | turn_theaetetus_0291 | 162c | 42087 | 42090
+  tok_theaetetus_007026 | γάρ | γὰρ | turn_theaetetus_0292 | 162d | 42246 | 42249
+  tok_theaetetus_007032 | οὖν | οὖν | turn_theaetetus_0292 | 162d | 42270 | 42273
+  tok_theaetetus_007039 | γάρ | γὰρ | turn_theaetetus_0292 | 162d | 42317 | 42320
+  tok_theaetetus_007130 | οὖν | οὖν | turn_theaetetus_0292 | 162e | 42868 | 42871
+  tok_theaetetus_007159 | δή | δὴ | turn_theaetetus_0294 | 163a | 43052 | 43054
+  tok_theaetetus_007174 | οὖν | οὖν | turn_theaetetus_0295 | 163a | 43125 | 43128
+  tok_theaetetus_007178 | δή | δὴ | turn_theaetetus_0296 | 163a | 43144 | 43146
+  tok_theaetetus_007191 | γάρ | γὰρ | turn_theaetetus_0296 | 163a | 43215 | 43218
+  tok_theaetetus_007209 | γάρ | γάρ | turn_theaetetus_0296 | 163a | 43312 | 43315
+  tok_theaetetus_007213 | οὖν | οὖν | turn_theaetetus_0297 | 163a | 43337 | 43340
+  tok_theaetetus_007216 | οὖν | οὖν | turn_theaetetus_0298 | 163b | 43355 | 43358
+  tok_theaetetus_007282 | γάρ | γὰρ | turn_theaetetus_0299 | 163b | 43771 | 43774
+  tok_theaetetus_007339 | δή | δὴ | turn_theaetetus_0300 | 163c | 44098 | 44100
+  tok_theaetetus_007352 | δή | δή | turn_theaetetus_0301 | 163c | 44169 | 44171
+  tok_theaetetus_007401 | γάρ | γὰρ | turn_theaetetus_0303 | 163d | 44478 | 44481
+  tok_theaetetus_007408 | οὖν | οὖν | turn_theaetetus_0304 | 163d | 44506 | 44509
+  tok_theaetetus_007470 | μήν | μήν | turn_theaetetus_0313 | 163e | 44855 | 44858
+  tok_theaetetus_007473 | δή | δὴ | turn_theaetetus_0314 | 163e | 44866 | 44868
+  tok_theaetetus_007518 | μήν | μὴν | turn_theaetetus_0319 | 164a | 45120 | 45123
+  tok_theaetetus_007537 | γάρ | γὰρ | turn_theaetetus_0320 | 164a | 45227 | 45230
+  tok_theaetetus_007566 | γάρ | γάρ | turn_theaetetus_0322 | 164a | 45382 | 45385
+  tok_theaetetus_007613 | δή | δή | turn_theaetetus_0328 | 164b | 45700 | 45702
+  tok_theaetetus_007636 | οὖν | οὖν | turn_theaetetus_0332 | 164c | 45850 | 45853
+  tok_theaetetus_007647 | καίτοι | καίτοι | turn_theaetetus_0332 | 164c | 45912 | 45918
+  tok_theaetetus_007672 | δή | δή | turn_theaetetus_0335 | 164c | 46080 | 46082
+  tok_theaetetus_007717 | δή | δὴ | turn_theaetetus_0338 | 164d | 46401 | 46403
+  tok_theaetetus_007720 | γάρ | γὰρ | turn_theaetetus_0338 | 164d | 46417 | 46420
+  tok_theaetetus_007721 | δή | δὴ | turn_theaetetus_0338 | 164d | 46421 | 46423
+  tok_theaetetus_007752 | δή | δὴ | turn_theaetetus_0338 | 164d | 46611 | 46613
+  tok_theaetetus_007797 | γάρ | γὰρ | turn_theaetetus_0340 | 164e | 46865 | 46868
+  tok_theaetetus_007811 | δή | δὴ | turn_theaetetus_0340 | 164e | 46959 | 46961
+  tok_theaetetus_007821 | γάρ | γὰρ | turn_theaetetus_0341 | 164e | 47022 | 47025
+  tok_theaetetus_007859 | οὖν | οὖν | turn_theaetetus_0342 | 165a | 47257 | 47260
+  tok_theaetetus_007865 | γάρ | γὰρ | turn_theaetetus_0342 | 165a | 47287 | 47290
+  tok_theaetetus_007895 | οὖν | οὖν | turn_theaetetus_0343 | 165a | 47455 | 47458
+  tok_theaetetus_007901 | γάρ | γὰρ | turn_theaetetus_0343 | 165b | 47502 | 47505
+  tok_theaetetus_007906 | δή | δὴ | turn_theaetetus_0344 | 165b | 47534 | 47536
+  tok_theaetetus_007929 | δή | δὴ | turn_theaetetus_0345 | 165b | 47661 | 47663
+  tok_theaetetus_007930 | οὖν | οὖν | turn_theaetetus_0345 | 165b | 47664 | 47667
+  tok_theaetetus_007948 | γάρ | γὰρ | turn_theaetetus_0347 | 165b | 47773 | 47776
+  tok_theaetetus_008035 | οὖν | οὖν | turn_theaetetus_0351 | 165c | 48274 | 48277
+  tok_theaetetus_008127 | δή | δή | turn_theaetetus_0353 | 165e | 48848 | 48850
+  tok_theaetetus_008144 | οὖν | οὖν | turn_theaetetus_0353 | 165e | 48945 | 48948
+  tok_theaetetus_008145 | δή | δὴ | turn_theaetetus_0353 | 165e | 48949 | 48951
+  tok_theaetetus_008163 | οὖν | οὖν | turn_theaetetus_0354 | 165e | 49055 | 49058
+  tok_theaetetus_008167 | δή | δὴ | turn_theaetetus_0355 | 165e | 49073 | 49075
+  tok_theaetetus_008183 | δή | δὴ | turn_theaetetus_0355 | 166a | 49188 | 49190
+  tok_theaetetus_008215 | δή | δὴ | turn_theaetetus_0355 | 166a | 49367 | 49369
+  tok_theaetetus_008255 | γάρ | γὰρ | turn_theaetetus_0355 | 166b | 49618 | 49621
+  tok_theaetetus_008323 | δή | δὴ | turn_theaetetus_0355 | 166c | 50044 | 50046
+  tok_theaetetus_008373 | δή | δὴ | turn_theaetetus_0355 | 166c | 50365 | 50367
+  tok_theaetetus_008396 | γάρ | γάρ | turn_theaetetus_0355 | 166d | 50511 | 50514
+  tok_theaetetus_008405 | γάρ | γὰρ | turn_theaetetus_0355 | 166d | 50562 | 50565
+  tok_theaetetus_008482 | γάρ | γὰρ | turn_theaetetus_0355 | 166e | 50978 | 50981
+  tok_theaetetus_008508 | οὖν | οὖν | turn_theaetetus_0356 | 166e | 51147 | 51150
+  tok_theaetetus_008514 | γάρ | γὰρ | turn_theaetetus_0356 | 167a | 51192 | 51195
+  tok_theaetetus_008537 | γάρ | γὰρ | turn_theaetetus_0356 | 167a | 51333 | 51336
+  tok_theaetetus_008577 | γάρ | γὰρ | turn_theaetetus_0356 | 167a | 51560 | 51563
+  tok_theaetetus_008607 | δή | δή | turn_theaetetus_0356 | 167b | 51741 | 51743
+  tok_theaetetus_008647 | γάρ | γὰρ | turn_theaetetus_0356 | 167b | 51979 | 51982
+  tok_theaetetus_008759 | γάρ | γὰρ | turn_theaetetus_0356 | 167d | 52671 | 52674
+  tok_theaetetus_008784 | γάρ | γὰρ | turn_theaetetus_0356 | 167d | 52820 | 52823
+  tok_theaetetus_008803 | γάρ | γὰρ | turn_theaetetus_0356 | 167e | 52941 | 52944
+  tok_theaetetus_008875 | γάρ | γὰρ | turn_theaetetus_0357 | 168a | 53404 | 53407
+  tok_theaetetus_008939 | οὖν | οὖν | turn_theaetetus_0357 | 168b | 53836 | 53839
+  tok_theaetetus_009039 | γάρ | γὰρ | turn_theaetetus_0358 | 168c | 54459 | 54462
+  tok_theaetetus_009093 | γάρ | γὰρ | turn_theaetetus_0360 | 168d | 54815 | 54818
+  tok_theaetetus_009100 | οὖν | οὖν | turn_theaetetus_0361 | 168d | 54852 | 54855
+  tok_theaetetus_009109 | οὖν | οὖν | turn_theaetetus_0363 | 168d | 54907 | 54910
+  tok_theaetetus_009118 | οὖν | οὖν | turn_theaetetus_0363 | 168d | 54952 | 54955
+  tok_theaetetus_009175 | οὖν | οὖν | turn_theaetetus_0365 | 168e | 55310 | 55313
+  tok_theaetetus_009222 | δή | δὴ | turn_theaetetus_0365 | 169a | 55591 | 55593
+  tok_theaetetus_009264 | γάρ | γὰρ | turn_theaetetus_0366 | 169b | 55873 | 55876
+  tok_theaetetus_009281 | γάρ | γὰρ | turn_theaetetus_0366 | 169b | 55968 | 55971
+  tok_theaetetus_009307 | γάρ | γὰρ | turn_theaetetus_0367 | 169b | 56154 | 56157
+  tok_theaetetus_009338 | οὖν | οὖν | turn_theaetetus_0367 | 169c | 56348 | 56351
+  tok_theaetetus_009410 | δή | δὴ | turn_theaetetus_0370 | 169d | 56801 | 56803
+  tok_theaetetus_009419 | τοίνυν | τοίνυν | turn_theaetetus_0371 | 169d | 56850 | 56856
+  tok_theaetetus_009456 | δή | δὴ | turn_theaetetus_0371 | 169d | 57097 | 57099
+  tok_theaetetus_009466 | τοίνυν | τοίνυν | turn_theaetetus_0373 | 169d | 57145 | 57151
+  tok_theaetetus_009504 | γάρ | γάρ | turn_theaetetus_0373 | 169e | 57413 | 57416
+  tok_theaetetus_009517 | τοίνυν | τοίνυν | turn_theaetetus_0375 | 169e | 57486 | 57492
+  tok_theaetetus_009547 | γάρ | γὰρ | turn_theaetetus_0378 | 170a | 57660 | 57663
+  tok_theaetetus_009548 | οὖν | οὖν | turn_theaetetus_0378 | 170a | 57664 | 57667
+  tok_theaetetus_009676 | μήν | μήν | turn_theaetetus_0382 | 170c | 58453 | 58456
+  tok_theaetetus_009679 | οὖν | οὖν | turn_theaetetus_0383 | 170c | 58465 | 58468
+  tok_theaetetus_009701 | γάρ | γάρ | turn_theaetetus_0383 | 170c | 58597 | 58600
+  tok_theaetetus_009712 | γάρ | γάρ | turn_theaetetus_0383 | 170c | 58666 | 58669
+  tok_theaetetus_009744 | μήν | μὴν | turn_theaetetus_0385 | 170d | 58855 | 58858
+  tok_theaetetus_009760 | δή | δή | turn_theaetetus_0386 | 170d | 58943 | 58945
+  tok_theaetetus_009776 | δή | δὴ | turn_theaetetus_0387 | 170d | 59023 | 59025
+  tok_theaetetus_009786 | δή | δὴ | turn_theaetetus_0387 | 170d | 59076 | 59078
+  tok_theaetetus_009837 | οὖν | οὖν | turn_theaetetus_0389 | 170e | 59390 | 59393
+  tok_theaetetus_009882 | δή | δὴ | turn_theaetetus_0391 | 170e | 59643 | 59645
+  tok_theaetetus_009961 | οὖν | οὖν | turn_theaetetus_0394 | 171a | 60110 | 60113
+  tok_theaetetus_009991 | γάρ | γὰρ | turn_theaetetus_0398 | 171b | 60295 | 60298
+  tok_theaetetus_009992 | οὖν | οὖν | turn_theaetetus_0398 | 171b | 60299 | 60302
+  tok_theaetetus_010235 | δή | δὴ | turn_theaetetus_0407 | 171e | 61782 | 61784
+  tok_theaetetus_010409 | δή | δή | turn_theaetetus_0411 | 172c | 62851 | 62853
+  tok_theaetetus_010436 | δή | δὴ | turn_theaetetus_0412 | 172c | 63024 | 63026
+  tok_theaetetus_010437 | οὖν | οὖν | turn_theaetetus_0412 | 172c | 63027 | 63030
+  tok_theaetetus_010466 | δή | δή | turn_theaetetus_0414 | 172d | 63229 | 63231
+  tok_theaetetus_010528 | γάρ | γὰρ | turn_theaetetus_0415 | 172e | 63594 | 63597
+  tok_theaetetus_010615 | γάρ | γὰρ | turn_theaetetus_0416 | 173a | 64146 | 64149
+  tok_theaetetus_010684 | δή | δὴ | turn_theaetetus_0416 | 173b | 64596 | 64598
+  tok_theaetetus_010725 | γάρ | γὰρ | turn_theaetetus_0417 | 173c | 64860 | 64863
+  tok_theaetetus_010755 | γάρ | γὰρ | turn_theaetetus_0417 | 173c | 65044 | 65047
+  tok_theaetetus_010770 | δή | δή | turn_theaetetus_0418 | 173c | 65141 | 65143
+  tok_theaetetus_010781 | γάρ | γὰρ | turn_theaetetus_0418 | 173c | 65198 | 65201
+  tok_theaetetus_010884 | γάρ | γὰρ | turn_theaetetus_0418 | 173e | 65805 | 65808
+  tok_theaetetus_010998 | γάρ | γὰρ | turn_theaetetus_0420 | 174b | 66549 | 66552
+  tok_theaetetus_011047 | γάρ | γάρ | turn_theaetetus_0420 | 174b | 66829 | 66832
+  tok_theaetetus_011117 | γάρ | γὰρ | turn_theaetetus_0422 | 174c | 67257 | 67260
+  tok_theaetetus_011136 | οὖν | οὖν | turn_theaetetus_0422 | 174d | 67385 | 67388
+  tok_theaetetus_011161 | γάρ | γὰρ | turn_theaetetus_0422 | 174d | 67545 | 67548
+  tok_theaetetus_011240 | δή | δὴ | turn_theaetetus_0423 | 174e | 68075 | 68077
+  tok_theaetetus_011347 | δή | δὴ | turn_theaetetus_0423 | 175b | 68808 | 68810
+  tok_theaetetus_011506 | γάρ | γὰρ | turn_theaetetus_0425 | 175d | 69789 | 69792
+  tok_theaetetus_011517 | δή | δὴ | turn_theaetetus_0425 | 175d | 69862 | 69864
+  tok_theaetetus_011533 | δή | δὴ | turn_theaetetus_0425 | 175e | 69956 | 69958
+  tok_theaetetus_011621 | γάρ | γάρ | turn_theaetetus_0427 | 176a | 70542 | 70545
+  tok_theaetetus_011669 | γάρ | γάρ | turn_theaetetus_0427 | 176b | 70829 | 70832
+  tok_theaetetus_011701 | δή | δὴ | turn_theaetetus_0427 | 176b | 70998 | 71000
+  tok_theaetetus_011711 | γάρ | γάρ | turn_theaetetus_0427 | 176b | 71047 | 71050
+  tok_theaetetus_011763 | γάρ | γὰρ | turn_theaetetus_0427 | 176c | 71345 | 71348
+  tok_theaetetus_011796 | οὖν | οὖν | turn_theaetetus_0427 | 176d | 71557 | 71560
+  tok_theaetetus_011814 | γάρ | γὰρ | turn_theaetetus_0427 | 176d | 71675 | 71678
+  tok_theaetetus_011836 | οὖν | οὖν | turn_theaetetus_0427 | 176d | 71803 | 71806
+  tok_theaetetus_011849 | γάρ | γὰρ | turn_theaetetus_0427 | 176d | 71886 | 71889
+  tok_theaetetus_011857 | γάρ | γάρ | turn_theaetetus_0427 | 176d | 71931 | 71934
+  tok_theaetetus_011876 | δή | δὴ | turn_theaetetus_0428 | 176e | 72059 | 72061
+  tok_theaetetus_011918 | δή | δὴ | turn_theaetetus_0429 | 177a | 72329 | 72331
+  tok_theaetetus_011961 | δή | δὴ | turn_theaetetus_0429 | 177a | 72596 | 72598
+  tok_theaetetus_011974 | δή | δή | turn_theaetetus_0430 | 177a | 72678 | 72680
+  tok_theaetetus_012033 | οὖν | οὖν | turn_theaetetus_0431 | 177b | 73056 | 73059
+  tok_theaetetus_012073 | γάρ | γὰρ | turn_theaetetus_0432 | 177c | 73298 | 73301
+  tok_theaetetus_012188 | γάρ | γὰρ | turn_theaetetus_0435 | 177e | 73962 | 73965
+  tok_theaetetus_012200 | γάρ | γάρ | turn_theaetetus_0436 | 177e | 74032 | 74035
+  tok_theaetetus_012235 | οὖν | οὖν | turn_theaetetus_0439 | 178a | 74259 | 74262
+  tok_theaetetus_012251 | τοίνυν | τοίνυν | turn_theaetetus_0441 | 178a | 74354 | 74360
+  tok_theaetetus_012283 | γάρ | γὰρ | turn_theaetetus_0441 | 178a | 74531 | 74534
+  tok_theaetetus_012306 | δή | δή | turn_theaetetus_0443 | 178b | 74689 | 74691
+  tok_theaetetus_012335 | γάρ | γὰρ | turn_theaetetus_0443 | 178b | 74880 | 74883
+  tok_theaetetus_012450 | μήν | μήν | turn_theaetetus_0448 | 178d | 75585 | 75588
+  tok_theaetetus_012500 | γάρ | γὰρ | turn_theaetetus_0451 | 178d | 75915 | 75918
+  tok_theaetetus_012747 | γάρ | γάρ | turn_theaetetus_0459 | 179c | 77446 | 77449
+  tok_theaetetus_012777 | οὖν | οὖν | turn_theaetetus_0459 | 179d | 77643 | 77646
+  tok_theaetetus_012799 | οὖν | οὖν | turn_theaetetus_0459 | 179d | 77789 | 77792
+  tok_theaetetus_012822 | γάρ | γὰρ | turn_theaetetus_0460 | 179d | 77919 | 77922
+  tok_theaetetus_012849 | οὖν | οὖν | turn_theaetetus_0462 | 179e | 78099 | 78102
+  tok_theaetetus_012851 | γάρ | γάρ | turn_theaetetus_0462 | 179e | 78108 | 78111
+  tok_theaetetus_012884 | γάρ | γὰρ | turn_theaetetus_0462 | 179e | 78325 | 78328
+  tok_theaetetus_013006 | γάρ | γὰρ | turn_theaetetus_0463 | 180b | 79120 | 79123
+  tok_theaetetus_013056 | οὖν | οὖν | turn_theaetetus_0464 | 180c | 79457 | 79460
+  tok_theaetetus_013084 | δή | δὴ | turn_theaetetus_0465 | 180c | 79625 | 79627
+  tok_theaetetus_013197 | οὖν | οὖν | turn_theaetetus_0466 | 180e | 80397 | 80400
+  tok_theaetetus_013205 | γάρ | γὰρ | turn_theaetetus_0466 | 180e | 80444 | 80447
+  tok_theaetetus_013237 | οὖν | οὖν | turn_theaetetus_0466 | 181a | 80670 | 80673
+  tok_theaetetus_013304 | οὖν | οὖν | turn_theaetetus_0466 | 181b | 81132 | 81135
+  tok_theaetetus_013316 | οὖν | οὖν | turn_theaetetus_0467 | 181b | 81208 | 81211
+  tok_theaetetus_013337 | οὖν | οὖν | turn_theaetetus_0468 | 181c | 81345 | 81348
+  tok_theaetetus_013409 | τοίνυν | τοίνυν | turn_theaetetus_0470 | 181c | 81747 | 81753
+  tok_theaetetus_013448 | οὖν | οὖν | turn_theaetetus_0471 | 181d | 81985 | 81988
+  tok_theaetetus_013451 | δή | δὴ | turn_theaetetus_0472 | 181d | 81998 | 82000
+  tok_theaetetus_013466 | τοίνυν | τοίνυν | turn_theaetetus_0474 | 181d | 82084 | 82090
+  tok_theaetetus_013551 | δή | δὴ | turn_theaetetus_0478 | 182a | 82605 | 82607
+  tok_theaetetus_013560 | δή | δή | turn_theaetetus_0480 | 182a | 82660 | 82662
+  tok_theaetetus_013607 | οὖν | οὖν | turn_theaetetus_0480 | 182a | 82957 | 82960
+  tok_theaetetus_013622 | οὖν | οὖν | turn_theaetetus_0480 | 182b | 83064 | 83067
+  tok_theaetetus_013625 | γάρ | γὰρ | turn_theaetetus_0480 | 182b | 83078 | 83081
+  tok_theaetetus_013640 | γάρ | γάρ | turn_theaetetus_0480 | 182b | 83174 | 83177
+  tok_theaetetus_013688 | τοίνυν | τοίνυν | turn_theaetetus_0482 | 182c | 83453 | 83459
+  tok_theaetetus_013713 | γάρ | γάρ | turn_theaetetus_0482 | 182c | 83609 | 83612
+  tok_theaetetus_013732 | δή | δὴ | turn_theaetetus_0485 | 182c | 83723 | 83725
+  tok_theaetetus_013738 | τοίνυν | τοίνυν | turn_theaetetus_0486 | 182c | 83755 | 83761
+  tok_theaetetus_013817 | δή | δὴ | turn_theaetetus_0489 | 182d | 84217 | 84219
+  tok_theaetetus_013870 | γάρ | γὰρ | turn_theaetetus_0493 | 182e | 84512 | 84515
+  tok_theaetetus_013871 | οὖν | οὖν | turn_theaetetus_0493 | 182e | 84516 | 84519
+  tok_theaetetus_013874 | μήν | μὴν | turn_theaetetus_0494 | 182e | 84529 | 84532
+  tok_theaetetus_013917 | δή | δὴ | turn_theaetetus_0498 | 183a | 84819 | 84821
+  tok_theaetetus_013981 | γάρ | γὰρ | turn_theaetetus_0500 | 183b | 85211 | 85214
+  tok_theaetetus_013992 | γάρ | γὰρ | turn_theaetetus_0500 | 183b | 85293 | 85296
+  tok_theaetetus_014086 | γάρ | γὰρ | turn_theaetetus_0503 | 183c | 85911 | 85914
+  tok_theaetetus_014165 | οὖν | οὖν | turn_theaetetus_0507 | 183d | 86448 | 86451
+  tok_theaetetus_014184 | δή | δὴ | turn_theaetetus_0509 | 183e | 86557 | 86559
+  tok_theaetetus_014185 | οὖν | οὖν | turn_theaetetus_0509 | 183e | 86560 | 86563
+  tok_theaetetus_014225 | γάρ | γὰρ | turn_theaetetus_0510 | 183e | 86826 | 86829
+  tok_theaetetus_014226 | δή | δὴ | turn_theaetetus_0510 | 183e | 86830 | 86832
+  tok_theaetetus_014242 | οὖν | οὖν | turn_theaetetus_0510 | 184a | 86932 | 86935
+  tok_theaetetus_014325 | τοίνυν | τοίνυν | turn_theaetetus_0512 | 184b | 87454 | 87460
+  tok_theaetetus_014334 | γάρ | γὰρ | turn_theaetetus_0512 | 184b | 87521 | 87524
+  tok_theaetetus_014335 | δή | δὴ | turn_theaetetus_0512 | 184b | 87525 | 87527
+  tok_theaetetus_014339 | γάρ | γάρ | turn_theaetetus_0512 | 184b | 87550 | 87553
+  tok_theaetetus_014344 | οὖν | οὖν | turn_theaetetus_0514 | 184b | 87573 | 87576
+  tok_theaetetus_014414 | γάρ | γάρ | turn_theaetetus_0516 | 184c | 87991 | 87994
+  tok_theaetetus_014449 | γάρ | γάρ | turn_theaetetus_0518 | 184d | 88202 | 88205
+  tok_theaetetus_014601 | γάρ | γὰρ | turn_theaetetus_0523 | 185a | 89088 | 89091
+  tok_theaetetus_014629 | γάρ | γὰρ | turn_theaetetus_0525 | 185a | 89237 | 89240
+  tok_theaetetus_014630 | οὖν | οὖν | turn_theaetetus_0525 | 185a | 89241 | 89244
+  tok_theaetetus_014633 | δή | δὴ | turn_theaetetus_0526 | 185a | 89255 | 89257
+  tok_theaetetus_014664 | μήν | μήν | turn_theaetetus_0529 | 185b | 89441 | 89444
+  tok_theaetetus_014691 | δή | δὴ | turn_theaetetus_0534 | 185b | 89601 | 89603
+  tok_theaetetus_014699 | γάρ | γὰρ | turn_theaetetus_0534 | 185b | 89645 | 89648
+  tok_theaetetus_014721 | γάρ | γὰρ | turn_theaetetus_0534 | 185b | 89760 | 89763
+  tok_theaetetus_014763 | δή | δὴ | turn_theaetetus_0536 | 185c | 89990 | 89992
+  tok_theaetetus_014908 | γάρ | γὰρ | turn_theaetetus_0540 | 185e | 90843 | 90846
+  tok_theaetetus_014919 | γάρ | γὰρ | turn_theaetetus_0540 | 185e | 90902 | 90905
+  tok_theaetetus_014956 | γάρ | γὰρ | turn_theaetetus_0540 | 185e | 91098 | 91101
+  tok_theaetetus_014970 | μήν | μὴν | turn_theaetetus_0541 | 186a | 91174 | 91177
+  tok_theaetetus_014975 | οὖν | οὖν | turn_theaetetus_0542 | 186a | 91203 | 91206
+  tok_theaetetus_014980 | γάρ | γὰρ | turn_theaetetus_0542 | 186a | 91231 | 91234
+  tok_theaetetus_015046 | δή | δή | turn_theaetetus_0548 | 186b | 91602 | 91604
+  tok_theaetetus_015099 | οὖν | οὖν | turn_theaetetus_0551 | 186b | 91913 | 91916
+  tok_theaetetus_015149 | οὖν | οὖν | turn_theaetetus_0553 | 186c | 92233 | 92236
+  tok_theaetetus_015153 | οὖν | οὖν | turn_theaetetus_0554 | 186c | 92250 | 92253
+  tok_theaetetus_015193 | γάρ | γὰρ | turn_theaetetus_0558 | 186d | 92490 | 92493
+  tok_theaetetus_015209 | οὖν | οὖν | turn_theaetetus_0560 | 186d | 92587 | 92590
+  tok_theaetetus_015221 | δή | δὴ | turn_theaetetus_0561 | 186d | 92665 | 92667
+  tok_theaetetus_015226 | οὖν | οὖν | turn_theaetetus_0562 | 186d | 92687 | 92690
+  tok_theaetetus_015227 | δή | δὴ | turn_theaetetus_0562 | 186d | 92691 | 92693
+  tok_theaetetus_015241 | γάρ | γὰρ | turn_theaetetus_0563 | 186e | 92804 | 92807
+  tok_theaetetus_015260 | γάρ | γὰρ | turn_theaetetus_0566 | 186e | 92918 | 92921
+  tok_theaetetus_015264 | γάρ | γὰρ | turn_theaetetus_0567 | 186e | 92939 | 92942
+  tok_theaetetus_015265 | οὖν | οὖν | turn_theaetetus_0567 | 186e | 92943 | 92946
+  tok_theaetetus_015272 | γάρ | γάρ | turn_theaetetus_0569 | 186e | 92981 | 92984
+  tok_theaetetus_015306 | δή | δὴ | turn_theaetetus_0572 | 187a | 93183 | 93185
+  tok_theaetetus_015355 | μήν | μὴν | turn_theaetetus_0573 | 187a | 93466 | 93469
+  tok_theaetetus_015366 | γάρ | γὰρ | turn_theaetetus_0574 | 187a | 93532 | 93535
+  tok_theaetetus_015372 | δή | δὴ | turn_theaetetus_0574 | 187a | 93558 | 93560
+  tok_theaetetus_015420 | γάρ | γὰρ | turn_theaetetus_0575 | 187b | 93861 | 93864
+  tok_theaetetus_015447 | γάρ | γὰρ | turn_theaetetus_0576 | 187b | 94022 | 94025
+  tok_theaetetus_015464 | καίτοι | καίτοι | turn_theaetetus_0576 | 187c | 94130 | 94136
+  tok_theaetetus_015473 | δή | δὴ | turn_theaetetus_0576 | 187c | 94179 | 94181
+  tok_theaetetus_015497 | γάρ | γὰρ | turn_theaetetus_0577 | 187c | 94318 | 94321
+  tok_theaetetus_015504 | οὖν | οὖν | turn_theaetetus_0578 | 187c | 94351 | 94354
+  tok_theaetetus_015514 | δή | δὴ | turn_theaetetus_0579 | 187c | 94408 | 94410
+  tok_theaetetus_015524 | δή | δὴ | turn_theaetetus_0580 | 187d | 94463 | 94465
+  tok_theaetetus_015554 | δή | δή | turn_theaetetus_0581 | 187d | 94637 | 94639
+  tok_theaetetus_015561 | δή | δὴ | turn_theaetetus_0582 | 187d | 94675 | 94677
+  tok_theaetetus_015578 | μήν | μήν | turn_theaetetus_0583 | 187d | 94777 | 94780
+  tok_theaetetus_015588 | γάρ | γὰρ | turn_theaetetus_0583 | 187d | 94836 | 94839
+  tok_theaetetus_015608 | γάρ | γὰρ | turn_theaetetus_0584 | 187e | 94960 | 94963
+  tok_theaetetus_015617 | γάρ | γάρ | turn_theaetetus_0584 | 187e | 95017 | 95020
+  tok_theaetetus_015628 | μήν | μήν | turn_theaetetus_0585 | 187e | 95071 | 95074
+  tok_theaetetus_015631 | οὖν | οὖν | turn_theaetetus_0586 | 187e | 95084 | 95087
+  tok_theaetetus_015633 | δή | δὴ | turn_theaetetus_0586 | 187e | 95092 | 95094
+  tok_theaetetus_015656 | γάρ | γὰρ | turn_theaetetus_0587 | 187e | 95225 | 95228
+  tok_theaetetus_015657 | δή | δή | turn_theaetetus_0587 | 187e | 95229 | 95231
+  tok_theaetetus_015675 | γάρ | γὰρ | turn_theaetetus_0588 | 188a | 95335 | 95338
+  tok_theaetetus_015688 | γάρ | γὰρ | turn_theaetetus_0588 | 188a | 95412 | 95415
+  tok_theaetetus_015696 | μήν | μήν | turn_theaetetus_0589 | 188a | 95456 | 95459
+  tok_theaetetus_015728 | μήν | μὴν | turn_theaetetus_0592 | 188a | 95629 | 95632
+  tok_theaetetus_015746 | οὖν | οὖν | turn_theaetetus_0594 | 188b | 95724 | 95727
+  tok_theaetetus_015816 | μήν | μήν | turn_theaetetus_0598 | 188c | 96124 | 96127
+  tok_theaetetus_015837 | γάρ | γὰρ | turn_theaetetus_0599 | 188c | 96220 | 96223
+  tok_theaetetus_015841 | οὖν | οὖν | turn_theaetetus_0600 | 188c | 96239 | 96242
+  tok_theaetetus_015847 | γάρ | γὰρ | turn_theaetetus_0600 | 188c | 96273 | 96276
+  tok_theaetetus_015871 | οὖν | οὖν | turn_theaetetus_0602 | 188c | 96422 | 96425
+  tok_theaetetus_015926 | οὖν | οὖν | turn_theaetetus_0606 | 188d | 96709 | 96712
+  tok_theaetetus_015958 | δή | δή | turn_theaetetus_0606 | 188d | 96889 | 96891
+  tok_theaetetus_015977 | οὖν | οὖν | turn_theaetetus_0608 | 188e | 97008 | 97011
+  tok_theaetetus_016001 | μήν | μὴν | turn_theaetetus_0612 | 188e | 97123 | 97126
+  tok_theaetetus_016056 | δή | δή | turn_theaetetus_0618 | 189a | 97382 | 97384
+  tok_theaetetus_016072 | δή | δὴ | turn_theaetetus_0620 | 189a | 97458 | 97460
+  tok_theaetetus_016105 | μήν | μὴν | turn_theaetetus_0626 | 189a | 97621 | 97624
+  tok_theaetetus_016170 | γάρ | γὰρ | turn_theaetetus_0633 | 189b | 97972 | 97975
+  tok_theaetetus_016171 | οὖν | οὖν | turn_theaetetus_0633 | 189b | 97976 | 97979
+  tok_theaetetus_016172 | δή | δή | turn_theaetetus_0633 | 189b | 97980 | 97982
+  tok_theaetetus_016205 | γάρ | γὰρ | turn_theaetetus_0636 | 189c | 98197 | 98200
+  tok_theaetetus_016230 | γάρ | γάρ | turn_theaetetus_0637 | 189c | 98349 | 98352
+  tok_theaetetus_016296 | οὖν | οὖν | turn_theaetetus_0640 | 189d | 98730 | 98733
+  tok_theaetetus_016337 | οὖν | οὖν | turn_theaetetus_0644 | 189e | 98965 | 98968
+  tok_theaetetus_016356 | οὖν | οὖν | turn_theaetetus_0645 | 189e | 99070 | 99073
+  tok_theaetetus_016395 | γάρ | γάρ | turn_theaetetus_0648 | 189e | 99272 | 99275
+  tok_theaetetus_016480 | μήν | μήν | turn_theaetetus_0651 | 190b | 99781 | 99784
+  tok_theaetetus_016483 | δή | δὴ | turn_theaetetus_0652 | 190b | 99803 | 99805
+  tok_theaetetus_016613 | γάρ | γὰρ | turn_theaetetus_0656 | 190d | 100588 | 100591
+  tok_theaetetus_016653 | μήν | μὴν | turn_theaetetus_0660 | 190d | 100807 | 100810
+  tok_theaetetus_016673 | γάρ | γὰρ | turn_theaetetus_0661 | 190d | 100933 | 100936
+  tok_theaetetus_016703 | γάρ | γὰρ | turn_theaetetus_0662 | 190e | 101120 | 101123
+  tok_theaetetus_016736 | δή | δή | turn_theaetetus_0665 | 190e | 101316 | 101318
+  tok_theaetetus_016747 | γάρ | γὰρ | turn_theaetetus_0666 | 190e | 101380 | 101383
+  tok_theaetetus_016796 | οὖν | οὖν | turn_theaetetus_0666 | 191a | 101691 | 101694
+  tok_theaetetus_016862 | γάρ | γὰρ | turn_theaetetus_0669 | 191b | 102096 | 102099
+  tok_theaetetus_016863 | δή | δὴ | turn_theaetetus_0669 | 191b | 102100 | 102102
+  tok_theaetetus_016884 | οὖν | οὖν | turn_theaetetus_0671 | 191b | 102217 | 102220
+  tok_theaetetus_016887 | γάρ | γὰρ | turn_theaetetus_0672 | 191b | 102229 | 102232
+  tok_theaetetus_016900 | γάρ | γὰρ | turn_theaetetus_0672 | 191c | 102315 | 102318
+  tok_theaetetus_016912 | οὖν | οὖν | turn_theaetetus_0672 | 191c | 102396 | 102399
+  tok_theaetetus_016940 | δή | δή | turn_theaetetus_0676 | 191c | 102543 | 102545
+  tok_theaetetus_016979 | τοίνυν | τοίνυν | turn_theaetetus_0678 | 191d | 102785 | 102791
+  tok_theaetetus_017049 | τοίνυν | τοίνυν | turn_theaetetus_0680 | 191e | 103225 | 103231
+  tok_theaetetus_017070 | δή | δή | turn_theaetetus_0681 | 191e | 103339 | 103341
+  tok_theaetetus_017086 | γάρ | γὰρ | turn_theaetetus_0682 | 191e | 103412 | 103415
+  tok_theaetetus_017300 | δή | δὴ | turn_theaetetus_0684 | 192c | 104629 | 104631
+  tok_theaetetus_017313 | δή | δή | turn_theaetetus_0685 | 192c | 104704 | 104706
+  tok_theaetetus_017323 | γάρ | γὰρ | turn_theaetetus_0685 | 192c | 104749 | 104752
+  tok_theaetetus_017364 | δή | δὴ | turn_theaetetus_0688 | 192d | 104977 | 104979
+  tok_theaetetus_017424 | οὖν | οὖν | turn_theaetetus_0689 | 192e | 105329 | 105332
+  tok_theaetetus_017427 | τοίνυν | τοίνυν | turn_theaetetus_0690 | 192e | 105344 | 105350
+  tok_theaetetus_017466 | δή | δὴ | turn_theaetetus_0694 | 192e | 105578 | 105580
+  tok_theaetetus_017510 | τοίνυν | τοίνυν | turn_theaetetus_0696 | 193a | 105835 | 105841
+  tok_theaetetus_017518 | γάρ | γάρ | turn_theaetetus_0697 | 193a | 105880 | 105883
+  tok_theaetetus_017521 | τοίνυν | τοίνυν | turn_theaetetus_0698 | 193a | 105898 | 105904
+  tok_theaetetus_017610 | τοίνυν | τοίνυν | turn_theaetetus_0702 | 193b | 106415 | 106421
+  tok_theaetetus_017693 | δή | δὴ | turn_theaetetus_0702 | 193d | 106956 | 106958
+  tok_theaetetus_017703 | γάρ | γάρ | turn_theaetetus_0703 | 193d | 107017 | 107020
+  tok_theaetetus_017715 | τοίνυν | τοίνυν | turn_theaetetus_0704 | 193d | 107082 | 107088
+  tok_theaetetus_017752 | γάρ | γὰρ | turn_theaetetus_0705 | 193d | 107288 | 107291
+  tok_theaetetus_017753 | οὖν | οὖν | turn_theaetetus_0705 | 193d | 107292 | 107295
+  tok_theaetetus_017756 | μήν | μὴν | turn_theaetetus_0706 | 193d | 107307 | 107310
+  tok_theaetetus_017794 | γάρ | γὰρ | turn_theaetetus_0706 | 193e | 107544 | 107547
+  tok_theaetetus_017808 | δή | δή | turn_theaetetus_0708 | 193e | 107615 | 107617
+  tok_theaetetus_017846 | δή | δὴ | turn_theaetetus_0708 | 194a | 107851 | 107853
+  tok_theaetetus_017857 | τοίνυν | τοίνυν | turn_theaetetus_0710 | 194a | 107911 | 107917
+  tok_theaetetus_017953 | τοίνυν | τοίνυν | turn_theaetetus_0712 | 194c | 108485 | 108491
+  tok_theaetetus_017962 | γάρ | γὰρ | turn_theaetetus_0712 | 194c | 108535 | 108538
+  tok_theaetetus_017976 | τοίνυν | τοίνυν | turn_theaetetus_0714 | 194c | 108615 | 108621
+  tok_theaetetus_018054 | γάρ | γὰρ | turn_theaetetus_0714 | 194d | 109108 | 109111
+  tok_theaetetus_018067 | δή | δὴ | turn_theaetetus_0714 | 194d | 109183 | 109185
+  tok_theaetetus_018072 | δή | δὴ | turn_theaetetus_0714 | 194d | 109211 | 109213
+  tok_theaetetus_018082 | οὖν | οὖν | turn_theaetetus_0715 | 194d | 109266 | 109269
+  tok_theaetetus_018085 | τοίνυν | τοίνυν | turn_theaetetus_0716 | 194e | 109287 | 109293
+  tok_theaetetus_018092 | δή | δὴ | turn_theaetetus_0716 | 194e | 109318 | 109320
+  tok_theaetetus_018124 | δή | δὴ | turn_theaetetus_0716 | 194e | 109502 | 109504
+  tok_theaetetus_018149 | γάρ | γὰρ | turn_theaetetus_0717 | 194e | 109641 | 109644
+  tok_theaetetus_018159 | γάρ | γὰρ | turn_theaetetus_0717 | 195a | 109690 | 109693
+  tok_theaetetus_018186 | οὖν | οὖν | turn_theaetetus_0717 | 195a | 109862 | 109865
+  tok_theaetetus_018193 | γάρ | γάρ | turn_theaetetus_0717 | 195a | 109908 | 109911
+  tok_theaetetus_018224 | δή | δὴ | turn_theaetetus_0717 | 195a | 110117 | 110119
+  tok_theaetetus_018249 | δή | δή | turn_theaetetus_0721 | 195b | 110270 | 110272
+  tok_theaetetus_018255 | οὖν | οὖν | turn_theaetetus_0723 | 195b | 110301 | 110304
+  tok_theaetetus_018270 | οὖν | οὖν | turn_theaetetus_0724 | 195b | 110399 | 110402
+  tok_theaetetus_018301 | γάρ | γὰρ | turn_theaetetus_0727 | 195c | 110591 | 110594
+  tok_theaetetus_018328 | δή | δὴ | turn_theaetetus_0728 | 195c | 110742 | 110744
+  tok_theaetetus_018347 | δή | δὴ | turn_theaetetus_0729 | 195c | 110862 | 110864
+  tok_theaetetus_018435 | οὖν | οὖν | turn_theaetetus_0733 | 195e | 111428 | 111431
+  tok_theaetetus_018462 | οὖν | οὖν | turn_theaetetus_0733 | 195e | 111582 | 111585
+  tok_theaetetus_018463 | δή | δή | turn_theaetetus_0733 | 195e | 111586 | 111588
+  tok_theaetetus_018497 | οὖν | οὖν | turn_theaetetus_0735 | 195e | 111776 | 111779
+  tok_theaetetus_018583 | δή | δὴ | turn_theaetetus_0736 | 196b | 112260 | 112262
+  tok_theaetetus_018597 | γάρ | γάρ | turn_theaetetus_0736 | 196b | 112341 | 112344
+  tok_theaetetus_018606 | γάρ | γὰρ | turn_theaetetus_0737 | 196b | 112406 | 112409
+  tok_theaetetus_018637 | γάρ | γὰρ | turn_theaetetus_0739 | 196b | 112572 | 112575
+  tok_theaetetus_018689 | γάρ | γὰρ | turn_theaetetus_0741 | 196c | 112885 | 112888
+  tok_theaetetus_018738 | γάρ | γὰρ | turn_theaetetus_0743 | 196d | 113166 | 113169
+  tok_theaetetus_018783 | οὖν | οὖν | turn_theaetetus_0748 | 196d | 113439 | 113442
+  tok_theaetetus_018798 | γάρ | γάρ | turn_theaetetus_0749 | 196d | 113538 | 113541
+  tok_theaetetus_018809 | γάρ | γὰρ | turn_theaetetus_0749 | 196e | 113619 | 113622
+  tok_theaetetus_018891 | οὖν | οὖν | turn_theaetetus_0751 | 197a | 114167 | 114170
+  tok_theaetetus_018902 | γάρ | γάρ | turn_theaetetus_0751 | 197a | 114241 | 114244
+  tok_theaetetus_018910 | τοίνυν | τοίνυν | turn_theaetetus_0752 | 197a | 114286 | 114292
+  tok_theaetetus_018923 | οὖν | οὖν | turn_theaetetus_0753 | 197a | 114362 | 114365
+  tok_theaetetus_018949 | τοίνυν | τοίνυν | turn_theaetetus_0757 | 197b | 114517 | 114523
+  tok_theaetetus_018958 | οὖν | οὖν | turn_theaetetus_0758 | 197b | 114582 | 114585
+  tok_theaetetus_018959 | δή | δὴ | turn_theaetetus_0758 | 197b | 114586 | 114588
+  tok_theaetetus_018970 | οὖν | οὖν | turn_theaetetus_0759 | 197b | 114646 | 114649
+  tok_theaetetus_018982 | τοίνυν | τοίνυν | turn_theaetetus_0761 | 197b | 114711 | 114717
+  tok_theaetetus_019007 | μήν | μὴν | turn_theaetetus_0761 | 197b | 114856 | 114859
+  tok_theaetetus_019014 | δή | δὴ | turn_theaetetus_0763 | 197c | 114899 | 114901
+  tok_theaetetus_019040 | γάρ | γὰρ | turn_theaetetus_0763 | 197c | 115079 | 115082
+  tok_theaetetus_019050 | δή | δὴ | turn_theaetetus_0763 | 197c | 115136 | 115138
+  tok_theaetetus_019053 | γάρ | γάρ | turn_theaetetus_0763 | 197c | 115151 | 115154
+  tok_theaetetus_019102 | δή | δή | turn_theaetetus_0767 | 197d | 115469 | 115471
+  tok_theaetetus_019150 | δή | δή | turn_theaetetus_0768 | 197e | 115763 | 115765
+  tok_theaetetus_019201 | τοίνυν | τοίνυν | turn_theaetetus_0771 | 198a | 116071 | 116077
+  tok_theaetetus_019237 | γάρ | γὰρ | turn_theaetetus_0771 | 198a | 116295 | 116298
+  tok_theaetetus_019244 | δή | δὴ | turn_theaetetus_0773 | 198a | 116336 | 116338
+  tok_theaetetus_019257 | δή | δὴ | turn_theaetetus_0775 | 198a | 116422 | 116424
+  tok_theaetetus_019288 | δή | δὴ | turn_theaetetus_0777 | 198b | 116631 | 116633
+  tok_theaetetus_019299 | οὖν | οὖν | turn_theaetetus_0778 | 198b | 116700 | 116703
+  tok_theaetetus_019303 | δή | δὴ | turn_theaetetus_0779 | 198b | 116715 | 116717
+  tok_theaetetus_019310 | γάρ | γὰρ | turn_theaetetus_0779 | 198b | 116762 | 116765
+  tok_theaetetus_019319 | γάρ | γὰρ | turn_theaetetus_0779 | 198b | 116818 | 116821
+  tok_theaetetus_019329 | μήν | μήν | turn_theaetetus_0780 | 198b | 116872 | 116875
+  tok_theaetetus_019332 | οὖν | οὖν | turn_theaetetus_0781 | 198c | 116890 | 116893
+  tok_theaetetus_019354 | γάρ | γὰρ | turn_theaetetus_0782 | 198c | 116994 | 116997
+  tok_theaetetus_019389 | γάρ | γάρ | turn_theaetetus_0785 | 198c | 117207 | 117210
+  tok_theaetetus_019470 | δή | δὴ | turn_theaetetus_0789 | 198e | 117711 | 117713
+  tok_theaetetus_019535 | οὖν | οὖν | turn_theaetetus_0793 | 199a | 118134 | 118137
+  tok_theaetetus_019594 | γάρ | γὰρ | turn_theaetetus_0794 | 199b | 118484 | 118487
+  tok_theaetetus_019642 | γάρ | γὰρ | turn_theaetetus_0795 | 199b | 118775 | 118778
+  tok_theaetetus_019643 | οὖν | οὖν | turn_theaetetus_0795 | 199b | 118779 | 118782
+  tok_theaetetus_019662 | δή | δὴ | turn_theaetetus_0796 | 199b | 118879 | 118881
+  tok_theaetetus_019679 | οὖν | οὖν | turn_theaetetus_0796 | 199c | 118989 | 118992
+  tok_theaetetus_019689 | γάρ | γὰρ | turn_theaetetus_0798 | 199c | 119045 | 119048
+  tok_theaetetus_019698 | γάρ | γὰρ | turn_theaetetus_0798 | 199c | 119099 | 119102
+  tok_theaetetus_019732 | δή | δή | turn_theaetetus_0801 | 199c | 119320 | 119322
+  tok_theaetetus_019773 | γάρ | γὰρ | turn_theaetetus_0802 | 199d | 119579 | 119582
+  tok_theaetetus_019797 | γάρ | γάρ | turn_theaetetus_0803 | 199e | 119743 | 119746
+  tok_theaetetus_019856 | γάρ | γὰρ | turn_theaetetus_0804 | 199e | 120120 | 120123
+  tok_theaetetus_019861 | δή | δὴ | turn_theaetetus_0804 | 199e | 120140 | 120142
+  tok_theaetetus_019870 | γάρ | γάρ | turn_theaetetus_0804 | 200a | 120203 | 120206
+  tok_theaetetus_019883 | γάρ | γάρ | turn_theaetetus_0807 | 200a | 120274 | 120277
+  tok_theaetetus_019897 | μήν | μήν | turn_theaetetus_0809 | 200a | 120350 | 120353
+  tok_theaetetus_019920 | γάρ | γὰρ | turn_theaetetus_0812 | 200a | 120510 | 120513
+  tok_theaetetus_020014 | δή | δὴ | turn_theaetetus_0812 | 200c | 121109 | 121111
+  tok_theaetetus_020043 | οὖν | οὖν | turn_theaetetus_0814 | 200c | 121297 | 121300
+  tok_theaetetus_020089 | οὖν | οὖν | turn_theaetetus_0816 | 200d | 121577 | 121580
+  tok_theaetetus_020097 | γάρ | γάρ | turn_theaetetus_0816 | 200d | 121619 | 121622
+  tok_theaetetus_020111 | δή | δή | turn_theaetetus_0818 | 200d | 121695 | 121697
+  tok_theaetetus_020131 | γάρ | γὰρ | turn_theaetetus_0819 | 200e | 121826 | 121829
+  tok_theaetetus_020205 | γάρ | γάρ | turn_theaetetus_0824 | 201a | 122283 | 122286
+  tok_theaetetus_020215 | δή | δή | turn_theaetetus_0825 | 201a | 122339 | 122341
+  tok_theaetetus_020226 | δή | δὴ | turn_theaetetus_0826 | 201a | 122392 | 122394
+  tok_theaetetus_020233 | γάρ | γάρ | turn_theaetetus_0826 | 201a | 122437 | 122440
+  tok_theaetetus_020294 | μήν | μήν | turn_theaetetus_0829 | 201b | 122835 | 122838
+  tok_theaetetus_020329 | οὖν | οὖν | turn_theaetetus_0831 | 201c | 123072 | 123075
+  tok_theaetetus_020411 | δή | δὴ | turn_theaetetus_0834 | 201d | 123544 | 123546
+  tok_theaetetus_020442 | δή | δὴ | turn_theaetetus_0836 | 201d | 123722 | 123724
+  tok_theaetetus_020447 | γάρ | γὰρ | turn_theaetetus_0836 | 201d | 123750 | 123753
+  tok_theaetetus_020470 | γάρ | γὰρ | turn_theaetetus_0837 | 201e | 123885 | 123888
+  tok_theaetetus_020490 | γάρ | γὰρ | turn_theaetetus_0837 | 201e | 123999 | 124002
+  tok_theaetetus_020530 | γάρ | γὰρ | turn_theaetetus_0837 | 202a | 124277 | 124280
+  tok_theaetetus_020566 | γάρ | γὰρ | turn_theaetetus_0837 | 202b | 124517 | 124520
+  tok_theaetetus_020574 | γάρ | γὰρ | turn_theaetetus_0837 | 202b | 124563 | 124566
+  tok_theaetetus_020595 | γάρ | γὰρ | turn_theaetetus_0837 | 202b | 124697 | 124700
+  tok_theaetetus_020601 | δή | δὴ | turn_theaetetus_0837 | 202b | 124736 | 124738
+  tok_theaetetus_020624 | οὖν | οὖν | turn_theaetetus_0837 | 202b | 124864 | 124867
+  tok_theaetetus_020644 | γάρ | γὰρ | turn_theaetetus_0837 | 202c | 124981 | 124984
+  tok_theaetetus_020679 | οὖν | οὖν | turn_theaetetus_0838 | 202c | 125200 | 125203
+  tok_theaetetus_020683 | οὖν | οὖν | turn_theaetetus_0839 | 202c | 125228 | 125231
+  tok_theaetetus_020697 | οὖν | οὖν | turn_theaetetus_0840 | 202c | 125311 | 125314
+  tok_theaetetus_020738 | γάρ | γὰρ | turn_theaetetus_0843 | 202d | 125550 | 125553
+  tok_theaetetus_020761 | δή | δή | turn_theaetetus_0844 | 202d | 125669 | 125671
+  tok_theaetetus_020784 | δή | δή | turn_theaetetus_0847 | 202e | 125809 | 125811
+  tok_theaetetus_020786 | γάρ | γὰρ | turn_theaetetus_0847 | 202e | 125819 | 125822
+  tok_theaetetus_020800 | δή | δή | turn_theaetetus_0848 | 202e | 125906 | 125908
+  tok_theaetetus_020827 | δή | δὴ | turn_theaetetus_0851 | 203a | 126070 | 126072
+  tok_theaetetus_020857 | οὖν | οὖν | turn_theaetetus_0853 | 203a | 126248 | 126251
+  tok_theaetetus_020894 | δή | δή | turn_theaetetus_0857 | 203b | 126475 | 126477
+  tok_theaetetus_020911 | γάρ | γὰρ | turn_theaetetus_0858 | 203b | 126566 | 126569
+  tok_theaetetus_020912 | δή | δή | turn_theaetetus_0858 | 203b | 126570 | 126572
+  tok_theaetetus_020993 | δή | δή | turn_theaetetus_0863 | 203c | 127040 | 127042
+  tok_theaetetus_021023 | δή | δὴ | turn_theaetetus_0865 | 203c | 127216 | 127218
+  tok_theaetetus_021047 | μήν | μήν | turn_theaetetus_0866 | 203d | 127358 | 127361
+  tok_theaetetus_021113 | γάρ | γὰρ | turn_theaetetus_0873 | 203e | 127773 | 127776
+  tok_theaetetus_021118 | γάρ | γὰρ | turn_theaetetus_0873 | 203e | 127806 | 127809
+  tok_theaetetus_021145 | οὖν | οὖν | turn_theaetetus_0874 | 203e | 127957 | 127960
+  tok_theaetetus_021169 | γάρ | γὰρ | turn_theaetetus_0876 | 203e | 128087 | 128090
+  tok_theaetetus_021170 | οὖν | οὖν | turn_theaetetus_0876 | 203e | 128091 | 128094
+  tok_theaetetus_021173 | δή | δὴ | turn_theaetetus_0877 | 204a | 128113 | 128115
+  tok_theaetetus_021199 | οὖν | οὖν | turn_theaetetus_0878 | 204a | 128263 | 128266
+  tok_theaetetus_021209 | δή | δή | turn_theaetetus_0880 | 204a | 128313 | 128315
+  tok_theaetetus_021244 | δή | δὴ | turn_theaetetus_0883 | 204a | 128477 | 128479
+  tok_theaetetus_021285 | δή | δή | turn_theaetetus_0886 | 204b | 128726 | 128728
+  tok_theaetetus_021303 | δή | δή | turn_theaetetus_0889 | 204b | 128810 | 128812
+  tok_theaetetus_021409 | δή | δὴ | turn_theaetetus_0901 | 204d | 129360 | 129362
+  tok_theaetetus_021422 | γάρ | γάρ | turn_theaetetus_0901 | 204d | 129430 | 129433
+  tok_theaetetus_021430 | δή | δὴ | turn_theaetetus_0903 | 204d | 129468 | 129470
+  tok_theaetetus_021436 | μήν | μὴν | turn_theaetetus_0905 | 204d | 129499 | 129502
+  tok_theaetetus_021451 | γάρ | γὰρ | turn_theaetetus_0905 | 204d | 129579 | 129582
+  tok_theaetetus_021515 | γάρ | γὰρ | turn_theaetetus_0913 | 204e | 129904 | 129907
+  tok_theaetetus_021619 | δή | δή | turn_theaetetus_0923 | 205a | 130433 | 130435
+  tok_theaetetus_021689 | γάρ | γάρ | turn_theaetetus_0928 | 205b | 130845 | 130848
+  tok_theaetetus_021706 | δή | δή | turn_theaetetus_0929 | 205c | 130959 | 130961
+  tok_theaetetus_021724 | οὖν | οὖν | turn_theaetetus_0931 | 205c | 131060 | 131063
+  tok_theaetetus_021772 | δή | δὴ | turn_theaetetus_0931 | 205c | 131359 | 131361
+  tok_theaetetus_021785 | οὖν | οὖν | turn_theaetetus_0933 | 205d | 131434 | 131437
+  tok_theaetetus_021801 | γάρ | γὰρ | turn_theaetetus_0933 | 205d | 131513 | 131516
+  tok_theaetetus_021807 | γάρ | γὰρ | turn_theaetetus_0934 | 205d | 131541 | 131544
+  tok_theaetetus_021808 | οὖν | οὖν | turn_theaetetus_0934 | 205d | 131545 | 131548
+  tok_theaetetus_021809 | δή | δὴ | turn_theaetetus_0934 | 205d | 131549 | 131551
+  tok_theaetetus_021832 | οὖν | οὖν | turn_theaetetus_0936 | 205d | 131681 | 131684
+  tok_theaetetus_021889 | γάρ | γὰρ | turn_theaetetus_0939 | 205e | 131987 | 131990
+  tok_theaetetus_021919 | γάρ | γάρ | turn_theaetetus_0942 | 205e | 132163 | 132166
+  tok_theaetetus_022005 | δή | δὴ | turn_theaetetus_0947 | 206b | 132671 | 132673
+  tok_theaetetus_022075 | οὖν | οὖν | turn_theaetetus_0950 | 206b | 133110 | 133113
+  tok_theaetetus_022078 | δή | δὴ | turn_theaetetus_0951 | 206c | 133131 | 133133
+  tok_theaetetus_022098 | δή | δή | turn_theaetetus_0951 | 206c | 133247 | 133249
+  tok_theaetetus_022118 | δή | δή | turn_theaetetus_0953 | 206c | 133377 | 133379
+  tok_theaetetus_022127 | γάρ | γὰρ | turn_theaetetus_0953 | 206c | 133430 | 133433
+  tok_theaetetus_022135 | δή | δή | turn_theaetetus_0954 | 206c | 133470 | 133472
+  tok_theaetetus_022234 | τοίνυν | τοίνυν | turn_theaetetus_0959 | 206e | 134046 | 134052
+  tok_theaetetus_022247 | γάρ | γὰρ | turn_theaetetus_0959 | 206e | 134144 | 134147
+  tok_theaetetus_022316 | οὖν | οὖν | turn_theaetetus_0962 | 207a | 134564 | 134567
+  tok_theaetetus_022387 | γάρ | γάρ | turn_theaetetus_0964 | 207b | 135001 | 135004
+  tok_theaetetus_022390 | τοίνυν | τοίνυν | turn_theaetetus_0965 | 207b | 135015 | 135021
+  tok_theaetetus_022566 | τοίνυν | τοίνυν | turn_theaetetus_0974 | 207e | 136076 | 136082
+  tok_theaetetus_022578 | οὖν | οὖν | turn_theaetetus_0975 | 207e | 136150 | 136153
+  tok_theaetetus_022631 | οὖν | οὖν | turn_theaetetus_0977 | 208a | 136494 | 136497
+  tok_theaetetus_022651 | οὖν | οὖν | turn_theaetetus_0979 | 208a | 136603 | 136606
+  tok_theaetetus_022668 | δή | δή | turn_theaetetus_0980 | 208a | 136717 | 136719
+  tok_theaetetus_022689 | γάρ | γὰρ | turn_theaetetus_0983 | 208b | 136837 | 136840
+  tok_theaetetus_022697 | δή | δὴ | turn_theaetetus_0983 | 208b | 136881 | 136883
+  tok_theaetetus_022720 | δή | δή | turn_theaetetus_0987 | 208b | 137021 | 137023
+  tok_theaetetus_022735 | γάρ | γὰρ | turn_theaetetus_0988 | 208c | 137134 | 137137
+  tok_theaetetus_022766 | γάρ | γὰρ | turn_theaetetus_0989 | 208c | 137315 | 137318
+  tok_theaetetus_022771 | γάρ | γὰρ | turn_theaetetus_0989 | 208c | 137337 | 137340
+  tok_theaetetus_022790 | δή | δὴ | turn_theaetetus_0989 | 208c | 137432 | 137434
+  tok_theaetetus_022844 | οὖν | οὖν | turn_theaetetus_0993 | 208d | 137745 | 137748
+  tok_theaetetus_022847 | δή | δὴ | turn_theaetetus_0994 | 208d | 137759 | 137761
+  tok_theaetetus_022927 | μήν | μὴν | turn_theaetetus_0997 | 208e | 138210 | 138213
+  tok_theaetetus_022977 | δή | δή | turn_theaetetus_1000 | 209a | 138528 | 138530
+  tok_theaetetus_023000 | οὖν | οὖν | turn_theaetetus_1004 | 209a | 138645 | 138648
+  tok_theaetetus_023035 | δή | δὴ | turn_theaetetus_1008 | 209b | 138849 | 138851
+  tok_theaetetus_023050 | γάρ | γάρ | turn_theaetetus_1008 | 209b | 138927 | 138930
+  tok_theaetetus_023071 | δή | δὴ | turn_theaetetus_1008 | 209b | 139039 | 139041
+  tok_theaetetus_023077 | οὖν | οὖν | turn_theaetetus_1008 | 209b | 139069 | 139072
+  tok_theaetetus_023097 | γάρ | γάρ | turn_theaetetus_1009 | 209b | 139188 | 139191
+  tok_theaetetus_023101 | δή | δὴ | turn_theaetetus_1010 | 209b | 139206 | 139208
+  tok_theaetetus_023198 | οὖν | οὖν | turn_theaetetus_1016 | 209d | 139765 | 139768
+  tok_theaetetus_023210 | γάρ | γὰρ | turn_theaetetus_1016 | 209d | 139821 | 139824
+  tok_theaetetus_023253 | δή | δὴ | turn_theaetetus_1018 | 209d | 140066 | 140068
+  tok_theaetetus_023270 | γάρ | γάρ | turn_theaetetus_1018 | 209e | 140185 | 140188
+  tok_theaetetus_023286 | δή | δὴ | turn_theaetetus_1019 | 209e | 140296 | 140298
+  tok_theaetetus_023317 | γάρ | γὰρ | turn_theaetetus_1020 | 209e | 140468 | 140471
+  tok_theaetetus_023324 | γάρ | γάρ | turn_theaetetus_1020 | 210a | 140516 | 140519
+  tok_theaetetus_023343 | γάρ | γὰρ | turn_theaetetus_1022 | 210a | 140645 | 140648
+  tok_theaetetus_023392 | οὖν | οὖν | turn_theaetetus_1026 | 210b | 140967 | 140970
+  tok_theaetetus_023438 | οὖν | οὖν | turn_theaetetus_1028 | 210b | 141224 | 141227
+  tok_theaetetus_023441 | τοίνυν | τοίνυν | turn_theaetetus_1029 | 210b | 141237 | 141243
+  tok_theaetetus_023477 | γάρ | γὰρ | turn_theaetetus_1029 | 210c | 141476 | 141479
+  tok_theaetetus_023529 | οὖν | οὖν | turn_theaetetus_1029 | 210d | 141748 | 141751

@@ -1,0 +1,2172 @@
+schema_version: 1
+dialogue: gorgias
+source_path: raw/plato/greek/gorgias.txt
+source_sha256: 5c56dd528433e113ac4ed3139227e6a18c81b39fe717b72c79ec402cebf6460a
+token_index_path: derived/plato/tokens/gorgias.toon
+token_index_sha256: 54e2a223d7d19db59b223fe01ab9be320096105e72b8a442c3fdab9d8d65a6fb
+turn_index_path: derived/plato/turns/gorgias.toon
+turn_index_sha256: fcc226d7b29d0d505a1d9b05c037c18cae9fdc24e33d3f3c1ce159097226e4fa
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 27383
+excluded_siglum_token_count: 1107
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  gorgias | 26276 | 27 | 14 | 9 | 275 | 168 | 139
+speakers[5]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  ΓΟΡ. | 1181 | 1 | 1 | 1 | 20 | 6 | 6
+  ΚΑΛ. | 2981 | 0 | 2 | 2 | 37 | 13 | 20
+  ΠΩΛ. | 1335 | 2 | 0 | 0 | 18 | 13 | 12
+  ΣΩ. | 20589 | 24 | 11 | 6 | 198 | 135 | 100
+  ΧΑΙ. | 190 | 0 | 0 | 0 | 2 | 1 | 1
+turns[1107]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_gorgias_0001 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0002 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0003 | 14 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0004 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0005 | 24 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_gorgias_0006 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0007 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0008 | 15 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0009 | 40 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0010 | 30 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0011 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0012 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0013 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0014 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0015 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0016 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0017 | 20 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0018 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0019 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0020 | 20 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_gorgias_0021 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0022 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0023 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0024 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0025 | 22 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0026 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0027 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0028 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0029 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0030 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0031 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0032 | 49 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0033 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0034 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0035 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0036 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0037 | 29 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0038 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0039 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0040 | 7 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0041 | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0042 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0043 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0044 | 16 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0045 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0046 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0047 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0048 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0049 | 41 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0050 | 38 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0051 | 17 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0052 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0053 | 32 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_gorgias_0054 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0055 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0056 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0057 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0058 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0059 | 17 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0060 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0061 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0062 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0063 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0064 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0065 | 6 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0066 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0067 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0068 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0069 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0070 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0071 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0072 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0073 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0074 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0075 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0076 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0077 | 27 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0078 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0079 | 22 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_gorgias_0080 | 52 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0081 | 18 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_0082 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0083 | 48 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0084 | 7 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0085 | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0086 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0087 | 54 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0088 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0089 | 221 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_gorgias_0090 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0091 | 23 | 0 | 0 | 0 | 2 | 0 | 2
+  turn_gorgias_0092 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0093 | 20 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0094 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0095 | 48 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0096 | 7 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0097 | 283 | 1 | 0 | 0 | 3 | 6 | 2
+  turn_gorgias_0098 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0099 | 5 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_gorgias_0100 | 63 | 0 | 0 | 1 | 0 | 0 | 0
+  turn_gorgias_0101 | 53 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0102 | 14 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0103 | 35 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_gorgias_0104 | 5 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_gorgias_0105 | 129 | 1 | 0 | 0 | 1 | 0 | 1
+  turn_gorgias_0106 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0107 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0108 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0109 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0110 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0111 | 33 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0112 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0113 | 23 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0114 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0115 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0116 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0117 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0118 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0119 | 46 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0120 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0121 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0122 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0123 | 41 | 0 | 1 | 0 | 0 | 0 | 1
+  turn_gorgias_0124 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0125 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0126 | 29 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_gorgias_0127 | 67 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0128 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0129 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0130 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0131 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0132 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0133 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0134 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0135 | 25 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_gorgias_0136 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0137 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0138 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0139 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0140 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0141 | 11 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0142 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0143 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0144 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0145 | 31 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0146 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0147 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0148 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0149 | 35 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0150 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0151 | 196 | 0 | 0 | 0 | 4 | 2 | 1
+  turn_gorgias_0152 | 49 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_gorgias_0153 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0154 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0155 | 23 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0156 | 284 | 0 | 0 | 0 | 4 | 1 | 0
+  turn_gorgias_0157 | 134 | 0 | 0 | 0 | 2 | 1 | 1
+  turn_gorgias_0158 | 143 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_gorgias_0159 | 108 | 0 | 0 | 0 | 2 | 2 | 0
+  turn_gorgias_0160 | 55 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_0161 | 39 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0162 | 31 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0163 | 12 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0164 | 27 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0165 | 33 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_gorgias_0166 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0167 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0168 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0169 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0170 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0171 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0172 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0173 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0174 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0175 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0176 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0177 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0178 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0179 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0180 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0181 | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0182 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0183 | 188 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0184 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0185 | 26 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_gorgias_0186 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0187 | 9 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0188 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0189 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0190 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0191 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0192 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0193 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0194 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0195 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0196 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0197 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0198 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0199 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0200 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0201 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0202 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0203 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0204 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0205 | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0206 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0207 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0208 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0209 | 29 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0210 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0211 | 105 | 0 | 1 | 0 | 0 | 1 | 1
+  turn_gorgias_0212 | 92 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0213 | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0214 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0215 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0216 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0217 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0218 | 72 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0219 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0220 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0221 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0222 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0223 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0224 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0225 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0226 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0227 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0228 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0229 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0230 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0231 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0232 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0233 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0234 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0235 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0236 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0237 | 9 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0238 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0239 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0240 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0241 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0242 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0243 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0244 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0245 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0246 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0247 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0248 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0249 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0250 | 58 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_gorgias_0251 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0252 | 152 | 0 | 1 | 0 | 2 | 1 | 0
+  turn_gorgias_0253 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0254 | 16 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_0255 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0256 | 17 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0257 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0258 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0259 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0260 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0261 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0262 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0263 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0264 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0265 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0266 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0267 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0268 | 202 | 0 | 0 | 0 | 0 | 1 | 3
+  turn_gorgias_0269 | 315 | 0 | 0 | 0 | 5 | 6 | 0
+  turn_gorgias_0270 | 33 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_0271 | 9 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0272 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0273 | 14 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0274 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0275 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0276 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0277 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0278 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0279 | 4 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0280 | 11 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_gorgias_0281 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0282 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0283 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0284 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0285 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0286 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0287 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0288 | 51 | 0 | 1 | 0 | 2 | 0 | 0
+  turn_gorgias_0289 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0290 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0291 | 7 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0292 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0293 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_0294 | 23 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0295 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0296 | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0297 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0298 | 23 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0299 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0300 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0301 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0302 | 4 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0303 | 5 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0304 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0305 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0306 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0307 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0308 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0309 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0310 | 47 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0311 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0312 | 39 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_gorgias_0313 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0314 | 23 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0315 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0316 | 21 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0317 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0318 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0319 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0320 | 52 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0321 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0322 | 15 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0323 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0324 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0325 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0326 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0327 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0328 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0329 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0330 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0331 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0332 | 59 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_gorgias_0333 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0334 | 36 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0335 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0336 | 13 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0337 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0338 | 22 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0339 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0340 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0341 | 35 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0342 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0343 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0344 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0345 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0346 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0347 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0348 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0349 | 15 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0350 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0351 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0352 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0353 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0354 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0355 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0356 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0357 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0358 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0359 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0360 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0361 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0362 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0363 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0364 | 143 | 0 | 0 | 0 | 2 | 1 | 1
+  turn_gorgias_0365 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0366 | 9 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0367 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0368 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0369 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0370 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0371 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0372 | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0373 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0374 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0375 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0376 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0377 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0378 | 25 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_gorgias_0379 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0380 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0381 | 30 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0382 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0383 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0384 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0385 | 7 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0386 | 10 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0387 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0388 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0389 | 13 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0390 | 12 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0391 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0392 | 24 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0393 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0394 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0395 | 194 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0396 | 66 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0397 | 10 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0398 | 323 | 0 | 0 | 0 | 6 | 2 | 0
+  turn_gorgias_0399 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0400 | 21 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0401 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0402 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0403 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0404 | 41 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0405 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0406 | 38 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_0407 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0408 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0409 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0410 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0411 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0412 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0413 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0414 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0415 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0416 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0417 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0418 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0419 | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0420 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0421 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0422 | 50 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_gorgias_0423 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0424 | 127 | 0 | 0 | 0 | 2 | 2 | 1
+  turn_gorgias_0425 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0426 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0427 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0428 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0429 | 10 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_0430 | 24 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0431 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0432 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0433 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0434 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0435 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0436 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0437 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0438 | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0439 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0440 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0441 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0442 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0443 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0444 | 25 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0445 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0446 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0447 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0448 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0449 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0450 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0451 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0452 | 20 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0453 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0454 | 21 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0455 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0456 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0457 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0458 | 19 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0459 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0460 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0461 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0462 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0463 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0464 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0465 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0466 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0467 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0468 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0469 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0470 | 23 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0471 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0472 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0473 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0474 | 36 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_0475 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0476 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0477 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0478 | 25 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0479 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0480 | 93 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0481 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0482 | 17 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0483 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0484 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0485 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0486 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0487 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0488 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0489 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0490 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0491 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0492 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0493 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0494 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0495 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0496 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0497 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0498 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0499 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0500 | 19 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0501 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0502 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0503 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0504 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0505 | 7 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0506 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0507 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0508 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0509 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0510 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0511 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0512 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0513 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0514 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0515 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0516 | 9 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0517 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0518 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0519 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0520 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0521 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0522 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0523 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0524 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0525 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0526 | 19 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0527 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0528 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0529 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0530 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0531 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0532 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0533 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0534 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0535 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0536 | 15 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0537 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0538 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0539 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0540 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0541 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0542 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0543 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0544 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0545 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0546 | 17 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0547 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0548 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0549 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0550 | 14 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0551 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0552 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0553 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0554 | 7 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0555 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0556 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0557 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0558 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0559 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0560 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0561 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0562 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0563 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0564 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0565 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0566 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0567 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0568 | 7 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0569 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0570 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0571 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0572 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0573 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0574 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0575 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0576 | 5 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0577 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0578 | 12 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0579 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0580 | 14 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0581 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0582 | 14 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0583 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0584 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0585 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0586 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0587 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0588 | 12 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0589 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0590 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0591 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0592 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0593 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0594 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0595 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0596 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0597 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0598 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0599 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0600 | 47 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0601 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0602 | 99 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0603 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0604 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0605 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0606 | 11 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0607 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0608 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0609 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0610 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0611 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0612 | 64 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0613 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0614 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0615 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0616 | 36 | 0 | 0 | 0 | 2 | 1 | 2
+  turn_gorgias_0617 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0618 | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0619 | 6 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_gorgias_0620 | 157 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0621 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0622 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0623 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0624 | 151 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_gorgias_0625 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0626 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0627 | 49 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0628 | 134 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0629 | 203 | 0 | 1 | 1 | 3 | 1 | 0
+  turn_gorgias_0630 | 157 | 0 | 0 | 0 | 3 | 0 | 1
+  turn_gorgias_0631 | 331 | 0 | 0 | 0 | 3 | 2 | 2
+  turn_gorgias_0632 | 291 | 0 | 0 | 0 | 4 | 2 | 1
+  turn_gorgias_0633 | 302 | 0 | 0 | 0 | 4 | 2 | 1
+  turn_gorgias_0634 | 251 | 0 | 0 | 2 | 3 | 0 | 0
+  turn_gorgias_0635 | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0636 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0637 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0638 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0639 | 343 | 1 | 0 | 0 | 6 | 2 | 1
+  turn_gorgias_0640 | 159 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_gorgias_0641 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0642 | 108 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0643 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0644 | 23 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0645 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0646 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0647 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0648 | 13 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0649 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0650 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0651 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0652 | 73 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0653 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0654 | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0655 | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0656 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0657 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0658 | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0659 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0660 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0661 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0662 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0663 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0664 | 43 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0665 | 25 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0666 | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0667 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0668 | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0669 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0670 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0671 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0672 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0673 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0674 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0675 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0676 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0677 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0678 | 36 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0679 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0680 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0681 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0682 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0683 | 51 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0684 | 83 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0685 | 33 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0686 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0687 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0688 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0689 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0690 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0691 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0692 | 12 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0693 | 251 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0694 | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_0695 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0696 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0697 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0698 | 257 | 1 | 0 | 0 | 2 | 0 | 3
+  turn_gorgias_0699 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0700 | 70 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_gorgias_0701 | 81 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0702 | 43 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0703 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0704 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0705 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0706 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0707 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0708 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0709 | 38 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0710 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0711 | 26 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0712 | 8 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_gorgias_0713 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0714 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0715 | 52 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0716 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0717 | 52 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0718 | 16 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0719 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0720 | 5 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0721 | 42 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_gorgias_0722 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0723 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0724 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0725 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0726 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0727 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0728 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0729 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0730 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0731 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0732 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0733 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0734 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0735 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0736 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0737 | 25 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0738 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0739 | 26 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0740 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0741 | 34 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_0742 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0743 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0744 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0745 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0746 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0747 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0748 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0749 | 8 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_gorgias_0750 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0751 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0752 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0753 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0754 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0755 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0756 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0757 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0758 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0759 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0760 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0761 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0762 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0763 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0764 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0765 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0766 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0767 | 13 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0768 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0769 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0770 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0771 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0772 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0773 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0774 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0775 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0776 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0777 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0778 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0779 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0780 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0781 | 37 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_0782 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0783 | 11 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0784 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0785 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0786 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0787 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0788 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0789 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0790 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0791 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0792 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0793 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0794 | 13 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0795 | 30 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0796 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0797 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0798 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0799 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0800 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0801 | 17 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0802 | 4 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_gorgias_0803 | 68 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_gorgias_0804 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0805 | 23 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0806 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0807 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0808 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0809 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0810 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0811 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0812 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0813 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0814 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0815 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0816 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0817 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0818 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0819 | 15 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0820 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0821 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0822 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0823 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0824 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0825 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0826 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0827 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0828 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0829 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0830 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0831 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0832 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0833 | 15 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0834 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0835 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0836 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0837 | 26 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0838 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0839 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0840 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0841 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0842 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0843 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0844 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0845 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0846 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0847 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0848 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0849 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0850 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0851 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0852 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0853 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0854 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0855 | 36 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_gorgias_0856 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0857 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0858 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0859 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0860 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0861 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0862 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0863 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0864 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0865 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0866 | 40 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0867 | 81 | 0 | 0 | 1 | 1 | 0 | 1
+  turn_gorgias_0868 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0869 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0870 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0871 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0872 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0873 | 44 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0874 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0875 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0876 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0877 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0878 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0879 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0880 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0881 | 47 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0882 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0883 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0884 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0885 | 19 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0886 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0887 | 198 | 0 | 0 | 0 | 2 | 2 | 2
+  turn_gorgias_0888 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0889 | 54 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0890 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0891 | 229 | 0 | 0 | 0 | 1 | 1 | 3
+  turn_gorgias_0892 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0893 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0894 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0895 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0896 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0897 | 52 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0898 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0899 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0900 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0901 | 41 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0902 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0903 | 44 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_gorgias_0904 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0905 | 73 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0906 | 17 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0907 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0908 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0909 | 24 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0910 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0911 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0912 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0913 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0914 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0915 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0916 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0917 | 30 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0918 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0919 | 86 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0920 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0921 | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0922 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0923 | 32 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0924 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0925 | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0926 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0927 | 63 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_gorgias_0928 | 78 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0929 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0930 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0931 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0932 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0933 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0934 | 8 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0935 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0936 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0937 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0938 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0939 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0940 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0941 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0942 | 53 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0943 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0944 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0945 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0946 | 74 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0947 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0948 | 40 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0949 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0950 | 18 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_gorgias_0951 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0952 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0953 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0954 | 42 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0955 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0956 | 7 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0957 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0958 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0959 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0960 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0961 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0962 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0963 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0964 | 9 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_gorgias_0965 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0966 | 28 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0967 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0968 | 12 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_0969 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0970 | 51 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0971 | 67 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_0972 | 33 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0973 | 64 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_gorgias_0974 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0975 | 169 | 2 | 0 | 0 | 2 | 0 | 2
+  turn_gorgias_0976 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0977 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0978 | 315 | 2 | 0 | 0 | 4 | 1 | 3
+  turn_gorgias_0979 | 350 | 0 | 0 | 0 | 1 | 0 | 4
+  turn_gorgias_0980 | 199 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_0981 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0982 | 66 | 0 | 0 | 0 | 0 | 2 | 0
+  turn_gorgias_0983 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0984 | 70 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_gorgias_0985 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0986 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0987 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0988 | 40 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_0989 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0990 | 33 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0991 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0992 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0993 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0994 | 24 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_0995 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0996 | 37 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_0997 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0998 | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_0999 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1000 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1001 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1002 | 46 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_1003 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1004 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1005 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1006 | 40 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1007 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_1008 | 44 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1009 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1010 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1011 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1012 | 170 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_1013 | 324 | 0 | 0 | 2 | 4 | 1 | 0
+  turn_gorgias_1014 | 178 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_gorgias_1015 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1016 | 62 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_1017 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1018 | 17 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_1019 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1020 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1021 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1022 | 56 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_gorgias_1023 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1024 | 52 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_1025 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1026 | 106 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_1027 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1028 | 138 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_1029 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1030 | 92 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1031 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1032 | 94 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_gorgias_1033 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1034 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1035 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1036 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1037 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1038 | 16 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_1039 | 3 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_gorgias_1040 | 38 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_1041 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1042 | 53 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1043 | 7 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_1044 | 50 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1045 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1046 | 16 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_gorgias_1047 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_1048 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1049 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1050 | 22 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_1051 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1052 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1053 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1054 | 17 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1055 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1056 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1057 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_gorgias_1058 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1059 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1060 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1061 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1062 | 106 | 0 | 0 | 1 | 0 | 0 | 0
+  turn_gorgias_1063 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1064 | 61 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_1065 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1066 | 271 | 0 | 0 | 0 | 3 | 1 | 1
+  turn_gorgias_1067 | 260 | 0 | 0 | 0 | 0 | 2 | 2
+  turn_gorgias_1068 | 251 | 0 | 0 | 1 | 6 | 1 | 0
+  turn_gorgias_1069 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1070 | 40 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1071 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1072 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1073 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1074 | 116 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1075 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1076 | 65 | 0 | 0 | 0 | 3 | 0 | 1
+  turn_gorgias_1077 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1078 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1079 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1080 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1081 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1082 | 34 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_1083 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1084 | 42 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_1085 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1086 | 51 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_1087 | 5 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_gorgias_1088 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1089 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1090 | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1091 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1092 | 63 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_1093 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1094 | 77 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_gorgias_1095 | 95 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_gorgias_1096 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1097 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1098 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1099 | 86 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_gorgias_1100 | 17 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_gorgias_1101 | 136 | 0 | 0 | 0 | 3 | 1 | 0
+  turn_gorgias_1102 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_gorgias_1103 | 317 | 0 | 0 | 0 | 7 | 8 | 4
+  turn_gorgias_1104 | 361 | 0 | 0 | 0 | 0 | 3 | 1
+  turn_gorgias_1105 | 296 | 0 | 0 | 0 | 4 | 0 | 0
+  turn_gorgias_1106 | 312 | 1 | 0 | 0 | 2 | 3 | 1
+  turn_gorgias_1107 | 350 | 0 | 0 | 0 | 3 | 4 | 0
+markers[404]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  447a | 44 | 0 | 0 | 0 | 1 | 0 | 0
+  447b | 61 | 0 | 0 | 0 | 3 | 0 | 0
+  447c | 71 | 0 | 0 | 0 | 2 | 0 | 0
+  447d | 41 | 0 | 0 | 0 | 0 | 0 | 0
+  448a | 63 | 0 | 0 | 0 | 3 | 0 | 0
+  448b | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  448c | 65 | 0 | 0 | 0 | 1 | 0 | 0
+  448d | 62 | 0 | 0 | 0 | 2 | 0 | 0
+  448e | 60 | 0 | 0 | 0 | 1 | 0 | 1
+  449a | 61 | 0 | 0 | 0 | 0 | 0 | 2
+  449b | 75 | 1 | 0 | 0 | 0 | 1 | 1
+  449c | 53 | 1 | 0 | 0 | 2 | 0 | 1
+  449d | 77 | 0 | 0 | 0 | 2 | 0 | 1
+  449e | 46 | 1 | 0 | 0 | 1 | 1 | 0
+  450a | 57 | 1 | 0 | 0 | 0 | 0 | 0
+  450b | 77 | 0 | 0 | 0 | 0 | 1 | 1
+  450c | 71 | 0 | 0 | 0 | 1 | 1 | 1
+  450d | 77 | 0 | 0 | 0 | 0 | 1 | 0
+  450e | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  451a | 66 | 0 | 0 | 0 | 2 | 0 | 0
+  451b | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  451c | 94 | 0 | 0 | 0 | 1 | 0 | 0
+  451d | 61 | 0 | 0 | 0 | 2 | 0 | 3
+  451e | 48 | 0 | 0 | 0 | 2 | 0 | 0
+  452a | 89 | 0 | 0 | 0 | 2 | 2 | 0
+  452b | 79 | 0 | 0 | 0 | 0 | 0 | 1
+  452c | 81 | 1 | 0 | 0 | 1 | 3 | 1
+  452d | 65 | 0 | 0 | 0 | 0 | 2 | 1
+  452e | 71 | 0 | 0 | 1 | 0 | 0 | 0
+  453a | 69 | 0 | 0 | 0 | 2 | 0 | 1
+  453b | 83 | 1 | 0 | 0 | 0 | 1 | 1
+  453c | 78 | 0 | 0 | 0 | 1 | 0 | 1
+  453d | 69 | 0 | 0 | 0 | 1 | 0 | 1
+  453e | 56 | 0 | 0 | 0 | 0 | 0 | 1
+  454a | 75 | 0 | 1 | 0 | 0 | 0 | 1
+  454b | 73 | 0 | 1 | 0 | 0 | 0 | 1
+  454c | 57 | 0 | 0 | 0 | 1 | 0 | 1
+  454d | 66 | 0 | 0 | 0 | 2 | 1 | 0
+  454e | 77 | 1 | 0 | 0 | 0 | 2 | 0
+  455a | 59 | 0 | 0 | 0 | 1 | 0 | 1
+  455b | 73 | 0 | 0 | 0 | 2 | 0 | 0
+  455c | 73 | 0 | 0 | 0 | 2 | 0 | 0
+  455d | 65 | 0 | 0 | 0 | 2 | 2 | 0
+  455e | 44 | 0 | 0 | 0 | 0 | 0 | 0
+  456a | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  456b | 75 | 0 | 0 | 0 | 1 | 0 | 0
+  456c | 72 | 0 | 0 | 0 | 2 | 1 | 0
+  456d | 76 | 0 | 0 | 0 | 0 | 0 | 0
+  456e | 33 | 0 | 0 | 0 | 1 | 0 | 0
+  457a | 57 | 0 | 0 | 0 | 1 | 0 | 1
+  457b | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  457c | 54 | 0 | 0 | 0 | 0 | 1 | 0
+  457d | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  457e | 44 | 0 | 0 | 0 | 0 | 1 | 1
+  458a | 77 | 0 | 0 | 0 | 2 | 1 | 0
+  458b | 69 | 0 | 0 | 0 | 1 | 1 | 0
+  458c | 56 | 0 | 0 | 0 | 0 | 2 | 0
+  458d | 60 | 1 | 0 | 0 | 0 | 0 | 2
+  458e | 55 | 0 | 0 | 0 | 1 | 0 | 1
+  459a | 58 | 0 | 0 | 0 | 2 | 1 | 0
+  459b | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  459c | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  459d | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  459e | 79 | 0 | 0 | 0 | 1 | 0 | 0
+  460a | 56 | 0 | 0 | 0 | 1 | 0 | 1
+  460b | 63 | 0 | 0 | 0 | 0 | 1 | 0
+  460c | 50 | 0 | 0 | 0 | 0 | 1 | 0
+  460d | 54 | 0 | 0 | 0 | 0 | 0 | 0
+  460e | 76 | 0 | 1 | 0 | 1 | 0 | 0
+  461a | 64 | 0 | 0 | 0 | 0 | 1 | 1
+  461b | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  461c | 70 | 0 | 0 | 0 | 0 | 0 | 1
+  461d | 56 | 0 | 0 | 0 | 0 | 0 | 0
+  461e | 43 | 0 | 0 | 0 | 0 | 0 | 0
+  462a | 69 | 0 | 0 | 0 | 1 | 1 | 0
+  462b | 65 | 0 | 0 | 0 | 0 | 0 | 1
+  462c | 53 | 0 | 0 | 0 | 0 | 0 | 0
+  462d | 64 | 0 | 0 | 0 | 1 | 1 | 3
+  462e | 48 | 0 | 0 | 0 | 1 | 0 | 0
+  463a | 62 | 0 | 1 | 0 | 1 | 0 | 0
+  463b | 65 | 0 | 0 | 0 | 1 | 1 | 0
+  463c | 68 | 0 | 0 | 0 | 1 | 0 | 1
+  463d | 53 | 0 | 0 | 0 | 2 | 2 | 0
+  463e | 50 | 0 | 0 | 0 | 1 | 0 | 0
+  464a | 77 | 0 | 0 | 0 | 1 | 0 | 0
+  464b | 71 | 0 | 0 | 0 | 0 | 0 | 1
+  464c | 61 | 0 | 0 | 0 | 0 | 0 | 2
+  464d | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  464e | 19 | 0 | 0 | 0 | 0 | 1 | 0
+  465a | 64 | 0 | 0 | 0 | 1 | 0 | 0
+  465b | 60 | 0 | 0 | 0 | 1 | 2 | 0
+  465c | 65 | 0 | 0 | 0 | 1 | 0 | 0
+  465d | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  465e | 54 | 0 | 0 | 0 | 1 | 3 | 0
+  466a | 68 | 0 | 0 | 0 | 1 | 3 | 0
+  466b | 57 | 1 | 1 | 0 | 0 | 0 | 0
+  466c | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  466d | 57 | 0 | 1 | 0 | 1 | 0 | 0
+  466e | 82 | 0 | 0 | 0 | 2 | 3 | 0
+  467a | 76 | 0 | 0 | 0 | 0 | 1 | 0
+  467b | 53 | 0 | 0 | 0 | 1 | 1 | 0
+  467c | 74 | 0 | 0 | 0 | 0 | 1 | 0
+  467d | 62 | 0 | 0 | 0 | 2 | 1 | 0
+  467e | 64 | 0 | 0 | 0 | 0 | 1 | 0
+  468a | 56 | 0 | 0 | 0 | 0 | 1 | 0
+  468b | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  468c | 67 | 0 | 0 | 0 | 2 | 0 | 0
+  468d | 62 | 0 | 0 | 0 | 1 | 2 | 0
+  468e | 79 | 0 | 0 | 0 | 0 | 0 | 1
+  469a | 64 | 0 | 0 | 0 | 1 | 1 | 1
+  469b | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  469c | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  469d | 64 | 0 | 0 | 0 | 2 | 0 | 0
+  469e | 75 | 0 | 0 | 0 | 0 | 1 | 0
+  470a | 64 | 0 | 0 | 0 | 0 | 1 | 1
+  470b | 62 | 0 | 0 | 0 | 0 | 2 | 1
+  470c | 75 | 1 | 1 | 0 | 0 | 0 | 0
+  470d | 55 | 0 | 0 | 0 | 2 | 1 | 0
+  470e | 73 | 0 | 0 | 0 | 2 | 0 | 1
+  471a | 75 | 0 | 0 | 0 | 0 | 0 | 1
+  471b | 56 | 0 | 0 | 0 | 0 | 0 | 0
+  471c | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  471d | 76 | 1 | 0 | 0 | 0 | 0 | 0
+  471e | 62 | 0 | 0 | 0 | 3 | 0 | 0
+  472a | 65 | 0 | 0 | 0 | 1 | 0 | 0
+  472b | 77 | 0 | 0 | 0 | 1 | 0 | 0
+  472c | 92 | 0 | 0 | 0 | 2 | 2 | 0
+  472d | 68 | 0 | 0 | 0 | 0 | 0 | 1
+  472e | 56 | 0 | 0 | 0 | 0 | 0 | 0
+  473a | 65 | 0 | 0 | 0 | 1 | 1 | 0
+  473b | 66 | 0 | 0 | 0 | 1 | 1 | 0
+  473c | 58 | 0 | 0 | 0 | 0 | 0 | 0
+  473d | 54 | 0 | 1 | 0 | 1 | 0 | 0
+  473e | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  474a | 69 | 0 | 0 | 0 | 1 | 1 | 0
+  474b | 76 | 0 | 0 | 0 | 1 | 1 | 1
+  474c | 61 | 0 | 0 | 0 | 1 | 1 | 2
+  474d | 80 | 0 | 0 | 0 | 0 | 0 | 0
+  474e | 61 | 1 | 0 | 0 | 0 | 0 | 0
+  475a | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  475b | 64 | 0 | 0 | 0 | 1 | 0 | 1
+  475c | 63 | 0 | 0 | 0 | 0 | 0 | 2
+  475d | 61 | 0 | 0 | 0 | 1 | 2 | 0
+  475e | 77 | 0 | 0 | 0 | 1 | 1 | 0
+  476a | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  476b | 73 | 0 | 0 | 0 | 0 | 1 | 1
+  476c | 72 | 0 | 0 | 0 | 2 | 0 | 0
+  476d | 61 | 0 | 0 | 0 | 1 | 0 | 2
+  476e | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  477a | 48 | 0 | 0 | 0 | 1 | 1 | 0
+  477b | 63 | 0 | 0 | 0 | 1 | 2 | 0
+  477c | 68 | 0 | 0 | 0 | 0 | 1 | 1
+  477d | 54 | 0 | 0 | 0 | 1 | 1 | 0
+  477e | 62 | 1 | 0 | 0 | 0 | 1 | 0
+  478a | 58 | 0 | 0 | 0 | 0 | 1 | 1
+  478b | 59 | 0 | 0 | 0 | 1 | 2 | 0
+  478c | 50 | 0 | 0 | 0 | 3 | 1 | 0
+  478d | 65 | 0 | 0 | 0 | 2 | 0 | 0
+  478e | 51 | 0 | 0 | 0 | 0 | 0 | 1
+  479a | 59 | 0 | 0 | 0 | 1 | 0 | 0
+  479b | 62 | 0 | 0 | 0 | 1 | 0 | 0
+  479c | 58 | 0 | 0 | 0 | 0 | 1 | 0
+  479d | 63 | 1 | 0 | 0 | 0 | 1 | 0
+  479e | 54 | 0 | 0 | 0 | 0 | 0 | 0
+  480a | 66 | 0 | 0 | 0 | 2 | 1 | 2
+  480b | 72 | 0 | 0 | 0 | 1 | 0 | 1
+  480c | 73 | 0 | 0 | 0 | 0 | 0 | 0
+  480d | 53 | 0 | 0 | 0 | 0 | 0 | 0
+  480e | 62 | 0 | 0 | 0 | 1 | 0 | 0
+  481a | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  481b | 76 | 0 | 0 | 0 | 0 | 0 | 1
+  481c | 74 | 0 | 0 | 0 | 1 | 0 | 0
+  481d | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  481e | 76 | 0 | 0 | 0 | 1 | 0 | 0
+  482a | 67 | 0 | 1 | 0 | 2 | 0 | 0
+  482b | 75 | 0 | 0 | 1 | 0 | 1 | 0
+  482c | 63 | 0 | 0 | 0 | 1 | 0 | 0
+  482d | 73 | 0 | 0 | 0 | 0 | 0 | 1
+  482e | 59 | 0 | 0 | 0 | 2 | 1 | 0
+  483a | 76 | 0 | 0 | 0 | 1 | 0 | 1
+  483b | 64 | 0 | 0 | 0 | 1 | 1 | 0
+  483c | 72 | 0 | 0 | 0 | 1 | 0 | 1
+  483d | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  483e | 52 | 0 | 0 | 0 | 0 | 0 | 0
+  484a | 52 | 0 | 0 | 0 | 0 | 0 | 0
+  484b | 61 | 0 | 0 | 0 | 1 | 0 | 1
+  484c | 79 | 0 | 0 | 0 | 2 | 1 | 0
+  484d | 62 | 0 | 0 | 0 | 1 | 1 | 0
+  484e | 47 | 0 | 0 | 0 | 1 | 0 | 0
+  485a | 58 | 0 | 0 | 0 | 0 | 0 | 0
+  485b | 63 | 0 | 0 | 0 | 1 | 0 | 0
+  485c | 57 | 0 | 0 | 0 | 1 | 1 | 0
+  485d | 64 | 0 | 0 | 0 | 1 | 0 | 1
+  485e | 61 | 0 | 0 | 0 | 1 | 1 | 0
+  486a | 83 | 0 | 0 | 1 | 2 | 0 | 0
+  486b | 61 | 0 | 0 | 1 | 0 | 0 | 0
+  486c | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  486d | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  486e | 40 | 0 | 0 | 0 | 1 | 0 | 2
+  487a | 74 | 0 | 0 | 0 | 1 | 0 | 0
+  487b | 62 | 0 | 0 | 0 | 2 | 0 | 0
+  487c | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  487d | 61 | 1 | 0 | 0 | 0 | 1 | 1
+  487e | 90 | 0 | 0 | 0 | 2 | 1 | 1
+  488a | 80 | 0 | 0 | 0 | 1 | 1 | 0
+  488b | 73 | 0 | 0 | 0 | 0 | 0 | 0
+  488c | 75 | 0 | 0 | 0 | 1 | 0 | 0
+  488d | 69 | 0 | 0 | 0 | 1 | 0 | 1
+  488e | 45 | 0 | 0 | 0 | 1 | 1 | 0
+  489a | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  489b | 73 | 0 | 0 | 0 | 0 | 0 | 1
+  489c | 66 | 0 | 0 | 0 | 1 | 1 | 0
+  489d | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  489e | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  490a | 68 | 0 | 0 | 0 | 2 | 0 | 0
+  490b | 69 | 0 | 0 | 0 | 0 | 0 | 1
+  490c | 70 | 0 | 0 | 0 | 0 | 1 | 0
+  490d | 54 | 0 | 0 | 0 | 0 | 0 | 0
+  490e | 71 | 0 | 0 | 0 | 0 | 0 | 1
+  491a | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  491b | 74 | 0 | 0 | 0 | 1 | 0 | 0
+  491c | 58 | 0 | 0 | 0 | 1 | 0 | 0
+  491d | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  491e | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  492a | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  492b | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  492c | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  492d | 64 | 0 | 0 | 0 | 1 | 1 | 0
+  492e | 63 | 0 | 0 | 0 | 2 | 0 | 1
+  493a | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  493b | 66 | 0 | 0 | 0 | 0 | 0 | 2
+  493c | 65 | 1 | 0 | 0 | 0 | 0 | 0
+  493d | 65 | 0 | 0 | 0 | 1 | 0 | 1
+  493e | 73 | 0 | 0 | 0 | 0 | 1 | 0
+  494a | 65 | 0 | 0 | 0 | 1 | 0 | 0
+  494b | 63 | 0 | 0 | 0 | 0 | 1 | 0
+  494c | 57 | 0 | 0 | 0 | 1 | 0 | 0
+  494d | 49 | 0 | 1 | 0 | 1 | 0 | 0
+  494e | 80 | 0 | 0 | 0 | 1 | 0 | 0
+  495a | 71 | 0 | 0 | 0 | 0 | 0 | 1
+  495b | 62 | 0 | 1 | 0 | 2 | 0 | 0
+  495c | 56 | 0 | 0 | 0 | 1 | 1 | 1
+  495d | 49 | 0 | 0 | 0 | 1 | 0 | 1
+  495e | 70 | 0 | 0 | 0 | 2 | 1 | 0
+  496a | 44 | 0 | 0 | 0 | 2 | 0 | 0
+  496b | 54 | 0 | 0 | 0 | 1 | 0 | 0
+  496c | 61 | 0 | 0 | 0 | 0 | 0 | 1
+  496d | 57 | 0 | 0 | 0 | 0 | 2 | 1
+  496e | 67 | 1 | 0 | 0 | 1 | 1 | 0
+  497a | 57 | 0 | 0 | 0 | 1 | 0 | 0
+  497b | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  497c | 61 | 0 | 0 | 0 | 0 | 1 | 1
+  497d | 78 | 1 | 0 | 0 | 2 | 2 | 1
+  497e | 63 | 0 | 0 | 0 | 1 | 1 | 0
+  498a | 60 | 0 | 0 | 0 | 1 | 1 | 0
+  498b | 63 | 0 | 0 | 0 | 0 | 1 | 0
+  498c | 63 | 1 | 0 | 0 | 0 | 1 | 0
+  498d | 63 | 0 | 0 | 0 | 1 | 0 | 0
+  498e | 83 | 0 | 0 | 0 | 1 | 0 | 1
+  499a | 64 | 0 | 0 | 0 | 1 | 0 | 0
+  499b | 73 | 0 | 0 | 0 | 0 | 0 | 1
+  499c | 72 | 0 | 0 | 1 | 1 | 0 | 1
+  499d | 67 | 0 | 0 | 0 | 0 | 2 | 0
+  499e | 75 | 0 | 0 | 0 | 2 | 0 | 1
+  500a | 67 | 0 | 0 | 0 | 1 | 1 | 1
+  500b | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  500c | 79 | 0 | 0 | 0 | 1 | 0 | 1
+  500d | 86 | 0 | 0 | 0 | 0 | 2 | 0
+  500e | 37 | 0 | 0 | 0 | 0 | 0 | 1
+  501a | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  501b | 74 | 0 | 0 | 0 | 0 | 1 | 1
+  501c | 70 | 0 | 0 | 0 | 1 | 0 | 1
+  501d | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  501e | 73 | 0 | 0 | 0 | 0 | 0 | 0
+  502a | 59 | 0 | 0 | 0 | 1 | 0 | 2
+  502b | 82 | 0 | 0 | 0 | 0 | 0 | 2
+  502c | 61 | 0 | 0 | 0 | 0 | 0 | 1
+  502d | 58 | 0 | 0 | 0 | 1 | 0 | 0
+  502e | 73 | 0 | 0 | 0 | 0 | 0 | 0
+  503a | 69 | 0 | 0 | 0 | 2 | 0 | 0
+  503b | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  503c | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  503d | 56 | 0 | 0 | 0 | 1 | 0 | 1
+  503e | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  504a | 57 | 0 | 0 | 0 | 0 | 0 | 1
+  504b | 53 | 1 | 0 | 0 | 0 | 1 | 0
+  504c | 84 | 0 | 0 | 0 | 1 | 0 | 0
+  504d | 76 | 0 | 0 | 0 | 0 | 0 | 0
+  504e | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  505a | 57 | 0 | 0 | 0 | 2 | 0 | 0
+  505b | 75 | 0 | 0 | 0 | 1 | 0 | 0
+  505c | 58 | 0 | 0 | 0 | 0 | 1 | 1
+  505d | 66 | 0 | 0 | 0 | 1 | 2 | 0
+  505e | 52 | 0 | 0 | 0 | 1 | 0 | 0
+  506a | 75 | 0 | 0 | 0 | 1 | 1 | 0
+  506b | 70 | 0 | 0 | 0 | 1 | 1 | 1
+  506c | 71 | 0 | 0 | 0 | 0 | 0 | 1
+  506d | 71 | 1 | 0 | 0 | 1 | 0 | 1
+  506e | 52 | 1 | 0 | 0 | 1 | 0 | 0
+  507a | 76 | 1 | 0 | 0 | 1 | 0 | 1
+  507b | 74 | 1 | 0 | 0 | 1 | 0 | 2
+  507c | 78 | 0 | 0 | 0 | 0 | 1 | 0
+  507d | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  507e | 53 | 0 | 0 | 0 | 2 | 0 | 0
+  508a | 75 | 0 | 0 | 0 | 1 | 0 | 1
+  508b | 74 | 0 | 0 | 0 | 0 | 0 | 0
+  508c | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  508d | 66 | 0 | 0 | 0 | 0 | 0 | 3
+  508e | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  509a | 71 | 0 | 0 | 0 | 0 | 1 | 0
+  509b | 74 | 0 | 0 | 0 | 0 | 0 | 0
+  509c | 64 | 0 | 0 | 0 | 0 | 2 | 0
+  509d | 67 | 0 | 0 | 0 | 1 | 0 | 2
+  509e | 51 | 0 | 0 | 0 | 0 | 0 | 0
+  510a | 75 | 0 | 0 | 0 | 1 | 1 | 0
+  510b | 71 | 0 | 0 | 0 | 0 | 0 | 1
+  510c | 62 | 0 | 0 | 0 | 1 | 0 | 1
+  510d | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  510e | 58 | 0 | 0 | 0 | 1 | 1 | 0
+  511a | 49 | 0 | 0 | 0 | 0 | 0 | 0
+  511b | 74 | 0 | 0 | 0 | 0 | 0 | 1
+  511c | 71 | 1 | 0 | 0 | 0 | 0 | 0
+  511d | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  511e | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  512a | 73 | 0 | 0 | 0 | 0 | 1 | 0
+  512b | 68 | 0 | 0 | 1 | 2 | 0 | 0
+  512c | 70 | 0 | 0 | 1 | 1 | 0 | 0
+  512d | 82 | 0 | 0 | 0 | 1 | 0 | 0
+  512e | 45 | 0 | 0 | 0 | 0 | 0 | 0
+  513a | 77 | 0 | 0 | 0 | 0 | 0 | 0
+  513b | 74 | 0 | 0 | 0 | 2 | 1 | 0
+  513c | 65 | 0 | 0 | 0 | 1 | 0 | 0
+  513d | 61 | 0 | 0 | 0 | 1 | 1 | 0
+  513e | 56 | 0 | 0 | 0 | 1 | 1 | 1
+  514a | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  514b | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  514c | 69 | 0 | 0 | 0 | 0 | 0 | 1
+  514d | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  514e | 74 | 0 | 0 | 0 | 0 | 0 | 1
+  515a | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  515b | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  515c | 60 | 0 | 1 | 0 | 0 | 0 | 0
+  515d | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  515e | 81 | 0 | 0 | 0 | 1 | 1 | 1
+  516a | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  516b | 61 | 0 | 1 | 0 | 1 | 1 | 0
+  516c | 60 | 1 | 0 | 0 | 0 | 0 | 1
+  516d | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  516e | 73 | 0 | 0 | 1 | 0 | 0 | 0
+  517a | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  517b | 53 | 0 | 0 | 0 | 1 | 0 | 0
+  517c | 71 | 0 | 0 | 0 | 1 | 1 | 0
+  517d | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  517e | 74 | 0 | 0 | 0 | 0 | 0 | 1
+  518a | 65 | 0 | 0 | 0 | 0 | 1 | 1
+  518b | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  518c | 56 | 0 | 0 | 0 | 0 | 1 | 0
+  518d | 65 | 0 | 0 | 0 | 0 | 0 | 1
+  518e | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  519a | 65 | 0 | 0 | 0 | 1 | 1 | 0
+  519b | 66 | 0 | 0 | 1 | 2 | 0 | 0
+  519c | 57 | 0 | 0 | 0 | 3 | 0 | 0
+  519d | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  519e | 52 | 0 | 0 | 0 | 0 | 0 | 0
+  520a | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  520b | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  520c | 52 | 0 | 0 | 0 | 1 | 0 | 0
+  520d | 67 | 0 | 0 | 0 | 2 | 0 | 1
+  520e | 79 | 0 | 0 | 0 | 2 | 0 | 0
+  521a | 57 | 0 | 1 | 0 | 1 | 1 | 0
+  521b | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  521c | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  521d | 73 | 0 | 0 | 0 | 1 | 1 | 0
+  521e | 77 | 0 | 0 | 0 | 2 | 0 | 0
+  522a | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  522b | 67 | 0 | 0 | 0 | 1 | 0 | 0
+  522c | 58 | 0 | 0 | 0 | 0 | 1 | 1
+  522d | 72 | 0 | 0 | 0 | 1 | 1 | 0
+  522e | 55 | 0 | 0 | 0 | 2 | 0 | 0
+  523a | 71 | 0 | 0 | 0 | 2 | 1 | 1
+  523b | 77 | 0 | 0 | 0 | 0 | 2 | 1
+  523c | 60 | 0 | 0 | 0 | 3 | 2 | 0
+  523d | 61 | 0 | 0 | 0 | 1 | 3 | 2
+  523e | 69 | 0 | 0 | 0 | 1 | 1 | 0
+  524a | 74 | 0 | 0 | 0 | 0 | 1 | 0
+  524b | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  524c | 79 | 0 | 0 | 0 | 0 | 0 | 0
+  524d | 78 | 0 | 0 | 0 | 0 | 1 | 1
+  524e | 39 | 0 | 0 | 0 | 0 | 0 | 0
+  525a | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  525b | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  525c | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  525d | 60 | 0 | 0 | 0 | 2 | 0 | 0
+  525e | 46 | 0 | 0 | 0 | 2 | 0 | 0
+  526a | 63 | 1 | 0 | 0 | 1 | 0 | 0
+  526b | 70 | 0 | 0 | 0 | 0 | 1 | 0
+  526c | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  526d | 59 | 0 | 0 | 0 | 0 | 2 | 0
+  526e | 60 | 0 | 0 | 0 | 0 | 0 | 1
+  527a | 78 | 0 | 0 | 0 | 0 | 1 | 0
+  527b | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  527c | 72 | 0 | 0 | 0 | 0 | 1 | 0
+  527d | 63 | 0 | 0 | 0 | 2 | 0 | 0
+  527e | 57 | 0 | 0 | 0 | 1 | 2 | 0
+occurrences[632]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_gorgias_000028 | γάρ | γὰρ | turn_gorgias_0003 | 447a | 178 | 181
+  tok_gorgias_000055 | γάρ | γὰρ | turn_gorgias_0005 | 447b | 363 | 366
+  tok_gorgias_000059 | γάρ | γάρ | turn_gorgias_0005 | 447b | 386 | 389
+  tok_gorgias_000100 | γάρ | γὰρ | turn_gorgias_0008 | 447b | 625 | 628
+  tok_gorgias_000118 | γάρ | γὰρ | turn_gorgias_0009 | 447c | 754 | 757
+  tok_gorgias_000156 | γάρ | γὰρ | turn_gorgias_0010 | 447c | 971 | 974
+  tok_gorgias_000239 | γάρ | γὰρ | turn_gorgias_0017 | 448a | 1476 | 1479
+  tok_gorgias_000282 | γάρ | γὰρ | turn_gorgias_0020 | 448a | 1723 | 1726
+  tok_gorgias_000288 | γάρ | γὰρ | turn_gorgias_0020 | 448a | 1760 | 1763
+  tok_gorgias_000321 | δή | δή | turn_gorgias_0025 | 448b | 1955 | 1957
+  tok_gorgias_000409 | γάρ | γὰρ | turn_gorgias_0032 | 448c | 2500 | 2503
+  tok_gorgias_000455 | γάρ | γὰρ | turn_gorgias_0033 | 448d | 2793 | 2796
+  tok_gorgias_000496 | γάρ | γάρ | turn_gorgias_0037 | 448d | 3031 | 3034
+  tok_gorgias_000513 | δή | δή | turn_gorgias_0038 | 448e | 3141 | 3143
+  tok_gorgias_000541 | γάρ | γὰρ | turn_gorgias_0040 | 448e | 3318 | 3321
+  tok_gorgias_000624 | δή | δὴ | turn_gorgias_0044 | 449a | 3791 | 3793
+  tok_gorgias_000640 | δή | δή | turn_gorgias_0046 | 449a | 3877 | 3879
+  tok_gorgias_000653 | δή | δὴ | turn_gorgias_0048 | 449b | 3962 | 3964
+  tok_gorgias_000663 | οὖν | οὖν | turn_gorgias_0049 | 449b | 4012 | 4015
+  tok_gorgias_000718 | μήν | μὴν | turn_gorgias_0050 | 449b | 4360 | 4363
+  tok_gorgias_000726 | γάρ | γὰρ | turn_gorgias_0050 | 449c | 4413 | 4416
+  tok_gorgias_000744 | μήν | μὴν | turn_gorgias_0051 | 449c | 4505 | 4508
+  tok_gorgias_000770 | δή | δή | turn_gorgias_0053 | 449c | 4677 | 4679
+  tok_gorgias_000772 | γάρ | γὰρ | turn_gorgias_0053 | 449c | 4691 | 4694
+  tok_gorgias_000800 | γάρ | γάρ | turn_gorgias_0053 | 449d | 4856 | 4859
+  tok_gorgias_000834 | γάρ | γὰρ | turn_gorgias_0058 | 449d | 5037 | 5040
+  tok_gorgias_000845 | δή | δή | turn_gorgias_0059 | 449d | 5102 | 5104
+  tok_gorgias_000894 | μήν | μὴν | turn_gorgias_0065 | 449e | 5388 | 5391
+  tok_gorgias_000910 | γάρ | γὰρ | turn_gorgias_0068 | 449e | 5480 | 5483
+  tok_gorgias_000914 | οὖν | οὖν | turn_gorgias_0069 | 449e | 5496 | 5499
+  tok_gorgias_000972 | μήν | μὴν | turn_gorgias_0077 | 450a | 5832 | 5835
+  tok_gorgias_001002 | οὖν | οὖν | turn_gorgias_0079 | 450b | 6012 | 6015
+  tok_gorgias_001003 | δή | δή | turn_gorgias_0079 | 450b | 6016 | 6018
+  tok_gorgias_001078 | οὖν | οὖν | turn_gorgias_0081 | 450c | 6455 | 6458
+  tok_gorgias_001094 | γάρ | γάρ | turn_gorgias_0081 | 450c | 6558 | 6561
+  tok_gorgias_001099 | δή | δὴ | turn_gorgias_0083 | 450c | 6583 | 6585
+  tok_gorgias_001149 | οὖν | οὖν | turn_gorgias_0084 | 450d | 6870 | 6873
+  tok_gorgias_001286 | γάρ | γὰρ | turn_gorgias_0088 | 451a | 7710 | 7713
+  tok_gorgias_001304 | γάρ | γὰρ | turn_gorgias_0089 | 451a | 7818 | 7821
+  tok_gorgias_001441 | γάρ | γάρ | turn_gorgias_0089 | 451c | 8630 | 8633
+  tok_gorgias_001524 | δή | δὴ | turn_gorgias_0091 | 451d | 9110 | 9112
+  tok_gorgias_001531 | γάρ | γὰρ | turn_gorgias_0091 | 451d | 9144 | 9147
+  tok_gorgias_001532 | δή | δὴ | turn_gorgias_0091 | 451d | 9148 | 9150
+  tok_gorgias_001545 | γάρ | γάρ | turn_gorgias_0091 | 451d | 9221 | 9224
+  tok_gorgias_001551 | δή | δὴ | turn_gorgias_0093 | 451d | 9252 | 9254
+  tok_gorgias_001593 | γάρ | γάρ | turn_gorgias_0095 | 451e | 9510 | 9513
+  tok_gorgias_001631 | γάρ | γάρ | turn_gorgias_0096 | 451e | 9801 | 9804
+  tok_gorgias_001671 | γάρ | γάρ | turn_gorgias_0097 | 452a | 10044 | 10047
+  tok_gorgias_001686 | οὖν | οὖν | turn_gorgias_0097 | 452a | 10129 | 10132
+  tok_gorgias_001702 | οὖν | οὖν | turn_gorgias_0097 | 452a | 10208 | 10211
+  tok_gorgias_001714 | γάρ | γὰρ | turn_gorgias_0097 | 452a | 10277 | 10280
+  tok_gorgias_001766 | δή | δὴ | turn_gorgias_0097 | 452b | 10591 | 10593
+  tok_gorgias_001827 | οὖν | οὖν | turn_gorgias_0097 | 452c | 10961 | 10964
+  tok_gorgias_001832 | δή | δή | turn_gorgias_0097 | 452c | 10983 | 10985
+  tok_gorgias_001843 | οὖν | οὖν | turn_gorgias_0097 | 452c | 11053 | 11056
+  tok_gorgias_001853 | γάρ | γὰρ | turn_gorgias_0097 | 452c | 11127 | 11130
+  tok_gorgias_001857 | μήν | μὴν | turn_gorgias_0097 | 452c | 11151 | 11154
+  tok_gorgias_001877 | οὖν | οὖν | turn_gorgias_0097 | 452c | 11265 | 11268
+  tok_gorgias_001893 | οὖν | οὖν | turn_gorgias_0097 | 452d | 11369 | 11372
+  tok_gorgias_001950 | οὖν | οὖν | turn_gorgias_0099 | 452d | 11700 | 11703
+  tok_gorgias_001951 | δή | δὴ | turn_gorgias_0099 | 452d | 11704 | 11706
+  tok_gorgias_001985 | καίτοι | καίτοι | turn_gorgias_0100 | 452e | 11926 | 11932
+  tok_gorgias_002082 | γάρ | γὰρ | turn_gorgias_0102 | 453a | 12517 | 12520
+  tok_gorgias_002089 | δή | δή | turn_gorgias_0103 | 453a | 12559 | 12561
+  tok_gorgias_002093 | γάρ | γὰρ | turn_gorgias_0103 | 453a | 12577 | 12580
+  tok_gorgias_002125 | οὖν | οὖν | turn_gorgias_0104 | 453b | 12756 | 12759
+  tok_gorgias_002126 | δή | δή | turn_gorgias_0104 | 453b | 12760 | 12762
+  tok_gorgias_002159 | μήν | μὴν | turn_gorgias_0105 | 453b | 12930 | 12933
+  tok_gorgias_002191 | δή | δὴ | turn_gorgias_0105 | 453c | 13108 | 13110
+  tok_gorgias_002219 | γάρ | γὰρ | turn_gorgias_0105 | 453c | 13266 | 13269
+  tok_gorgias_002292 | γάρ | γὰρ | turn_gorgias_0110 | 453d | 13645 | 13648
+  tok_gorgias_002296 | δή | δὴ | turn_gorgias_0111 | 453d | 13661 | 13663
+  tok_gorgias_002339 | δή | δὴ | turn_gorgias_0113 | 453e | 13913 | 13915
+  tok_gorgias_002442 | τοίνυν | τοίνυν | turn_gorgias_0123 | 454a | 14526 | 14532
+  tok_gorgias_002464 | δή | δὴ | turn_gorgias_0123 | 454a | 14663 | 14665
+  tok_gorgias_002486 | δή | δή | turn_gorgias_0125 | 454b | 14798 | 14800
+  tok_gorgias_002497 | τοίνυν | τοίνυν | turn_gorgias_0126 | 454b | 14855 | 14861
+  tok_gorgias_002561 | γάρ | γὰρ | turn_gorgias_0127 | 454c | 15214 | 15217
+  tok_gorgias_002604 | δή | δὴ | turn_gorgias_0129 | 454c | 15465 | 15467
+  tok_gorgias_002621 | οὖν | οὖν | turn_gorgias_0133 | 454d | 15582 | 15585
+  tok_gorgias_002645 | γάρ | γὰρ | turn_gorgias_0135 | 454d | 15726 | 15729
+  tok_gorgias_002651 | γάρ | γάρ | turn_gorgias_0135 | 454d | 15757 | 15760
+  tok_gorgias_002694 | μήν | μὴν | turn_gorgias_0141 | 454e | 16002 | 16005
+  tok_gorgias_002709 | οὖν | οὖν | turn_gorgias_0143 | 454e | 16095 | 16098
+  tok_gorgias_002729 | οὖν | οὖν | turn_gorgias_0145 | 454e | 16210 | 16213
+  tok_gorgias_002812 | γάρ | γὰρ | turn_gorgias_0149 | 455a | 16691 | 16694
+  tok_gorgias_002831 | δή | δή | turn_gorgias_0151 | 455a | 16798 | 16800
+  tok_gorgias_002842 | γάρ | γάρ | turn_gorgias_0151 | 455b | 16864 | 16867
+  tok_gorgias_002877 | γάρ | γὰρ | turn_gorgias_0151 | 455b | 17067 | 17070
+  tok_gorgias_002932 | γάρ | γὰρ | turn_gorgias_0151 | 455c | 17425 | 17428
+  tok_gorgias_002960 | γάρ | γὰρ | turn_gorgias_0151 | 455c | 17578 | 17581
+  tok_gorgias_002986 | οὖν | οὖν | turn_gorgias_0151 | 455d | 17745 | 17748
+  tok_gorgias_003023 | οὖν | οὖν | turn_gorgias_0151 | 455d | 17982 | 17985
+  tok_gorgias_003041 | γάρ | γὰρ | turn_gorgias_0152 | 455d | 18106 | 18109
+  tok_gorgias_003045 | γάρ | γὰρ | turn_gorgias_0152 | 455d | 18131 | 18134
+  tok_gorgias_003139 | γάρ | γάρ | turn_gorgias_0155 | 456a | 18692 | 18695
+  tok_gorgias_003171 | γάρ | γὰρ | turn_gorgias_0156 | 456b | 18893 | 18896
+  tok_gorgias_003271 | γάρ | γὰρ | turn_gorgias_0156 | 456c | 19497 | 19500
+  tok_gorgias_003290 | οὖν | οὖν | turn_gorgias_0156 | 456c | 19603 | 19606
+  tok_gorgias_003311 | γάρ | γὰρ | turn_gorgias_0156 | 456c | 19728 | 19731
+  tok_gorgias_003405 | γάρ | γὰρ | turn_gorgias_0156 | 456e | 20292 | 20295
+  tok_gorgias_003455 | δή | δὴ | turn_gorgias_0157 | 457a | 20607 | 20609
+  tok_gorgias_003463 | γάρ | γὰρ | turn_gorgias_0157 | 457a | 20652 | 20655
+  tok_gorgias_003543 | γάρ | γὰρ | turn_gorgias_0157 | 457b | 21133 | 21136
+  tok_gorgias_003553 | οὖν | οὖν | turn_gorgias_0157 | 457c | 21199 | 21202
+  tok_gorgias_003670 | δή | δὴ | turn_gorgias_0158 | 457e | 21980 | 21982
+  tok_gorgias_003693 | οὖν | οὖν | turn_gorgias_0158 | 457e | 22111 | 22114
+  tok_gorgias_003713 | οὖν | οὖν | turn_gorgias_0159 | 458a | 22236 | 22239
+  tok_gorgias_003764 | γάρ | γὰρ | turn_gorgias_0159 | 458a | 22503 | 22506
+  tok_gorgias_003781 | γάρ | γὰρ | turn_gorgias_0159 | 458a | 22617 | 22620
+  tok_gorgias_003800 | οὖν | οὖν | turn_gorgias_0159 | 458b | 22726 | 22729
+  tok_gorgias_003843 | γάρ | γάρ | turn_gorgias_0160 | 458b | 22971 | 22974
+  tok_gorgias_003862 | οὖν | οὖν | turn_gorgias_0160 | 458c | 23101 | 23104
+  tok_gorgias_003897 | οὖν | οὖν | turn_gorgias_0161 | 458c | 23305 | 23308
+  tok_gorgias_003924 | δή | δὴ | turn_gorgias_0162 | 458d | 23482 | 23484
+  tok_gorgias_003950 | μήν | μήν | turn_gorgias_0163 | 458d | 23645 | 23648
+  tok_gorgias_003963 | δή | δὴ | turn_gorgias_0164 | 458d | 23724 | 23726
+  tok_gorgias_003991 | δή | δή | turn_gorgias_0165 | 458e | 23899 | 23901
+  tok_gorgias_004002 | γάρ | γάρ | turn_gorgias_0165 | 458e | 23956 | 23959
+  tok_gorgias_004041 | οὖν | οὖν | turn_gorgias_0168 | 459a | 24193 | 24196
+  tok_gorgias_004059 | γάρ | γὰρ | turn_gorgias_0170 | 459a | 24292 | 24295
+  tok_gorgias_004076 | γάρ | γὰρ | turn_gorgias_0171 | 459a | 24374 | 24377
+  tok_gorgias_004109 | γάρ | γάρ | turn_gorgias_0175 | 459b | 24577 | 24580
+  tok_gorgias_004342 | γάρ | γὰρ | turn_gorgias_0183 | 459e | 25922 | 25925
+  tok_gorgias_004421 | δή | δή | turn_gorgias_0185 | 460a | 26365 | 26367
+  tok_gorgias_004423 | γάρ | γὰρ | turn_gorgias_0185 | 460a | 26375 | 26378
+  tok_gorgias_004451 | οὖν | οὖν | turn_gorgias_0187 | 460b | 26538 | 26541
+  tok_gorgias_004571 | οὖν | οὖν | turn_gorgias_0205 | 460c | 27257 | 27260
+  tok_gorgias_004680 | γάρ | γάρ | turn_gorgias_0209 | 460e | 27875 | 27878
+  tok_gorgias_004685 | τοίνυν | τοίνυν | turn_gorgias_0211 | 460e | 27898 | 27904
+  tok_gorgias_004755 | δή | δὴ | turn_gorgias_0211 | 461a | 28330 | 28332
+  tok_gorgias_004773 | οὖν | οὖν | turn_gorgias_0211 | 461a | 28445 | 28448
+  tok_gorgias_004851 | δή | δὴ | turn_gorgias_0212 | 461c | 28908 | 28910
+  tok_gorgias_005065 | γάρ | γὰρ | turn_gorgias_0218 | 462a | 30211 | 30214
+  tok_gorgias_005094 | οὖν | οὖν | turn_gorgias_0221 | 462a | 30385 | 30388
+  tok_gorgias_005098 | δή | δὴ | turn_gorgias_0222 | 462b | 30409 | 30411
+  tok_gorgias_005243 | γάρ | γὰρ | turn_gorgias_0237 | 462d | 31243 | 31246
+  tok_gorgias_005253 | οὖν | οὖν | turn_gorgias_0238 | 462d | 31303 | 31306
+  tok_gorgias_005276 | δή | δή | turn_gorgias_0241 | 462d | 31440 | 31442
+  tok_gorgias_005290 | δή | δή | turn_gorgias_0244 | 462d | 31514 | 31516
+  tok_gorgias_005298 | δή | δή | turn_gorgias_0246 | 462d | 31557 | 31559
+  tok_gorgias_005333 | γάρ | γὰρ | turn_gorgias_0250 | 462e | 31779 | 31782
+  tok_gorgias_005358 | γάρ | γὰρ | turn_gorgias_0250 | 463a | 31933 | 31936
+  tok_gorgias_005394 | τοίνυν | τοίνυν | turn_gorgias_0252 | 463a | 32143 | 32149
+  tok_gorgias_005476 | οὖν | οὖν | turn_gorgias_0252 | 463b | 32636 | 32639
+  tok_gorgias_005482 | γάρ | γάρ | turn_gorgias_0252 | 463b | 32683 | 32686
+  tok_gorgias_005528 | γάρ | γὰρ | turn_gorgias_0252 | 463c | 32975 | 32978
+  tok_gorgias_005547 | δή | δή | turn_gorgias_0253 | 463c | 33095 | 33097
+  tok_gorgias_005554 | οὖν | οὖν | turn_gorgias_0254 | 463d | 33143 | 33146
+  tok_gorgias_005559 | γάρ | γὰρ | turn_gorgias_0254 | 463d | 33178 | 33181
+  tok_gorgias_005571 | οὖν | οὖν | turn_gorgias_0255 | 463d | 33247 | 33250
+  tok_gorgias_005582 | γάρ | γὰρ | turn_gorgias_0256 | 463d | 33309 | 33312
+  tok_gorgias_005615 | γάρ | γάρ | turn_gorgias_0258 | 463e | 33492 | 33495
+  tok_gorgias_005671 | γάρ | γὰρ | turn_gorgias_0261 | 464a | 33799 | 33802
+  tok_gorgias_005754 | δή | δή | turn_gorgias_0268 | 464b | 34248 | 34250
+  tok_gorgias_005820 | δή | δὴ | turn_gorgias_0268 | 464c | 34655 | 34657
+  tok_gorgias_005845 | δή | δὴ | turn_gorgias_0268 | 464c | 34809 | 34811
+  tok_gorgias_005905 | οὖν | οὖν | turn_gorgias_0268 | 464d | 35190 | 35193
+  tok_gorgias_005958 | οὖν | οὖν | turn_gorgias_0269 | 464e | 35521 | 35524
+  tok_gorgias_005970 | γάρ | γὰρ | turn_gorgias_0269 | 465a | 35592 | 35595
+  tok_gorgias_006030 | οὖν | οὖν | turn_gorgias_0269 | 465b | 35934 | 35937
+  tok_gorgias_006077 | οὖν | οὖν | turn_gorgias_0269 | 465b | 36251 | 36254
+  tok_gorgias_006087 | γάρ | γὰρ | turn_gorgias_0269 | 465b | 36309 | 36312
+  tok_gorgias_006145 | γάρ | γὰρ | turn_gorgias_0269 | 465c | 36681 | 36684
+  tok_gorgias_006191 | γάρ | γὰρ | turn_gorgias_0269 | 465d | 36932 | 36935
+  tok_gorgias_006213 | οὖν | οὖν | turn_gorgias_0269 | 465d | 37059 | 37062
+  tok_gorgias_006230 | οὖν | οὖν | turn_gorgias_0269 | 465e | 37170 | 37173
+  tok_gorgias_006246 | οὖν | οὖν | turn_gorgias_0269 | 465e | 37268 | 37271
+  tok_gorgias_006252 | γάρ | γάρ | turn_gorgias_0269 | 465e | 37309 | 37312
+  tok_gorgias_006274 | οὖν | οὖν | turn_gorgias_0270 | 465e | 37438 | 37441
+  tok_gorgias_006294 | γάρ | γάρ | turn_gorgias_0270 | 466a | 37554 | 37557
+  tok_gorgias_006307 | οὖν | οὖν | turn_gorgias_0271 | 466a | 37620 | 37623
+  tok_gorgias_006318 | οὖν | οὖν | turn_gorgias_0272 | 466a | 37684 | 37687
+  tok_gorgias_006334 | οὖν | οὖν | turn_gorgias_0273 | 466a | 37777 | 37780
+  tok_gorgias_006388 | μήν | μὴν | turn_gorgias_0279 | 466b | 38106 | 38109
+  tok_gorgias_006393 | τοίνυν | τοίνυν | turn_gorgias_0280 | 466b | 38133 | 38139
+  tok_gorgias_006500 | τοίνυν | τοίνυν | turn_gorgias_0288 | 466d | 38766 | 38772
+  tok_gorgias_006515 | γάρ | γάρ | turn_gorgias_0288 | 466d | 38855 | 38858
+  tok_gorgias_006535 | γάρ | γὰρ | turn_gorgias_0288 | 466e | 38983 | 38986
+  tok_gorgias_006569 | οὖν | οὖν | turn_gorgias_0291 | 466e | 39170 | 39173
+  tok_gorgias_006588 | γάρ | γὰρ | turn_gorgias_0293 | 466e | 39265 | 39268
+  tok_gorgias_006589 | οὖν | οὖν | turn_gorgias_0293 | 466e | 39269 | 39272
+  tok_gorgias_006592 | οὖν | οὖν | turn_gorgias_0294 | 466e | 39285 | 39288
+  tok_gorgias_006682 | οὖν | οὖν | turn_gorgias_0298 | 467a | 39789 | 39792
+  tok_gorgias_006730 | γάρ | γὰρ | turn_gorgias_0302 | 467b | 40090 | 40093
+  tok_gorgias_006735 | οὖν | οὖν | turn_gorgias_0303 | 467b | 40116 | 40119
+  tok_gorgias_006793 | οὖν | οὖν | turn_gorgias_0310 | 467c | 40456 | 40459
+  tok_gorgias_006864 | γάρ | γὰρ | turn_gorgias_0312 | 467d | 40905 | 40908
+  tok_gorgias_006881 | γάρ | γὰρ | turn_gorgias_0312 | 467d | 41019 | 41022
+  tok_gorgias_006890 | οὖν | οὖν | turn_gorgias_0314 | 467d | 41065 | 41068
+  tok_gorgias_006915 | οὖν | οὖν | turn_gorgias_0316 | 467e | 41204 | 41207
+  tok_gorgias_007021 | οὖν | οὖν | turn_gorgias_0322 | 468a | 41790 | 41793
+  tok_gorgias_007151 | γάρ | γὰρ | turn_gorgias_0332 | 468c | 42616 | 42619
+  tok_gorgias_007169 | γάρ | γάρ | turn_gorgias_0332 | 468c | 42705 | 42708
+  tok_gorgias_007219 | γάρ | γάρ | turn_gorgias_0334 | 468d | 43000 | 43003
+  tok_gorgias_007224 | οὖν | οὖν | turn_gorgias_0336 | 468d | 43023 | 43026
+  tok_gorgias_007246 | οὖν | οὖν | turn_gorgias_0338 | 468d | 43144 | 43147
+  tok_gorgias_007294 | δή | δὴ | turn_gorgias_0341 | 468e | 43412 | 43414
+  tok_gorgias_007347 | δή | δή | turn_gorgias_0345 | 469a | 43708 | 43710
+  tok_gorgias_007376 | γάρ | γὰρ | turn_gorgias_0348 | 469a | 43858 | 43861
+  tok_gorgias_007380 | οὖν | οὖν | turn_gorgias_0349 | 469a | 43877 | 43880
+  tok_gorgias_007463 | γάρ | γὰρ | turn_gorgias_0357 | 469b | 44357 | 44360
+  tok_gorgias_007549 | δή | δὴ | turn_gorgias_0364 | 469c | 44860 | 44862
+  tok_gorgias_007555 | γάρ | γὰρ | turn_gorgias_0364 | 469d | 44900 | 44903
+  tok_gorgias_007579 | γάρ | γὰρ | turn_gorgias_0364 | 469d | 45047 | 45050
+  tok_gorgias_007626 | οὖν | οὖν | turn_gorgias_0364 | 469e | 45336 | 45339
+  tok_gorgias_007696 | οὖν | οὖν | turn_gorgias_0366 | 470a | 45726 | 45729
+  tok_gorgias_007708 | δή | δή | turn_gorgias_0368 | 470a | 45792 | 45794
+  tok_gorgias_007798 | δή | δή | turn_gorgias_0374 | 470b | 46350 | 46352
+  tok_gorgias_007812 | οὖν | οὖν | turn_gorgias_0376 | 470b | 46423 | 46426
+  tok_gorgias_007826 | οὖν | οὖν | turn_gorgias_0377 | 470b | 46496 | 46499
+  tok_gorgias_007835 | τοίνυν | τοίνυν | turn_gorgias_0378 | 470c | 46568 | 46574
+  tok_gorgias_007903 | μήν | μήν | turn_gorgias_0381 | 470c | 46948 | 46951
+  tok_gorgias_007914 | γάρ | γὰρ | turn_gorgias_0381 | 470d | 47020 | 47023
+  tok_gorgias_007954 | οὖν | οὖν | turn_gorgias_0385 | 470d | 47270 | 47273
+  tok_gorgias_007966 | γάρ | γάρ | turn_gorgias_0386 | 470d | 47325 | 47328
+  tok_gorgias_007991 | δή | δή | turn_gorgias_0389 | 470e | 47473 | 47475
+  tok_gorgias_008009 | γάρ | γὰρ | turn_gorgias_0390 | 470e | 47575 | 47578
+  tok_gorgias_008034 | γάρ | γὰρ | turn_gorgias_0392 | 470e | 47702 | 47705
+  tok_gorgias_008070 | δή | δὴ | turn_gorgias_0395 | 471a | 47907 | 47909
+  tok_gorgias_008320 | μήν | μὴν | turn_gorgias_0396 | 471d | 49472 | 49475
+  tok_gorgias_008331 | γάρ | γὰρ | turn_gorgias_0397 | 471e | 49530 | 49533
+  tok_gorgias_008344 | γάρ | γάρ | turn_gorgias_0398 | 471e | 49599 | 49602
+  tok_gorgias_008356 | γάρ | γὰρ | turn_gorgias_0398 | 471e | 49681 | 49684
+  tok_gorgias_008395 | γάρ | γὰρ | turn_gorgias_0398 | 472a | 49928 | 49931
+  tok_gorgias_008493 | γάρ | γάρ | turn_gorgias_0398 | 472b | 50499 | 50502
+  tok_gorgias_008560 | οὖν | οὖν | turn_gorgias_0398 | 472c | 50884 | 50887
+  tok_gorgias_008581 | οὖν | οὖν | turn_gorgias_0398 | 472c | 50996 | 50999
+  tok_gorgias_008590 | γάρ | γὰρ | turn_gorgias_0398 | 472c | 51054 | 51057
+  tok_gorgias_008614 | γάρ | γὰρ | turn_gorgias_0398 | 472c | 51192 | 51195
+  tok_gorgias_008679 | δή | δὴ | turn_gorgias_0400 | 472d | 51572 | 51574
+  tok_gorgias_008777 | γάρ | γάρ | turn_gorgias_0406 | 473a | 52123 | 52126
+  tok_gorgias_008782 | οὖν | οὖν | turn_gorgias_0406 | 473a | 52147 | 52150
+  tok_gorgias_008856 | οὖν | οὖν | turn_gorgias_0415 | 473b | 52549 | 52552
+  tok_gorgias_008891 | γάρ | γὰρ | turn_gorgias_0418 | 473b | 52759 | 52762
+  tok_gorgias_008998 | τοίνυν | τοίνυν | turn_gorgias_0422 | 473d | 53487 | 53493
+  tok_gorgias_009014 | γάρ | γὰρ | turn_gorgias_0422 | 473d | 53595 | 53598
+  tok_gorgias_009090 | οὖν | οὖν | turn_gorgias_0424 | 474a | 54084 | 54087
+  tok_gorgias_009124 | γάρ | γὰρ | turn_gorgias_0424 | 474a | 54279 | 54282
+  tok_gorgias_009156 | οὖν | οὖν | turn_gorgias_0424 | 474b | 54468 | 54471
+  tok_gorgias_009168 | γάρ | γὰρ | turn_gorgias_0424 | 474b | 54545 | 54548
+  tok_gorgias_009169 | δή | δὴ | turn_gorgias_0424 | 474b | 54549 | 54551
+  tok_gorgias_009237 | οὖν | οὖν | turn_gorgias_0429 | 474c | 54918 | 54921
+  tok_gorgias_009239 | γάρ | γὰρ | turn_gorgias_0429 | 474c | 54927 | 54930
+  tok_gorgias_009247 | δή | δή | turn_gorgias_0430 | 474c | 54972 | 54974
+  tok_gorgias_009277 | δή | δή | turn_gorgias_0432 | 474c | 55129 | 55131
+  tok_gorgias_009426 | μήν | μὴν | turn_gorgias_0444 | 474e | 55980 | 55983
+  tok_gorgias_009521 | δή | δὴ | turn_gorgias_0452 | 475a | 56504 | 56506
+  tok_gorgias_009542 | δή | δή | turn_gorgias_0454 | 475b | 56626 | 56628
+  tok_gorgias_009591 | γάρ | γὰρ | turn_gorgias_0457 | 475b | 56921 | 56924
+  tok_gorgias_009596 | δή | δὴ | turn_gorgias_0458 | 475c | 56951 | 56953
+  tok_gorgias_009667 | δή | δὴ | turn_gorgias_0469 | 475c | 57367 | 57369
+  tok_gorgias_009672 | οὖν | οὖν | turn_gorgias_0470 | 475d | 57394 | 57397
+  tok_gorgias_009706 | οὖν | οὖν | turn_gorgias_0474 | 475d | 57581 | 57584
+  tok_gorgias_009723 | γάρ | γὰρ | turn_gorgias_0474 | 475d | 57673 | 57676
+  tok_gorgias_009784 | γάρ | γὰρ | turn_gorgias_0478 | 475e | 58008 | 58011
+  tok_gorgias_009791 | οὖν | οὖν | turn_gorgias_0480 | 475e | 58049 | 58052
+  tok_gorgias_009887 | οὖν | οὖν | turn_gorgias_0482 | 476b | 58618 | 58621
+  tok_gorgias_009911 | δή | δὴ | turn_gorgias_0484 | 476b | 58754 | 58756
+  tok_gorgias_009999 | γάρ | γὰρ | turn_gorgias_0493 | 476c | 59233 | 59236
+  tok_gorgias_010031 | γάρ | γάρ | turn_gorgias_0496 | 476c | 59390 | 59393
+  tok_gorgias_010059 | δή | δὴ | turn_gorgias_0500 | 476d | 59552 | 59554
+  tok_gorgias_010082 | δή | δὴ | turn_gorgias_0502 | 476d | 59683 | 59685
+  tok_gorgias_010105 | γάρ | γὰρ | turn_gorgias_0505 | 476d | 59828 | 59831
+  tok_gorgias_010167 | γάρ | γὰρ | turn_gorgias_0516 | 477a | 60182 | 60185
+  tok_gorgias_010216 | οὖν | οὖν | turn_gorgias_0526 | 477a | 60472 | 60475
+  tok_gorgias_010269 | γάρ | γὰρ | turn_gorgias_0531 | 477b | 60791 | 60794
+  tok_gorgias_010273 | οὖν | οὖν | turn_gorgias_0532 | 477b | 60810 | 60813
+  tok_gorgias_010287 | οὖν | οὖν | turn_gorgias_0533 | 477b | 60887 | 60890
+  tok_gorgias_010307 | οὖν | οὖν | turn_gorgias_0536 | 477c | 61023 | 61026
+  tok_gorgias_010326 | δή | δὴ | turn_gorgias_0538 | 477c | 61126 | 61128
+  tok_gorgias_010371 | γάρ | γάρ | turn_gorgias_0543 | 477d | 61419 | 61422
+  tok_gorgias_010391 | οὖν | οὖν | turn_gorgias_0546 | 477d | 61538 | 61541
+  tok_gorgias_010447 | μήν | μήν | turn_gorgias_0550 | 477e | 61877 | 61880
+  tok_gorgias_010483 | οὖν | οὖν | turn_gorgias_0554 | 477e | 62071 | 62074
+  tok_gorgias_010547 | οὖν | οὖν | turn_gorgias_0564 | 478a | 62464 | 62467
+  tok_gorgias_010558 | δή | δή | turn_gorgias_0565 | 478a | 62539 | 62541
+  tok_gorgias_010577 | οὖν | οὖν | turn_gorgias_0568 | 478b | 62665 | 62668
+  tok_gorgias_010615 | οὖν | οὖν | turn_gorgias_0574 | 478b | 62916 | 62919
+  tok_gorgias_010633 | γάρ | γάρ | turn_gorgias_0576 | 478b | 63024 | 63027
+  tok_gorgias_010638 | γάρ | γὰρ | turn_gorgias_0578 | 478c | 63058 | 63061
+  tok_gorgias_010651 | γάρ | γὰρ | turn_gorgias_0579 | 478c | 63145 | 63148
+  tok_gorgias_010655 | οὖν | οὖν | turn_gorgias_0580 | 478c | 63161 | 63164
+  tok_gorgias_010675 | γάρ | γὰρ | turn_gorgias_0582 | 478c | 63284 | 63287
+  tok_gorgias_010735 | γάρ | γάρ | turn_gorgias_0587 | 478d | 63653 | 63656
+  tok_gorgias_010738 | γάρ | γάρ | turn_gorgias_0588 | 478d | 63673 | 63676
+  tok_gorgias_010769 | δή | δή | turn_gorgias_0591 | 478e | 63863 | 63865
+  tok_gorgias_010844 | γάρ | γάρ | turn_gorgias_0600 | 479a | 64355 | 64358
+  tok_gorgias_010905 | γάρ | γὰρ | turn_gorgias_0602 | 479b | 64744 | 64747
+  tok_gorgias_010999 | οὖν | οὖν | turn_gorgias_0604 | 479c | 65310 | 65313
+  tok_gorgias_011013 | μήν | μὴν | turn_gorgias_0606 | 479d | 65397 | 65400
+  tok_gorgias_011062 | οὖν | οὖν | turn_gorgias_0612 | 479d | 65675 | 65678
+  tok_gorgias_011138 | οὖν | οὖν | turn_gorgias_0616 | 480a | 66179 | 66182
+  tok_gorgias_011139 | δή | δὴ | turn_gorgias_0616 | 480a | 66183 | 66185
+  tok_gorgias_011153 | γάρ | γὰρ | turn_gorgias_0616 | 480a | 66255 | 66258
+  tok_gorgias_011154 | δή | δὴ | turn_gorgias_0616 | 480a | 66259 | 66261
+  tok_gorgias_011171 | γάρ | γάρ | turn_gorgias_0616 | 480a | 66362 | 66365
+  tok_gorgias_011241 | γάρ | γὰρ | turn_gorgias_0619 | 480b | 66764 | 66767
+  tok_gorgias_011242 | δή | δὴ | turn_gorgias_0619 | 480b | 66768 | 66770
+  tok_gorgias_011458 | γάρ | γὰρ | turn_gorgias_0624 | 480e | 68071 | 68074
+  tok_gorgias_011571 | δή | δὴ | turn_gorgias_0624 | 481b | 68741 | 68743
+  tok_gorgias_011627 | γάρ | γὰρ | turn_gorgias_0627 | 481c | 69074 | 69077
+  tok_gorgias_011736 | οὖν | οὖν | turn_gorgias_0628 | 481d | 69685 | 69688
+  tok_gorgias_011795 | γάρ | γὰρ | turn_gorgias_0629 | 481e | 70039 | 70042
+  tok_gorgias_011847 | τοίνυν | τοίνυν | turn_gorgias_0629 | 482a | 70338 | 70344
+  tok_gorgias_011872 | γάρ | γάρ | turn_gorgias_0629 | 482a | 70490 | 70493
+  tok_gorgias_011891 | γάρ | γὰρ | turn_gorgias_0629 | 482a | 70592 | 70595
+  tok_gorgias_011916 | οὖν | οὖν | turn_gorgias_0629 | 482b | 70739 | 70742
+  tok_gorgias_011958 | καίτοι | καίτοι | turn_gorgias_0629 | 482b | 70996 | 71002
+  tok_gorgias_012024 | γάρ | γάρ | turn_gorgias_0630 | 482c | 71418 | 71421
+  tok_gorgias_012066 | δή | δὴ | turn_gorgias_0630 | 482d | 71674 | 71676
+  tok_gorgias_012115 | γάρ | γὰρ | turn_gorgias_0630 | 482e | 71973 | 71976
+  tok_gorgias_012132 | γάρ | γὰρ | turn_gorgias_0630 | 482e | 72079 | 72082
+  tok_gorgias_012171 | οὖν | οὖν | turn_gorgias_0631 | 482e | 72290 | 72293
+  tok_gorgias_012184 | δή | δὴ | turn_gorgias_0631 | 483a | 72377 | 72379
+  tok_gorgias_012236 | γάρ | γὰρ | turn_gorgias_0631 | 483a | 72669 | 72672
+  tok_gorgias_012250 | γάρ | γὰρ | turn_gorgias_0631 | 483b | 72755 | 72758
+  tok_gorgias_012299 | οὖν | οὖν | turn_gorgias_0631 | 483b | 73052 | 73055
+  tok_gorgias_012350 | γάρ | γὰρ | turn_gorgias_0631 | 483c | 73386 | 73389
+  tok_gorgias_012361 | δή | δὴ | turn_gorgias_0631 | 483c | 73448 | 73450
+  tok_gorgias_012587 | δή | δή | turn_gorgias_0632 | 484b | 74859 | 74861
+  tok_gorgias_012602 | γάρ | γὰρ | turn_gorgias_0632 | 484b | 74993 | 74996
+  tok_gorgias_012644 | οὖν | οὖν | turn_gorgias_0632 | 484c | 75243 | 75246
+  tok_gorgias_012659 | γάρ | γάρ | turn_gorgias_0632 | 484c | 75330 | 75333
+  tok_gorgias_012683 | γάρ | γὰρ | turn_gorgias_0632 | 484c | 75475 | 75478
+  tok_gorgias_012711 | γάρ | γὰρ | turn_gorgias_0632 | 484d | 75656 | 75659
+  tok_gorgias_012752 | οὖν | οὖν | turn_gorgias_0632 | 484d | 75913 | 75916
+  tok_gorgias_012781 | γάρ | γὰρ | turn_gorgias_0633 | 484e | 76118 | 76121
+  tok_gorgias_012878 | γάρ | γὰρ | turn_gorgias_0633 | 485b | 76842 | 76845
+  tok_gorgias_012943 | οὖν | οὖν | turn_gorgias_0633 | 485c | 77254 | 77257
+  tok_gorgias_012954 | γάρ | γὰρ | turn_gorgias_0633 | 485c | 77318 | 77321
+  tok_gorgias_012988 | δή | δὴ | turn_gorgias_0633 | 485d | 77556 | 77558
+  tok_gorgias_013007 | γάρ | γὰρ | turn_gorgias_0633 | 485d | 77673 | 77676
+  tok_gorgias_013069 | οὖν | οὖν | turn_gorgias_0633 | 485e | 78066 | 78069
+  tok_gorgias_013084 | γάρ | γὰρ | turn_gorgias_0634 | 485e | 78153 | 78156
+  tok_gorgias_013136 | καίτοι | καίτοι | turn_gorgias_0634 | 486a | 78502 | 78508
+  tok_gorgias_013145 | γάρ | γὰρ | turn_gorgias_0634 | 486a | 78557 | 78560
+  tok_gorgias_013170 | γάρ | γὰρ | turn_gorgias_0634 | 486a | 78691 | 78694
+  tok_gorgias_013223 | καίτοι | καίτοι | turn_gorgias_0634 | 486b | 79024 | 79030
+  tok_gorgias_013386 | δή | δὴ | turn_gorgias_0636 | 486e | 80118 | 80120
+  tok_gorgias_013405 | δή | δή | turn_gorgias_0638 | 486e | 80232 | 80234
+  tok_gorgias_013426 | γάρ | γὰρ | turn_gorgias_0639 | 486e | 80337 | 80340
+  tok_gorgias_013454 | γάρ | γὰρ | turn_gorgias_0639 | 487a | 80496 | 80499
+  tok_gorgias_013513 | γάρ | γὰρ | turn_gorgias_0639 | 487b | 80829 | 80832
+  tok_gorgias_013552 | γάρ | γὰρ | turn_gorgias_0639 | 487b | 81065 | 81068
+  tok_gorgias_013634 | οὖν | οὖν | turn_gorgias_0639 | 487d | 81620 | 81623
+  tok_gorgias_013655 | μήν | μὴν | turn_gorgias_0639 | 487d | 81752 | 81755
+  tok_gorgias_013676 | δή | δὴ | turn_gorgias_0639 | 487d | 81873 | 81875
+  tok_gorgias_013710 | γάρ | γὰρ | turn_gorgias_0639 | 487e | 82073 | 82076
+  tok_gorgias_013729 | γάρ | γάρ | turn_gorgias_0639 | 487e | 82190 | 82193
+  tok_gorgias_013738 | οὖν | οὖν | turn_gorgias_0639 | 487e | 82228 | 82231
+  tok_gorgias_013763 | δή | δή | turn_gorgias_0640 | 487e | 82356 | 82358
+  tok_gorgias_013784 | γάρ | γὰρ | turn_gorgias_0640 | 488a | 82486 | 82489
+  tok_gorgias_013807 | οὖν | οὖν | turn_gorgias_0640 | 488a | 82600 | 82603
+  tok_gorgias_013930 | γάρ | γάρ | turn_gorgias_0642 | 488c | 83299 | 83302
+  tok_gorgias_014048 | δή | δὴ | turn_gorgias_0644 | 488d | 84010 | 84012
+  tok_gorgias_014063 | γάρ | γὰρ | turn_gorgias_0645 | 488d | 84085 | 84088
+  tok_gorgias_014084 | γάρ | γὰρ | turn_gorgias_0648 | 488e | 84200 | 84203
+  tok_gorgias_014109 | οὖν | οὖν | turn_gorgias_0652 | 488e | 84343 | 84346
+  tok_gorgias_014229 | δή | δὴ | turn_gorgias_0654 | 489b | 85067 | 85069
+  tok_gorgias_014280 | γάρ | γὰρ | turn_gorgias_0655 | 489c | 85363 | 85366
+  tok_gorgias_014339 | οὖν | οὖν | turn_gorgias_0657 | 489c | 85709 | 85712
+  tok_gorgias_014364 | γάρ | γὰρ | turn_gorgias_0658 | 489d | 85861 | 85864
+  tok_gorgias_014503 | γάρ | γάρ | turn_gorgias_0664 | 490a | 86691 | 86694
+  tok_gorgias_014525 | γάρ | γὰρ | turn_gorgias_0665 | 490a | 86810 | 86813
+  tok_gorgias_014546 | δή | δὴ | turn_gorgias_0666 | 490b | 86938 | 86940
+  tok_gorgias_014617 | οὖν | οὖν | turn_gorgias_0668 | 490c | 87326 | 87329
+  tok_gorgias_014790 | δή | δὴ | turn_gorgias_0678 | 490e | 88393 | 88395
+  tok_gorgias_014940 | γάρ | γὰρ | turn_gorgias_0684 | 491b | 89264 | 89267
+  tok_gorgias_015022 | γάρ | γὰρ | turn_gorgias_0685 | 491c | 89762 | 89765
+  tok_gorgias_015111 | γάρ | γὰρ | turn_gorgias_0692 | 491e | 90294 | 90297
+  tok_gorgias_015207 | δή | δή | turn_gorgias_0693 | 492a | 90901 | 90903
+  tok_gorgias_015385 | γάρ | γὰρ | turn_gorgias_0694 | 492d | 92049 | 92052
+  tok_gorgias_015399 | οὖν | οὖν | turn_gorgias_0694 | 492d | 92127 | 92130
+  tok_gorgias_015460 | γάρ | γὰρ | turn_gorgias_0697 | 492e | 92490 | 92493
+  tok_gorgias_015472 | δή | δὴ | turn_gorgias_0698 | 492e | 92554 | 92556
+  tok_gorgias_015482 | γάρ | γάρ | turn_gorgias_0698 | 492e | 92595 | 92598
+  tok_gorgias_015513 | γάρ | γάρ | turn_gorgias_0698 | 493a | 92785 | 92788
+  tok_gorgias_015599 | δή | δὴ | turn_gorgias_0698 | 493b | 93294 | 93296
+  tok_gorgias_015611 | δή | δὴ | turn_gorgias_0698 | 493b | 93359 | 93361
+  tok_gorgias_015671 | μήν | μὴν | turn_gorgias_0698 | 493c | 93714 | 93717
+  tok_gorgias_015735 | δή | δή | turn_gorgias_0700 | 493d | 94131 | 94133
+  tok_gorgias_015747 | γάρ | γὰρ | turn_gorgias_0700 | 493d | 94195 | 94198
+  tok_gorgias_015807 | οὖν | οὖν | turn_gorgias_0701 | 493e | 94540 | 94543
+  tok_gorgias_015893 | γάρ | γὰρ | turn_gorgias_0702 | 494a | 95068 | 95071
+  tok_gorgias_015953 | οὖν | οὖν | turn_gorgias_0704 | 494b | 95423 | 95426
+  tok_gorgias_016005 | γάρ | γὰρ | turn_gorgias_0709 | 494c | 95744 | 95747
+  tok_gorgias_016070 | γάρ | γὰρ | turn_gorgias_0711 | 494d | 96153 | 96156
+  tok_gorgias_016077 | τοίνυν | τοίνυν | turn_gorgias_0712 | 494d | 96193 | 96199
+  tok_gorgias_016158 | γάρ | γὰρ | turn_gorgias_0717 | 494e | 96677 | 96680
+  tok_gorgias_016211 | δή | δή | turn_gorgias_0718 | 495a | 96967 | 96969
+  tok_gorgias_016251 | γάρ | γὰρ | turn_gorgias_0720 | 495b | 97202 | 97205
+  tok_gorgias_016257 | τοίνυν | τοίνυν | turn_gorgias_0721 | 495b | 97229 | 97235
+  tok_gorgias_016282 | γάρ | γὰρ | turn_gorgias_0721 | 495b | 97360 | 97363
+  tok_gorgias_016330 | δή | δή | turn_gorgias_0727 | 495c | 97638 | 97640
+  tok_gorgias_016355 | γάρ | γάρ | turn_gorgias_0730 | 495c | 97787 | 97790
+  tok_gorgias_016359 | οὖν | οὖν | turn_gorgias_0731 | 495c | 97804 | 97807
+  tok_gorgias_016395 | γάρ | γὰρ | turn_gorgias_0736 | 495d | 98012 | 98015
+  tok_gorgias_016399 | δή | δὴ | turn_gorgias_0737 | 495d | 98029 | 98031
+  tok_gorgias_016449 | γάρ | γάρ | turn_gorgias_0739 | 495e | 98338 | 98341
+  tok_gorgias_016466 | οὖν | οὖν | turn_gorgias_0741 | 495e | 98444 | 98447
+  tok_gorgias_016483 | γάρ | γὰρ | turn_gorgias_0741 | 495e | 98547 | 98550
+  tok_gorgias_016520 | γάρ | γὰρ | turn_gorgias_0744 | 496a | 98775 | 98778
+  tok_gorgias_016559 | γάρ | γὰρ | turn_gorgias_0749 | 496a | 99013 | 99016
+  tok_gorgias_016565 | γάρ | γάρ | turn_gorgias_0749 | 496b | 99053 | 99056
+  tok_gorgias_016663 | δή | δὴ | turn_gorgias_0761 | 496c | 99623 | 99625
+  tok_gorgias_016692 | οὖν | οὖν | turn_gorgias_0763 | 496d | 99805 | 99808
+  tok_gorgias_016712 | οὖν | οὖν | turn_gorgias_0767 | 496d | 99908 | 99911
+  tok_gorgias_016733 | δή | δὴ | turn_gorgias_0769 | 496d | 100035 | 100037
+  tok_gorgias_016788 | οὖν | οὖν | turn_gorgias_0781 | 496e | 100349 | 100352
+  tok_gorgias_016817 | γάρ | γὰρ | turn_gorgias_0781 | 496e | 100524 | 100527
+  tok_gorgias_016828 | μήν | μὴν | turn_gorgias_0783 | 496e | 100582 | 100585
+  tok_gorgias_016840 | γάρ | γάρ | turn_gorgias_0784 | 497a | 100658 | 100661
+  tok_gorgias_016967 | δή | δὴ | turn_gorgias_0794 | 497c | 101428 | 101430
+  tok_gorgias_016998 | οὖν | οὖν | turn_gorgias_0795 | 497c | 101598 | 101601
+  tok_gorgias_017041 | μήν | μὴν | turn_gorgias_0801 | 497d | 101851 | 101854
+  tok_gorgias_017060 | οὖν | οὖν | turn_gorgias_0802 | 497d | 101950 | 101953
+  tok_gorgias_017061 | δή | δή | turn_gorgias_0802 | 497d | 101954 | 101956
+  tok_gorgias_017080 | γάρ | γὰρ | turn_gorgias_0803 | 497d | 102050 | 102053
+  tok_gorgias_017090 | οὖν | οὖν | turn_gorgias_0803 | 497d | 102099 | 102102
+  tok_gorgias_017110 | γάρ | γάρ | turn_gorgias_0803 | 497d | 102202 | 102205
+  tok_gorgias_017143 | γάρ | γὰρ | turn_gorgias_0805 | 497e | 102409 | 102412
+  tok_gorgias_017160 | οὖν | οὖν | turn_gorgias_0806 | 497e | 102507 | 102510
+  tok_gorgias_017233 | γάρ | γὰρ | turn_gorgias_0818 | 498a | 102932 | 102935
+  tok_gorgias_017237 | οὖν | οὖν | turn_gorgias_0819 | 498a | 102947 | 102950
+  tok_gorgias_017265 | οὖν | οὖν | turn_gorgias_0821 | 498b | 103145 | 103148
+  tok_gorgias_017341 | μήν | μὴν | turn_gorgias_0833 | 498c | 103577 | 103580
+  tok_gorgias_017372 | οὖν | οὖν | turn_gorgias_0837 | 498c | 103749 | 103752
+  tok_gorgias_017444 | γάρ | γὰρ | turn_gorgias_0842 | 498d | 104164 | 104167
+  tok_gorgias_017543 | δή | δὴ | turn_gorgias_0855 | 498e | 104734 | 104736
+  tok_gorgias_017555 | γάρ | γάρ | turn_gorgias_0855 | 498e | 104800 | 104803
+  tok_gorgias_017577 | γάρ | γάρ | turn_gorgias_0855 | 499a | 104931 | 104934
+  tok_gorgias_017682 | δή | δὴ | turn_gorgias_0866 | 499b | 105524 | 105526
+  tok_gorgias_017725 | καίτοι | καίτοι | turn_gorgias_0867 | 499c | 105764 | 105770
+  tok_gorgias_017764 | δή | δή | turn_gorgias_0867 | 499c | 105984 | 105986
+  tok_gorgias_017781 | γάρ | γάρ | turn_gorgias_0867 | 499c | 106066 | 106069
+  tok_gorgias_017786 | οὖν | οὖν | turn_gorgias_0869 | 499d | 106096 | 106099
+  tok_gorgias_017815 | οὖν | οὖν | turn_gorgias_0873 | 499d | 106243 | 106246
+  tok_gorgias_017875 | γάρ | γὰρ | turn_gorgias_0876 | 499e | 106571 | 106574
+  tok_gorgias_017901 | δή | δή | turn_gorgias_0880 | 499e | 106708 | 106710
+  tok_gorgias_017904 | γάρ | γάρ | turn_gorgias_0881 | 499e | 106722 | 106725
+  tok_gorgias_017974 | οὖν | οὖν | turn_gorgias_0885 | 500a | 107115 | 107118
+  tok_gorgias_017996 | δή | δὴ | turn_gorgias_0887 | 500a | 107253 | 107255
+  tok_gorgias_018007 | γάρ | γὰρ | turn_gorgias_0887 | 500a | 107313 | 107316
+  tok_gorgias_018089 | γάρ | γὰρ | turn_gorgias_0887 | 500c | 107802 | 107805
+  tok_gorgias_018123 | δή | δὴ | turn_gorgias_0887 | 500c | 107986 | 107988
+  tok_gorgias_018159 | οὖν | οὖν | turn_gorgias_0887 | 500d | 108219 | 108222
+  tok_gorgias_018188 | οὖν | οὖν | turn_gorgias_0887 | 500d | 108419 | 108422
+  tok_gorgias_018256 | δή | δή | turn_gorgias_0891 | 500e | 108781 | 108783
+  tok_gorgias_018358 | δή | δὴ | turn_gorgias_0891 | 501b | 109381 | 109383
+  tok_gorgias_018364 | οὖν | οὖν | turn_gorgias_0891 | 501b | 109416 | 109419
+  tok_gorgias_018435 | γάρ | γάρ | turn_gorgias_0891 | 501c | 109853 | 109856
+  tok_gorgias_018473 | δή | δὴ | turn_gorgias_0891 | 501c | 110065 | 110067
+  tok_gorgias_018540 | οὖν | οὖν | turn_gorgias_0897 | 501d | 110458 | 110461
+  tok_gorgias_018653 | δή | δὴ | turn_gorgias_0902 | 502a | 111123 | 111125
+  tok_gorgias_018684 | γάρ | γὰρ | turn_gorgias_0903 | 502a | 111288 | 111291
+  tok_gorgias_018689 | δή | δὴ | turn_gorgias_0903 | 502a | 111315 | 111317
+  tok_gorgias_018711 | δή | δὴ | turn_gorgias_0905 | 502b | 111444 | 111446
+  tok_gorgias_018784 | δή | δὴ | turn_gorgias_0906 | 502b | 111869 | 111871
+  tok_gorgias_018815 | δή | δή | turn_gorgias_0909 | 502c | 112059 | 112061
+  tok_gorgias_018907 | γάρ | γὰρ | turn_gorgias_0917 | 502d | 112602 | 112605
+  tok_gorgias_019009 | γάρ | γὰρ | turn_gorgias_0920 | 503a | 113238 | 113241
+  tok_gorgias_019026 | γάρ | γὰρ | turn_gorgias_0921 | 503a | 113334 | 113337
+  tok_gorgias_019133 | γάρ | γὰρ | turn_gorgias_0923 | 503b | 113976 | 113979
+  tok_gorgias_019238 | δή | δὴ | turn_gorgias_0927 | 503d | 114624 | 114626
+  tok_gorgias_019248 | γάρ | γάρ | turn_gorgias_0927 | 503d | 114690 | 114693
+  tok_gorgias_019352 | δή | δὴ | turn_gorgias_0928 | 504a | 115337 | 115339
+  tok_gorgias_019407 | μήν | μὴν | turn_gorgias_0934 | 504b | 115663 | 115666
+  tok_gorgias_019442 | οὖν | οὖν | turn_gorgias_0938 | 504b | 115849 | 115852
+  tok_gorgias_019521 | γάρ | γὰρ | turn_gorgias_0942 | 504c | 116253 | 116256
+  tok_gorgias_019661 | γάρ | γὰρ | turn_gorgias_0948 | 504e | 117072 | 117075
+  tok_gorgias_019704 | γάρ | γὰρ | turn_gorgias_0950 | 505a | 117318 | 117321
+  tok_gorgias_019713 | γάρ | γὰρ | turn_gorgias_0950 | 505a | 117381 | 117384
+  tok_gorgias_019809 | γάρ | γάρ | turn_gorgias_0956 | 505b | 117929 | 117932
+  tok_gorgias_019889 | οὖν | οὖν | turn_gorgias_0964 | 505c | 118379 | 118382
+  tok_gorgias_019890 | δή | δὴ | turn_gorgias_0964 | 505c | 118383 | 118385
+  tok_gorgias_019918 | οὖν | οὖν | turn_gorgias_0966 | 505d | 118576 | 118579
+  tok_gorgias_019950 | οὖν | οὖν | turn_gorgias_0968 | 505d | 118739 | 118742
+  tok_gorgias_019954 | γάρ | γάρ | turn_gorgias_0968 | 505d | 118760 | 118763
+  tok_gorgias_020023 | γάρ | γὰρ | turn_gorgias_0970 | 505e | 119181 | 119184
+  tok_gorgias_020032 | οὖν | οὖν | turn_gorgias_0971 | 506a | 119243 | 119246
+  tok_gorgias_020056 | γάρ | γάρ | turn_gorgias_0971 | 506a | 119369 | 119372
+  tok_gorgias_020121 | γάρ | γὰρ | turn_gorgias_0972 | 506b | 119756 | 119759
+  tok_gorgias_020134 | δή | δή | turn_gorgias_0973 | 506b | 119829 | 119831
+  tok_gorgias_020168 | οὖν | οὖν | turn_gorgias_0973 | 506b | 120028 | 120031
+  tok_gorgias_020204 | δή | δὴ | turn_gorgias_0975 | 506c | 120251 | 120253
+  tok_gorgias_020262 | μήν | μὴν | turn_gorgias_0975 | 506d | 120578 | 120581
+  tok_gorgias_020285 | δή | δὴ | turn_gorgias_0975 | 506d | 120722 | 120724
+  tok_gorgias_020320 | γάρ | γάρ | turn_gorgias_0975 | 506d | 120923 | 120926
+  tok_gorgias_020362 | μήν | μὴν | turn_gorgias_0975 | 506e | 121195 | 121198
+  tok_gorgias_020369 | γάρ | γὰρ | turn_gorgias_0975 | 506e | 121230 | 121233
+  tok_gorgias_020406 | δή | δὴ | turn_gorgias_0978 | 507a | 121429 | 121431
+  tok_gorgias_020431 | μήν | μὴν | turn_gorgias_0978 | 507a | 121558 | 121561
+  tok_gorgias_020446 | γάρ | γὰρ | turn_gorgias_0978 | 507a | 121637 | 121640
+  tok_gorgias_020458 | μήν | μὴν | turn_gorgias_0978 | 507b | 121716 | 121719
+  tok_gorgias_020488 | δή | δὴ | turn_gorgias_0978 | 507b | 121888 | 121890
+  tok_gorgias_020494 | γάρ | γὰρ | turn_gorgias_0978 | 507b | 121918 | 121921
+  tok_gorgias_020495 | δή | δὴ | turn_gorgias_0978 | 507b | 121922 | 121924
+  tok_gorgias_020587 | οὖν | οὖν | turn_gorgias_0978 | 507c | 122468 | 122471
+  tok_gorgias_020697 | γάρ | γὰρ | turn_gorgias_0978 | 507e | 123179 | 123182
+  tok_gorgias_020709 | γάρ | γὰρ | turn_gorgias_0978 | 507e | 123247 | 123250
+  tok_gorgias_020796 | γάρ | γὰρ | turn_gorgias_0979 | 508a | 123754 | 123757
+  tok_gorgias_020801 | δή | δὴ | turn_gorgias_0979 | 508a | 123787 | 123789
+  tok_gorgias_020959 | δή | δὴ | turn_gorgias_0979 | 508d | 124750 | 124752
+  tok_gorgias_020983 | δή | δὴ | turn_gorgias_0979 | 508d | 124905 | 124907
+  tok_gorgias_020992 | δή | δὴ | turn_gorgias_0979 | 508d | 124946 | 124948
+  tok_gorgias_021157 | οὖν | οὖν | turn_gorgias_0980 | 509a | 125890 | 125893
+  tok_gorgias_021276 | οὖν | οὖν | turn_gorgias_0982 | 509c | 126600 | 126603
+  tok_gorgias_021294 | οὖν | οὖν | turn_gorgias_0982 | 509c | 126707 | 126710
+  tok_gorgias_021343 | δή | δὴ | turn_gorgias_0983 | 509d | 127029 | 127031
+  tok_gorgias_021352 | δή | δὴ | turn_gorgias_0984 | 509d | 127069 | 127071
+  tok_gorgias_021364 | γάρ | γὰρ | turn_gorgias_0984 | 509d | 127140 | 127143
+  tok_gorgias_021452 | οὖν | οὖν | turn_gorgias_0988 | 510a | 127696 | 127699
+  tok_gorgias_021472 | γάρ | γὰρ | turn_gorgias_0988 | 510a | 127808 | 127811
+  tok_gorgias_021512 | δή | δὴ | turn_gorgias_0990 | 510b | 128043 | 128045
+  tok_gorgias_021597 | γάρ | γὰρ | turn_gorgias_0994 | 510c | 128513 | 128516
+  tok_gorgias_021616 | δή | δὴ | turn_gorgias_0996 | 510c | 128615 | 128617
+  tok_gorgias_021728 | οὖν | οὖν | turn_gorgias_1002 | 510e | 129287 | 129290
+  tok_gorgias_021772 | γάρ | γάρ | turn_gorgias_1002 | 510e | 129532 | 129535
+  tok_gorgias_021870 | δή | δὴ | turn_gorgias_1007 | 511b | 130116 | 130118
+  tok_gorgias_021950 | μήν | μὴν | turn_gorgias_1012 | 511c | 130565 | 130568
+  tok_gorgias_022087 | γάρ | γὰρ | turn_gorgias_1012 | 511e | 131404 | 131407
+  tok_gorgias_022121 | οὖν | οὖν | turn_gorgias_1013 | 512a | 131637 | 131640
+  tok_gorgias_022193 | γάρ | γὰρ | turn_gorgias_1013 | 512b | 132065 | 132068
+  tok_gorgias_022228 | γάρ | γὰρ | turn_gorgias_1013 | 512b | 132296 | 132299
+  tok_gorgias_022240 | καίτοι | καίτοι | turn_gorgias_1013 | 512b | 132361 | 132367
+  tok_gorgias_022269 | γάρ | γὰρ | turn_gorgias_1013 | 512c | 132559 | 132562
+  tok_gorgias_022306 | καίτοι | καίτοι | turn_gorgias_1013 | 512c | 132773 | 132779
+  tok_gorgias_022395 | γάρ | γὰρ | turn_gorgias_1013 | 512d | 133268 | 133271
+  tok_gorgias_022553 | γάρ | γὰρ | turn_gorgias_1014 | 513b | 134192 | 134195
+  tok_gorgias_022580 | οὖν | οὖν | turn_gorgias_1014 | 513b | 134352 | 134355
+  tok_gorgias_022597 | γάρ | γὰρ | turn_gorgias_1014 | 513b | 134473 | 134476
+  tok_gorgias_022647 | γάρ | γὰρ | turn_gorgias_1016 | 513c | 134757 | 134760
+  tok_gorgias_022671 | οὖν | οὖν | turn_gorgias_1016 | 513d | 134925 | 134928
+  tok_gorgias_022727 | γάρ | γάρ | turn_gorgias_1018 | 513d | 135247 | 135250
+  tok_gorgias_022757 | οὖν | οὖν | turn_gorgias_1022 | 513e | 135412 | 135415
+  tok_gorgias_022775 | γάρ | γὰρ | turn_gorgias_1022 | 513e | 135535 | 135538
+  tok_gorgias_022776 | δή | δὴ | turn_gorgias_1022 | 513e | 135539 | 135541
+  tok_gorgias_022820 | οὖν | οὖν | turn_gorgias_1024 | 514a | 135806 | 135809
+  tok_gorgias_022962 | δή | δὴ | turn_gorgias_1026 | 514c | 136702 | 136704
+  tok_gorgias_023097 | δή | δὴ | turn_gorgias_1028 | 514e | 137529 | 137531
+  tok_gorgias_023282 | τοίνυν | τοίνυν | turn_gorgias_1032 | 515c | 138714 | 138720
+  tok_gorgias_023362 | δή | δή | turn_gorgias_1038 | 515d | 139212 | 139214
+  tok_gorgias_023378 | οὖν | οὖν | turn_gorgias_1039 | 515e | 139312 | 139315
+  tok_gorgias_023379 | δή | δή | turn_gorgias_1039 | 515e | 139316 | 139318
+  tok_gorgias_023402 | γάρ | γὰρ | turn_gorgias_1040 | 515e | 139463 | 139466
+  tok_gorgias_023484 | οὖν | οὖν | turn_gorgias_1043 | 516a | 140009 | 140012
+  tok_gorgias_023550 | τοίνυν | τοίνυν | turn_gorgias_1046 | 516b | 140425 | 140431
+  tok_gorgias_023566 | γάρ | γὰρ | turn_gorgias_1047 | 516b | 140515 | 140518
+  tok_gorgias_023577 | οὖν | οὖν | turn_gorgias_1050 | 516b | 140580 | 140583
+  tok_gorgias_023620 | μήν | μὴν | turn_gorgias_1054 | 516c | 140842 | 140845
+  tok_gorgias_023649 | δή | δὴ | turn_gorgias_1057 | 516c | 141010 | 141012
+  tok_gorgias_023732 | καίτοι | καίτοι | turn_gorgias_1062 | 516e | 141511 | 141517
+  tok_gorgias_023844 | γάρ | γὰρ | turn_gorgias_1064 | 517a | 142174 | 142177
+  tok_gorgias_023901 | γάρ | γὰρ | turn_gorgias_1066 | 517b | 142515 | 142518
+  tok_gorgias_023952 | οὖν | οὖν | turn_gorgias_1066 | 517c | 142859 | 142862
+  tok_gorgias_023964 | γάρ | γὰρ | turn_gorgias_1066 | 517c | 142919 | 142922
+  tok_gorgias_024050 | γάρ | γὰρ | turn_gorgias_1066 | 517d | 143438 | 143441
+  tok_gorgias_024102 | δή | δὴ | turn_gorgias_1066 | 517e | 143760 | 143762
+  tok_gorgias_024145 | δή | δὴ | turn_gorgias_1067 | 518a | 144013 | 144015
+  tok_gorgias_024174 | οὖν | οὖν | turn_gorgias_1067 | 518a | 144207 | 144210
+  tok_gorgias_024275 | οὖν | οὖν | turn_gorgias_1067 | 518c | 144861 | 144864
+  tok_gorgias_024351 | δή | δὴ | turn_gorgias_1067 | 518d | 145373 | 145375
+  tok_gorgias_024425 | γάρ | γὰρ | turn_gorgias_1068 | 519a | 145876 | 145879
+  tok_gorgias_024443 | οὖν | οὖν | turn_gorgias_1068 | 519a | 145998 | 146001
+  tok_gorgias_024494 | καίτοι | καίτοι | turn_gorgias_1068 | 519b | 146340 | 146346
+  tok_gorgias_024509 | γάρ | γάρ | turn_gorgias_1068 | 519b | 146437 | 146440
+  tok_gorgias_024547 | γάρ | γὰρ | turn_gorgias_1068 | 519b | 146686 | 146689
+  tok_gorgias_024562 | γάρ | γὰρ | turn_gorgias_1068 | 519c | 146783 | 146786
+  tok_gorgias_024574 | γάρ | γὰρ | turn_gorgias_1068 | 519c | 146862 | 146865
+  tok_gorgias_024585 | γάρ | γὰρ | turn_gorgias_1068 | 519c | 146940 | 146943
+  tok_gorgias_024875 | γάρ | γὰρ | turn_gorgias_1076 | 520c | 148824 | 148827
+  tok_gorgias_024909 | γάρ | γὰρ | turn_gorgias_1076 | 520d | 149057 | 149060
+  tok_gorgias_024910 | δή | δὴ | turn_gorgias_1076 | 520d | 149061 | 149063
+  tok_gorgias_024920 | γάρ | γάρ | turn_gorgias_1076 | 520d | 149121 | 149124
+  tok_gorgias_025014 | γάρ | γάρ | turn_gorgias_1082 | 520e | 149692 | 149695
+  tok_gorgias_025019 | γάρ | γὰρ | turn_gorgias_1084 | 520e | 149717 | 149720
+  tok_gorgias_025065 | οὖν | οὖν | turn_gorgias_1086 | 521a | 149984 | 149987
+  tok_gorgias_025097 | γάρ | γὰρ | turn_gorgias_1086 | 521a | 150194 | 150197
+  tok_gorgias_025116 | τοίνυν | τοίνυν | turn_gorgias_1087 | 521a | 150303 | 150309
+  tok_gorgias_025274 | γάρ | γὰρ | turn_gorgias_1092 | 521d | 151224 | 151227
+  tok_gorgias_025320 | οὖν | οὖν | turn_gorgias_1094 | 521d | 151494 | 151497
+  tok_gorgias_025366 | γάρ | γὰρ | turn_gorgias_1094 | 521e | 151750 | 151753
+  tok_gorgias_025377 | γάρ | γάρ | turn_gorgias_1095 | 521e | 151823 | 151826
+  tok_gorgias_025505 | γάρ | γὰρ | turn_gorgias_1099 | 522b | 152605 | 152608
+  tok_gorgias_025563 | δή | δὴ | turn_gorgias_1099 | 522c | 152968 | 152970
+  tok_gorgias_025580 | οὖν | οὖν | turn_gorgias_1100 | 522c | 153065 | 153068
+  tok_gorgias_025626 | γάρ | γὰρ | turn_gorgias_1101 | 522d | 153355 | 153358
+  tok_gorgias_025637 | οὖν | οὖν | turn_gorgias_1101 | 522d | 153426 | 153429
+  tok_gorgias_025691 | γάρ | γὰρ | turn_gorgias_1101 | 522e | 153767 | 153770
+  tok_gorgias_025709 | γάρ | γὰρ | turn_gorgias_1101 | 522e | 153887 | 153890
+  tok_gorgias_025745 | δή | δή | turn_gorgias_1103 | 523a | 154108 | 154110
+  tok_gorgias_025763 | γάρ | γὰρ | turn_gorgias_1103 | 523a | 154196 | 154199
+  tok_gorgias_025771 | γάρ | γὰρ | turn_gorgias_1103 | 523a | 154236 | 154239
+  tok_gorgias_025791 | οὖν | οὖν | turn_gorgias_1103 | 523a | 154350 | 154353
+  tok_gorgias_025842 | δή | δὴ | turn_gorgias_1103 | 523b | 154647 | 154649
+  tok_gorgias_025870 | οὖν | οὖν | turn_gorgias_1103 | 523b | 154822 | 154825
+  tok_gorgias_025876 | οὖν | οὖν | turn_gorgias_1103 | 523b | 154851 | 154854
+  tok_gorgias_025897 | οὖν | οὖν | turn_gorgias_1103 | 523c | 154986 | 154989
+  tok_gorgias_025908 | γάρ | γὰρ | turn_gorgias_1103 | 523c | 155058 | 155061
+  tok_gorgias_025914 | γάρ | γάρ | turn_gorgias_1103 | 523c | 155101 | 155104
+  tok_gorgias_025920 | γάρ | γὰρ | turn_gorgias_1103 | 523c | 155152 | 155155
+  tok_gorgias_025923 | οὖν | οὖν | turn_gorgias_1103 | 523c | 155174 | 155177
+  tok_gorgias_025953 | οὖν | οὖν | turn_gorgias_1103 | 523d | 155379 | 155382
+  tok_gorgias_025979 | δή | δὴ | turn_gorgias_1103 | 523d | 155543 | 155545
+  tok_gorgias_025994 | οὖν | οὖν | turn_gorgias_1103 | 523d | 155638 | 155641
+  tok_gorgias_026003 | γάρ | γὰρ | turn_gorgias_1103 | 523d | 155707 | 155710
+  tok_gorgias_026007 | οὖν | οὖν | turn_gorgias_1103 | 523d | 155731 | 155734
+  tok_gorgias_026009 | δή | δὴ | turn_gorgias_1103 | 523d | 155739 | 155741
+  tok_gorgias_026023 | γάρ | γὰρ | turn_gorgias_1103 | 523e | 155839 | 155842
+  tok_gorgias_026064 | οὖν | οὖν | turn_gorgias_1104 | 523e | 156095 | 156098
+  tok_gorgias_026090 | οὖν | οὖν | turn_gorgias_1104 | 524a | 156254 | 156257
+  tok_gorgias_026329 | δή | δή | turn_gorgias_1104 | 524d | 157633 | 157635
+  tok_gorgias_026371 | οὖν | οὖν | turn_gorgias_1104 | 524d | 157866 | 157869
+  tok_gorgias_026549 | γάρ | γὰρ | turn_gorgias_1105 | 525b | 159002 | 159005
+  tok_gorgias_026660 | γάρ | γὰρ | turn_gorgias_1105 | 525d | 159725 | 159728
+  tok_gorgias_026675 | γάρ | γὰρ | turn_gorgias_1105 | 525d | 159834 | 159837
+  tok_gorgias_026709 | γάρ | γὰρ | turn_gorgias_1105 | 525e | 160065 | 160068
+  tok_gorgias_026722 | γάρ | γάρ | turn_gorgias_1106 | 525e | 160134 | 160137
+  tok_gorgias_026736 | μήν | μὴν | turn_gorgias_1106 | 526a | 160231 | 160234
+  tok_gorgias_026752 | γάρ | γάρ | turn_gorgias_1106 | 526a | 160337 | 160340
+  tok_gorgias_026819 | οὖν | οὖν | turn_gorgias_1106 | 526b | 160765 | 160768
+  tok_gorgias_026934 | οὖν | οὖν | turn_gorgias_1106 | 526d | 161538 | 161541
+  tok_gorgias_026954 | οὖν | οὖν | turn_gorgias_1106 | 526d | 161661 | 161664
+  tok_gorgias_026990 | δή | δὴ | turn_gorgias_1106 | 526e | 161890 | 161892
+  tok_gorgias_027071 | οὖν | οὖν | turn_gorgias_1107 | 527a | 162342 | 162345
+  tok_gorgias_027229 | οὖν | οὖν | turn_gorgias_1107 | 527c | 163293 | 163296
+  tok_gorgias_027268 | γάρ | γὰρ | turn_gorgias_1107 | 527d | 163552 | 163555
+  tok_gorgias_027305 | γάρ | γὰρ | turn_gorgias_1107 | 527d | 163788 | 163791
+  tok_gorgias_027334 | οὖν | οὖν | turn_gorgias_1107 | 527e | 163974 | 163977
+  tok_gorgias_027365 | οὖν | οὖν | turn_gorgias_1107 | 527e | 164157 | 164160
+  tok_gorgias_027379 | γάρ | γὰρ | turn_gorgias_1107 | 527e | 164245 | 164248

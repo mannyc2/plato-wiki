@@ -289,6 +289,7 @@ export { buildObservationTurnJoin, writeObservationTurnJoin, writeObservationTur
 export { buildVoiceIndex, readVoiceIndex, writeVoiceIndex, writeVoiceIndexes } from "./derived/voices.js";
 export { buildVoiceJoin, writeVoiceJoin, writeVoiceJoins } from "./derived/voice-joins.js";
 export { buildAssentMetrics, buildProcedureMetrics, buildTurnLengthMetrics, writeDerivedMetrics } from "./derived/metrics.js";
+export { buildParticleMetrics, buildParticleReport, PARTICLE_FORMS } from "./derived/particles.js";
 export {
   listEnglishDialogues,
   listGreekDialogues,

@@ -1,0 +1,779 @@
+schema_version: 1
+dialogue: protagoras
+source_path: raw/plato/greek/protagoras.txt
+source_sha256: f2890c5fd07c6fa1f6219a938be81ca3eda1a55d5bd3d41ac7a1169a8e43d99b
+token_index_path: derived/plato/tokens/protagoras.toon
+token_index_sha256: 91dbe1d469c1fbf296761f2db0a42e8a33bc273d4b07a8d22eba90b772fbccca
+turn_index_path: derived/plato/turns/protagoras.toon
+turn_index_sha256: c35d612db3346447e8c4152742e1fdf36476819612db9c7e0c855fbe5e55b5de
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 17610
+excluded_siglum_token_count: 74
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  protagoras | 17536 | 5 | 9 | 4 | 177 | 142 | 77
+speakers[2]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  ΕΤ. | 144 | 2 | 0 | 0 | 1 | 2 | 1
+  ΣΩ. | 17392 | 3 | 9 | 4 | 176 | 140 | 76
+turns[74]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_protagoras_0001 | 40 | 1 | 0 | 0 | 0 | 0 | 1
+  turn_protagoras_0002 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_protagoras_0003 | 15 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_protagoras_0004 | 42 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_protagoras_0005 | 22 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_protagoras_0006 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_protagoras_0007 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_protagoras_0008 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_protagoras_0009 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_protagoras_0010 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_protagoras_0011 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_protagoras_0012 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_protagoras_0013 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_protagoras_0014 | 13 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_protagoras_0015 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_protagoras_0016 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_protagoras_0017 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_protagoras_0018 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_protagoras_0019 | 18 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_protagoras_0020 | 9 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_protagoras_0021 | 7 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_protagoras_0022 | 307 | 0 | 0 | 0 | 5 | 2 | 0
+  turn_protagoras_0023 | 328 | 0 | 0 | 0 | 3 | 1 | 2
+  turn_protagoras_0024 | 366 | 0 | 0 | 1 | 4 | 3 | 4
+  turn_protagoras_0025 | 368 | 0 | 0 | 0 | 2 | 3 | 0
+  turn_protagoras_0026 | 289 | 0 | 0 | 0 | 5 | 5 | 1
+  turn_protagoras_0027 | 333 | 0 | 0 | 0 | 1 | 2 | 1
+  turn_protagoras_0028 | 368 | 0 | 0 | 0 | 3 | 3 | 1
+  turn_protagoras_0029 | 301 | 0 | 0 | 1 | 6 | 5 | 1
+  turn_protagoras_0030 | 359 | 0 | 1 | 0 | 4 | 2 | 2
+  turn_protagoras_0031 | 277 | 0 | 1 | 0 | 5 | 3 | 0
+  turn_protagoras_0032 | 293 | 0 | 1 | 0 | 1 | 3 | 1
+  turn_protagoras_0033 | 336 | 0 | 0 | 0 | 3 | 3 | 3
+  turn_protagoras_0034 | 276 | 0 | 0 | 0 | 2 | 5 | 4
+  turn_protagoras_0035 | 300 | 0 | 0 | 0 | 3 | 1 | 0
+  turn_protagoras_0036 | 287 | 0 | 0 | 0 | 5 | 2 | 3
+  turn_protagoras_0037 | 311 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_protagoras_0038 | 315 | 0 | 1 | 0 | 1 | 1 | 0
+  turn_protagoras_0039 | 316 | 0 | 0 | 0 | 3 | 3 | 1
+  turn_protagoras_0040 | 331 | 0 | 0 | 0 | 5 | 0 | 3
+  turn_protagoras_0041 | 335 | 0 | 0 | 0 | 2 | 3 | 0
+  turn_protagoras_0042 | 368 | 0 | 0 | 0 | 2 | 7 | 3
+  turn_protagoras_0043 | 379 | 0 | 0 | 0 | 7 | 2 | 0
+  turn_protagoras_0044 | 321 | 1 | 0 | 0 | 0 | 1 | 3
+  turn_protagoras_0045 | 347 | 0 | 0 | 0 | 6 | 8 | 3
+  turn_protagoras_0046 | 314 | 0 | 0 | 0 | 0 | 4 | 0
+  turn_protagoras_0047 | 330 | 0 | 0 | 0 | 5 | 2 | 0
+  turn_protagoras_0048 | 306 | 0 | 0 | 0 | 5 | 4 | 0
+  turn_protagoras_0049 | 282 | 0 | 0 | 0 | 8 | 2 | 0
+  turn_protagoras_0050 | 315 | 0 | 0 | 0 | 2 | 4 | 1
+  turn_protagoras_0051 | 374 | 0 | 0 | 2 | 3 | 5 | 2
+  turn_protagoras_0052 | 315 | 0 | 0 | 0 | 5 | 3 | 1
+  turn_protagoras_0053 | 378 | 0 | 0 | 0 | 5 | 2 | 1
+  turn_protagoras_0054 | 297 | 0 | 1 | 0 | 2 | 1 | 1
+  turn_protagoras_0055 | 308 | 0 | 0 | 0 | 3 | 3 | 4
+  turn_protagoras_0056 | 364 | 0 | 0 | 0 | 7 | 2 | 0
+  turn_protagoras_0057 | 350 | 0 | 0 | 0 | 6 | 3 | 1
+  turn_protagoras_0058 | 290 | 0 | 0 | 0 | 4 | 1 | 1
+  turn_protagoras_0059 | 319 | 0 | 0 | 0 | 3 | 1 | 1
+  turn_protagoras_0060 | 306 | 0 | 0 | 0 | 4 | 2 | 2
+  turn_protagoras_0061 | 359 | 0 | 0 | 0 | 3 | 4 | 3
+  turn_protagoras_0062 | 313 | 0 | 0 | 0 | 2 | 2 | 0
+  turn_protagoras_0063 | 376 | 0 | 1 | 0 | 4 | 2 | 1
+  turn_protagoras_0064 | 319 | 0 | 0 | 0 | 1 | 3 | 3
+  turn_protagoras_0065 | 345 | 0 | 1 | 0 | 3 | 2 | 2
+  turn_protagoras_0066 | 371 | 0 | 1 | 0 | 1 | 3 | 0
+  turn_protagoras_0067 | 335 | 0 | 0 | 0 | 3 | 3 | 2
+  turn_protagoras_0068 | 384 | 0 | 0 | 0 | 3 | 1 | 2
+  turn_protagoras_0069 | 383 | 0 | 1 | 0 | 1 | 1 | 2
+  turn_protagoras_0070 | 354 | 0 | 0 | 0 | 3 | 3 | 4
+  turn_protagoras_0071 | 362 | 1 | 0 | 0 | 4 | 1 | 4
+  turn_protagoras_0072 | 350 | 1 | 0 | 0 | 0 | 3 | 1
+  turn_protagoras_0073 | 342 | 0 | 0 | 0 | 3 | 2 | 1
+  turn_protagoras_0074 | 29 | 0 | 0 | 0 | 1 | 0 | 0
+markers[265]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  309a | 49 | 1 | 0 | 0 | 0 | 0 | 1
+  309b | 69 | 0 | 0 | 0 | 2 | 2 | 0
+  309c | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  309d | 28 | 0 | 0 | 0 | 0 | 1 | 0
+  310a | 65 | 1 | 0 | 0 | 1 | 3 | 0
+  310b | 81 | 0 | 0 | 0 | 0 | 0 | 0
+  310c | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  310d | 80 | 0 | 0 | 0 | 1 | 1 | 0
+  310e | 69 | 0 | 0 | 0 | 3 | 0 | 0
+  311a | 63 | 0 | 0 | 0 | 2 | 0 | 0
+  311b | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  311c | 73 | 0 | 0 | 0 | 0 | 0 | 0
+  311d | 66 | 0 | 0 | 0 | 0 | 1 | 1
+  311e | 48 | 0 | 0 | 0 | 0 | 1 | 1
+  312a | 73 | 0 | 0 | 0 | 1 | 0 | 1
+  312b | 67 | 0 | 0 | 0 | 1 | 2 | 0
+  312c | 79 | 0 | 0 | 1 | 0 | 0 | 1
+  312d | 86 | 0 | 0 | 0 | 1 | 0 | 0
+  312e | 54 | 0 | 0 | 0 | 1 | 0 | 2
+  313a | 88 | 0 | 0 | 0 | 0 | 1 | 0
+  313b | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  313c | 83 | 0 | 0 | 0 | 1 | 1 | 0
+  313d | 75 | 0 | 0 | 0 | 1 | 0 | 0
+  313e | 49 | 0 | 0 | 0 | 0 | 1 | 0
+  314a | 77 | 0 | 0 | 0 | 2 | 0 | 1
+  314b | 65 | 0 | 0 | 0 | 2 | 1 | 0
+  314c | 65 | 0 | 0 | 0 | 0 | 2 | 0
+  314d | 74 | 0 | 0 | 0 | 0 | 0 | 0
+  314e | 41 | 0 | 0 | 0 | 1 | 2 | 0
+  315a | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  315b | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  315c | 69 | 0 | 0 | 0 | 0 | 0 | 1
+  315d | 75 | 0 | 0 | 0 | 1 | 1 | 0
+  315e | 63 | 0 | 0 | 0 | 1 | 1 | 0
+  316a | 57 | 0 | 0 | 0 | 0 | 1 | 0
+  316b | 71 | 0 | 0 | 0 | 0 | 1 | 1
+  316c | 76 | 0 | 0 | 0 | 1 | 1 | 0
+  316d | 88 | 0 | 0 | 0 | 1 | 0 | 0
+  316e | 40 | 0 | 0 | 0 | 0 | 0 | 0
+  317a | 61 | 0 | 0 | 0 | 2 | 1 | 0
+  317b | 59 | 0 | 0 | 0 | 1 | 1 | 0
+  317c | 66 | 0 | 0 | 1 | 2 | 0 | 0
+  317d | 71 | 0 | 0 | 0 | 1 | 3 | 0
+  317e | 41 | 0 | 0 | 0 | 0 | 0 | 1
+  318a | 78 | 0 | 1 | 0 | 1 | 2 | 0
+  318b | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  318c | 73 | 0 | 0 | 0 | 0 | 0 | 2
+  318d | 70 | 0 | 0 | 0 | 2 | 0 | 0
+  318e | 55 | 0 | 0 | 0 | 1 | 0 | 0
+  319a | 77 | 0 | 0 | 0 | 3 | 1 | 0
+  319b | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  319c | 72 | 0 | 0 | 0 | 0 | 1 | 0
+  319d | 54 | 0 | 1 | 0 | 1 | 0 | 0
+  319e | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  320a | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  320b | 73 | 0 | 0 | 0 | 0 | 2 | 0
+  320c | 56 | 0 | 1 | 0 | 1 | 1 | 0
+  320d | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  320e | 37 | 0 | 0 | 0 | 1 | 0 | 0
+  321a | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  321b | 65 | 0 | 0 | 0 | 0 | 1 | 1
+  321c | 74 | 0 | 0 | 0 | 0 | 1 | 1
+  321d | 79 | 0 | 0 | 0 | 2 | 1 | 1
+  321e | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  322a | 65 | 0 | 0 | 0 | 0 | 0 | 1
+  322b | 66 | 0 | 0 | 0 | 1 | 2 | 1
+  322c | 67 | 0 | 0 | 0 | 0 | 3 | 1
+  322d | 75 | 0 | 0 | 0 | 1 | 0 | 1
+  322e | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  323a | 79 | 0 | 0 | 0 | 1 | 0 | 0
+  323b | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  323c | 67 | 0 | 0 | 0 | 1 | 1 | 0
+  323d | 65 | 0 | 0 | 0 | 1 | 0 | 0
+  323e | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  324a | 63 | 0 | 0 | 0 | 2 | 0 | 1
+  324b | 61 | 0 | 0 | 0 | 1 | 1 | 0
+  324c | 69 | 0 | 0 | 0 | 0 | 1 | 0
+  324d | 67 | 0 | 0 | 0 | 1 | 0 | 2
+  324e | 32 | 0 | 0 | 0 | 2 | 0 | 0
+  325a | 73 | 0 | 0 | 0 | 0 | 0 | 0
+  325b | 80 | 0 | 0 | 0 | 1 | 0 | 0
+  325c | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  325d | 76 | 0 | 0 | 0 | 0 | 0 | 0
+  325e | 39 | 0 | 0 | 0 | 0 | 0 | 0
+  326a | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  326b | 59 | 0 | 1 | 0 | 1 | 0 | 0
+  326c | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  326d | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  326e | 64 | 0 | 0 | 0 | 1 | 2 | 0
+  327a | 75 | 0 | 0 | 0 | 1 | 0 | 1
+  327b | 72 | 0 | 0 | 0 | 1 | 1 | 0
+  327c | 63 | 0 | 0 | 0 | 0 | 1 | 0
+  327d | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  327e | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  328a | 78 | 0 | 0 | 0 | 0 | 0 | 1
+  328b | 65 | 0 | 0 | 0 | 1 | 0 | 1
+  328c | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  328d | 71 | 0 | 0 | 0 | 3 | 0 | 1
+  328e | 52 | 0 | 0 | 0 | 2 | 0 | 0
+  329a | 55 | 0 | 0 | 0 | 0 | 0 | 0
+  329b | 67 | 0 | 0 | 0 | 0 | 1 | 0
+  329c | 79 | 0 | 0 | 0 | 1 | 1 | 0
+  329d | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  329e | 59 | 0 | 0 | 0 | 1 | 2 | 0
+  330a | 84 | 0 | 0 | 0 | 0 | 1 | 0
+  330b | 66 | 0 | 0 | 0 | 0 | 0 | 2
+  330c | 82 | 0 | 0 | 0 | 1 | 1 | 1
+  330d | 76 | 0 | 0 | 0 | 0 | 1 | 0
+  330e | 73 | 0 | 0 | 0 | 1 | 3 | 0
+  331a | 76 | 0 | 0 | 0 | 0 | 2 | 0
+  331b | 78 | 0 | 0 | 0 | 1 | 0 | 0
+  331c | 71 | 0 | 0 | 0 | 2 | 0 | 0
+  331d | 80 | 0 | 0 | 0 | 2 | 0 | 0
+  331e | 57 | 0 | 0 | 0 | 1 | 0 | 0
+  332a | 69 | 1 | 0 | 0 | 0 | 0 | 0
+  332b | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  332c | 88 | 0 | 0 | 0 | 0 | 0 | 2
+  332d | 51 | 0 | 0 | 0 | 0 | 0 | 1
+  332e | 53 | 0 | 0 | 0 | 0 | 1 | 0
+  333a | 73 | 0 | 0 | 0 | 3 | 2 | 1
+  333b | 75 | 0 | 0 | 0 | 1 | 0 | 1
+  333c | 74 | 0 | 0 | 0 | 1 | 2 | 0
+  333d | 82 | 0 | 0 | 0 | 1 | 3 | 1
+  333e | 44 | 0 | 0 | 0 | 0 | 1 | 0
+  334a | 81 | 0 | 0 | 0 | 0 | 0 | 0
+  334b | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  334c | 79 | 0 | 0 | 0 | 0 | 1 | 0
+  334d | 64 | 0 | 0 | 0 | 0 | 2 | 0
+  334e | 49 | 0 | 0 | 0 | 0 | 1 | 0
+  335a | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  335b | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  335c | 80 | 0 | 0 | 0 | 2 | 0 | 0
+  335d | 65 | 0 | 0 | 0 | 1 | 1 | 0
+  335e | 39 | 0 | 0 | 0 | 0 | 0 | 0
+  336a | 69 | 0 | 0 | 0 | 2 | 1 | 0
+  336b | 70 | 0 | 0 | 0 | 2 | 1 | 0
+  336c | 49 | 0 | 0 | 0 | 0 | 1 | 0
+  336d | 64 | 0 | 0 | 0 | 1 | 1 | 0
+  336e | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  337a | 73 | 0 | 0 | 0 | 3 | 0 | 0
+  337b | 64 | 0 | 0 | 0 | 3 | 0 | 0
+  337c | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  337d | 66 | 0 | 0 | 0 | 1 | 1 | 0
+  337e | 30 | 0 | 0 | 0 | 0 | 1 | 0
+  338a | 70 | 0 | 0 | 0 | 0 | 1 | 0
+  338b | 66 | 0 | 0 | 0 | 2 | 1 | 0
+  338c | 61 | 0 | 0 | 0 | 0 | 0 | 1
+  338d | 60 | 0 | 0 | 0 | 0 | 1 | 0
+  338e | 56 | 0 | 0 | 0 | 0 | 1 | 0
+  339a | 69 | 0 | 0 | 0 | 1 | 0 | 1
+  339b | 79 | 0 | 0 | 0 | 1 | 1 | 1
+  339c | 68 | 0 | 0 | 1 | 1 | 2 | 0
+  339d | 81 | 0 | 0 | 1 | 0 | 1 | 0
+  339e | 55 | 0 | 0 | 0 | 0 | 0 | 0
+  340a | 59 | 0 | 0 | 0 | 1 | 2 | 0
+  340b | 71 | 0 | 0 | 0 | 2 | 0 | 0
+  340c | 78 | 0 | 0 | 0 | 1 | 0 | 0
+  340d | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  340e | 64 | 0 | 0 | 0 | 1 | 0 | 1
+  341a | 82 | 0 | 0 | 0 | 0 | 0 | 0
+  341b | 74 | 0 | 0 | 0 | 2 | 2 | 0
+  341c | 69 | 0 | 0 | 0 | 0 | 0 | 1
+  341d | 81 | 0 | 0 | 0 | 0 | 0 | 0
+  341e | 65 | 0 | 0 | 0 | 2 | 0 | 0
+  342a | 73 | 0 | 1 | 0 | 1 | 1 | 0
+  342b | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  342c | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  342d | 62 | 0 | 0 | 0 | 1 | 0 | 0
+  342e | 56 | 0 | 0 | 0 | 0 | 1 | 0
+  343a | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  343b | 61 | 0 | 0 | 0 | 0 | 1 | 3
+  343c | 70 | 0 | 0 | 0 | 1 | 1 | 1
+  343d | 61 | 0 | 0 | 0 | 1 | 0 | 0
+  343e | 55 | 0 | 0 | 0 | 1 | 0 | 0
+  344a | 60 | 0 | 0 | 0 | 2 | 0 | 0
+  344b | 71 | 0 | 0 | 0 | 2 | 0 | 0
+  344c | 78 | 0 | 0 | 0 | 1 | 2 | 0
+  344d | 62 | 0 | 0 | 0 | 1 | 0 | 0
+  344e | 59 | 0 | 0 | 0 | 1 | 0 | 0
+  345a | 75 | 0 | 0 | 0 | 1 | 2 | 0
+  345b | 80 | 0 | 0 | 0 | 2 | 0 | 0
+  345c | 78 | 0 | 0 | 0 | 1 | 1 | 0
+  345d | 66 | 0 | 0 | 0 | 2 | 0 | 0
+  345e | 64 | 0 | 0 | 0 | 1 | 0 | 1
+  346a | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  346b | 64 | 0 | 0 | 0 | 0 | 0 | 1
+  346c | 47 | 0 | 0 | 0 | 2 | 0 | 0
+  346d | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  346e | 37 | 0 | 0 | 0 | 0 | 1 | 0
+  347a | 63 | 0 | 0 | 0 | 1 | 0 | 0
+  347b | 68 | 0 | 0 | 0 | 0 | 0 | 1
+  347c | 65 | 0 | 0 | 0 | 2 | 0 | 0
+  347d | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  347e | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  348a | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  348b | 68 | 0 | 0 | 0 | 1 | 2 | 0
+  348c | 63 | 0 | 0 | 0 | 1 | 0 | 1
+  348d | 62 | 0 | 0 | 0 | 1 | 0 | 0
+  348e | 61 | 0 | 0 | 0 | 1 | 0 | 1
+  349a | 65 | 0 | 0 | 0 | 0 | 1 | 1
+  349b | 55 | 0 | 0 | 0 | 0 | 1 | 0
+  349c | 80 | 0 | 0 | 0 | 1 | 0 | 0
+  349d | 58 | 0 | 0 | 0 | 1 | 0 | 0
+  349e | 82 | 0 | 0 | 0 | 1 | 3 | 2
+  350a | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  350b | 60 | 0 | 0 | 0 | 0 | 1 | 0
+  350c | 75 | 0 | 0 | 0 | 1 | 0 | 0
+  350d | 64 | 0 | 0 | 0 | 1 | 0 | 0
+  350e | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  351a | 64 | 0 | 0 | 0 | 2 | 0 | 0
+  351b | 68 | 0 | 0 | 0 | 0 | 1 | 0
+  351c | 72 | 0 | 0 | 0 | 1 | 0 | 1
+  351d | 77 | 0 | 0 | 0 | 0 | 0 | 0
+  351e | 81 | 0 | 1 | 0 | 1 | 1 | 0
+  352a | 81 | 0 | 0 | 0 | 0 | 1 | 2
+  352b | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  352c | 71 | 0 | 0 | 0 | 0 | 1 | 0
+  352d | 67 | 0 | 0 | 0 | 0 | 1 | 1
+  352e | 48 | 0 | 0 | 0 | 1 | 0 | 1
+  353a | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  353b | 58 | 0 | 0 | 0 | 0 | 1 | 0
+  353c | 81 | 0 | 1 | 0 | 2 | 1 | 1
+  353d | 77 | 0 | 0 | 0 | 0 | 0 | 0
+  353e | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  354a | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  354b | 68 | 0 | 0 | 0 | 0 | 1 | 0
+  354c | 73 | 0 | 0 | 0 | 0 | 0 | 0
+  354d | 77 | 0 | 0 | 0 | 0 | 1 | 0
+  354e | 71 | 0 | 1 | 0 | 1 | 1 | 0
+  355a | 82 | 0 | 0 | 0 | 1 | 0 | 0
+  355b | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  355c | 73 | 0 | 0 | 0 | 1 | 2 | 2
+  355d | 80 | 0 | 0 | 0 | 1 | 0 | 0
+  355e | 66 | 0 | 0 | 0 | 0 | 1 | 1
+  356a | 78 | 0 | 0 | 0 | 2 | 0 | 0
+  356b | 81 | 0 | 0 | 0 | 1 | 0 | 0
+  356c | 74 | 0 | 0 | 0 | 0 | 1 | 1
+  356d | 81 | 0 | 0 | 0 | 0 | 0 | 0
+  356e | 82 | 0 | 0 | 0 | 0 | 0 | 0
+  357a | 70 | 0 | 0 | 0 | 0 | 0 | 1
+  357b | 59 | 0 | 1 | 0 | 0 | 0 | 0
+  357c | 75 | 0 | 0 | 0 | 0 | 0 | 1
+  357d | 62 | 0 | 0 | 0 | 1 | 1 | 0
+  357e | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  358a | 76 | 0 | 0 | 0 | 2 | 0 | 2
+  358b | 69 | 0 | 0 | 0 | 0 | 1 | 1
+  358c | 73 | 0 | 0 | 0 | 0 | 1 | 1
+  358d | 76 | 0 | 0 | 0 | 0 | 1 | 0
+  358e | 57 | 0 | 0 | 0 | 1 | 0 | 0
+  359a | 72 | 0 | 0 | 0 | 2 | 0 | 2
+  359b | 73 | 0 | 0 | 0 | 1 | 1 | 0
+  359c | 68 | 0 | 0 | 0 | 0 | 0 | 2
+  359d | 82 | 1 | 0 | 0 | 0 | 0 | 0
+  359e | 74 | 0 | 0 | 0 | 1 | 0 | 0
+  360a | 77 | 0 | 0 | 0 | 0 | 1 | 0
+  360b | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  360c | 67 | 1 | 0 | 0 | 0 | 1 | 0
+  360d | 73 | 0 | 0 | 0 | 0 | 0 | 1
+  360e | 72 | 0 | 0 | 0 | 1 | 1 | 0
+  361a | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  361b | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  361c | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  361d | 73 | 0 | 0 | 0 | 1 | 1 | 0
+  361e | 61 | 0 | 0 | 0 | 0 | 0 | 1
+  362a | 29 | 0 | 0 | 0 | 1 | 0 | 0
+occurrences[414]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_protagoras_000008 | δή | δὴ | turn_protagoras_0001 | 309a | 44 | 46
+  tok_protagoras_000018 | μήν | μήν | turn_protagoras_0001 | 309a | 100 | 103
+  tok_protagoras_000066 | οὖν | οὖν | turn_protagoras_0003 | 309b | 397 | 400
+  tok_protagoras_000092 | γάρ | γὰρ | turn_protagoras_0004 | 309b | 527 | 530
+  tok_protagoras_000100 | οὖν | οὖν | turn_protagoras_0004 | 309b | 569 | 572
+  tok_protagoras_000113 | γάρ | γὰρ | turn_protagoras_0004 | 309b | 647 | 650
+  tok_protagoras_000135 | γάρ | γὰρ | turn_protagoras_0005 | 309c | 784 | 787
+  tok_protagoras_000203 | οὖν | οὖν | turn_protagoras_0014 | 309d | 1157 | 1160
+  tok_protagoras_000242 | οὖν | οὖν | turn_protagoras_0019 | 310a | 1386 | 1389
+  tok_protagoras_000262 | οὖν | οὖν | turn_protagoras_0020 | 310a | 1506 | 1509
+  tok_protagoras_000271 | μήν | μὴν | turn_protagoras_0021 | 310a | 1554 | 1557
+  tok_protagoras_000284 | οὖν | οὖν | turn_protagoras_0022 | 310a | 1615 | 1618
+  tok_protagoras_000287 | γάρ | γὰρ | turn_protagoras_0022 | 310a | 1636 | 1639
+  tok_protagoras_000404 | γάρ | γάρ | turn_protagoras_0022 | 310c | 2387 | 2390
+  tok_protagoras_000480 | οὖν | οὖν | turn_protagoras_0022 | 310d | 2854 | 2857
+  tok_protagoras_000527 | γάρ | γάρ | turn_protagoras_0022 | 310d | 3127 | 3130
+  tok_protagoras_000562 | γάρ | γὰρ | turn_protagoras_0022 | 310e | 3302 | 3305
+  tok_protagoras_000578 | γάρ | γὰρ | turn_protagoras_0022 | 310e | 3393 | 3396
+  tok_protagoras_000587 | γάρ | γάρ | turn_protagoras_0023 | 310e | 3440 | 3443
+  tok_protagoras_000627 | γάρ | γάρ | turn_protagoras_0023 | 311a | 3697 | 3700
+  tok_protagoras_000646 | γάρ | γὰρ | turn_protagoras_0023 | 311a | 3814 | 3817
+  tok_protagoras_000809 | δή | δὴ | turn_protagoras_0023 | 311d | 4898 | 4900
+  tok_protagoras_000844 | οὖν | οὖν | turn_protagoras_0023 | 311d | 5109 | 5112
+  tok_protagoras_000896 | δή | δή | turn_protagoras_0023 | 311e | 5460 | 5462
+  tok_protagoras_000916 | οὖν | οὖν | turn_protagoras_0024 | 311e | 5579 | 5582
+  tok_protagoras_000924 | δή | δὴ | turn_protagoras_0024 | 312a | 5632 | 5634
+  tok_protagoras_000937 | γάρ | γὰρ | turn_protagoras_0024 | 312a | 5714 | 5717
+  tok_protagoras_001008 | γάρ | γὰρ | turn_protagoras_0024 | 312b | 6162 | 6165
+  tok_protagoras_001030 | οὖν | οὖν | turn_protagoras_0024 | 312b | 6291 | 6294
+  tok_protagoras_001042 | οὖν | οὖν | turn_protagoras_0024 | 312b | 6369 | 6372
+  tok_protagoras_001077 | καίτοι | καίτοι | turn_protagoras_0024 | 312c | 6572 | 6578
+  tok_protagoras_001099 | δή | δή | turn_protagoras_0024 | 312c | 6699 | 6701
+  tok_protagoras_001211 | γάρ | γὰρ | turn_protagoras_0024 | 312d | 7364 | 7367
+  tok_protagoras_001238 | γάρ | γάρ | turn_protagoras_0024 | 312e | 7537 | 7540
+  tok_protagoras_001243 | δή | δὴ | turn_protagoras_0024 | 312e | 7558 | 7560
+  tok_protagoras_001259 | δή | δή | turn_protagoras_0024 | 312e | 7652 | 7654
+  tok_protagoras_001288 | οὖν | οὖν | turn_protagoras_0025 | 313a | 7814 | 7817
+  tok_protagoras_001464 | οὖν | οὖν | turn_protagoras_0025 | 313c | 8861 | 8864
+  tok_protagoras_001482 | γάρ | γὰρ | turn_protagoras_0025 | 313c | 8970 | 8973
+  tok_protagoras_001523 | γάρ | γὰρ | turn_protagoras_0025 | 313d | 9203 | 9206
+  tok_protagoras_001616 | οὖν | οὖν | turn_protagoras_0025 | 313e | 9731 | 9734
+  tok_protagoras_001652 | γάρ | γὰρ | turn_protagoras_0026 | 314a | 9954 | 9957
+  tok_protagoras_001653 | δή | δὴ | turn_protagoras_0026 | 314a | 9958 | 9960
+  tok_protagoras_001670 | γάρ | γὰρ | turn_protagoras_0026 | 314a | 10040 | 10043
+  tok_protagoras_001749 | οὖν | οὖν | turn_protagoras_0026 | 314b | 10526 | 10529
+  tok_protagoras_001757 | γάρ | γὰρ | turn_protagoras_0026 | 314b | 10577 | 10580
+  tok_protagoras_001779 | γάρ | γὰρ | turn_protagoras_0026 | 314b | 10732 | 10735
+  tok_protagoras_001823 | οὖν | οὖν | turn_protagoras_0026 | 314c | 11008 | 11011
+  tok_protagoras_001840 | οὖν | οὖν | turn_protagoras_0026 | 314c | 11137 | 11140
+  tok_protagoras_001925 | γάρ | γάρ | turn_protagoras_0026 | 314e | 11685 | 11688
+  tok_protagoras_001931 | οὖν | οὖν | turn_protagoras_0026 | 314e | 11729 | 11732
+  tok_protagoras_001933 | οὖν | οὖν | turn_protagoras_0026 | 314e | 11745 | 11748
+  tok_protagoras_002169 | δή | δὴ | turn_protagoras_0027 | 315c | 13255 | 13257
+  tok_protagoras_002175 | γάρ | γὰρ | turn_protagoras_0027 | 315d | 13334 | 13337
+  tok_protagoras_002211 | οὖν | οὖν | turn_protagoras_0027 | 315d | 13533 | 13536
+  tok_protagoras_002255 | οὖν | οὖν | turn_protagoras_0027 | 315e | 13808 | 13811
+  tok_protagoras_002310 | γάρ | γάρ | turn_protagoras_0028 | 315e | 14149 | 14152
+  tok_protagoras_002357 | οὖν | οὖν | turn_protagoras_0028 | 316a | 14439 | 14442
+  tok_protagoras_002410 | οὖν | οὖν | turn_protagoras_0028 | 316b | 14784 | 14787
+  tok_protagoras_002411 | δή | δή | turn_protagoras_0028 | 316b | 14788 | 14790
+  tok_protagoras_002460 | οὖν | οὖν | turn_protagoras_0028 | 316c | 15113 | 15116
+  tok_protagoras_002484 | γάρ | γὰρ | turn_protagoras_0028 | 316c | 15260 | 15263
+  tok_protagoras_002527 | γάρ | γὰρ | turn_protagoras_0028 | 316d | 15552 | 15555
+  tok_protagoras_002654 | γάρ | γὰρ | turn_protagoras_0029 | 317a | 16387 | 16390
+  tok_protagoras_002662 | γάρ | γὰρ | turn_protagoras_0029 | 317a | 16434 | 16437
+  tok_protagoras_002695 | οὖν | οὖν | turn_protagoras_0029 | 317a | 16640 | 16643
+  tok_protagoras_002716 | γάρ | γὰρ | turn_protagoras_0029 | 317b | 16812 | 16815
+  tok_protagoras_002726 | οὖν | οὖν | turn_protagoras_0029 | 317b | 16871 | 16874
+  tok_protagoras_002771 | καίτοι | καίτοι | turn_protagoras_0029 | 317c | 17171 | 17177
+  tok_protagoras_002781 | γάρ | γὰρ | turn_protagoras_0029 | 317c | 17217 | 17220
+  tok_protagoras_002819 | γάρ | γὰρ | turn_protagoras_0029 | 317c | 17443 | 17446
+  tok_protagoras_002837 | οὖν | οὖν | turn_protagoras_0029 | 317d | 17565 | 17568
+  tok_protagoras_002855 | οὖν | οὖν | turn_protagoras_0029 | 317d | 17674 | 17677
+  tok_protagoras_002860 | οὖν | οὖν | turn_protagoras_0029 | 317d | 17710 | 17713
+  tok_protagoras_002893 | γάρ | γὰρ | turn_protagoras_0029 | 317d | 17944 | 17947
+  tok_protagoras_002924 | δή | δὴ | turn_protagoras_0029 | 317e | 18149 | 18151
+  tok_protagoras_002963 | γάρ | γὰρ | turn_protagoras_0030 | 318a | 18383 | 18386
+  tok_protagoras_002973 | οὖν | οὖν | turn_protagoras_0030 | 318a | 18438 | 18441
+  tok_protagoras_002989 | οὖν | οὖν | turn_protagoras_0030 | 318a | 18540 | 18543
+  tok_protagoras_002996 | τοίνυν | τοίνυν | turn_protagoras_0030 | 318a | 18582 | 18588
+  tok_protagoras_003111 | δή | δὴ | turn_protagoras_0030 | 318c | 19325 | 19327
+  tok_protagoras_003155 | δή | δὴ | turn_protagoras_0030 | 318c | 19601 | 19603
+  tok_protagoras_003213 | γάρ | γὰρ | turn_protagoras_0030 | 318d | 19974 | 19977
+  tok_protagoras_003229 | γάρ | γὰρ | turn_protagoras_0030 | 318d | 20067 | 20070
+  tok_protagoras_003235 | γάρ | γὰρ | turn_protagoras_0030 | 318e | 20109 | 20112
+  tok_protagoras_003314 | γάρ | γάρ | turn_protagoras_0031 | 319a | 20588 | 20591
+  tok_protagoras_003328 | οὖν | οὖν | turn_protagoras_0031 | 319a | 20685 | 20688
+  tok_protagoras_003349 | γάρ | γάρ | turn_protagoras_0031 | 319a | 20813 | 20816
+  tok_protagoras_003360 | γάρ | γὰρ | turn_protagoras_0031 | 319a | 20862 | 20865
+  tok_protagoras_003392 | γάρ | γὰρ | turn_protagoras_0031 | 319b | 21077 | 21080
+  tok_protagoras_003403 | οὖν | οὖν | turn_protagoras_0031 | 319b | 21143 | 21146
+  tok_protagoras_003493 | οὖν | οὖν | turn_protagoras_0031 | 319c | 21745 | 21748
+  tok_protagoras_003549 | γάρ | γὰρ | turn_protagoras_0031 | 319d | 22162 | 22165
+  tok_protagoras_003556 | τοίνυν | τοίνυν | turn_protagoras_0031 | 319d | 22202 | 22208
+  tok_protagoras_003644 | δή | δὴ | turn_protagoras_0032 | 320a | 22770 | 22772
+  tok_protagoras_003687 | οὖν | οὖν | turn_protagoras_0032 | 320b | 23055 | 23058
+  tok_protagoras_003726 | οὖν | οὖν | turn_protagoras_0032 | 320b | 23297 | 23300
+  tok_protagoras_003759 | οὖν | οὖν | turn_protagoras_0032 | 320c | 23531 | 23534
+  tok_protagoras_003769 | τοίνυν | τοίνυν | turn_protagoras_0032 | 320c | 23608 | 23614
+  tok_protagoras_003778 | γάρ | γάρ | turn_protagoras_0032 | 320c | 23669 | 23672
+  tok_protagoras_003880 | γάρ | γὰρ | turn_protagoras_0033 | 320e | 24323 | 24326
+  tok_protagoras_004011 | δή | δὴ | turn_protagoras_0033 | 321b | 25188 | 25190
+  tok_protagoras_004012 | οὖν | οὖν | turn_protagoras_0033 | 321b | 25191 | 25194
+  tok_protagoras_004029 | δή | δὴ | turn_protagoras_0033 | 321c | 25293 | 25295
+  tok_protagoras_004087 | οὖν | οὖν | turn_protagoras_0033 | 321c | 25626 | 25629
+  tok_protagoras_004106 | γάρ | γὰρ | turn_protagoras_0033 | 321d | 25758 | 25761
+  tok_protagoras_004118 | δή | δὴ | turn_protagoras_0033 | 321d | 25821 | 25823
+  tok_protagoras_004123 | οὖν | οὖν | turn_protagoras_0033 | 321d | 25850 | 25853
+  tok_protagoras_004137 | γάρ | γὰρ | turn_protagoras_0033 | 321d | 25928 | 25931
+  tok_protagoras_004264 | δή | δὴ | turn_protagoras_0034 | 322a | 26703 | 26705
+  tok_protagoras_004276 | οὖν | οὖν | turn_protagoras_0034 | 322b | 26795 | 26798
+  tok_protagoras_004305 | γάρ | γὰρ | turn_protagoras_0034 | 322b | 26968 | 26971
+  tok_protagoras_004313 | δή | δὴ | turn_protagoras_0034 | 322b | 27018 | 27020
+  tok_protagoras_004320 | οὖν | οὖν | turn_protagoras_0034 | 322b | 27068 | 27071
+  tok_protagoras_004335 | οὖν | οὖν | turn_protagoras_0034 | 322c | 27191 | 27194
+  tok_protagoras_004363 | οὖν | οὖν | turn_protagoras_0034 | 322c | 27352 | 27355
+  tok_protagoras_004367 | οὖν | οὖν | turn_protagoras_0034 | 322c | 27371 | 27374
+  tok_protagoras_004398 | δή | δὴ | turn_protagoras_0034 | 322c | 27570 | 27572
+  tok_protagoras_004419 | γάρ | γὰρ | turn_protagoras_0034 | 322d | 27704 | 27707
+  tok_protagoras_004448 | δή | δή | turn_protagoras_0034 | 322d | 27880 | 27882
+  tok_protagoras_004554 | γάρ | γὰρ | turn_protagoras_0035 | 323a | 28538 | 28541
+  tok_protagoras_004653 | οὖν | οὖν | turn_protagoras_0035 | 323c | 29178 | 29181
+  tok_protagoras_004699 | γάρ | γὰρ | turn_protagoras_0035 | 323c | 29473 | 29476
+  tok_protagoras_004742 | γάρ | γὰρ | turn_protagoras_0035 | 323d | 29753 | 29756
+  tok_protagoras_004811 | δή | δὴ | turn_protagoras_0036 | 324a | 30165 | 30167
+  tok_protagoras_004827 | γάρ | γὰρ | turn_protagoras_0036 | 324a | 30258 | 30261
+  tok_protagoras_004851 | γάρ | γὰρ | turn_protagoras_0036 | 324a | 30416 | 30419
+  tok_protagoras_004884 | γάρ | γὰρ | turn_protagoras_0036 | 324b | 30639 | 30642
+  tok_protagoras_004921 | οὖν | οὖν | turn_protagoras_0036 | 324b | 30874 | 30877
+  tok_protagoras_004968 | οὖν | οὖν | turn_protagoras_0036 | 324c | 31174 | 31177
+  tok_protagoras_004998 | δή | δὴ | turn_protagoras_0036 | 324d | 31393 | 31395
+  tok_protagoras_005037 | δή | δὴ | turn_protagoras_0036 | 324d | 31626 | 31628
+  tok_protagoras_005048 | γάρ | γὰρ | turn_protagoras_0036 | 324d | 31684 | 31687
+  tok_protagoras_005069 | γάρ | γὰρ | turn_protagoras_0036 | 324e | 31815 | 31818
+  tok_protagoras_005083 | γάρ | γὰρ | turn_protagoras_0037 | 324e | 31883 | 31886
+  tok_protagoras_005204 | γάρ | γὰρ | turn_protagoras_0037 | 325b | 32610 | 32613
+  tok_protagoras_005514 | γάρ | γὰρ | turn_protagoras_0038 | 326b | 34640 | 34643
+  tok_protagoras_005525 | τοίνυν | τοίνυν | turn_protagoras_0038 | 326b | 34705 | 34711
+  tok_protagoras_005680 | οὖν | οὖν | turn_protagoras_0038 | 326e | 35760 | 35763
+  tok_protagoras_005711 | οὖν | οὖν | turn_protagoras_0039 | 326e | 35946 | 35949
+  tok_protagoras_005723 | γάρ | γὰρ | turn_protagoras_0039 | 326e | 36020 | 36023
+  tok_protagoras_005746 | γάρ | γὰρ | turn_protagoras_0039 | 327a | 36171 | 36174
+  tok_protagoras_005747 | δή | δὴ | turn_protagoras_0039 | 327a | 36175 | 36177
+  tok_protagoras_005817 | γάρ | γὰρ | turn_protagoras_0039 | 327b | 36604 | 36607
+  tok_protagoras_005840 | οὖν | οὖν | turn_protagoras_0039 | 327b | 36730 | 36733
+  tok_protagoras_005904 | οὖν | οὖν | turn_protagoras_0039 | 327c | 37130 | 37133
+  tok_protagoras_006058 | δή | δὴ | turn_protagoras_0040 | 328a | 38128 | 38130
+  tok_protagoras_006117 | δή | δὴ | turn_protagoras_0040 | 328b | 38484 | 38486
+  tok_protagoras_006163 | γάρ | γάρ | turn_protagoras_0040 | 328b | 38754 | 38757
+  tok_protagoras_006250 | γάρ | γὰρ | turn_protagoras_0040 | 328d | 39308 | 39311
+  tok_protagoras_006256 | γάρ | γάρ | turn_protagoras_0040 | 328d | 39342 | 39345
+  tok_protagoras_006284 | δή | δὴ | turn_protagoras_0040 | 328d | 39527 | 39529
+  tok_protagoras_006314 | γάρ | γὰρ | turn_protagoras_0040 | 328d | 39713 | 39716
+  tok_protagoras_006321 | γάρ | γὰρ | turn_protagoras_0040 | 328e | 39768 | 39771
+  tok_protagoras_006359 | γάρ | γὰρ | turn_protagoras_0041 | 328e | 40004 | 40007
+  tok_protagoras_006462 | οὖν | οὖν | turn_protagoras_0041 | 329b | 40677 | 40680
+  tok_protagoras_006503 | γάρ | γὰρ | turn_protagoras_0041 | 329c | 40928 | 40931
+  tok_protagoras_006540 | οὖν | οὖν | turn_protagoras_0041 | 329c | 41135 | 41138
+  tok_protagoras_006652 | οὖν | οὖν | turn_protagoras_0041 | 329e | 41787 | 41790
+  tok_protagoras_006695 | γάρ | γὰρ | turn_protagoras_0042 | 329e | 42026 | 42029
+  tok_protagoras_006696 | οὖν | οὖν | turn_protagoras_0042 | 329e | 42030 | 42033
+  tok_protagoras_006771 | οὖν | οὖν | turn_protagoras_0042 | 330a | 42433 | 42436
+  tok_protagoras_006793 | δή | δὴ | turn_protagoras_0042 | 330b | 42548 | 42550
+  tok_protagoras_006836 | δή | δή | turn_protagoras_0042 | 330b | 42802 | 42804
+  tok_protagoras_006860 | γάρ | γὰρ | turn_protagoras_0042 | 330c | 42946 | 42949
+  tok_protagoras_006868 | οὖν | οὖν | turn_protagoras_0042 | 330c | 42983 | 42986
+  tok_protagoras_006882 | δή | δή | turn_protagoras_0042 | 330c | 43058 | 43060
+  tok_protagoras_006939 | οὖν | οὖν | turn_protagoras_0042 | 330d | 43391 | 43394
+  tok_protagoras_007022 | οὖν | οὖν | turn_protagoras_0042 | 330e | 43884 | 43887
+  tok_protagoras_007025 | οὖν | οὖν | turn_protagoras_0042 | 330e | 43901 | 43904
+  tok_protagoras_007032 | οὖν | οὖν | turn_protagoras_0042 | 330e | 43943 | 43946
+  tok_protagoras_007081 | γάρ | γὰρ | turn_protagoras_0043 | 330e | 44244 | 44247
+  tok_protagoras_007089 | οὖν | οὖν | turn_protagoras_0043 | 331a | 44295 | 44298
+  tok_protagoras_007124 | οὖν | οὖν | turn_protagoras_0043 | 331a | 44501 | 44504
+  tok_protagoras_007167 | γάρ | γὰρ | turn_protagoras_0043 | 331b | 44786 | 44789
+  tok_protagoras_007262 | γάρ | γὰρ | turn_protagoras_0043 | 331c | 45351 | 45354
+  tok_protagoras_007278 | γάρ | γὰρ | turn_protagoras_0043 | 331c | 45440 | 45443
+  tok_protagoras_007325 | γάρ | γὰρ | turn_protagoras_0043 | 331d | 45730 | 45733
+  tok_protagoras_007333 | γάρ | γὰρ | turn_protagoras_0043 | 331d | 45773 | 45776
+  tok_protagoras_007425 | γάρ | γὰρ | turn_protagoras_0043 | 331e | 46297 | 46300
+  tok_protagoras_007457 | μήν | μήν | turn_protagoras_0044 | 332a | 46473 | 46476
+  tok_protagoras_007582 | δή | δὴ | turn_protagoras_0044 | 332c | 47329 | 47331
+  tok_protagoras_007598 | δή | δή | turn_protagoras_0044 | 332c | 47427 | 47429
+  tok_protagoras_007666 | δή | δή | turn_protagoras_0044 | 332d | 47800 | 47802
+  tok_protagoras_007752 | οὖν | οὖν | turn_protagoras_0044 | 332e | 48403 | 48406
+  tok_protagoras_007773 | οὖν | οὖν | turn_protagoras_0045 | 333a | 48547 | 48550
+  tok_protagoras_007817 | οὖν | οὖν | turn_protagoras_0045 | 333a | 48803 | 48806
+  tok_protagoras_007818 | δή | δὴ | turn_protagoras_0045 | 333a | 48807 | 48809
+  tok_protagoras_007821 | γάρ | γὰρ | turn_protagoras_0045 | 333a | 48825 | 48828
+  tok_protagoras_007830 | γάρ | γὰρ | turn_protagoras_0045 | 333a | 48878 | 48881
+  tok_protagoras_007836 | γάρ | γὰρ | turn_protagoras_0045 | 333a | 48927 | 48930
+  tok_protagoras_007863 | γάρ | γάρ | turn_protagoras_0045 | 333b | 49084 | 49087
+  tok_protagoras_007900 | δή | δή | turn_protagoras_0045 | 333b | 49281 | 49283
+  tok_protagoras_007937 | οὖν | οὖν | turn_protagoras_0045 | 333c | 49518 | 49521
+  tok_protagoras_007969 | οὖν | οὖν | turn_protagoras_0045 | 333c | 49702 | 49705
+  tok_protagoras_007976 | γάρ | γὰρ | turn_protagoras_0045 | 333c | 49735 | 49738
+  tok_protagoras_007994 | οὖν | οὖν | turn_protagoras_0045 | 333d | 49864 | 49867
+  tok_protagoras_008001 | γάρ | γὰρ | turn_protagoras_0045 | 333d | 49910 | 49913
+  tok_protagoras_008011 | δή | δή | turn_protagoras_0045 | 333d | 49985 | 49987
+  tok_protagoras_008056 | οὖν | οὖν | turn_protagoras_0045 | 333d | 50247 | 50250
+  tok_protagoras_008062 | οὖν | οὖν | turn_protagoras_0045 | 333d | 50279 | 50282
+  tok_protagoras_008104 | οὖν | οὖν | turn_protagoras_0045 | 333e | 50530 | 50533
+  tok_protagoras_008320 | οὖν | οὖν | turn_protagoras_0046 | 334c | 51816 | 51819
+  tok_protagoras_008354 | οὖν | οὖν | turn_protagoras_0046 | 334d | 52014 | 52017
+  tok_protagoras_008390 | οὖν | οὖν | turn_protagoras_0046 | 334d | 52250 | 52253
+  tok_protagoras_008415 | οὖν | οὖν | turn_protagoras_0046 | 334e | 52413 | 52416
+  tok_protagoras_008468 | οὖν | οὖν | turn_protagoras_0047 | 335a | 52719 | 52722
+  tok_protagoras_008521 | γάρ | γὰρ | turn_protagoras_0047 | 335a | 53055 | 53058
+  tok_protagoras_008579 | γάρ | γάρ | turn_protagoras_0047 | 335b | 53434 | 53437
+  tok_protagoras_008600 | γάρ | γὰρ | turn_protagoras_0047 | 335c | 53559 | 53562
+  tok_protagoras_008648 | γάρ | γάρ | turn_protagoras_0047 | 335c | 53835 | 53838
+  tok_protagoras_008694 | γάρ | γὰρ | turn_protagoras_0047 | 335d | 54109 | 54112
+  tok_protagoras_008704 | οὖν | οὖν | turn_protagoras_0047 | 335d | 54169 | 54172
+  tok_protagoras_008799 | γάρ | γὰρ | turn_protagoras_0048 | 336a | 54732 | 54735
+  tok_protagoras_008819 | γάρ | γὰρ | turn_protagoras_0048 | 336a | 54842 | 54845
+  tok_protagoras_008829 | οὖν | οὖν | turn_protagoras_0048 | 336a | 54897 | 54900
+  tok_protagoras_008863 | γάρ | γὰρ | turn_protagoras_0048 | 336b | 55105 | 55108
+  tok_protagoras_008899 | οὖν | οὖν | turn_protagoras_0048 | 336b | 55337 | 55340
+  tok_protagoras_008910 | γάρ | γὰρ | turn_protagoras_0048 | 336b | 55400 | 55403
+  tok_protagoras_008941 | οὖν | οὖν | turn_protagoras_0048 | 336c | 55600 | 55603
+  tok_protagoras_009004 | οὖν | οὖν | turn_protagoras_0048 | 336d | 56031 | 56034
+  tok_protagoras_009010 | γάρ | γὰρ | turn_protagoras_0048 | 336d | 56075 | 56078
+  tok_protagoras_009080 | γάρ | γὰρ | turn_protagoras_0049 | 337a | 56529 | 56532
+  tok_protagoras_009097 | γάρ | γὰρ | turn_protagoras_0049 | 337a | 56645 | 56648
+  tok_protagoras_009102 | γάρ | γὰρ | turn_protagoras_0049 | 337a | 56670 | 56673
+  tok_protagoras_009144 | γάρ | γὰρ | turn_protagoras_0049 | 337b | 56929 | 56932
+  tok_protagoras_009170 | γάρ | γὰρ | turn_protagoras_0049 | 337b | 57076 | 57079
+  tok_protagoras_009186 | γάρ | γὰρ | turn_protagoras_0049 | 337b | 57178 | 57181
+  tok_protagoras_009216 | γάρ | γὰρ | turn_protagoras_0049 | 337c | 57382 | 57385
+  tok_protagoras_009238 | οὖν | οὖν | turn_protagoras_0049 | 337c | 57521 | 57524
+  tok_protagoras_009275 | γάρ | γὰρ | turn_protagoras_0049 | 337d | 57751 | 57754
+  tok_protagoras_009295 | οὖν | οὖν | turn_protagoras_0049 | 337d | 57866 | 57869
+  tok_protagoras_009351 | οὖν | οὖν | turn_protagoras_0050 | 337e | 58229 | 58232
+  tok_protagoras_009425 | οὖν | οὖν | turn_protagoras_0050 | 338a | 58708 | 58711
+  tok_protagoras_009465 | οὖν | οὖν | turn_protagoras_0050 | 338b | 58969 | 58972
+  tok_protagoras_009475 | γάρ | γὰρ | turn_protagoras_0050 | 338b | 59027 | 59030
+  tok_protagoras_009496 | γάρ | γὰρ | turn_protagoras_0050 | 338b | 59148 | 59151
+  tok_protagoras_009507 | δή | δὴ | turn_protagoras_0050 | 338c | 59222 | 59224
+  tok_protagoras_009601 | οὖν | οὖν | turn_protagoras_0050 | 338d | 59850 | 59853
+  tok_protagoras_009666 | οὖν | οὖν | turn_protagoras_0051 | 338e | 60294 | 60297
+  tok_protagoras_009712 | δή | δὴ | turn_protagoras_0051 | 339a | 60571 | 60573
+  tok_protagoras_009740 | γάρ | γάρ | turn_protagoras_0051 | 339a | 60734 | 60737
+  tok_protagoras_009782 | γάρ | γάρ | turn_protagoras_0051 | 339b | 61017 | 61020
+  tok_protagoras_009794 | οὖν | οὖν | turn_protagoras_0051 | 339b | 61096 | 61099
+  tok_protagoras_009828 | δή | δή | turn_protagoras_0051 | 339b | 61288 | 61290
+  tok_protagoras_009836 | οὖν | οὖν | turn_protagoras_0051 | 339c | 61349 | 61352
+  tok_protagoras_009850 | καίτοι | καίτοι | turn_protagoras_0051 | 339c | 61444 | 61450
+  tok_protagoras_009874 | οὖν | οὖν | turn_protagoras_0051 | 339c | 61602 | 61605
+  tok_protagoras_009896 | γάρ | γὰρ | turn_protagoras_0051 | 339c | 61737 | 61740
+  tok_protagoras_009950 | καίτοι | καίτοι | turn_protagoras_0051 | 339d | 62102 | 62108
+  tok_protagoras_009972 | οὖν | οὖν | turn_protagoras_0051 | 339d | 62238 | 62241
+  tok_protagoras_010041 | οὖν | οὖν | turn_protagoras_0052 | 340a | 62679 | 62682
+  tok_protagoras_010078 | γάρ | γὰρ | turn_protagoras_0052 | 340a | 62946 | 62949
+  tok_protagoras_010079 | οὖν | οὖν | turn_protagoras_0052 | 340a | 62950 | 62953
+  tok_protagoras_010117 | γάρ | γὰρ | turn_protagoras_0052 | 340b | 63159 | 63162
+  tok_protagoras_010125 | γάρ | γάρ | turn_protagoras_0052 | 340b | 63212 | 63215
+  tok_protagoras_010193 | γάρ | γὰρ | turn_protagoras_0052 | 340c | 63614 | 63617
+  tok_protagoras_010257 | γάρ | γὰρ | turn_protagoras_0052 | 340d | 63981 | 63984
+  tok_protagoras_010280 | οὖν | οὖν | turn_protagoras_0052 | 340d | 64179 | 64182
+  tok_protagoras_010327 | δή | δή | turn_protagoras_0052 | 340e | 64478 | 64480
+  tok_protagoras_010373 | γάρ | γάρ | turn_protagoras_0053 | 340e | 64750 | 64753
+  tok_protagoras_010465 | γάρ | γὰρ | turn_protagoras_0053 | 341b | 65328 | 65331
+  tok_protagoras_010497 | οὖν | οὖν | turn_protagoras_0053 | 341b | 65585 | 65588
+  tok_protagoras_010518 | οὖν | οὖν | turn_protagoras_0053 | 341b | 65700 | 65703
+  tok_protagoras_010521 | γάρ | γὰρ | turn_protagoras_0053 | 341b | 65721 | 65724
+  tok_protagoras_010594 | δή | δή | turn_protagoras_0053 | 341c | 66232 | 66234
+  tok_protagoras_010692 | γάρ | γὰρ | turn_protagoras_0053 | 341e | 66817 | 66820
+  tok_protagoras_010724 | γάρ | γὰρ | turn_protagoras_0053 | 341e | 67029 | 67032
+  tok_protagoras_010768 | οὖν | οὖν | turn_protagoras_0054 | 342a | 67282 | 67285
+  tok_protagoras_010793 | τοίνυν | τοίνυν | turn_protagoras_0054 | 342a | 67425 | 67431
+  tok_protagoras_010809 | γάρ | γάρ | turn_protagoras_0054 | 342a | 67522 | 67525
+  tok_protagoras_010895 | δή | δὴ | turn_protagoras_0054 | 342c | 68129 | 68131
+  tok_protagoras_010991 | γάρ | γὰρ | turn_protagoras_0054 | 342d | 68788 | 68791
+  tok_protagoras_011034 | οὖν | οὖν | turn_protagoras_0055 | 342e | 69095 | 69098
+  tok_protagoras_011143 | δή | δὴ | turn_protagoras_0055 | 343b | 69811 | 69813
+  tok_protagoras_011152 | δή | δὴ | turn_protagoras_0055 | 343b | 69899 | 69901
+  tok_protagoras_011169 | δή | δὴ | turn_protagoras_0055 | 343b | 69999 | 70001
+  tok_protagoras_011187 | οὖν | οὖν | turn_protagoras_0055 | 343b | 70127 | 70130
+  tok_protagoras_011215 | οὖν | οὖν | turn_protagoras_0055 | 343c | 70313 | 70316
+  tok_protagoras_011233 | δή | δὴ | turn_protagoras_0055 | 343c | 70432 | 70434
+  tok_protagoras_011243 | γάρ | γὰρ | turn_protagoras_0055 | 343c | 70484 | 70487
+  tok_protagoras_011264 | γάρ | γὰρ | turn_protagoras_0055 | 343d | 70621 | 70624
+  tok_protagoras_011333 | γάρ | γὰρ | turn_protagoras_0055 | 343e | 71080 | 71083
+  tok_protagoras_011384 | γάρ | γὰρ | turn_protagoras_0056 | 344a | 71415 | 71418
+  tok_protagoras_011430 | γάρ | γὰρ | turn_protagoras_0056 | 344a | 71727 | 71730
+  tok_protagoras_011445 | γάρ | γὰρ | turn_protagoras_0056 | 344b | 71818 | 71821
+  tok_protagoras_011480 | γάρ | γὰρ | turn_protagoras_0056 | 344b | 72041 | 72044
+  tok_protagoras_011545 | οὖν | οὖν | turn_protagoras_0056 | 344c | 72443 | 72446
+  tok_protagoras_011559 | γάρ | γὰρ | turn_protagoras_0056 | 344c | 72521 | 72524
+  tok_protagoras_011564 | οὖν | οὖν | turn_protagoras_0056 | 344c | 72554 | 72557
+  tok_protagoras_011625 | γάρ | γὰρ | turn_protagoras_0056 | 344d | 72921 | 72924
+  tok_protagoras_011697 | γάρ | γὰρ | turn_protagoras_0056 | 344e | 73423 | 73426
+  tok_protagoras_011708 | οὖν | οὖν | turn_protagoras_0057 | 345a | 73489 | 73492
+  tok_protagoras_011744 | οὖν | οὖν | turn_protagoras_0057 | 345a | 73719 | 73722
+  tok_protagoras_011761 | γάρ | γὰρ | turn_protagoras_0057 | 345a | 73817 | 73820
+  tok_protagoras_011825 | γάρ | γὰρ | turn_protagoras_0057 | 345b | 74172 | 74175
+  tok_protagoras_011842 | γάρ | γὰρ | turn_protagoras_0057 | 345b | 74268 | 74271
+  tok_protagoras_011896 | οὖν | οὖν | turn_protagoras_0057 | 345c | 74600 | 74603
+  tok_protagoras_011912 | γάρ | γάρ | turn_protagoras_0057 | 345c | 74690 | 74693
+  tok_protagoras_011975 | γάρ | γὰρ | turn_protagoras_0057 | 345d | 75137 | 75140
+  tok_protagoras_011998 | γάρ | γὰρ | turn_protagoras_0057 | 345d | 75275 | 75278
+  tok_protagoras_012035 | δή | δὴ | turn_protagoras_0057 | 345e | 75507 | 75509
+  tok_protagoras_012059 | γάρ | γὰρ | turn_protagoras_0058 | 345e | 75634 | 75637
+  tok_protagoras_012091 | οὖν | οὖν | turn_protagoras_0058 | 346a | 75861 | 75864
+  tok_protagoras_012189 | δή | δὴ | turn_protagoras_0058 | 346b | 76554 | 76556
+  tok_protagoras_012227 | γάρ | γάρ | turn_protagoras_0058 | 346c | 76785 | 76788
+  tok_protagoras_012231 | γάρ | γὰρ | turn_protagoras_0058 | 346c | 76817 | 76820
+  tok_protagoras_012258 | γάρ | γὰρ | turn_protagoras_0058 | 346d | 77008 | 77011
+  tok_protagoras_012350 | οὖν | οὖν | turn_protagoras_0059 | 346e | 77613 | 77616
+  tok_protagoras_012367 | γάρ | γὰρ | turn_protagoras_0059 | 347a | 77709 | 77712
+  tok_protagoras_012459 | δή | δὴ | turn_protagoras_0059 | 347b | 78272 | 78274
+  tok_protagoras_012505 | γάρ | γὰρ | turn_protagoras_0059 | 347c | 78559 | 78562
+  tok_protagoras_012523 | γάρ | γὰρ | turn_protagoras_0059 | 347c | 78678 | 78681
+  tok_protagoras_012746 | οὖν | οὖν | turn_protagoras_0060 | 348b | 80129 | 80132
+  tok_protagoras_012759 | οὖν | οὖν | turn_protagoras_0060 | 348b | 80212 | 80215
+  tok_protagoras_012785 | γάρ | γὰρ | turn_protagoras_0060 | 348b | 80365 | 80368
+  tok_protagoras_012849 | δή | δὴ | turn_protagoras_0060 | 348c | 80778 | 80780
+  tok_protagoras_012869 | γάρ | γὰρ | turn_protagoras_0060 | 348c | 80899 | 80902
+  tok_protagoras_012887 | γάρ | γάρ | turn_protagoras_0060 | 348d | 81016 | 81019
+  tok_protagoras_012945 | δή | δὴ | turn_protagoras_0060 | 348e | 81387 | 81389
+  tok_protagoras_012950 | γάρ | γὰρ | turn_protagoras_0060 | 348e | 81412 | 81415
+  tok_protagoras_013023 | οὖν | οὖν | turn_protagoras_0061 | 349a | 81880 | 81883
+  tok_protagoras_013042 | δή | δὴ | turn_protagoras_0061 | 349a | 81984 | 81986
+  tok_protagoras_013112 | οὖν | οὖν | turn_protagoras_0061 | 349b | 82412 | 82415
+  tok_protagoras_013194 | γάρ | γὰρ | turn_protagoras_0061 | 349c | 82870 | 82873
+  tok_protagoras_013242 | γάρ | γὰρ | turn_protagoras_0061 | 349d | 83166 | 83169
+  tok_protagoras_013259 | δή | δή | turn_protagoras_0061 | 349e | 83312 | 83314
+  tok_protagoras_013263 | γάρ | γάρ | turn_protagoras_0061 | 349e | 83332 | 83335
+  tok_protagoras_013287 | δή | δή | turn_protagoras_0061 | 349e | 83471 | 83473
+  tok_protagoras_013305 | οὖν | οὖν | turn_protagoras_0061 | 349e | 83576 | 83579
+  tok_protagoras_013312 | οὖν | οὖν | turn_protagoras_0061 | 349e | 83613 | 83616
+  tok_protagoras_013337 | οὖν | οὖν | turn_protagoras_0062 | 349e | 83730 | 83733
+  tok_protagoras_013449 | οὖν | οὖν | turn_protagoras_0062 | 350b | 84433 | 84436
+  tok_protagoras_013531 | γάρ | γάρ | turn_protagoras_0062 | 350c | 84949 | 84952
+  tok_protagoras_013593 | γάρ | γὰρ | turn_protagoras_0062 | 350d | 85331 | 85334
+  tok_protagoras_013665 | γάρ | γὰρ | turn_protagoras_0063 | 351a | 85791 | 85794
+  tok_protagoras_013721 | γάρ | γὰρ | turn_protagoras_0063 | 351a | 86124 | 86127
+  tok_protagoras_013761 | οὖν | οὖν | turn_protagoras_0063 | 351b | 86360 | 86363
+  tok_protagoras_013811 | δή | δή | turn_protagoras_0063 | 351c | 86633 | 86635
+  tok_protagoras_013828 | γάρ | γὰρ | turn_protagoras_0063 | 351c | 86722 | 86725
+  tok_protagoras_013953 | τοίνυν | τοίνυν | turn_protagoras_0063 | 351e | 87389 | 87395
+  tok_protagoras_014004 | οὖν | οὖν | turn_protagoras_0063 | 351e | 87689 | 87692
+  tok_protagoras_014021 | γάρ | γὰρ | turn_protagoras_0063 | 351e | 87788 | 87791
+  tok_protagoras_014028 | οὖν | οὖν | turn_protagoras_0064 | 352a | 87836 | 87839
+  tok_protagoras_014066 | δή | δή | turn_protagoras_0064 | 352a | 88036 | 88038
+  tok_protagoras_014104 | δή | δή | turn_protagoras_0064 | 352a | 88263 | 88265
+  tok_protagoras_014192 | οὖν | οὖν | turn_protagoras_0064 | 352c | 88841 | 88844
+  tok_protagoras_014278 | οὖν | οὖν | turn_protagoras_0064 | 352d | 89347 | 89350
+  tok_protagoras_014306 | δή | δὴ | turn_protagoras_0064 | 352d | 89516 | 89518
+  tok_protagoras_014334 | γάρ | γὰρ | turn_protagoras_0064 | 352e | 89693 | 89696
+  tok_protagoras_014348 | δή | δὴ | turn_protagoras_0065 | 352e | 89774 | 89776
+  tok_protagoras_014381 | γάρ | γὰρ | turn_protagoras_0065 | 353a | 89975 | 89978
+  tok_protagoras_014462 | οὖν | οὖν | turn_protagoras_0065 | 353b | 90446 | 90449
+  tok_protagoras_014498 | τοίνυν | τοίνυν | turn_protagoras_0065 | 353c | 90668 | 90674
+  tok_protagoras_014505 | οὖν | οὖν | turn_protagoras_0065 | 353c | 90710 | 90713
+  tok_protagoras_014523 | δή | δή | turn_protagoras_0065 | 353c | 90819 | 90821
+  tok_protagoras_014525 | γάρ | γὰρ | turn_protagoras_0065 | 353c | 90835 | 90838
+  tok_protagoras_014534 | γάρ | γάρ | turn_protagoras_0065 | 353c | 90882 | 90885
+  tok_protagoras_014781 | οὖν | οὖν | turn_protagoras_0066 | 354b | 92382 | 92385
+  tok_protagoras_014956 | οὖν | οὖν | turn_protagoras_0066 | 354d | 93402 | 93405
+  tok_protagoras_015017 | τοίνυν | τοίνυν | turn_protagoras_0066 | 354e | 93767 | 93773
+  tok_protagoras_015026 | οὖν | οὖν | turn_protagoras_0066 | 354e | 93824 | 93827
+  tok_protagoras_015042 | γάρ | γὰρ | turn_protagoras_0066 | 354e | 93930 | 93933
+  tok_protagoras_015124 | γάρ | γὰρ | turn_protagoras_0067 | 355a | 94360 | 94363
+  tok_protagoras_015218 | δή | δὴ | turn_protagoras_0067 | 355c | 94956 | 94958
+  tok_protagoras_015234 | οὖν | οὖν | turn_protagoras_0067 | 355c | 95042 | 95045
+  tok_protagoras_015256 | γάρ | γὰρ | turn_protagoras_0067 | 355c | 95191 | 95194
+  tok_protagoras_015265 | δή | δὴ | turn_protagoras_0067 | 355c | 95245 | 95247
+  tok_protagoras_015280 | οὖν | οὖν | turn_protagoras_0067 | 355c | 95346 | 95349
+  tok_protagoras_015333 | γάρ | γὰρ | turn_protagoras_0067 | 355d | 95679 | 95682
+  tok_protagoras_015398 | οὖν | οὖν | turn_protagoras_0067 | 355e | 96064 | 96067
+  tok_protagoras_015402 | δή | δὴ | turn_protagoras_0068 | 355e | 96090 | 96092
+  tok_protagoras_015475 | γάρ | γάρ | turn_protagoras_0068 | 356a | 96518 | 96521
+  tok_protagoras_015507 | γάρ | γὰρ | turn_protagoras_0068 | 356a | 96694 | 96697
+  tok_protagoras_015539 | γάρ | γὰρ | turn_protagoras_0068 | 356b | 96873 | 96876
+  tok_protagoras_015622 | δή | δὴ | turn_protagoras_0068 | 356c | 97323 | 97325
+  tok_protagoras_015667 | οὖν | οὖν | turn_protagoras_0068 | 356c | 97592 | 97595
+  tok_protagoras_015880 | δή | δὴ | turn_protagoras_0069 | 357a | 98769 | 98771
+  tok_protagoras_015938 | τοίνυν | τοίνυν | turn_protagoras_0069 | 357b | 99129 | 99135
+  tok_protagoras_015993 | δή | δὴ | turn_protagoras_0069 | 357c | 99480 | 99482
+  tok_protagoras_016039 | οὖν | οὖν | turn_protagoras_0069 | 357d | 99757 | 99760
+  tok_protagoras_016059 | γάρ | γὰρ | turn_protagoras_0069 | 357d | 99878 | 99881
+  tok_protagoras_016179 | δή | δὴ | turn_protagoras_0070 | 358a | 100634 | 100636
+  tok_protagoras_016189 | γάρ | γὰρ | turn_protagoras_0070 | 358a | 100704 | 100707
+  tok_protagoras_016190 | δή | δὴ | turn_protagoras_0070 | 358a | 100708 | 100710
+  tok_protagoras_016232 | γάρ | γὰρ | turn_protagoras_0070 | 358a | 100958 | 100961
+  tok_protagoras_016257 | οὖν | οὖν | turn_protagoras_0070 | 358b | 101121 | 101124
+  tok_protagoras_016266 | δή | δή | turn_protagoras_0070 | 358b | 101170 | 101172
+  tok_protagoras_016347 | δή | δή | turn_protagoras_0070 | 358c | 101631 | 101633
+  tok_protagoras_016371 | οὖν | οὖν | turn_protagoras_0070 | 358c | 101771 | 101774
+  tok_protagoras_016426 | οὖν | οὖν | turn_protagoras_0070 | 358d | 102095 | 102098
+  tok_protagoras_016502 | γάρ | γὰρ | turn_protagoras_0070 | 358e | 102542 | 102545
+  tok_protagoras_016526 | δή | δὴ | turn_protagoras_0071 | 359a | 102702 | 102704
+  tok_protagoras_016554 | γάρ | γὰρ | turn_protagoras_0071 | 359a | 102863 | 102866
+  tok_protagoras_016555 | δή | δὴ | turn_protagoras_0071 | 359a | 102867 | 102869
+  tok_protagoras_016585 | γάρ | γὰρ | turn_protagoras_0071 | 359a | 103028 | 103031
+  tok_protagoras_016612 | γάρ | γάρ | turn_protagoras_0071 | 359b | 103200 | 103203
+  tok_protagoras_016657 | οὖν | οὖν | turn_protagoras_0071 | 359b | 103493 | 103496
+  tok_protagoras_016680 | δή | δή | turn_protagoras_0071 | 359c | 103640 | 103642
+  tok_protagoras_016721 | δή | δή | turn_protagoras_0071 | 359c | 103854 | 103856
+  tok_protagoras_016799 | μήν | μὴν | turn_protagoras_0071 | 359d | 104302 | 104305
+  tok_protagoras_016874 | γάρ | γὰρ | turn_protagoras_0071 | 359e | 104731 | 104734
+  tok_protagoras_016924 | οὖν | οὖν | turn_protagoras_0072 | 360a | 105026 | 105029
+  tok_protagoras_017034 | οὖν | οὖν | turn_protagoras_0072 | 360c | 105699 | 105702
+  tok_protagoras_017093 | μήν | μήν | turn_protagoras_0072 | 360c | 106039 | 106042
+  tok_protagoras_017153 | δή | δή | turn_protagoras_0072 | 360d | 106398 | 106400
+  tok_protagoras_017200 | οὖν | οὖν | turn_protagoras_0072 | 360e | 106690 | 106693
+  tok_protagoras_017240 | γάρ | γὰρ | turn_protagoras_0073 | 360e | 106908 | 106911
+  tok_protagoras_017341 | γάρ | γὰρ | turn_protagoras_0073 | 361b | 107513 | 107516
+  tok_protagoras_017398 | οὖν | οὖν | turn_protagoras_0073 | 361c | 107875 | 107878
+  tok_protagoras_017460 | οὖν | οὖν | turn_protagoras_0073 | 361d | 108268 | 108271
+  tok_protagoras_017518 | γάρ | γὰρ | turn_protagoras_0073 | 361d | 108611 | 108614
+  tok_protagoras_017535 | δή | δὴ | turn_protagoras_0073 | 361e | 108721 | 108723
+  tok_protagoras_017593 | γάρ | γὰρ | turn_protagoras_0074 | 362a | 109038 | 109041
