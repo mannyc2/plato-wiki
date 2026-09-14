@@ -502,6 +502,28 @@ def write_fake_distribution(
 
 
 class DotsRendererPureTest(unittest.TestCase):
+    def test_trim_rejects_low_level_transient_with_long_silent_padding(self) -> None:
+        import numpy as np
+
+        for duration in (15_360, 96_000):
+            with self.subTest(frames=duration):
+                audio = np.zeros(duration, dtype=np.float32)
+                audio[2_400:2_544] = 0.0017
+                with self.assertRaisesRegex(RuntimeError, "transient without speech"):
+                    _trim_generated_audio(audio, 48_000)
+
+    def test_trim_preserves_sustained_quiet_audio(self) -> None:
+        import numpy as np
+
+        quiet = (0.001 * np.sin(np.arange(4_800) * 0.1)).astype(np.float32)
+        self.assertTrue(np.array_equal(_trim_generated_audio(quiet, 48_000), quiet))
+
+    def test_trim_preserves_short_normal_level_audio(self) -> None:
+        import numpy as np
+
+        speech = (0.2 * np.sin(np.arange(2_400) * 0.1)).astype(np.float32)
+        self.assertTrue(np.array_equal(_trim_generated_audio(speech, 48_000), speech))
+
     def test_trim_removes_low_level_onset_stall_but_keeps_safety_audio(self) -> None:
         import numpy as np
 

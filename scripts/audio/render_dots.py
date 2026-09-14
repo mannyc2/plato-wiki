@@ -29,8 +29,12 @@ import time
 import uuid
 import wave
 from pathlib import Path, PurePosixPath
-from typing import Any, Iterable
+from typing import TYPE_CHECKING, Any, Iterable
 from urllib.parse import urlparse
+
+if TYPE_CHECKING:
+    import numpy as np
+    from numpy.typing import ArrayLike, NDArray
 
 from cast_acceptance import (
     CastAcceptanceError,
@@ -3981,7 +3985,7 @@ def validate_runtime_provenance(value: Any) -> dict[str, Any]:
     return value
 
 
-def _trim_generated_audio(audio: Any, sample_rate: int) -> Any:
+def _trim_generated_audio(audio: ArrayLike, sample_rate: int) -> NDArray[np.float32]:
     import numpy as np
 
     samples = np.asarray(audio, dtype=np.float32).reshape(-1)
@@ -3990,6 +3994,21 @@ def _trim_generated_audio(audio: Any, sample_rate: int) -> Any:
     peak = float(np.max(np.abs(samples)))
     if peak <= 0:
         raise RuntimeError("Dots generated silent audio")
+    # A low-level impulse can pass relative trimming while containing no speech.
+    # Require both concentrated energy and little activity so sustained quiet
+    # speech is preserved; absolute amplitude alone is not a rejection gate.
+    if peak < 0.01:
+        energy = np.square(samples, dtype=np.float64)
+        cumulative = np.cumsum(energy)
+        lower, upper = np.searchsorted(
+            cumulative, (cumulative[-1] * 0.025, cumulative[-1] * 0.975)
+        )
+        active_frames = np.count_nonzero(
+            np.abs(samples) >= max(peak * 0.1, 1 / 8_388_608)
+        )
+        minimum_frames = sample_rate * 0.020
+        if upper - lower + 1 < minimum_frames and active_frames < minimum_frames:
+            raise RuntimeError("Dots generated a low-level transient without speech")
     threshold = peak * (10.0 ** (TRIM_THRESHOLD_DB / 20.0))
     non_silent = np.flatnonzero(np.abs(samples) >= threshold)
     if non_silent.size == 0:
