@@ -1,0 +1,644 @@
+schema_version: 1
+dialogue: laches
+source_path: raw/plato/greek/laches.txt
+source_sha256: a035988ad66603bb28bb451b1b1d53131e572518198a5dbc6f78cb121d97803f
+token_index_path: derived/plato/tokens/laches.toon
+token_index_sha256: 07153bda0119d982c5a63c8c201617ad998d16f4596e03d9dd7efcb8dc68bacf
+turn_index_path: derived/plato/turns/laches.toon
+turn_index_sha256: a365d1f042afa8cc5fa25a2318ac35f4f126872222d27864fdc3b2d167806669
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 7948
+excluded_siglum_token_count: 265
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  laches | 7683 | 8 | 10 | 7 | 96 | 70 | 43
+speakers[6]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  ΛΑ. | 1882 | 3 | 3 | 5 | 26 | 20 | 9
+  ΛΥ. | 1085 | 0 | 0 | 0 | 18 | 15 | 9
+  ΜΕ. | 17 | 0 | 0 | 0 | 1 | 0 | 0
+  ΝΙ. | 1274 | 0 | 1 | 0 | 18 | 8 | 3
+  ΠΑΙ. | 6 | 0 | 0 | 0 | 0 | 1 | 0
+  ΣΩ. | 3419 | 5 | 6 | 2 | 33 | 26 | 22
+turns[265]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_laches_0001 | 88 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_laches_0002 | 328 | 0 | 0 | 0 | 3 | 6 | 5
+  turn_laches_0003 | 43 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0004 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0005 | 112 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_laches_0006 | 12 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0007 | 5 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0008 | 39 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0009 | 71 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_laches_0010 | 44 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0011 | 6 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0012 | 30 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0013 | 56 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0014 | 124 | 0 | 0 | 0 | 0 | 4 | 0
+  turn_laches_0015 | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0016 | 18 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0017 | 300 | 0 | 0 | 0 | 4 | 1 | 1
+  turn_laches_0018 | 66 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_laches_0019 | 330 | 0 | 0 | 1 | 3 | 2 | 1
+  turn_laches_0020 | 235 | 0 | 0 | 0 | 2 | 5 | 1
+  turn_laches_0021 | 47 | 0 | 0 | 0 | 3 | 0 | 1
+  turn_laches_0022 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0023 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0024 | 37 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0025 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0026 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0027 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0028 | 12 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0029 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0030 | 81 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0031 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0032 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0033 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0034 | 30 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0035 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0036 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0037 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0038 | 31 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0039 | 18 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0040 | 33 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0041 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0042 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0043 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0044 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0045 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0046 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0047 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0048 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0049 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0050 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0051 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0052 | 31 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0053 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0054 | 287 | 0 | 0 | 1 | 3 | 4 | 1
+  turn_laches_0055 | 165 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_laches_0056 | 126 | 0 | 0 | 0 | 3 | 1 | 1
+  turn_laches_0057 | 50 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0058 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0059 | 203 | 0 | 0 | 0 | 1 | 2 | 0
+  turn_laches_0060 | 153 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_laches_0061 | 156 | 0 | 0 | 0 | 2 | 3 | 0
+  turn_laches_0062 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0063 | 84 | 0 | 0 | 0 | 2 | 2 | 1
+  turn_laches_0064 | 111 | 0 | 0 | 0 | 1 | 2 | 0
+  turn_laches_0065 | 81 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0066 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0067 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0068 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0069 | 38 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_laches_0070 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0071 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0072 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0073 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0074 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0075 | 34 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_laches_0076 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0077 | 31 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_laches_0078 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0079 | 40 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_laches_0080 | 29 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0081 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0082 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0083 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0084 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0085 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0086 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0087 | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0088 | 35 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_laches_0089 | 42 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0090 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0091 | 108 | 0 | 1 | 0 | 2 | 0 | 0
+  turn_laches_0092 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0093 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0094 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0095 | 25 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0096 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0097 | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0098 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0099 | 40 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_laches_0100 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0101 | 31 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0102 | 18 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_laches_0103 | 41 | 1 | 1 | 0 | 1 | 0 | 0
+  turn_laches_0104 | 7 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0105 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0106 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0107 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0108 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0109 | 13 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0110 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0111 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0112 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0113 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0114 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0115 | 32 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0116 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0117 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0118 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0119 | 55 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0120 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0121 | 11 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0122 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0123 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0124 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0125 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0126 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0127 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0128 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0129 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0130 | 4 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0131 | 19 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0132 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0133 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0134 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0135 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0136 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0137 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0138 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0139 | 5 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0140 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0141 | 45 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_laches_0142 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0143 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0144 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0145 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0146 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0147 | 38 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0148 | 62 | 0 | 0 | 1 | 1 | 0 | 0
+  turn_laches_0149 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0150 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0151 | 14 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0152 | 4 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0153 | 43 | 0 | 0 | 0 | 1 | 0 | 2
+  turn_laches_0154 | 22 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_laches_0155 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0156 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0157 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0158 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0159 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0160 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0161 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0162 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0163 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0164 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0165 | 21 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_laches_0166 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0167 | 4 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0168 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0169 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0170 | 15 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0171 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0172 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0173 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0174 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0175 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0176 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0177 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0178 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0179 | 35 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_laches_0180 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0181 | 37 | 0 | 0 | 1 | 0 | 0 | 0
+  turn_laches_0182 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0183 | 9 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0184 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0185 | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0186 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0187 | 11 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0188 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0189 | 24 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0190 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0191 | 31 | 0 | 0 | 1 | 1 | 0 | 1
+  turn_laches_0192 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0193 | 4 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0194 | 55 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0195 | 102 | 0 | 0 | 1 | 1 | 2 | 0
+  turn_laches_0196 | 36 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0197 | 13 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_laches_0198 | 14 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0199 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0200 | 25 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_laches_0201 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0202 | 29 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0203 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0204 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0205 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0206 | 76 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0207 | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0208 | 97 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_laches_0209 | 25 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0210 | 23 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0211 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0212 | 38 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_laches_0213 | 18 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0214 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0215 | 5 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_laches_0216 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0217 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0218 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0219 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0220 | 16 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0221 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0222 | 23 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0223 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0224 | 79 | 0 | 0 | 0 | 2 | 1 | 1
+  turn_laches_0225 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0226 | 31 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_laches_0227 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0228 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0229 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0230 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0231 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0232 | 79 | 0 | 0 | 0 | 1 | 0 | 2
+  turn_laches_0233 | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0234 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0235 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0236 | 7 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0237 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0238 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0239 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0240 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0241 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0242 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0243 | 34 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0244 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0245 | 66 | 0 | 0 | 1 | 0 | 0 | 1
+  turn_laches_0246 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0247 | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0248 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0249 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0250 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0251 | 12 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0252 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0253 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0254 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0255 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0256 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0257 | 27 | 1 | 0 | 0 | 0 | 0 | 1
+  turn_laches_0258 | 122 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_laches_0259 | 48 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0260 | 51 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_laches_0261 | 34 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_laches_0262 | 57 | 0 | 0 | 0 | 2 | 2 | 0
+  turn_laches_0263 | 105 | 0 | 0 | 0 | 3 | 2 | 1
+  turn_laches_0264 | 42 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_laches_0265 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+markers[115]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  178a | 46 | 0 | 0 | 0 | 2 | 0 | 0
+  178b | 43 | 0 | 0 | 0 | 0 | 0 | 0
+  179a | 73 | 0 | 0 | 0 | 1 | 3 | 1
+  179b | 73 | 0 | 0 | 0 | 1 | 0 | 1
+  179c | 65 | 0 | 0 | 0 | 1 | 1 | 1
+  179d | 60 | 0 | 0 | 0 | 0 | 1 | 1
+  179e | 56 | 0 | 0 | 0 | 0 | 1 | 1
+  180a | 62 | 0 | 0 | 0 | 0 | 1 | 0
+  180b | 79 | 0 | 0 | 0 | 1 | 1 | 0
+  180c | 68 | 0 | 0 | 0 | 2 | 1 | 0
+  180d | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  180e | 61 | 0 | 0 | 0 | 3 | 0 | 0
+  181a | 71 | 1 | 0 | 0 | 0 | 1 | 1
+  181b | 78 | 0 | 0 | 0 | 1 | 1 | 0
+  181c | 83 | 0 | 0 | 0 | 0 | 3 | 0
+  181d | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  181e | 46 | 0 | 0 | 0 | 2 | 0 | 1
+  182a | 78 | 0 | 0 | 0 | 1 | 0 | 0
+  182b | 64 | 0 | 0 | 0 | 1 | 0 | 0
+  182c | 81 | 0 | 0 | 0 | 0 | 0 | 0
+  182d | 67 | 0 | 0 | 0 | 1 | 1 | 1
+  182e | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  183a | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  183b | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  183c | 71 | 0 | 0 | 1 | 1 | 0 | 0
+  183d | 64 | 0 | 0 | 0 | 1 | 1 | 1
+  183e | 59 | 0 | 0 | 0 | 1 | 2 | 1
+  184a | 79 | 0 | 0 | 0 | 0 | 2 | 0
+  184b | 66 | 0 | 0 | 0 | 1 | 2 | 0
+  184c | 74 | 0 | 0 | 0 | 2 | 0 | 0
+  184d | 70 | 0 | 0 | 0 | 3 | 0 | 1
+  184e | 65 | 0 | 0 | 0 | 2 | 0 | 0
+  185a | 83 | 0 | 0 | 0 | 1 | 0 | 0
+  185b | 69 | 0 | 0 | 0 | 0 | 1 | 0
+  185c | 60 | 0 | 0 | 0 | 1 | 1 | 0
+  185d | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  185e | 80 | 0 | 0 | 0 | 0 | 0 | 0
+  186a | 52 | 0 | 0 | 0 | 0 | 0 | 0
+  186b | 71 | 0 | 0 | 0 | 0 | 2 | 0
+  186c | 73 | 0 | 0 | 1 | 1 | 0 | 0
+  186d | 72 | 0 | 0 | 0 | 1 | 2 | 1
+  186e | 54 | 0 | 0 | 0 | 1 | 0 | 1
+  187a | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  187b | 71 | 0 | 0 | 0 | 0 | 1 | 0
+  187c | 76 | 0 | 0 | 0 | 2 | 0 | 1
+  187d | 58 | 0 | 0 | 0 | 1 | 1 | 0
+  187e | 82 | 0 | 0 | 0 | 0 | 0 | 0
+  188a | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  188b | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  188c | 72 | 0 | 0 | 0 | 2 | 1 | 0
+  188d | 72 | 0 | 0 | 0 | 0 | 1 | 0
+  188e | 52 | 0 | 0 | 0 | 0 | 0 | 0
+  189a | 73 | 0 | 0 | 0 | 2 | 1 | 0
+  189b | 64 | 0 | 0 | 0 | 0 | 2 | 0
+  189c | 70 | 0 | 0 | 0 | 2 | 1 | 1
+  189d | 61 | 0 | 0 | 0 | 0 | 2 | 0
+  189e | 78 | 0 | 0 | 0 | 1 | 1 | 0
+  190a | 74 | 0 | 0 | 0 | 1 | 0 | 0
+  190b | 64 | 0 | 0 | 0 | 1 | 1 | 0
+  190c | 62 | 0 | 1 | 0 | 2 | 0 | 0
+  190d | 67 | 0 | 1 | 0 | 1 | 1 | 2
+  190e | 81 | 0 | 0 | 0 | 1 | 0 | 0
+  191a | 67 | 0 | 0 | 0 | 1 | 0 | 0
+  191b | 67 | 0 | 0 | 0 | 2 | 0 | 0
+  191c | 53 | 0 | 1 | 0 | 1 | 0 | 0
+  191d | 75 | 0 | 0 | 0 | 1 | 0 | 0
+  191e | 85 | 0 | 0 | 0 | 1 | 1 | 0
+  192a | 86 | 0 | 1 | 0 | 0 | 0 | 0
+  192b | 66 | 0 | 1 | 0 | 0 | 0 | 1
+  192c | 67 | 1 | 1 | 0 | 1 | 1 | 0
+  192d | 62 | 0 | 0 | 0 | 0 | 1 | 0
+  192e | 54 | 0 | 0 | 0 | 0 | 0 | 1
+  193a | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  193b | 51 | 1 | 0 | 0 | 0 | 0 | 0
+  193c | 66 | 2 | 0 | 0 | 1 | 0 | 0
+  193d | 64 | 0 | 0 | 0 | 1 | 1 | 0
+  193e | 63 | 0 | 0 | 0 | 2 | 2 | 1
+  194a | 65 | 0 | 0 | 1 | 0 | 1 | 0
+  194b | 63 | 0 | 0 | 0 | 1 | 2 | 0
+  194c | 73 | 0 | 1 | 0 | 3 | 0 | 3
+  194d | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  194e | 64 | 1 | 0 | 0 | 1 | 1 | 2
+  195a | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  195b | 67 | 0 | 0 | 1 | 1 | 1 | 0
+  195c | 90 | 0 | 0 | 0 | 2 | 0 | 1
+  195d | 57 | 0 | 0 | 0 | 0 | 1 | 1
+  195e | 73 | 0 | 0 | 1 | 2 | 0 | 1
+  196a | 67 | 0 | 0 | 0 | 1 | 1 | 0
+  196b | 64 | 0 | 0 | 1 | 0 | 1 | 0
+  196c | 75 | 0 | 1 | 0 | 1 | 2 | 1
+  196d | 67 | 0 | 0 | 0 | 1 | 1 | 1
+  196e | 76 | 0 | 0 | 0 | 0 | 0 | 1
+  197a | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  197b | 57 | 0 | 0 | 0 | 0 | 1 | 0
+  197c | 71 | 0 | 0 | 0 | 1 | 0 | 1
+  197d | 56 | 0 | 0 | 0 | 2 | 0 | 1
+  197e | 69 | 0 | 1 | 0 | 0 | 0 | 1
+  198a | 58 | 0 | 0 | 0 | 1 | 1 | 1
+  198b | 82 | 0 | 0 | 0 | 2 | 2 | 1
+  198c | 62 | 0 | 1 | 0 | 0 | 0 | 2
+  198d | 66 | 0 | 0 | 0 | 1 | 0 | 2
+  198e | 46 | 0 | 0 | 0 | 0 | 0 | 0
+  199a | 65 | 0 | 0 | 0 | 1 | 0 | 0
+  199b | 68 | 0 | 0 | 0 | 2 | 0 | 0
+  199c | 59 | 0 | 0 | 1 | 0 | 0 | 1
+  199d | 78 | 0 | 0 | 0 | 0 | 1 | 0
+  199e | 71 | 2 | 0 | 0 | 1 | 0 | 0
+  200a | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  200b | 66 | 0 | 0 | 0 | 0 | 1 | 0
+  200c | 70 | 0 | 0 | 0 | 2 | 0 | 0
+  200d | 70 | 0 | 0 | 0 | 1 | 1 | 0
+  200e | 62 | 0 | 0 | 0 | 2 | 3 | 1
+  201a | 62 | 0 | 0 | 0 | 3 | 0 | 0
+  201b | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  201c | 32 | 0 | 0 | 0 | 0 | 0 | 0
+occurrences[234]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_laches_000033 | γάρ | γὰρ | turn_laches_0001 | 178a | 191 | 194
+  tok_laches_000040 | γάρ | γάρ | turn_laches_0001 | 178a | 236 | 239
+  tok_laches_000092 | οὖν | οὖν | turn_laches_0002 | 179a | 585 | 588
+  tok_laches_000124 | γάρ | γὰρ | turn_laches_0002 | 179a | 781 | 784
+  tok_laches_000128 | οὖν | οὖν | turn_laches_0002 | 179a | 805 | 808
+  tok_laches_000152 | δή | δὴ | turn_laches_0002 | 179a | 960 | 962
+  tok_laches_000163 | οὖν | οὖν | turn_laches_0002 | 179a | 1028 | 1031
+  tok_laches_000226 | γάρ | γὰρ | turn_laches_0002 | 179b | 1427 | 1430
+  tok_laches_000227 | δή | δὴ | turn_laches_0002 | 179b | 1431 | 1433
+  tok_laches_000239 | οὖν | οὖν | turn_laches_0002 | 179c | 1503 | 1506
+  tok_laches_000249 | γάρ | γὰρ | turn_laches_0002 | 179c | 1569 | 1572
+  tok_laches_000291 | δή | δὴ | turn_laches_0002 | 179c | 1813 | 1815
+  tok_laches_000346 | οὖν | οὖν | turn_laches_0002 | 179d | 2179 | 2182
+  tok_laches_000351 | δή | δὴ | turn_laches_0002 | 179d | 2209 | 2211
+  tok_laches_000364 | οὖν | οὖν | turn_laches_0002 | 179e | 2307 | 2310
+  tok_laches_000392 | δή | δὴ | turn_laches_0002 | 179e | 2476 | 2478
+  tok_laches_000427 | οὖν | οὖν | turn_laches_0003 | 180a | 2703 | 2706
+  tok_laches_000485 | γάρ | γὰρ | turn_laches_0005 | 180b | 3058 | 3061
+  tok_laches_000548 | οὖν | οὖν | turn_laches_0005 | 180b | 3401 | 3404
+  tok_laches_000602 | γάρ | γὰρ | turn_laches_0006 | 180c | 3736 | 3739
+  tok_laches_000612 | οὖν | οὖν | turn_laches_0007 | 180c | 3798 | 3801
+  tok_laches_000627 | γάρ | γὰρ | turn_laches_0008 | 180c | 3878 | 3881
+  tok_laches_000701 | γάρ | γὰρ | turn_laches_0009 | 180e | 4372 | 4375
+  tok_laches_000708 | γάρ | γὰρ | turn_laches_0009 | 180e | 4414 | 4417
+  tok_laches_000738 | γάρ | γὰρ | turn_laches_0010 | 180e | 4580 | 4583
+  tok_laches_000775 | οὖν | οὖν | turn_laches_0011 | 181a | 4840 | 4843
+  tok_laches_000797 | δή | δὴ | turn_laches_0012 | 181a | 4954 | 4956
+  tok_laches_000812 | μήν | μήν | turn_laches_0013 | 181a | 5022 | 5025
+  tok_laches_000836 | γάρ | γὰρ | turn_laches_0013 | 181b | 5159 | 5162
+  tok_laches_000892 | οὖν | οὖν | turn_laches_0014 | 181b | 5459 | 5462
+  tok_laches_000913 | οὖν | οὖν | turn_laches_0014 | 181c | 5576 | 5579
+  tok_laches_000929 | οὖν | οὖν | turn_laches_0014 | 181c | 5667 | 5670
+  tok_laches_000961 | οὖν | οὖν | turn_laches_0014 | 181c | 5863 | 5866
+  tok_laches_001065 | γάρ | γὰρ | turn_laches_0016 | 181d | 6476 | 6479
+  tok_laches_001079 | γάρ | γὰρ | turn_laches_0017 | 181e | 6566 | 6569
+  tok_laches_001086 | δή | δὴ | turn_laches_0017 | 181e | 6602 | 6604
+  tok_laches_001109 | γάρ | γὰρ | turn_laches_0017 | 181e | 6737 | 6740
+  tok_laches_001130 | γάρ | γὰρ | turn_laches_0017 | 182a | 6869 | 6872
+  tok_laches_001236 | γάρ | γὰρ | turn_laches_0017 | 182b | 7505 | 7508
+  tok_laches_001350 | οὖν | οὖν | turn_laches_0017 | 182d | 8225 | 8228
+  tok_laches_001394 | γάρ | γὰρ | turn_laches_0018 | 182d | 8482 | 8485
+  tok_laches_001400 | δή | δὴ | turn_laches_0018 | 182d | 8521 | 8523
+  tok_laches_001630 | γάρ | γὰρ | turn_laches_0019 | 183c | 9972 | 9975
+  tok_laches_001644 | καίτοι | καίτοι | turn_laches_0019 | 183c | 10067 | 10073
+  tok_laches_001705 | γάρ | γὰρ | turn_laches_0019 | 183d | 10467 | 10470
+  tok_laches_001718 | δή | δὴ | turn_laches_0019 | 183d | 10551 | 10553
+  tok_laches_001728 | οὖν | οὖν | turn_laches_0019 | 183d | 10601 | 10604
+  tok_laches_001748 | γάρ | γὰρ | turn_laches_0019 | 183e | 10717 | 10720
+  tok_laches_001760 | οὖν | οὖν | turn_laches_0019 | 183e | 10789 | 10792
+  tok_laches_001779 | οὖν | οὖν | turn_laches_0020 | 183e | 10886 | 10889
+  tok_laches_001789 | δή | δὴ | turn_laches_0020 | 183e | 10941 | 10943
+  tok_laches_001866 | οὖν | οὖν | turn_laches_0020 | 184a | 11387 | 11390
+  tok_laches_001876 | οὖν | οὖν | turn_laches_0020 | 184a | 11435 | 11438
+  tok_laches_001883 | οὖν | οὖν | turn_laches_0020 | 184b | 11484 | 11487
+  tok_laches_001909 | γάρ | γὰρ | turn_laches_0020 | 184b | 11639 | 11642
+  tok_laches_001910 | οὖν | οὖν | turn_laches_0020 | 184b | 11643 | 11646
+  tok_laches_001947 | γάρ | γὰρ | turn_laches_0020 | 184c | 11888 | 11891
+  tok_laches_002019 | γάρ | γὰρ | turn_laches_0021 | 184c | 12315 | 12318
+  tok_laches_002031 | γάρ | γὰρ | turn_laches_0021 | 184d | 12389 | 12392
+  tok_laches_002043 | γάρ | γάρ | turn_laches_0021 | 184d | 12460 | 12463
+  tok_laches_002050 | δή | δὴ | turn_laches_0021 | 184d | 12496 | 12498
+  tok_laches_002076 | γάρ | γὰρ | turn_laches_0023 | 184d | 12646 | 12649
+  tok_laches_002141 | γάρ | γὰρ | turn_laches_0028 | 184e | 13009 | 13012
+  tok_laches_002154 | γάρ | γὰρ | turn_laches_0029 | 184e | 13085 | 13088
+  tok_laches_002216 | γάρ | γάρ | turn_laches_0030 | 185a | 13434 | 13437
+  tok_laches_002253 | οὖν | οὖν | turn_laches_0034 | 185b | 13643 | 13646
+  tok_laches_002333 | γάρ | γάρ | turn_laches_0039 | 185c | 14176 | 14179
+  tok_laches_002353 | οὖν | οὖν | turn_laches_0040 | 185c | 14294 | 14297
+  tok_laches_002619 | οὖν | οὖν | turn_laches_0054 | 186b | 15921 | 15924
+  tok_laches_002667 | οὖν | οὖν | turn_laches_0054 | 186b | 16231 | 16234
+  tok_laches_002684 | καίτοι | καίτοι | turn_laches_0054 | 186c | 16337 | 16343
+  tok_laches_002732 | γάρ | γὰρ | turn_laches_0054 | 186c | 16617 | 16620
+  tok_laches_002747 | δή | δή | turn_laches_0054 | 186d | 16728 | 16730
+  tok_laches_002754 | γάρ | γὰρ | turn_laches_0054 | 186d | 16772 | 16775
+  tok_laches_002774 | οὖν | οὖν | turn_laches_0054 | 186d | 16895 | 16898
+  tok_laches_002785 | οὖν | οὖν | turn_laches_0054 | 186d | 16972 | 16975
+  tok_laches_002833 | γάρ | γὰρ | turn_laches_0054 | 186e | 17276 | 17279
+  tok_laches_002853 | δή | δὴ | turn_laches_0055 | 186e | 17395 | 17397
+  tok_laches_002941 | γάρ | γὰρ | turn_laches_0055 | 187a | 17953 | 17956
+  tok_laches_002983 | οὖν | οὖν | turn_laches_0055 | 187b | 18199 | 18202
+  tok_laches_003031 | δή | δὴ | turn_laches_0056 | 187c | 18478 | 18480
+  tok_laches_003041 | γάρ | γὰρ | turn_laches_0056 | 187c | 18528 | 18531
+  tok_laches_003059 | γάρ | γὰρ | turn_laches_0056 | 187c | 18631 | 18634
+  tok_laches_003096 | οὖν | οὖν | turn_laches_0056 | 187d | 18876 | 18879
+  tok_laches_003115 | γάρ | γὰρ | turn_laches_0056 | 187d | 18992 | 18995
+  tok_laches_003288 | γάρ | γάρ | turn_laches_0059 | 188a | 20029 | 20032
+  tok_laches_003343 | οὖν | οὖν | turn_laches_0059 | 188b | 20364 | 20367
+  tok_laches_003374 | οὖν | οὖν | turn_laches_0059 | 188c | 20557 | 20560
+  tok_laches_003413 | γάρ | γὰρ | turn_laches_0060 | 188c | 20778 | 20781
+  tok_laches_003424 | γάρ | γὰρ | turn_laches_0060 | 188c | 20839 | 20842
+  tok_laches_003511 | οὖν | οὖν | turn_laches_0060 | 188d | 21387 | 21390
+  tok_laches_003578 | οὖν | οὖν | turn_laches_0061 | 189a | 21811 | 21814
+  tok_laches_003606 | γάρ | γὰρ | turn_laches_0061 | 189a | 21987 | 21990
+  tok_laches_003614 | γάρ | γάρ | turn_laches_0061 | 189a | 22040 | 22043
+  tok_laches_003650 | οὖν | οὖν | turn_laches_0061 | 189b | 22247 | 22250
+  tok_laches_003696 | οὖν | οὖν | turn_laches_0061 | 189b | 22522 | 22525
+  tok_laches_003724 | δή | δὴ | turn_laches_0063 | 189c | 22708 | 22710
+  tok_laches_003729 | γάρ | γάρ | turn_laches_0063 | 189c | 22733 | 22736
+  tok_laches_003735 | οὖν | οὖν | turn_laches_0063 | 189c | 22765 | 22768
+  tok_laches_003752 | γάρ | γὰρ | turn_laches_0063 | 189c | 22879 | 22882
+  tok_laches_003780 | οὖν | οὖν | turn_laches_0063 | 189d | 23040 | 23043
+  tok_laches_003818 | οὖν | οὖν | turn_laches_0064 | 189d | 23251 | 23254
+  tok_laches_003865 | γάρ | γὰρ | turn_laches_0064 | 189e | 23540 | 23543
+  tok_laches_003908 | οὖν | οὖν | turn_laches_0064 | 189e | 23807 | 23810
+  tok_laches_003963 | γάρ | γὰρ | turn_laches_0065 | 190a | 24156 | 24159
+  tok_laches_004033 | οὖν | οὖν | turn_laches_0069 | 190b | 24568 | 24571
+  tok_laches_004046 | γάρ | γάρ | turn_laches_0069 | 190b | 24636 | 24639
+  tok_laches_004100 | γάρ | γὰρ | turn_laches_0074 | 190c | 24954 | 24957
+  tok_laches_004104 | τοίνυν | τοίνυν | turn_laches_0075 | 190c | 24969 | 24975
+  tok_laches_004113 | γάρ | γὰρ | turn_laches_0075 | 190c | 25027 | 25030
+  tok_laches_004148 | οὖν | οὖν | turn_laches_0077 | 190d | 25220 | 25223
+  tok_laches_004157 | δή | δὴ | turn_laches_0077 | 190d | 25269 | 25271
+  tok_laches_004177 | γάρ | γάρ | turn_laches_0077 | 190d | 25370 | 25373
+  tok_laches_004181 | δή | δὴ | turn_laches_0078 | 190d | 25388 | 25390
+  tok_laches_004186 | τοίνυν | τοίνυν | turn_laches_0079 | 190d | 25413 | 25419
+  tok_laches_004236 | γάρ | γάρ | turn_laches_0080 | 190e | 25726 | 25729
+  tok_laches_004313 | γάρ | γὰρ | turn_laches_0085 | 191a | 26148 | 26151
+  tok_laches_004388 | γάρ | γὰρ | turn_laches_0088 | 191b | 26631 | 26634
+  tok_laches_004400 | γάρ | γὰρ | turn_laches_0088 | 191b | 26690 | 26693
+  tok_laches_004425 | γάρ | γάρ | turn_laches_0089 | 191c | 26869 | 26872
+  tok_laches_004464 | τοίνυν | τοίνυν | turn_laches_0091 | 191c | 27129 | 27135
+  tok_laches_004480 | γάρ | γάρ | turn_laches_0091 | 191d | 27230 | 27233
+  tok_laches_004561 | γάρ | γάρ | turn_laches_0091 | 191e | 27686 | 27689
+  tok_laches_004624 | οὖν | οὖν | turn_laches_0095 | 191e | 28033 | 28036
+  tok_laches_004717 | τοίνυν | τοίνυν | turn_laches_0099 | 192a | 28508 | 28514
+  tok_laches_004763 | δή | δὴ | turn_laches_0101 | 192b | 28785 | 28787
+  tok_laches_004795 | τοίνυν | τοίνυν | turn_laches_0102 | 192b | 28957 | 28963
+  tok_laches_004814 | μήν | μὴν | turn_laches_0103 | 192c | 29081 | 29084
+  tok_laches_004824 | τοίνυν | τοίνυν | turn_laches_0103 | 192c | 29143 | 29149
+  tok_laches_004840 | γάρ | γάρ | turn_laches_0103 | 192c | 29254 | 29257
+  tok_laches_004857 | οὖν | οὖν | turn_laches_0104 | 192c | 29339 | 29342
+  tok_laches_004890 | οὖν | οὖν | turn_laches_0109 | 192d | 29531 | 29534
+  tok_laches_004946 | δή | δή | turn_laches_0115 | 192e | 29860 | 29862
+  tok_laches_005078 | μήν | μὴν | turn_laches_0121 | 193b | 30675 | 30678
+  tok_laches_005157 | γάρ | γὰρ | turn_laches_0128 | 193c | 31153 | 31156
+  tok_laches_005172 | μήν | μὴν | turn_laches_0130 | 193c | 31230 | 31233
+  tok_laches_005177 | μήν | μήν | turn_laches_0131 | 193c | 31252 | 31255
+  tok_laches_005228 | γάρ | γάρ | turn_laches_0136 | 193d | 31555 | 31558
+  tok_laches_005247 | οὖν | οὖν | turn_laches_0139 | 193d | 31668 | 31671
+  tok_laches_005277 | γάρ | γὰρ | turn_laches_0141 | 193e | 31821 | 31824
+  tok_laches_005286 | γάρ | γάρ | turn_laches_0141 | 193e | 31869 | 31872
+  tok_laches_005311 | οὖν | οὖν | turn_laches_0143 | 193e | 32013 | 32016
+  tok_laches_005323 | οὖν | οὖν | turn_laches_0145 | 193e | 32090 | 32093
+  tok_laches_005333 | δή | δὴ | turn_laches_0146 | 193e | 32143 | 32145
+  tok_laches_005345 | οὖν | οὖν | turn_laches_0147 | 194a | 32213 | 32216
+  tok_laches_005385 | καίτοι | καίτοι | turn_laches_0148 | 194a | 32459 | 32465
+  tok_laches_005416 | γάρ | γὰρ | turn_laches_0148 | 194b | 32632 | 32635
+  tok_laches_005455 | οὖν | οὖν | turn_laches_0150 | 194b | 32849 | 32852
+  tok_laches_005458 | οὖν | οὖν | turn_laches_0151 | 194b | 32865 | 32868
+  tok_laches_005474 | γάρ | γὰρ | turn_laches_0152 | 194c | 32972 | 32975
+  tok_laches_005478 | δή | δή | turn_laches_0153 | 194c | 32988 | 32990
+  tok_laches_005495 | γάρ | γὰρ | turn_laches_0153 | 194c | 33092 | 33095
+  tok_laches_005496 | δή | δὴ | turn_laches_0153 | 194c | 33096 | 33098
+  tok_laches_005522 | τοίνυν | τοίνυν | turn_laches_0154 | 194c | 33235 | 33241
+  tok_laches_005533 | γάρ | γὰρ | turn_laches_0154 | 194c | 33300 | 33303
+  tok_laches_005545 | δή | δή | turn_laches_0155 | 194c | 33365 | 33367
+  tok_laches_005625 | δή | δή | turn_laches_0165 | 194e | 33825 | 33827
+  tok_laches_005640 | γάρ | γάρ | turn_laches_0165 | 194e | 33898 | 33901
+  tok_laches_005649 | μήν | μὴν | turn_laches_0167 | 194e | 33943 | 33946
+  tok_laches_005658 | δή | δὴ | turn_laches_0169 | 194e | 33988 | 33990
+  tok_laches_005666 | οὖν | οὖν | turn_laches_0170 | 194e | 34027 | 34030
+  tok_laches_005764 | οὖν | οὖν | turn_laches_0179 | 195b | 34594 | 34597
+  tok_laches_005772 | γάρ | γὰρ | turn_laches_0179 | 195b | 34642 | 34645
+  tok_laches_005806 | καίτοι | καίτοι | turn_laches_0181 | 195b | 34843 | 34849
+  tok_laches_005851 | γάρ | γὰρ | turn_laches_0183 | 195c | 35106 | 35109
+  tok_laches_005861 | δή | δή | turn_laches_0184 | 195c | 35152 | 35154
+  tok_laches_005921 | γάρ | γὰρ | turn_laches_0185 | 195c | 35498 | 35501
+  tok_laches_005941 | οὖν | οὖν | turn_laches_0187 | 195d | 35613 | 35616
+  tok_laches_005957 | δή | δὴ | turn_laches_0189 | 195d | 35703 | 35705
+  tok_laches_005995 | γάρ | γὰρ | turn_laches_0191 | 195e | 35927 | 35930
+  tok_laches_005996 | δή | δὴ | turn_laches_0191 | 195e | 35931 | 35933
+  tok_laches_006004 | καίτοι | καίτοι | turn_laches_0191 | 195e | 35976 | 35982
+  tok_laches_006033 | γάρ | γὰρ | turn_laches_0193 | 195e | 36144 | 36147
+  tok_laches_006103 | γάρ | γὰρ | turn_laches_0195 | 196a | 36540 | 36543
+  tok_laches_006125 | οὖν | οὖν | turn_laches_0195 | 196a | 36661 | 36664
+  tok_laches_006144 | καίτοι | καίτοι | turn_laches_0195 | 196b | 36798 | 36804
+  tok_laches_006167 | οὖν | οὖν | turn_laches_0195 | 196b | 36926 | 36929
+  tok_laches_006215 | οὖν | οὖν | turn_laches_0196 | 196c | 37194 | 37197
+  tok_laches_006233 | τοίνυν | τοίνυν | turn_laches_0197 | 196c | 37302 | 37308
+  tok_laches_006251 | γάρ | γὰρ | turn_laches_0198 | 196c | 37416 | 37419
+  tok_laches_006263 | οὖν | οὖν | turn_laches_0199 | 196c | 37470 | 37473
+  tok_laches_006266 | δή | δή | turn_laches_0200 | 196c | 37484 | 37486
+  tok_laches_006274 | γάρ | γὰρ | turn_laches_0200 | 196d | 37534 | 37537
+  tok_laches_006297 | δή | δὴ | turn_laches_0202 | 196d | 37657 | 37659
+  tok_laches_006325 | οὖν | οὖν | turn_laches_0203 | 196d | 37824 | 37827
+  tok_laches_006348 | δή | δή | turn_laches_0206 | 196e | 37945 | 37947
+  tok_laches_006464 | γάρ | γάρ | turn_laches_0208 | 197a | 38655 | 38658
+  tok_laches_006542 | οὖν | οὖν | turn_laches_0208 | 197b | 39106 | 39109
+  tok_laches_006568 | δή | δή | turn_laches_0209 | 197c | 39246 | 39248
+  tok_laches_006595 | γάρ | γάρ | turn_laches_0210 | 197c | 39412 | 39415
+  tok_laches_006632 | γάρ | γάρ | turn_laches_0212 | 197d | 39618 | 39621
+  tok_laches_006655 | δή | δὴ | turn_laches_0212 | 197d | 39757 | 39759
+  tok_laches_006666 | γάρ | γὰρ | turn_laches_0213 | 197d | 39825 | 39828
+  tok_laches_006712 | τοίνυν | τοίνυν | turn_laches_0215 | 197e | 40129 | 40135
+  tok_laches_006742 | δή | δὴ | turn_laches_0217 | 197e | 40302 | 40304
+  tok_laches_006783 | δή | δὴ | turn_laches_0220 | 198a | 40537 | 40539
+  tok_laches_006793 | γάρ | γὰρ | turn_laches_0221 | 198a | 40592 | 40595
+  tok_laches_006797 | οὖν | οὖν | turn_laches_0222 | 198a | 40608 | 40611
+  tok_laches_006822 | οὖν | οὖν | turn_laches_0223 | 198b | 40748 | 40751
+  tok_laches_006825 | δή | δή | turn_laches_0224 | 198b | 40761 | 40763
+  tok_laches_006828 | γάρ | γὰρ | turn_laches_0224 | 198b | 40775 | 40778
+  tok_laches_006849 | οὖν | οὖν | turn_laches_0224 | 198b | 40887 | 40890
+  tok_laches_006891 | γάρ | γὰρ | turn_laches_0224 | 198b | 41122 | 41125
+  tok_laches_006913 | τοίνυν | τοίνυν | turn_laches_0226 | 198c | 41251 | 41257
+  tok_laches_006957 | δή | δὴ | turn_laches_0230 | 198c | 41496 | 41498
+  tok_laches_006970 | δή | δὴ | turn_laches_0231 | 198c | 41561 | 41563
+  tok_laches_006974 | δή | δὴ | turn_laches_0232 | 198d | 41586 | 41588
+  tok_laches_006977 | γάρ | γὰρ | turn_laches_0232 | 198d | 41602 | 41605
+  tok_laches_006978 | δή | δὴ | turn_laches_0232 | 198d | 41606 | 41608
+  tok_laches_007140 | γάρ | γάρ | turn_laches_0236 | 199a | 42558 | 42561
+  tok_laches_007161 | γάρ | γάρ | turn_laches_0237 | 199b | 42679 | 42682
+  tok_laches_007214 | γάρ | γὰρ | turn_laches_0243 | 199b | 42962 | 42965
+  tok_laches_007250 | καίτοι | καίτοι | turn_laches_0245 | 199c | 43186 | 43192
+  tok_laches_007259 | δή | δή | turn_laches_0245 | 199c | 43239 | 43241
+  tok_laches_007313 | οὖν | οὖν | turn_laches_0247 | 199d | 43532 | 43535
+  tok_laches_007404 | μήν | μὴν | turn_laches_0251 | 199e | 44063 | 44066
+  tok_laches_007417 | γάρ | γάρ | turn_laches_0252 | 199e | 44133 | 44136
+  tok_laches_007443 | μήν | μὴν | turn_laches_0257 | 199e | 44271 | 44274
+  tok_laches_007457 | δή | δὴ | turn_laches_0257 | 200a | 44375 | 44377
+  tok_laches_007520 | οὖν | οὖν | turn_laches_0258 | 200b | 44744 | 44747
+  tok_laches_007585 | γάρ | γάρ | turn_laches_0258 | 200c | 45137 | 45140
+  tok_laches_007594 | γάρ | γάρ | turn_laches_0259 | 200c | 45187 | 45190
+  tok_laches_007667 | γάρ | γὰρ | turn_laches_0260 | 200d | 45622 | 45625
+  tok_laches_007715 | οὖν | οὖν | turn_laches_0261 | 200d | 45892 | 45895
+  tok_laches_007730 | γάρ | γὰρ | turn_laches_0262 | 200e | 45997 | 46000
+  tok_laches_007747 | οὖν | οὖν | turn_laches_0262 | 200e | 46097 | 46100
+  tok_laches_007774 | γάρ | γὰρ | turn_laches_0262 | 200e | 46241 | 46244
+  tok_laches_007780 | οὖν | οὖν | turn_laches_0262 | 200e | 46276 | 46279
+  tok_laches_007789 | οὖν | οὖν | turn_laches_0263 | 200e | 46322 | 46325
+  tok_laches_007790 | δή | δὴ | turn_laches_0263 | 200e | 46326 | 46328
+  tok_laches_007806 | γάρ | γάρ | turn_laches_0263 | 201a | 46428 | 46431
+  tok_laches_007812 | γάρ | γὰρ | turn_laches_0263 | 201a | 46462 | 46465
+  tok_laches_007827 | γάρ | γάρ | turn_laches_0263 | 201a | 46559 | 46562
+  tok_laches_007877 | οὖν | οὖν | turn_laches_0263 | 201b | 46922 | 46925

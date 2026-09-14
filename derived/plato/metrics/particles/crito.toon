@@ -1,0 +1,275 @@
+schema_version: 1
+dialogue: crito
+source_path: raw/plato/greek/crito.txt
+source_sha256: fc1eaadbd89edd53c9ad97c51b0c568346338869f26aa2e322ff86d54b42e28a
+token_index_path: derived/plato/tokens/crito.toon
+token_index_sha256: 6447f3c8e87c9265f9f41fb5bef71b90edbdda1b4872625fac69995c60272796
+turn_index_path: derived/plato/turns/crito.toon
+turn_index_sha256: 1707ebca9073f0a0350ddc8a3da53418552ee499f17506241327cb17f132c282
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 4277
+excluded_siglum_token_count: 102
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  crito | 4175 | 0 | 5 | 1 | 34 | 16 | 32
+speakers[2]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  ΚΡ. | 923 | 0 | 1 | 1 | 11 | 3 | 11
+  ΣΩ. | 3252 | 0 | 4 | 0 | 23 | 13 | 21
+turns[102]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_crito_0001 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0002 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_crito_0003 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0004 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0005 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0006 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0007 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0008 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0009 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0010 | 63 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0011 | 14 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_crito_0012 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0013 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0014 | 31 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0015 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0016 | 41 | 0 | 0 | 0 | 0 | 1 | 2
+  turn_crito_0017 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0018 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0019 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_crito_0020 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0021 | 31 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_crito_0022 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0023 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0024 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0025 | 9 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_crito_0026 | 89 | 0 | 0 | 1 | 1 | 0 | 0
+  turn_crito_0027 | 26 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_crito_0028 | 41 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0029 | 44 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_crito_0030 | 52 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0031 | 32 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_crito_0032 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0033 | 343 | 0 | 1 | 0 | 3 | 0 | 2
+  turn_crito_0034 | 57 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_crito_0035 | 253 | 0 | 0 | 0 | 0 | 2 | 1
+  turn_crito_0036 | 55 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_crito_0037 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0038 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0039 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0040 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0041 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0042 | 34 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0043 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0044 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0045 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0046 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0047 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0048 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0049 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_crito_0050 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0051 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_crito_0052 | 87 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0053 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0054 | 35 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0055 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0056 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_crito_0057 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0058 | 37 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0059 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0060 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0061 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0062 | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0063 | 11 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_crito_0064 | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0065 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0066 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0067 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0068 | 134 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0069 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0070 | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0071 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0072 | 111 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0073 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0074 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0075 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0076 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0077 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0078 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0079 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0080 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0081 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0082 | 10 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_crito_0083 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0084 | 124 | 0 | 0 | 0 | 2 | 2 | 1
+  turn_crito_0085 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0086 | 20 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0087 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0088 | 30 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_crito_0089 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_crito_0090 | 135 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_crito_0091 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0092 | 196 | 0 | 0 | 0 | 1 | 3 | 0
+  turn_crito_0093 | 226 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0094 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0095 | 197 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_crito_0096 | 266 | 0 | 1 | 0 | 2 | 2 | 2
+  turn_crito_0097 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0098 | 46 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_crito_0099 | 363 | 0 | 0 | 0 | 6 | 1 | 6
+  turn_crito_0100 | 294 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_crito_0101 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_crito_0102 | 12 | 0 | 1 | 0 | 0 | 0 | 0
+markers[59]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  43a | 50 | 0 | 0 | 0 | 0 | 1 | 0
+  43b | 86 | 0 | 0 | 0 | 1 | 0 | 1
+  43c | 71 | 0 | 0 | 0 | 0 | 0 | 1
+  43d | 62 | 0 | 0 | 0 | 0 | 1 | 2
+  44a | 71 | 0 | 1 | 0 | 1 | 0 | 2
+  44b | 78 | 0 | 0 | 0 | 0 | 1 | 0
+  44c | 66 | 0 | 0 | 1 | 2 | 0 | 0
+  44d | 85 | 0 | 0 | 0 | 2 | 0 | 1
+  44e | 55 | 0 | 0 | 0 | 1 | 0 | 1
+  45a | 72 | 0 | 1 | 0 | 2 | 0 | 0
+  45b | 74 | 0 | 0 | 0 | 0 | 0 | 0
+  45c | 81 | 0 | 0 | 0 | 1 | 0 | 0
+  45d | 73 | 0 | 0 | 0 | 1 | 0 | 1
+  45e | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  46a | 78 | 0 | 0 | 0 | 1 | 1 | 0
+  46b | 77 | 0 | 0 | 0 | 0 | 1 | 1
+  46c | 71 | 0 | 0 | 0 | 0 | 1 | 0
+  46d | 85 | 0 | 0 | 0 | 0 | 0 | 0
+  46e | 30 | 0 | 0 | 0 | 1 | 0 | 0
+  47a | 78 | 0 | 0 | 0 | 0 | 0 | 2
+  47b | 76 | 0 | 0 | 0 | 0 | 0 | 1
+  47c | 92 | 0 | 0 | 0 | 2 | 0 | 1
+  47d | 77 | 0 | 0 | 0 | 0 | 0 | 1
+  47e | 48 | 0 | 0 | 0 | 0 | 1 | 0
+  48a | 82 | 0 | 0 | 0 | 0 | 0 | 1
+  48b | 80 | 0 | 0 | 0 | 1 | 0 | 1
+  48c | 77 | 0 | 0 | 0 | 0 | 0 | 0
+  48d | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  48e | 47 | 0 | 0 | 0 | 0 | 0 | 1
+  49a | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  49b | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  49c | 60 | 0 | 0 | 0 | 1 | 0 | 1
+  49d | 78 | 0 | 0 | 0 | 1 | 2 | 1
+  49e | 65 | 0 | 0 | 0 | 1 | 0 | 2
+  50a | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  50b | 78 | 0 | 0 | 0 | 1 | 0 | 0
+  50c | 80 | 0 | 0 | 0 | 2 | 2 | 0
+  50d | 77 | 0 | 0 | 0 | 0 | 1 | 0
+  50e | 93 | 0 | 0 | 0 | 0 | 0 | 0
+  51a | 77 | 0 | 0 | 0 | 0 | 0 | 0
+  51b | 82 | 0 | 0 | 0 | 0 | 0 | 0
+  51c | 74 | 0 | 1 | 0 | 1 | 0 | 0
+  51d | 74 | 0 | 0 | 0 | 0 | 0 | 0
+  51e | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  52a | 74 | 0 | 0 | 0 | 1 | 1 | 2
+  52b | 74 | 0 | 0 | 0 | 1 | 0 | 0
+  52c | 86 | 0 | 1 | 0 | 0 | 0 | 0
+  52d | 66 | 0 | 0 | 0 | 0 | 2 | 0
+  52e | 52 | 0 | 0 | 0 | 0 | 0 | 1
+  53a | 83 | 0 | 0 | 0 | 2 | 0 | 2
+  53b | 70 | 0 | 0 | 0 | 2 | 0 | 0
+  53c | 72 | 0 | 0 | 0 | 1 | 1 | 0
+  53d | 76 | 0 | 0 | 0 | 1 | 0 | 2
+  53e | 52 | 0 | 0 | 0 | 0 | 0 | 1
+  54a | 80 | 0 | 0 | 0 | 1 | 0 | 1
+  54b | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  54c | 74 | 0 | 0 | 0 | 0 | 0 | 0
+  54d | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  54e | 12 | 0 | 1 | 0 | 0 | 0 | 0
+occurrences[88]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_crito_000015 | οὖν | οὖν | turn_crito_0002 | 43a | 73 | 76
+  tok_crito_000108 | δή | δή | turn_crito_0010 | 43b | 613 | 615
+  tok_crito_000135 | γάρ | γὰρ | turn_crito_0011 | 43b | 759 | 762
+  tok_crito_000176 | δή | δὴ | turn_crito_0013 | 43c | 1018 | 1020
+  tok_crito_000228 | δή | δὴ | turn_crito_0016 | 43d | 1319 | 1321
+  tok_crito_000248 | οὖν | οὖν | turn_crito_0016 | 43d | 1444 | 1447
+  tok_crito_000258 | δή | δὴ | turn_crito_0016 | 43d | 1512 | 1514
+  tok_crito_000296 | γάρ | γάρ | turn_crito_0019 | 44a | 1726 | 1729
+  tok_crito_000312 | δή | δὴ | turn_crito_0020 | 44a | 1801 | 1803
+  tok_crito_000318 | τοίνυν | τοίνυν | turn_crito_0021 | 44a | 1829 | 1835
+  tok_crito_000351 | δή | δὴ | turn_crito_0022 | 44a | 2023 | 2025
+  tok_crito_000388 | οὖν | οὖν | turn_crito_0025 | 44b | 2276 | 2279
+  tok_crito_000456 | καίτοι | καίτοι | turn_crito_0026 | 44c | 2650 | 2656
+  tok_crito_000472 | γάρ | γὰρ | turn_crito_0026 | 44c | 2742 | 2745
+  tok_crito_000499 | γάρ | γὰρ | turn_crito_0027 | 44c | 2899 | 2902
+  tok_crito_000515 | δή | δὴ | turn_crito_0028 | 44d | 3013 | 3015
+  tok_crito_000556 | γάρ | γὰρ | turn_crito_0029 | 44d | 3236 | 3239
+  tok_crito_000587 | γάρ | γὰρ | turn_crito_0029 | 44d | 3399 | 3402
+  tok_crito_000602 | δή | δὴ | turn_crito_0030 | 44e | 3493 | 3495
+  tok_crito_000654 | γάρ | γάρ | turn_crito_0031 | 44e | 3789 | 3792
+  tok_crito_000662 | γάρ | γάρ | turn_crito_0031 | 45a | 3843 | 3846
+  tok_crito_000696 | τοίνυν | τοίνυν | turn_crito_0033 | 45a | 4038 | 4044
+  tok_crito_000700 | γάρ | γὰρ | turn_crito_0033 | 45a | 4063 | 4066
+  tok_crito_000805 | γάρ | γὰρ | turn_crito_0033 | 45c | 4705 | 4708
+  tok_crito_000917 | γάρ | γὰρ | turn_crito_0033 | 45d | 5407 | 5410
+  tok_crito_000948 | δή | δὴ | turn_crito_0033 | 45d | 5604 | 5606
+  tok_crito_001004 | δή | δὴ | turn_crito_0033 | 45e | 5921 | 5923
+  tok_crito_001040 | οὖν | οὖν | turn_crito_0034 | 46a | 6135 | 6138
+  tok_crito_001069 | γάρ | γὰρ | turn_crito_0034 | 46a | 6290 | 6293
+  tok_crito_001118 | οὖν | οὖν | turn_crito_0035 | 46b | 6589 | 6592
+  tok_crito_001151 | δή | δὴ | turn_crito_0035 | 46b | 6766 | 6768
+  tok_crito_001221 | οὖν | οὖν | turn_crito_0035 | 46c | 7183 | 7186
+  tok_crito_001352 | γάρ | γάρ | turn_crito_0036 | 46e | 7939 | 7942
+  tok_crito_001371 | δή | δή | turn_crito_0036 | 47a | 8061 | 8063
+  tok_crito_001438 | δή | δή | turn_crito_0042 | 47a | 8398 | 8400
+  tok_crito_001495 | δή | δή | turn_crito_0045 | 47b | 8735 | 8737
+  tok_crito_001555 | γάρ | γὰρ | turn_crito_0049 | 47c | 9088 | 9091
+  tok_crito_001580 | γάρ | γὰρ | turn_crito_0051 | 47c | 9208 | 9211
+  tok_crito_001596 | δή | δὴ | turn_crito_0052 | 47c | 9301 | 9303
+  tok_crito_001677 | δή | δή | turn_crito_0054 | 47d | 9759 | 9761
+  tok_crito_001715 | οὖν | οὖν | turn_crito_0056 | 47e | 9991 | 9994
+  tok_crito_001828 | δή | δή | turn_crito_0062 | 48a | 10655 | 10657
+  tok_crito_001842 | δή | δὴ | turn_crito_0063 | 48b | 10747 | 10749
+  tok_crito_001846 | γάρ | γὰρ | turn_crito_0063 | 48b | 10766 | 10769
+  tok_crito_002108 | δή | δὴ | turn_crito_0070 | 48e | 12310 | 12312
+  tok_crito_002271 | δή | δή | turn_crito_0078 | 49c | 13323 | 13325
+  tok_crito_002302 | γάρ | γάρ | turn_crito_0082 | 49c | 13493 | 13496
+  tok_crito_002342 | γάρ | γὰρ | turn_crito_0084 | 49d | 13743 | 13746
+  tok_crito_002352 | οὖν | οὖν | turn_crito_0084 | 49d | 13795 | 13798
+  tok_crito_002373 | δή | δὴ | turn_crito_0084 | 49d | 13933 | 13935
+  tok_crito_002374 | οὖν | οὖν | turn_crito_0084 | 49d | 13936 | 13939
+  tok_crito_002413 | γάρ | γὰρ | turn_crito_0084 | 49e | 14192 | 14195
+  tok_crito_002450 | δή | δὴ | turn_crito_0086 | 49e | 14382 | 14384
+  tok_crito_002474 | δή | δὴ | turn_crito_0088 | 49e | 14514 | 14516
+  tok_crito_002512 | γάρ | γὰρ | turn_crito_0089 | 50a | 14746 | 14749
+  tok_crito_002608 | γάρ | γὰρ | turn_crito_0090 | 50b | 15311 | 15314
+  tok_crito_002636 | γάρ | γὰρ | turn_crito_0090 | 50c | 15486 | 15489
+  tok_crito_002658 | οὖν | οὖν | turn_crito_0092 | 50c | 15598 | 15601
+  tok_crito_002683 | οὖν | οὖν | turn_crito_0092 | 50c | 15732 | 15735
+  tok_crito_002709 | γάρ | γάρ | turn_crito_0092 | 50c | 15901 | 15904
+  tok_crito_002738 | οὖν | οὖν | turn_crito_0092 | 50d | 16076 | 16079
+  tok_crito_003085 | τοίνυν | τοίνυν | turn_crito_0095 | 51c | 18190 | 18196
+  tok_crito_003108 | γάρ | γάρ | turn_crito_0095 | 51c | 18332 | 18335
+  tok_crito_003283 | δή | δή | turn_crito_0096 | 52a | 19446 | 19448
+  tok_crito_003306 | οὖν | οὖν | turn_crito_0096 | 52a | 19584 | 19587
+  tok_crito_003311 | δή | δή | turn_crito_0096 | 52a | 19612 | 19614
+  tok_crito_003331 | γάρ | γὰρ | turn_crito_0096 | 52a | 19749 | 19752
+  tok_crito_003350 | γάρ | γὰρ | turn_crito_0096 | 52b | 19861 | 19864
+  tok_crito_003438 | τοίνυν | τοίνυν | turn_crito_0096 | 52c | 20401 | 20407
+  tok_crito_003517 | οὖν | οὖν | turn_crito_0096 | 52d | 20896 | 20899
+  tok_crito_003555 | οὖν | οὖν | turn_crito_0098 | 52d | 21119 | 21122
+  tok_crito_003608 | δή | δὴ | turn_crito_0099 | 52e | 21478 | 21480
+  tok_crito_003653 | γάρ | γὰρ | turn_crito_0099 | 53a | 21754 | 21757
+  tok_crito_003661 | δή | δὴ | turn_crito_0099 | 53a | 21794 | 21796
+  tok_crito_003682 | γάρ | γὰρ | turn_crito_0099 | 53a | 21922 | 21925
+  tok_crito_003683 | δή | δή | turn_crito_0099 | 53a | 21926 | 21928
+  tok_crito_003701 | γάρ | γὰρ | turn_crito_0099 | 53b | 22040 | 22043
+  tok_crito_003737 | γάρ | γὰρ | turn_crito_0099 | 53b | 22257 | 22260
+  tok_crito_003771 | γάρ | γὰρ | turn_crito_0099 | 53c | 22496 | 22499
+  tok_crito_003787 | οὖν | οὖν | turn_crito_0099 | 53c | 22600 | 22603
+  tok_crito_003865 | γάρ | γὰρ | turn_crito_0099 | 53d | 23091 | 23094
+  tok_crito_003866 | δή | δὴ | turn_crito_0099 | 53d | 23095 | 23097
+  tok_crito_003893 | δή | δὴ | turn_crito_0099 | 53d | 23257 | 23259
+  tok_crito_003945 | δή | δὴ | turn_crito_0099 | 53e | 23588 | 23590
+  tok_crito_003979 | δή | δὴ | turn_crito_0100 | 54a | 23814 | 23816
+  tok_crito_004024 | γάρ | γὰρ | turn_crito_0100 | 54a | 24095 | 24098
+  tok_crito_004092 | γάρ | γὰρ | turn_crito_0100 | 54b | 24543 | 24546
+  tok_crito_004267 | τοίνυν | τοίνυν | turn_crito_0102 | 54e | 25594 | 25600

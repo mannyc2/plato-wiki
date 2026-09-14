@@ -1,0 +1,2084 @@
+schema_version: 1
+dialogue: sophist
+source_path: raw/plato/greek/sophist.txt
+source_sha256: 4e856d5f7b7c4d870fd0fbce7c61060fd9c85e6c708ba39d6f18b329cb4ebbeb
+token_index_path: derived/plato/tokens/sophist.toon
+token_index_sha256: c0e8ca5163674e1c7c489ef5978c2689c21862cd0a50f22cd7f061ea50cbdcbe
+turn_index_path: derived/plato/turns/sophist.toon
+turn_index_sha256: 34a515b5accf12d084e3605380f0866b27e3a6ff17b84656a0951f135ad1fd6b
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 17210
+excluded_siglum_token_count: 1178
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  sophist | 16032 | 72 | 55 | 1 | 190 | 123 | 175
+speakers[4]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  ΘΕΑΙ. | 2421 | 18 | 2 | 0 | 76 | 69 | 39
+  ΘΕΟ. | 132 | 1 | 0 | 0 | 1 | 0 | 2
+  ΞΕ. | 13199 | 52 | 51 | 1 | 111 | 52 | 132
+  ΣΩ. | 280 | 1 | 2 | 0 | 2 | 2 | 2
+turns[1178]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_sophist_0001 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0002 | 67 | 0 | 0 | 0 | 0 | 2 | 1
+  turn_sophist_0003 | 32 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0004 | 100 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0005 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0006 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0007 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0008 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0009 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0010 | 27 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0011 | 40 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0012 | 54 | 0 | 1 | 0 | 0 | 0 | 1
+  turn_sophist_0013 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0014 | 32 | 1 | 1 | 0 | 1 | 0 | 0
+  turn_sophist_0015 | 95 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0016 | 12 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0017 | 39 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0018 | 35 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0019 | 155 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_sophist_0020 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0021 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0022 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0023 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0024 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0025 | 13 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0026 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0027 | 20 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0028 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0029 | 9 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0030 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0031 | 33 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0032 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0033 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0034 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0035 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0036 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0037 | 5 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0038 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0039 | 55 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0040 | 4 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0041 | 15 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0042 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0043 | 34 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0044 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0045 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0046 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0047 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0048 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0049 | 11 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0050 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0051 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0052 | 6 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0053 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0054 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0055 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0056 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0057 | 10 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0058 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0059 | 13 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0060 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0061 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0062 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0063 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0064 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0065 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0066 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0067 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0068 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0069 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0070 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0071 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0072 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0073 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0074 | 7 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0075 | 20 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0076 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0077 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0078 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0079 | 23 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0080 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0081 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0082 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0083 | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0084 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0085 | 77 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0086 | 7 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0087 | 14 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0088 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0089 | 18 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0090 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0091 | 13 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0092 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0093 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0094 | 5 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_sophist_0095 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0096 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0097 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0098 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0099 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0100 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0101 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0102 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0103 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0104 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0105 | 15 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0106 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0107 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0108 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0109 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0110 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0111 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0112 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0113 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0114 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0115 | 45 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0116 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0117 | 6 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0118 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0119 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0120 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0121 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0122 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0123 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0124 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0125 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0126 | 5 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0127 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0128 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0129 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0130 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0131 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0132 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0133 | 7 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0134 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0135 | 34 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0136 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0137 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0138 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0139 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0140 | 19 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_sophist_0141 | 39 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0142 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0143 | 40 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_sophist_0144 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0145 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0146 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0147 | 13 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0148 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0149 | 7 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0150 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0151 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0152 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0153 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0154 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0155 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0156 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0157 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0158 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0159 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0160 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0161 | 55 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0162 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0163 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0164 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0165 | 33 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0166 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0167 | 21 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0168 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0169 | 16 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0170 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0171 | 25 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0172 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0173 | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0174 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0175 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0176 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0177 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0178 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0179 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0180 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0181 | 8 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0182 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0183 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0184 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0185 | 20 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0186 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0187 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0188 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0189 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0190 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0191 | 19 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0192 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0193 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0194 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0195 | 43 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0196 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0197 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0198 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0199 | 11 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0200 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0201 | 10 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0202 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0203 | 34 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0204 | 5 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0205 | 15 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0206 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0207 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0208 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0209 | 18 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0210 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0211 | 23 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0212 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0213 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0214 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0215 | 19 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0216 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0217 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0218 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0219 | 17 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0220 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0221 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0222 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0223 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0224 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0225 | 19 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0226 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0227 | 19 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0228 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0229 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0230 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0231 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0232 | 10 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0233 | 14 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0234 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0235 | 43 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0236 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0237 | 138 | 0 | 0 | 0 | 3 | 1 | 1
+  turn_sophist_0238 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0239 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0240 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0241 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0242 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0243 | 17 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0244 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0245 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0246 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0247 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0248 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0249 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0250 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0251 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0252 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0253 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0254 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0255 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0256 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0257 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0258 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0259 | 7 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0260 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0261 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0262 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0263 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0264 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0265 | 9 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0266 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0267 | 16 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0268 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0269 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0270 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0271 | 21 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0272 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0273 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0274 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0275 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0276 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0277 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0278 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0279 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0280 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0281 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0282 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0283 | 19 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0284 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0285 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0286 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0287 | 31 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0288 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0289 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0290 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0291 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0292 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0293 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0294 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0295 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0296 | 18 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0297 | 26 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_sophist_0298 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0299 | 8 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0300 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0301 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0302 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0303 | 39 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0304 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0305 | 41 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0306 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0307 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0308 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0309 | 149 | 0 | 0 | 0 | 1 | 0 | 2
+  turn_sophist_0310 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0311 | 51 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0312 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0313 | 15 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0314 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0315 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0316 | 9 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0317 | 39 | 0 | 0 | 0 | 3 | 0 | 0
+  turn_sophist_0318 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0319 | 43 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0320 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0321 | 36 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0322 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0323 | 29 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0324 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0325 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0326 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0327 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0328 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0329 | 19 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0330 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0331 | 19 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0332 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0333 | 51 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0334 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0335 | 28 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_sophist_0336 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0337 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0338 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0339 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0340 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0341 | 33 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0342 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0343 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0344 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0345 | 31 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0346 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0347 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0348 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0349 | 26 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0350 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0351 | 25 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0352 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0353 | 23 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0354 | 14 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0355 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0356 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0357 | 18 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0358 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0359 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0360 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0361 | 54 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0362 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0363 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0364 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0365 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0366 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0367 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0368 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0369 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0370 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0371 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0372 | 4 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0373 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0374 | 13 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0375 | 7 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0376 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0377 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0378 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0379 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0380 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0381 | 16 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0382 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0383 | 14 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0384 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0385 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0386 | 18 | 0 | 0 | 0 | 2 | 0 | 2
+  turn_sophist_0387 | 26 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0388 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0389 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0390 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0391 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0392 | 12 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0393 | 45 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0394 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0395 | 53 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_sophist_0396 | 9 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0397 | 63 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0398 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0399 | 54 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0400 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0401 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0402 | 4 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0403 | 30 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0404 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0405 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0406 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0407 | 76 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0408 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0409 | 34 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0410 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0411 | 39 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0412 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0413 | 44 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0414 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0415 | 22 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0416 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0417 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0418 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0419 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0420 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0421 | 39 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0422 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0423 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0424 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0425 | 14 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0426 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0427 | 11 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0428 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0429 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0430 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0431 | 19 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0432 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0433 | 58 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_sophist_0434 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0435 | 84 | 0 | 0 | 0 | 2 | 2 | 1
+  turn_sophist_0436 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0437 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0438 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0439 | 38 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0440 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0441 | 15 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0442 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0443 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0444 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0445 | 30 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_sophist_0446 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0447 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0448 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0449 | 17 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0450 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0451 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0452 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0453 | 25 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0454 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0455 | 25 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_sophist_0456 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0457 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0458 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0459 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0460 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0461 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0462 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0463 | 14 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0464 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0465 | 26 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0466 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0467 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0468 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0469 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0470 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0471 | 13 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0472 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0473 | 27 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0474 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0475 | 19 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0476 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0477 | 31 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0478 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0479 | 36 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_sophist_0480 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0481 | 16 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0482 | 4 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0483 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0484 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0485 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0486 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0487 | 16 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0488 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0489 | 31 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0490 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0491 | 45 | 0 | 1 | 0 | 1 | 0 | 1
+  turn_sophist_0492 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0493 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0494 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0495 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0496 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0497 | 46 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0498 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0499 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0500 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0501 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0502 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0503 | 40 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0504 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0505 | 26 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0506 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0507 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0508 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0509 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0510 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0511 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0512 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0513 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0514 | 5 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0515 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0516 | 7 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0517 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0518 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0519 | 26 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0520 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0521 | 14 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0522 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0523 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0524 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0525 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0526 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0527 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0528 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0529 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0530 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0531 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0532 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0533 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0534 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0535 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0536 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0537 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0538 | 38 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_sophist_0539 | 33 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0540 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0541 | 10 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0542 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0543 | 6 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0544 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0545 | 17 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0546 | 4 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0547 | 6 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0548 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0549 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0550 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0551 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0552 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0553 | 55 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_sophist_0554 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0555 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0556 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0557 | 7 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0558 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0559 | 20 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0560 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0561 | 29 | 0 | 0 | 0 | 1 | 0 | 2
+  turn_sophist_0562 | 21 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0563 | 21 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0564 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0565 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0566 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0567 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0568 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0569 | 103 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0570 | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0571 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0572 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0573 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0574 | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0575 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0576 | 34 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0577 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0578 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0579 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0580 | 21 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0581 | 19 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0582 | 90 | 0 | 0 | 0 | 3 | 0 | 1
+  turn_sophist_0583 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0584 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0585 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0586 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0587 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0588 | 79 | 0 | 1 | 0 | 1 | 1 | 1
+  turn_sophist_0589 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0590 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0591 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0592 | 13 | 0 | 1 | 0 | 2 | 0 | 0
+  turn_sophist_0593 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0594 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0595 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0596 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0597 | 9 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0598 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0599 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0600 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0601 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0602 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0603 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0604 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0605 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0606 | 28 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0607 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0608 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0609 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0610 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0611 | 7 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0612 | 48 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_sophist_0613 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0614 | 26 | 1 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0615 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0616 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0617 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0618 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0619 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0620 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0621 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0622 | 22 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0623 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0624 | 24 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0625 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0626 | 26 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0627 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0628 | 13 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0629 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0630 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0631 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0632 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0633 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0634 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0635 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0636 | 22 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0637 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0638 | 20 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0639 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0640 | 39 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0641 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0642 | 18 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0643 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0644 | 57 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0645 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0646 | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0647 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0648 | 14 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0649 | 4 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_sophist_0650 | 32 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0651 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0652 | 44 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0653 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0654 | 13 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0655 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0656 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0657 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0658 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0659 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0660 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0661 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0662 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0663 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0664 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0665 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0666 | 13 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0667 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0668 | 31 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_sophist_0669 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0670 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0671 | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0672 | 39 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0673 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0674 | 61 | 0 | 1 | 0 | 2 | 1 | 1
+  turn_sophist_0675 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0676 | 46 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0677 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0678 | 22 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0679 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0680 | 17 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0681 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0682 | 10 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0683 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0684 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0685 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0686 | 21 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0687 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0688 | 30 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0689 | 5 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_sophist_0690 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0691 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0692 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0693 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0694 | 23 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0695 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0696 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0697 | 4 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0698 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0699 | 10 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0700 | 45 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_sophist_0701 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0702 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0703 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0704 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0705 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0706 | 16 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0707 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0708 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0709 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0710 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0711 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0712 | 14 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0713 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0714 | 20 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0715 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0716 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0717 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0718 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0719 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0720 | 20 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0721 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0722 | 55 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0723 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0724 | 12 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0725 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0726 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0727 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0728 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0729 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0730 | 22 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0731 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0732 | 18 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0733 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0734 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0735 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0736 | 10 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0737 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0738 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0739 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0740 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0741 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0742 | 34 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0743 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0744 | 14 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0745 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0746 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0747 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0748 | 16 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0749 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0750 | 34 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0751 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0752 | 6 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0753 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0754 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0755 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0756 | 11 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0757 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0758 | 54 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0759 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0760 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0761 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0762 | 56 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0763 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0764 | 78 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_sophist_0765 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0766 | 32 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0767 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0768 | 53 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0769 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0770 | 11 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0771 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0772 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0773 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0774 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0775 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0776 | 52 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0777 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0778 | 52 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0779 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0780 | 17 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0781 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0782 | 55 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0783 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0784 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0785 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0786 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0787 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0788 | 15 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0789 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0790 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0791 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0792 | 19 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0793 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0794 | 7 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0795 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0796 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0797 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0798 | 29 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0799 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0800 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0801 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0802 | 15 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0803 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0804 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0805 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0806 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0807 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0808 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0809 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0810 | 63 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0811 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0812 | 27 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0813 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0814 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0815 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0816 | 55 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0817 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0818 | 17 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0819 | 6 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0820 | 32 | 1 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0821 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0822 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0823 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0824 | 34 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0825 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0826 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0827 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0828 | 116 | 0 | 0 | 0 | 0 | 2 | 2
+  turn_sophist_0829 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0830 | 15 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0831 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0832 | 10 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0833 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0834 | 10 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0835 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0836 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0837 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0838 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0839 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0840 | 51 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0841 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0842 | 13 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0843 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0844 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0845 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0846 | 27 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0847 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0848 | 6 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0849 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0850 | 12 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0851 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0852 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0853 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0854 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0855 | 5 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0856 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0857 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0858 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0859 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0860 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0861 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0862 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0863 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0864 | 9 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0865 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0866 | 49 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0867 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0868 | 13 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0869 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0870 | 29 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0871 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0872 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0873 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0874 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0875 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0876 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0877 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0878 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0879 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0880 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0881 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0882 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0883 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0884 | 12 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0885 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0886 | 61 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0887 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0888 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0889 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0890 | 18 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0891 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0892 | 17 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0893 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0894 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0895 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0896 | 31 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_sophist_0897 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0898 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0899 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0900 | 15 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0901 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0902 | 50 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0903 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0904 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0905 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0906 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0907 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0908 | 29 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0909 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0910 | 30 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0911 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0912 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0913 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0914 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0915 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0916 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0917 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0918 | 39 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0919 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0920 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0921 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0922 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0923 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0924 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0925 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0926 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0927 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0928 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0929 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0930 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0931 | 18 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0932 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0933 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0934 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0935 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0936 | 13 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0937 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0938 | 20 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0939 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0940 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0941 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0942 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0943 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0944 | 26 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_sophist_0945 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0946 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0947 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0948 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0949 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0950 | 76 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0951 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0952 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0953 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0954 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0955 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0956 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0957 | 4 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_0958 | 55 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0959 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0960 | 165 | 1 | 1 | 0 | 1 | 0 | 1
+  turn_sophist_0961 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0962 | 61 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0963 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0964 | 84 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0965 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0966 | 22 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0967 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0968 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0969 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0970 | 15 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_0971 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0972 | 59 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0973 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0974 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0975 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0976 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0977 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0978 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0979 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0980 | 36 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0981 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0982 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0983 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0984 | 15 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0985 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0986 | 37 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_sophist_0987 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0988 | 78 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0989 | 46 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_0990 | 83 | 0 | 0 | 0 | 2 | 1 | 1
+  turn_sophist_0991 | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_0992 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0993 | 29 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_0994 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0995 | 23 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_0996 | 8 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_sophist_0997 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0998 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_0999 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1000 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1001 | 18 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_1002 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1003 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1004 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1005 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1006 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1007 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1008 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_1009 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1010 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1011 | 22 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_1012 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1013 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1014 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_1015 | 72 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_1016 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1017 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1018 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1019 | 45 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_1020 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1021 | 29 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1022 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_1023 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1024 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1025 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1026 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1027 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1028 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1029 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1030 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1031 | 20 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_1032 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1033 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1034 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1035 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1036 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1037 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1038 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1039 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1040 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1041 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1042 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1043 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1044 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1045 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1046 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1047 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1048 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1049 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1050 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1051 | 20 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_1052 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_1053 | 22 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1054 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1055 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1056 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1057 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1058 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_1059 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_1060 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1061 | 34 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1062 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_1063 | 26 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1064 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1065 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1066 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1067 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1068 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_1069 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1070 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1071 | 8 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1072 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1073 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1074 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1075 | 16 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_1076 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1077 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1078 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1079 | 44 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1080 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1081 | 23 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_1082 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1083 | 17 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_sophist_1084 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1085 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1086 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1087 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1088 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1089 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1090 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1091 | 26 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1092 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1093 | 15 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1094 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1095 | 46 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_1096 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1097 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1098 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1099 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1100 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_1101 | 32 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_sophist_1102 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_1103 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1104 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1105 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1106 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1107 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1108 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1109 | 47 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_sophist_1110 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1111 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1112 | 27 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1113 | 90 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_sophist_1114 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1115 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1116 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1117 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1118 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1119 | 21 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1120 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1121 | 32 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1122 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1123 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1124 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1125 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1126 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1127 | 46 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1128 | 15 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_1129 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1130 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_1131 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1132 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1133 | 27 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_1134 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_sophist_1135 | 13 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1136 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1137 | 6 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_sophist_1138 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1139 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1140 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1141 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1142 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1143 | 25 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1144 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1145 | 14 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1146 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1147 | 22 | 0 | 0 | 1 | 0 | 0 | 0
+  turn_sophist_1148 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1149 | 18 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_sophist_1150 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1151 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1152 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1153 | 14 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_1154 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1155 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1156 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1157 | 65 | 0 | 0 | 0 | 0 | 1 | 2
+  turn_sophist_1158 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1159 | 16 | 0 | 1 | 0 | 1 | 0 | 1
+  turn_sophist_1160 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1161 | 16 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1162 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1163 | 41 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_sophist_1164 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_1165 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1166 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1167 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1168 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1169 | 31 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1170 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1171 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_1172 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1173 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1174 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1175 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_sophist_1176 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_sophist_1177 | 44 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_sophist_1178 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+markers[262]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  216a | 50 | 0 | 0 | 0 | 0 | 1 | 0
+  216b | 75 | 1 | 0 | 0 | 0 | 1 | 1
+  216c | 71 | 0 | 0 | 0 | 2 | 0 | 0
+  216d | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  217a | 63 | 0 | 0 | 0 | 0 | 0 | 1
+  217b | 67 | 1 | 0 | 0 | 1 | 0 | 1
+  217c | 54 | 0 | 1 | 0 | 0 | 0 | 1
+  217d | 70 | 1 | 1 | 0 | 1 | 0 | 0
+  217e | 56 | 0 | 0 | 0 | 1 | 0 | 0
+  218a | 72 | 0 | 1 | 0 | 0 | 0 | 0
+  218b | 61 | 0 | 0 | 0 | 0 | 0 | 1
+  218c | 80 | 0 | 0 | 0 | 1 | 0 | 1
+  218d | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  218e | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  219a | 69 | 2 | 0 | 0 | 0 | 0 | 2
+  219b | 59 | 0 | 1 | 0 | 1 | 1 | 0
+  219c | 60 | 0 | 0 | 0 | 1 | 0 | 1
+  219d | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  219e | 40 | 2 | 0 | 0 | 0 | 0 | 0
+  220a | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  220b | 71 | 2 | 0 | 0 | 1 | 1 | 0
+  220c | 56 | 0 | 0 | 0 | 0 | 1 | 1
+  220d | 64 | 0 | 1 | 0 | 1 | 0 | 0
+  220e | 61 | 0 | 1 | 0 | 1 | 1 | 0
+  221a | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  221b | 54 | 0 | 0 | 0 | 1 | 0 | 0
+  221c | 58 | 1 | 0 | 0 | 0 | 2 | 1
+  221d | 65 | 0 | 0 | 0 | 1 | 1 | 2
+  221e | 41 | 0 | 0 | 0 | 1 | 0 | 0
+  222a | 62 | 1 | 1 | 0 | 0 | 0 | 0
+  222b | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  222c | 54 | 0 | 1 | 0 | 0 | 0 | 0
+  222d | 48 | 0 | 0 | 0 | 1 | 1 | 1
+  222e | 41 | 0 | 1 | 0 | 0 | 0 | 0
+  223a | 62 | 0 | 0 | 0 | 3 | 1 | 2
+  223b | 42 | 0 | 0 | 0 | 0 | 1 | 1
+  223c | 82 | 1 | 1 | 0 | 3 | 2 | 1
+  223d | 50 | 0 | 0 | 0 | 0 | 0 | 0
+  223e | 40 | 0 | 0 | 0 | 0 | 0 | 0
+  224a | 57 | 0 | 1 | 0 | 0 | 0 | 0
+  224b | 59 | 0 | 1 | 0 | 0 | 1 | 1
+  224c | 66 | 1 | 0 | 0 | 1 | 0 | 1
+  224d | 55 | 0 | 0 | 0 | 0 | 0 | 0
+  224e | 42 | 0 | 0 | 0 | 1 | 0 | 1
+  225a | 63 | 0 | 2 | 0 | 1 | 1 | 1
+  225b | 59 | 0 | 0 | 0 | 1 | 0 | 0
+  225c | 67 | 0 | 0 | 0 | 2 | 0 | 0
+  225d | 64 | 2 | 1 | 0 | 1 | 1 | 0
+  225e | 39 | 0 | 1 | 0 | 0 | 0 | 0
+  226a | 54 | 0 | 0 | 0 | 0 | 2 | 0
+  226b | 64 | 1 | 0 | 0 | 2 | 1 | 1
+  226c | 55 | 0 | 1 | 0 | 0 | 0 | 1
+  226d | 60 | 1 | 1 | 0 | 1 | 1 | 0
+  226e | 47 | 2 | 0 | 0 | 0 | 0 | 0
+  227a | 70 | 0 | 0 | 0 | 2 | 1 | 0
+  227b | 62 | 0 | 0 | 0 | 0 | 0 | 1
+  227c | 72 | 0 | 0 | 0 | 1 | 0 | 0
+  227d | 70 | 1 | 0 | 0 | 2 | 1 | 0
+  228a | 56 | 0 | 0 | 0 | 0 | 0 | 0
+  228b | 50 | 1 | 0 | 0 | 1 | 1 | 0
+  228c | 58 | 2 | 0 | 0 | 0 | 0 | 0
+  228d | 57 | 0 | 0 | 0 | 0 | 1 | 1
+  228e | 50 | 0 | 0 | 0 | 0 | 0 | 0
+  229a | 51 | 0 | 0 | 0 | 0 | 0 | 1
+  229b | 68 | 0 | 0 | 0 | 1 | 1 | 1
+  229c | 61 | 0 | 0 | 0 | 0 | 0 | 3
+  229d | 57 | 0 | 1 | 0 | 2 | 1 | 0
+  229e | 43 | 0 | 0 | 0 | 0 | 0 | 1
+  230a | 66 | 0 | 0 | 0 | 0 | 1 | 0
+  230b | 65 | 0 | 0 | 0 | 0 | 0 | 2
+  230c | 68 | 0 | 0 | 0 | 1 | 0 | 1
+  230d | 62 | 0 | 0 | 0 | 0 | 0 | 1
+  230e | 35 | 0 | 0 | 0 | 0 | 1 | 0
+  231a | 57 | 1 | 0 | 0 | 4 | 0 | 1
+  231b | 61 | 0 | 0 | 0 | 0 | 0 | 1
+  231c | 59 | 0 | 0 | 0 | 1 | 1 | 1
+  231d | 61 | 0 | 0 | 0 | 1 | 0 | 0
+  231e | 38 | 1 | 0 | 0 | 2 | 2 | 0
+  232a | 57 | 0 | 0 | 0 | 0 | 1 | 0
+  232b | 67 | 1 | 1 | 0 | 1 | 0 | 1
+  232c | 68 | 1 | 0 | 0 | 1 | 0 | 1
+  232d | 59 | 1 | 0 | 0 | 1 | 0 | 0
+  232e | 58 | 0 | 0 | 0 | 1 | 0 | 3
+  233a | 61 | 0 | 0 | 0 | 1 | 2 | 1
+  233b | 62 | 0 | 0 | 0 | 1 | 0 | 1
+  233c | 56 | 1 | 0 | 0 | 4 | 0 | 0
+  233d | 51 | 0 | 1 | 0 | 0 | 1 | 1
+  233e | 49 | 0 | 1 | 0 | 2 | 1 | 0
+  234a | 71 | 0 | 1 | 0 | 2 | 0 | 2
+  234b | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  234c | 56 | 0 | 0 | 0 | 1 | 0 | 2
+  234d | 58 | 0 | 0 | 0 | 1 | 1 | 0
+  234e | 55 | 0 | 0 | 0 | 0 | 1 | 0
+  235a | 71 | 0 | 0 | 0 | 1 | 0 | 2
+  235b | 65 | 0 | 1 | 0 | 1 | 0 | 0
+  235c | 65 | 0 | 0 | 0 | 0 | 0 | 1
+  235d | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  235e | 47 | 0 | 0 | 0 | 1 | 0 | 0
+  236a | 58 | 0 | 0 | 0 | 0 | 2 | 0
+  236b | 65 | 1 | 0 | 0 | 0 | 0 | 0
+  236c | 54 | 0 | 1 | 0 | 0 | 0 | 1
+  236d | 52 | 0 | 0 | 0 | 0 | 1 | 0
+  236e | 49 | 0 | 0 | 0 | 2 | 0 | 0
+  237a | 61 | 0 | 0 | 0 | 2 | 0 | 1
+  237b | 74 | 0 | 1 | 0 | 1 | 2 | 1
+  237c | 74 | 0 | 0 | 0 | 1 | 1 | 1
+  237d | 65 | 0 | 0 | 0 | 4 | 0 | 1
+  237e | 47 | 0 | 0 | 0 | 0 | 2 | 1
+  238a | 65 | 0 | 0 | 0 | 3 | 0 | 1
+  238b | 69 | 0 | 1 | 0 | 0 | 1 | 0
+  238c | 60 | 2 | 0 | 0 | 0 | 2 | 0
+  238d | 66 | 0 | 0 | 0 | 0 | 1 | 1
+  238e | 55 | 1 | 0 | 0 | 3 | 0 | 0
+  239a | 65 | 1 | 0 | 0 | 1 | 0 | 0
+  239b | 79 | 0 | 1 | 0 | 1 | 0 | 1
+  239c | 57 | 0 | 0 | 0 | 0 | 0 | 1
+  239d | 64 | 0 | 0 | 0 | 0 | 1 | 0
+  239e | 43 | 0 | 0 | 0 | 0 | 0 | 1
+  240a | 67 | 0 | 0 | 0 | 0 | 1 | 0
+  240b | 65 | 2 | 0 | 0 | 1 | 1 | 0
+  240c | 64 | 0 | 0 | 0 | 1 | 0 | 1
+  240d | 59 | 0 | 0 | 0 | 1 | 0 | 0
+  240e | 53 | 0 | 0 | 0 | 0 | 0 | 1
+  241a | 68 | 0 | 0 | 0 | 2 | 0 | 0
+  241b | 63 | 0 | 1 | 0 | 2 | 0 | 1
+  241c | 58 | 0 | 0 | 0 | 1 | 2 | 0
+  241d | 63 | 0 | 1 | 0 | 1 | 0 | 2
+  241e | 46 | 0 | 0 | 0 | 1 | 0 | 0
+  242a | 74 | 0 | 1 | 0 | 0 | 0 | 2
+  242b | 62 | 0 | 1 | 0 | 2 | 0 | 3
+  242c | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  242d | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  242e | 49 | 0 | 0 | 0 | 1 | 0 | 0
+  243a | 52 | 0 | 0 | 0 | 1 | 0 | 0
+  243b | 77 | 0 | 0 | 0 | 1 | 0 | 0
+  243c | 58 | 0 | 2 | 0 | 0 | 0 | 1
+  243d | 66 | 0 | 0 | 0 | 1 | 0 | 2
+  243e | 66 | 0 | 0 | 0 | 2 | 0 | 0
+  244a | 64 | 0 | 1 | 0 | 1 | 1 | 0
+  244b | 72 | 0 | 1 | 0 | 3 | 0 | 1
+  244c | 66 | 0 | 0 | 0 | 0 | 1 | 0
+  244d | 75 | 1 | 0 | 0 | 0 | 0 | 0
+  244e | 56 | 0 | 1 | 0 | 2 | 0 | 0
+  245a | 59 | 1 | 0 | 0 | 1 | 1 | 1
+  245b | 64 | 0 | 0 | 0 | 1 | 0 | 2
+  245c | 72 | 1 | 0 | 0 | 0 | 0 | 1
+  245d | 76 | 1 | 1 | 0 | 1 | 0 | 1
+  245e | 61 | 0 | 1 | 0 | 1 | 0 | 0
+  246a | 69 | 1 | 0 | 0 | 1 | 0 | 0
+  246b | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  246c | 61 | 0 | 1 | 0 | 1 | 1 | 1
+  246d | 60 | 0 | 0 | 0 | 1 | 0 | 0
+  246e | 40 | 0 | 0 | 0 | 0 | 0 | 2
+  247a | 57 | 2 | 0 | 0 | 0 | 1 | 0
+  247b | 70 | 0 | 0 | 0 | 0 | 1 | 1
+  247c | 64 | 0 | 1 | 0 | 2 | 0 | 0
+  247d | 68 | 0 | 0 | 0 | 1 | 1 | 3
+  247e | 62 | 0 | 0 | 0 | 2 | 0 | 0
+  248a | 70 | 0 | 0 | 0 | 1 | 1 | 1
+  248b | 61 | 0 | 0 | 0 | 1 | 3 | 2
+  248c | 68 | 0 | 0 | 0 | 0 | 0 | 1
+  248d | 61 | 1 | 0 | 0 | 1 | 0 | 0
+  248e | 56 | 0 | 0 | 0 | 0 | 0 | 2
+  249a | 72 | 1 | 0 | 0 | 0 | 0 | 0
+  249b | 66 | 1 | 0 | 0 | 0 | 2 | 1
+  249c | 62 | 1 | 0 | 0 | 0 | 0 | 1
+  249d | 68 | 0 | 0 | 0 | 0 | 2 | 0
+  249e | 43 | 0 | 0 | 0 | 0 | 0 | 1
+  250a | 60 | 1 | 0 | 0 | 1 | 1 | 1
+  250b | 56 | 0 | 0 | 0 | 1 | 1 | 0
+  250c | 68 | 0 | 0 | 0 | 2 | 0 | 2
+  250d | 55 | 0 | 1 | 0 | 1 | 2 | 0
+  250e | 55 | 0 | 1 | 0 | 0 | 1 | 0
+  251a | 66 | 0 | 0 | 0 | 0 | 0 | 2
+  251b | 66 | 0 | 0 | 0 | 1 | 0 | 1
+  251c | 54 | 0 | 1 | 0 | 1 | 1 | 1
+  251d | 71 | 0 | 0 | 0 | 0 | 0 | 1
+  251e | 54 | 0 | 0 | 0 | 0 | 1 | 0
+  252a | 68 | 0 | 0 | 0 | 2 | 2 | 1
+  252b | 70 | 1 | 1 | 0 | 0 | 0 | 0
+  252c | 56 | 0 | 0 | 0 | 0 | 0 | 0
+  252d | 63 | 1 | 0 | 0 | 1 | 0 | 1
+  252e | 55 | 2 | 0 | 0 | 1 | 1 | 1
+  253a | 66 | 0 | 0 | 0 | 1 | 1 | 0
+  253b | 78 | 0 | 0 | 0 | 0 | 0 | 1
+  253c | 68 | 0 | 0 | 0 | 1 | 1 | 1
+  253d | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  253e | 57 | 1 | 0 | 0 | 1 | 1 | 1
+  254a | 65 | 1 | 0 | 0 | 2 | 0 | 0
+  254b | 75 | 0 | 0 | 0 | 0 | 1 | 1
+  254c | 72 | 0 | 0 | 0 | 0 | 1 | 1
+  254d | 74 | 3 | 0 | 0 | 1 | 0 | 1
+  254e | 42 | 1 | 0 | 0 | 0 | 0 | 0
+  255a | 62 | 1 | 0 | 0 | 1 | 0 | 1
+  255b | 59 | 1 | 1 | 0 | 1 | 0 | 0
+  255c | 77 | 1 | 0 | 0 | 0 | 1 | 1
+  255d | 70 | 0 | 0 | 0 | 1 | 0 | 1
+  255e | 65 | 0 | 0 | 0 | 1 | 1 | 1
+  256a | 66 | 1 | 0 | 0 | 2 | 1 | 2
+  256b | 66 | 0 | 0 | 0 | 0 | 1 | 0
+  256c | 71 | 1 | 0 | 0 | 1 | 1 | 2
+  256d | 73 | 0 | 0 | 0 | 2 | 1 | 1
+  256e | 47 | 0 | 0 | 0 | 0 | 0 | 1
+  257a | 74 | 0 | 0 | 0 | 1 | 0 | 1
+  257b | 60 | 0 | 0 | 0 | 0 | 0 | 1
+  257c | 62 | 0 | 0 | 0 | 0 | 1 | 0
+  257d | 70 | 0 | 0 | 0 | 1 | 2 | 1
+  257e | 60 | 0 | 0 | 0 | 0 | 1 | 1
+  258a | 69 | 1 | 0 | 0 | 1 | 0 | 2
+  258b | 74 | 0 | 0 | 0 | 0 | 2 | 0
+  258c | 73 | 0 | 0 | 0 | 0 | 1 | 1
+  258d | 53 | 0 | 0 | 0 | 3 | 1 | 0
+  258e | 63 | 0 | 1 | 0 | 1 | 0 | 0
+  259a | 81 | 1 | 0 | 0 | 0 | 0 | 0
+  259b | 75 | 0 | 0 | 0 | 0 | 0 | 2
+  259c | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  259d | 71 | 0 | 0 | 0 | 1 | 1 | 0
+  259e | 37 | 0 | 0 | 0 | 1 | 0 | 2
+  260a | 66 | 0 | 1 | 0 | 1 | 0 | 1
+  260b | 62 | 0 | 0 | 0 | 0 | 0 | 2
+  260c | 72 | 1 | 0 | 0 | 2 | 0 | 0
+  260d | 80 | 0 | 0 | 0 | 2 | 0 | 1
+  260e | 47 | 0 | 0 | 0 | 1 | 1 | 0
+  261a | 78 | 0 | 0 | 0 | 2 | 1 | 0
+  261b | 71 | 0 | 0 | 0 | 1 | 0 | 1
+  261c | 65 | 0 | 0 | 0 | 0 | 0 | 1
+  261d | 63 | 0 | 0 | 0 | 1 | 1 | 2
+  261e | 34 | 0 | 0 | 0 | 1 | 0 | 0
+  262a | 56 | 0 | 0 | 0 | 0 | 1 | 0
+  262b | 62 | 0 | 0 | 0 | 2 | 0 | 0
+  262c | 73 | 0 | 0 | 0 | 1 | 0 | 1
+  262d | 68 | 0 | 0 | 0 | 1 | 0 | 2
+  262e | 67 | 0 | 1 | 0 | 0 | 1 | 2
+  263a | 65 | 0 | 0 | 0 | 0 | 0 | 1
+  263b | 68 | 1 | 0 | 0 | 1 | 1 | 2
+  263c | 64 | 0 | 0 | 0 | 2 | 0 | 1
+  263d | 74 | 0 | 0 | 0 | 0 | 1 | 2
+  263e | 63 | 1 | 0 | 0 | 0 | 1 | 0
+  264a | 60 | 0 | 0 | 0 | 0 | 1 | 0
+  264b | 62 | 0 | 1 | 0 | 0 | 1 | 1
+  264c | 58 | 0 | 0 | 0 | 1 | 0 | 1
+  264d | 59 | 1 | 1 | 0 | 0 | 0 | 1
+  264e | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  265a | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  265b | 56 | 0 | 0 | 0 | 2 | 1 | 1
+  265c | 71 | 0 | 0 | 0 | 0 | 0 | 2
+  265d | 65 | 1 | 0 | 0 | 0 | 0 | 0
+  265e | 61 | 0 | 0 | 0 | 1 | 0 | 2
+  266a | 69 | 1 | 0 | 0 | 0 | 0 | 1
+  266b | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  266c | 64 | 0 | 0 | 0 | 1 | 1 | 0
+  266d | 69 | 0 | 1 | 0 | 0 | 1 | 0
+  266e | 28 | 0 | 0 | 0 | 1 | 1 | 1
+  267a | 62 | 0 | 1 | 0 | 0 | 0 | 1
+  267b | 71 | 1 | 0 | 1 | 1 | 0 | 0
+  267c | 58 | 0 | 0 | 0 | 0 | 1 | 0
+  267d | 65 | 0 | 0 | 0 | 0 | 1 | 3
+  267e | 58 | 0 | 2 | 0 | 2 | 0 | 2
+  268a | 64 | 0 | 0 | 0 | 0 | 1 | 0
+  268b | 60 | 0 | 0 | 0 | 0 | 1 | 0
+  268c | 56 | 0 | 0 | 0 | 0 | 1 | 1
+  268d | 33 | 0 | 0 | 0 | 0 | 1 | 0
+occurrences[616]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_sophist_000036 | οὖν | οὖν | turn_sophist_0002 | 216a | 223 | 226
+  tok_sophist_000062 | δή | δὴ | turn_sophist_0002 | 216b | 384 | 386
+  tok_sophist_000079 | οὖν | οὖν | turn_sophist_0002 | 216b | 489 | 492
+  tok_sophist_000127 | μήν | μήν | turn_sophist_0003 | 216b | 773 | 776
+  tok_sophist_000129 | γάρ | γὰρ | turn_sophist_0003 | 216c | 792 | 795
+  tok_sophist_000160 | γάρ | γὰρ | turn_sophist_0004 | 216c | 966 | 969
+  tok_sophist_000239 | δή | δή | turn_sophist_0005 | 217a | 1494 | 1496
+  tok_sophist_000302 | γάρ | γὰρ | turn_sophist_0010 | 217b | 1888 | 1891
+  tok_sophist_000313 | μήν | μὴν | turn_sophist_0010 | 217b | 1953 | 1956
+  tok_sophist_000327 | δή | δὴ | turn_sophist_0011 | 217b | 2033 | 2035
+  tok_sophist_000367 | τοίνυν | τοίνυν | turn_sophist_0012 | 217c | 2276 | 2282
+  tok_sophist_000416 | δή | δὴ | turn_sophist_0012 | 217c | 2587 | 2589
+  tok_sophist_000443 | τοίνυν | τοίνυν | turn_sophist_0014 | 217d | 2743 | 2749
+  tok_sophist_000451 | γάρ | γὰρ | turn_sophist_0014 | 217d | 2797 | 2800
+  tok_sophist_000456 | μήν | μὴν | turn_sophist_0014 | 217d | 2834 | 2837
+  tok_sophist_000510 | γάρ | γὰρ | turn_sophist_0015 | 217e | 3165 | 3168
+  tok_sophist_000572 | τοίνυν | τοίνυν | turn_sophist_0016 | 218a | 3531 | 3537
+  tok_sophist_000627 | δή | δὴ | turn_sophist_0018 | 218b | 3847 | 3849
+  tok_sophist_000693 | γάρ | γὰρ | turn_sophist_0019 | 218c | 4256 | 4259
+  tok_sophist_000694 | δή | δὴ | turn_sophist_0019 | 218c | 4260 | 4262
+  tok_sophist_000781 | οὖν | οὖν | turn_sophist_0019 | 218d | 4763 | 4766
+  tok_sophist_000870 | μήν | μὴν | turn_sophist_0025 | 219a | 5334 | 5337
+  tok_sophist_000888 | δή | δή | turn_sophist_0027 | 219a | 5437 | 5439
+  tok_sophist_000913 | μήν | μὴν | turn_sophist_0029 | 219a | 5585 | 5588
+  tok_sophist_000943 | δή | δὴ | turn_sophist_0031 | 219a | 5736 | 5738
+  tok_sophist_001001 | γάρ | γὰρ | turn_sophist_0036 | 219b | 6088 | 6091
+  tok_sophist_001002 | οὖν | οὖν | turn_sophist_0036 | 219b | 6092 | 6095
+  tok_sophist_001005 | τοίνυν | τοίνυν | turn_sophist_0037 | 219b | 6111 | 6117
+  tok_sophist_001013 | δή | δὴ | turn_sophist_0039 | 219c | 6181 | 6183
+  tok_sophist_001070 | γάρ | γὰρ | turn_sophist_0040 | 219c | 6534 | 6537
+  tok_sophist_001074 | δή | δὴ | turn_sophist_0041 | 219d | 6562 | 6564
+  tok_sophist_001164 | μήν | μὴν | turn_sophist_0049 | 219e | 7092 | 7095
+  tok_sophist_001186 | μήν | μήν | turn_sophist_0052 | 219e | 7215 | 7218
+  tok_sophist_001263 | μήν | μὴν | turn_sophist_0057 | 220b | 7686 | 7689
+  tok_sophist_001280 | μήν | μὴν | turn_sophist_0059 | 220b | 7769 | 7772
+  tok_sophist_001292 | γάρ | γὰρ | turn_sophist_0060 | 220b | 7840 | 7843
+  tok_sophist_001293 | οὖν | οὖν | turn_sophist_0060 | 220b | 7844 | 7847
+  tok_sophist_001360 | οὖν | οὖν | turn_sophist_0068 | 220c | 8222 | 8225
+  tok_sophist_001363 | δή | δὴ | turn_sophist_0069 | 220c | 8239 | 8241
+  tok_sophist_001431 | γάρ | γὰρ | turn_sophist_0074 | 220d | 8643 | 8646
+  tok_sophist_001436 | τοίνυν | τοίνυν | turn_sophist_0075 | 220d | 8666 | 8672
+  tok_sophist_001475 | γάρ | γὰρ | turn_sophist_0078 | 220e | 8925 | 8928
+  tok_sophist_001476 | οὖν | οὖν | turn_sophist_0078 | 220e | 8929 | 8932
+  tok_sophist_001479 | τοίνυν | τοίνυν | turn_sophist_0079 | 220e | 8942 | 8948
+  tok_sophist_001604 | γάρ | γὰρ | turn_sophist_0085 | 221b | 9727 | 9730
+  tok_sophist_001662 | οὖν | οὖν | turn_sophist_0086 | 221c | 10153 | 10156
+  tok_sophist_001669 | δή | δή | turn_sophist_0087 | 221c | 10193 | 10195
+  tok_sophist_001685 | οὖν | οὖν | turn_sophist_0088 | 221c | 10291 | 10294
+  tok_sophist_001688 | μήν | μὴν | turn_sophist_0089 | 221c | 10304 | 10307
+  tok_sophist_001710 | δή | δὴ | turn_sophist_0091 | 221d | 10436 | 10438
+  tok_sophist_001725 | γάρ | γὰρ | turn_sophist_0092 | 221d | 10539 | 10542
+  tok_sophist_001751 | οὖν | οὖν | turn_sophist_0094 | 221d | 10680 | 10683
+  tok_sophist_001752 | δή | δὴ | turn_sophist_0094 | 221d | 10684 | 10686
+  tok_sophist_001787 | γάρ | γὰρ | turn_sophist_0100 | 221e | 10900 | 10903
+  tok_sophist_001832 | τοίνυν | τοίνυν | turn_sophist_0105 | 222a | 11174 | 11180
+  tok_sophist_001871 | μήν | μήν | turn_sophist_0108 | 222a | 11423 | 11426
+  tok_sophist_001987 | τοίνυν | τοίνυν | turn_sophist_0117 | 222c | 12123 | 12129
+  tok_sophist_002037 | δή | δὴ | turn_sophist_0123 | 222d | 12468 | 12470
+  tok_sophist_002055 | γάρ | γὰρ | turn_sophist_0126 | 222d | 12583 | 12586
+  tok_sophist_002056 | οὖν | οὖν | turn_sophist_0126 | 222d | 12587 | 12590
+  tok_sophist_002100 | τοίνυν | τοίνυν | turn_sophist_0133 | 222e | 12874 | 12880
+  tok_sophist_002145 | γάρ | γὰρ | turn_sophist_0136 | 223a | 13176 | 13179
+  tok_sophist_002173 | γάρ | γὰρ | turn_sophist_0138 | 223a | 13348 | 13351
+  tok_sophist_002177 | δή | δὴ | turn_sophist_0139 | 223a | 13365 | 13367
+  tok_sophist_002183 | δή | δή | turn_sophist_0140 | 223a | 13401 | 13403
+  tok_sophist_002185 | γάρ | γὰρ | turn_sophist_0140 | 223a | 13409 | 13412
+  tok_sophist_002191 | οὖν | οὖν | turn_sophist_0140 | 223a | 13454 | 13457
+  tok_sophist_002203 | δή | δὴ | turn_sophist_0141 | 223b | 13529 | 13531
+  tok_sophist_002244 | οὖν | οὖν | turn_sophist_0142 | 223b | 13958 | 13961
+  tok_sophist_002252 | γάρ | γάρ | turn_sophist_0143 | 223c | 14001 | 14004
+  tok_sophist_002266 | γάρ | γὰρ | turn_sophist_0143 | 223c | 14081 | 14084
+  tok_sophist_002267 | οὖν | οὖν | turn_sophist_0143 | 223c | 14085 | 14088
+  tok_sophist_002288 | δή | δή | turn_sophist_0144 | 223c | 14204 | 14206
+  tok_sophist_002308 | γάρ | γὰρ | turn_sophist_0146 | 223c | 14314 | 14317
+  tok_sophist_002309 | οὖν | οὖν | turn_sophist_0146 | 223c | 14318 | 14321
+  tok_sophist_002312 | τοίνυν | τοίνυν | turn_sophist_0147 | 223c | 14331 | 14337
+  tok_sophist_002328 | μήν | μὴν | turn_sophist_0149 | 223c | 14434 | 14437
+  tok_sophist_002438 | τοίνυν | τοίνυν | turn_sophist_0161 | 224a | 15099 | 15105
+  tok_sophist_002514 | δή | δὴ | turn_sophist_0165 | 224b | 15622 | 15624
+  tok_sophist_002549 | οὖν | οὖν | turn_sophist_0166 | 224b | 15837 | 15840
+  tok_sophist_002552 | τοίνυν | τοίνυν | turn_sophist_0167 | 224b | 15853 | 15859
+  tok_sophist_002574 | γάρ | γὰρ | turn_sophist_0168 | 224c | 15987 | 15990
+  tok_sophist_002578 | μήν | μὴν | turn_sophist_0169 | 224c | 16012 | 16015
+  tok_sophist_002617 | δή | δὴ | turn_sophist_0171 | 224c | 16222 | 16224
+  tok_sophist_002714 | γάρ | γὰρ | turn_sophist_0176 | 224e | 16863 | 16866
+  tok_sophist_002720 | δή | δὴ | turn_sophist_0177 | 224e | 16899 | 16901
+  tok_sophist_002733 | δή | δή | turn_sophist_0178 | 225a | 16988 | 16990
+  tok_sophist_002744 | γάρ | γὰρ | turn_sophist_0180 | 225a | 17047 | 17050
+  tok_sophist_002745 | οὖν | οὖν | turn_sophist_0180 | 225a | 17051 | 17054
+  tok_sophist_002750 | τοίνυν | τοίνυν | turn_sophist_0181 | 225a | 17075 | 17081
+  tok_sophist_002772 | τοίνυν | τοίνυν | turn_sophist_0185 | 225a | 17208 | 17214
+  tok_sophist_002824 | γάρ | γὰρ | turn_sophist_0191 | 225b | 17527 | 17530
+  tok_sophist_002909 | γάρ | γὰρ | turn_sophist_0196 | 225c | 18068 | 18071
+  tok_sophist_002939 | γάρ | γὰρ | turn_sophist_0198 | 225c | 18244 | 18247
+  tok_sophist_002943 | μήν | μὴν | turn_sophist_0199 | 225d | 18267 | 18270
+  tok_sophist_002959 | τοίνυν | τοίνυν | turn_sophist_0201 | 225d | 18376 | 18382
+  tok_sophist_002972 | μήν | μὴν | turn_sophist_0203 | 225d | 18458 | 18461
+  tok_sophist_003007 | γάρ | γὰρ | turn_sophist_0204 | 225d | 18675 | 18678
+  tok_sophist_003008 | οὖν | οὖν | turn_sophist_0204 | 225d | 18679 | 18682
+  tok_sophist_003013 | τοίνυν | τοίνυν | turn_sophist_0205 | 225e | 18711 | 18717
+  tok_sophist_003086 | οὖν | οὖν | turn_sophist_0208 | 226a | 19189 | 19192
+  tok_sophist_003089 | οὖν | οὖν | turn_sophist_0209 | 226a | 19203 | 19206
+  tok_sophist_003112 | γάρ | γὰρ | turn_sophist_0211 | 226b | 19335 | 19338
+  tok_sophist_003113 | οὖν | οὖν | turn_sophist_0211 | 226b | 19339 | 19342
+  tok_sophist_003139 | δή | δὴ | turn_sophist_0212 | 226b | 19498 | 19500
+  tok_sophist_003158 | μήν | μήν | turn_sophist_0214 | 226b | 19623 | 19626
+  tok_sophist_003178 | γάρ | γάρ | turn_sophist_0215 | 226b | 19746 | 19749
+  tok_sophist_003205 | τοίνυν | τοίνυν | turn_sophist_0219 | 226c | 19925 | 19931
+  tok_sophist_003228 | δή | δὴ | turn_sophist_0223 | 226c | 20075 | 20077
+  tok_sophist_003245 | μήν | μὴν | turn_sophist_0225 | 226d | 20178 | 20181
+  tok_sophist_003272 | τοίνυν | τοίνυν | turn_sophist_0227 | 226d | 20335 | 20341
+  tok_sophist_003307 | γάρ | γὰρ | turn_sophist_0230 | 226d | 20554 | 20557
+  tok_sophist_003308 | οὖν | οὖν | turn_sophist_0230 | 226d | 20558 | 20561
+  tok_sophist_003328 | μήν | μὴν | turn_sophist_0232 | 226e | 20666 | 20669
+  tok_sophist_003334 | μήν | μὴν | turn_sophist_0233 | 226e | 20696 | 20699
+  tok_sophist_003401 | οὖν | οὖν | turn_sophist_0237 | 227a | 21133 | 21136
+  tok_sophist_003405 | γάρ | γὰρ | turn_sophist_0237 | 227a | 21155 | 21158
+  tok_sophist_003432 | γάρ | γὰρ | turn_sophist_0237 | 227a | 21317 | 21320
+  tok_sophist_003479 | δή | δὴ | turn_sophist_0237 | 227b | 21622 | 21624
+  tok_sophist_003520 | γάρ | γὰρ | turn_sophist_0237 | 227c | 21891 | 21894
+  tok_sophist_003593 | γάρ | γὰρ | turn_sophist_0242 | 227d | 22329 | 22332
+  tok_sophist_003597 | μήν | μὴν | turn_sophist_0243 | 227d | 22345 | 22348
+  tok_sophist_003615 | γάρ | γὰρ | turn_sophist_0244 | 227d | 22436 | 22439
+  tok_sophist_003616 | οὖν | οὖν | turn_sophist_0244 | 227d | 22440 | 22443
+  tok_sophist_003744 | μήν | μὴν | turn_sophist_0259 | 228b | 23205 | 23208
+  tok_sophist_003751 | γάρ | γὰρ | turn_sophist_0260 | 228b | 23248 | 23251
+  tok_sophist_003767 | οὖν | οὖν | turn_sophist_0262 | 228b | 23343 | 23346
+  tok_sophist_003811 | μήν | μὴν | turn_sophist_0265 | 228c | 23645 | 23648
+  tok_sophist_003825 | μήν | μὴν | turn_sophist_0267 | 228c | 23720 | 23723
+  tok_sophist_003842 | οὖν | οὖν | turn_sophist_0268 | 228d | 23850 | 23853
+  tok_sophist_003855 | δή | δὴ | turn_sophist_0271 | 228d | 23928 | 23930
+  tok_sophist_003973 | δή | δὴ | turn_sophist_0279 | 229a | 24647 | 24649
+  tok_sophist_004006 | δή | δή | turn_sophist_0283 | 229b | 24850 | 24852
+  tok_sophist_004050 | γάρ | γὰρ | turn_sophist_0287 | 229b | 25106 | 25109
+  tok_sophist_004071 | οὖν | οὖν | turn_sophist_0288 | 229b | 25241 | 25244
+  tok_sophist_004098 | δή | δή | turn_sophist_0290 | 229c | 25415 | 25417
+  tok_sophist_004119 | δή | δὴ | turn_sophist_0293 | 229c | 25543 | 25545
+  tok_sophist_004136 | δή | δὴ | turn_sophist_0295 | 229c | 25636 | 25638
+  tok_sophist_004149 | οὖν | οὖν | turn_sophist_0296 | 229d | 25729 | 25732
+  tok_sophist_004167 | γάρ | γὰρ | turn_sophist_0297 | 229d | 25844 | 25847
+  tok_sophist_004175 | γάρ | γὰρ | turn_sophist_0297 | 229d | 25891 | 25894
+  tok_sophist_004198 | τοίνυν | τοίνυν | turn_sophist_0299 | 229d | 26023 | 26029
+  tok_sophist_004230 | δή | δὴ | turn_sophist_0302 | 229e | 26211 | 26213
+  tok_sophist_004266 | οὖν | οὖν | turn_sophist_0303 | 230a | 26441 | 26444
+  tok_sophist_004336 | δή | δή | turn_sophist_0308 | 230b | 26878 | 26880
+  tok_sophist_004357 | δή | δὴ | turn_sophist_0309 | 230b | 27006 | 27008
+  tok_sophist_004393 | δή | δὴ | turn_sophist_0309 | 230c | 27236 | 27238
+  tok_sophist_004416 | γάρ | γάρ | turn_sophist_0309 | 230c | 27405 | 27408
+  tok_sophist_004498 | δή | δὴ | turn_sophist_0311 | 230d | 27948 | 27950
+  tok_sophist_004550 | οὖν | οὖν | turn_sophist_0312 | 230e | 28284 | 28287
+  tok_sophist_004563 | γάρ | γὰρ | turn_sophist_0313 | 231a | 28360 | 28363
+  tok_sophist_004569 | δή | δή | turn_sophist_0314 | 231a | 28398 | 28400
+  tok_sophist_004578 | μήν | μὴν | turn_sophist_0316 | 231a | 28453 | 28456
+  tok_sophist_004588 | γάρ | γὰρ | turn_sophist_0317 | 231a | 28508 | 28511
+  tok_sophist_004607 | γάρ | γὰρ | turn_sophist_0317 | 231a | 28640 | 28643
+  tok_sophist_004614 | γάρ | γὰρ | turn_sophist_0317 | 231a | 28671 | 28674
+  tok_sophist_004633 | δή | δὴ | turn_sophist_0319 | 231b | 28801 | 28803
+  tok_sophist_004720 | γάρ | γὰρ | turn_sophist_0321 | 231c | 29356 | 29359
+  tok_sophist_004731 | οὖν | οὖν | turn_sophist_0321 | 231c | 29418 | 29421
+  tok_sophist_004741 | δή | δὴ | turn_sophist_0323 | 231c | 29481 | 29483
+  tok_sophist_004760 | γάρ | γάρ | turn_sophist_0323 | 231d | 29620 | 29623
+  tok_sophist_004816 | γάρ | γὰρ | turn_sophist_0329 | 231e | 29972 | 29975
+  tok_sophist_004829 | γάρ | γὰρ | turn_sophist_0330 | 231e | 30059 | 30062
+  tok_sophist_004830 | οὖν | οὖν | turn_sophist_0330 | 231e | 30063 | 30066
+  tok_sophist_004834 | μήν | μὴν | turn_sophist_0331 | 231e | 30078 | 30081
+  tok_sophist_004854 | οὖν | οὖν | turn_sophist_0332 | 231e | 30220 | 30223
+  tok_sophist_004857 | οὖν | οὖν | turn_sophist_0333 | 232a | 30240 | 30243
+  tok_sophist_004916 | τοίνυν | τοίνυν | turn_sophist_0335 | 232b | 30611 | 30617
+  tok_sophist_004936 | γάρ | γάρ | turn_sophist_0335 | 232b | 30742 | 30745
+  tok_sophist_004967 | μήν | μήν | turn_sophist_0340 | 232b | 30923 | 30926
+  tok_sophist_004970 | δή | δή | turn_sophist_0341 | 232b | 30941 | 30943
+  tok_sophist_005005 | δή | δὴ | turn_sophist_0342 | 232c | 31147 | 31149
+  tok_sophist_005025 | γάρ | γάρ | turn_sophist_0344 | 232c | 31242 | 31245
+  tok_sophist_005028 | μήν | μὴν | turn_sophist_0345 | 232c | 31256 | 31259
+  tok_sophist_005078 | γάρ | γὰρ | turn_sophist_0348 | 232d | 31574 | 31577
+  tok_sophist_005091 | μήν | μὴν | turn_sophist_0349 | 232d | 31648 | 31651
+  tok_sophist_005136 | δή | δὴ | turn_sophist_0351 | 232e | 31937 | 31939
+  tok_sophist_005157 | δή | δὴ | turn_sophist_0352 | 232e | 32067 | 32069
+  tok_sophist_005163 | δή | δὴ | turn_sophist_0353 | 232e | 32101 | 32103
+  tok_sophist_005172 | γάρ | γὰρ | turn_sophist_0353 | 232e | 32146 | 32149
+  tok_sophist_005194 | γάρ | γάρ | turn_sophist_0354 | 233a | 32275 | 32278
+  tok_sophist_005219 | οὖν | οὖν | turn_sophist_0357 | 233a | 32419 | 32422
+  tok_sophist_005241 | οὖν | οὖν | turn_sophist_0359 | 233a | 32544 | 32547
+  tok_sophist_005251 | δή | δὴ | turn_sophist_0360 | 233a | 32599 | 32601
+  tok_sophist_005270 | γάρ | γὰρ | turn_sophist_0361 | 233b | 32726 | 32729
+  tok_sophist_005293 | δή | δὴ | turn_sophist_0361 | 233b | 32867 | 32869
+  tok_sophist_005321 | γάρ | γὰρ | turn_sophist_0365 | 233c | 33039 | 33042
+  tok_sophist_005333 | γάρ | γὰρ | turn_sophist_0366 | 233c | 33118 | 33121
+  tok_sophist_005354 | μήν | μήν | turn_sophist_0370 | 233c | 33233 | 33236
+  tok_sophist_005360 | γάρ | γὰρ | turn_sophist_0371 | 233c | 33265 | 33268
+  tok_sophist_005366 | γάρ | γὰρ | turn_sophist_0372 | 233c | 33295 | 33298
+  tok_sophist_005387 | οὖν | οὖν | turn_sophist_0374 | 233d | 33438 | 33441
+  tok_sophist_005400 | τοίνυν | τοίνυν | turn_sophist_0375 | 233d | 33520 | 33526
+  tok_sophist_005409 | δή | δή | turn_sophist_0376 | 233d | 33580 | 33582
+  tok_sophist_005456 | γάρ | γὰρ | turn_sophist_0381 | 233e | 33855 | 33858
+  tok_sophist_005464 | γάρ | γὰρ | turn_sophist_0382 | 233e | 33903 | 33906
+  tok_sophist_005465 | οὖν | οὖν | turn_sophist_0382 | 233e | 33907 | 33910
+  tok_sophist_005468 | τοίνυν | τοίνυν | turn_sophist_0383 | 233e | 33921 | 33927
+  tok_sophist_005498 | δή | δὴ | turn_sophist_0386 | 234a | 34080 | 34082
+  tok_sophist_005503 | γάρ | γὰρ | turn_sophist_0386 | 234a | 34105 | 34108
+  tok_sophist_005504 | δή | δὴ | turn_sophist_0386 | 234a | 34109 | 34111
+  tok_sophist_005510 | γάρ | γὰρ | turn_sophist_0386 | 234a | 34139 | 34142
+  tok_sophist_005532 | τοίνυν | τοίνυν | turn_sophist_0387 | 234a | 34258 | 34264
+  tok_sophist_005589 | γάρ | γὰρ | turn_sophist_0392 | 234b | 34611 | 34614
+  tok_sophist_005647 | γάρ | γὰρ | turn_sophist_0394 | 234c | 35004 | 35007
+  tok_sophist_005652 | δή | δή | turn_sophist_0395 | 234c | 35022 | 35024
+  tok_sophist_005698 | δή | δὴ | turn_sophist_0395 | 234c | 35329 | 35331
+  tok_sophist_005705 | γάρ | γὰρ | turn_sophist_0396 | 234d | 35379 | 35382
+  tok_sophist_005716 | οὖν | οὖν | turn_sophist_0397 | 234d | 35435 | 35438
+  tok_sophist_005811 | οὖν | οὖν | turn_sophist_0399 | 234e | 36056 | 36059
+  tok_sophist_005873 | δή | δὴ | turn_sophist_0401 | 235a | 36430 | 36432
+  tok_sophist_005882 | γάρ | γὰρ | turn_sophist_0402 | 235a | 36478 | 36481
+  tok_sophist_005887 | δή | δή | turn_sophist_0403 | 235a | 36501 | 36503
+  tok_sophist_005897 | γάρ | γὰρ | turn_sophist_0403 | 235b | 36567 | 36570
+  tok_sophist_005941 | τοίνυν | τοίνυν | turn_sophist_0407 | 235b | 36825 | 36831
+  tok_sophist_006025 | δή | δὴ | turn_sophist_0409 | 235c | 37369 | 37371
+  tok_sophist_006135 | γάρ | γὰρ | turn_sophist_0413 | 235e | 38042 | 38045
+  tok_sophist_006170 | οὖν | οὖν | turn_sophist_0414 | 236a | 38244 | 38247
+  tok_sophist_006173 | οὖν | οὖν | turn_sophist_0415 | 236a | 38257 | 38260
+  tok_sophist_006271 | μήν | μήν | turn_sophist_0422 | 236b | 38828 | 38831
+  tok_sophist_006293 | δή | δὴ | turn_sophist_0425 | 236c | 38956 | 38958
+  tok_sophist_006311 | τοίνυν | τοίνυν | turn_sophist_0427 | 236c | 39078 | 39084
+  tok_sophist_006364 | οὖν | οὖν | turn_sophist_0431 | 236d | 39436 | 39439
+  tok_sophist_006399 | γάρ | γὰρ | turn_sophist_0433 | 236e | 39650 | 39653
+  tok_sophist_006429 | γάρ | γὰρ | turn_sophist_0433 | 236e | 39804 | 39807
+  tok_sophist_006450 | δή | δή | turn_sophist_0434 | 237a | 39956 | 39958
+  tok_sophist_006462 | γάρ | γὰρ | turn_sophist_0435 | 237a | 40022 | 40025
+  tok_sophist_006493 | γάρ | γὰρ | turn_sophist_0435 | 237a | 40203 | 40206
+  tok_sophist_006512 | οὖν | οὖν | turn_sophist_0435 | 237b | 40326 | 40329
+  tok_sophist_006517 | δή | δὴ | turn_sophist_0435 | 237b | 40358 | 40360
+  tok_sophist_006527 | οὖν | οὖν | turn_sophist_0435 | 237b | 40420 | 40423
+  tok_sophist_006575 | γάρ | γὰρ | turn_sophist_0438 | 237b | 40679 | 40682
+  tok_sophist_006579 | τοίνυν | τοίνυν | turn_sophist_0439 | 237b | 40694 | 40700
+  tok_sophist_006629 | οὖν | οὖν | turn_sophist_0441 | 237c | 41007 | 41010
+  tok_sophist_006645 | γάρ | γὰρ | turn_sophist_0442 | 237c | 41093 | 41096
+  tok_sophist_006665 | δή | δή | turn_sophist_0444 | 237c | 41186 | 41188
+  tok_sophist_006683 | γάρ | γὰρ | turn_sophist_0445 | 237d | 41308 | 41311
+  tok_sophist_006696 | γάρ | γάρ | turn_sophist_0445 | 237d | 41390 | 41393
+  tok_sophist_006717 | γάρ | γὰρ | turn_sophist_0449 | 237d | 41503 | 41506
+  tok_sophist_006718 | δή | δὴ | turn_sophist_0449 | 237d | 41507 | 41509
+  tok_sophist_006735 | γάρ | γὰρ | turn_sophist_0450 | 237d | 41616 | 41619
+  tok_sophist_006740 | δή | δὴ | turn_sophist_0451 | 237e | 41642 | 41644
+  tok_sophist_006753 | οὖν | οὖν | turn_sophist_0452 | 237e | 41732 | 41735
+  tok_sophist_006756 | οὖν | οὖν | turn_sophist_0453 | 237e | 41745 | 41748
+  tok_sophist_006793 | γάρ | γάρ | turn_sophist_0455 | 238a | 41974 | 41977
+  tok_sophist_006807 | γάρ | γὰρ | turn_sophist_0455 | 238a | 42047 | 42050
+  tok_sophist_006834 | γάρ | γὰρ | turn_sophist_0458 | 238a | 42195 | 42198
+  tok_sophist_006854 | δή | δὴ | turn_sophist_0461 | 238a | 42304 | 42306
+  tok_sophist_006871 | τοίνυν | τοίνυν | turn_sophist_0463 | 238b | 42394 | 42400
+  tok_sophist_006898 | οὖν | οὖν | turn_sophist_0465 | 238b | 42549 | 42552
+  tok_sophist_006940 | μήν | μήν | turn_sophist_0468 | 238c | 42775 | 42778
+  tok_sophist_006955 | μήν | μὴν | turn_sophist_0471 | 238c | 42839 | 42842
+  tok_sophist_006972 | οὖν | οὖν | turn_sophist_0473 | 238c | 42951 | 42954
+  tok_sophist_007001 | οὖν | οὖν | turn_sophist_0474 | 238c | 43125 | 43128
+  tok_sophist_007004 | οὖν | οὖν | turn_sophist_0475 | 238d | 43145 | 43148
+  tok_sophist_007024 | δή | δή | turn_sophist_0476 | 238d | 43262 | 43264
+  tok_sophist_007073 | γάρ | γὰρ | turn_sophist_0479 | 238e | 43565 | 43568
+  tok_sophist_007096 | γάρ | γὰρ | turn_sophist_0479 | 238e | 43677 | 43680
+  tok_sophist_007104 | μήν | μὴν | turn_sophist_0481 | 238e | 43718 | 43721
+  tok_sophist_007122 | γάρ | γὰρ | turn_sophist_0482 | 238e | 43829 | 43832
+  tok_sophist_007150 | μήν | μὴν | turn_sophist_0487 | 239a | 44000 | 44003
+  tok_sophist_007192 | γάρ | γὰρ | turn_sophist_0489 | 239a | 44218 | 44221
+  tok_sophist_007207 | τοίνυν | τοίνυν | turn_sophist_0491 | 239b | 44316 | 44322
+  tok_sophist_007215 | γάρ | γὰρ | turn_sophist_0491 | 239b | 44351 | 44354
+  tok_sophist_007245 | δή | δὴ | turn_sophist_0491 | 239b | 44512 | 44514
+  tok_sophist_007337 | δή | δὴ | turn_sophist_0496 | 239c | 45063 | 45065
+  tok_sophist_007374 | οὖν | οὖν | turn_sophist_0497 | 239d | 45329 | 45332
+  tok_sophist_007422 | δή | δή | turn_sophist_0500 | 239e | 45611 | 45613
+  tok_sophist_007497 | οὖν | οὖν | turn_sophist_0505 | 240a | 46060 | 46063
+  tok_sophist_007560 | μήν | μήν | turn_sophist_0512 | 240b | 46431 | 46434
+  tok_sophist_007580 | μήν | μήν | turn_sophist_0514 | 240b | 46544 | 46547
+  tok_sophist_007589 | γάρ | γὰρ | turn_sophist_0516 | 240b | 46589 | 46592
+  tok_sophist_007590 | οὖν | οὖν | turn_sophist_0516 | 240b | 46593 | 46596
+  tok_sophist_007622 | γάρ | γὰρ | turn_sophist_0519 | 240c | 46789 | 46792
+  tok_sophist_007654 | δή | δή | turn_sophist_0521 | 240c | 46963 | 46965
+  tok_sophist_007709 | γάρ | γὰρ | turn_sophist_0524 | 240d | 47295 | 47298
+  tok_sophist_007786 | δή | δὴ | turn_sophist_0533 | 240e | 47712 | 47714
+  tok_sophist_007813 | γάρ | γὰρ | turn_sophist_0536 | 241a | 47861 | 47864
+  tok_sophist_007856 | γάρ | γὰρ | turn_sophist_0538 | 241a | 48144 | 48147
+  tok_sophist_007878 | γάρ | γὰρ | turn_sophist_0538 | 241b | 48279 | 48282
+  tok_sophist_007898 | δή | δὴ | turn_sophist_0539 | 241b | 48428 | 48430
+  tok_sophist_007907 | γάρ | γὰρ | turn_sophist_0539 | 241b | 48491 | 48494
+  tok_sophist_007933 | τοίνυν | τοίνυν | turn_sophist_0541 | 241b | 48650 | 48656
+  tok_sophist_007957 | οὖν | οὖν | turn_sophist_0543 | 241c | 48801 | 48804
+  tok_sophist_007979 | οὖν | οὖν | turn_sophist_0545 | 241c | 48943 | 48946
+  tok_sophist_007997 | γάρ | γὰρ | turn_sophist_0546 | 241c | 49056 | 49059
+  tok_sophist_008002 | τοίνυν | τοίνυν | turn_sophist_0547 | 241d | 49085 | 49091
+  tok_sophist_008020 | δή | δή | turn_sophist_0550 | 241d | 49195 | 49197
+  tok_sophist_008061 | γάρ | γὰρ | turn_sophist_0553 | 241d | 49420 | 49423
+  tok_sophist_008067 | δή | δὴ | turn_sophist_0553 | 241d | 49453 | 49455
+  tok_sophist_008071 | γάρ | γὰρ | turn_sophist_0553 | 241e | 49483 | 49486
+  tok_sophist_008147 | τοίνυν | τοίνυν | turn_sophist_0557 | 242a | 49968 | 49974
+  tok_sophist_008173 | δή | δὴ | turn_sophist_0559 | 242a | 50115 | 50117
+  tok_sophist_008181 | δή | δὴ | turn_sophist_0561 | 242a | 50156 | 50158
+  tok_sophist_008200 | γάρ | γὰρ | turn_sophist_0561 | 242b | 50266 | 50269
+  tok_sophist_008201 | δή | δὴ | turn_sophist_0561 | 242b | 50270 | 50272
+  tok_sophist_008211 | τοίνυν | τοίνυν | turn_sophist_0562 | 242b | 50338 | 50344
+  tok_sophist_008233 | δή | δή | turn_sophist_0563 | 242b | 50469 | 50471
+  tok_sophist_008243 | γάρ | γὰρ | turn_sophist_0563 | 242b | 50533 | 50536
+  tok_sophist_008255 | δή | δή | turn_sophist_0564 | 242b | 50608 | 50610
+  tok_sophist_008414 | γάρ | γὰρ | turn_sophist_0570 | 242e | 51587 | 51590
+  tok_sophist_008493 | γάρ | γὰρ | turn_sophist_0572 | 243a | 52062 | 52065
+  tok_sophist_008550 | γάρ | γὰρ | turn_sophist_0574 | 243b | 52438 | 52441
+  tok_sophist_008582 | τοίνυν | τοίνυν | turn_sophist_0576 | 243c | 52614 | 52620
+  tok_sophist_008622 | δή | δὴ | turn_sophist_0578 | 243c | 52843 | 52845
+  tok_sophist_008635 | τοίνυν | τοίνυν | turn_sophist_0580 | 243c | 52917 | 52923
+  tok_sophist_008656 | δή | δὴ | turn_sophist_0581 | 243d | 53047 | 53049
+  tok_sophist_008682 | γάρ | γὰρ | turn_sophist_0582 | 243d | 53194 | 53197
+  tok_sophist_008683 | δή | δὴ | turn_sophist_0582 | 243d | 53198 | 53200
+  tok_sophist_008744 | γάρ | γάρ | turn_sophist_0582 | 243e | 53562 | 53565
+  tok_sophist_008757 | γάρ | γὰρ | turn_sophist_0582 | 243e | 53642 | 53645
+  tok_sophist_008797 | τοίνυν | τοίνυν | turn_sophist_0588 | 244a | 53905 | 53911
+  tok_sophist_008813 | γάρ | γὰρ | turn_sophist_0588 | 244a | 54019 | 54022
+  tok_sophist_008830 | οὖν | οὖν | turn_sophist_0588 | 244a | 54118 | 54121
+  tok_sophist_008851 | δή | δὴ | turn_sophist_0588 | 244b | 54256 | 54258
+  tok_sophist_008899 | γάρ | γὰρ | turn_sophist_0591 | 244b | 54505 | 54508
+  tok_sophist_008903 | τοίνυν | τοίνυν | turn_sophist_0592 | 244b | 54522 | 54528
+  tok_sophist_008911 | γάρ | γάρ | turn_sophist_0592 | 244b | 54589 | 54592
+  tok_sophist_008914 | γάρ | γάρ | turn_sophist_0592 | 244b | 54611 | 54614
+  tok_sophist_008939 | οὖν | οὖν | turn_sophist_0597 | 244c | 54768 | 54771
+  tok_sophist_009022 | μήν | μὴν | turn_sophist_0606 | 244d | 55238 | 55241
+  tok_sophist_009083 | γάρ | γὰρ | turn_sophist_0611 | 244e | 55571 | 55574
+  tok_sophist_009091 | τοίνυν | τοίνυν | turn_sophist_0612 | 244e | 55607 | 55613
+  tok_sophist_009107 | γάρ | γὰρ | turn_sophist_0612 | 244e | 55732 | 55735
+  tok_sophist_009142 | μήν | μὴν | turn_sophist_0614 | 245a | 55926 | 55929
+  tok_sophist_009159 | δή | δὴ | turn_sophist_0614 | 245a | 56023 | 56025
+  tok_sophist_009203 | γάρ | γὰρ | turn_sophist_0619 | 245a | 56237 | 56240
+  tok_sophist_009204 | οὖν | οὖν | turn_sophist_0619 | 245a | 56241 | 56244
+  tok_sophist_009223 | δή | δὴ | turn_sophist_0622 | 245b | 56361 | 56363
+  tok_sophist_009254 | γάρ | γὰρ | turn_sophist_0624 | 245b | 56536 | 56539
+  tok_sophist_009268 | δή | δὴ | turn_sophist_0624 | 245b | 56600 | 56602
+  tok_sophist_009277 | μήν | μὴν | turn_sophist_0626 | 245c | 56650 | 56653
+  tok_sophist_009309 | δή | δὴ | turn_sophist_0628 | 245c | 56802 | 56804
+  tok_sophist_009370 | δή | δή | turn_sophist_0633 | 245d | 57120 | 57122
+  tok_sophist_009404 | μήν | μὴν | turn_sophist_0636 | 245d | 57320 | 57323
+  tok_sophist_009415 | γάρ | γὰρ | turn_sophist_0636 | 245d | 57373 | 57376
+  tok_sophist_009430 | τοίνυν | τοίνυν | turn_sophist_0638 | 245d | 57455 | 57461
+  tok_sophist_009457 | γάρ | γὰρ | turn_sophist_0639 | 245e | 57630 | 57633
+  tok_sophist_009474 | τοίνυν | τοίνυν | turn_sophist_0640 | 245e | 57732 | 57738
+  tok_sophist_009520 | μήν | μὴν | turn_sophist_0642 | 246a | 58011 | 58014
+  tok_sophist_009559 | γάρ | γὰρ | turn_sophist_0644 | 246a | 58243 | 58246
+  tok_sophist_009603 | γάρ | γὰρ | turn_sophist_0645 | 246b | 58545 | 58548
+  tok_sophist_009672 | τοίνυν | τοίνυν | turn_sophist_0648 | 246c | 59006 | 59012
+  tok_sophist_009686 | οὖν | οὖν | turn_sophist_0649 | 246c | 59089 | 59092
+  tok_sophist_009687 | δή | δὴ | turn_sophist_0649 | 246c | 59093 | 59095
+  tok_sophist_009699 | γάρ | γάρ | turn_sophist_0650 | 246c | 59167 | 59170
+  tok_sophist_009751 | γάρ | γὰρ | turn_sophist_0652 | 246d | 59483 | 59486
+  tok_sophist_009773 | δή | δὴ | turn_sophist_0654 | 246e | 59637 | 59639
+  tok_sophist_009790 | δή | δὴ | turn_sophist_0656 | 246e | 59751 | 59753
+  tok_sophist_009841 | μήν | μήν | turn_sophist_0663 | 247a | 60020 | 60023
+  tok_sophist_009865 | μήν | μὴν | turn_sophist_0666 | 247a | 60172 | 60175
+  tok_sophist_009880 | οὖν | οὖν | turn_sophist_0667 | 247a | 60265 | 60268
+  tok_sophist_009883 | οὖν | οὖν | turn_sophist_0668 | 247b | 60287 | 60290
+  tok_sophist_009895 | δή | δὴ | turn_sophist_0668 | 247b | 60360 | 60362
+  tok_sophist_009970 | γάρ | γὰρ | turn_sophist_0672 | 247c | 60808 | 60811
+  tok_sophist_010015 | τοίνυν | τοίνυν | turn_sophist_0674 | 247c | 61084 | 61090
+  tok_sophist_010019 | γάρ | γάρ | turn_sophist_0674 | 247c | 61113 | 61116
+  tok_sophist_010030 | γάρ | γὰρ | turn_sophist_0674 | 247d | 61190 | 61193
+  tok_sophist_010053 | οὖν | οὖν | turn_sophist_0674 | 247d | 61327 | 61330
+  tok_sophist_010058 | δή | δή | turn_sophist_0674 | 247d | 61352 | 61354
+  tok_sophist_010078 | δή | δή | turn_sophist_0675 | 247d | 61481 | 61483
+  tok_sophist_010085 | δή | δὴ | turn_sophist_0676 | 247d | 61519 | 61521
+  tok_sophist_010118 | γάρ | γὰρ | turn_sophist_0676 | 247e | 61733 | 61736
+  tok_sophist_010148 | γάρ | γὰρ | turn_sophist_0678 | 247e | 61915 | 61918
+  tok_sophist_010161 | οὖν | οὖν | turn_sophist_0678 | 248a | 61988 | 61991
+  tok_sophist_010172 | δή | δὴ | turn_sophist_0680 | 248a | 62063 | 62065
+  tok_sophist_010201 | γάρ | γάρ | turn_sophist_0682 | 248a | 62228 | 62231
+  tok_sophist_010234 | γάρ | γὰρ | turn_sophist_0685 | 248b | 62427 | 62430
+  tok_sophist_010235 | οὖν | οὖν | turn_sophist_0685 | 248b | 62431 | 62434
+  tok_sophist_010239 | δή | δὴ | turn_sophist_0686 | 248b | 62446 | 62448
+  tok_sophist_010275 | οὖν | οὖν | turn_sophist_0688 | 248b | 62651 | 62654
+  tok_sophist_010294 | οὖν | οὖν | turn_sophist_0689 | 248b | 62759 | 62762
+  tok_sophist_010295 | δή | δὴ | turn_sophist_0689 | 248b | 62763 | 62765
+  tok_sophist_010337 | δή | δὴ | turn_sophist_0694 | 248c | 63000 | 63002
+  tok_sophist_010388 | μήν | μὴν | turn_sophist_0697 | 248d | 63331 | 63334
+  tok_sophist_010424 | γάρ | γὰρ | turn_sophist_0699 | 248d | 63553 | 63556
+  tok_sophist_010448 | δή | δὴ | turn_sophist_0700 | 248e | 63713 | 63715
+  tok_sophist_010467 | δή | δή | turn_sophist_0700 | 248e | 63834 | 63836
+  tok_sophist_010542 | μήν | μὴν | turn_sophist_0706 | 249a | 64265 | 64268
+  tok_sophist_010585 | δή | δὴ | turn_sophist_0710 | 249b | 64529 | 64531
+  tok_sophist_010598 | οὖν | οὖν | turn_sophist_0712 | 249b | 64599 | 64602
+  tok_sophist_010613 | οὖν | οὖν | turn_sophist_0713 | 249b | 64691 | 64694
+  tok_sophist_010616 | μήν | μὴν | turn_sophist_0714 | 249b | 64704 | 64707
+  tok_sophist_010673 | μήν | μὴν | turn_sophist_0720 | 249c | 65032 | 65035
+  tok_sophist_010697 | δή | δὴ | turn_sophist_0722 | 249c | 65170 | 65172
+  tok_sophist_010755 | οὖν | οὖν | turn_sophist_0724 | 249d | 65502 | 65505
+  tok_sophist_010769 | οὖν | οὖν | turn_sophist_0725 | 249d | 65582 | 65585
+  tok_sophist_010829 | δή | δὴ | turn_sophist_0730 | 249e | 65934 | 65936
+  tok_sophist_010857 | οὖν | οὖν | turn_sophist_0732 | 250a | 66116 | 66119
+  tok_sophist_010877 | δή | δή | turn_sophist_0734 | 250a | 66230 | 66232
+  tok_sophist_010888 | γάρ | γὰρ | turn_sophist_0735 | 250a | 66300 | 66303
+  tok_sophist_010892 | μήν | μὴν | turn_sophist_0736 | 250a | 66316 | 66319
+  tok_sophist_010903 | γάρ | γὰρ | turn_sophist_0737 | 250b | 66386 | 66389
+  tok_sophist_010904 | οὖν | οὖν | turn_sophist_0737 | 250b | 66390 | 66393
+  tok_sophist_010990 | δή | δή | turn_sophist_0744 | 250c | 66923 | 66925
+  tok_sophist_011011 | δή | δὴ | turn_sophist_0748 | 250c | 67036 | 67038
+  tok_sophist_011028 | γάρ | γάρ | turn_sophist_0749 | 250c | 67140 | 67143
+  tok_sophist_011036 | γάρ | γάρ | turn_sophist_0750 | 250c | 67183 | 67186
+  tok_sophist_011062 | οὖν | οὖν | turn_sophist_0750 | 250d | 67331 | 67334
+  tok_sophist_011067 | οὖν | οὖν | turn_sophist_0751 | 250d | 67359 | 67362
+  tok_sophist_011071 | τοίνυν | τοίνυν | turn_sophist_0752 | 250d | 67386 | 67392
+  tok_sophist_011097 | γάρ | γὰρ | turn_sophist_0755 | 250d | 67551 | 67554
+  tok_sophist_011101 | οὖν | οὖν | turn_sophist_0756 | 250e | 67574 | 67577
+  tok_sophist_011125 | τοίνυν | τοίνυν | turn_sophist_0758 | 250e | 67703 | 67709
+  tok_sophist_011181 | δή | δὴ | turn_sophist_0760 | 251a | 68066 | 68068
+  tok_sophist_011194 | δή | δὴ | turn_sophist_0761 | 251a | 68158 | 68160
+  tok_sophist_011239 | δή | δὴ | turn_sophist_0762 | 251b | 68435 | 68437
+  tok_sophist_011273 | γάρ | γὰρ | turn_sophist_0764 | 251b | 68646 | 68649
+  tok_sophist_011306 | γάρ | γάρ | turn_sophist_0764 | 251c | 68856 | 68859
+  tok_sophist_011329 | δή | δή | turn_sophist_0764 | 251c | 69018 | 69020
+  tok_sophist_011340 | οὖν | οὖν | turn_sophist_0765 | 251c | 69086 | 69089
+  tok_sophist_011343 | τοίνυν | τοίνυν | turn_sophist_0766 | 251c | 69099 | 69105
+  tok_sophist_011377 | δή | δή | turn_sophist_0767 | 251d | 69312 | 69314
+  tok_sophist_011444 | οὖν | οὖν | turn_sophist_0770 | 251e | 69723 | 69726
+  tok_sophist_011484 | γάρ | γὰρ | turn_sophist_0773 | 252a | 69986 | 69989
+  tok_sophist_011485 | οὖν | οὖν | turn_sophist_0773 | 252a | 69990 | 69993
+  tok_sophist_011500 | δή | δὴ | turn_sophist_0776 | 252a | 70077 | 70079
+  tok_sophist_011535 | γάρ | γὰρ | turn_sophist_0776 | 252a | 70267 | 70270
+  tok_sophist_011554 | οὖν | οὖν | turn_sophist_0777 | 252a | 70381 | 70384
+  tok_sophist_011557 | μήν | μὴν | turn_sophist_0778 | 252b | 70401 | 70404
+  tok_sophist_011612 | τοίνυν | τοίνυν | turn_sophist_0780 | 252b | 70724 | 70730
+  tok_sophist_011732 | μήν | μὴν | turn_sophist_0788 | 252d | 71545 | 71548
+  tok_sophist_011748 | γάρ | γὰρ | turn_sophist_0789 | 252d | 71648 | 71651
+  tok_sophist_011753 | δή | δὴ | turn_sophist_0790 | 252d | 71670 | 71672
+  tok_sophist_011760 | μήν | μὴν | turn_sophist_0792 | 252e | 71713 | 71716
+  tok_sophist_011780 | γάρ | γὰρ | turn_sophist_0793 | 252e | 71812 | 71815
+  tok_sophist_011784 | μήν | μὴν | turn_sophist_0794 | 252e | 71828 | 71831
+  tok_sophist_011807 | οὖν | οὖν | turn_sophist_0797 | 252e | 71958 | 71961
+  tok_sophist_011810 | δή | δὴ | turn_sophist_0798 | 252e | 71971 | 71973
+  tok_sophist_011827 | γάρ | γὰρ | turn_sophist_0798 | 253a | 72063 | 72066
+  tok_sophist_011872 | οὖν | οὖν | turn_sophist_0802 | 253a | 72320 | 72323
+  tok_sophist_011929 | δή | δὴ | turn_sophist_0808 | 253b | 72658 | 72660
+  tok_sophist_011979 | δή | δὴ | turn_sophist_0810 | 253c | 72964 | 72966
+  tok_sophist_012006 | γάρ | γὰρ | turn_sophist_0811 | 253c | 73126 | 73129
+  tok_sophist_012018 | οὖν | οὖν | turn_sophist_0812 | 253c | 73191 | 73194
+  tok_sophist_012131 | οὖν | οὖν | turn_sophist_0817 | 253e | 73957 | 73960
+  tok_sophist_012134 | μήν | μὴν | turn_sophist_0818 | 253e | 73971 | 73974
+  tok_sophist_012152 | γάρ | γὰρ | turn_sophist_0819 | 253e | 74076 | 74079
+  tok_sophist_012160 | δή | δὴ | turn_sophist_0820 | 253e | 74110 | 74112
+  tok_sophist_012180 | μήν | μὴν | turn_sophist_0820 | 254a | 74240 | 74243
+  tok_sophist_012213 | γάρ | γάρ | turn_sophist_0822 | 254a | 74437 | 74440
+  tok_sophist_012239 | γάρ | γὰρ | turn_sophist_0824 | 254a | 74584 | 74587
+  tok_sophist_012293 | οὖν | οὖν | turn_sophist_0828 | 254b | 74911 | 74914
+  tok_sophist_012294 | δή | δὴ | turn_sophist_0828 | 254b | 74915 | 74917
+  tok_sophist_012327 | δή | δὴ | turn_sophist_0828 | 254c | 75100 | 75102
+  tok_sophist_012376 | οὖν | οὖν | turn_sophist_0828 | 254c | 75395 | 75398
+  tok_sophist_012413 | μήν | μὴν | turn_sophist_0830 | 254d | 75612 | 75615
+  tok_sophist_012432 | μήν | μὴν | turn_sophist_0832 | 254d | 75702 | 75705
+  tok_sophist_012452 | γάρ | γὰρ | turn_sophist_0834 | 254d | 75805 | 75808
+  tok_sophist_012461 | δή | δὴ | turn_sophist_0836 | 254d | 75845 | 75847
+  tok_sophist_012466 | μήν | μήν | turn_sophist_0837 | 254d | 75873 | 75876
+  tok_sophist_012504 | μήν | μὴν | turn_sophist_0840 | 254e | 76096 | 76099
+  tok_sophist_012540 | μήν | μὴν | turn_sophist_0842 | 255a | 76305 | 76308
+  tok_sophist_012568 | δή | δή | turn_sophist_0845 | 255a | 76471 | 76473
+  tok_sophist_012578 | γάρ | γὰρ | turn_sophist_0846 | 255a | 76531 | 76534
+  tok_sophist_012602 | μήν | μὴν | turn_sophist_0848 | 255b | 76713 | 76716
+  tok_sophist_012611 | τοίνυν | τοίνυν | turn_sophist_0850 | 255b | 76760 | 76766
+  tok_sophist_012624 | γάρ | γάρ | turn_sophist_0851 | 255b | 76835 | 76838
+  tok_sophist_012668 | μήν | μὴν | turn_sophist_0855 | 255c | 77088 | 77091
+  tok_sophist_012685 | δή | δὴ | turn_sophist_0858 | 255c | 77182 | 77184
+  tok_sophist_012696 | οὖν | οὖν | turn_sophist_0859 | 255c | 77244 | 77247
+  tok_sophist_012754 | γάρ | γάρ | turn_sophist_0864 | 255d | 77534 | 77537
+  tok_sophist_012813 | δή | δὴ | turn_sophist_0868 | 255d | 77857 | 77859
+  tok_sophist_012839 | γάρ | γὰρ | turn_sophist_0870 | 255e | 78021 | 78024
+  tok_sophist_012860 | οὖν | οὖν | turn_sophist_0871 | 255e | 78133 | 78136
+  tok_sophist_012863 | δή | δὴ | turn_sophist_0872 | 255e | 78146 | 78148
+  tok_sophist_012907 | δή | δὴ | turn_sophist_0880 | 256a | 78405 | 78407
+  tok_sophist_012923 | γάρ | γὰρ | turn_sophist_0883 | 256a | 78493 | 78496
+  tok_sophist_012924 | οὖν | οὖν | turn_sophist_0883 | 256a | 78497 | 78500
+  tok_sophist_012927 | μήν | μὴν | turn_sophist_0884 | 256a | 78511 | 78514
+  tok_sophist_012944 | δή | δὴ | turn_sophist_0886 | 256a | 78597 | 78599
+  tok_sophist_012956 | γάρ | γὰρ | turn_sophist_0886 | 256a | 78666 | 78669
+  tok_sophist_013006 | οὖν | οὖν | turn_sophist_0887 | 256b | 78972 | 78975
+  tok_sophist_013040 | μήν | μὴν | turn_sophist_0890 | 256c | 79192 | 79195
+  tok_sophist_013059 | γάρ | γὰρ | turn_sophist_0891 | 256c | 79301 | 79304
+  tok_sophist_013063 | δή | δὴ | turn_sophist_0892 | 256c | 79321 | 79323
+  tok_sophist_013097 | οὖν | οὖν | turn_sophist_0896 | 256c | 79506 | 79509
+  tok_sophist_013098 | δή | δὴ | turn_sophist_0896 | 256c | 79510 | 79512
+  tok_sophist_013131 | γάρ | γὰρ | turn_sophist_0897 | 256d | 79705 | 79708
+  tok_sophist_013153 | οὖν | οὖν | turn_sophist_0899 | 256d | 79849 | 79852
+  tok_sophist_013156 | δή | δὴ | turn_sophist_0900 | 256d | 79865 | 79867
+  tok_sophist_013192 | γάρ | γὰρ | turn_sophist_0902 | 256d | 80048 | 80051
+  tok_sophist_013206 | δή | δὴ | turn_sophist_0902 | 256e | 80140 | 80142
+  tok_sophist_013273 | γάρ | γὰρ | turn_sophist_0908 | 257a | 80504 | 80507
+  tok_sophist_013293 | δή | δὴ | turn_sophist_0910 | 257a | 80609 | 80611
+  tok_sophist_013327 | δή | δὴ | turn_sophist_0912 | 257b | 80825 | 80827
+  tok_sophist_013418 | οὖν | οὖν | turn_sophist_0919 | 257c | 81358 | 81361
+  tok_sophist_013473 | οὖν | οὖν | turn_sophist_0925 | 257d | 81700 | 81703
+  tok_sophist_013492 | δή | δὴ | turn_sophist_0927 | 257d | 81805 | 81807
+  tok_sophist_013506 | οὖν | οὖν | turn_sophist_0930 | 257d | 81890 | 81893
+  tok_sophist_013516 | γάρ | γὰρ | turn_sophist_0931 | 257d | 81948 | 81951
+  tok_sophist_013568 | δή | δὴ | turn_sophist_0936 | 257e | 82240 | 82242
+  tok_sophist_013584 | οὖν | οὖν | turn_sophist_0938 | 257e | 82328 | 82331
+  tok_sophist_013640 | μήν | μήν | turn_sophist_0943 | 258a | 82627 | 82630
+  tok_sophist_013644 | δή | δὴ | turn_sophist_0944 | 258a | 82646 | 82648
+  tok_sophist_013659 | δή | δὴ | turn_sophist_0944 | 258a | 82734 | 82736
+  tok_sophist_013670 | γάρ | γὰρ | turn_sophist_0945 | 258a | 82794 | 82797
+  tok_sophist_013713 | οὖν | οὖν | turn_sophist_0948 | 258b | 83069 | 83072
+  tok_sophist_013732 | οὖν | οὖν | turn_sophist_0950 | 258b | 83177 | 83180
+  tok_sophist_013811 | οὖν | οὖν | turn_sophist_0952 | 258c | 83613 | 83616
+  tok_sophist_013820 | δή | δή | turn_sophist_0953 | 258c | 83679 | 83681
+  tok_sophist_013844 | γάρ | γὰρ | turn_sophist_0956 | 258d | 83828 | 83831
+  tok_sophist_013861 | γάρ | γὰρ | turn_sophist_0957 | 258d | 83932 | 83935
+  tok_sophist_013862 | οὖν | οὖν | turn_sophist_0957 | 258d | 83936 | 83939
+  tok_sophist_013888 | γάρ | γὰρ | turn_sophist_0958 | 258d | 84067 | 84070
+  tok_sophist_013932 | τοίνυν | τοίνυν | turn_sophist_0960 | 258e | 84347 | 84353
+  tok_sophist_013949 | γάρ | γὰρ | turn_sophist_0960 | 258e | 84448 | 84451
+  tok_sophist_014025 | μήν | μὴν | turn_sophist_0960 | 259a | 84880 | 84883
+  tok_sophist_014083 | δή | δὴ | turn_sophist_0960 | 259b | 85203 | 85205
+  tok_sophist_014101 | δή | δὴ | turn_sophist_0962 | 259b | 85306 | 85308
+  tok_sophist_014145 | γάρ | γὰρ | turn_sophist_0962 | 259c | 85573 | 85576
+  tok_sophist_014251 | οὖν | οὖν | turn_sophist_0965 | 259d | 86204 | 86207
+  tok_sophist_014254 | γάρ | γάρ | turn_sophist_0966 | 259d | 86217 | 86220
+  tok_sophist_014268 | δή | δὴ | turn_sophist_0966 | 259e | 86305 | 86307
+  tok_sophist_014277 | δή | δή | turn_sophist_0967 | 259e | 86362 | 86364
+  tok_sophist_014290 | γάρ | γὰρ | turn_sophist_0968 | 259e | 86444 | 86447
+  tok_sophist_014304 | τοίνυν | τοίνυν | turn_sophist_0970 | 260a | 86533 | 86539
+  tok_sophist_014320 | δή | δὴ | turn_sophist_0971 | 260a | 86645 | 86647
+  tok_sophist_014335 | γάρ | γὰρ | turn_sophist_0972 | 260a | 86715 | 86718
+  tok_sophist_014407 | δή | δὴ | turn_sophist_0976 | 260b | 87144 | 87146
+  tok_sophist_014439 | δή | δή | turn_sophist_0979 | 260b | 87312 | 87314
+  tok_sophist_014459 | γάρ | γὰρ | turn_sophist_0980 | 260c | 87442 | 87445
+  tok_sophist_014490 | μήν | μὴν | turn_sophist_0984 | 260c | 87607 | 87610
+  tok_sophist_014506 | γάρ | γὰρ | turn_sophist_0985 | 260c | 87701 | 87704
+  tok_sophist_014530 | γάρ | γὰρ | turn_sophist_0986 | 260d | 87841 | 87844
+  tok_sophist_014539 | γάρ | γὰρ | turn_sophist_0986 | 260d | 87893 | 87896
+  tok_sophist_014584 | δή | δὴ | turn_sophist_0988 | 260d | 88110 | 88112
+  tok_sophist_014618 | γάρ | γὰρ | turn_sophist_0988 | 260e | 88319 | 88322
+  tok_sophist_014631 | οὖν | οὖν | turn_sophist_0989 | 260e | 88396 | 88399
+  tok_sophist_014697 | γάρ | γὰρ | turn_sophist_0990 | 261a | 88809 | 88812
+  tok_sophist_014698 | οὖν | οὖν | turn_sophist_0990 | 261a | 88813 | 88816
+  tok_sophist_014715 | γάρ | γὰρ | turn_sophist_0990 | 261a | 88935 | 88938
+  tok_sophist_014731 | δή | δὴ | turn_sophist_0990 | 261b | 89032 | 89034
+  tok_sophist_014775 | γάρ | γὰρ | turn_sophist_0991 | 261b | 89279 | 89282
+  tok_sophist_014838 | δή | δὴ | turn_sophist_0993 | 261c | 89636 | 89638
+  tok_sophist_014870 | δή | δή | turn_sophist_0995 | 261d | 89854 | 89856
+  tok_sophist_014886 | γάρ | γάρ | turn_sophist_0995 | 261d | 89964 | 89967
+  tok_sophist_014895 | οὖν | οὖν | turn_sophist_0996 | 261d | 90011 | 90014
+  tok_sophist_014896 | δή | δὴ | turn_sophist_0996 | 261d | 90015 | 90017
+  tok_sophist_014959 | γάρ | γὰρ | turn_sophist_1001 | 261e | 90391 | 90394
+  tok_sophist_015014 | οὖν | οὖν | turn_sophist_1008 | 262a | 90702 | 90705
+  tok_sophist_015039 | γάρ | γὰρ | turn_sophist_1011 | 262b | 90862 | 90865
+  tok_sophist_015086 | γάρ | γάρ | turn_sophist_1014 | 262b | 91179 | 91182
+  tok_sophist_015108 | δή | δὴ | turn_sophist_1015 | 262c | 91342 | 91344
+  tok_sophist_015116 | γάρ | γὰρ | turn_sophist_1015 | 262c | 91393 | 91396
+  tok_sophist_015183 | γάρ | γὰρ | turn_sophist_1019 | 262d | 91795 | 91798
+  tok_sophist_015218 | δή | δὴ | turn_sophist_1019 | 262d | 91997 | 91999
+  tok_sophist_015231 | δή | δὴ | turn_sophist_1021 | 262d | 92072 | 92074
+  tok_sophist_015262 | οὖν | οὖν | turn_sophist_1022 | 262e | 92252 | 92255
+  tok_sophist_015265 | δή | δὴ | turn_sophist_1023 | 262e | 92265 | 92267
+  tok_sophist_015299 | δή | δὴ | turn_sophist_1029 | 262e | 92459 | 92461
+  tok_sophist_015309 | τοίνυν | τοίνυν | turn_sophist_1031 | 262e | 92509 | 92515
+  tok_sophist_015348 | δή | δὴ | turn_sophist_1035 | 263a | 92745 | 92747
+  tok_sophist_015407 | δή | δὴ | turn_sophist_1043 | 263b | 93067 | 93069
+  tok_sophist_015436 | μήν | μήν | turn_sophist_1046 | 263b | 93211 | 93214
+  tok_sophist_015440 | δή | δὴ | turn_sophist_1047 | 263b | 93225 | 93227
+  tok_sophist_015467 | γάρ | γὰρ | turn_sophist_1051 | 263b | 93358 | 93361
+  tok_sophist_015481 | οὖν | οὖν | turn_sophist_1052 | 263b | 93434 | 93437
+  tok_sophist_015485 | δή | δὴ | turn_sophist_1053 | 263c | 93461 | 93463
+  tok_sophist_015529 | γάρ | γάρ | turn_sophist_1058 | 263c | 93714 | 93717
+  tok_sophist_015542 | γάρ | γὰρ | turn_sophist_1059 | 263c | 93794 | 93797
+  tok_sophist_015556 | δή | δὴ | turn_sophist_1061 | 263d | 93882 | 93884
+  tok_sophist_015592 | οὖν | οὖν | turn_sophist_1062 | 263d | 94122 | 94125
+  tok_sophist_015596 | δή | δή | turn_sophist_1063 | 263d | 94137 | 94139
+  tok_sophist_015668 | οὖν | οὖν | turn_sophist_1068 | 263e | 94551 | 94554
+  tok_sophist_015688 | μήν | μὴν | turn_sophist_1071 | 263e | 94658 | 94661
+  tok_sophist_015707 | οὖν | οὖν | turn_sophist_1075 | 264a | 94762 | 94765
+  tok_sophist_015783 | δή | δὴ | turn_sophist_1079 | 264b | 95229 | 95231
+  tok_sophist_015803 | οὖν | οὖν | turn_sophist_1081 | 264b | 95348 | 95351
+  tok_sophist_015829 | τοίνυν | τοίνυν | turn_sophist_1083 | 264b | 95517 | 95523
+  tok_sophist_015836 | γάρ | γὰρ | turn_sophist_1083 | 264c | 95566 | 95569
+  tok_sophist_015847 | δή | δή | turn_sophist_1084 | 264c | 95647 | 95649
+  tok_sophist_015925 | δή | δὴ | turn_sophist_1091 | 264d | 96146 | 96148
+  tok_sophist_015942 | μήν | μὴν | turn_sophist_1093 | 264d | 96254 | 96257
+  tok_sophist_015960 | τοίνυν | τοίνυν | turn_sophist_1095 | 264d | 96356 | 96362
+  tok_sophist_016039 | οὖν | οὖν | turn_sophist_1100 | 265a | 96900 | 96903
+  tok_sophist_016058 | γάρ | γάρ | turn_sophist_1101 | 265b | 97022 | 97025
+  tok_sophist_016072 | γάρ | γάρ | turn_sophist_1101 | 265b | 97106 | 97109
+  tok_sophist_016076 | οὖν | οὖν | turn_sophist_1102 | 265b | 97131 | 97134
+  tok_sophist_016079 | δή | δὴ | turn_sophist_1103 | 265b | 97150 | 97152
+  tok_sophist_016122 | δή | δὴ | turn_sophist_1109 | 265c | 97423 | 97425
+  tok_sophist_016126 | δή | δὴ | turn_sophist_1109 | 265c | 97443 | 97445
+  tok_sophist_016205 | μήν | μὴν | turn_sophist_1112 | 265d | 97913 | 97916
+  tok_sophist_016275 | γάρ | γὰρ | turn_sophist_1113 | 265e | 98336 | 98339
+  tok_sophist_016300 | δή | δὴ | turn_sophist_1113 | 265e | 98487 | 98489
+  tok_sophist_016317 | δή | δὴ | turn_sophist_1115 | 265e | 98581 | 98583
+  tok_sophist_016344 | μήν | μὴν | turn_sophist_1119 | 266a | 98744 | 98747
+  tok_sophist_016393 | δή | δὴ | turn_sophist_1121 | 266a | 99019 | 99021
+  tok_sophist_016501 | γάρ | γὰρ | turn_sophist_1128 | 266c | 99664 | 99667
+  tok_sophist_016502 | οὖν | οὖν | turn_sophist_1128 | 266c | 99668 | 99671
+  tok_sophist_016541 | οὖν | οὖν | turn_sophist_1130 | 266d | 99926 | 99929
+  tok_sophist_016596 | τοίνυν | τοίνυν | turn_sophist_1133 | 266d | 100280 | 100286
+  tok_sophist_016624 | γάρ | γὰρ | turn_sophist_1134 | 266e | 100457 | 100460
+  tok_sophist_016625 | οὖν | οὖν | turn_sophist_1134 | 266e | 100461 | 100464
+  tok_sophist_016633 | δή | δὴ | turn_sophist_1135 | 266e | 100500 | 100502
+  tok_sophist_016644 | τοίνυν | τοίνυν | turn_sophist_1137 | 267a | 100577 | 100583
+  tok_sophist_016698 | δή | δὴ | turn_sophist_1143 | 267a | 100919 | 100921
+  tok_sophist_016729 | μήν | μὴν | turn_sophist_1145 | 267b | 101130 | 101133
+  tok_sophist_016758 | καίτοι | καίτοι | turn_sophist_1147 | 267b | 101298 | 101304
+  tok_sophist_016779 | γάρ | γὰρ | turn_sophist_1149 | 267b | 101426 | 101429
+  tok_sophist_016836 | οὖν | οὖν | turn_sophist_1153 | 267c | 101774 | 101777
+  tok_sophist_016853 | δή | δὴ | turn_sophist_1155 | 267d | 101894 | 101896
+  tok_sophist_016868 | οὖν | οὖν | turn_sophist_1157 | 267d | 101990 | 101993
+  tok_sophist_016877 | δή | δὴ | turn_sophist_1157 | 267d | 102042 | 102044
+  tok_sophist_016903 | δή | δὴ | turn_sophist_1157 | 267d | 102208 | 102210
+  tok_sophist_016936 | τοίνυν | τοίνυν | turn_sophist_1159 | 267e | 102437 | 102443
+  tok_sophist_016939 | γάρ | γὰρ | turn_sophist_1159 | 267e | 102456 | 102459
+  tok_sophist_016950 | δή | δή | turn_sophist_1159 | 267e | 102517 | 102519
+  tok_sophist_016957 | δή | δὴ | turn_sophist_1161 | 267e | 102557 | 102559
+  tok_sophist_016975 | τοίνυν | τοίνυν | turn_sophist_1163 | 267e | 102663 | 102669
+  tok_sophist_016981 | γάρ | γὰρ | turn_sophist_1163 | 267e | 102693 | 102696
+  tok_sophist_017018 | οὖν | οὖν | turn_sophist_1164 | 268a | 102915 | 102918
+  tok_sophist_017089 | οὖν | οὖν | turn_sophist_1171 | 268b | 103355 | 103358
+  tok_sophist_017161 | οὖν | οὖν | turn_sophist_1176 | 268c | 103845 | 103848
+  tok_sophist_017164 | δή | δὴ | turn_sophist_1177 | 268c | 103857 | 103859
+  tok_sophist_017210 | οὖν | οὖν | turn_sophist_1178 | 268d | 104191 | 104194

@@ -1006,7 +1006,7 @@ async function main() {
       const results = writeDerivedMetrics(dialogueArg ? requireDialogue(args.command, dialogueArg) : undefined);
       for (const result of results) {
         console.log(
-          `${result.dialogue}: turn_lengths=${result.turnLengths.turnCount} assent_turns=${result.assent.turnCount} assent_stretches=${result.assent.stretchCount} procedure_candidates=${result.procedure.candidateCount}`,
+          `${result.dialogue}: turn_lengths=${result.turnLengths.turnCount} assent_turns=${result.assent.turnCount} assent_stretches=${result.assent.stretchCount} procedure_candidates=${result.procedure.candidateCount} particle_matches=${result.particles.occurrenceCount}`,
         );
       }
       return;

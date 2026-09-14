@@ -454,7 +454,7 @@ Why it matters:
 
 ## Priority 7: Stylometric And Prosodic Metrics
 
-### Particle Frequency Metrics
+### Done: Particle Frequency Metrics
 
 Problem: particle distribution is a batch statistic, not an LLM task.
 
@@ -475,6 +475,14 @@ Suggested particles:
 Why it matters:
 
 - Supports style-clock analysis without asking the model to count.
+
+Implemented by `bun run harness derive metrics` in
+`derived/plato/metrics/particles/`: six normalized form counts for every
+dialogue, printed outer speaker, turn, and Stephanus marker; exact token
+evidence; and a corpus report with comparable frequencies. Denominators
+exclude printed speaker labels. `bun run validate` rejects missing, stale,
+altered, or unexpected artifacts. These are form counts without grammatical
+disambiguation or chronology conclusions.
 
 ### Hiatus And Clausula Metrics
 

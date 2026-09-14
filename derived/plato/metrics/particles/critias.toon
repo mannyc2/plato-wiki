@@ -1,0 +1,224 @@
+schema_version: 1
+dialogue: critias
+source_path: raw/plato/greek/critias.txt
+source_sha256: f724e270f7d4fdffa96cfaf82ce029b30e7cbe60f8cee3f3c7f941af2cb58ee2
+token_index_path: derived/plato/tokens/critias.toon
+token_index_sha256: 813042999c1c25317fa90d5c600518378bc952249145f998f4a3ae6669d23242
+turn_index_path: derived/plato/turns/critias.toon
+turn_index_sha256: 18c8c993f2427313bce48d689e1a4a03ec5605c678a7c17f7cb236f5441e5c78
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 4973
+excluded_siglum_token_count: 20
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  critias | 4953 | 2 | 0 | 1 | 29 | 21 | 47
+speakers[4]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  ΕΡ. | 42 | 1 | 0 | 0 | 1 | 1 | 0
+  ΚΡΙ. | 4736 | 0 | 0 | 1 | 27 | 18 | 47
+  ΣΩ. | 81 | 1 | 0 | 0 | 1 | 1 | 0
+  ΤΙ. | 94 | 0 | 0 | 0 | 0 | 1 | 0
+turns[20]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_critias_0001 | 94 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_critias_0002 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_critias_0003 | 285 | 0 | 0 | 1 | 5 | 0 | 4
+  turn_critias_0004 | 32 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_critias_0005 | 81 | 1 | 0 | 0 | 1 | 1 | 0
+  turn_critias_0006 | 42 | 1 | 0 | 0 | 1 | 1 | 0
+  turn_critias_0007 | 171 | 0 | 0 | 0 | 2 | 4 | 3
+  turn_critias_0008 | 311 | 0 | 0 | 0 | 3 | 2 | 2
+  turn_critias_0009 | 297 | 0 | 0 | 0 | 1 | 0 | 5
+  turn_critias_0010 | 347 | 0 | 0 | 0 | 3 | 3 | 4
+  turn_critias_0011 | 353 | 0 | 0 | 0 | 3 | 1 | 3
+  turn_critias_0012 | 330 | 0 | 0 | 0 | 3 | 1 | 5
+  turn_critias_0013 | 354 | 0 | 0 | 0 | 1 | 0 | 3
+  turn_critias_0014 | 373 | 0 | 0 | 0 | 3 | 1 | 2
+  turn_critias_0015 | 338 | 0 | 0 | 0 | 1 | 0 | 2
+  turn_critias_0016 | 341 | 0 | 0 | 0 | 0 | 0 | 5
+  turn_critias_0017 | 344 | 0 | 0 | 0 | 1 | 3 | 2
+  turn_critias_0018 | 320 | 0 | 0 | 0 | 0 | 2 | 1
+  turn_critias_0019 | 293 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_critias_0020 | 211 | 0 | 0 | 0 | 1 | 0 | 3
+markers[76]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  106a | 42 | 0 | 0 | 0 | 0 | 0 | 0
+  106b | 62 | 0 | 0 | 0 | 0 | 1 | 0
+  106c | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  107a | 67 | 0 | 0 | 1 | 2 | 0 | 0
+  107b | 73 | 0 | 0 | 0 | 2 | 0 | 2
+  107c | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  107d | 66 | 0 | 0 | 0 | 0 | 0 | 2
+  107e | 26 | 0 | 0 | 0 | 1 | 0 | 0
+  108a | 59 | 0 | 0 | 0 | 1 | 0 | 2
+  108b | 61 | 2 | 0 | 0 | 0 | 1 | 0
+  108c | 59 | 0 | 0 | 0 | 1 | 3 | 0
+  108d | 67 | 0 | 0 | 0 | 2 | 1 | 1
+  108e | 71 | 0 | 0 | 0 | 0 | 1 | 2
+  109a | 64 | 0 | 0 | 0 | 0 | 0 | 1
+  109b | 61 | 0 | 0 | 0 | 2 | 0 | 1
+  109c | 75 | 0 | 0 | 0 | 0 | 1 | 0
+  109d | 69 | 0 | 0 | 0 | 1 | 1 | 0
+  109e | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  110a | 70 | 0 | 0 | 0 | 1 | 0 | 1
+  110b | 75 | 0 | 0 | 0 | 0 | 0 | 1
+  110c | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  110d | 64 | 0 | 0 | 0 | 0 | 0 | 2
+  110e | 61 | 0 | 0 | 0 | 1 | 0 | 0
+  111a | 74 | 0 | 0 | 0 | 1 | 2 | 2
+  111b | 64 | 0 | 0 | 0 | 0 | 0 | 1
+  111c | 73 | 0 | 0 | 0 | 1 | 0 | 1
+  111d | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  111e | 56 | 0 | 0 | 0 | 0 | 1 | 0
+  112a | 72 | 0 | 0 | 0 | 1 | 0 | 0
+  112b | 62 | 0 | 0 | 0 | 1 | 0 | 0
+  112c | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  112d | 64 | 0 | 0 | 0 | 0 | 0 | 1
+  112e | 81 | 0 | 0 | 0 | 0 | 1 | 2
+  113a | 59 | 0 | 0 | 0 | 1 | 0 | 0
+  113b | 73 | 0 | 0 | 0 | 1 | 1 | 2
+  113c | 75 | 0 | 0 | 0 | 0 | 0 | 2
+  113d | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  113e | 75 | 0 | 0 | 0 | 1 | 0 | 1
+  114a | 62 | 0 | 0 | 0 | 0 | 0 | 1
+  114b | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  114c | 65 | 0 | 0 | 0 | 0 | 0 | 1
+  114d | 69 | 0 | 0 | 0 | 1 | 0 | 1
+  114e | 96 | 0 | 0 | 0 | 1 | 0 | 1
+  115a | 74 | 0 | 0 | 0 | 0 | 0 | 0
+  115b | 60 | 0 | 0 | 0 | 0 | 1 | 0
+  115c | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  115d | 69 | 0 | 0 | 0 | 1 | 0 | 1
+  115e | 77 | 0 | 0 | 0 | 1 | 0 | 0
+  116a | 76 | 0 | 0 | 0 | 0 | 0 | 1
+  116b | 58 | 0 | 0 | 0 | 0 | 0 | 0
+  116c | 70 | 0 | 0 | 0 | 0 | 0 | 1
+  116d | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  116e | 72 | 0 | 0 | 0 | 1 | 0 | 0
+  117a | 67 | 0 | 0 | 0 | 0 | 0 | 2
+  117b | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  117c | 69 | 0 | 0 | 0 | 0 | 0 | 1
+  117d | 71 | 0 | 0 | 0 | 0 | 0 | 1
+  117e | 85 | 0 | 0 | 0 | 0 | 1 | 1
+  118a | 63 | 0 | 0 | 0 | 0 | 1 | 0
+  118b | 75 | 0 | 0 | 0 | 0 | 1 | 0
+  118c | 60 | 0 | 0 | 0 | 1 | 0 | 0
+  118d | 72 | 0 | 0 | 0 | 0 | 0 | 1
+  118e | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  119a | 71 | 0 | 0 | 0 | 0 | 1 | 0
+  119b | 63 | 0 | 0 | 0 | 0 | 1 | 0
+  119c | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  119d | 70 | 0 | 0 | 0 | 0 | 0 | 1
+  119e | 43 | 0 | 0 | 0 | 0 | 1 | 0
+  120a | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  120b | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  120c | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  120d | 63 | 0 | 0 | 0 | 0 | 0 | 1
+  120e | 51 | 0 | 0 | 0 | 1 | 0 | 0
+  121a | 85 | 0 | 0 | 0 | 0 | 0 | 1
+  121b | 68 | 0 | 0 | 0 | 0 | 0 | 1
+  121c | 30 | 0 | 0 | 0 | 0 | 0 | 1
+occurrences[100]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_critias_000066 | οὖν | οὖν | turn_critias_0001 | 106b | 414 | 417
+  tok_critias_000134 | καίτοι | καίτοι | turn_critias_0003 | 107a | 871 | 877
+  tok_critias_000153 | γάρ | γὰρ | turn_critias_0003 | 107a | 996 | 999
+  tok_critias_000181 | γάρ | γάρ | turn_critias_0003 | 107a | 1175 | 1178
+  tok_critias_000198 | γάρ | γὰρ | turn_critias_0003 | 107b | 1276 | 1279
+  tok_critias_000221 | δή | δὴ | turn_critias_0003 | 107b | 1413 | 1415
+  tok_critias_000237 | γάρ | γὰρ | turn_critias_0003 | 107b | 1506 | 1509
+  tok_critias_000238 | δή | δὴ | turn_critias_0003 | 107b | 1510 | 1512
+  tok_critias_000363 | δή | δὴ | turn_critias_0003 | 107d | 2318 | 2320
+  tok_critias_000390 | δή | δὴ | turn_critias_0003 | 107d | 2479 | 2481
+  tok_critias_000405 | γάρ | γὰρ | turn_critias_0003 | 107e | 2585 | 2588
+  tok_critias_000421 | δή | δὴ | turn_critias_0004 | 108a | 2684 | 2686
+  tok_critias_000444 | δή | δὴ | turn_critias_0004 | 108a | 2831 | 2833
+  tok_critias_000472 | γάρ | γὰρ | turn_critias_0005 | 108a | 2999 | 3002
+  tok_critias_000484 | οὖν | οὖν | turn_critias_0005 | 108b | 3084 | 3087
+  tok_critias_000504 | μήν | μήν | turn_critias_0005 | 108b | 3210 | 3213
+  tok_critias_000536 | μήν | μήν | turn_critias_0006 | 108b | 3417 | 3420
+  tok_critias_000544 | γάρ | γὰρ | turn_critias_0006 | 108c | 3476 | 3479
+  tok_critias_000554 | οὖν | οὖν | turn_critias_0006 | 108c | 3543 | 3546
+  tok_critias_000591 | οὖν | οὖν | turn_critias_0007 | 108c | 3778 | 3781
+  tok_critias_000600 | οὖν | οὖν | turn_critias_0007 | 108c | 3834 | 3837
+  tok_critias_000615 | δή | δὴ | turn_critias_0007 | 108d | 3930 | 3932
+  tok_critias_000621 | γάρ | γὰρ | turn_critias_0007 | 108d | 3967 | 3970
+  tok_critias_000634 | γάρ | γὰρ | turn_critias_0007 | 108d | 4037 | 4040
+  tok_critias_000661 | οὖν | οὖν | turn_critias_0007 | 108d | 4213 | 4216
+  tok_critias_000670 | δή | δὴ | turn_critias_0007 | 108e | 4279 | 4281
+  tok_critias_000701 | οὖν | οὖν | turn_critias_0007 | 108e | 4468 | 4471
+  tok_critias_000720 | δή | δὴ | turn_critias_0007 | 108e | 4579 | 4581
+  tok_critias_000752 | δή | δὴ | turn_critias_0008 | 109a | 4780 | 4782
+  tok_critias_000806 | γάρ | γὰρ | turn_critias_0008 | 109b | 5125 | 5128
+  tok_critias_000818 | γάρ | γὰρ | turn_critias_0008 | 109b | 5191 | 5194
+  tok_critias_000844 | δή | δὴ | turn_critias_0008 | 109b | 5361 | 5363
+  tok_critias_000898 | οὖν | οὖν | turn_critias_0008 | 109c | 5741 | 5744
+  tok_critias_000976 | γάρ | γὰρ | turn_critias_0008 | 109d | 6233 | 6236
+  tok_critias_001005 | οὖν | οὖν | turn_critias_0008 | 109d | 6414 | 6417
+  tok_critias_001063 | γάρ | γὰρ | turn_critias_0009 | 110a | 6786 | 6789
+  tok_critias_001087 | δή | δὴ | turn_critias_0009 | 110a | 6932 | 6934
+  tok_critias_001145 | δή | δὴ | turn_critias_0009 | 110b | 7300 | 7302
+  tok_critias_001203 | δή | δὴ | turn_critias_0009 | 110c | 7649 | 7651
+  tok_critias_001269 | δή | δὴ | turn_critias_0009 | 110d | 8040 | 8042
+  tok_critias_001282 | δή | δὴ | turn_critias_0009 | 110d | 8133 | 8135
+  tok_critias_001365 | γάρ | γὰρ | turn_critias_0010 | 110e | 8627 | 8630
+  tok_critias_001393 | οὖν | οὖν | turn_critias_0010 | 111a | 8800 | 8803
+  tok_critias_001394 | δή | δὴ | turn_critias_0010 | 111a | 8804 | 8806
+  tok_critias_001421 | δή | δὴ | turn_critias_0010 | 111a | 8954 | 8956
+  tok_critias_001432 | οὖν | οὖν | turn_critias_0010 | 111a | 9023 | 9026
+  tok_critias_001442 | γάρ | γὰρ | turn_critias_0010 | 111a | 9097 | 9100
+  tok_critias_001482 | δή | δή | turn_critias_0010 | 111b | 9332 | 9334
+  tok_critias_001545 | γάρ | γὰρ | turn_critias_0010 | 111c | 9713 | 9716
+  tok_critias_001585 | δή | δὴ | turn_critias_0010 | 111c | 9975 | 9977
+  tok_critias_001659 | οὖν | οὖν | turn_critias_0010 | 111e | 10426 | 10429
+  tok_critias_001722 | γάρ | γὰρ | turn_critias_0011 | 112a | 10787 | 10790
+  tok_critias_001831 | γάρ | γὰρ | turn_critias_0011 | 112b | 11458 | 11461
+  tok_critias_001861 | γάρ | γὰρ | turn_critias_0011 | 112c | 11669 | 11672
+  tok_critias_001941 | δή | δὴ | turn_critias_0011 | 112d | 12197 | 12199
+  tok_critias_001985 | οὖν | οὖν | turn_critias_0011 | 112e | 12478 | 12481
+  tok_critias_001986 | δή | δὴ | turn_critias_0011 | 112e | 12482 | 12484
+  tok_critias_002030 | δή | δὴ | turn_critias_0011 | 112e | 12732 | 12734
+  tok_critias_002080 | γάρ | γὰρ | turn_critias_0012 | 113a | 13041 | 13044
+  tok_critias_002131 | δή | δὴ | turn_critias_0012 | 113b | 13393 | 13395
+  tok_critias_002152 | οὖν | οὖν | turn_critias_0012 | 113b | 13501 | 13504
+  tok_critias_002164 | γάρ | γὰρ | turn_critias_0012 | 113b | 13569 | 13572
+  tok_critias_002170 | δή | δὴ | turn_critias_0012 | 113b | 13603 | 13605
+  tok_critias_002205 | δή | δὴ | turn_critias_0012 | 113c | 13823 | 13825
+  tok_critias_002236 | δή | δὴ | turn_critias_0012 | 113c | 14005 | 14007
+  tok_critias_002347 | γάρ | γὰρ | turn_critias_0012 | 113e | 14704 | 14707
+  tok_critias_002362 | δή | δὴ | turn_critias_0012 | 113e | 14769 | 14771
+  tok_critias_002459 | δή | δὴ | turn_critias_0013 | 114a | 15383 | 15385
+  tok_critias_002571 | δή | δὴ | turn_critias_0013 | 114c | 16086 | 16088
+  tok_critias_002606 | δή | δὴ | turn_critias_0013 | 114d | 16308 | 16310
+  tok_critias_002668 | γάρ | γὰρ | turn_critias_0013 | 114d | 16707 | 16710
+  tok_critias_002749 | δή | δὴ | turn_critias_0014 | 114e | 17191 | 17193
+  tok_critias_002758 | γάρ | γὰρ | turn_critias_0014 | 114e | 17240 | 17243
+  tok_critias_002896 | οὖν | οὖν | turn_critias_0014 | 115b | 18061 | 18064
+  tok_critias_002987 | γάρ | γὰρ | turn_critias_0014 | 115d | 18665 | 18668
+  tok_critias_003029 | δή | δὴ | turn_critias_0014 | 115d | 18941 | 18943
+  tok_critias_003059 | γάρ | γὰρ | turn_critias_0014 | 115e | 19134 | 19137
+  tok_critias_003136 | δή | δὴ | turn_critias_0015 | 116a | 19555 | 19557
+  tok_critias_003259 | δή | δὴ | turn_critias_0015 | 116c | 20361 | 20363
+  tok_critias_003407 | γάρ | γὰρ | turn_critias_0015 | 116e | 21307 | 21310
+  tok_critias_003463 | δή | δὴ | turn_critias_0016 | 117a | 21644 | 21646
+  tok_critias_003496 | δή | δὴ | turn_critias_0016 | 117a | 21820 | 21822
+  tok_critias_003599 | δή | δὴ | turn_critias_0016 | 117c | 22511 | 22513
+  tok_critias_003720 | δή | δὴ | turn_critias_0016 | 117d | 23234 | 23236
+  tok_critias_003766 | δή | δὴ | turn_critias_0016 | 117e | 23531 | 23533
+  tok_critias_003805 | οὖν | οὖν | turn_critias_0017 | 117e | 23775 | 23778
+  tok_critias_003836 | οὖν | οὖν | turn_critias_0017 | 118a | 23969 | 23972
+  tok_critias_003957 | οὖν | οὖν | turn_critias_0017 | 118b | 24704 | 24707
+  tok_critias_004013 | γάρ | γὰρ | turn_critias_0017 | 118c | 25066 | 25069
+  tok_critias_004091 | δή | δὴ | turn_critias_0017 | 118d | 25554 | 25556
+  tok_critias_004123 | δή | δὴ | turn_critias_0017 | 118e | 25735 | 25737
+  tok_critias_004212 | οὖν | οὖν | turn_critias_0018 | 119a | 26266 | 26269
+  tok_critias_004277 | οὖν | οὖν | turn_critias_0018 | 119b | 26697 | 26700
+  tok_critias_004370 | δή | δὴ | turn_critias_0018 | 119d | 27262 | 27264
+  tok_critias_004470 | οὖν | οὖν | turn_critias_0019 | 119e | 27912 | 27915
+  tok_critias_004713 | δή | δὴ | turn_critias_0019 | 120d | 29459 | 29461
+  tok_critias_004764 | γάρ | γὰρ | turn_critias_0020 | 120e | 29769 | 29772
+  tok_critias_004847 | δή | δὴ | turn_critias_0020 | 121a | 30296 | 30298
+  tok_critias_004912 | δή | δὴ | turn_critias_0020 | 121b | 30732 | 30734
+  tok_critias_004959 | δή | δὴ | turn_critias_0020 | 121c | 31091 | 31093

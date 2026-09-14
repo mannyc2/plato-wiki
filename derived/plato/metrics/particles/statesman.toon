@@ -1,0 +1,1766 @@
+schema_version: 1
+dialogue: statesman
+source_path: raw/plato/greek/statesman.txt
+source_sha256: f31b15a667c9c31b5b2d1e138310af71f442dabc65d284348733dae467ef85e9
+token_index_path: derived/plato/tokens/statesman.toon
+token_index_sha256: 62167b2e392d378e9d77ae306a8f1ae39e8f922b76981f2ae8f4d1e7c76a8b8a
+turn_index_path: derived/plato/turns/statesman.toon
+turn_index_sha256: 3b6362e0b18d3d24fd62ae447033955bdaf69e79cf670cde6001d5ccde47ff2c
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 18316
+excluded_siglum_token_count: 1338
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  statesman | 16978 | 77 | 46 | 2 | 146 | 106 | 189
+speakers[5]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  (none) | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  ΘΕΟ. | 86 | 0 | 0 | 0 | 1 | 1 | 0
+  ΝΕ. ΣΩ. | 1496 | 24 | 1 | 0 | 39 | 46 | 38
+  ΞΕ. | 15264 | 52 | 45 | 2 | 106 | 56 | 150
+  ΣΩ. | 131 | 1 | 0 | 0 | 0 | 3 | 1
+turns[899]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_statesman_0001 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0002 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0003 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0004 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0005 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0006 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0007 | 53 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0008 | 27 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0009 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0010 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0011 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0012 | 11 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0013 | 68 | 0 | 0 | 0 | 0 | 3 | 1
+  turn_statesman_0014 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0015 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0016 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0017 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0018 | 39 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0019 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0020 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0021 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0022 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0023 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0024 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0025 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0026 | 41 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_statesman_0027 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0028 | 13 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0029 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0030 | 20 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0031 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0032 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0033 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0034 | 13 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0035 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0036 | 31 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0037 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0038 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0039 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0040 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0041 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0042 | 7 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0043 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0044 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0045 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0046 | 7 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0047 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0048 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0049 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0050 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0051 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0052 | 28 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0053 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0054 | 16 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0055 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0056 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0057 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0058 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0059 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0060 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0061 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0062 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0063 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0064 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0065 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0066 | 17 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0067 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0068 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0069 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0070 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0071 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0072 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0073 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0074 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0075 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0076 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0077 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0078 | 19 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0079 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0080 | 9 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0081 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0082 | 13 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0083 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0084 | 29 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0085 | 4 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0086 | 37 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0087 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0088 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0089 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0090 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0091 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0092 | 76 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_statesman_0093 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0094 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0095 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0096 | 7 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0097 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0098 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0099 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0100 | 11 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0101 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0102 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0103 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0104 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0105 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0106 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0107 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0108 | 15 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0109 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0110 | 35 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0111 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0112 | 24 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0113 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0114 | 20 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0115 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0116 | 14 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0117 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0118 | 47 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0119 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0120 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0121 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0122 | 73 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_statesman_0123 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0124 | 34 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0125 | 10 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_statesman_0126 | 144 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0127 | 22 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0128 | 59 | 1 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0129 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0130 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0131 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0132 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0133 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0134 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0135 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0136 | 35 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0137 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0138 | 23 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0139 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0140 | 66 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0141 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0142 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0143 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0144 | 7 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_statesman_0145 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0146 | 16 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0147 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0148 | 25 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_statesman_0149 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0150 | 18 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0151 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0152 | 28 | 0 | 1 | 0 | 1 | 0 | 1
+  turn_statesman_0153 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0154 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0155 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0156 | 28 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_statesman_0157 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0158 | 37 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_statesman_0159 | 9 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0160 | 19 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0161 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0162 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0163 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_statesman_0164 | 28 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0165 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0166 | 16 | 1 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0167 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0168 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0169 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0170 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0171 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0172 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0173 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0174 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0175 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0176 | 51 | 2 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0177 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0178 | 11 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0179 | 6 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0180 | 39 | 1 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0181 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0182 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0183 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0184 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0185 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0186 | 21 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0187 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0188 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0189 | 8 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0190 | 14 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0191 | 4 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0192 | 8 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0193 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0194 | 21 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_statesman_0195 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0196 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0197 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0198 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0199 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0200 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0201 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0202 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0203 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_statesman_0204 | 28 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0205 | 9 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_statesman_0206 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0207 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0208 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0209 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0210 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0211 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0212 | 23 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0213 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0214 | 20 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0215 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0216 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0217 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0218 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0219 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0220 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0221 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0222 | 17 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0223 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0224 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0225 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0226 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0227 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0228 | 65 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0229 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0230 | 19 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0231 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0232 | 93 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0233 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0234 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0235 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0236 | 26 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0237 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0238 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0239 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0240 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0241 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0242 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0243 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0244 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0245 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0246 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0247 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0248 | 51 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0249 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0250 | 85 | 0 | 1 | 0 | 1 | 0 | 1
+  turn_statesman_0251 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0252 | 26 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0253 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0254 | 42 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0255 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0256 | 15 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0257 | 6 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0258 | 11 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0259 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0260 | 29 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0261 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0262 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0263 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0264 | 33 | 0 | 1 | 0 | 1 | 0 | 1
+  turn_statesman_0265 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0266 | 46 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0267 | 6 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_statesman_0268 | 12 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0269 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0270 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0271 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0272 | 55 | 0 | 1 | 0 | 1 | 0 | 1
+  turn_statesman_0273 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0274 | 58 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0275 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0276 | 101 | 1 | 0 | 0 | 0 | 1 | 1
+  turn_statesman_0277 | 89 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_statesman_0278 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0279 | 22 | 0 | 0 | 0 | 1 | 1 | 2
+  turn_statesman_0280 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0281 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0282 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0283 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0284 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0285 | 13 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0286 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0287 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0288 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0289 | 51 | 0 | 1 | 0 | 0 | 0 | 1
+  turn_statesman_0290 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0291 | 119 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0292 | 15 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0293 | 134 | 0 | 0 | 0 | 3 | 0 | 1
+  turn_statesman_0294 | 45 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_statesman_0295 | 118 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_statesman_0296 | 122 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_statesman_0297 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0298 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0299 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0300 | 206 | 0 | 1 | 0 | 1 | 1 | 4
+  turn_statesman_0301 | 350 | 0 | 0 | 0 | 3 | 4 | 1
+  turn_statesman_0302 | 295 | 0 | 0 | 0 | 3 | 0 | 4
+  turn_statesman_0303 | 9 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0304 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0305 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0306 | 67 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0307 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0308 | 18 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0309 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0310 | 47 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0311 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0312 | 40 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0313 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0314 | 15 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0315 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0316 | 30 | 1 | 0 | 0 | 2 | 0 | 2
+  turn_statesman_0317 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0318 | 18 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_statesman_0319 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0320 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0321 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0322 | 46 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0323 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0324 | 41 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0325 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0326 | 51 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0327 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0328 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0329 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0330 | 17 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0331 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0332 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0333 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0334 | 24 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0335 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0336 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0337 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0338 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0339 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0340 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0341 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0342 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0343 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0344 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0345 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0346 | 31 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0347 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0348 | 145 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0349 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0350 | 25 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0351 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0352 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0353 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0354 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0355 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0356 | 17 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0357 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0358 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0359 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0360 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0361 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0362 | 13 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0363 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0364 | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0365 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0366 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0367 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0368 | 60 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0369 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0370 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0371 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0372 | 60 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0373 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0374 | 36 | 0 | 0 | 0 | 0 | 0 | 3
+  turn_statesman_0375 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0376 | 63 | 0 | 0 | 0 | 2 | 1 | 0
+  turn_statesman_0377 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0378 | 35 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0379 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0380 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0381 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0382 | 188 | 0 | 1 | 0 | 0 | 0 | 1
+  turn_statesman_0383 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0384 | 32 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0385 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0386 | 32 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_statesman_0387 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0388 | 36 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0389 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0390 | 99 | 0 | 1 | 0 | 0 | 0 | 1
+  turn_statesman_0391 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_statesman_0392 | 22 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0393 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0394 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0395 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0396 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0397 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0398 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0399 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0400 | 19 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0401 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0402 | 22 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0403 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0404 | 29 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0405 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0406 | 25 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0407 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0408 | 50 | 1 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0409 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0410 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0411 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0412 | 11 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0413 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0414 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0415 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0416 | 34 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0417 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0418 | 30 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0419 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0420 | 29 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0421 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0422 | 29 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0423 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0424 | 14 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0425 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0426 | 39 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0427 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0428 | 33 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_statesman_0429 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0430 | 29 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0431 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0432 | 19 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0433 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0434 | 14 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0435 | 14 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_statesman_0436 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0437 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0438 | 13 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0439 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0440 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0441 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0442 | 23 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0443 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0444 | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0445 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0446 | 41 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0447 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0448 | 21 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_statesman_0449 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0450 | 33 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0451 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0452 | 28 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0453 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0454 | 12 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0455 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0456 | 19 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0457 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0458 | 12 | 0 | 1 | 0 | 1 | 0 | 1
+  turn_statesman_0459 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0460 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0461 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0462 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0463 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0464 | 37 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0465 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0466 | 44 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0467 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0468 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0469 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0470 | 61 | 0 | 0 | 0 | 1 | 0 | 2
+  turn_statesman_0471 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0472 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0473 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0474 | 60 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_statesman_0475 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0476 | 27 | 0 | 0 | 1 | 0 | 0 | 0
+  turn_statesman_0477 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0478 | 74 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0479 | 9 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0480 | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0481 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0482 | 150 | 0 | 0 | 0 | 2 | 1 | 2
+  turn_statesman_0483 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0484 | 21 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0485 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0486 | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0487 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0488 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0489 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0490 | 85 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0491 | 46 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0492 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0493 | 10 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0494 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0495 | 70 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_statesman_0496 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0497 | 48 | 0 | 1 | 0 | 0 | 0 | 1
+  turn_statesman_0498 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0499 | 178 | 0 | 1 | 0 | 1 | 0 | 2
+  turn_statesman_0500 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0501 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0502 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0503 | 17 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0504 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0505 | 20 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_statesman_0506 | 5 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0507 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0508 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0509 | 48 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_statesman_0510 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0511 | 39 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_statesman_0512 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0513 | 20 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0514 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0515 | 34 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_statesman_0516 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0517 | 33 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0518 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0519 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0520 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0521 | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0522 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0523 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0524 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0525 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0526 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0527 | 19 | 0 | 1 | 0 | 1 | 0 | 0
+  turn_statesman_0528 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0529 | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0530 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0531 | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0532 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0533 | 53 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0534 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0535 | 102 | 0 | 1 | 0 | 2 | 0 | 0
+  turn_statesman_0536 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0537 | 60 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0538 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0539 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0540 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0541 | 16 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0542 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0543 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0544 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0545 | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0546 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0547 | 17 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0548 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0549 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0550 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0551 | 27 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0552 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0553 | 30 | 1 | 0 | 1 | 0 | 0 | 0
+  turn_statesman_0554 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0555 | 26 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0556 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0557 | 41 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0558 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0559 | 109 | 0 | 1 | 0 | 2 | 0 | 2
+  turn_statesman_0560 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0561 | 27 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0562 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0563 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0564 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0565 | 52 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0566 | 7 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0567 | 26 | 0 | 0 | 0 | 2 | 0 | 1
+  turn_statesman_0568 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0569 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0570 | 6 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0571 | 10 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0572 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0573 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0574 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0575 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0576 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0577 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0578 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0579 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0580 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0581 | 37 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0582 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0583 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0584 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0585 | 29 | 1 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0586 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0587 | 35 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0588 | 5 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0589 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0590 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0591 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0592 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0593 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0594 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0595 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0596 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0597 | 33 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0598 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0599 | 33 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0600 | 7 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0601 | 46 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0602 | 10 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0603 | 13 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0604 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0605 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0606 | 53 | 0 | 0 | 0 | 2 | 0 | 2
+  turn_statesman_0607 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0608 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0609 | 111 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0610 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0611 | 49 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0612 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0613 | 88 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0614 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0615 | 38 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0616 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0617 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0618 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0619 | 59 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0620 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0621 | 42 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0622 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0623 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0624 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0625 | 16 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_statesman_0626 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0627 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0628 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0629 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0630 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0631 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0632 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0633 | 26 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0634 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0635 | 30 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0636 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0637 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0638 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0639 | 48 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0640 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0641 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0642 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0643 | 41 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0644 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0645 | 102 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0646 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0647 | 64 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_statesman_0648 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0649 | 11 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0650 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0651 | 25 | 1 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0652 | 4 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0653 | 24 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0654 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0655 | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0656 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0657 | 21 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0658 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0659 | 52 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0660 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0661 | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0662 | 86 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0663 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0664 | 6 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0665 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0666 | 58 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0667 | 13 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0668 | 23 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0669 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0670 | 46 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0671 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0672 | 51 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0673 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0674 | 13 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0675 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0676 | 18 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0677 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0678 | 261 | 0 | 0 | 0 | 1 | 1 | 4
+  turn_statesman_0679 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0680 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0681 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0682 | 81 | 0 | 0 | 0 | 1 | 0 | 2
+  turn_statesman_0683 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0684 | 227 | 0 | 1 | 0 | 3 | 0 | 2
+  turn_statesman_0685 | 39 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0686 | 55 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0687 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0688 | 38 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0689 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0690 | 25 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0691 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0692 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0693 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0694 | 37 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0695 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0696 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0697 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0698 | 32 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0699 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0700 | 15 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0701 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_statesman_0702 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0703 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0704 | 37 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0705 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0706 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0707 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0708 | 24 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0709 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0710 | 32 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0711 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0712 | 45 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0713 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0714 | 76 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0715 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0716 | 40 | 0 | 0 | 0 | 0 | 0 | 2
+  turn_statesman_0717 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0718 | 115 | 1 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0719 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0720 | 45 | 1 | 0 | 0 | 0 | 1 | 1
+  turn_statesman_0721 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0722 | 11 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0723 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0724 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0725 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_statesman_0726 | 14 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0727 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0728 | 41 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0729 | 6 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0730 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0731 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_statesman_0732 | 36 | 0 | 1 | 0 | 0 | 0 | 1
+  turn_statesman_0733 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0734 | 20 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0735 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0736 | 105 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0737 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0738 | 39 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0739 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0740 | 29 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0741 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0742 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0743 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0744 | 54 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0745 | 7 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_statesman_0746 | 67 | 0 | 1 | 0 | 0 | 0 | 1
+  turn_statesman_0747 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0748 | 15 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0749 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0750 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0751 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0752 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0753 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0754 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0755 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0756 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0757 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0758 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0759 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0760 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0761 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0762 | 17 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0763 | 7 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0764 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0765 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0766 | 13 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0767 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0768 | 16 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0769 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0770 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0771 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0772 | 14 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0773 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0774 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0775 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0776 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0777 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0778 | 22 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_statesman_0779 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0780 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0781 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0782 | 11 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0783 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0784 | 62 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0785 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0786 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0787 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0788 | 51 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0789 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0790 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0791 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0792 | 33 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0793 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0794 | 24 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0795 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0796 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0797 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0798 | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0799 | 4 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0800 | 22 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0801 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0802 | 13 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0803 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0804 | 15 | 1 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0805 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0806 | 8 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0807 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0808 | 19 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0809 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0810 | 17 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_statesman_0811 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0812 | 22 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0813 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0814 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0815 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0816 | 40 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0817 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0818 | 11 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0819 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0820 | 13 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0821 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0822 | 46 | 0 | 0 | 0 | 1 | 1 | 1
+  turn_statesman_0823 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0824 | 26 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0825 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0826 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0827 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0828 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0829 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0830 | 51 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0831 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0832 | 20 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0833 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0834 | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0835 | 3 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0836 | 42 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0837 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0838 | 22 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0839 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0840 | 99 | 0 | 0 | 0 | 1 | 0 | 2
+  turn_statesman_0841 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0842 | 47 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0843 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0844 | 21 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0845 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0846 | 23 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0847 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0848 | 4 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0849 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0850 | 58 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0851 | 2 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0852 | 78 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0853 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0854 | 79 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0855 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0856 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0857 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0858 | 63 | 0 | 1 | 0 | 0 | 0 | 0
+  turn_statesman_0859 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0860 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0861 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0862 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0863 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0864 | 28 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0865 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0866 | 17 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0867 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0868 | 28 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0869 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0870 | 33 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0871 | 3 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_statesman_0872 | 32 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0873 | 2 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0874 | 41 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0875 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0876 | 18 | 1 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0877 | 4 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0878 | 28 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0879 | 2 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0880 | 18 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0881 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0882 | 19 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0883 | 3 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_statesman_0884 | 31 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0885 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0886 | 46 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0887 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0888 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0889 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0890 | 27 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0891 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0892 | 70 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_statesman_0893 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0894 | 43 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0895 | 5 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0896 | 37 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_statesman_0897 | 3 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_statesman_0898 | 68 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_statesman_0899 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+markers[272]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  257a | 49 | 0 | 0 | 0 | 0 | 0 | 0
+  257b | 70 | 0 | 0 | 0 | 0 | 1 | 0
+  257c | 58 | 0 | 0 | 0 | 2 | 0 | 0
+  257d | 29 | 1 | 0 | 0 | 0 | 1 | 0
+  258a | 65 | 0 | 0 | 0 | 0 | 4 | 2
+  258b | 64 | 1 | 0 | 0 | 0 | 0 | 2
+  258c | 57 | 0 | 0 | 0 | 1 | 1 | 0
+  258d | 53 | 1 | 0 | 0 | 0 | 1 | 0
+  258e | 69 | 1 | 1 | 0 | 0 | 1 | 0
+  259a | 49 | 0 | 0 | 0 | 0 | 0 | 0
+  259b | 55 | 3 | 0 | 0 | 0 | 0 | 0
+  259c | 64 | 1 | 0 | 0 | 1 | 0 | 1
+  259d | 52 | 1 | 0 | 0 | 0 | 0 | 1
+  259e | 56 | 1 | 0 | 0 | 1 | 0 | 1
+  260a | 55 | 0 | 0 | 0 | 0 | 0 | 1
+  260b | 57 | 2 | 1 | 0 | 0 | 1 | 0
+  260c | 60 | 0 | 0 | 0 | 1 | 0 | 2
+  260d | 47 | 0 | 0 | 0 | 0 | 2 | 0
+  260e | 65 | 0 | 0 | 0 | 1 | 0 | 0
+  261a | 48 | 1 | 0 | 0 | 0 | 1 | 0
+  261b | 59 | 1 | 0 | 0 | 0 | 0 | 0
+  261c | 61 | 0 | 1 | 0 | 1 | 0 | 1
+  261d | 60 | 2 | 0 | 0 | 0 | 0 | 1
+  261e | 51 | 0 | 0 | 0 | 0 | 1 | 0
+  262a | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  262b | 61 | 0 | 0 | 0 | 2 | 0 | 0
+  262c | 60 | 0 | 0 | 0 | 0 | 2 | 1
+  262d | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  262e | 73 | 0 | 0 | 0 | 0 | 0 | 1
+  263a | 57 | 0 | 0 | 0 | 1 | 1 | 0
+  263b | 72 | 2 | 0 | 0 | 0 | 0 | 0
+  263c | 61 | 0 | 0 | 0 | 1 | 0 | 2
+  263d | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  263e | 48 | 1 | 0 | 0 | 3 | 2 | 1
+  264a | 59 | 1 | 2 | 0 | 1 | 0 | 1
+  264b | 66 | 0 | 0 | 0 | 3 | 1 | 2
+  264c | 58 | 2 | 0 | 0 | 1 | 1 | 0
+  264d | 58 | 1 | 0 | 0 | 1 | 2 | 0
+  264e | 63 | 0 | 0 | 0 | 1 | 0 | 2
+  265a | 66 | 3 | 0 | 0 | 0 | 1 | 0
+  265b | 68 | 1 | 1 | 0 | 1 | 0 | 1
+  265c | 50 | 0 | 0 | 0 | 1 | 1 | 1
+  265d | 59 | 1 | 1 | 0 | 3 | 1 | 0
+  265e | 61 | 0 | 0 | 0 | 1 | 1 | 1
+  266a | 62 | 1 | 0 | 0 | 2 | 1 | 1
+  266b | 69 | 1 | 0 | 0 | 0 | 0 | 2
+  266c | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  266d | 69 | 0 | 0 | 0 | 1 | 1 | 0
+  266e | 81 | 0 | 0 | 0 | 0 | 0 | 1
+  267a | 54 | 0 | 1 | 0 | 0 | 1 | 1
+  267b | 52 | 0 | 0 | 0 | 0 | 0 | 0
+  267c | 63 | 0 | 0 | 0 | 0 | 1 | 1
+  267d | 61 | 1 | 0 | 0 | 0 | 0 | 0
+  267e | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  268a | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  268b | 61 | 0 | 1 | 0 | 1 | 1 | 1
+  268c | 60 | 1 | 0 | 0 | 0 | 0 | 0
+  268d | 52 | 1 | 2 | 0 | 1 | 1 | 2
+  268e | 78 | 0 | 1 | 0 | 1 | 1 | 2
+  269a | 64 | 1 | 0 | 0 | 1 | 1 | 2
+  269b | 58 | 0 | 1 | 0 | 0 | 1 | 0
+  269c | 59 | 0 | 0 | 0 | 2 | 0 | 1
+  269d | 68 | 0 | 0 | 0 | 0 | 1 | 2
+  269e | 83 | 1 | 0 | 0 | 0 | 0 | 1
+  270a | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  270b | 60 | 0 | 0 | 0 | 1 | 1 | 4
+  270c | 65 | 0 | 2 | 0 | 0 | 0 | 1
+  270d | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  270e | 87 | 0 | 0 | 0 | 0 | 0 | 0
+  271a | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  271b | 70 | 0 | 0 | 0 | 3 | 0 | 1
+  271c | 70 | 0 | 0 | 0 | 1 | 1 | 1
+  271d | 66 | 0 | 0 | 0 | 1 | 0 | 1
+  271e | 71 | 0 | 0 | 0 | 0 | 1 | 0
+  272a | 59 | 0 | 0 | 0 | 2 | 0 | 0
+  272b | 74 | 0 | 1 | 0 | 0 | 1 | 1
+  272c | 62 | 0 | 0 | 0 | 0 | 0 | 1
+  272d | 67 | 0 | 0 | 0 | 1 | 1 | 0
+  272e | 71 | 0 | 0 | 0 | 0 | 1 | 3
+  273a | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  273b | 62 | 0 | 0 | 0 | 1 | 1 | 0
+  273c | 63 | 0 | 0 | 0 | 0 | 1 | 0
+  273d | 53 | 0 | 0 | 0 | 0 | 0 | 1
+  273e | 100 | 0 | 0 | 0 | 2 | 1 | 0
+  274a | 68 | 0 | 0 | 0 | 1 | 0 | 2
+  274b | 70 | 0 | 0 | 0 | 2 | 0 | 0
+  274c | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  274d | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  274e | 72 | 0 | 0 | 0 | 0 | 1 | 1
+  275a | 69 | 1 | 1 | 0 | 0 | 0 | 0
+  275b | 58 | 1 | 0 | 0 | 0 | 0 | 0
+  275c | 68 | 2 | 0 | 0 | 2 | 0 | 1
+  275d | 50 | 0 | 1 | 0 | 2 | 0 | 1
+  275e | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  276a | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  276b | 60 | 0 | 0 | 0 | 0 | 1 | 0
+  276c | 65 | 1 | 0 | 0 | 0 | 0 | 1
+  276d | 51 | 0 | 0 | 0 | 1 | 0 | 1
+  276e | 77 | 0 | 0 | 0 | 0 | 1 | 0
+  277a | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  277b | 53 | 0 | 0 | 0 | 0 | 0 | 1
+  277c | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  277d | 56 | 0 | 0 | 0 | 1 | 0 | 1
+  277e | 47 | 0 | 0 | 0 | 1 | 1 | 0
+  278a | 49 | 0 | 0 | 0 | 1 | 2 | 0
+  278b | 47 | 0 | 0 | 0 | 0 | 0 | 0
+  278c | 51 | 0 | 0 | 0 | 0 | 2 | 0
+  278d | 64 | 0 | 0 | 0 | 1 | 0 | 0
+  278e | 78 | 0 | 0 | 0 | 0 | 1 | 1
+  279a | 54 | 0 | 0 | 0 | 0 | 0 | 3
+  279b | 66 | 0 | 0 | 0 | 3 | 1 | 0
+  279c | 56 | 0 | 1 | 0 | 0 | 0 | 0
+  279d | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  279e | 56 | 0 | 0 | 0 | 0 | 0 | 1
+  280a | 55 | 0 | 0 | 0 | 0 | 0 | 1
+  280b | 60 | 0 | 0 | 0 | 1 | 1 | 0
+  280c | 63 | 1 | 1 | 0 | 0 | 1 | 0
+  280d | 44 | 0 | 0 | 0 | 0 | 0 | 0
+  280e | 53 | 0 | 0 | 0 | 2 | 1 | 1
+  281a | 60 | 1 | 0 | 0 | 0 | 0 | 1
+  281b | 57 | 1 | 0 | 0 | 1 | 0 | 0
+  281c | 54 | 0 | 1 | 0 | 0 | 1 | 0
+  281d | 62 | 1 | 1 | 0 | 0 | 0 | 0
+  281e | 68 | 0 | 0 | 0 | 0 | 0 | 1
+  282a | 62 | 1 | 0 | 0 | 1 | 0 | 1
+  282b | 64 | 0 | 1 | 0 | 0 | 0 | 1
+  282c | 64 | 0 | 1 | 0 | 1 | 1 | 1
+  282d | 55 | 0 | 0 | 0 | 1 | 2 | 0
+  282e | 89 | 0 | 0 | 0 | 1 | 0 | 2
+  283a | 45 | 1 | 0 | 0 | 1 | 0 | 0
+  283b | 58 | 0 | 0 | 0 | 1 | 1 | 2
+  283c | 59 | 0 | 1 | 0 | 0 | 0 | 1
+  283d | 70 | 0 | 1 | 0 | 2 | 0 | 1
+  283e | 91 | 1 | 0 | 0 | 0 | 0 | 0
+  284a | 69 | 0 | 0 | 0 | 2 | 0 | 1
+  284b | 68 | 1 | 0 | 0 | 0 | 1 | 1
+  284c | 62 | 0 | 0 | 1 | 1 | 0 | 1
+  284d | 74 | 0 | 0 | 0 | 1 | 0 | 0
+  284e | 85 | 0 | 0 | 0 | 1 | 0 | 2
+  285a | 61 | 0 | 0 | 0 | 1 | 0 | 1
+  285b | 69 | 0 | 0 | 0 | 0 | 1 | 0
+  285c | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  285d | 74 | 0 | 0 | 0 | 0 | 0 | 0
+  285e | 33 | 0 | 0 | 0 | 0 | 0 | 0
+  286a | 58 | 0 | 0 | 0 | 1 | 0 | 0
+  286b | 72 | 0 | 1 | 0 | 0 | 0 | 1
+  286c | 66 | 0 | 1 | 0 | 0 | 1 | 1
+  286d | 68 | 0 | 1 | 0 | 1 | 0 | 0
+  286e | 54 | 0 | 0 | 0 | 0 | 0 | 1
+  287a | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  287b | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  287c | 63 | 0 | 1 | 0 | 1 | 1 | 1
+  287d | 66 | 0 | 0 | 0 | 4 | 1 | 1
+  287e | 63 | 0 | 0 | 0 | 1 | 0 | 2
+  288a | 62 | 0 | 0 | 0 | 1 | 0 | 1
+  288b | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  288c | 58 | 1 | 1 | 0 | 1 | 0 | 0
+  288d | 60 | 0 | 0 | 0 | 0 | 0 | 1
+  288e | 64 | 0 | 0 | 0 | 0 | 0 | 1
+  289a | 65 | 0 | 1 | 0 | 2 | 0 | 0
+  289b | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  289c | 63 | 0 | 0 | 0 | 0 | 1 | 1
+  289d | 47 | 0 | 0 | 0 | 0 | 0 | 2
+  289e | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  290a | 52 | 1 | 0 | 0 | 1 | 0 | 0
+  290b | 63 | 1 | 0 | 1 | 0 | 0 | 0
+  290c | 55 | 1 | 0 | 0 | 1 | 1 | 1
+  290d | 67 | 0 | 1 | 0 | 1 | 0 | 1
+  290e | 68 | 0 | 0 | 0 | 1 | 0 | 1
+  291a | 56 | 0 | 1 | 0 | 1 | 0 | 1
+  291b | 59 | 0 | 0 | 0 | 3 | 0 | 1
+  291c | 57 | 1 | 0 | 0 | 0 | 0 | 1
+  291d | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  291e | 61 | 2 | 0 | 0 | 0 | 1 | 0
+  292a | 62 | 0 | 0 | 0 | 1 | 1 | 1
+  292b | 52 | 0 | 0 | 0 | 0 | 0 | 2
+  292c | 60 | 0 | 1 | 0 | 0 | 0 | 1
+  292d | 63 | 1 | 0 | 0 | 2 | 0 | 2
+  292e | 78 | 0 | 0 | 0 | 2 | 1 | 2
+  293a | 59 | 1 | 0 | 0 | 0 | 0 | 0
+  293b | 58 | 0 | 0 | 0 | 0 | 0 | 0
+  293c | 62 | 0 | 0 | 0 | 0 | 1 | 1
+  293d | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  293e | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  294a | 72 | 0 | 0 | 0 | 2 | 0 | 1
+  294b | 60 | 1 | 0 | 0 | 1 | 0 | 1
+  294c | 66 | 0 | 0 | 0 | 1 | 1 | 1
+  294d | 67 | 1 | 0 | 0 | 0 | 0 | 0
+  294e | 63 | 0 | 1 | 0 | 0 | 0 | 1
+  295a | 57 | 0 | 0 | 0 | 1 | 0 | 0
+  295b | 66 | 0 | 0 | 0 | 1 | 0 | 2
+  295c | 58 | 0 | 0 | 0 | 0 | 0 | 0
+  295d | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  295e | 63 | 0 | 0 | 0 | 0 | 1 | 2
+  296a | 64 | 2 | 0 | 0 | 1 | 2 | 1
+  296b | 75 | 0 | 0 | 0 | 0 | 1 | 1
+  296c | 60 | 0 | 0 | 0 | 0 | 0 | 2
+  296d | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  296e | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  297a | 50 | 0 | 0 | 0 | 0 | 0 | 0
+  297b | 64 | 1 | 0 | 0 | 0 | 0 | 0
+  297c | 72 | 1 | 0 | 0 | 1 | 0 | 0
+  297d | 54 | 1 | 0 | 0 | 1 | 0 | 1
+  297e | 88 | 0 | 0 | 0 | 2 | 1 | 3
+  298a | 60 | 0 | 0 | 0 | 1 | 0 | 1
+  298b | 56 | 0 | 0 | 0 | 0 | 0 | 2
+  298c | 63 | 0 | 0 | 0 | 0 | 1 | 1
+  298d | 56 | 0 | 0 | 0 | 0 | 0 | 0
+  298e | 95 | 0 | 0 | 0 | 1 | 0 | 2
+  299a | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  299b | 66 | 0 | 1 | 0 | 0 | 0 | 0
+  299c | 68 | 0 | 0 | 0 | 3 | 0 | 1
+  299d | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  299e | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  300a | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  300b | 42 | 0 | 0 | 0 | 1 | 0 | 0
+  300c | 72 | 1 | 0 | 0 | 0 | 0 | 1
+  300d | 63 | 0 | 0 | 0 | 1 | 2 | 0
+  300e | 71 | 1 | 0 | 0 | 2 | 1 | 1
+  301a | 58 | 1 | 0 | 0 | 0 | 0 | 0
+  301b | 60 | 0 | 0 | 0 | 0 | 0 | 1
+  301c | 68 | 1 | 0 | 0 | 0 | 0 | 1
+  301d | 57 | 0 | 0 | 0 | 0 | 0 | 1
+  301e | 62 | 0 | 0 | 0 | 0 | 0 | 1
+  302a | 69 | 1 | 0 | 0 | 1 | 0 | 1
+  302b | 66 | 1 | 0 | 0 | 0 | 1 | 1
+  302c | 52 | 0 | 2 | 0 | 1 | 1 | 0
+  302d | 55 | 0 | 0 | 0 | 0 | 0 | 1
+  302e | 82 | 0 | 2 | 0 | 1 | 1 | 1
+  303a | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  303b | 60 | 0 | 0 | 0 | 1 | 0 | 1
+  303c | 56 | 0 | 0 | 0 | 0 | 0 | 0
+  303d | 62 | 0 | 0 | 0 | 0 | 0 | 1
+  303e | 81 | 0 | 1 | 0 | 1 | 1 | 1
+  304a | 53 | 0 | 1 | 0 | 0 | 0 | 1
+  304b | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  304c | 53 | 0 | 0 | 0 | 0 | 1 | 0
+  304d | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  304e | 72 | 1 | 0 | 0 | 0 | 0 | 0
+  305a | 49 | 0 | 0 | 0 | 0 | 1 | 1
+  305b | 59 | 0 | 0 | 0 | 0 | 2 | 1
+  305c | 60 | 0 | 0 | 0 | 0 | 0 | 1
+  305d | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  305e | 65 | 0 | 0 | 0 | 0 | 1 | 1
+  306a | 64 | 1 | 0 | 0 | 2 | 0 | 1
+  306b | 61 | 1 | 0 | 0 | 1 | 2 | 3
+  306c | 65 | 0 | 0 | 0 | 0 | 0 | 1
+  306d | 59 | 1 | 0 | 0 | 0 | 1 | 0
+  306e | 77 | 0 | 0 | 0 | 1 | 1 | 1
+  307a | 64 | 0 | 0 | 0 | 0 | 1 | 0
+  307b | 55 | 1 | 0 | 0 | 0 | 0 | 0
+  307c | 68 | 0 | 0 | 0 | 0 | 0 | 2
+  307d | 59 | 0 | 1 | 0 | 1 | 0 | 1
+  307e | 91 | 0 | 0 | 0 | 1 | 0 | 2
+  308a | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  308b | 58 | 0 | 1 | 0 | 0 | 1 | 1
+  308c | 60 | 1 | 0 | 0 | 0 | 0 | 0
+  308d | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  308e | 76 | 0 | 0 | 0 | 0 | 1 | 1
+  309a | 49 | 0 | 1 | 0 | 0 | 0 | 0
+  309b | 56 | 0 | 0 | 0 | 0 | 0 | 1
+  309c | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  309d | 56 | 0 | 0 | 0 | 0 | 1 | 1
+  309e | 94 | 0 | 0 | 0 | 1 | 1 | 0
+  310a | 60 | 1 | 0 | 0 | 0 | 0 | 1
+  310b | 62 | 0 | 0 | 0 | 1 | 0 | 2
+  310c | 63 | 0 | 0 | 0 | 1 | 1 | 1
+  310d | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  310e | 79 | 0 | 0 | 0 | 1 | 0 | 2
+  311a | 62 | 0 | 0 | 0 | 1 | 0 | 1
+  311b | 62 | 0 | 0 | 0 | 1 | 0 | 1
+  311c | 58 | 0 | 0 | 0 | 0 | 0 | 0
+occurrences[566]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_statesman_000095 | οὖν | οὖν | turn_statesman_0007 | 257b | 589 | 592
+  tok_statesman_000153 | γάρ | γὰρ | turn_statesman_0008 | 257c | 983 | 986
+  tok_statesman_000181 | γάρ | γὰρ | turn_statesman_0011 | 257c | 1171 | 1174
+  tok_statesman_000190 | μήν | μὴν | turn_statesman_0012 | 257d | 1233 | 1236
+  tok_statesman_000204 | οὖν | οὖν | turn_statesman_0013 | 257d | 1313 | 1316
+  tok_statesman_000229 | δή | δὴ | turn_statesman_0013 | 258a | 1468 | 1470
+  tok_statesman_000241 | οὖν | οὖν | turn_statesman_0013 | 258a | 1544 | 1547
+  tok_statesman_000262 | οὖν | οὖν | turn_statesman_0013 | 258a | 1673 | 1676
+  tok_statesman_000275 | δή | δὴ | turn_statesman_0014 | 258a | 1749 | 1751
+  tok_statesman_000282 | οὖν | οὖν | turn_statesman_0016 | 258a | 1790 | 1793
+  tok_statesman_000289 | οὖν | οὖν | turn_statesman_0017 | 258a | 1822 | 1825
+  tok_statesman_000304 | δή | δὴ | turn_statesman_0018 | 258b | 1909 | 1911
+  tok_statesman_000350 | δή | δὴ | turn_statesman_0022 | 258b | 2194 | 2196
+  tok_statesman_000362 | μήν | μήν | turn_statesman_0023 | 258b | 2256 | 2259
+  tok_statesman_000372 | οὖν | οὖν | turn_statesman_0026 | 258c | 2310 | 2313
+  tok_statesman_000379 | γάρ | γὰρ | turn_statesman_0026 | 258c | 2354 | 2357
+  tok_statesman_000429 | μήν | μήν | turn_statesman_0028 | 258d | 2659 | 2662
+  tok_statesman_000446 | οὖν | οὖν | turn_statesman_0030 | 258d | 2752 | 2755
+  tok_statesman_000501 | μήν | μήν | turn_statesman_0033 | 258e | 3098 | 3101
+  tok_statesman_000504 | τοίνυν | τοίνυν | turn_statesman_0034 | 258e | 3113 | 3119
+  tok_statesman_000530 | οὖν | οὖν | turn_statesman_0036 | 258e | 3273 | 3276
+  tok_statesman_000620 | μήν | μὴν | turn_statesman_0042 | 259b | 3848 | 3851
+  tok_statesman_000656 | μήν | μὴν | turn_statesman_0046 | 259b | 4059 | 4062
+  tok_statesman_000665 | μήν | μήν | turn_statesman_0047 | 259b | 4108 | 4111
+  tok_statesman_000714 | γάρ | γάρ | turn_statesman_0051 | 259c | 4412 | 4415
+  tok_statesman_000717 | μήν | μὴν | turn_statesman_0052 | 259c | 4426 | 4429
+  tok_statesman_000749 | δή | δὴ | turn_statesman_0054 | 259c | 4598 | 4600
+  tok_statesman_000767 | μήν | μήν | turn_statesman_0055 | 259d | 4719 | 4722
+  tok_statesman_000805 | δή | δὴ | turn_statesman_0060 | 259d | 4947 | 4949
+  tok_statesman_000844 | δή | δὴ | turn_statesman_0066 | 259e | 5163 | 5165
+  tok_statesman_000863 | μήν | μήν | turn_statesman_0067 | 259e | 5267 | 5270
+  tok_statesman_000866 | γάρ | γὰρ | turn_statesman_0068 | 259e | 5280 | 5283
+  tok_statesman_000892 | δή | δὴ | turn_statesman_0072 | 260a | 5440 | 5442
+  tok_statesman_000962 | οὖν | οὖν | turn_statesman_0078 | 260b | 5886 | 5889
+  tok_statesman_000989 | μήν | μὴν | turn_statesman_0080 | 260b | 6054 | 6057
+  tok_statesman_001004 | τοίνυν | τοίνυν | turn_statesman_0082 | 260b | 6135 | 6141
+  tok_statesman_001019 | μήν | μήν | turn_statesman_0083 | 260b | 6225 | 6228
+  tok_statesman_001022 | δή | δή | turn_statesman_0084 | 260c | 6246 | 6248
+  tok_statesman_001053 | γάρ | γὰρ | turn_statesman_0085 | 260c | 6430 | 6433
+  tok_statesman_001059 | δή | δὴ | turn_statesman_0086 | 260c | 6465 | 6467
+  tok_statesman_001113 | οὖν | οὖν | turn_statesman_0089 | 260d | 6795 | 6798
+  tok_statesman_001134 | οὖν | οὖν | turn_statesman_0092 | 260d | 6943 | 6946
+  tok_statesman_001198 | γάρ | γὰρ | turn_statesman_0092 | 260e | 7409 | 7412
+  tok_statesman_001213 | οὖν | οὖν | turn_statesman_0093 | 261a | 7494 | 7497
+  tok_statesman_001246 | μήν | μὴν | turn_statesman_0096 | 261a | 7705 | 7708
+  tok_statesman_001277 | μήν | μὴν | turn_statesman_0100 | 261b | 7919 | 7922
+  tok_statesman_001352 | τοίνυν | τοίνυν | turn_statesman_0108 | 261c | 8355 | 8361
+  tok_statesman_001382 | γάρ | γὰρ | turn_statesman_0110 | 261c | 8541 | 8544
+  tok_statesman_001383 | δή | δὴ | turn_statesman_0110 | 261c | 8545 | 8547
+  tok_statesman_001415 | μήν | μὴν | turn_statesman_0112 | 261d | 8746 | 8749
+  tok_statesman_001443 | μήν | μὴν | turn_statesman_0114 | 261d | 8900 | 8903
+  tok_statesman_001465 | δή | δὴ | turn_statesman_0115 | 261d | 9047 | 9049
+  tok_statesman_001470 | οὖν | οὖν | turn_statesman_0116 | 261e | 9080 | 9083
+  tok_statesman_001598 | γάρ | γὰρ | turn_statesman_0122 | 262b | 9891 | 9894
+  tok_statesman_001625 | γάρ | γάρ | turn_statesman_0122 | 262b | 10070 | 10073
+  tok_statesman_001672 | οὖν | οὖν | turn_statesman_0124 | 262c | 10358 | 10361
+  tok_statesman_001696 | οὖν | οὖν | turn_statesman_0125 | 262c | 10510 | 10513
+  tok_statesman_001697 | δή | δὴ | turn_statesman_0125 | 262c | 10514 | 10516
+  tok_statesman_001781 | δή | δὴ | turn_statesman_0126 | 262e | 11064 | 11066
+  tok_statesman_001854 | γάρ | γὰρ | turn_statesman_0127 | 263a | 11488 | 11491
+  tok_statesman_001903 | οὖν | οὖν | turn_statesman_0128 | 263a | 11786 | 11789
+  tok_statesman_001918 | μήν | μὴν | turn_statesman_0128 | 263b | 11890 | 11893
+  tok_statesman_001949 | μήν | μήν | turn_statesman_0131 | 263b | 12065 | 12068
+  tok_statesman_001989 | δή | δή | turn_statesman_0134 | 263c | 12295 | 12297
+  tok_statesman_002007 | γάρ | γὰρ | turn_statesman_0136 | 263c | 12392 | 12395
+  tok_statesman_002039 | δή | δὴ | turn_statesman_0138 | 263c | 12588 | 12590
+  tok_statesman_002127 | οὖν | οὖν | turn_statesman_0140 | 263e | 13111 | 13114
+  tok_statesman_002151 | γάρ | γὰρ | turn_statesman_0143 | 263e | 13251 | 13254
+  tok_statesman_002155 | γάρ | γὰρ | turn_statesman_0144 | 263e | 13268 | 13271
+  tok_statesman_002156 | οὖν | οὖν | turn_statesman_0144 | 263e | 13272 | 13275
+  tok_statesman_002164 | δή | δή | turn_statesman_0145 | 263e | 13314 | 13316
+  tok_statesman_002178 | μήν | μὴν | turn_statesman_0146 | 263e | 13404 | 13407
+  tok_statesman_002181 | γάρ | γάρ | turn_statesman_0146 | 263e | 13416 | 13419
+  tok_statesman_002187 | τοίνυν | τοίνυν | turn_statesman_0148 | 264a | 13453 | 13459
+  tok_statesman_002200 | γάρ | γὰρ | turn_statesman_0148 | 264a | 13516 | 13519
+  tok_statesman_002230 | μήν | μὴν | turn_statesman_0150 | 264a | 13691 | 13694
+  tok_statesman_002238 | τοίνυν | τοίνυν | turn_statesman_0152 | 264a | 13734 | 13740
+  tok_statesman_002248 | δή | δὴ | turn_statesman_0152 | 264a | 13810 | 13812
+  tok_statesman_002255 | γάρ | γὰρ | turn_statesman_0152 | 264b | 13861 | 13864
+  tok_statesman_002288 | οὖν | οὖν | turn_statesman_0156 | 264b | 14046 | 14049
+  tok_statesman_002296 | γάρ | γὰρ | turn_statesman_0156 | 264b | 14102 | 14105
+  tok_statesman_002315 | δή | δή | turn_statesman_0157 | 264b | 14209 | 14211
+  tok_statesman_002324 | γάρ | γὰρ | turn_statesman_0158 | 264b | 14259 | 14262
+  tok_statesman_002325 | δή | δὴ | turn_statesman_0158 | 264b | 14263 | 14265
+  tok_statesman_002347 | γάρ | γὰρ | turn_statesman_0158 | 264c | 14391 | 14394
+  tok_statesman_002358 | οὖν | οὖν | turn_statesman_0159 | 264c | 14449 | 14452
+  tok_statesman_002367 | μήν | μὴν | turn_statesman_0160 | 264c | 14503 | 14506
+  tok_statesman_002388 | μήν | μήν | turn_statesman_0161 | 264c | 14630 | 14633
+  tok_statesman_002411 | γάρ | γὰρ | turn_statesman_0163 | 264d | 14769 | 14772
+  tok_statesman_002412 | οὖν | οὖν | turn_statesman_0163 | 264d | 14773 | 14776
+  tok_statesman_002415 | οὖν | οὖν | turn_statesman_0164 | 264d | 14786 | 14789
+  tok_statesman_002447 | μήν | μὴν | turn_statesman_0166 | 264d | 15003 | 15006
+  tok_statesman_002459 | δή | δὴ | turn_statesman_0166 | 264e | 15088 | 15090
+  tok_statesman_002460 | γάρ | γὰρ | turn_statesman_0166 | 264e | 15098 | 15101
+  tok_statesman_002470 | δή | δὴ | turn_statesman_0168 | 264e | 15140 | 15142
+  tok_statesman_002533 | μήν | μὴν | turn_statesman_0176 | 265a | 15512 | 15515
+  tok_statesman_002575 | μήν | μήν | turn_statesman_0176 | 265a | 15760 | 15763
+  tok_statesman_002577 | οὖν | οὖν | turn_statesman_0176 | 265a | 15773 | 15776
+  tok_statesman_002597 | μήν | μὴν | turn_statesman_0178 | 265a | 15891 | 15894
+  tok_statesman_002605 | τοίνυν | τοίνυν | turn_statesman_0179 | 265b | 15938 | 15944
+  tok_statesman_002617 | μήν | μὴν | turn_statesman_0180 | 265b | 16018 | 16021
+  tok_statesman_002639 | γάρ | γὰρ | turn_statesman_0180 | 265b | 16155 | 16158
+  tok_statesman_002646 | δή | δὴ | turn_statesman_0180 | 265b | 16196 | 16198
+  tok_statesman_002683 | δή | δὴ | turn_statesman_0186 | 265c | 16407 | 16409
+  tok_statesman_002693 | γάρ | γὰρ | turn_statesman_0186 | 265c | 16471 | 16474
+  tok_statesman_002706 | οὖν | οὖν | turn_statesman_0187 | 265c | 16558 | 16561
+  tok_statesman_002741 | γάρ | γὰρ | turn_statesman_0189 | 265d | 16778 | 16781
+  tok_statesman_002746 | μήν | μὴν | turn_statesman_0190 | 265d | 16808 | 16811
+  tok_statesman_002762 | γάρ | γὰρ | turn_statesman_0191 | 265d | 16897 | 16900
+  tok_statesman_002767 | τοίνυν | τοίνυν | turn_statesman_0192 | 265d | 16922 | 16928
+  tok_statesman_002780 | οὖν | οὖν | turn_statesman_0194 | 265d | 17013 | 17016
+  tok_statesman_002798 | γάρ | γάρ | turn_statesman_0194 | 265d | 17120 | 17123
+  tok_statesman_002862 | δή | δὴ | turn_statesman_0202 | 265e | 17467 | 17469
+  tok_statesman_002875 | γάρ | γὰρ | turn_statesman_0203 | 265e | 17542 | 17545
+  tok_statesman_002876 | οὖν | οὖν | turn_statesman_0203 | 265e | 17546 | 17549
+  tok_statesman_002879 | μήν | μὴν | turn_statesman_0204 | 266a | 17566 | 17569
+  tok_statesman_002895 | γάρ | γὰρ | turn_statesman_0204 | 266a | 17663 | 17666
+  tok_statesman_002909 | γάρ | γὰρ | turn_statesman_0205 | 266a | 17745 | 17748
+  tok_statesman_002910 | οὖν | οὖν | turn_statesman_0205 | 266a | 17749 | 17752
+  tok_statesman_002913 | δή | δὴ | turn_statesman_0205 | 266a | 17764 | 17766
+  tok_statesman_002978 | μήν | μὴν | turn_statesman_0212 | 266b | 18129 | 18132
+  tok_statesman_003007 | δή | δὴ | turn_statesman_0213 | 266b | 18286 | 18288
+  tok_statesman_003016 | δή | δὴ | turn_statesman_0214 | 266b | 18334 | 18336
+  tok_statesman_003108 | οὖν | οὖν | turn_statesman_0221 | 266d | 18916 | 18919
+  tok_statesman_003111 | γάρ | γάρ | turn_statesman_0222 | 266d | 18929 | 18932
+  tok_statesman_003191 | δή | δὴ | turn_statesman_0228 | 266e | 19388 | 19390
+  tok_statesman_003275 | δή | δὴ | turn_statesman_0230 | 267a | 19924 | 19926
+  tok_statesman_003297 | οὖν | οὖν | turn_statesman_0231 | 267a | 20054 | 20057
+  tok_statesman_003301 | τοίνυν | τοίνυν | turn_statesman_0232 | 267a | 20077 | 20083
+  tok_statesman_003396 | οὖν | οὖν | turn_statesman_0233 | 267c | 20766 | 20769
+  tok_statesman_003417 | δή | δή | turn_statesman_0235 | 267c | 20881 | 20883
+  tok_statesman_003440 | μήν | μὴν | turn_statesman_0236 | 267d | 21018 | 21021
+  tok_statesman_003510 | δή | δὴ | turn_statesman_0244 | 267e | 21435 | 21437
+  tok_statesman_003646 | τοίνυν | τοίνυν | turn_statesman_0250 | 268b | 22289 | 22295
+  tok_statesman_003679 | δή | δὴ | turn_statesman_0250 | 268b | 22511 | 22513
+  tok_statesman_003689 | γάρ | γάρ | turn_statesman_0250 | 268b | 22558 | 22561
+  tok_statesman_003695 | οὖν | οὖν | turn_statesman_0252 | 268b | 22589 | 22592
+  tok_statesman_003738 | μήν | μὴν | turn_statesman_0254 | 268c | 22888 | 22891
+  tok_statesman_003770 | οὖν | οὖν | turn_statesman_0255 | 268d | 23116 | 23119
+  tok_statesman_003773 | τοίνυν | τοίνυν | turn_statesman_0256 | 268d | 23131 | 23137
+  tok_statesman_003790 | μήν | μὴν | turn_statesman_0257 | 268d | 23230 | 23233
+  tok_statesman_003797 | τοίνυν | τοίνυν | turn_statesman_0258 | 268d | 23271 | 23277
+  tok_statesman_003810 | δή | δή | turn_statesman_0259 | 268d | 23345 | 23347
+  tok_statesman_003816 | γάρ | γὰρ | turn_statesman_0260 | 268d | 23390 | 23393
+  tok_statesman_003825 | δή | δή | turn_statesman_0260 | 268d | 23447 | 23449
+  tok_statesman_003845 | οὖν | οὖν | turn_statesman_0261 | 268e | 23580 | 23583
+  tok_statesman_003848 | δή | δὴ | turn_statesman_0262 | 268e | 23594 | 23596
+  tok_statesman_003871 | τοίνυν | τοίνυν | turn_statesman_0264 | 268e | 23716 | 23722
+  tok_statesman_003882 | δή | δὴ | turn_statesman_0264 | 268e | 23775 | 23777
+  tok_statesman_003895 | γάρ | γάρ | turn_statesman_0264 | 268e | 23846 | 23849
+  tok_statesman_003948 | δή | δὴ | turn_statesman_0266 | 269a | 24149 | 24151
+  tok_statesman_003963 | γάρ | γὰρ | turn_statesman_0267 | 269a | 24229 | 24232
+  tok_statesman_003964 | οὖν | οὖν | turn_statesman_0267 | 269a | 24233 | 24236
+  tok_statesman_003965 | δή | δὴ | turn_statesman_0267 | 269a | 24237 | 24239
+  tok_statesman_003970 | μήν | μὴν | turn_statesman_0268 | 269a | 24259 | 24262
+  tok_statesman_003985 | οὖν | οὖν | turn_statesman_0269 | 269b | 24348 | 24351
+  tok_statesman_004009 | τοίνυν | τοίνυν | turn_statesman_0272 | 269b | 24480 | 24486
+  tok_statesman_004053 | δή | δὴ | turn_statesman_0272 | 269c | 24747 | 24749
+  tok_statesman_004056 | γάρ | γὰρ | turn_statesman_0272 | 269c | 24763 | 24766
+  tok_statesman_004075 | γάρ | γὰρ | turn_statesman_0274 | 269c | 24876 | 24879
+  tok_statesman_004135 | δή | δή | turn_statesman_0275 | 269d | 25242 | 25244
+  tok_statesman_004174 | οὖν | οὖν | turn_statesman_0276 | 269d | 25483 | 25486
+  tok_statesman_004175 | δή | δὴ | turn_statesman_0276 | 269d | 25487 | 25489
+  tok_statesman_004191 | μήν | μὴν | turn_statesman_0276 | 269e | 25599 | 25602
+  tok_statesman_004241 | δή | δὴ | turn_statesman_0277 | 269e | 25900 | 25902
+  tok_statesman_004317 | δή | δὴ | turn_statesman_0277 | 270a | 26403 | 26405
+  tok_statesman_004332 | δή | δὴ | turn_statesman_0278 | 270b | 26503 | 26505
+  tok_statesman_004342 | δή | δὴ | turn_statesman_0279 | 270b | 26570 | 26572
+  tok_statesman_004358 | γάρ | γὰρ | turn_statesman_0279 | 270b | 26665 | 26668
+  tok_statesman_004359 | οὖν | οὖν | turn_statesman_0279 | 270b | 26669 | 26672
+  tok_statesman_004360 | δή | δὴ | turn_statesman_0279 | 270b | 26673 | 26675
+  tok_statesman_004387 | δή | δή | turn_statesman_0282 | 270b | 26807 | 26809
+  tok_statesman_004412 | τοίνυν | τοίνυν | turn_statesman_0285 | 270c | 26972 | 26978
+  tok_statesman_004455 | τοίνυν | τοίνυν | turn_statesman_0289 | 270c | 27225 | 27231
+  tok_statesman_004466 | δή | δὴ | turn_statesman_0289 | 270c | 27292 | 27294
+  tok_statesman_004633 | δή | δὴ | turn_statesman_0292 | 271a | 28342 | 28344
+  tok_statesman_004704 | γάρ | γὰρ | turn_statesman_0293 | 271b | 28758 | 28761
+  tok_statesman_004719 | γάρ | γὰρ | turn_statesman_0293 | 271b | 28845 | 28848
+  tok_statesman_004725 | γάρ | γάρ | turn_statesman_0293 | 271b | 28887 | 28890
+  tok_statesman_004759 | δή | δὴ | turn_statesman_0293 | 271b | 29112 | 29114
+  tok_statesman_004785 | οὖν | οὖν | turn_statesman_0294 | 271c | 29267 | 29270
+  tok_statesman_004792 | δή | δὴ | turn_statesman_0294 | 271c | 29308 | 29310
+  tok_statesman_004813 | γάρ | γὰρ | turn_statesman_0294 | 271c | 29415 | 29418
+  tok_statesman_004856 | γάρ | γὰρ | turn_statesman_0295 | 271d | 29691 | 29694
+  tok_statesman_004884 | δή | δὴ | turn_statesman_0295 | 271d | 29853 | 29855
+  tok_statesman_004936 | οὖν | οὖν | turn_statesman_0295 | 271e | 30162 | 30165
+  tok_statesman_004979 | γάρ | γὰρ | turn_statesman_0296 | 272a | 30445 | 30448
+  tok_statesman_005021 | γάρ | γὰρ | turn_statesman_0296 | 272a | 30718 | 30721
+  tok_statesman_005037 | δή | δὴ | turn_statesman_0296 | 272b | 30822 | 30824
+  tok_statesman_005085 | οὖν | οὖν | turn_statesman_0299 | 272b | 31090 | 31093
+  tok_statesman_005089 | τοίνυν | τοίνυν | turn_statesman_0300 | 272b | 31106 | 31112
+  tok_statesman_005169 | δή | δὴ | turn_statesman_0300 | 272c | 31645 | 31647
+  tok_statesman_005190 | οὖν | οὖν | turn_statesman_0300 | 272d | 31764 | 31767
+  tok_statesman_005232 | γάρ | γὰρ | turn_statesman_0300 | 272d | 32003 | 32006
+  tok_statesman_005242 | δή | δὴ | turn_statesman_0300 | 272e | 32077 | 32079
+  tok_statesman_005267 | δή | δὴ | turn_statesman_0300 | 272e | 32233 | 32235
+  tok_statesman_005284 | δή | δὴ | turn_statesman_0300 | 272e | 32334 | 32336
+  tok_statesman_005295 | οὖν | οὖν | turn_statesman_0301 | 272e | 32408 | 32411
+  tok_statesman_005390 | οὖν | οὖν | turn_statesman_0301 | 273b | 33029 | 33032
+  tok_statesman_005423 | γάρ | γὰρ | turn_statesman_0301 | 273b | 33243 | 33246
+  tok_statesman_005453 | οὖν | οὖν | turn_statesman_0301 | 273c | 33429 | 33432
+  tok_statesman_005524 | δή | δὴ | turn_statesman_0301 | 273d | 33888 | 33890
+  tok_statesman_005579 | οὖν | οὖν | turn_statesman_0301 | 273e | 34246 | 34249
+  tok_statesman_005598 | γάρ | γὰρ | turn_statesman_0301 | 273e | 34366 | 34369
+  tok_statesman_005622 | γάρ | γὰρ | turn_statesman_0301 | 273e | 34490 | 34493
+  tok_statesman_005658 | δή | δὴ | turn_statesman_0302 | 274a | 34730 | 34732
+  tok_statesman_005674 | γάρ | γὰρ | turn_statesman_0302 | 274a | 34821 | 34824
+  tok_statesman_005695 | δή | δὴ | turn_statesman_0302 | 274a | 34954 | 34956
+  tok_statesman_005734 | γάρ | γὰρ | turn_statesman_0302 | 274b | 35165 | 35168
+  tok_statesman_005760 | γάρ | γὰρ | turn_statesman_0302 | 274b | 35324 | 35327
+  tok_statesman_005825 | δή | δὴ | turn_statesman_0302 | 274c | 35778 | 35780
+  tok_statesman_005916 | δή | δὴ | turn_statesman_0302 | 274e | 36340 | 36342
+  tok_statesman_005943 | οὖν | οὖν | turn_statesman_0303 | 274e | 36502 | 36505
+  tok_statesman_006024 | μήν | μὴν | turn_statesman_0306 | 275a | 36984 | 36987
+  tok_statesman_006042 | τοίνυν | τοίνυν | turn_statesman_0308 | 275a | 37084 | 37090
+  tok_statesman_006065 | μήν | μὴν | turn_statesman_0310 | 275b | 37233 | 37236
+  tok_statesman_006161 | μήν | μὴν | turn_statesman_0314 | 275c | 37851 | 37854
+  tok_statesman_006177 | γάρ | γὰρ | turn_statesman_0315 | 275c | 37942 | 37945
+  tok_statesman_006181 | δή | δὴ | turn_statesman_0316 | 275c | 37959 | 37961
+  tok_statesman_006185 | γάρ | γὰρ | turn_statesman_0316 | 275c | 37984 | 37987
+  tok_statesman_006194 | μήν | μὴν | turn_statesman_0316 | 275c | 38041 | 38044
+  tok_statesman_006204 | δή | δὴ | turn_statesman_0316 | 275d | 38111 | 38113
+  tok_statesman_006209 | γάρ | γάρ | turn_statesman_0316 | 275d | 38150 | 38153
+  tok_statesman_006215 | τοίνυν | τοίνυν | turn_statesman_0318 | 275d | 38179 | 38185
+  tok_statesman_006219 | γάρ | γὰρ | turn_statesman_0318 | 275d | 38208 | 38211
+  tok_statesman_006420 | οὖν | οὖν | turn_statesman_0326 | 276b | 39473 | 39476
+  tok_statesman_006476 | δή | δὴ | turn_statesman_0330 | 276c | 39818 | 39820
+  tok_statesman_006518 | μήν | μήν | turn_statesman_0333 | 276c | 40075 | 40078
+  tok_statesman_006538 | γάρ | γὰρ | turn_statesman_0334 | 276d | 40222 | 40225
+  tok_statesman_006587 | δή | δή | turn_statesman_0341 | 276d | 40494 | 40496
+  tok_statesman_006639 | οὖν | οὖν | turn_statesman_0345 | 276e | 40832 | 40835
+  tok_statesman_006743 | δή | δὴ | turn_statesman_0348 | 277b | 41485 | 41487
+  tok_statesman_006861 | γάρ | γὰρ | turn_statesman_0350 | 277d | 42293 | 42296
+  tok_statesman_006899 | δή | δή | turn_statesman_0353 | 277d | 42492 | 42494
+  tok_statesman_006914 | οὖν | οὖν | turn_statesman_0355 | 277e | 42584 | 42587
+  tok_statesman_006930 | γάρ | γάρ | turn_statesman_0356 | 277e | 42677 | 42680
+  tok_statesman_006967 | γάρ | γὰρ | turn_statesman_0359 | 278a | 42923 | 42926
+  tok_statesman_006987 | οὖν | οὖν | turn_statesman_0361 | 278a | 43028 | 43031
+  tok_statesman_006990 | οὖν | οὖν | turn_statesman_0362 | 278a | 43041 | 43044
+  tok_statesman_007082 | οὖν | οὖν | turn_statesman_0365 | 278c | 43656 | 43659
+  tok_statesman_007119 | οὖν | οὖν | turn_statesman_0368 | 278c | 43900 | 43903
+  tok_statesman_007185 | γάρ | γάρ | turn_statesman_0370 | 278d | 44276 | 44279
+  tok_statesman_007216 | δή | δὴ | turn_statesman_0372 | 278e | 44472 | 44474
+  tok_statesman_007274 | οὖν | οὖν | turn_statesman_0373 | 278e | 44840 | 44843
+  tok_statesman_007278 | δή | δὴ | turn_statesman_0374 | 279a | 44868 | 44870
+  tok_statesman_007296 | δή | δὴ | turn_statesman_0374 | 279a | 44986 | 44988
+  tok_statesman_007307 | δή | δὴ | turn_statesman_0374 | 279a | 45057 | 45059
+  tok_statesman_007347 | οὖν | οὖν | turn_statesman_0376 | 279b | 45315 | 45318
+  tok_statesman_007359 | γάρ | γὰρ | turn_statesman_0376 | 279b | 45390 | 45393
+  tok_statesman_007369 | γάρ | γὰρ | turn_statesman_0376 | 279b | 45437 | 45440
+  tok_statesman_007384 | γάρ | γὰρ | turn_statesman_0377 | 279b | 45521 | 45524
+  tok_statesman_007439 | τοίνυν | τοίνυν | turn_statesman_0382 | 279c | 45864 | 45870
+  tok_statesman_007560 | δή | δὴ | turn_statesman_0382 | 279e | 46600 | 46602
+  tok_statesman_007634 | δή | δὴ | turn_statesman_0384 | 280a | 47096 | 47098
+  tok_statesman_007676 | οὖν | οὖν | turn_statesman_0386 | 280b | 47377 | 47380
+  tok_statesman_007683 | γάρ | γὰρ | turn_statesman_0386 | 280b | 47425 | 47428
+  tok_statesman_007706 | μήν | μὴν | turn_statesman_0388 | 280c | 47582 | 47585
+  tok_statesman_007745 | οὖν | οὖν | turn_statesman_0389 | 280c | 47816 | 47819
+  tok_statesman_007748 | τοίνυν | τοίνυν | turn_statesman_0390 | 280c | 47829 | 47835
+  tok_statesman_007816 | δή | δὴ | turn_statesman_0390 | 280e | 48341 | 48343
+  tok_statesman_007849 | γάρ | γὰρ | turn_statesman_0391 | 280e | 48574 | 48577
+  tok_statesman_007850 | οὖν | οὖν | turn_statesman_0391 | 280e | 48578 | 48581
+  tok_statesman_007862 | γάρ | γὰρ | turn_statesman_0392 | 280e | 48639 | 48642
+  tok_statesman_007902 | δή | δή | turn_statesman_0397 | 281a | 48867 | 48869
+  tok_statesman_007927 | μήν | μὴν | turn_statesman_0400 | 281a | 49010 | 49013
+  tok_statesman_007948 | γάρ | γὰρ | turn_statesman_0401 | 281b | 49142 | 49145
+  tok_statesman_007978 | μήν | μὴν | turn_statesman_0404 | 281b | 49329 | 49332
+  tok_statesman_008012 | τοίνυν | τοίνυν | turn_statesman_0406 | 281c | 49550 | 49556
+  tok_statesman_008041 | οὖν | οὖν | turn_statesman_0408 | 281c | 49740 | 49743
+  tok_statesman_008078 | μήν | μὴν | turn_statesman_0408 | 281d | 49970 | 49973
+  tok_statesman_008114 | τοίνυν | τοίνυν | turn_statesman_0412 | 281d | 50158 | 50164
+  tok_statesman_008182 | δή | δὴ | turn_statesman_0418 | 281e | 50587 | 50589
+  tok_statesman_008216 | δή | δὴ | turn_statesman_0420 | 282a | 50810 | 50812
+  tok_statesman_008248 | μήν | μὴν | turn_statesman_0422 | 282a | 51023 | 51026
+  tok_statesman_008279 | γάρ | γὰρ | turn_statesman_0423 | 282a | 51192 | 51195
+  tok_statesman_008283 | δή | δὴ | turn_statesman_0424 | 282b | 51215 | 51217
+  tok_statesman_008344 | τοίνυν | τοίνυν | turn_statesman_0428 | 282b | 51572 | 51578
+  tok_statesman_008356 | γάρ | γὰρ | turn_statesman_0428 | 282c | 51648 | 51651
+  tok_statesman_008380 | οὖν | οὖν | turn_statesman_0429 | 282c | 51792 | 51795
+  tok_statesman_008383 | δή | δὴ | turn_statesman_0430 | 282c | 51807 | 51809
+  tok_statesman_008417 | τοίνυν | τοίνυν | turn_statesman_0432 | 282c | 52046 | 52052
+  tok_statesman_008441 | οὖν | οὖν | turn_statesman_0434 | 282d | 52213 | 52216
+  tok_statesman_008456 | οὖν | οὖν | turn_statesman_0435 | 282d | 52296 | 52299
+  tok_statesman_008459 | γάρ | γάρ | turn_statesman_0435 | 282d | 52316 | 52319
+  tok_statesman_008487 | δή | δὴ | turn_statesman_0438 | 282e | 52489 | 52491
+  tok_statesman_008492 | γάρ | γὰρ | turn_statesman_0438 | 282e | 52519 | 52522
+  tok_statesman_008522 | δή | δὴ | turn_statesman_0442 | 282e | 52684 | 52686
+  tok_statesman_008591 | μήν | μὴν | turn_statesman_0446 | 283a | 53104 | 53107
+  tok_statesman_008604 | γάρ | γὰρ | turn_statesman_0446 | 283a | 53172 | 53175
+  tok_statesman_008637 | δή | δή | turn_statesman_0448 | 283b | 53401 | 53403
+  tok_statesman_008639 | οὖν | οὖν | turn_statesman_0448 | 283b | 53409 | 53412
+  tok_statesman_008680 | δή | δὴ | turn_statesman_0450 | 283b | 53675 | 53677
+  tok_statesman_008691 | γάρ | γὰρ | turn_statesman_0450 | 283b | 53740 | 53743
+  tok_statesman_008708 | τοίνυν | τοίνυν | turn_statesman_0452 | 283c | 53852 | 53858
+  tok_statesman_008741 | δή | δὴ | turn_statesman_0454 | 283c | 54057 | 54059
+  tok_statesman_008768 | γάρ | γάρ | turn_statesman_0456 | 283d | 54217 | 54220
+  tok_statesman_008780 | τοίνυν | τοίνυν | turn_statesman_0458 | 283d | 54284 | 54290
+  tok_statesman_008785 | γάρ | γὰρ | turn_statesman_0458 | 283d | 54311 | 54314
+  tok_statesman_008786 | δή | δὴ | turn_statesman_0458 | 283d | 54315 | 54317
+  tok_statesman_008941 | μήν | μήν | turn_statesman_0467 | 283e | 55203 | 55206
+  tok_statesman_008963 | γάρ | γάρ | turn_statesman_0468 | 284a | 55325 | 55328
+  tok_statesman_008982 | δή | δὴ | turn_statesman_0470 | 284a | 55430 | 55432
+  tok_statesman_008994 | γάρ | γὰρ | turn_statesman_0470 | 284a | 55512 | 55515
+  tok_statesman_009018 | δή | δὴ | turn_statesman_0470 | 284b | 55648 | 55650
+  tok_statesman_009032 | μήν | μήν | turn_statesman_0471 | 284b | 55725 | 55728
+  tok_statesman_009055 | οὖν | οὖν | turn_statesman_0474 | 284b | 55864 | 55867
+  tok_statesman_009095 | γάρ | γὰρ | turn_statesman_0474 | 284c | 56105 | 56108
+  tok_statesman_009096 | δή | δὴ | turn_statesman_0474 | 284c | 56109 | 56111
+  tok_statesman_009134 | καίτοι | καίτοι | turn_statesman_0476 | 284c | 56345 | 56351
+  tok_statesman_009213 | γάρ | γὰρ | turn_statesman_0478 | 284d | 56804 | 56807
+  tok_statesman_009238 | δή | δὴ | turn_statesman_0479 | 284e | 56953 | 56955
+  tok_statesman_009314 | γάρ | γὰρ | turn_statesman_0482 | 284e | 57391 | 57394
+  tok_statesman_009319 | δή | δή | turn_statesman_0482 | 284e | 57424 | 57426
+  tok_statesman_009344 | γάρ | γὰρ | turn_statesman_0482 | 285a | 57578 | 57581
+  tok_statesman_009345 | δή | δή | turn_statesman_0482 | 285a | 57582 | 57584
+  tok_statesman_009434 | οὖν | οὖν | turn_statesman_0482 | 285b | 58179 | 58182
+  tok_statesman_009469 | δή | δὴ | turn_statesman_0484 | 285c | 58398 | 58400
+  tok_statesman_009667 | γάρ | γὰρ | turn_statesman_0491 | 286a | 59671 | 59674
+  tok_statesman_009708 | τοίνυν | τοίνυν | turn_statesman_0493 | 286b | 59907 | 59913
+  tok_statesman_009764 | δή | δὴ | turn_statesman_0495 | 286b | 60242 | 60244
+  tok_statesman_009777 | οὖν | οὖν | turn_statesman_0495 | 286c | 60333 | 60336
+  tok_statesman_009800 | τοίνυν | τοίνυν | turn_statesman_0497 | 286c | 60468 | 60474
+  tok_statesman_009803 | δή | δὴ | turn_statesman_0497 | 286c | 60483 | 60485
+  tok_statesman_009852 | τοίνυν | τοίνυν | turn_statesman_0499 | 286d | 60763 | 60769
+  tok_statesman_009858 | γάρ | γὰρ | turn_statesman_0499 | 286d | 60798 | 60801
+  tok_statesman_009908 | δή | δὴ | turn_statesman_0499 | 286e | 61109 | 61111
+  tok_statesman_010017 | δή | δὴ | turn_statesman_0499 | 287a | 61823 | 61825
+  tok_statesman_010079 | οὖν | οὖν | turn_statesman_0503 | 287b | 62199 | 62202
+  tok_statesman_010104 | τοίνυν | τοίνυν | turn_statesman_0505 | 287c | 62347 | 62353
+  tok_statesman_010113 | γάρ | γὰρ | turn_statesman_0505 | 287c | 62414 | 62417
+  tok_statesman_010125 | οὖν | οὖν | turn_statesman_0506 | 287c | 62480 | 62483
+  tok_statesman_010150 | δή | δὴ | turn_statesman_0509 | 287c | 62632 | 62634
+  tok_statesman_010162 | γάρ | γὰρ | turn_statesman_0509 | 287d | 62701 | 62704
+  tok_statesman_010178 | γάρ | γὰρ | turn_statesman_0509 | 287d | 62803 | 62806
+  tok_statesman_010199 | γάρ | γάρ | turn_statesman_0510 | 287d | 62921 | 62924
+  tok_statesman_010203 | δή | δὴ | turn_statesman_0511 | 287d | 62938 | 62940
+  tok_statesman_010215 | γάρ | γὰρ | turn_statesman_0511 | 287d | 63015 | 63018
+  tok_statesman_010216 | οὖν | οὖν | turn_statesman_0511 | 287d | 63019 | 63022
+  tok_statesman_010253 | γάρ | γὰρ | turn_statesman_0513 | 287e | 63224 | 63227
+  tok_statesman_010272 | δή | δὴ | turn_statesman_0515 | 287e | 63345 | 63347
+  tok_statesman_010285 | δή | δὴ | turn_statesman_0515 | 287e | 63433 | 63435
+  tok_statesman_010307 | γάρ | γὰρ | turn_statesman_0516 | 288a | 63578 | 63581
+  tok_statesman_010311 | δή | δὴ | turn_statesman_0517 | 288a | 63597 | 63599
+  tok_statesman_010434 | οὖν | οὖν | turn_statesman_0522 | 288b | 64365 | 64368
+  tok_statesman_010479 | μήν | μήν | turn_statesman_0526 | 288c | 64640 | 64643
+  tok_statesman_010482 | τοίνυν | τοίνυν | turn_statesman_0527 | 288c | 64655 | 64661
+  tok_statesman_010490 | γάρ | γὰρ | turn_statesman_0527 | 288c | 64710 | 64713
+  tok_statesman_010540 | δή | δὴ | turn_statesman_0530 | 288d | 65011 | 65013
+  tok_statesman_010617 | δή | δὴ | turn_statesman_0533 | 288e | 65524 | 65526
+  tok_statesman_010672 | γάρ | γὰρ | turn_statesman_0534 | 289a | 65884 | 65887
+  tok_statesman_010676 | τοίνυν | τοίνυν | turn_statesman_0535 | 289a | 65903 | 65909
+  tok_statesman_010693 | γάρ | γὰρ | turn_statesman_0535 | 289a | 66006 | 66009
+  tok_statesman_010737 | γάρ | γὰρ | turn_statesman_0535 | 289b | 66301 | 66304
+  tok_statesman_010781 | οὖν | οὖν | turn_statesman_0536 | 289c | 66573 | 66576
+  tok_statesman_010785 | δή | δὴ | turn_statesman_0537 | 289c | 66588 | 66590
+  tok_statesman_010849 | δή | δὴ | turn_statesman_0539 | 289d | 66995 | 66997
+  tok_statesman_010866 | δή | δὴ | turn_statesman_0541 | 289d | 67108 | 67110
+  tok_statesman_010985 | μήν | μὴν | turn_statesman_0547 | 290a | 67880 | 67883
+  tok_statesman_011003 | γάρ | γάρ | turn_statesman_0548 | 290a | 68004 | 68007
+  tok_statesman_011065 | μήν | μὴν | turn_statesman_0553 | 290b | 68379 | 68382
+  tok_statesman_011079 | καίτοι | καίτοι | turn_statesman_0553 | 290b | 68479 | 68485
+  tok_statesman_011097 | οὖν | οὖν | turn_statesman_0554 | 290c | 68588 | 68591
+  tok_statesman_011100 | δή | δὴ | turn_statesman_0555 | 290c | 68601 | 68603
+  tok_statesman_011119 | γάρ | γάρ | turn_statesman_0555 | 290c | 68738 | 68741
+  tok_statesman_011130 | μήν | μὴν | turn_statesman_0557 | 290c | 68799 | 68802
+  tok_statesman_011176 | τοίνυν | τοίνυν | turn_statesman_0559 | 290d | 69076 | 69082
+  tok_statesman_011188 | γάρ | γὰρ | turn_statesman_0559 | 290d | 69151 | 69154
+  tok_statesman_011189 | δή | δὴ | turn_statesman_0559 | 290d | 69155 | 69157
+  tok_statesman_011260 | δή | δὴ | turn_statesman_0559 | 290e | 69602 | 69604
+  tok_statesman_011270 | γάρ | γὰρ | turn_statesman_0559 | 290e | 69647 | 69650
+  tok_statesman_011292 | τοίνυν | τοίνυν | turn_statesman_0561 | 291a | 69785 | 69791
+  tok_statesman_011332 | δή | δή | turn_statesman_0564 | 291a | 70032 | 70034
+  tok_statesman_011345 | γάρ | γὰρ | turn_statesman_0565 | 291a | 70108 | 70111
+  tok_statesman_011391 | γάρ | γὰρ | turn_statesman_0566 | 291b | 70410 | 70413
+  tok_statesman_011398 | γάρ | γὰρ | turn_statesman_0567 | 291b | 70445 | 70448
+  tok_statesman_011405 | γάρ | γὰρ | turn_statesman_0567 | 291b | 70487 | 70490
+  tok_statesman_011406 | δή | δὴ | turn_statesman_0567 | 291b | 70491 | 70493
+  tok_statesman_011459 | μήν | μὴν | turn_statesman_0570 | 291c | 70835 | 70838
+  tok_statesman_011466 | δή | δὴ | turn_statesman_0571 | 291c | 70872 | 70874
+  tok_statesman_011549 | δή | δή | turn_statesman_0580 | 291d | 71320 | 71322
+  tok_statesman_011591 | μήν | μήν | turn_statesman_0582 | 291e | 71596 | 71599
+  tok_statesman_011612 | μήν | μήν | turn_statesman_0585 | 291e | 71721 | 71724
+  tok_statesman_011614 | οὖν | οὖν | turn_statesman_0585 | 291e | 71732 | 71735
+  tok_statesman_011644 | οὖν | οὖν | turn_statesman_0587 | 292a | 71923 | 71926
+  tok_statesman_011681 | γάρ | γὰρ | turn_statesman_0588 | 292a | 72151 | 72154
+  tok_statesman_011682 | δή | δὴ | turn_statesman_0588 | 292a | 72155 | 72157
+  tok_statesman_011687 | δή | δὴ | turn_statesman_0589 | 292b | 72188 | 72190
+  tok_statesman_011706 | δή | δὴ | turn_statesman_0592 | 292b | 72302 | 72304
+  tok_statesman_011757 | δή | δὴ | turn_statesman_0597 | 292c | 72598 | 72600
+  tok_statesman_011782 | τοίνυν | τοίνυν | turn_statesman_0599 | 292c | 72767 | 72773
+  tok_statesman_011816 | μήν | μὴν | turn_statesman_0600 | 292d | 72991 | 72994
+  tok_statesman_011825 | δή | δὴ | turn_statesman_0601 | 292d | 73039 | 73041
+  tok_statesman_011847 | γάρ | γὰρ | turn_statesman_0601 | 292d | 73188 | 73191
+  tok_statesman_011872 | γάρ | γὰρ | turn_statesman_0602 | 292d | 73351 | 73354
+  tok_statesman_011873 | δή | δὴ | turn_statesman_0602 | 292d | 73355 | 73357
+  tok_statesman_011883 | οὖν | οὖν | turn_statesman_0603 | 292e | 73415 | 73418
+  tok_statesman_011925 | γάρ | γὰρ | turn_statesman_0606 | 292e | 73658 | 73661
+  tok_statesman_011944 | δή | δὴ | turn_statesman_0606 | 292e | 73766 | 73768
+  tok_statesman_011948 | γάρ | γὰρ | turn_statesman_0606 | 292e | 73785 | 73788
+  tok_statesman_011949 | δή | δὴ | turn_statesman_0606 | 292e | 73789 | 73791
+  tok_statesman_011996 | μήν | μήν | turn_statesman_0608 | 293a | 74075 | 74078
+  tok_statesman_012113 | οὖν | οὖν | turn_statesman_0610 | 293c | 74865 | 74868
+  tok_statesman_012116 | δή | δὴ | turn_statesman_0611 | 293c | 74884 | 74886
+  tok_statesman_012285 | γάρ | γάρ | turn_statesman_0615 | 294a | 76003 | 76006
+  tok_statesman_012318 | γάρ | γὰρ | turn_statesman_0616 | 294a | 76202 | 76205
+  tok_statesman_012350 | δή | δὴ | turn_statesman_0618 | 294a | 76383 | 76385
+  tok_statesman_012373 | γάρ | γὰρ | turn_statesman_0619 | 294b | 76524 | 76527
+  tok_statesman_012409 | δή | δὴ | turn_statesman_0619 | 294b | 76747 | 76749
+  tok_statesman_012415 | μήν | μήν | turn_statesman_0620 | 294b | 76778 | 76781
+  tok_statesman_012463 | γάρ | γὰρ | turn_statesman_0622 | 294c | 77059 | 77062
+  tok_statesman_012492 | δή | δή | turn_statesman_0625 | 294c | 77229 | 77231
+  tok_statesman_012494 | οὖν | οὖν | turn_statesman_0625 | 294c | 77237 | 77240
+  tok_statesman_012509 | μήν | μήν | turn_statesman_0626 | 294d | 77344 | 77347
+  tok_statesman_012597 | δή | δή | turn_statesman_0633 | 294e | 77880 | 77882
+  tok_statesman_012630 | τοίνυν | τοίνυν | turn_statesman_0635 | 294e | 78062 | 78068
+  tok_statesman_012700 | γάρ | γὰρ | turn_statesman_0639 | 295a | 78505 | 78508
+  tok_statesman_012767 | δή | δή | turn_statesman_0642 | 295b | 78919 | 78921
+  tok_statesman_012772 | γάρ | γὰρ | turn_statesman_0643 | 295b | 78948 | 78951
+  tok_statesman_012773 | δή | δὴ | turn_statesman_0643 | 295b | 78952 | 78954
+  tok_statesman_012920 | οὖν | οὖν | turn_statesman_0646 | 295e | 79896 | 79899
+  tok_statesman_012926 | δή | δὴ | turn_statesman_0647 | 295e | 79921 | 79923
+  tok_statesman_012968 | δή | δὴ | turn_statesman_0647 | 295e | 80171 | 80173
+  tok_statesman_012989 | μήν | μήν | turn_statesman_0648 | 296a | 80298 | 80301
+  tok_statesman_012992 | οὖν | οὖν | turn_statesman_0649 | 296a | 80313 | 80316
+  tok_statesman_013011 | μήν | μὴν | turn_statesman_0651 | 296a | 80409 | 80412
+  tok_statesman_013014 | γάρ | γὰρ | turn_statesman_0651 | 296a | 80428 | 80431
+  tok_statesman_013015 | δή | δὴ | turn_statesman_0651 | 296a | 80432 | 80434
+  tok_statesman_013038 | οὖν | οὖν | turn_statesman_0652 | 296a | 80569 | 80572
+  tok_statesman_013045 | οὖν | οὖν | turn_statesman_0653 | 296b | 80608 | 80611
+  tok_statesman_013069 | δή | δὴ | turn_statesman_0654 | 296b | 80745 | 80747
+  tok_statesman_013146 | δή | δὴ | turn_statesman_0657 | 296c | 81186 | 81188
+  tok_statesman_013170 | δή | δὴ | turn_statesman_0659 | 296c | 81330 | 81332
+  tok_statesman_013387 | μήν | μὴν | turn_statesman_0664 | 297b | 82665 | 82668
+  tok_statesman_013463 | γάρ | γὰρ | turn_statesman_0667 | 297c | 83102 | 83105
+  tok_statesman_013473 | μήν | μὴν | turn_statesman_0668 | 297c | 83158 | 83161
+  tok_statesman_013498 | δή | δή | turn_statesman_0669 | 297d | 83308 | 83310
+  tok_statesman_013512 | μήν | μὴν | turn_statesman_0670 | 297d | 83382 | 83385
+  tok_statesman_013517 | γάρ | γάρ | turn_statesman_0670 | 297d | 83414 | 83417
+  tok_statesman_013596 | δή | δὴ | turn_statesman_0672 | 297e | 83886 | 83888
+  tok_statesman_013601 | γάρ | γάρ | turn_statesman_0672 | 297e | 83925 | 83928
+  tok_statesman_013606 | οὖν | οὖν | turn_statesman_0673 | 297e | 83947 | 83950
+  tok_statesman_013609 | δή | δὴ | turn_statesman_0674 | 297e | 83960 | 83962
+  tok_statesman_013635 | γάρ | γὰρ | turn_statesman_0676 | 297e | 84139 | 84142
+  tok_statesman_013636 | δή | δή | turn_statesman_0676 | 297e | 84143 | 84145
+  tok_statesman_013662 | γάρ | γὰρ | turn_statesman_0678 | 298a | 84303 | 84306
+  tok_statesman_013670 | δή | δὴ | turn_statesman_0678 | 298a | 84357 | 84359
+  tok_statesman_013708 | δή | δὴ | turn_statesman_0678 | 298b | 84606 | 84608
+  tok_statesman_013755 | δή | δὴ | turn_statesman_0678 | 298b | 84930 | 84932
+  tok_statesman_013772 | οὖν | οὖν | turn_statesman_0678 | 298c | 85066 | 85069
+  tok_statesman_013820 | δή | δὴ | turn_statesman_0678 | 298c | 85361 | 85363
+  tok_statesman_013959 | δή | δὴ | turn_statesman_0682 | 298e | 86223 | 86225
+  tok_statesman_013966 | γάρ | γὰρ | turn_statesman_0682 | 298e | 86262 | 86265
+  tok_statesman_013967 | δή | δὴ | turn_statesman_0682 | 298e | 86266 | 86268
+  tok_statesman_014059 | τοίνυν | τοίνυν | turn_statesman_0684 | 299b | 86832 | 86838
+  tok_statesman_014139 | δή | δή | turn_statesman_0684 | 299c | 87384 | 87386
+  tok_statesman_014160 | γάρ | γὰρ | turn_statesman_0684 | 299c | 87514 | 87517
+  tok_statesman_014167 | γάρ | γὰρ | turn_statesman_0684 | 299c | 87557 | 87560
+  tok_statesman_014181 | γάρ | γὰρ | turn_statesman_0684 | 299c | 87643 | 87646
+  tok_statesman_014191 | δή | δὴ | turn_statesman_0684 | 299d | 87718 | 87720
+  tok_statesman_014388 | γάρ | γὰρ | turn_statesman_0688 | 300b | 88983 | 88986
+  tok_statesman_014434 | δή | δὴ | turn_statesman_0690 | 300c | 89301 | 89303
+  tok_statesman_014485 | μήν | μὴν | turn_statesman_0694 | 300c | 89594 | 89597
+  tok_statesman_014524 | γάρ | γάρ | turn_statesman_0695 | 300d | 89844 | 89847
+  tok_statesman_014560 | οὖν | οὖν | turn_statesman_0697 | 300d | 90056 | 90059
+  tok_statesman_014563 | οὖν | οὖν | turn_statesman_0698 | 300d | 90069 | 90072
+  tok_statesman_014600 | μήν | μὴν | turn_statesman_0700 | 300e | 90299 | 90302
+  tok_statesman_014617 | γάρ | γὰρ | turn_statesman_0701 | 300e | 90411 | 90414
+  tok_statesman_014618 | οὖν | οὖν | turn_statesman_0701 | 300e | 90415 | 90418
+  tok_statesman_014646 | γάρ | γὰρ | turn_statesman_0703 | 300e | 90567 | 90570
+  tok_statesman_014650 | δή | δὴ | turn_statesman_0704 | 300e | 90583 | 90585
+  tok_statesman_014715 | μήν | μὴν | turn_statesman_0708 | 301a | 91015 | 91018
+  tok_statesman_014763 | δή | δὴ | turn_statesman_0710 | 301b | 91328 | 91330
+  tok_statesman_014827 | μήν | μήν | turn_statesman_0713 | 301c | 91696 | 91699
+  tok_statesman_014830 | δή | δὴ | turn_statesman_0714 | 301c | 91710 | 91712
+  tok_statesman_014919 | δή | δή | turn_statesman_0716 | 301d | 92283 | 92285
+  tok_statesman_014939 | δή | δὴ | turn_statesman_0716 | 301e | 92400 | 92402
+  tok_statesman_015010 | γάρ | γὰρ | turn_statesman_0718 | 302a | 92908 | 92911
+  tok_statesman_015011 | δή | δὴ | turn_statesman_0718 | 302a | 92912 | 92914
+  tok_statesman_015029 | μήν | μὴν | turn_statesman_0718 | 302a | 93023 | 93026
+  tok_statesman_015075 | οὖν | οὖν | turn_statesman_0720 | 302b | 93344 | 93347
+  tok_statesman_015076 | δή | δὴ | turn_statesman_0720 | 302b | 93348 | 93350
+  tok_statesman_015105 | μήν | μὴν | turn_statesman_0720 | 302b | 93523 | 93526
+  tok_statesman_015128 | τοίνυν | τοίνυν | turn_statesman_0722 | 302c | 93644 | 93650
+  tok_statesman_015166 | γάρ | γὰρ | turn_statesman_0725 | 302c | 93877 | 93880
+  tok_statesman_015167 | οὖν | οὖν | turn_statesman_0725 | 302c | 93881 | 93884
+  tok_statesman_015170 | τοίνυν | τοίνυν | turn_statesman_0726 | 302c | 93897 | 93903
+  tok_statesman_015231 | δή | δή | turn_statesman_0729 | 302d | 94284 | 94286
+  tok_statesman_015265 | γάρ | γὰρ | turn_statesman_0731 | 302e | 94486 | 94489
+  tok_statesman_015266 | οὖν | οὖν | turn_statesman_0731 | 302e | 94490 | 94493
+  tok_statesman_015270 | τοίνυν | τοίνυν | turn_statesman_0732 | 302e | 94508 | 94514
+  tok_statesman_015296 | δή | δὴ | turn_statesman_0732 | 302e | 94668 | 94670
+  tok_statesman_015314 | τοίνυν | τοίνυν | turn_statesman_0734 | 302e | 94781 | 94787
+  tok_statesman_015430 | γάρ | γὰρ | turn_statesman_0736 | 303b | 95484 | 95487
+  tok_statesman_015457 | δή | δὴ | turn_statesman_0738 | 303b | 95651 | 95653
+  tok_statesman_015525 | δή | δὴ | turn_statesman_0740 | 303d | 96141 | 96143
+  tok_statesman_015631 | γάρ | γὰρ | turn_statesman_0745 | 303e | 96819 | 96822
+  tok_statesman_015632 | οὖν | οὖν | turn_statesman_0745 | 303e | 96823 | 96826
+  tok_statesman_015633 | δή | δὴ | turn_statesman_0745 | 303e | 96827 | 96829
+  tok_statesman_015641 | τοίνυν | τοίνυν | turn_statesman_0746 | 303e | 96871 | 96877
+  tok_statesman_015688 | δή | δὴ | turn_statesman_0746 | 304a | 97171 | 97173
+  tok_statesman_015716 | τοίνυν | τοίνυν | turn_statesman_0748 | 304a | 97332 | 97338
+  tok_statesman_015859 | οὖν | οὖν | turn_statesman_0762 | 304c | 98175 | 98178
+  tok_statesman_015949 | μήν | μὴν | turn_statesman_0768 | 304e | 98720 | 98723
+  tok_statesman_016043 | οὖν | οὖν | turn_statesman_0778 | 305a | 99318 | 99321
+  tok_statesman_016059 | δή | δὴ | turn_statesman_0778 | 305a | 99429 | 99431
+  tok_statesman_016086 | δή | δή | turn_statesman_0782 | 305b | 99598 | 99600
+  tok_statesman_016100 | οὖν | οὖν | turn_statesman_0783 | 305b | 99680 | 99683
+  tok_statesman_016103 | οὖν | οὖν | turn_statesman_0784 | 305b | 99693 | 99696
+  tok_statesman_016199 | δή | δὴ | turn_statesman_0788 | 305c | 100287 | 100289
+  tok_statesman_016214 | γάρ | γὰρ | turn_statesman_0788 | 305d | 100396 | 100399
+  tok_statesman_016324 | οὖν | οὖν | turn_statesman_0793 | 305e | 101094 | 101097
+  tok_statesman_016327 | δή | δὴ | turn_statesman_0794 | 305e | 101110 | 101112
+  tok_statesman_016357 | δή | δὴ | turn_statesman_0796 | 306a | 101278 | 101280
+  tok_statesman_016391 | μήν | μὴν | turn_statesman_0799 | 306a | 101492 | 101495
+  tok_statesman_016395 | γάρ | γὰρ | turn_statesman_0800 | 306a | 101511 | 101514
+  tok_statesman_016425 | γάρ | γὰρ | turn_statesman_0802 | 306a | 101697 | 101700
+  tok_statesman_016440 | μήν | μὴν | turn_statesman_0804 | 306b | 101779 | 101782
+  tok_statesman_016448 | οὖν | οὖν | turn_statesman_0804 | 306b | 101824 | 101827
+  tok_statesman_016459 | δή | δὴ | turn_statesman_0806 | 306b | 101881 | 101883
+  tok_statesman_016473 | δή | δή | turn_statesman_0808 | 306b | 101967 | 101969
+  tok_statesman_016499 | γάρ | γὰρ | turn_statesman_0810 | 306b | 102116 | 102119
+  tok_statesman_016500 | οὖν | οὖν | turn_statesman_0810 | 306b | 102120 | 102123
+  tok_statesman_016501 | δή | δὴ | turn_statesman_0810 | 306b | 102124 | 102126
+  tok_statesman_016516 | δή | δὴ | turn_statesman_0812 | 306c | 102211 | 102213
+  tok_statesman_016611 | μήν | μήν | turn_statesman_0817 | 306d | 102784 | 102787
+  tok_statesman_016629 | οὖν | οὖν | turn_statesman_0820 | 306d | 102883 | 102886
+  tok_statesman_016654 | οὖν | οὖν | turn_statesman_0822 | 306e | 103040 | 103043
+  tok_statesman_016661 | γάρ | γὰρ | turn_statesman_0822 | 306e | 103081 | 103084
+  tok_statesman_016662 | δή | δὴ | turn_statesman_0822 | 306e | 103085 | 103087
+  tok_statesman_016750 | οὖν | οὖν | turn_statesman_0828 | 307a | 103621 | 103624
+  tok_statesman_016819 | μήν | μὴν | turn_statesman_0832 | 307b | 104056 | 104059
+  tok_statesman_016916 | δή | δὴ | turn_statesman_0835 | 307c | 104704 | 104706
+  tok_statesman_016922 | δή | δὴ | turn_statesman_0836 | 307c | 104730 | 104732
+  tok_statesman_016934 | γάρ | γὰρ | turn_statesman_0836 | 307d | 104802 | 104805
+  tok_statesman_016966 | τοίνυν | τοίνυν | turn_statesman_0838 | 307d | 105012 | 105018
+  tok_statesman_016990 | δή | δὴ | turn_statesman_0839 | 307d | 105150 | 105152
+  tok_statesman_017005 | γάρ | γὰρ | turn_statesman_0840 | 307e | 105229 | 105232
+  tok_statesman_017006 | δή | δὴ | turn_statesman_0840 | 307e | 105233 | 105235
+  tok_statesman_017048 | δή | δὴ | turn_statesman_0840 | 307e | 105491 | 105493
+  tok_statesman_017155 | οὖν | οὖν | turn_statesman_0844 | 308b | 106160 | 106163
+  tok_statesman_017197 | δή | δὴ | turn_statesman_0846 | 308b | 106415 | 106417
+  tok_statesman_017210 | τοίνυν | τοίνυν | turn_statesman_0848 | 308b | 106489 | 106495
+  tok_statesman_017279 | μήν | μήν | turn_statesman_0851 | 308c | 106913 | 106916
+  tok_statesman_017363 | οὖν | οὖν | turn_statesman_0853 | 308e | 107481 | 107484
+  tok_statesman_017366 | δή | δή | turn_statesman_0854 | 308e | 107497 | 107499
+  tok_statesman_017472 | τοίνυν | τοίνυν | turn_statesman_0858 | 309a | 108179 | 108185
+  tok_statesman_017536 | δή | δή | turn_statesman_0859 | 309b | 108615 | 108617
+  tok_statesman_017605 | δή | δὴ | turn_statesman_0864 | 309d | 109043 | 109045
+  tok_statesman_017660 | οὖν | οὖν | turn_statesman_0868 | 309d | 109384 | 109387
+  tok_statesman_017730 | οὖν | οὖν | turn_statesman_0871 | 309e | 109820 | 109823
+  tok_statesman_017767 | γάρ | γάρ | turn_statesman_0873 | 309e | 110046 | 110049
+  tok_statesman_017788 | δή | δὴ | turn_statesman_0874 | 310a | 110176 | 110178
+  tok_statesman_017815 | μήν | μὴν | turn_statesman_0876 | 310a | 110352 | 110355
+  tok_statesman_017835 | δή | δή | turn_statesman_0877 | 310b | 110500 | 110502
+  tok_statesman_017854 | γάρ | γὰρ | turn_statesman_0878 | 310b | 110608 | 110611
+  tok_statesman_017870 | δή | δή | turn_statesman_0879 | 310b | 110695 | 110697
+  tok_statesman_017916 | γάρ | γὰρ | turn_statesman_0883 | 310c | 110961 | 110964
+  tok_statesman_017917 | οὖν | οὖν | turn_statesman_0883 | 310c | 110965 | 110968
+  tok_statesman_017921 | δή | δὴ | turn_statesman_0884 | 310c | 110988 | 110990
+  tok_statesman_018056 | δή | δὴ | turn_statesman_0890 | 310e | 111831 | 111833
+  tok_statesman_018068 | δή | δὴ | turn_statesman_0892 | 310e | 111912 | 111914
+  tok_statesman_018089 | γάρ | γὰρ | turn_statesman_0892 | 310e | 112037 | 112040
+  tok_statesman_018164 | γάρ | γὰρ | turn_statesman_0894 | 311a | 112530 | 112533
+  tok_statesman_018188 | δή | δὴ | turn_statesman_0895 | 311a | 112683 | 112685
+  tok_statesman_018232 | γάρ | γὰρ | turn_statesman_0897 | 311b | 112944 | 112947
+  tok_statesman_018236 | δή | δὴ | turn_statesman_0898 | 311b | 112962 | 112964

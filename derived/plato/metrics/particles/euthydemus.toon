@@ -1,0 +1,653 @@
+schema_version: 1
+dialogue: euthydemus
+source_path: raw/plato/greek/euthydemus.txt
+source_sha256: 23536f3045b3c14d919bfc41e21a18e2bb7903cd34408d17e1ab08801ab9df14
+token_index_path: derived/plato/tokens/euthydemus.toon
+token_index_sha256: 3d7b42585c52319731a7db7d0640ced98c1e695e1469a8326f132b74a27e3e75
+turn_index_path: derived/plato/turns/euthydemus.toon
+turn_index_sha256: 114215016db5ab4c3c5d0a00e15cd6073bd51f28de0fdc2114ed8fc7e3a4c6ad
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 12576
+excluded_siglum_token_count: 95
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  euthydemus | 12481 | 13 | 10 | 4 | 144 | 131 | 48
+speakers[2]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  ΚΡ. | 741 | 3 | 0 | 0 | 6 | 7 | 3
+  ΣΩ. | 11740 | 10 | 10 | 4 | 138 | 124 | 45
+turns[95]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_euthydemus_0001 | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0002 | 11 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthydemus_0003 | 49 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0004 | 23 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0005 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0006 | 84 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_euthydemus_0007 | 118 | 0 | 0 | 0 | 3 | 2 | 0
+  turn_euthydemus_0008 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0009 | 134 | 0 | 0 | 0 | 2 | 2 | 0
+  turn_euthydemus_0010 | 24 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0011 | 59 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthydemus_0012 | 332 | 0 | 0 | 0 | 3 | 5 | 0
+  turn_euthydemus_0013 | 351 | 0 | 0 | 0 | 3 | 7 | 1
+  turn_euthydemus_0014 | 313 | 1 | 1 | 0 | 4 | 3 | 4
+  turn_euthydemus_0015 | 310 | 1 | 0 | 0 | 1 | 3 | 1
+  turn_euthydemus_0016 | 332 | 0 | 0 | 0 | 3 | 4 | 1
+  turn_euthydemus_0017 | 356 | 0 | 0 | 0 | 5 | 4 | 3
+  turn_euthydemus_0018 | 373 | 1 | 0 | 0 | 4 | 2 | 5
+  turn_euthydemus_0019 | 339 | 0 | 0 | 0 | 3 | 4 | 0
+  turn_euthydemus_0020 | 375 | 1 | 0 | 0 | 2 | 5 | 0
+  turn_euthydemus_0021 | 327 | 0 | 1 | 0 | 2 | 3 | 1
+  turn_euthydemus_0022 | 319 | 1 | 0 | 1 | 2 | 7 | 0
+  turn_euthydemus_0023 | 407 | 2 | 0 | 0 | 3 | 5 | 0
+  turn_euthydemus_0024 | 336 | 0 | 0 | 1 | 2 | 2 | 0
+  turn_euthydemus_0025 | 377 | 0 | 0 | 0 | 7 | 5 | 3
+  turn_euthydemus_0026 | 330 | 0 | 1 | 0 | 7 | 3 | 0
+  turn_euthydemus_0027 | 303 | 0 | 0 | 0 | 4 | 5 | 0
+  turn_euthydemus_0028 | 360 | 1 | 0 | 1 | 6 | 1 | 2
+  turn_euthydemus_0029 | 283 | 0 | 0 | 0 | 4 | 5 | 2
+  turn_euthydemus_0030 | 10 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0031 | 4 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0032 | 21 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthydemus_0033 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0034 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0035 | 33 | 1 | 0 | 0 | 1 | 0 | 0
+  turn_euthydemus_0036 | 30 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0037 | 82 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_euthydemus_0038 | 7 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_euthydemus_0039 | 15 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_euthydemus_0040 | 3 | 0 | 0 | 0 | 0 | 1 | 1
+  turn_euthydemus_0041 | 59 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthydemus_0042 | 6 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0043 | 46 | 0 | 0 | 0 | 1 | 0 | 1
+  turn_euthydemus_0044 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0045 | 26 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthydemus_0046 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0047 | 25 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0048 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0049 | 15 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0050 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0051 | 20 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthydemus_0052 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0053 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0054 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0055 | 16 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0056 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0057 | 50 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0058 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0059 | 10 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthydemus_0060 | 5 | 0 | 0 | 0 | 1 | 0 | 0
+  turn_euthydemus_0061 | 21 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0062 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0063 | 47 | 0 | 0 | 0 | 1 | 1 | 2
+  turn_euthydemus_0064 | 2 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0065 | 67 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0066 | 12 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0067 | 54 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthydemus_0068 | 8 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthydemus_0069 | 313 | 0 | 1 | 0 | 5 | 4 | 6
+  turn_euthydemus_0070 | 334 | 0 | 0 | 0 | 3 | 1 | 0
+  turn_euthydemus_0071 | 323 | 1 | 2 | 0 | 5 | 7 | 2
+  turn_euthydemus_0072 | 351 | 0 | 1 | 0 | 7 | 1 | 1
+  turn_euthydemus_0073 | 346 | 0 | 1 | 0 | 6 | 0 | 3
+  turn_euthydemus_0074 | 421 | 0 | 0 | 0 | 7 | 4 | 0
+  turn_euthydemus_0075 | 378 | 0 | 0 | 1 | 2 | 3 | 0
+  turn_euthydemus_0076 | 328 | 0 | 0 | 0 | 4 | 3 | 0
+  turn_euthydemus_0077 | 344 | 0 | 1 | 0 | 3 | 2 | 0
+  turn_euthydemus_0078 | 379 | 0 | 0 | 0 | 6 | 4 | 1
+  turn_euthydemus_0079 | 377 | 0 | 0 | 0 | 2 | 4 | 3
+  turn_euthydemus_0080 | 163 | 0 | 0 | 0 | 1 | 2 | 0
+  turn_euthydemus_0081 | 178 | 2 | 0 | 0 | 2 | 1 | 1
+  turn_euthydemus_0082 | 100 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_euthydemus_0083 | 43 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0084 | 29 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0085 | 126 | 0 | 0 | 0 | 4 | 1 | 0
+  turn_euthydemus_0086 | 20 | 0 | 0 | 0 | 1 | 1 | 0
+  turn_euthydemus_0087 | 221 | 0 | 0 | 0 | 4 | 3 | 0
+  turn_euthydemus_0088 | 120 | 1 | 0 | 0 | 0 | 2 | 0
+  turn_euthydemus_0089 | 36 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0090 | 3 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0091 | 14 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthydemus_0092 | 8 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0093 | 15 | 0 | 0 | 0 | 0 | 1 | 0
+  turn_euthydemus_0094 | 5 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_euthydemus_0095 | 62 | 0 | 1 | 0 | 0 | 0 | 1
+markers[182]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  271a | 59 | 0 | 0 | 0 | 1 | 0 | 0
+  271b | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  271c | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  271d | 31 | 0 | 0 | 0 | 2 | 0 | 0
+  272a | 73 | 0 | 0 | 0 | 1 | 1 | 0
+  272b | 82 | 0 | 0 | 0 | 2 | 1 | 0
+  272c | 73 | 0 | 0 | 0 | 0 | 2 | 0
+  272d | 80 | 0 | 0 | 0 | 1 | 0 | 0
+  272e | 35 | 0 | 0 | 0 | 1 | 1 | 0
+  273a | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  273b | 71 | 0 | 0 | 0 | 1 | 1 | 0
+  273c | 76 | 0 | 0 | 0 | 1 | 1 | 0
+  273d | 66 | 0 | 0 | 0 | 0 | 2 | 0
+  273e | 63 | 0 | 0 | 0 | 2 | 0 | 0
+  274a | 72 | 0 | 0 | 0 | 1 | 0 | 0
+  274b | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  274c | 63 | 0 | 0 | 0 | 0 | 2 | 1
+  274d | 66 | 0 | 0 | 0 | 0 | 4 | 0
+  274e | 73 | 0 | 0 | 0 | 0 | 1 | 0
+  275a | 74 | 0 | 1 | 0 | 1 | 0 | 1
+  275b | 71 | 0 | 0 | 0 | 0 | 2 | 1
+  275c | 58 | 0 | 0 | 0 | 2 | 0 | 2
+  275d | 58 | 0 | 0 | 0 | 0 | 1 | 0
+  275e | 56 | 1 | 0 | 0 | 1 | 0 | 0
+  276a | 61 | 0 | 0 | 0 | 0 | 2 | 0
+  276b | 59 | 0 | 0 | 0 | 0 | 1 | 0
+  276c | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  276d | 73 | 0 | 0 | 0 | 1 | 0 | 1
+  276e | 62 | 1 | 0 | 0 | 0 | 0 | 0
+  277a | 73 | 0 | 0 | 0 | 0 | 2 | 0
+  277b | 76 | 0 | 0 | 0 | 1 | 0 | 0
+  277c | 58 | 0 | 0 | 0 | 0 | 1 | 0
+  277d | 81 | 0 | 0 | 0 | 2 | 0 | 1
+  277e | 64 | 0 | 0 | 0 | 1 | 1 | 1
+  278a | 72 | 0 | 0 | 0 | 0 | 0 | 0
+  278b | 74 | 0 | 0 | 0 | 0 | 0 | 1
+  278c | 61 | 0 | 0 | 0 | 1 | 2 | 0
+  278d | 60 | 0 | 0 | 0 | 1 | 1 | 1
+  278e | 54 | 0 | 0 | 0 | 2 | 1 | 0
+  279a | 83 | 0 | 0 | 0 | 3 | 0 | 2
+  279b | 77 | 1 | 0 | 0 | 1 | 1 | 0
+  279c | 84 | 0 | 0 | 0 | 0 | 0 | 1
+  279d | 75 | 0 | 0 | 0 | 0 | 1 | 2
+  279e | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  280a | 72 | 0 | 0 | 0 | 2 | 1 | 0
+  280b | 67 | 0 | 0 | 0 | 1 | 2 | 0
+  280c | 88 | 0 | 0 | 0 | 0 | 0 | 0
+  280d | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  280e | 64 | 0 | 0 | 0 | 2 | 1 | 0
+  281a | 80 | 1 | 0 | 0 | 0 | 2 | 0
+  281b | 75 | 0 | 0 | 0 | 0 | 1 | 0
+  281c | 69 | 0 | 0 | 0 | 0 | 1 | 0
+  281d | 76 | 0 | 0 | 0 | 0 | 0 | 0
+  281e | 46 | 0 | 0 | 0 | 0 | 1 | 0
+  282a | 67 | 0 | 1 | 0 | 0 | 0 | 1
+  282b | 59 | 0 | 0 | 0 | 0 | 1 | 0
+  282c | 85 | 0 | 0 | 0 | 1 | 1 | 0
+  282d | 67 | 0 | 0 | 0 | 0 | 1 | 0
+  282e | 49 | 0 | 0 | 0 | 1 | 0 | 0
+  283a | 60 | 0 | 0 | 0 | 0 | 2 | 0
+  283b | 74 | 0 | 0 | 0 | 1 | 1 | 0
+  283c | 69 | 1 | 0 | 0 | 1 | 3 | 0
+  283d | 69 | 0 | 0 | 1 | 0 | 1 | 0
+  283e | 80 | 0 | 0 | 0 | 0 | 0 | 0
+  284a | 71 | 2 | 0 | 0 | 1 | 0 | 0
+  284b | 86 | 0 | 0 | 0 | 0 | 4 | 0
+  284c | 85 | 0 | 0 | 0 | 1 | 0 | 0
+  284d | 80 | 0 | 0 | 0 | 1 | 1 | 0
+  284e | 82 | 0 | 0 | 0 | 0 | 0 | 0
+  285a | 65 | 0 | 0 | 0 | 1 | 1 | 0
+  285b | 58 | 0 | 0 | 0 | 0 | 1 | 0
+  285c | 76 | 0 | 0 | 0 | 0 | 0 | 0
+  285d | 61 | 0 | 0 | 1 | 1 | 0 | 0
+  285e | 66 | 0 | 0 | 0 | 0 | 1 | 0
+  286a | 67 | 0 | 0 | 0 | 2 | 2 | 1
+  286b | 77 | 0 | 0 | 0 | 1 | 0 | 0
+  286c | 70 | 0 | 0 | 0 | 3 | 0 | 1
+  286d | 75 | 0 | 0 | 0 | 0 | 1 | 1
+  286e | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  287a | 73 | 0 | 0 | 0 | 3 | 0 | 0
+  287b | 76 | 0 | 0 | 0 | 3 | 0 | 0
+  287c | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  287d | 71 | 0 | 1 | 0 | 1 | 2 | 0
+  287e | 61 | 0 | 0 | 0 | 1 | 1 | 0
+  288a | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  288b | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  288c | 50 | 0 | 0 | 0 | 2 | 2 | 0
+  288d | 68 | 0 | 0 | 0 | 1 | 2 | 0
+  288e | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  289a | 65 | 0 | 0 | 0 | 1 | 0 | 0
+  289b | 62 | 0 | 0 | 0 | 0 | 0 | 0
+  289c | 73 | 1 | 0 | 0 | 3 | 0 | 1
+  289d | 80 | 0 | 0 | 1 | 0 | 1 | 0
+  289e | 47 | 0 | 0 | 0 | 2 | 0 | 1
+  290a | 78 | 0 | 0 | 0 | 1 | 1 | 0
+  290b | 70 | 0 | 0 | 0 | 0 | 1 | 1
+  290c | 73 | 0 | 0 | 0 | 2 | 2 | 0
+  290d | 62 | 0 | 0 | 0 | 1 | 1 | 1
+  290e | 51 | 0 | 0 | 0 | 1 | 0 | 0
+  291a | 65 | 1 | 0 | 0 | 1 | 0 | 0
+  291b | 70 | 0 | 0 | 0 | 0 | 1 | 1
+  291c | 74 | 0 | 0 | 0 | 1 | 2 | 3
+  291d | 56 | 0 | 0 | 0 | 1 | 0 | 1
+  291e | 55 | 0 | 0 | 0 | 0 | 1 | 0
+  292a | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  292b | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  292c | 58 | 0 | 0 | 0 | 1 | 1 | 0
+  292d | 68 | 0 | 0 | 0 | 1 | 1 | 2
+  292e | 69 | 0 | 0 | 0 | 0 | 1 | 0
+  293a | 66 | 0 | 0 | 0 | 1 | 1 | 0
+  293b | 79 | 0 | 1 | 0 | 1 | 2 | 2
+  293c | 75 | 0 | 0 | 0 | 0 | 1 | 0
+  293d | 73 | 0 | 0 | 0 | 2 | 1 | 3
+  293e | 73 | 0 | 0 | 0 | 1 | 0 | 1
+  294a | 73 | 0 | 0 | 0 | 1 | 0 | 0
+  294b | 74 | 0 | 0 | 0 | 1 | 0 | 0
+  294c | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  294d | 63 | 0 | 0 | 0 | 1 | 1 | 0
+  294e | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  295a | 77 | 1 | 0 | 0 | 1 | 0 | 1
+  295b | 70 | 0 | 0 | 0 | 2 | 2 | 0
+  295c | 79 | 0 | 2 | 0 | 1 | 1 | 0
+  295d | 59 | 0 | 0 | 0 | 0 | 3 | 0
+  295e | 38 | 0 | 0 | 0 | 1 | 1 | 1
+  296a | 75 | 0 | 0 | 0 | 2 | 0 | 0
+  296b | 74 | 0 | 0 | 0 | 1 | 0 | 0
+  296c | 71 | 0 | 1 | 0 | 3 | 1 | 0
+  296d | 75 | 0 | 0 | 0 | 0 | 0 | 1
+  296e | 56 | 0 | 0 | 0 | 1 | 0 | 0
+  297a | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  297b | 71 | 0 | 0 | 0 | 3 | 0 | 0
+  297c | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  297d | 77 | 0 | 1 | 0 | 1 | 0 | 3
+  297e | 69 | 0 | 0 | 0 | 2 | 0 | 0
+  298a | 98 | 0 | 0 | 0 | 0 | 2 | 0
+  298b | 64 | 0 | 0 | 0 | 1 | 0 | 0
+  298c | 87 | 0 | 0 | 0 | 2 | 0 | 0
+  298d | 83 | 0 | 0 | 0 | 3 | 1 | 0
+  298e | 88 | 0 | 0 | 0 | 1 | 1 | 0
+  299a | 67 | 0 | 0 | 0 | 1 | 0 | 0
+  299b | 84 | 0 | 0 | 1 | 1 | 0 | 0
+  299c | 81 | 0 | 0 | 0 | 0 | 0 | 0
+  299d | 69 | 0 | 0 | 0 | 0 | 2 | 0
+  299e | 77 | 0 | 0 | 0 | 0 | 1 | 0
+  300a | 76 | 0 | 0 | 0 | 0 | 2 | 0
+  300b | 74 | 0 | 0 | 0 | 1 | 1 | 0
+  300c | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  300d | 77 | 0 | 0 | 0 | 2 | 0 | 0
+  300e | 32 | 0 | 0 | 0 | 1 | 0 | 0
+  301a | 70 | 0 | 0 | 0 | 0 | 1 | 0
+  301b | 73 | 0 | 0 | 0 | 2 | 0 | 0
+  301c | 72 | 0 | 0 | 0 | 0 | 1 | 0
+  301d | 69 | 0 | 1 | 0 | 0 | 0 | 0
+  301e | 72 | 0 | 0 | 0 | 1 | 1 | 0
+  302a | 75 | 0 | 0 | 0 | 1 | 1 | 0
+  302b | 75 | 0 | 0 | 0 | 0 | 1 | 0
+  302c | 79 | 0 | 0 | 0 | 1 | 0 | 0
+  302d | 80 | 0 | 0 | 0 | 2 | 1 | 0
+  302e | 72 | 0 | 0 | 0 | 2 | 0 | 2
+  303a | 72 | 0 | 0 | 0 | 0 | 2 | 0
+  303b | 64 | 0 | 0 | 0 | 1 | 1 | 0
+  303c | 71 | 0 | 0 | 0 | 0 | 1 | 1
+  303d | 77 | 0 | 0 | 0 | 1 | 0 | 0
+  303e | 79 | 0 | 0 | 0 | 0 | 0 | 1
+  304a | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  304b | 57 | 0 | 0 | 0 | 1 | 1 | 0
+  304c | 68 | 1 | 0 | 0 | 0 | 0 | 1
+  304d | 87 | 1 | 0 | 0 | 1 | 0 | 0
+  304e | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  305a | 74 | 0 | 0 | 0 | 1 | 1 | 0
+  305b | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  305c | 72 | 0 | 0 | 0 | 1 | 0 | 0
+  305d | 65 | 0 | 0 | 0 | 2 | 1 | 0
+  305e | 46 | 0 | 0 | 0 | 3 | 1 | 0
+  306a | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  306b | 65 | 0 | 0 | 0 | 1 | 2 | 0
+  306c | 71 | 0 | 0 | 0 | 1 | 1 | 0
+  306d | 71 | 1 | 0 | 0 | 0 | 2 | 0
+  306e | 40 | 0 | 0 | 0 | 0 | 0 | 0
+  307a | 62 | 0 | 0 | 0 | 0 | 1 | 0
+  307b | 62 | 0 | 1 | 0 | 0 | 1 | 0
+  307c | 34 | 0 | 0 | 0 | 0 | 0 | 1
+occurrences[350]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_euthydemus_000047 | γάρ | γὰρ | turn_euthydemus_0002 | 271a | 277 | 280
+  tok_euthydemus_000193 | γάρ | γάρ | turn_euthydemus_0006 | 271c | 1145 | 1148
+  tok_euthydemus_000207 | γάρ | γὰρ | turn_euthydemus_0006 | 271d | 1243 | 1246
+  tok_euthydemus_000231 | γάρ | γὰρ | turn_euthydemus_0007 | 271d | 1386 | 1389
+  tok_euthydemus_000270 | οὖν | οὖν | turn_euthydemus_0007 | 272a | 1621 | 1624
+  tok_euthydemus_000282 | γάρ | γὰρ | turn_euthydemus_0007 | 272a | 1700 | 1703
+  tok_euthydemus_000322 | οὖν | οὖν | turn_euthydemus_0007 | 272b | 1940 | 1943
+  tok_euthydemus_000333 | γάρ | γάρ | turn_euthydemus_0007 | 272b | 2002 | 2005
+  tok_euthydemus_000374 | γάρ | γὰρ | turn_euthydemus_0009 | 272b | 2230 | 2233
+  tok_euthydemus_000421 | οὖν | οὖν | turn_euthydemus_0009 | 272c | 2528 | 2531
+  tok_euthydemus_000436 | οὖν | οὖν | turn_euthydemus_0009 | 272c | 2625 | 2628
+  tok_euthydemus_000488 | γάρ | γὰρ | turn_euthydemus_0009 | 272d | 2946 | 2949
+  tok_euthydemus_000552 | γάρ | γάρ | turn_euthydemus_0011 | 272e | 3320 | 3323
+  tok_euthydemus_000582 | οὖν | οὖν | turn_euthydemus_0012 | 272e | 3498 | 3501
+  tok_euthydemus_000658 | οὖν | οὖν | turn_euthydemus_0012 | 273b | 3996 | 3999
+  tok_euthydemus_000697 | γάρ | γὰρ | turn_euthydemus_0012 | 273b | 4236 | 4239
+  tok_euthydemus_000727 | οὖν | οὖν | turn_euthydemus_0012 | 273c | 4421 | 4424
+  tok_euthydemus_000758 | γάρ | γὰρ | turn_euthydemus_0012 | 273c | 4594 | 4597
+  tok_euthydemus_000803 | οὖν | οὖν | turn_euthydemus_0012 | 273d | 4907 | 4910
+  tok_euthydemus_000809 | οὖν | οὖν | turn_euthydemus_0012 | 273d | 4953 | 4956
+  tok_euthydemus_000905 | γάρ | γὰρ | turn_euthydemus_0012 | 273e | 5549 | 5552
+  tok_euthydemus_000925 | γάρ | γὰρ | turn_euthydemus_0013 | 273e | 5682 | 5685
+  tok_euthydemus_000949 | γάρ | γὰρ | turn_euthydemus_0013 | 274a | 5846 | 5849
+  tok_euthydemus_001054 | γάρ | γὰρ | turn_euthydemus_0013 | 274b | 6514 | 6517
+  tok_euthydemus_001086 | οὖν | οὖν | turn_euthydemus_0013 | 274c | 6733 | 6736
+  tok_euthydemus_001104 | οὖν | οὖν | turn_euthydemus_0013 | 274c | 6846 | 6849
+  tok_euthydemus_001126 | δή | δὴ | turn_euthydemus_0013 | 274c | 6982 | 6984
+  tok_euthydemus_001139 | οὖν | οὖν | turn_euthydemus_0013 | 274d | 7063 | 7066
+  tok_euthydemus_001158 | οὖν | οὖν | turn_euthydemus_0013 | 274d | 7190 | 7193
+  tok_euthydemus_001166 | οὖν | οὖν | turn_euthydemus_0013 | 274d | 7236 | 7239
+  tok_euthydemus_001178 | οὖν | οὖν | turn_euthydemus_0013 | 274d | 7311 | 7314
+  tok_euthydemus_001257 | οὖν | οὖν | turn_euthydemus_0013 | 274e | 7767 | 7770
+  tok_euthydemus_001286 | δή | δή | turn_euthydemus_0014 | 275a | 7962 | 7964
+  tok_euthydemus_001291 | τοίνυν | τοίνυν | turn_euthydemus_0014 | 275a | 7990 | 7996
+  tok_euthydemus_001322 | γάρ | γάρ | turn_euthydemus_0014 | 275a | 8206 | 8209
+  tok_euthydemus_001363 | δή | δὴ | turn_euthydemus_0014 | 275b | 8470 | 8472
+  tok_euthydemus_001385 | οὖν | οὖν | turn_euthydemus_0014 | 275b | 8589 | 8592
+  tok_euthydemus_001404 | οὖν | οὖν | turn_euthydemus_0014 | 275b | 8717 | 8720
+  tok_euthydemus_001431 | δή | δή | turn_euthydemus_0014 | 275c | 8890 | 8892
+  tok_euthydemus_001439 | γάρ | γὰρ | turn_euthydemus_0014 | 275c | 8932 | 8935
+  tok_euthydemus_001454 | δή | δὴ | turn_euthydemus_0014 | 275c | 9037 | 9039
+  tok_euthydemus_001465 | γάρ | γὰρ | turn_euthydemus_0014 | 275c | 9095 | 9098
+  tok_euthydemus_001491 | οὖν | οὖν | turn_euthydemus_0014 | 275d | 9286 | 9289
+  tok_euthydemus_001544 | γάρ | γάρ | turn_euthydemus_0014 | 275e | 9629 | 9632
+  tok_euthydemus_001566 | μήν | μήν | turn_euthydemus_0014 | 275e | 9763 | 9766
+  tok_euthydemus_001643 | οὖν | οὖν | turn_euthydemus_0015 | 276a | 10297 | 10300
+  tok_euthydemus_001654 | οὖν | οὖν | turn_euthydemus_0015 | 276a | 10368 | 10371
+  tok_euthydemus_001699 | οὖν | οὖν | turn_euthydemus_0015 | 276b | 10639 | 10642
+  tok_euthydemus_001775 | δή | δὴ | turn_euthydemus_0015 | 276d | 11145 | 11147
+  tok_euthydemus_001829 | γάρ | γὰρ | turn_euthydemus_0015 | 276d | 11489 | 11492
+  tok_euthydemus_001862 | μήν | μὴν | turn_euthydemus_0015 | 276e | 11699 | 11702
+  tok_euthydemus_001932 | οὖν | οὖν | turn_euthydemus_0016 | 277a | 12125 | 12128
+  tok_euthydemus_001954 | οὖν | οὖν | turn_euthydemus_0016 | 277a | 12284 | 12287
+  tok_euthydemus_002025 | γάρ | γάρ | turn_euthydemus_0016 | 277b | 12737 | 12740
+  tok_euthydemus_002066 | οὖν | οὖν | turn_euthydemus_0016 | 277c | 12986 | 12989
+  tok_euthydemus_002118 | δή | δὴ | turn_euthydemus_0016 | 277d | 13309 | 13311
+  tok_euthydemus_002155 | γάρ | γὰρ | turn_euthydemus_0016 | 277d | 13557 | 13560
+  tok_euthydemus_002185 | γάρ | γὰρ | turn_euthydemus_0016 | 277d | 13724 | 13727
+  tok_euthydemus_002214 | οὖν | οὖν | turn_euthydemus_0016 | 277e | 13892 | 13895
+  tok_euthydemus_002225 | γάρ | γάρ | turn_euthydemus_0017 | 277e | 13958 | 13961
+  tok_euthydemus_002235 | δή | δὴ | turn_euthydemus_0017 | 277e | 14019 | 14021
+  tok_euthydemus_002347 | δή | δὴ | turn_euthydemus_0017 | 278b | 14705 | 14707
+  tok_euthydemus_002417 | οὖν | οὖν | turn_euthydemus_0017 | 278c | 15142 | 15145
+  tok_euthydemus_002447 | γάρ | γὰρ | turn_euthydemus_0017 | 278c | 15321 | 15324
+  tok_euthydemus_002464 | οὖν | οὖν | turn_euthydemus_0017 | 278c | 15430 | 15433
+  tok_euthydemus_002479 | δή | δὴ | turn_euthydemus_0017 | 278d | 15519 | 15521
+  tok_euthydemus_002507 | οὖν | οὖν | turn_euthydemus_0017 | 278d | 15703 | 15706
+  tok_euthydemus_002521 | γάρ | γὰρ | turn_euthydemus_0017 | 278d | 15788 | 15791
+  tok_euthydemus_002532 | οὖν | οὖν | turn_euthydemus_0017 | 278e | 15881 | 15884
+  tok_euthydemus_002566 | γάρ | γὰρ | turn_euthydemus_0017 | 278e | 16089 | 16092
+  tok_euthydemus_002574 | γάρ | γὰρ | turn_euthydemus_0017 | 278e | 16129 | 16132
+  tok_euthydemus_002592 | δή | δὴ | turn_euthydemus_0018 | 279a | 16233 | 16235
+  tok_euthydemus_002616 | γάρ | γάρ | turn_euthydemus_0018 | 279a | 16372 | 16375
+  tok_euthydemus_002625 | δή | δή | turn_euthydemus_0018 | 279a | 16419 | 16421
+  tok_euthydemus_002649 | γάρ | γὰρ | turn_euthydemus_0018 | 279a | 16549 | 16552
+  tok_euthydemus_002658 | γάρ | γάρ | turn_euthydemus_0018 | 279a | 16593 | 16596
+  tok_euthydemus_002679 | μήν | μὴν | turn_euthydemus_0018 | 279b | 16723 | 16726
+  tok_euthydemus_002695 | οὖν | οὖν | turn_euthydemus_0018 | 279b | 16812 | 16815
+  tok_euthydemus_002732 | γάρ | γὰρ | turn_euthydemus_0018 | 279b | 17012 | 17015
+  tok_euthydemus_002765 | δή | δὴ | turn_euthydemus_0018 | 279c | 17199 | 17201
+  tok_euthydemus_002841 | δή | δή | turn_euthydemus_0018 | 279d | 17636 | 17638
+  tok_euthydemus_002857 | οὖν | οὖν | turn_euthydemus_0018 | 279d | 17731 | 17734
+  tok_euthydemus_002858 | δή | δὴ | turn_euthydemus_0018 | 279d | 17735 | 17737
+  tok_euthydemus_002994 | οὖν | οὖν | turn_euthydemus_0019 | 280a | 18565 | 18568
+  tok_euthydemus_003019 | γάρ | γὰρ | turn_euthydemus_0019 | 280a | 18716 | 18719
+  tok_euthydemus_003034 | γάρ | γὰρ | turn_euthydemus_0019 | 280a | 18801 | 18804
+  tok_euthydemus_003072 | γάρ | γάρ | turn_euthydemus_0019 | 280b | 19079 | 19082
+  tok_euthydemus_003086 | οὖν | οὖν | turn_euthydemus_0019 | 280b | 19162 | 19165
+  tok_euthydemus_003104 | οὖν | οὖν | turn_euthydemus_0019 | 280b | 19259 | 19262
+  tok_euthydemus_003259 | οὖν | οὖν | turn_euthydemus_0019 | 280e | 20162 | 20165
+  tok_euthydemus_003302 | γάρ | γάρ | turn_euthydemus_0020 | 280e | 20392 | 20395
+  tok_euthydemus_003319 | γάρ | γὰρ | turn_euthydemus_0020 | 280e | 20478 | 20481
+  tok_euthydemus_003333 | οὖν | οὖν | turn_euthydemus_0020 | 281a | 20558 | 20561
+  tok_euthydemus_003360 | μήν | μήν | turn_euthydemus_0020 | 281a | 20699 | 20702
+  tok_euthydemus_003377 | οὖν | οὖν | turn_euthydemus_0020 | 281a | 20791 | 20794
+  tok_euthydemus_003439 | οὖν | οὖν | turn_euthydemus_0020 | 281b | 21150 | 21153
+  tok_euthydemus_003501 | οὖν | οὖν | turn_euthydemus_0020 | 281c | 21509 | 21512
+  tok_euthydemus_003639 | οὖν | οὖν | turn_euthydemus_0020 | 281e | 22347 | 22350
+  tok_euthydemus_003672 | τοίνυν | τοίνυν | turn_euthydemus_0021 | 282a | 22533 | 22539
+  tok_euthydemus_003706 | δή | δή | turn_euthydemus_0021 | 282a | 22775 | 22777
+  tok_euthydemus_003793 | οὖν | οὖν | turn_euthydemus_0021 | 282b | 23345 | 23348
+  tok_euthydemus_003820 | γάρ | γὰρ | turn_euthydemus_0021 | 282c | 23497 | 23500
+  tok_euthydemus_003867 | οὖν | οὖν | turn_euthydemus_0021 | 282c | 23774 | 23777
+  tok_euthydemus_003900 | οὖν | οὖν | turn_euthydemus_0021 | 282d | 23967 | 23970
+  tok_euthydemus_003982 | γάρ | γὰρ | turn_euthydemus_0021 | 282e | 24488 | 24491
+  tok_euthydemus_004001 | οὖν | οὖν | turn_euthydemus_0022 | 283a | 24612 | 24615
+  tok_euthydemus_004036 | οὖν | οὖν | turn_euthydemus_0022 | 283a | 24825 | 24828
+  tok_euthydemus_004059 | οὖν | οὖν | turn_euthydemus_0022 | 283b | 24993 | 24996
+  tok_euthydemus_004064 | γάρ | γάρ | turn_euthydemus_0022 | 283b | 25024 | 25027
+  tok_euthydemus_004134 | οὖν | οὖν | turn_euthydemus_0022 | 283c | 25482 | 25485
+  tok_euthydemus_004146 | μήν | μήν | turn_euthydemus_0022 | 283c | 25573 | 25576
+  tok_euthydemus_004162 | γάρ | γὰρ | turn_euthydemus_0022 | 283c | 25653 | 25656
+  tok_euthydemus_004168 | οὖν | οὖν | turn_euthydemus_0022 | 283c | 25685 | 25688
+  tok_euthydemus_004177 | οὖν | οὖν | turn_euthydemus_0022 | 283c | 25741 | 25744
+  tok_euthydemus_004237 | οὖν | οὖν | turn_euthydemus_0022 | 283d | 26083 | 26086
+  tok_euthydemus_004252 | καίτοι | καίτοι | turn_euthydemus_0022 | 283d | 26179 | 26185
+  tok_euthydemus_004369 | γάρ | γὰρ | turn_euthydemus_0023 | 284a | 26866 | 26869
+  tok_euthydemus_004375 | μήν | μὴν | turn_euthydemus_0023 | 284a | 26894 | 26897
+  tok_euthydemus_004398 | μήν | μὴν | turn_euthydemus_0023 | 284a | 27012 | 27015
+  tok_euthydemus_004455 | οὖν | οὖν | turn_euthydemus_0023 | 284b | 27312 | 27315
+  tok_euthydemus_004465 | οὖν | οὖν | turn_euthydemus_0023 | 284b | 27365 | 27368
+  tok_euthydemus_004492 | οὖν | οὖν | turn_euthydemus_0023 | 284b | 27511 | 27514
+  tok_euthydemus_004504 | οὖν | οὖν | turn_euthydemus_0023 | 284b | 27583 | 27586
+  tok_euthydemus_004533 | γάρ | γὰρ | turn_euthydemus_0023 | 284c | 27749 | 27752
+  tok_euthydemus_004594 | γάρ | γάρ | turn_euthydemus_0023 | 284d | 28086 | 28089
+  tok_euthydemus_004614 | οὖν | οὖν | turn_euthydemus_0023 | 284d | 28194 | 28197
+  tok_euthydemus_004763 | οὖν | οὖν | turn_euthydemus_0024 | 285a | 29074 | 29077
+  tok_euthydemus_004799 | γάρ | γὰρ | turn_euthydemus_0024 | 285a | 29300 | 29303
+  tok_euthydemus_004861 | οὖν | οὖν | turn_euthydemus_0024 | 285b | 29718 | 29721
+  tok_euthydemus_004965 | καίτοι | καίτοι | turn_euthydemus_0024 | 285d | 30364 | 30370
+  tok_euthydemus_005000 | γάρ | γάρ | turn_euthydemus_0024 | 285d | 30583 | 30586
+  tok_euthydemus_005065 | οὖν | οὖν | turn_euthydemus_0025 | 285e | 31033 | 31036
+  tok_euthydemus_005087 | γάρ | γὰρ | turn_euthydemus_0025 | 286a | 31146 | 31149
+  tok_euthydemus_005101 | γάρ | γὰρ | turn_euthydemus_0025 | 286a | 31229 | 31232
+  tok_euthydemus_005108 | οὖν | οὖν | turn_euthydemus_0025 | 286a | 31262 | 31265
+  tok_euthydemus_005109 | δή | δὴ | turn_euthydemus_0025 | 286a | 31266 | 31268
+  tok_euthydemus_005124 | οὖν | οὖν | turn_euthydemus_0025 | 286a | 31341 | 31344
+  tok_euthydemus_005226 | γάρ | γάρ | turn_euthydemus_0025 | 286b | 31952 | 31955
+  tok_euthydemus_005234 | δή | δὴ | turn_euthydemus_0025 | 286c | 31999 | 32001
+  tok_euthydemus_005241 | γάρ | γὰρ | turn_euthydemus_0025 | 286c | 32039 | 32042
+  tok_euthydemus_005283 | γάρ | γὰρ | turn_euthydemus_0025 | 286c | 32286 | 32289
+  tok_euthydemus_005288 | γάρ | γάρ | turn_euthydemus_0025 | 286c | 32309 | 32312
+  tok_euthydemus_005299 | οὖν | οὖν | turn_euthydemus_0025 | 286d | 32390 | 32393
+  tok_euthydemus_005361 | δή | δὴ | turn_euthydemus_0025 | 286d | 32765 | 32767
+  tok_euthydemus_005402 | γάρ | γὰρ | turn_euthydemus_0025 | 286e | 33042 | 33045
+  tok_euthydemus_005435 | οὖν | οὖν | turn_euthydemus_0025 | 286e | 33204 | 33207
+  tok_euthydemus_005445 | γάρ | γὰρ | turn_euthydemus_0026 | 287a | 33274 | 33277
+  tok_euthydemus_005465 | γάρ | γὰρ | turn_euthydemus_0026 | 287a | 33400 | 33403
+  tok_euthydemus_005488 | γάρ | γὰρ | turn_euthydemus_0026 | 287a | 33534 | 33537
+  tok_euthydemus_005555 | γάρ | γάρ | turn_euthydemus_0026 | 287b | 33966 | 33969
+  tok_euthydemus_005564 | γάρ | γὰρ | turn_euthydemus_0026 | 287b | 34020 | 34023
+  tok_euthydemus_005577 | γάρ | γὰρ | turn_euthydemus_0026 | 287b | 34102 | 34105
+  tok_euthydemus_005695 | τοίνυν | τοίνυν | turn_euthydemus_0026 | 287d | 34847 | 34853
+  tok_euthydemus_005704 | γάρ | γὰρ | turn_euthydemus_0026 | 287d | 34892 | 34895
+  tok_euthydemus_005709 | οὖν | οὖν | turn_euthydemus_0026 | 287d | 34928 | 34931
+  tok_euthydemus_005723 | οὖν | οὖν | turn_euthydemus_0026 | 287d | 35009 | 35012
+  tok_euthydemus_005734 | οὖν | οὖν | turn_euthydemus_0026 | 287e | 35075 | 35078
+  tok_euthydemus_005774 | γάρ | γὰρ | turn_euthydemus_0027 | 287e | 35278 | 35281
+  tok_euthydemus_005927 | οὖν | οὖν | turn_euthydemus_0027 | 288c | 36245 | 36248
+  tok_euthydemus_005945 | γάρ | γάρ | turn_euthydemus_0027 | 288c | 36353 | 36356
+  tok_euthydemus_005962 | οὖν | οὖν | turn_euthydemus_0027 | 288c | 36485 | 36488
+  tok_euthydemus_005975 | γάρ | γὰρ | turn_euthydemus_0027 | 288c | 36565 | 36568
+  tok_euthydemus_006013 | οὖν | οὖν | turn_euthydemus_0027 | 288d | 36827 | 36830
+  tok_euthydemus_006021 | γάρ | γάρ | turn_euthydemus_0027 | 288d | 36895 | 36898
+  tok_euthydemus_006039 | οὖν | οὖν | turn_euthydemus_0027 | 288d | 36987 | 36990
+  tok_euthydemus_006059 | οὖν | οὖν | turn_euthydemus_0027 | 288e | 37112 | 37115
+  tok_euthydemus_006118 | γάρ | γὰρ | turn_euthydemus_0028 | 289a | 37471 | 37474
+  tok_euthydemus_006244 | γάρ | γὰρ | turn_euthydemus_0028 | 289c | 38255 | 38258
+  tok_euthydemus_006245 | δή | δὴ | turn_euthydemus_0028 | 289c | 38259 | 38261
+  tok_euthydemus_006260 | γάρ | γὰρ | turn_euthydemus_0028 | 289c | 38335 | 38338
+  tok_euthydemus_006272 | μήν | μὴν | turn_euthydemus_0028 | 289c | 38418 | 38421
+  tok_euthydemus_006279 | γάρ | γὰρ | turn_euthydemus_0028 | 289c | 38460 | 38463
+  tok_euthydemus_006349 | οὖν | οὖν | turn_euthydemus_0028 | 289d | 38928 | 38931
+  tok_euthydemus_006384 | καίτοι | καίτοι | turn_euthydemus_0028 | 289d | 39124 | 39130
+  tok_euthydemus_006393 | δή | δὴ | turn_euthydemus_0028 | 289e | 39187 | 39189
+  tok_euthydemus_006397 | γάρ | γάρ | turn_euthydemus_0028 | 289e | 39210 | 39213
+  tok_euthydemus_006427 | γάρ | γὰρ | turn_euthydemus_0028 | 289e | 39393 | 39396
+  tok_euthydemus_006440 | γάρ | γὰρ | turn_euthydemus_0029 | 290a | 39473 | 39476
+  tok_euthydemus_006491 | οὖν | οὖν | turn_euthydemus_0029 | 290a | 39761 | 39764
+  tok_euthydemus_006547 | δή | δὴ | turn_euthydemus_0029 | 290b | 40112 | 40114
+  tok_euthydemus_006548 | οὖν | οὖν | turn_euthydemus_0029 | 290b | 40115 | 40118
+  tok_euthydemus_006596 | γάρ | γάρ | turn_euthydemus_0029 | 290c | 40428 | 40431
+  tok_euthydemus_006601 | γάρ | γὰρ | turn_euthydemus_0029 | 290c | 40451 | 40454
+  tok_euthydemus_006612 | οὖν | οὖν | turn_euthydemus_0029 | 290c | 40525 | 40528
+  tok_euthydemus_006650 | οὖν | οὖν | turn_euthydemus_0029 | 290c | 40786 | 40789
+  tok_euthydemus_006672 | γάρ | γὰρ | turn_euthydemus_0029 | 290d | 40938 | 40941
+  tok_euthydemus_006687 | οὖν | οὖν | turn_euthydemus_0029 | 290d | 41048 | 41051
+  tok_euthydemus_006714 | δή | δή | turn_euthydemus_0029 | 290d | 41208 | 41210
+  tok_euthydemus_006743 | γάρ | γὰρ | turn_euthydemus_0032 | 290e | 41381 | 41384
+  tok_euthydemus_006781 | μήν | μὴν | turn_euthydemus_0035 | 291a | 41598 | 41601
+  tok_euthydemus_006807 | γάρ | γὰρ | turn_euthydemus_0035 | 291a | 41747 | 41750
+  tok_euthydemus_006873 | οὖν | οὖν | turn_euthydemus_0037 | 291b | 42136 | 42139
+  tok_euthydemus_006881 | δή | δὴ | turn_euthydemus_0037 | 291b | 42172 | 42174
+  tok_euthydemus_006929 | δή | δὴ | turn_euthydemus_0038 | 291c | 42496 | 42498
+  tok_euthydemus_006939 | γάρ | γὰρ | turn_euthydemus_0039 | 291c | 42551 | 42554
+  tok_euthydemus_006940 | δή | δὴ | turn_euthydemus_0039 | 291c | 42555 | 42557
+  tok_euthydemus_006953 | οὖν | οὖν | turn_euthydemus_0040 | 291c | 42616 | 42619
+  tok_euthydemus_006954 | δή | δή | turn_euthydemus_0040 | 291c | 42620 | 42622
+  tok_euthydemus_006978 | οὖν | οὖν | turn_euthydemus_0041 | 291c | 42762 | 42765
+  tok_euthydemus_007037 | γάρ | γὰρ | turn_euthydemus_0043 | 291d | 43113 | 43116
+  tok_euthydemus_007038 | δή | δὴ | turn_euthydemus_0043 | 291d | 43117 | 43119
+  tok_euthydemus_007073 | οὖν | οὖν | turn_euthydemus_0045 | 291e | 43322 | 43325
+  tok_euthydemus_007152 | γάρ | γὰρ | turn_euthydemus_0051 | 292a | 43776 | 43779
+  tok_euthydemus_007274 | οὖν | οὖν | turn_euthydemus_0059 | 292c | 44503 | 44506
+  tok_euthydemus_007285 | γάρ | γὰρ | turn_euthydemus_0060 | 292c | 44566 | 44569
+  tok_euthydemus_007320 | δή | δὴ | turn_euthydemus_0063 | 292d | 44783 | 44785
+  tok_euthydemus_007327 | γάρ | γὰρ | turn_euthydemus_0063 | 292d | 44821 | 44824
+  tok_euthydemus_007348 | δή | δὴ | turn_euthydemus_0063 | 292d | 44958 | 44960
+  tok_euthydemus_007349 | οὖν | οὖν | turn_euthydemus_0063 | 292d | 44961 | 44964
+  tok_euthydemus_007451 | οὖν | οὖν | turn_euthydemus_0067 | 292e | 45559 | 45562
+  tok_euthydemus_007506 | οὖν | οὖν | turn_euthydemus_0068 | 293a | 45909 | 45912
+  tok_euthydemus_007515 | γάρ | γὰρ | turn_euthydemus_0069 | 293a | 45962 | 45965
+  tok_euthydemus_007528 | δή | δή | turn_euthydemus_0069 | 293b | 46047 | 46049
+  tok_euthydemus_007556 | οὖν | οὖν | turn_euthydemus_0069 | 293b | 46206 | 46209
+  tok_euthydemus_007559 | τοίνυν | τοίνυν | turn_euthydemus_0069 | 293b | 46230 | 46236
+  tok_euthydemus_007567 | γάρ | γὰρ | turn_euthydemus_0069 | 293b | 46271 | 46274
+  tok_euthydemus_007574 | δή | δή | turn_euthydemus_0069 | 293b | 46318 | 46320
+  tok_euthydemus_007593 | οὖν | οὖν | turn_euthydemus_0069 | 293b | 46420 | 46423
+  tok_euthydemus_007666 | οὖν | οὖν | turn_euthydemus_0069 | 293c | 46833 | 46836
+  tok_euthydemus_007699 | γάρ | γὰρ | turn_euthydemus_0069 | 293d | 47016 | 47019
+  tok_euthydemus_007702 | δή | δὴ | turn_euthydemus_0069 | 293d | 47036 | 47038
+  tok_euthydemus_007705 | οὖν | οὖν | turn_euthydemus_0069 | 293d | 47053 | 47056
+  tok_euthydemus_007713 | δή | δὴ | turn_euthydemus_0069 | 293d | 47106 | 47108
+  tok_euthydemus_007729 | γάρ | γὰρ | turn_euthydemus_0069 | 293d | 47195 | 47198
+  tok_euthydemus_007742 | δή | δὴ | turn_euthydemus_0069 | 293d | 47274 | 47276
+  tok_euthydemus_007757 | δή | δὴ | turn_euthydemus_0069 | 293e | 47367 | 47369
+  tok_euthydemus_007777 | γάρ | γάρ | turn_euthydemus_0069 | 293e | 47473 | 47476
+  tok_euthydemus_007870 | γάρ | γὰρ | turn_euthydemus_0070 | 294a | 48048 | 48051
+  tok_euthydemus_007911 | γάρ | γάρ | turn_euthydemus_0070 | 294b | 48289 | 48292
+  tok_euthydemus_008040 | οὖν | οὖν | turn_euthydemus_0070 | 294d | 49146 | 49149
+  tok_euthydemus_008056 | γάρ | γὰρ | turn_euthydemus_0070 | 294d | 49263 | 49266
+  tok_euthydemus_008204 | μήν | μήν | turn_euthydemus_0071 | 295a | 50237 | 50240
+  tok_euthydemus_008212 | γάρ | γάρ | turn_euthydemus_0071 | 295a | 50282 | 50285
+  tok_euthydemus_008238 | δή | δή | turn_euthydemus_0071 | 295a | 50432 | 50434
+  tok_euthydemus_008244 | οὖν | οὖν | turn_euthydemus_0071 | 295b | 50485 | 50488
+  tok_euthydemus_008255 | οὖν | οὖν | turn_euthydemus_0071 | 295b | 50545 | 50548
+  tok_euthydemus_008268 | γάρ | γάρ | turn_euthydemus_0071 | 295b | 50617 | 50620
+  tok_euthydemus_008292 | γάρ | γὰρ | turn_euthydemus_0071 | 295b | 50758 | 50761
+  tok_euthydemus_008311 | γάρ | γὰρ | turn_euthydemus_0071 | 295c | 50890 | 50893
+  tok_euthydemus_008323 | τοίνυν | τοίνυν | turn_euthydemus_0071 | 295c | 50954 | 50960
+  tok_euthydemus_008328 | οὖν | οὖν | turn_euthydemus_0071 | 295c | 50994 | 50997
+  tok_euthydemus_008362 | τοίνυν | τοίνυν | turn_euthydemus_0071 | 295c | 51195 | 51201
+  tok_euthydemus_008405 | οὖν | οὖν | turn_euthydemus_0071 | 295d | 51490 | 51493
+  tok_euthydemus_008426 | οὖν | οὖν | turn_euthydemus_0071 | 295d | 51619 | 51622
+  tok_euthydemus_008443 | οὖν | οὖν | turn_euthydemus_0071 | 295d | 51735 | 51738
+  tok_euthydemus_008453 | γάρ | γὰρ | turn_euthydemus_0071 | 295e | 51802 | 51805
+  tok_euthydemus_008466 | οὖν | οὖν | turn_euthydemus_0071 | 295e | 51890 | 51893
+  tok_euthydemus_008471 | δή | δή | turn_euthydemus_0071 | 295e | 51924 | 51926
+  tok_euthydemus_008494 | γάρ | γὰρ | turn_euthydemus_0072 | 296a | 52072 | 52075
+  tok_euthydemus_008515 | γάρ | γὰρ | turn_euthydemus_0072 | 296a | 52215 | 52218
+  tok_euthydemus_008633 | γάρ | γάρ | turn_euthydemus_0072 | 296b | 52918 | 52921
+  tok_euthydemus_008648 | γάρ | γὰρ | turn_euthydemus_0072 | 296c | 53022 | 53025
+  tok_euthydemus_008658 | τοίνυν | τοίνυν | turn_euthydemus_0072 | 296c | 53072 | 53078
+  tok_euthydemus_008663 | γάρ | γὰρ | turn_euthydemus_0072 | 296c | 53102 | 53105
+  tok_euthydemus_008695 | γάρ | γὰρ | turn_euthydemus_0072 | 296c | 53328 | 53331
+  tok_euthydemus_008702 | οὖν | οὖν | turn_euthydemus_0072 | 296c | 53375 | 53378
+  tok_euthydemus_008751 | δή | δὴ | turn_euthydemus_0072 | 296d | 53665 | 53667
+  tok_euthydemus_008784 | γάρ | γὰρ | turn_euthydemus_0072 | 296e | 53844 | 53847
+  tok_euthydemus_008912 | γάρ | γάρ | turn_euthydemus_0073 | 297b | 54657 | 54660
+  tok_euthydemus_008959 | γάρ | γάρ | turn_euthydemus_0073 | 297b | 54968 | 54971
+  tok_euthydemus_008974 | γάρ | γάρ | turn_euthydemus_0073 | 297b | 55041 | 55044
+  tok_euthydemus_009054 | δή | δή | turn_euthydemus_0073 | 297d | 55563 | 55565
+  tok_euthydemus_009073 | τοίνυν | τοίνυν | turn_euthydemus_0073 | 297d | 55685 | 55691
+  tok_euthydemus_009083 | γάρ | γὰρ | turn_euthydemus_0073 | 297d | 55744 | 55747
+  tok_euthydemus_009105 | δή | δή | turn_euthydemus_0073 | 297d | 55869 | 55871
+  tok_euthydemus_009108 | δή | δή | turn_euthydemus_0073 | 297d | 55890 | 55892
+  tok_euthydemus_009125 | γάρ | γὰρ | turn_euthydemus_0073 | 297e | 55993 | 55996
+  tok_euthydemus_009171 | γάρ | γὰρ | turn_euthydemus_0073 | 297e | 56268 | 56271
+  tok_euthydemus_009210 | οὖν | οὖν | turn_euthydemus_0074 | 298a | 56490 | 56493
+  tok_euthydemus_009247 | οὖν | οὖν | turn_euthydemus_0074 | 298a | 56673 | 56676
+  tok_euthydemus_009286 | γάρ | γὰρ | turn_euthydemus_0074 | 298b | 56892 | 56895
+  tok_euthydemus_009395 | γάρ | γάρ | turn_euthydemus_0074 | 298c | 57507 | 57510
+  tok_euthydemus_009408 | γάρ | γὰρ | turn_euthydemus_0074 | 298c | 57587 | 57590
+  tok_euthydemus_009476 | γάρ | γὰρ | turn_euthydemus_0074 | 298d | 57937 | 57940
+  tok_euthydemus_009487 | γάρ | γὰρ | turn_euthydemus_0074 | 298d | 57990 | 57993
+  tok_euthydemus_009506 | γάρ | γάρ | turn_euthydemus_0074 | 298d | 58099 | 58102
+  tok_euthydemus_009518 | οὖν | οὖν | turn_euthydemus_0074 | 298d | 58164 | 58167
+  tok_euthydemus_009541 | οὖν | οὖν | turn_euthydemus_0074 | 298e | 58302 | 58305
+  tok_euthydemus_009598 | γάρ | γὰρ | turn_euthydemus_0074 | 298e | 58619 | 58622
+  tok_euthydemus_009672 | γάρ | γάρ | turn_euthydemus_0075 | 299a | 59100 | 59103
+  tok_euthydemus_009704 | καίτοι | καίτοι | turn_euthydemus_0075 | 299b | 59294 | 59300
+  tok_euthydemus_009718 | γάρ | γὰρ | turn_euthydemus_0075 | 299b | 59374 | 59377
+  tok_euthydemus_009866 | οὖν | οὖν | turn_euthydemus_0075 | 299d | 60226 | 60229
+  tok_euthydemus_009889 | οὖν | οὖν | turn_euthydemus_0075 | 299d | 60360 | 60363
+  tok_euthydemus_009931 | οὖν | οὖν | turn_euthydemus_0075 | 299e | 60592 | 60595
+  tok_euthydemus_010015 | οὖν | οὖν | turn_euthydemus_0076 | 300a | 61100 | 61103
+  tok_euthydemus_010021 | οὖν | οὖν | turn_euthydemus_0076 | 300a | 61135 | 61138
+  tok_euthydemus_010064 | γάρ | γὰρ | turn_euthydemus_0076 | 300b | 61392 | 61395
+  tok_euthydemus_010088 | οὖν | οὖν | turn_euthydemus_0076 | 300b | 61527 | 61530
+  tok_euthydemus_010214 | γάρ | γὰρ | turn_euthydemus_0076 | 300d | 62283 | 62286
+  tok_euthydemus_010275 | γάρ | γάρ | turn_euthydemus_0076 | 300d | 62646 | 62649
+  tok_euthydemus_010296 | γάρ | γὰρ | turn_euthydemus_0076 | 300e | 62787 | 62790
+  tok_euthydemus_010353 | οὖν | οὖν | turn_euthydemus_0077 | 301a | 63136 | 63139
+  tok_euthydemus_010403 | γάρ | γὰρ | turn_euthydemus_0077 | 301b | 63457 | 63460
+  tok_euthydemus_010452 | γάρ | γὰρ | turn_euthydemus_0077 | 301b | 63719 | 63722
+  tok_euthydemus_010498 | οὖν | οὖν | turn_euthydemus_0077 | 301c | 64015 | 64018
+  tok_euthydemus_010566 | τοίνυν | τοίνυν | turn_euthydemus_0077 | 301d | 64455 | 64461
+  tok_euthydemus_010652 | γάρ | γὰρ | turn_euthydemus_0077 | 301e | 64964 | 64967
+  tok_euthydemus_010662 | οὖν | οὖν | turn_euthydemus_0078 | 301e | 65027 | 65030
+  tok_euthydemus_010711 | γάρ | γὰρ | turn_euthydemus_0078 | 302a | 65278 | 65281
+  tok_euthydemus_010728 | οὖν | οὖν | turn_euthydemus_0078 | 302a | 65380 | 65383
+  tok_euthydemus_010751 | οὖν | οὖν | turn_euthydemus_0078 | 302b | 65507 | 65510
+  tok_euthydemus_010854 | γάρ | γὰρ | turn_euthydemus_0078 | 302c | 66097 | 66100
+  tok_euthydemus_010931 | γάρ | γάρ | turn_euthydemus_0078 | 302d | 66550 | 66553
+  tok_euthydemus_010960 | οὖν | οὖν | turn_euthydemus_0078 | 302d | 66698 | 66701
+  tok_euthydemus_010973 | γάρ | γὰρ | turn_euthydemus_0078 | 302d | 66770 | 66773
+  tok_euthydemus_010984 | γάρ | γὰρ | turn_euthydemus_0078 | 302e | 66840 | 66843
+  tok_euthydemus_011026 | δή | δὴ | turn_euthydemus_0078 | 302e | 67056 | 67058
+  tok_euthydemus_011035 | γάρ | γάρ | turn_euthydemus_0078 | 302e | 67104 | 67107
+  tok_euthydemus_011042 | δή | δή | turn_euthydemus_0079 | 302e | 67142 | 67144
+  tok_euthydemus_011078 | οὖν | οὖν | turn_euthydemus_0079 | 303a | 67342 | 67345
+  tok_euthydemus_011105 | οὖν | οὖν | turn_euthydemus_0079 | 303a | 67503 | 67506
+  tok_euthydemus_011153 | γάρ | γὰρ | turn_euthydemus_0079 | 303b | 67808 | 67811
+  tok_euthydemus_011185 | οὖν | οὖν | turn_euthydemus_0079 | 303b | 67996 | 67999
+  tok_euthydemus_011233 | οὖν | οὖν | turn_euthydemus_0079 | 303c | 68311 | 68314
+  tok_euthydemus_011259 | δή | δὴ | turn_euthydemus_0079 | 303c | 68462 | 68464
+  tok_euthydemus_011273 | γάρ | γὰρ | turn_euthydemus_0079 | 303d | 68545 | 68548
+  tok_euthydemus_011380 | δή | δὴ | turn_euthydemus_0079 | 303e | 69172 | 69174
+  tok_euthydemus_011421 | οὖν | οὖν | turn_euthydemus_0080 | 304a | 69422 | 69425
+  tok_euthydemus_011500 | γάρ | γὰρ | turn_euthydemus_0080 | 304b | 69917 | 69920
+  tok_euthydemus_011536 | οὖν | οὖν | turn_euthydemus_0080 | 304b | 70142 | 70145
+  tok_euthydemus_011584 | μήν | μήν | turn_euthydemus_0081 | 304c | 70453 | 70456
+  tok_euthydemus_011607 | δή | δὴ | turn_euthydemus_0081 | 304c | 70590 | 70592
+  tok_euthydemus_011680 | γάρ | γὰρ | turn_euthydemus_0081 | 304d | 71006 | 71009
+  tok_euthydemus_011690 | μήν | μήν | turn_euthydemus_0081 | 304d | 71059 | 71062
+  tok_euthydemus_011717 | οὖν | οὖν | turn_euthydemus_0081 | 304e | 71216 | 71219
+  tok_euthydemus_011743 | γάρ | γάρ | turn_euthydemus_0081 | 304e | 71366 | 71369
+  tok_euthydemus_011769 | οὖν | οὖν | turn_euthydemus_0082 | 305a | 71521 | 71524
+  tok_euthydemus_011814 | γάρ | γάρ | turn_euthydemus_0082 | 305a | 71792 | 71795
+  tok_euthydemus_011947 | γάρ | γάρ | turn_euthydemus_0085 | 305c | 72641 | 72644
+  tok_euthydemus_011991 | οὖν | οὖν | turn_euthydemus_0085 | 305d | 72930 | 72933
+  tok_euthydemus_012014 | γάρ | γὰρ | turn_euthydemus_0085 | 305d | 73084 | 73087
+  tok_euthydemus_012039 | γάρ | γὰρ | turn_euthydemus_0085 | 305d | 73244 | 73247
+  tok_euthydemus_012050 | γάρ | γὰρ | turn_euthydemus_0085 | 305e | 73326 | 73329
+  tok_euthydemus_012065 | οὖν | οὖν | turn_euthydemus_0086 | 305e | 73416 | 73419
+  tok_euthydemus_012073 | γάρ | γάρ | turn_euthydemus_0086 | 305e | 73460 | 73463
+  tok_euthydemus_012086 | γάρ | γὰρ | turn_euthydemus_0087 | 305e | 73525 | 73528
+  tok_euthydemus_012096 | γάρ | γὰρ | turn_euthydemus_0087 | 306a | 73591 | 73594
+  tok_euthydemus_012175 | οὖν | οὖν | turn_euthydemus_0087 | 306b | 74050 | 74053
+  tok_euthydemus_012199 | γάρ | γάρ | turn_euthydemus_0087 | 306b | 74201 | 74204
+  tok_euthydemus_012227 | οὖν | οὖν | turn_euthydemus_0087 | 306b | 74353 | 74356
+  tok_euthydemus_012276 | οὖν | οὖν | turn_euthydemus_0087 | 306c | 74658 | 74661
+  tok_euthydemus_012291 | γάρ | γὰρ | turn_euthydemus_0087 | 306c | 74757 | 74760
+  tok_euthydemus_012308 | μήν | μήν | turn_euthydemus_0088 | 306d | 74876 | 74879
+  tok_euthydemus_012330 | οὖν | οὖν | turn_euthydemus_0088 | 306d | 74988 | 74991
+  tok_euthydemus_012349 | οὖν | οὖν | turn_euthydemus_0088 | 306d | 75101 | 75104
+  tok_euthydemus_012470 | οὖν | οὖν | turn_euthydemus_0091 | 307a | 75865 | 75868
+  tok_euthydemus_012494 | οὖν | οὖν | turn_euthydemus_0093 | 307b | 76001 | 76004
+  tok_euthydemus_012516 | τοίνυν | τοίνυν | turn_euthydemus_0095 | 307b | 76124 | 76130
+  tok_euthydemus_012570 | δή | δὴ | turn_euthydemus_0095 | 307c | 76446 | 76448

@@ -1,0 +1,413 @@
+schema_version: 1
+dialogue: apology
+source_path: raw/plato/greek/apology.txt
+source_sha256: 37c1ce832119acb9c2872c1c04433a3895a32679f2231f239a1b150c9a01c4d8
+token_index_path: derived/plato/tokens/apology.toon
+token_index_sha256: 7c115c3dee938eb24eecb3298d87ebe291769c6aacd824faade3d3986b4e55bd
+turn_index_path: derived/plato/turns/apology.toon
+turn_index_sha256: b093ce5bf1903e2ba655f7a366f88b7bff76ee522b7569de5b93d71bc27d51dd
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 8750
+excluded_siglum_token_count: 0
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  apology | 8750 | 1 | 2 | 7 | 125 | 68 | 59
+speakers[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  (none) | 8750 | 1 | 2 | 7 | 125 | 68 | 59
+turns[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_apology_0001 | 8750 | 1 | 2 | 7 | 125 | 68 | 59
+markers[125]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  17a | 55 | 0 | 0 | 1 | 0 | 1 | 0
+  17b | 81 | 0 | 0 | 0 | 2 | 1 | 0
+  17c | 78 | 0 | 0 | 0 | 2 | 0 | 0
+  17d | 46 | 0 | 0 | 0 | 1 | 2 | 0
+  18a | 80 | 0 | 0 | 0 | 2 | 1 | 1
+  18b | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  18c | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  18d | 73 | 0 | 0 | 0 | 1 | 1 | 0
+  18e | 35 | 0 | 0 | 0 | 1 | 0 | 1
+  19a | 71 | 0 | 0 | 0 | 0 | 2 | 0
+  19b | 45 | 0 | 0 | 0 | 0 | 1 | 2
+  19c | 71 | 0 | 0 | 0 | 2 | 0 | 0
+  19d | 76 | 0 | 0 | 0 | 1 | 1 | 0
+  19e | 59 | 0 | 0 | 0 | 1 | 0 | 0
+  20a | 69 | 0 | 0 | 0 | 2 | 1 | 0
+  20b | 87 | 0 | 0 | 0 | 1 | 0 | 0
+  20c | 76 | 0 | 0 | 0 | 2 | 2 | 0
+  20d | 86 | 0 | 0 | 0 | 2 | 0 | 2
+  20e | 84 | 0 | 0 | 0 | 4 | 0 | 2
+  21a | 76 | 0 | 0 | 0 | 1 | 1 | 3
+  21b | 83 | 0 | 0 | 0 | 5 | 1 | 2
+  21c | 76 | 0 | 0 | 0 | 1 | 1 | 0
+  21d | 75 | 0 | 0 | 0 | 1 | 3 | 0
+  21e | 47 | 0 | 0 | 0 | 0 | 2 | 0
+  22a | 81 | 1 | 0 | 0 | 2 | 0 | 1
+  22b | 76 | 0 | 0 | 0 | 1 | 3 | 0
+  22c | 71 | 0 | 0 | 0 | 2 | 2 | 0
+  22d | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  22e | 52 | 0 | 0 | 0 | 0 | 1 | 1
+  23a | 72 | 0 | 0 | 0 | 1 | 0 | 0
+  23b | 87 | 0 | 0 | 0 | 0 | 1 | 0
+  23c | 62 | 0 | 0 | 0 | 0 | 1 | 0
+  23d | 78 | 0 | 0 | 0 | 1 | 1 | 0
+  23e | 43 | 0 | 0 | 0 | 0 | 0 | 0
+  24a | 73 | 0 | 0 | 1 | 0 | 0 | 0
+  24b | 71 | 0 | 0 | 0 | 1 | 1 | 1
+  24c | 74 | 0 | 0 | 0 | 1 | 0 | 2
+  24d | 85 | 0 | 0 | 1 | 2 | 0 | 3
+  24e | 66 | 0 | 0 | 0 | 0 | 0 | 1
+  25a | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  25b | 79 | 0 | 0 | 0 | 1 | 0 | 0
+  25c | 70 | 0 | 0 | 0 | 2 | 0 | 0
+  25d | 72 | 0 | 0 | 0 | 1 | 1 | 1
+  25e | 59 | 0 | 0 | 0 | 0 | 0 | 1
+  26a | 70 | 0 | 0 | 0 | 2 | 0 | 0
+  26b | 78 | 0 | 1 | 0 | 0 | 1 | 2
+  26c | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  26d | 80 | 0 | 0 | 0 | 0 | 0 | 1
+  26e | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  27a | 72 | 0 | 0 | 1 | 2 | 0 | 2
+  27b | 80 | 0 | 0 | 0 | 0 | 0 | 0
+  27c | 77 | 0 | 0 | 0 | 1 | 2 | 1
+  27d | 85 | 0 | 0 | 0 | 1 | 0 | 1
+  27e | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  28a | 79 | 0 | 0 | 0 | 1 | 0 | 1
+  28b | 79 | 0 | 0 | 0 | 0 | 1 | 0
+  28c | 83 | 0 | 0 | 0 | 2 | 0 | 0
+  28d | 79 | 0 | 0 | 0 | 1 | 1 | 0
+  28e | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  29a | 82 | 0 | 0 | 0 | 3 | 0 | 0
+  29b | 96 | 0 | 0 | 1 | 0 | 1 | 1
+  29c | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  29d | 84 | 0 | 0 | 0 | 0 | 1 | 0
+  29e | 47 | 0 | 0 | 0 | 0 | 0 | 0
+  30a | 77 | 0 | 0 | 0 | 2 | 0 | 0
+  30b | 80 | 0 | 0 | 0 | 0 | 1 | 0
+  30c | 86 | 0 | 0 | 0 | 6 | 1 | 0
+  30d | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  30e | 62 | 0 | 0 | 0 | 1 | 0 | 1
+  31a | 71 | 0 | 0 | 0 | 0 | 1 | 0
+  31b | 74 | 0 | 0 | 0 | 1 | 0 | 1
+  31c | 68 | 0 | 0 | 0 | 1 | 1 | 1
+  31d | 72 | 0 | 0 | 0 | 1 | 0 | 1
+  31e | 35 | 0 | 0 | 0 | 1 | 0 | 0
+  32a | 74 | 0 | 0 | 0 | 1 | 0 | 1
+  32b | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  32c | 67 | 0 | 0 | 0 | 0 | 0 | 1
+  32d | 78 | 0 | 0 | 0 | 1 | 0 | 0
+  32e | 42 | 0 | 0 | 0 | 1 | 1 | 0
+  33a | 71 | 0 | 0 | 0 | 0 | 0 | 1
+  33b | 80 | 0 | 0 | 0 | 0 | 0 | 1
+  33c | 75 | 0 | 0 | 0 | 2 | 0 | 1
+  33d | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  33e | 58 | 0 | 1 | 0 | 0 | 0 | 0
+  34a | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  34b | 62 | 0 | 0 | 0 | 1 | 0 | 1
+  34c | 71 | 0 | 0 | 0 | 0 | 1 | 0
+  34d | 91 | 0 | 0 | 0 | 2 | 2 | 2
+  34e | 53 | 0 | 0 | 0 | 0 | 4 | 0
+  35a | 69 | 0 | 0 | 0 | 0 | 1 | 0
+  35b | 77 | 0 | 0 | 0 | 1 | 0 | 0
+  35c | 74 | 0 | 0 | 0 | 2 | 1 | 0
+  35d | 76 | 0 | 0 | 0 | 2 | 0 | 0
+  35e | 9 | 0 | 0 | 0 | 0 | 0 | 0
+  36a | 80 | 0 | 0 | 0 | 1 | 1 | 0
+  36b | 76 | 0 | 0 | 0 | 0 | 2 | 1
+  36c | 73 | 0 | 0 | 0 | 0 | 0 | 0
+  36d | 86 | 0 | 0 | 0 | 1 | 2 | 0
+  36e | 21 | 0 | 0 | 0 | 0 | 1 | 0
+  37a | 65 | 0 | 0 | 0 | 1 | 1 | 0
+  37b | 76 | 0 | 0 | 0 | 0 | 0 | 2
+  37c | 74 | 0 | 0 | 0 | 2 | 0 | 1
+  37d | 70 | 0 | 0 | 0 | 1 | 1 | 0
+  37e | 53 | 0 | 0 | 0 | 1 | 1 | 1
+  38a | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  38b | 77 | 0 | 0 | 0 | 3 | 2 | 0
+  38c | 66 | 0 | 0 | 0 | 2 | 0 | 2
+  38d | 80 | 0 | 0 | 0 | 0 | 0 | 0
+  38e | 56 | 0 | 0 | 0 | 1 | 0 | 1
+  39a | 64 | 0 | 0 | 0 | 1 | 0 | 0
+  39b | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  39c | 71 | 0 | 0 | 0 | 3 | 0 | 1
+  39d | 73 | 0 | 0 | 0 | 2 | 1 | 0
+  39e | 41 | 0 | 0 | 0 | 1 | 0 | 0
+  40a | 79 | 0 | 0 | 0 | 4 | 0 | 1
+  40b | 73 | 0 | 0 | 1 | 1 | 1 | 1
+  40c | 84 | 0 | 0 | 0 | 3 | 0 | 1
+  40d | 79 | 0 | 0 | 0 | 1 | 0 | 0
+  40e | 69 | 0 | 0 | 0 | 2 | 1 | 1
+  41a | 72 | 0 | 0 | 0 | 1 | 0 | 0
+  41b | 78 | 0 | 0 | 0 | 0 | 0 | 1
+  41c | 78 | 0 | 0 | 0 | 1 | 0 | 0
+  41d | 70 | 0 | 0 | 1 | 0 | 0 | 0
+  41e | 61 | 0 | 0 | 0 | 0 | 0 | 0
+  42a | 37 | 0 | 0 | 0 | 1 | 0 | 0
+occurrences[262]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_apology_000016 | οὖν | οὖν | turn_apology_0001 | 17a | 101 | 104
+  tok_apology_000027 | καίτοι | καίτοι | turn_apology_0001 | 17a | 173 | 179
+  tok_apology_000061 | γάρ | γὰρ | turn_apology_0001 | 17b | 376 | 379
+  tok_apology_000094 | γάρ | γὰρ | turn_apology_0001 | 17b | 596 | 599
+  tok_apology_000107 | οὖν | οὖν | turn_apology_0001 | 17b | 675 | 678
+  tok_apology_000151 | γάρ | γὰρ | turn_apology_0001 | 17c | 967 | 970
+  tok_apology_000162 | γάρ | γὰρ | turn_apology_0001 | 17c | 1034 | 1037
+  tok_apology_000221 | γάρ | γὰρ | turn_apology_0001 | 17d | 1399 | 1402
+  tok_apology_000233 | οὖν | οὖν | turn_apology_0001 | 17d | 1486 | 1489
+  tok_apology_000240 | οὖν | οὖν | turn_apology_0001 | 17d | 1525 | 1528
+  tok_apology_000266 | δή | δὴ | turn_apology_0001 | 18a | 1668 | 1670
+  tok_apology_000285 | γάρ | γὰρ | turn_apology_0001 | 18a | 1763 | 1766
+  tok_apology_000308 | γάρ | γὰρ | turn_apology_0001 | 18a | 1886 | 1889
+  tok_apology_000317 | οὖν | οὖν | turn_apology_0001 | 18a | 1943 | 1946
+  tok_apology_000343 | γάρ | γὰρ | turn_apology_0001 | 18b | 2116 | 2119
+  tok_apology_000428 | γάρ | γὰρ | turn_apology_0001 | 18c | 2660 | 2663
+  tok_apology_000514 | γάρ | γὰρ | turn_apology_0001 | 18d | 3224 | 3227
+  tok_apology_000536 | οὖν | οὖν | turn_apology_0001 | 18d | 3391 | 3394
+  tok_apology_000568 | γάρ | γὰρ | turn_apology_0001 | 18e | 3601 | 3604
+  tok_apology_000583 | δή | δή | turn_apology_0001 | 18e | 3710 | 3712
+  tok_apology_000606 | οὖν | οὖν | turn_apology_0001 | 19a | 3858 | 3861
+  tok_apology_000651 | οὖν | οὖν | turn_apology_0001 | 19a | 4113 | 4116
+  tok_apology_000665 | δή | δὴ | turn_apology_0001 | 19b | 4185 | 4187
+  tok_apology_000676 | δή | δὴ | turn_apology_0001 | 19b | 4249 | 4251
+  tok_apology_000682 | οὖν | οὖν | turn_apology_0001 | 19b | 4294 | 4297
+  tok_apology_000715 | γάρ | γὰρ | turn_apology_0001 | 19c | 4516 | 4519
+  tok_apology_000768 | γάρ | γὰρ | turn_apology_0001 | 19c | 4848 | 4851
+  tok_apology_000803 | οὖν | οὖν | turn_apology_0001 | 19d | 5083 | 5086
+  tok_apology_000835 | γάρ | γὰρ | turn_apology_0001 | 19d | 5266 | 5269
+  tok_apology_000885 | γάρ | γὰρ | turn_apology_0001 | 19e | 5563 | 5566
+  tok_apology_000935 | γάρ | γὰρ | turn_apology_0001 | 20a | 5896 | 5899
+  tok_apology_000951 | οὖν | οὖν | turn_apology_0001 | 20a | 6002 | 6005
+  tok_apology_000954 | γάρ | γὰρ | turn_apology_0001 | 20a | 6023 | 6026
+  tok_apology_001024 | γάρ | γάρ | turn_apology_0001 | 20b | 6441 | 6444
+  tok_apology_001089 | γάρ | γὰρ | turn_apology_0001 | 20c | 6858 | 6861
+  tok_apology_001096 | οὖν | οὖν | turn_apology_0001 | 20c | 6908 | 6911
+  tok_apology_001115 | γάρ | γὰρ | turn_apology_0001 | 20c | 7014 | 7017
+  tok_apology_001140 | οὖν | οὖν | turn_apology_0001 | 20c | 7162 | 7165
+  tok_apology_001175 | δή | δή | turn_apology_0001 | 20d | 7376 | 7378
+  tok_apology_001192 | γάρ | γάρ | turn_apology_0001 | 20d | 7467 | 7470
+  tok_apology_001208 | δή | δὴ | turn_apology_0001 | 20d | 7553 | 7555
+  tok_apology_001218 | γάρ | γὰρ | turn_apology_0001 | 20d | 7612 | 7615
+  tok_apology_001244 | γάρ | γὰρ | turn_apology_0001 | 20e | 7755 | 7758
+  tok_apology_001245 | δή | δὴ | turn_apology_0001 | 20e | 7759 | 7761
+  tok_apology_001275 | γάρ | γὰρ | turn_apology_0001 | 20e | 7924 | 7927
+  tok_apology_001291 | γάρ | γὰρ | turn_apology_0001 | 20e | 8007 | 8010
+  tok_apology_001294 | δή | δή | turn_apology_0001 | 20e | 8020 | 8022
+  tok_apology_001309 | γάρ | γὰρ | turn_apology_0001 | 20e | 8107 | 8110
+  tok_apology_001336 | δή | δὴ | turn_apology_0001 | 21a | 8252 | 8254
+  tok_apology_001346 | δή | δή | turn_apology_0001 | 21a | 8307 | 8309
+  tok_apology_001363 | γάρ | γὰρ | turn_apology_0001 | 21a | 8414 | 8417
+  tok_apology_001364 | δή | δὴ | turn_apology_0001 | 21a | 8418 | 8420
+  tok_apology_001371 | οὖν | οὖν | turn_apology_0001 | 21a | 8456 | 8459
+  tok_apology_001390 | δή | δὴ | turn_apology_0001 | 21b | 8596 | 8598
+  tok_apology_001396 | γάρ | γὰρ | turn_apology_0001 | 21b | 8626 | 8629
+  tok_apology_001405 | γάρ | γὰρ | turn_apology_0001 | 21b | 8678 | 8681
+  tok_apology_001420 | γάρ | γὰρ | turn_apology_0001 | 21b | 8768 | 8771
+  tok_apology_001421 | δή | δὴ | turn_apology_0001 | 21b | 8772 | 8774
+  tok_apology_001431 | οὖν | οὖν | turn_apology_0001 | 21b | 8826 | 8829
+  tok_apology_001439 | γάρ | γὰρ | turn_apology_0001 | 21b | 8872 | 8875
+  tok_apology_001444 | γάρ | γὰρ | turn_apology_0001 | 21b | 8898 | 8901
+  tok_apology_001492 | οὖν | οὖν | turn_apology_0001 | 21c | 9205 | 9208
+  tok_apology_001495 | γάρ | γὰρ | turn_apology_0001 | 21c | 9226 | 9229
+  tok_apology_001549 | οὖν | οὖν | turn_apology_0001 | 21d | 9550 | 9553
+  tok_apology_001560 | οὖν | οὖν | turn_apology_0001 | 21d | 9615 | 9618
+  tok_apology_001573 | γάρ | γὰρ | turn_apology_0001 | 21d | 9699 | 9702
+  tok_apology_001591 | οὖν | οὖν | turn_apology_0001 | 21d | 9805 | 9808
+  tok_apology_001636 | οὖν | οὖν | turn_apology_0001 | 21e | 10086 | 10089
+  tok_apology_001660 | οὖν | οὖν | turn_apology_0001 | 21e | 10253 | 10256
+  tok_apology_001680 | γάρ | γὰρ | turn_apology_0001 | 22a | 10376 | 10379
+  tok_apology_001686 | μήν | μὴν | turn_apology_0001 | 22a | 10408 | 10411
+  tok_apology_001719 | δή | δὴ | turn_apology_0001 | 22a | 10624 | 10626
+  tok_apology_001737 | γάρ | γὰρ | turn_apology_0001 | 22a | 10734 | 10737
+  tok_apology_001765 | οὖν | οὖν | turn_apology_0001 | 22b | 10927 | 10930
+  tok_apology_001788 | οὖν | οὖν | turn_apology_0001 | 22b | 11074 | 11077
+  tok_apology_001799 | γάρ | γὰρ | turn_apology_0001 | 22b | 11133 | 11136
+  tok_apology_001814 | οὖν | οὖν | turn_apology_0001 | 22b | 11229 | 11232
+  tok_apology_001841 | γάρ | γὰρ | turn_apology_0001 | 22c | 11388 | 11391
+  tok_apology_001879 | οὖν | οὖν | turn_apology_0001 | 22c | 11611 | 11614
+  tok_apology_001891 | οὖν | οὖν | turn_apology_0001 | 22c | 11696 | 11699
+  tok_apology_001897 | γάρ | γὰρ | turn_apology_0001 | 22c | 11732 | 11735
+  tok_apology_002002 | οὖν | οὖν | turn_apology_0001 | 22e | 12391 | 12394
+  tok_apology_002015 | δή | δὴ | turn_apology_0001 | 22e | 12466 | 12468
+  tok_apology_002044 | γάρ | γάρ | turn_apology_0001 | 23a | 12667 | 12670
+  tok_apology_002123 | οὖν | οὖν | turn_apology_0001 | 23b | 13165 | 13168
+  tok_apology_002233 | οὖν | οὖν | turn_apology_0001 | 23c | 13849 | 13852
+  tok_apology_002300 | γάρ | γὰρ | turn_apology_0001 | 23d | 14285 | 14288
+  tok_apology_002317 | οὖν | οὖν | turn_apology_0001 | 23d | 14400 | 14403
+  tok_apology_002412 | καίτοι | καίτοι | turn_apology_0001 | 24a | 15010 | 15016
+  tok_apology_002449 | οὖν | οὖν | turn_apology_0001 | 24b | 15230 | 15233
+  tok_apology_002479 | γάρ | γὰρ | turn_apology_0001 | 24b | 15420 | 15423
+  tok_apology_002480 | δή | δή | turn_apology_0001 | 24b | 15424 | 15426
+  tok_apology_002516 | δή | δὴ | turn_apology_0001 | 24c | 15647 | 15649
+  tok_apology_002528 | γάρ | γὰρ | turn_apology_0001 | 24c | 15731 | 15734
+  tok_apology_002529 | δή | δὴ | turn_apology_0001 | 24c | 15735 | 15737
+  tok_apology_002592 | δή | δή | turn_apology_0001 | 24d | 16154 | 16156
+  tok_apology_002601 | γάρ | γὰρ | turn_apology_0001 | 24d | 16208 | 16211
+  tok_apology_002609 | γάρ | γὰρ | turn_apology_0001 | 24d | 16245 | 16248
+  tok_apology_002621 | δή | δὴ | turn_apology_0001 | 24d | 16325 | 16327
+  tok_apology_002640 | καίτοι | καίτοι | turn_apology_0001 | 24d | 16435 | 16441
+  tok_apology_002650 | δή | δὴ | turn_apology_0001 | 24d | 16494 | 16496
+  tok_apology_002726 | δή | δή | turn_apology_0001 | 24e | 16968 | 16970
+  tok_apology_002863 | γάρ | γὰρ | turn_apology_0001 | 25b | 17828 | 17831
+  tok_apology_002882 | γάρ | γάρ | turn_apology_0001 | 25c | 17940 | 17943
+  tok_apology_002927 | γάρ | γάρ | turn_apology_0001 | 25c | 18227 | 18230
+  tok_apology_002951 | οὖν | οὖν | turn_apology_0001 | 25d | 18373 | 18376
+  tok_apology_002965 | γάρ | γὰρ | turn_apology_0001 | 25d | 18465 | 18468
+  tok_apology_002977 | δή | δή | turn_apology_0001 | 25d | 18553 | 18555
+  tok_apology_003029 | δή | δὴ | turn_apology_0001 | 25e | 18880 | 18882
+  tok_apology_003109 | γάρ | γὰρ | turn_apology_0001 | 26a | 19383 | 19386
+  tok_apology_003143 | γάρ | γάρ | turn_apology_0001 | 26a | 19583 | 19586
+  tok_apology_003164 | δή | δὴ | turn_apology_0001 | 26b | 19711 | 19713
+  tok_apology_003177 | δή | δὴ | turn_apology_0001 | 26b | 19783 | 19785
+  tok_apology_003204 | οὖν | οὖν | turn_apology_0001 | 26b | 19944 | 19947
+  tok_apology_003210 | τοίνυν | τοίνυν | turn_apology_0001 | 26b | 19982 | 19988
+  tok_apology_003231 | γάρ | γὰρ | turn_apology_0001 | 26c | 20105 | 20108
+  tok_apology_003360 | δή | δὴ | turn_apology_0001 | 26d | 20892 | 20894
+  tok_apology_003421 | γάρ | γὰρ | turn_apology_0001 | 26e | 21266 | 21269
+  tok_apology_003445 | γάρ | γὰρ | turn_apology_0001 | 27a | 21428 | 21431
+  tok_apology_003455 | δή | δὴ | turn_apology_0001 | 27a | 21504 | 21506
+  tok_apology_003471 | γάρ | γὰρ | turn_apology_0001 | 27a | 21618 | 21621
+  tok_apology_003494 | καίτοι | καίτοι | turn_apology_0001 | 27a | 21760 | 21766
+  tok_apology_003499 | δή | δή | turn_apology_0001 | 27a | 21808 | 21810
+  tok_apology_003627 | οὖν | οὖν | turn_apology_0001 | 27c | 22607 | 22610
+  tok_apology_003632 | οὖν | οὖν | turn_apology_0001 | 27c | 22635 | 22638
+  tok_apology_003663 | δή | δή | turn_apology_0001 | 27c | 22812 | 22814
+  tok_apology_003665 | γάρ | γάρ | turn_apology_0001 | 27c | 22823 | 22826
+  tok_apology_003742 | δή | δὴ | turn_apology_0001 | 27d | 23263 | 23265
+  tok_apology_003757 | γάρ | γὰρ | turn_apology_0001 | 27d | 23346 | 23349
+  tok_apology_003838 | γάρ | γάρ | turn_apology_0001 | 28a | 23812 | 23815
+  tok_apology_003902 | δή | δὴ | turn_apology_0001 | 28a | 24159 | 24161
+  tok_apology_003923 | οὖν | οὖν | turn_apology_0001 | 28b | 24280 | 24283
+  tok_apology_003987 | γάρ | γὰρ | turn_apology_0001 | 28c | 24693 | 24696
+  tok_apology_004049 | γάρ | γάρ | turn_apology_0001 | 28c | 25064 | 25067
+  tok_apology_004105 | γάρ | γὰρ | turn_apology_0001 | 28d | 25455 | 25458
+  tok_apology_004142 | οὖν | οὖν | turn_apology_0001 | 28d | 25687 | 25690
+  tok_apology_004248 | γάρ | γάρ | turn_apology_0001 | 29a | 26311 | 26314
+  tok_apology_004264 | γάρ | γὰρ | turn_apology_0001 | 29a | 26401 | 26404
+  tok_apology_004272 | γάρ | γὰρ | turn_apology_0001 | 29a | 26441 | 26444
+  tok_apology_004296 | καίτοι | καίτοι | turn_apology_0001 | 29b | 26583 | 26589
+  tok_apology_004325 | δή | δή | turn_apology_0001 | 29b | 26744 | 26746
+  tok_apology_004364 | οὖν | οὖν | turn_apology_0001 | 29b | 26953 | 26956
+  tok_apology_004468 | οὖν | οὖν | turn_apology_0001 | 29d | 27587 | 27590
+  tok_apology_004631 | γάρ | γὰρ | turn_apology_0001 | 30a | 28593 | 28596
+  tok_apology_004656 | γάρ | γὰρ | turn_apology_0001 | 30a | 28721 | 28724
+  tok_apology_004708 | οὖν | οὖν | turn_apology_0001 | 30b | 29049 | 29052
+  tok_apology_004778 | γάρ | γάρ | turn_apology_0001 | 30c | 29453 | 29456
+  tok_apology_004785 | γάρ | γὰρ | turn_apology_0001 | 30c | 29498 | 29501
+  tok_apology_004786 | οὖν | οὖν | turn_apology_0001 | 30c | 29502 | 29505
+  tok_apology_004801 | γάρ | γὰρ | turn_apology_0001 | 30c | 29585 | 29588
+  tok_apology_004820 | γάρ | γὰρ | turn_apology_0001 | 30c | 29688 | 29691
+  tok_apology_004829 | γάρ | γὰρ | turn_apology_0001 | 30c | 29742 | 29745
+  tok_apology_004833 | γάρ | γὰρ | turn_apology_0001 | 30c | 29762 | 29765
+  tok_apology_004878 | οὖν | οὖν | turn_apology_0001 | 30d | 30053 | 30056
+  tok_apology_004907 | γάρ | γάρ | turn_apology_0001 | 30e | 30231 | 30234
+  tok_apology_004943 | δή | δή | turn_apology_0001 | 30e | 30466 | 30468
+  tok_apology_004971 | οὖν | οὖν | turn_apology_0001 | 31a | 30648 | 30651
+  tok_apology_005037 | γάρ | γὰρ | turn_apology_0001 | 31b | 31066 | 31069
+  tok_apology_005090 | δή | δὴ | turn_apology_0001 | 31b | 31407 | 31409
+  tok_apology_005120 | γάρ | γάρ | turn_apology_0001 | 31c | 31606 | 31609
+  tok_apology_005133 | οὖν | οὖν | turn_apology_0001 | 31c | 31683 | 31686
+  tok_apology_005138 | δή | δὴ | turn_apology_0001 | 31c | 31713 | 31715
+  tok_apology_005180 | δή | δὴ | turn_apology_0001 | 31d | 31992 | 31994
+  tok_apology_005227 | γάρ | γὰρ | turn_apology_0001 | 31d | 32277 | 32280
+  tok_apology_005259 | γάρ | γὰρ | turn_apology_0001 | 31e | 32470 | 32473
+  tok_apology_005317 | δή | δή | turn_apology_0001 | 32a | 32860 | 32862
+  tok_apology_005349 | γάρ | γάρ | turn_apology_0001 | 32a | 33040 | 33043
+  tok_apology_005478 | δή | δὴ | turn_apology_0001 | 32c | 33882 | 33884
+  tok_apology_005524 | γάρ | γὰρ | turn_apology_0001 | 32d | 34172 | 34175
+  tok_apology_005577 | οὖν | οὖν | turn_apology_0001 | 32e | 34491 | 34494
+  tok_apology_005610 | γάρ | γὰρ | turn_apology_0001 | 32e | 34694 | 34697
+  tok_apology_005647 | δή | δὴ | turn_apology_0001 | 33a | 34910 | 34912
+  tok_apology_005757 | δή | δή | turn_apology_0001 | 33b | 35577 | 35579
+  tok_apology_005789 | γάρ | γὰρ | turn_apology_0001 | 33c | 35795 | 35798
+  tok_apology_005834 | γάρ | γὰρ | turn_apology_0001 | 33c | 36054 | 36057
+  tok_apology_005835 | δή | δὴ | turn_apology_0001 | 33c | 36058 | 36060
+  tok_apology_005935 | τοίνυν | τοίνυν | turn_apology_0001 | 33e | 36730 | 36736
+  tok_apology_006044 | γάρ | γὰρ | turn_apology_0001 | 34b | 37446 | 37449
+  tok_apology_006083 | δή | δή | turn_apology_0001 | 34b | 37702 | 37704
+  tok_apology_006158 | οὖν | οὖν | turn_apology_0001 | 34c | 38165 | 38168
+  tok_apology_006178 | δή | δή | turn_apology_0001 | 34d | 38287 | 38289
+  tok_apology_006186 | γάρ | γὰρ | turn_apology_0001 | 34d | 38325 | 38328
+  tok_apology_006190 | οὖν | οὖν | turn_apology_0001 | 34d | 38342 | 38345
+  tok_apology_006210 | γάρ | γὰρ | turn_apology_0001 | 34d | 38454 | 38457
+  tok_apology_006256 | δή | δὴ | turn_apology_0001 | 34d | 38737 | 38739
+  tok_apology_006257 | οὖν | οὖν | turn_apology_0001 | 34d | 38740 | 38743
+  tok_apology_006283 | οὖν | οὖν | turn_apology_0001 | 34e | 38899 | 38902
+  tok_apology_006310 | οὖν | οὖν | turn_apology_0001 | 34e | 39043 | 39046
+  tok_apology_006313 | οὖν | οὖν | turn_apology_0001 | 34e | 39059 | 39062
+  tok_apology_006316 | οὖν | οὖν | turn_apology_0001 | 34e | 39076 | 39079
+  tok_apology_006327 | οὖν | οὖν | turn_apology_0001 | 35a | 39150 | 39153
+  tok_apology_006411 | γάρ | γάρ | turn_apology_0001 | 35b | 39714 | 39717
+  tok_apology_006476 | γάρ | γὰρ | turn_apology_0001 | 35c | 40142 | 40145
+  tok_apology_006516 | γάρ | γὰρ | turn_apology_0001 | 35c | 40388 | 40391
+  tok_apology_006521 | οὖν | οὖν | turn_apology_0001 | 35c | 40414 | 40417
+  tok_apology_006554 | γάρ | γὰρ | turn_apology_0001 | 35d | 40615 | 40618
+  tok_apology_006588 | γάρ | γάρ | turn_apology_0001 | 35d | 40829 | 40832
+  tok_apology_006652 | γάρ | γὰρ | turn_apology_0001 | 36a | 41229 | 41232
+  tok_apology_006676 | οὖν | οὖν | turn_apology_0001 | 36a | 41372 | 41375
+  tok_apology_006714 | οὖν | οὖν | turn_apology_0001 | 36b | 41604 | 41607
+  tok_apology_006722 | δή | δὴ | turn_apology_0001 | 36b | 41641 | 41643
+  tok_apology_006735 | οὖν | οὖν | turn_apology_0001 | 36b | 41715 | 41718
+  tok_apology_006856 | οὖν | οὖν | turn_apology_0001 | 36d | 42466 | 42469
+  tok_apology_006886 | οὖν | οὖν | turn_apology_0001 | 36d | 42629 | 42632
+  tok_apology_006930 | γάρ | γὰρ | turn_apology_0001 | 36d | 42893 | 42896
+  tok_apology_006949 | οὖν | οὖν | turn_apology_0001 | 36e | 43002 | 43005
+  tok_apology_006964 | οὖν | οὖν | turn_apology_0001 | 37a | 43103 | 43106
+  tok_apology_007004 | γάρ | γὰρ | turn_apology_0001 | 37a | 43362 | 43365
+  tok_apology_007041 | δή | δὴ | turn_apology_0001 | 37b | 43606 | 43608
+  tok_apology_007088 | δή | δὴ | turn_apology_0001 | 37b | 43869 | 43871
+  tok_apology_007129 | γάρ | γὰρ | turn_apology_0001 | 37c | 44116 | 44119
+  tok_apology_007136 | δή | δὴ | turn_apology_0001 | 37c | 44158 | 44160
+  tok_apology_007140 | γάρ | γὰρ | turn_apology_0001 | 37c | 44183 | 44186
+  tok_apology_007202 | οὖν | οὖν | turn_apology_0001 | 37d | 44580 | 44583
+  tok_apology_007220 | γάρ | γὰρ | turn_apology_0001 | 37d | 44687 | 44690
+  tok_apology_007258 | οὖν | οὖν | turn_apology_0001 | 37e | 44928 | 44931
+  tok_apology_007277 | δή | δή | turn_apology_0001 | 37e | 45034 | 45036
+  tok_apology_007285 | γάρ | γὰρ | turn_apology_0001 | 37e | 45086 | 45089
+  tok_apology_007375 | γάρ | γὰρ | turn_apology_0001 | 38b | 45625 | 45628
+  tok_apology_007386 | γάρ | γὰρ | turn_apology_0001 | 38b | 45697 | 45700
+  tok_apology_007392 | γάρ | γὰρ | turn_apology_0001 | 38b | 45723 | 45726
+  tok_apology_007416 | οὖν | οὖν | turn_apology_0001 | 38b | 45868 | 45871
+  tok_apology_007439 | οὖν | οὖν | turn_apology_0001 | 38b | 46030 | 46033
+  tok_apology_007473 | γάρ | γὰρ | turn_apology_0001 | 38c | 46267 | 46270
+  tok_apology_007474 | δή | δὴ | turn_apology_0001 | 38c | 46271 | 46273
+  tok_apology_007498 | γάρ | γὰρ | turn_apology_0001 | 38c | 46418 | 46421
+  tok_apology_007499 | δή | δὴ | turn_apology_0001 | 38c | 46422 | 46424
+  tok_apology_007604 | δή | δὴ | turn_apology_0001 | 38e | 47040 | 47042
+  tok_apology_007639 | γάρ | γὰρ | turn_apology_0001 | 38e | 47269 | 47272
+  tok_apology_007659 | γάρ | γὰρ | turn_apology_0001 | 39a | 47391 | 47394
+  tok_apology_007716 | γάρ | γὰρ | turn_apology_0001 | 39b | 47748 | 47751
+  tok_apology_007788 | δή | δὴ | turn_apology_0001 | 39c | 48153 | 48155
+  tok_apology_007798 | γάρ | γάρ | turn_apology_0001 | 39c | 48220 | 48223
+  tok_apology_007811 | γάρ | γάρ | turn_apology_0001 | 39c | 48310 | 48313
+  tok_apology_007834 | γάρ | γὰρ | turn_apology_0001 | 39c | 48442 | 48445
+  tok_apology_007878 | γάρ | γὰρ | turn_apology_0001 | 39d | 48733 | 48736
+  tok_apology_007895 | γάρ | γάρ | turn_apology_0001 | 39d | 48848 | 48851
+  tok_apology_007924 | οὖν | οὖν | turn_apology_0001 | 39d | 49022 | 49025
+  tok_apology_007963 | γάρ | γὰρ | turn_apology_0001 | 39e | 49307 | 49310
+  tok_apology_007971 | γάρ | γὰρ | turn_apology_0001 | 40a | 49371 | 49374
+  tok_apology_007985 | γάρ | γάρ | turn_apology_0001 | 40a | 49449 | 49452
+  tok_apology_007990 | γάρ | γὰρ | turn_apology_0001 | 40a | 49479 | 49482
+  tok_apology_008000 | γάρ | γὰρ | turn_apology_0001 | 40a | 49541 | 49544
+  tok_apology_008039 | δή | δὴ | turn_apology_0001 | 40a | 49753 | 49755
+  tok_apology_008074 | καίτοι | καίτοι | turn_apology_0001 | 40b | 49970 | 49976
+  tok_apology_008079 | δή | δή | turn_apology_0001 | 40b | 50003 | 50005
+  tok_apology_008101 | οὖν | οὖν | turn_apology_0001 | 40b | 50122 | 50125
+  tok_apology_008109 | γάρ | γάρ | turn_apology_0001 | 40b | 50176 | 50179
+  tok_apology_008135 | γάρ | γὰρ | turn_apology_0001 | 40c | 50349 | 50352
+  tok_apology_008164 | γάρ | γὰρ | turn_apology_0001 | 40c | 50513 | 50516
+  tok_apology_008170 | γάρ | γὰρ | turn_apology_0001 | 40c | 50546 | 50549
+  tok_apology_008202 | δή | δὴ | turn_apology_0001 | 40c | 50735 | 50737
+  tok_apology_008223 | γάρ | γὰρ | turn_apology_0001 | 40d | 50865 | 50868
+  tok_apology_008297 | οὖν | οὖν | turn_apology_0001 | 40e | 51295 | 51298
+  tok_apology_008306 | γάρ | γὰρ | turn_apology_0001 | 40e | 51348 | 51351
+  tok_apology_008314 | δή | δὴ | turn_apology_0001 | 40e | 51392 | 51394
+  tok_apology_008353 | γάρ | γάρ | turn_apology_0001 | 40e | 51599 | 51602
+  tok_apology_008418 | γάρ | γὰρ | turn_apology_0001 | 41a | 51990 | 51993
+  tok_apology_008468 | δή | δὴ | turn_apology_0001 | 41b | 52297 | 52299
+  tok_apology_008544 | γάρ | γὰρ | turn_apology_0001 | 41c | 52749 | 52752
+  tok_apology_008641 | καίτοι | καίτοι | turn_apology_0001 | 41d | 53351 | 53357
+  tok_apology_008728 | γάρ | γὰρ | turn_apology_0001 | 42a | 53906 | 53909

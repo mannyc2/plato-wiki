@@ -1,0 +1,805 @@
+schema_version: 1
+dialogue: symposium
+source_path: raw/plato/greek/symposium.txt
+source_sha256: 260b7c575fc40bf88e74f793ebaccb48e536702b26d8780c111190e01a3447a7
+token_index_path: derived/plato/tokens/symposium.toon
+token_index_sha256: 986f4c774bbb889192a4009fc710a465675e6cf03bef61955077aca407df4c71
+turn_index_path: derived/plato/turns/symposium.toon
+turn_index_sha256: 6d86dd3d2f808cd29099ba89af1c7fab6acd44d3362db13078789d37b95f8329
+matching: whole_normalized_tokens_without_grammatical_disambiguation
+denominator: indexed_greek_tokens_excluding_printed_speaker_labels
+speaker_scope: outer_printed_turn_labels
+indexed_token_count: 17354
+excluded_siglum_token_count: 5
+dialogue_totals[1]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  symposium | 17349 | 15 | 13 | 1 | 230 | 139 | 119
+speakers[2]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  ΑΠΟΛ. | 17275 | 15 | 13 | 1 | 228 | 139 | 119
+  ΕΤΑΙ. | 74 | 0 | 0 | 0 | 2 | 0 | 0
+turns[5]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  turn_symposium_0001 | 430 | 1 | 0 | 0 | 5 | 4 | 2
+  turn_symposium_0002 | 54 | 0 | 0 | 0 | 2 | 0 | 0
+  turn_symposium_0003 | 18 | 0 | 0 | 0 | 0 | 0 | 1
+  turn_symposium_0004 | 20 | 0 | 0 | 0 | 0 | 0 | 0
+  turn_symposium_0005 | 16827 | 14 | 13 | 1 | 223 | 135 | 116
+markers[257]:
+  id | token_count | μήν | τοίνυν | καίτοι | γάρ | οὖν | δή
+  172a | 56 | 1 | 0 | 0 | 1 | 1 | 0
+  172b | 74 | 0 | 0 | 0 | 3 | 1 | 0
+  172c | 56 | 0 | 0 | 0 | 0 | 0 | 1
+  173a | 76 | 0 | 0 | 0 | 0 | 0 | 0
+  173b | 79 | 0 | 0 | 0 | 0 | 1 | 1
+  173c | 66 | 0 | 0 | 0 | 1 | 1 | 0
+  173d | 77 | 0 | 0 | 0 | 2 | 0 | 0
+  173e | 45 | 0 | 1 | 0 | 0 | 0 | 1
+  174a | 69 | 0 | 0 | 0 | 2 | 0 | 1
+  174b | 57 | 0 | 1 | 0 | 2 | 0 | 0
+  174c | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  174d | 50 | 0 | 0 | 0 | 0 | 1 | 0
+  174e | 104 | 0 | 0 | 0 | 1 | 2 | 0
+  175a | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  175b | 75 | 0 | 0 | 0 | 1 | 2 | 0
+  175c | 63 | 0 | 0 | 0 | 1 | 3 | 0
+  175d | 71 | 0 | 0 | 0 | 3 | 0 | 0
+  175e | 92 | 0 | 0 | 0 | 2 | 0 | 0
+  176a | 71 | 0 | 0 | 0 | 1 | 2 | 0
+  176b | 62 | 0 | 0 | 0 | 1 | 3 | 0
+  176c | 77 | 0 | 0 | 0 | 3 | 1 | 1
+  176d | 60 | 1 | 0 | 0 | 0 | 0 | 0
+  176e | 73 | 0 | 1 | 0 | 0 | 0 | 1
+  177a | 72 | 0 | 0 | 0 | 2 | 1 | 1
+  177b | 50 | 0 | 0 | 0 | 0 | 0 | 0
+  177c | 63 | 0 | 0 | 0 | 0 | 3 | 1
+  177d | 67 | 0 | 0 | 0 | 2 | 0 | 0
+  177e | 57 | 1 | 0 | 1 | 0 | 0 | 1
+  178a | 75 | 0 | 0 | 0 | 2 | 1 | 0
+  178b | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  178c | 61 | 0 | 0 | 0 | 2 | 0 | 0
+  178d | 66 | 0 | 1 | 0 | 1 | 0 | 1
+  178e | 52 | 0 | 0 | 0 | 0 | 1 | 0
+  179a | 75 | 1 | 0 | 0 | 1 | 0 | 0
+  179b | 65 | 1 | 0 | 0 | 0 | 0 | 0
+  179c | 62 | 0 | 0 | 0 | 0 | 0 | 1
+  179d | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  179e | 38 | 0 | 0 | 0 | 0 | 0 | 0
+  180a | 66 | 0 | 0 | 0 | 1 | 0 | 1
+  180b | 65 | 0 | 0 | 0 | 2 | 0 | 1
+  180c | 67 | 0 | 0 | 0 | 2 | 0 | 0
+  180d | 73 | 0 | 0 | 0 | 1 | 2 | 2
+  180e | 45 | 0 | 0 | 0 | 1 | 2 | 2
+  181a | 67 | 0 | 0 | 0 | 1 | 1 | 1
+  181b | 74 | 0 | 0 | 0 | 1 | 0 | 1
+  181c | 69 | 0 | 0 | 0 | 0 | 0 | 1
+  181d | 56 | 0 | 0 | 0 | 2 | 0 | 0
+  181e | 53 | 0 | 0 | 0 | 1 | 1 | 0
+  182a | 66 | 0 | 0 | 0 | 2 | 0 | 1
+  182b | 70 | 0 | 0 | 0 | 2 | 0 | 0
+  182c | 59 | 0 | 0 | 0 | 2 | 0 | 1
+  182d | 79 | 0 | 0 | 0 | 1 | 0 | 0
+  182e | 28 | 0 | 0 | 0 | 0 | 0 | 0
+  183a | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  183b | 59 | 0 | 0 | 0 | 1 | 0 | 0
+  183c | 72 | 0 | 0 | 0 | 0 | 1 | 0
+  183d | 74 | 0 | 0 | 0 | 0 | 1 | 0
+  183e | 51 | 0 | 0 | 0 | 2 | 0 | 1
+  184a | 68 | 0 | 0 | 0 | 0 | 1 | 2
+  184b | 60 | 0 | 0 | 0 | 2 | 0 | 1
+  184c | 73 | 0 | 0 | 0 | 1 | 0 | 3
+  184d | 63 | 0 | 0 | 0 | 1 | 0 | 0
+  184e | 53 | 0 | 0 | 0 | 1 | 0 | 1
+  185a | 61 | 0 | 0 | 0 | 1 | 0 | 1
+  185b | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  185c | 64 | 0 | 0 | 0 | 1 | 0 | 0
+  185d | 73 | 0 | 0 | 0 | 2 | 0 | 0
+  185e | 57 | 0 | 1 | 0 | 0 | 0 | 1
+  186a | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  186b | 87 | 0 | 0 | 0 | 2 | 1 | 1
+  186c | 66 | 0 | 0 | 0 | 1 | 0 | 0
+  186d | 66 | 0 | 0 | 0 | 1 | 0 | 1
+  186e | 36 | 0 | 0 | 0 | 0 | 1 | 0
+  187a | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  187b | 62 | 0 | 0 | 0 | 2 | 0 | 0
+  187c | 66 | 0 | 0 | 0 | 0 | 0 | 0
+  187d | 68 | 0 | 0 | 0 | 1 | 0 | 3
+  187e | 72 | 0 | 0 | 0 | 0 | 0 | 1
+  188a | 78 | 0 | 0 | 0 | 1 | 0 | 0
+  188b | 65 | 0 | 1 | 0 | 2 | 0 | 0
+  188c | 65 | 0 | 0 | 0 | 1 | 0 | 1
+  188d | 71 | 0 | 0 | 0 | 0 | 0 | 0
+  188e | 37 | 0 | 0 | 0 | 0 | 1 | 0
+  189a | 61 | 0 | 0 | 0 | 1 | 1 | 0
+  189b | 76 | 0 | 0 | 0 | 1 | 0 | 0
+  189c | 70 | 1 | 0 | 0 | 2 | 0 | 0
+  189d | 72 | 0 | 0 | 0 | 2 | 1 | 0
+  189e | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  190a | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  190b | 82 | 0 | 0 | 0 | 0 | 1 | 1
+  190c | 69 | 0 | 0 | 0 | 2 | 1 | 1
+  190d | 62 | 0 | 0 | 0 | 1 | 0 | 0
+  190e | 79 | 0 | 0 | 0 | 0 | 0 | 1
+  191a | 65 | 0 | 0 | 0 | 0 | 1 | 0
+  191b | 63 | 0 | 0 | 0 | 1 | 0 | 1
+  191c | 78 | 0 | 0 | 0 | 0 | 2 | 1
+  191d | 72 | 0 | 0 | 0 | 0 | 2 | 2
+  191e | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  192a | 56 | 0 | 0 | 0 | 2 | 0 | 1
+  192b | 60 | 0 | 0 | 0 | 0 | 2 | 0
+  192c | 62 | 0 | 0 | 0 | 1 | 0 | 0
+  192d | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  192e | 97 | 0 | 0 | 0 | 1 | 1 | 0
+  193a | 66 | 0 | 0 | 0 | 0 | 1 | 0
+  193b | 61 | 0 | 0 | 0 | 1 | 0 | 0
+  193c | 75 | 0 | 0 | 0 | 1 | 1 | 1
+  193d | 68 | 0 | 0 | 0 | 0 | 1 | 0
+  193e | 53 | 0 | 0 | 0 | 2 | 0 | 0
+  194a | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  194b | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  194c | 79 | 0 | 0 | 0 | 1 | 0 | 0
+  194d | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  194e | 60 | 0 | 0 | 0 | 2 | 0 | 1
+  195a | 72 | 0 | 0 | 0 | 0 | 1 | 1
+  195b | 66 | 0 | 0 | 0 | 1 | 0 | 1
+  195c | 70 | 0 | 0 | 0 | 1 | 1 | 0
+  195d | 60 | 0 | 0 | 0 | 2 | 1 | 0
+  195e | 77 | 0 | 0 | 0 | 2 | 1 | 1
+  196a | 72 | 0 | 0 | 0 | 3 | 0 | 2
+  196b | 78 | 0 | 0 | 0 | 2 | 1 | 0
+  196c | 71 | 1 | 0 | 0 | 2 | 0 | 0
+  196d | 64 | 0 | 0 | 0 | 1 | 2 | 0
+  196e | 60 | 0 | 0 | 0 | 1 | 0 | 1
+  197a | 63 | 1 | 0 | 0 | 0 | 0 | 1
+  197b | 78 | 0 | 0 | 0 | 1 | 0 | 1
+  197c | 46 | 0 | 0 | 0 | 0 | 0 | 0
+  197d | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  197e | 59 | 0 | 0 | 0 | 0 | 0 | 0
+  198a | 74 | 0 | 0 | 0 | 0 | 1 | 0
+  198b | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  198c | 55 | 0 | 0 | 0 | 1 | 0 | 0
+  198d | 76 | 0 | 0 | 0 | 1 | 0 | 1
+  198e | 57 | 0 | 0 | 0 | 1 | 0 | 1
+  199a | 72 | 0 | 0 | 0 | 4 | 1 | 1
+  199b | 74 | 0 | 1 | 0 | 0 | 2 | 0
+  199c | 64 | 1 | 0 | 0 | 0 | 1 | 1
+  199d | 83 | 0 | 0 | 0 | 1 | 0 | 0
+  199e | 53 | 0 | 1 | 0 | 1 | 1 | 1
+  200a | 70 | 0 | 1 | 0 | 0 | 0 | 1
+  200b | 83 | 0 | 0 | 0 | 4 | 1 | 0
+  200c | 72 | 0 | 0 | 0 | 1 | 1 | 0
+  200d | 87 | 0 | 0 | 0 | 0 | 1 | 1
+  200e | 69 | 0 | 0 | 0 | 0 | 0 | 1
+  201a | 75 | 0 | 0 | 0 | 3 | 0 | 1
+  201b | 61 | 0 | 0 | 0 | 0 | 1 | 0
+  201c | 68 | 1 | 0 | 0 | 0 | 1 | 0
+  201d | 75 | 0 | 0 | 0 | 0 | 1 | 2
+  201e | 101 | 0 | 0 | 0 | 1 | 1 | 1
+  202a | 70 | 0 | 0 | 0 | 2 | 0 | 0
+  202b | 76 | 1 | 1 | 0 | 0 | 1 | 0
+  202c | 75 | 0 | 0 | 0 | 1 | 0 | 1
+  202d | 79 | 2 | 0 | 0 | 2 | 4 | 0
+  202e | 70 | 0 | 0 | 0 | 0 | 0 | 0
+  203a | 77 | 0 | 0 | 0 | 0 | 0 | 1
+  203b | 73 | 0 | 0 | 0 | 2 | 2 | 1
+  203c | 67 | 0 | 0 | 0 | 0 | 1 | 1
+  203d | 69 | 0 | 0 | 0 | 0 | 0 | 0
+  203e | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  204a | 72 | 0 | 0 | 0 | 3 | 1 | 0
+  204b | 81 | 0 | 0 | 0 | 2 | 1 | 2
+  204c | 74 | 0 | 0 | 0 | 2 | 0 | 1
+  204d | 87 | 0 | 0 | 0 | 1 | 0 | 2
+  204e | 47 | 0 | 0 | 0 | 0 | 0 | 0
+  205a | 70 | 0 | 0 | 0 | 1 | 1 | 2
+  205b | 73 | 0 | 0 | 0 | 2 | 0 | 0
+  205c | 70 | 0 | 0 | 0 | 1 | 0 | 0
+  205d | 85 | 0 | 1 | 0 | 0 | 0 | 0
+  205e | 71 | 0 | 0 | 0 | 1 | 0 | 0
+  206a | 74 | 0 | 0 | 0 | 0 | 2 | 0
+  206b | 82 | 0 | 0 | 0 | 1 | 0 | 1
+  206c | 79 | 0 | 0 | 0 | 2 | 0 | 0
+  206d | 73 | 0 | 0 | 0 | 0 | 1 | 1
+  206e | 57 | 1 | 0 | 0 | 1 | 2 | 1
+  207a | 75 | 0 | 0 | 0 | 0 | 1 | 1
+  207b | 60 | 0 | 0 | 0 | 1 | 0 | 0
+  207c | 70 | 0 | 1 | 0 | 1 | 1 | 0
+  207d | 82 | 0 | 0 | 0 | 0 | 0 | 0
+  207e | 48 | 0 | 0 | 0 | 0 | 0 | 0
+  208a | 73 | 0 | 0 | 0 | 3 | 0 | 0
+  208b | 72 | 0 | 0 | 0 | 1 | 1 | 0
+  208c | 63 | 0 | 0 | 0 | 0 | 0 | 0
+  208d | 64 | 0 | 0 | 0 | 0 | 0 | 0
+  208e | 45 | 0 | 0 | 0 | 1 | 1 | 0
+  209a | 78 | 0 | 0 | 0 | 1 | 2 | 2
+  209b | 77 | 0 | 0 | 0 | 1 | 1 | 2
+  209c | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  209d | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  209e | 43 | 0 | 0 | 0 | 0 | 1 | 0
+  210a | 81 | 0 | 0 | 0 | 1 | 1 | 0
+  210b | 77 | 0 | 0 | 0 | 0 | 0 | 0
+  210c | 65 | 0 | 0 | 0 | 0 | 0 | 0
+  210d | 60 | 0 | 0 | 0 | 0 | 0 | 0
+  210e | 56 | 0 | 0 | 0 | 1 | 0 | 1
+  211a | 87 | 0 | 0 | 0 | 0 | 0 | 0
+  211b | 69 | 0 | 0 | 0 | 1 | 0 | 2
+  211c | 75 | 0 | 0 | 0 | 0 | 0 | 0
+  211d | 80 | 0 | 0 | 0 | 0 | 0 | 0
+  211e | 33 | 0 | 0 | 0 | 0 | 0 | 0
+  212a | 57 | 0 | 0 | 0 | 0 | 0 | 0
+  212b | 76 | 0 | 0 | 0 | 0 | 0 | 2
+  212c | 66 | 0 | 0 | 0 | 0 | 2 | 0
+  212d | 63 | 0 | 0 | 0 | 0 | 1 | 0
+  212e | 79 | 0 | 0 | 0 | 1 | 0 | 0
+  213a | 59 | 0 | 0 | 0 | 0 | 1 | 0
+  213b | 68 | 0 | 0 | 0 | 1 | 1 | 0
+  213c | 69 | 0 | 0 | 0 | 1 | 0 | 0
+  213d | 70 | 0 | 0 | 0 | 0 | 1 | 0
+  213e | 105 | 0 | 0 | 0 | 2 | 2 | 1
+  214a | 57 | 0 | 0 | 0 | 1 | 2 | 0
+  214b | 72 | 0 | 0 | 0 | 3 | 2 | 1
+  214c | 68 | 0 | 0 | 0 | 0 | 1 | 0
+  214d | 68 | 0 | 0 | 0 | 1 | 0 | 0
+  214e | 76 | 0 | 0 | 0 | 1 | 0 | 0
+  215a | 60 | 0 | 0 | 0 | 2 | 1 | 1
+  215b | 70 | 0 | 0 | 0 | 1 | 1 | 0
+  215c | 67 | 0 | 0 | 0 | 1 | 1 | 0
+  215d | 76 | 0 | 0 | 0 | 0 | 0 | 1
+  215e | 62 | 0 | 0 | 0 | 1 | 0 | 1
+  216a | 76 | 0 | 0 | 0 | 1 | 1 | 0
+  216b | 55 | 0 | 0 | 0 | 1 | 1 | 0
+  216c | 72 | 0 | 0 | 0 | 1 | 0 | 1
+  216d | 70 | 0 | 0 | 0 | 2 | 0 | 0
+  216e | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  217a | 61 | 0 | 0 | 0 | 1 | 1 | 1
+  217b | 60 | 0 | 0 | 0 | 2 | 0 | 0
+  217c | 67 | 0 | 0 | 0 | 1 | 1 | 1
+  217d | 59 | 0 | 0 | 0 | 0 | 2 | 0
+  217e | 77 | 0 | 0 | 0 | 1 | 1 | 1
+  218a | 67 | 0 | 0 | 0 | 1 | 1 | 0
+  218b | 65 | 0 | 0 | 0 | 3 | 1 | 0
+  218c | 77 | 0 | 0 | 0 | 0 | 1 | 0
+  218d | 73 | 0 | 0 | 0 | 1 | 0 | 1
+  218e | 55 | 0 | 0 | 0 | 0 | 0 | 1
+  219a | 75 | 0 | 0 | 0 | 1 | 0 | 0
+  219b | 59 | 0 | 0 | 0 | 1 | 0 | 1
+  219c | 62 | 0 | 0 | 0 | 2 | 0 | 1
+  219d | 62 | 0 | 0 | 0 | 0 | 1 | 1
+  219e | 78 | 0 | 0 | 0 | 2 | 1 | 2
+  220a | 64 | 0 | 0 | 0 | 1 | 1 | 0
+  220b | 61 | 0 | 0 | 0 | 0 | 0 | 1
+  220c | 70 | 0 | 0 | 0 | 1 | 0 | 1
+  220d | 67 | 0 | 0 | 0 | 3 | 0 | 1
+  220e | 72 | 0 | 1 | 0 | 1 | 0 | 0
+  221a | 63 | 0 | 0 | 0 | 2 | 1 | 1
+  221b | 70 | 0 | 0 | 0 | 1 | 0 | 1
+  221c | 67 | 0 | 0 | 0 | 1 | 1 | 0
+  221d | 75 | 0 | 0 | 0 | 1 | 1 | 0
+  221e | 51 | 0 | 0 | 0 | 2 | 0 | 1
+  222a | 68 | 0 | 0 | 0 | 0 | 0 | 0
+  222b | 56 | 0 | 0 | 0 | 0 | 0 | 1
+  222c | 61 | 0 | 0 | 0 | 1 | 1 | 2
+  222d | 59 | 1 | 0 | 0 | 0 | 1 | 0
+  222e | 102 | 0 | 0 | 0 | 1 | 2 | 0
+  223a | 63 | 0 | 0 | 0 | 1 | 0 | 0
+  223b | 64 | 0 | 0 | 0 | 0 | 2 | 0
+  223c | 51 | 0 | 0 | 0 | 0 | 1 | 0
+  223d | 90 | 0 | 0 | 0 | 1 | 1 | 1
+occurrences[517]:
+  token_id | form | surface | turn_id | marker | start_char | end_char
+  tok_symposium_000011 | γάρ | γὰρ | turn_symposium_0001 | 172a | 72 | 75
+  tok_symposium_000020 | οὖν | οὖν | turn_symposium_0001 | 172a | 130 | 133
+  tok_symposium_000048 | μήν | μὴν | turn_symposium_0001 | 172a | 346 | 349
+  tok_symposium_000078 | γάρ | γάρ | turn_symposium_0001 | 172b | 556 | 559
+  tok_symposium_000092 | γάρ | γὰρ | turn_symposium_0001 | 172b | 636 | 639
+  tok_symposium_000098 | οὖν | οὖν | turn_symposium_0001 | 172b | 668 | 671
+  tok_symposium_000102 | γάρ | γὰρ | turn_symposium_0001 | 172b | 698 | 701
+  tok_symposium_000150 | δή | δή | turn_symposium_0001 | 172c | 1010 | 1012
+  tok_symposium_000316 | οὖν | οὖν | turn_symposium_0001 | 173b | 2067 | 2070
+  tok_symposium_000335 | δή | δὴ | turn_symposium_0001 | 173b | 2191 | 2193
+  tok_symposium_000351 | οὖν | οὖν | turn_symposium_0001 | 173c | 2298 | 2301
+  tok_symposium_000360 | γάρ | γὰρ | turn_symposium_0001 | 173c | 2350 | 2353
+  tok_symposium_000439 | γάρ | γὰρ | turn_symposium_0002 | 173d | 2825 | 2828
+  tok_symposium_000473 | γάρ | γὰρ | turn_symposium_0002 | 173d | 3041 | 3044
+  tok_symposium_000493 | δή | δὴ | turn_symposium_0003 | 173e | 3163 | 3165
+  tok_symposium_000529 | τοίνυν | τοίνυν | turn_symposium_0005 | 173e | 3384 | 3390
+  tok_symposium_000546 | γάρ | γάρ | turn_symposium_0005 | 174a | 3511 | 3514
+  tok_symposium_000577 | γάρ | γὰρ | turn_symposium_0005 | 174a | 3711 | 3714
+  tok_symposium_000591 | δή | δὴ | turn_symposium_0005 | 174a | 3810 | 3812
+  tok_symposium_000623 | τοίνυν | τοίνυν | turn_symposium_0005 | 174b | 3994 | 4000
+  tok_symposium_000642 | γάρ | γὰρ | turn_symposium_0005 | 174b | 4130 | 4133
+  tok_symposium_000655 | γάρ | γὰρ | turn_symposium_0005 | 174b | 4216 | 4219
+  tok_symposium_000715 | οὖν | οὖν | turn_symposium_0005 | 174c | 4638 | 4641
+  tok_symposium_000750 | οὖν | οὖν | turn_symposium_0005 | 174d | 4881 | 4884
+  tok_symposium_000790 | γάρ | γὰρ | turn_symposium_0005 | 174e | 5146 | 5149
+  tok_symposium_000809 | οὖν | οὖν | turn_symposium_0005 | 174e | 5272 | 5275
+  tok_symposium_000858 | οὖν | οὖν | turn_symposium_0005 | 174e | 5566 | 5569
+  tok_symposium_000960 | γάρ | γάρ | turn_symposium_0005 | 175b | 6222 | 6225
+  tok_symposium_000977 | οὖν | οὖν | turn_symposium_0005 | 175b | 6311 | 6314
+  tok_symposium_001014 | οὖν | οὖν | turn_symposium_0005 | 175b | 6537 | 6540
+  tok_symposium_001043 | οὖν | οὖν | turn_symposium_0005 | 175c | 6726 | 6729
+  tok_symposium_001055 | οὖν | οὖν | turn_symposium_0005 | 175c | 6803 | 6806
+  tok_symposium_001069 | οὖν | οὖν | turn_symposium_0005 | 175c | 6894 | 6897
+  tok_symposium_001072 | γάρ | γὰρ | turn_symposium_0005 | 175c | 6918 | 6921
+  tok_symposium_001097 | γάρ | γὰρ | turn_symposium_0005 | 175d | 7088 | 7091
+  tok_symposium_001104 | γάρ | γὰρ | turn_symposium_0005 | 175d | 7121 | 7124
+  tok_symposium_001155 | γάρ | γὰρ | turn_symposium_0005 | 175d | 7406 | 7409
+  tok_symposium_001168 | γάρ | γάρ | turn_symposium_0005 | 175e | 7487 | 7490
+  tok_symposium_001179 | γάρ | γὰρ | turn_symposium_0005 | 175e | 7548 | 7551
+  tok_symposium_001280 | οὖν | οὖν | turn_symposium_0005 | 176a | 8155 | 8158
+  tok_symposium_001296 | οὖν | οὖν | turn_symposium_0005 | 176a | 8261 | 8264
+  tok_symposium_001320 | γάρ | γὰρ | turn_symposium_0005 | 176a | 8391 | 8394
+  tok_symposium_001323 | οὖν | οὖν | turn_symposium_0005 | 176b | 8419 | 8422
+  tok_symposium_001331 | οὖν | οὖν | turn_symposium_0005 | 176b | 8464 | 8467
+  tok_symposium_001349 | γάρ | γὰρ | turn_symposium_0005 | 176b | 8584 | 8587
+  tok_symposium_001356 | οὖν | οὖν | turn_symposium_0005 | 176b | 8637 | 8640
+  tok_symposium_001411 | γάρ | γὰρ | turn_symposium_0005 | 176c | 8975 | 8978
+  tok_symposium_001419 | γάρ | γὰρ | turn_symposium_0005 | 176c | 9025 | 9028
+  tok_symposium_001429 | οὖν | οὖν | turn_symposium_0005 | 176c | 9090 | 9093
+  tok_symposium_001457 | γάρ | γὰρ | turn_symposium_0005 | 176c | 9249 | 9252
+  tok_symposium_001458 | δή | δὴ | turn_symposium_0005 | 176c | 9253 | 9255
+  tok_symposium_001495 | μήν | μήν | turn_symposium_0005 | 176d | 9491 | 9494
+  tok_symposium_001523 | δή | δὴ | turn_symposium_0005 | 176e | 9666 | 9668
+  tok_symposium_001542 | τοίνυν | τοίνυν | turn_symposium_0005 | 176e | 9793 | 9799
+  tok_symposium_001596 | δή | δὴ | turn_symposium_0005 | 177a | 10152 | 10154
+  tok_symposium_001605 | οὖν | οὖν | turn_symposium_0005 | 177a | 10215 | 10218
+  tok_symposium_001621 | γάρ | γὰρ | turn_symposium_0005 | 177a | 10302 | 10305
+  tok_symposium_001632 | γάρ | γὰρ | turn_symposium_0005 | 177a | 10365 | 10368
+  tok_symposium_001722 | οὖν | οὖν | turn_symposium_0005 | 177c | 10969 | 10972
+  tok_symposium_001747 | δή | δή | turn_symposium_0005 | 177c | 11138 | 11140
+  tok_symposium_001754 | οὖν | οὖν | turn_symposium_0005 | 177c | 11174 | 11177
+  tok_symposium_001779 | οὖν | οὖν | turn_symposium_0005 | 177c | 11319 | 11322
+  tok_symposium_001791 | γάρ | γάρ | turn_symposium_0005 | 177d | 11397 | 11400
+  tok_symposium_001830 | γάρ | γὰρ | turn_symposium_0005 | 177d | 11646 | 11649
+  tok_symposium_001849 | μήν | μὴν | turn_symposium_0005 | 177e | 11760 | 11763
+  tok_symposium_001866 | καίτοι | καίτοι | turn_symposium_0005 | 177e | 11862 | 11868
+  tok_symposium_001895 | δή | δὴ | turn_symposium_0005 | 177e | 12057 | 12059
+  tok_symposium_001910 | οὖν | οὖν | turn_symposium_0005 | 178a | 12145 | 12148
+  tok_symposium_001942 | γάρ | γάρ | turn_symposium_0005 | 178a | 12336 | 12339
+  tok_symposium_001975 | γάρ | γὰρ | turn_symposium_0005 | 178a | 12521 | 12524
+  tok_symposium_001990 | γάρ | γὰρ | turn_symposium_0005 | 178b | 12611 | 12614
+  tok_symposium_002063 | γάρ | γὰρ | turn_symposium_0005 | 178c | 13121 | 13124
+  tok_symposium_002081 | γάρ | γὰρ | turn_symposium_0005 | 178c | 13221 | 13224
+  tok_symposium_002111 | δή | δὴ | turn_symposium_0005 | 178d | 13407 | 13409
+  tok_symposium_002126 | γάρ | γὰρ | turn_symposium_0005 | 178d | 13490 | 13493
+  tok_symposium_002140 | τοίνυν | τοίνυν | turn_symposium_0005 | 178d | 13576 | 13582
+  tok_symposium_002195 | οὖν | οὖν | turn_symposium_0005 | 178e | 13908 | 13911
+  tok_symposium_002243 | γάρ | γὰρ | turn_symposium_0005 | 179a | 14216 | 14219
+  tok_symposium_002271 | μήν | μὴν | turn_symposium_0005 | 179a | 14371 | 14374
+  tok_symposium_002321 | μήν | μὴν | turn_symposium_0005 | 179b | 14697 | 14700
+  tok_symposium_002408 | δή | δή | turn_symposium_0005 | 179c | 15264 | 15266
+  tok_symposium_002541 | δή | δὴ | turn_symposium_0005 | 180a | 16145 | 16147
+  tok_symposium_002585 | γάρ | γὰρ | turn_symposium_0005 | 180a | 16424 | 16427
+  tok_symposium_002621 | γάρ | γὰρ | turn_symposium_0005 | 180b | 16637 | 16640
+  tok_symposium_002625 | γάρ | γάρ | turn_symposium_0005 | 180b | 16666 | 16669
+  tok_symposium_002641 | δή | δὴ | turn_symposium_0005 | 180b | 16776 | 16778
+  tok_symposium_002708 | γάρ | γὰρ | turn_symposium_0005 | 180c | 17215 | 17218
+  tok_symposium_002719 | γάρ | γάρ | turn_symposium_0005 | 180c | 17259 | 17262
+  tok_symposium_002734 | οὖν | οὖν | turn_symposium_0005 | 180d | 17359 | 17362
+  tok_symposium_002751 | γάρ | γὰρ | turn_symposium_0005 | 180d | 17477 | 17480
+  tok_symposium_002761 | οὖν | οὖν | turn_symposium_0005 | 180d | 17532 | 17535
+  tok_symposium_002769 | δή | δὴ | turn_symposium_0005 | 180d | 17566 | 17568
+  tok_symposium_002793 | δή | δὴ | turn_symposium_0005 | 180d | 17685 | 17687
+  tok_symposium_002804 | δή | δὴ | turn_symposium_0005 | 180e | 17755 | 17757
+  tok_symposium_002808 | δή | δὴ | turn_symposium_0005 | 180e | 17787 | 17789
+  tok_symposium_002824 | οὖν | οὖν | turn_symposium_0005 | 180e | 17882 | 17885
+  tok_symposium_002830 | οὖν | οὖν | turn_symposium_0005 | 180e | 17909 | 17912
+  tok_symposium_002836 | γάρ | γὰρ | turn_symposium_0005 | 180e | 17952 | 17955
+  tok_symposium_002876 | γάρ | γὰρ | turn_symposium_0005 | 181a | 18182 | 18185
+  tok_symposium_002887 | δή | δὴ | turn_symposium_0005 | 181a | 18250 | 18252
+  tok_symposium_002908 | οὖν | οὖν | turn_symposium_0005 | 181a | 18359 | 18362
+  tok_symposium_002968 | δή | δὴ | turn_symposium_0005 | 181b | 18717 | 18719
+  tok_symposium_002983 | γάρ | γὰρ | turn_symposium_0005 | 181b | 18813 | 18816
+  tok_symposium_003028 | δή | δὴ | turn_symposium_0005 | 181c | 19079 | 19081
+  tok_symposium_003064 | γάρ | γὰρ | turn_symposium_0005 | 181d | 19298 | 19301
+  tok_symposium_003079 | γάρ | γὰρ | turn_symposium_0005 | 181d | 19406 | 19409
+  tok_symposium_003123 | γάρ | γὰρ | turn_symposium_0005 | 181e | 19702 | 19705
+  tok_symposium_003140 | οὖν | οὖν | turn_symposium_0005 | 181e | 19793 | 19796
+  tok_symposium_003172 | γάρ | γάρ | turn_symposium_0005 | 182a | 20020 | 20023
+  tok_symposium_003213 | δή | δὴ | turn_symposium_0005 | 182a | 20303 | 20305
+  tok_symposium_003228 | γάρ | γὰρ | turn_symposium_0005 | 182a | 20380 | 20383
+  tok_symposium_003240 | γάρ | γὰρ | turn_symposium_0005 | 182b | 20454 | 20457
+  tok_symposium_003292 | γάρ | γὰρ | turn_symposium_0005 | 182b | 20779 | 20782
+  tok_symposium_003308 | γάρ | γὰρ | turn_symposium_0005 | 182c | 20879 | 20882
+  tok_symposium_003324 | δή | δὴ | turn_symposium_0005 | 182c | 20992 | 20994
+  tok_symposium_003344 | γάρ | γὰρ | turn_symposium_0005 | 182c | 21094 | 21097
+  tok_symposium_003401 | γάρ | γὰρ | turn_symposium_0005 | 182d | 21480 | 21483
+  tok_symposium_003480 | γάρ | γὰρ | turn_symposium_0005 | 183a | 21996 | 21999
+  tok_symposium_003592 | γάρ | γὰρ | turn_symposium_0005 | 183b | 22716 | 22719
+  tok_symposium_003617 | οὖν | οὖν | turn_symposium_0005 | 183c | 22857 | 22860
+  tok_symposium_003723 | οὖν | οὖν | turn_symposium_0005 | 183d | 23532 | 23535
+  tok_symposium_003753 | γάρ | γὰρ | turn_symposium_0005 | 183e | 23702 | 23705
+  tok_symposium_003763 | γάρ | γὰρ | turn_symposium_0005 | 183e | 23763 | 23766
+  tok_symposium_003792 | δή | δὴ | turn_symposium_0005 | 183e | 23964 | 23966
+  tok_symposium_003810 | οὖν | οὖν | turn_symposium_0005 | 184a | 24080 | 24083
+  tok_symposium_003831 | δή | δὴ | turn_symposium_0005 | 184a | 24213 | 24215
+  tok_symposium_003847 | δή | δὴ | turn_symposium_0005 | 184a | 24313 | 24315
+  tok_symposium_003883 | γάρ | γὰρ | turn_symposium_0005 | 184b | 24548 | 24551
+  tok_symposium_003900 | δή | δὴ | turn_symposium_0005 | 184b | 24654 | 24656
+  tok_symposium_003913 | γάρ | γὰρ | turn_symposium_0005 | 184b | 24736 | 24739
+  tok_symposium_003932 | δή | δὴ | turn_symposium_0005 | 184c | 24876 | 24878
+  tok_symposium_003950 | γάρ | γὰρ | turn_symposium_0005 | 184c | 24985 | 24988
+  tok_symposium_003951 | δή | δὴ | turn_symposium_0005 | 184c | 24989 | 24991
+  tok_symposium_003983 | δή | δὴ | turn_symposium_0005 | 184c | 25177 | 25179
+  tok_symposium_004015 | γάρ | γὰρ | turn_symposium_0005 | 184d | 25374 | 25377
+  tok_symposium_004073 | δή | δὴ | turn_symposium_0005 | 184e | 25746 | 25748
+  tok_symposium_004110 | γάρ | γάρ | turn_symposium_0005 | 184e | 25982 | 25985
+  tok_symposium_004131 | γάρ | γὰρ | turn_symposium_0005 | 185a | 26135 | 26138
+  tok_symposium_004152 | δή | δὴ | turn_symposium_0005 | 185a | 26253 | 26255
+  tok_symposium_004182 | γάρ | γὰρ | turn_symposium_0005 | 185b | 26444 | 26447
+  tok_symposium_004270 | γάρ | γάρ | turn_symposium_0005 | 185c | 26998 | 27001
+  tok_symposium_004309 | γάρ | γὰρ | turn_symposium_0005 | 185d | 27222 | 27225
+  tok_symposium_004342 | γάρ | γὰρ | turn_symposium_0005 | 185d | 27431 | 27434
+  tok_symposium_004417 | δή | δὴ | turn_symposium_0005 | 185e | 27867 | 27869
+  tok_symposium_004421 | τοίνυν | τοίνυν | turn_symposium_0005 | 185e | 27892 | 27898
+  tok_symposium_004444 | γάρ | γὰρ | turn_symposium_0005 | 186a | 28045 | 28048
+  tok_symposium_004533 | γάρ | γὰρ | turn_symposium_0005 | 186b | 28538 | 28541
+  tok_symposium_004543 | γάρ | γὰρ | turn_symposium_0005 | 186b | 28594 | 28597
+  tok_symposium_004565 | οὖν | οὖν | turn_symposium_0005 | 186b | 28725 | 28728
+  tok_symposium_004578 | δή | δή | turn_symposium_0005 | 186b | 28785 | 28787
+  tok_symposium_004635 | γάρ | γὰρ | turn_symposium_0005 | 186c | 29141 | 29144
+  tok_symposium_004695 | γάρ | γὰρ | turn_symposium_0005 | 186d | 29525 | 29528
+  tok_symposium_004696 | δή | δὴ | turn_symposium_0005 | 186d | 29529 | 29531
+  tok_symposium_004749 | οὖν | οὖν | turn_symposium_0005 | 186e | 29862 | 29865
+  tok_symposium_004796 | γάρ | γάρ | turn_symposium_0005 | 187a | 30151 | 30154
+  tok_symposium_004842 | γάρ | γὰρ | turn_symposium_0005 | 187b | 30481 | 30484
+  tok_symposium_004856 | γάρ | γὰρ | turn_symposium_0005 | 187b | 30553 | 30556
+  tok_symposium_004963 | δή | δὴ | turn_symposium_0005 | 187d | 31254 | 31256
+  tok_symposium_004976 | δή | δὴ | turn_symposium_0005 | 187d | 31338 | 31340
+  tok_symposium_004980 | δή | δὴ | turn_symposium_0005 | 187d | 31365 | 31367
+  tok_symposium_004988 | γάρ | γὰρ | turn_symposium_0005 | 187d | 31413 | 31416
+  tok_symposium_005073 | δή | δὴ | turn_symposium_0005 | 187e | 31937 | 31939
+  tok_symposium_005096 | γάρ | γάρ | turn_symposium_0005 | 188a | 32082 | 32085
+  tok_symposium_005176 | γάρ | γὰρ | turn_symposium_0005 | 188b | 32546 | 32549
+  tok_symposium_005195 | γάρ | γὰρ | turn_symposium_0005 | 188b | 32661 | 32664
+  tok_symposium_005223 | τοίνυν | τοίνυν | turn_symposium_0005 | 188b | 32844 | 32850
+  tok_symposium_005257 | γάρ | γὰρ | turn_symposium_0005 | 188c | 33039 | 33042
+  tok_symposium_005291 | δή | δὴ | turn_symposium_0005 | 188c | 33232 | 33234
+  tok_symposium_005375 | οὖν | οὖν | turn_symposium_0005 | 188e | 33788 | 33791
+  tok_symposium_005413 | οὖν | οὖν | turn_symposium_0005 | 189a | 34034 | 34037
+  tok_symposium_005449 | γάρ | γὰρ | turn_symposium_0005 | 189a | 34253 | 34256
+  tok_symposium_005520 | γάρ | γὰρ | turn_symposium_0005 | 189b | 34714 | 34717
+  tok_symposium_005557 | μήν | μήν | turn_symposium_0005 | 189c | 34952 | 34955
+  tok_symposium_005578 | γάρ | γὰρ | turn_symposium_0005 | 189c | 35059 | 35062
+  tok_symposium_005616 | γάρ | γὰρ | turn_symposium_0005 | 189c | 35311 | 35314
+  tok_symposium_005637 | οὖν | οὖν | turn_symposium_0005 | 189d | 35453 | 35456
+  tok_symposium_005663 | γάρ | γὰρ | turn_symposium_0005 | 189d | 35615 | 35618
+  tok_symposium_005676 | γάρ | γὰρ | turn_symposium_0005 | 189d | 35682 | 35685
+  tok_symposium_005707 | γάρ | γὰρ | turn_symposium_0005 | 189e | 35863 | 35866
+  tok_symposium_005861 | δή | δὴ | turn_symposium_0005 | 190b | 36776 | 36778
+  tok_symposium_005876 | οὖν | οὖν | turn_symposium_0005 | 190b | 36847 | 36850
+  tok_symposium_005916 | οὖν | οὖν | turn_symposium_0005 | 190c | 37092 | 37095
+  tok_symposium_005930 | γάρ | γὰρ | turn_symposium_0005 | 190c | 37173 | 37176
+  tok_symposium_005944 | γάρ | γὰρ | turn_symposium_0005 | 190c | 37270 | 37273
+  tok_symposium_005958 | δή | δὴ | turn_symposium_0005 | 190c | 37357 | 37359
+  tok_symposium_005982 | γάρ | γὰρ | turn_symposium_0005 | 190d | 37524 | 37527
+  tok_symposium_006111 | δή | δὴ | turn_symposium_0005 | 190e | 38330 | 38332
+  tok_symposium_006159 | οὖν | οὖν | turn_symposium_0005 | 191a | 38634 | 38637
+  tok_symposium_006216 | δή | δὴ | turn_symposium_0005 | 191b | 39005 | 39007
+  tok_symposium_006241 | γάρ | γὰρ | turn_symposium_0005 | 191b | 39162 | 39165
+  tok_symposium_006261 | οὖν | οὖν | turn_symposium_0005 | 191c | 39283 | 39286
+  tok_symposium_006322 | δή | δὴ | turn_symposium_0005 | 191c | 39631 | 39633
+  tok_symposium_006323 | οὖν | οὖν | turn_symposium_0005 | 191c | 39634 | 39637
+  tok_symposium_006350 | οὖν | οὖν | turn_symposium_0005 | 191d | 39807 | 39810
+  tok_symposium_006364 | δή | δὴ | turn_symposium_0005 | 191d | 39892 | 39894
+  tok_symposium_006372 | οὖν | οὖν | turn_symposium_0005 | 191d | 39935 | 39938
+  tok_symposium_006380 | δή | δὴ | turn_symposium_0005 | 191d | 39976 | 39978
+  tok_symposium_006483 | δή | δή | turn_symposium_0005 | 192a | 40650 | 40652
+  tok_symposium_006490 | γάρ | γὰρ | turn_symposium_0005 | 192a | 40701 | 40704
+  tok_symposium_006510 | γάρ | γὰρ | turn_symposium_0005 | 192a | 40834 | 40837
+  tok_symposium_006548 | οὖν | οὖν | turn_symposium_0005 | 192b | 41104 | 41107
+  tok_symposium_006562 | οὖν | οὖν | turn_symposium_0005 | 192b | 41197 | 41200
+  tok_symposium_006617 | γάρ | γὰρ | turn_symposium_0005 | 192c | 41546 | 41549
+  tok_symposium_006707 | γάρ | γὰρ | turn_symposium_0005 | 192d | 42112 | 42115
+  tok_symposium_006792 | γάρ | γάρ | turn_symposium_0005 | 192e | 42623 | 42626
+  tok_symposium_006808 | οὖν | οὖν | turn_symposium_0005 | 192e | 42699 | 42702
+  tok_symposium_006836 | οὖν | οὖν | turn_symposium_0005 | 193a | 42870 | 42873
+  tok_symposium_006903 | γάρ | γὰρ | turn_symposium_0005 | 193b | 43318 | 43321
+  tok_symposium_006938 | γάρ | γὰρ | turn_symposium_0005 | 193c | 43548 | 43551
+  tok_symposium_006952 | οὖν | οὖν | turn_symposium_0005 | 193c | 43635 | 43638
+  tok_symposium_007008 | δή | δὴ | turn_symposium_0005 | 193c | 43971 | 43973
+  tok_symposium_007068 | οὖν | οὖν | turn_symposium_0005 | 193d | 44356 | 44359
+  tok_symposium_007087 | γάρ | γὰρ | turn_symposium_0005 | 193e | 44476 | 44479
+  tok_symposium_007099 | γάρ | γάρ | turn_symposium_0005 | 193e | 44554 | 44557
+  tok_symposium_007135 | οὖν | οὖν | turn_symposium_0005 | 194a | 44763 | 44766
+  tok_symposium_007139 | γάρ | γὰρ | turn_symposium_0005 | 194a | 44788 | 44791
+  tok_symposium_007300 | γάρ | γὰρ | turn_symposium_0005 | 194c | 45800 | 45803
+  tok_symposium_007395 | οὖν | οὖν | turn_symposium_0005 | 194d | 46391 | 46394
+  tok_symposium_007416 | γάρ | γὰρ | turn_symposium_0005 | 194e | 46529 | 46532
+  tok_symposium_007424 | δή | δὴ | turn_symposium_0005 | 194e | 46588 | 46590
+  tok_symposium_007436 | γάρ | γάρ | turn_symposium_0005 | 194e | 46659 | 46662
+  tok_symposium_007488 | δή | δὴ | turn_symposium_0005 | 195a | 46970 | 46972
+  tok_symposium_007503 | οὖν | οὖν | turn_symposium_0005 | 195a | 47059 | 47062
+  tok_symposium_007555 | δή | δὴ | turn_symposium_0005 | 195b | 47393 | 47395
+  tok_symposium_007573 | γάρ | γὰρ | turn_symposium_0005 | 195b | 47491 | 47494
+  tok_symposium_007629 | γάρ | γὰρ | turn_symposium_0005 | 195c | 47832 | 47835
+  tok_symposium_007660 | οὖν | οὖν | turn_symposium_0005 | 195c | 47999 | 48002
+  tok_symposium_007680 | γάρ | γὰρ | turn_symposium_0005 | 195d | 48119 | 48122
+  tok_symposium_007700 | γάρ | γὰρ | turn_symposium_0005 | 195d | 48240 | 48243
+  tok_symposium_007713 | οὖν | οὖν | turn_symposium_0005 | 195d | 48320 | 48323
+  tok_symposium_007730 | δή | δὴ | turn_symposium_0005 | 195e | 48431 | 48433
+  tok_symposium_007740 | γάρ | γὰρ | turn_symposium_0005 | 195e | 48489 | 48492
+  tok_symposium_007763 | γάρ | γὰρ | turn_symposium_0005 | 195e | 48611 | 48614
+  tok_symposium_007795 | οὖν | οὖν | turn_symposium_0005 | 195e | 48801 | 48804
+  tok_symposium_007810 | δή | δή | turn_symposium_0005 | 196a | 48907 | 48909
+  tok_symposium_007821 | γάρ | γὰρ | turn_symposium_0005 | 196a | 48966 | 48969
+  tok_symposium_007852 | δή | δὴ | turn_symposium_0005 | 196a | 49144 | 49146
+  tok_symposium_007860 | γάρ | γὰρ | turn_symposium_0005 | 196a | 49205 | 49208
+  tok_symposium_007878 | γάρ | γὰρ | turn_symposium_0005 | 196a | 49308 | 49311
+  tok_symposium_007908 | οὖν | οὖν | turn_symposium_0005 | 196b | 49471 | 49474
+  tok_symposium_007946 | γάρ | γὰρ | turn_symposium_0005 | 196b | 49689 | 49692
+  tok_symposium_007954 | γάρ | γὰρ | turn_symposium_0005 | 196b | 49730 | 49733
+  tok_symposium_007962 | γάρ | γὰρ | turn_symposium_0005 | 196c | 49784 | 49787
+  tok_symposium_007988 | γάρ | γὰρ | turn_symposium_0005 | 196c | 49962 | 49965
+  tok_symposium_008023 | μήν | μὴν | turn_symposium_0005 | 196c | 50181 | 50184
+  tok_symposium_008032 | γάρ | γὰρ | turn_symposium_0005 | 196d | 50256 | 50259
+  tok_symposium_008060 | οὖν | οὖν | turn_symposium_0005 | 196d | 50422 | 50425
+  tok_symposium_008074 | οὖν | οὖν | turn_symposium_0005 | 196d | 50514 | 50517
+  tok_symposium_008117 | δή | δὴ | turn_symposium_0005 | 196e | 50783 | 50785
+  tok_symposium_008135 | γάρ | γάρ | turn_symposium_0005 | 196e | 50889 | 50892
+  tok_symposium_008153 | δή | δὴ | turn_symposium_0005 | 197a | 50978 | 50980
+  tok_symposium_008204 | μήν | μὴν | turn_symposium_0005 | 197a | 51263 | 51266
+  tok_symposium_008239 | δή | δὴ | turn_symposium_0005 | 197b | 51517 | 51519
+  tok_symposium_008252 | γάρ | γὰρ | turn_symposium_0005 | 197b | 51605 | 51608
+  tok_symposium_008483 | οὖν | οὖν | turn_symposium_0005 | 198a | 53131 | 53134
+  tok_symposium_008606 | γάρ | γάρ | turn_symposium_0005 | 198c | 53885 | 53888
+  tok_symposium_008676 | γάρ | γὰρ | turn_symposium_0005 | 198d | 54311 | 54314
+  tok_symposium_008703 | δή | δὴ | turn_symposium_0005 | 198d | 54489 | 54491
+  tok_symposium_008754 | γάρ | γάρ | turn_symposium_0005 | 198e | 54764 | 54767
+  tok_symposium_008769 | δή | δὴ | turn_symposium_0005 | 198e | 54860 | 54862
+  tok_symposium_008799 | γάρ | γὰρ | turn_symposium_0005 | 199a | 55051 | 55054
+  tok_symposium_008813 | γάρ | γὰρ | turn_symposium_0005 | 199a | 55124 | 55127
+  tok_symposium_008835 | οὖν | οὖν | turn_symposium_0005 | 199a | 55257 | 55260
+  tok_symposium_008842 | δή | δή | turn_symposium_0005 | 199a | 55301 | 55303
+  tok_symposium_008844 | γάρ | γὰρ | turn_symposium_0005 | 199a | 55308 | 55311
+  tok_symposium_008851 | γάρ | γὰρ | turn_symposium_0005 | 199a | 55349 | 55352
+  tok_symposium_008876 | οὖν | οὖν | turn_symposium_0005 | 199b | 55506 | 55509
+  tok_symposium_008902 | οὖν | οὖν | turn_symposium_0005 | 199b | 55664 | 55667
+  tok_symposium_008917 | τοίνυν | τοίνυν | turn_symposium_0005 | 199b | 55758 | 55764
+  tok_symposium_008943 | δή | δὴ | turn_symposium_0005 | 199c | 55937 | 55939
+  tok_symposium_008951 | μήν | μήν | turn_symposium_0005 | 199c | 55994 | 55997
+  tok_symposium_008984 | οὖν | οὖν | turn_symposium_0005 | 199c | 56182 | 56185
+  tok_symposium_009021 | γάρ | γὰρ | turn_symposium_0005 | 199d | 56401 | 56404
+  tok_symposium_009082 | τοίνυν | τοίνυν | turn_symposium_0005 | 199e | 56742 | 56748
+  tok_symposium_009095 | γάρ | γὰρ | turn_symposium_0005 | 199e | 56829 | 56832
+  tok_symposium_009117 | δή | δή | turn_symposium_0005 | 199e | 56979 | 56981
+  tok_symposium_009132 | οὖν | οὖν | turn_symposium_0005 | 199e | 57060 | 57063
+  tok_symposium_009136 | τοίνυν | τοίνυν | turn_symposium_0005 | 200a | 57092 | 57098
+  tok_symposium_009186 | δή | δή | turn_symposium_0005 | 200a | 57384 | 57386
+  tok_symposium_009211 | γάρ | γὰρ | turn_symposium_0005 | 200b | 57531 | 57534
+  tok_symposium_009228 | οὖν | οὖν | turn_symposium_0005 | 200b | 57638 | 57641
+  tok_symposium_009245 | γάρ | γάρ | turn_symposium_0005 | 200b | 57743 | 57746
+  tok_symposium_009257 | γάρ | γὰρ | turn_symposium_0005 | 200b | 57806 | 57809
+  tok_symposium_009276 | γάρ | γὰρ | turn_symposium_0005 | 200b | 57914 | 57917
+  tok_symposium_009298 | οὖν | οὖν | turn_symposium_0005 | 200c | 58047 | 58050
+  tok_symposium_009305 | γάρ | γάρ | turn_symposium_0005 | 200c | 58096 | 58099
+  tok_symposium_009385 | οὖν | οὖν | turn_symposium_0005 | 200d | 58569 | 58572
+  tok_symposium_009419 | δή | δὴ | turn_symposium_0005 | 200d | 58766 | 58768
+  tok_symposium_009493 | δή | δή | turn_symposium_0005 | 200e | 59172 | 59174
+  tok_symposium_009518 | δή | δὴ | turn_symposium_0005 | 201a | 59332 | 59334
+  tok_symposium_009536 | γάρ | γάρ | turn_symposium_0005 | 201a | 59433 | 59436
+  tok_symposium_009551 | γάρ | γὰρ | turn_symposium_0005 | 201a | 59524 | 59527
+  tok_symposium_009560 | γάρ | γάρ | turn_symposium_0005 | 201a | 59575 | 59578
+  tok_symposium_009630 | οὖν | οὖν | turn_symposium_0005 | 201b | 60003 | 60006
+  tok_symposium_009652 | μήν | μὴν | turn_symposium_0005 | 201c | 60151 | 60154
+  tok_symposium_009705 | οὖν | οὖν | turn_symposium_0005 | 201c | 60447 | 60450
+  tok_symposium_009760 | δή | δὴ | turn_symposium_0005 | 201d | 60782 | 60784
+  tok_symposium_009767 | οὖν | οὖν | turn_symposium_0005 | 201d | 60818 | 60821
+  tok_symposium_009787 | δή | δή | turn_symposium_0005 | 201d | 60945 | 60947
+  tok_symposium_009808 | οὖν | οὖν | turn_symposium_0005 | 201e | 61067 | 61070
+  tok_symposium_009822 | γάρ | γάρ | turn_symposium_0005 | 201e | 61147 | 61150
+  tok_symposium_009847 | δή | δή | turn_symposium_0005 | 201e | 61273 | 61275
+  tok_symposium_009932 | γάρ | γὰρ | turn_symposium_0005 | 202a | 61761 | 61764
+  tok_symposium_009941 | γάρ | γὰρ | turn_symposium_0005 | 202a | 61812 | 61815
+  tok_symposium_009966 | τοίνυν | τοίνυν | turn_symposium_0005 | 202b | 61966 | 61972
+  tok_symposium_010008 | μήν | μήν | turn_symposium_0005 | 202b | 62207 | 62210
+  tok_symposium_010031 | οὖν | οὖν | turn_symposium_0005 | 202b | 62345 | 62348
+  tok_symposium_010076 | γάρ | γάρ | turn_symposium_0005 | 202c | 62610 | 62613
+  tok_symposium_010105 | δή | δὴ | turn_symposium_0005 | 202c | 62778 | 62780
+  tok_symposium_010117 | μήν | μὴν | turn_symposium_0005 | 202d | 62857 | 62860
+  tok_symposium_010134 | γάρ | γάρ | turn_symposium_0005 | 202d | 62968 | 62971
+  tok_symposium_010137 | οὖν | οὖν | turn_symposium_0005 | 202d | 62984 | 62987
+  tok_symposium_010152 | οὖν | οὖν | turn_symposium_0005 | 202d | 63068 | 63071
+  tok_symposium_010162 | οὖν | οὖν | turn_symposium_0005 | 202d | 63120 | 63123
+  tok_symposium_010173 | μήν | μήν | turn_symposium_0005 | 202d | 63181 | 63184
+  tok_symposium_010183 | οὖν | οὖν | turn_symposium_0005 | 202d | 63248 | 63251
+  tok_symposium_010191 | γάρ | γὰρ | turn_symposium_0005 | 202d | 63298 | 63301
+  tok_symposium_010319 | δή | δὴ | turn_symposium_0005 | 203a | 64033 | 64035
+  tok_symposium_010351 | γάρ | γὰρ | turn_symposium_0005 | 203b | 64223 | 64226
+  tok_symposium_010372 | δή | δὴ | turn_symposium_0005 | 203b | 64346 | 64348
+  tok_symposium_010384 | οὖν | οὖν | turn_symposium_0005 | 203b | 64405 | 64408
+  tok_symposium_010390 | γάρ | γὰρ | turn_symposium_0005 | 203b | 64446 | 64449
+  tok_symposium_010402 | οὖν | οὖν | turn_symposium_0005 | 203b | 64513 | 64516
+  tok_symposium_010423 | δή | δὴ | turn_symposium_0005 | 203c | 64651 | 64653
+  tok_symposium_010452 | οὖν | οὖν | turn_symposium_0005 | 203c | 64822 | 64825
+  tok_symposium_010600 | γάρ | γὰρ | turn_symposium_0005 | 204a | 65720 | 65723
+  tok_symposium_010610 | γάρ | γάρ | turn_symposium_0005 | 204a | 65787 | 65790
+  tok_symposium_010628 | γάρ | γὰρ | turn_symposium_0005 | 204a | 65901 | 65904
+  tok_symposium_010657 | οὖν | οὖν | turn_symposium_0005 | 204a | 66078 | 66081
+  tok_symposium_010672 | δή | δή | turn_symposium_0005 | 204b | 66173 | 66175
+  tok_symposium_010691 | γάρ | γὰρ | turn_symposium_0005 | 204b | 66266 | 66269
+  tok_symposium_010692 | δή | δὴ | turn_symposium_0005 | 204b | 66270 | 66272
+  tok_symposium_010726 | γάρ | γὰρ | turn_symposium_0005 | 204b | 66465 | 66468
+  tok_symposium_010739 | οὖν | οὖν | turn_symposium_0005 | 204b | 66530 | 66533
+  tok_symposium_010782 | γάρ | γὰρ | turn_symposium_0005 | 204c | 66777 | 66780
+  tok_symposium_010811 | δή | δή | turn_symposium_0005 | 204c | 66934 | 66936
+  tok_symposium_010815 | γάρ | γὰρ | turn_symposium_0005 | 204c | 66952 | 66955
+  tok_symposium_010827 | δή | δὴ | turn_symposium_0005 | 204d | 67033 | 67035
+  tok_symposium_010838 | γάρ | γὰρ | turn_symposium_0005 | 204d | 67097 | 67100
+  tok_symposium_010839 | δή | δὴ | turn_symposium_0005 | 204d | 67101 | 67103
+  tok_symposium_010961 | γάρ | γάρ | turn_symposium_0005 | 205a | 67812 | 67815
+  tok_symposium_010990 | δή | δὴ | turn_symposium_0005 | 205a | 68006 | 68008
+  tok_symposium_011021 | δή | δὴ | turn_symposium_0005 | 205a | 68195 | 68197
+  tok_symposium_011022 | οὖν | οὖν | turn_symposium_0005 | 205a | 68198 | 68201
+  tok_symposium_011056 | γάρ | γὰρ | turn_symposium_0005 | 205b | 68396 | 68399
+  tok_symposium_011089 | γάρ | γάρ | turn_symposium_0005 | 205b | 68589 | 68592
+  tok_symposium_011157 | γάρ | γὰρ | turn_symposium_0005 | 205c | 68991 | 68994
+  tok_symposium_011174 | τοίνυν | τοίνυν | turn_symposium_0005 | 205d | 69110 | 69116
+  tok_symposium_011302 | γάρ | γὰρ | turn_symposium_0005 | 205e | 69867 | 69870
+  tok_symposium_011345 | οὖν | οὖν | turn_symposium_0005 | 206a | 70104 | 70107
+  tok_symposium_011374 | οὖν | οὖν | turn_symposium_0005 | 206a | 70283 | 70286
+  tok_symposium_011404 | δή | δὴ | turn_symposium_0005 | 206b | 70475 | 70477
+  tok_symposium_011461 | γάρ | γὰρ | turn_symposium_0005 | 206b | 70782 | 70785
+  tok_symposium_011493 | γάρ | γάρ | turn_symposium_0005 | 206c | 70961 | 70964
+  tok_symposium_011530 | γάρ | γὰρ | turn_symposium_0005 | 206c | 71158 | 71161
+  tok_symposium_011577 | οὖν | οὖν | turn_symposium_0005 | 206d | 71430 | 71433
+  tok_symposium_011626 | δή | δὴ | turn_symposium_0005 | 206d | 71732 | 71734
+  tok_symposium_011648 | γάρ | γάρ | turn_symposium_0005 | 206e | 71861 | 71864
+  tok_symposium_011662 | μήν | μήν | turn_symposium_0005 | 206e | 71928 | 71931
+  tok_symposium_011677 | οὖν | οὖν | turn_symposium_0005 | 206e | 72011 | 72014
+  tok_symposium_011680 | δή | δὴ | turn_symposium_0005 | 206e | 72024 | 72026
+  tok_symposium_011681 | οὖν | οὖν | turn_symposium_0005 | 206e | 72027 | 72030
+  tok_symposium_011711 | δή | δὴ | turn_symposium_0005 | 207a | 72226 | 72228
+  tok_symposium_011724 | οὖν | οὖν | turn_symposium_0005 | 207a | 72297 | 72300
+  tok_symposium_011812 | γάρ | γὰρ | turn_symposium_0005 | 207b | 72862 | 72865
+  tok_symposium_011843 | οὖν | οὖν | turn_symposium_0005 | 207c | 73051 | 73054
+  tok_symposium_011884 | τοίνυν | τοίνυν | turn_symposium_0005 | 207c | 73284 | 73290
+  tok_symposium_011898 | γάρ | γὰρ | turn_symposium_0005 | 207c | 73384 | 73387
+  tok_symposium_012056 | γάρ | γὰρ | turn_symposium_0005 | 208a | 74281 | 74284
+  tok_symposium_012065 | γάρ | γὰρ | turn_symposium_0005 | 208a | 74340 | 74343
+  tok_symposium_012086 | γάρ | γὰρ | turn_symposium_0005 | 208a | 74476 | 74479
+  tok_symposium_012133 | οὖν | οὖν | turn_symposium_0005 | 208b | 74751 | 74754
+  tok_symposium_012143 | γάρ | γὰρ | turn_symposium_0005 | 208b | 74813 | 74816
+  tok_symposium_012305 | γάρ | γὰρ | turn_symposium_0005 | 208e | 75852 | 75855
+  tok_symposium_012310 | οὖν | οὖν | turn_symposium_0005 | 208e | 75880 | 75883
+  tok_symposium_012348 | γάρ | γὰρ | turn_symposium_0005 | 209a | 76131 | 76134
+  tok_symposium_012349 | οὖν | οὖν | turn_symposium_0005 | 209a | 76135 | 76138
+  tok_symposium_012370 | οὖν | οὖν | turn_symposium_0005 | 209a | 76243 | 76246
+  tok_symposium_012379 | δή | δή | turn_symposium_0005 | 209a | 76295 | 76297
+  tok_symposium_012411 | δή | δὴ | turn_symposium_0005 | 209a | 76487 | 76489
+  tok_symposium_012442 | δή | δὴ | turn_symposium_0005 | 209b | 76664 | 76666
+  tok_symposium_012455 | γάρ | γὰρ | turn_symposium_0005 | 209b | 76726 | 76729
+  tok_symposium_012461 | οὖν | οὖν | turn_symposium_0005 | 209b | 76762 | 76765
+  tok_symposium_012482 | δή | δὴ | turn_symposium_0005 | 209b | 76873 | 76875
+  tok_symposium_012512 | γάρ | γὰρ | turn_symposium_0005 | 209c | 77070 | 77073
+  tok_symposium_012664 | οὖν | οὖν | turn_symposium_0005 | 209e | 78062 | 78065
+  tok_symposium_012696 | οὖν | οὖν | turn_symposium_0005 | 210a | 78229 | 78232
+  tok_symposium_012711 | γάρ | γάρ | turn_symposium_0005 | 210a | 78310 | 78313
+  tok_symposium_012968 | γάρ | γὰρ | turn_symposium_0005 | 210e | 79865 | 79868
+  tok_symposium_013001 | δή | δὴ | turn_symposium_0005 | 210e | 80063 | 80065
+  tok_symposium_013140 | δή | δή | turn_symposium_0005 | 211b | 80832 | 80834
+  tok_symposium_013161 | γάρ | γὰρ | turn_symposium_0005 | 211b | 80955 | 80958
+  tok_symposium_013162 | δή | δή | turn_symposium_0005 | 211b | 80959 | 80961
+  tok_symposium_013413 | δή | δή | turn_symposium_0005 | 212b | 82488 | 82490
+  tok_symposium_013449 | δή | δὴ | turn_symposium_0005 | 212b | 82696 | 82698
+  tok_symposium_013488 | οὖν | οὖν | turn_symposium_0005 | 212c | 82928 | 82931
+  tok_symposium_013550 | οὖν | οὖν | turn_symposium_0005 | 212c | 83323 | 83326
+  tok_symposium_013599 | οὖν | οὖν | turn_symposium_0005 | 212d | 83630 | 83633
+  tok_symposium_013653 | γάρ | γάρ | turn_symposium_0005 | 212e | 83985 | 83988
+  tok_symposium_013716 | οὖν | οὖν | turn_symposium_0005 | 213a | 84348 | 84351
+  tok_symposium_013762 | γάρ | γὰρ | turn_symposium_0005 | 213b | 84668 | 84671
+  tok_symposium_013778 | οὖν | οὖν | turn_symposium_0005 | 213b | 84780 | 84783
+  tok_symposium_013886 | γάρ | γὰρ | turn_symposium_0005 | 213c | 85463 | 85466
+  tok_symposium_013920 | οὖν | οὖν | turn_symposium_0005 | 213d | 85680 | 85683
+  tok_symposium_014019 | δή | δή | turn_symposium_0005 | 213e | 86292 | 86294
+  tok_symposium_014022 | γάρ | γάρ | turn_symposium_0005 | 213e | 86312 | 86315
+  tok_symposium_014027 | οὖν | οὖν | turn_symposium_0005 | 213e | 86344 | 86347
+  tok_symposium_014032 | γάρ | γὰρ | turn_symposium_0005 | 213e | 86378 | 86381
+  tok_symposium_014036 | οὖν | οὖν | turn_symposium_0005 | 213e | 86402 | 86405
+  tok_symposium_014096 | γάρ | γὰρ | turn_symposium_0005 | 214a | 86779 | 86782
+  tok_symposium_014109 | οὖν | οὖν | turn_symposium_0005 | 214a | 86856 | 86859
+  tok_symposium_014119 | οὖν | οὖν | turn_symposium_0005 | 214a | 86919 | 86922
+  tok_symposium_014141 | οὖν | οὖν | turn_symposium_0005 | 214b | 87061 | 87064
+  tok_symposium_014153 | γάρ | γὰρ | turn_symposium_0005 | 214b | 87156 | 87159
+  tok_symposium_014166 | γάρ | γάρ | turn_symposium_0005 | 214b | 87230 | 87233
+  tok_symposium_014170 | γάρ | γὰρ | turn_symposium_0005 | 214b | 87264 | 87267
+  tok_symposium_014176 | οὖν | οὖν | turn_symposium_0005 | 214b | 87314 | 87317
+  tok_symposium_014180 | δή | δή | turn_symposium_0005 | 214b | 87342 | 87344
+  tok_symposium_014206 | οὖν | οὖν | turn_symposium_0005 | 214c | 87509 | 87512
+  tok_symposium_014279 | γάρ | γάρ | turn_symposium_0005 | 214d | 87936 | 87939
+  tok_symposium_014405 | γάρ | γὰρ | turn_symposium_0005 | 214e | 88738 | 88741
+  tok_symposium_014418 | γάρ | γάρ | turn_symposium_0005 | 215a | 88837 | 88840
+  tok_symposium_014442 | οὖν | οὖν | turn_symposium_0005 | 215a | 88997 | 89000
+  tok_symposium_014459 | γάρ | γὰρ | turn_symposium_0005 | 215a | 89091 | 89094
+  tok_symposium_014460 | δή | δὴ | turn_symposium_0005 | 215a | 89095 | 89097
+  tok_symposium_014499 | οὖν | οὖν | turn_symposium_0005 | 215b | 89369 | 89372
+  tok_symposium_014526 | γάρ | γὰρ | turn_symposium_0005 | 215b | 89514 | 89517
+  tok_symposium_014560 | γάρ | γὰρ | turn_symposium_0005 | 215c | 89718 | 89721
+  tok_symposium_014568 | οὖν | οὖν | turn_symposium_0005 | 215c | 89774 | 89777
+  tok_symposium_014670 | δή | δὴ | turn_symposium_0005 | 215d | 90392 | 90394
+  tok_symposium_014683 | γάρ | γὰρ | turn_symposium_0005 | 215e | 90466 | 90469
+  tok_symposium_014742 | δή | δὴ | turn_symposium_0005 | 215e | 90831 | 90833
+  tok_symposium_014783 | γάρ | γάρ | turn_symposium_0005 | 216a | 91065 | 91068
+  tok_symposium_014800 | οὖν | οὖν | turn_symposium_0005 | 216a | 91159 | 91162
+  tok_symposium_014840 | γάρ | γὰρ | turn_symposium_0005 | 216b | 91415 | 91418
+  tok_symposium_014864 | οὖν | οὖν | turn_symposium_0005 | 216b | 91555 | 91558
+  tok_symposium_014908 | δή | δὴ | turn_symposium_0005 | 216c | 91806 | 91808
+  tok_symposium_014941 | γάρ | γὰρ | turn_symposium_0005 | 216c | 91989 | 91992
+  tok_symposium_014954 | γάρ | γὰρ | turn_symposium_0005 | 216d | 92079 | 92082
+  tok_symposium_014985 | γάρ | γὰρ | turn_symposium_0005 | 216d | 92260 | 92263
+  tok_symposium_015123 | γάρ | γὰρ | turn_symposium_0005 | 217a | 93144 | 93147
+  tok_symposium_015124 | δή | δὴ | turn_symposium_0005 | 217a | 93148 | 93150
+  tok_symposium_015131 | οὖν | οὖν | turn_symposium_0005 | 217a | 93184 | 93187
+  tok_symposium_015150 | γάρ | γὰρ | turn_symposium_0005 | 217b | 93323 | 93326
+  tok_symposium_015166 | γάρ | γάρ | turn_symposium_0005 | 217b | 93434 | 93437
+  tok_symposium_015214 | οὖν | οὖν | turn_symposium_0005 | 217c | 93769 | 93772
+  tok_symposium_015226 | γάρ | γάρ | turn_symposium_0005 | 217c | 93846 | 93849
+  tok_symposium_015257 | δή | δὴ | turn_symposium_0005 | 217c | 94035 | 94037
+  tok_symposium_015275 | οὖν | οὖν | turn_symposium_0005 | 217d | 94160 | 94163
+  tok_symposium_015314 | οὖν | οὖν | turn_symposium_0005 | 217d | 94444 | 94447
+  tok_symposium_015334 | οὖν | οὖν | turn_symposium_0005 | 217e | 94559 | 94562
+  tok_symposium_015335 | δή | δὴ | turn_symposium_0005 | 217e | 94563 | 94565
+  tok_symposium_015392 | γάρ | γάρ | turn_symposium_0005 | 217e | 94891 | 94894
+  tok_symposium_015422 | οὖν | οὖν | turn_symposium_0005 | 218a | 95072 | 95075
+  tok_symposium_015436 | γάρ | γὰρ | turn_symposium_0005 | 218a | 95159 | 95162
+  tok_symposium_015491 | γάρ | γὰρ | turn_symposium_0005 | 218b | 95504 | 95507
+  tok_symposium_015503 | γάρ | γὰρ | turn_symposium_0005 | 218b | 95595 | 95598
+  tok_symposium_015531 | γάρ | γὰρ | turn_symposium_0005 | 218b | 95760 | 95763
+  tok_symposium_015532 | οὖν | οὖν | turn_symposium_0005 | 218b | 95764 | 95767
+  tok_symposium_015569 | οὖν | οὖν | turn_symposium_0005 | 218c | 95992 | 95995
+  tok_symposium_015625 | γάρ | γὰρ | turn_symposium_0005 | 218d | 96298 | 96301
+  tok_symposium_015645 | δή | δὴ | turn_symposium_0005 | 218d | 96424 | 96426
+  tok_symposium_015719 | δή | δὴ | turn_symposium_0005 | 218e | 96871 | 96873
+  tok_symposium_015816 | γάρ | γὰρ | turn_symposium_0005 | 219a | 97472 | 97475
+  tok_symposium_015836 | δή | δὴ | turn_symposium_0005 | 219b | 97595 | 97597
+  tok_symposium_015865 | γάρ | γὰρ | turn_symposium_0005 | 219b | 97769 | 97772
+  tok_symposium_015899 | δή | δὴ | turn_symposium_0005 | 219c | 97986 | 97988
+  tok_symposium_015926 | γάρ | γάρ | turn_symposium_0005 | 219c | 98153 | 98156
+  tok_symposium_015932 | γάρ | γὰρ | turn_symposium_0005 | 219c | 98193 | 98196
+  tok_symposium_015953 | δή | δὴ | turn_symposium_0005 | 219d | 98342 | 98344
+  tok_symposium_015992 | οὖν | οὖν | turn_symposium_0005 | 219d | 98583 | 98586
+  tok_symposium_016006 | γάρ | γὰρ | turn_symposium_0005 | 219e | 98693 | 98696
+  tok_symposium_016029 | δή | δή | turn_symposium_0005 | 219e | 98820 | 98822
+  tok_symposium_016043 | γάρ | γάρ | turn_symposium_0005 | 219e | 98906 | 98909
+  tok_symposium_016061 | οὖν | οὖν | turn_symposium_0005 | 219e | 99026 | 99029
+  tok_symposium_016078 | δή | δὴ | turn_symposium_0005 | 219e | 99135 | 99137
+  tok_symposium_016122 | οὖν | οὖν | turn_symposium_0005 | 220a | 99416 | 99419
+  tok_symposium_016138 | γάρ | γὰρ | turn_symposium_0005 | 220a | 99509 | 99512
+  tok_symposium_016165 | δή | δὴ | turn_symposium_0005 | 220b | 99681 | 99683
+  tok_symposium_016213 | δή | δὴ | turn_symposium_0005 | 220c | 99997 | 99999
+  tok_symposium_016231 | γάρ | γὰρ | turn_symposium_0005 | 220c | 100118 | 100121
+  tok_symposium_016276 | γάρ | γὰρ | turn_symposium_0005 | 220d | 100417 | 100420
+  tok_symposium_016320 | γάρ | γὰρ | turn_symposium_0005 | 220d | 100673 | 100676
+  tok_symposium_016321 | δή | δὴ | turn_symposium_0005 | 220d | 100677 | 100679
+  tok_symposium_016327 | γάρ | γὰρ | turn_symposium_0005 | 220d | 100712 | 100715
+  tok_symposium_016382 | γάρ | γὰρ | turn_symposium_0005 | 220e | 101037 | 101040
+  tok_symposium_016405 | τοίνυν | τοίνυν | turn_symposium_0005 | 220e | 101192 | 101198
+  tok_symposium_016420 | γάρ | γὰρ | turn_symposium_0005 | 221a | 101297 | 101300
+  tok_symposium_016428 | οὖν | οὖν | turn_symposium_0005 | 221a | 101351 | 101354
+  tok_symposium_016455 | δή | δὴ | turn_symposium_0005 | 221a | 101520 | 101522
+  tok_symposium_016464 | γάρ | γὰρ | turn_symposium_0005 | 221a | 101576 | 101579
+  tok_symposium_016489 | δή | δὴ | turn_symposium_0005 | 221b | 101720 | 101722
+  tok_symposium_016535 | γάρ | γάρ | turn_symposium_0005 | 221b | 102031 | 102034
+  tok_symposium_016552 | οὖν | οὖν | turn_symposium_0005 | 221c | 102151 | 102154
+  tok_symposium_016593 | γάρ | γὰρ | turn_symposium_0005 | 221c | 102390 | 102393
+  tok_symposium_016671 | γάρ | γὰρ | turn_symposium_0005 | 221d | 102844 | 102847
+  tok_symposium_016672 | οὖν | οὖν | turn_symposium_0005 | 221d | 102848 | 102851
+  tok_symposium_016691 | γάρ | γὰρ | turn_symposium_0005 | 221e | 102971 | 102974
+  tok_symposium_016712 | δή | δή | turn_symposium_0005 | 221e | 103112 | 103114
+  tok_symposium_016717 | γάρ | γὰρ | turn_symposium_0005 | 221e | 103142 | 103145
+  tok_symposium_016839 | δή | δὴ | turn_symposium_0005 | 222b | 103923 | 103925
+  tok_symposium_016866 | δή | δὴ | turn_symposium_0005 | 222c | 104110 | 104112
+  tok_symposium_016884 | οὖν | οὖν | turn_symposium_0005 | 222c | 104222 | 104225
+  tok_symposium_016893 | γάρ | γὰρ | turn_symposium_0005 | 222c | 104277 | 104280
+  tok_symposium_016911 | δή | δὴ | turn_symposium_0005 | 222c | 104390 | 104392
+  tok_symposium_016977 | οὖν | οὖν | turn_symposium_0005 | 222d | 104790 | 104793
+  tok_symposium_016981 | μήν | μήν | turn_symposium_0005 | 222d | 104814 | 104817
+  tok_symposium_017003 | οὖν | οὖν | turn_symposium_0005 | 222e | 104951 | 104954
+  tok_symposium_017058 | γάρ | γὰρ | turn_symposium_0005 | 222e | 105289 | 105292
+  tok_symposium_017070 | οὖν | οὖν | turn_symposium_0005 | 222e | 105349 | 105352
+  tok_symposium_017098 | γάρ | γὰρ | turn_symposium_0005 | 223a | 105530 | 105533
+  tok_symposium_017152 | οὖν | οὖν | turn_symposium_0005 | 223b | 105912 | 105915
+  tok_symposium_017197 | οὖν | οὖν | turn_symposium_0005 | 223b | 106225 | 106228
+  tok_symposium_017256 | οὖν | οὖν | turn_symposium_0005 | 223c | 106613 | 106616
+  tok_symposium_017272 | γάρ | γὰρ | turn_symposium_0005 | 223d | 106717 | 106720
+  tok_symposium_017305 | δή | δὴ | turn_symposium_0005 | 223d | 106970 | 106972
+  tok_symposium_017326 | οὖν | οὖν | turn_symposium_0005 | 223d | 107117 | 107120
