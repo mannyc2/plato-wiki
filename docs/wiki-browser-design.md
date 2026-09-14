@@ -78,7 +78,11 @@ site build validates.
 
 ## Serving the listening site
 
-Build a review site with explicitly selected draft recording manifests and a
+Use a separate review output directory, such as `scratch/listening-site`.
+Completeness checks inspect the repository's `site/` directory as public output,
+so placing review candidates there changes the public audio-readiness result.
+
+Build the review site with explicitly selected draft recording manifests and a
 verified local MP3 artifact store:
 
 ```bash
