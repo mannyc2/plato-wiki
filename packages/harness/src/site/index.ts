@@ -81,7 +81,7 @@ export type BuiltStaticSite = {
 export type BuildStaticSiteOptions = {
   outDir?: string;
   recordingArtifactRoot?: string;
-  includeDraftRecordings?: boolean;
+  reviewRecordingManifestRoot?: string | undefined;
   readingPageTargetBytes?: number;
 };
 
@@ -3937,7 +3937,7 @@ export function buildStaticSite(options: BuildStaticSiteOptions = {}): BuiltStat
   const outDir = options.outDir ?? join(getRepoRoot(), "site");
   const sourceResolver = createSourceSpanResolver();
   const data = readSiteData({
-    includeDraftRecordings: options.includeDraftRecordings ?? false,
+    reviewRecordingManifestRoot: options.reviewRecordingManifestRoot,
     sourceResolver,
   });
   const recordingArtifactRoot = options.recordingArtifactRoot ?? process.env.PLATO_RECORDING_ARTIFACT_ROOT;

@@ -83,12 +83,14 @@ Completeness checks inspect the repository's `site/` directory as public output,
 so placing review candidates there changes the public audio-readiness result.
 
 Build the review site with explicitly selected draft recording manifests and a
-verified local MP3 artifact store:
+verified local MP3 artifact store. Keep these manifests outside the canonical
+`wiki/recordings` inventory until acceptance; the explicit review directory is
+the sole catalog for this build and must contain only draft manifests:
 
 ```bash
 bun run harness site --out-dir /absolute/path/to/site \
   --recording-artifact-root /absolute/path/to/audio-artifacts \
-  --include-draft-recordings
+  --review-recording-manifests /absolute/path/to/review-manifests
 bun scripts/site/serve.ts --directory /absolute/path/to/site \
   --host 127.0.0.1 --port 8080
 ```

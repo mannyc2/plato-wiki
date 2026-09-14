@@ -150,7 +150,7 @@ type ParsedArgs = {
   toMarker: string | undefined;
   outDir: string | undefined;
   recordingArtifactRoot: string | undefined;
-  includeDraftRecordings: boolean;
+  reviewRecordingManifestRoot: string | undefined;
   family: string | undefined;
 };
 
@@ -225,7 +225,7 @@ Usage:
   bun run harness ontology-audit bind-final
   bun run harness ontology-audit close
   bun run harness ontology-audit verify [--baseline-only]
-  bun run harness site [--out-dir <path>] [--recording-artifact-root <absolute-path>] [--include-draft-recordings]
+  bun run harness site [--out-dir <path>] [--recording-artifact-root <absolute-path>] [--review-recording-manifests <absolute-path>]
   bun run harness job manifest [--target corpus|knowledge-base|audio-edition] [--write] [--json]
   bun run harness job list [--target <t>] [--lane <lane>] [--family <CMP-*>] [--scope <slug>] [--refresh] [--json]
   bun run harness job show <job-id> [--target <t>] [--refresh] [--json]
@@ -371,7 +371,8 @@ function parseCommand(argv: string[]): ParsedArgs {
   const toMarker = optionValue(argv, "--to-marker");
   const outDir = optionValue(argv, "--out-dir");
   const recordingArtifactRoot = optionValue(argv, "--recording-artifact-root");
-  const includeDraftRecordings = argv.includes("--include-draft-recordings");
+  const reviewRecordingManifestRoot = optionValue(argv, "--review-recording-manifests");
+  if (argv.includes("--include-draft-recordings")) throw new Error("Use --review-recording-manifests <absolute-path> to select an external review catalog.");
   const family = optionValue(argv, "--family");
 
   if (!rawCommand || rawCommand === "help" || rawCommand === "--help" || rawCommand === "-h") {
@@ -384,7 +385,7 @@ function parseCommand(argv: string[]): ParsedArgs {
       toMarker,
       outDir,
       recordingArtifactRoot,
-      includeDraftRecordings,
+      reviewRecordingManifestRoot,
       family,
     };
   }
@@ -423,7 +424,7 @@ function parseCommand(argv: string[]): ParsedArgs {
     toMarker,
     outDir,
     recordingArtifactRoot,
-    includeDraftRecordings,
+    reviewRecordingManifestRoot,
     family,
   };
 }
@@ -1490,7 +1491,7 @@ async function main() {
       ...(args.recordingArtifactRoot
         ? { recordingArtifactRoot: args.recordingArtifactRoot }
         : {}),
-      includeDraftRecordings: args.includeDraftRecordings,
+      reviewRecordingManifestRoot: args.reviewRecordingManifestRoot,
     });
     console.log(`wrote ${result.pages.length} site file(s) to ${relative(getRepoRoot(), result.outDir)}`);
     console.log(`observations=${result.observationCount} ontology_concepts=${result.ontologyConceptCount} clusters=${result.clusterCount}`);

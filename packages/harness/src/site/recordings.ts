@@ -7,6 +7,7 @@ import {
   mkdirSync,
   openSync,
   readFileSync,
+  readdirSync,
   readSync,
   realpathSync,
   renameSync,
@@ -281,22 +282,46 @@ export function streamFileSha256(path: string) {
 }
 
 export function discoverSiteRecordings({
-  includeDraftRecordings = false,
+  reviewRecordingManifestRoot,
 }: {
-  includeDraftRecordings?: boolean;
+  reviewRecordingManifestRoot?: string | undefined;
 } = {}) {
-  const issues = validateRecordingManifests();
-  if (issues.length > 0) {
-    throw new Error(`Recording manifest validation failed:\n${formatRecordingManifestValidationError(issues)}`);
+  let sources: { manifestPath: string; sourcePath: string }[];
+  if (reviewRecordingManifestRoot !== undefined) {
+    const root = reviewRecordingManifestRoot;
+    if (!isAbsolute(root) || !existsSync(root) || lstatSync(root).isSymbolicLink() || !statSync(root).isDirectory()) {
+      throw new Error("Review recording manifests require an absolute non-symlink directory.");
+    }
+    sources = readdirSync(root).filter((name) => name.endsWith(".json")).sort().map((name) => {
+      const sourcePath = join(root, name);
+      if (lstatSync(sourcePath).isSymbolicLink() || !statSync(sourcePath).isFile()) {
+        throw new Error(`Review manifest must be a regular non-symlink file: ${sourcePath}`);
+      }
+      return { manifestPath: `wiki/recordings/${name}`, sourcePath };
+    });
+    if (sources.length === 0) throw new Error("Review recording manifest directory is empty.");
+  } else {
+    const issues = validateRecordingManifests();
+    if (issues.length > 0) {
+      throw new Error(`Recording manifest validation failed:\n${formatRecordingManifestValidationError(issues)}`);
+    }
+    sources = listRecordingManifestPaths().map((manifestPath) => ({ manifestPath, sourcePath: join(getRepoRoot(), manifestPath) }));
   }
 
   const recordings = new Map<string, SiteRecording>();
-  for (const manifestPath of listRecordingManifestPaths()) {
-    const manifest = parseRecordingManifest(
-      manifestPath,
-      readFileSync(join(getRepoRoot(), manifestPath), "utf8"),
-    );
-    if (manifest.status !== "accepted" && !(includeDraftRecordings && manifest.status === "draft")) continue;
+  const recordingIds = new Set<string>();
+  for (const { manifestPath, sourcePath } of sources) {
+    let manifest: RecordingManifest;
+    try {
+      manifest = parseRecordingManifest(manifestPath, readFileSync(sourcePath, "utf8"));
+    } catch (error) {
+      throw new Error(`Invalid recording manifest ${sourcePath}: ${String(error)}`);
+    }
+    if (reviewRecordingManifestRoot !== undefined) {
+      if (manifest.status !== "draft") throw new Error(`Review manifest must have draft status: ${sourcePath}`);
+    } else if (manifest.status !== "accepted") continue;
+    if (recordingIds.has(manifest.recording_id)) throw new Error(`Duplicate recording ID: ${manifest.recording_id}`);
+    recordingIds.add(manifest.recording_id);
     if (manifest.audio.mime_type !== "audio/mpeg") {
       throw new Error(
         `${manifest.status === "accepted" ? "Accepted recording" : "Review candidate"} ${manifest.recording_id} must use audio/mpeg for the static complete.mp3 audio asset.`,

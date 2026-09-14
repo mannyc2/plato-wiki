@@ -1405,7 +1405,7 @@ describe("static recording publication", () => {
     const result = buildStaticSite({
       outDir,
       recordingArtifactRoot: artifactRoot,
-      includeDraftRecordings: true,
+      reviewRecordingManifestRoot: join(root, "wiki/recordings"),
     });
 
     expect(result).toMatchObject({ acceptedRecordingCount: 0, reviewCandidateRecordingCount: 1 });
@@ -1456,7 +1456,7 @@ describe("static recording publication", () => {
     writeFileSync(join(outDir, "previous-good-build.txt"), "preserve", "utf8");
 
     expect(() =>
-      buildStaticSite({ outDir, recordingArtifactRoot: artifactRoot, includeDraftRecordings: true }),
+      buildStaticSite({ outDir, recordingArtifactRoot: artifactRoot, reviewRecordingManifestRoot: join(root, "wiki/recordings") }),
     ).toThrow(/Recording artifact hash mismatch/u);
     expect(readFileSync(join(outDir, "previous-good-build.txt"), "utf8")).toBe("preserve");
   });
@@ -2258,7 +2258,7 @@ stance_events: []
 
     acceptMenoCommentary(root);
     const { artifactRoot } = writeMenoRecording({ status: "draft" });
-    buildStaticSite({ outDir, includeDraftRecordings: true, recordingArtifactRoot: artifactRoot });
+    buildStaticSite({ outDir, reviewRecordingManifestRoot: join(root, "wiki/recordings"), recordingArtifactRoot: artifactRoot });
     index = readFileSync(join(outDir, "index.html"), "utf8");
     // A missing translation marker joins the preceding slice; its complete
     // source text still qualifies when every paragraph is rendered.
@@ -2286,7 +2286,7 @@ stance_events: []
       })}\n`,
       "utf8",
     );
-    buildStaticSite({ outDir, includeDraftRecordings: true, recordingArtifactRoot: artifactRoot });
+    buildStaticSite({ outDir, reviewRecordingManifestRoot: join(root, "wiki/recordings"), recordingArtifactRoot: artifactRoot });
     index = readFileSync(join(outDir, "index.html"), "utf8");
     expect(index).not.toContain('class="featured-reading"');
 
@@ -2303,7 +2303,7 @@ stance_events: []
       })}\n`,
       "utf8",
     );
-    buildStaticSite({ outDir, includeDraftRecordings: true, recordingArtifactRoot: artifactRoot });
+    buildStaticSite({ outDir, reviewRecordingManifestRoot: join(root, "wiki/recordings"), recordingArtifactRoot: artifactRoot });
     index = readFileSync(join(outDir, "index.html"), "utf8");
     expect(index).toContain('class="featured-reading"');
 
@@ -2313,7 +2313,7 @@ stance_events: []
       "{70a} Meno speaks. {70b} Socrates replies.",
       "utf8",
     );
-    buildStaticSite({ outDir, includeDraftRecordings: true, recordingArtifactRoot: artifactRoot });
+    buildStaticSite({ outDir, reviewRecordingManifestRoot: join(root, "wiki/recordings"), recordingArtifactRoot: artifactRoot });
     index = readFileSync(join(outDir, "index.html"), "utf8");
     expect(index).toContain('class="featured-reading"');
     expect(index).toContain("One complete dialogue");
@@ -2323,7 +2323,7 @@ stance_events: []
     expect(index).toContain("Audio is available as a review candidate");
 
     const rebuilt = join(root, "site-rebuild");
-    buildStaticSite({ outDir: rebuilt, includeDraftRecordings: true, recordingArtifactRoot: artifactRoot });
+    buildStaticSite({ outDir: rebuilt, reviewRecordingManifestRoot: join(root, "wiki/recordings"), recordingArtifactRoot: artifactRoot });
     expect(readFileSync(join(rebuilt, "index.html"), "utf8")).toBe(index);
   });
 
