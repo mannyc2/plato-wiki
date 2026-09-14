@@ -75,3 +75,28 @@ bun run validate
 
 Publication and deployment remain separate authorization gates after a local
 site build validates.
+
+## Serving the listening site
+
+Build a review site with explicitly selected draft recording manifests and a
+verified local MP3 artifact store:
+
+```bash
+bun run harness site --out-dir /absolute/path/to/site \
+  --recording-artifact-root /absolute/path/to/audio-artifacts \
+  --include-draft-recordings
+bun scripts/site/serve.ts --directory /absolute/path/to/site \
+  --host 127.0.0.1 --port 8080
+```
+
+The server serves only generated files beneath that directory. It supports
+HEAD, byte ranges, and cache revalidation so complete recordings can seek and
+resume without downloading the whole file. For access over Tailscale, bind to
+the machine's Tailscale address. Keep the server supervised when it is intended
+to remain available.
+
+Draft recordings appear as review candidates. Making them available for
+listening does not promote their audio QA or satisfy the audio acceptance jobs.
+Ordinary builds continue to select only accepted recordings. Media binaries
+remain outside Git; the build checks each selected MP3's hash, duration, and
+encoding profile before copying it into the generated site.
