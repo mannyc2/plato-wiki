@@ -1755,6 +1755,12 @@ uv run --with numpy==2.2.6 python -m unittest \
 
 ### Replacing a failed utterance
 
+Repairs select one complete renderer task by its first entry ID and exact task
+text. This also supports a task joining several replies or containing one chunk
+of a longer commentary entry. Ambiguous selections and partial task splices are
+rejected; the timing must name every entry in the selected task, and the original
+samples bordering its PCM interior remain intact.
+
 A source-edit recipe can also include `repairs`. Each replacement names the
 canonical `entry_id` and complete `canonical_text`, an interval in the timeline
 **after** the quiet cuts, a separate mono 48 kHz RF64 PCM24 file (`audio_path`,

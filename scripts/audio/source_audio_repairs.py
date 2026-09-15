@@ -254,17 +254,20 @@ def validate_canonical_repairs(repairs: list[dict[str, object]], base: SourceEdi
         for task in tasks:
             utterance = cast(dict[str, object], cast(dict[str, object], task["input"])["utterance"])
             spans = _rows(utterance["spans"])
-            if any(span["entry_id"] == repair["entry_id"] for span in spans):
-                if len(spans) != 1 or spans[0]["part_count"] != 1 or utterance["text"] != repair["canonical_text"]:
-                    raise ValueError("replacement text must match one complete canonical utterance")
+            # A renderer task may join replies or contain one commentary chunk.
+            # Replace its entire text and PCM interior; an entry alone is not unique.
+            if (spans and spans[0]["entry_id"] == repair["entry_id"]
+                    and utterance["text"] == repair["canonical_text"]):
                 matches.append(task)
         if len(matches) != 1:
             raise ValueError("replacement requires one uniquely identified canonical utterance")
         task = matches[0]
+        utterance = cast(dict[str, object], cast(dict[str, object], task["input"])["utterance"])
+        entry_ids = list(dict.fromkeys(_text(span["entry_id"]) for span in _rows(utterance["spans"])))
         intervals: list[tuple[int, int]] = []
         for chapter, start in zip(chapters, starts, strict=True):
             for timing in _rows(chapter["timing"]):
-                if timing["input_sha256"] == task["input_sha256"] and timing["entry_ids"] == [repair["entry_id"]]:
+                if timing["input_sha256"] == task["input_sha256"] and timing["entry_ids"] == entry_ids:
                     offset = _integer(start["start_frame"])
                     # Keep the immutable source samples adjacent to declared boundaries.
                     left = map_frame(offset + _integer(timing["start_frame"]) + 1, cuts, frames)
