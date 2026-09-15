@@ -95,6 +95,42 @@ class SourceAudioRepairTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate_canonical_repairs([self.row],self.base,{"tasks":[task,task]},assembly)
 
+    def test_grouped_replies_require_complete_task_text_and_all_timing_entries(self) -> None:
+        from source_audio_repairs import validate_canonical_repairs
+        task = {"input_sha256": "a" * 64, "input": {"utterance": {
+            "text": "Yes. Certainly.", "spans": [
+                {"entry_id": "source-turn-1", "part_count": 1},
+                {"entry_id": "source-turn-2", "part_count": 1}]}}}
+        timing = {"input_sha256": "a" * 64, "entry_ids": ["source-turn-1", "source-turn-2"],
+                  "start_frame": 999, "end_frame": 1401}
+        assembly = {"complete": {"chapter_starts": [{"start_frame": 0}]},
+                    "chapters": [{"timing": [timing]}]}
+        row = {**self.row, "canonical_text": "Yes. Certainly."}
+        validate_canonical_repairs([row], self.base, {"tasks": [task]}, assembly)
+        for changes in ({"canonical_text": "Yes."}, {"entry_id": "source-turn-2"}, {"end_frame": 1300}):
+            with self.subTest(changes=changes), self.assertRaises(ValueError):
+                validate_canonical_repairs([{**row, **changes}], self.base, {"tasks": [task]}, assembly)
+        timing["entry_ids"] = ["source-turn-1"]
+        with self.assertRaises(ValueError):
+            validate_canonical_repairs([row], self.base, {"tasks": [task]}, assembly)
+
+    def test_commentary_chunk_selection_is_unique_and_cannot_cross_chunks(self) -> None:
+        from source_audio_repairs import validate_canonical_repairs
+        tasks = [{"input_sha256": digest * 64, "input": {"utterance": {
+            "text": text, "spans": [{"entry_id": "source-turn-1", "part_index": index, "part_count": 2}]}}}
+                 for index, (digest, text) in enumerate([("a", "Yes."), ("b", "Certainly.")])]
+        assembly = {"complete": {"chapter_starts": [{"start_frame": 0}]}, "chapters": [{"timing": [
+            {"input_sha256": "a" * 64, "entry_ids": ["source-turn-1"], "start_frame": 999, "end_frame": 1401},
+            {"input_sha256": "b" * 64, "entry_ids": ["source-turn-1"], "start_frame": 1500, "end_frame": 1800}]}]}
+        validate_canonical_repairs([self.row], self.base, {"tasks": tasks}, assembly)
+        for changes in ({"canonical_text": "Yes. Certainly."}, {"canonical_text": "Certainly."}, {"end_frame": 1799}):
+            with self.subTest(changes=changes), self.assertRaises(ValueError):
+                validate_canonical_repairs([{**self.row, **changes}], self.base, {"tasks": tasks}, assembly)
+        duplicate = copy.deepcopy(tasks[1])
+        duplicate["input"]["utterance"]["text"] = "Yes."
+        with self.assertRaises(ValueError):
+            validate_canonical_repairs([self.row], self.base, {"tasks": [tasks[0], duplicate]}, assembly)
+
     def test_downstream_inventory_requires_every_replacement_receipt(self) -> None:
         from source_audio_repairs import source_repair_files
         from qa_full_master_asr import FullMasterAsrError, _validate_source_file_inventory

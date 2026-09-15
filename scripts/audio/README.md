@@ -1429,6 +1429,12 @@ screenplay and clips the normalized working master only at the authoritative
 screenplay dependencies, mastering artifacts, model files, and implementation
 files are hash-bound and are checked before and after inference.
 
+Implementation v3 streams each exact chapter frame range into a temporary PCM
+file before recognition. Memory therefore scales with one chapter; timestamp
+clipping alone would decode and featurize the entire master for every chapter.
+The temporary file is removed after transcription, including on failure. The
+changed clipping policy and implementation identity require a fresh ASR plan.
+
 The recognizer is the already pinned
 `deepdml/faster-whisper-large-v3-turbo-ct2` revision
 `44cbbd1adefe7387c83df88963a6d9ac4c9adea5`, with faster-whisper 1.2.1,
@@ -1748,6 +1754,12 @@ uv run --with numpy==2.2.6 python -m unittest \
 ```
 
 ### Replacing a failed utterance
+
+Repairs select one complete renderer task by its first entry ID and exact task
+text. This also supports a task joining several replies or containing one chunk
+of a longer commentary entry. Ambiguous selections and partial task splices are
+rejected; the timing must name every entry in the selected task, and the original
+samples bordering its PCM interior remain intact.
 
 A source-edit recipe can also include `repairs`. Each replacement names the
 canonical `entry_id` and complete `canonical_text`, an interval in the timeline

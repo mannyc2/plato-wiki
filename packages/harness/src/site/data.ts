@@ -1318,10 +1318,10 @@ export function buildDossierPageByConceptId(dossiers: readonly SiteDossier[]) {
 }
 
 export function readSiteData({
-  includeDraftRecordings = false,
+  reviewRecordingManifestRoot,
   sourceResolver = createSourceSpanResolver(),
 }: {
-  includeDraftRecordings?: boolean;
+  reviewRecordingManifestRoot?: string | undefined;
   sourceResolver?: SourceSpanResolver;
 } = {}): SiteData {
   const allObservations = readObservationsFromDisk(sourceResolver);
@@ -1376,7 +1376,7 @@ export function readSiteData({
   const { shards: claimShards, pageById: claimPageById } = buildClaimShards(claims);
   const { shards: relationShards, pageById: relationPageById } = buildRelationShards(relations);
   const dossierPageByConceptId = buildDossierPageByConceptId(dossiers);
-  const recordingsByDialogue = discoverSiteRecordings({ includeDraftRecordings });
+  const recordingsByDialogue = discoverSiteRecordings({ reviewRecordingManifestRoot });
   for (const dialogue of recordingsByDialogue.keys()) {
     if (!derivedByDialogue.has(dialogue)) {
       throw new Error(`Playable recording references missing dialogue target ${dialogue}.`);

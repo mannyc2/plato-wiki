@@ -19,6 +19,7 @@ import os
 import re
 import shutil
 import sys
+import tempfile
 import unicodedata
 import uuid
 from pathlib import Path
@@ -30,6 +31,7 @@ from master_audio import (
     current_mastering_inputs,
     load_mastering_plan,
     validate_result_directory,
+    write_source_chapter,
 )
 from render_dots import (
     SAMPLE_RATE,
@@ -43,7 +45,7 @@ from render_dots import (
 
 SCHEMA_VERSION = 2
 IMPLEMENTATION_NAME = "plato-full-master-asr"
-IMPLEMENTATION_VERSION = 2
+IMPLEMENTATION_VERSION = 3
 PLAN_STATUS = "full-master-asr-plan"
 EVIDENCE_STATUS = "full-master-asr-measured-unaccepted"
 EVIDENCE_FILENAME = "asr-evidence.json"
@@ -100,7 +102,7 @@ TRANSCRIPTION_POLICY = {
     "multilingual": False,
     "vad_filter": False,
     "word_timestamps": False,
-    "chapter_clips": "authoritative-48000hz-mastering-timeline-v1",
+    "chapter_clips": "frame-exact-pcm24-chapter-files-v2",
     "normalization": "NFC-lower-unicode-letters-numbers-apostrophes-v1",
     "ordinary_word_policy": (
         "conservative-unreviewed-all-levenshtein-errors-are-ordinary-v1"
@@ -810,35 +812,43 @@ def load_pinned_transcriber(
     )
 
     def transcribe(
-        audio_path: Path, *, start_seconds: float, end_seconds: float
+        audio_path: Path, *, start_frame: int, end_frame: int
     ) -> dict[str, Any]:
-        segments, info = model.transcribe(
-            str(audio_path),
-            task=TRANSCRIPTION_POLICY["task"],
-            language=LANGUAGE,
-            beam_size=BEAM_SIZE,
-            best_of=TRANSCRIPTION_POLICY["best_of"],
-            patience=TRANSCRIPTION_POLICY["patience"],
-            length_penalty=TRANSCRIPTION_POLICY["length_penalty"],
-            repetition_penalty=TRANSCRIPTION_POLICY["repetition_penalty"],
-            no_repeat_ngram_size=TRANSCRIPTION_POLICY["no_repeat_ngram_size"],
-            temperature=TRANSCRIPTION_POLICY["temperature"],
-            compression_ratio_threshold=TRANSCRIPTION_POLICY[
-                "compression_ratio_threshold"
-            ],
-            log_prob_threshold=TRANSCRIPTION_POLICY["log_prob_threshold"],
-            no_speech_threshold=TRANSCRIPTION_POLICY["no_speech_threshold"],
-            condition_on_previous_text=False,
-            suppress_blank=TRANSCRIPTION_POLICY["suppress_blank"],
-            suppress_tokens=TRANSCRIPTION_POLICY["suppress_tokens"],
-            without_timestamps=TRANSCRIPTION_POLICY["without_timestamps"],
-            max_initial_timestamp=TRANSCRIPTION_POLICY["max_initial_timestamp"],
-            multilingual=TRANSCRIPTION_POLICY["multilingual"],
-            vad_filter=False,
-            word_timestamps=False,
-            clip_timestamps=[start_seconds, end_seconds],
-        )
-        transcript = " ".join(segment.text.strip() for segment in segments).strip()
+        # Timestamp clipping still makes Whisper decode and featurize the whole
+        # input. Slice exact PCM frames first so memory scales with one chapter.
+        with tempfile.TemporaryDirectory(prefix="plato-asr-chapter-") as temporary:
+            chapter_path = Path(temporary) / "chapter.wav"
+            write_source_chapter(audio_path, chapter_path, {
+                "chapter_id": "asr-chapter",
+                "start_frame": start_frame,
+                "end_frame": end_frame,
+            })
+            segments, info = model.transcribe(
+                str(chapter_path),
+                task=TRANSCRIPTION_POLICY["task"],
+                language=LANGUAGE,
+                beam_size=BEAM_SIZE,
+                best_of=TRANSCRIPTION_POLICY["best_of"],
+                patience=TRANSCRIPTION_POLICY["patience"],
+                length_penalty=TRANSCRIPTION_POLICY["length_penalty"],
+                repetition_penalty=TRANSCRIPTION_POLICY["repetition_penalty"],
+                no_repeat_ngram_size=TRANSCRIPTION_POLICY["no_repeat_ngram_size"],
+                temperature=TRANSCRIPTION_POLICY["temperature"],
+                compression_ratio_threshold=TRANSCRIPTION_POLICY[
+                    "compression_ratio_threshold"
+                ],
+                log_prob_threshold=TRANSCRIPTION_POLICY["log_prob_threshold"],
+                no_speech_threshold=TRANSCRIPTION_POLICY["no_speech_threshold"],
+                condition_on_previous_text=False,
+                suppress_blank=TRANSCRIPTION_POLICY["suppress_blank"],
+                suppress_tokens=TRANSCRIPTION_POLICY["suppress_tokens"],
+                without_timestamps=TRANSCRIPTION_POLICY["without_timestamps"],
+                max_initial_timestamp=TRANSCRIPTION_POLICY["max_initial_timestamp"],
+                multilingual=TRANSCRIPTION_POLICY["multilingual"],
+                vad_filter=False,
+                word_timestamps=False,
+            )
+            transcript = " ".join(segment.text.strip() for segment in segments).strip()
         return {
             "text": transcript,
             "detected_language": info.language,
@@ -878,8 +888,8 @@ def run_asr_with_transcriber(
         )
         recognized = transcriber(
             master,
-            start_seconds=chapter["start_seconds"],
-            end_seconds=chapter["end_seconds"],
+            start_frame=chapter["start_frame"],
+            end_frame=chapter["end_frame"],
         )
         if (
             not isinstance(recognized, dict)

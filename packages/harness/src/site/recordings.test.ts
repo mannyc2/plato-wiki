@@ -545,7 +545,7 @@ describe("published recording materialization", () => {
     writeFileSync(draftPath, fixture.bytes);
 
     expect(discoverSiteRecordings().size).toBe(0);
-    const recordings = discoverSiteRecordings({ includeDraftRecordings: true });
+    const recordings = discoverSiteRecordings({ reviewRecordingManifestRoot: join(root, "wiki/recordings") });
     expect(recordings.get("fixture")).toMatchObject({
       status: "draft",
       sourceArtifactPath: "artifacts/draft/publication.mp3",
@@ -565,6 +565,39 @@ describe("published recording materialization", () => {
     expect(readFileSync(join(outDir, "assets/recordings/fixture/complete.mp3"))).toEqual(fixture.bytes);
   });
 
+  it("loads an external review catalog without adding canonical records", () => {
+    writeManifest({ status: "draft", sha256: "a".repeat(64) });
+    const canonical = join(root, "wiki/recordings/fixture.json");
+    const bytes = readFileSync(canonical);
+    const reviewRoot = join(artifactRoot, "review-manifests");
+    mkdirSync(reviewRoot);
+    writeFileSync(join(reviewRoot, "fixture.json"), bytes);
+    rmSync(canonical);
+    expect(discoverSiteRecordings().size).toBe(0);
+    expect(discoverSiteRecordings({ reviewRecordingManifestRoot: reviewRoot }).get("fixture")?.status).toBe("draft");
+    expect(existsSync(canonical)).toBe(false);
+
+    writeFileSync(join(reviewRoot, "duplicate.json"), bytes);
+    expect(() => discoverSiteRecordings({ reviewRecordingManifestRoot: reviewRoot })).toThrow(/dialogue_mismatch/u);
+    rmSync(join(reviewRoot, "duplicate.json"));
+    rmSync(join(reviewRoot, "fixture.json"));
+    symlinkSync(canonical, join(reviewRoot, "fixture.json"));
+    expect(() => discoverSiteRecordings({ reviewRecordingManifestRoot: reviewRoot })).toThrow(/regular non-symlink file/u);
+  });
+
+  it("rejects invalid review directories and non-draft selections", () => {
+    expect(() => discoverSiteRecordings({ reviewRecordingManifestRoot: "relative" })).toThrow(/absolute non-symlink directory/u);
+    expect(() => discoverSiteRecordings({ reviewRecordingManifestRoot: join(root, "missing") })).toThrow(/absolute non-symlink directory/u);
+    const empty = join(root, "empty-review");
+    mkdirSync(empty);
+    expect(() => discoverSiteRecordings({ reviewRecordingManifestRoot: empty })).toThrow(/directory is empty/u);
+    const linked = join(root, "linked-review");
+    symlinkSync(empty, linked);
+    expect(() => discoverSiteRecordings({ reviewRecordingManifestRoot: linked })).toThrow(/absolute non-symlink directory/u);
+    writeManifest({ status: "withdrawn", sha256: "a".repeat(64) });
+    expect(() => discoverSiteRecordings({ reviewRecordingManifestRoot: join(root, "wiki/recordings") })).toThrow(/must have draft status/u);
+  });
+
   it("fails closed on a missing, symlinked, or hash-mismatched draft artifact", () => {
     const fixture = mp3Fixture(80);
     writeManifest({
@@ -572,7 +605,7 @@ describe("published recording materialization", () => {
       audioBytes: fixture.bytes,
       durationSeconds: fixture.durationSeconds,
     });
-    const recordings = discoverSiteRecordings({ includeDraftRecordings: true });
+    const recordings = discoverSiteRecordings({ reviewRecordingManifestRoot: join(root, "wiki/recordings") });
     const draftPath = join(artifactRoot, "artifacts/draft/publication.mp3");
 
     expect(() =>
@@ -603,7 +636,7 @@ describe("published recording materialization", () => {
 
     writeManifest({ status: "draft", sha256: "a".repeat(64), mimeType: "audio/wav" });
     expect(discoverSiteRecordings().size).toBe(0);
-    expect(() => discoverSiteRecordings({ includeDraftRecordings: true })).toThrow(
+    expect(() => discoverSiteRecordings({ reviewRecordingManifestRoot: join(root, "wiki/recordings") })).toThrow(
       /Review candidate .* must use audio\/mpeg/u,
     );
   });
