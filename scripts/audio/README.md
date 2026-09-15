@@ -1429,6 +1429,12 @@ screenplay and clips the normalized working master only at the authoritative
 screenplay dependencies, mastering artifacts, model files, and implementation
 files are hash-bound and are checked before and after inference.
 
+Implementation v3 streams each exact chapter frame range into a temporary PCM
+file before recognition. Memory therefore scales with one chapter; timestamp
+clipping alone would decode and featurize the entire master for every chapter.
+The temporary file is removed after transcription, including on failure. The
+changed clipping policy and implementation identity require a fresh ASR plan.
+
 The recognizer is the already pinned
 `deepdml/faster-whisper-large-v3-turbo-ct2` revision
 `44cbbd1adefe7387c83df88963a6d9ac4c9adea5`, with faster-whisper 1.2.1,

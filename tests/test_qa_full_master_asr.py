@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import itertools
+import struct
+from collections.abc import Iterator
 import sys
 import tempfile
 import unittest
@@ -34,12 +36,12 @@ from qa_full_master_asr import (  # noqa: E402
 class FakeTranscriber:
     def __init__(self, responses: list[str]) -> None:
         self.responses = iter(responses)
-        self.calls: list[tuple[Path, float, float]] = []
+        self.calls: list[tuple[Path, int, int]] = []
 
     def __call__(
-        self, audio_path: Path, *, start_seconds: float, end_seconds: float
+        self, audio_path: Path, *, start_frame: int, end_frame: int
     ) -> dict:
-        self.calls.append((audio_path, start_seconds, end_seconds))
+        self.calls.append((audio_path, start_frame, end_frame))
         return {
             "text": next(self.responses),
             "detected_language": "en",
@@ -241,6 +243,63 @@ class FullMasterAsrTests(unittest.TestCase):
         with self.assertRaisesRegex(FullMasterAsrError, "differs"):
             reconstruct_expected_chapters(fixture_screenplay(), reordered)
 
+    def test_recognizer_receives_only_exact_chapter_pcm_and_cleans_up(self) -> None:
+        source = self.root / "slice-source.wav"
+        payload = bytes(range(90))
+        source.write_bytes(
+            b"RF64" + struct.pack("<I", 0xFFFFFFFF) + b"WAVEds64"
+            + struct.pack("<IQQQI", 28, 72 + len(payload), len(payload), 30, 0)
+            + b"fmt " + struct.pack("<IHHIIHH", 16, 1, 1, 48000, 144000, 3, 24)
+            + b"data" + struct.pack("<I", 0xFFFFFFFF) + payload
+        )
+        original = source.read_bytes()
+        temporary_paths: list[Path] = []
+
+        def segments(path: Path) -> Iterator[SimpleNamespace]:
+            self.assertTrue(path.exists())
+            yield SimpleNamespace(text=" chapter words ")
+
+        def recognize(path: str, **options: object) -> tuple[Iterator[SimpleNamespace], SimpleNamespace]:
+            sliced = Path(path)
+            temporary_paths.append(sliced)
+            self.assertNotEqual(sliced, source)
+            self.assertEqual(sliced.read_bytes()[80:], payload[6:27] + b"\x00")
+            self.assertNotIn("clip_timestamps", options)
+            return segments(sliced), SimpleNamespace(language="en", language_probability=1.0)
+
+        model = mock.Mock()
+        model.transcribe.side_effect = recognize
+        factory = mock.Mock(return_value=model)
+        with (
+            mock.patch.object(full_master_asr, "verify_runtime_provenance"),
+            mock.patch.dict(sys.modules, {
+                "ctranslate2": SimpleNamespace(get_cuda_device_count=lambda: 1),
+                "faster_whisper": SimpleNamespace(WhisperModel=factory),
+            }),
+        ):
+            transcribe = full_master_asr.load_pinned_transcriber({"model": {"snapshot_path": "fixture"}})
+            result = transcribe(source, start_frame=2, end_frame=9)
+            self.assertEqual(result["text"], "chapter words")
+            self.assertFalse(temporary_paths[-1].exists())
+            self.assertEqual(source.read_bytes(), original)
+            with self.assertRaisesRegex(full_master_asr.MasteringContractError, "frame range"):
+                transcribe(source, start_frame=2, end_frame=31)
+            self.assertEqual(model.transcribe.call_count, 1)
+            factory.assert_called_once()
+
+            def broken_segments(path: str, **options: object) -> tuple[Iterator[SimpleNamespace], SimpleNamespace]:
+                temporary_paths.append(Path(path))
+                def fail() -> Iterator[SimpleNamespace]:
+                    raise RuntimeError("decoder failed")
+                    yield
+                return fail(), SimpleNamespace(language="en", language_probability=1.0)
+
+            model.transcribe.side_effect = broken_segments
+            with self.assertRaisesRegex(RuntimeError, "decoder failed"):
+                transcribe(source, start_frame=2, end_frame=9)
+            self.assertFalse(temporary_paths[-1].exists())
+            self.assertEqual(source.read_bytes(), original)
+
     def test_scores_every_chapter_with_one_reusable_fake_transcriber(self) -> None:
         transcriber = FakeTranscriber(["alpha bet", "gamma delta"])
         report = run_asr_with_transcriber(self.plan, self.expected, transcriber)
@@ -249,7 +308,7 @@ class FullMasterAsrTests(unittest.TestCase):
         self.assertTrue(all(call[0] == self.master for call in transcriber.calls))
         self.assertEqual(
             [(call[1], call[2]) for call in transcriber.calls],
-            [(0.0, 1.0), (1.0, 2.0)],
+            [(0, 48000), (48000, 96000)],
         )
         self.assertEqual(
             [chapter["word_errors"] for chapter in report["chapters"]], [1, 0]
@@ -302,7 +361,7 @@ class FullMasterAsrTests(unittest.TestCase):
                               expected=expected, asr_runtime=self.runtime)
         transcriber = FakeTranscriber(["alpha beta", "gamma delta"])
         report = run_asr_with_transcriber(plan, expected, transcriber)
-        self.assertEqual([(row[1], row[2]) for row in transcriber.calls], [(0.0, 0.5), (0.5, 1.5)])
+        self.assertEqual([(row[1], row[2]) for row in transcriber.calls], [(0, 24000), (24000, 72000)])
         self.assertFalse(report["acceptance"]["accepted"])
         edit_path.write_text("changed", encoding="utf-8")
         untouched = FakeTranscriber(["unused", "unused"])
