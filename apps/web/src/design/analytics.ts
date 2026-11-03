@@ -1,7 +1,9 @@
 // Figures the app works out from the corpus. A curated page names one with an `::analytic` block
-// and never restates its numbers, so a page cannot go stale when the corpus changes. Sample values
-// from the voice records, counted by Greek letters under the analysis plan's rules (DEC-19).
+// and never restates its numbers, so a page cannot go stale when the corpus changes. The figures are
+// computed when the kit is built (figures.ts), counted by Greek letters under the analysis plan's
+// rules (DEC-19).
 import type { DialogueKey } from "./covers";
+import { whoSpeaksFigures } from "./figures" with { type: "macro" };
 import type { PersonKey } from "./people";
 
 // A named voice someone performs keeps its own share and names its performer, as the Laws do in the
@@ -18,58 +20,7 @@ export type WhoSpeaks = {
   readonly waiting: number;
 };
 
-export const WHO_SPEAKS: Partial<Record<DialogueKey, WhoSpeaks>> = {
-  crito: {
-    shares: [
-      { person: "socrates", percent: 40.62, quoted: 0.27 },
-      { person: "socrates", as: "laws", percent: 37.21 },
-      { person: "crito", percent: 21.96 },
-    ],
-    under: [{ name: "the woman in Socrates’ dream", percent: 0.21 }],
-    waiting: 0,
-  },
-  // One unlabelled turn, Socrates' to the jury. Meletus' answers under cross-examination are his
-  // own words in the scene, not a voice Socrates performs.
-  apology: {
-    shares: [{ person: "socrates", percent: 98.15, quoted: 0.86 }],
-    under: [
-      { name: "Meletus", percent: 0.67 },
-      { name: "the jurors Socrates imagines", percent: 0.33 },
-      { name: "the old accusers", percent: 0.26 },
-      { name: "Thetis", percent: 0.26 },
-      { name: "Achilles", percent: 0.23 },
-      { name: "Callias", percent: 0.1 },
-    ],
-    waiting: 0,
-  },
-  euthyphro: {
-    shares: [
-      { person: "socrates", percent: 74.5 },
-      { person: "euthyphro", percent: 25.5 },
-    ],
-    under: [],
-    waiting: 0,
-  },
-  // Narrated by Phaedo, with the scene at the second level. Three bare replies under the narrator
-  // wait for a speaker: two that the Greek leaves to Cebes or Simmias, and a bystander Phaedo cannot
-  // name.
-  phaedo: {
-    shares: [
-      { person: "socrates", percent: 75.37 },
-      { person: "cebes", percent: 8.25 },
-      { person: "simmias", percent: 6.69 },
-      { person: "phaedo", percent: 6.29 },
-      { person: "echecrates", percent: 1.68 },
-    ],
-    under: [
-      { name: "Crito", percent: 0.73 },
-      { name: "the attendant of the Eleven", percent: 0.58 },
-      { name: "the doorkeeper", percent: 0.07 },
-      { name: "Xanthippe", percent: 0.05 },
-    ],
-    waiting: 0.29,
-  },
-};
+export const WHO_SPEAKS: Partial<Record<DialogueKey, WhoSpeaks>> = whoSpeaksFigures();
 
 export type AnalyticName = "who-speaks";
 export const ANALYTIC_NAMES: ReadonlyArray<AnalyticName> = ["who-speaks"];

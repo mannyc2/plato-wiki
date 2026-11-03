@@ -313,6 +313,8 @@ export { appendSegmentCoverage, planGapIngest, planSegmentedIngest } from "./seg
 export { buildStaticSite, parseObservationLedger } from "./site/index.js";
 export { validateGeneratedSite } from "./site/validate.js";
 export { resolveEnglishSpan, resolveSourceSpan } from "./source.js";
+export { readChapters } from "./derived/chapters.js";
+export { readWhoSpeaks } from "./derived/who-speaks.js";
 export {
   ENGLISH_ERRATA_PATH,
   ERRATUM_KINDS,

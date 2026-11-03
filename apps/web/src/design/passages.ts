@@ -5,6 +5,7 @@
 // adds the few that only the kit's own screens quote.
 import { DIALOGUES, type DialogueKey } from "./covers";
 import type { Rendered } from "./rendering";
+import { chapterFigures } from "./figures" with { type: "macro" };
 import { held } from "./rendering" with { type: "macro" };
 
 export const PASSAGES: Readonly<Record<string, Rendered>> = held(["phaedo 91c", "gorgias 472b", "charmides 161c", "philebus 14b", "theaetetus 151d"]);
@@ -70,36 +71,9 @@ export const correctionsAround = (key: PassageKey, quote: string): ReadonlyArray
   return errata.filter(({ at: [from, to] }) => from < end && to > start).map(({ correction }) => correction);
 };
 
-// Chapters as the current review recording divides a dialogue, each from the marker it starts at.
-export const CHAPTERS: Partial<Record<DialogueKey, ReadonlyArray<{ readonly title: string; readonly from: string }>>> = {
-  crito: [
-    { title: "Before dawn", from: "43a" },
-    { title: "Which opinions matter", from: "46b" },
-    { title: "From agreement to consistency", from: "48b" },
-    { title: "The Laws speak", from: "49e" },
-    { title: "Exile and silence", from: "52d" },
-  ],
-  apology: [
-    { title: "Opening", from: "17a" },
-    { title: "The oracle and the test of the wise", from: "20e" },
-    { title: "Where are the corrupted?", from: "33a" },
-    { title: "Convicted", from: "35e" },
-    { title: "What a benefactor deserves", from: "36e" },
-    { title: "Death as sleep or migration", from: "40a" },
-  ],
-  euthyphro: [
-    { title: "At the King Archon’s court", from: "2a" },
-    { title: "The gods disagree", from: "7a" },
-    { title: "Exchange, honour and the god-loved", from: "14b" },
-  ],
-  phaedo: [
-    { title: "Opening", from: "57a" },
-    { title: "Purification and courage", from: "65e" },
-    { title: "Recollection", from: "73e" },
-    { title: "When harmony cannot lead", from: "92e" },
-    { title: "Immortality and care", from: "105e" },
-  ],
-};
+// Chapters as the recording divides a dialogue, each from the marker it starts at, read from the
+// audio scripts when the kit is built.
+export const CHAPTERS: Partial<Record<DialogueKey, ReadonlyArray<{ readonly title: string; readonly from: string }>>> = chapterFigures();
 
 // Stephanus markers in reading order: page, then section a to e.
 const position = (marker: string): number => {

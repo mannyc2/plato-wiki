@@ -1,5 +1,7 @@
 import { describe, expect, test } from "bun:test";
 import { WHO_SPEAKS } from "./analytics";
+import { chapterFigures, whoSpeaksFigures } from "./figures";
+import { CHAPTERS } from "./passages";
 
 describe("Who speaks", () => {
   for (const [dialogue, figures] of Object.entries(WHO_SPEAKS)) {
@@ -10,4 +12,10 @@ describe("Who speaks", () => {
       expect(figures.under.every(({ percent }) => percent < 1)).toBe(true);
     });
   }
+
+  // Shares carry unrounded fractions of the letter counts, which no typed figure reproduces.
+  test("comes from the corpus, as chapters do, not from figures typed into the kit", () => {
+    expect(WHO_SPEAKS).toEqual(whoSpeaksFigures());
+    expect(CHAPTERS).toEqual(chapterFigures());
+  });
 });
