@@ -313,6 +313,14 @@ export { appendSegmentCoverage, planGapIngest, planSegmentedIngest } from "./seg
 export { buildStaticSite, parseObservationLedger } from "./site/index.js";
 export { validateGeneratedSite } from "./site/validate.js";
 export { resolveEnglishSpan, resolveSourceSpan } from "./source.js";
+export {
+  ENGLISH_ERRATA_PATH,
+  ERRATUM_KINDS,
+  loadEnglishErrata,
+  plainSourceText,
+  type Erratum,
+  type ErratumKind,
+} from "./english-errata.js";
 export { listTranscripts, summarizeTranscriptTrace, summarizeTranscriptUsage, writeTranscriptUsageArtifacts } from "./transcript.js";
 export { validateRepo } from "./validate.js";
 export {

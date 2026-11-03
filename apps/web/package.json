@@ -9,6 +9,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@plato-observation-wiki/harness": "workspace:*",
     "@effect/platform-browser": "4.0.0",
     "effect": "4.0.0",
     "foldkit": "0.169.0"

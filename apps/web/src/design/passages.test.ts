@@ -1,4 +1,5 @@
 import { describe, expect, test } from "bun:test";
+import { loadEnglishErrata } from "@plato-observation-wiki/harness";
 import { rendered } from "./rendering";
 
 describe("the rendering at a reference", () => {
@@ -30,5 +31,12 @@ describe("the rendering at a reference", () => {
 
   test("refuses a reference the rendering does not mark", () => {
     expect(() => rendered("crito 99a")).toThrow("crito 99a is not in the crito rendering");
+  });
+
+  test("marks every English erratum at its own reference", () => {
+    for (const { dialogue, span, english, correction } of loadEnglishErrata()) {
+      const { text, errata } = rendered(`${dialogue} ${span}`);
+      expect(errata.map(({ at: [from, to] }) => [text.slice(from, to), correction])).toContainEqual([english, correction]);
+    }
   });
 });

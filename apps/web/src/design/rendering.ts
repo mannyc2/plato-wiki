@@ -8,6 +8,7 @@
 // Laws' speech inside Socrates' turn, so the result keeps both, in positions within `text`.
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { loadEnglishErrata } from "@plato-observation-wiki/harness";
 import { readPages } from "./page-sources";
 
 const REPO = join(import.meta.dir, "../../../..");
@@ -19,6 +20,9 @@ export type Rendered = {
   // Where each line starts, with the words before its first full stop: the speaker's name in a
   // dialogue rendered turn by turn. The first entry, at 0, is the line the reference starts in.
   readonly lines: ReadonlyArray<readonly [number, string]>;
+  // Words the English gets wrong against the Greek (raw/plato/english/errata.toml), with what the
+  // Greek says. The rendering's bytes are fixed, so a view marks these instead of rewriting them.
+  readonly errata: ReadonlyArray<{ readonly at: readonly [number, number]; readonly correction: string }>;
 };
 
 const markerFile = (dialogue: string): string => join(REPO, "derived/plato/stephanus-english", `${dialogue}.toon`);
@@ -111,8 +115,28 @@ export const rendered = (key: string): Rendered => {
     }
   }
   if (depth > 0 && !opening) quoted.push([openedAt, text.length]);
-  return { text, quoted, lines };
+  return { text, quoted, lines, errata: errataIn(dialogue, first, last, text) };
 };
+
+// Stephanus markers in reading order: page, then section a to e.
+const position = (marker: string): number => {
+  const match = /^(\d+)([a-e])$/u.exec(marker);
+  return match ? Number(match[1]) * 5 + "abcde".indexOf(match[2] ?? "a") : -1;
+};
+
+// The ledger holds each entry's words to one occurrence in its own span. A longer reference may
+// repeat them elsewhere; it marks them only where they are unambiguous, so no mark lands on the
+// wrong words.
+const errataIn = (dialogue: string, first: string, last: string, text: string): Rendered["errata"] =>
+  loadEnglishErrata(REPO)
+    .filter((erratum) => erratum.dialogue === dialogue)
+    .flatMap((erratum) => {
+      const [from, to] = bounds(erratum.span);
+      if (position(from) < position(first) || position(to) > position(last)) return [];
+      const at = text.indexOf(erratum.english);
+      if (at < 0 || text.indexOf(erratum.english, at + 1) >= 0) return [];
+      return [{ at: [at, at + erratum.english.length] as const, correction: erratum.correction }];
+    });
 
 // A dialogue and a Stephanus reference anywhere in a page: a citation, a passage block's `ref`, or
 // what a line note is about.

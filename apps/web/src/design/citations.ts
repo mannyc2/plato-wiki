@@ -5,7 +5,7 @@
 import type { Html, HtmlBuilder } from "foldkit/html";
 import type { Note } from "./blocks";
 import { icon } from "./icons";
-import { chapterOf, refLabel, sentenceAround } from "./passages";
+import { chapterOf, correctionsAround, refLabel, sentenceAround } from "./passages";
 
 export const sourceCard = <Message>(note: Note, h: HtmlBuilder<Message>): Html => {
   const chapter = chapterOf(note.ref);
@@ -18,6 +18,7 @@ export const sourceCard = <Message>(note: Note, h: HtmlBuilder<Message>): Html =
         [h.b([], [refLabel(note.ref)]), ...(chapter ? [h.span([], [`Chapter ${chapter.number}, ${chapter.title}`])] : [])],
       ),
       h.span([h.Class("a-src-q")], words ? ["“", words.before, h.mark([], [words.quote]), words.after, "”"] : [`“${note.quote}”`]),
+      ...correctionsAround(note.ref, note.quote).map((correction) => h.span([h.Class("a-src-g")], [correction])),
       h.span(
         [h.Class("a-src-f")],
         [h.span([h.Class("a-link sm")], ["Read in context"]), h.span([h.Class("a-src-play")], [icon("play", h), "Play from here"])],

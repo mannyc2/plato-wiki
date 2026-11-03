@@ -60,6 +60,16 @@ export const sentenceAround = (
   return { before: text.slice(start, at), quote, after: text.slice(at + quote.length, end) };
 };
 
+// What the Greek says wherever the English the card shows gets it wrong.
+export const correctionsAround = (key: PassageKey, quote: string): ReadonlyArray<string> => {
+  const { text, errata } = passage(key);
+  const words = sentenceAround(key, quote);
+  if (!words) return [];
+  const start = text.indexOf(quote) - words.before.length;
+  const end = start + words.before.length + quote.length + words.after.length;
+  return errata.filter(({ at: [from, to] }) => from < end && to > start).map(({ correction }) => correction);
+};
+
 // Chapters as the current review recording divides a dialogue, each from the marker it starts at.
 export const CHAPTERS: Partial<Record<DialogueKey, ReadonlyArray<{ readonly title: string; readonly from: string }>>> = {
   crito: [

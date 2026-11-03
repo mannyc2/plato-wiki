@@ -1011,6 +1011,8 @@
 .A .a-src-h span { font-size: 12.5px; color: var(--muted); }
 .A .a-src-q { padding: 0 16px 13px; font: 400 15px/1.55 var(--serif); }
 .A .a-src-q mark { background: var(--hl); color: inherit; border-radius: 3px; padding: 0 1px; }
+/* Where the English the card quotes departs from the Greek, the Greek's sense follows it. */
+.A .a-src-g { display: block; padding: 0 16px 13px; font: 400 13px/1.45 var(--sans); color: var(--muted); }
 .A .a-src-f { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px; border-top: 1px solid var(--line); }
 .A .a-src-play { display: inline-flex; align-items: center; gap: 6px; font: 600 13px/1 var(--sans); color: var(--acc-strong); }
 .A .a-src-play .i { width: 15px; height: 15px; }

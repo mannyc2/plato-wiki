@@ -32,6 +32,7 @@ import { claimYamlBlocks, listClaimLedgerPaths } from "./wiki/claim-ledger.js";
 import { formatClaimLedgerValidationError, validateClaimLedger } from "./wiki/claim-validator.js";
 import { listApparatusLedgerPaths } from "./wiki/apparatus-ledger.js";
 import { formatApparatusLedgerValidationError, validateApparatusLedger } from "./wiki/apparatus-validator.js";
+import { validateEnglishErrata } from "./english-errata.js";
 import { dialogueFromVoicesPath, listVoicesLedgerPaths } from "./wiki/voices-ledger.js";
 import {
   collectOrphanVoiceDerivedFailures,
@@ -588,6 +589,11 @@ export function validateRepo(): ValidationReport {
   const manifestFailures = verifySha256Manifest("raw/plato/MANIFEST.sha256");
   if (manifestFailures.length > 0) {
     throw new Error(`Source manifest verification failed:\n${manifestFailures.join("\n")}`);
+  }
+
+  const errataFailures = validateEnglishErrata(repoRoot);
+  if (errataFailures.length > 0) {
+    throw new Error(`English errata verification failed:\n${errataFailures.join("\n")}`);
   }
 
   const bannedTextFailures = scanForBannedInstructionText();

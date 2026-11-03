@@ -1,0 +1,108 @@
+# Places where the English rendering contradicts, drops or adds to the Greek in
+# raw/plato/greek/, whether the translator erred or followed a different Greek
+# text. The rendering's own files stay byte-identical to their
+# sources (raw/plato/MANIFEST.sha256), so readers' text is corrected by
+# reference to this list instead of by editing it.
+#
+# An entry is recorded only when a reader of the English would get a name, an
+# object, a polarity or a step of the argument wrong. Defensible word choices
+# (δοῦλοι as "servants", φίλον as "precious") are not errata.
+#
+# Fields:
+#   dialogue    slug of raw/plato/{greek,english}/<slug>.txt
+#   span        Stephanus span, such as "38b" or "37b-37c"
+#   kind        name | omission | addition | reversal | sense
+#   english     exact words of the rendering inside `span`; for an omission,
+#               the words beside the gap
+#   greek       the short Greek term in `span` that the English departs from
+#   correction  what the Greek says, in plain English
+
+schema_version = 1
+
+[[erratum]]
+dialogue = "apology"
+span = "37c"
+kind = "omission"
+english = "a slave to those who may be in authority"
+greek = "τοῖς ἕνδεκα"
+correction = "The Greek names the officials he would serve in prison: the Eleven."
+
+[[erratum]]
+dialogue = "apology"
+span = "38b"
+kind = "name"
+english = "and Aristobulus"
+greek = "Ἀπολλόδωρος"
+correction = "The fourth man offering surety is Apollodorus, not Aristobulus."
+
+[[erratum]]
+dialogue = "crito"
+span = "52b"
+kind = "omission"
+english = "you never went out from the city to a festival"
+greek = "ὅτι μὴ ἅπαξ εἰς Ἰσθμόν"
+correction = "The Greek makes one exception: he went out once, to the Isthmus."
+
+[[erratum]]
+dialogue = "euthyphro"
+span = "11c"
+kind = "reversal"
+english = "for they stay fixed, as you yourself see"
+greek = "οὐ γὰρ ἐθέλουσι σοὶ μένειν"
+correction = "The Greek says the opposite: the statements will not stay put for Euthyphro."
+
+[[erratum]]
+dialogue = "euthyphro"
+span = "15a"
+kind = "sense"
+english = "honor and praise"
+greek = "γέρα"
+correction = "The second gift is gifts of honour (γέρα), not praise."
+
+[[erratum]]
+dialogue = "phaedo"
+span = "61e"
+kind = "sense"
+english = "say the same thing you just said"
+greek = "ὅπερ νυνδὴ σὺ ἤρου"
+correction = "Cebes refers back to what Socrates just asked (ἤρου), not to something Socrates said."
+
+[[erratum]]
+dialogue = "phaedo"
+span = "72c"
+kind = "sense"
+english = "all things are chaos"
+greek = "ὁμοῦ πάντα χρήματα"
+correction = "Anaxagoras' saying is 'all things together', not 'all things are chaos'."
+
+[[erratum]]
+dialogue = "phaedo"
+span = "82b"
+kind = "addition"
+english = "by nature and habit"
+greek = "ἐξ ἔθους τε καὶ μελέτης"
+correction = "The Greek has habit and practice; it says nothing of nature."
+
+[[erratum]]
+dialogue = "phaedo"
+span = "92d"
+kind = "sense"
+english = "established by a sound course of argument"
+greek = "δι’ ὑποθέσεως"
+correction = "The Greek says the account of recollection rests on a hypothesis worth accepting."
+
+[[erratum]]
+dialogue = "phaedo"
+span = "105a"
+kind = "reversal"
+english = "Now ten is not itself an opposite"
+greek = "ἄλλῳ ἐναντίον"
+correction = "The Greek says the double is itself opposite to something else, and still does not admit the odd."
+
+[[erratum]]
+dialogue = "phaedo"
+span = "118a"
+kind = "sense"
+english = "thighs"
+greek = "κνήμας"
+correction = "After the foot, the man presses his shins (κνήμας), not his thighs."
