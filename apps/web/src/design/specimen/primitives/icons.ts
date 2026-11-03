@@ -1,0 +1,65 @@
+// Primitives: Icons.
+import type { Html, HtmlBuilder } from "foldkit/html";
+import { icon } from "../../icons";
+
+export const iconsSection = <Message>(h: HtmlBuilder<Message>): ReadonlyArray<Html> => [
+  h.section(
+    [h.Class("cat")],
+    [
+      h.h3([h.Class("sub")], ["Icons"]),
+      h.p(
+        [h.Class("sub-p")],
+        [
+          "One line set on a 24-point grid with 1.9-point strokes and round ends. These are the 42 icons the screens use. The moon marks Night; the sleep timer has its own icon.",
+        ],
+      ),
+      h.div(
+        [h.Class("icg")],
+        [
+          h.span([], [icon("home", h), h.code([], ["home"])]),
+          h.span([], [icon("books", h), h.code([], ["books"])]),
+          h.span([], [icon("compass", h), h.code([], ["compass"])]),
+          h.span([], [icon("search", h), h.code([], ["search"])]),
+          h.span([], [icon("play", h), h.code([], ["play"])]),
+          h.span([], [icon("pause", h), h.code([], ["pause"])]),
+          h.span([], [icon("back15", h), h.code([], ["back15"])]),
+          h.span([], [icon("fwd30", h), h.code([], ["fwd30"])]),
+          h.span([], [icon("chev-l", h), h.code([], ["chev-l"])]),
+          h.span([], [icon("chev-r", h), h.code([], ["chev-r"])]),
+          h.span([], [icon("chev-d", h), h.code([], ["chev-d"])]),
+          h.span([], [icon("more", h), h.code([], ["more"])]),
+          h.span([], [icon("headphones", h), h.code([], ["headphones"])]),
+          h.span([], [icon("aa", h), h.code([], ["aa"])]),
+          h.span([], [icon("marker", h), h.code([], ["marker"])]),
+          h.span([], [icon("share", h), h.code([], ["share"])]),
+          h.span([], [icon("copy", h), h.code([], ["copy"])]),
+          h.span([], [icon("list", h), h.code([], ["list"])]),
+          h.span([], [icon("moon", h), h.code([], ["moon"])]),
+          h.span([], [icon("timer", h), h.code([], ["timer"])]),
+          h.span([], [icon("layers", h), h.code([], ["layers"])]),
+          h.span([], [icon("plus", h), h.code([], ["plus"])]),
+          h.span([], [icon("download", h), h.code([], ["download"])]),
+          h.span([], [icon("check", h), h.code([], ["check"])]),
+          h.span([], [icon("sparkle", h), h.code([], ["sparkle"])]),
+          h.span([], [icon("info", h), h.code([], ["info"])]),
+          h.span([], [icon("x", h), h.code([], ["x"])]),
+          h.span([], [icon("globe", h), h.code([], ["globe"])]),
+          h.span([], [icon("eq", h), h.code([], ["eq"])]),
+          h.span([], [icon("bookopen", h), h.code([], ["bookopen"])]),
+          h.span([], [icon("bulb", h), h.code([], ["bulb"])]),
+          h.span([], [icon("clock", h), h.code([], ["clock"])]),
+          h.span([], [icon("user", h), h.code([], ["user"])]),
+          h.span([], [icon("speaker", h), h.code([], ["speaker"])]),
+          h.span([], [icon("edit", h), h.code([], ["edit"])]),
+          h.span([], [icon("alert", h), h.code([], ["alert"])]),
+          h.span([], [icon("refresh", h), h.code([], ["refresh"])]),
+          h.span([], [icon("minus", h), h.code([], ["minus"])]),
+          h.span([], [icon("sliders", h), h.code([], ["sliders"])]),
+          h.span([], [icon("grid", h), h.code([], ["grid"])]),
+          h.span([], [icon("expand", h), h.code([], ["expand"])]),
+          h.span([], [icon("align", h), h.code([], ["align"])]),
+        ],
+      ),
+    ],
+  ),
+  ];

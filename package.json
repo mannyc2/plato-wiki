@@ -5,7 +5,8 @@
   "packageManager": "bun@1.4.0",
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "apps/*"
     ],
     "catalog": {
       "@types/node": "^24.10.1",
@@ -13,6 +14,8 @@
     }
   },
   "scripts": {
+    "sketch": "bun run --cwd apps/web sketch",
+    "pages": "bun run --cwd apps/web pages",
     "cli": "bun packages/cli/src/cli.ts",
     "harness": "bun packages/cli/src/cli.ts",
     "commentary:structural-remediation": "bun scripts/commentary/structural-remediation-batch.ts",
@@ -27,7 +30,7 @@
     "typecheck": "bun run --workspaces typecheck",
     "validate": "bun run derive && bun packages/cli/src/cli.ts validate",
     "ci": "bun scripts/ci.ts",
-    "lint": "oxlint --deny-warnings packages scripts",
+    "lint": "oxlint --deny-warnings packages scripts apps",
     "build": "bun run derive && bun packages/cli/src/cli.ts site",
     "derive": "bun packages/cli/src/cli.ts derive tokens"
   },

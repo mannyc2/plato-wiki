@@ -1,0 +1,49 @@
+/* The app's palette. `.A` marks an app surface (a phone screen, a desktop window, a kit stage), so the
+   specimen page around it keeps its own neutral chrome. Paper is the default theme. */
+.A {
+  --paper: #FBF8F3;
+  --card: #FFFFFF;
+  --ink: #1F1B16;
+  --muted: #6A6359;
+  --line: #ECE5DA;
+  --acc: #C2412D;
+  --acc-strong: #A3321F;
+  --acc-soft: #F7E6DF;
+  --hl: #FBE6A2;
+  --chip: #F2EDE5;
+  --guide: #F3EDE3;
+  /* Cream for cover lettering, listening text and portrait busts. */
+  --on: #F4EBD6;
+  --serif: "Literata", Georgia, serif;
+  --sans: "Inter", system-ui, sans-serif;
+  color: var(--ink);
+  font-family: var(--sans);
+}
+
+/* Control, fill and glass tokens, then the Sepia and Night themes. */
+.A { --control: #8E8578; --fill: var(--acc); --now: var(--acc-soft); --glass: rgba(255, 255, 255, .9); --shadow: 60, 40, 20; }
+.A.sepia {
+  --paper: #F4ECD8; --card: #FBF5E6; --ink: #3B2F22; --muted: #6E604D; --line: #E3D6BC; --chip: #EADFC6; --guide: #EADFC6;
+  --acc-strong: #9A2F1C; --hl: #F2D27A;
+}
+.A.night {
+  color-scheme: dark;
+  --paper: #16130F; --card: #1F1B16; --ink: #ECE4D6; --muted: #A89F91; --line: #2E2923; --chip: #2A251F; --guide: #221D18;
+  --acc-strong: #F08A73; --acc-soft: #3A2019; --hl: #5C4A17; --control: #7D7366; --fill: #E0654D; --now: #3A2019;
+  --glass: rgba(31, 27, 22, .92); --shadow: 0, 0, 0;
+}
+
+/* Audio screens sit on the cloth darkened by 40%; the glow stays behind the cover. contrast.ts checks the same mixes. */
+.A.cloth, .A .cloth {
+  --cl: #2F5D50;
+  --deep: color-mix(in srgb, var(--cl) 60%, #000);
+  --glow: color-mix(in srgb, var(--cl) 88%, #000);
+  --on2: color-mix(in srgb, var(--on) 72%, var(--deep));
+  --up: color-mix(in srgb, var(--on) 64%, var(--deep));
+  --past: color-mix(in srgb, var(--on) 46%, var(--deep));
+  color: var(--on);
+}
+
+/* The desktop ground behind the sidebar and the player bar. */
+.A { --ground: #F2EDE5; }
+.A.night { --ground: #0E0C0A; }

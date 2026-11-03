@@ -1,0 +1,38 @@
+/* The review page around the app's own cards: Paper only, one narrow column that reads on a phone. */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: #FBF8F3; }
+.rv { background: var(--paper); min-height: 100vh; color: var(--ink); font: 400 16px/1.55 var(--sans); -webkit-font-smoothing: antialiased; }
+.rv-in { max-width: 600px; margin: 0 auto; padding-block: 32px 80px; padding-inline: 16px; }
+.rv h1 { font: 600 32px/1.12 var(--serif); letter-spacing: -.01em; margin: 0 0 12px; }
+.rv h2 { font: 650 21px/1.25 var(--sans); margin: 38px 0 14px; }
+.rv-lead { margin: 0 0 10px; color: var(--muted); }
+.rv-state { margin: 0; font-weight: 650; }
+.rv-qs { margin-top: 26px; padding: 16px 18px 6px; border-radius: 20px; background: var(--guide); }
+.rv-qs h2 { margin: 0 0 10px; font-size: 17px; }
+.rv-qs ul { margin: 0; padding-left: 18px; }
+.rv-qs li { margin: 0 0 10px; }
+.rv-ch { margin: 28px 0 12px; font: 650 15px/1.3 var(--sans); color: var(--muted); }
+.rv-pg { margin: 0 0 16px; }
+.rv-pg-h { display: flex; align-items: center; gap: 12px; margin: 0 0 12px; }
+.rv-pg-h > div { display: flex; flex-direction: column; min-width: 0; }
+.rv-pg-h b { font: 600 22px/1.2 var(--serif); }
+.rv-ref { font-size: 14px; color: var(--muted); }
+.rv-st { margin-left: auto; flex: none; padding: 4px 10px; border-radius: 999px; background: var(--chip); color: var(--muted); font-size: 13px; font-weight: 600; white-space: nowrap; }
+.rv-st.read { background: #E3EEE7; color: #1F5B39; }
+.rv-sec { margin: 22px 0 10px; }
+.rv-src { margin: 0 0 14px; border-radius: 14px; background: var(--guide); }
+.rv-src summary { cursor: pointer; padding: 10px 14px; font-weight: 600; font-size: 14px; }
+.rv-src > div { padding: 0 14px 12px; font: 400 15px/1.55 var(--serif); }
+.rv-src p { margin: 0 0 8px; }
+.rv-src b { font-family: var(--sans); font-size: 13px; font-weight: 650; }
+/* A dialogue read through folds into one closed row. */
+.rv-done { margin: 38px 0 0; }
+.rv-done > summary { cursor: pointer; padding: 14px 18px; border-radius: 16px; background: var(--guide); }
+.rv-done > summary > .rv-ref { display: block; margin-left: 1.15em; }
+.rv-done[open] > summary { margin-bottom: 12px; }
+.rv-dt { font: 650 21px/1.25 var(--sans); }
+.rv-foot { margin-top: 30px; color: var(--muted); font-size: 14px; }
+/* The column is phone-narrow at every width, so source cards open below their block, as on a phone. */
+.rv :is(.bk-p, .bk-moves p, .bk-pass figcaption, .bk-person > span:last-child) { position: relative; }
+.rv :is(.bk-p, .bk-moves p, .bk-pass figcaption, .bk-person > span:last-child) .a-cite { position: static; }
+.rv :is(.bk-p, .bk-moves p, .bk-pass figcaption, .bk-person > span:last-child) .a-src { left: 0; right: 0; width: auto; top: calc(100% + 6px); }
