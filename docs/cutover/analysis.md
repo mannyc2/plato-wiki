@@ -249,7 +249,8 @@ billed. Decisions calls for the lane as a whole cost about $35:
 DEC-17 must also forecast the agent sessions:
 
 - AN1's table drafting and independent checks;
-- AN2's catalog authoring and its independent overlap review;
+- AN2's catalog authoring and crosswalk, and their independent overlap review;
+- AN4's gap review;
 - double labelling of the calibration set;
 - the O4 pass and its adjudication;
 - refusal reviews;
@@ -414,13 +415,24 @@ Use the seed definitions, AN0's inventories and a per-dialogue sample of omissio
 evidence; no English rendering enters authoring. Draft the phase-1 receipt in scratch as the target
 specifies, including the rejected candidates and an independent overlap review.
 
-Add titles and summaries, and publish the catalog as a rendered page. The user then ratifies the
-catalog count, as the target requires, and approves the consumer copy in the same review. Record both
-under DEC-16 in the decision register, with the page URL and version. The receipt commits in AN6.
+The receipt also carries a crosswalk from the feature era, so that no earlier idea is dropped unseen.
+It has one row for each feature-era family/label pair with at least three accepted records in at
+least two dialogues (321 pairs over 4,112 records at AN0), and one for each family with at least ten
+accepted records that lives in only one or two dialogues (18 families, 436 records, such as the
+Cratylus' etymologies and the Laws' legislation). Each row names the concept that covers it or the
+reason it is dropped. The three-dialogue rule binds axes, not concepts, so one dialogue's material can
+be a concept under an axis that compares several. Both thresholds are proposed. A scratch check
+compares the crosswalk with AN0's inventory and fails on any pair or family it leaves out. The
+independent overlap reviewer also checks the crosswalk.
+
+Add titles and summaries, and publish the catalog as a rendered page, with the crosswalk's drops. The
+user then ratifies the catalog count, as the target requires, and approves the consumer copy in the
+same review. Record both under DEC-16 in the decision register, with the page URL and version. The
+receipt commits in AN6.
 
 **Verify:** normalized-question and definition uniqueness pass, and every axis lists at least three
-classes. Any axis over twelve classes has a split review. Count ratification and copy approval are
-recorded.
+classes. Any axis over twelve classes has a split review. The crosswalk check passes, and every drop
+gives a reason. Count ratification and copy approval are recorded.
 
 ### AN3. Build the tooling and the calibration set: target phase 2, plus A1
 
@@ -457,8 +469,19 @@ labelled, adjudicate them, and recheck κ. Measure actual tokens and cost,
 latency, refusals, precision and recall per concept, and calibration. Set the thresholds. A scratch
 script is acceptable.
 
+Then review the catalog's gaps before AN5 classifies against it. The O4 pass cannot find them, because
+its labeller works from the same catalog. The gap pool is every accepted observation for which no
+concept reaches its threshold. From a stratified sample of it (proposed: 200, at least half of them
+omission repairs, which carry no feature-era tag), an agent independent of the catalog's author gives
+each record either the concept that fits or the comparison question the catalog lacks, citing the
+record. A proposed question goes through phase 1's admission rules. An admitted change revises the
+catalog, reruns only its own questions on the stored inputs, and enters the phase-1 receipt with every
+declined proposal. Because the ratified count is a ceiling, the user ratifies the revised count.
+
 **Verify:** recorded usage is within a factor of two of the forecast, or DEC-17 is revisited. κ per
-axis stays at least 0.6. Thresholds and metrics are recorded for every concept.
+axis stays at least 0.6. Thresholds and metrics are recorded for every concept. The gap pool's size
+per dialogue is recorded, and every gap-review proposal is admitted or declined in the phase-1
+receipt.
 
 ### AN5. Classify, check independently and prune: target phases 3–5, amended by A1 and A2
 
@@ -586,6 +609,8 @@ Stop and report on any of these:
 Completion is reported as corpus delta first:
 
 - axes and concepts before (483 and 3,557) and after;
+- feature-era pairs and families the crosswalk covers, and those it drops, with reasons;
+- the gap pool before and after the gap review;
 - observations classified for the first time (4,648 now unclassified);
 - memberships per observation in each dialogue, by evidence type;
 - dispositions;
